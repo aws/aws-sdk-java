@@ -40,23 +40,23 @@ import com.amazonaws.util.json.*;
 public class PredictionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Prediction prediction, JSONWriter jsonWriter) {
+    public void marshall(Prediction prediction, SdkJsonGenerator jsonGenerator) {
         if (prediction == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (prediction.getPredictedLabel() != null) {
-                jsonWriter.key("predictedLabel").value(
+                jsonGenerator.writeFieldName("predictedLabel").writeValue(
                         prediction.getPredictedLabel());
             }
             if (prediction.getPredictedValue() != null) {
-                jsonWriter.key("predictedValue").value(
+                jsonGenerator.writeFieldName("predictedValue").writeValue(
                         prediction.getPredictedValue());
             }
 
@@ -64,38 +64,40 @@ public class PredictionJsonMarshaller {
                     .getPredictedScores();
             if (!predictedScoresMap.isEmpty()
                     || !predictedScoresMap.isAutoConstruct()) {
-                jsonWriter.key("predictedScores");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("predictedScores");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Float> predictedScoresMapValue : predictedScoresMap
                         .entrySet()) {
                     if (predictedScoresMapValue.getValue() != null) {
-                        jsonWriter.key(predictedScoresMapValue.getKey());
+                        jsonGenerator.writeFieldName(predictedScoresMapValue
+                                .getKey());
 
-                        jsonWriter.value(predictedScoresMapValue.getValue());
+                        jsonGenerator.writeValue(predictedScoresMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> detailsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) prediction
                     .getDetails();
             if (!detailsMap.isEmpty() || !detailsMap.isAutoConstruct()) {
-                jsonWriter.key("details");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("details");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> detailsMapValue : detailsMap
                         .entrySet()) {
                     if (detailsMapValue.getValue() != null) {
-                        jsonWriter.key(detailsMapValue.getKey());
+                        jsonGenerator.writeFieldName(detailsMapValue.getKey());
 
-                        jsonWriter.value(detailsMapValue.getValue());
+                        jsonGenerator.writeValue(detailsMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

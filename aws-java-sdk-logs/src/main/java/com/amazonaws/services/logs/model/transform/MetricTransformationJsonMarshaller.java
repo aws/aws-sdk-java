@@ -40,32 +40,32 @@ import com.amazonaws.util.json.*;
 public class MetricTransformationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(MetricTransformation metricTransformation,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (metricTransformation == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (metricTransformation.getMetricName() != null) {
-                jsonWriter.key("metricName").value(
+                jsonGenerator.writeFieldName("metricName").writeValue(
                         metricTransformation.getMetricName());
             }
             if (metricTransformation.getMetricNamespace() != null) {
-                jsonWriter.key("metricNamespace").value(
+                jsonGenerator.writeFieldName("metricNamespace").writeValue(
                         metricTransformation.getMetricNamespace());
             }
             if (metricTransformation.getMetricValue() != null) {
-                jsonWriter.key("metricValue").value(
+                jsonGenerator.writeFieldName("metricValue").writeValue(
                         metricTransformation.getMetricValue());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,25 +40,28 @@ import com.amazonaws.util.json.*;
 public class SearchStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(SearchStatus searchStatus, JSONWriter jsonWriter) {
+    public void marshall(SearchStatus searchStatus,
+            SdkJsonGenerator jsonGenerator) {
         if (searchStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (searchStatus.getTimems() != null) {
-                jsonWriter.key("timems").value(searchStatus.getTimems());
+                jsonGenerator.writeFieldName("timems").writeValue(
+                        searchStatus.getTimems());
             }
             if (searchStatus.getRid() != null) {
-                jsonWriter.key("rid").value(searchStatus.getRid());
+                jsonGenerator.writeFieldName("rid").writeValue(
+                        searchStatus.getRid());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,27 +40,28 @@ import com.amazonaws.util.json.*;
 public class IncompatibilityMessageJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(IncompatibilityMessage incompatibilityMessage,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (incompatibilityMessage == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (incompatibilityMessage.getMessage() != null) {
-                jsonWriter.key("message").value(
+                jsonGenerator.writeFieldName("message").writeValue(
                         incompatibilityMessage.getMessage());
             }
             if (incompatibilityMessage.getType() != null) {
-                jsonWriter.key("type").value(incompatibilityMessage.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        incompatibilityMessage.getType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

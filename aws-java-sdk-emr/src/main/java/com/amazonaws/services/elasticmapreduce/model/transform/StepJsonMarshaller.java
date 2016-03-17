@@ -40,39 +40,39 @@ import com.amazonaws.util.json.*;
 public class StepJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Step step, JSONWriter jsonWriter) {
+    public void marshall(Step step, SdkJsonGenerator jsonGenerator) {
         if (step == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (step.getId() != null) {
-                jsonWriter.key("Id").value(step.getId());
+                jsonGenerator.writeFieldName("Id").writeValue(step.getId());
             }
             if (step.getName() != null) {
-                jsonWriter.key("Name").value(step.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(step.getName());
             }
             if (step.getConfig() != null) {
-                jsonWriter.key("Config");
+                jsonGenerator.writeFieldName("Config");
                 HadoopStepConfigJsonMarshaller.getInstance().marshall(
-                        step.getConfig(), jsonWriter);
+                        step.getConfig(), jsonGenerator);
             }
             if (step.getActionOnFailure() != null) {
-                jsonWriter.key("ActionOnFailure").value(
+                jsonGenerator.writeFieldName("ActionOnFailure").writeValue(
                         step.getActionOnFailure());
             }
             if (step.getStatus() != null) {
-                jsonWriter.key("Status");
+                jsonGenerator.writeFieldName("Status");
                 StepStatusJsonMarshaller.getInstance().marshall(
-                        step.getStatus(), jsonWriter);
+                        step.getStatus(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,23 +40,24 @@ import com.amazonaws.util.json.*;
 public class LambdaActionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(LambdaAction lambdaAction, JSONWriter jsonWriter) {
+    public void marshall(LambdaAction lambdaAction,
+            SdkJsonGenerator jsonGenerator) {
         if (lambdaAction == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (lambdaAction.getFunctionArn() != null) {
-                jsonWriter.key("functionArn").value(
+                jsonGenerator.writeFieldName("functionArn").writeValue(
                         lambdaAction.getFunctionArn());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

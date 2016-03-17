@@ -40,101 +40,107 @@ import com.amazonaws.util.json.*;
 public class AttributeValueJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(AttributeValue attributeValue, JSONWriter jsonWriter) {
+    public void marshall(AttributeValue attributeValue,
+            SdkJsonGenerator jsonGenerator) {
         if (attributeValue == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (attributeValue.getS() != null) {
-                jsonWriter.key("S").value(attributeValue.getS());
+                jsonGenerator.writeFieldName("S").writeValue(
+                        attributeValue.getS());
             }
             if (attributeValue.getN() != null) {
-                jsonWriter.key("N").value(attributeValue.getN());
+                jsonGenerator.writeFieldName("N").writeValue(
+                        attributeValue.getN());
             }
             if (attributeValue.getB() != null) {
-                jsonWriter.key("B").value(attributeValue.getB());
+                jsonGenerator.writeFieldName("B").writeValue(
+                        attributeValue.getB());
             }
 
             java.util.List<String> sSList = attributeValue.getSS();
             if (sSList != null) {
-                jsonWriter.key("SS");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SS");
+                jsonGenerator.writeStartArray();
                 for (String sSListValue : sSList) {
                     if (sSListValue != null) {
-                        jsonWriter.value(sSListValue);
+                        jsonGenerator.writeValue(sSListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<String> nSList = attributeValue.getNS();
             if (nSList != null) {
-                jsonWriter.key("NS");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("NS");
+                jsonGenerator.writeStartArray();
                 for (String nSListValue : nSList) {
                     if (nSListValue != null) {
-                        jsonWriter.value(nSListValue);
+                        jsonGenerator.writeValue(nSListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<java.nio.ByteBuffer> bSList = attributeValue.getBS();
             if (bSList != null) {
-                jsonWriter.key("BS");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("BS");
+                jsonGenerator.writeStartArray();
                 for (java.nio.ByteBuffer bSListValue : bSList) {
                     if (bSListValue != null) {
-                        jsonWriter.value(bSListValue);
+                        jsonGenerator.writeValue(bSListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.Map<String, AttributeValue> mMap = attributeValue.getM();
             if (mMap != null) {
-                jsonWriter.key("M");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("M");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, AttributeValue> mMapValue : mMap
                         .entrySet()) {
                     if (mMapValue.getValue() != null) {
-                        jsonWriter.key(mMapValue.getKey());
+                        jsonGenerator.writeFieldName(mMapValue.getKey());
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
-                                mMapValue.getValue(), jsonWriter);
+                                mMapValue.getValue(), jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.List<AttributeValue> lList = attributeValue.getL();
             if (lList != null) {
-                jsonWriter.key("L");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("L");
+                jsonGenerator.writeStartArray();
                 for (AttributeValue lListValue : lList) {
                     if (lListValue != null) {
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
-                                lListValue, jsonWriter);
+                                lListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (attributeValue.getNULL() != null) {
-                jsonWriter.key("NULL").value(attributeValue.getNULL());
+                jsonGenerator.writeFieldName("NULL").writeValue(
+                        attributeValue.getNULL());
             }
             if (attributeValue.getBOOL() != null) {
-                jsonWriter.key("BOOL").value(attributeValue.getBOOL());
+                jsonGenerator.writeFieldName("BOOL").writeValue(
+                        attributeValue.getBOOL());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

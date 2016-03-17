@@ -64,47 +64,47 @@ public class RegisterInstanceRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (registerInstanceRequest.getStackId() != null) {
-                jsonWriter.key("StackId").value(
+                jsonGenerator.writeFieldName("StackId").writeValue(
                         registerInstanceRequest.getStackId());
             }
             if (registerInstanceRequest.getHostname() != null) {
-                jsonWriter.key("Hostname").value(
+                jsonGenerator.writeFieldName("Hostname").writeValue(
                         registerInstanceRequest.getHostname());
             }
             if (registerInstanceRequest.getPublicIp() != null) {
-                jsonWriter.key("PublicIp").value(
+                jsonGenerator.writeFieldName("PublicIp").writeValue(
                         registerInstanceRequest.getPublicIp());
             }
             if (registerInstanceRequest.getPrivateIp() != null) {
-                jsonWriter.key("PrivateIp").value(
+                jsonGenerator.writeFieldName("PrivateIp").writeValue(
                         registerInstanceRequest.getPrivateIp());
             }
             if (registerInstanceRequest.getRsaPublicKey() != null) {
-                jsonWriter.key("RsaPublicKey").value(
+                jsonGenerator.writeFieldName("RsaPublicKey").writeValue(
                         registerInstanceRequest.getRsaPublicKey());
             }
             if (registerInstanceRequest.getRsaPublicKeyFingerprint() != null) {
-                jsonWriter.key("RsaPublicKeyFingerprint").value(
-                        registerInstanceRequest.getRsaPublicKeyFingerprint());
+                jsonGenerator.writeFieldName("RsaPublicKeyFingerprint")
+                        .writeValue(
+                                registerInstanceRequest
+                                        .getRsaPublicKeyFingerprint());
             }
             if (registerInstanceRequest.getInstanceIdentity() != null) {
-                jsonWriter.key("InstanceIdentity");
+                jsonGenerator.writeFieldName("InstanceIdentity");
                 InstanceIdentityJsonMarshaller.getInstance().marshall(
                         registerInstanceRequest.getInstanceIdentity(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,36 +40,38 @@ import com.amazonaws.util.json.*;
 public class TapeRecoveryPointInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(TapeRecoveryPointInfo tapeRecoveryPointInfo,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (tapeRecoveryPointInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (tapeRecoveryPointInfo.getTapeARN() != null) {
-                jsonWriter.key("TapeARN").value(
+                jsonGenerator.writeFieldName("TapeARN").writeValue(
                         tapeRecoveryPointInfo.getTapeARN());
             }
             if (tapeRecoveryPointInfo.getTapeRecoveryPointTime() != null) {
-                jsonWriter.key("TapeRecoveryPointTime").value(
-                        tapeRecoveryPointInfo.getTapeRecoveryPointTime());
+                jsonGenerator.writeFieldName("TapeRecoveryPointTime")
+                        .writeValue(
+                                tapeRecoveryPointInfo
+                                        .getTapeRecoveryPointTime());
             }
             if (tapeRecoveryPointInfo.getTapeSizeInBytes() != null) {
-                jsonWriter.key("TapeSizeInBytes").value(
+                jsonGenerator.writeFieldName("TapeSizeInBytes").writeValue(
                         tapeRecoveryPointInfo.getTapeSizeInBytes());
             }
             if (tapeRecoveryPointInfo.getTapeStatus() != null) {
-                jsonWriter.key("TapeStatus").value(
+                jsonGenerator.writeFieldName("TapeStatus").writeValue(
                         tapeRecoveryPointInfo.getTapeStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

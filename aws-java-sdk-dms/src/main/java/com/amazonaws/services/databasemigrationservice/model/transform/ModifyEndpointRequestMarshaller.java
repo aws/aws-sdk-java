@@ -64,56 +64,57 @@ public class ModifyEndpointRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (modifyEndpointRequest.getEndpointArn() != null) {
-                jsonWriter.key("EndpointArn").value(
+                jsonGenerator.writeFieldName("EndpointArn").writeValue(
                         modifyEndpointRequest.getEndpointArn());
             }
             if (modifyEndpointRequest.getEndpointIdentifier() != null) {
-                jsonWriter.key("EndpointIdentifier").value(
+                jsonGenerator.writeFieldName("EndpointIdentifier").writeValue(
                         modifyEndpointRequest.getEndpointIdentifier());
             }
             if (modifyEndpointRequest.getEndpointType() != null) {
-                jsonWriter.key("EndpointType").value(
+                jsonGenerator.writeFieldName("EndpointType").writeValue(
                         modifyEndpointRequest.getEndpointType());
             }
             if (modifyEndpointRequest.getEngineName() != null) {
-                jsonWriter.key("EngineName").value(
+                jsonGenerator.writeFieldName("EngineName").writeValue(
                         modifyEndpointRequest.getEngineName());
             }
             if (modifyEndpointRequest.getUsername() != null) {
-                jsonWriter.key("Username").value(
+                jsonGenerator.writeFieldName("Username").writeValue(
                         modifyEndpointRequest.getUsername());
             }
             if (modifyEndpointRequest.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         modifyEndpointRequest.getPassword());
             }
             if (modifyEndpointRequest.getServerName() != null) {
-                jsonWriter.key("ServerName").value(
+                jsonGenerator.writeFieldName("ServerName").writeValue(
                         modifyEndpointRequest.getServerName());
             }
             if (modifyEndpointRequest.getPort() != null) {
-                jsonWriter.key("Port").value(modifyEndpointRequest.getPort());
+                jsonGenerator.writeFieldName("Port").writeValue(
+                        modifyEndpointRequest.getPort());
             }
             if (modifyEndpointRequest.getDatabaseName() != null) {
-                jsonWriter.key("DatabaseName").value(
+                jsonGenerator.writeFieldName("DatabaseName").writeValue(
                         modifyEndpointRequest.getDatabaseName());
             }
             if (modifyEndpointRequest.getExtraConnectionAttributes() != null) {
-                jsonWriter.key("ExtraConnectionAttributes").value(
-                        modifyEndpointRequest.getExtraConnectionAttributes());
+                jsonGenerator.writeFieldName("ExtraConnectionAttributes")
+                        .writeValue(
+                                modifyEndpointRequest
+                                        .getExtraConnectionAttributes());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,44 +40,48 @@ import com.amazonaws.util.json.*;
 public class ArtworkJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Artwork artwork, JSONWriter jsonWriter) {
+    public void marshall(Artwork artwork, SdkJsonGenerator jsonGenerator) {
         if (artwork == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (artwork.getInputKey() != null) {
-                jsonWriter.key("InputKey").value(artwork.getInputKey());
+                jsonGenerator.writeFieldName("InputKey").writeValue(
+                        artwork.getInputKey());
             }
             if (artwork.getMaxWidth() != null) {
-                jsonWriter.key("MaxWidth").value(artwork.getMaxWidth());
+                jsonGenerator.writeFieldName("MaxWidth").writeValue(
+                        artwork.getMaxWidth());
             }
             if (artwork.getMaxHeight() != null) {
-                jsonWriter.key("MaxHeight").value(artwork.getMaxHeight());
+                jsonGenerator.writeFieldName("MaxHeight").writeValue(
+                        artwork.getMaxHeight());
             }
             if (artwork.getSizingPolicy() != null) {
-                jsonWriter.key("SizingPolicy").value(artwork.getSizingPolicy());
+                jsonGenerator.writeFieldName("SizingPolicy").writeValue(
+                        artwork.getSizingPolicy());
             }
             if (artwork.getPaddingPolicy() != null) {
-                jsonWriter.key("PaddingPolicy").value(
+                jsonGenerator.writeFieldName("PaddingPolicy").writeValue(
                         artwork.getPaddingPolicy());
             }
             if (artwork.getAlbumArtFormat() != null) {
-                jsonWriter.key("AlbumArtFormat").value(
+                jsonGenerator.writeFieldName("AlbumArtFormat").writeValue(
                         artwork.getAlbumArtFormat());
             }
             if (artwork.getEncryption() != null) {
-                jsonWriter.key("Encryption");
+                jsonGenerator.writeFieldName("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(
-                        artwork.getEncryption(), jsonWriter);
+                        artwork.getEncryption(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

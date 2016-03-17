@@ -40,25 +40,27 @@ import com.amazonaws.util.json.*;
 public class ResolutionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Resolution resolution, JSONWriter jsonWriter) {
+    public void marshall(Resolution resolution, SdkJsonGenerator jsonGenerator) {
         if (resolution == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (resolution.getWidth() != null) {
-                jsonWriter.key("width").value(resolution.getWidth());
+                jsonGenerator.writeFieldName("width").writeValue(
+                        resolution.getWidth());
             }
             if (resolution.getHeight() != null) {
-                jsonWriter.key("height").value(resolution.getHeight());
+                jsonGenerator.writeFieldName("height").writeValue(
+                        resolution.getHeight());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

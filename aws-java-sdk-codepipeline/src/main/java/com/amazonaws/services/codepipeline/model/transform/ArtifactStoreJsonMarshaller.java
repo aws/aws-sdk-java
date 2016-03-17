@@ -40,30 +40,33 @@ import com.amazonaws.util.json.*;
 public class ArtifactStoreJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ArtifactStore artifactStore, JSONWriter jsonWriter) {
+    public void marshall(ArtifactStore artifactStore,
+            SdkJsonGenerator jsonGenerator) {
         if (artifactStore == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (artifactStore.getType() != null) {
-                jsonWriter.key("type").value(artifactStore.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        artifactStore.getType());
             }
             if (artifactStore.getLocation() != null) {
-                jsonWriter.key("location").value(artifactStore.getLocation());
+                jsonGenerator.writeFieldName("location").writeValue(
+                        artifactStore.getLocation());
             }
             if (artifactStore.getEncryptionKey() != null) {
-                jsonWriter.key("encryptionKey");
+                jsonGenerator.writeFieldName("encryptionKey");
                 EncryptionKeyJsonMarshaller.getInstance().marshall(
-                        artifactStore.getEncryptionKey(), jsonWriter);
+                        artifactStore.getEncryptionKey(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

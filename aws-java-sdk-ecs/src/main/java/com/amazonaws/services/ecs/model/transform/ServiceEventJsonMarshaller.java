@@ -40,28 +40,32 @@ import com.amazonaws.util.json.*;
 public class ServiceEventJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ServiceEvent serviceEvent, JSONWriter jsonWriter) {
+    public void marshall(ServiceEvent serviceEvent,
+            SdkJsonGenerator jsonGenerator) {
         if (serviceEvent == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (serviceEvent.getId() != null) {
-                jsonWriter.key("id").value(serviceEvent.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        serviceEvent.getId());
             }
             if (serviceEvent.getCreatedAt() != null) {
-                jsonWriter.key("createdAt").value(serviceEvent.getCreatedAt());
+                jsonGenerator.writeFieldName("createdAt").writeValue(
+                        serviceEvent.getCreatedAt());
             }
             if (serviceEvent.getMessage() != null) {
-                jsonWriter.key("message").value(serviceEvent.getMessage());
+                jsonGenerator.writeFieldName("message").writeValue(
+                        serviceEvent.getMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

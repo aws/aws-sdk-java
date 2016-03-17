@@ -64,52 +64,50 @@ public class DescribeJobFlowsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeJobFlowsRequest.getCreatedAfter() != null) {
-                jsonWriter.key("CreatedAfter").value(
+                jsonGenerator.writeFieldName("CreatedAfter").writeValue(
                         describeJobFlowsRequest.getCreatedAfter());
             }
             if (describeJobFlowsRequest.getCreatedBefore() != null) {
-                jsonWriter.key("CreatedBefore").value(
+                jsonGenerator.writeFieldName("CreatedBefore").writeValue(
                         describeJobFlowsRequest.getCreatedBefore());
             }
 
             com.amazonaws.internal.SdkInternalList<String> jobFlowIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeJobFlowsRequest
                     .getJobFlowIds();
             if (!jobFlowIdsList.isEmpty() || !jobFlowIdsList.isAutoConstruct()) {
-                jsonWriter.key("JobFlowIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("JobFlowIds");
+                jsonGenerator.writeStartArray();
                 for (String jobFlowIdsListValue : jobFlowIdsList) {
                     if (jobFlowIdsListValue != null) {
-                        jsonWriter.value(jobFlowIdsListValue);
+                        jsonGenerator.writeValue(jobFlowIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> jobFlowStatesList = (com.amazonaws.internal.SdkInternalList<String>) describeJobFlowsRequest
                     .getJobFlowStates();
             if (!jobFlowStatesList.isEmpty()
                     || !jobFlowStatesList.isAutoConstruct()) {
-                jsonWriter.key("JobFlowStates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("JobFlowStates");
+                jsonGenerator.writeStartArray();
                 for (String jobFlowStatesListValue : jobFlowStatesList) {
                     if (jobFlowStatesListValue != null) {
-                        jsonWriter.value(jobFlowStatesListValue);
+                        jsonGenerator.writeValue(jobFlowStatesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

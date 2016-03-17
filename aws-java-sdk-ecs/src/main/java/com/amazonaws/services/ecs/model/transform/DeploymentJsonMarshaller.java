@@ -40,47 +40,51 @@ import com.amazonaws.util.json.*;
 public class DeploymentJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Deployment deployment, JSONWriter jsonWriter) {
+    public void marshall(Deployment deployment, SdkJsonGenerator jsonGenerator) {
         if (deployment == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deployment.getId() != null) {
-                jsonWriter.key("id").value(deployment.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        deployment.getId());
             }
             if (deployment.getStatus() != null) {
-                jsonWriter.key("status").value(deployment.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        deployment.getStatus());
             }
             if (deployment.getTaskDefinition() != null) {
-                jsonWriter.key("taskDefinition").value(
+                jsonGenerator.writeFieldName("taskDefinition").writeValue(
                         deployment.getTaskDefinition());
             }
             if (deployment.getDesiredCount() != null) {
-                jsonWriter.key("desiredCount").value(
+                jsonGenerator.writeFieldName("desiredCount").writeValue(
                         deployment.getDesiredCount());
             }
             if (deployment.getPendingCount() != null) {
-                jsonWriter.key("pendingCount").value(
+                jsonGenerator.writeFieldName("pendingCount").writeValue(
                         deployment.getPendingCount());
             }
             if (deployment.getRunningCount() != null) {
-                jsonWriter.key("runningCount").value(
+                jsonGenerator.writeFieldName("runningCount").writeValue(
                         deployment.getRunningCount());
             }
             if (deployment.getCreatedAt() != null) {
-                jsonWriter.key("createdAt").value(deployment.getCreatedAt());
+                jsonGenerator.writeFieldName("createdAt").writeValue(
+                        deployment.getCreatedAt());
             }
             if (deployment.getUpdatedAt() != null) {
-                jsonWriter.key("updatedAt").value(deployment.getUpdatedAt());
+                jsonGenerator.writeFieldName("updatedAt").writeValue(
+                        deployment.getUpdatedAt());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

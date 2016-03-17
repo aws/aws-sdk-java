@@ -64,28 +64,27 @@ public class UpdateVolumeRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateVolumeRequest.getVolumeId() != null) {
-                jsonWriter.key("VolumeId").value(
+                jsonGenerator.writeFieldName("VolumeId").writeValue(
                         updateVolumeRequest.getVolumeId());
             }
             if (updateVolumeRequest.getName() != null) {
-                jsonWriter.key("Name").value(updateVolumeRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        updateVolumeRequest.getName());
             }
             if (updateVolumeRequest.getMountPoint() != null) {
-                jsonWriter.key("MountPoint").value(
+                jsonGenerator.writeFieldName("MountPoint").writeValue(
                         updateVolumeRequest.getMountPoint());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

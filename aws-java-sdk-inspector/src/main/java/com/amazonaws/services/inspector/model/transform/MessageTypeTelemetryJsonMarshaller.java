@@ -40,31 +40,32 @@ import com.amazonaws.util.json.*;
 public class MessageTypeTelemetryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(MessageTypeTelemetry messageTypeTelemetry,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (messageTypeTelemetry == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (messageTypeTelemetry.getMessageType() != null) {
-                jsonWriter.key("messageType").value(
+                jsonGenerator.writeFieldName("messageType").writeValue(
                         messageTypeTelemetry.getMessageType());
             }
             if (messageTypeTelemetry.getCount() != null) {
-                jsonWriter.key("count").value(messageTypeTelemetry.getCount());
+                jsonGenerator.writeFieldName("count").writeValue(
+                        messageTypeTelemetry.getCount());
             }
             if (messageTypeTelemetry.getDataSize() != null) {
-                jsonWriter.key("dataSize").value(
+                jsonGenerator.writeFieldName("dataSize").writeValue(
                         messageTypeTelemetry.getDataSize());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

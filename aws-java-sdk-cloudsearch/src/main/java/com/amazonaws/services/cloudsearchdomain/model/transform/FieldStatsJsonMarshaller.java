@@ -40,44 +40,51 @@ import com.amazonaws.util.json.*;
 public class FieldStatsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(FieldStats fieldStats, JSONWriter jsonWriter) {
+    public void marshall(FieldStats fieldStats, SdkJsonGenerator jsonGenerator) {
         if (fieldStats == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (fieldStats.getMin() != null) {
-                jsonWriter.key("min").value(fieldStats.getMin());
+                jsonGenerator.writeFieldName("min").writeValue(
+                        fieldStats.getMin());
             }
             if (fieldStats.getMax() != null) {
-                jsonWriter.key("max").value(fieldStats.getMax());
+                jsonGenerator.writeFieldName("max").writeValue(
+                        fieldStats.getMax());
             }
             if (fieldStats.getCount() != null) {
-                jsonWriter.key("count").value(fieldStats.getCount());
+                jsonGenerator.writeFieldName("count").writeValue(
+                        fieldStats.getCount());
             }
             if (fieldStats.getMissing() != null) {
-                jsonWriter.key("missing").value(fieldStats.getMissing());
+                jsonGenerator.writeFieldName("missing").writeValue(
+                        fieldStats.getMissing());
             }
             if (fieldStats.getSum() != null) {
-                jsonWriter.key("sum").value(fieldStats.getSum());
+                jsonGenerator.writeFieldName("sum").writeValue(
+                        fieldStats.getSum());
             }
             if (fieldStats.getSumOfSquares() != null) {
-                jsonWriter.key("sumOfSquares").value(
+                jsonGenerator.writeFieldName("sumOfSquares").writeValue(
                         fieldStats.getSumOfSquares());
             }
             if (fieldStats.getMean() != null) {
-                jsonWriter.key("mean").value(fieldStats.getMean());
+                jsonGenerator.writeFieldName("mean").writeValue(
+                        fieldStats.getMean());
             }
             if (fieldStats.getStddev() != null) {
-                jsonWriter.key("stddev").value(fieldStats.getStddev());
+                jsonGenerator.writeFieldName("stddev").writeValue(
+                        fieldStats.getStddev());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -64,34 +64,33 @@ public class PutTargetsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putTargetsRequest.getRule() != null) {
-                jsonWriter.key("Rule").value(putTargetsRequest.getRule());
+                jsonGenerator.writeFieldName("Rule").writeValue(
+                        putTargetsRequest.getRule());
             }
 
             java.util.List<Target> targetsList = putTargetsRequest.getTargets();
             if (targetsList != null) {
-                jsonWriter.key("Targets");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Targets");
+                jsonGenerator.writeStartArray();
                 for (Target targetsListValue : targetsList) {
                     if (targetsListValue != null) {
 
                         TargetJsonMarshaller.getInstance().marshall(
-                                targetsListValue, jsonWriter);
+                                targetsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

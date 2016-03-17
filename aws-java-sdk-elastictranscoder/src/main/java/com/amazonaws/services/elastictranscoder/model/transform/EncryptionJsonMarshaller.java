@@ -40,32 +40,35 @@ import com.amazonaws.util.json.*;
 public class EncryptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Encryption encryption, JSONWriter jsonWriter) {
+    public void marshall(Encryption encryption, SdkJsonGenerator jsonGenerator) {
         if (encryption == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (encryption.getMode() != null) {
-                jsonWriter.key("Mode").value(encryption.getMode());
+                jsonGenerator.writeFieldName("Mode").writeValue(
+                        encryption.getMode());
             }
             if (encryption.getKey() != null) {
-                jsonWriter.key("Key").value(encryption.getKey());
+                jsonGenerator.writeFieldName("Key").writeValue(
+                        encryption.getKey());
             }
             if (encryption.getKeyMd5() != null) {
-                jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
+                jsonGenerator.writeFieldName("KeyMd5").writeValue(
+                        encryption.getKeyMd5());
             }
             if (encryption.getInitializationVector() != null) {
-                jsonWriter.key("InitializationVector").value(
-                        encryption.getInitializationVector());
+                jsonGenerator.writeFieldName("InitializationVector")
+                        .writeValue(encryption.getInitializationVector());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

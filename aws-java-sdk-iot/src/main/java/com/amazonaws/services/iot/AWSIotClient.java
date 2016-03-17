@@ -320,8 +320,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
-     *         You can't revert the certificate transfer because it has already
-     *         completed.
+     *         You can't revert the certificate transfer because the transfer is
+     *         already complete.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -488,11 +488,11 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * </p>
      * <p>
      * <b>Note</b> Only the transfer source account can use this operation to
-     * cancel a transfer (transfer destinations can use
-     * <a>RejectCertificateTransfer</a> instead). After transfer, AWS IoT
-     * returns the certificate to the source account in the INACTIVE state. Once
-     * the destination account has accepted the transfer, the transfer may no
-     * longer be cancelled.
+     * cancel a transfer. (Transfer destinations can use
+     * <a>RejectCertificateTransfer</a> instead.) After transfer, AWS IoT
+     * returns the certificate to the source account in the INACTIVE state.
+     * After the destination account has accepted the transfer, the transfer
+     * cannot be cancelled.
      * </p>
      * <p>
      * After a certificate transfer is cancelled, the status of the certificate
@@ -504,8 +504,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
-     *         You can't revert the certificate transfer because it has already
-     *         completed.
+     *         You can't revert the certificate transfer because the transfer is
+     *         already complete.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -561,8 +561,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * a distinct certificate.
      * </p>
      * <p>
-     * You can create multiple certificates in a batch by creating a directory
-     * and copying multiple .csr files into that directory and specifying that
+     * You can create multiple certificates in a batch by creating a directory,
+     * copying multiple .csr files into that directory, and then specifying that
      * directory on the command line. The following commands show how to create
      * a batch of certificates given a batch of CSRs.
      * </p>
@@ -572,7 +572,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * </p>
      * &gt;
      * <p>
-     * On Linux and OSX, the command is:
+     * On Linux and OS X, the command is:
      * </p>
      * <p>
      * $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
@@ -580,7 +580,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * </p>
      * <p>
      * This command lists all of the CSRs in my-csr-directory and pipes each CSR
-     * filename to the aws iot create-certificate-from-csr AWS CLI command to
+     * file name to the aws iot create-certificate-from-csr AWS CLI command to
      * create a certificate for the corresponding CSR.
      * </p>
      * <p>
@@ -601,7 +601,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * --certificate-signing-request file://my-csr-directory/$_}
      * </p>
      * <p>
-     * On Windows Command Prompt, the command to create certificates for all
+     * On a Windows command prompt, the command to create certificates for all
      * CSRs in my-csr-directory is:
      * </p>
      * <p>
@@ -662,12 +662,12 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Creates a 2048 bit RSA key pair and issues an X.509 certificate using the
+     * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
      * issued public key.
      * </p>
      * <p>
      * <b>Note</b> This is the only time AWS IoT issues the private key for this
-     * certificate. It is important to keep track of the private key.
+     * certificate, so it is important to keep it in a secure location.
      * </p>
      * 
      * @param createKeysAndCertificateRequest
@@ -788,13 +788,14 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * <p>
      * Creates a new version of the specified AWS IoT policy. To update a
      * policy, create a new policy version. A managed policy can have up to five
-     * versions. If the policy has five versions, you must delete an existing
-     * version using <a>DeletePolicyVersion</a> before you create a new version.
+     * versions. If the policy has five versions, you must use
+     * <a>DeletePolicyVersion</a> to delete an existing version before you
+     * create a new one.
      * </p>
      * <p>
      * Optionally, you can set the new version as the policy's default version.
-     * The default version is the operative version; that is, the version that
-     * is in effect for the certificates that the policy is attached to.
+     * The default version is the operative version (that is, the version that
+     * is in effect for the certificates to which the policy is attached).
      * </p>
      * 
      * @param createPolicyVersionRequest
@@ -856,7 +857,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Creates a thing in the thing registry.
+     * Creates a thing in the Thing Registry.
      * </p>
      * 
      * @param createThingRequest
@@ -911,7 +912,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Creates a rule.
+     * Creates a rule. Creating rules is an administrator-level action. Any user
+     * who has permission to create rules will be able to access data processed
+     * by the rule.
      * </p>
      * 
      * @param createTopicRuleRequest
@@ -965,8 +968,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * </p>
      * <p>
      * A certificate cannot be deleted if it has a policy attached to it or if
-     * its status is set to ACTIVE. To delete a certificate, first detach all
-     * policies using the <a>DetachPrincipalPolicy</a> API. Next use the
+     * its status is set to ACTIVE. To delete a certificate, first use the
+     * <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the
      * <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
      * status.
      * </p>
@@ -1020,14 +1023,14 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * Deletes the specified policy.
      * </p>
      * <p>
-     * A policy cannot be deleted if it has non-default versions and/or it is
+     * A policy cannot be deleted if it has non-default versions or it is
      * attached to any certificate.
      * </p>
      * <p>
-     * To delete a policy, delete all non-default versions of the policy using
-     * the DeletePolicyVersion API, detach the policy from any certificate using
-     * the DetachPrincipalPolicy API, and then use the DeletePolicy API to
-     * delete the policy.
+     * To delete a policy, use the DeletePolicyVersion API to delete all
+     * non-default versions of the policy; use the DetachPrincipalPolicy API to
+     * detach the policy from any certificate; and then use the DeletePolicy API
+     * to delete the policy.
      * </p>
      * <p>
      * When a policy is deleted using DeletePolicy, its default version is
@@ -1528,7 +1531,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Disables the specified rule
+     * Disables the specified rule.
      * </p>
      * 
      * @param disableTopicRuleRequest
@@ -1845,8 +1848,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * Lists your certificates.
      * </p>
      * <p>
-     * The results are paginated with a default page size of 25. You can
-     * retrieve additional results using the returned marker.
+     * The results are paginated with a default page size of 25. You can use the
+     * returned marker to retrieve additional results.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -2015,9 +2018,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     /**
      * <p>
      * Lists the policies attached to the specified principal. If you use an
-     * Amazon Cognito identity, the ID needs to be in <a href=
+     * Cognito identity, the ID must be in <a href=
      * "http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax"
-     * >Amazon Cognito Identity format</a>.
+     * >AmazonCognito Identity format</a>.
      * </p>
      * 
      * @param listPrincipalPoliciesRequest
@@ -2187,9 +2190,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Lists your things. You can pass an AttributeName and/or AttributeValue to
-     * filter your things. For example:
-     * "ListThings where AttributeName=Color and AttributeValue=Red"
+     * Lists your things. You can pass an AttributeName or AttributeValue to
+     * filter your things (for example,
+     * "ListThings where AttributeName=Color and AttributeValue=Red").
      * </p>
      * 
      * @param listThingsRequest
@@ -2301,9 +2304,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * to enumerate your certificates.
      * </p>
      * <p>
-     * This operation can only be called by the transfer destination. Once
-     * called, the certificate will be returned to the source's account in the
-     * INACTIVE state.
+     * This operation can only be called by the transfer destination. After it
+     * is called, the certificate will be returned to the source's account in
+     * the INACTIVE state.
      * </p>
      * 
      * @param rejectCertificateTransferRequest
@@ -2311,8 +2314,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
-     *         You can't revert the certificate transfer because it has already
-     *         completed.
+     *         You can't revert the certificate transfer because the transfer is
+     *         already complete.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -2361,6 +2364,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     /**
      * <p>
      * Replaces the specified rule. You must specify all parameters for the new
+     * rule. Creating rules is an administrator-level action. Any user who has
+     * permission to create rules will be able to access data processed by the
      * rule.
      * </p>
      * 
@@ -2413,9 +2418,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     /**
      * <p>
      * Sets the specified version of the specified policy as the policy's
-     * default (operative) version. This action affects all certificates that
-     * the policy is attached to. To list the principals the policy is attached
-     * to, use the ListPrincipalPolicy API.
+     * default (operative) version. This action affects all certificates to
+     * which the policy is attached. To list the principals the policy is
+     * attached to, use the ListPrincipalPolicy API.
      * </p>
      * 
      * @param setDefaultPolicyVersionRequest
@@ -2523,16 +2528,16 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * You can cancel the transfer until it is acknowledged by the recipient.
      * </p>
      * <p>
-     * No notification is sent to the transfer destination's account, it is up
+     * No notification is sent to the transfer destination's account. It is up
      * to the caller to notify the transfer target.
      * </p>
      * <p>
-     * The certificate being transferred must not be in the ACTIVE state. It can
-     * be deactivated using the UpdateCertificate API.
+     * The certificate being transferred must not be in the ACTIVE state. You
+     * can use the UpdateCertificate API to deactivate it.
      * </p>
      * <p>
-     * The certificate must not have any policies attached to it. These can be
-     * detached using the DetachPrincipalPolicy API.
+     * The certificate must not have any policies attached to it. You can use
+     * the DetachPrincipalPolicy API to detach them.
      * </p>
      * 
      * @param transferCertificateRequest
@@ -2546,8 +2551,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws CertificateStateException
      *         The certificate operation is not allowed.
      * @throws TransferConflictException
-     *         You can't transfer the the certificate because authorization
-     *         policies are still attached.
+     *         You can't transfer the certificate because authorization policies
+     *         are still attached.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException
@@ -2599,9 +2604,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * idempotent.
      * </p>
      * <p>
-     * Moving a cert from the ACTIVE state (including REVOKED) will NOT
-     * disconnect currently-connected devices, although these devices will be
-     * unable to reconnect.
+     * Moving a certificate from the ACTIVE state (including REVOKED) will not
+     * disconnect currently connected devices, but these devices will be unable
+     * to reconnect.
      * </p>
      * <p>
      * The ACTIVE state is required to authenticate devices connecting to AWS

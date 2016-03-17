@@ -67,32 +67,31 @@ public class RemoveTagsRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (removeTagsRequest.getARN() != null) {
-                jsonWriter.key("ARN").value(removeTagsRequest.getARN());
+                jsonGenerator.writeFieldName("ARN").writeValue(
+                        removeTagsRequest.getARN());
             }
 
             java.util.List<String> tagKeysList = removeTagsRequest.getTagKeys();
             if (tagKeysList != null) {
-                jsonWriter.key("TagKeys");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TagKeys");
+                jsonGenerator.writeStartArray();
                 for (String tagKeysListValue : tagKeysList) {
                     if (tagKeysListValue != null) {
-                        jsonWriter.value(tagKeysListValue);
+                        jsonGenerator.writeValue(tagKeysListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

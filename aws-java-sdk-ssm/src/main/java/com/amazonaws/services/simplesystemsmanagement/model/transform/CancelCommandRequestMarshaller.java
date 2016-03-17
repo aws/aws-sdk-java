@@ -64,13 +64,12 @@ public class CancelCommandRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (cancelCommandRequest.getCommandId() != null) {
-                jsonWriter.key("CommandId").value(
+                jsonGenerator.writeFieldName("CommandId").writeValue(
                         cancelCommandRequest.getCommandId());
             }
 
@@ -78,21 +77,20 @@ public class CancelCommandRequestMarshaller implements
                     .getInstanceIds();
             if (!instanceIdsList.isEmpty()
                     || !instanceIdsList.isAutoConstruct()) {
-                jsonWriter.key("InstanceIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InstanceIds");
+                jsonGenerator.writeStartArray();
                 for (String instanceIdsListValue : instanceIdsList) {
                     if (instanceIdsListValue != null) {
-                        jsonWriter.value(instanceIdsListValue);
+                        jsonGenerator.writeValue(instanceIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

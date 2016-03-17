@@ -40,86 +40,91 @@ import com.amazonaws.util.json.*;
 public class FindingJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Finding finding, JSONWriter jsonWriter) {
+    public void marshall(Finding finding, SdkJsonGenerator jsonGenerator) {
         if (finding == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (finding.getFindingArn() != null) {
-                jsonWriter.key("findingArn").value(finding.getFindingArn());
+                jsonGenerator.writeFieldName("findingArn").writeValue(
+                        finding.getFindingArn());
             }
             if (finding.getRunArn() != null) {
-                jsonWriter.key("runArn").value(finding.getRunArn());
+                jsonGenerator.writeFieldName("runArn").writeValue(
+                        finding.getRunArn());
             }
             if (finding.getRulesPackageArn() != null) {
-                jsonWriter.key("rulesPackageArn").value(
+                jsonGenerator.writeFieldName("rulesPackageArn").writeValue(
                         finding.getRulesPackageArn());
             }
             if (finding.getRuleName() != null) {
-                jsonWriter.key("ruleName").value(finding.getRuleName());
+                jsonGenerator.writeFieldName("ruleName").writeValue(
+                        finding.getRuleName());
             }
             if (finding.getAgentId() != null) {
-                jsonWriter.key("agentId").value(finding.getAgentId());
+                jsonGenerator.writeFieldName("agentId").writeValue(
+                        finding.getAgentId());
             }
             if (finding.getAutoScalingGroup() != null) {
-                jsonWriter.key("autoScalingGroup").value(
+                jsonGenerator.writeFieldName("autoScalingGroup").writeValue(
                         finding.getAutoScalingGroup());
             }
             if (finding.getSeverity() != null) {
-                jsonWriter.key("severity").value(finding.getSeverity());
+                jsonGenerator.writeFieldName("severity").writeValue(
+                        finding.getSeverity());
             }
             if (finding.getFinding() != null) {
-                jsonWriter.key("finding");
+                jsonGenerator.writeFieldName("finding");
                 LocalizedTextJsonMarshaller.getInstance().marshall(
-                        finding.getFinding(), jsonWriter);
+                        finding.getFinding(), jsonGenerator);
             }
             if (finding.getDescription() != null) {
-                jsonWriter.key("description");
+                jsonGenerator.writeFieldName("description");
                 LocalizedTextJsonMarshaller.getInstance().marshall(
-                        finding.getDescription(), jsonWriter);
+                        finding.getDescription(), jsonGenerator);
             }
             if (finding.getRecommendation() != null) {
-                jsonWriter.key("recommendation");
+                jsonGenerator.writeFieldName("recommendation");
                 LocalizedTextJsonMarshaller.getInstance().marshall(
-                        finding.getRecommendation(), jsonWriter);
+                        finding.getRecommendation(), jsonGenerator);
             }
 
             java.util.List<Attribute> attributesList = finding.getAttributes();
             if (attributesList != null) {
-                jsonWriter.key("attributes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("attributes");
+                jsonGenerator.writeStartArray();
                 for (Attribute attributesListValue : attributesList) {
                     if (attributesListValue != null) {
 
                         AttributeJsonMarshaller.getInstance().marshall(
-                                attributesListValue, jsonWriter);
+                                attributesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<Attribute> userAttributesList = finding
                     .getUserAttributes();
             if (userAttributesList != null) {
-                jsonWriter.key("userAttributes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("userAttributes");
+                jsonGenerator.writeStartArray();
                 for (Attribute userAttributesListValue : userAttributesList) {
                     if (userAttributesListValue != null) {
 
                         AttributeJsonMarshaller.getInstance().marshall(
-                                userAttributesListValue, jsonWriter);
+                                userAttributesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

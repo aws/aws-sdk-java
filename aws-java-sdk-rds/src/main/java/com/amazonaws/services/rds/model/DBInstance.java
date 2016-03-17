@@ -306,6 +306,15 @@ public class DBInstance implements Serializable, Cloneable {
     private String monitoringRoleArn;
 
     /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
+     */
+    private Integer promotionTier;
+
+    /**
      * Contains a user-supplied database identifier. This identifier is the
      * unique key that identifies a DB instance.
      *
@@ -2377,6 +2386,63 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
+     *
+     * @return A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>.
+     */
+    public Integer getPromotionTier() {
+        return promotionTier;
+    }
+    
+    /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
+     *
+     * @param promotionTier A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>.
+     */
+    public void setPromotionTier(Integer promotionTier) {
+        this.promotionTier = promotionTier;
+    }
+    
+    /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param promotionTier A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withPromotionTier(Integer promotionTier) {
+        this.promotionTier = promotionTier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2430,7 +2496,8 @@ public class DBInstance implements Serializable, Cloneable {
         if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() + ",");
         if (getMonitoringInterval() != null) sb.append("MonitoringInterval: " + getMonitoringInterval() + ",");
         if (getEnhancedMonitoringResourceArn() != null) sb.append("EnhancedMonitoringResourceArn: " + getEnhancedMonitoringResourceArn() + ",");
-        if (getMonitoringRoleArn() != null) sb.append("MonitoringRoleArn: " + getMonitoringRoleArn() );
+        if (getMonitoringRoleArn() != null) sb.append("MonitoringRoleArn: " + getMonitoringRoleArn() + ",");
+        if (getPromotionTier() != null) sb.append("PromotionTier: " + getPromotionTier() );
         sb.append("}");
         return sb.toString();
     }
@@ -2483,6 +2550,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMonitoringInterval() == null) ? 0 : getMonitoringInterval().hashCode()); 
         hashCode = prime * hashCode + ((getEnhancedMonitoringResourceArn() == null) ? 0 : getEnhancedMonitoringResourceArn().hashCode()); 
         hashCode = prime * hashCode + ((getMonitoringRoleArn() == null) ? 0 : getMonitoringRoleArn().hashCode()); 
+        hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode()); 
         return hashCode;
     }
     
@@ -2580,6 +2648,8 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getEnhancedMonitoringResourceArn() != null && other.getEnhancedMonitoringResourceArn().equals(this.getEnhancedMonitoringResourceArn()) == false) return false; 
         if (other.getMonitoringRoleArn() == null ^ this.getMonitoringRoleArn() == null) return false;
         if (other.getMonitoringRoleArn() != null && other.getMonitoringRoleArn().equals(this.getMonitoringRoleArn()) == false) return false; 
+        if (other.getPromotionTier() == null ^ this.getPromotionTier() == null) return false;
+        if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false) return false; 
         return true;
     }
     

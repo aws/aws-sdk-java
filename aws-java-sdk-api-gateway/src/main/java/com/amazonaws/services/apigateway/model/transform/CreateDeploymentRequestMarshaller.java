@@ -72,54 +72,53 @@ public class CreateDeploymentRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createDeploymentRequest.getStageName() != null) {
-                jsonWriter.key("stageName").value(
+                jsonGenerator.writeFieldName("stageName").writeValue(
                         createDeploymentRequest.getStageName());
             }
             if (createDeploymentRequest.getStageDescription() != null) {
-                jsonWriter.key("stageDescription").value(
+                jsonGenerator.writeFieldName("stageDescription").writeValue(
                         createDeploymentRequest.getStageDescription());
             }
             if (createDeploymentRequest.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         createDeploymentRequest.getDescription());
             }
             if (createDeploymentRequest.getCacheClusterEnabled() != null) {
-                jsonWriter.key("cacheClusterEnabled").value(
+                jsonGenerator.writeFieldName("cacheClusterEnabled").writeValue(
                         createDeploymentRequest.getCacheClusterEnabled());
             }
             if (createDeploymentRequest.getCacheClusterSize() != null) {
-                jsonWriter.key("cacheClusterSize").value(
+                jsonGenerator.writeFieldName("cacheClusterSize").writeValue(
                         createDeploymentRequest.getCacheClusterSize());
             }
 
             java.util.Map<String, String> variablesMap = createDeploymentRequest
                     .getVariables();
             if (variablesMap != null) {
-                jsonWriter.key("variables");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("variables");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> variablesMapValue : variablesMap
                         .entrySet()) {
                     if (variablesMapValue.getValue() != null) {
-                        jsonWriter.key(variablesMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(variablesMapValue.getKey());
 
-                        jsonWriter.value(variablesMapValue.getValue());
+                        jsonGenerator.writeValue(variablesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

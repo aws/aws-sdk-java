@@ -64,44 +64,42 @@ public class PutLogEventsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putLogEventsRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         putLogEventsRequest.getLogGroupName());
             }
             if (putLogEventsRequest.getLogStreamName() != null) {
-                jsonWriter.key("logStreamName").value(
+                jsonGenerator.writeFieldName("logStreamName").writeValue(
                         putLogEventsRequest.getLogStreamName());
             }
 
             com.amazonaws.internal.SdkInternalList<InputLogEvent> logEventsList = (com.amazonaws.internal.SdkInternalList<InputLogEvent>) putLogEventsRequest
                     .getLogEvents();
             if (!logEventsList.isEmpty() || !logEventsList.isAutoConstruct()) {
-                jsonWriter.key("logEvents");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("logEvents");
+                jsonGenerator.writeStartArray();
                 for (InputLogEvent logEventsListValue : logEventsList) {
                     if (logEventsListValue != null) {
 
                         InputLogEventJsonMarshaller.getInstance().marshall(
-                                logEventsListValue, jsonWriter);
+                                logEventsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (putLogEventsRequest.getSequenceToken() != null) {
-                jsonWriter.key("sequenceToken").value(
+                jsonGenerator.writeFieldName("sequenceToken").writeValue(
                         putLogEventsRequest.getSequenceToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

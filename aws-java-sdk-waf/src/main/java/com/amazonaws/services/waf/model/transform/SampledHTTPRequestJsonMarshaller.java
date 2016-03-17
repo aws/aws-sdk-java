@@ -40,35 +40,37 @@ import com.amazonaws.util.json.*;
 public class SampledHTTPRequestJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(SampledHTTPRequest sampledHTTPRequest,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (sampledHTTPRequest == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (sampledHTTPRequest.getRequest() != null) {
-                jsonWriter.key("Request");
+                jsonGenerator.writeFieldName("Request");
                 HTTPRequestJsonMarshaller.getInstance().marshall(
-                        sampledHTTPRequest.getRequest(), jsonWriter);
+                        sampledHTTPRequest.getRequest(), jsonGenerator);
             }
             if (sampledHTTPRequest.getWeight() != null) {
-                jsonWriter.key("Weight").value(sampledHTTPRequest.getWeight());
+                jsonGenerator.writeFieldName("Weight").writeValue(
+                        sampledHTTPRequest.getWeight());
             }
             if (sampledHTTPRequest.getTimestamp() != null) {
-                jsonWriter.key("Timestamp").value(
+                jsonGenerator.writeFieldName("Timestamp").writeValue(
                         sampledHTTPRequest.getTimestamp());
             }
             if (sampledHTTPRequest.getAction() != null) {
-                jsonWriter.key("Action").value(sampledHTTPRequest.getAction());
+                jsonGenerator.writeFieldName("Action").writeValue(
+                        sampledHTTPRequest.getAction());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

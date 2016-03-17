@@ -40,43 +40,47 @@ import com.amazonaws.util.json.*;
 public class DiskJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Disk disk, JSONWriter jsonWriter) {
+    public void marshall(Disk disk, SdkJsonGenerator jsonGenerator) {
         if (disk == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (disk.getDiskId() != null) {
-                jsonWriter.key("DiskId").value(disk.getDiskId());
+                jsonGenerator.writeFieldName("DiskId").writeValue(
+                        disk.getDiskId());
             }
             if (disk.getDiskPath() != null) {
-                jsonWriter.key("DiskPath").value(disk.getDiskPath());
+                jsonGenerator.writeFieldName("DiskPath").writeValue(
+                        disk.getDiskPath());
             }
             if (disk.getDiskNode() != null) {
-                jsonWriter.key("DiskNode").value(disk.getDiskNode());
+                jsonGenerator.writeFieldName("DiskNode").writeValue(
+                        disk.getDiskNode());
             }
             if (disk.getDiskStatus() != null) {
-                jsonWriter.key("DiskStatus").value(disk.getDiskStatus());
+                jsonGenerator.writeFieldName("DiskStatus").writeValue(
+                        disk.getDiskStatus());
             }
             if (disk.getDiskSizeInBytes() != null) {
-                jsonWriter.key("DiskSizeInBytes").value(
+                jsonGenerator.writeFieldName("DiskSizeInBytes").writeValue(
                         disk.getDiskSizeInBytes());
             }
             if (disk.getDiskAllocationType() != null) {
-                jsonWriter.key("DiskAllocationType").value(
+                jsonGenerator.writeFieldName("DiskAllocationType").writeValue(
                         disk.getDiskAllocationType());
             }
             if (disk.getDiskAllocationResource() != null) {
-                jsonWriter.key("DiskAllocationResource").value(
-                        disk.getDiskAllocationResource());
+                jsonGenerator.writeFieldName("DiskAllocationResource")
+                        .writeValue(disk.getDiskAllocationResource());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

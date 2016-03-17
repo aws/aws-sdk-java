@@ -40,34 +40,39 @@ import com.amazonaws.util.json.*;
 public class S3LocationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(S3Location s3Location, JSONWriter jsonWriter) {
+    public void marshall(S3Location s3Location, SdkJsonGenerator jsonGenerator) {
         if (s3Location == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (s3Location.getBucket() != null) {
-                jsonWriter.key("bucket").value(s3Location.getBucket());
+                jsonGenerator.writeFieldName("bucket").writeValue(
+                        s3Location.getBucket());
             }
             if (s3Location.getKey() != null) {
-                jsonWriter.key("key").value(s3Location.getKey());
+                jsonGenerator.writeFieldName("key").writeValue(
+                        s3Location.getKey());
             }
             if (s3Location.getBundleType() != null) {
-                jsonWriter.key("bundleType").value(s3Location.getBundleType());
+                jsonGenerator.writeFieldName("bundleType").writeValue(
+                        s3Location.getBundleType());
             }
             if (s3Location.getVersion() != null) {
-                jsonWriter.key("version").value(s3Location.getVersion());
+                jsonGenerator.writeFieldName("version").writeValue(
+                        s3Location.getVersion());
             }
             if (s3Location.getETag() != null) {
-                jsonWriter.key("eTag").value(s3Location.getETag());
+                jsonGenerator.writeFieldName("eTag").writeValue(
+                        s3Location.getETag());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

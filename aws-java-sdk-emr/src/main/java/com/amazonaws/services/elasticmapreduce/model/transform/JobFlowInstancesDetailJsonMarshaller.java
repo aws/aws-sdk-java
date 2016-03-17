@@ -40,36 +40,36 @@ import com.amazonaws.util.json.*;
 public class JobFlowInstancesDetailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(JobFlowInstancesDetail jobFlowInstancesDetail,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (jobFlowInstancesDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (jobFlowInstancesDetail.getMasterInstanceType() != null) {
-                jsonWriter.key("MasterInstanceType").value(
+                jsonGenerator.writeFieldName("MasterInstanceType").writeValue(
                         jobFlowInstancesDetail.getMasterInstanceType());
             }
             if (jobFlowInstancesDetail.getMasterPublicDnsName() != null) {
-                jsonWriter.key("MasterPublicDnsName").value(
+                jsonGenerator.writeFieldName("MasterPublicDnsName").writeValue(
                         jobFlowInstancesDetail.getMasterPublicDnsName());
             }
             if (jobFlowInstancesDetail.getMasterInstanceId() != null) {
-                jsonWriter.key("MasterInstanceId").value(
+                jsonGenerator.writeFieldName("MasterInstanceId").writeValue(
                         jobFlowInstancesDetail.getMasterInstanceId());
             }
             if (jobFlowInstancesDetail.getSlaveInstanceType() != null) {
-                jsonWriter.key("SlaveInstanceType").value(
+                jsonGenerator.writeFieldName("SlaveInstanceType").writeValue(
                         jobFlowInstancesDetail.getSlaveInstanceType());
             }
             if (jobFlowInstancesDetail.getInstanceCount() != null) {
-                jsonWriter.key("InstanceCount").value(
+                jsonGenerator.writeFieldName("InstanceCount").writeValue(
                         jobFlowInstancesDetail.getInstanceCount());
             }
 
@@ -77,49 +77,55 @@ public class JobFlowInstancesDetailJsonMarshaller {
                     .getInstanceGroups();
             if (!instanceGroupsList.isEmpty()
                     || !instanceGroupsList.isAutoConstruct()) {
-                jsonWriter.key("InstanceGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InstanceGroups");
+                jsonGenerator.writeStartArray();
                 for (InstanceGroupDetail instanceGroupsListValue : instanceGroupsList) {
                     if (instanceGroupsListValue != null) {
 
                         InstanceGroupDetailJsonMarshaller.getInstance()
-                                .marshall(instanceGroupsListValue, jsonWriter);
+                                .marshall(instanceGroupsListValue,
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (jobFlowInstancesDetail.getNormalizedInstanceHours() != null) {
-                jsonWriter.key("NormalizedInstanceHours").value(
-                        jobFlowInstancesDetail.getNormalizedInstanceHours());
+                jsonGenerator.writeFieldName("NormalizedInstanceHours")
+                        .writeValue(
+                                jobFlowInstancesDetail
+                                        .getNormalizedInstanceHours());
             }
             if (jobFlowInstancesDetail.getEc2KeyName() != null) {
-                jsonWriter.key("Ec2KeyName").value(
+                jsonGenerator.writeFieldName("Ec2KeyName").writeValue(
                         jobFlowInstancesDetail.getEc2KeyName());
             }
             if (jobFlowInstancesDetail.getEc2SubnetId() != null) {
-                jsonWriter.key("Ec2SubnetId").value(
+                jsonGenerator.writeFieldName("Ec2SubnetId").writeValue(
                         jobFlowInstancesDetail.getEc2SubnetId());
             }
             if (jobFlowInstancesDetail.getPlacement() != null) {
-                jsonWriter.key("Placement");
+                jsonGenerator.writeFieldName("Placement");
                 PlacementTypeJsonMarshaller.getInstance().marshall(
-                        jobFlowInstancesDetail.getPlacement(), jsonWriter);
+                        jobFlowInstancesDetail.getPlacement(), jsonGenerator);
             }
             if (jobFlowInstancesDetail.getKeepJobFlowAliveWhenNoSteps() != null) {
-                jsonWriter.key("KeepJobFlowAliveWhenNoSteps")
-                        .value(jobFlowInstancesDetail
-                                .getKeepJobFlowAliveWhenNoSteps());
+                jsonGenerator.writeFieldName("KeepJobFlowAliveWhenNoSteps")
+                        .writeValue(
+                                jobFlowInstancesDetail
+                                        .getKeepJobFlowAliveWhenNoSteps());
             }
             if (jobFlowInstancesDetail.getTerminationProtected() != null) {
-                jsonWriter.key("TerminationProtected").value(
-                        jobFlowInstancesDetail.getTerminationProtected());
+                jsonGenerator.writeFieldName("TerminationProtected")
+                        .writeValue(
+                                jobFlowInstancesDetail
+                                        .getTerminationProtected());
             }
             if (jobFlowInstancesDetail.getHadoopVersion() != null) {
-                jsonWriter.key("HadoopVersion").value(
+                jsonGenerator.writeFieldName("HadoopVersion").writeValue(
                         jobFlowInstancesDetail.getHadoopVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

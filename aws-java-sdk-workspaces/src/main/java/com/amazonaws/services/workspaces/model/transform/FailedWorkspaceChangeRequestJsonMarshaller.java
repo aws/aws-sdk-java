@@ -40,33 +40,33 @@ import com.amazonaws.util.json.*;
 public class FailedWorkspaceChangeRequestJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             FailedWorkspaceChangeRequest failedWorkspaceChangeRequest,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (failedWorkspaceChangeRequest == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (failedWorkspaceChangeRequest.getWorkspaceId() != null) {
-                jsonWriter.key("WorkspaceId").value(
+                jsonGenerator.writeFieldName("WorkspaceId").writeValue(
                         failedWorkspaceChangeRequest.getWorkspaceId());
             }
             if (failedWorkspaceChangeRequest.getErrorCode() != null) {
-                jsonWriter.key("ErrorCode").value(
+                jsonGenerator.writeFieldName("ErrorCode").writeValue(
                         failedWorkspaceChangeRequest.getErrorCode());
             }
             if (failedWorkspaceChangeRequest.getErrorMessage() != null) {
-                jsonWriter.key("ErrorMessage").value(
+                jsonGenerator.writeFieldName("ErrorMessage").writeValue(
                         failedWorkspaceChangeRequest.getErrorMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

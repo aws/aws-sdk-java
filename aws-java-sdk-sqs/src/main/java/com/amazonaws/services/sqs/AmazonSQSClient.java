@@ -109,7 +109,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * Client configuration factory providing ClientConfigurations tailored to
      * this client
      */
-    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+    protected static final com.amazonaws.services.sqs.AmazonSQSClientConfigurationFactory configFactory = new com.amazonaws.services.sqs.AmazonSQSClientConfigurationFactory();
 
     /**
      * List of exception unmarshallers for all Amazon SQS exceptions.

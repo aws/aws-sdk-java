@@ -20,14 +20,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an action that writes data to a Kinesis Firehose stream.
+ * Describes an action that writes data to an Amazon Kinesis Firehose stream.
  * </p>
  */
 public class FirehoseAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that grants access to the firehose stream.
+     * The IAM role that grants access to the Amazon Kinesis Firehost stream.
      * </p>
      */
     private String roleArn;
@@ -40,11 +40,12 @@ public class FirehoseAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that grants access to the firehose stream.
+     * The IAM role that grants access to the Amazon Kinesis Firehost stream.
      * </p>
      * 
      * @param roleArn
-     *        The IAM role that grants access to the firehose stream.
+     *        The IAM role that grants access to the Amazon Kinesis Firehost
+     *        stream.
      */
 
     public void setRoleArn(String roleArn) {
@@ -53,10 +54,11 @@ public class FirehoseAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that grants access to the firehose stream.
+     * The IAM role that grants access to the Amazon Kinesis Firehost stream.
      * </p>
      * 
-     * @return The IAM role that grants access to the firehose stream.
+     * @return The IAM role that grants access to the Amazon Kinesis Firehost
+     *         stream.
      */
 
     public String getRoleArn() {
@@ -65,11 +67,12 @@ public class FirehoseAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that grants access to the firehose stream.
+     * The IAM role that grants access to the Amazon Kinesis Firehost stream.
      * </p>
      * 
      * @param roleArn
-     *        The IAM role that grants access to the firehose stream.
+     *        The IAM role that grants access to the Amazon Kinesis Firehost
+     *        stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

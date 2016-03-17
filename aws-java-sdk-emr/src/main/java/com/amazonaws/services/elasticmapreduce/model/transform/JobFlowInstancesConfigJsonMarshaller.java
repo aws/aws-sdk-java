@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class JobFlowInstancesConfigJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(JobFlowInstancesConfig jobFlowInstancesConfig,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (jobFlowInstancesConfig == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (jobFlowInstancesConfig.getMasterInstanceType() != null) {
-                jsonWriter.key("MasterInstanceType").value(
+                jsonGenerator.writeFieldName("MasterInstanceType").writeValue(
                         jobFlowInstancesConfig.getMasterInstanceType());
             }
             if (jobFlowInstancesConfig.getSlaveInstanceType() != null) {
-                jsonWriter.key("SlaveInstanceType").value(
+                jsonGenerator.writeFieldName("SlaveInstanceType").writeValue(
                         jobFlowInstancesConfig.getSlaveInstanceType());
             }
             if (jobFlowInstancesConfig.getInstanceCount() != null) {
-                jsonWriter.key("InstanceCount").value(
+                jsonGenerator.writeFieldName("InstanceCount").writeValue(
                         jobFlowInstancesConfig.getInstanceCount());
             }
 
@@ -69,89 +69,97 @@ public class JobFlowInstancesConfigJsonMarshaller {
                     .getInstanceGroups();
             if (!instanceGroupsList.isEmpty()
                     || !instanceGroupsList.isAutoConstruct()) {
-                jsonWriter.key("InstanceGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InstanceGroups");
+                jsonGenerator.writeStartArray();
                 for (InstanceGroupConfig instanceGroupsListValue : instanceGroupsList) {
                     if (instanceGroupsListValue != null) {
 
                         InstanceGroupConfigJsonMarshaller.getInstance()
-                                .marshall(instanceGroupsListValue, jsonWriter);
+                                .marshall(instanceGroupsListValue,
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (jobFlowInstancesConfig.getEc2KeyName() != null) {
-                jsonWriter.key("Ec2KeyName").value(
+                jsonGenerator.writeFieldName("Ec2KeyName").writeValue(
                         jobFlowInstancesConfig.getEc2KeyName());
             }
             if (jobFlowInstancesConfig.getPlacement() != null) {
-                jsonWriter.key("Placement");
+                jsonGenerator.writeFieldName("Placement");
                 PlacementTypeJsonMarshaller.getInstance().marshall(
-                        jobFlowInstancesConfig.getPlacement(), jsonWriter);
+                        jobFlowInstancesConfig.getPlacement(), jsonGenerator);
             }
             if (jobFlowInstancesConfig.getKeepJobFlowAliveWhenNoSteps() != null) {
-                jsonWriter.key("KeepJobFlowAliveWhenNoSteps")
-                        .value(jobFlowInstancesConfig
-                                .getKeepJobFlowAliveWhenNoSteps());
+                jsonGenerator.writeFieldName("KeepJobFlowAliveWhenNoSteps")
+                        .writeValue(
+                                jobFlowInstancesConfig
+                                        .getKeepJobFlowAliveWhenNoSteps());
             }
             if (jobFlowInstancesConfig.getTerminationProtected() != null) {
-                jsonWriter.key("TerminationProtected").value(
-                        jobFlowInstancesConfig.getTerminationProtected());
+                jsonGenerator.writeFieldName("TerminationProtected")
+                        .writeValue(
+                                jobFlowInstancesConfig
+                                        .getTerminationProtected());
             }
             if (jobFlowInstancesConfig.getHadoopVersion() != null) {
-                jsonWriter.key("HadoopVersion").value(
+                jsonGenerator.writeFieldName("HadoopVersion").writeValue(
                         jobFlowInstancesConfig.getHadoopVersion());
             }
             if (jobFlowInstancesConfig.getEc2SubnetId() != null) {
-                jsonWriter.key("Ec2SubnetId").value(
+                jsonGenerator.writeFieldName("Ec2SubnetId").writeValue(
                         jobFlowInstancesConfig.getEc2SubnetId());
             }
             if (jobFlowInstancesConfig.getEmrManagedMasterSecurityGroup() != null) {
-                jsonWriter.key("EmrManagedMasterSecurityGroup").value(
-                        jobFlowInstancesConfig
-                                .getEmrManagedMasterSecurityGroup());
+                jsonGenerator.writeFieldName("EmrManagedMasterSecurityGroup")
+                        .writeValue(
+                                jobFlowInstancesConfig
+                                        .getEmrManagedMasterSecurityGroup());
             }
             if (jobFlowInstancesConfig.getEmrManagedSlaveSecurityGroup() != null) {
-                jsonWriter.key("EmrManagedSlaveSecurityGroup").value(
-                        jobFlowInstancesConfig
-                                .getEmrManagedSlaveSecurityGroup());
+                jsonGenerator.writeFieldName("EmrManagedSlaveSecurityGroup")
+                        .writeValue(
+                                jobFlowInstancesConfig
+                                        .getEmrManagedSlaveSecurityGroup());
             }
             if (jobFlowInstancesConfig.getServiceAccessSecurityGroup() != null) {
-                jsonWriter.key("ServiceAccessSecurityGroup").value(
-                        jobFlowInstancesConfig.getServiceAccessSecurityGroup());
+                jsonGenerator.writeFieldName("ServiceAccessSecurityGroup")
+                        .writeValue(
+                                jobFlowInstancesConfig
+                                        .getServiceAccessSecurityGroup());
             }
 
             com.amazonaws.internal.SdkInternalList<String> additionalMasterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) jobFlowInstancesConfig
                     .getAdditionalMasterSecurityGroups();
             if (!additionalMasterSecurityGroupsList.isEmpty()
                     || !additionalMasterSecurityGroupsList.isAutoConstruct()) {
-                jsonWriter.key("AdditionalMasterSecurityGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AdditionalMasterSecurityGroups");
+                jsonGenerator.writeStartArray();
                 for (String additionalMasterSecurityGroupsListValue : additionalMasterSecurityGroupsList) {
                     if (additionalMasterSecurityGroupsListValue != null) {
-                        jsonWriter
-                                .value(additionalMasterSecurityGroupsListValue);
+                        jsonGenerator
+                                .writeValue(additionalMasterSecurityGroupsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> additionalSlaveSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) jobFlowInstancesConfig
                     .getAdditionalSlaveSecurityGroups();
             if (!additionalSlaveSecurityGroupsList.isEmpty()
                     || !additionalSlaveSecurityGroupsList.isAutoConstruct()) {
-                jsonWriter.key("AdditionalSlaveSecurityGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AdditionalSlaveSecurityGroups");
+                jsonGenerator.writeStartArray();
                 for (String additionalSlaveSecurityGroupsListValue : additionalSlaveSecurityGroupsList) {
                     if (additionalSlaveSecurityGroupsListValue != null) {
-                        jsonWriter
-                                .value(additionalSlaveSecurityGroupsListValue);
+                        jsonGenerator
+                                .writeValue(additionalSlaveSecurityGroupsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

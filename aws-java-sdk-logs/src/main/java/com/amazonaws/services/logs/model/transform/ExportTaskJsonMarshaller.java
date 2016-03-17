@@ -40,53 +40,57 @@ import com.amazonaws.util.json.*;
 public class ExportTaskJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ExportTask exportTask, JSONWriter jsonWriter) {
+    public void marshall(ExportTask exportTask, SdkJsonGenerator jsonGenerator) {
         if (exportTask == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (exportTask.getTaskId() != null) {
-                jsonWriter.key("taskId").value(exportTask.getTaskId());
+                jsonGenerator.writeFieldName("taskId").writeValue(
+                        exportTask.getTaskId());
             }
             if (exportTask.getTaskName() != null) {
-                jsonWriter.key("taskName").value(exportTask.getTaskName());
+                jsonGenerator.writeFieldName("taskName").writeValue(
+                        exportTask.getTaskName());
             }
             if (exportTask.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         exportTask.getLogGroupName());
             }
             if (exportTask.getFrom() != null) {
-                jsonWriter.key("from").value(exportTask.getFrom());
+                jsonGenerator.writeFieldName("from").writeValue(
+                        exportTask.getFrom());
             }
             if (exportTask.getTo() != null) {
-                jsonWriter.key("to").value(exportTask.getTo());
+                jsonGenerator.writeFieldName("to").writeValue(
+                        exportTask.getTo());
             }
             if (exportTask.getDestination() != null) {
-                jsonWriter.key("destination")
-                        .value(exportTask.getDestination());
+                jsonGenerator.writeFieldName("destination").writeValue(
+                        exportTask.getDestination());
             }
             if (exportTask.getDestinationPrefix() != null) {
-                jsonWriter.key("destinationPrefix").value(
+                jsonGenerator.writeFieldName("destinationPrefix").writeValue(
                         exportTask.getDestinationPrefix());
             }
             if (exportTask.getStatus() != null) {
-                jsonWriter.key("status");
+                jsonGenerator.writeFieldName("status");
                 ExportTaskStatusJsonMarshaller.getInstance().marshall(
-                        exportTask.getStatus(), jsonWriter);
+                        exportTask.getStatus(), jsonGenerator);
             }
             if (exportTask.getExecutionInfo() != null) {
-                jsonWriter.key("executionInfo");
+                jsonGenerator.writeFieldName("executionInfo");
                 ExportTaskExecutionInfoJsonMarshaller.getInstance().marshall(
-                        exportTask.getExecutionInfo(), jsonWriter);
+                        exportTask.getExecutionInfo(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

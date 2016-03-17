@@ -64,29 +64,27 @@ public class DescribeStacksRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> stackIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeStacksRequest
                     .getStackIds();
             if (!stackIdsList.isEmpty() || !stackIdsList.isAutoConstruct()) {
-                jsonWriter.key("StackIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("StackIds");
+                jsonGenerator.writeStartArray();
                 for (String stackIdsListValue : stackIdsList) {
                     if (stackIdsListValue != null) {
-                        jsonWriter.value(stackIdsListValue);
+                        jsonGenerator.writeValue(stackIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

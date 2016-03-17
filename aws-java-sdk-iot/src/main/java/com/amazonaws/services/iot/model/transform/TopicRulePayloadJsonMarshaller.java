@@ -40,45 +40,46 @@ import com.amazonaws.util.json.*;
 public class TopicRulePayloadJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(TopicRulePayload topicRulePayload,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (topicRulePayload == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (topicRulePayload.getSql() != null) {
-                jsonWriter.key("sql").value(topicRulePayload.getSql());
+                jsonGenerator.writeFieldName("sql").writeValue(
+                        topicRulePayload.getSql());
             }
             if (topicRulePayload.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         topicRulePayload.getDescription());
             }
 
             java.util.List<Action> actionsList = topicRulePayload.getActions();
             if (actionsList != null) {
-                jsonWriter.key("actions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("actions");
+                jsonGenerator.writeStartArray();
                 for (Action actionsListValue : actionsList) {
                     if (actionsListValue != null) {
 
                         ActionJsonMarshaller.getInstance().marshall(
-                                actionsListValue, jsonWriter);
+                                actionsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (topicRulePayload.getRuleDisabled() != null) {
-                jsonWriter.key("ruleDisabled").value(
+                jsonGenerator.writeFieldName("ruleDisabled").writeValue(
                         topicRulePayload.getRuleDisabled());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

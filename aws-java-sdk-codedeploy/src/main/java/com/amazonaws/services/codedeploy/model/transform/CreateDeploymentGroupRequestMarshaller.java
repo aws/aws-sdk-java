@@ -66,72 +66,73 @@ public class CreateDeploymentGroupRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createDeploymentGroupRequest.getApplicationName() != null) {
-                jsonWriter.key("applicationName").value(
+                jsonGenerator.writeFieldName("applicationName").writeValue(
                         createDeploymentGroupRequest.getApplicationName());
             }
             if (createDeploymentGroupRequest.getDeploymentGroupName() != null) {
-                jsonWriter.key("deploymentGroupName").value(
+                jsonGenerator.writeFieldName("deploymentGroupName").writeValue(
                         createDeploymentGroupRequest.getDeploymentGroupName());
             }
             if (createDeploymentGroupRequest.getDeploymentConfigName() != null) {
-                jsonWriter.key("deploymentConfigName").value(
-                        createDeploymentGroupRequest.getDeploymentConfigName());
+                jsonGenerator.writeFieldName("deploymentConfigName")
+                        .writeValue(
+                                createDeploymentGroupRequest
+                                        .getDeploymentConfigName());
             }
 
             com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFiltersList = (com.amazonaws.internal.SdkInternalList<EC2TagFilter>) createDeploymentGroupRequest
                     .getEc2TagFilters();
             if (!ec2TagFiltersList.isEmpty()
                     || !ec2TagFiltersList.isAutoConstruct()) {
-                jsonWriter.key("ec2TagFilters");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ec2TagFilters");
+                jsonGenerator.writeStartArray();
                 for (EC2TagFilter ec2TagFiltersListValue : ec2TagFiltersList) {
                     if (ec2TagFiltersListValue != null) {
 
                         EC2TagFilterJsonMarshaller.getInstance().marshall(
-                                ec2TagFiltersListValue, jsonWriter);
+                                ec2TagFiltersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFiltersList = (com.amazonaws.internal.SdkInternalList<TagFilter>) createDeploymentGroupRequest
                     .getOnPremisesInstanceTagFilters();
             if (!onPremisesInstanceTagFiltersList.isEmpty()
                     || !onPremisesInstanceTagFiltersList.isAutoConstruct()) {
-                jsonWriter.key("onPremisesInstanceTagFilters");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("onPremisesInstanceTagFilters");
+                jsonGenerator.writeStartArray();
                 for (TagFilter onPremisesInstanceTagFiltersListValue : onPremisesInstanceTagFiltersList) {
                     if (onPremisesInstanceTagFiltersListValue != null) {
 
                         TagFilterJsonMarshaller.getInstance().marshall(
                                 onPremisesInstanceTagFiltersListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> autoScalingGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createDeploymentGroupRequest
                     .getAutoScalingGroups();
             if (!autoScalingGroupsList.isEmpty()
                     || !autoScalingGroupsList.isAutoConstruct()) {
-                jsonWriter.key("autoScalingGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("autoScalingGroups");
+                jsonGenerator.writeStartArray();
                 for (String autoScalingGroupsListValue : autoScalingGroupsList) {
                     if (autoScalingGroupsListValue != null) {
-                        jsonWriter.value(autoScalingGroupsListValue);
+                        jsonGenerator.writeValue(autoScalingGroupsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (createDeploymentGroupRequest.getServiceRoleArn() != null) {
-                jsonWriter.key("serviceRoleArn").value(
+                jsonGenerator.writeFieldName("serviceRoleArn").writeValue(
                         createDeploymentGroupRequest.getServiceRoleArn());
             }
 
@@ -139,23 +140,22 @@ public class CreateDeploymentGroupRequestMarshaller
                     .getTriggerConfigurations();
             if (!triggerConfigurationsList.isEmpty()
                     || !triggerConfigurationsList.isAutoConstruct()) {
-                jsonWriter.key("triggerConfigurations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("triggerConfigurations");
+                jsonGenerator.writeStartArray();
                 for (TriggerConfig triggerConfigurationsListValue : triggerConfigurationsList) {
                     if (triggerConfigurationsListValue != null) {
 
                         TriggerConfigJsonMarshaller.getInstance().marshall(
-                                triggerConfigurationsListValue, jsonWriter);
+                                triggerConfigurationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

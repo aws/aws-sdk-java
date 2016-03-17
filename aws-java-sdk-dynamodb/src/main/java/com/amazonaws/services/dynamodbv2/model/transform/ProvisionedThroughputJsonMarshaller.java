@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class ProvisionedThroughputJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ProvisionedThroughput provisionedThroughput,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (provisionedThroughput == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (provisionedThroughput.getReadCapacityUnits() != null) {
-                jsonWriter.key("ReadCapacityUnits").value(
+                jsonGenerator.writeFieldName("ReadCapacityUnits").writeValue(
                         provisionedThroughput.getReadCapacityUnits());
             }
             if (provisionedThroughput.getWriteCapacityUnits() != null) {
-                jsonWriter.key("WriteCapacityUnits").value(
+                jsonGenerator.writeFieldName("WriteCapacityUnits").writeValue(
                         provisionedThroughput.getWriteCapacityUnits());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

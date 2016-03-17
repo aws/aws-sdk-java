@@ -35,11 +35,11 @@ public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
     private String policyName;
     /**
      * <p>
-     * The principal
+     * The principal.
      * </p>
      * <p>
      * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is a Cognito identity specify the identity ID.
+     * principal is an Amazon Cognito identity, specify the identity ID.
      * </p>
      */
     private String principal;
@@ -87,18 +87,19 @@ public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal
+     * The principal.
      * </p>
      * <p>
      * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is a Cognito identity specify the identity ID.
+     * principal is an Amazon Cognito identity, specify the identity ID.
      * </p>
      * 
      * @param principal
-     *        The principal</p>
+     *        The principal.</p>
      *        <p>
      *        If the principal is a certificate, specify the certificate ARN. If
-     *        the principal is a Cognito identity specify the identity ID.
+     *        the principal is an Amazon Cognito identity, specify the identity
+     *        ID.
      */
 
     public void setPrincipal(String principal) {
@@ -107,17 +108,18 @@ public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal
+     * The principal.
      * </p>
      * <p>
      * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is a Cognito identity specify the identity ID.
+     * principal is an Amazon Cognito identity, specify the identity ID.
      * </p>
      * 
-     * @return The principal</p>
+     * @return The principal.</p>
      *         <p>
      *         If the principal is a certificate, specify the certificate ARN.
-     *         If the principal is a Cognito identity specify the identity ID.
+     *         If the principal is an Amazon Cognito identity, specify the
+     *         identity ID.
      */
 
     public String getPrincipal() {
@@ -126,18 +128,19 @@ public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal
+     * The principal.
      * </p>
      * <p>
      * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is a Cognito identity specify the identity ID.
+     * principal is an Amazon Cognito identity, specify the identity ID.
      * </p>
      * 
      * @param principal
-     *        The principal</p>
+     *        The principal.</p>
      *        <p>
      *        If the principal is a certificate, specify the certificate ARN. If
-     *        the principal is a Cognito identity specify the identity ID.
+     *        the principal is an Amazon Cognito identity, specify the identity
+     *        ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

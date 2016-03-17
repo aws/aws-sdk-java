@@ -66,38 +66,37 @@ public class CreateBatchPredictionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createBatchPredictionRequest.getBatchPredictionId() != null) {
-                jsonWriter.key("BatchPredictionId").value(
+                jsonGenerator.writeFieldName("BatchPredictionId").writeValue(
                         createBatchPredictionRequest.getBatchPredictionId());
             }
             if (createBatchPredictionRequest.getBatchPredictionName() != null) {
-                jsonWriter.key("BatchPredictionName").value(
+                jsonGenerator.writeFieldName("BatchPredictionName").writeValue(
                         createBatchPredictionRequest.getBatchPredictionName());
             }
             if (createBatchPredictionRequest.getMLModelId() != null) {
-                jsonWriter.key("MLModelId").value(
+                jsonGenerator.writeFieldName("MLModelId").writeValue(
                         createBatchPredictionRequest.getMLModelId());
             }
             if (createBatchPredictionRequest.getBatchPredictionDataSourceId() != null) {
-                jsonWriter.key("BatchPredictionDataSourceId").value(
-                        createBatchPredictionRequest
-                                .getBatchPredictionDataSourceId());
+                jsonGenerator.writeFieldName("BatchPredictionDataSourceId")
+                        .writeValue(
+                                createBatchPredictionRequest
+                                        .getBatchPredictionDataSourceId());
             }
             if (createBatchPredictionRequest.getOutputUri() != null) {
-                jsonWriter.key("OutputUri").value(
+                jsonGenerator.writeFieldName("OutputUri").writeValue(
                         createBatchPredictionRequest.getOutputUri());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

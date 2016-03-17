@@ -40,42 +40,43 @@ import com.amazonaws.util.json.*;
 public class SizeConstraintSetJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(SizeConstraintSet sizeConstraintSet,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (sizeConstraintSet == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (sizeConstraintSet.getSizeConstraintSetId() != null) {
-                jsonWriter.key("SizeConstraintSetId").value(
+                jsonGenerator.writeFieldName("SizeConstraintSetId").writeValue(
                         sizeConstraintSet.getSizeConstraintSetId());
             }
             if (sizeConstraintSet.getName() != null) {
-                jsonWriter.key("Name").value(sizeConstraintSet.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        sizeConstraintSet.getName());
             }
 
             java.util.List<SizeConstraint> sizeConstraintsList = sizeConstraintSet
                     .getSizeConstraints();
             if (sizeConstraintsList != null) {
-                jsonWriter.key("SizeConstraints");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SizeConstraints");
+                jsonGenerator.writeStartArray();
                 for (SizeConstraint sizeConstraintsListValue : sizeConstraintsList) {
                     if (sizeConstraintsListValue != null) {
 
                         SizeConstraintJsonMarshaller.getInstance().marshall(
-                                sizeConstraintsListValue, jsonWriter);
+                                sizeConstraintsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

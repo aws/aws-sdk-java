@@ -40,33 +40,33 @@ import com.amazonaws.util.json.*;
 public class PutRecordBatchResponseEntryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             PutRecordBatchResponseEntry putRecordBatchResponseEntry,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (putRecordBatchResponseEntry == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putRecordBatchResponseEntry.getRecordId() != null) {
-                jsonWriter.key("RecordId").value(
+                jsonGenerator.writeFieldName("RecordId").writeValue(
                         putRecordBatchResponseEntry.getRecordId());
             }
             if (putRecordBatchResponseEntry.getErrorCode() != null) {
-                jsonWriter.key("ErrorCode").value(
+                jsonGenerator.writeFieldName("ErrorCode").writeValue(
                         putRecordBatchResponseEntry.getErrorCode());
             }
             if (putRecordBatchResponseEntry.getErrorMessage() != null) {
-                jsonWriter.key("ErrorMessage").value(
+                jsonGenerator.writeFieldName("ErrorMessage").writeValue(
                         putRecordBatchResponseEntry.getErrorMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

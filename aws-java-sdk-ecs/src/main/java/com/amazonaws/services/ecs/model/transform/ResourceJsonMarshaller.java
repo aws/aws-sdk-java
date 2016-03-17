@@ -40,49 +40,53 @@ import com.amazonaws.util.json.*;
 public class ResourceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Resource resource, JSONWriter jsonWriter) {
+    public void marshall(Resource resource, SdkJsonGenerator jsonGenerator) {
         if (resource == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (resource.getName() != null) {
-                jsonWriter.key("name").value(resource.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        resource.getName());
             }
             if (resource.getType() != null) {
-                jsonWriter.key("type").value(resource.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        resource.getType());
             }
             if (resource.getDoubleValue() != null) {
-                jsonWriter.key("doubleValue").value(resource.getDoubleValue());
+                jsonGenerator.writeFieldName("doubleValue").writeValue(
+                        resource.getDoubleValue());
             }
             if (resource.getLongValue() != null) {
-                jsonWriter.key("longValue").value(resource.getLongValue());
+                jsonGenerator.writeFieldName("longValue").writeValue(
+                        resource.getLongValue());
             }
             if (resource.getIntegerValue() != null) {
-                jsonWriter.key("integerValue")
-                        .value(resource.getIntegerValue());
+                jsonGenerator.writeFieldName("integerValue").writeValue(
+                        resource.getIntegerValue());
             }
 
             com.amazonaws.internal.SdkInternalList<String> stringSetValueList = (com.amazonaws.internal.SdkInternalList<String>) resource
                     .getStringSetValue();
             if (!stringSetValueList.isEmpty()
                     || !stringSetValueList.isAutoConstruct()) {
-                jsonWriter.key("stringSetValue");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("stringSetValue");
+                jsonGenerator.writeStartArray();
                 for (String stringSetValueListValue : stringSetValueList) {
                     if (stringSetValueListValue != null) {
-                        jsonWriter.value(stringSetValueListValue);
+                        jsonGenerator.writeValue(stringSetValueListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

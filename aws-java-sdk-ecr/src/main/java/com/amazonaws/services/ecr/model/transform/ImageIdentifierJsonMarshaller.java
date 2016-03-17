@@ -40,26 +40,28 @@ import com.amazonaws.util.json.*;
 public class ImageIdentifierJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ImageIdentifier imageIdentifier, JSONWriter jsonWriter) {
+    public void marshall(ImageIdentifier imageIdentifier,
+            SdkJsonGenerator jsonGenerator) {
         if (imageIdentifier == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (imageIdentifier.getImageDigest() != null) {
-                jsonWriter.key("imageDigest").value(
+                jsonGenerator.writeFieldName("imageDigest").writeValue(
                         imageIdentifier.getImageDigest());
             }
             if (imageIdentifier.getImageTag() != null) {
-                jsonWriter.key("imageTag").value(imageIdentifier.getImageTag());
+                jsonGenerator.writeFieldName("imageTag").writeValue(
+                        imageIdentifier.getImageTag());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -66,41 +66,40 @@ public class CreateDataSourceFromRedshiftRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createDataSourceFromRedshiftRequest.getDataSourceId() != null) {
-                jsonWriter.key("DataSourceId").value(
+                jsonGenerator.writeFieldName("DataSourceId").writeValue(
                         createDataSourceFromRedshiftRequest.getDataSourceId());
             }
             if (createDataSourceFromRedshiftRequest.getDataSourceName() != null) {
-                jsonWriter.key("DataSourceName")
-                        .value(createDataSourceFromRedshiftRequest
-                                .getDataSourceName());
+                jsonGenerator.writeFieldName("DataSourceName")
+                        .writeValue(
+                                createDataSourceFromRedshiftRequest
+                                        .getDataSourceName());
             }
             if (createDataSourceFromRedshiftRequest.getDataSpec() != null) {
-                jsonWriter.key("DataSpec");
+                jsonGenerator.writeFieldName("DataSpec");
                 RedshiftDataSpecJsonMarshaller.getInstance().marshall(
                         createDataSourceFromRedshiftRequest.getDataSpec(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (createDataSourceFromRedshiftRequest.getRoleARN() != null) {
-                jsonWriter.key("RoleARN").value(
+                jsonGenerator.writeFieldName("RoleARN").writeValue(
                         createDataSourceFromRedshiftRequest.getRoleARN());
             }
             if (createDataSourceFromRedshiftRequest.getComputeStatistics() != null) {
-                jsonWriter.key("ComputeStatistics").value(
+                jsonGenerator.writeFieldName("ComputeStatistics").writeValue(
                         createDataSourceFromRedshiftRequest
                                 .getComputeStatistics());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,32 +40,33 @@ import com.amazonaws.util.json.*;
 public class BootstrapActionConfigJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(BootstrapActionConfig bootstrapActionConfig,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (bootstrapActionConfig == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (bootstrapActionConfig.getName() != null) {
-                jsonWriter.key("Name").value(bootstrapActionConfig.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        bootstrapActionConfig.getName());
             }
             if (bootstrapActionConfig.getScriptBootstrapAction() != null) {
-                jsonWriter.key("ScriptBootstrapAction");
+                jsonGenerator.writeFieldName("ScriptBootstrapAction");
                 ScriptBootstrapActionConfigJsonMarshaller
                         .getInstance()
                         .marshall(
                                 bootstrapActionConfig
                                         .getScriptBootstrapAction(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

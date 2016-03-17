@@ -40,32 +40,32 @@ import com.amazonaws.util.json.*;
 public class SupportedEndpointTypeJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(SupportedEndpointType supportedEndpointType,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (supportedEndpointType == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (supportedEndpointType.getEngineName() != null) {
-                jsonWriter.key("EngineName").value(
+                jsonGenerator.writeFieldName("EngineName").writeValue(
                         supportedEndpointType.getEngineName());
             }
             if (supportedEndpointType.getSupportsCDC() != null) {
-                jsonWriter.key("SupportsCDC").value(
+                jsonGenerator.writeFieldName("SupportsCDC").writeValue(
                         supportedEndpointType.getSupportsCDC());
             }
             if (supportedEndpointType.getEndpointType() != null) {
-                jsonWriter.key("EndpointType").value(
+                jsonGenerator.writeFieldName("EndpointType").writeValue(
                         supportedEndpointType.getEndpointType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -66,25 +66,23 @@ public class GetDeploymentInstanceRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getDeploymentInstanceRequest.getDeploymentId() != null) {
-                jsonWriter.key("deploymentId").value(
+                jsonGenerator.writeFieldName("deploymentId").writeValue(
                         getDeploymentInstanceRequest.getDeploymentId());
             }
             if (getDeploymentInstanceRequest.getInstanceId() != null) {
-                jsonWriter.key("instanceId").value(
+                jsonGenerator.writeFieldName("instanceId").writeValue(
                         getDeploymentInstanceRequest.getInstanceId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

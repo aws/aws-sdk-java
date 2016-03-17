@@ -40,28 +40,31 @@ import com.amazonaws.util.json.*;
 public class TagFilterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TagFilter tagFilter, JSONWriter jsonWriter) {
+    public void marshall(TagFilter tagFilter, SdkJsonGenerator jsonGenerator) {
         if (tagFilter == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (tagFilter.getKey() != null) {
-                jsonWriter.key("Key").value(tagFilter.getKey());
+                jsonGenerator.writeFieldName("Key").writeValue(
+                        tagFilter.getKey());
             }
             if (tagFilter.getValue() != null) {
-                jsonWriter.key("Value").value(tagFilter.getValue());
+                jsonGenerator.writeFieldName("Value").writeValue(
+                        tagFilter.getValue());
             }
             if (tagFilter.getType() != null) {
-                jsonWriter.key("Type").value(tagFilter.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        tagFilter.getType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

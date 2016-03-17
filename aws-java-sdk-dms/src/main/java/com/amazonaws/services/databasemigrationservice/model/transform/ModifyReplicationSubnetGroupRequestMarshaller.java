@@ -67,20 +67,22 @@ public class ModifyReplicationSubnetGroupRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (modifyReplicationSubnetGroupRequest
                     .getReplicationSubnetGroupIdentifier() != null) {
-                jsonWriter.key("ReplicationSubnetGroupIdentifier").value(
-                        modifyReplicationSubnetGroupRequest
-                                .getReplicationSubnetGroupIdentifier());
+                jsonGenerator
+                        .writeFieldName("ReplicationSubnetGroupIdentifier")
+                        .writeValue(
+                                modifyReplicationSubnetGroupRequest
+                                        .getReplicationSubnetGroupIdentifier());
             }
             if (modifyReplicationSubnetGroupRequest
                     .getReplicationSubnetGroupDescription() != null) {
-                jsonWriter.key("ReplicationSubnetGroupDescription").value(
+                jsonGenerator.writeFieldName(
+                        "ReplicationSubnetGroupDescription").writeValue(
                         modifyReplicationSubnetGroupRequest
                                 .getReplicationSubnetGroupDescription());
             }
@@ -88,21 +90,20 @@ public class ModifyReplicationSubnetGroupRequestMarshaller
             java.util.List<String> subnetIdsList = modifyReplicationSubnetGroupRequest
                     .getSubnetIds();
             if (subnetIdsList != null) {
-                jsonWriter.key("SubnetIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SubnetIds");
+                jsonGenerator.writeStartArray();
                 for (String subnetIdsListValue : subnetIdsList) {
                     if (subnetIdsListValue != null) {
-                        jsonWriter.value(subnetIdsListValue);
+                        jsonGenerator.writeValue(subnetIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

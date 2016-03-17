@@ -66,13 +66,12 @@ public class ListDiscoveredResourcesRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listDiscoveredResourcesRequest.getResourceType() != null) {
-                jsonWriter.key("resourceType").value(
+                jsonGenerator.writeFieldName("resourceType").writeValue(
                         listDiscoveredResourcesRequest.getResourceType());
             }
 
@@ -80,38 +79,38 @@ public class ListDiscoveredResourcesRequestMarshaller
                     .getResourceIds();
             if (!resourceIdsList.isEmpty()
                     || !resourceIdsList.isAutoConstruct()) {
-                jsonWriter.key("resourceIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("resourceIds");
+                jsonGenerator.writeStartArray();
                 for (String resourceIdsListValue : resourceIdsList) {
                     if (resourceIdsListValue != null) {
-                        jsonWriter.value(resourceIdsListValue);
+                        jsonGenerator.writeValue(resourceIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (listDiscoveredResourcesRequest.getResourceName() != null) {
-                jsonWriter.key("resourceName").value(
+                jsonGenerator.writeFieldName("resourceName").writeValue(
                         listDiscoveredResourcesRequest.getResourceName());
             }
             if (listDiscoveredResourcesRequest.getLimit() != null) {
-                jsonWriter.key("limit").value(
+                jsonGenerator.writeFieldName("limit").writeValue(
                         listDiscoveredResourcesRequest.getLimit());
             }
             if (listDiscoveredResourcesRequest.getIncludeDeletedResources() != null) {
-                jsonWriter.key("includeDeletedResources").value(
-                        listDiscoveredResourcesRequest
-                                .getIncludeDeletedResources());
+                jsonGenerator.writeFieldName("includeDeletedResources")
+                        .writeValue(
+                                listDiscoveredResourcesRequest
+                                        .getIncludeDeletedResources());
             }
             if (listDiscoveredResourcesRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         listDiscoveredResourcesRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,36 +40,37 @@ import com.amazonaws.util.json.*;
 public class ByteMatchTupleJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ByteMatchTuple byteMatchTuple, JSONWriter jsonWriter) {
+    public void marshall(ByteMatchTuple byteMatchTuple,
+            SdkJsonGenerator jsonGenerator) {
         if (byteMatchTuple == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (byteMatchTuple.getFieldToMatch() != null) {
-                jsonWriter.key("FieldToMatch");
+                jsonGenerator.writeFieldName("FieldToMatch");
                 FieldToMatchJsonMarshaller.getInstance().marshall(
-                        byteMatchTuple.getFieldToMatch(), jsonWriter);
+                        byteMatchTuple.getFieldToMatch(), jsonGenerator);
             }
             if (byteMatchTuple.getTargetString() != null) {
-                jsonWriter.key("TargetString").value(
+                jsonGenerator.writeFieldName("TargetString").writeValue(
                         byteMatchTuple.getTargetString());
             }
             if (byteMatchTuple.getTextTransformation() != null) {
-                jsonWriter.key("TextTransformation").value(
+                jsonGenerator.writeFieldName("TextTransformation").writeValue(
                         byteMatchTuple.getTextTransformation());
             }
             if (byteMatchTuple.getPositionalConstraint() != null) {
-                jsonWriter.key("PositionalConstraint").value(
-                        byteMatchTuple.getPositionalConstraint());
+                jsonGenerator.writeFieldName("PositionalConstraint")
+                        .writeValue(byteMatchTuple.getPositionalConstraint());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

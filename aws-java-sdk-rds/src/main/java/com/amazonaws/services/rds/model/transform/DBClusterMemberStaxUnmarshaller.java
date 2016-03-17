@@ -57,6 +57,10 @@ public class DBClusterMemberStaxUnmarshaller implements Unmarshaller<DBClusterMe
                     dBClusterMember.setDBClusterParameterGroupStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("PromotionTier", targetDepth)) {
+                    dBClusterMember.setPromotionTier(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBClusterMember;

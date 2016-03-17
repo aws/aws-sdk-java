@@ -40,36 +40,36 @@ import com.amazonaws.util.json.*;
 public class PutRequestJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PutRequest putRequest, JSONWriter jsonWriter) {
+    public void marshall(PutRequest putRequest, SdkJsonGenerator jsonGenerator) {
         if (putRequest == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.Map<String, AttributeValue> itemMap = putRequest
                     .getItem();
             if (itemMap != null) {
-                jsonWriter.key("Item");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Item");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, AttributeValue> itemMapValue : itemMap
                         .entrySet()) {
                     if (itemMapValue.getValue() != null) {
-                        jsonWriter.key(itemMapValue.getKey());
+                        jsonGenerator.writeFieldName(itemMapValue.getKey());
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
-                                itemMapValue.getValue(), jsonWriter);
+                                itemMapValue.getValue(), jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

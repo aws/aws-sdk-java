@@ -40,31 +40,31 @@ import com.amazonaws.util.json.*;
 public class CopyCommandJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CopyCommand copyCommand, JSONWriter jsonWriter) {
+    public void marshall(CopyCommand copyCommand, SdkJsonGenerator jsonGenerator) {
         if (copyCommand == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (copyCommand.getDataTableName() != null) {
-                jsonWriter.key("DataTableName").value(
+                jsonGenerator.writeFieldName("DataTableName").writeValue(
                         copyCommand.getDataTableName());
             }
             if (copyCommand.getDataTableColumns() != null) {
-                jsonWriter.key("DataTableColumns").value(
+                jsonGenerator.writeFieldName("DataTableColumns").writeValue(
                         copyCommand.getDataTableColumns());
             }
             if (copyCommand.getCopyOptions() != null) {
-                jsonWriter.key("CopyOptions").value(
+                jsonGenerator.writeFieldName("CopyOptions").writeValue(
                         copyCommand.getCopyOptions());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

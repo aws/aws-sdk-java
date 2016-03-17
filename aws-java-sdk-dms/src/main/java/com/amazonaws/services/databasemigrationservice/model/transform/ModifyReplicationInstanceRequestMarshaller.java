@@ -66,61 +66,65 @@ public class ModifyReplicationInstanceRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (modifyReplicationInstanceRequest.getReplicationInstanceArn() != null) {
-                jsonWriter.key("ReplicationInstanceArn").value(
-                        modifyReplicationInstanceRequest
-                                .getReplicationInstanceArn());
+                jsonGenerator.writeFieldName("ReplicationInstanceArn")
+                        .writeValue(
+                                modifyReplicationInstanceRequest
+                                        .getReplicationInstanceArn());
             }
             if (modifyReplicationInstanceRequest.getAllocatedStorage() != null) {
-                jsonWriter.key("AllocatedStorage").value(
+                jsonGenerator.writeFieldName("AllocatedStorage").writeValue(
                         modifyReplicationInstanceRequest.getAllocatedStorage());
             }
             if (modifyReplicationInstanceRequest.getApplyImmediately() != null) {
-                jsonWriter.key("ApplyImmediately").value(
+                jsonGenerator.writeFieldName("ApplyImmediately").writeValue(
                         modifyReplicationInstanceRequest.getApplyImmediately());
             }
             if (modifyReplicationInstanceRequest.getReplicationInstanceClass() != null) {
-                jsonWriter.key("ReplicationInstanceClass").value(
-                        modifyReplicationInstanceRequest
-                                .getReplicationInstanceClass());
+                jsonGenerator.writeFieldName("ReplicationInstanceClass")
+                        .writeValue(
+                                modifyReplicationInstanceRequest
+                                        .getReplicationInstanceClass());
             }
             if (modifyReplicationInstanceRequest
                     .getPreferredMaintenanceWindow() != null) {
-                jsonWriter.key("PreferredMaintenanceWindow").value(
-                        modifyReplicationInstanceRequest
-                                .getPreferredMaintenanceWindow());
+                jsonGenerator.writeFieldName("PreferredMaintenanceWindow")
+                        .writeValue(
+                                modifyReplicationInstanceRequest
+                                        .getPreferredMaintenanceWindow());
             }
             if (modifyReplicationInstanceRequest.getEngineVersion() != null) {
-                jsonWriter.key("EngineVersion").value(
+                jsonGenerator.writeFieldName("EngineVersion").writeValue(
                         modifyReplicationInstanceRequest.getEngineVersion());
             }
             if (modifyReplicationInstanceRequest.getAllowMajorVersionUpgrade() != null) {
-                jsonWriter.key("AllowMajorVersionUpgrade").value(
-                        modifyReplicationInstanceRequest
-                                .getAllowMajorVersionUpgrade());
+                jsonGenerator.writeFieldName("AllowMajorVersionUpgrade")
+                        .writeValue(
+                                modifyReplicationInstanceRequest
+                                        .getAllowMajorVersionUpgrade());
             }
             if (modifyReplicationInstanceRequest.getAutoMinorVersionUpgrade() != null) {
-                jsonWriter.key("AutoMinorVersionUpgrade").value(
-                        modifyReplicationInstanceRequest
-                                .getAutoMinorVersionUpgrade());
+                jsonGenerator.writeFieldName("AutoMinorVersionUpgrade")
+                        .writeValue(
+                                modifyReplicationInstanceRequest
+                                        .getAutoMinorVersionUpgrade());
             }
             if (modifyReplicationInstanceRequest
                     .getReplicationInstanceIdentifier() != null) {
-                jsonWriter.key("ReplicationInstanceIdentifier").value(
-                        modifyReplicationInstanceRequest
-                                .getReplicationInstanceIdentifier());
+                jsonGenerator.writeFieldName("ReplicationInstanceIdentifier")
+                        .writeValue(
+                                modifyReplicationInstanceRequest
+                                        .getReplicationInstanceIdentifier());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

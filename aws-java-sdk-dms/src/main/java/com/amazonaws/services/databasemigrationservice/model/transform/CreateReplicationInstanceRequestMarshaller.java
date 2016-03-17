@@ -66,81 +66,85 @@ public class CreateReplicationInstanceRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createReplicationInstanceRequest
                     .getReplicationInstanceIdentifier() != null) {
-                jsonWriter.key("ReplicationInstanceIdentifier").value(
-                        createReplicationInstanceRequest
-                                .getReplicationInstanceIdentifier());
+                jsonGenerator.writeFieldName("ReplicationInstanceIdentifier")
+                        .writeValue(
+                                createReplicationInstanceRequest
+                                        .getReplicationInstanceIdentifier());
             }
             if (createReplicationInstanceRequest.getAllocatedStorage() != null) {
-                jsonWriter.key("AllocatedStorage").value(
+                jsonGenerator.writeFieldName("AllocatedStorage").writeValue(
                         createReplicationInstanceRequest.getAllocatedStorage());
             }
             if (createReplicationInstanceRequest.getReplicationInstanceClass() != null) {
-                jsonWriter.key("ReplicationInstanceClass").value(
-                        createReplicationInstanceRequest
-                                .getReplicationInstanceClass());
+                jsonGenerator.writeFieldName("ReplicationInstanceClass")
+                        .writeValue(
+                                createReplicationInstanceRequest
+                                        .getReplicationInstanceClass());
             }
             if (createReplicationInstanceRequest.getAvailabilityZone() != null) {
-                jsonWriter.key("AvailabilityZone").value(
+                jsonGenerator.writeFieldName("AvailabilityZone").writeValue(
                         createReplicationInstanceRequest.getAvailabilityZone());
             }
             if (createReplicationInstanceRequest
                     .getReplicationSubnetGroupIdentifier() != null) {
-                jsonWriter.key("ReplicationSubnetGroupIdentifier").value(
-                        createReplicationInstanceRequest
-                                .getReplicationSubnetGroupIdentifier());
+                jsonGenerator
+                        .writeFieldName("ReplicationSubnetGroupIdentifier")
+                        .writeValue(
+                                createReplicationInstanceRequest
+                                        .getReplicationSubnetGroupIdentifier());
             }
             if (createReplicationInstanceRequest
                     .getPreferredMaintenanceWindow() != null) {
-                jsonWriter.key("PreferredMaintenanceWindow").value(
-                        createReplicationInstanceRequest
-                                .getPreferredMaintenanceWindow());
+                jsonGenerator.writeFieldName("PreferredMaintenanceWindow")
+                        .writeValue(
+                                createReplicationInstanceRequest
+                                        .getPreferredMaintenanceWindow());
             }
             if (createReplicationInstanceRequest.getEngineVersion() != null) {
-                jsonWriter.key("EngineVersion").value(
+                jsonGenerator.writeFieldName("EngineVersion").writeValue(
                         createReplicationInstanceRequest.getEngineVersion());
             }
             if (createReplicationInstanceRequest.getAutoMinorVersionUpgrade() != null) {
-                jsonWriter.key("AutoMinorVersionUpgrade").value(
-                        createReplicationInstanceRequest
-                                .getAutoMinorVersionUpgrade());
+                jsonGenerator.writeFieldName("AutoMinorVersionUpgrade")
+                        .writeValue(
+                                createReplicationInstanceRequest
+                                        .getAutoMinorVersionUpgrade());
             }
 
             java.util.List<Tag> tagsList = createReplicationInstanceRequest
                     .getTags();
             if (tagsList != null) {
-                jsonWriter.key("Tags");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (createReplicationInstanceRequest.getKmsKeyId() != null) {
-                jsonWriter.key("KmsKeyId").value(
+                jsonGenerator.writeFieldName("KmsKeyId").writeValue(
                         createReplicationInstanceRequest.getKmsKeyId());
             }
             if (createReplicationInstanceRequest.getPubliclyAccessible() != null) {
-                jsonWriter.key("PubliclyAccessible").value(
+                jsonGenerator.writeFieldName("PubliclyAccessible").writeValue(
                         createReplicationInstanceRequest
                                 .getPubliclyAccessible());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

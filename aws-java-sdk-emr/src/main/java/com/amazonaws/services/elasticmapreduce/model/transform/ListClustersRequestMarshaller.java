@@ -64,17 +64,16 @@ public class ListClustersRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listClustersRequest.getCreatedAfter() != null) {
-                jsonWriter.key("CreatedAfter").value(
+                jsonGenerator.writeFieldName("CreatedAfter").writeValue(
                         listClustersRequest.getCreatedAfter());
             }
             if (listClustersRequest.getCreatedBefore() != null) {
-                jsonWriter.key("CreatedBefore").value(
+                jsonGenerator.writeFieldName("CreatedBefore").writeValue(
                         listClustersRequest.getCreatedBefore());
             }
 
@@ -82,24 +81,24 @@ public class ListClustersRequestMarshaller implements
                     .getClusterStates();
             if (!clusterStatesList.isEmpty()
                     || !clusterStatesList.isAutoConstruct()) {
-                jsonWriter.key("ClusterStates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ClusterStates");
+                jsonGenerator.writeStartArray();
                 for (String clusterStatesListValue : clusterStatesList) {
                     if (clusterStatesListValue != null) {
-                        jsonWriter.value(clusterStatesListValue);
+                        jsonGenerator.writeValue(clusterStatesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (listClustersRequest.getMarker() != null) {
-                jsonWriter.key("Marker").value(listClustersRequest.getMarker());
+                jsonGenerator.writeFieldName("Marker").writeValue(
+                        listClustersRequest.getMarker());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

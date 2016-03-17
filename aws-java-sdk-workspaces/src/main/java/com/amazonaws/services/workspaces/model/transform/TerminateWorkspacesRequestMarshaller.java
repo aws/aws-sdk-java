@@ -66,33 +66,31 @@ public class TerminateWorkspacesRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<TerminateRequest> terminateWorkspaceRequestsList = (com.amazonaws.internal.SdkInternalList<TerminateRequest>) terminateWorkspacesRequest
                     .getTerminateWorkspaceRequests();
             if (!terminateWorkspaceRequestsList.isEmpty()
                     || !terminateWorkspaceRequestsList.isAutoConstruct()) {
-                jsonWriter.key("TerminateWorkspaceRequests");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TerminateWorkspaceRequests");
+                jsonGenerator.writeStartArray();
                 for (TerminateRequest terminateWorkspaceRequestsListValue : terminateWorkspaceRequestsList) {
                     if (terminateWorkspaceRequestsListValue != null) {
 
-                        TerminateRequestJsonMarshaller.getInstance()
-                                .marshall(terminateWorkspaceRequestsListValue,
-                                        jsonWriter);
+                        TerminateRequestJsonMarshaller.getInstance().marshall(
+                                terminateWorkspaceRequestsListValue,
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

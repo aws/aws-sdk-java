@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Contains the inputs for the <a>ModifyHsm</a> action.
+ * Contains the inputs for the <a>ModifyHsm</a> operation.
  * </p>
  */
 public class ModifyHsmRequest extends AmazonWebServiceRequest implements
@@ -35,13 +35,20 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
     private String hsmArn;
     /**
      * <p>
-     * The new identifier of the subnet that the HSM is in.
+     * The new identifier of the subnet that the HSM is in. The new subnet must
+     * be in the same Availability Zone as the current subnet.
      * </p>
      */
     private String subnetId;
     /**
      * <p>
-     * The new IP address for the elastic network interface attached to the HSM.
+     * The new IP address for the elastic network interface (ENI) attached to
+     * the HSM.
+     * </p>
+     * <p>
+     * If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of
+     * the new subnet.
      * </p>
      */
     private String eniIp;
@@ -59,7 +66,8 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
     private String externalId;
     /**
      * <p>
-     * The new IP address for the syslog monitoring server.
+     * The new IP address for the syslog monitoring server. The AWS CloudHSM
+     * service only supports one syslog monitoring server.
      * </p>
      */
     private String syslogIp;
@@ -107,11 +115,14 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The new identifier of the subnet that the HSM is in.
+     * The new identifier of the subnet that the HSM is in. The new subnet must
+     * be in the same Availability Zone as the current subnet.
      * </p>
      * 
      * @param subnetId
-     *        The new identifier of the subnet that the HSM is in.
+     *        The new identifier of the subnet that the HSM is in. The new
+     *        subnet must be in the same Availability Zone as the current
+     *        subnet.
      */
 
     public void setSubnetId(String subnetId) {
@@ -120,10 +131,13 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The new identifier of the subnet that the HSM is in.
+     * The new identifier of the subnet that the HSM is in. The new subnet must
+     * be in the same Availability Zone as the current subnet.
      * </p>
      * 
-     * @return The new identifier of the subnet that the HSM is in.
+     * @return The new identifier of the subnet that the HSM is in. The new
+     *         subnet must be in the same Availability Zone as the current
+     *         subnet.
      */
 
     public String getSubnetId() {
@@ -132,11 +146,14 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The new identifier of the subnet that the HSM is in.
+     * The new identifier of the subnet that the HSM is in. The new subnet must
+     * be in the same Availability Zone as the current subnet.
      * </p>
      * 
      * @param subnetId
-     *        The new identifier of the subnet that the HSM is in.
+     *        The new identifier of the subnet that the HSM is in. The new
+     *        subnet must be in the same Availability Zone as the current
+     *        subnet.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -148,12 +165,22 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The new IP address for the elastic network interface attached to the HSM.
+     * The new IP address for the elastic network interface (ENI) attached to
+     * the HSM.
+     * </p>
+     * <p>
+     * If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of
+     * the new subnet.
      * </p>
      * 
      * @param eniIp
-     *        The new IP address for the elastic network interface attached to
-     *        the HSM.
+     *        The new IP address for the elastic network interface (ENI)
+     *        attached to the HSM.</p>
+     *        <p>
+     *        If the HSM is moved to a different subnet, and an IP address is
+     *        not specified, an IP address will be randomly chosen from the CIDR
+     *        range of the new subnet.
      */
 
     public void setEniIp(String eniIp) {
@@ -162,11 +189,21 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The new IP address for the elastic network interface attached to the HSM.
+     * The new IP address for the elastic network interface (ENI) attached to
+     * the HSM.
+     * </p>
+     * <p>
+     * If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of
+     * the new subnet.
      * </p>
      * 
-     * @return The new IP address for the elastic network interface attached to
-     *         the HSM.
+     * @return The new IP address for the elastic network interface (ENI)
+     *         attached to the HSM.</p>
+     *         <p>
+     *         If the HSM is moved to a different subnet, and an IP address is
+     *         not specified, an IP address will be randomly chosen from the
+     *         CIDR range of the new subnet.
      */
 
     public String getEniIp() {
@@ -175,12 +212,22 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The new IP address for the elastic network interface attached to the HSM.
+     * The new IP address for the elastic network interface (ENI) attached to
+     * the HSM.
+     * </p>
+     * <p>
+     * If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of
+     * the new subnet.
      * </p>
      * 
      * @param eniIp
-     *        The new IP address for the elastic network interface attached to
-     *        the HSM.
+     *        The new IP address for the elastic network interface (ENI)
+     *        attached to the HSM.</p>
+     *        <p>
+     *        If the HSM is moved to a different subnet, and an IP address is
+     *        not specified, an IP address will be randomly chosen from the CIDR
+     *        range of the new subnet.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -274,11 +321,13 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The new IP address for the syslog monitoring server.
+     * The new IP address for the syslog monitoring server. The AWS CloudHSM
+     * service only supports one syslog monitoring server.
      * </p>
      * 
      * @param syslogIp
-     *        The new IP address for the syslog monitoring server.
+     *        The new IP address for the syslog monitoring server. The AWS
+     *        CloudHSM service only supports one syslog monitoring server.
      */
 
     public void setSyslogIp(String syslogIp) {
@@ -287,10 +336,12 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The new IP address for the syslog monitoring server.
+     * The new IP address for the syslog monitoring server. The AWS CloudHSM
+     * service only supports one syslog monitoring server.
      * </p>
      * 
-     * @return The new IP address for the syslog monitoring server.
+     * @return The new IP address for the syslog monitoring server. The AWS
+     *         CloudHSM service only supports one syslog monitoring server.
      */
 
     public String getSyslogIp() {
@@ -299,11 +350,13 @@ public class ModifyHsmRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The new IP address for the syslog monitoring server.
+     * The new IP address for the syslog monitoring server. The AWS CloudHSM
+     * service only supports one syslog monitoring server.
      * </p>
      * 
      * @param syslogIp
-     *        The new IP address for the syslog monitoring server.
+     *        The new IP address for the syslog monitoring server. The AWS
+     *        CloudHSM service only supports one syslog monitoring server.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

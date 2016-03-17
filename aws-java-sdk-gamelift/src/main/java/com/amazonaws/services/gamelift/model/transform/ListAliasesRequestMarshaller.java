@@ -64,31 +64,31 @@ public class ListAliasesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listAliasesRequest.getRoutingStrategyType() != null) {
-                jsonWriter.key("RoutingStrategyType").value(
+                jsonGenerator.writeFieldName("RoutingStrategyType").writeValue(
                         listAliasesRequest.getRoutingStrategyType());
             }
             if (listAliasesRequest.getName() != null) {
-                jsonWriter.key("Name").value(listAliasesRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        listAliasesRequest.getName());
             }
             if (listAliasesRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(listAliasesRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(
+                        listAliasesRequest.getLimit());
             }
             if (listAliasesRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         listAliasesRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

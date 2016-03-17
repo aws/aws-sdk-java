@@ -66,30 +66,28 @@ public class DescribeDeliveryChannelsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> deliveryChannelNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeDeliveryChannelsRequest
                     .getDeliveryChannelNames();
             if (!deliveryChannelNamesList.isEmpty()
                     || !deliveryChannelNamesList.isAutoConstruct()) {
-                jsonWriter.key("DeliveryChannelNames");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("DeliveryChannelNames");
+                jsonGenerator.writeStartArray();
                 for (String deliveryChannelNamesListValue : deliveryChannelNamesList) {
                     if (deliveryChannelNamesListValue != null) {
-                        jsonWriter.value(deliveryChannelNamesListValue);
+                        jsonGenerator.writeValue(deliveryChannelNamesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,34 +40,35 @@ import com.amazonaws.util.json.*;
 public class InstanceGroupStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(InstanceGroupStatus instanceGroupStatus,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (instanceGroupStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceGroupStatus.getState() != null) {
-                jsonWriter.key("State").value(instanceGroupStatus.getState());
+                jsonGenerator.writeFieldName("State").writeValue(
+                        instanceGroupStatus.getState());
             }
             if (instanceGroupStatus.getStateChangeReason() != null) {
-                jsonWriter.key("StateChangeReason");
+                jsonGenerator.writeFieldName("StateChangeReason");
                 InstanceGroupStateChangeReasonJsonMarshaller.getInstance()
                         .marshall(instanceGroupStatus.getStateChangeReason(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (instanceGroupStatus.getTimeline() != null) {
-                jsonWriter.key("Timeline");
+                jsonGenerator.writeFieldName("Timeline");
                 InstanceGroupTimelineJsonMarshaller.getInstance().marshall(
-                        instanceGroupStatus.getTimeline(), jsonWriter);
+                        instanceGroupStatus.getTimeline(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,83 +40,87 @@ import com.amazonaws.util.json.*;
 public class ElasticLoadBalancerJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ElasticLoadBalancer elasticLoadBalancer,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (elasticLoadBalancer == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (elasticLoadBalancer.getElasticLoadBalancerName() != null) {
-                jsonWriter.key("ElasticLoadBalancerName").value(
-                        elasticLoadBalancer.getElasticLoadBalancerName());
+                jsonGenerator.writeFieldName("ElasticLoadBalancerName")
+                        .writeValue(
+                                elasticLoadBalancer
+                                        .getElasticLoadBalancerName());
             }
             if (elasticLoadBalancer.getRegion() != null) {
-                jsonWriter.key("Region").value(elasticLoadBalancer.getRegion());
+                jsonGenerator.writeFieldName("Region").writeValue(
+                        elasticLoadBalancer.getRegion());
             }
             if (elasticLoadBalancer.getDnsName() != null) {
-                jsonWriter.key("DnsName").value(
+                jsonGenerator.writeFieldName("DnsName").writeValue(
                         elasticLoadBalancer.getDnsName());
             }
             if (elasticLoadBalancer.getStackId() != null) {
-                jsonWriter.key("StackId").value(
+                jsonGenerator.writeFieldName("StackId").writeValue(
                         elasticLoadBalancer.getStackId());
             }
             if (elasticLoadBalancer.getLayerId() != null) {
-                jsonWriter.key("LayerId").value(
+                jsonGenerator.writeFieldName("LayerId").writeValue(
                         elasticLoadBalancer.getLayerId());
             }
             if (elasticLoadBalancer.getVpcId() != null) {
-                jsonWriter.key("VpcId").value(elasticLoadBalancer.getVpcId());
+                jsonGenerator.writeFieldName("VpcId").writeValue(
+                        elasticLoadBalancer.getVpcId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) elasticLoadBalancer
                     .getAvailabilityZones();
             if (!availabilityZonesList.isEmpty()
                     || !availabilityZonesList.isAutoConstruct()) {
-                jsonWriter.key("AvailabilityZones");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AvailabilityZones");
+                jsonGenerator.writeStartArray();
                 for (String availabilityZonesListValue : availabilityZonesList) {
                     if (availabilityZonesListValue != null) {
-                        jsonWriter.value(availabilityZonesListValue);
+                        jsonGenerator.writeValue(availabilityZonesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) elasticLoadBalancer
                     .getSubnetIds();
             if (!subnetIdsList.isEmpty() || !subnetIdsList.isAutoConstruct()) {
-                jsonWriter.key("SubnetIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SubnetIds");
+                jsonGenerator.writeStartArray();
                 for (String subnetIdsListValue : subnetIdsList) {
                     if (subnetIdsListValue != null) {
-                        jsonWriter.value(subnetIdsListValue);
+                        jsonGenerator.writeValue(subnetIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> ec2InstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) elasticLoadBalancer
                     .getEc2InstanceIds();
             if (!ec2InstanceIdsList.isEmpty()
                     || !ec2InstanceIdsList.isAutoConstruct()) {
-                jsonWriter.key("Ec2InstanceIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Ec2InstanceIds");
+                jsonGenerator.writeStartArray();
                 for (String ec2InstanceIdsListValue : ec2InstanceIdsList) {
                     if (ec2InstanceIdsListValue != null) {
-                        jsonWriter.value(ec2InstanceIdsListValue);
+                        jsonGenerator.writeValue(ec2InstanceIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

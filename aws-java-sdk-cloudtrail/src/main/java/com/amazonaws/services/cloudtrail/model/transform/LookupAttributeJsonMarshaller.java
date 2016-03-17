@@ -40,27 +40,28 @@ import com.amazonaws.util.json.*;
 public class LookupAttributeJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(LookupAttribute lookupAttribute, JSONWriter jsonWriter) {
+    public void marshall(LookupAttribute lookupAttribute,
+            SdkJsonGenerator jsonGenerator) {
         if (lookupAttribute == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (lookupAttribute.getAttributeKey() != null) {
-                jsonWriter.key("AttributeKey").value(
+                jsonGenerator.writeFieldName("AttributeKey").writeValue(
                         lookupAttribute.getAttributeKey());
             }
             if (lookupAttribute.getAttributeValue() != null) {
-                jsonWriter.key("AttributeValue").value(
+                jsonGenerator.writeFieldName("AttributeValue").writeValue(
                         lookupAttribute.getAttributeValue());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -65,8 +65,8 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     /**
      * List of exception unmarshallers for all AmazonElastiCache exceptions.
      */
-    protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
-            = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
+    protected final List<Unmarshaller<AmazonServiceException, org.w3c.dom.Node>> exceptionUnmarshallers
+            = new ArrayList<Unmarshaller<AmazonServiceException, org.w3c.dom.Node>>();
 
     /**
      * Constructs a new client to invoke service methods on

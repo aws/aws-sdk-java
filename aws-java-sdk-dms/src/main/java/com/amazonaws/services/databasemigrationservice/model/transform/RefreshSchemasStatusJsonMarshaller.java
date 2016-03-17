@@ -40,40 +40,42 @@ import com.amazonaws.util.json.*;
 public class RefreshSchemasStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RefreshSchemasStatus refreshSchemasStatus,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (refreshSchemasStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (refreshSchemasStatus.getEndpointArn() != null) {
-                jsonWriter.key("EndpointArn").value(
+                jsonGenerator.writeFieldName("EndpointArn").writeValue(
                         refreshSchemasStatus.getEndpointArn());
             }
             if (refreshSchemasStatus.getReplicationInstanceArn() != null) {
-                jsonWriter.key("ReplicationInstanceArn").value(
-                        refreshSchemasStatus.getReplicationInstanceArn());
+                jsonGenerator.writeFieldName("ReplicationInstanceArn")
+                        .writeValue(
+                                refreshSchemasStatus
+                                        .getReplicationInstanceArn());
             }
             if (refreshSchemasStatus.getStatus() != null) {
-                jsonWriter.key("Status")
-                        .value(refreshSchemasStatus.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        refreshSchemasStatus.getStatus());
             }
             if (refreshSchemasStatus.getLastRefreshDate() != null) {
-                jsonWriter.key("LastRefreshDate").value(
+                jsonGenerator.writeFieldName("LastRefreshDate").writeValue(
                         refreshSchemasStatus.getLastRefreshDate());
             }
             if (refreshSchemasStatus.getLastFailureMessage() != null) {
-                jsonWriter.key("LastFailureMessage").value(
+                jsonGenerator.writeFieldName("LastFailureMessage").writeValue(
                         refreshSchemasStatus.getLastFailureMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,28 +40,31 @@ import com.amazonaws.util.json.*;
 public class CPUJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CPU cPU, JSONWriter jsonWriter) {
+    public void marshall(CPU cPU, SdkJsonGenerator jsonGenerator) {
         if (cPU == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (cPU.getFrequency() != null) {
-                jsonWriter.key("frequency").value(cPU.getFrequency());
+                jsonGenerator.writeFieldName("frequency").writeValue(
+                        cPU.getFrequency());
             }
             if (cPU.getArchitecture() != null) {
-                jsonWriter.key("architecture").value(cPU.getArchitecture());
+                jsonGenerator.writeFieldName("architecture").writeValue(
+                        cPU.getArchitecture());
             }
             if (cPU.getClock() != null) {
-                jsonWriter.key("clock").value(cPU.getClock());
+                jsonGenerator.writeFieldName("clock")
+                        .writeValue(cPU.getClock());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

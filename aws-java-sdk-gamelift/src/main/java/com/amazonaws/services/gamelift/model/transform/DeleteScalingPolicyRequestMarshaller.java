@@ -65,25 +65,23 @@ public class DeleteScalingPolicyRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deleteScalingPolicyRequest.getName() != null) {
-                jsonWriter.key("Name").value(
+                jsonGenerator.writeFieldName("Name").writeValue(
                         deleteScalingPolicyRequest.getName());
             }
             if (deleteScalingPolicyRequest.getFleetId() != null) {
-                jsonWriter.key("FleetId").value(
+                jsonGenerator.writeFieldName("FleetId").writeValue(
                         deleteScalingPolicyRequest.getFleetId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

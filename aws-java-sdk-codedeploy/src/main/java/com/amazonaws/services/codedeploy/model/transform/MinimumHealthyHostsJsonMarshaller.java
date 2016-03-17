@@ -40,26 +40,28 @@ import com.amazonaws.util.json.*;
 public class MinimumHealthyHostsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(MinimumHealthyHosts minimumHealthyHosts,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (minimumHealthyHosts == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (minimumHealthyHosts.getValue() != null) {
-                jsonWriter.key("value").value(minimumHealthyHosts.getValue());
+                jsonGenerator.writeFieldName("value").writeValue(
+                        minimumHealthyHosts.getValue());
             }
             if (minimumHealthyHosts.getType() != null) {
-                jsonWriter.key("type").value(minimumHealthyHosts.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        minimumHealthyHosts.getType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

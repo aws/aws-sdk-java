@@ -64,43 +64,43 @@ public class CreateExportTaskRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createExportTaskRequest.getTaskName() != null) {
-                jsonWriter.key("taskName").value(
+                jsonGenerator.writeFieldName("taskName").writeValue(
                         createExportTaskRequest.getTaskName());
             }
             if (createExportTaskRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         createExportTaskRequest.getLogGroupName());
             }
             if (createExportTaskRequest.getLogStreamNamePrefix() != null) {
-                jsonWriter.key("logStreamNamePrefix").value(
+                jsonGenerator.writeFieldName("logStreamNamePrefix").writeValue(
                         createExportTaskRequest.getLogStreamNamePrefix());
             }
             if (createExportTaskRequest.getFrom() != null) {
-                jsonWriter.key("from").value(createExportTaskRequest.getFrom());
+                jsonGenerator.writeFieldName("from").writeValue(
+                        createExportTaskRequest.getFrom());
             }
             if (createExportTaskRequest.getTo() != null) {
-                jsonWriter.key("to").value(createExportTaskRequest.getTo());
+                jsonGenerator.writeFieldName("to").writeValue(
+                        createExportTaskRequest.getTo());
             }
             if (createExportTaskRequest.getDestination() != null) {
-                jsonWriter.key("destination").value(
+                jsonGenerator.writeFieldName("destination").writeValue(
                         createExportTaskRequest.getDestination());
             }
             if (createExportTaskRequest.getDestinationPrefix() != null) {
-                jsonWriter.key("destinationPrefix").value(
+                jsonGenerator.writeFieldName("destinationPrefix").writeValue(
                         createExportTaskRequest.getDestinationPrefix());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

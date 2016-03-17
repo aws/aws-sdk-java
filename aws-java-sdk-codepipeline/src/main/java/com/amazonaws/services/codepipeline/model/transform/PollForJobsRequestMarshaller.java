@@ -64,43 +64,42 @@ public class PollForJobsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (pollForJobsRequest.getActionTypeId() != null) {
-                jsonWriter.key("actionTypeId");
+                jsonGenerator.writeFieldName("actionTypeId");
                 ActionTypeIdJsonMarshaller.getInstance().marshall(
-                        pollForJobsRequest.getActionTypeId(), jsonWriter);
+                        pollForJobsRequest.getActionTypeId(), jsonGenerator);
             }
             if (pollForJobsRequest.getMaxBatchSize() != null) {
-                jsonWriter.key("maxBatchSize").value(
+                jsonGenerator.writeFieldName("maxBatchSize").writeValue(
                         pollForJobsRequest.getMaxBatchSize());
             }
 
             java.util.Map<String, String> queryParamMap = pollForJobsRequest
                     .getQueryParam();
             if (queryParamMap != null) {
-                jsonWriter.key("queryParam");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("queryParam");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> queryParamMapValue : queryParamMap
                         .entrySet()) {
                     if (queryParamMapValue.getValue() != null) {
-                        jsonWriter.key(queryParamMapValue.getKey());
+                        jsonGenerator.writeFieldName(queryParamMapValue
+                                .getKey());
 
-                        jsonWriter.value(queryParamMapValue.getValue());
+                        jsonGenerator.writeValue(queryParamMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

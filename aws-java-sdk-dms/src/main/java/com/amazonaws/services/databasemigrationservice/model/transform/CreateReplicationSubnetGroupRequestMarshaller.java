@@ -67,20 +67,22 @@ public class CreateReplicationSubnetGroupRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createReplicationSubnetGroupRequest
                     .getReplicationSubnetGroupIdentifier() != null) {
-                jsonWriter.key("ReplicationSubnetGroupIdentifier").value(
-                        createReplicationSubnetGroupRequest
-                                .getReplicationSubnetGroupIdentifier());
+                jsonGenerator
+                        .writeFieldName("ReplicationSubnetGroupIdentifier")
+                        .writeValue(
+                                createReplicationSubnetGroupRequest
+                                        .getReplicationSubnetGroupIdentifier());
             }
             if (createReplicationSubnetGroupRequest
                     .getReplicationSubnetGroupDescription() != null) {
-                jsonWriter.key("ReplicationSubnetGroupDescription").value(
+                jsonGenerator.writeFieldName(
+                        "ReplicationSubnetGroupDescription").writeValue(
                         createReplicationSubnetGroupRequest
                                 .getReplicationSubnetGroupDescription());
             }
@@ -88,36 +90,35 @@ public class CreateReplicationSubnetGroupRequestMarshaller
             java.util.List<String> subnetIdsList = createReplicationSubnetGroupRequest
                     .getSubnetIds();
             if (subnetIdsList != null) {
-                jsonWriter.key("SubnetIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SubnetIds");
+                jsonGenerator.writeStartArray();
                 for (String subnetIdsListValue : subnetIdsList) {
                     if (subnetIdsListValue != null) {
-                        jsonWriter.value(subnetIdsListValue);
+                        jsonGenerator.writeValue(subnetIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<Tag> tagsList = createReplicationSubnetGroupRequest
                     .getTags();
             if (tagsList != null) {
-                jsonWriter.key("Tags");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

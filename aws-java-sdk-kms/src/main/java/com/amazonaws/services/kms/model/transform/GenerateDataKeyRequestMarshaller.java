@@ -64,39 +64,40 @@ public class GenerateDataKeyRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (generateDataKeyRequest.getKeyId() != null) {
-                jsonWriter.key("KeyId")
-                        .value(generateDataKeyRequest.getKeyId());
+                jsonGenerator.writeFieldName("KeyId").writeValue(
+                        generateDataKeyRequest.getKeyId());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> encryptionContextMap = (com.amazonaws.internal.SdkInternalMap<String, String>) generateDataKeyRequest
                     .getEncryptionContext();
             if (!encryptionContextMap.isEmpty()
                     || !encryptionContextMap.isAutoConstruct()) {
-                jsonWriter.key("EncryptionContext");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("EncryptionContext");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> encryptionContextMapValue : encryptionContextMap
                         .entrySet()) {
                     if (encryptionContextMapValue.getValue() != null) {
-                        jsonWriter.key(encryptionContextMapValue.getKey());
+                        jsonGenerator.writeFieldName(encryptionContextMapValue
+                                .getKey());
 
-                        jsonWriter.value(encryptionContextMapValue.getValue());
+                        jsonGenerator.writeValue(encryptionContextMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (generateDataKeyRequest.getNumberOfBytes() != null) {
-                jsonWriter.key("NumberOfBytes").value(
+                jsonGenerator.writeFieldName("NumberOfBytes").writeValue(
                         generateDataKeyRequest.getNumberOfBytes());
             }
             if (generateDataKeyRequest.getKeySpec() != null) {
-                jsonWriter.key("KeySpec").value(
+                jsonGenerator.writeFieldName("KeySpec").writeValue(
                         generateDataKeyRequest.getKeySpec());
             }
 
@@ -104,21 +105,20 @@ public class GenerateDataKeyRequestMarshaller implements
                     .getGrantTokens();
             if (!grantTokensList.isEmpty()
                     || !grantTokensList.isAutoConstruct()) {
-                jsonWriter.key("GrantTokens");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("GrantTokens");
+                jsonGenerator.writeStartArray();
                 for (String grantTokensListValue : grantTokensList) {
                     if (grantTokensListValue != null) {
-                        jsonWriter.value(grantTokensListValue);
+                        jsonGenerator.writeValue(grantTokensListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

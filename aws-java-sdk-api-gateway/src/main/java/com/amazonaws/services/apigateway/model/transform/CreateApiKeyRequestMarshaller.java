@@ -67,43 +67,42 @@ public class CreateApiKeyRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createApiKeyRequest.getName() != null) {
-                jsonWriter.key("name").value(createApiKeyRequest.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        createApiKeyRequest.getName());
             }
             if (createApiKeyRequest.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         createApiKeyRequest.getDescription());
             }
             if (createApiKeyRequest.getEnabled() != null) {
-                jsonWriter.key("enabled").value(
+                jsonGenerator.writeFieldName("enabled").writeValue(
                         createApiKeyRequest.getEnabled());
             }
 
             java.util.List<StageKey> stageKeysList = createApiKeyRequest
                     .getStageKeys();
             if (stageKeysList != null) {
-                jsonWriter.key("stageKeys");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("stageKeys");
+                jsonGenerator.writeStartArray();
                 for (StageKey stageKeysListValue : stageKeysList) {
                     if (stageKeysListValue != null) {
 
                         StageKeyJsonMarshaller.getInstance().marshall(
-                                stageKeysListValue, jsonWriter);
+                                stageKeysListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

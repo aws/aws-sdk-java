@@ -63,42 +63,40 @@ public class PredictRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (predictRequest.getMLModelId() != null) {
-                jsonWriter.key("MLModelId")
-                        .value(predictRequest.getMLModelId());
+                jsonGenerator.writeFieldName("MLModelId").writeValue(
+                        predictRequest.getMLModelId());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> recordMap = (com.amazonaws.internal.SdkInternalMap<String, String>) predictRequest
                     .getRecord();
             if (!recordMap.isEmpty() || !recordMap.isAutoConstruct()) {
-                jsonWriter.key("Record");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Record");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> recordMapValue : recordMap
                         .entrySet()) {
                     if (recordMapValue.getValue() != null) {
-                        jsonWriter.key(recordMapValue.getKey());
+                        jsonGenerator.writeFieldName(recordMapValue.getKey());
 
-                        jsonWriter.value(recordMapValue.getValue());
+                        jsonGenerator.writeValue(recordMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (predictRequest.getPredictEndpoint() != null) {
-                jsonWriter.key("PredictEndpoint").value(
+                jsonGenerator.writeFieldName("PredictEndpoint").writeValue(
                         predictRequest.getPredictEndpoint());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

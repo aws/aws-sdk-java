@@ -64,26 +64,27 @@ public class StopTaskRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stopTaskRequest.getCluster() != null) {
-                jsonWriter.key("cluster").value(stopTaskRequest.getCluster());
+                jsonGenerator.writeFieldName("cluster").writeValue(
+                        stopTaskRequest.getCluster());
             }
             if (stopTaskRequest.getTask() != null) {
-                jsonWriter.key("task").value(stopTaskRequest.getTask());
+                jsonGenerator.writeFieldName("task").writeValue(
+                        stopTaskRequest.getTask());
             }
             if (stopTaskRequest.getReason() != null) {
-                jsonWriter.key("reason").value(stopTaskRequest.getReason());
+                jsonGenerator.writeFieldName("reason").writeValue(
+                        stopTaskRequest.getReason());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

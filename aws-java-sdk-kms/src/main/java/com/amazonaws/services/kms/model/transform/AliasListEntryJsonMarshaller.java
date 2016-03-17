@@ -40,30 +40,32 @@ import com.amazonaws.util.json.*;
 public class AliasListEntryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(AliasListEntry aliasListEntry, JSONWriter jsonWriter) {
+    public void marshall(AliasListEntry aliasListEntry,
+            SdkJsonGenerator jsonGenerator) {
         if (aliasListEntry == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (aliasListEntry.getAliasName() != null) {
-                jsonWriter.key("AliasName")
-                        .value(aliasListEntry.getAliasName());
+                jsonGenerator.writeFieldName("AliasName").writeValue(
+                        aliasListEntry.getAliasName());
             }
             if (aliasListEntry.getAliasArn() != null) {
-                jsonWriter.key("AliasArn").value(aliasListEntry.getAliasArn());
+                jsonGenerator.writeFieldName("AliasArn").writeValue(
+                        aliasListEntry.getAliasArn());
             }
             if (aliasListEntry.getTargetKeyId() != null) {
-                jsonWriter.key("TargetKeyId").value(
+                jsonGenerator.writeFieldName("TargetKeyId").writeValue(
                         aliasListEntry.getTargetKeyId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

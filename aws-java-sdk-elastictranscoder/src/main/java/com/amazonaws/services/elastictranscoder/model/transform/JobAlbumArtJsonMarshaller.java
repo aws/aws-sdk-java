@@ -40,38 +40,38 @@ import com.amazonaws.util.json.*;
 public class JobAlbumArtJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(JobAlbumArt jobAlbumArt, JSONWriter jsonWriter) {
+    public void marshall(JobAlbumArt jobAlbumArt, SdkJsonGenerator jsonGenerator) {
         if (jobAlbumArt == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (jobAlbumArt.getMergePolicy() != null) {
-                jsonWriter.key("MergePolicy").value(
+                jsonGenerator.writeFieldName("MergePolicy").writeValue(
                         jobAlbumArt.getMergePolicy());
             }
 
             com.amazonaws.internal.SdkInternalList<Artwork> artworkList = (com.amazonaws.internal.SdkInternalList<Artwork>) jobAlbumArt
                     .getArtwork();
             if (!artworkList.isEmpty() || !artworkList.isAutoConstruct()) {
-                jsonWriter.key("Artwork");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Artwork");
+                jsonGenerator.writeStartArray();
                 for (Artwork artworkListValue : artworkList) {
                     if (artworkListValue != null) {
 
                         ArtworkJsonMarshaller.getInstance().marshall(
-                                artworkListValue, jsonWriter);
+                                artworkListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

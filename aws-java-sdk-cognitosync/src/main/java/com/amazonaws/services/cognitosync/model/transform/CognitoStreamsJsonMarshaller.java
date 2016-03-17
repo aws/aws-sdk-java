@@ -40,30 +40,32 @@ import com.amazonaws.util.json.*;
 public class CognitoStreamsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CognitoStreams cognitoStreams, JSONWriter jsonWriter) {
+    public void marshall(CognitoStreams cognitoStreams,
+            SdkJsonGenerator jsonGenerator) {
         if (cognitoStreams == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (cognitoStreams.getStreamName() != null) {
-                jsonWriter.key("StreamName").value(
+                jsonGenerator.writeFieldName("StreamName").writeValue(
                         cognitoStreams.getStreamName());
             }
             if (cognitoStreams.getRoleArn() != null) {
-                jsonWriter.key("RoleArn").value(cognitoStreams.getRoleArn());
+                jsonGenerator.writeFieldName("RoleArn").writeValue(
+                        cognitoStreams.getRoleArn());
             }
             if (cognitoStreams.getStreamingStatus() != null) {
-                jsonWriter.key("StreamingStatus").value(
+                jsonGenerator.writeFieldName("StreamingStatus").writeValue(
                         cognitoStreams.getStreamingStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,61 +40,62 @@ import com.amazonaws.util.json.*;
 public class PipelineDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(PipelineDescription pipelineDescription,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (pipelineDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (pipelineDescription.getPipelineId() != null) {
-                jsonWriter.key("pipelineId").value(
+                jsonGenerator.writeFieldName("pipelineId").writeValue(
                         pipelineDescription.getPipelineId());
             }
             if (pipelineDescription.getName() != null) {
-                jsonWriter.key("name").value(pipelineDescription.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        pipelineDescription.getName());
             }
 
             com.amazonaws.internal.SdkInternalList<Field> fieldsList = (com.amazonaws.internal.SdkInternalList<Field>) pipelineDescription
                     .getFields();
             if (!fieldsList.isEmpty() || !fieldsList.isAutoConstruct()) {
-                jsonWriter.key("fields");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("fields");
+                jsonGenerator.writeStartArray();
                 for (Field fieldsListValue : fieldsList) {
                     if (fieldsListValue != null) {
 
                         FieldJsonMarshaller.getInstance().marshall(
-                                fieldsListValue, jsonWriter);
+                                fieldsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (pipelineDescription.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         pipelineDescription.getDescription());
             }
 
             com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) pipelineDescription
                     .getTags();
             if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
-                jsonWriter.key("tags");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("tags");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

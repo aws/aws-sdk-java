@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class ComplianceContributorCountJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ComplianceContributorCount complianceContributorCount,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (complianceContributorCount == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (complianceContributorCount.getCappedCount() != null) {
-                jsonWriter.key("CappedCount").value(
+                jsonGenerator.writeFieldName("CappedCount").writeValue(
                         complianceContributorCount.getCappedCount());
             }
             if (complianceContributorCount.getCapExceeded() != null) {
-                jsonWriter.key("CapExceeded").value(
+                jsonGenerator.writeFieldName("CapExceeded").writeValue(
                         complianceContributorCount.getCapExceeded());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

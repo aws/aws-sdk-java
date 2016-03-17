@@ -66,50 +66,48 @@ public class DescribeWorkspacesRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> workspaceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeWorkspacesRequest
                     .getWorkspaceIds();
             if (!workspaceIdsList.isEmpty()
                     || !workspaceIdsList.isAutoConstruct()) {
-                jsonWriter.key("WorkspaceIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("WorkspaceIds");
+                jsonGenerator.writeStartArray();
                 for (String workspaceIdsListValue : workspaceIdsList) {
                     if (workspaceIdsListValue != null) {
-                        jsonWriter.value(workspaceIdsListValue);
+                        jsonGenerator.writeValue(workspaceIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (describeWorkspacesRequest.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         describeWorkspacesRequest.getDirectoryId());
             }
             if (describeWorkspacesRequest.getUserName() != null) {
-                jsonWriter.key("UserName").value(
+                jsonGenerator.writeFieldName("UserName").writeValue(
                         describeWorkspacesRequest.getUserName());
             }
             if (describeWorkspacesRequest.getBundleId() != null) {
-                jsonWriter.key("BundleId").value(
+                jsonGenerator.writeFieldName("BundleId").writeValue(
                         describeWorkspacesRequest.getBundleId());
             }
             if (describeWorkspacesRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(
+                jsonGenerator.writeFieldName("Limit").writeValue(
                         describeWorkspacesRequest.getLimit());
             }
             if (describeWorkspacesRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         describeWorkspacesRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

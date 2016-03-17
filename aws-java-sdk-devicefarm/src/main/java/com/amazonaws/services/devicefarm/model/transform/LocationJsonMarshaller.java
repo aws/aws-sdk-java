@@ -40,25 +40,27 @@ import com.amazonaws.util.json.*;
 public class LocationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Location location, JSONWriter jsonWriter) {
+    public void marshall(Location location, SdkJsonGenerator jsonGenerator) {
         if (location == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (location.getLatitude() != null) {
-                jsonWriter.key("latitude").value(location.getLatitude());
+                jsonGenerator.writeFieldName("latitude").writeValue(
+                        location.getLatitude());
             }
             if (location.getLongitude() != null) {
-                jsonWriter.key("longitude").value(location.getLongitude());
+                jsonGenerator.writeFieldName("longitude").writeValue(
+                        location.getLongitude());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

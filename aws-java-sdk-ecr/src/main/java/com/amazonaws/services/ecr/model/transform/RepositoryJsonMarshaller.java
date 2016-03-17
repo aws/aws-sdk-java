@@ -40,30 +40,31 @@ import com.amazonaws.util.json.*;
 public class RepositoryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Repository repository, JSONWriter jsonWriter) {
+    public void marshall(Repository repository, SdkJsonGenerator jsonGenerator) {
         if (repository == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (repository.getRepositoryArn() != null) {
-                jsonWriter.key("repositoryArn").value(
+                jsonGenerator.writeFieldName("repositoryArn").writeValue(
                         repository.getRepositoryArn());
             }
             if (repository.getRegistryId() != null) {
-                jsonWriter.key("registryId").value(repository.getRegistryId());
+                jsonGenerator.writeFieldName("registryId").writeValue(
+                        repository.getRegistryId());
             }
             if (repository.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         repository.getRepositoryName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

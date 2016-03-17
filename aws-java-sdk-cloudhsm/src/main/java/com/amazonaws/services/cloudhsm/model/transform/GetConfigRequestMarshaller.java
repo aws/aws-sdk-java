@@ -63,38 +63,36 @@ public class GetConfigRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getConfigRequest.getClientArn() != null) {
-                jsonWriter.key("ClientArn").value(
+                jsonGenerator.writeFieldName("ClientArn").writeValue(
                         getConfigRequest.getClientArn());
             }
             if (getConfigRequest.getClientVersion() != null) {
-                jsonWriter.key("ClientVersion").value(
+                jsonGenerator.writeFieldName("ClientVersion").writeValue(
                         getConfigRequest.getClientVersion());
             }
 
             com.amazonaws.internal.SdkInternalList<String> hapgListList = (com.amazonaws.internal.SdkInternalList<String>) getConfigRequest
                     .getHapgList();
             if (!hapgListList.isEmpty() || !hapgListList.isAutoConstruct()) {
-                jsonWriter.key("HapgList");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("HapgList");
+                jsonGenerator.writeStartArray();
                 for (String hapgListListValue : hapgListList) {
                     if (hapgListListValue != null) {
-                        jsonWriter.value(hapgListListValue);
+                        jsonGenerator.writeValue(hapgListListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

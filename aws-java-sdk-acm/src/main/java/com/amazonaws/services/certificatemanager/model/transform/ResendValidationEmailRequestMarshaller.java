@@ -66,29 +66,27 @@ public class ResendValidationEmailRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (resendValidationEmailRequest.getCertificateArn() != null) {
-                jsonWriter.key("CertificateArn").value(
+                jsonGenerator.writeFieldName("CertificateArn").writeValue(
                         resendValidationEmailRequest.getCertificateArn());
             }
             if (resendValidationEmailRequest.getDomain() != null) {
-                jsonWriter.key("Domain").value(
+                jsonGenerator.writeFieldName("Domain").writeValue(
                         resendValidationEmailRequest.getDomain());
             }
             if (resendValidationEmailRequest.getValidationDomain() != null) {
-                jsonWriter.key("ValidationDomain").value(
+                jsonGenerator.writeFieldName("ValidationDomain").writeValue(
                         resendValidationEmailRequest.getValidationDomain());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

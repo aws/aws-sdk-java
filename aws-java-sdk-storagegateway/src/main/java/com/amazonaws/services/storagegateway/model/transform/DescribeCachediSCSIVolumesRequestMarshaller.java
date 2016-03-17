@@ -66,29 +66,27 @@ public class DescribeCachediSCSIVolumesRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> volumeARNsList = (com.amazonaws.internal.SdkInternalList<String>) describeCachediSCSIVolumesRequest
                     .getVolumeARNs();
             if (!volumeARNsList.isEmpty() || !volumeARNsList.isAutoConstruct()) {
-                jsonWriter.key("VolumeARNs");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("VolumeARNs");
+                jsonGenerator.writeStartArray();
                 for (String volumeARNsListValue : volumeARNsList) {
                     if (volumeARNsListValue != null) {
-                        jsonWriter.value(volumeARNsListValue);
+                        jsonGenerator.writeValue(volumeARNsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

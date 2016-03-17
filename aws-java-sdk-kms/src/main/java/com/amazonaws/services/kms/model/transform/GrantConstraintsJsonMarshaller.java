@@ -40,59 +40,63 @@ import com.amazonaws.util.json.*;
 public class GrantConstraintsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(GrantConstraints grantConstraints,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (grantConstraints == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalMap<String, String> encryptionContextSubsetMap = (com.amazonaws.internal.SdkInternalMap<String, String>) grantConstraints
                     .getEncryptionContextSubset();
             if (!encryptionContextSubsetMap.isEmpty()
                     || !encryptionContextSubsetMap.isAutoConstruct()) {
-                jsonWriter.key("EncryptionContextSubset");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("EncryptionContextSubset");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> encryptionContextSubsetMapValue : encryptionContextSubsetMap
                         .entrySet()) {
                     if (encryptionContextSubsetMapValue.getValue() != null) {
-                        jsonWriter
-                                .key(encryptionContextSubsetMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(encryptionContextSubsetMapValue
+                                        .getKey());
 
-                        jsonWriter.value(encryptionContextSubsetMapValue
-                                .getValue());
+                        jsonGenerator
+                                .writeValue(encryptionContextSubsetMapValue
+                                        .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> encryptionContextEqualsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) grantConstraints
                     .getEncryptionContextEquals();
             if (!encryptionContextEqualsMap.isEmpty()
                     || !encryptionContextEqualsMap.isAutoConstruct()) {
-                jsonWriter.key("EncryptionContextEquals");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("EncryptionContextEquals");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> encryptionContextEqualsMapValue : encryptionContextEqualsMap
                         .entrySet()) {
                     if (encryptionContextEqualsMapValue.getValue() != null) {
-                        jsonWriter
-                                .key(encryptionContextEqualsMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(encryptionContextEqualsMapValue
+                                        .getKey());
 
-                        jsonWriter.value(encryptionContextEqualsMapValue
-                                .getValue());
+                        jsonGenerator
+                                .writeValue(encryptionContextEqualsMapValue
+                                        .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

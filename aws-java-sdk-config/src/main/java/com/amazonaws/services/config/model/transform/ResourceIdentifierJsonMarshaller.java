@@ -40,36 +40,37 @@ import com.amazonaws.util.json.*;
 public class ResourceIdentifierJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ResourceIdentifier resourceIdentifier,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (resourceIdentifier == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (resourceIdentifier.getResourceType() != null) {
-                jsonWriter.key("resourceType").value(
+                jsonGenerator.writeFieldName("resourceType").writeValue(
                         resourceIdentifier.getResourceType());
             }
             if (resourceIdentifier.getResourceId() != null) {
-                jsonWriter.key("resourceId").value(
+                jsonGenerator.writeFieldName("resourceId").writeValue(
                         resourceIdentifier.getResourceId());
             }
             if (resourceIdentifier.getResourceName() != null) {
-                jsonWriter.key("resourceName").value(
+                jsonGenerator.writeFieldName("resourceName").writeValue(
                         resourceIdentifier.getResourceName());
             }
             if (resourceIdentifier.getResourceDeletionTime() != null) {
-                jsonWriter.key("resourceDeletionTime").value(
-                        resourceIdentifier.getResourceDeletionTime());
+                jsonGenerator.writeFieldName("resourceDeletionTime")
+                        .writeValue(
+                                resourceIdentifier.getResourceDeletionTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -64,13 +64,12 @@ public class FilterLogEventsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (filterLogEventsRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         filterLogEventsRequest.getLogGroupName());
             }
 
@@ -78,45 +77,44 @@ public class FilterLogEventsRequestMarshaller implements
                     .getLogStreamNames();
             if (!logStreamNamesList.isEmpty()
                     || !logStreamNamesList.isAutoConstruct()) {
-                jsonWriter.key("logStreamNames");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("logStreamNames");
+                jsonGenerator.writeStartArray();
                 for (String logStreamNamesListValue : logStreamNamesList) {
                     if (logStreamNamesListValue != null) {
-                        jsonWriter.value(logStreamNamesListValue);
+                        jsonGenerator.writeValue(logStreamNamesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (filterLogEventsRequest.getStartTime() != null) {
-                jsonWriter.key("startTime").value(
+                jsonGenerator.writeFieldName("startTime").writeValue(
                         filterLogEventsRequest.getStartTime());
             }
             if (filterLogEventsRequest.getEndTime() != null) {
-                jsonWriter.key("endTime").value(
+                jsonGenerator.writeFieldName("endTime").writeValue(
                         filterLogEventsRequest.getEndTime());
             }
             if (filterLogEventsRequest.getFilterPattern() != null) {
-                jsonWriter.key("filterPattern").value(
+                jsonGenerator.writeFieldName("filterPattern").writeValue(
                         filterLogEventsRequest.getFilterPattern());
             }
             if (filterLogEventsRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         filterLogEventsRequest.getNextToken());
             }
             if (filterLogEventsRequest.getLimit() != null) {
-                jsonWriter.key("limit")
-                        .value(filterLogEventsRequest.getLimit());
+                jsonGenerator.writeFieldName("limit").writeValue(
+                        filterLogEventsRequest.getLimit());
             }
             if (filterLogEventsRequest.getInterleaved() != null) {
-                jsonWriter.key("interleaved").value(
+                jsonGenerator.writeFieldName("interleaved").writeValue(
                         filterLogEventsRequest.getInterleaved());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,31 +40,33 @@ import com.amazonaws.util.json.*;
 public class JobWatermarkJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(JobWatermark jobWatermark, JSONWriter jsonWriter) {
+    public void marshall(JobWatermark jobWatermark,
+            SdkJsonGenerator jsonGenerator) {
         if (jobWatermark == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (jobWatermark.getPresetWatermarkId() != null) {
-                jsonWriter.key("PresetWatermarkId").value(
+                jsonGenerator.writeFieldName("PresetWatermarkId").writeValue(
                         jobWatermark.getPresetWatermarkId());
             }
             if (jobWatermark.getInputKey() != null) {
-                jsonWriter.key("InputKey").value(jobWatermark.getInputKey());
+                jsonGenerator.writeFieldName("InputKey").writeValue(
+                        jobWatermark.getInputKey());
             }
             if (jobWatermark.getEncryption() != null) {
-                jsonWriter.key("Encryption");
+                jsonGenerator.writeFieldName("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(
-                        jobWatermark.getEncryption(), jsonWriter);
+                        jobWatermark.getEncryption(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

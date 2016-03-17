@@ -66,54 +66,53 @@ public class RequestCertificateRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (requestCertificateRequest.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         requestCertificateRequest.getDomainName());
             }
 
             java.util.List<String> subjectAlternativeNamesList = requestCertificateRequest
                     .getSubjectAlternativeNames();
             if (subjectAlternativeNamesList != null) {
-                jsonWriter.key("SubjectAlternativeNames");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SubjectAlternativeNames");
+                jsonGenerator.writeStartArray();
                 for (String subjectAlternativeNamesListValue : subjectAlternativeNamesList) {
                     if (subjectAlternativeNamesListValue != null) {
-                        jsonWriter.value(subjectAlternativeNamesListValue);
+                        jsonGenerator
+                                .writeValue(subjectAlternativeNamesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (requestCertificateRequest.getIdempotencyToken() != null) {
-                jsonWriter.key("IdempotencyToken").value(
+                jsonGenerator.writeFieldName("IdempotencyToken").writeValue(
                         requestCertificateRequest.getIdempotencyToken());
             }
 
             java.util.List<DomainValidationOption> domainValidationOptionsList = requestCertificateRequest
                     .getDomainValidationOptions();
             if (domainValidationOptionsList != null) {
-                jsonWriter.key("DomainValidationOptions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("DomainValidationOptions");
+                jsonGenerator.writeStartArray();
                 for (DomainValidationOption domainValidationOptionsListValue : domainValidationOptionsList) {
                     if (domainValidationOptionsListValue != null) {
 
                         DomainValidationOptionJsonMarshaller.getInstance()
                                 .marshall(domainValidationOptionsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

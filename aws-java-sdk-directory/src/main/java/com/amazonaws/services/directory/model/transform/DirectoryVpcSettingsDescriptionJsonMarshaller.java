@@ -40,38 +40,38 @@ import com.amazonaws.util.json.*;
 public class DirectoryVpcSettingsDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             DirectoryVpcSettingsDescription directoryVpcSettingsDescription,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (directoryVpcSettingsDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (directoryVpcSettingsDescription.getVpcId() != null) {
-                jsonWriter.key("VpcId").value(
+                jsonGenerator.writeFieldName("VpcId").writeValue(
                         directoryVpcSettingsDescription.getVpcId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) directoryVpcSettingsDescription
                     .getSubnetIds();
             if (!subnetIdsList.isEmpty() || !subnetIdsList.isAutoConstruct()) {
-                jsonWriter.key("SubnetIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SubnetIds");
+                jsonGenerator.writeStartArray();
                 for (String subnetIdsListValue : subnetIdsList) {
                     if (subnetIdsListValue != null) {
-                        jsonWriter.value(subnetIdsListValue);
+                        jsonGenerator.writeValue(subnetIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (directoryVpcSettingsDescription.getSecurityGroupId() != null) {
-                jsonWriter.key("SecurityGroupId").value(
+                jsonGenerator.writeFieldName("SecurityGroupId").writeValue(
                         directoryVpcSettingsDescription.getSecurityGroupId());
             }
 
@@ -79,17 +79,17 @@ public class DirectoryVpcSettingsDescriptionJsonMarshaller {
                     .getAvailabilityZones();
             if (!availabilityZonesList.isEmpty()
                     || !availabilityZonesList.isAutoConstruct()) {
-                jsonWriter.key("AvailabilityZones");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AvailabilityZones");
+                jsonGenerator.writeStartArray();
                 for (String availabilityZonesListValue : availabilityZonesList) {
                     if (availabilityZonesListValue != null) {
-                        jsonWriter.value(availabilityZonesListValue);
+                        jsonGenerator.writeValue(availabilityZonesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

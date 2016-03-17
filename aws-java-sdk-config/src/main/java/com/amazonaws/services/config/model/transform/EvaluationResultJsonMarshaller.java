@@ -40,49 +40,50 @@ import com.amazonaws.util.json.*;
 public class EvaluationResultJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(EvaluationResult evaluationResult,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (evaluationResult == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (evaluationResult.getEvaluationResultIdentifier() != null) {
-                jsonWriter.key("EvaluationResultIdentifier");
+                jsonGenerator.writeFieldName("EvaluationResultIdentifier");
                 EvaluationResultIdentifierJsonMarshaller
                         .getInstance()
                         .marshall(
                                 evaluationResult
                                         .getEvaluationResultIdentifier(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (evaluationResult.getComplianceType() != null) {
-                jsonWriter.key("ComplianceType").value(
+                jsonGenerator.writeFieldName("ComplianceType").writeValue(
                         evaluationResult.getComplianceType());
             }
             if (evaluationResult.getResultRecordedTime() != null) {
-                jsonWriter.key("ResultRecordedTime").value(
+                jsonGenerator.writeFieldName("ResultRecordedTime").writeValue(
                         evaluationResult.getResultRecordedTime());
             }
             if (evaluationResult.getConfigRuleInvokedTime() != null) {
-                jsonWriter.key("ConfigRuleInvokedTime").value(
-                        evaluationResult.getConfigRuleInvokedTime());
+                jsonGenerator
+                        .writeFieldName("ConfigRuleInvokedTime")
+                        .writeValue(evaluationResult.getConfigRuleInvokedTime());
             }
             if (evaluationResult.getAnnotation() != null) {
-                jsonWriter.key("Annotation").value(
+                jsonGenerator.writeFieldName("Annotation").writeValue(
                         evaluationResult.getAnnotation());
             }
             if (evaluationResult.getResultToken() != null) {
-                jsonWriter.key("ResultToken").value(
+                jsonGenerator.writeFieldName("ResultToken").writeValue(
                         evaluationResult.getResultToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

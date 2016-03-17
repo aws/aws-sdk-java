@@ -66,46 +66,45 @@ public class GetResourceConfigHistoryRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getResourceConfigHistoryRequest.getResourceType() != null) {
-                jsonWriter.key("resourceType").value(
+                jsonGenerator.writeFieldName("resourceType").writeValue(
                         getResourceConfigHistoryRequest.getResourceType());
             }
             if (getResourceConfigHistoryRequest.getResourceId() != null) {
-                jsonWriter.key("resourceId").value(
+                jsonGenerator.writeFieldName("resourceId").writeValue(
                         getResourceConfigHistoryRequest.getResourceId());
             }
             if (getResourceConfigHistoryRequest.getLaterTime() != null) {
-                jsonWriter.key("laterTime").value(
+                jsonGenerator.writeFieldName("laterTime").writeValue(
                         getResourceConfigHistoryRequest.getLaterTime());
             }
             if (getResourceConfigHistoryRequest.getEarlierTime() != null) {
-                jsonWriter.key("earlierTime").value(
+                jsonGenerator.writeFieldName("earlierTime").writeValue(
                         getResourceConfigHistoryRequest.getEarlierTime());
             }
             if (getResourceConfigHistoryRequest.getChronologicalOrder() != null) {
-                jsonWriter.key("chronologicalOrder")
-                        .value(getResourceConfigHistoryRequest
-                                .getChronologicalOrder());
+                jsonGenerator.writeFieldName("chronologicalOrder")
+                        .writeValue(
+                                getResourceConfigHistoryRequest
+                                        .getChronologicalOrder());
             }
             if (getResourceConfigHistoryRequest.getLimit() != null) {
-                jsonWriter.key("limit").value(
+                jsonGenerator.writeFieldName("limit").writeValue(
                         getResourceConfigHistoryRequest.getLimit());
             }
             if (getResourceConfigHistoryRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         getResourceConfigHistoryRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -65,41 +65,40 @@ public class DescribeTapesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeTapesRequest.getGatewayARN() != null) {
-                jsonWriter.key("GatewayARN").value(
+                jsonGenerator.writeFieldName("GatewayARN").writeValue(
                         describeTapesRequest.getGatewayARN());
             }
 
             com.amazonaws.internal.SdkInternalList<String> tapeARNsList = (com.amazonaws.internal.SdkInternalList<String>) describeTapesRequest
                     .getTapeARNs();
             if (!tapeARNsList.isEmpty() || !tapeARNsList.isAutoConstruct()) {
-                jsonWriter.key("TapeARNs");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TapeARNs");
+                jsonGenerator.writeStartArray();
                 for (String tapeARNsListValue : tapeARNsList) {
                     if (tapeARNsListValue != null) {
-                        jsonWriter.value(tapeARNsListValue);
+                        jsonGenerator.writeValue(tapeARNsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (describeTapesRequest.getMarker() != null) {
-                jsonWriter.key("Marker")
-                        .value(describeTapesRequest.getMarker());
+                jsonGenerator.writeFieldName("Marker").writeValue(
+                        describeTapesRequest.getMarker());
             }
             if (describeTapesRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(describeTapesRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(
+                        describeTapesRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

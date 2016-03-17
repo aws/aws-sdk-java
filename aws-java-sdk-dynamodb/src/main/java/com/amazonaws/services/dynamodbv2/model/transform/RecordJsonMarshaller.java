@@ -40,39 +40,44 @@ import com.amazonaws.util.json.*;
 public class RecordJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Record record, JSONWriter jsonWriter) {
+    public void marshall(Record record, SdkJsonGenerator jsonGenerator) {
         if (record == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (record.getEventID() != null) {
-                jsonWriter.key("eventID").value(record.getEventID());
+                jsonGenerator.writeFieldName("eventID").writeValue(
+                        record.getEventID());
             }
             if (record.getEventName() != null) {
-                jsonWriter.key("eventName").value(record.getEventName());
+                jsonGenerator.writeFieldName("eventName").writeValue(
+                        record.getEventName());
             }
             if (record.getEventVersion() != null) {
-                jsonWriter.key("eventVersion").value(record.getEventVersion());
+                jsonGenerator.writeFieldName("eventVersion").writeValue(
+                        record.getEventVersion());
             }
             if (record.getEventSource() != null) {
-                jsonWriter.key("eventSource").value(record.getEventSource());
+                jsonGenerator.writeFieldName("eventSource").writeValue(
+                        record.getEventSource());
             }
             if (record.getAwsRegion() != null) {
-                jsonWriter.key("awsRegion").value(record.getAwsRegion());
+                jsonGenerator.writeFieldName("awsRegion").writeValue(
+                        record.getAwsRegion());
             }
             if (record.getDynamodb() != null) {
-                jsonWriter.key("dynamodb");
+                jsonGenerator.writeFieldName("dynamodb");
                 StreamRecordJsonMarshaller.getInstance().marshall(
-                        record.getDynamodb(), jsonWriter);
+                        record.getDynamodb(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

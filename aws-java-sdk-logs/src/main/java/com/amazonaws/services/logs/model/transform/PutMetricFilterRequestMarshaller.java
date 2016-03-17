@@ -64,21 +64,20 @@ public class PutMetricFilterRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putMetricFilterRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         putMetricFilterRequest.getLogGroupName());
             }
             if (putMetricFilterRequest.getFilterName() != null) {
-                jsonWriter.key("filterName").value(
+                jsonGenerator.writeFieldName("filterName").writeValue(
                         putMetricFilterRequest.getFilterName());
             }
             if (putMetricFilterRequest.getFilterPattern() != null) {
-                jsonWriter.key("filterPattern").value(
+                jsonGenerator.writeFieldName("filterPattern").writeValue(
                         putMetricFilterRequest.getFilterPattern());
             }
 
@@ -86,24 +85,23 @@ public class PutMetricFilterRequestMarshaller implements
                     .getMetricTransformations();
             if (!metricTransformationsList.isEmpty()
                     || !metricTransformationsList.isAutoConstruct()) {
-                jsonWriter.key("metricTransformations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("metricTransformations");
+                jsonGenerator.writeStartArray();
                 for (MetricTransformation metricTransformationsListValue : metricTransformationsList) {
                     if (metricTransformationsListValue != null) {
 
                         MetricTransformationJsonMarshaller.getInstance()
                                 .marshall(metricTransformationsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

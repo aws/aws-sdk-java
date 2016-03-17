@@ -40,47 +40,52 @@ import com.amazonaws.util.json.*;
 public class PlayerSessionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PlayerSession playerSession, JSONWriter jsonWriter) {
+    public void marshall(PlayerSession playerSession,
+            SdkJsonGenerator jsonGenerator) {
         if (playerSession == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (playerSession.getPlayerSessionId() != null) {
-                jsonWriter.key("PlayerSessionId").value(
+                jsonGenerator.writeFieldName("PlayerSessionId").writeValue(
                         playerSession.getPlayerSessionId());
             }
             if (playerSession.getPlayerId() != null) {
-                jsonWriter.key("PlayerId").value(playerSession.getPlayerId());
+                jsonGenerator.writeFieldName("PlayerId").writeValue(
+                        playerSession.getPlayerId());
             }
             if (playerSession.getGameSessionId() != null) {
-                jsonWriter.key("GameSessionId").value(
+                jsonGenerator.writeFieldName("GameSessionId").writeValue(
                         playerSession.getGameSessionId());
             }
             if (playerSession.getFleetId() != null) {
-                jsonWriter.key("FleetId").value(playerSession.getFleetId());
+                jsonGenerator.writeFieldName("FleetId").writeValue(
+                        playerSession.getFleetId());
             }
             if (playerSession.getCreationTime() != null) {
-                jsonWriter.key("CreationTime").value(
+                jsonGenerator.writeFieldName("CreationTime").writeValue(
                         playerSession.getCreationTime());
             }
             if (playerSession.getTerminationTime() != null) {
-                jsonWriter.key("TerminationTime").value(
+                jsonGenerator.writeFieldName("TerminationTime").writeValue(
                         playerSession.getTerminationTime());
             }
             if (playerSession.getStatus() != null) {
-                jsonWriter.key("Status").value(playerSession.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        playerSession.getStatus());
             }
             if (playerSession.getIpAddress() != null) {
-                jsonWriter.key("IpAddress").value(playerSession.getIpAddress());
+                jsonGenerator.writeFieldName("IpAddress").writeValue(
+                        playerSession.getIpAddress());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

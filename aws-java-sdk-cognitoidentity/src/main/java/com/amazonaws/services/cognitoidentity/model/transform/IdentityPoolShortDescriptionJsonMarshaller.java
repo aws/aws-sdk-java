@@ -40,29 +40,29 @@ import com.amazonaws.util.json.*;
 public class IdentityPoolShortDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             IdentityPoolShortDescription identityPoolShortDescription,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (identityPoolShortDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (identityPoolShortDescription.getIdentityPoolId() != null) {
-                jsonWriter.key("IdentityPoolId").value(
+                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(
                         identityPoolShortDescription.getIdentityPoolId());
             }
             if (identityPoolShortDescription.getIdentityPoolName() != null) {
-                jsonWriter.key("IdentityPoolName").value(
+                jsonGenerator.writeFieldName("IdentityPoolName").writeValue(
                         identityPoolShortDescription.getIdentityPoolName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

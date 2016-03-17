@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Contains the inputs for the <a>DescribeHsm</a> action.
+ * Contains the inputs for the <a>DescribeHsm</a> operation.
  * </p>
  */
 public class DescribeHsmRequest extends AmazonWebServiceRequest implements

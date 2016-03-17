@@ -40,44 +40,46 @@ import com.amazonaws.util.json.*;
 public class ReplicationTaskStatsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ReplicationTaskStats replicationTaskStats,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (replicationTaskStats == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (replicationTaskStats.getFullLoadProgressPercent() != null) {
-                jsonWriter.key("FullLoadProgressPercent").value(
-                        replicationTaskStats.getFullLoadProgressPercent());
+                jsonGenerator.writeFieldName("FullLoadProgressPercent")
+                        .writeValue(
+                                replicationTaskStats
+                                        .getFullLoadProgressPercent());
             }
             if (replicationTaskStats.getElapsedTimeMillis() != null) {
-                jsonWriter.key("ElapsedTimeMillis").value(
+                jsonGenerator.writeFieldName("ElapsedTimeMillis").writeValue(
                         replicationTaskStats.getElapsedTimeMillis());
             }
             if (replicationTaskStats.getTablesLoaded() != null) {
-                jsonWriter.key("TablesLoaded").value(
+                jsonGenerator.writeFieldName("TablesLoaded").writeValue(
                         replicationTaskStats.getTablesLoaded());
             }
             if (replicationTaskStats.getTablesLoading() != null) {
-                jsonWriter.key("TablesLoading").value(
+                jsonGenerator.writeFieldName("TablesLoading").writeValue(
                         replicationTaskStats.getTablesLoading());
             }
             if (replicationTaskStats.getTablesQueued() != null) {
-                jsonWriter.key("TablesQueued").value(
+                jsonGenerator.writeFieldName("TablesQueued").writeValue(
                         replicationTaskStats.getTablesQueued());
             }
             if (replicationTaskStats.getTablesErrored() != null) {
-                jsonWriter.key("TablesErrored").value(
+                jsonGenerator.writeFieldName("TablesErrored").writeValue(
                         replicationTaskStats.getTablesErrored());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

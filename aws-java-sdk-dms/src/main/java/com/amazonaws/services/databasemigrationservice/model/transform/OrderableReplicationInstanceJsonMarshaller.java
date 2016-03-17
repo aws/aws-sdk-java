@@ -40,52 +40,55 @@ import com.amazonaws.util.json.*;
 public class OrderableReplicationInstanceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             OrderableReplicationInstance orderableReplicationInstance,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (orderableReplicationInstance == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (orderableReplicationInstance.getEngineVersion() != null) {
-                jsonWriter.key("EngineVersion").value(
+                jsonGenerator.writeFieldName("EngineVersion").writeValue(
                         orderableReplicationInstance.getEngineVersion());
             }
             if (orderableReplicationInstance.getReplicationInstanceClass() != null) {
-                jsonWriter.key("ReplicationInstanceClass").value(
-                        orderableReplicationInstance
-                                .getReplicationInstanceClass());
+                jsonGenerator.writeFieldName("ReplicationInstanceClass")
+                        .writeValue(
+                                orderableReplicationInstance
+                                        .getReplicationInstanceClass());
             }
             if (orderableReplicationInstance.getStorageType() != null) {
-                jsonWriter.key("StorageType").value(
+                jsonGenerator.writeFieldName("StorageType").writeValue(
                         orderableReplicationInstance.getStorageType());
             }
             if (orderableReplicationInstance.getMinAllocatedStorage() != null) {
-                jsonWriter.key("MinAllocatedStorage").value(
+                jsonGenerator.writeFieldName("MinAllocatedStorage").writeValue(
                         orderableReplicationInstance.getMinAllocatedStorage());
             }
             if (orderableReplicationInstance.getMaxAllocatedStorage() != null) {
-                jsonWriter.key("MaxAllocatedStorage").value(
+                jsonGenerator.writeFieldName("MaxAllocatedStorage").writeValue(
                         orderableReplicationInstance.getMaxAllocatedStorage());
             }
             if (orderableReplicationInstance.getDefaultAllocatedStorage() != null) {
-                jsonWriter.key("DefaultAllocatedStorage").value(
-                        orderableReplicationInstance
-                                .getDefaultAllocatedStorage());
+                jsonGenerator.writeFieldName("DefaultAllocatedStorage")
+                        .writeValue(
+                                orderableReplicationInstance
+                                        .getDefaultAllocatedStorage());
             }
             if (orderableReplicationInstance.getIncludedAllocatedStorage() != null) {
-                jsonWriter.key("IncludedAllocatedStorage").value(
-                        orderableReplicationInstance
-                                .getIncludedAllocatedStorage());
+                jsonGenerator.writeFieldName("IncludedAllocatedStorage")
+                        .writeValue(
+                                orderableReplicationInstance
+                                        .getIncludedAllocatedStorage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

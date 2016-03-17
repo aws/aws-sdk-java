@@ -261,19 +261,20 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      * all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      * <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li> </ul>
-     * <p><b>MariaDB</b> <ul> <li><b>Version 10.0 (Available in all regions
-     * except AWS GovCloud (US) Region (us-gov-west-1)):</b> <code> 10.0.17
-     * </code></li> </ul> <p><b>Oracle Database Enterprise Edition
-     * (oracle-ee)</b> <ul> <li><b>Version 11.2 (Only available in the
-     * following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.2.v3 |
-     * 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li>
-     * <li><b>Version 11.2 (Available in all regions):</b> <code> 11.2.0.3.v1
-     * | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 |
-     * 11.2.0.4.v4</code></li> <li><b>Version 12.1 (Available in all
-     * regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1
-     * </code></li> </ul> <p><b>Oracle Database Standard Edition
+     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     * <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
+     * (Available in all regions except AWS GovCloud (US) Region
+     * (us-gov-west-1)):</b> <code> 10.0.17 </code></li> </ul> <p><b>Oracle
+     * Database Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2
+     * (Only available in the following regions: ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1,
+     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 |
+     * 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version 11.2 (Available
+     * in all regions):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 |
+     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code></li> <li><b>Version
+     * 12.1 (Available in all regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 |
+     * 12.1.0.2.v1 </code></li> </ul> <p><b>Oracle Database Standard Edition
      * (oracle-se)</b> <ul> <li><b>Version 11.2 (Only available in the
      * following regions: us-west-1):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
      * 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version
@@ -467,6 +468,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * you must supply a <code>MonitoringRoleArn</code> value.
      */
     private String monitoringRoleArn;
+
+    /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     * Values: 0 - 15
+     */
+    private Integer promotionTier;
 
     /**
      * Default constructor for a new CreateDBInstanceRequest object.  Callers should use the
@@ -2033,19 +2044,20 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      * all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      * <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li> </ul>
-     * <p><b>MariaDB</b> <ul> <li><b>Version 10.0 (Available in all regions
-     * except AWS GovCloud (US) Region (us-gov-west-1)):</b> <code> 10.0.17
-     * </code></li> </ul> <p><b>Oracle Database Enterprise Edition
-     * (oracle-ee)</b> <ul> <li><b>Version 11.2 (Only available in the
-     * following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.2.v3 |
-     * 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li>
-     * <li><b>Version 11.2 (Available in all regions):</b> <code> 11.2.0.3.v1
-     * | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 |
-     * 11.2.0.4.v4</code></li> <li><b>Version 12.1 (Available in all
-     * regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1
-     * </code></li> </ul> <p><b>Oracle Database Standard Edition
+     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     * <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
+     * (Available in all regions except AWS GovCloud (US) Region
+     * (us-gov-west-1)):</b> <code> 10.0.17 </code></li> </ul> <p><b>Oracle
+     * Database Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2
+     * (Only available in the following regions: ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1,
+     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 |
+     * 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version 11.2 (Available
+     * in all regions):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 |
+     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code></li> <li><b>Version
+     * 12.1 (Available in all regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 |
+     * 12.1.0.2.v1 </code></li> </ul> <p><b>Oracle Database Standard Edition
      * (oracle-se)</b> <ul> <li><b>Version 11.2 (Only available in the
      * following regions: us-west-1):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
      * 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version
@@ -2113,19 +2125,20 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      *         all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      *         <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li> </ul>
-     *         <p><b>MariaDB</b> <ul> <li><b>Version 10.0 (Available in all regions
-     *         except AWS GovCloud (US) Region (us-gov-west-1)):</b> <code> 10.0.17
-     *         </code></li> </ul> <p><b>Oracle Database Enterprise Edition
-     *         (oracle-ee)</b> <ul> <li><b>Version 11.2 (Only available in the
-     *         following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     *         eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.2.v3 |
-     *         11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li>
-     *         <li><b>Version 11.2 (Available in all regions):</b> <code> 11.2.0.3.v1
-     *         | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 |
-     *         11.2.0.4.v4</code></li> <li><b>Version 12.1 (Available in all
-     *         regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1
-     *         </code></li> </ul> <p><b>Oracle Database Standard Edition
+     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     *         <li><b>Version 5.7 (Available in all regions):</b> <code>
+     *         5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
+     *         (Available in all regions except AWS GovCloud (US) Region
+     *         (us-gov-west-1)):</b> <code> 10.0.17 </code></li> </ul> <p><b>Oracle
+     *         Database Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2
+     *         (Only available in the following regions: ap-northeast-1,
+     *         ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1,
+     *         us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 |
+     *         11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version 11.2 (Available
+     *         in all regions):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 |
+     *         11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code></li> <li><b>Version
+     *         12.1 (Available in all regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 |
+     *         12.1.0.2.v1 </code></li> </ul> <p><b>Oracle Database Standard Edition
      *         (oracle-se)</b> <ul> <li><b>Version 11.2 (Only available in the
      *         following regions: us-west-1):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
      *         11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version
@@ -2198,19 +2211,20 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      * all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      * <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li> </ul>
-     * <p><b>MariaDB</b> <ul> <li><b>Version 10.0 (Available in all regions
-     * except AWS GovCloud (US) Region (us-gov-west-1)):</b> <code> 10.0.17
-     * </code></li> </ul> <p><b>Oracle Database Enterprise Edition
-     * (oracle-ee)</b> <ul> <li><b>Version 11.2 (Only available in the
-     * following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.2.v3 |
-     * 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li>
-     * <li><b>Version 11.2 (Available in all regions):</b> <code> 11.2.0.3.v1
-     * | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 |
-     * 11.2.0.4.v4</code></li> <li><b>Version 12.1 (Available in all
-     * regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1
-     * </code></li> </ul> <p><b>Oracle Database Standard Edition
+     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     * <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
+     * (Available in all regions except AWS GovCloud (US) Region
+     * (us-gov-west-1)):</b> <code> 10.0.17 </code></li> </ul> <p><b>Oracle
+     * Database Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2
+     * (Only available in the following regions: ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1,
+     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 |
+     * 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version 11.2 (Available
+     * in all regions):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 |
+     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code></li> <li><b>Version
+     * 12.1 (Available in all regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 |
+     * 12.1.0.2.v1 </code></li> </ul> <p><b>Oracle Database Standard Edition
      * (oracle-se)</b> <ul> <li><b>Version 11.2 (Only available in the
      * following regions: us-west-1):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
      * 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version
@@ -2278,19 +2292,20 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      *         all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      *         <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li> </ul>
-     *         <p><b>MariaDB</b> <ul> <li><b>Version 10.0 (Available in all regions
-     *         except AWS GovCloud (US) Region (us-gov-west-1)):</b> <code> 10.0.17
-     *         </code></li> </ul> <p><b>Oracle Database Enterprise Edition
-     *         (oracle-ee)</b> <ul> <li><b>Version 11.2 (Only available in the
-     *         following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     *         eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.2.v3 |
-     *         11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li>
-     *         <li><b>Version 11.2 (Available in all regions):</b> <code> 11.2.0.3.v1
-     *         | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 |
-     *         11.2.0.4.v4</code></li> <li><b>Version 12.1 (Available in all
-     *         regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1
-     *         </code></li> </ul> <p><b>Oracle Database Standard Edition
+     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     *         <li><b>Version 5.7 (Available in all regions):</b> <code>
+     *         5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
+     *         (Available in all regions except AWS GovCloud (US) Region
+     *         (us-gov-west-1)):</b> <code> 10.0.17 </code></li> </ul> <p><b>Oracle
+     *         Database Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2
+     *         (Only available in the following regions: ap-northeast-1,
+     *         ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1,
+     *         us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 |
+     *         11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version 11.2 (Available
+     *         in all regions):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 |
+     *         11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code></li> <li><b>Version
+     *         12.1 (Available in all regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 |
+     *         12.1.0.2.v1 </code></li> </ul> <p><b>Oracle Database Standard Edition
      *         (oracle-se)</b> <ul> <li><b>Version 11.2 (Only available in the
      *         following regions: us-west-1):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
      *         11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version
@@ -2363,19 +2378,20 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      * all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      * <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li> </ul>
-     * <p><b>MariaDB</b> <ul> <li><b>Version 10.0 (Available in all regions
-     * except AWS GovCloud (US) Region (us-gov-west-1)):</b> <code> 10.0.17
-     * </code></li> </ul> <p><b>Oracle Database Enterprise Edition
-     * (oracle-ee)</b> <ul> <li><b>Version 11.2 (Only available in the
-     * following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.2.v3 |
-     * 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li>
-     * <li><b>Version 11.2 (Available in all regions):</b> <code> 11.2.0.3.v1
-     * | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 |
-     * 11.2.0.4.v4</code></li> <li><b>Version 12.1 (Available in all
-     * regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1
-     * </code></li> </ul> <p><b>Oracle Database Standard Edition
+     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     * <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
+     * (Available in all regions except AWS GovCloud (US) Region
+     * (us-gov-west-1)):</b> <code> 10.0.17 </code></li> </ul> <p><b>Oracle
+     * Database Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2
+     * (Only available in the following regions: ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1,
+     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 |
+     * 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version 11.2 (Available
+     * in all regions):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 |
+     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code></li> <li><b>Version
+     * 12.1 (Available in all regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 |
+     * 12.1.0.2.v1 </code></li> </ul> <p><b>Oracle Database Standard Edition
      * (oracle-se)</b> <ul> <li><b>Version 11.2 (Only available in the
      * following regions: us-west-1):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
      * 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version
@@ -2445,19 +2461,20 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      *         all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      *         <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li> </ul>
-     *         <p><b>MariaDB</b> <ul> <li><b>Version 10.0 (Available in all regions
-     *         except AWS GovCloud (US) Region (us-gov-west-1)):</b> <code> 10.0.17
-     *         </code></li> </ul> <p><b>Oracle Database Enterprise Edition
-     *         (oracle-ee)</b> <ul> <li><b>Version 11.2 (Only available in the
-     *         following regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     *         eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.2.v3 |
-     *         11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li>
-     *         <li><b>Version 11.2 (Available in all regions):</b> <code> 11.2.0.3.v1
-     *         | 11.2.0.3.v2 | 11.2.0.3.v3 | 11.2.0.4.v1 | 11.2.0.4.v3 |
-     *         11.2.0.4.v4</code></li> <li><b>Version 12.1 (Available in all
-     *         regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 | 12.1.0.2.v1
-     *         </code></li> </ul> <p><b>Oracle Database Standard Edition
+     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     *         <li><b>Version 5.7 (Available in all regions):</b> <code>
+     *         5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
+     *         (Available in all regions except AWS GovCloud (US) Region
+     *         (us-gov-west-1)):</b> <code> 10.0.17 </code></li> </ul> <p><b>Oracle
+     *         Database Enterprise Edition (oracle-ee)</b> <ul> <li><b>Version 11.2
+     *         (Only available in the following regions: ap-northeast-1,
+     *         ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-west-1,
+     *         us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 |
+     *         11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version 11.2 (Available
+     *         in all regions):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3 |
+     *         11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code></li> <li><b>Version
+     *         12.1 (Available in all regions):</b> <code>12.1.0.1.v1 | 12.1.0.1.v2 |
+     *         12.1.0.2.v1 </code></li> </ul> <p><b>Oracle Database Standard Edition
      *         (oracle-se)</b> <ul> <li><b>Version 11.2 (Only available in the
      *         following regions: us-west-1):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 |
      *         11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code></li> <li><b>Version
@@ -3498,6 +3515,69 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     * Values: 0 - 15
+     *
+     * @return A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     *         Values: 0 - 15
+     */
+    public Integer getPromotionTier() {
+        return promotionTier;
+    }
+    
+    /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     * Values: 0 - 15
+     *
+     * @param promotionTier A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     *         Values: 0 - 15
+     */
+    public void setPromotionTier(Integer promotionTier) {
+        this.promotionTier = promotionTier;
+    }
+    
+    /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     * Values: 0 - 15
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param promotionTier A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     *         Values: 0 - 15
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceRequest withPromotionTier(Integer promotionTier) {
+        this.promotionTier = promotionTier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -3542,7 +3622,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() + ",");
         if (getMonitoringInterval() != null) sb.append("MonitoringInterval: " + getMonitoringInterval() + ",");
-        if (getMonitoringRoleArn() != null) sb.append("MonitoringRoleArn: " + getMonitoringRoleArn() );
+        if (getMonitoringRoleArn() != null) sb.append("MonitoringRoleArn: " + getMonitoringRoleArn() + ",");
+        if (getPromotionTier() != null) sb.append("PromotionTier: " + getPromotionTier() );
         sb.append("}");
         return sb.toString();
     }
@@ -3586,6 +3667,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((isCopyTagsToSnapshot() == null) ? 0 : isCopyTagsToSnapshot().hashCode()); 
         hashCode = prime * hashCode + ((getMonitoringInterval() == null) ? 0 : getMonitoringInterval().hashCode()); 
         hashCode = prime * hashCode + ((getMonitoringRoleArn() == null) ? 0 : getMonitoringRoleArn().hashCode()); 
+        hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode()); 
         return hashCode;
     }
     
@@ -3665,6 +3747,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.getMonitoringInterval() != null && other.getMonitoringInterval().equals(this.getMonitoringInterval()) == false) return false; 
         if (other.getMonitoringRoleArn() == null ^ this.getMonitoringRoleArn() == null) return false;
         if (other.getMonitoringRoleArn() != null && other.getMonitoringRoleArn().equals(this.getMonitoringRoleArn()) == false) return false; 
+        if (other.getPromotionTier() == null ^ this.getPromotionTier() == null) return false;
+        if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false) return false; 
         return true;
     }
     

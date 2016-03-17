@@ -40,46 +40,48 @@ import com.amazonaws.util.json.*;
 public class DynamoDBActionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DynamoDBAction dynamoDBAction, JSONWriter jsonWriter) {
+    public void marshall(DynamoDBAction dynamoDBAction,
+            SdkJsonGenerator jsonGenerator) {
         if (dynamoDBAction == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (dynamoDBAction.getTableName() != null) {
-                jsonWriter.key("tableName")
-                        .value(dynamoDBAction.getTableName());
+                jsonGenerator.writeFieldName("tableName").writeValue(
+                        dynamoDBAction.getTableName());
             }
             if (dynamoDBAction.getRoleArn() != null) {
-                jsonWriter.key("roleArn").value(dynamoDBAction.getRoleArn());
+                jsonGenerator.writeFieldName("roleArn").writeValue(
+                        dynamoDBAction.getRoleArn());
             }
             if (dynamoDBAction.getHashKeyField() != null) {
-                jsonWriter.key("hashKeyField").value(
+                jsonGenerator.writeFieldName("hashKeyField").writeValue(
                         dynamoDBAction.getHashKeyField());
             }
             if (dynamoDBAction.getHashKeyValue() != null) {
-                jsonWriter.key("hashKeyValue").value(
+                jsonGenerator.writeFieldName("hashKeyValue").writeValue(
                         dynamoDBAction.getHashKeyValue());
             }
             if (dynamoDBAction.getRangeKeyField() != null) {
-                jsonWriter.key("rangeKeyField").value(
+                jsonGenerator.writeFieldName("rangeKeyField").writeValue(
                         dynamoDBAction.getRangeKeyField());
             }
             if (dynamoDBAction.getRangeKeyValue() != null) {
-                jsonWriter.key("rangeKeyValue").value(
+                jsonGenerator.writeFieldName("rangeKeyValue").writeValue(
                         dynamoDBAction.getRangeKeyValue());
             }
             if (dynamoDBAction.getPayloadField() != null) {
-                jsonWriter.key("payloadField").value(
+                jsonGenerator.writeFieldName("payloadField").writeValue(
                         dynamoDBAction.getPayloadField());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

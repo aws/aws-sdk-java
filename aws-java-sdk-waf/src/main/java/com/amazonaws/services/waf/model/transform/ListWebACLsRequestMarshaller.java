@@ -64,24 +64,23 @@ public class ListWebACLsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listWebACLsRequest.getNextMarker() != null) {
-                jsonWriter.key("NextMarker").value(
+                jsonGenerator.writeFieldName("NextMarker").writeValue(
                         listWebACLsRequest.getNextMarker());
             }
             if (listWebACLsRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(listWebACLsRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(
+                        listWebACLsRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

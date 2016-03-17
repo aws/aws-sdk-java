@@ -92,55 +92,57 @@ public class PutIntegrationResponseRequestMarshaller
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putIntegrationResponseRequest.getSelectionPattern() != null) {
-                jsonWriter.key("selectionPattern").value(
+                jsonGenerator.writeFieldName("selectionPattern").writeValue(
                         putIntegrationResponseRequest.getSelectionPattern());
             }
 
             java.util.Map<String, String> responseParametersMap = putIntegrationResponseRequest
                     .getResponseParameters();
             if (responseParametersMap != null) {
-                jsonWriter.key("responseParameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("responseParameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> responseParametersMapValue : responseParametersMap
                         .entrySet()) {
                     if (responseParametersMapValue.getValue() != null) {
-                        jsonWriter.key(responseParametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(responseParametersMapValue
+                                .getKey());
 
-                        jsonWriter.value(responseParametersMapValue.getValue());
+                        jsonGenerator.writeValue(responseParametersMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, String> responseTemplatesMap = putIntegrationResponseRequest
                     .getResponseTemplates();
             if (responseTemplatesMap != null) {
-                jsonWriter.key("responseTemplates");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("responseTemplates");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> responseTemplatesMapValue : responseTemplatesMap
                         .entrySet()) {
                     if (responseTemplatesMapValue.getValue() != null) {
-                        jsonWriter.key(responseTemplatesMapValue.getKey());
+                        jsonGenerator.writeFieldName(responseTemplatesMapValue
+                                .getKey());
 
-                        jsonWriter.value(responseTemplatesMapValue.getValue());
+                        jsonGenerator.writeValue(responseTemplatesMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

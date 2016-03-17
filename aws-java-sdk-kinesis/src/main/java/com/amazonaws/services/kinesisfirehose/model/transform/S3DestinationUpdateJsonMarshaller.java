@@ -40,46 +40,47 @@ import com.amazonaws.util.json.*;
 public class S3DestinationUpdateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(S3DestinationUpdate s3DestinationUpdate,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (s3DestinationUpdate == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (s3DestinationUpdate.getRoleARN() != null) {
-                jsonWriter.key("RoleARN").value(
+                jsonGenerator.writeFieldName("RoleARN").writeValue(
                         s3DestinationUpdate.getRoleARN());
             }
             if (s3DestinationUpdate.getBucketARN() != null) {
-                jsonWriter.key("BucketARN").value(
+                jsonGenerator.writeFieldName("BucketARN").writeValue(
                         s3DestinationUpdate.getBucketARN());
             }
             if (s3DestinationUpdate.getPrefix() != null) {
-                jsonWriter.key("Prefix").value(s3DestinationUpdate.getPrefix());
+                jsonGenerator.writeFieldName("Prefix").writeValue(
+                        s3DestinationUpdate.getPrefix());
             }
             if (s3DestinationUpdate.getBufferingHints() != null) {
-                jsonWriter.key("BufferingHints");
+                jsonGenerator.writeFieldName("BufferingHints");
                 BufferingHintsJsonMarshaller.getInstance().marshall(
-                        s3DestinationUpdate.getBufferingHints(), jsonWriter);
+                        s3DestinationUpdate.getBufferingHints(), jsonGenerator);
             }
             if (s3DestinationUpdate.getCompressionFormat() != null) {
-                jsonWriter.key("CompressionFormat").value(
+                jsonGenerator.writeFieldName("CompressionFormat").writeValue(
                         s3DestinationUpdate.getCompressionFormat());
             }
             if (s3DestinationUpdate.getEncryptionConfiguration() != null) {
-                jsonWriter.key("EncryptionConfiguration");
+                jsonGenerator.writeFieldName("EncryptionConfiguration");
                 EncryptionConfigurationJsonMarshaller.getInstance().marshall(
                         s3DestinationUpdate.getEncryptionConfiguration(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,29 +40,30 @@ import com.amazonaws.util.json.*;
 public class ShutdownEventConfigurationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ShutdownEventConfiguration shutdownEventConfiguration,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (shutdownEventConfiguration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (shutdownEventConfiguration.getExecutionTimeout() != null) {
-                jsonWriter.key("ExecutionTimeout").value(
+                jsonGenerator.writeFieldName("ExecutionTimeout").writeValue(
                         shutdownEventConfiguration.getExecutionTimeout());
             }
             if (shutdownEventConfiguration.getDelayUntilElbConnectionsDrained() != null) {
-                jsonWriter.key("DelayUntilElbConnectionsDrained").value(
-                        shutdownEventConfiguration
-                                .getDelayUntilElbConnectionsDrained());
+                jsonGenerator.writeFieldName("DelayUntilElbConnectionsDrained")
+                        .writeValue(
+                                shutdownEventConfiguration
+                                        .getDelayUntilElbConnectionsDrained());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

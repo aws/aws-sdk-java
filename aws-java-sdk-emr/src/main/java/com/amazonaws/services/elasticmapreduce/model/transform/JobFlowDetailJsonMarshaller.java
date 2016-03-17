@@ -40,101 +40,105 @@ import com.amazonaws.util.json.*;
 public class JobFlowDetailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(JobFlowDetail jobFlowDetail, JSONWriter jsonWriter) {
+    public void marshall(JobFlowDetail jobFlowDetail,
+            SdkJsonGenerator jsonGenerator) {
         if (jobFlowDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (jobFlowDetail.getJobFlowId() != null) {
-                jsonWriter.key("JobFlowId").value(jobFlowDetail.getJobFlowId());
+                jsonGenerator.writeFieldName("JobFlowId").writeValue(
+                        jobFlowDetail.getJobFlowId());
             }
             if (jobFlowDetail.getName() != null) {
-                jsonWriter.key("Name").value(jobFlowDetail.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        jobFlowDetail.getName());
             }
             if (jobFlowDetail.getLogUri() != null) {
-                jsonWriter.key("LogUri").value(jobFlowDetail.getLogUri());
+                jsonGenerator.writeFieldName("LogUri").writeValue(
+                        jobFlowDetail.getLogUri());
             }
             if (jobFlowDetail.getAmiVersion() != null) {
-                jsonWriter.key("AmiVersion").value(
+                jsonGenerator.writeFieldName("AmiVersion").writeValue(
                         jobFlowDetail.getAmiVersion());
             }
             if (jobFlowDetail.getExecutionStatusDetail() != null) {
-                jsonWriter.key("ExecutionStatusDetail");
+                jsonGenerator.writeFieldName("ExecutionStatusDetail");
                 JobFlowExecutionStatusDetailJsonMarshaller.getInstance()
                         .marshall(jobFlowDetail.getExecutionStatusDetail(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (jobFlowDetail.getInstances() != null) {
-                jsonWriter.key("Instances");
+                jsonGenerator.writeFieldName("Instances");
                 JobFlowInstancesDetailJsonMarshaller.getInstance().marshall(
-                        jobFlowDetail.getInstances(), jsonWriter);
+                        jobFlowDetail.getInstances(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<StepDetail> stepsList = (com.amazonaws.internal.SdkInternalList<StepDetail>) jobFlowDetail
                     .getSteps();
             if (!stepsList.isEmpty() || !stepsList.isAutoConstruct()) {
-                jsonWriter.key("Steps");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Steps");
+                jsonGenerator.writeStartArray();
                 for (StepDetail stepsListValue : stepsList) {
                     if (stepsListValue != null) {
 
                         StepDetailJsonMarshaller.getInstance().marshall(
-                                stepsListValue, jsonWriter);
+                                stepsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<BootstrapActionDetail> bootstrapActionsList = (com.amazonaws.internal.SdkInternalList<BootstrapActionDetail>) jobFlowDetail
                     .getBootstrapActions();
             if (!bootstrapActionsList.isEmpty()
                     || !bootstrapActionsList.isAutoConstruct()) {
-                jsonWriter.key("BootstrapActions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("BootstrapActions");
+                jsonGenerator.writeStartArray();
                 for (BootstrapActionDetail bootstrapActionsListValue : bootstrapActionsList) {
                     if (bootstrapActionsListValue != null) {
 
-                        BootstrapActionDetailJsonMarshaller
-                                .getInstance()
-                                .marshall(bootstrapActionsListValue, jsonWriter);
+                        BootstrapActionDetailJsonMarshaller.getInstance()
+                                .marshall(bootstrapActionsListValue,
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> supportedProductsList = (com.amazonaws.internal.SdkInternalList<String>) jobFlowDetail
                     .getSupportedProducts();
             if (!supportedProductsList.isEmpty()
                     || !supportedProductsList.isAutoConstruct()) {
-                jsonWriter.key("SupportedProducts");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SupportedProducts");
+                jsonGenerator.writeStartArray();
                 for (String supportedProductsListValue : supportedProductsList) {
                     if (supportedProductsListValue != null) {
-                        jsonWriter.value(supportedProductsListValue);
+                        jsonGenerator.writeValue(supportedProductsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (jobFlowDetail.getVisibleToAllUsers() != null) {
-                jsonWriter.key("VisibleToAllUsers").value(
+                jsonGenerator.writeFieldName("VisibleToAllUsers").writeValue(
                         jobFlowDetail.getVisibleToAllUsers());
             }
             if (jobFlowDetail.getJobFlowRole() != null) {
-                jsonWriter.key("JobFlowRole").value(
+                jsonGenerator.writeFieldName("JobFlowRole").writeValue(
                         jobFlowDetail.getJobFlowRole());
             }
             if (jobFlowDetail.getServiceRole() != null) {
-                jsonWriter.key("ServiceRole").value(
+                jsonGenerator.writeFieldName("ServiceRole").writeValue(
                         jobFlowDetail.getServiceRole());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

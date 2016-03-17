@@ -40,25 +40,28 @@ import com.amazonaws.util.json.*;
 public class ThirdPartyJobJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ThirdPartyJob thirdPartyJob, JSONWriter jsonWriter) {
+    public void marshall(ThirdPartyJob thirdPartyJob,
+            SdkJsonGenerator jsonGenerator) {
         if (thirdPartyJob == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (thirdPartyJob.getClientId() != null) {
-                jsonWriter.key("clientId").value(thirdPartyJob.getClientId());
+                jsonGenerator.writeFieldName("clientId").writeValue(
+                        thirdPartyJob.getClientId());
             }
             if (thirdPartyJob.getJobId() != null) {
-                jsonWriter.key("jobId").value(thirdPartyJob.getJobId());
+                jsonGenerator.writeFieldName("jobId").writeValue(
+                        thirdPartyJob.getJobId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

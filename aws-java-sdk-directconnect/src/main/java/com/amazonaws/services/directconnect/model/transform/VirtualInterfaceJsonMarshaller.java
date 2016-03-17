@@ -40,69 +40,73 @@ import com.amazonaws.util.json.*;
 public class VirtualInterfaceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(VirtualInterface virtualInterface,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (virtualInterface == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (virtualInterface.getOwnerAccount() != null) {
-                jsonWriter.key("ownerAccount").value(
+                jsonGenerator.writeFieldName("ownerAccount").writeValue(
                         virtualInterface.getOwnerAccount());
             }
             if (virtualInterface.getVirtualInterfaceId() != null) {
-                jsonWriter.key("virtualInterfaceId").value(
+                jsonGenerator.writeFieldName("virtualInterfaceId").writeValue(
                         virtualInterface.getVirtualInterfaceId());
             }
             if (virtualInterface.getLocation() != null) {
-                jsonWriter.key("location")
-                        .value(virtualInterface.getLocation());
+                jsonGenerator.writeFieldName("location").writeValue(
+                        virtualInterface.getLocation());
             }
             if (virtualInterface.getConnectionId() != null) {
-                jsonWriter.key("connectionId").value(
+                jsonGenerator.writeFieldName("connectionId").writeValue(
                         virtualInterface.getConnectionId());
             }
             if (virtualInterface.getVirtualInterfaceType() != null) {
-                jsonWriter.key("virtualInterfaceType").value(
-                        virtualInterface.getVirtualInterfaceType());
+                jsonGenerator.writeFieldName("virtualInterfaceType")
+                        .writeValue(virtualInterface.getVirtualInterfaceType());
             }
             if (virtualInterface.getVirtualInterfaceName() != null) {
-                jsonWriter.key("virtualInterfaceName").value(
-                        virtualInterface.getVirtualInterfaceName());
+                jsonGenerator.writeFieldName("virtualInterfaceName")
+                        .writeValue(virtualInterface.getVirtualInterfaceName());
             }
             if (virtualInterface.getVlan() != null) {
-                jsonWriter.key("vlan").value(virtualInterface.getVlan());
+                jsonGenerator.writeFieldName("vlan").writeValue(
+                        virtualInterface.getVlan());
             }
             if (virtualInterface.getAsn() != null) {
-                jsonWriter.key("asn").value(virtualInterface.getAsn());
+                jsonGenerator.writeFieldName("asn").writeValue(
+                        virtualInterface.getAsn());
             }
             if (virtualInterface.getAuthKey() != null) {
-                jsonWriter.key("authKey").value(virtualInterface.getAuthKey());
+                jsonGenerator.writeFieldName("authKey").writeValue(
+                        virtualInterface.getAuthKey());
             }
             if (virtualInterface.getAmazonAddress() != null) {
-                jsonWriter.key("amazonAddress").value(
+                jsonGenerator.writeFieldName("amazonAddress").writeValue(
                         virtualInterface.getAmazonAddress());
             }
             if (virtualInterface.getCustomerAddress() != null) {
-                jsonWriter.key("customerAddress").value(
+                jsonGenerator.writeFieldName("customerAddress").writeValue(
                         virtualInterface.getCustomerAddress());
             }
             if (virtualInterface.getVirtualInterfaceState() != null) {
-                jsonWriter.key("virtualInterfaceState").value(
-                        virtualInterface.getVirtualInterfaceState());
+                jsonGenerator
+                        .writeFieldName("virtualInterfaceState")
+                        .writeValue(virtualInterface.getVirtualInterfaceState());
             }
             if (virtualInterface.getCustomerRouterConfig() != null) {
-                jsonWriter.key("customerRouterConfig").value(
-                        virtualInterface.getCustomerRouterConfig());
+                jsonGenerator.writeFieldName("customerRouterConfig")
+                        .writeValue(virtualInterface.getCustomerRouterConfig());
             }
             if (virtualInterface.getVirtualGatewayId() != null) {
-                jsonWriter.key("virtualGatewayId").value(
+                jsonGenerator.writeFieldName("virtualGatewayId").writeValue(
                         virtualInterface.getVirtualGatewayId());
             }
 
@@ -110,19 +114,19 @@ public class VirtualInterfaceJsonMarshaller {
                     .getRouteFilterPrefixes();
             if (!routeFilterPrefixesList.isEmpty()
                     || !routeFilterPrefixesList.isAutoConstruct()) {
-                jsonWriter.key("routeFilterPrefixes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("routeFilterPrefixes");
+                jsonGenerator.writeStartArray();
                 for (RouteFilterPrefix routeFilterPrefixesListValue : routeFilterPrefixesList) {
                     if (routeFilterPrefixesListValue != null) {
 
                         RouteFilterPrefixJsonMarshaller.getInstance().marshall(
-                                routeFilterPrefixesListValue, jsonWriter);
+                                routeFilterPrefixesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

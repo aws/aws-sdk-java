@@ -66,55 +66,59 @@ public class DescribeEvaluationsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeEvaluationsRequest.getFilterVariable() != null) {
-                jsonWriter.key("FilterVariable").value(
+                jsonGenerator.writeFieldName("FilterVariable").writeValue(
                         describeEvaluationsRequest.getFilterVariable());
             }
             if (describeEvaluationsRequest.getEQ() != null) {
-                jsonWriter.key("EQ").value(describeEvaluationsRequest.getEQ());
+                jsonGenerator.writeFieldName("EQ").writeValue(
+                        describeEvaluationsRequest.getEQ());
             }
             if (describeEvaluationsRequest.getGT() != null) {
-                jsonWriter.key("GT").value(describeEvaluationsRequest.getGT());
+                jsonGenerator.writeFieldName("GT").writeValue(
+                        describeEvaluationsRequest.getGT());
             }
             if (describeEvaluationsRequest.getLT() != null) {
-                jsonWriter.key("LT").value(describeEvaluationsRequest.getLT());
+                jsonGenerator.writeFieldName("LT").writeValue(
+                        describeEvaluationsRequest.getLT());
             }
             if (describeEvaluationsRequest.getGE() != null) {
-                jsonWriter.key("GE").value(describeEvaluationsRequest.getGE());
+                jsonGenerator.writeFieldName("GE").writeValue(
+                        describeEvaluationsRequest.getGE());
             }
             if (describeEvaluationsRequest.getLE() != null) {
-                jsonWriter.key("LE").value(describeEvaluationsRequest.getLE());
+                jsonGenerator.writeFieldName("LE").writeValue(
+                        describeEvaluationsRequest.getLE());
             }
             if (describeEvaluationsRequest.getNE() != null) {
-                jsonWriter.key("NE").value(describeEvaluationsRequest.getNE());
+                jsonGenerator.writeFieldName("NE").writeValue(
+                        describeEvaluationsRequest.getNE());
             }
             if (describeEvaluationsRequest.getPrefix() != null) {
-                jsonWriter.key("Prefix").value(
+                jsonGenerator.writeFieldName("Prefix").writeValue(
                         describeEvaluationsRequest.getPrefix());
             }
             if (describeEvaluationsRequest.getSortOrder() != null) {
-                jsonWriter.key("SortOrder").value(
+                jsonGenerator.writeFieldName("SortOrder").writeValue(
                         describeEvaluationsRequest.getSortOrder());
             }
             if (describeEvaluationsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         describeEvaluationsRequest.getNextToken());
             }
             if (describeEvaluationsRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(
+                jsonGenerator.writeFieldName("Limit").writeValue(
                         describeEvaluationsRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

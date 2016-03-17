@@ -40,37 +40,43 @@ import com.amazonaws.util.json.*;
 public class SnapshotJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Snapshot snapshot, JSONWriter jsonWriter) {
+    public void marshall(Snapshot snapshot, SdkJsonGenerator jsonGenerator) {
         if (snapshot == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (snapshot.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(snapshot.getDirectoryId());
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
+                        snapshot.getDirectoryId());
             }
             if (snapshot.getSnapshotId() != null) {
-                jsonWriter.key("SnapshotId").value(snapshot.getSnapshotId());
+                jsonGenerator.writeFieldName("SnapshotId").writeValue(
+                        snapshot.getSnapshotId());
             }
             if (snapshot.getType() != null) {
-                jsonWriter.key("Type").value(snapshot.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        snapshot.getType());
             }
             if (snapshot.getName() != null) {
-                jsonWriter.key("Name").value(snapshot.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        snapshot.getName());
             }
             if (snapshot.getStatus() != null) {
-                jsonWriter.key("Status").value(snapshot.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        snapshot.getStatus());
             }
             if (snapshot.getStartTime() != null) {
-                jsonWriter.key("StartTime").value(snapshot.getStartTime());
+                jsonGenerator.writeFieldName("StartTime").writeValue(
+                        snapshot.getStartTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

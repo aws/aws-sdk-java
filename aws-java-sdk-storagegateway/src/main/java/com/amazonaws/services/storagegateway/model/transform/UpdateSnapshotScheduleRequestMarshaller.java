@@ -66,33 +66,31 @@ public class UpdateSnapshotScheduleRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateSnapshotScheduleRequest.getVolumeARN() != null) {
-                jsonWriter.key("VolumeARN").value(
+                jsonGenerator.writeFieldName("VolumeARN").writeValue(
                         updateSnapshotScheduleRequest.getVolumeARN());
             }
             if (updateSnapshotScheduleRequest.getStartAt() != null) {
-                jsonWriter.key("StartAt").value(
+                jsonGenerator.writeFieldName("StartAt").writeValue(
                         updateSnapshotScheduleRequest.getStartAt());
             }
             if (updateSnapshotScheduleRequest.getRecurrenceInHours() != null) {
-                jsonWriter.key("RecurrenceInHours").value(
+                jsonGenerator.writeFieldName("RecurrenceInHours").writeValue(
                         updateSnapshotScheduleRequest.getRecurrenceInHours());
             }
             if (updateSnapshotScheduleRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         updateSnapshotScheduleRequest.getDescription());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

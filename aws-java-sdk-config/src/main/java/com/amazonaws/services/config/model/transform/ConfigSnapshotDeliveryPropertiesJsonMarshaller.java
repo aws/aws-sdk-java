@@ -40,26 +40,27 @@ import com.amazonaws.util.json.*;
 public class ConfigSnapshotDeliveryPropertiesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (configSnapshotDeliveryProperties == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (configSnapshotDeliveryProperties.getDeliveryFrequency() != null) {
-                jsonWriter.key("deliveryFrequency")
-                        .value(configSnapshotDeliveryProperties
-                                .getDeliveryFrequency());
+                jsonGenerator.writeFieldName("deliveryFrequency")
+                        .writeValue(
+                                configSnapshotDeliveryProperties
+                                        .getDeliveryFrequency());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class CertificateSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(CertificateSummary certificateSummary,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (certificateSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (certificateSummary.getCertificateArn() != null) {
-                jsonWriter.key("CertificateArn").value(
+                jsonGenerator.writeFieldName("CertificateArn").writeValue(
                         certificateSummary.getCertificateArn());
             }
             if (certificateSummary.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         certificateSummary.getDomainName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

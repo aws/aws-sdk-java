@@ -40,23 +40,26 @@ import com.amazonaws.util.json.*;
 public class SnapshotOptionsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(SnapshotOptions snapshotOptions, JSONWriter jsonWriter) {
+    public void marshall(SnapshotOptions snapshotOptions,
+            SdkJsonGenerator jsonGenerator) {
         if (snapshotOptions == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (snapshotOptions.getAutomatedSnapshotStartHour() != null) {
-                jsonWriter.key("AutomatedSnapshotStartHour").value(
-                        snapshotOptions.getAutomatedSnapshotStartHour());
+                jsonGenerator
+                        .writeFieldName("AutomatedSnapshotStartHour")
+                        .writeValue(
+                                snapshotOptions.getAutomatedSnapshotStartHour());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

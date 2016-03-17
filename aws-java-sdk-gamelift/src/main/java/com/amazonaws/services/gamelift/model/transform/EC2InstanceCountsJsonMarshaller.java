@@ -40,42 +40,48 @@ import com.amazonaws.util.json.*;
 public class EC2InstanceCountsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(EC2InstanceCounts eC2InstanceCounts,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (eC2InstanceCounts == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (eC2InstanceCounts.getDESIRED() != null) {
-                jsonWriter.key("DESIRED").value(eC2InstanceCounts.getDESIRED());
+                jsonGenerator.writeFieldName("DESIRED").writeValue(
+                        eC2InstanceCounts.getDESIRED());
             }
             if (eC2InstanceCounts.getMINIMUM() != null) {
-                jsonWriter.key("MINIMUM").value(eC2InstanceCounts.getMINIMUM());
+                jsonGenerator.writeFieldName("MINIMUM").writeValue(
+                        eC2InstanceCounts.getMINIMUM());
             }
             if (eC2InstanceCounts.getMAXIMUM() != null) {
-                jsonWriter.key("MAXIMUM").value(eC2InstanceCounts.getMAXIMUM());
+                jsonGenerator.writeFieldName("MAXIMUM").writeValue(
+                        eC2InstanceCounts.getMAXIMUM());
             }
             if (eC2InstanceCounts.getPENDING() != null) {
-                jsonWriter.key("PENDING").value(eC2InstanceCounts.getPENDING());
+                jsonGenerator.writeFieldName("PENDING").writeValue(
+                        eC2InstanceCounts.getPENDING());
             }
             if (eC2InstanceCounts.getACTIVE() != null) {
-                jsonWriter.key("ACTIVE").value(eC2InstanceCounts.getACTIVE());
+                jsonGenerator.writeFieldName("ACTIVE").writeValue(
+                        eC2InstanceCounts.getACTIVE());
             }
             if (eC2InstanceCounts.getIDLE() != null) {
-                jsonWriter.key("IDLE").value(eC2InstanceCounts.getIDLE());
+                jsonGenerator.writeFieldName("IDLE").writeValue(
+                        eC2InstanceCounts.getIDLE());
             }
             if (eC2InstanceCounts.getTERMINATING() != null) {
-                jsonWriter.key("TERMINATING").value(
+                jsonGenerator.writeFieldName("TERMINATING").writeValue(
                         eC2InstanceCounts.getTERMINATING());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

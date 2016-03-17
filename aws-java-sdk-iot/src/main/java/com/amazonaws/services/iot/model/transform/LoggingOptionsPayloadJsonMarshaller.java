@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class LoggingOptionsPayloadJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(LoggingOptionsPayload loggingOptionsPayload,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (loggingOptionsPayload == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (loggingOptionsPayload.getRoleArn() != null) {
-                jsonWriter.key("roleArn").value(
+                jsonGenerator.writeFieldName("roleArn").writeValue(
                         loggingOptionsPayload.getRoleArn());
             }
             if (loggingOptionsPayload.getLogLevel() != null) {
-                jsonWriter.key("logLevel").value(
+                jsonGenerator.writeFieldName("logLevel").writeValue(
                         loggingOptionsPayload.getLogLevel());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

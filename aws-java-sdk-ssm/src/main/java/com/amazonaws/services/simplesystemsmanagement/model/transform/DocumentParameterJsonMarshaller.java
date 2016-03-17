@@ -40,34 +40,36 @@ import com.amazonaws.util.json.*;
 public class DocumentParameterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DocumentParameter documentParameter,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (documentParameter == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (documentParameter.getName() != null) {
-                jsonWriter.key("Name").value(documentParameter.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        documentParameter.getName());
             }
             if (documentParameter.getType() != null) {
-                jsonWriter.key("Type").value(documentParameter.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        documentParameter.getType());
             }
             if (documentParameter.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         documentParameter.getDescription());
             }
             if (documentParameter.getDefaultValue() != null) {
-                jsonWriter.key("DefaultValue").value(
+                jsonGenerator.writeFieldName("DefaultValue").writeValue(
                         documentParameter.getDefaultValue());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

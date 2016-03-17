@@ -40,59 +40,71 @@ import com.amazonaws.util.json.*;
 public class VolumeJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Volume volume, JSONWriter jsonWriter) {
+    public void marshall(Volume volume, SdkJsonGenerator jsonGenerator) {
         if (volume == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (volume.getVolumeId() != null) {
-                jsonWriter.key("VolumeId").value(volume.getVolumeId());
+                jsonGenerator.writeFieldName("VolumeId").writeValue(
+                        volume.getVolumeId());
             }
             if (volume.getEc2VolumeId() != null) {
-                jsonWriter.key("Ec2VolumeId").value(volume.getEc2VolumeId());
+                jsonGenerator.writeFieldName("Ec2VolumeId").writeValue(
+                        volume.getEc2VolumeId());
             }
             if (volume.getName() != null) {
-                jsonWriter.key("Name").value(volume.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        volume.getName());
             }
             if (volume.getRaidArrayId() != null) {
-                jsonWriter.key("RaidArrayId").value(volume.getRaidArrayId());
+                jsonGenerator.writeFieldName("RaidArrayId").writeValue(
+                        volume.getRaidArrayId());
             }
             if (volume.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(volume.getInstanceId());
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
+                        volume.getInstanceId());
             }
             if (volume.getStatus() != null) {
-                jsonWriter.key("Status").value(volume.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        volume.getStatus());
             }
             if (volume.getSize() != null) {
-                jsonWriter.key("Size").value(volume.getSize());
+                jsonGenerator.writeFieldName("Size").writeValue(
+                        volume.getSize());
             }
             if (volume.getDevice() != null) {
-                jsonWriter.key("Device").value(volume.getDevice());
+                jsonGenerator.writeFieldName("Device").writeValue(
+                        volume.getDevice());
             }
             if (volume.getMountPoint() != null) {
-                jsonWriter.key("MountPoint").value(volume.getMountPoint());
+                jsonGenerator.writeFieldName("MountPoint").writeValue(
+                        volume.getMountPoint());
             }
             if (volume.getRegion() != null) {
-                jsonWriter.key("Region").value(volume.getRegion());
+                jsonGenerator.writeFieldName("Region").writeValue(
+                        volume.getRegion());
             }
             if (volume.getAvailabilityZone() != null) {
-                jsonWriter.key("AvailabilityZone").value(
+                jsonGenerator.writeFieldName("AvailabilityZone").writeValue(
                         volume.getAvailabilityZone());
             }
             if (volume.getVolumeType() != null) {
-                jsonWriter.key("VolumeType").value(volume.getVolumeType());
+                jsonGenerator.writeFieldName("VolumeType").writeValue(
+                        volume.getVolumeType());
             }
             if (volume.getIops() != null) {
-                jsonWriter.key("Iops").value(volume.getIops());
+                jsonGenerator.writeFieldName("Iops").writeValue(
+                        volume.getIops());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -64,64 +64,62 @@ public class UpdateTableRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.List<AttributeDefinition> attributeDefinitionsList = updateTableRequest
                     .getAttributeDefinitions();
             if (attributeDefinitionsList != null) {
-                jsonWriter.key("AttributeDefinitions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AttributeDefinitions");
+                jsonGenerator.writeStartArray();
                 for (AttributeDefinition attributeDefinitionsListValue : attributeDefinitionsList) {
                     if (attributeDefinitionsListValue != null) {
 
                         AttributeDefinitionJsonMarshaller.getInstance()
                                 .marshall(attributeDefinitionsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (updateTableRequest.getTableName() != null) {
-                jsonWriter.key("TableName").value(
+                jsonGenerator.writeFieldName("TableName").writeValue(
                         updateTableRequest.getTableName());
             }
             if (updateTableRequest.getProvisionedThroughput() != null) {
-                jsonWriter.key("ProvisionedThroughput");
+                jsonGenerator.writeFieldName("ProvisionedThroughput");
                 ProvisionedThroughputJsonMarshaller.getInstance().marshall(
                         updateTableRequest.getProvisionedThroughput(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
             java.util.List<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdatesList = updateTableRequest
                     .getGlobalSecondaryIndexUpdates();
             if (globalSecondaryIndexUpdatesList != null) {
-                jsonWriter.key("GlobalSecondaryIndexUpdates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("GlobalSecondaryIndexUpdates");
+                jsonGenerator.writeStartArray();
                 for (GlobalSecondaryIndexUpdate globalSecondaryIndexUpdatesListValue : globalSecondaryIndexUpdatesList) {
                     if (globalSecondaryIndexUpdatesListValue != null) {
 
                         GlobalSecondaryIndexUpdateJsonMarshaller.getInstance()
                                 .marshall(globalSecondaryIndexUpdatesListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (updateTableRequest.getStreamSpecification() != null) {
-                jsonWriter.key("StreamSpecification");
-                StreamSpecificationJsonMarshaller.getInstance()
-                        .marshall(updateTableRequest.getStreamSpecification(),
-                                jsonWriter);
+                jsonGenerator.writeFieldName("StreamSpecification");
+                StreamSpecificationJsonMarshaller.getInstance().marshall(
+                        updateTableRequest.getStreamSpecification(),
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.0");

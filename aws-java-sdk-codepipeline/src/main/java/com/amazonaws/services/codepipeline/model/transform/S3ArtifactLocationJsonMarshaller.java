@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class S3ArtifactLocationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(S3ArtifactLocation s3ArtifactLocation,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (s3ArtifactLocation == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (s3ArtifactLocation.getBucketName() != null) {
-                jsonWriter.key("bucketName").value(
+                jsonGenerator.writeFieldName("bucketName").writeValue(
                         s3ArtifactLocation.getBucketName());
             }
             if (s3ArtifactLocation.getObjectKey() != null) {
-                jsonWriter.key("objectKey").value(
+                jsonGenerator.writeFieldName("objectKey").writeValue(
                         s3ArtifactLocation.getObjectKey());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

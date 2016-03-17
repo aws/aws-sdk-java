@@ -40,101 +40,109 @@ import com.amazonaws.util.json.*;
 public class DirectoryDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DirectoryDescription directoryDescription,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (directoryDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (directoryDescription.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         directoryDescription.getDirectoryId());
             }
             if (directoryDescription.getName() != null) {
-                jsonWriter.key("Name").value(directoryDescription.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        directoryDescription.getName());
             }
             if (directoryDescription.getShortName() != null) {
-                jsonWriter.key("ShortName").value(
+                jsonGenerator.writeFieldName("ShortName").writeValue(
                         directoryDescription.getShortName());
             }
             if (directoryDescription.getSize() != null) {
-                jsonWriter.key("Size").value(directoryDescription.getSize());
+                jsonGenerator.writeFieldName("Size").writeValue(
+                        directoryDescription.getSize());
             }
             if (directoryDescription.getAlias() != null) {
-                jsonWriter.key("Alias").value(directoryDescription.getAlias());
+                jsonGenerator.writeFieldName("Alias").writeValue(
+                        directoryDescription.getAlias());
             }
             if (directoryDescription.getAccessUrl() != null) {
-                jsonWriter.key("AccessUrl").value(
+                jsonGenerator.writeFieldName("AccessUrl").writeValue(
                         directoryDescription.getAccessUrl());
             }
             if (directoryDescription.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         directoryDescription.getDescription());
             }
 
             com.amazonaws.internal.SdkInternalList<String> dnsIpAddrsList = (com.amazonaws.internal.SdkInternalList<String>) directoryDescription
                     .getDnsIpAddrs();
             if (!dnsIpAddrsList.isEmpty() || !dnsIpAddrsList.isAutoConstruct()) {
-                jsonWriter.key("DnsIpAddrs");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("DnsIpAddrs");
+                jsonGenerator.writeStartArray();
                 for (String dnsIpAddrsListValue : dnsIpAddrsList) {
                     if (dnsIpAddrsListValue != null) {
-                        jsonWriter.value(dnsIpAddrsListValue);
+                        jsonGenerator.writeValue(dnsIpAddrsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (directoryDescription.getStage() != null) {
-                jsonWriter.key("Stage").value(directoryDescription.getStage());
+                jsonGenerator.writeFieldName("Stage").writeValue(
+                        directoryDescription.getStage());
             }
             if (directoryDescription.getLaunchTime() != null) {
-                jsonWriter.key("LaunchTime").value(
+                jsonGenerator.writeFieldName("LaunchTime").writeValue(
                         directoryDescription.getLaunchTime());
             }
             if (directoryDescription.getStageLastUpdatedDateTime() != null) {
-                jsonWriter.key("StageLastUpdatedDateTime").value(
-                        directoryDescription.getStageLastUpdatedDateTime());
+                jsonGenerator.writeFieldName("StageLastUpdatedDateTime")
+                        .writeValue(
+                                directoryDescription
+                                        .getStageLastUpdatedDateTime());
             }
             if (directoryDescription.getType() != null) {
-                jsonWriter.key("Type").value(directoryDescription.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        directoryDescription.getType());
             }
             if (directoryDescription.getVpcSettings() != null) {
-                jsonWriter.key("VpcSettings");
+                jsonGenerator.writeFieldName("VpcSettings");
                 DirectoryVpcSettingsDescriptionJsonMarshaller.getInstance()
                         .marshall(directoryDescription.getVpcSettings(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (directoryDescription.getConnectSettings() != null) {
-                jsonWriter.key("ConnectSettings");
+                jsonGenerator.writeFieldName("ConnectSettings");
                 DirectoryConnectSettingsDescriptionJsonMarshaller.getInstance()
                         .marshall(directoryDescription.getConnectSettings(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (directoryDescription.getRadiusSettings() != null) {
-                jsonWriter.key("RadiusSettings");
-                RadiusSettingsJsonMarshaller.getInstance().marshall(
-                        directoryDescription.getRadiusSettings(), jsonWriter);
+                jsonGenerator.writeFieldName("RadiusSettings");
+                RadiusSettingsJsonMarshaller.getInstance()
+                        .marshall(directoryDescription.getRadiusSettings(),
+                                jsonGenerator);
             }
             if (directoryDescription.getRadiusStatus() != null) {
-                jsonWriter.key("RadiusStatus").value(
+                jsonGenerator.writeFieldName("RadiusStatus").writeValue(
                         directoryDescription.getRadiusStatus());
             }
             if (directoryDescription.getStageReason() != null) {
-                jsonWriter.key("StageReason").value(
+                jsonGenerator.writeFieldName("StageReason").writeValue(
                         directoryDescription.getStageReason());
             }
             if (directoryDescription.getSsoEnabled() != null) {
-                jsonWriter.key("SsoEnabled").value(
+                jsonGenerator.writeFieldName("SsoEnabled").writeValue(
                         directoryDescription.getSsoEnabled());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

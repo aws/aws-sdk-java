@@ -40,28 +40,31 @@ import com.amazonaws.util.json.*;
 public class UlimitJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Ulimit ulimit, JSONWriter jsonWriter) {
+    public void marshall(Ulimit ulimit, SdkJsonGenerator jsonGenerator) {
         if (ulimit == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (ulimit.getName() != null) {
-                jsonWriter.key("name").value(ulimit.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        ulimit.getName());
             }
             if (ulimit.getSoftLimit() != null) {
-                jsonWriter.key("softLimit").value(ulimit.getSoftLimit());
+                jsonGenerator.writeFieldName("softLimit").writeValue(
+                        ulimit.getSoftLimit());
             }
             if (ulimit.getHardLimit() != null) {
-                jsonWriter.key("hardLimit").value(ulimit.getHardLimit());
+                jsonGenerator.writeFieldName("hardLimit").writeValue(
+                        ulimit.getHardLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

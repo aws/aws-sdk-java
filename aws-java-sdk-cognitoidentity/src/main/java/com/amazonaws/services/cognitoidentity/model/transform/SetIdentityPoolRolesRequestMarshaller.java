@@ -66,38 +66,36 @@ public class SetIdentityPoolRolesRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (setIdentityPoolRolesRequest.getIdentityPoolId() != null) {
-                jsonWriter.key("IdentityPoolId").value(
+                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(
                         setIdentityPoolRolesRequest.getIdentityPoolId());
             }
 
             java.util.Map<String, String> rolesMap = setIdentityPoolRolesRequest
                     .getRoles();
             if (rolesMap != null) {
-                jsonWriter.key("Roles");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Roles");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> rolesMapValue : rolesMap
                         .entrySet()) {
                     if (rolesMapValue.getValue() != null) {
-                        jsonWriter.key(rolesMapValue.getKey());
+                        jsonGenerator.writeFieldName(rolesMapValue.getKey());
 
-                        jsonWriter.value(rolesMapValue.getValue());
+                        jsonGenerator.writeValue(rolesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

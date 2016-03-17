@@ -65,45 +65,43 @@ public class ActivateGatewayRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (activateGatewayRequest.getActivationKey() != null) {
-                jsonWriter.key("ActivationKey").value(
+                jsonGenerator.writeFieldName("ActivationKey").writeValue(
                         activateGatewayRequest.getActivationKey());
             }
             if (activateGatewayRequest.getGatewayName() != null) {
-                jsonWriter.key("GatewayName").value(
+                jsonGenerator.writeFieldName("GatewayName").writeValue(
                         activateGatewayRequest.getGatewayName());
             }
             if (activateGatewayRequest.getGatewayTimezone() != null) {
-                jsonWriter.key("GatewayTimezone").value(
+                jsonGenerator.writeFieldName("GatewayTimezone").writeValue(
                         activateGatewayRequest.getGatewayTimezone());
             }
             if (activateGatewayRequest.getGatewayRegion() != null) {
-                jsonWriter.key("GatewayRegion").value(
+                jsonGenerator.writeFieldName("GatewayRegion").writeValue(
                         activateGatewayRequest.getGatewayRegion());
             }
             if (activateGatewayRequest.getGatewayType() != null) {
-                jsonWriter.key("GatewayType").value(
+                jsonGenerator.writeFieldName("GatewayType").writeValue(
                         activateGatewayRequest.getGatewayType());
             }
             if (activateGatewayRequest.getTapeDriveType() != null) {
-                jsonWriter.key("TapeDriveType").value(
+                jsonGenerator.writeFieldName("TapeDriveType").writeValue(
                         activateGatewayRequest.getTapeDriveType());
             }
             if (activateGatewayRequest.getMediumChangerType() != null) {
-                jsonWriter.key("MediumChangerType").value(
+                jsonGenerator.writeFieldName("MediumChangerType").writeValue(
                         activateGatewayRequest.getMediumChangerType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

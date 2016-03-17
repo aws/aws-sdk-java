@@ -40,53 +40,56 @@ import com.amazonaws.util.json.*;
 public class ReplicationSubnetGroupJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ReplicationSubnetGroup replicationSubnetGroup,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (replicationSubnetGroup == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (replicationSubnetGroup.getReplicationSubnetGroupIdentifier() != null) {
-                jsonWriter.key("ReplicationSubnetGroupIdentifier").value(
-                        replicationSubnetGroup
-                                .getReplicationSubnetGroupIdentifier());
+                jsonGenerator
+                        .writeFieldName("ReplicationSubnetGroupIdentifier")
+                        .writeValue(
+                                replicationSubnetGroup
+                                        .getReplicationSubnetGroupIdentifier());
             }
             if (replicationSubnetGroup.getReplicationSubnetGroupDescription() != null) {
-                jsonWriter.key("ReplicationSubnetGroupDescription").value(
+                jsonGenerator.writeFieldName(
+                        "ReplicationSubnetGroupDescription").writeValue(
                         replicationSubnetGroup
                                 .getReplicationSubnetGroupDescription());
             }
             if (replicationSubnetGroup.getVpcId() != null) {
-                jsonWriter.key("VpcId")
-                        .value(replicationSubnetGroup.getVpcId());
+                jsonGenerator.writeFieldName("VpcId").writeValue(
+                        replicationSubnetGroup.getVpcId());
             }
             if (replicationSubnetGroup.getSubnetGroupStatus() != null) {
-                jsonWriter.key("SubnetGroupStatus").value(
+                jsonGenerator.writeFieldName("SubnetGroupStatus").writeValue(
                         replicationSubnetGroup.getSubnetGroupStatus());
             }
 
             java.util.List<Subnet> subnetsList = replicationSubnetGroup
                     .getSubnets();
             if (subnetsList != null) {
-                jsonWriter.key("Subnets");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Subnets");
+                jsonGenerator.writeStartArray();
                 for (Subnet subnetsListValue : subnetsList) {
                     if (subnetsListValue != null) {
 
                         SubnetJsonMarshaller.getInstance().marshall(
-                                subnetsListValue, jsonWriter);
+                                subnetsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

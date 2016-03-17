@@ -40,50 +40,56 @@ import com.amazonaws.util.json.*;
 public class RdsDbInstanceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RdsDbInstance rdsDbInstance, JSONWriter jsonWriter) {
+    public void marshall(RdsDbInstance rdsDbInstance,
+            SdkJsonGenerator jsonGenerator) {
         if (rdsDbInstance == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (rdsDbInstance.getRdsDbInstanceArn() != null) {
-                jsonWriter.key("RdsDbInstanceArn").value(
+                jsonGenerator.writeFieldName("RdsDbInstanceArn").writeValue(
                         rdsDbInstance.getRdsDbInstanceArn());
             }
             if (rdsDbInstance.getDbInstanceIdentifier() != null) {
-                jsonWriter.key("DbInstanceIdentifier").value(
-                        rdsDbInstance.getDbInstanceIdentifier());
+                jsonGenerator.writeFieldName("DbInstanceIdentifier")
+                        .writeValue(rdsDbInstance.getDbInstanceIdentifier());
             }
             if (rdsDbInstance.getDbUser() != null) {
-                jsonWriter.key("DbUser").value(rdsDbInstance.getDbUser());
+                jsonGenerator.writeFieldName("DbUser").writeValue(
+                        rdsDbInstance.getDbUser());
             }
             if (rdsDbInstance.getDbPassword() != null) {
-                jsonWriter.key("DbPassword").value(
+                jsonGenerator.writeFieldName("DbPassword").writeValue(
                         rdsDbInstance.getDbPassword());
             }
             if (rdsDbInstance.getRegion() != null) {
-                jsonWriter.key("Region").value(rdsDbInstance.getRegion());
+                jsonGenerator.writeFieldName("Region").writeValue(
+                        rdsDbInstance.getRegion());
             }
             if (rdsDbInstance.getAddress() != null) {
-                jsonWriter.key("Address").value(rdsDbInstance.getAddress());
+                jsonGenerator.writeFieldName("Address").writeValue(
+                        rdsDbInstance.getAddress());
             }
             if (rdsDbInstance.getEngine() != null) {
-                jsonWriter.key("Engine").value(rdsDbInstance.getEngine());
+                jsonGenerator.writeFieldName("Engine").writeValue(
+                        rdsDbInstance.getEngine());
             }
             if (rdsDbInstance.getStackId() != null) {
-                jsonWriter.key("StackId").value(rdsDbInstance.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(
+                        rdsDbInstance.getStackId());
             }
             if (rdsDbInstance.getMissingOnRds() != null) {
-                jsonWriter.key("MissingOnRds").value(
+                jsonGenerator.writeFieldName("MissingOnRds").writeValue(
                         rdsDbInstance.getMissingOnRds());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

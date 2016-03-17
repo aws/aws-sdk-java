@@ -204,4 +204,10 @@ public interface Headers {
 
     /** Region where the bucket is located. This header is returned only in HEAD bucket and ListObjects response. */
     public static final String S3_BUCKET_REGION = "x-amz-bucket-region";
+
+    /** Date when multipart upload will become eligible for abort operation by lifecycle. */
+    public static final String ABORT_DATE = "x-amz-abort-date";
+
+    /** Id of the lifecycle rule that makes a multipart upload eligible for abort operation. */
+    public static final String ABORT_RULE_ID = "x-amz-abort-rule-id";
 }

@@ -66,42 +66,40 @@ public class DescribeEcsClustersRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> ecsClusterArnsList = (com.amazonaws.internal.SdkInternalList<String>) describeEcsClustersRequest
                     .getEcsClusterArns();
             if (!ecsClusterArnsList.isEmpty()
                     || !ecsClusterArnsList.isAutoConstruct()) {
-                jsonWriter.key("EcsClusterArns");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("EcsClusterArns");
+                jsonGenerator.writeStartArray();
                 for (String ecsClusterArnsListValue : ecsClusterArnsList) {
                     if (ecsClusterArnsListValue != null) {
-                        jsonWriter.value(ecsClusterArnsListValue);
+                        jsonGenerator.writeValue(ecsClusterArnsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (describeEcsClustersRequest.getStackId() != null) {
-                jsonWriter.key("StackId").value(
+                jsonGenerator.writeFieldName("StackId").writeValue(
                         describeEcsClustersRequest.getStackId());
             }
             if (describeEcsClustersRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         describeEcsClustersRequest.getNextToken());
             }
             if (describeEcsClustersRequest.getMaxResults() != null) {
-                jsonWriter.key("MaxResults").value(
+                jsonGenerator.writeFieldName("MaxResults").writeValue(
                         describeEcsClustersRequest.getMaxResults());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

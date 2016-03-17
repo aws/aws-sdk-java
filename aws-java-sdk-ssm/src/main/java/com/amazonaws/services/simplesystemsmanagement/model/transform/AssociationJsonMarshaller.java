@@ -40,25 +40,27 @@ import com.amazonaws.util.json.*;
 public class AssociationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Association association, JSONWriter jsonWriter) {
+    public void marshall(Association association, SdkJsonGenerator jsonGenerator) {
         if (association == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (association.getName() != null) {
-                jsonWriter.key("Name").value(association.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        association.getName());
             }
             if (association.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(association.getInstanceId());
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
+                        association.getInstanceId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -65,53 +65,51 @@ public class UpdateFleetPortSettingsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateFleetPortSettingsRequest.getFleetId() != null) {
-                jsonWriter.key("FleetId").value(
+                jsonGenerator.writeFieldName("FleetId").writeValue(
                         updateFleetPortSettingsRequest.getFleetId());
             }
 
             java.util.List<IpPermission> inboundPermissionAuthorizationsList = updateFleetPortSettingsRequest
                     .getInboundPermissionAuthorizations();
             if (inboundPermissionAuthorizationsList != null) {
-                jsonWriter.key("InboundPermissionAuthorizations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InboundPermissionAuthorizations");
+                jsonGenerator.writeStartArray();
                 for (IpPermission inboundPermissionAuthorizationsListValue : inboundPermissionAuthorizationsList) {
                     if (inboundPermissionAuthorizationsListValue != null) {
 
                         IpPermissionJsonMarshaller.getInstance().marshall(
                                 inboundPermissionAuthorizationsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<IpPermission> inboundPermissionRevocationsList = updateFleetPortSettingsRequest
                     .getInboundPermissionRevocations();
             if (inboundPermissionRevocationsList != null) {
-                jsonWriter.key("InboundPermissionRevocations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InboundPermissionRevocations");
+                jsonGenerator.writeStartArray();
                 for (IpPermission inboundPermissionRevocationsListValue : inboundPermissionRevocationsList) {
                     if (inboundPermissionRevocationsListValue != null) {
 
                         IpPermissionJsonMarshaller.getInstance().marshall(
                                 inboundPermissionRevocationsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

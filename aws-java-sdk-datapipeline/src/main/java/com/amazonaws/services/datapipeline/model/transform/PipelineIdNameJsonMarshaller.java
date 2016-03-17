@@ -40,25 +40,28 @@ import com.amazonaws.util.json.*;
 public class PipelineIdNameJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PipelineIdName pipelineIdName, JSONWriter jsonWriter) {
+    public void marshall(PipelineIdName pipelineIdName,
+            SdkJsonGenerator jsonGenerator) {
         if (pipelineIdName == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (pipelineIdName.getId() != null) {
-                jsonWriter.key("id").value(pipelineIdName.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        pipelineIdName.getId());
             }
             if (pipelineIdName.getName() != null) {
-                jsonWriter.key("name").value(pipelineIdName.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        pipelineIdName.getName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

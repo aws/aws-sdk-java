@@ -63,47 +63,47 @@ public class CreateHsmRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createHsmRequest.getSubnetId() != null) {
-                jsonWriter.key("SubnetId")
-                        .value(createHsmRequest.getSubnetId());
+                jsonGenerator.writeFieldName("SubnetId").writeValue(
+                        createHsmRequest.getSubnetId());
             }
             if (createHsmRequest.getSshKey() != null) {
-                jsonWriter.key("SshKey").value(createHsmRequest.getSshKey());
+                jsonGenerator.writeFieldName("SshKey").writeValue(
+                        createHsmRequest.getSshKey());
             }
             if (createHsmRequest.getEniIp() != null) {
-                jsonWriter.key("EniIp").value(createHsmRequest.getEniIp());
+                jsonGenerator.writeFieldName("EniIp").writeValue(
+                        createHsmRequest.getEniIp());
             }
             if (createHsmRequest.getIamRoleArn() != null) {
-                jsonWriter.key("IamRoleArn").value(
+                jsonGenerator.writeFieldName("IamRoleArn").writeValue(
                         createHsmRequest.getIamRoleArn());
             }
             if (createHsmRequest.getExternalId() != null) {
-                jsonWriter.key("ExternalId").value(
+                jsonGenerator.writeFieldName("ExternalId").writeValue(
                         createHsmRequest.getExternalId());
             }
             if (createHsmRequest.getSubscriptionType() != null) {
-                jsonWriter.key("SubscriptionType").value(
+                jsonGenerator.writeFieldName("SubscriptionType").writeValue(
                         createHsmRequest.getSubscriptionType());
             }
             if (createHsmRequest.getClientToken() != null) {
-                jsonWriter.key("ClientToken").value(
+                jsonGenerator.writeFieldName("ClientToken").writeValue(
                         createHsmRequest.getClientToken());
             }
             if (createHsmRequest.getSyslogIp() != null) {
-                jsonWriter.key("SyslogIp")
-                        .value(createHsmRequest.getSyslogIp());
+                jsonGenerator.writeFieldName("SyslogIp").writeValue(
+                        createHsmRequest.getSyslogIp());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

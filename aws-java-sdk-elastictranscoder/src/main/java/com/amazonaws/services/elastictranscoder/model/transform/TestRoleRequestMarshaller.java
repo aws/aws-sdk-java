@@ -66,41 +66,40 @@ public class TestRoleRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (testRoleRequest.getRole() != null) {
-                jsonWriter.key("Role").value(testRoleRequest.getRole());
+                jsonGenerator.writeFieldName("Role").writeValue(
+                        testRoleRequest.getRole());
             }
             if (testRoleRequest.getInputBucket() != null) {
-                jsonWriter.key("InputBucket").value(
+                jsonGenerator.writeFieldName("InputBucket").writeValue(
                         testRoleRequest.getInputBucket());
             }
             if (testRoleRequest.getOutputBucket() != null) {
-                jsonWriter.key("OutputBucket").value(
+                jsonGenerator.writeFieldName("OutputBucket").writeValue(
                         testRoleRequest.getOutputBucket());
             }
 
             com.amazonaws.internal.SdkInternalList<String> topicsList = (com.amazonaws.internal.SdkInternalList<String>) testRoleRequest
                     .getTopics();
             if (!topicsList.isEmpty() || !topicsList.isAutoConstruct()) {
-                jsonWriter.key("Topics");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Topics");
+                jsonGenerator.writeStartArray();
                 for (String topicsListValue : topicsList) {
                     if (topicsListValue != null) {
-                        jsonWriter.value(topicsListValue);
+                        jsonGenerator.writeValue(topicsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

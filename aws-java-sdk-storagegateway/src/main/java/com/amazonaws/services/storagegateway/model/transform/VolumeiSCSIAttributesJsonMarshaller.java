@@ -40,40 +40,42 @@ import com.amazonaws.util.json.*;
 public class VolumeiSCSIAttributesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(VolumeiSCSIAttributes volumeiSCSIAttributes,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (volumeiSCSIAttributes == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (volumeiSCSIAttributes.getTargetARN() != null) {
-                jsonWriter.key("TargetARN").value(
+                jsonGenerator.writeFieldName("TargetARN").writeValue(
                         volumeiSCSIAttributes.getTargetARN());
             }
             if (volumeiSCSIAttributes.getNetworkInterfaceId() != null) {
-                jsonWriter.key("NetworkInterfaceId").value(
+                jsonGenerator.writeFieldName("NetworkInterfaceId").writeValue(
                         volumeiSCSIAttributes.getNetworkInterfaceId());
             }
             if (volumeiSCSIAttributes.getNetworkInterfacePort() != null) {
-                jsonWriter.key("NetworkInterfacePort").value(
-                        volumeiSCSIAttributes.getNetworkInterfacePort());
+                jsonGenerator
+                        .writeFieldName("NetworkInterfacePort")
+                        .writeValue(
+                                volumeiSCSIAttributes.getNetworkInterfacePort());
             }
             if (volumeiSCSIAttributes.getLunNumber() != null) {
-                jsonWriter.key("LunNumber").value(
+                jsonGenerator.writeFieldName("LunNumber").writeValue(
                         volumeiSCSIAttributes.getLunNumber());
             }
             if (volumeiSCSIAttributes.getChapEnabled() != null) {
-                jsonWriter.key("ChapEnabled").value(
+                jsonGenerator.writeFieldName("ChapEnabled").writeValue(
                         volumeiSCSIAttributes.getChapEnabled());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

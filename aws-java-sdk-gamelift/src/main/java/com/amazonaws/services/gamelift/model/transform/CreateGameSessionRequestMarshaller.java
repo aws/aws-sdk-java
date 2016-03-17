@@ -64,49 +64,48 @@ public class CreateGameSessionRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createGameSessionRequest.getFleetId() != null) {
-                jsonWriter.key("FleetId").value(
+                jsonGenerator.writeFieldName("FleetId").writeValue(
                         createGameSessionRequest.getFleetId());
             }
             if (createGameSessionRequest.getAliasId() != null) {
-                jsonWriter.key("AliasId").value(
+                jsonGenerator.writeFieldName("AliasId").writeValue(
                         createGameSessionRequest.getAliasId());
             }
             if (createGameSessionRequest.getMaximumPlayerSessionCount() != null) {
-                jsonWriter.key("MaximumPlayerSessionCount")
-                        .value(createGameSessionRequest
-                                .getMaximumPlayerSessionCount());
+                jsonGenerator.writeFieldName("MaximumPlayerSessionCount")
+                        .writeValue(
+                                createGameSessionRequest
+                                        .getMaximumPlayerSessionCount());
             }
             if (createGameSessionRequest.getName() != null) {
-                jsonWriter.key("Name")
-                        .value(createGameSessionRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createGameSessionRequest.getName());
             }
 
             java.util.List<GameProperty> gamePropertiesList = createGameSessionRequest
                     .getGameProperties();
             if (gamePropertiesList != null) {
-                jsonWriter.key("GameProperties");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("GameProperties");
+                jsonGenerator.writeStartArray();
                 for (GameProperty gamePropertiesListValue : gamePropertiesList) {
                     if (gamePropertiesListValue != null) {
 
                         GamePropertyJsonMarshaller.getInstance().marshall(
-                                gamePropertiesListValue, jsonWriter);
+                                gamePropertiesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

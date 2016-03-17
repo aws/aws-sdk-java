@@ -65,25 +65,23 @@ public class ScheduleKeyDeletionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (scheduleKeyDeletionRequest.getKeyId() != null) {
-                jsonWriter.key("KeyId").value(
+                jsonGenerator.writeFieldName("KeyId").writeValue(
                         scheduleKeyDeletionRequest.getKeyId());
             }
             if (scheduleKeyDeletionRequest.getPendingWindowInDays() != null) {
-                jsonWriter.key("PendingWindowInDays").value(
+                jsonGenerator.writeFieldName("PendingWindowInDays").writeValue(
                         scheduleKeyDeletionRequest.getPendingWindowInDays());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

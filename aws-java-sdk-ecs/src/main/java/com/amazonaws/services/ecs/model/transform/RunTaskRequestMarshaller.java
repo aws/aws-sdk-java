@@ -64,36 +64,36 @@ public class RunTaskRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (runTaskRequest.getCluster() != null) {
-                jsonWriter.key("cluster").value(runTaskRequest.getCluster());
+                jsonGenerator.writeFieldName("cluster").writeValue(
+                        runTaskRequest.getCluster());
             }
             if (runTaskRequest.getTaskDefinition() != null) {
-                jsonWriter.key("taskDefinition").value(
+                jsonGenerator.writeFieldName("taskDefinition").writeValue(
                         runTaskRequest.getTaskDefinition());
             }
             if (runTaskRequest.getOverrides() != null) {
-                jsonWriter.key("overrides");
+                jsonGenerator.writeFieldName("overrides");
                 TaskOverrideJsonMarshaller.getInstance().marshall(
-                        runTaskRequest.getOverrides(), jsonWriter);
+                        runTaskRequest.getOverrides(), jsonGenerator);
             }
             if (runTaskRequest.getCount() != null) {
-                jsonWriter.key("count").value(runTaskRequest.getCount());
+                jsonGenerator.writeFieldName("count").writeValue(
+                        runTaskRequest.getCount());
             }
             if (runTaskRequest.getStartedBy() != null) {
-                jsonWriter.key("startedBy")
-                        .value(runTaskRequest.getStartedBy());
+                jsonGenerator.writeFieldName("startedBy").writeValue(
+                        runTaskRequest.getStartedBy());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -27,13 +27,13 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access to the Kinesis stream.
+     * The ARN of the IAM role that grants access to the Amazon Kinesis stream.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Amazon Kinesis stream.
      * </p>
      */
     private String streamName;
@@ -46,11 +46,12 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access to the Kinesis stream.
+     * The ARN of the IAM role that grants access to the Amazon Kinesis stream.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that grants access to the Kinesis stream.
+     *        The ARN of the IAM role that grants access to the Amazon Kinesis
+     *        stream.
      */
 
     public void setRoleArn(String roleArn) {
@@ -59,10 +60,11 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access to the Kinesis stream.
+     * The ARN of the IAM role that grants access to the Amazon Kinesis stream.
      * </p>
      * 
-     * @return The ARN of the IAM role that grants access to the Kinesis stream.
+     * @return The ARN of the IAM role that grants access to the Amazon Kinesis
+     *         stream.
      */
 
     public String getRoleArn() {
@@ -71,11 +73,12 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access to the Kinesis stream.
+     * The ARN of the IAM role that grants access to the Amazon Kinesis stream.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that grants access to the Kinesis stream.
+     *        The ARN of the IAM role that grants access to the Amazon Kinesis
+     *        stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -87,11 +90,11 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Amazon Kinesis stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Kinesis stream.
+     *        The name of the Amazon Kinesis stream.
      */
 
     public void setStreamName(String streamName) {
@@ -100,10 +103,10 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Amazon Kinesis stream.
      * </p>
      * 
-     * @return The name of the Kinesis stream.
+     * @return The name of the Amazon Kinesis stream.
      */
 
     public String getStreamName() {
@@ -112,11 +115,11 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Amazon Kinesis stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Kinesis stream.
+     *        The name of the Amazon Kinesis stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -40,255 +40,266 @@ import com.amazonaws.util.json.*;
 public class ContainerDefinitionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ContainerDefinition containerDefinition,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (containerDefinition == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (containerDefinition.getName() != null) {
-                jsonWriter.key("name").value(containerDefinition.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        containerDefinition.getName());
             }
             if (containerDefinition.getImage() != null) {
-                jsonWriter.key("image").value(containerDefinition.getImage());
+                jsonGenerator.writeFieldName("image").writeValue(
+                        containerDefinition.getImage());
             }
             if (containerDefinition.getCpu() != null) {
-                jsonWriter.key("cpu").value(containerDefinition.getCpu());
+                jsonGenerator.writeFieldName("cpu").writeValue(
+                        containerDefinition.getCpu());
             }
             if (containerDefinition.getMemory() != null) {
-                jsonWriter.key("memory").value(containerDefinition.getMemory());
+                jsonGenerator.writeFieldName("memory").writeValue(
+                        containerDefinition.getMemory());
             }
 
             com.amazonaws.internal.SdkInternalList<String> linksList = (com.amazonaws.internal.SdkInternalList<String>) containerDefinition
                     .getLinks();
             if (!linksList.isEmpty() || !linksList.isAutoConstruct()) {
-                jsonWriter.key("links");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("links");
+                jsonGenerator.writeStartArray();
                 for (String linksListValue : linksList) {
                     if (linksListValue != null) {
-                        jsonWriter.value(linksListValue);
+                        jsonGenerator.writeValue(linksListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<PortMapping> portMappingsList = (com.amazonaws.internal.SdkInternalList<PortMapping>) containerDefinition
                     .getPortMappings();
             if (!portMappingsList.isEmpty()
                     || !portMappingsList.isAutoConstruct()) {
-                jsonWriter.key("portMappings");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("portMappings");
+                jsonGenerator.writeStartArray();
                 for (PortMapping portMappingsListValue : portMappingsList) {
                     if (portMappingsListValue != null) {
 
                         PortMappingJsonMarshaller.getInstance().marshall(
-                                portMappingsListValue, jsonWriter);
+                                portMappingsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (containerDefinition.getEssential() != null) {
-                jsonWriter.key("essential").value(
+                jsonGenerator.writeFieldName("essential").writeValue(
                         containerDefinition.getEssential());
             }
 
             com.amazonaws.internal.SdkInternalList<String> entryPointList = (com.amazonaws.internal.SdkInternalList<String>) containerDefinition
                     .getEntryPoint();
             if (!entryPointList.isEmpty() || !entryPointList.isAutoConstruct()) {
-                jsonWriter.key("entryPoint");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("entryPoint");
+                jsonGenerator.writeStartArray();
                 for (String entryPointListValue : entryPointList) {
                     if (entryPointListValue != null) {
-                        jsonWriter.value(entryPointListValue);
+                        jsonGenerator.writeValue(entryPointListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> commandList = (com.amazonaws.internal.SdkInternalList<String>) containerDefinition
                     .getCommand();
             if (!commandList.isEmpty() || !commandList.isAutoConstruct()) {
-                jsonWriter.key("command");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("command");
+                jsonGenerator.writeStartArray();
                 for (String commandListValue : commandList) {
                     if (commandListValue != null) {
-                        jsonWriter.value(commandListValue);
+                        jsonGenerator.writeValue(commandListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<KeyValuePair> environmentList = (com.amazonaws.internal.SdkInternalList<KeyValuePair>) containerDefinition
                     .getEnvironment();
             if (!environmentList.isEmpty()
                     || !environmentList.isAutoConstruct()) {
-                jsonWriter.key("environment");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("environment");
+                jsonGenerator.writeStartArray();
                 for (KeyValuePair environmentListValue : environmentList) {
                     if (environmentListValue != null) {
 
                         KeyValuePairJsonMarshaller.getInstance().marshall(
-                                environmentListValue, jsonWriter);
+                                environmentListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<MountPoint> mountPointsList = (com.amazonaws.internal.SdkInternalList<MountPoint>) containerDefinition
                     .getMountPoints();
             if (!mountPointsList.isEmpty()
                     || !mountPointsList.isAutoConstruct()) {
-                jsonWriter.key("mountPoints");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("mountPoints");
+                jsonGenerator.writeStartArray();
                 for (MountPoint mountPointsListValue : mountPointsList) {
                     if (mountPointsListValue != null) {
 
                         MountPointJsonMarshaller.getInstance().marshall(
-                                mountPointsListValue, jsonWriter);
+                                mountPointsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<VolumeFrom> volumesFromList = (com.amazonaws.internal.SdkInternalList<VolumeFrom>) containerDefinition
                     .getVolumesFrom();
             if (!volumesFromList.isEmpty()
                     || !volumesFromList.isAutoConstruct()) {
-                jsonWriter.key("volumesFrom");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("volumesFrom");
+                jsonGenerator.writeStartArray();
                 for (VolumeFrom volumesFromListValue : volumesFromList) {
                     if (volumesFromListValue != null) {
 
                         VolumeFromJsonMarshaller.getInstance().marshall(
-                                volumesFromListValue, jsonWriter);
+                                volumesFromListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (containerDefinition.getHostname() != null) {
-                jsonWriter.key("hostname").value(
+                jsonGenerator.writeFieldName("hostname").writeValue(
                         containerDefinition.getHostname());
             }
             if (containerDefinition.getUser() != null) {
-                jsonWriter.key("user").value(containerDefinition.getUser());
+                jsonGenerator.writeFieldName("user").writeValue(
+                        containerDefinition.getUser());
             }
             if (containerDefinition.getWorkingDirectory() != null) {
-                jsonWriter.key("workingDirectory").value(
+                jsonGenerator.writeFieldName("workingDirectory").writeValue(
                         containerDefinition.getWorkingDirectory());
             }
             if (containerDefinition.getDisableNetworking() != null) {
-                jsonWriter.key("disableNetworking").value(
+                jsonGenerator.writeFieldName("disableNetworking").writeValue(
                         containerDefinition.getDisableNetworking());
             }
             if (containerDefinition.getPrivileged() != null) {
-                jsonWriter.key("privileged").value(
+                jsonGenerator.writeFieldName("privileged").writeValue(
                         containerDefinition.getPrivileged());
             }
             if (containerDefinition.getReadonlyRootFilesystem() != null) {
-                jsonWriter.key("readonlyRootFilesystem").value(
-                        containerDefinition.getReadonlyRootFilesystem());
+                jsonGenerator
+                        .writeFieldName("readonlyRootFilesystem")
+                        .writeValue(
+                                containerDefinition.getReadonlyRootFilesystem());
             }
 
             com.amazonaws.internal.SdkInternalList<String> dnsServersList = (com.amazonaws.internal.SdkInternalList<String>) containerDefinition
                     .getDnsServers();
             if (!dnsServersList.isEmpty() || !dnsServersList.isAutoConstruct()) {
-                jsonWriter.key("dnsServers");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("dnsServers");
+                jsonGenerator.writeStartArray();
                 for (String dnsServersListValue : dnsServersList) {
                     if (dnsServersListValue != null) {
-                        jsonWriter.value(dnsServersListValue);
+                        jsonGenerator.writeValue(dnsServersListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> dnsSearchDomainsList = (com.amazonaws.internal.SdkInternalList<String>) containerDefinition
                     .getDnsSearchDomains();
             if (!dnsSearchDomainsList.isEmpty()
                     || !dnsSearchDomainsList.isAutoConstruct()) {
-                jsonWriter.key("dnsSearchDomains");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("dnsSearchDomains");
+                jsonGenerator.writeStartArray();
                 for (String dnsSearchDomainsListValue : dnsSearchDomainsList) {
                     if (dnsSearchDomainsListValue != null) {
-                        jsonWriter.value(dnsSearchDomainsListValue);
+                        jsonGenerator.writeValue(dnsSearchDomainsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<HostEntry> extraHostsList = (com.amazonaws.internal.SdkInternalList<HostEntry>) containerDefinition
                     .getExtraHosts();
             if (!extraHostsList.isEmpty() || !extraHostsList.isAutoConstruct()) {
-                jsonWriter.key("extraHosts");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("extraHosts");
+                jsonGenerator.writeStartArray();
                 for (HostEntry extraHostsListValue : extraHostsList) {
                     if (extraHostsListValue != null) {
 
                         HostEntryJsonMarshaller.getInstance().marshall(
-                                extraHostsListValue, jsonWriter);
+                                extraHostsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> dockerSecurityOptionsList = (com.amazonaws.internal.SdkInternalList<String>) containerDefinition
                     .getDockerSecurityOptions();
             if (!dockerSecurityOptionsList.isEmpty()
                     || !dockerSecurityOptionsList.isAutoConstruct()) {
-                jsonWriter.key("dockerSecurityOptions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("dockerSecurityOptions");
+                jsonGenerator.writeStartArray();
                 for (String dockerSecurityOptionsListValue : dockerSecurityOptionsList) {
                     if (dockerSecurityOptionsListValue != null) {
-                        jsonWriter.value(dockerSecurityOptionsListValue);
+                        jsonGenerator
+                                .writeValue(dockerSecurityOptionsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.Map<String, String> dockerLabelsMap = containerDefinition
                     .getDockerLabels();
             if (dockerLabelsMap != null) {
-                jsonWriter.key("dockerLabels");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("dockerLabels");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> dockerLabelsMapValue : dockerLabelsMap
                         .entrySet()) {
                     if (dockerLabelsMapValue.getValue() != null) {
-                        jsonWriter.key(dockerLabelsMapValue.getKey());
+                        jsonGenerator.writeFieldName(dockerLabelsMapValue
+                                .getKey());
 
-                        jsonWriter.value(dockerLabelsMapValue.getValue());
+                        jsonGenerator.writeValue(dockerLabelsMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalList<Ulimit> ulimitsList = (com.amazonaws.internal.SdkInternalList<Ulimit>) containerDefinition
                     .getUlimits();
             if (!ulimitsList.isEmpty() || !ulimitsList.isAutoConstruct()) {
-                jsonWriter.key("ulimits");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ulimits");
+                jsonGenerator.writeStartArray();
                 for (Ulimit ulimitsListValue : ulimitsList) {
                     if (ulimitsListValue != null) {
 
                         UlimitJsonMarshaller.getInstance().marshall(
-                                ulimitsListValue, jsonWriter);
+                                ulimitsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (containerDefinition.getLogConfiguration() != null) {
-                jsonWriter.key("logConfiguration");
+                jsonGenerator.writeFieldName("logConfiguration");
                 LogConfigurationJsonMarshaller.getInstance().marshall(
-                        containerDefinition.getLogConfiguration(), jsonWriter);
+                        containerDefinition.getLogConfiguration(),
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

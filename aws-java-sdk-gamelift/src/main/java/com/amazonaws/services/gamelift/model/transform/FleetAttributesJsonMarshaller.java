@@ -40,67 +40,75 @@ import com.amazonaws.util.json.*;
 public class FleetAttributesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(FleetAttributes fleetAttributes, JSONWriter jsonWriter) {
+    public void marshall(FleetAttributes fleetAttributes,
+            SdkJsonGenerator jsonGenerator) {
         if (fleetAttributes == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (fleetAttributes.getFleetId() != null) {
-                jsonWriter.key("FleetId").value(fleetAttributes.getFleetId());
+                jsonGenerator.writeFieldName("FleetId").writeValue(
+                        fleetAttributes.getFleetId());
             }
             if (fleetAttributes.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         fleetAttributes.getDescription());
             }
             if (fleetAttributes.getName() != null) {
-                jsonWriter.key("Name").value(fleetAttributes.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        fleetAttributes.getName());
             }
             if (fleetAttributes.getCreationTime() != null) {
-                jsonWriter.key("CreationTime").value(
+                jsonGenerator.writeFieldName("CreationTime").writeValue(
                         fleetAttributes.getCreationTime());
             }
             if (fleetAttributes.getTerminationTime() != null) {
-                jsonWriter.key("TerminationTime").value(
+                jsonGenerator.writeFieldName("TerminationTime").writeValue(
                         fleetAttributes.getTerminationTime());
             }
             if (fleetAttributes.getStatus() != null) {
-                jsonWriter.key("Status").value(fleetAttributes.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        fleetAttributes.getStatus());
             }
             if (fleetAttributes.getBuildId() != null) {
-                jsonWriter.key("BuildId").value(fleetAttributes.getBuildId());
+                jsonGenerator.writeFieldName("BuildId").writeValue(
+                        fleetAttributes.getBuildId());
             }
             if (fleetAttributes.getServerLaunchPath() != null) {
-                jsonWriter.key("ServerLaunchPath").value(
+                jsonGenerator.writeFieldName("ServerLaunchPath").writeValue(
                         fleetAttributes.getServerLaunchPath());
             }
             if (fleetAttributes.getServerLaunchParameters() != null) {
-                jsonWriter.key("ServerLaunchParameters").value(
-                        fleetAttributes.getServerLaunchParameters());
+                jsonGenerator
+                        .writeFieldName("ServerLaunchParameters")
+                        .writeValue(fleetAttributes.getServerLaunchParameters());
             }
 
             java.util.List<String> logPathsList = fleetAttributes.getLogPaths();
             if (logPathsList != null) {
-                jsonWriter.key("LogPaths");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("LogPaths");
+                jsonGenerator.writeStartArray();
                 for (String logPathsListValue : logPathsList) {
                     if (logPathsListValue != null) {
-                        jsonWriter.value(logPathsListValue);
+                        jsonGenerator.writeValue(logPathsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (fleetAttributes.getNewGameSessionProtectionPolicy() != null) {
-                jsonWriter.key("NewGameSessionProtectionPolicy").value(
-                        fleetAttributes.getNewGameSessionProtectionPolicy());
+                jsonGenerator.writeFieldName("NewGameSessionProtectionPolicy")
+                        .writeValue(
+                                fleetAttributes
+                                        .getNewGameSessionProtectionPolicy());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

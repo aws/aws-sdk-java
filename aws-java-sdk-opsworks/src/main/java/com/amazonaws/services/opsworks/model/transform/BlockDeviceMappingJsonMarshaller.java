@@ -40,37 +40,37 @@ import com.amazonaws.util.json.*;
 public class BlockDeviceMappingJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(BlockDeviceMapping blockDeviceMapping,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (blockDeviceMapping == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (blockDeviceMapping.getDeviceName() != null) {
-                jsonWriter.key("DeviceName").value(
+                jsonGenerator.writeFieldName("DeviceName").writeValue(
                         blockDeviceMapping.getDeviceName());
             }
             if (blockDeviceMapping.getNoDevice() != null) {
-                jsonWriter.key("NoDevice").value(
+                jsonGenerator.writeFieldName("NoDevice").writeValue(
                         blockDeviceMapping.getNoDevice());
             }
             if (blockDeviceMapping.getVirtualName() != null) {
-                jsonWriter.key("VirtualName").value(
+                jsonGenerator.writeFieldName("VirtualName").writeValue(
                         blockDeviceMapping.getVirtualName());
             }
             if (blockDeviceMapping.getEbs() != null) {
-                jsonWriter.key("Ebs");
+                jsonGenerator.writeFieldName("Ebs");
                 EbsBlockDeviceJsonMarshaller.getInstance().marshall(
-                        blockDeviceMapping.getEbs(), jsonWriter);
+                        blockDeviceMapping.getEbs(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

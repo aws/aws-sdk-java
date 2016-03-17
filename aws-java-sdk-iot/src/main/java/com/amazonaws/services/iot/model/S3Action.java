@@ -33,7 +33,7 @@ public class S3Action implements Serializable, Cloneable {
     private String roleArn;
     /**
      * <p>
-     * The S3 bucket.
+     * The Amazon S3 bucket.
      * </p>
      */
     private String bucketName;
@@ -87,11 +87,11 @@ public class S3Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket.
+     * The Amazon S3 bucket.
      * </p>
      * 
      * @param bucketName
-     *        The S3 bucket.
+     *        The Amazon S3 bucket.
      */
 
     public void setBucketName(String bucketName) {
@@ -100,10 +100,10 @@ public class S3Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket.
+     * The Amazon S3 bucket.
      * </p>
      * 
-     * @return The S3 bucket.
+     * @return The Amazon S3 bucket.
      */
 
     public String getBucketName() {
@@ -112,11 +112,11 @@ public class S3Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket.
+     * The Amazon S3 bucket.
      * </p>
      * 
      * @param bucketName
-     *        The S3 bucket.
+     *        The Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

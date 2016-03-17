@@ -40,31 +40,31 @@ import com.amazonaws.util.json.*;
 public class ApplicationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Application application, JSONWriter jsonWriter) {
+    public void marshall(Application application, SdkJsonGenerator jsonGenerator) {
         if (application == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (application.getApplicationArn() != null) {
-                jsonWriter.key("applicationArn").value(
+                jsonGenerator.writeFieldName("applicationArn").writeValue(
                         application.getApplicationArn());
             }
             if (application.getApplicationName() != null) {
-                jsonWriter.key("applicationName").value(
+                jsonGenerator.writeFieldName("applicationName").writeValue(
                         application.getApplicationName());
             }
             if (application.getResourceGroupArn() != null) {
-                jsonWriter.key("resourceGroupArn").value(
+                jsonGenerator.writeFieldName("resourceGroupArn").writeValue(
                         application.getResourceGroupArn());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

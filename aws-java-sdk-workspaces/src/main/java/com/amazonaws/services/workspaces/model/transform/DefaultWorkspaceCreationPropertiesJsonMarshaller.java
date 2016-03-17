@@ -40,45 +40,48 @@ import com.amazonaws.util.json.*;
 public class DefaultWorkspaceCreationPropertiesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             DefaultWorkspaceCreationProperties defaultWorkspaceCreationProperties,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (defaultWorkspaceCreationProperties == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (defaultWorkspaceCreationProperties.getEnableWorkDocs() != null) {
-                jsonWriter.key("EnableWorkDocs").value(
+                jsonGenerator.writeFieldName("EnableWorkDocs").writeValue(
                         defaultWorkspaceCreationProperties.getEnableWorkDocs());
             }
             if (defaultWorkspaceCreationProperties.getEnableInternetAccess() != null) {
-                jsonWriter.key("EnableInternetAccess").value(
-                        defaultWorkspaceCreationProperties
-                                .getEnableInternetAccess());
+                jsonGenerator.writeFieldName("EnableInternetAccess")
+                        .writeValue(
+                                defaultWorkspaceCreationProperties
+                                        .getEnableInternetAccess());
             }
             if (defaultWorkspaceCreationProperties.getDefaultOu() != null) {
-                jsonWriter.key("DefaultOu").value(
+                jsonGenerator.writeFieldName("DefaultOu").writeValue(
                         defaultWorkspaceCreationProperties.getDefaultOu());
             }
             if (defaultWorkspaceCreationProperties.getCustomSecurityGroupId() != null) {
-                jsonWriter.key("CustomSecurityGroupId").value(
-                        defaultWorkspaceCreationProperties
-                                .getCustomSecurityGroupId());
+                jsonGenerator.writeFieldName("CustomSecurityGroupId")
+                        .writeValue(
+                                defaultWorkspaceCreationProperties
+                                        .getCustomSecurityGroupId());
             }
             if (defaultWorkspaceCreationProperties
                     .getUserEnabledAsLocalAdministrator() != null) {
-                jsonWriter.key("UserEnabledAsLocalAdministrator").value(
-                        defaultWorkspaceCreationProperties
-                                .getUserEnabledAsLocalAdministrator());
+                jsonGenerator.writeFieldName("UserEnabledAsLocalAdministrator")
+                        .writeValue(
+                                defaultWorkspaceCreationProperties
+                                        .getUserEnabledAsLocalAdministrator());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -39,6 +39,12 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     }
 
     @Override
+    public AddTagsToResourceResult addTagsToResource(
+            AddTagsToResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateHapgResult createHapg(CreateHapgRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -143,6 +149,12 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyHapgResult modifyHapg(ModifyHapgRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -155,6 +167,12 @@ public class AbstractAWSCloudHSM implements AWSCloudHSM {
     @Override
     public ModifyLunaClientResult modifyLunaClient(
             ModifyLunaClientRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveTagsFromResourceResult removeTagsFromResource(
+            RemoveTagsFromResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

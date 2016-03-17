@@ -64,13 +64,12 @@ public class TestMetricFilterRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (testMetricFilterRequest.getFilterPattern() != null) {
-                jsonWriter.key("filterPattern").value(
+                jsonGenerator.writeFieldName("filterPattern").writeValue(
                         testMetricFilterRequest.getFilterPattern());
             }
 
@@ -78,21 +77,20 @@ public class TestMetricFilterRequestMarshaller implements
                     .getLogEventMessages();
             if (!logEventMessagesList.isEmpty()
                     || !logEventMessagesList.isAutoConstruct()) {
-                jsonWriter.key("logEventMessages");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("logEventMessages");
+                jsonGenerator.writeStartArray();
                 for (String logEventMessagesListValue : logEventMessagesList) {
                     if (logEventMessagesListValue != null) {
-                        jsonWriter.value(logEventMessagesListValue);
+                        jsonGenerator.writeValue(logEventMessagesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

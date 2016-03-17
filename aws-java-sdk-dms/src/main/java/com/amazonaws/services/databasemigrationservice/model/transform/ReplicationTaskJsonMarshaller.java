@@ -40,71 +40,80 @@ import com.amazonaws.util.json.*;
 public class ReplicationTaskJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ReplicationTask replicationTask, JSONWriter jsonWriter) {
+    public void marshall(ReplicationTask replicationTask,
+            SdkJsonGenerator jsonGenerator) {
         if (replicationTask == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (replicationTask.getReplicationTaskIdentifier() != null) {
-                jsonWriter.key("ReplicationTaskIdentifier").value(
-                        replicationTask.getReplicationTaskIdentifier());
+                jsonGenerator.writeFieldName("ReplicationTaskIdentifier")
+                        .writeValue(
+                                replicationTask.getReplicationTaskIdentifier());
             }
             if (replicationTask.getSourceEndpointArn() != null) {
-                jsonWriter.key("SourceEndpointArn").value(
+                jsonGenerator.writeFieldName("SourceEndpointArn").writeValue(
                         replicationTask.getSourceEndpointArn());
             }
             if (replicationTask.getTargetEndpointArn() != null) {
-                jsonWriter.key("TargetEndpointArn").value(
+                jsonGenerator.writeFieldName("TargetEndpointArn").writeValue(
                         replicationTask.getTargetEndpointArn());
             }
             if (replicationTask.getReplicationInstanceArn() != null) {
-                jsonWriter.key("ReplicationInstanceArn").value(
-                        replicationTask.getReplicationInstanceArn());
+                jsonGenerator
+                        .writeFieldName("ReplicationInstanceArn")
+                        .writeValue(replicationTask.getReplicationInstanceArn());
             }
             if (replicationTask.getMigrationType() != null) {
-                jsonWriter.key("MigrationType").value(
+                jsonGenerator.writeFieldName("MigrationType").writeValue(
                         replicationTask.getMigrationType());
             }
             if (replicationTask.getTableMappings() != null) {
-                jsonWriter.key("TableMappings").value(
+                jsonGenerator.writeFieldName("TableMappings").writeValue(
                         replicationTask.getTableMappings());
             }
             if (replicationTask.getReplicationTaskSettings() != null) {
-                jsonWriter.key("ReplicationTaskSettings").value(
-                        replicationTask.getReplicationTaskSettings());
+                jsonGenerator.writeFieldName("ReplicationTaskSettings")
+                        .writeValue(
+                                replicationTask.getReplicationTaskSettings());
             }
             if (replicationTask.getStatus() != null) {
-                jsonWriter.key("Status").value(replicationTask.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        replicationTask.getStatus());
             }
             if (replicationTask.getLastFailureMessage() != null) {
-                jsonWriter.key("LastFailureMessage").value(
+                jsonGenerator.writeFieldName("LastFailureMessage").writeValue(
                         replicationTask.getLastFailureMessage());
             }
             if (replicationTask.getReplicationTaskCreationDate() != null) {
-                jsonWriter.key("ReplicationTaskCreationDate").value(
-                        replicationTask.getReplicationTaskCreationDate());
+                jsonGenerator.writeFieldName("ReplicationTaskCreationDate")
+                        .writeValue(
+                                replicationTask
+                                        .getReplicationTaskCreationDate());
             }
             if (replicationTask.getReplicationTaskStartDate() != null) {
-                jsonWriter.key("ReplicationTaskStartDate").value(
-                        replicationTask.getReplicationTaskStartDate());
+                jsonGenerator.writeFieldName("ReplicationTaskStartDate")
+                        .writeValue(
+                                replicationTask.getReplicationTaskStartDate());
             }
             if (replicationTask.getReplicationTaskArn() != null) {
-                jsonWriter.key("ReplicationTaskArn").value(
+                jsonGenerator.writeFieldName("ReplicationTaskArn").writeValue(
                         replicationTask.getReplicationTaskArn());
             }
             if (replicationTask.getReplicationTaskStats() != null) {
-                jsonWriter.key("ReplicationTaskStats");
+                jsonGenerator.writeFieldName("ReplicationTaskStats");
                 ReplicationTaskStatsJsonMarshaller.getInstance().marshall(
-                        replicationTask.getReplicationTaskStats(), jsonWriter);
+                        replicationTask.getReplicationTaskStats(),
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

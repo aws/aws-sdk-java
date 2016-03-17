@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class ExportTaskExecutionInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ExportTaskExecutionInfo exportTaskExecutionInfo,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (exportTaskExecutionInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (exportTaskExecutionInfo.getCreationTime() != null) {
-                jsonWriter.key("creationTime").value(
+                jsonGenerator.writeFieldName("creationTime").writeValue(
                         exportTaskExecutionInfo.getCreationTime());
             }
             if (exportTaskExecutionInfo.getCompletionTime() != null) {
-                jsonWriter.key("completionTime").value(
+                jsonGenerator.writeFieldName("completionTime").writeValue(
                         exportTaskExecutionInfo.getCompletionTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

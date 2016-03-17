@@ -106,7 +106,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     private String availabilityZone;
 
     /**
-     * The DB subnet group name to use for the new instance.
+     * The DB subnet group name to use for the new instance. <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods,
+     * underscores, spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      */
     private String dBSubnetGroupName;
 
@@ -161,7 +164,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code>
      */
     private String engine;
@@ -665,29 +668,47 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     }
 
     /**
-     * The DB subnet group name to use for the new instance.
+     * The DB subnet group name to use for the new instance. <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods,
+     * underscores, spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      *
-     * @return The DB subnet group name to use for the new instance.
+     * @return The DB subnet group name to use for the new instance. <p>Constraints:
+     *         Must contain no more than 255 alphanumeric characters, periods,
+     *         underscores, spaces, or hyphens. Must not be default. <p>Example:
+     *         <code>mySubnetgroup</code>
      */
     public String getDBSubnetGroupName() {
         return dBSubnetGroupName;
     }
     
     /**
-     * The DB subnet group name to use for the new instance.
+     * The DB subnet group name to use for the new instance. <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods,
+     * underscores, spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      *
-     * @param dBSubnetGroupName The DB subnet group name to use for the new instance.
+     * @param dBSubnetGroupName The DB subnet group name to use for the new instance. <p>Constraints:
+     *         Must contain no more than 255 alphanumeric characters, periods,
+     *         underscores, spaces, or hyphens. Must not be default. <p>Example:
+     *         <code>mySubnetgroup</code>
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
     }
     
     /**
-     * The DB subnet group name to use for the new instance.
+     * The DB subnet group name to use for the new instance. <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods,
+     * underscores, spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSubnetGroupName The DB subnet group name to use for the new instance.
+     * @param dBSubnetGroupName The DB subnet group name to use for the new instance. <p>Constraints:
+     *         Must contain no more than 255 alphanumeric characters, periods,
+     *         underscores, spaces, or hyphens. Must not be default. <p>Example:
+     *         <code>mySubnetgroup</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1040,7 +1061,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code>
      *
      * @return The database engine to use for the new instance. <p>Default: The same
@@ -1049,7 +1070,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         <code>oracle-se1</code> | <code>oracle-se</code> |
      *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     *         <code>sqlserver-web</code> | <code>postgres</code>|
+     *         <code>sqlserver-web</code> | <code>postgres</code> |
      *         <code>aurora</code>
      */
     public String getEngine() {
@@ -1063,7 +1084,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code>
      *
      * @param engine The database engine to use for the new instance. <p>Default: The same
@@ -1072,7 +1093,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         <code>oracle-se1</code> | <code>oracle-se</code> |
      *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     *         <code>sqlserver-web</code> | <code>postgres</code>|
+     *         <code>sqlserver-web</code> | <code>postgres</code> |
      *         <code>aurora</code>
      */
     public void setEngine(String engine) {
@@ -1086,7 +1107,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <code>oracle-se1</code> | <code>oracle-se</code> |
      * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -1097,7 +1118,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         <code>oracle-se1</code> | <code>oracle-se</code> |
      *         <code>oracle-ee</code> | <code>sqlserver-ee</code> |
      *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     *         <code>sqlserver-web</code> | <code>postgres</code>|
+     *         <code>sqlserver-web</code> | <code>postgres</code> |
      *         <code>aurora</code>
      *
      * @return A reference to this updated object so that method calls can be chained

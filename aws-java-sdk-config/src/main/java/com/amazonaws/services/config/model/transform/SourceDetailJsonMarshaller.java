@@ -40,27 +40,28 @@ import com.amazonaws.util.json.*;
 public class SourceDetailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(SourceDetail sourceDetail, JSONWriter jsonWriter) {
+    public void marshall(SourceDetail sourceDetail,
+            SdkJsonGenerator jsonGenerator) {
         if (sourceDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (sourceDetail.getEventSource() != null) {
-                jsonWriter.key("EventSource").value(
+                jsonGenerator.writeFieldName("EventSource").writeValue(
                         sourceDetail.getEventSource());
             }
             if (sourceDetail.getMessageType() != null) {
-                jsonWriter.key("MessageType").value(
+                jsonGenerator.writeFieldName("MessageType").writeValue(
                         sourceDetail.getMessageType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

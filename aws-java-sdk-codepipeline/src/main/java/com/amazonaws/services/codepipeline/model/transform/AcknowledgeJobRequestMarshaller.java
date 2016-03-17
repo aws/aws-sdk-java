@@ -65,23 +65,23 @@ public class AcknowledgeJobRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (acknowledgeJobRequest.getJobId() != null) {
-                jsonWriter.key("jobId").value(acknowledgeJobRequest.getJobId());
+                jsonGenerator.writeFieldName("jobId").writeValue(
+                        acknowledgeJobRequest.getJobId());
             }
             if (acknowledgeJobRequest.getNonce() != null) {
-                jsonWriter.key("nonce").value(acknowledgeJobRequest.getNonce());
+                jsonGenerator.writeFieldName("nonce").writeValue(
+                        acknowledgeJobRequest.getNonce());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

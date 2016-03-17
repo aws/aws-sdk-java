@@ -66,48 +66,46 @@ public class PutThirdPartyJobSuccessResultRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putThirdPartyJobSuccessResultRequest.getJobId() != null) {
-                jsonWriter.key("jobId").value(
+                jsonGenerator.writeFieldName("jobId").writeValue(
                         putThirdPartyJobSuccessResultRequest.getJobId());
             }
             if (putThirdPartyJobSuccessResultRequest.getClientToken() != null) {
-                jsonWriter.key("clientToken").value(
+                jsonGenerator.writeFieldName("clientToken").writeValue(
                         putThirdPartyJobSuccessResultRequest.getClientToken());
             }
             if (putThirdPartyJobSuccessResultRequest.getCurrentRevision() != null) {
-                jsonWriter.key("currentRevision");
+                jsonGenerator.writeFieldName("currentRevision");
                 CurrentRevisionJsonMarshaller
                         .getInstance()
                         .marshall(
                                 putThirdPartyJobSuccessResultRequest
                                         .getCurrentRevision(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (putThirdPartyJobSuccessResultRequest.getContinuationToken() != null) {
-                jsonWriter.key("continuationToken").value(
+                jsonGenerator.writeFieldName("continuationToken").writeValue(
                         putThirdPartyJobSuccessResultRequest
                                 .getContinuationToken());
             }
             if (putThirdPartyJobSuccessResultRequest.getExecutionDetails() != null) {
-                jsonWriter.key("executionDetails");
+                jsonGenerator.writeFieldName("executionDetails");
                 ExecutionDetailsJsonMarshaller
                         .getInstance()
                         .marshall(
                                 putThirdPartyJobSuccessResultRequest
                                         .getExecutionDetails(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

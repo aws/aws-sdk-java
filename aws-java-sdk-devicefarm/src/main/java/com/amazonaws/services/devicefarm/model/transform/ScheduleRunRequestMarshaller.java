@@ -64,41 +64,41 @@ public class ScheduleRunRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (scheduleRunRequest.getProjectArn() != null) {
-                jsonWriter.key("projectArn").value(
+                jsonGenerator.writeFieldName("projectArn").writeValue(
                         scheduleRunRequest.getProjectArn());
             }
             if (scheduleRunRequest.getAppArn() != null) {
-                jsonWriter.key("appArn").value(scheduleRunRequest.getAppArn());
+                jsonGenerator.writeFieldName("appArn").writeValue(
+                        scheduleRunRequest.getAppArn());
             }
             if (scheduleRunRequest.getDevicePoolArn() != null) {
-                jsonWriter.key("devicePoolArn").value(
+                jsonGenerator.writeFieldName("devicePoolArn").writeValue(
                         scheduleRunRequest.getDevicePoolArn());
             }
             if (scheduleRunRequest.getName() != null) {
-                jsonWriter.key("name").value(scheduleRunRequest.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        scheduleRunRequest.getName());
             }
             if (scheduleRunRequest.getTest() != null) {
-                jsonWriter.key("test");
+                jsonGenerator.writeFieldName("test");
                 ScheduleRunTestJsonMarshaller.getInstance().marshall(
-                        scheduleRunRequest.getTest(), jsonWriter);
+                        scheduleRunRequest.getTest(), jsonGenerator);
             }
             if (scheduleRunRequest.getConfiguration() != null) {
-                jsonWriter.key("configuration");
+                jsonGenerator.writeFieldName("configuration");
                 ScheduleRunConfigurationJsonMarshaller.getInstance().marshall(
-                        scheduleRunRequest.getConfiguration(), jsonWriter);
+                        scheduleRunRequest.getConfiguration(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

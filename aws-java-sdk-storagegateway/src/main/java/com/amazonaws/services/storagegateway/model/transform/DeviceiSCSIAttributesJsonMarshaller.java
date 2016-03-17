@@ -40,36 +40,38 @@ import com.amazonaws.util.json.*;
 public class DeviceiSCSIAttributesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DeviceiSCSIAttributes deviceiSCSIAttributes,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (deviceiSCSIAttributes == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deviceiSCSIAttributes.getTargetARN() != null) {
-                jsonWriter.key("TargetARN").value(
+                jsonGenerator.writeFieldName("TargetARN").writeValue(
                         deviceiSCSIAttributes.getTargetARN());
             }
             if (deviceiSCSIAttributes.getNetworkInterfaceId() != null) {
-                jsonWriter.key("NetworkInterfaceId").value(
+                jsonGenerator.writeFieldName("NetworkInterfaceId").writeValue(
                         deviceiSCSIAttributes.getNetworkInterfaceId());
             }
             if (deviceiSCSIAttributes.getNetworkInterfacePort() != null) {
-                jsonWriter.key("NetworkInterfacePort").value(
-                        deviceiSCSIAttributes.getNetworkInterfacePort());
+                jsonGenerator
+                        .writeFieldName("NetworkInterfacePort")
+                        .writeValue(
+                                deviceiSCSIAttributes.getNetworkInterfacePort());
             }
             if (deviceiSCSIAttributes.getChapEnabled() != null) {
-                jsonWriter.key("ChapEnabled").value(
+                jsonGenerator.writeFieldName("ChapEnabled").writeValue(
                         deviceiSCSIAttributes.getChapEnabled());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

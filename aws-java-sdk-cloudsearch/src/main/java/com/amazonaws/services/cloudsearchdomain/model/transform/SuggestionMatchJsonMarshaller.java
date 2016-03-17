@@ -40,29 +40,32 @@ import com.amazonaws.util.json.*;
 public class SuggestionMatchJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(SuggestionMatch suggestionMatch, JSONWriter jsonWriter) {
+    public void marshall(SuggestionMatch suggestionMatch,
+            SdkJsonGenerator jsonGenerator) {
         if (suggestionMatch == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (suggestionMatch.getSuggestion() != null) {
-                jsonWriter.key("suggestion").value(
+                jsonGenerator.writeFieldName("suggestion").writeValue(
                         suggestionMatch.getSuggestion());
             }
             if (suggestionMatch.getScore() != null) {
-                jsonWriter.key("score").value(suggestionMatch.getScore());
+                jsonGenerator.writeFieldName("score").writeValue(
+                        suggestionMatch.getScore());
             }
             if (suggestionMatch.getId() != null) {
-                jsonWriter.key("id").value(suggestionMatch.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        suggestionMatch.getId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

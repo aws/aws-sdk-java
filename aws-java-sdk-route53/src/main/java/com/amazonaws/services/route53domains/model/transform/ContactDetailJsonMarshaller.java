@@ -40,80 +40,88 @@ import com.amazonaws.util.json.*;
 public class ContactDetailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ContactDetail contactDetail, JSONWriter jsonWriter) {
+    public void marshall(ContactDetail contactDetail,
+            SdkJsonGenerator jsonGenerator) {
         if (contactDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (contactDetail.getFirstName() != null) {
-                jsonWriter.key("FirstName").value(contactDetail.getFirstName());
+                jsonGenerator.writeFieldName("FirstName").writeValue(
+                        contactDetail.getFirstName());
             }
             if (contactDetail.getLastName() != null) {
-                jsonWriter.key("LastName").value(contactDetail.getLastName());
+                jsonGenerator.writeFieldName("LastName").writeValue(
+                        contactDetail.getLastName());
             }
             if (contactDetail.getContactType() != null) {
-                jsonWriter.key("ContactType").value(
+                jsonGenerator.writeFieldName("ContactType").writeValue(
                         contactDetail.getContactType());
             }
             if (contactDetail.getOrganizationName() != null) {
-                jsonWriter.key("OrganizationName").value(
+                jsonGenerator.writeFieldName("OrganizationName").writeValue(
                         contactDetail.getOrganizationName());
             }
             if (contactDetail.getAddressLine1() != null) {
-                jsonWriter.key("AddressLine1").value(
+                jsonGenerator.writeFieldName("AddressLine1").writeValue(
                         contactDetail.getAddressLine1());
             }
             if (contactDetail.getAddressLine2() != null) {
-                jsonWriter.key("AddressLine2").value(
+                jsonGenerator.writeFieldName("AddressLine2").writeValue(
                         contactDetail.getAddressLine2());
             }
             if (contactDetail.getCity() != null) {
-                jsonWriter.key("City").value(contactDetail.getCity());
+                jsonGenerator.writeFieldName("City").writeValue(
+                        contactDetail.getCity());
             }
             if (contactDetail.getState() != null) {
-                jsonWriter.key("State").value(contactDetail.getState());
+                jsonGenerator.writeFieldName("State").writeValue(
+                        contactDetail.getState());
             }
             if (contactDetail.getCountryCode() != null) {
-                jsonWriter.key("CountryCode").value(
+                jsonGenerator.writeFieldName("CountryCode").writeValue(
                         contactDetail.getCountryCode());
             }
             if (contactDetail.getZipCode() != null) {
-                jsonWriter.key("ZipCode").value(contactDetail.getZipCode());
+                jsonGenerator.writeFieldName("ZipCode").writeValue(
+                        contactDetail.getZipCode());
             }
             if (contactDetail.getPhoneNumber() != null) {
-                jsonWriter.key("PhoneNumber").value(
+                jsonGenerator.writeFieldName("PhoneNumber").writeValue(
                         contactDetail.getPhoneNumber());
             }
             if (contactDetail.getEmail() != null) {
-                jsonWriter.key("Email").value(contactDetail.getEmail());
+                jsonGenerator.writeFieldName("Email").writeValue(
+                        contactDetail.getEmail());
             }
             if (contactDetail.getFax() != null) {
-                jsonWriter.key("Fax").value(contactDetail.getFax());
+                jsonGenerator.writeFieldName("Fax").writeValue(
+                        contactDetail.getFax());
             }
 
             com.amazonaws.internal.SdkInternalList<ExtraParam> extraParamsList = (com.amazonaws.internal.SdkInternalList<ExtraParam>) contactDetail
                     .getExtraParams();
             if (!extraParamsList.isEmpty()
                     || !extraParamsList.isAutoConstruct()) {
-                jsonWriter.key("ExtraParams");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ExtraParams");
+                jsonGenerator.writeStartArray();
                 for (ExtraParam extraParamsListValue : extraParamsList) {
                     if (extraParamsListValue != null) {
 
                         ExtraParamJsonMarshaller.getInstance().marshall(
-                                extraParamsListValue, jsonWriter);
+                                extraParamsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

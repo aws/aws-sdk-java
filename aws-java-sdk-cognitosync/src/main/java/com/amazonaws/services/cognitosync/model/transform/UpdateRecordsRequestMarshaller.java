@@ -88,13 +88,12 @@ public class UpdateRecordsRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateRecordsRequest.getDeviceId() != null) {
-                jsonWriter.key("DeviceId").value(
+                jsonGenerator.writeFieldName("DeviceId").writeValue(
                         updateRecordsRequest.getDeviceId());
             }
 
@@ -102,27 +101,26 @@ public class UpdateRecordsRequestMarshaller implements
                     .getRecordPatches();
             if (!recordPatchesList.isEmpty()
                     || !recordPatchesList.isAutoConstruct()) {
-                jsonWriter.key("RecordPatches");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("RecordPatches");
+                jsonGenerator.writeStartArray();
                 for (RecordPatch recordPatchesListValue : recordPatchesList) {
                     if (recordPatchesListValue != null) {
 
                         RecordPatchJsonMarshaller.getInstance().marshall(
-                                recordPatchesListValue, jsonWriter);
+                                recordPatchesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (updateRecordsRequest.getSyncSessionToken() != null) {
-                jsonWriter.key("SyncSessionToken").value(
+                jsonGenerator.writeFieldName("SyncSessionToken").writeValue(
                         updateRecordsRequest.getSyncSessionToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

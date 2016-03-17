@@ -66,29 +66,27 @@ public class DeleteCustomActionTypeRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deleteCustomActionTypeRequest.getCategory() != null) {
-                jsonWriter.key("category").value(
+                jsonGenerator.writeFieldName("category").writeValue(
                         deleteCustomActionTypeRequest.getCategory());
             }
             if (deleteCustomActionTypeRequest.getProvider() != null) {
-                jsonWriter.key("provider").value(
+                jsonGenerator.writeFieldName("provider").writeValue(
                         deleteCustomActionTypeRequest.getProvider());
             }
             if (deleteCustomActionTypeRequest.getVersion() != null) {
-                jsonWriter.key("version").value(
+                jsonGenerator.writeFieldName("version").writeValue(
                         deleteCustomActionTypeRequest.getVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

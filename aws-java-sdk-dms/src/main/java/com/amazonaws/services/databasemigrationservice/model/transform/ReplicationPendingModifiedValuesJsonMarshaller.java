@@ -40,34 +40,35 @@ import com.amazonaws.util.json.*;
 public class ReplicationPendingModifiedValuesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             ReplicationPendingModifiedValues replicationPendingModifiedValues,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (replicationPendingModifiedValues == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (replicationPendingModifiedValues.getReplicationInstanceClass() != null) {
-                jsonWriter.key("ReplicationInstanceClass").value(
-                        replicationPendingModifiedValues
-                                .getReplicationInstanceClass());
+                jsonGenerator.writeFieldName("ReplicationInstanceClass")
+                        .writeValue(
+                                replicationPendingModifiedValues
+                                        .getReplicationInstanceClass());
             }
             if (replicationPendingModifiedValues.getAllocatedStorage() != null) {
-                jsonWriter.key("AllocatedStorage").value(
+                jsonGenerator.writeFieldName("AllocatedStorage").writeValue(
                         replicationPendingModifiedValues.getAllocatedStorage());
             }
             if (replicationPendingModifiedValues.getEngineVersion() != null) {
-                jsonWriter.key("EngineVersion").value(
+                jsonGenerator.writeFieldName("EngineVersion").writeValue(
                         replicationPendingModifiedValues.getEngineVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

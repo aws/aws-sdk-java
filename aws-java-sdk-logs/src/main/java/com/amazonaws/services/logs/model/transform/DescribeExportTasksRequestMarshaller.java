@@ -65,33 +65,31 @@ public class DescribeExportTasksRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeExportTasksRequest.getTaskId() != null) {
-                jsonWriter.key("taskId").value(
+                jsonGenerator.writeFieldName("taskId").writeValue(
                         describeExportTasksRequest.getTaskId());
             }
             if (describeExportTasksRequest.getStatusCode() != null) {
-                jsonWriter.key("statusCode").value(
+                jsonGenerator.writeFieldName("statusCode").writeValue(
                         describeExportTasksRequest.getStatusCode());
             }
             if (describeExportTasksRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         describeExportTasksRequest.getNextToken());
             }
             if (describeExportTasksRequest.getLimit() != null) {
-                jsonWriter.key("limit").value(
+                jsonGenerator.writeFieldName("limit").writeValue(
                         describeExportTasksRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

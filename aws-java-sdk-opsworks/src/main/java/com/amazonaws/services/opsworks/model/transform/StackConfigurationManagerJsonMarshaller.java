@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class StackConfigurationManagerJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(StackConfigurationManager stackConfigurationManager,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (stackConfigurationManager == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stackConfigurationManager.getName() != null) {
-                jsonWriter.key("Name").value(
+                jsonGenerator.writeFieldName("Name").writeValue(
                         stackConfigurationManager.getName());
             }
             if (stackConfigurationManager.getVersion() != null) {
-                jsonWriter.key("Version").value(
+                jsonGenerator.writeFieldName("Version").writeValue(
                         stackConfigurationManager.getVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

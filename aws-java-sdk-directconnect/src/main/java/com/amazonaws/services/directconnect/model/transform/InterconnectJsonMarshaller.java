@@ -40,40 +40,44 @@ import com.amazonaws.util.json.*;
 public class InterconnectJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Interconnect interconnect, JSONWriter jsonWriter) {
+    public void marshall(Interconnect interconnect,
+            SdkJsonGenerator jsonGenerator) {
         if (interconnect == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (interconnect.getInterconnectId() != null) {
-                jsonWriter.key("interconnectId").value(
+                jsonGenerator.writeFieldName("interconnectId").writeValue(
                         interconnect.getInterconnectId());
             }
             if (interconnect.getInterconnectName() != null) {
-                jsonWriter.key("interconnectName").value(
+                jsonGenerator.writeFieldName("interconnectName").writeValue(
                         interconnect.getInterconnectName());
             }
             if (interconnect.getInterconnectState() != null) {
-                jsonWriter.key("interconnectState").value(
+                jsonGenerator.writeFieldName("interconnectState").writeValue(
                         interconnect.getInterconnectState());
             }
             if (interconnect.getRegion() != null) {
-                jsonWriter.key("region").value(interconnect.getRegion());
+                jsonGenerator.writeFieldName("region").writeValue(
+                        interconnect.getRegion());
             }
             if (interconnect.getLocation() != null) {
-                jsonWriter.key("location").value(interconnect.getLocation());
+                jsonGenerator.writeFieldName("location").writeValue(
+                        interconnect.getLocation());
             }
             if (interconnect.getBandwidth() != null) {
-                jsonWriter.key("bandwidth").value(interconnect.getBandwidth());
+                jsonGenerator.writeFieldName("bandwidth").writeValue(
+                        interconnect.getBandwidth());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

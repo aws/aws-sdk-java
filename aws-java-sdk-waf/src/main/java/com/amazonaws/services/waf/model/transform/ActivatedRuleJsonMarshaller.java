@@ -40,30 +40,33 @@ import com.amazonaws.util.json.*;
 public class ActivatedRuleJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ActivatedRule activatedRule, JSONWriter jsonWriter) {
+    public void marshall(ActivatedRule activatedRule,
+            SdkJsonGenerator jsonGenerator) {
         if (activatedRule == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (activatedRule.getPriority() != null) {
-                jsonWriter.key("Priority").value(activatedRule.getPriority());
+                jsonGenerator.writeFieldName("Priority").writeValue(
+                        activatedRule.getPriority());
             }
             if (activatedRule.getRuleId() != null) {
-                jsonWriter.key("RuleId").value(activatedRule.getRuleId());
+                jsonGenerator.writeFieldName("RuleId").writeValue(
+                        activatedRule.getRuleId());
             }
             if (activatedRule.getAction() != null) {
-                jsonWriter.key("Action");
+                jsonGenerator.writeFieldName("Action");
                 WafActionJsonMarshaller.getInstance().marshall(
-                        activatedRule.getAction(), jsonWriter);
+                        activatedRule.getAction(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

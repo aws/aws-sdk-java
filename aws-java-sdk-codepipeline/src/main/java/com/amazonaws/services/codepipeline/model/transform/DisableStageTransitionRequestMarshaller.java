@@ -66,33 +66,31 @@ public class DisableStageTransitionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (disableStageTransitionRequest.getPipelineName() != null) {
-                jsonWriter.key("pipelineName").value(
+                jsonGenerator.writeFieldName("pipelineName").writeValue(
                         disableStageTransitionRequest.getPipelineName());
             }
             if (disableStageTransitionRequest.getStageName() != null) {
-                jsonWriter.key("stageName").value(
+                jsonGenerator.writeFieldName("stageName").writeValue(
                         disableStageTransitionRequest.getStageName());
             }
             if (disableStageTransitionRequest.getTransitionType() != null) {
-                jsonWriter.key("transitionType").value(
+                jsonGenerator.writeFieldName("transitionType").writeValue(
                         disableStageTransitionRequest.getTransitionType());
             }
             if (disableStageTransitionRequest.getReason() != null) {
-                jsonWriter.key("reason").value(
+                jsonGenerator.writeFieldName("reason").writeValue(
                         disableStageTransitionRequest.getReason());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

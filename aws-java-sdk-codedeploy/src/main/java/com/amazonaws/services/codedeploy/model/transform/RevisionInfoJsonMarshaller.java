@@ -40,29 +40,30 @@ import com.amazonaws.util.json.*;
 public class RevisionInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RevisionInfo revisionInfo, JSONWriter jsonWriter) {
+    public void marshall(RevisionInfo revisionInfo,
+            SdkJsonGenerator jsonGenerator) {
         if (revisionInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (revisionInfo.getRevisionLocation() != null) {
-                jsonWriter.key("revisionLocation");
+                jsonGenerator.writeFieldName("revisionLocation");
                 RevisionLocationJsonMarshaller.getInstance().marshall(
-                        revisionInfo.getRevisionLocation(), jsonWriter);
+                        revisionInfo.getRevisionLocation(), jsonGenerator);
             }
             if (revisionInfo.getGenericRevisionInfo() != null) {
-                jsonWriter.key("genericRevisionInfo");
+                jsonGenerator.writeFieldName("genericRevisionInfo");
                 GenericRevisionInfoJsonMarshaller.getInstance().marshall(
-                        revisionInfo.getGenericRevisionInfo(), jsonWriter);
+                        revisionInfo.getGenericRevisionInfo(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

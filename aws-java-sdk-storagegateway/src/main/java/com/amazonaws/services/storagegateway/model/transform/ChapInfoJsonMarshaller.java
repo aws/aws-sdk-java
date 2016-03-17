@@ -40,34 +40,36 @@ import com.amazonaws.util.json.*;
 public class ChapInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ChapInfo chapInfo, JSONWriter jsonWriter) {
+    public void marshall(ChapInfo chapInfo, SdkJsonGenerator jsonGenerator) {
         if (chapInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (chapInfo.getTargetARN() != null) {
-                jsonWriter.key("TargetARN").value(chapInfo.getTargetARN());
+                jsonGenerator.writeFieldName("TargetARN").writeValue(
+                        chapInfo.getTargetARN());
             }
             if (chapInfo.getSecretToAuthenticateInitiator() != null) {
-                jsonWriter.key("SecretToAuthenticateInitiator").value(
-                        chapInfo.getSecretToAuthenticateInitiator());
+                jsonGenerator
+                        .writeFieldName("SecretToAuthenticateInitiator")
+                        .writeValue(chapInfo.getSecretToAuthenticateInitiator());
             }
             if (chapInfo.getInitiatorName() != null) {
-                jsonWriter.key("InitiatorName").value(
+                jsonGenerator.writeFieldName("InitiatorName").writeValue(
                         chapInfo.getInitiatorName());
             }
             if (chapInfo.getSecretToAuthenticateTarget() != null) {
-                jsonWriter.key("SecretToAuthenticateTarget").value(
-                        chapInfo.getSecretToAuthenticateTarget());
+                jsonGenerator.writeFieldName("SecretToAuthenticateTarget")
+                        .writeValue(chapInfo.getSecretToAuthenticateTarget());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

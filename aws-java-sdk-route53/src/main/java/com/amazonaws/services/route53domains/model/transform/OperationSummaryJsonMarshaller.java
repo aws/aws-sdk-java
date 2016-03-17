@@ -40,34 +40,36 @@ import com.amazonaws.util.json.*;
 public class OperationSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(OperationSummary operationSummary,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (operationSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (operationSummary.getOperationId() != null) {
-                jsonWriter.key("OperationId").value(
+                jsonGenerator.writeFieldName("OperationId").writeValue(
                         operationSummary.getOperationId());
             }
             if (operationSummary.getStatus() != null) {
-                jsonWriter.key("Status").value(operationSummary.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        operationSummary.getStatus());
             }
             if (operationSummary.getType() != null) {
-                jsonWriter.key("Type").value(operationSummary.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        operationSummary.getType());
             }
             if (operationSummary.getSubmittedDate() != null) {
-                jsonWriter.key("SubmittedDate").value(
+                jsonGenerator.writeFieldName("SubmittedDate").writeValue(
                         operationSummary.getSubmittedDate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

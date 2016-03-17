@@ -40,36 +40,39 @@ import com.amazonaws.util.json.*;
 public class ActionTypeSettingsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ActionTypeSettings actionTypeSettings,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (actionTypeSettings == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (actionTypeSettings.getThirdPartyConfigurationUrl() != null) {
-                jsonWriter.key("thirdPartyConfigurationUrl").value(
-                        actionTypeSettings.getThirdPartyConfigurationUrl());
+                jsonGenerator.writeFieldName("thirdPartyConfigurationUrl")
+                        .writeValue(
+                                actionTypeSettings
+                                        .getThirdPartyConfigurationUrl());
             }
             if (actionTypeSettings.getEntityUrlTemplate() != null) {
-                jsonWriter.key("entityUrlTemplate").value(
+                jsonGenerator.writeFieldName("entityUrlTemplate").writeValue(
                         actionTypeSettings.getEntityUrlTemplate());
             }
             if (actionTypeSettings.getExecutionUrlTemplate() != null) {
-                jsonWriter.key("executionUrlTemplate").value(
-                        actionTypeSettings.getExecutionUrlTemplate());
+                jsonGenerator.writeFieldName("executionUrlTemplate")
+                        .writeValue(
+                                actionTypeSettings.getExecutionUrlTemplate());
             }
             if (actionTypeSettings.getRevisionUrlTemplate() != null) {
-                jsonWriter.key("revisionUrlTemplate").value(
+                jsonGenerator.writeFieldName("revisionUrlTemplate").writeValue(
                         actionTypeSettings.getRevisionUrlTemplate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

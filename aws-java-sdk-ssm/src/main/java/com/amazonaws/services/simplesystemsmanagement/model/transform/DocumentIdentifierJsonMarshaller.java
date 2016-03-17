@@ -40,37 +40,38 @@ import com.amazonaws.util.json.*;
 public class DocumentIdentifierJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DocumentIdentifier documentIdentifier,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (documentIdentifier == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (documentIdentifier.getName() != null) {
-                jsonWriter.key("Name").value(documentIdentifier.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        documentIdentifier.getName());
             }
 
             com.amazonaws.internal.SdkInternalList<String> platformTypesList = (com.amazonaws.internal.SdkInternalList<String>) documentIdentifier
                     .getPlatformTypes();
             if (!platformTypesList.isEmpty()
                     || !platformTypesList.isAutoConstruct()) {
-                jsonWriter.key("PlatformTypes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("PlatformTypes");
+                jsonGenerator.writeStartArray();
                 for (String platformTypesListValue : platformTypesList) {
                     if (platformTypesListValue != null) {
-                        jsonWriter.value(platformTypesListValue);
+                        jsonGenerator.writeValue(platformTypesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

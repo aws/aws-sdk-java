@@ -40,22 +40,24 @@ import com.amazonaws.util.json.*;
 public class StageContextJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(StageContext stageContext, JSONWriter jsonWriter) {
+    public void marshall(StageContext stageContext,
+            SdkJsonGenerator jsonGenerator) {
         if (stageContext == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stageContext.getName() != null) {
-                jsonWriter.key("name").value(stageContext.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        stageContext.getName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

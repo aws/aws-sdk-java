@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Contains the inputs for the <a>DeleteHsm</a> action.
+ * Contains the inputs for the <a>DeleteHsm</a> operation.
  * </p>
  */
 public class DeleteHsmRequest extends AmazonWebServiceRequest implements

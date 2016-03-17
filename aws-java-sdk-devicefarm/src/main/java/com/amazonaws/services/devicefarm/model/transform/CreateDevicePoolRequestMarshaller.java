@@ -65,42 +65,41 @@ public class CreateDevicePoolRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createDevicePoolRequest.getProjectArn() != null) {
-                jsonWriter.key("projectArn").value(
+                jsonGenerator.writeFieldName("projectArn").writeValue(
                         createDevicePoolRequest.getProjectArn());
             }
             if (createDevicePoolRequest.getName() != null) {
-                jsonWriter.key("name").value(createDevicePoolRequest.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        createDevicePoolRequest.getName());
             }
             if (createDevicePoolRequest.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         createDevicePoolRequest.getDescription());
             }
 
             java.util.List<Rule> rulesList = createDevicePoolRequest.getRules();
             if (rulesList != null) {
-                jsonWriter.key("rules");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("rules");
+                jsonGenerator.writeStartArray();
                 for (Rule rulesListValue : rulesList) {
                     if (rulesListValue != null) {
 
                         RuleJsonMarshaller.getInstance().marshall(
-                                rulesListValue, jsonWriter);
+                                rulesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

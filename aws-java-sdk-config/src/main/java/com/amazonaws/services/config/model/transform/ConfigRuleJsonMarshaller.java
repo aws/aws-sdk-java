@@ -40,57 +40,57 @@ import com.amazonaws.util.json.*;
 public class ConfigRuleJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ConfigRule configRule, JSONWriter jsonWriter) {
+    public void marshall(ConfigRule configRule, SdkJsonGenerator jsonGenerator) {
         if (configRule == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (configRule.getConfigRuleName() != null) {
-                jsonWriter.key("ConfigRuleName").value(
+                jsonGenerator.writeFieldName("ConfigRuleName").writeValue(
                         configRule.getConfigRuleName());
             }
             if (configRule.getConfigRuleArn() != null) {
-                jsonWriter.key("ConfigRuleArn").value(
+                jsonGenerator.writeFieldName("ConfigRuleArn").writeValue(
                         configRule.getConfigRuleArn());
             }
             if (configRule.getConfigRuleId() != null) {
-                jsonWriter.key("ConfigRuleId").value(
+                jsonGenerator.writeFieldName("ConfigRuleId").writeValue(
                         configRule.getConfigRuleId());
             }
             if (configRule.getDescription() != null) {
-                jsonWriter.key("Description")
-                        .value(configRule.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(
+                        configRule.getDescription());
             }
             if (configRule.getScope() != null) {
-                jsonWriter.key("Scope");
+                jsonGenerator.writeFieldName("Scope");
                 ScopeJsonMarshaller.getInstance().marshall(
-                        configRule.getScope(), jsonWriter);
+                        configRule.getScope(), jsonGenerator);
             }
             if (configRule.getSource() != null) {
-                jsonWriter.key("Source");
+                jsonGenerator.writeFieldName("Source");
                 SourceJsonMarshaller.getInstance().marshall(
-                        configRule.getSource(), jsonWriter);
+                        configRule.getSource(), jsonGenerator);
             }
             if (configRule.getInputParameters() != null) {
-                jsonWriter.key("InputParameters").value(
+                jsonGenerator.writeFieldName("InputParameters").writeValue(
                         configRule.getInputParameters());
             }
             if (configRule.getMaximumExecutionFrequency() != null) {
-                jsonWriter.key("MaximumExecutionFrequency").value(
-                        configRule.getMaximumExecutionFrequency());
+                jsonGenerator.writeFieldName("MaximumExecutionFrequency")
+                        .writeValue(configRule.getMaximumExecutionFrequency());
             }
             if (configRule.getConfigRuleState() != null) {
-                jsonWriter.key("ConfigRuleState").value(
+                jsonGenerator.writeFieldName("ConfigRuleState").writeValue(
                         configRule.getConfigRuleState());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

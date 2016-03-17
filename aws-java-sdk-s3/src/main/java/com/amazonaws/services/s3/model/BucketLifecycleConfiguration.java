@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.s3.model;
 import java.io.Serializable;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -100,6 +99,8 @@ public class BucketLifecycleConfiguration implements Serializable {
          */
         private int expirationInDays = -1;
 
+        private boolean expiredObjectDeleteMarker = false;
+
         /**
          * The time, in days, between when a new version of the object is
          * uploaded to the bucket and when older versions of the object
@@ -122,6 +123,11 @@ public class BucketLifecycleConfiguration implements Serializable {
          * Transition rules for the non current objects in the bucket.
          */
         private List<NoncurrentVersionTransition> noncurrentVersionTransitions;
+
+        /**
+         * Specifies the days since the initiation of an Incomplete Multipart Upload that Lifecycle will wait before permanently removing all parts of the upload.
+         */
+        private AbortIncompleteMultipartUpload abortIncompleteMultipartUpload;
 
         /**
          * Sets the ID of this rule. Rules must be less than 255 alphanumeric
@@ -453,6 +459,64 @@ public class BucketLifecycleConfiguration implements Serializable {
             noncurrentVersionTransitions.add(noncurrentVersionTransition);
             return this;
         }
+
+        public AbortIncompleteMultipartUpload getAbortIncompleteMultipartUpload() {
+            return abortIncompleteMultipartUpload;
+        }
+
+        public void setAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload abortIncompleteMultipartUpload) {
+            this.abortIncompleteMultipartUpload = abortIncompleteMultipartUpload;
+        }
+
+        public Rule withAbortIncompleteMultipartUpload
+                (AbortIncompleteMultipartUpload abortIncompleteMultipartUpload) {
+            setAbortIncompleteMultipartUpload(abortIncompleteMultipartUpload);
+            return this;
+        }
+
+        /**
+         * Returns whether the current expiration policy for the object is set to remove objects
+         * when only a delete marker is left
+         * <p>
+         * If set to true the lifecycle policy will delete the current version of an object if and
+         * only if the current version is a expired object delete marker. This option only makes sense to use
+         * for versioned buckets and cannot be used in conjunction with expirationInDays or
+         * expirationDate. Note that the current version can only be removed if all non-current
+         * versions have been removed (either through a non-current version expiration policy or
+         * being explicitly deleted)
+         * </p>
+         *
+         * @return True if this lifecycle's configuration is configured to delete the current
+         *         version of an object if it's the only version left and it's a delete marker.
+         *         False otherwise
+         */
+        public boolean isExpiredObjectDeleteMarker() {
+            return expiredObjectDeleteMarker;
+        }
+
+        /**
+         * Sets the value of the ExpiredObjectDeleteMarkers attribute.
+         *
+         * @param expiredObjectDeleteMarker
+         *            True to allow the current expiration policy to remove the current version of
+         *            the object if it's the only version left and it's a delete marker. False has
+         *            no effect on the current expiration policy
+         */
+        public void setExpiredObjectDeleteMarker(boolean expiredObjectDeleteMarker) {
+            this.expiredObjectDeleteMarker = expiredObjectDeleteMarker;
+        }
+
+        /**
+         * Fluent method for setting the value of the ExpiredObjectDeleteMarkers attributes. See
+         * {@link #setExpiredObjectDeleteMarker(boolean)}
+         *
+         * @param expiredObjectDeleteMarker
+         * @return This object for method chaining
+         */
+        public Rule withExpiredObjectDeleteMarker(boolean expiredObjectDeleteMarker) {
+            this.expiredObjectDeleteMarker = expiredObjectDeleteMarker;
+            return this;
+        }
     }
 
     /**
@@ -523,7 +587,7 @@ public class BucketLifecycleConfiguration implements Serializable {
 
         /**
          * Returns the storage class of this object.
-         * 
+         *
          * @deprecated This method should not be used. Use {@link #getStorageClassAsString()}
          *             instead.
          */
@@ -647,7 +711,7 @@ public class BucketLifecycleConfiguration implements Serializable {
 
         /**
          * Returns the storage class of this object.
-         * 
+         *
          * @deprecated This method should not be used. Use {@link #getStorageClassAsString()}
          *             instead.
          */

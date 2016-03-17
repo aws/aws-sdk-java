@@ -40,44 +40,44 @@ import com.amazonaws.util.json.*;
 public class ConfigExportDeliveryInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ConfigExportDeliveryInfo configExportDeliveryInfo,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (configExportDeliveryInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (configExportDeliveryInfo.getLastStatus() != null) {
-                jsonWriter.key("lastStatus").value(
+                jsonGenerator.writeFieldName("lastStatus").writeValue(
                         configExportDeliveryInfo.getLastStatus());
             }
             if (configExportDeliveryInfo.getLastErrorCode() != null) {
-                jsonWriter.key("lastErrorCode").value(
+                jsonGenerator.writeFieldName("lastErrorCode").writeValue(
                         configExportDeliveryInfo.getLastErrorCode());
             }
             if (configExportDeliveryInfo.getLastErrorMessage() != null) {
-                jsonWriter.key("lastErrorMessage").value(
+                jsonGenerator.writeFieldName("lastErrorMessage").writeValue(
                         configExportDeliveryInfo.getLastErrorMessage());
             }
             if (configExportDeliveryInfo.getLastAttemptTime() != null) {
-                jsonWriter.key("lastAttemptTime").value(
+                jsonGenerator.writeFieldName("lastAttemptTime").writeValue(
                         configExportDeliveryInfo.getLastAttemptTime());
             }
             if (configExportDeliveryInfo.getLastSuccessfulTime() != null) {
-                jsonWriter.key("lastSuccessfulTime").value(
+                jsonGenerator.writeFieldName("lastSuccessfulTime").writeValue(
                         configExportDeliveryInfo.getLastSuccessfulTime());
             }
             if (configExportDeliveryInfo.getNextDeliveryTime() != null) {
-                jsonWriter.key("nextDeliveryTime").value(
+                jsonGenerator.writeFieldName("nextDeliveryTime").writeValue(
                         configExportDeliveryInfo.getNextDeliveryTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

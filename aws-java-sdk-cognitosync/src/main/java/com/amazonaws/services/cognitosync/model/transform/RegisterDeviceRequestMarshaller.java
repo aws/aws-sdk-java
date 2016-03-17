@@ -79,24 +79,23 @@ public class RegisterDeviceRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (registerDeviceRequest.getPlatform() != null) {
-                jsonWriter.key("Platform").value(
+                jsonGenerator.writeFieldName("Platform").writeValue(
                         registerDeviceRequest.getPlatform());
             }
             if (registerDeviceRequest.getToken() != null) {
-                jsonWriter.key("Token").value(registerDeviceRequest.getToken());
+                jsonGenerator.writeFieldName("Token").writeValue(
+                        registerDeviceRequest.getToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

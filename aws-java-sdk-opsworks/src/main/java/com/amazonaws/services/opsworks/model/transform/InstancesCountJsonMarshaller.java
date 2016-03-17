@@ -40,90 +40,96 @@ import com.amazonaws.util.json.*;
 public class InstancesCountJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(InstancesCount instancesCount, JSONWriter jsonWriter) {
+    public void marshall(InstancesCount instancesCount,
+            SdkJsonGenerator jsonGenerator) {
         if (instancesCount == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instancesCount.getAssigning() != null) {
-                jsonWriter.key("Assigning")
-                        .value(instancesCount.getAssigning());
+                jsonGenerator.writeFieldName("Assigning").writeValue(
+                        instancesCount.getAssigning());
             }
             if (instancesCount.getBooting() != null) {
-                jsonWriter.key("Booting").value(instancesCount.getBooting());
+                jsonGenerator.writeFieldName("Booting").writeValue(
+                        instancesCount.getBooting());
             }
             if (instancesCount.getConnectionLost() != null) {
-                jsonWriter.key("ConnectionLost").value(
+                jsonGenerator.writeFieldName("ConnectionLost").writeValue(
                         instancesCount.getConnectionLost());
             }
             if (instancesCount.getDeregistering() != null) {
-                jsonWriter.key("Deregistering").value(
+                jsonGenerator.writeFieldName("Deregistering").writeValue(
                         instancesCount.getDeregistering());
             }
             if (instancesCount.getOnline() != null) {
-                jsonWriter.key("Online").value(instancesCount.getOnline());
+                jsonGenerator.writeFieldName("Online").writeValue(
+                        instancesCount.getOnline());
             }
             if (instancesCount.getPending() != null) {
-                jsonWriter.key("Pending").value(instancesCount.getPending());
+                jsonGenerator.writeFieldName("Pending").writeValue(
+                        instancesCount.getPending());
             }
             if (instancesCount.getRebooting() != null) {
-                jsonWriter.key("Rebooting")
-                        .value(instancesCount.getRebooting());
+                jsonGenerator.writeFieldName("Rebooting").writeValue(
+                        instancesCount.getRebooting());
             }
             if (instancesCount.getRegistered() != null) {
-                jsonWriter.key("Registered").value(
+                jsonGenerator.writeFieldName("Registered").writeValue(
                         instancesCount.getRegistered());
             }
             if (instancesCount.getRegistering() != null) {
-                jsonWriter.key("Registering").value(
+                jsonGenerator.writeFieldName("Registering").writeValue(
                         instancesCount.getRegistering());
             }
             if (instancesCount.getRequested() != null) {
-                jsonWriter.key("Requested")
-                        .value(instancesCount.getRequested());
+                jsonGenerator.writeFieldName("Requested").writeValue(
+                        instancesCount.getRequested());
             }
             if (instancesCount.getRunningSetup() != null) {
-                jsonWriter.key("RunningSetup").value(
+                jsonGenerator.writeFieldName("RunningSetup").writeValue(
                         instancesCount.getRunningSetup());
             }
             if (instancesCount.getSetupFailed() != null) {
-                jsonWriter.key("SetupFailed").value(
+                jsonGenerator.writeFieldName("SetupFailed").writeValue(
                         instancesCount.getSetupFailed());
             }
             if (instancesCount.getShuttingDown() != null) {
-                jsonWriter.key("ShuttingDown").value(
+                jsonGenerator.writeFieldName("ShuttingDown").writeValue(
                         instancesCount.getShuttingDown());
             }
             if (instancesCount.getStartFailed() != null) {
-                jsonWriter.key("StartFailed").value(
+                jsonGenerator.writeFieldName("StartFailed").writeValue(
                         instancesCount.getStartFailed());
             }
             if (instancesCount.getStopped() != null) {
-                jsonWriter.key("Stopped").value(instancesCount.getStopped());
+                jsonGenerator.writeFieldName("Stopped").writeValue(
+                        instancesCount.getStopped());
             }
             if (instancesCount.getStopping() != null) {
-                jsonWriter.key("Stopping").value(instancesCount.getStopping());
+                jsonGenerator.writeFieldName("Stopping").writeValue(
+                        instancesCount.getStopping());
             }
             if (instancesCount.getTerminated() != null) {
-                jsonWriter.key("Terminated").value(
+                jsonGenerator.writeFieldName("Terminated").writeValue(
                         instancesCount.getTerminated());
             }
             if (instancesCount.getTerminating() != null) {
-                jsonWriter.key("Terminating").value(
+                jsonGenerator.writeFieldName("Terminating").writeValue(
                         instancesCount.getTerminating());
             }
             if (instancesCount.getUnassigning() != null) {
-                jsonWriter.key("Unassigning").value(
+                jsonGenerator.writeFieldName("Unassigning").writeValue(
                         instancesCount.getUnassigning());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

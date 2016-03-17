@@ -20,25 +20,25 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output of the <a>DeleteHsm</a> action.
+ * Contains the output of the <a>DeleteHsm</a> operation.
  * </p>
  */
 public class DeleteHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the action.
+     * The status of the operation.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * The status of the action.
+     * The status of the operation.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        The status of the operation.
      */
 
     public void setStatus(String status) {
@@ -47,10 +47,10 @@ public class DeleteHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the action.
+     * The status of the operation.
      * </p>
      * 
-     * @return The status of the action.
+     * @return The status of the operation.
      */
 
     public String getStatus() {
@@ -59,11 +59,11 @@ public class DeleteHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the action.
+     * The status of the operation.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        The status of the operation.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

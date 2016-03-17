@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class ClusterStateChangeReasonJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ClusterStateChangeReason clusterStateChangeReason,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (clusterStateChangeReason == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (clusterStateChangeReason.getCode() != null) {
-                jsonWriter.key("Code")
-                        .value(clusterStateChangeReason.getCode());
+                jsonGenerator.writeFieldName("Code").writeValue(
+                        clusterStateChangeReason.getCode());
             }
             if (clusterStateChangeReason.getMessage() != null) {
-                jsonWriter.key("Message").value(
+                jsonGenerator.writeFieldName("Message").writeValue(
                         clusterStateChangeReason.getMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

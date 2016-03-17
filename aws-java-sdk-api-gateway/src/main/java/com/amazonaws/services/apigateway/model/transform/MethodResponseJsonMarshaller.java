@@ -40,57 +40,62 @@ import com.amazonaws.util.json.*;
 public class MethodResponseJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(MethodResponse methodResponse, JSONWriter jsonWriter) {
+    public void marshall(MethodResponse methodResponse,
+            SdkJsonGenerator jsonGenerator) {
         if (methodResponse == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (methodResponse.getStatusCode() != null) {
-                jsonWriter.key("statusCode").value(
+                jsonGenerator.writeFieldName("statusCode").writeValue(
                         methodResponse.getStatusCode());
             }
 
             java.util.Map<String, Boolean> responseParametersMap = methodResponse
                     .getResponseParameters();
             if (responseParametersMap != null) {
-                jsonWriter.key("responseParameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("responseParameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Boolean> responseParametersMapValue : responseParametersMap
                         .entrySet()) {
                     if (responseParametersMapValue.getValue() != null) {
-                        jsonWriter.key(responseParametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(responseParametersMapValue
+                                .getKey());
 
-                        jsonWriter.value(responseParametersMapValue.getValue());
+                        jsonGenerator.writeValue(responseParametersMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, String> responseModelsMap = methodResponse
                     .getResponseModels();
             if (responseModelsMap != null) {
-                jsonWriter.key("responseModels");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("responseModels");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> responseModelsMapValue : responseModelsMap
                         .entrySet()) {
                     if (responseModelsMapValue.getValue() != null) {
-                        jsonWriter.key(responseModelsMapValue.getKey());
+                        jsonGenerator.writeFieldName(responseModelsMapValue
+                                .getKey());
 
-                        jsonWriter.value(responseModelsMapValue.getValue());
+                        jsonGenerator.writeValue(responseModelsMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

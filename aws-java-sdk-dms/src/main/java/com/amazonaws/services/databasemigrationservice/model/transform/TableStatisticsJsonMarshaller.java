@@ -40,51 +40,56 @@ import com.amazonaws.util.json.*;
 public class TableStatisticsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TableStatistics tableStatistics, JSONWriter jsonWriter) {
+    public void marshall(TableStatistics tableStatistics,
+            SdkJsonGenerator jsonGenerator) {
         if (tableStatistics == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (tableStatistics.getSchemaName() != null) {
-                jsonWriter.key("SchemaName").value(
+                jsonGenerator.writeFieldName("SchemaName").writeValue(
                         tableStatistics.getSchemaName());
             }
             if (tableStatistics.getTableName() != null) {
-                jsonWriter.key("TableName").value(
+                jsonGenerator.writeFieldName("TableName").writeValue(
                         tableStatistics.getTableName());
             }
             if (tableStatistics.getInserts() != null) {
-                jsonWriter.key("Inserts").value(tableStatistics.getInserts());
+                jsonGenerator.writeFieldName("Inserts").writeValue(
+                        tableStatistics.getInserts());
             }
             if (tableStatistics.getDeletes() != null) {
-                jsonWriter.key("Deletes").value(tableStatistics.getDeletes());
+                jsonGenerator.writeFieldName("Deletes").writeValue(
+                        tableStatistics.getDeletes());
             }
             if (tableStatistics.getUpdates() != null) {
-                jsonWriter.key("Updates").value(tableStatistics.getUpdates());
+                jsonGenerator.writeFieldName("Updates").writeValue(
+                        tableStatistics.getUpdates());
             }
             if (tableStatistics.getDdls() != null) {
-                jsonWriter.key("Ddls").value(tableStatistics.getDdls());
+                jsonGenerator.writeFieldName("Ddls").writeValue(
+                        tableStatistics.getDdls());
             }
             if (tableStatistics.getFullLoadRows() != null) {
-                jsonWriter.key("FullLoadRows").value(
+                jsonGenerator.writeFieldName("FullLoadRows").writeValue(
                         tableStatistics.getFullLoadRows());
             }
             if (tableStatistics.getLastUpdateTime() != null) {
-                jsonWriter.key("LastUpdateTime").value(
+                jsonGenerator.writeFieldName("LastUpdateTime").writeValue(
                         tableStatistics.getLastUpdateTime());
             }
             if (tableStatistics.getTableState() != null) {
-                jsonWriter.key("TableState").value(
+                jsonGenerator.writeFieldName("TableState").writeValue(
                         tableStatistics.getTableState());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

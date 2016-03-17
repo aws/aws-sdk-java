@@ -40,41 +40,45 @@ import com.amazonaws.util.json.*;
 public class AudioParametersJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(AudioParameters audioParameters, JSONWriter jsonWriter) {
+    public void marshall(AudioParameters audioParameters,
+            SdkJsonGenerator jsonGenerator) {
         if (audioParameters == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (audioParameters.getCodec() != null) {
-                jsonWriter.key("Codec").value(audioParameters.getCodec());
+                jsonGenerator.writeFieldName("Codec").writeValue(
+                        audioParameters.getCodec());
             }
             if (audioParameters.getSampleRate() != null) {
-                jsonWriter.key("SampleRate").value(
+                jsonGenerator.writeFieldName("SampleRate").writeValue(
                         audioParameters.getSampleRate());
             }
             if (audioParameters.getBitRate() != null) {
-                jsonWriter.key("BitRate").value(audioParameters.getBitRate());
+                jsonGenerator.writeFieldName("BitRate").writeValue(
+                        audioParameters.getBitRate());
             }
             if (audioParameters.getChannels() != null) {
-                jsonWriter.key("Channels").value(audioParameters.getChannels());
+                jsonGenerator.writeFieldName("Channels").writeValue(
+                        audioParameters.getChannels());
             }
             if (audioParameters.getAudioPackingMode() != null) {
-                jsonWriter.key("AudioPackingMode").value(
+                jsonGenerator.writeFieldName("AudioPackingMode").writeValue(
                         audioParameters.getAudioPackingMode());
             }
             if (audioParameters.getCodecOptions() != null) {
-                jsonWriter.key("CodecOptions");
+                jsonGenerator.writeFieldName("CodecOptions");
                 AudioCodecOptionsJsonMarshaller.getInstance().marshall(
-                        audioParameters.getCodecOptions(), jsonWriter);
+                        audioParameters.getCodecOptions(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

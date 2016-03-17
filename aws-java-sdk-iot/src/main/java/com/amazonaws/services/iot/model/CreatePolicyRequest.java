@@ -35,9 +35,9 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
     private String policyName;
     /**
      * <p>
-     * The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum
-     * length of 2048, excluding whitespace.
+     * The JSON document that describes the policy. <b>policyDocument</b> must
+     * have a minimum length of 1, with a maximum length of 2048, excluding
+     * whitespace.
      * </p>
      */
     private String policyDocument;
@@ -85,15 +85,15 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum
-     * length of 2048, excluding whitespace.
+     * The JSON document that describes the policy. <b>policyDocument</b> must
+     * have a minimum length of 1, with a maximum length of 2048, excluding
+     * whitespace.
      * </p>
      * 
      * @param policyDocument
-     *        The JSON document that describes the policy. The length of the
-     *        <b>policyDocument</b> must be a minimum length of 1, with a
-     *        maximum length of 2048, excluding whitespace.
+     *        The JSON document that describes the policy. <b>policyDocument</b>
+     *        must have a minimum length of 1, with a maximum length of 2048,
+     *        excluding whitespace.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -102,13 +102,13 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum
-     * length of 2048, excluding whitespace.
+     * The JSON document that describes the policy. <b>policyDocument</b> must
+     * have a minimum length of 1, with a maximum length of 2048, excluding
+     * whitespace.
      * </p>
      * 
-     * @return The JSON document that describes the policy. The length of the
-     *         <b>policyDocument</b> must be a minimum length of 1, with a
+     * @return The JSON document that describes the policy.
+     *         <b>policyDocument</b> must have a minimum length of 1, with a
      *         maximum length of 2048, excluding whitespace.
      */
 
@@ -118,15 +118,15 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum
-     * length of 2048, excluding whitespace.
+     * The JSON document that describes the policy. <b>policyDocument</b> must
+     * have a minimum length of 1, with a maximum length of 2048, excluding
+     * whitespace.
      * </p>
      * 
      * @param policyDocument
-     *        The JSON document that describes the policy. The length of the
-     *        <b>policyDocument</b> must be a minimum length of 1, with a
-     *        maximum length of 2048, excluding whitespace.
+     *        The JSON document that describes the policy. <b>policyDocument</b>
+     *        must have a minimum length of 1, with a maximum length of 2048,
+     *        excluding whitespace.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

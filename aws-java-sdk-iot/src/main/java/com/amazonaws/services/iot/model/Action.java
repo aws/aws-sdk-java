@@ -39,19 +39,19 @@ public class Action implements Serializable, Cloneable {
     private LambdaAction lambda;
     /**
      * <p>
-     * Publish to an SNS topic.
+     * Publish to an Amazon SNS topic.
      * </p>
      */
     private SnsAction sns;
     /**
      * <p>
-     * Publish to an SQS queue.
+     * Publish to an Amazon SQS queue.
      * </p>
      */
     private SqsAction sqs;
     /**
      * <p>
-     * Write data to a Kinesis stream.
+     * Write data to an Amazon Kinesis stream.
      * </p>
      */
     private KinesisAction kinesis;
@@ -63,16 +63,34 @@ public class Action implements Serializable, Cloneable {
     private RepublishAction republish;
     /**
      * <p>
-     * Write to an S3 bucket.
+     * Write to an Amazon S3 bucket.
      * </p>
      */
     private S3Action s3;
     /**
      * <p>
-     * Write to a Kinesis Firehose stream.
+     * Write to an Amazon Kinesis Firehose stream.
      * </p>
      */
     private FirehoseAction firehose;
+    /**
+     * <p>
+     * Capture a CloudWatch metric.
+     * </p>
+     */
+    private CloudwatchMetricAction cloudwatchMetric;
+    /**
+     * <p>
+     * Change the state of a CloudWatch alarm.
+     * </p>
+     */
+    private CloudwatchAlarmAction cloudwatchAlarm;
+    /**
+     * <p>
+     * Write data to an Amazon Elasticsearch Service; domain.
+     * </p>
+     */
+    private ElasticsearchAction elasticsearch;
 
     /**
      * <p>
@@ -158,11 +176,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Publish to an SNS topic.
+     * Publish to an Amazon SNS topic.
      * </p>
      * 
      * @param sns
-     *        Publish to an SNS topic.
+     *        Publish to an Amazon SNS topic.
      */
 
     public void setSns(SnsAction sns) {
@@ -171,10 +189,10 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Publish to an SNS topic.
+     * Publish to an Amazon SNS topic.
      * </p>
      * 
-     * @return Publish to an SNS topic.
+     * @return Publish to an Amazon SNS topic.
      */
 
     public SnsAction getSns() {
@@ -183,11 +201,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Publish to an SNS topic.
+     * Publish to an Amazon SNS topic.
      * </p>
      * 
      * @param sns
-     *        Publish to an SNS topic.
+     *        Publish to an Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -199,11 +217,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Publish to an SQS queue.
+     * Publish to an Amazon SQS queue.
      * </p>
      * 
      * @param sqs
-     *        Publish to an SQS queue.
+     *        Publish to an Amazon SQS queue.
      */
 
     public void setSqs(SqsAction sqs) {
@@ -212,10 +230,10 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Publish to an SQS queue.
+     * Publish to an Amazon SQS queue.
      * </p>
      * 
-     * @return Publish to an SQS queue.
+     * @return Publish to an Amazon SQS queue.
      */
 
     public SqsAction getSqs() {
@@ -224,11 +242,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Publish to an SQS queue.
+     * Publish to an Amazon SQS queue.
      * </p>
      * 
      * @param sqs
-     *        Publish to an SQS queue.
+     *        Publish to an Amazon SQS queue.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -240,11 +258,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write data to a Kinesis stream.
+     * Write data to an Amazon Kinesis stream.
      * </p>
      * 
      * @param kinesis
-     *        Write data to a Kinesis stream.
+     *        Write data to an Amazon Kinesis stream.
      */
 
     public void setKinesis(KinesisAction kinesis) {
@@ -253,10 +271,10 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write data to a Kinesis stream.
+     * Write data to an Amazon Kinesis stream.
      * </p>
      * 
-     * @return Write data to a Kinesis stream.
+     * @return Write data to an Amazon Kinesis stream.
      */
 
     public KinesisAction getKinesis() {
@@ -265,11 +283,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write data to a Kinesis stream.
+     * Write data to an Amazon Kinesis stream.
      * </p>
      * 
      * @param kinesis
-     *        Write data to a Kinesis stream.
+     *        Write data to an Amazon Kinesis stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -322,11 +340,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write to an S3 bucket.
+     * Write to an Amazon S3 bucket.
      * </p>
      * 
      * @param s3
-     *        Write to an S3 bucket.
+     *        Write to an Amazon S3 bucket.
      */
 
     public void setS3(S3Action s3) {
@@ -335,10 +353,10 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write to an S3 bucket.
+     * Write to an Amazon S3 bucket.
      * </p>
      * 
-     * @return Write to an S3 bucket.
+     * @return Write to an Amazon S3 bucket.
      */
 
     public S3Action getS3() {
@@ -347,11 +365,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write to an S3 bucket.
+     * Write to an Amazon S3 bucket.
      * </p>
      * 
      * @param s3
-     *        Write to an S3 bucket.
+     *        Write to an Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -363,11 +381,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write to a Kinesis Firehose stream.
+     * Write to an Amazon Kinesis Firehose stream.
      * </p>
      * 
      * @param firehose
-     *        Write to a Kinesis Firehose stream.
+     *        Write to an Amazon Kinesis Firehose stream.
      */
 
     public void setFirehose(FirehoseAction firehose) {
@@ -376,10 +394,10 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write to a Kinesis Firehose stream.
+     * Write to an Amazon Kinesis Firehose stream.
      * </p>
      * 
-     * @return Write to a Kinesis Firehose stream.
+     * @return Write to an Amazon Kinesis Firehose stream.
      */
 
     public FirehoseAction getFirehose() {
@@ -388,17 +406,140 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Write to a Kinesis Firehose stream.
+     * Write to an Amazon Kinesis Firehose stream.
      * </p>
      * 
      * @param firehose
-     *        Write to a Kinesis Firehose stream.
+     *        Write to an Amazon Kinesis Firehose stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
     public Action withFirehose(FirehoseAction firehose) {
         setFirehose(firehose);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Capture a CloudWatch metric.
+     * </p>
+     * 
+     * @param cloudwatchMetric
+     *        Capture a CloudWatch metric.
+     */
+
+    public void setCloudwatchMetric(CloudwatchMetricAction cloudwatchMetric) {
+        this.cloudwatchMetric = cloudwatchMetric;
+    }
+
+    /**
+     * <p>
+     * Capture a CloudWatch metric.
+     * </p>
+     * 
+     * @return Capture a CloudWatch metric.
+     */
+
+    public CloudwatchMetricAction getCloudwatchMetric() {
+        return this.cloudwatchMetric;
+    }
+
+    /**
+     * <p>
+     * Capture a CloudWatch metric.
+     * </p>
+     * 
+     * @param cloudwatchMetric
+     *        Capture a CloudWatch metric.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Action withCloudwatchMetric(CloudwatchMetricAction cloudwatchMetric) {
+        setCloudwatchMetric(cloudwatchMetric);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Change the state of a CloudWatch alarm.
+     * </p>
+     * 
+     * @param cloudwatchAlarm
+     *        Change the state of a CloudWatch alarm.
+     */
+
+    public void setCloudwatchAlarm(CloudwatchAlarmAction cloudwatchAlarm) {
+        this.cloudwatchAlarm = cloudwatchAlarm;
+    }
+
+    /**
+     * <p>
+     * Change the state of a CloudWatch alarm.
+     * </p>
+     * 
+     * @return Change the state of a CloudWatch alarm.
+     */
+
+    public CloudwatchAlarmAction getCloudwatchAlarm() {
+        return this.cloudwatchAlarm;
+    }
+
+    /**
+     * <p>
+     * Change the state of a CloudWatch alarm.
+     * </p>
+     * 
+     * @param cloudwatchAlarm
+     *        Change the state of a CloudWatch alarm.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Action withCloudwatchAlarm(CloudwatchAlarmAction cloudwatchAlarm) {
+        setCloudwatchAlarm(cloudwatchAlarm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Write data to an Amazon Elasticsearch Service; domain.
+     * </p>
+     * 
+     * @param elasticsearch
+     *        Write data to an Amazon Elasticsearch Service; domain.
+     */
+
+    public void setElasticsearch(ElasticsearchAction elasticsearch) {
+        this.elasticsearch = elasticsearch;
+    }
+
+    /**
+     * <p>
+     * Write data to an Amazon Elasticsearch Service; domain.
+     * </p>
+     * 
+     * @return Write data to an Amazon Elasticsearch Service; domain.
+     */
+
+    public ElasticsearchAction getElasticsearch() {
+        return this.elasticsearch;
+    }
+
+    /**
+     * <p>
+     * Write data to an Amazon Elasticsearch Service; domain.
+     * </p>
+     * 
+     * @param elasticsearch
+     *        Write data to an Amazon Elasticsearch Service; domain.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Action withElasticsearch(ElasticsearchAction elasticsearch) {
+        setElasticsearch(elasticsearch);
         return this;
     }
 
@@ -429,7 +570,13 @@ public class Action implements Serializable, Cloneable {
         if (getS3() != null)
             sb.append("S3: " + getS3() + ",");
         if (getFirehose() != null)
-            sb.append("Firehose: " + getFirehose());
+            sb.append("Firehose: " + getFirehose() + ",");
+        if (getCloudwatchMetric() != null)
+            sb.append("CloudwatchMetric: " + getCloudwatchMetric() + ",");
+        if (getCloudwatchAlarm() != null)
+            sb.append("CloudwatchAlarm: " + getCloudwatchAlarm() + ",");
+        if (getElasticsearch() != null)
+            sb.append("Elasticsearch: " + getElasticsearch());
         sb.append("}");
         return sb.toString();
     }
@@ -484,6 +631,24 @@ public class Action implements Serializable, Cloneable {
         if (other.getFirehose() != null
                 && other.getFirehose().equals(this.getFirehose()) == false)
             return false;
+        if (other.getCloudwatchMetric() == null
+                ^ this.getCloudwatchMetric() == null)
+            return false;
+        if (other.getCloudwatchMetric() != null
+                && other.getCloudwatchMetric().equals(
+                        this.getCloudwatchMetric()) == false)
+            return false;
+        if (other.getCloudwatchAlarm() == null
+                ^ this.getCloudwatchAlarm() == null)
+            return false;
+        if (other.getCloudwatchAlarm() != null
+                && other.getCloudwatchAlarm().equals(this.getCloudwatchAlarm()) == false)
+            return false;
+        if (other.getElasticsearch() == null ^ this.getElasticsearch() == null)
+            return false;
+        if (other.getElasticsearch() != null
+                && other.getElasticsearch().equals(this.getElasticsearch()) == false)
+            return false;
         return true;
     }
 
@@ -508,6 +673,18 @@ public class Action implements Serializable, Cloneable {
                 + ((getS3() == null) ? 0 : getS3().hashCode());
         hashCode = prime * hashCode
                 + ((getFirehose() == null) ? 0 : getFirehose().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudwatchMetric() == null) ? 0 : getCloudwatchMetric()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudwatchAlarm() == null) ? 0 : getCloudwatchAlarm()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getElasticsearch() == null) ? 0 : getElasticsearch()
+                        .hashCode());
         return hashCode;
     }
 

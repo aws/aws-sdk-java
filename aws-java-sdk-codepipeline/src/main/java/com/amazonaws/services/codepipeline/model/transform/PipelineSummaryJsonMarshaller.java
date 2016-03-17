@@ -40,31 +40,36 @@ import com.amazonaws.util.json.*;
 public class PipelineSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PipelineSummary pipelineSummary, JSONWriter jsonWriter) {
+    public void marshall(PipelineSummary pipelineSummary,
+            SdkJsonGenerator jsonGenerator) {
         if (pipelineSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (pipelineSummary.getName() != null) {
-                jsonWriter.key("name").value(pipelineSummary.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        pipelineSummary.getName());
             }
             if (pipelineSummary.getVersion() != null) {
-                jsonWriter.key("version").value(pipelineSummary.getVersion());
+                jsonGenerator.writeFieldName("version").writeValue(
+                        pipelineSummary.getVersion());
             }
             if (pipelineSummary.getCreated() != null) {
-                jsonWriter.key("created").value(pipelineSummary.getCreated());
+                jsonGenerator.writeFieldName("created").writeValue(
+                        pipelineSummary.getCreated());
             }
             if (pipelineSummary.getUpdated() != null) {
-                jsonWriter.key("updated").value(pipelineSummary.getUpdated());
+                jsonGenerator.writeFieldName("updated").writeValue(
+                        pipelineSummary.getUpdated());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

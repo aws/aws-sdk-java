@@ -40,30 +40,30 @@ import com.amazonaws.util.json.*;
 public class TrustedAdvisorCategorySpecificSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             TrustedAdvisorCategorySpecificSummary trustedAdvisorCategorySpecificSummary,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (trustedAdvisorCategorySpecificSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (trustedAdvisorCategorySpecificSummary.getCostOptimizing() != null) {
-                jsonWriter.key("costOptimizing");
+                jsonGenerator.writeFieldName("costOptimizing");
                 TrustedAdvisorCostOptimizingSummaryJsonMarshaller
                         .getInstance()
                         .marshall(
                                 trustedAdvisorCategorySpecificSummary
                                         .getCostOptimizing(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

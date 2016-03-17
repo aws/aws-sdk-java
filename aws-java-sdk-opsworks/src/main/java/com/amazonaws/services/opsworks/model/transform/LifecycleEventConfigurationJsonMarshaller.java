@@ -40,27 +40,27 @@ import com.amazonaws.util.json.*;
 public class LifecycleEventConfigurationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             LifecycleEventConfiguration lifecycleEventConfiguration,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (lifecycleEventConfiguration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (lifecycleEventConfiguration.getShutdown() != null) {
-                jsonWriter.key("Shutdown");
+                jsonGenerator.writeFieldName("Shutdown");
                 ShutdownEventConfigurationJsonMarshaller.getInstance()
                         .marshall(lifecycleEventConfiguration.getShutdown(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -57,9 +57,17 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements S
      * A value that specifies whether the modifications in this request and
      * any pending modifications are asynchronously applied as soon as
      * possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     * setting for the DB cluster. <p>If this parameter is set to
+     * setting for the DB cluster. If this parameter is set to
      * <code>false</code>, changes to the DB cluster are applied during the
-     * next maintenance window. <p>Default: <code>false</code>
+     * next maintenance window. <p>The <code>ApplyImmediately</code>
+     * parameter only affects the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes
+     * to the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately,
+     * regardless of the value of the <code>ApplyImmediately</code>
+     * parameter. <p>Default: <code>false</code>
      */
     private Boolean applyImmediately;
 
@@ -267,16 +275,32 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements S
      * A value that specifies whether the modifications in this request and
      * any pending modifications are asynchronously applied as soon as
      * possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     * setting for the DB cluster. <p>If this parameter is set to
+     * setting for the DB cluster. If this parameter is set to
      * <code>false</code>, changes to the DB cluster are applied during the
-     * next maintenance window. <p>Default: <code>false</code>
+     * next maintenance window. <p>The <code>ApplyImmediately</code>
+     * parameter only affects the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes
+     * to the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately,
+     * regardless of the value of the <code>ApplyImmediately</code>
+     * parameter. <p>Default: <code>false</code>
      *
      * @return A value that specifies whether the modifications in this request and
      *         any pending modifications are asynchronously applied as soon as
      *         possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     *         setting for the DB cluster. <p>If this parameter is set to
+     *         setting for the DB cluster. If this parameter is set to
      *         <code>false</code>, changes to the DB cluster are applied during the
-     *         next maintenance window. <p>Default: <code>false</code>
+     *         next maintenance window. <p>The <code>ApplyImmediately</code>
+     *         parameter only affects the <code>NewDBClusterIdentifier</code> and
+     *         <code>MasterUserPassword</code> values. If you set the
+     *         <code>ApplyImmediately</code> parameter value to false, then changes
+     *         to the <code>NewDBClusterIdentifier</code> and
+     *         <code>MasterUserPassword</code> values are applied during the next
+     *         maintenance window. All other changes are applied immediately,
+     *         regardless of the value of the <code>ApplyImmediately</code>
+     *         parameter. <p>Default: <code>false</code>
      */
     public Boolean isApplyImmediately() {
         return applyImmediately;
@@ -286,16 +310,32 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements S
      * A value that specifies whether the modifications in this request and
      * any pending modifications are asynchronously applied as soon as
      * possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     * setting for the DB cluster. <p>If this parameter is set to
+     * setting for the DB cluster. If this parameter is set to
      * <code>false</code>, changes to the DB cluster are applied during the
-     * next maintenance window. <p>Default: <code>false</code>
+     * next maintenance window. <p>The <code>ApplyImmediately</code>
+     * parameter only affects the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes
+     * to the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately,
+     * regardless of the value of the <code>ApplyImmediately</code>
+     * parameter. <p>Default: <code>false</code>
      *
      * @param applyImmediately A value that specifies whether the modifications in this request and
      *         any pending modifications are asynchronously applied as soon as
      *         possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     *         setting for the DB cluster. <p>If this parameter is set to
+     *         setting for the DB cluster. If this parameter is set to
      *         <code>false</code>, changes to the DB cluster are applied during the
-     *         next maintenance window. <p>Default: <code>false</code>
+     *         next maintenance window. <p>The <code>ApplyImmediately</code>
+     *         parameter only affects the <code>NewDBClusterIdentifier</code> and
+     *         <code>MasterUserPassword</code> values. If you set the
+     *         <code>ApplyImmediately</code> parameter value to false, then changes
+     *         to the <code>NewDBClusterIdentifier</code> and
+     *         <code>MasterUserPassword</code> values are applied during the next
+     *         maintenance window. All other changes are applied immediately,
+     *         regardless of the value of the <code>ApplyImmediately</code>
+     *         parameter. <p>Default: <code>false</code>
      */
     public void setApplyImmediately(Boolean applyImmediately) {
         this.applyImmediately = applyImmediately;
@@ -305,18 +345,34 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements S
      * A value that specifies whether the modifications in this request and
      * any pending modifications are asynchronously applied as soon as
      * possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     * setting for the DB cluster. <p>If this parameter is set to
+     * setting for the DB cluster. If this parameter is set to
      * <code>false</code>, changes to the DB cluster are applied during the
-     * next maintenance window. <p>Default: <code>false</code>
+     * next maintenance window. <p>The <code>ApplyImmediately</code>
+     * parameter only affects the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes
+     * to the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately,
+     * regardless of the value of the <code>ApplyImmediately</code>
+     * parameter. <p>Default: <code>false</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applyImmediately A value that specifies whether the modifications in this request and
      *         any pending modifications are asynchronously applied as soon as
      *         possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     *         setting for the DB cluster. <p>If this parameter is set to
+     *         setting for the DB cluster. If this parameter is set to
      *         <code>false</code>, changes to the DB cluster are applied during the
-     *         next maintenance window. <p>Default: <code>false</code>
+     *         next maintenance window. <p>The <code>ApplyImmediately</code>
+     *         parameter only affects the <code>NewDBClusterIdentifier</code> and
+     *         <code>MasterUserPassword</code> values. If you set the
+     *         <code>ApplyImmediately</code> parameter value to false, then changes
+     *         to the <code>NewDBClusterIdentifier</code> and
+     *         <code>MasterUserPassword</code> values are applied during the next
+     *         maintenance window. All other changes are applied immediately,
+     *         regardless of the value of the <code>ApplyImmediately</code>
+     *         parameter. <p>Default: <code>false</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -330,16 +386,32 @@ public class ModifyDBClusterRequest extends AmazonWebServiceRequest implements S
      * A value that specifies whether the modifications in this request and
      * any pending modifications are asynchronously applied as soon as
      * possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     * setting for the DB cluster. <p>If this parameter is set to
+     * setting for the DB cluster. If this parameter is set to
      * <code>false</code>, changes to the DB cluster are applied during the
-     * next maintenance window. <p>Default: <code>false</code>
+     * next maintenance window. <p>The <code>ApplyImmediately</code>
+     * parameter only affects the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes
+     * to the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values are applied during the next
+     * maintenance window. All other changes are applied immediately,
+     * regardless of the value of the <code>ApplyImmediately</code>
+     * parameter. <p>Default: <code>false</code>
      *
      * @return A value that specifies whether the modifications in this request and
      *         any pending modifications are asynchronously applied as soon as
      *         possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     *         setting for the DB cluster. <p>If this parameter is set to
+     *         setting for the DB cluster. If this parameter is set to
      *         <code>false</code>, changes to the DB cluster are applied during the
-     *         next maintenance window. <p>Default: <code>false</code>
+     *         next maintenance window. <p>The <code>ApplyImmediately</code>
+     *         parameter only affects the <code>NewDBClusterIdentifier</code> and
+     *         <code>MasterUserPassword</code> values. If you set the
+     *         <code>ApplyImmediately</code> parameter value to false, then changes
+     *         to the <code>NewDBClusterIdentifier</code> and
+     *         <code>MasterUserPassword</code> values are applied during the next
+     *         maintenance window. All other changes are applied immediately,
+     *         regardless of the value of the <code>ApplyImmediately</code>
+     *         parameter. <p>Default: <code>false</code>
      */
     public Boolean getApplyImmediately() {
         return applyImmediately;

@@ -64,49 +64,49 @@ public class CreateAssociationRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createAssociationRequest.getName() != null) {
-                jsonWriter.key("Name")
-                        .value(createAssociationRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createAssociationRequest.getName());
             }
             if (createAssociationRequest.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
                         createAssociationRequest.getInstanceId());
             }
 
             java.util.Map<String, java.util.List<String>> parametersMap = createAssociationRequest
                     .getParameters();
             if (parametersMap != null) {
-                jsonWriter.key("Parameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Parameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, java.util.List<String>> parametersMapValue : parametersMap
                         .entrySet()) {
                     if (parametersMapValue.getValue() != null) {
-                        jsonWriter.key(parametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(parametersMapValue
+                                .getKey());
 
-                        jsonWriter.array();
+                        jsonGenerator.writeStartArray();
                         for (String parametersMapValueList : parametersMapValue
                                 .getValue()) {
                             if (parametersMapValueList != null) {
-                                jsonWriter.value(parametersMapValueList);
+                                jsonGenerator
+                                        .writeValue(parametersMapValueList);
                             }
                         }
-                        jsonWriter.endArray();
+                        jsonGenerator.writeEndArray();
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

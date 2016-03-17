@@ -40,28 +40,29 @@ import com.amazonaws.util.json.*;
 public class ByteMatchSetUpdateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ByteMatchSetUpdate byteMatchSetUpdate,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (byteMatchSetUpdate == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (byteMatchSetUpdate.getAction() != null) {
-                jsonWriter.key("Action").value(byteMatchSetUpdate.getAction());
+                jsonGenerator.writeFieldName("Action").writeValue(
+                        byteMatchSetUpdate.getAction());
             }
             if (byteMatchSetUpdate.getByteMatchTuple() != null) {
-                jsonWriter.key("ByteMatchTuple");
+                jsonGenerator.writeFieldName("ByteMatchTuple");
                 ByteMatchTupleJsonMarshaller.getInstance().marshall(
-                        byteMatchSetUpdate.getByteMatchTuple(), jsonWriter);
+                        byteMatchSetUpdate.getByteMatchTuple(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

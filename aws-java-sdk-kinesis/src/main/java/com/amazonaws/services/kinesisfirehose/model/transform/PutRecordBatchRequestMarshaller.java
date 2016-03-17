@@ -64,36 +64,34 @@ public class PutRecordBatchRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putRecordBatchRequest.getDeliveryStreamName() != null) {
-                jsonWriter.key("DeliveryStreamName").value(
+                jsonGenerator.writeFieldName("DeliveryStreamName").writeValue(
                         putRecordBatchRequest.getDeliveryStreamName());
             }
 
             java.util.List<Record> recordsList = putRecordBatchRequest
                     .getRecords();
             if (recordsList != null) {
-                jsonWriter.key("Records");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Records");
+                jsonGenerator.writeStartArray();
                 for (Record recordsListValue : recordsList) {
                     if (recordsListValue != null) {
 
                         RecordJsonMarshaller.getInstance().marshall(
-                                recordsListValue, jsonWriter);
+                                recordsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

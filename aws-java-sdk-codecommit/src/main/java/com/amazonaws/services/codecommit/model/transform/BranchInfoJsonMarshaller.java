@@ -40,25 +40,27 @@ import com.amazonaws.util.json.*;
 public class BranchInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(BranchInfo branchInfo, JSONWriter jsonWriter) {
+    public void marshall(BranchInfo branchInfo, SdkJsonGenerator jsonGenerator) {
         if (branchInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (branchInfo.getBranchName() != null) {
-                jsonWriter.key("branchName").value(branchInfo.getBranchName());
+                jsonGenerator.writeFieldName("branchName").writeValue(
+                        branchInfo.getBranchName());
             }
             if (branchInfo.getCommitId() != null) {
-                jsonWriter.key("commitId").value(branchInfo.getCommitId());
+                jsonGenerator.writeFieldName("commitId").writeValue(
+                        branchInfo.getCommitId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

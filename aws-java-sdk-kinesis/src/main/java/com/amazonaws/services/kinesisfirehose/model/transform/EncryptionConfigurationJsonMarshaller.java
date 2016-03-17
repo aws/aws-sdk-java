@@ -40,30 +40,30 @@ import com.amazonaws.util.json.*;
 public class EncryptionConfigurationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(EncryptionConfiguration encryptionConfiguration,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (encryptionConfiguration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (encryptionConfiguration.getNoEncryptionConfig() != null) {
-                jsonWriter.key("NoEncryptionConfig").value(
+                jsonGenerator.writeFieldName("NoEncryptionConfig").writeValue(
                         encryptionConfiguration.getNoEncryptionConfig());
             }
             if (encryptionConfiguration.getKMSEncryptionConfig() != null) {
-                jsonWriter.key("KMSEncryptionConfig");
+                jsonGenerator.writeFieldName("KMSEncryptionConfig");
                 KMSEncryptionConfigJsonMarshaller.getInstance().marshall(
                         encryptionConfiguration.getKMSEncryptionConfig(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

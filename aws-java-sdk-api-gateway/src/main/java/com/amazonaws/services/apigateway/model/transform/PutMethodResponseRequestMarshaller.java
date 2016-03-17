@@ -90,50 +90,52 @@ public class PutMethodResponseRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.Map<String, Boolean> responseParametersMap = putMethodResponseRequest
                     .getResponseParameters();
             if (responseParametersMap != null) {
-                jsonWriter.key("responseParameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("responseParameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Boolean> responseParametersMapValue : responseParametersMap
                         .entrySet()) {
                     if (responseParametersMapValue.getValue() != null) {
-                        jsonWriter.key(responseParametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(responseParametersMapValue
+                                .getKey());
 
-                        jsonWriter.value(responseParametersMapValue.getValue());
+                        jsonGenerator.writeValue(responseParametersMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, String> responseModelsMap = putMethodResponseRequest
                     .getResponseModels();
             if (responseModelsMap != null) {
-                jsonWriter.key("responseModels");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("responseModels");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> responseModelsMapValue : responseModelsMap
                         .entrySet()) {
                     if (responseModelsMapValue.getValue() != null) {
-                        jsonWriter.key(responseModelsMapValue.getKey());
+                        jsonGenerator.writeFieldName(responseModelsMapValue
+                                .getKey());
 
-                        jsonWriter.value(responseModelsMapValue.getValue());
+                        jsonGenerator.writeValue(responseModelsMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

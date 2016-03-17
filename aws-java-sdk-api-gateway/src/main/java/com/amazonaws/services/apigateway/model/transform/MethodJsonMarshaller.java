@@ -40,90 +40,98 @@ import com.amazonaws.util.json.*;
 public class MethodJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Method method, JSONWriter jsonWriter) {
+    public void marshall(Method method, SdkJsonGenerator jsonGenerator) {
         if (method == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (method.getHttpMethod() != null) {
-                jsonWriter.key("httpMethod").value(method.getHttpMethod());
+                jsonGenerator.writeFieldName("httpMethod").writeValue(
+                        method.getHttpMethod());
             }
             if (method.getAuthorizationType() != null) {
-                jsonWriter.key("authorizationType").value(
+                jsonGenerator.writeFieldName("authorizationType").writeValue(
                         method.getAuthorizationType());
             }
             if (method.getAuthorizerId() != null) {
-                jsonWriter.key("authorizerId").value(method.getAuthorizerId());
+                jsonGenerator.writeFieldName("authorizerId").writeValue(
+                        method.getAuthorizerId());
             }
             if (method.getApiKeyRequired() != null) {
-                jsonWriter.key("apiKeyRequired").value(
+                jsonGenerator.writeFieldName("apiKeyRequired").writeValue(
                         method.getApiKeyRequired());
             }
 
             java.util.Map<String, Boolean> requestParametersMap = method
                     .getRequestParameters();
             if (requestParametersMap != null) {
-                jsonWriter.key("requestParameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("requestParameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Boolean> requestParametersMapValue : requestParametersMap
                         .entrySet()) {
                     if (requestParametersMapValue.getValue() != null) {
-                        jsonWriter.key(requestParametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(requestParametersMapValue
+                                .getKey());
 
-                        jsonWriter.value(requestParametersMapValue.getValue());
+                        jsonGenerator.writeValue(requestParametersMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, String> requestModelsMap = method
                     .getRequestModels();
             if (requestModelsMap != null) {
-                jsonWriter.key("requestModels");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("requestModels");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> requestModelsMapValue : requestModelsMap
                         .entrySet()) {
                     if (requestModelsMapValue.getValue() != null) {
-                        jsonWriter.key(requestModelsMapValue.getKey());
+                        jsonGenerator.writeFieldName(requestModelsMapValue
+                                .getKey());
 
-                        jsonWriter.value(requestModelsMapValue.getValue());
+                        jsonGenerator.writeValue(requestModelsMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, MethodResponse> methodResponsesMap = method
                     .getMethodResponses();
             if (methodResponsesMap != null) {
-                jsonWriter.key("methodResponses");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("methodResponses");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, MethodResponse> methodResponsesMapValue : methodResponsesMap
                         .entrySet()) {
                     if (methodResponsesMapValue.getValue() != null) {
-                        jsonWriter.key(methodResponsesMapValue.getKey());
+                        jsonGenerator.writeFieldName(methodResponsesMapValue
+                                .getKey());
 
                         MethodResponseJsonMarshaller.getInstance().marshall(
-                                methodResponsesMapValue.getValue(), jsonWriter);
+                                methodResponsesMapValue.getValue(),
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (method.getMethodIntegration() != null) {
-                jsonWriter.key("methodIntegration");
+                jsonGenerator.writeFieldName("methodIntegration");
                 IntegrationJsonMarshaller.getInstance().marshall(
-                        method.getMethodIntegration(), jsonWriter);
+                        method.getMethodIntegration(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

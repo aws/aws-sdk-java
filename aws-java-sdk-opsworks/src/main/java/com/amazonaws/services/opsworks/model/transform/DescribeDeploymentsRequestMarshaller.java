@@ -66,17 +66,16 @@ public class DescribeDeploymentsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeDeploymentsRequest.getStackId() != null) {
-                jsonWriter.key("StackId").value(
+                jsonGenerator.writeFieldName("StackId").writeValue(
                         describeDeploymentsRequest.getStackId());
             }
             if (describeDeploymentsRequest.getAppId() != null) {
-                jsonWriter.key("AppId").value(
+                jsonGenerator.writeFieldName("AppId").writeValue(
                         describeDeploymentsRequest.getAppId());
             }
 
@@ -84,21 +83,20 @@ public class DescribeDeploymentsRequestMarshaller
                     .getDeploymentIds();
             if (!deploymentIdsList.isEmpty()
                     || !deploymentIdsList.isAutoConstruct()) {
-                jsonWriter.key("DeploymentIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("DeploymentIds");
+                jsonGenerator.writeStartArray();
                 for (String deploymentIdsListValue : deploymentIdsList) {
                     if (deploymentIdsListValue != null) {
-                        jsonWriter.value(deploymentIdsListValue);
+                        jsonGenerator.writeValue(deploymentIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

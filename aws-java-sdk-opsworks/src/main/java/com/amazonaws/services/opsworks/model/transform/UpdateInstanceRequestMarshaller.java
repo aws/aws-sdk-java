@@ -64,72 +64,74 @@ public class UpdateInstanceRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateInstanceRequest.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
                         updateInstanceRequest.getInstanceId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> layerIdsList = (com.amazonaws.internal.SdkInternalList<String>) updateInstanceRequest
                     .getLayerIds();
             if (!layerIdsList.isEmpty() || !layerIdsList.isAutoConstruct()) {
-                jsonWriter.key("LayerIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("LayerIds");
+                jsonGenerator.writeStartArray();
                 for (String layerIdsListValue : layerIdsList) {
                     if (layerIdsListValue != null) {
-                        jsonWriter.value(layerIdsListValue);
+                        jsonGenerator.writeValue(layerIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (updateInstanceRequest.getInstanceType() != null) {
-                jsonWriter.key("InstanceType").value(
+                jsonGenerator.writeFieldName("InstanceType").writeValue(
                         updateInstanceRequest.getInstanceType());
             }
             if (updateInstanceRequest.getAutoScalingType() != null) {
-                jsonWriter.key("AutoScalingType").value(
+                jsonGenerator.writeFieldName("AutoScalingType").writeValue(
                         updateInstanceRequest.getAutoScalingType());
             }
             if (updateInstanceRequest.getHostname() != null) {
-                jsonWriter.key("Hostname").value(
+                jsonGenerator.writeFieldName("Hostname").writeValue(
                         updateInstanceRequest.getHostname());
             }
             if (updateInstanceRequest.getOs() != null) {
-                jsonWriter.key("Os").value(updateInstanceRequest.getOs());
+                jsonGenerator.writeFieldName("Os").writeValue(
+                        updateInstanceRequest.getOs());
             }
             if (updateInstanceRequest.getAmiId() != null) {
-                jsonWriter.key("AmiId").value(updateInstanceRequest.getAmiId());
+                jsonGenerator.writeFieldName("AmiId").writeValue(
+                        updateInstanceRequest.getAmiId());
             }
             if (updateInstanceRequest.getSshKeyName() != null) {
-                jsonWriter.key("SshKeyName").value(
+                jsonGenerator.writeFieldName("SshKeyName").writeValue(
                         updateInstanceRequest.getSshKeyName());
             }
             if (updateInstanceRequest.getArchitecture() != null) {
-                jsonWriter.key("Architecture").value(
+                jsonGenerator.writeFieldName("Architecture").writeValue(
                         updateInstanceRequest.getArchitecture());
             }
             if (updateInstanceRequest.getInstallUpdatesOnBoot() != null) {
-                jsonWriter.key("InstallUpdatesOnBoot").value(
-                        updateInstanceRequest.getInstallUpdatesOnBoot());
+                jsonGenerator
+                        .writeFieldName("InstallUpdatesOnBoot")
+                        .writeValue(
+                                updateInstanceRequest.getInstallUpdatesOnBoot());
             }
             if (updateInstanceRequest.getEbsOptimized() != null) {
-                jsonWriter.key("EbsOptimized").value(
+                jsonGenerator.writeFieldName("EbsOptimized").writeValue(
                         updateInstanceRequest.getEbsOptimized());
             }
             if (updateInstanceRequest.getAgentVersion() != null) {
-                jsonWriter.key("AgentVersion").value(
+                jsonGenerator.writeFieldName("AgentVersion").writeValue(
                         updateInstanceRequest.getAgentVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

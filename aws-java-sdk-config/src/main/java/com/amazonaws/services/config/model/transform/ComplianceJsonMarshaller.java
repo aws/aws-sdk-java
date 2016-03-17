@@ -40,29 +40,29 @@ import com.amazonaws.util.json.*;
 public class ComplianceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Compliance compliance, JSONWriter jsonWriter) {
+    public void marshall(Compliance compliance, SdkJsonGenerator jsonGenerator) {
         if (compliance == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (compliance.getComplianceType() != null) {
-                jsonWriter.key("ComplianceType").value(
+                jsonGenerator.writeFieldName("ComplianceType").writeValue(
                         compliance.getComplianceType());
             }
             if (compliance.getComplianceContributorCount() != null) {
-                jsonWriter.key("ComplianceContributorCount");
+                jsonGenerator.writeFieldName("ComplianceContributorCount");
                 ComplianceContributorCountJsonMarshaller.getInstance()
                         .marshall(compliance.getComplianceContributorCount(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

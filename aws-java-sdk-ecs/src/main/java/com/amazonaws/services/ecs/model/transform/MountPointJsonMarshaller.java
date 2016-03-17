@@ -40,30 +40,31 @@ import com.amazonaws.util.json.*;
 public class MountPointJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(MountPoint mountPoint, JSONWriter jsonWriter) {
+    public void marshall(MountPoint mountPoint, SdkJsonGenerator jsonGenerator) {
         if (mountPoint == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (mountPoint.getSourceVolume() != null) {
-                jsonWriter.key("sourceVolume").value(
+                jsonGenerator.writeFieldName("sourceVolume").writeValue(
                         mountPoint.getSourceVolume());
             }
             if (mountPoint.getContainerPath() != null) {
-                jsonWriter.key("containerPath").value(
+                jsonGenerator.writeFieldName("containerPath").writeValue(
                         mountPoint.getContainerPath());
             }
             if (mountPoint.getReadOnly() != null) {
-                jsonWriter.key("readOnly").value(mountPoint.getReadOnly());
+                jsonGenerator.writeFieldName("readOnly").writeValue(
+                        mountPoint.getReadOnly());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

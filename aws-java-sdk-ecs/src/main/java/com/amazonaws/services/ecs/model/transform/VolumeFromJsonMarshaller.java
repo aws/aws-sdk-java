@@ -40,26 +40,27 @@ import com.amazonaws.util.json.*;
 public class VolumeFromJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(VolumeFrom volumeFrom, JSONWriter jsonWriter) {
+    public void marshall(VolumeFrom volumeFrom, SdkJsonGenerator jsonGenerator) {
         if (volumeFrom == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (volumeFrom.getSourceContainer() != null) {
-                jsonWriter.key("sourceContainer").value(
+                jsonGenerator.writeFieldName("sourceContainer").writeValue(
                         volumeFrom.getSourceContainer());
             }
             if (volumeFrom.getReadOnly() != null) {
-                jsonWriter.key("readOnly").value(volumeFrom.getReadOnly());
+                jsonGenerator.writeFieldName("readOnly").writeValue(
+                        volumeFrom.getReadOnly());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

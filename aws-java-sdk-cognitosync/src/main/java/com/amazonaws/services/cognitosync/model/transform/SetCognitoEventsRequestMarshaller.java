@@ -73,33 +73,31 @@ public class SetCognitoEventsRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalMap<String, String> eventsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) setCognitoEventsRequest
                     .getEvents();
             if (!eventsMap.isEmpty() || !eventsMap.isAutoConstruct()) {
-                jsonWriter.key("Events");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Events");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> eventsMapValue : eventsMap
                         .entrySet()) {
                     if (eventsMapValue.getValue() != null) {
-                        jsonWriter.key(eventsMapValue.getKey());
+                        jsonGenerator.writeFieldName(eventsMapValue.getKey());
 
-                        jsonWriter.value(eventsMapValue.getValue());
+                        jsonGenerator.writeValue(eventsMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

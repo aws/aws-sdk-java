@@ -40,39 +40,40 @@ import com.amazonaws.util.json.*;
 public class PermissionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Permission permission, JSONWriter jsonWriter) {
+    public void marshall(Permission permission, SdkJsonGenerator jsonGenerator) {
         if (permission == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (permission.getGranteeType() != null) {
-                jsonWriter.key("GranteeType")
-                        .value(permission.getGranteeType());
+                jsonGenerator.writeFieldName("GranteeType").writeValue(
+                        permission.getGranteeType());
             }
             if (permission.getGrantee() != null) {
-                jsonWriter.key("Grantee").value(permission.getGrantee());
+                jsonGenerator.writeFieldName("Grantee").writeValue(
+                        permission.getGrantee());
             }
 
             com.amazonaws.internal.SdkInternalList<String> accessList = (com.amazonaws.internal.SdkInternalList<String>) permission
                     .getAccess();
             if (!accessList.isEmpty() || !accessList.isAutoConstruct()) {
-                jsonWriter.key("Access");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Access");
+                jsonGenerator.writeStartArray();
                 for (String accessListValue : accessList) {
                     if (accessListValue != null) {
-                        jsonWriter.value(accessListValue);
+                        jsonGenerator.writeValue(accessListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

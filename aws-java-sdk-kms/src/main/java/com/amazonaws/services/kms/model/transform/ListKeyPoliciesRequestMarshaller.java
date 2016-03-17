@@ -64,29 +64,27 @@ public class ListKeyPoliciesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listKeyPoliciesRequest.getKeyId() != null) {
-                jsonWriter.key("KeyId")
-                        .value(listKeyPoliciesRequest.getKeyId());
+                jsonGenerator.writeFieldName("KeyId").writeValue(
+                        listKeyPoliciesRequest.getKeyId());
             }
             if (listKeyPoliciesRequest.getLimit() != null) {
-                jsonWriter.key("Limit")
-                        .value(listKeyPoliciesRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(
+                        listKeyPoliciesRequest.getLimit());
             }
             if (listKeyPoliciesRequest.getMarker() != null) {
-                jsonWriter.key("Marker").value(
+                jsonGenerator.writeFieldName("Marker").writeValue(
                         listKeyPoliciesRequest.getMarker());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

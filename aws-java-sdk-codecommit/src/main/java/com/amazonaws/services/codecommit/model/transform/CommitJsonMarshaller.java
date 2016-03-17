@@ -40,51 +40,53 @@ import com.amazonaws.util.json.*;
 public class CommitJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Commit commit, JSONWriter jsonWriter) {
+    public void marshall(Commit commit, SdkJsonGenerator jsonGenerator) {
         if (commit == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (commit.getTreeId() != null) {
-                jsonWriter.key("treeId").value(commit.getTreeId());
+                jsonGenerator.writeFieldName("treeId").writeValue(
+                        commit.getTreeId());
             }
 
             java.util.List<String> parentsList = commit.getParents();
             if (parentsList != null) {
-                jsonWriter.key("parents");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("parents");
+                jsonGenerator.writeStartArray();
                 for (String parentsListValue : parentsList) {
                     if (parentsListValue != null) {
-                        jsonWriter.value(parentsListValue);
+                        jsonGenerator.writeValue(parentsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (commit.getMessage() != null) {
-                jsonWriter.key("message").value(commit.getMessage());
+                jsonGenerator.writeFieldName("message").writeValue(
+                        commit.getMessage());
             }
             if (commit.getAuthor() != null) {
-                jsonWriter.key("author");
+                jsonGenerator.writeFieldName("author");
                 UserInfoJsonMarshaller.getInstance().marshall(
-                        commit.getAuthor(), jsonWriter);
+                        commit.getAuthor(), jsonGenerator);
             }
             if (commit.getCommitter() != null) {
-                jsonWriter.key("committer");
+                jsonGenerator.writeFieldName("committer");
                 UserInfoJsonMarshaller.getInstance().marshall(
-                        commit.getCommitter(), jsonWriter);
+                        commit.getCommitter(), jsonGenerator);
             }
             if (commit.getAdditionalData() != null) {
-                jsonWriter.key("additionalData").value(
+                jsonGenerator.writeFieldName("additionalData").writeValue(
                         commit.getAdditionalData());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

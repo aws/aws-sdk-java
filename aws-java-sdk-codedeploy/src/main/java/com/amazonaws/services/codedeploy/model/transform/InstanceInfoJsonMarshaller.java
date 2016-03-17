@@ -40,54 +40,55 @@ import com.amazonaws.util.json.*;
 public class InstanceInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(InstanceInfo instanceInfo, JSONWriter jsonWriter) {
+    public void marshall(InstanceInfo instanceInfo,
+            SdkJsonGenerator jsonGenerator) {
         if (instanceInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceInfo.getInstanceName() != null) {
-                jsonWriter.key("instanceName").value(
+                jsonGenerator.writeFieldName("instanceName").writeValue(
                         instanceInfo.getInstanceName());
             }
             if (instanceInfo.getIamUserArn() != null) {
-                jsonWriter.key("iamUserArn")
-                        .value(instanceInfo.getIamUserArn());
+                jsonGenerator.writeFieldName("iamUserArn").writeValue(
+                        instanceInfo.getIamUserArn());
             }
             if (instanceInfo.getInstanceArn() != null) {
-                jsonWriter.key("instanceArn").value(
+                jsonGenerator.writeFieldName("instanceArn").writeValue(
                         instanceInfo.getInstanceArn());
             }
             if (instanceInfo.getRegisterTime() != null) {
-                jsonWriter.key("registerTime").value(
+                jsonGenerator.writeFieldName("registerTime").writeValue(
                         instanceInfo.getRegisterTime());
             }
             if (instanceInfo.getDeregisterTime() != null) {
-                jsonWriter.key("deregisterTime").value(
+                jsonGenerator.writeFieldName("deregisterTime").writeValue(
                         instanceInfo.getDeregisterTime());
             }
 
             com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) instanceInfo
                     .getTags();
             if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
-                jsonWriter.key("tags");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("tags");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

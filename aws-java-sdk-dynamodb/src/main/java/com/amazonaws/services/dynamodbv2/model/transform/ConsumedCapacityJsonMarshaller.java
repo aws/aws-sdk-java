@@ -40,71 +40,75 @@ import com.amazonaws.util.json.*;
 public class ConsumedCapacityJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ConsumedCapacity consumedCapacity,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (consumedCapacity == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (consumedCapacity.getTableName() != null) {
-                jsonWriter.key("TableName").value(
+                jsonGenerator.writeFieldName("TableName").writeValue(
                         consumedCapacity.getTableName());
             }
             if (consumedCapacity.getCapacityUnits() != null) {
-                jsonWriter.key("CapacityUnits").value(
+                jsonGenerator.writeFieldName("CapacityUnits").writeValue(
                         consumedCapacity.getCapacityUnits());
             }
             if (consumedCapacity.getTable() != null) {
-                jsonWriter.key("Table");
+                jsonGenerator.writeFieldName("Table");
                 CapacityJsonMarshaller.getInstance().marshall(
-                        consumedCapacity.getTable(), jsonWriter);
+                        consumedCapacity.getTable(), jsonGenerator);
             }
 
             java.util.Map<String, Capacity> localSecondaryIndexesMap = consumedCapacity
                     .getLocalSecondaryIndexes();
             if (localSecondaryIndexesMap != null) {
-                jsonWriter.key("LocalSecondaryIndexes");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("LocalSecondaryIndexes");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Capacity> localSecondaryIndexesMapValue : localSecondaryIndexesMap
                         .entrySet()) {
                     if (localSecondaryIndexesMapValue.getValue() != null) {
-                        jsonWriter.key(localSecondaryIndexesMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(localSecondaryIndexesMapValue
+                                        .getKey());
 
                         CapacityJsonMarshaller.getInstance().marshall(
                                 localSecondaryIndexesMapValue.getValue(),
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, Capacity> globalSecondaryIndexesMap = consumedCapacity
                     .getGlobalSecondaryIndexes();
             if (globalSecondaryIndexesMap != null) {
-                jsonWriter.key("GlobalSecondaryIndexes");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("GlobalSecondaryIndexes");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Capacity> globalSecondaryIndexesMapValue : globalSecondaryIndexesMap
                         .entrySet()) {
                     if (globalSecondaryIndexesMapValue.getValue() != null) {
-                        jsonWriter.key(globalSecondaryIndexesMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(globalSecondaryIndexesMapValue
+                                        .getKey());
 
                         CapacityJsonMarshaller.getInstance().marshall(
                                 globalSecondaryIndexesMapValue.getValue(),
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

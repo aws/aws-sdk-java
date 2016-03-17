@@ -40,38 +40,40 @@ import com.amazonaws.util.json.*;
 public class FilteredLogEventJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(FilteredLogEvent filteredLogEvent,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (filteredLogEvent == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (filteredLogEvent.getLogStreamName() != null) {
-                jsonWriter.key("logStreamName").value(
+                jsonGenerator.writeFieldName("logStreamName").writeValue(
                         filteredLogEvent.getLogStreamName());
             }
             if (filteredLogEvent.getTimestamp() != null) {
-                jsonWriter.key("timestamp").value(
+                jsonGenerator.writeFieldName("timestamp").writeValue(
                         filteredLogEvent.getTimestamp());
             }
             if (filteredLogEvent.getMessage() != null) {
-                jsonWriter.key("message").value(filteredLogEvent.getMessage());
+                jsonGenerator.writeFieldName("message").writeValue(
+                        filteredLogEvent.getMessage());
             }
             if (filteredLogEvent.getIngestionTime() != null) {
-                jsonWriter.key("ingestionTime").value(
+                jsonGenerator.writeFieldName("ingestionTime").writeValue(
                         filteredLogEvent.getIngestionTime());
             }
             if (filteredLogEvent.getEventId() != null) {
-                jsonWriter.key("eventId").value(filteredLogEvent.getEventId());
+                jsonGenerator.writeFieldName("eventId").writeValue(
+                        filteredLogEvent.getEventId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

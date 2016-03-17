@@ -65,34 +65,32 @@ public class AddWorkingStorageRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (addWorkingStorageRequest.getGatewayARN() != null) {
-                jsonWriter.key("GatewayARN").value(
+                jsonGenerator.writeFieldName("GatewayARN").writeValue(
                         addWorkingStorageRequest.getGatewayARN());
             }
 
             com.amazonaws.internal.SdkInternalList<String> diskIdsList = (com.amazonaws.internal.SdkInternalList<String>) addWorkingStorageRequest
                     .getDiskIds();
             if (!diskIdsList.isEmpty() || !diskIdsList.isAutoConstruct()) {
-                jsonWriter.key("DiskIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("DiskIds");
+                jsonGenerator.writeStartArray();
                 for (String diskIdsListValue : diskIdsList) {
                     if (diskIdsListValue != null) {
-                        jsonWriter.value(diskIdsListValue);
+                        jsonGenerator.writeValue(diskIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

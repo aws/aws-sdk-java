@@ -65,35 +65,33 @@ public class PutActionRevisionRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putActionRevisionRequest.getPipelineName() != null) {
-                jsonWriter.key("pipelineName").value(
+                jsonGenerator.writeFieldName("pipelineName").writeValue(
                         putActionRevisionRequest.getPipelineName());
             }
             if (putActionRevisionRequest.getStageName() != null) {
-                jsonWriter.key("stageName").value(
+                jsonGenerator.writeFieldName("stageName").writeValue(
                         putActionRevisionRequest.getStageName());
             }
             if (putActionRevisionRequest.getActionName() != null) {
-                jsonWriter.key("actionName").value(
+                jsonGenerator.writeFieldName("actionName").writeValue(
                         putActionRevisionRequest.getActionName());
             }
             if (putActionRevisionRequest.getActionRevision() != null) {
-                jsonWriter.key("actionRevision");
+                jsonGenerator.writeFieldName("actionRevision");
                 ActionRevisionJsonMarshaller.getInstance().marshall(
                         putActionRevisionRequest.getActionRevision(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

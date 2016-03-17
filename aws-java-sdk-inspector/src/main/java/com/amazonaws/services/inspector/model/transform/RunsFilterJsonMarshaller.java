@@ -40,66 +40,66 @@ import com.amazonaws.util.json.*;
 public class RunsFilterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RunsFilter runsFilter, JSONWriter jsonWriter) {
+    public void marshall(RunsFilter runsFilter, SdkJsonGenerator jsonGenerator) {
         if (runsFilter == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.List<String> runNamePatternsList = runsFilter
                     .getRunNamePatterns();
             if (runNamePatternsList != null) {
-                jsonWriter.key("runNamePatterns");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("runNamePatterns");
+                jsonGenerator.writeStartArray();
                 for (String runNamePatternsListValue : runNamePatternsList) {
                     if (runNamePatternsListValue != null) {
-                        jsonWriter.value(runNamePatternsListValue);
+                        jsonGenerator.writeValue(runNamePatternsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<String> runStatesList = runsFilter.getRunStates();
             if (runStatesList != null) {
-                jsonWriter.key("runStates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("runStates");
+                jsonGenerator.writeStartArray();
                 for (String runStatesListValue : runStatesList) {
                     if (runStatesListValue != null) {
-                        jsonWriter.value(runStatesListValue);
+                        jsonGenerator.writeValue(runStatesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<String> rulesPackagesList = runsFilter
                     .getRulesPackages();
             if (rulesPackagesList != null) {
-                jsonWriter.key("rulesPackages");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("rulesPackages");
+                jsonGenerator.writeStartArray();
                 for (String rulesPackagesListValue : rulesPackagesList) {
                     if (rulesPackagesListValue != null) {
-                        jsonWriter.value(rulesPackagesListValue);
+                        jsonGenerator.writeValue(rulesPackagesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (runsFilter.getCreationTime() != null) {
-                jsonWriter.key("creationTime");
+                jsonGenerator.writeFieldName("creationTime");
                 TimestampRangeJsonMarshaller.getInstance().marshall(
-                        runsFilter.getCreationTime(), jsonWriter);
+                        runsFilter.getCreationTime(), jsonGenerator);
             }
             if (runsFilter.getCompletionTime() != null) {
-                jsonWriter.key("completionTime");
+                jsonGenerator.writeFieldName("completionTime");
                 TimestampRangeJsonMarshaller.getInstance().marshall(
-                        runsFilter.getCompletionTime(), jsonWriter);
+                        runsFilter.getCompletionTime(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

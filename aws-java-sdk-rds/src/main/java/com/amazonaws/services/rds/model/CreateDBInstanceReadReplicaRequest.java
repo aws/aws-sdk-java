@@ -144,7 +144,9 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * <ul><li>Specify DB subnet groups from the same VPC. All these Read
      * Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than
+     * 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Must not be default. <p>Example: <code>mySubnetgroup</code>
      */
     private String dBSubnetGroupName;
 
@@ -907,7 +909,9 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * <ul><li>Specify DB subnet groups from the same VPC. All these Read
      * Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than
+     * 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Must not be default. <p>Example: <code>mySubnetgroup</code>
      *
      * @return Specifies a DB subnet group for the DB instance. The new DB instance
      *         will be created in the VPC associated with the DB subnet group. If no
@@ -920,7 +924,9 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         <ul><li>Specify DB subnet groups from the same VPC. All these Read
      *         Replicas will be created in the same VPC.</li><li>Not specify a DB
      *         subnet group. All these Read Replicas will be created outside of any
-     *         VPC.</li></ul></li> </ul>
+     *         VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than
+     *         255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     *         Must not be default. <p>Example: <code>mySubnetgroup</code>
      */
     public String getDBSubnetGroupName() {
         return dBSubnetGroupName;
@@ -938,7 +944,9 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * <ul><li>Specify DB subnet groups from the same VPC. All these Read
      * Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than
+     * 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Must not be default. <p>Example: <code>mySubnetgroup</code>
      *
      * @param dBSubnetGroupName Specifies a DB subnet group for the DB instance. The new DB instance
      *         will be created in the VPC associated with the DB subnet group. If no
@@ -951,7 +959,9 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         <ul><li>Specify DB subnet groups from the same VPC. All these Read
      *         Replicas will be created in the same VPC.</li><li>Not specify a DB
      *         subnet group. All these Read Replicas will be created outside of any
-     *         VPC.</li></ul></li> </ul>
+     *         VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than
+     *         255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     *         Must not be default. <p>Example: <code>mySubnetgroup</code>
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -969,7 +979,9 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * <ul><li>Specify DB subnet groups from the same VPC. All these Read
      * Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than
+     * 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Must not be default. <p>Example: <code>mySubnetgroup</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -984,7 +996,9 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         <ul><li>Specify DB subnet groups from the same VPC. All these Read
      *         Replicas will be created in the same VPC.</li><li>Not specify a DB
      *         subnet group. All these Read Replicas will be created outside of any
-     *         VPC.</li></ul></li> </ul>
+     *         VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than
+     *         255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     *         Must not be default. <p>Example: <code>mySubnetgroup</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

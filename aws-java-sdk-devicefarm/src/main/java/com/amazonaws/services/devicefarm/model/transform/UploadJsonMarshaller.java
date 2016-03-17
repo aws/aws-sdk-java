@@ -40,46 +40,53 @@ import com.amazonaws.util.json.*;
 public class UploadJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Upload upload, JSONWriter jsonWriter) {
+    public void marshall(Upload upload, SdkJsonGenerator jsonGenerator) {
         if (upload == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (upload.getArn() != null) {
-                jsonWriter.key("arn").value(upload.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(upload.getArn());
             }
             if (upload.getName() != null) {
-                jsonWriter.key("name").value(upload.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        upload.getName());
             }
             if (upload.getCreated() != null) {
-                jsonWriter.key("created").value(upload.getCreated());
+                jsonGenerator.writeFieldName("created").writeValue(
+                        upload.getCreated());
             }
             if (upload.getType() != null) {
-                jsonWriter.key("type").value(upload.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        upload.getType());
             }
             if (upload.getStatus() != null) {
-                jsonWriter.key("status").value(upload.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        upload.getStatus());
             }
             if (upload.getUrl() != null) {
-                jsonWriter.key("url").value(upload.getUrl());
+                jsonGenerator.writeFieldName("url").writeValue(upload.getUrl());
             }
             if (upload.getMetadata() != null) {
-                jsonWriter.key("metadata").value(upload.getMetadata());
+                jsonGenerator.writeFieldName("metadata").writeValue(
+                        upload.getMetadata());
             }
             if (upload.getContentType() != null) {
-                jsonWriter.key("contentType").value(upload.getContentType());
+                jsonGenerator.writeFieldName("contentType").writeValue(
+                        upload.getContentType());
             }
             if (upload.getMessage() != null) {
-                jsonWriter.key("message").value(upload.getMessage());
+                jsonGenerator.writeFieldName("message").writeValue(
+                        upload.getMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

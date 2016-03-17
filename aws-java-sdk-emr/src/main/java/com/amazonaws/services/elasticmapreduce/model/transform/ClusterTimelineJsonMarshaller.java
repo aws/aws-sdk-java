@@ -40,31 +40,32 @@ import com.amazonaws.util.json.*;
 public class ClusterTimelineJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ClusterTimeline clusterTimeline, JSONWriter jsonWriter) {
+    public void marshall(ClusterTimeline clusterTimeline,
+            SdkJsonGenerator jsonGenerator) {
         if (clusterTimeline == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (clusterTimeline.getCreationDateTime() != null) {
-                jsonWriter.key("CreationDateTime").value(
+                jsonGenerator.writeFieldName("CreationDateTime").writeValue(
                         clusterTimeline.getCreationDateTime());
             }
             if (clusterTimeline.getReadyDateTime() != null) {
-                jsonWriter.key("ReadyDateTime").value(
+                jsonGenerator.writeFieldName("ReadyDateTime").writeValue(
                         clusterTimeline.getReadyDateTime());
             }
             if (clusterTimeline.getEndDateTime() != null) {
-                jsonWriter.key("EndDateTime").value(
+                jsonGenerator.writeFieldName("EndDateTime").writeValue(
                         clusterTimeline.getEndDateTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

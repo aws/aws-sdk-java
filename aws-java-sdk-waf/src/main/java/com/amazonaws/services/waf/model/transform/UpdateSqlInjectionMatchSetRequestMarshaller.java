@@ -66,41 +66,40 @@ public class UpdateSqlInjectionMatchSetRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateSqlInjectionMatchSetRequest.getSqlInjectionMatchSetId() != null) {
-                jsonWriter.key("SqlInjectionMatchSetId").value(
-                        updateSqlInjectionMatchSetRequest
-                                .getSqlInjectionMatchSetId());
+                jsonGenerator.writeFieldName("SqlInjectionMatchSetId")
+                        .writeValue(
+                                updateSqlInjectionMatchSetRequest
+                                        .getSqlInjectionMatchSetId());
             }
             if (updateSqlInjectionMatchSetRequest.getChangeToken() != null) {
-                jsonWriter.key("ChangeToken").value(
+                jsonGenerator.writeFieldName("ChangeToken").writeValue(
                         updateSqlInjectionMatchSetRequest.getChangeToken());
             }
 
             java.util.List<SqlInjectionMatchSetUpdate> updatesList = updateSqlInjectionMatchSetRequest
                     .getUpdates();
             if (updatesList != null) {
-                jsonWriter.key("Updates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Updates");
+                jsonGenerator.writeStartArray();
                 for (SqlInjectionMatchSetUpdate updatesListValue : updatesList) {
                     if (updatesListValue != null) {
 
                         SqlInjectionMatchSetUpdateJsonMarshaller.getInstance()
-                                .marshall(updatesListValue, jsonWriter);
+                                .marshall(updatesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -67,42 +67,40 @@ public class DescribeInstanceInformationRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<InstanceInformationFilter> instanceInformationFilterListList = (com.amazonaws.internal.SdkInternalList<InstanceInformationFilter>) describeInstanceInformationRequest
                     .getInstanceInformationFilterList();
             if (!instanceInformationFilterListList.isEmpty()
                     || !instanceInformationFilterListList.isAutoConstruct()) {
-                jsonWriter.key("InstanceInformationFilterList");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InstanceInformationFilterList");
+                jsonGenerator.writeStartArray();
                 for (InstanceInformationFilter instanceInformationFilterListListValue : instanceInformationFilterListList) {
                     if (instanceInformationFilterListListValue != null) {
 
                         InstanceInformationFilterJsonMarshaller.getInstance()
                                 .marshall(
                                         instanceInformationFilterListListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (describeInstanceInformationRequest.getMaxResults() != null) {
-                jsonWriter.key("MaxResults").value(
+                jsonGenerator.writeFieldName("MaxResults").writeValue(
                         describeInstanceInformationRequest.getMaxResults());
             }
             if (describeInstanceInformationRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         describeInstanceInformationRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,55 +40,55 @@ import com.amazonaws.util.json.*;
 public class CreateGlobalSecondaryIndexActionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             CreateGlobalSecondaryIndexAction createGlobalSecondaryIndexAction,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (createGlobalSecondaryIndexAction == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createGlobalSecondaryIndexAction.getIndexName() != null) {
-                jsonWriter.key("IndexName").value(
+                jsonGenerator.writeFieldName("IndexName").writeValue(
                         createGlobalSecondaryIndexAction.getIndexName());
             }
 
             java.util.List<KeySchemaElement> keySchemaList = createGlobalSecondaryIndexAction
                     .getKeySchema();
             if (keySchemaList != null) {
-                jsonWriter.key("KeySchema");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("KeySchema");
+                jsonGenerator.writeStartArray();
                 for (KeySchemaElement keySchemaListValue : keySchemaList) {
                     if (keySchemaListValue != null) {
 
                         KeySchemaElementJsonMarshaller.getInstance().marshall(
-                                keySchemaListValue, jsonWriter);
+                                keySchemaListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (createGlobalSecondaryIndexAction.getProjection() != null) {
-                jsonWriter.key("Projection");
+                jsonGenerator.writeFieldName("Projection");
                 ProjectionJsonMarshaller.getInstance().marshall(
                         createGlobalSecondaryIndexAction.getProjection(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (createGlobalSecondaryIndexAction.getProvisionedThroughput() != null) {
-                jsonWriter.key("ProvisionedThroughput");
+                jsonGenerator.writeFieldName("ProvisionedThroughput");
                 ProvisionedThroughputJsonMarshaller
                         .getInstance()
                         .marshall(
                                 createGlobalSecondaryIndexAction
                                         .getProvisionedThroughput(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

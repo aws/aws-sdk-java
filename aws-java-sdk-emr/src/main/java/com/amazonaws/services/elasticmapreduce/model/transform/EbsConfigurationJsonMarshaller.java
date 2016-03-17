@@ -40,40 +40,40 @@ import com.amazonaws.util.json.*;
 public class EbsConfigurationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(EbsConfiguration ebsConfiguration,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (ebsConfiguration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig> ebsBlockDeviceConfigsList = (com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>) ebsConfiguration
                     .getEbsBlockDeviceConfigs();
             if (!ebsBlockDeviceConfigsList.isEmpty()
                     || !ebsBlockDeviceConfigsList.isAutoConstruct()) {
-                jsonWriter.key("EbsBlockDeviceConfigs");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("EbsBlockDeviceConfigs");
+                jsonGenerator.writeStartArray();
                 for (EbsBlockDeviceConfig ebsBlockDeviceConfigsListValue : ebsBlockDeviceConfigsList) {
                     if (ebsBlockDeviceConfigsListValue != null) {
 
                         EbsBlockDeviceConfigJsonMarshaller.getInstance()
                                 .marshall(ebsBlockDeviceConfigsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (ebsConfiguration.getEbsOptimized() != null) {
-                jsonWriter.key("EbsOptimized").value(
+                jsonGenerator.writeFieldName("EbsOptimized").writeValue(
                         ebsConfiguration.getEbsOptimized());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

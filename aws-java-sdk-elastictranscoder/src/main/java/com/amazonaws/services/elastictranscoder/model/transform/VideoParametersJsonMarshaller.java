@@ -40,100 +40,107 @@ import com.amazonaws.util.json.*;
 public class VideoParametersJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(VideoParameters videoParameters, JSONWriter jsonWriter) {
+    public void marshall(VideoParameters videoParameters,
+            SdkJsonGenerator jsonGenerator) {
         if (videoParameters == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (videoParameters.getCodec() != null) {
-                jsonWriter.key("Codec").value(videoParameters.getCodec());
+                jsonGenerator.writeFieldName("Codec").writeValue(
+                        videoParameters.getCodec());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> codecOptionsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) videoParameters
                     .getCodecOptions();
             if (!codecOptionsMap.isEmpty()
                     || !codecOptionsMap.isAutoConstruct()) {
-                jsonWriter.key("CodecOptions");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("CodecOptions");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> codecOptionsMapValue : codecOptionsMap
                         .entrySet()) {
                     if (codecOptionsMapValue.getValue() != null) {
-                        jsonWriter.key(codecOptionsMapValue.getKey());
+                        jsonGenerator.writeFieldName(codecOptionsMapValue
+                                .getKey());
 
-                        jsonWriter.value(codecOptionsMapValue.getValue());
+                        jsonGenerator.writeValue(codecOptionsMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (videoParameters.getKeyframesMaxDist() != null) {
-                jsonWriter.key("KeyframesMaxDist").value(
+                jsonGenerator.writeFieldName("KeyframesMaxDist").writeValue(
                         videoParameters.getKeyframesMaxDist());
             }
             if (videoParameters.getFixedGOP() != null) {
-                jsonWriter.key("FixedGOP").value(videoParameters.getFixedGOP());
+                jsonGenerator.writeFieldName("FixedGOP").writeValue(
+                        videoParameters.getFixedGOP());
             }
             if (videoParameters.getBitRate() != null) {
-                jsonWriter.key("BitRate").value(videoParameters.getBitRate());
+                jsonGenerator.writeFieldName("BitRate").writeValue(
+                        videoParameters.getBitRate());
             }
             if (videoParameters.getFrameRate() != null) {
-                jsonWriter.key("FrameRate").value(
+                jsonGenerator.writeFieldName("FrameRate").writeValue(
                         videoParameters.getFrameRate());
             }
             if (videoParameters.getMaxFrameRate() != null) {
-                jsonWriter.key("MaxFrameRate").value(
+                jsonGenerator.writeFieldName("MaxFrameRate").writeValue(
                         videoParameters.getMaxFrameRate());
             }
             if (videoParameters.getResolution() != null) {
-                jsonWriter.key("Resolution").value(
+                jsonGenerator.writeFieldName("Resolution").writeValue(
                         videoParameters.getResolution());
             }
             if (videoParameters.getAspectRatio() != null) {
-                jsonWriter.key("AspectRatio").value(
+                jsonGenerator.writeFieldName("AspectRatio").writeValue(
                         videoParameters.getAspectRatio());
             }
             if (videoParameters.getMaxWidth() != null) {
-                jsonWriter.key("MaxWidth").value(videoParameters.getMaxWidth());
+                jsonGenerator.writeFieldName("MaxWidth").writeValue(
+                        videoParameters.getMaxWidth());
             }
             if (videoParameters.getMaxHeight() != null) {
-                jsonWriter.key("MaxHeight").value(
+                jsonGenerator.writeFieldName("MaxHeight").writeValue(
                         videoParameters.getMaxHeight());
             }
             if (videoParameters.getDisplayAspectRatio() != null) {
-                jsonWriter.key("DisplayAspectRatio").value(
+                jsonGenerator.writeFieldName("DisplayAspectRatio").writeValue(
                         videoParameters.getDisplayAspectRatio());
             }
             if (videoParameters.getSizingPolicy() != null) {
-                jsonWriter.key("SizingPolicy").value(
+                jsonGenerator.writeFieldName("SizingPolicy").writeValue(
                         videoParameters.getSizingPolicy());
             }
             if (videoParameters.getPaddingPolicy() != null) {
-                jsonWriter.key("PaddingPolicy").value(
+                jsonGenerator.writeFieldName("PaddingPolicy").writeValue(
                         videoParameters.getPaddingPolicy());
             }
 
             com.amazonaws.internal.SdkInternalList<PresetWatermark> watermarksList = (com.amazonaws.internal.SdkInternalList<PresetWatermark>) videoParameters
                     .getWatermarks();
             if (!watermarksList.isEmpty() || !watermarksList.isAutoConstruct()) {
-                jsonWriter.key("Watermarks");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Watermarks");
+                jsonGenerator.writeStartArray();
                 for (PresetWatermark watermarksListValue : watermarksList) {
                     if (watermarksListValue != null) {
 
                         PresetWatermarkJsonMarshaller.getInstance().marshall(
-                                watermarksListValue, jsonWriter);
+                                watermarksListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

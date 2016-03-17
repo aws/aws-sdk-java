@@ -65,40 +65,38 @@ public class BatchDeleteImageRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (batchDeleteImageRequest.getRegistryId() != null) {
-                jsonWriter.key("registryId").value(
+                jsonGenerator.writeFieldName("registryId").writeValue(
                         batchDeleteImageRequest.getRegistryId());
             }
             if (batchDeleteImageRequest.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         batchDeleteImageRequest.getRepositoryName());
             }
 
             java.util.List<ImageIdentifier> imageIdsList = batchDeleteImageRequest
                     .getImageIds();
             if (imageIdsList != null) {
-                jsonWriter.key("imageIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("imageIds");
+                jsonGenerator.writeStartArray();
                 for (ImageIdentifier imageIdsListValue : imageIdsList) {
                     if (imageIdsListValue != null) {
 
                         ImageIdentifierJsonMarshaller.getInstance().marshall(
-                                imageIdsListValue, jsonWriter);
+                                imageIdsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

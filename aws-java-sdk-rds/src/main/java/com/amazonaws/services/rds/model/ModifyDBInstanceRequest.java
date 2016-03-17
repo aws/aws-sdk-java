@@ -122,7 +122,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB instance. <p> If this parameter is set to <code>false</code>,
+     * the DB instance. <p>If this parameter is set to <code>false</code>,
      * changes to the DB instance are applied during the next maintenance
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -384,12 +384,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private Integer dBPortNumber;
 
     /**
-     * True to make the DB instance Internet-facing with a publicly
-     * resolvable DNS name, which resolves to a public IP address. False to
-     * make the DB instance internal with a DNS name that resolves to a
-     * private IP address. <p><code>PubliclyAccessible</code> only applies to
-     * DB instances in a VPC. The DB instance must be part of a public subnet
-     * and <code>PubliclyAccessible</code> must be true in order for it to be
+     * Boolean value that indicates if the DB instance has a publicly
+     * resolvable DNS name. Set to <code>True</code> to make the DB instance
+     * Internet-facing with a publicly resolvable DNS name, which resolves to
+     * a public IP address. Set to <code>False</code> to make the DB instance
+     * internal with a DNS name that resolves to a private IP address.
+     * <p><code>PubliclyAccessible</code> only applies to DB instances in a
+     * VPC. The DB instance must be part of a public subnet and
+     * <code>PubliclyAccessible</code> must be true in order for it to be
      * publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
      * parameter are applied immediately regardless of the value of the
      * <code>ApplyImmediately</code> parameter. <p> Default: false
@@ -407,6 +409,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * you must supply a <code>MonitoringRoleArn</code> value.
      */
     private String monitoringRoleArn;
+
+    /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     * Values: 0 - 15
+     */
+    private Integer promotionTier;
 
     /**
      * Default constructor for a new ModifyDBInstanceRequest object.  Callers should use the
@@ -1075,7 +1087,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB instance. <p> If this parameter is set to <code>false</code>,
+     * the DB instance. <p>If this parameter is set to <code>false</code>,
      * changes to the DB instance are applied during the next maintenance
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1089,7 +1101,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @return Specifies whether the modifications in this request and any pending
      *         modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB instance. <p> If this parameter is set to <code>false</code>,
+     *         the DB instance. <p>If this parameter is set to <code>false</code>,
      *         changes to the DB instance are applied during the next maintenance
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1108,7 +1120,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB instance. <p> If this parameter is set to <code>false</code>,
+     * the DB instance. <p>If this parameter is set to <code>false</code>,
      * changes to the DB instance are applied during the next maintenance
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1122,7 +1134,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param applyImmediately Specifies whether the modifications in this request and any pending
      *         modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB instance. <p> If this parameter is set to <code>false</code>,
+     *         the DB instance. <p>If this parameter is set to <code>false</code>,
      *         changes to the DB instance are applied during the next maintenance
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1141,7 +1153,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB instance. <p> If this parameter is set to <code>false</code>,
+     * the DB instance. <p>If this parameter is set to <code>false</code>,
      * changes to the DB instance are applied during the next maintenance
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1157,7 +1169,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param applyImmediately Specifies whether the modifications in this request and any pending
      *         modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB instance. <p> If this parameter is set to <code>false</code>,
+     *         the DB instance. <p>If this parameter is set to <code>false</code>,
      *         changes to the DB instance are applied during the next maintenance
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1180,7 +1192,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB instance. <p> If this parameter is set to <code>false</code>,
+     * the DB instance. <p>If this parameter is set to <code>false</code>,
      * changes to the DB instance are applied during the next maintenance
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1194,7 +1206,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @return Specifies whether the modifications in this request and any pending
      *         modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB instance. <p> If this parameter is set to <code>false</code>,
+     *         the DB instance. <p>If this parameter is set to <code>false</code>,
      *         changes to the DB instance are applied during the next maintenance
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -2831,22 +2843,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * True to make the DB instance Internet-facing with a publicly
-     * resolvable DNS name, which resolves to a public IP address. False to
-     * make the DB instance internal with a DNS name that resolves to a
-     * private IP address. <p><code>PubliclyAccessible</code> only applies to
-     * DB instances in a VPC. The DB instance must be part of a public subnet
-     * and <code>PubliclyAccessible</code> must be true in order for it to be
+     * Boolean value that indicates if the DB instance has a publicly
+     * resolvable DNS name. Set to <code>True</code> to make the DB instance
+     * Internet-facing with a publicly resolvable DNS name, which resolves to
+     * a public IP address. Set to <code>False</code> to make the DB instance
+     * internal with a DNS name that resolves to a private IP address.
+     * <p><code>PubliclyAccessible</code> only applies to DB instances in a
+     * VPC. The DB instance must be part of a public subnet and
+     * <code>PubliclyAccessible</code> must be true in order for it to be
      * publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
      * parameter are applied immediately regardless of the value of the
      * <code>ApplyImmediately</code> parameter. <p> Default: false
      *
-     * @return True to make the DB instance Internet-facing with a publicly
-     *         resolvable DNS name, which resolves to a public IP address. False to
-     *         make the DB instance internal with a DNS name that resolves to a
-     *         private IP address. <p><code>PubliclyAccessible</code> only applies to
-     *         DB instances in a VPC. The DB instance must be part of a public subnet
-     *         and <code>PubliclyAccessible</code> must be true in order for it to be
+     * @return Boolean value that indicates if the DB instance has a publicly
+     *         resolvable DNS name. Set to <code>True</code> to make the DB instance
+     *         Internet-facing with a publicly resolvable DNS name, which resolves to
+     *         a public IP address. Set to <code>False</code> to make the DB instance
+     *         internal with a DNS name that resolves to a private IP address.
+     *         <p><code>PubliclyAccessible</code> only applies to DB instances in a
+     *         VPC. The DB instance must be part of a public subnet and
+     *         <code>PubliclyAccessible</code> must be true in order for it to be
      *         publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
      *         parameter are applied immediately regardless of the value of the
      *         <code>ApplyImmediately</code> parameter. <p> Default: false
@@ -2856,22 +2872,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * True to make the DB instance Internet-facing with a publicly
-     * resolvable DNS name, which resolves to a public IP address. False to
-     * make the DB instance internal with a DNS name that resolves to a
-     * private IP address. <p><code>PubliclyAccessible</code> only applies to
-     * DB instances in a VPC. The DB instance must be part of a public subnet
-     * and <code>PubliclyAccessible</code> must be true in order for it to be
+     * Boolean value that indicates if the DB instance has a publicly
+     * resolvable DNS name. Set to <code>True</code> to make the DB instance
+     * Internet-facing with a publicly resolvable DNS name, which resolves to
+     * a public IP address. Set to <code>False</code> to make the DB instance
+     * internal with a DNS name that resolves to a private IP address.
+     * <p><code>PubliclyAccessible</code> only applies to DB instances in a
+     * VPC. The DB instance must be part of a public subnet and
+     * <code>PubliclyAccessible</code> must be true in order for it to be
      * publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
      * parameter are applied immediately regardless of the value of the
      * <code>ApplyImmediately</code> parameter. <p> Default: false
      *
-     * @param publiclyAccessible True to make the DB instance Internet-facing with a publicly
-     *         resolvable DNS name, which resolves to a public IP address. False to
-     *         make the DB instance internal with a DNS name that resolves to a
-     *         private IP address. <p><code>PubliclyAccessible</code> only applies to
-     *         DB instances in a VPC. The DB instance must be part of a public subnet
-     *         and <code>PubliclyAccessible</code> must be true in order for it to be
+     * @param publiclyAccessible Boolean value that indicates if the DB instance has a publicly
+     *         resolvable DNS name. Set to <code>True</code> to make the DB instance
+     *         Internet-facing with a publicly resolvable DNS name, which resolves to
+     *         a public IP address. Set to <code>False</code> to make the DB instance
+     *         internal with a DNS name that resolves to a private IP address.
+     *         <p><code>PubliclyAccessible</code> only applies to DB instances in a
+     *         VPC. The DB instance must be part of a public subnet and
+     *         <code>PubliclyAccessible</code> must be true in order for it to be
      *         publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
      *         parameter are applied immediately regardless of the value of the
      *         <code>ApplyImmediately</code> parameter. <p> Default: false
@@ -2881,24 +2901,28 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
     
     /**
-     * True to make the DB instance Internet-facing with a publicly
-     * resolvable DNS name, which resolves to a public IP address. False to
-     * make the DB instance internal with a DNS name that resolves to a
-     * private IP address. <p><code>PubliclyAccessible</code> only applies to
-     * DB instances in a VPC. The DB instance must be part of a public subnet
-     * and <code>PubliclyAccessible</code> must be true in order for it to be
+     * Boolean value that indicates if the DB instance has a publicly
+     * resolvable DNS name. Set to <code>True</code> to make the DB instance
+     * Internet-facing with a publicly resolvable DNS name, which resolves to
+     * a public IP address. Set to <code>False</code> to make the DB instance
+     * internal with a DNS name that resolves to a private IP address.
+     * <p><code>PubliclyAccessible</code> only applies to DB instances in a
+     * VPC. The DB instance must be part of a public subnet and
+     * <code>PubliclyAccessible</code> must be true in order for it to be
      * publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
      * parameter are applied immediately regardless of the value of the
      * <code>ApplyImmediately</code> parameter. <p> Default: false
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publiclyAccessible True to make the DB instance Internet-facing with a publicly
-     *         resolvable DNS name, which resolves to a public IP address. False to
-     *         make the DB instance internal with a DNS name that resolves to a
-     *         private IP address. <p><code>PubliclyAccessible</code> only applies to
-     *         DB instances in a VPC. The DB instance must be part of a public subnet
-     *         and <code>PubliclyAccessible</code> must be true in order for it to be
+     * @param publiclyAccessible Boolean value that indicates if the DB instance has a publicly
+     *         resolvable DNS name. Set to <code>True</code> to make the DB instance
+     *         Internet-facing with a publicly resolvable DNS name, which resolves to
+     *         a public IP address. Set to <code>False</code> to make the DB instance
+     *         internal with a DNS name that resolves to a private IP address.
+     *         <p><code>PubliclyAccessible</code> only applies to DB instances in a
+     *         VPC. The DB instance must be part of a public subnet and
+     *         <code>PubliclyAccessible</code> must be true in order for it to be
      *         publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
      *         parameter are applied immediately regardless of the value of the
      *         <code>ApplyImmediately</code> parameter. <p> Default: false
@@ -2912,22 +2936,26 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * True to make the DB instance Internet-facing with a publicly
-     * resolvable DNS name, which resolves to a public IP address. False to
-     * make the DB instance internal with a DNS name that resolves to a
-     * private IP address. <p><code>PubliclyAccessible</code> only applies to
-     * DB instances in a VPC. The DB instance must be part of a public subnet
-     * and <code>PubliclyAccessible</code> must be true in order for it to be
+     * Boolean value that indicates if the DB instance has a publicly
+     * resolvable DNS name. Set to <code>True</code> to make the DB instance
+     * Internet-facing with a publicly resolvable DNS name, which resolves to
+     * a public IP address. Set to <code>False</code> to make the DB instance
+     * internal with a DNS name that resolves to a private IP address.
+     * <p><code>PubliclyAccessible</code> only applies to DB instances in a
+     * VPC. The DB instance must be part of a public subnet and
+     * <code>PubliclyAccessible</code> must be true in order for it to be
      * publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
      * parameter are applied immediately regardless of the value of the
      * <code>ApplyImmediately</code> parameter. <p> Default: false
      *
-     * @return True to make the DB instance Internet-facing with a publicly
-     *         resolvable DNS name, which resolves to a public IP address. False to
-     *         make the DB instance internal with a DNS name that resolves to a
-     *         private IP address. <p><code>PubliclyAccessible</code> only applies to
-     *         DB instances in a VPC. The DB instance must be part of a public subnet
-     *         and <code>PubliclyAccessible</code> must be true in order for it to be
+     * @return Boolean value that indicates if the DB instance has a publicly
+     *         resolvable DNS name. Set to <code>True</code> to make the DB instance
+     *         Internet-facing with a publicly resolvable DNS name, which resolves to
+     *         a public IP address. Set to <code>False</code> to make the DB instance
+     *         internal with a DNS name that resolves to a private IP address.
+     *         <p><code>PubliclyAccessible</code> only applies to DB instances in a
+     *         VPC. The DB instance must be part of a public subnet and
+     *         <code>PubliclyAccessible</code> must be true in order for it to be
      *         publicly accessible. <p>Changes to the <code>PubliclyAccessible</code>
      *         parameter are applied immediately regardless of the value of the
      *         <code>ApplyImmediately</code> parameter. <p> Default: false
@@ -3012,6 +3040,69 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     * Values: 0 - 15
+     *
+     * @return A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     *         Values: 0 - 15
+     */
+    public Integer getPromotionTier() {
+        return promotionTier;
+    }
+    
+    /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     * Values: 0 - 15
+     *
+     * @param promotionTier A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     *         Values: 0 - 15
+     */
+    public void setPromotionTier(Integer promotionTier) {
+        this.promotionTier = promotionTier;
+    }
+    
+    /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     * Values: 0 - 15
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param promotionTier A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>. <p>Default: 1 <p>Valid
+     *         Values: 0 - 15
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyDBInstanceRequest withPromotionTier(Integer promotionTier) {
+        this.promotionTier = promotionTier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -3049,7 +3140,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getMonitoringInterval() != null) sb.append("MonitoringInterval: " + getMonitoringInterval() + ",");
         if (getDBPortNumber() != null) sb.append("DBPortNumber: " + getDBPortNumber() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
-        if (getMonitoringRoleArn() != null) sb.append("MonitoringRoleArn: " + getMonitoringRoleArn() );
+        if (getMonitoringRoleArn() != null) sb.append("MonitoringRoleArn: " + getMonitoringRoleArn() + ",");
+        if (getPromotionTier() != null) sb.append("PromotionTier: " + getPromotionTier() );
         sb.append("}");
         return sb.toString();
     }
@@ -3086,6 +3178,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((getDBPortNumber() == null) ? 0 : getDBPortNumber().hashCode()); 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         hashCode = prime * hashCode + ((getMonitoringRoleArn() == null) ? 0 : getMonitoringRoleArn().hashCode()); 
+        hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode()); 
         return hashCode;
     }
     
@@ -3151,6 +3244,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         if (other.getMonitoringRoleArn() == null ^ this.getMonitoringRoleArn() == null) return false;
         if (other.getMonitoringRoleArn() != null && other.getMonitoringRoleArn().equals(this.getMonitoringRoleArn()) == false) return false; 
+        if (other.getPromotionTier() == null ^ this.getPromotionTier() == null) return false;
+        if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false) return false; 
         return true;
     }
     

@@ -40,28 +40,30 @@ import com.amazonaws.util.json.*;
 public class DeploymentConfigurationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DeploymentConfiguration deploymentConfiguration,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (deploymentConfiguration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deploymentConfiguration.getMaximumPercent() != null) {
-                jsonWriter.key("maximumPercent").value(
+                jsonGenerator.writeFieldName("maximumPercent").writeValue(
                         deploymentConfiguration.getMaximumPercent());
             }
             if (deploymentConfiguration.getMinimumHealthyPercent() != null) {
-                jsonWriter.key("minimumHealthyPercent").value(
-                        deploymentConfiguration.getMinimumHealthyPercent());
+                jsonGenerator.writeFieldName("minimumHealthyPercent")
+                        .writeValue(
+                                deploymentConfiguration
+                                        .getMinimumHealthyPercent());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

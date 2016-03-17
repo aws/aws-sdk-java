@@ -64,34 +64,32 @@ public class AssignInstanceRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (assignInstanceRequest.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
                         assignInstanceRequest.getInstanceId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> layerIdsList = (com.amazonaws.internal.SdkInternalList<String>) assignInstanceRequest
                     .getLayerIds();
             if (!layerIdsList.isEmpty() || !layerIdsList.isAutoConstruct()) {
-                jsonWriter.key("LayerIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("LayerIds");
+                jsonGenerator.writeStartArray();
                 for (String layerIdsListValue : layerIdsList) {
                     if (layerIdsListValue != null) {
-                        jsonWriter.value(layerIdsListValue);
+                        jsonGenerator.writeValue(layerIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

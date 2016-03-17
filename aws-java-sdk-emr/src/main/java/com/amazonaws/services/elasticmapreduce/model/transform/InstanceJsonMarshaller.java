@@ -40,66 +40,66 @@ import com.amazonaws.util.json.*;
 public class InstanceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Instance instance, JSONWriter jsonWriter) {
+    public void marshall(Instance instance, SdkJsonGenerator jsonGenerator) {
         if (instance == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instance.getId() != null) {
-                jsonWriter.key("Id").value(instance.getId());
+                jsonGenerator.writeFieldName("Id").writeValue(instance.getId());
             }
             if (instance.getEc2InstanceId() != null) {
-                jsonWriter.key("Ec2InstanceId").value(
+                jsonGenerator.writeFieldName("Ec2InstanceId").writeValue(
                         instance.getEc2InstanceId());
             }
             if (instance.getPublicDnsName() != null) {
-                jsonWriter.key("PublicDnsName").value(
+                jsonGenerator.writeFieldName("PublicDnsName").writeValue(
                         instance.getPublicDnsName());
             }
             if (instance.getPublicIpAddress() != null) {
-                jsonWriter.key("PublicIpAddress").value(
+                jsonGenerator.writeFieldName("PublicIpAddress").writeValue(
                         instance.getPublicIpAddress());
             }
             if (instance.getPrivateDnsName() != null) {
-                jsonWriter.key("PrivateDnsName").value(
+                jsonGenerator.writeFieldName("PrivateDnsName").writeValue(
                         instance.getPrivateDnsName());
             }
             if (instance.getPrivateIpAddress() != null) {
-                jsonWriter.key("PrivateIpAddress").value(
+                jsonGenerator.writeFieldName("PrivateIpAddress").writeValue(
                         instance.getPrivateIpAddress());
             }
             if (instance.getStatus() != null) {
-                jsonWriter.key("Status");
+                jsonGenerator.writeFieldName("Status");
                 InstanceStatusJsonMarshaller.getInstance().marshall(
-                        instance.getStatus(), jsonWriter);
+                        instance.getStatus(), jsonGenerator);
             }
             if (instance.getInstanceGroupId() != null) {
-                jsonWriter.key("InstanceGroupId").value(
+                jsonGenerator.writeFieldName("InstanceGroupId").writeValue(
                         instance.getInstanceGroupId());
             }
 
             com.amazonaws.internal.SdkInternalList<EbsVolume> ebsVolumesList = (com.amazonaws.internal.SdkInternalList<EbsVolume>) instance
                     .getEbsVolumes();
             if (!ebsVolumesList.isEmpty() || !ebsVolumesList.isAutoConstruct()) {
-                jsonWriter.key("EbsVolumes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("EbsVolumes");
+                jsonGenerator.writeStartArray();
                 for (EbsVolume ebsVolumesListValue : ebsVolumesList) {
                     if (ebsVolumesListValue != null) {
 
                         EbsVolumeJsonMarshaller.getInstance().marshall(
-                                ebsVolumesListValue, jsonWriter);
+                                ebsVolumesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

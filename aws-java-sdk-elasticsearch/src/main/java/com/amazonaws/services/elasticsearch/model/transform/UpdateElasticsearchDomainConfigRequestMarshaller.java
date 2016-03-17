@@ -75,64 +75,64 @@ public class UpdateElasticsearchDomainConfigRequestMarshaller
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateElasticsearchDomainConfigRequest
                     .getElasticsearchClusterConfig() != null) {
-                jsonWriter.key("ElasticsearchClusterConfig");
+                jsonGenerator.writeFieldName("ElasticsearchClusterConfig");
                 ElasticsearchClusterConfigJsonMarshaller
                         .getInstance()
                         .marshall(
                                 updateElasticsearchDomainConfigRequest
                                         .getElasticsearchClusterConfig(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (updateElasticsearchDomainConfigRequest.getEBSOptions() != null) {
-                jsonWriter.key("EBSOptions");
+                jsonGenerator.writeFieldName("EBSOptions");
                 EBSOptionsJsonMarshaller.getInstance().marshall(
                         updateElasticsearchDomainConfigRequest.getEBSOptions(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (updateElasticsearchDomainConfigRequest.getSnapshotOptions() != null) {
-                jsonWriter.key("SnapshotOptions");
+                jsonGenerator.writeFieldName("SnapshotOptions");
                 SnapshotOptionsJsonMarshaller
                         .getInstance()
                         .marshall(
                                 updateElasticsearchDomainConfigRequest
                                         .getSnapshotOptions(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
             java.util.Map<String, String> advancedOptionsMap = updateElasticsearchDomainConfigRequest
                     .getAdvancedOptions();
             if (advancedOptionsMap != null) {
-                jsonWriter.key("AdvancedOptions");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("AdvancedOptions");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> advancedOptionsMapValue : advancedOptionsMap
                         .entrySet()) {
                     if (advancedOptionsMapValue.getValue() != null) {
-                        jsonWriter.key(advancedOptionsMapValue.getKey());
+                        jsonGenerator.writeFieldName(advancedOptionsMapValue
+                                .getKey());
 
-                        jsonWriter.value(advancedOptionsMapValue.getValue());
+                        jsonGenerator.writeValue(advancedOptionsMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (updateElasticsearchDomainConfigRequest.getAccessPolicies() != null) {
-                jsonWriter.key("AccessPolicies").value(
+                jsonGenerator.writeFieldName("AccessPolicies").writeValue(
                         updateElasticsearchDomainConfigRequest
                                 .getAccessPolicies());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

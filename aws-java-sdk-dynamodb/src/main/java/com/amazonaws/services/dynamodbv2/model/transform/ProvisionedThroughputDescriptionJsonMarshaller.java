@@ -40,46 +40,50 @@ import com.amazonaws.util.json.*;
 public class ProvisionedThroughputDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             ProvisionedThroughputDescription provisionedThroughputDescription,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (provisionedThroughputDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (provisionedThroughputDescription.getLastIncreaseDateTime() != null) {
-                jsonWriter.key("LastIncreaseDateTime").value(
-                        provisionedThroughputDescription
-                                .getLastIncreaseDateTime());
+                jsonGenerator.writeFieldName("LastIncreaseDateTime")
+                        .writeValue(
+                                provisionedThroughputDescription
+                                        .getLastIncreaseDateTime());
             }
             if (provisionedThroughputDescription.getLastDecreaseDateTime() != null) {
-                jsonWriter.key("LastDecreaseDateTime").value(
-                        provisionedThroughputDescription
-                                .getLastDecreaseDateTime());
+                jsonGenerator.writeFieldName("LastDecreaseDateTime")
+                        .writeValue(
+                                provisionedThroughputDescription
+                                        .getLastDecreaseDateTime());
             }
             if (provisionedThroughputDescription.getNumberOfDecreasesToday() != null) {
-                jsonWriter.key("NumberOfDecreasesToday").value(
-                        provisionedThroughputDescription
-                                .getNumberOfDecreasesToday());
+                jsonGenerator.writeFieldName("NumberOfDecreasesToday")
+                        .writeValue(
+                                provisionedThroughputDescription
+                                        .getNumberOfDecreasesToday());
             }
             if (provisionedThroughputDescription.getReadCapacityUnits() != null) {
-                jsonWriter.key("ReadCapacityUnits")
-                        .value(provisionedThroughputDescription
-                                .getReadCapacityUnits());
+                jsonGenerator.writeFieldName("ReadCapacityUnits")
+                        .writeValue(
+                                provisionedThroughputDescription
+                                        .getReadCapacityUnits());
             }
             if (provisionedThroughputDescription.getWriteCapacityUnits() != null) {
-                jsonWriter.key("WriteCapacityUnits").value(
+                jsonGenerator.writeFieldName("WriteCapacityUnits").writeValue(
                         provisionedThroughputDescription
                                 .getWriteCapacityUnits());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

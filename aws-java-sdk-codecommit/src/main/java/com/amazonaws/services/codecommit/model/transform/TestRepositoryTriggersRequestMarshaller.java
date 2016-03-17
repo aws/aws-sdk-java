@@ -66,36 +66,34 @@ public class TestRepositoryTriggersRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (testRepositoryTriggersRequest.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         testRepositoryTriggersRequest.getRepositoryName());
             }
 
             java.util.List<RepositoryTrigger> triggersList = testRepositoryTriggersRequest
                     .getTriggers();
             if (triggersList != null) {
-                jsonWriter.key("triggers");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("triggers");
+                jsonGenerator.writeStartArray();
                 for (RepositoryTrigger triggersListValue : triggersList) {
                     if (triggersListValue != null) {
 
                         RepositoryTriggerJsonMarshaller.getInstance().marshall(
-                                triggersListValue, jsonWriter);
+                                triggersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,46 +40,47 @@ import com.amazonaws.util.json.*;
 public class JobFlowExecutionStatusDetailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             JobFlowExecutionStatusDetail jobFlowExecutionStatusDetail,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (jobFlowExecutionStatusDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (jobFlowExecutionStatusDetail.getState() != null) {
-                jsonWriter.key("State").value(
+                jsonGenerator.writeFieldName("State").writeValue(
                         jobFlowExecutionStatusDetail.getState());
             }
             if (jobFlowExecutionStatusDetail.getCreationDateTime() != null) {
-                jsonWriter.key("CreationDateTime").value(
+                jsonGenerator.writeFieldName("CreationDateTime").writeValue(
                         jobFlowExecutionStatusDetail.getCreationDateTime());
             }
             if (jobFlowExecutionStatusDetail.getStartDateTime() != null) {
-                jsonWriter.key("StartDateTime").value(
+                jsonGenerator.writeFieldName("StartDateTime").writeValue(
                         jobFlowExecutionStatusDetail.getStartDateTime());
             }
             if (jobFlowExecutionStatusDetail.getReadyDateTime() != null) {
-                jsonWriter.key("ReadyDateTime").value(
+                jsonGenerator.writeFieldName("ReadyDateTime").writeValue(
                         jobFlowExecutionStatusDetail.getReadyDateTime());
             }
             if (jobFlowExecutionStatusDetail.getEndDateTime() != null) {
-                jsonWriter.key("EndDateTime").value(
+                jsonGenerator.writeFieldName("EndDateTime").writeValue(
                         jobFlowExecutionStatusDetail.getEndDateTime());
             }
             if (jobFlowExecutionStatusDetail.getLastStateChangeReason() != null) {
-                jsonWriter.key("LastStateChangeReason")
-                        .value(jobFlowExecutionStatusDetail
-                                .getLastStateChangeReason());
+                jsonGenerator.writeFieldName("LastStateChangeReason")
+                        .writeValue(
+                                jobFlowExecutionStatusDetail
+                                        .getLastStateChangeReason());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

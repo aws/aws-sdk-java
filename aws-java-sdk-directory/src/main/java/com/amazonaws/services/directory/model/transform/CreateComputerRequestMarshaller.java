@@ -65,25 +65,25 @@ public class CreateComputerRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createComputerRequest.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         createComputerRequest.getDirectoryId());
             }
             if (createComputerRequest.getComputerName() != null) {
-                jsonWriter.key("ComputerName").value(
+                jsonGenerator.writeFieldName("ComputerName").writeValue(
                         createComputerRequest.getComputerName());
             }
             if (createComputerRequest.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         createComputerRequest.getPassword());
             }
             if (createComputerRequest.getOrganizationalUnitDistinguishedName() != null) {
-                jsonWriter.key("OrganizationalUnitDistinguishedName").value(
+                jsonGenerator.writeFieldName(
+                        "OrganizationalUnitDistinguishedName").writeValue(
                         createComputerRequest
                                 .getOrganizationalUnitDistinguishedName());
             }
@@ -92,23 +92,22 @@ public class CreateComputerRequestMarshaller implements
                     .getComputerAttributes();
             if (!computerAttributesList.isEmpty()
                     || !computerAttributesList.isAutoConstruct()) {
-                jsonWriter.key("ComputerAttributes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ComputerAttributes");
+                jsonGenerator.writeStartArray();
                 for (Attribute computerAttributesListValue : computerAttributesList) {
                     if (computerAttributesListValue != null) {
 
                         AttributeJsonMarshaller.getInstance().marshall(
-                                computerAttributesListValue, jsonWriter);
+                                computerAttributesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

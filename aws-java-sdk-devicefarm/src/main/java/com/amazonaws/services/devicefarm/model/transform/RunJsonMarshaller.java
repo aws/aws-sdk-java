@@ -40,68 +40,78 @@ import com.amazonaws.util.json.*;
 public class RunJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Run run, JSONWriter jsonWriter) {
+    public void marshall(Run run, SdkJsonGenerator jsonGenerator) {
         if (run == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (run.getArn() != null) {
-                jsonWriter.key("arn").value(run.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(run.getArn());
             }
             if (run.getName() != null) {
-                jsonWriter.key("name").value(run.getName());
+                jsonGenerator.writeFieldName("name").writeValue(run.getName());
             }
             if (run.getType() != null) {
-                jsonWriter.key("type").value(run.getType());
+                jsonGenerator.writeFieldName("type").writeValue(run.getType());
             }
             if (run.getPlatform() != null) {
-                jsonWriter.key("platform").value(run.getPlatform());
+                jsonGenerator.writeFieldName("platform").writeValue(
+                        run.getPlatform());
             }
             if (run.getCreated() != null) {
-                jsonWriter.key("created").value(run.getCreated());
+                jsonGenerator.writeFieldName("created").writeValue(
+                        run.getCreated());
             }
             if (run.getStatus() != null) {
-                jsonWriter.key("status").value(run.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        run.getStatus());
             }
             if (run.getResult() != null) {
-                jsonWriter.key("result").value(run.getResult());
+                jsonGenerator.writeFieldName("result").writeValue(
+                        run.getResult());
             }
             if (run.getStarted() != null) {
-                jsonWriter.key("started").value(run.getStarted());
+                jsonGenerator.writeFieldName("started").writeValue(
+                        run.getStarted());
             }
             if (run.getStopped() != null) {
-                jsonWriter.key("stopped").value(run.getStopped());
+                jsonGenerator.writeFieldName("stopped").writeValue(
+                        run.getStopped());
             }
             if (run.getCounters() != null) {
-                jsonWriter.key("counters");
+                jsonGenerator.writeFieldName("counters");
                 CountersJsonMarshaller.getInstance().marshall(
-                        run.getCounters(), jsonWriter);
+                        run.getCounters(), jsonGenerator);
             }
             if (run.getMessage() != null) {
-                jsonWriter.key("message").value(run.getMessage());
+                jsonGenerator.writeFieldName("message").writeValue(
+                        run.getMessage());
             }
             if (run.getTotalJobs() != null) {
-                jsonWriter.key("totalJobs").value(run.getTotalJobs());
+                jsonGenerator.writeFieldName("totalJobs").writeValue(
+                        run.getTotalJobs());
             }
             if (run.getCompletedJobs() != null) {
-                jsonWriter.key("completedJobs").value(run.getCompletedJobs());
+                jsonGenerator.writeFieldName("completedJobs").writeValue(
+                        run.getCompletedJobs());
             }
             if (run.getBillingMethod() != null) {
-                jsonWriter.key("billingMethod").value(run.getBillingMethod());
+                jsonGenerator.writeFieldName("billingMethod").writeValue(
+                        run.getBillingMethod());
             }
             if (run.getDeviceMinutes() != null) {
-                jsonWriter.key("deviceMinutes");
+                jsonGenerator.writeFieldName("deviceMinutes");
                 DeviceMinutesJsonMarshaller.getInstance().marshall(
-                        run.getDeviceMinutes(), jsonWriter);
+                        run.getDeviceMinutes(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

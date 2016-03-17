@@ -40,34 +40,36 @@ import com.amazonaws.util.json.*;
 public class ImageJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Image image, JSONWriter jsonWriter) {
+    public void marshall(Image image, SdkJsonGenerator jsonGenerator) {
         if (image == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (image.getRegistryId() != null) {
-                jsonWriter.key("registryId").value(image.getRegistryId());
+                jsonGenerator.writeFieldName("registryId").writeValue(
+                        image.getRegistryId());
             }
             if (image.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         image.getRepositoryName());
             }
             if (image.getImageId() != null) {
-                jsonWriter.key("imageId");
+                jsonGenerator.writeFieldName("imageId");
                 ImageIdentifierJsonMarshaller.getInstance().marshall(
-                        image.getImageId(), jsonWriter);
+                        image.getImageId(), jsonGenerator);
             }
             if (image.getImageManifest() != null) {
-                jsonWriter.key("imageManifest").value(image.getImageManifest());
+                jsonGenerator.writeFieldName("imageManifest").writeValue(
+                        image.getImageManifest());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

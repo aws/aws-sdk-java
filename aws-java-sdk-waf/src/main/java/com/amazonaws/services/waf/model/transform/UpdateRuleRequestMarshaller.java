@@ -64,39 +64,38 @@ public class UpdateRuleRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateRuleRequest.getRuleId() != null) {
-                jsonWriter.key("RuleId").value(updateRuleRequest.getRuleId());
+                jsonGenerator.writeFieldName("RuleId").writeValue(
+                        updateRuleRequest.getRuleId());
             }
             if (updateRuleRequest.getChangeToken() != null) {
-                jsonWriter.key("ChangeToken").value(
+                jsonGenerator.writeFieldName("ChangeToken").writeValue(
                         updateRuleRequest.getChangeToken());
             }
 
             java.util.List<RuleUpdate> updatesList = updateRuleRequest
                     .getUpdates();
             if (updatesList != null) {
-                jsonWriter.key("Updates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Updates");
+                jsonGenerator.writeStartArray();
                 for (RuleUpdate updatesListValue : updatesList) {
                     if (updatesListValue != null) {
 
                         RuleUpdateJsonMarshaller.getInstance().marshall(
-                                updatesListValue, jsonWriter);
+                                updatesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

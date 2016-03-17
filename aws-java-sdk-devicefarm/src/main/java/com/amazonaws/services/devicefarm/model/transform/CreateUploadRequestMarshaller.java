@@ -64,31 +64,31 @@ public class CreateUploadRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createUploadRequest.getProjectArn() != null) {
-                jsonWriter.key("projectArn").value(
+                jsonGenerator.writeFieldName("projectArn").writeValue(
                         createUploadRequest.getProjectArn());
             }
             if (createUploadRequest.getName() != null) {
-                jsonWriter.key("name").value(createUploadRequest.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        createUploadRequest.getName());
             }
             if (createUploadRequest.getType() != null) {
-                jsonWriter.key("type").value(createUploadRequest.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        createUploadRequest.getType());
             }
             if (createUploadRequest.getContentType() != null) {
-                jsonWriter.key("contentType").value(
+                jsonGenerator.writeFieldName("contentType").writeValue(
                         createUploadRequest.getContentType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

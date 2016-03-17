@@ -66,17 +66,16 @@ public class DescribeComplianceByResourceRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeComplianceByResourceRequest.getResourceType() != null) {
-                jsonWriter.key("ResourceType").value(
+                jsonGenerator.writeFieldName("ResourceType").writeValue(
                         describeComplianceByResourceRequest.getResourceType());
             }
             if (describeComplianceByResourceRequest.getResourceId() != null) {
-                jsonWriter.key("ResourceId").value(
+                jsonGenerator.writeFieldName("ResourceId").writeValue(
                         describeComplianceByResourceRequest.getResourceId());
             }
 
@@ -84,29 +83,28 @@ public class DescribeComplianceByResourceRequestMarshaller
                     .getComplianceTypes();
             if (!complianceTypesList.isEmpty()
                     || !complianceTypesList.isAutoConstruct()) {
-                jsonWriter.key("ComplianceTypes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ComplianceTypes");
+                jsonGenerator.writeStartArray();
                 for (String complianceTypesListValue : complianceTypesList) {
                     if (complianceTypesListValue != null) {
-                        jsonWriter.value(complianceTypesListValue);
+                        jsonGenerator.writeValue(complianceTypesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (describeComplianceByResourceRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(
+                jsonGenerator.writeFieldName("Limit").writeValue(
                         describeComplianceByResourceRequest.getLimit());
             }
             if (describeComplianceByResourceRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         describeComplianceByResourceRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

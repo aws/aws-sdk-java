@@ -90,6 +90,21 @@ public class ActionJsonUnmarshaller implements
                     action.setFirehose(FirehoseActionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("cloudwatchMetric", targetDepth)) {
+                    context.nextToken();
+                    action.setCloudwatchMetric(CloudwatchMetricActionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("cloudwatchAlarm", targetDepth)) {
+                    context.nextToken();
+                    action.setCloudwatchAlarm(CloudwatchAlarmActionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("elasticsearch", targetDepth)) {
+                    context.nextToken();
+                    action.setElasticsearch(ElasticsearchActionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

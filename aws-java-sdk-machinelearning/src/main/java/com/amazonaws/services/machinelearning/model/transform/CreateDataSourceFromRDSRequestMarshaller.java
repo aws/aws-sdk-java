@@ -66,39 +66,37 @@ public class CreateDataSourceFromRDSRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createDataSourceFromRDSRequest.getDataSourceId() != null) {
-                jsonWriter.key("DataSourceId").value(
+                jsonGenerator.writeFieldName("DataSourceId").writeValue(
                         createDataSourceFromRDSRequest.getDataSourceId());
             }
             if (createDataSourceFromRDSRequest.getDataSourceName() != null) {
-                jsonWriter.key("DataSourceName").value(
+                jsonGenerator.writeFieldName("DataSourceName").writeValue(
                         createDataSourceFromRDSRequest.getDataSourceName());
             }
             if (createDataSourceFromRDSRequest.getRDSData() != null) {
-                jsonWriter.key("RDSData");
-                RDSDataSpecJsonMarshaller.getInstance()
-                        .marshall(createDataSourceFromRDSRequest.getRDSData(),
-                                jsonWriter);
+                jsonGenerator.writeFieldName("RDSData");
+                RDSDataSpecJsonMarshaller.getInstance().marshall(
+                        createDataSourceFromRDSRequest.getRDSData(),
+                        jsonGenerator);
             }
             if (createDataSourceFromRDSRequest.getRoleARN() != null) {
-                jsonWriter.key("RoleARN").value(
+                jsonGenerator.writeFieldName("RoleARN").writeValue(
                         createDataSourceFromRDSRequest.getRoleARN());
             }
             if (createDataSourceFromRDSRequest.getComputeStatistics() != null) {
-                jsonWriter.key("ComputeStatistics").value(
+                jsonGenerator.writeFieldName("ComputeStatistics").writeValue(
                         createDataSourceFromRDSRequest.getComputeStatistics());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

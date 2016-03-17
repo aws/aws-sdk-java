@@ -65,38 +65,36 @@ public class GetOpenIdTokenRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getOpenIdTokenRequest.getIdentityId() != null) {
-                jsonWriter.key("IdentityId").value(
+                jsonGenerator.writeFieldName("IdentityId").writeValue(
                         getOpenIdTokenRequest.getIdentityId());
             }
 
             java.util.Map<String, String> loginsMap = getOpenIdTokenRequest
                     .getLogins();
             if (loginsMap != null) {
-                jsonWriter.key("Logins");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Logins");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> loginsMapValue : loginsMap
                         .entrySet()) {
                     if (loginsMapValue.getValue() != null) {
-                        jsonWriter.key(loginsMapValue.getKey());
+                        jsonGenerator.writeFieldName(loginsMapValue.getKey());
 
-                        jsonWriter.value(loginsMapValue.getValue());
+                        jsonGenerator.writeValue(loginsMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

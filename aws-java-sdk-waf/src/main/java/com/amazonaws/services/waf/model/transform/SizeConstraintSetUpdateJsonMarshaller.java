@@ -40,30 +40,30 @@ import com.amazonaws.util.json.*;
 public class SizeConstraintSetUpdateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(SizeConstraintSetUpdate sizeConstraintSetUpdate,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (sizeConstraintSetUpdate == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (sizeConstraintSetUpdate.getAction() != null) {
-                jsonWriter.key("Action").value(
+                jsonGenerator.writeFieldName("Action").writeValue(
                         sizeConstraintSetUpdate.getAction());
             }
             if (sizeConstraintSetUpdate.getSizeConstraint() != null) {
-                jsonWriter.key("SizeConstraint");
-                SizeConstraintJsonMarshaller.getInstance()
-                        .marshall(sizeConstraintSetUpdate.getSizeConstraint(),
-                                jsonWriter);
+                jsonGenerator.writeFieldName("SizeConstraint");
+                SizeConstraintJsonMarshaller.getInstance().marshall(
+                        sizeConstraintSetUpdate.getSizeConstraint(),
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

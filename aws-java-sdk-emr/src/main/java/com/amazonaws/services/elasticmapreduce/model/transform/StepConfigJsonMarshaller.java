@@ -40,31 +40,32 @@ import com.amazonaws.util.json.*;
 public class StepConfigJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(StepConfig stepConfig, JSONWriter jsonWriter) {
+    public void marshall(StepConfig stepConfig, SdkJsonGenerator jsonGenerator) {
         if (stepConfig == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stepConfig.getName() != null) {
-                jsonWriter.key("Name").value(stepConfig.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        stepConfig.getName());
             }
             if (stepConfig.getActionOnFailure() != null) {
-                jsonWriter.key("ActionOnFailure").value(
+                jsonGenerator.writeFieldName("ActionOnFailure").writeValue(
                         stepConfig.getActionOnFailure());
             }
             if (stepConfig.getHadoopJarStep() != null) {
-                jsonWriter.key("HadoopJarStep");
+                jsonGenerator.writeFieldName("HadoopJarStep");
                 HadoopJarStepConfigJsonMarshaller.getInstance().marshall(
-                        stepConfig.getHadoopJarStep(), jsonWriter);
+                        stepConfig.getHadoopJarStep(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,32 +40,32 @@ import com.amazonaws.util.json.*;
 public class AuthorizationDataJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AuthorizationData authorizationData,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (authorizationData == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (authorizationData.getAuthorizationToken() != null) {
-                jsonWriter.key("authorizationToken").value(
+                jsonGenerator.writeFieldName("authorizationToken").writeValue(
                         authorizationData.getAuthorizationToken());
             }
             if (authorizationData.getExpiresAt() != null) {
-                jsonWriter.key("expiresAt").value(
+                jsonGenerator.writeFieldName("expiresAt").writeValue(
                         authorizationData.getExpiresAt());
             }
             if (authorizationData.getProxyEndpoint() != null) {
-                jsonWriter.key("proxyEndpoint").value(
+                jsonGenerator.writeFieldName("proxyEndpoint").writeValue(
                         authorizationData.getProxyEndpoint());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

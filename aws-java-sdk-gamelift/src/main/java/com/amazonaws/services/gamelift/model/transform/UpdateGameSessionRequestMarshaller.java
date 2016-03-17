@@ -64,39 +64,39 @@ public class UpdateGameSessionRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateGameSessionRequest.getGameSessionId() != null) {
-                jsonWriter.key("GameSessionId").value(
+                jsonGenerator.writeFieldName("GameSessionId").writeValue(
                         updateGameSessionRequest.getGameSessionId());
             }
             if (updateGameSessionRequest.getMaximumPlayerSessionCount() != null) {
-                jsonWriter.key("MaximumPlayerSessionCount")
-                        .value(updateGameSessionRequest
-                                .getMaximumPlayerSessionCount());
+                jsonGenerator.writeFieldName("MaximumPlayerSessionCount")
+                        .writeValue(
+                                updateGameSessionRequest
+                                        .getMaximumPlayerSessionCount());
             }
             if (updateGameSessionRequest.getName() != null) {
-                jsonWriter.key("Name")
-                        .value(updateGameSessionRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        updateGameSessionRequest.getName());
             }
             if (updateGameSessionRequest.getPlayerSessionCreationPolicy() != null) {
-                jsonWriter.key("PlayerSessionCreationPolicy").value(
-                        updateGameSessionRequest
-                                .getPlayerSessionCreationPolicy());
+                jsonGenerator.writeFieldName("PlayerSessionCreationPolicy")
+                        .writeValue(
+                                updateGameSessionRequest
+                                        .getPlayerSessionCreationPolicy());
             }
             if (updateGameSessionRequest.getProtectionPolicy() != null) {
-                jsonWriter.key("ProtectionPolicy").value(
+                jsonGenerator.writeFieldName("ProtectionPolicy").writeValue(
                         updateGameSessionRequest.getProtectionPolicy());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,31 +40,34 @@ import com.amazonaws.util.json.*;
 public class RestApiJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RestApi restApi, JSONWriter jsonWriter) {
+    public void marshall(RestApi restApi, SdkJsonGenerator jsonGenerator) {
         if (restApi == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (restApi.getId() != null) {
-                jsonWriter.key("id").value(restApi.getId());
+                jsonGenerator.writeFieldName("id").writeValue(restApi.getId());
             }
             if (restApi.getName() != null) {
-                jsonWriter.key("name").value(restApi.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        restApi.getName());
             }
             if (restApi.getDescription() != null) {
-                jsonWriter.key("description").value(restApi.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(
+                        restApi.getDescription());
             }
             if (restApi.getCreatedDate() != null) {
-                jsonWriter.key("createdDate").value(restApi.getCreatedDate());
+                jsonGenerator.writeFieldName("createdDate").writeValue(
+                        restApi.getCreatedDate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,41 +40,43 @@ import com.amazonaws.util.json.*;
 public class LogGroupJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(LogGroup logGroup, JSONWriter jsonWriter) {
+    public void marshall(LogGroup logGroup, SdkJsonGenerator jsonGenerator) {
         if (logGroup == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (logGroup.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName")
-                        .value(logGroup.getLogGroupName());
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
+                        logGroup.getLogGroupName());
             }
             if (logGroup.getCreationTime() != null) {
-                jsonWriter.key("creationTime")
-                        .value(logGroup.getCreationTime());
+                jsonGenerator.writeFieldName("creationTime").writeValue(
+                        logGroup.getCreationTime());
             }
             if (logGroup.getRetentionInDays() != null) {
-                jsonWriter.key("retentionInDays").value(
+                jsonGenerator.writeFieldName("retentionInDays").writeValue(
                         logGroup.getRetentionInDays());
             }
             if (logGroup.getMetricFilterCount() != null) {
-                jsonWriter.key("metricFilterCount").value(
+                jsonGenerator.writeFieldName("metricFilterCount").writeValue(
                         logGroup.getMetricFilterCount());
             }
             if (logGroup.getArn() != null) {
-                jsonWriter.key("arn").value(logGroup.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(
+                        logGroup.getArn());
             }
             if (logGroup.getStoredBytes() != null) {
-                jsonWriter.key("storedBytes").value(logGroup.getStoredBytes());
+                jsonGenerator.writeFieldName("storedBytes").writeValue(
+                        logGroup.getStoredBytes());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

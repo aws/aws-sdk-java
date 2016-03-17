@@ -40,32 +40,36 @@ import com.amazonaws.util.json.*;
 public class NetworkBindingJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(NetworkBinding networkBinding, JSONWriter jsonWriter) {
+    public void marshall(NetworkBinding networkBinding,
+            SdkJsonGenerator jsonGenerator) {
         if (networkBinding == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (networkBinding.getBindIP() != null) {
-                jsonWriter.key("bindIP").value(networkBinding.getBindIP());
+                jsonGenerator.writeFieldName("bindIP").writeValue(
+                        networkBinding.getBindIP());
             }
             if (networkBinding.getContainerPort() != null) {
-                jsonWriter.key("containerPort").value(
+                jsonGenerator.writeFieldName("containerPort").writeValue(
                         networkBinding.getContainerPort());
             }
             if (networkBinding.getHostPort() != null) {
-                jsonWriter.key("hostPort").value(networkBinding.getHostPort());
+                jsonGenerator.writeFieldName("hostPort").writeValue(
+                        networkBinding.getHostPort());
             }
             if (networkBinding.getProtocol() != null) {
-                jsonWriter.key("protocol").value(networkBinding.getProtocol());
+                jsonGenerator.writeFieldName("protocol").writeValue(
+                        networkBinding.getProtocol());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

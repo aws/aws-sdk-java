@@ -40,33 +40,33 @@ import com.amazonaws.util.json.*;
 public class RedshiftMetadataJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RedshiftMetadata redshiftMetadata,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (redshiftMetadata == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (redshiftMetadata.getRedshiftDatabase() != null) {
-                jsonWriter.key("RedshiftDatabase");
+                jsonGenerator.writeFieldName("RedshiftDatabase");
                 RedshiftDatabaseJsonMarshaller.getInstance().marshall(
-                        redshiftMetadata.getRedshiftDatabase(), jsonWriter);
+                        redshiftMetadata.getRedshiftDatabase(), jsonGenerator);
             }
             if (redshiftMetadata.getDatabaseUserName() != null) {
-                jsonWriter.key("DatabaseUserName").value(
+                jsonGenerator.writeFieldName("DatabaseUserName").writeValue(
                         redshiftMetadata.getDatabaseUserName());
             }
             if (redshiftMetadata.getSelectSqlQuery() != null) {
-                jsonWriter.key("SelectSqlQuery").value(
+                jsonGenerator.writeFieldName("SelectSqlQuery").writeValue(
                         redshiftMetadata.getSelectSqlQuery());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

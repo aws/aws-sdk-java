@@ -40,29 +40,29 @@ import com.amazonaws.util.json.*;
 public class ComplianceByConfigRuleJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ComplianceByConfigRule complianceByConfigRule,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (complianceByConfigRule == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (complianceByConfigRule.getConfigRuleName() != null) {
-                jsonWriter.key("ConfigRuleName").value(
+                jsonGenerator.writeFieldName("ConfigRuleName").writeValue(
                         complianceByConfigRule.getConfigRuleName());
             }
             if (complianceByConfigRule.getCompliance() != null) {
-                jsonWriter.key("Compliance");
+                jsonGenerator.writeFieldName("Compliance");
                 ComplianceJsonMarshaller.getInstance().marshall(
-                        complianceByConfigRule.getCompliance(), jsonWriter);
+                        complianceByConfigRule.getCompliance(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

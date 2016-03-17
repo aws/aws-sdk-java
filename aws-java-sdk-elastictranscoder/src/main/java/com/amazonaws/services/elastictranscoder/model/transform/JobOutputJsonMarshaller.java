@@ -40,120 +40,130 @@ import com.amazonaws.util.json.*;
 public class JobOutputJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(JobOutput jobOutput, JSONWriter jsonWriter) {
+    public void marshall(JobOutput jobOutput, SdkJsonGenerator jsonGenerator) {
         if (jobOutput == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (jobOutput.getId() != null) {
-                jsonWriter.key("Id").value(jobOutput.getId());
+                jsonGenerator.writeFieldName("Id")
+                        .writeValue(jobOutput.getId());
             }
             if (jobOutput.getKey() != null) {
-                jsonWriter.key("Key").value(jobOutput.getKey());
+                jsonGenerator.writeFieldName("Key").writeValue(
+                        jobOutput.getKey());
             }
             if (jobOutput.getThumbnailPattern() != null) {
-                jsonWriter.key("ThumbnailPattern").value(
+                jsonGenerator.writeFieldName("ThumbnailPattern").writeValue(
                         jobOutput.getThumbnailPattern());
             }
             if (jobOutput.getThumbnailEncryption() != null) {
-                jsonWriter.key("ThumbnailEncryption");
+                jsonGenerator.writeFieldName("ThumbnailEncryption");
                 EncryptionJsonMarshaller.getInstance().marshall(
-                        jobOutput.getThumbnailEncryption(), jsonWriter);
+                        jobOutput.getThumbnailEncryption(), jsonGenerator);
             }
             if (jobOutput.getRotate() != null) {
-                jsonWriter.key("Rotate").value(jobOutput.getRotate());
+                jsonGenerator.writeFieldName("Rotate").writeValue(
+                        jobOutput.getRotate());
             }
             if (jobOutput.getPresetId() != null) {
-                jsonWriter.key("PresetId").value(jobOutput.getPresetId());
+                jsonGenerator.writeFieldName("PresetId").writeValue(
+                        jobOutput.getPresetId());
             }
             if (jobOutput.getSegmentDuration() != null) {
-                jsonWriter.key("SegmentDuration").value(
+                jsonGenerator.writeFieldName("SegmentDuration").writeValue(
                         jobOutput.getSegmentDuration());
             }
             if (jobOutput.getStatus() != null) {
-                jsonWriter.key("Status").value(jobOutput.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        jobOutput.getStatus());
             }
             if (jobOutput.getStatusDetail() != null) {
-                jsonWriter.key("StatusDetail").value(
+                jsonGenerator.writeFieldName("StatusDetail").writeValue(
                         jobOutput.getStatusDetail());
             }
             if (jobOutput.getDuration() != null) {
-                jsonWriter.key("Duration").value(jobOutput.getDuration());
+                jsonGenerator.writeFieldName("Duration").writeValue(
+                        jobOutput.getDuration());
             }
             if (jobOutput.getWidth() != null) {
-                jsonWriter.key("Width").value(jobOutput.getWidth());
+                jsonGenerator.writeFieldName("Width").writeValue(
+                        jobOutput.getWidth());
             }
             if (jobOutput.getHeight() != null) {
-                jsonWriter.key("Height").value(jobOutput.getHeight());
+                jsonGenerator.writeFieldName("Height").writeValue(
+                        jobOutput.getHeight());
             }
             if (jobOutput.getFrameRate() != null) {
-                jsonWriter.key("FrameRate").value(jobOutput.getFrameRate());
+                jsonGenerator.writeFieldName("FrameRate").writeValue(
+                        jobOutput.getFrameRate());
             }
             if (jobOutput.getFileSize() != null) {
-                jsonWriter.key("FileSize").value(jobOutput.getFileSize());
+                jsonGenerator.writeFieldName("FileSize").writeValue(
+                        jobOutput.getFileSize());
             }
             if (jobOutput.getDurationMillis() != null) {
-                jsonWriter.key("DurationMillis").value(
+                jsonGenerator.writeFieldName("DurationMillis").writeValue(
                         jobOutput.getDurationMillis());
             }
 
             com.amazonaws.internal.SdkInternalList<JobWatermark> watermarksList = (com.amazonaws.internal.SdkInternalList<JobWatermark>) jobOutput
                     .getWatermarks();
             if (!watermarksList.isEmpty() || !watermarksList.isAutoConstruct()) {
-                jsonWriter.key("Watermarks");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Watermarks");
+                jsonGenerator.writeStartArray();
                 for (JobWatermark watermarksListValue : watermarksList) {
                     if (watermarksListValue != null) {
 
                         JobWatermarkJsonMarshaller.getInstance().marshall(
-                                watermarksListValue, jsonWriter);
+                                watermarksListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (jobOutput.getAlbumArt() != null) {
-                jsonWriter.key("AlbumArt");
+                jsonGenerator.writeFieldName("AlbumArt");
                 JobAlbumArtJsonMarshaller.getInstance().marshall(
-                        jobOutput.getAlbumArt(), jsonWriter);
+                        jobOutput.getAlbumArt(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<Clip> compositionList = (com.amazonaws.internal.SdkInternalList<Clip>) jobOutput
                     .getComposition();
             if (!compositionList.isEmpty()
                     || !compositionList.isAutoConstruct()) {
-                jsonWriter.key("Composition");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Composition");
+                jsonGenerator.writeStartArray();
                 for (Clip compositionListValue : compositionList) {
                     if (compositionListValue != null) {
 
                         ClipJsonMarshaller.getInstance().marshall(
-                                compositionListValue, jsonWriter);
+                                compositionListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (jobOutput.getCaptions() != null) {
-                jsonWriter.key("Captions");
+                jsonGenerator.writeFieldName("Captions");
                 CaptionsJsonMarshaller.getInstance().marshall(
-                        jobOutput.getCaptions(), jsonWriter);
+                        jobOutput.getCaptions(), jsonGenerator);
             }
             if (jobOutput.getEncryption() != null) {
-                jsonWriter.key("Encryption");
+                jsonGenerator.writeFieldName("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(
-                        jobOutput.getEncryption(), jsonWriter);
+                        jobOutput.getEncryption(), jsonGenerator);
             }
             if (jobOutput.getAppliedColorSpaceConversion() != null) {
-                jsonWriter.key("AppliedColorSpaceConversion").value(
-                        jobOutput.getAppliedColorSpaceConversion());
+                jsonGenerator.writeFieldName("AppliedColorSpaceConversion")
+                        .writeValue(jobOutput.getAppliedColorSpaceConversion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

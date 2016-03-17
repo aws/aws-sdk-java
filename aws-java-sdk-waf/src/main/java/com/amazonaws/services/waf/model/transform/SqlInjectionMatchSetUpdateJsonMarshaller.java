@@ -40,30 +40,30 @@ import com.amazonaws.util.json.*;
 public class SqlInjectionMatchSetUpdateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(SqlInjectionMatchSetUpdate sqlInjectionMatchSetUpdate,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (sqlInjectionMatchSetUpdate == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (sqlInjectionMatchSetUpdate.getAction() != null) {
-                jsonWriter.key("Action").value(
+                jsonGenerator.writeFieldName("Action").writeValue(
                         sqlInjectionMatchSetUpdate.getAction());
             }
             if (sqlInjectionMatchSetUpdate.getSqlInjectionMatchTuple() != null) {
-                jsonWriter.key("SqlInjectionMatchTuple");
+                jsonGenerator.writeFieldName("SqlInjectionMatchTuple");
                 SqlInjectionMatchTupleJsonMarshaller.getInstance().marshall(
                         sqlInjectionMatchSetUpdate.getSqlInjectionMatchTuple(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

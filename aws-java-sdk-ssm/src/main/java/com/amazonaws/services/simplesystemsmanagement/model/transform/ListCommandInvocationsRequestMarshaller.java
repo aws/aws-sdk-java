@@ -65,52 +65,50 @@ public class ListCommandInvocationsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listCommandInvocationsRequest.getCommandId() != null) {
-                jsonWriter.key("CommandId").value(
+                jsonGenerator.writeFieldName("CommandId").writeValue(
                         listCommandInvocationsRequest.getCommandId());
             }
             if (listCommandInvocationsRequest.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
                         listCommandInvocationsRequest.getInstanceId());
             }
             if (listCommandInvocationsRequest.getMaxResults() != null) {
-                jsonWriter.key("MaxResults").value(
+                jsonGenerator.writeFieldName("MaxResults").writeValue(
                         listCommandInvocationsRequest.getMaxResults());
             }
             if (listCommandInvocationsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         listCommandInvocationsRequest.getNextToken());
             }
 
             com.amazonaws.internal.SdkInternalList<CommandFilter> filtersList = (com.amazonaws.internal.SdkInternalList<CommandFilter>) listCommandInvocationsRequest
                     .getFilters();
             if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
-                jsonWriter.key("Filters");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Filters");
+                jsonGenerator.writeStartArray();
                 for (CommandFilter filtersListValue : filtersList) {
                     if (filtersListValue != null) {
 
                         CommandFilterJsonMarshaller.getInstance().marshall(
-                                filtersListValue, jsonWriter);
+                                filtersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (listCommandInvocationsRequest.getDetails() != null) {
-                jsonWriter.key("Details").value(
+                jsonGenerator.writeFieldName("Details").writeValue(
                         listCommandInvocationsRequest.getDetails());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

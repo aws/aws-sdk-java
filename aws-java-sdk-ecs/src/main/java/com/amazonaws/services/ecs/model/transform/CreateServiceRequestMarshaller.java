@@ -65,21 +65,20 @@ public class CreateServiceRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createServiceRequest.getCluster() != null) {
-                jsonWriter.key("cluster").value(
+                jsonGenerator.writeFieldName("cluster").writeValue(
                         createServiceRequest.getCluster());
             }
             if (createServiceRequest.getServiceName() != null) {
-                jsonWriter.key("serviceName").value(
+                jsonGenerator.writeFieldName("serviceName").writeValue(
                         createServiceRequest.getServiceName());
             }
             if (createServiceRequest.getTaskDefinition() != null) {
-                jsonWriter.key("taskDefinition").value(
+                jsonGenerator.writeFieldName("taskDefinition").writeValue(
                         createServiceRequest.getTaskDefinition());
             }
 
@@ -87,40 +86,40 @@ public class CreateServiceRequestMarshaller implements
                     .getLoadBalancers();
             if (!loadBalancersList.isEmpty()
                     || !loadBalancersList.isAutoConstruct()) {
-                jsonWriter.key("loadBalancers");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("loadBalancers");
+                jsonGenerator.writeStartArray();
                 for (LoadBalancer loadBalancersListValue : loadBalancersList) {
                     if (loadBalancersListValue != null) {
 
                         LoadBalancerJsonMarshaller.getInstance().marshall(
-                                loadBalancersListValue, jsonWriter);
+                                loadBalancersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (createServiceRequest.getDesiredCount() != null) {
-                jsonWriter.key("desiredCount").value(
+                jsonGenerator.writeFieldName("desiredCount").writeValue(
                         createServiceRequest.getDesiredCount());
             }
             if (createServiceRequest.getClientToken() != null) {
-                jsonWriter.key("clientToken").value(
+                jsonGenerator.writeFieldName("clientToken").writeValue(
                         createServiceRequest.getClientToken());
             }
             if (createServiceRequest.getRole() != null) {
-                jsonWriter.key("role").value(createServiceRequest.getRole());
+                jsonGenerator.writeFieldName("role").writeValue(
+                        createServiceRequest.getRole());
             }
             if (createServiceRequest.getDeploymentConfiguration() != null) {
-                jsonWriter.key("deploymentConfiguration");
+                jsonGenerator.writeFieldName("deploymentConfiguration");
                 DeploymentConfigurationJsonMarshaller.getInstance().marshall(
                         createServiceRequest.getDeploymentConfiguration(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

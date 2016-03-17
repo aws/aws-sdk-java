@@ -40,32 +40,36 @@ import com.amazonaws.util.json.*;
 public class NotificationsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Notifications notifications, JSONWriter jsonWriter) {
+    public void marshall(Notifications notifications,
+            SdkJsonGenerator jsonGenerator) {
         if (notifications == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (notifications.getProgressing() != null) {
-                jsonWriter.key("Progressing").value(
+                jsonGenerator.writeFieldName("Progressing").writeValue(
                         notifications.getProgressing());
             }
             if (notifications.getCompleted() != null) {
-                jsonWriter.key("Completed").value(notifications.getCompleted());
+                jsonGenerator.writeFieldName("Completed").writeValue(
+                        notifications.getCompleted());
             }
             if (notifications.getWarning() != null) {
-                jsonWriter.key("Warning").value(notifications.getWarning());
+                jsonGenerator.writeFieldName("Warning").writeValue(
+                        notifications.getWarning());
             }
             if (notifications.getError() != null) {
-                jsonWriter.key("Error").value(notifications.getError());
+                jsonGenerator.writeFieldName("Error").writeValue(
+                        notifications.getError());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

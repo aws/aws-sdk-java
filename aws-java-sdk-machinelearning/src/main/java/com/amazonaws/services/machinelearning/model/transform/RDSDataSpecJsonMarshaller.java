@@ -40,73 +40,75 @@ import com.amazonaws.util.json.*;
 public class RDSDataSpecJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RDSDataSpec rDSDataSpec, JSONWriter jsonWriter) {
+    public void marshall(RDSDataSpec rDSDataSpec, SdkJsonGenerator jsonGenerator) {
         if (rDSDataSpec == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (rDSDataSpec.getDatabaseInformation() != null) {
-                jsonWriter.key("DatabaseInformation");
+                jsonGenerator.writeFieldName("DatabaseInformation");
                 RDSDatabaseJsonMarshaller.getInstance().marshall(
-                        rDSDataSpec.getDatabaseInformation(), jsonWriter);
+                        rDSDataSpec.getDatabaseInformation(), jsonGenerator);
             }
             if (rDSDataSpec.getSelectSqlQuery() != null) {
-                jsonWriter.key("SelectSqlQuery").value(
+                jsonGenerator.writeFieldName("SelectSqlQuery").writeValue(
                         rDSDataSpec.getSelectSqlQuery());
             }
             if (rDSDataSpec.getDatabaseCredentials() != null) {
-                jsonWriter.key("DatabaseCredentials");
+                jsonGenerator.writeFieldName("DatabaseCredentials");
                 RDSDatabaseCredentialsJsonMarshaller.getInstance().marshall(
-                        rDSDataSpec.getDatabaseCredentials(), jsonWriter);
+                        rDSDataSpec.getDatabaseCredentials(), jsonGenerator);
             }
             if (rDSDataSpec.getS3StagingLocation() != null) {
-                jsonWriter.key("S3StagingLocation").value(
+                jsonGenerator.writeFieldName("S3StagingLocation").writeValue(
                         rDSDataSpec.getS3StagingLocation());
             }
             if (rDSDataSpec.getDataRearrangement() != null) {
-                jsonWriter.key("DataRearrangement").value(
+                jsonGenerator.writeFieldName("DataRearrangement").writeValue(
                         rDSDataSpec.getDataRearrangement());
             }
             if (rDSDataSpec.getDataSchema() != null) {
-                jsonWriter.key("DataSchema").value(rDSDataSpec.getDataSchema());
+                jsonGenerator.writeFieldName("DataSchema").writeValue(
+                        rDSDataSpec.getDataSchema());
             }
             if (rDSDataSpec.getDataSchemaUri() != null) {
-                jsonWriter.key("DataSchemaUri").value(
+                jsonGenerator.writeFieldName("DataSchemaUri").writeValue(
                         rDSDataSpec.getDataSchemaUri());
             }
             if (rDSDataSpec.getResourceRole() != null) {
-                jsonWriter.key("ResourceRole").value(
+                jsonGenerator.writeFieldName("ResourceRole").writeValue(
                         rDSDataSpec.getResourceRole());
             }
             if (rDSDataSpec.getServiceRole() != null) {
-                jsonWriter.key("ServiceRole").value(
+                jsonGenerator.writeFieldName("ServiceRole").writeValue(
                         rDSDataSpec.getServiceRole());
             }
             if (rDSDataSpec.getSubnetId() != null) {
-                jsonWriter.key("SubnetId").value(rDSDataSpec.getSubnetId());
+                jsonGenerator.writeFieldName("SubnetId").writeValue(
+                        rDSDataSpec.getSubnetId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) rDSDataSpec
                     .getSecurityGroupIds();
             if (!securityGroupIdsList.isEmpty()
                     || !securityGroupIdsList.isAutoConstruct()) {
-                jsonWriter.key("SecurityGroupIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SecurityGroupIds");
+                jsonGenerator.writeStartArray();
                 for (String securityGroupIdsListValue : securityGroupIdsList) {
                     if (securityGroupIdsListValue != null) {
-                        jsonWriter.value(securityGroupIdsListValue);
+                        jsonGenerator.writeValue(securityGroupIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,28 +40,31 @@ import com.amazonaws.util.json.*;
 public class ReportedOsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ReportedOs reportedOs, JSONWriter jsonWriter) {
+    public void marshall(ReportedOs reportedOs, SdkJsonGenerator jsonGenerator) {
         if (reportedOs == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (reportedOs.getFamily() != null) {
-                jsonWriter.key("Family").value(reportedOs.getFamily());
+                jsonGenerator.writeFieldName("Family").writeValue(
+                        reportedOs.getFamily());
             }
             if (reportedOs.getName() != null) {
-                jsonWriter.key("Name").value(reportedOs.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        reportedOs.getName());
             }
             if (reportedOs.getVersion() != null) {
-                jsonWriter.key("Version").value(reportedOs.getVersion());
+                jsonGenerator.writeFieldName("Version").writeValue(
+                        reportedOs.getVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

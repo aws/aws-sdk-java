@@ -66,45 +66,43 @@ public class ListApplicationRevisionsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listApplicationRevisionsRequest.getApplicationName() != null) {
-                jsonWriter.key("applicationName").value(
+                jsonGenerator.writeFieldName("applicationName").writeValue(
                         listApplicationRevisionsRequest.getApplicationName());
             }
             if (listApplicationRevisionsRequest.getSortBy() != null) {
-                jsonWriter.key("sortBy").value(
+                jsonGenerator.writeFieldName("sortBy").writeValue(
                         listApplicationRevisionsRequest.getSortBy());
             }
             if (listApplicationRevisionsRequest.getSortOrder() != null) {
-                jsonWriter.key("sortOrder").value(
+                jsonGenerator.writeFieldName("sortOrder").writeValue(
                         listApplicationRevisionsRequest.getSortOrder());
             }
             if (listApplicationRevisionsRequest.getS3Bucket() != null) {
-                jsonWriter.key("s3Bucket").value(
+                jsonGenerator.writeFieldName("s3Bucket").writeValue(
                         listApplicationRevisionsRequest.getS3Bucket());
             }
             if (listApplicationRevisionsRequest.getS3KeyPrefix() != null) {
-                jsonWriter.key("s3KeyPrefix").value(
+                jsonGenerator.writeFieldName("s3KeyPrefix").writeValue(
                         listApplicationRevisionsRequest.getS3KeyPrefix());
             }
             if (listApplicationRevisionsRequest.getDeployed() != null) {
-                jsonWriter.key("deployed").value(
+                jsonGenerator.writeFieldName("deployed").writeValue(
                         listApplicationRevisionsRequest.getDeployed());
             }
             if (listApplicationRevisionsRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         listApplicationRevisionsRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

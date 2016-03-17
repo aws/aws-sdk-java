@@ -65,7 +65,9 @@ import com.amazonaws.services.s3.internal.CompleteMultipartUploadRetryCondition;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.DigestValidationInputStream;
+import com.amazonaws.services.s3.internal.InitiateMultipartUploadHeaderHandler;
 import com.amazonaws.services.s3.internal.InputSubstream;
+import com.amazonaws.services.s3.internal.ListPartsHeaderHandler;
 import com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream;
 import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.MultiFileOutputStream;
@@ -2664,7 +2666,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 // xml payload unmarshaller
                 new Unmarshallers.InitiateMultipartUploadResultUnmarshaller(),
                 // header handlers
-                new ServerSideEncryptionHeaderHandler<InitiateMultipartUploadResult>());
+                new ServerSideEncryptionHeaderHandler<InitiateMultipartUploadResult>(),
+                new InitiateMultipartUploadHeaderHandler());
         return invoke(request, responseHandler,
                 initiateMultipartUploadRequest.getBucketName(), initiateMultipartUploadRequest.getKey());
     }
@@ -2711,7 +2714,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (listPartsRequest.getPartNumberMarker() != null) request.addParameter("part-number-marker", listPartsRequest.getPartNumberMarker().toString());
         if (listPartsRequest.getEncodingType() != null) request.addParameter("encoding-type", listPartsRequest.getEncodingType());
 
-        return invoke(request, new Unmarshallers.ListPartsResultUnmarshaller(), listPartsRequest.getBucketName(), listPartsRequest.getKey());
+        @SuppressWarnings("unchecked")
+        ResponseHeaderHandlerChain<PartListing> handler = new ResponseHeaderHandlerChain<PartListing>(
+                new Unmarshallers.ListPartsResultUnmarshaller(), new ListPartsHeaderHandler());
+        return invoke(request, handler, listPartsRequest.getBucketName(), listPartsRequest.getKey());
     }
 
     @Override

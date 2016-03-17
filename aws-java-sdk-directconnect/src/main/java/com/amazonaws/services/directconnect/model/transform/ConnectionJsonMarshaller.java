@@ -40,51 +40,55 @@ import com.amazonaws.util.json.*;
 public class ConnectionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Connection connection, JSONWriter jsonWriter) {
+    public void marshall(Connection connection, SdkJsonGenerator jsonGenerator) {
         if (connection == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (connection.getOwnerAccount() != null) {
-                jsonWriter.key("ownerAccount").value(
+                jsonGenerator.writeFieldName("ownerAccount").writeValue(
                         connection.getOwnerAccount());
             }
             if (connection.getConnectionId() != null) {
-                jsonWriter.key("connectionId").value(
+                jsonGenerator.writeFieldName("connectionId").writeValue(
                         connection.getConnectionId());
             }
             if (connection.getConnectionName() != null) {
-                jsonWriter.key("connectionName").value(
+                jsonGenerator.writeFieldName("connectionName").writeValue(
                         connection.getConnectionName());
             }
             if (connection.getConnectionState() != null) {
-                jsonWriter.key("connectionState").value(
+                jsonGenerator.writeFieldName("connectionState").writeValue(
                         connection.getConnectionState());
             }
             if (connection.getRegion() != null) {
-                jsonWriter.key("region").value(connection.getRegion());
+                jsonGenerator.writeFieldName("region").writeValue(
+                        connection.getRegion());
             }
             if (connection.getLocation() != null) {
-                jsonWriter.key("location").value(connection.getLocation());
+                jsonGenerator.writeFieldName("location").writeValue(
+                        connection.getLocation());
             }
             if (connection.getBandwidth() != null) {
-                jsonWriter.key("bandwidth").value(connection.getBandwidth());
+                jsonGenerator.writeFieldName("bandwidth").writeValue(
+                        connection.getBandwidth());
             }
             if (connection.getVlan() != null) {
-                jsonWriter.key("vlan").value(connection.getVlan());
+                jsonGenerator.writeFieldName("vlan").writeValue(
+                        connection.getVlan());
             }
             if (connection.getPartnerName() != null) {
-                jsonWriter.key("partnerName")
-                        .value(connection.getPartnerName());
+                jsonGenerator.writeFieldName("partnerName").writeValue(
+                        connection.getPartnerName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

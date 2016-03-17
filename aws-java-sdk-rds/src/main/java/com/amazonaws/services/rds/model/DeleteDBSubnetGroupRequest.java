@@ -34,25 +34,25 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * The name of the database subnet group to delete. <note>You cannot
-     * delete the default subnet group.</note> <p> Constraints: <ul> <li>Must
-     * be 1 to 255 alphanumeric characters</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul>
+     * delete the default subnet group.</note> <p>Constraints: Must contain
+     * no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      */
     private String dBSubnetGroupName;
 
     /**
      * The name of the database subnet group to delete. <note>You cannot
-     * delete the default subnet group.</note> <p> Constraints: <ul> <li>Must
-     * be 1 to 255 alphanumeric characters</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul>
+     * delete the default subnet group.</note> <p>Constraints: Must contain
+     * no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      *
      * @return The name of the database subnet group to delete. <note>You cannot
-     *         delete the default subnet group.</note> <p> Constraints: <ul> <li>Must
-     *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul>
+     *         delete the default subnet group.</note> <p>Constraints: Must contain
+     *         no more than 255 alphanumeric characters, periods, underscores,
+     *         spaces, or hyphens. Must not be default. <p>Example:
+     *         <code>mySubnetgroup</code>
      */
     public String getDBSubnetGroupName() {
         return dBSubnetGroupName;
@@ -60,16 +60,16 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
     
     /**
      * The name of the database subnet group to delete. <note>You cannot
-     * delete the default subnet group.</note> <p> Constraints: <ul> <li>Must
-     * be 1 to 255 alphanumeric characters</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul>
+     * delete the default subnet group.</note> <p>Constraints: Must contain
+     * no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      *
      * @param dBSubnetGroupName The name of the database subnet group to delete. <note>You cannot
-     *         delete the default subnet group.</note> <p> Constraints: <ul> <li>Must
-     *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul>
+     *         delete the default subnet group.</note> <p>Constraints: Must contain
+     *         no more than 255 alphanumeric characters, periods, underscores,
+     *         spaces, or hyphens. Must not be default. <p>Example:
+     *         <code>mySubnetgroup</code>
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -77,18 +77,18 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
     
     /**
      * The name of the database subnet group to delete. <note>You cannot
-     * delete the default subnet group.</note> <p> Constraints: <ul> <li>Must
-     * be 1 to 255 alphanumeric characters</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul>
+     * delete the default subnet group.</note> <p>Constraints: Must contain
+     * no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSubnetGroupName The name of the database subnet group to delete. <note>You cannot
-     *         delete the default subnet group.</note> <p> Constraints: <ul> <li>Must
-     *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul>
+     *         delete the default subnet group.</note> <p>Constraints: Must contain
+     *         no more than 255 alphanumeric characters, periods, underscores,
+     *         spaces, or hyphens. Must not be default. <p>Example:
+     *         <code>mySubnetgroup</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

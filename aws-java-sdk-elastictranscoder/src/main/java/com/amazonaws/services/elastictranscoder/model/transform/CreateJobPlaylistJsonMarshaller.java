@@ -40,50 +40,52 @@ import com.amazonaws.util.json.*;
 public class CreateJobPlaylistJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(CreateJobPlaylist createJobPlaylist,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (createJobPlaylist == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createJobPlaylist.getName() != null) {
-                jsonWriter.key("Name").value(createJobPlaylist.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createJobPlaylist.getName());
             }
             if (createJobPlaylist.getFormat() != null) {
-                jsonWriter.key("Format").value(createJobPlaylist.getFormat());
+                jsonGenerator.writeFieldName("Format").writeValue(
+                        createJobPlaylist.getFormat());
             }
 
             com.amazonaws.internal.SdkInternalList<String> outputKeysList = (com.amazonaws.internal.SdkInternalList<String>) createJobPlaylist
                     .getOutputKeys();
             if (!outputKeysList.isEmpty() || !outputKeysList.isAutoConstruct()) {
-                jsonWriter.key("OutputKeys");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("OutputKeys");
+                jsonGenerator.writeStartArray();
                 for (String outputKeysListValue : outputKeysList) {
                     if (outputKeysListValue != null) {
-                        jsonWriter.value(outputKeysListValue);
+                        jsonGenerator.writeValue(outputKeysListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (createJobPlaylist.getHlsContentProtection() != null) {
-                jsonWriter.key("HlsContentProtection");
-                HlsContentProtectionJsonMarshaller.getInstance()
-                        .marshall(createJobPlaylist.getHlsContentProtection(),
-                                jsonWriter);
+                jsonGenerator.writeFieldName("HlsContentProtection");
+                HlsContentProtectionJsonMarshaller.getInstance().marshall(
+                        createJobPlaylist.getHlsContentProtection(),
+                        jsonGenerator);
             }
             if (createJobPlaylist.getPlayReadyDrm() != null) {
-                jsonWriter.key("PlayReadyDrm");
+                jsonGenerator.writeFieldName("PlayReadyDrm");
                 PlayReadyDrmJsonMarshaller.getInstance().marshall(
-                        createJobPlaylist.getPlayReadyDrm(), jsonWriter);
+                        createJobPlaylist.getPlayReadyDrm(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -65,29 +65,27 @@ public class DeleteRepositoryRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deleteRepositoryRequest.getRegistryId() != null) {
-                jsonWriter.key("registryId").value(
+                jsonGenerator.writeFieldName("registryId").writeValue(
                         deleteRepositoryRequest.getRegistryId());
             }
             if (deleteRepositoryRequest.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         deleteRepositoryRequest.getRepositoryName());
             }
             if (deleteRepositoryRequest.getForce() != null) {
-                jsonWriter.key("force").value(
+                jsonGenerator.writeFieldName("force").writeValue(
                         deleteRepositoryRequest.getForce());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

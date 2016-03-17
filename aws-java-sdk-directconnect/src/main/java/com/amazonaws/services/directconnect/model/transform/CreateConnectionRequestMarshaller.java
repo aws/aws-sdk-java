@@ -64,29 +64,27 @@ public class CreateConnectionRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createConnectionRequest.getLocation() != null) {
-                jsonWriter.key("location").value(
+                jsonGenerator.writeFieldName("location").writeValue(
                         createConnectionRequest.getLocation());
             }
             if (createConnectionRequest.getBandwidth() != null) {
-                jsonWriter.key("bandwidth").value(
+                jsonGenerator.writeFieldName("bandwidth").writeValue(
                         createConnectionRequest.getBandwidth());
             }
             if (createConnectionRequest.getConnectionName() != null) {
-                jsonWriter.key("connectionName").value(
+                jsonGenerator.writeFieldName("connectionName").writeValue(
                         createConnectionRequest.getConnectionName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

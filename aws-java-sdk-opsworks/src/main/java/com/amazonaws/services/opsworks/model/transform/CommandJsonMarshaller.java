@@ -40,50 +40,59 @@ import com.amazonaws.util.json.*;
 public class CommandJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Command command, JSONWriter jsonWriter) {
+    public void marshall(Command command, SdkJsonGenerator jsonGenerator) {
         if (command == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (command.getCommandId() != null) {
-                jsonWriter.key("CommandId").value(command.getCommandId());
+                jsonGenerator.writeFieldName("CommandId").writeValue(
+                        command.getCommandId());
             }
             if (command.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(command.getInstanceId());
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
+                        command.getInstanceId());
             }
             if (command.getDeploymentId() != null) {
-                jsonWriter.key("DeploymentId").value(command.getDeploymentId());
+                jsonGenerator.writeFieldName("DeploymentId").writeValue(
+                        command.getDeploymentId());
             }
             if (command.getCreatedAt() != null) {
-                jsonWriter.key("CreatedAt").value(command.getCreatedAt());
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(
+                        command.getCreatedAt());
             }
             if (command.getAcknowledgedAt() != null) {
-                jsonWriter.key("AcknowledgedAt").value(
+                jsonGenerator.writeFieldName("AcknowledgedAt").writeValue(
                         command.getAcknowledgedAt());
             }
             if (command.getCompletedAt() != null) {
-                jsonWriter.key("CompletedAt").value(command.getCompletedAt());
+                jsonGenerator.writeFieldName("CompletedAt").writeValue(
+                        command.getCompletedAt());
             }
             if (command.getStatus() != null) {
-                jsonWriter.key("Status").value(command.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        command.getStatus());
             }
             if (command.getExitCode() != null) {
-                jsonWriter.key("ExitCode").value(command.getExitCode());
+                jsonGenerator.writeFieldName("ExitCode").writeValue(
+                        command.getExitCode());
             }
             if (command.getLogUrl() != null) {
-                jsonWriter.key("LogUrl").value(command.getLogUrl());
+                jsonGenerator.writeFieldName("LogUrl").writeValue(
+                        command.getLogUrl());
             }
             if (command.getType() != null) {
-                jsonWriter.key("Type").value(command.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        command.getType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

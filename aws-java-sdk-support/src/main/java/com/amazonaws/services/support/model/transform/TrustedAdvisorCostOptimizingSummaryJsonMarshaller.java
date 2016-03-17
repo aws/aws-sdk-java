@@ -40,33 +40,35 @@ import com.amazonaws.util.json.*;
 public class TrustedAdvisorCostOptimizingSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             TrustedAdvisorCostOptimizingSummary trustedAdvisorCostOptimizingSummary,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (trustedAdvisorCostOptimizingSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (trustedAdvisorCostOptimizingSummary
                     .getEstimatedMonthlySavings() != null) {
-                jsonWriter.key("estimatedMonthlySavings").value(
-                        trustedAdvisorCostOptimizingSummary
-                                .getEstimatedMonthlySavings());
+                jsonGenerator.writeFieldName("estimatedMonthlySavings")
+                        .writeValue(
+                                trustedAdvisorCostOptimizingSummary
+                                        .getEstimatedMonthlySavings());
             }
             if (trustedAdvisorCostOptimizingSummary
                     .getEstimatedPercentMonthlySavings() != null) {
-                jsonWriter.key("estimatedPercentMonthlySavings").value(
-                        trustedAdvisorCostOptimizingSummary
-                                .getEstimatedPercentMonthlySavings());
+                jsonGenerator.writeFieldName("estimatedPercentMonthlySavings")
+                        .writeValue(
+                                trustedAdvisorCostOptimizingSummary
+                                        .getEstimatedPercentMonthlySavings());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

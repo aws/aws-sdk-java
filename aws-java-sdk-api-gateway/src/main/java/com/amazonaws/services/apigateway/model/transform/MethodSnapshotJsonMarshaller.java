@@ -40,27 +40,28 @@ import com.amazonaws.util.json.*;
 public class MethodSnapshotJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(MethodSnapshot methodSnapshot, JSONWriter jsonWriter) {
+    public void marshall(MethodSnapshot methodSnapshot,
+            SdkJsonGenerator jsonGenerator) {
         if (methodSnapshot == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (methodSnapshot.getAuthorizationType() != null) {
-                jsonWriter.key("authorizationType").value(
+                jsonGenerator.writeFieldName("authorizationType").writeValue(
                         methodSnapshot.getAuthorizationType());
             }
             if (methodSnapshot.getApiKeyRequired() != null) {
-                jsonWriter.key("apiKeyRequired").value(
+                jsonGenerator.writeFieldName("apiKeyRequired").writeValue(
                         methodSnapshot.getApiKeyRequired());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

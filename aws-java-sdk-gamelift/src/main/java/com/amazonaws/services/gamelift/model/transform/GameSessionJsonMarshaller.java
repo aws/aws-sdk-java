@@ -40,70 +40,75 @@ import com.amazonaws.util.json.*;
 public class GameSessionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(GameSession gameSession, JSONWriter jsonWriter) {
+    public void marshall(GameSession gameSession, SdkJsonGenerator jsonGenerator) {
         if (gameSession == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (gameSession.getGameSessionId() != null) {
-                jsonWriter.key("GameSessionId").value(
+                jsonGenerator.writeFieldName("GameSessionId").writeValue(
                         gameSession.getGameSessionId());
             }
             if (gameSession.getName() != null) {
-                jsonWriter.key("Name").value(gameSession.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        gameSession.getName());
             }
             if (gameSession.getFleetId() != null) {
-                jsonWriter.key("FleetId").value(gameSession.getFleetId());
+                jsonGenerator.writeFieldName("FleetId").writeValue(
+                        gameSession.getFleetId());
             }
             if (gameSession.getCreationTime() != null) {
-                jsonWriter.key("CreationTime").value(
+                jsonGenerator.writeFieldName("CreationTime").writeValue(
                         gameSession.getCreationTime());
             }
             if (gameSession.getTerminationTime() != null) {
-                jsonWriter.key("TerminationTime").value(
+                jsonGenerator.writeFieldName("TerminationTime").writeValue(
                         gameSession.getTerminationTime());
             }
             if (gameSession.getCurrentPlayerSessionCount() != null) {
-                jsonWriter.key("CurrentPlayerSessionCount").value(
-                        gameSession.getCurrentPlayerSessionCount());
+                jsonGenerator.writeFieldName("CurrentPlayerSessionCount")
+                        .writeValue(gameSession.getCurrentPlayerSessionCount());
             }
             if (gameSession.getMaximumPlayerSessionCount() != null) {
-                jsonWriter.key("MaximumPlayerSessionCount").value(
-                        gameSession.getMaximumPlayerSessionCount());
+                jsonGenerator.writeFieldName("MaximumPlayerSessionCount")
+                        .writeValue(gameSession.getMaximumPlayerSessionCount());
             }
             if (gameSession.getStatus() != null) {
-                jsonWriter.key("Status").value(gameSession.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        gameSession.getStatus());
             }
 
             java.util.List<GameProperty> gamePropertiesList = gameSession
                     .getGameProperties();
             if (gamePropertiesList != null) {
-                jsonWriter.key("GameProperties");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("GameProperties");
+                jsonGenerator.writeStartArray();
                 for (GameProperty gamePropertiesListValue : gamePropertiesList) {
                     if (gamePropertiesListValue != null) {
 
                         GamePropertyJsonMarshaller.getInstance().marshall(
-                                gamePropertiesListValue, jsonWriter);
+                                gamePropertiesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (gameSession.getIpAddress() != null) {
-                jsonWriter.key("IpAddress").value(gameSession.getIpAddress());
+                jsonGenerator.writeFieldName("IpAddress").writeValue(
+                        gameSession.getIpAddress());
             }
             if (gameSession.getPlayerSessionCreationPolicy() != null) {
-                jsonWriter.key("PlayerSessionCreationPolicy").value(
-                        gameSession.getPlayerSessionCreationPolicy());
+                jsonGenerator.writeFieldName("PlayerSessionCreationPolicy")
+                        .writeValue(
+                                gameSession.getPlayerSessionCreationPolicy());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

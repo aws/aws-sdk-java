@@ -40,51 +40,55 @@ import com.amazonaws.util.json.*;
 public class TrustJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Trust trust, JSONWriter jsonWriter) {
+    public void marshall(Trust trust, SdkJsonGenerator jsonGenerator) {
         if (trust == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (trust.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(trust.getDirectoryId());
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
+                        trust.getDirectoryId());
             }
             if (trust.getTrustId() != null) {
-                jsonWriter.key("TrustId").value(trust.getTrustId());
+                jsonGenerator.writeFieldName("TrustId").writeValue(
+                        trust.getTrustId());
             }
             if (trust.getRemoteDomainName() != null) {
-                jsonWriter.key("RemoteDomainName").value(
+                jsonGenerator.writeFieldName("RemoteDomainName").writeValue(
                         trust.getRemoteDomainName());
             }
             if (trust.getTrustType() != null) {
-                jsonWriter.key("TrustType").value(trust.getTrustType());
+                jsonGenerator.writeFieldName("TrustType").writeValue(
+                        trust.getTrustType());
             }
             if (trust.getTrustDirection() != null) {
-                jsonWriter.key("TrustDirection").value(
+                jsonGenerator.writeFieldName("TrustDirection").writeValue(
                         trust.getTrustDirection());
             }
             if (trust.getTrustState() != null) {
-                jsonWriter.key("TrustState").value(trust.getTrustState());
+                jsonGenerator.writeFieldName("TrustState").writeValue(
+                        trust.getTrustState());
             }
             if (trust.getCreatedDateTime() != null) {
-                jsonWriter.key("CreatedDateTime").value(
+                jsonGenerator.writeFieldName("CreatedDateTime").writeValue(
                         trust.getCreatedDateTime());
             }
             if (trust.getLastUpdatedDateTime() != null) {
-                jsonWriter.key("LastUpdatedDateTime").value(
+                jsonGenerator.writeFieldName("LastUpdatedDateTime").writeValue(
                         trust.getLastUpdatedDateTime());
             }
             if (trust.getStateLastUpdatedDateTime() != null) {
-                jsonWriter.key("StateLastUpdatedDateTime").value(
-                        trust.getStateLastUpdatedDateTime());
+                jsonGenerator.writeFieldName("StateLastUpdatedDateTime")
+                        .writeValue(trust.getStateLastUpdatedDateTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

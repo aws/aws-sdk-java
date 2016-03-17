@@ -73,45 +73,44 @@ public class ReplaceTopicRuleRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
             TopicRulePayload topicRulePayload = replaceTopicRuleRequest
                     .getTopicRulePayload();
             if (topicRulePayload != null) {
-                jsonWriter.object();
+                jsonGenerator.writeStartObject();
                 if (topicRulePayload.getSql() != null) {
-                    jsonWriter.key("sql").value(topicRulePayload.getSql());
+                    jsonGenerator.writeFieldName("sql").writeValue(
+                            topicRulePayload.getSql());
                 }
                 if (topicRulePayload.getDescription() != null) {
-                    jsonWriter.key("description").value(
+                    jsonGenerator.writeFieldName("description").writeValue(
                             topicRulePayload.getDescription());
                 }
 
                 java.util.List<Action> actionsList = topicRulePayload
                         .getActions();
                 if (actionsList != null) {
-                    jsonWriter.key("actions");
-                    jsonWriter.array();
+                    jsonGenerator.writeFieldName("actions");
+                    jsonGenerator.writeStartArray();
                     for (Action actionsListValue : actionsList) {
                         if (actionsListValue != null) {
 
                             ActionJsonMarshaller.getInstance().marshall(
-                                    actionsListValue, jsonWriter);
+                                    actionsListValue, jsonGenerator);
                         }
                     }
-                    jsonWriter.endArray();
+                    jsonGenerator.writeEndArray();
                 }
                 if (topicRulePayload.getRuleDisabled() != null) {
-                    jsonWriter.key("ruleDisabled").value(
+                    jsonGenerator.writeFieldName("ruleDisabled").writeValue(
                             topicRulePayload.getRuleDisabled());
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

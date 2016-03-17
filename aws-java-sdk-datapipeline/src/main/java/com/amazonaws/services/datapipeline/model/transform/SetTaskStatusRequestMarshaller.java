@@ -64,37 +64,35 @@ public class SetTaskStatusRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (setTaskStatusRequest.getTaskId() != null) {
-                jsonWriter.key("taskId")
-                        .value(setTaskStatusRequest.getTaskId());
+                jsonGenerator.writeFieldName("taskId").writeValue(
+                        setTaskStatusRequest.getTaskId());
             }
             if (setTaskStatusRequest.getTaskStatus() != null) {
-                jsonWriter.key("taskStatus").value(
+                jsonGenerator.writeFieldName("taskStatus").writeValue(
                         setTaskStatusRequest.getTaskStatus());
             }
             if (setTaskStatusRequest.getErrorId() != null) {
-                jsonWriter.key("errorId").value(
+                jsonGenerator.writeFieldName("errorId").writeValue(
                         setTaskStatusRequest.getErrorId());
             }
             if (setTaskStatusRequest.getErrorMessage() != null) {
-                jsonWriter.key("errorMessage").value(
+                jsonGenerator.writeFieldName("errorMessage").writeValue(
                         setTaskStatusRequest.getErrorMessage());
             }
             if (setTaskStatusRequest.getErrorStackTrace() != null) {
-                jsonWriter.key("errorStackTrace").value(
+                jsonGenerator.writeFieldName("errorStackTrace").writeValue(
                         setTaskStatusRequest.getErrorStackTrace());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

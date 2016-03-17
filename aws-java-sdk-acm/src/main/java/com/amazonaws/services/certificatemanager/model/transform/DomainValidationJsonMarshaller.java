@@ -40,41 +40,41 @@ import com.amazonaws.util.json.*;
 public class DomainValidationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DomainValidation domainValidation,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (domainValidation == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (domainValidation.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         domainValidation.getDomainName());
             }
 
             java.util.List<String> validationEmailsList = domainValidation
                     .getValidationEmails();
             if (validationEmailsList != null) {
-                jsonWriter.key("ValidationEmails");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ValidationEmails");
+                jsonGenerator.writeStartArray();
                 for (String validationEmailsListValue : validationEmailsList) {
                     if (validationEmailsListValue != null) {
-                        jsonWriter.value(validationEmailsListValue);
+                        jsonGenerator.writeValue(validationEmailsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (domainValidation.getValidationDomain() != null) {
-                jsonWriter.key("ValidationDomain").value(
+                jsonGenerator.writeFieldName("ValidationDomain").writeValue(
                         domainValidation.getValidationDomain());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

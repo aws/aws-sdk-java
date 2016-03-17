@@ -40,68 +40,74 @@ import com.amazonaws.util.json.*;
 public class ConfigRuleEvaluationStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ConfigRuleEvaluationStatus configRuleEvaluationStatus,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (configRuleEvaluationStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (configRuleEvaluationStatus.getConfigRuleName() != null) {
-                jsonWriter.key("ConfigRuleName").value(
+                jsonGenerator.writeFieldName("ConfigRuleName").writeValue(
                         configRuleEvaluationStatus.getConfigRuleName());
             }
             if (configRuleEvaluationStatus.getConfigRuleArn() != null) {
-                jsonWriter.key("ConfigRuleArn").value(
+                jsonGenerator.writeFieldName("ConfigRuleArn").writeValue(
                         configRuleEvaluationStatus.getConfigRuleArn());
             }
             if (configRuleEvaluationStatus.getConfigRuleId() != null) {
-                jsonWriter.key("ConfigRuleId").value(
+                jsonGenerator.writeFieldName("ConfigRuleId").writeValue(
                         configRuleEvaluationStatus.getConfigRuleId());
             }
             if (configRuleEvaluationStatus.getLastSuccessfulInvocationTime() != null) {
-                jsonWriter.key("LastSuccessfulInvocationTime").value(
-                        configRuleEvaluationStatus
-                                .getLastSuccessfulInvocationTime());
+                jsonGenerator.writeFieldName("LastSuccessfulInvocationTime")
+                        .writeValue(
+                                configRuleEvaluationStatus
+                                        .getLastSuccessfulInvocationTime());
             }
             if (configRuleEvaluationStatus.getLastFailedInvocationTime() != null) {
-                jsonWriter.key("LastFailedInvocationTime").value(
-                        configRuleEvaluationStatus
-                                .getLastFailedInvocationTime());
+                jsonGenerator.writeFieldName("LastFailedInvocationTime")
+                        .writeValue(
+                                configRuleEvaluationStatus
+                                        .getLastFailedInvocationTime());
             }
             if (configRuleEvaluationStatus.getLastSuccessfulEvaluationTime() != null) {
-                jsonWriter.key("LastSuccessfulEvaluationTime").value(
-                        configRuleEvaluationStatus
-                                .getLastSuccessfulEvaluationTime());
+                jsonGenerator.writeFieldName("LastSuccessfulEvaluationTime")
+                        .writeValue(
+                                configRuleEvaluationStatus
+                                        .getLastSuccessfulEvaluationTime());
             }
             if (configRuleEvaluationStatus.getLastFailedEvaluationTime() != null) {
-                jsonWriter.key("LastFailedEvaluationTime").value(
-                        configRuleEvaluationStatus
-                                .getLastFailedEvaluationTime());
+                jsonGenerator.writeFieldName("LastFailedEvaluationTime")
+                        .writeValue(
+                                configRuleEvaluationStatus
+                                        .getLastFailedEvaluationTime());
             }
             if (configRuleEvaluationStatus.getFirstActivatedTime() != null) {
-                jsonWriter.key("FirstActivatedTime").value(
+                jsonGenerator.writeFieldName("FirstActivatedTime").writeValue(
                         configRuleEvaluationStatus.getFirstActivatedTime());
             }
             if (configRuleEvaluationStatus.getLastErrorCode() != null) {
-                jsonWriter.key("LastErrorCode").value(
+                jsonGenerator.writeFieldName("LastErrorCode").writeValue(
                         configRuleEvaluationStatus.getLastErrorCode());
             }
             if (configRuleEvaluationStatus.getLastErrorMessage() != null) {
-                jsonWriter.key("LastErrorMessage").value(
+                jsonGenerator.writeFieldName("LastErrorMessage").writeValue(
                         configRuleEvaluationStatus.getLastErrorMessage());
             }
             if (configRuleEvaluationStatus.getFirstEvaluationStarted() != null) {
-                jsonWriter.key("FirstEvaluationStarted").value(
-                        configRuleEvaluationStatus.getFirstEvaluationStarted());
+                jsonGenerator.writeFieldName("FirstEvaluationStarted")
+                        .writeValue(
+                                configRuleEvaluationStatus
+                                        .getFirstEvaluationStarted());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

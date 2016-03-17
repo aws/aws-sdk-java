@@ -66,34 +66,32 @@ public class RemoveTagsFromResourceRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (removeTagsFromResourceRequest.getResourceArn() != null) {
-                jsonWriter.key("ResourceArn").value(
+                jsonGenerator.writeFieldName("ResourceArn").writeValue(
                         removeTagsFromResourceRequest.getResourceArn());
             }
 
             java.util.List<String> tagKeysList = removeTagsFromResourceRequest
                     .getTagKeys();
             if (tagKeysList != null) {
-                jsonWriter.key("TagKeys");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TagKeys");
+                jsonGenerator.writeStartArray();
                 for (String tagKeysListValue : tagKeysList) {
                     if (tagKeysListValue != null) {
-                        jsonWriter.value(tagKeysListValue);
+                        jsonGenerator.writeValue(tagKeysListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

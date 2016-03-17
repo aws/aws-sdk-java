@@ -23,10 +23,7 @@ import com.amazonaws.services.iotdata.model.*;
  * operation; overloads which accept an {@code AsyncHandler} can be used to
  * receive notification when an asynchronous operation completes.
  * <p>
- * <fullname>AWS IoT (Beta)</fullname>
- * <p>
- * <b>AWS IoT is considered a beta service as defined in the Service Terms</b>
- * </p>
+ * <fullname>AWS IoT</fullname>
  * <p>
  * AWS IoT-Data enables secure, bi-directional communication between
  * Internet-connected things (such as sensors, actuators, embedded devices, or

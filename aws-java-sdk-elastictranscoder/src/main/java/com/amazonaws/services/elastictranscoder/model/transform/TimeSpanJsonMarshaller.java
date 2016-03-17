@@ -40,25 +40,27 @@ import com.amazonaws.util.json.*;
 public class TimeSpanJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TimeSpan timeSpan, JSONWriter jsonWriter) {
+    public void marshall(TimeSpan timeSpan, SdkJsonGenerator jsonGenerator) {
         if (timeSpan == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (timeSpan.getStartTime() != null) {
-                jsonWriter.key("StartTime").value(timeSpan.getStartTime());
+                jsonGenerator.writeFieldName("StartTime").writeValue(
+                        timeSpan.getStartTime());
             }
             if (timeSpan.getDuration() != null) {
-                jsonWriter.key("Duration").value(timeSpan.getDuration());
+                jsonGenerator.writeFieldName("Duration").writeValue(
+                        timeSpan.getDuration());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

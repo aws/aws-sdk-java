@@ -40,57 +40,61 @@ import com.amazonaws.util.json.*;
 public class AgentJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Agent agent, JSONWriter jsonWriter) {
+    public void marshall(Agent agent, SdkJsonGenerator jsonGenerator) {
         if (agent == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (agent.getAgentId() != null) {
-                jsonWriter.key("agentId").value(agent.getAgentId());
+                jsonGenerator.writeFieldName("agentId").writeValue(
+                        agent.getAgentId());
             }
             if (agent.getAssessmentArn() != null) {
-                jsonWriter.key("assessmentArn").value(agent.getAssessmentArn());
+                jsonGenerator.writeFieldName("assessmentArn").writeValue(
+                        agent.getAssessmentArn());
             }
             if (agent.getAgentHealth() != null) {
-                jsonWriter.key("agentHealth").value(agent.getAgentHealth());
+                jsonGenerator.writeFieldName("agentHealth").writeValue(
+                        agent.getAgentHealth());
             }
             if (agent.getAgentHealthCode() != null) {
-                jsonWriter.key("agentHealthCode").value(
+                jsonGenerator.writeFieldName("agentHealthCode").writeValue(
                         agent.getAgentHealthCode());
             }
             if (agent.getAgentHealthDetails() != null) {
-                jsonWriter.key("agentHealthDetails").value(
+                jsonGenerator.writeFieldName("agentHealthDetails").writeValue(
                         agent.getAgentHealthDetails());
             }
             if (agent.getAutoScalingGroup() != null) {
-                jsonWriter.key("autoScalingGroup").value(
+                jsonGenerator.writeFieldName("autoScalingGroup").writeValue(
                         agent.getAutoScalingGroup());
             }
             if (agent.getAccountId() != null) {
-                jsonWriter.key("accountId").value(agent.getAccountId());
+                jsonGenerator.writeFieldName("accountId").writeValue(
+                        agent.getAccountId());
             }
 
             java.util.List<Telemetry> telemetryList = agent.getTelemetry();
             if (telemetryList != null) {
-                jsonWriter.key("telemetry");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("telemetry");
+                jsonGenerator.writeStartArray();
                 for (Telemetry telemetryListValue : telemetryList) {
                     if (telemetryListValue != null) {
 
                         TelemetryJsonMarshaller.getInstance().marshall(
-                                telemetryListValue, jsonWriter);
+                                telemetryListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

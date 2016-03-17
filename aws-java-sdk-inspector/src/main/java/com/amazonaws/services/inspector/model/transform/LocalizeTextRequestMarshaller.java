@@ -64,34 +64,33 @@ public class LocalizeTextRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.List<LocalizedText> localizedTextsList = localizeTextRequest
                     .getLocalizedTexts();
             if (localizedTextsList != null) {
-                jsonWriter.key("localizedTexts");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("localizedTexts");
+                jsonGenerator.writeStartArray();
                 for (LocalizedText localizedTextsListValue : localizedTextsList) {
                     if (localizedTextsListValue != null) {
 
                         LocalizedTextJsonMarshaller.getInstance().marshall(
-                                localizedTextsListValue, jsonWriter);
+                                localizedTextsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (localizeTextRequest.getLocale() != null) {
-                jsonWriter.key("locale").value(localizeTextRequest.getLocale());
+                jsonGenerator.writeFieldName("locale").writeValue(
+                        localizeTextRequest.getLocale());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

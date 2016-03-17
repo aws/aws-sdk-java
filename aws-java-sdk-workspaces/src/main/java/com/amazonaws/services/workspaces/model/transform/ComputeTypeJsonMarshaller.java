@@ -40,22 +40,23 @@ import com.amazonaws.util.json.*;
 public class ComputeTypeJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ComputeType computeType, JSONWriter jsonWriter) {
+    public void marshall(ComputeType computeType, SdkJsonGenerator jsonGenerator) {
         if (computeType == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (computeType.getName() != null) {
-                jsonWriter.key("Name").value(computeType.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        computeType.getName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

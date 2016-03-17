@@ -40,75 +40,75 @@ import com.amazonaws.util.json.*;
 public class GlobalSecondaryIndexDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             GlobalSecondaryIndexDescription globalSecondaryIndexDescription,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (globalSecondaryIndexDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (globalSecondaryIndexDescription.getIndexName() != null) {
-                jsonWriter.key("IndexName").value(
+                jsonGenerator.writeFieldName("IndexName").writeValue(
                         globalSecondaryIndexDescription.getIndexName());
             }
 
             java.util.List<KeySchemaElement> keySchemaList = globalSecondaryIndexDescription
                     .getKeySchema();
             if (keySchemaList != null) {
-                jsonWriter.key("KeySchema");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("KeySchema");
+                jsonGenerator.writeStartArray();
                 for (KeySchemaElement keySchemaListValue : keySchemaList) {
                     if (keySchemaListValue != null) {
 
                         KeySchemaElementJsonMarshaller.getInstance().marshall(
-                                keySchemaListValue, jsonWriter);
+                                keySchemaListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (globalSecondaryIndexDescription.getProjection() != null) {
-                jsonWriter.key("Projection");
+                jsonGenerator.writeFieldName("Projection");
                 ProjectionJsonMarshaller.getInstance().marshall(
                         globalSecondaryIndexDescription.getProjection(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (globalSecondaryIndexDescription.getIndexStatus() != null) {
-                jsonWriter.key("IndexStatus").value(
+                jsonGenerator.writeFieldName("IndexStatus").writeValue(
                         globalSecondaryIndexDescription.getIndexStatus());
             }
             if (globalSecondaryIndexDescription.getBackfilling() != null) {
-                jsonWriter.key("Backfilling").value(
+                jsonGenerator.writeFieldName("Backfilling").writeValue(
                         globalSecondaryIndexDescription.getBackfilling());
             }
             if (globalSecondaryIndexDescription.getProvisionedThroughput() != null) {
-                jsonWriter.key("ProvisionedThroughput");
+                jsonGenerator.writeFieldName("ProvisionedThroughput");
                 ProvisionedThroughputDescriptionJsonMarshaller
                         .getInstance()
                         .marshall(
                                 globalSecondaryIndexDescription
                                         .getProvisionedThroughput(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (globalSecondaryIndexDescription.getIndexSizeBytes() != null) {
-                jsonWriter.key("IndexSizeBytes").value(
+                jsonGenerator.writeFieldName("IndexSizeBytes").writeValue(
                         globalSecondaryIndexDescription.getIndexSizeBytes());
             }
             if (globalSecondaryIndexDescription.getItemCount() != null) {
-                jsonWriter.key("ItemCount").value(
+                jsonGenerator.writeFieldName("ItemCount").writeValue(
                         globalSecondaryIndexDescription.getItemCount());
             }
             if (globalSecondaryIndexDescription.getIndexArn() != null) {
-                jsonWriter.key("IndexArn").value(
+                jsonGenerator.writeFieldName("IndexArn").writeValue(
                         globalSecondaryIndexDescription.getIndexArn());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

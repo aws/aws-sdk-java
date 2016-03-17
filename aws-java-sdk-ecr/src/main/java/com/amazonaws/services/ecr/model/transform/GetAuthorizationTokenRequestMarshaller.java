@@ -66,29 +66,27 @@ public class GetAuthorizationTokenRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.List<String> registryIdsList = getAuthorizationTokenRequest
                     .getRegistryIds();
             if (registryIdsList != null) {
-                jsonWriter.key("registryIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("registryIds");
+                jsonGenerator.writeStartArray();
                 for (String registryIdsListValue : registryIdsList) {
                     if (registryIdsListValue != null) {
-                        jsonWriter.value(registryIdsListValue);
+                        jsonGenerator.writeValue(registryIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

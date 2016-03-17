@@ -40,46 +40,47 @@ import com.amazonaws.util.json.*;
 public class DevicePoolCompatibilityResultJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             DevicePoolCompatibilityResult devicePoolCompatibilityResult,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (devicePoolCompatibilityResult == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (devicePoolCompatibilityResult.getDevice() != null) {
-                jsonWriter.key("device");
+                jsonGenerator.writeFieldName("device");
                 DeviceJsonMarshaller.getInstance().marshall(
-                        devicePoolCompatibilityResult.getDevice(), jsonWriter);
+                        devicePoolCompatibilityResult.getDevice(),
+                        jsonGenerator);
             }
             if (devicePoolCompatibilityResult.getCompatible() != null) {
-                jsonWriter.key("compatible").value(
+                jsonGenerator.writeFieldName("compatible").writeValue(
                         devicePoolCompatibilityResult.getCompatible());
             }
 
             java.util.List<IncompatibilityMessage> incompatibilityMessagesList = devicePoolCompatibilityResult
                     .getIncompatibilityMessages();
             if (incompatibilityMessagesList != null) {
-                jsonWriter.key("incompatibilityMessages");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("incompatibilityMessages");
+                jsonGenerator.writeStartArray();
                 for (IncompatibilityMessage incompatibilityMessagesListValue : incompatibilityMessagesList) {
                     if (incompatibilityMessagesListValue != null) {
 
                         IncompatibilityMessageJsonMarshaller.getInstance()
                                 .marshall(incompatibilityMessagesListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

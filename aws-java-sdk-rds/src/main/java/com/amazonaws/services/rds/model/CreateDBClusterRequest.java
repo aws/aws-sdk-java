@@ -85,7 +85,10 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIds;
 
     /**
-     * A DB subnet group to associate with this DB cluster.
+     * A DB subnet group to associate with this DB cluster. <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods,
+     * underscores, spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      */
     private String dBSubnetGroupName;
 
@@ -610,29 +613,47 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * A DB subnet group to associate with this DB cluster.
+     * A DB subnet group to associate with this DB cluster. <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods,
+     * underscores, spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      *
-     * @return A DB subnet group to associate with this DB cluster.
+     * @return A DB subnet group to associate with this DB cluster. <p>Constraints:
+     *         Must contain no more than 255 alphanumeric characters, periods,
+     *         underscores, spaces, or hyphens. Must not be default. <p>Example:
+     *         <code>mySubnetgroup</code>
      */
     public String getDBSubnetGroupName() {
         return dBSubnetGroupName;
     }
     
     /**
-     * A DB subnet group to associate with this DB cluster.
+     * A DB subnet group to associate with this DB cluster. <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods,
+     * underscores, spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      *
-     * @param dBSubnetGroupName A DB subnet group to associate with this DB cluster.
+     * @param dBSubnetGroupName A DB subnet group to associate with this DB cluster. <p>Constraints:
+     *         Must contain no more than 255 alphanumeric characters, periods,
+     *         underscores, spaces, or hyphens. Must not be default. <p>Example:
+     *         <code>mySubnetgroup</code>
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
     }
     
     /**
-     * A DB subnet group to associate with this DB cluster.
+     * A DB subnet group to associate with this DB cluster. <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods,
+     * underscores, spaces, or hyphens. Must not be default. <p>Example:
+     * <code>mySubnetgroup</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSubnetGroupName A DB subnet group to associate with this DB cluster.
+     * @param dBSubnetGroupName A DB subnet group to associate with this DB cluster. <p>Constraints:
+     *         Must contain no more than 255 alphanumeric characters, periods,
+     *         underscores, spaces, or hyphens. Must not be default. <p>Example:
+     *         <code>mySubnetgroup</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

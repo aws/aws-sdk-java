@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class SearchedLogStreamJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(SearchedLogStream searchedLogStream,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (searchedLogStream == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (searchedLogStream.getLogStreamName() != null) {
-                jsonWriter.key("logStreamName").value(
+                jsonGenerator.writeFieldName("logStreamName").writeValue(
                         searchedLogStream.getLogStreamName());
             }
             if (searchedLogStream.getSearchedCompletely() != null) {
-                jsonWriter.key("searchedCompletely").value(
+                jsonGenerator.writeFieldName("searchedCompletely").writeValue(
                         searchedLogStream.getSearchedCompletely());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

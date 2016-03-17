@@ -40,32 +40,32 @@ import com.amazonaws.util.json.*;
 public class InstanceGroupTimelineJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(InstanceGroupTimeline instanceGroupTimeline,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (instanceGroupTimeline == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceGroupTimeline.getCreationDateTime() != null) {
-                jsonWriter.key("CreationDateTime").value(
+                jsonGenerator.writeFieldName("CreationDateTime").writeValue(
                         instanceGroupTimeline.getCreationDateTime());
             }
             if (instanceGroupTimeline.getReadyDateTime() != null) {
-                jsonWriter.key("ReadyDateTime").value(
+                jsonGenerator.writeFieldName("ReadyDateTime").writeValue(
                         instanceGroupTimeline.getReadyDateTime());
             }
             if (instanceGroupTimeline.getEndDateTime() != null) {
-                jsonWriter.key("EndDateTime").value(
+                jsonGenerator.writeFieldName("EndDateTime").writeValue(
                         instanceGroupTimeline.getEndDateTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -64,27 +64,27 @@ public class ListArtifactsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listArtifactsRequest.getArn() != null) {
-                jsonWriter.key("arn").value(listArtifactsRequest.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(
+                        listArtifactsRequest.getArn());
             }
             if (listArtifactsRequest.getType() != null) {
-                jsonWriter.key("type").value(listArtifactsRequest.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        listArtifactsRequest.getType());
             }
             if (listArtifactsRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         listArtifactsRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

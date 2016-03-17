@@ -74,29 +74,27 @@ public class CreateBasePathMappingRequestMarshaller
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createBasePathMappingRequest.getBasePath() != null) {
-                jsonWriter.key("basePath").value(
+                jsonGenerator.writeFieldName("basePath").writeValue(
                         createBasePathMappingRequest.getBasePath());
             }
             if (createBasePathMappingRequest.getRestApiId() != null) {
-                jsonWriter.key("restApiId").value(
+                jsonGenerator.writeFieldName("restApiId").writeValue(
                         createBasePathMappingRequest.getRestApiId());
             }
             if (createBasePathMappingRequest.getStage() != null) {
-                jsonWriter.key("stage").value(
+                jsonGenerator.writeFieldName("stage").writeValue(
                         createBasePathMappingRequest.getStage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

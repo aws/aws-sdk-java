@@ -65,41 +65,39 @@ public class UploadLayerPartRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (uploadLayerPartRequest.getRegistryId() != null) {
-                jsonWriter.key("registryId").value(
+                jsonGenerator.writeFieldName("registryId").writeValue(
                         uploadLayerPartRequest.getRegistryId());
             }
             if (uploadLayerPartRequest.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         uploadLayerPartRequest.getRepositoryName());
             }
             if (uploadLayerPartRequest.getUploadId() != null) {
-                jsonWriter.key("uploadId").value(
+                jsonGenerator.writeFieldName("uploadId").writeValue(
                         uploadLayerPartRequest.getUploadId());
             }
             if (uploadLayerPartRequest.getPartFirstByte() != null) {
-                jsonWriter.key("partFirstByte").value(
+                jsonGenerator.writeFieldName("partFirstByte").writeValue(
                         uploadLayerPartRequest.getPartFirstByte());
             }
             if (uploadLayerPartRequest.getPartLastByte() != null) {
-                jsonWriter.key("partLastByte").value(
+                jsonGenerator.writeFieldName("partLastByte").writeValue(
                         uploadLayerPartRequest.getPartLastByte());
             }
             if (uploadLayerPartRequest.getLayerPartBlob() != null) {
-                jsonWriter.key("layerPartBlob").value(
+                jsonGenerator.writeFieldName("layerPartBlob").writeValue(
                         uploadLayerPartRequest.getLayerPartBlob());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

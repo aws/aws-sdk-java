@@ -66,34 +66,32 @@ public class UpdateDomainContactPrivacyRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateDomainContactPrivacyRequest.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         updateDomainContactPrivacyRequest.getDomainName());
             }
             if (updateDomainContactPrivacyRequest.getAdminPrivacy() != null) {
-                jsonWriter.key("AdminPrivacy").value(
+                jsonGenerator.writeFieldName("AdminPrivacy").writeValue(
                         updateDomainContactPrivacyRequest.getAdminPrivacy());
             }
             if (updateDomainContactPrivacyRequest.getRegistrantPrivacy() != null) {
-                jsonWriter.key("RegistrantPrivacy").value(
+                jsonGenerator.writeFieldName("RegistrantPrivacy").writeValue(
                         updateDomainContactPrivacyRequest
                                 .getRegistrantPrivacy());
             }
             if (updateDomainContactPrivacyRequest.getTechPrivacy() != null) {
-                jsonWriter.key("TechPrivacy").value(
+                jsonGenerator.writeFieldName("TechPrivacy").writeValue(
                         updateDomainContactPrivacyRequest.getTechPrivacy());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -64,70 +64,71 @@ public class CreateEndpointRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createEndpointRequest.getEndpointIdentifier() != null) {
-                jsonWriter.key("EndpointIdentifier").value(
+                jsonGenerator.writeFieldName("EndpointIdentifier").writeValue(
                         createEndpointRequest.getEndpointIdentifier());
             }
             if (createEndpointRequest.getEndpointType() != null) {
-                jsonWriter.key("EndpointType").value(
+                jsonGenerator.writeFieldName("EndpointType").writeValue(
                         createEndpointRequest.getEndpointType());
             }
             if (createEndpointRequest.getEngineName() != null) {
-                jsonWriter.key("EngineName").value(
+                jsonGenerator.writeFieldName("EngineName").writeValue(
                         createEndpointRequest.getEngineName());
             }
             if (createEndpointRequest.getUsername() != null) {
-                jsonWriter.key("Username").value(
+                jsonGenerator.writeFieldName("Username").writeValue(
                         createEndpointRequest.getUsername());
             }
             if (createEndpointRequest.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         createEndpointRequest.getPassword());
             }
             if (createEndpointRequest.getServerName() != null) {
-                jsonWriter.key("ServerName").value(
+                jsonGenerator.writeFieldName("ServerName").writeValue(
                         createEndpointRequest.getServerName());
             }
             if (createEndpointRequest.getPort() != null) {
-                jsonWriter.key("Port").value(createEndpointRequest.getPort());
+                jsonGenerator.writeFieldName("Port").writeValue(
+                        createEndpointRequest.getPort());
             }
             if (createEndpointRequest.getDatabaseName() != null) {
-                jsonWriter.key("DatabaseName").value(
+                jsonGenerator.writeFieldName("DatabaseName").writeValue(
                         createEndpointRequest.getDatabaseName());
             }
             if (createEndpointRequest.getExtraConnectionAttributes() != null) {
-                jsonWriter.key("ExtraConnectionAttributes").value(
-                        createEndpointRequest.getExtraConnectionAttributes());
+                jsonGenerator.writeFieldName("ExtraConnectionAttributes")
+                        .writeValue(
+                                createEndpointRequest
+                                        .getExtraConnectionAttributes());
             }
             if (createEndpointRequest.getKmsKeyId() != null) {
-                jsonWriter.key("KmsKeyId").value(
+                jsonGenerator.writeFieldName("KmsKeyId").writeValue(
                         createEndpointRequest.getKmsKeyId());
             }
 
             java.util.List<Tag> tagsList = createEndpointRequest.getTags();
             if (tagsList != null) {
-                jsonWriter.key("Tags");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,40 +40,47 @@ import com.amazonaws.util.json.*;
 public class CountersJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Counters counters, JSONWriter jsonWriter) {
+    public void marshall(Counters counters, SdkJsonGenerator jsonGenerator) {
         if (counters == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (counters.getTotal() != null) {
-                jsonWriter.key("total").value(counters.getTotal());
+                jsonGenerator.writeFieldName("total").writeValue(
+                        counters.getTotal());
             }
             if (counters.getPassed() != null) {
-                jsonWriter.key("passed").value(counters.getPassed());
+                jsonGenerator.writeFieldName("passed").writeValue(
+                        counters.getPassed());
             }
             if (counters.getFailed() != null) {
-                jsonWriter.key("failed").value(counters.getFailed());
+                jsonGenerator.writeFieldName("failed").writeValue(
+                        counters.getFailed());
             }
             if (counters.getWarned() != null) {
-                jsonWriter.key("warned").value(counters.getWarned());
+                jsonGenerator.writeFieldName("warned").writeValue(
+                        counters.getWarned());
             }
             if (counters.getErrored() != null) {
-                jsonWriter.key("errored").value(counters.getErrored());
+                jsonGenerator.writeFieldName("errored").writeValue(
+                        counters.getErrored());
             }
             if (counters.getStopped() != null) {
-                jsonWriter.key("stopped").value(counters.getStopped());
+                jsonGenerator.writeFieldName("stopped").writeValue(
+                        counters.getStopped());
             }
             if (counters.getSkipped() != null) {
-                jsonWriter.key("skipped").value(counters.getSkipped());
+                jsonGenerator.writeFieldName("skipped").writeValue(
+                        counters.getSkipped());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

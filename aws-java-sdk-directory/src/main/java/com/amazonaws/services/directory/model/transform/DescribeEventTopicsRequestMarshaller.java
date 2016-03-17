@@ -66,34 +66,32 @@ public class DescribeEventTopicsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeEventTopicsRequest.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         describeEventTopicsRequest.getDirectoryId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> topicNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeEventTopicsRequest
                     .getTopicNames();
             if (!topicNamesList.isEmpty() || !topicNamesList.isAutoConstruct()) {
-                jsonWriter.key("TopicNames");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TopicNames");
+                jsonGenerator.writeStartArray();
                 for (String topicNamesListValue : topicNamesList) {
                     if (topicNamesListValue != null) {
-                        jsonWriter.value(topicNamesListValue);
+                        jsonGenerator.writeValue(topicNamesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

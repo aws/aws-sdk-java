@@ -34,7 +34,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (e.g., AWS IoT Certificate).
+     * certificate (for example, AWS IoT Certificate).
      * </p>
      */
     private String certificateId;
@@ -96,12 +96,12 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (e.g., AWS IoT Certificate).
+     * certificate (for example, AWS IoT Certificate).
      * </p>
      * 
      * @param certificateId
      *        The ID of the certificate. AWS IoT issues a default subject name
-     *        for the certificate (e.g., AWS IoT Certificate).
+     *        for the certificate (for example, AWS IoT Certificate).
      */
 
     public void setCertificateId(String certificateId) {
@@ -111,11 +111,11 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (e.g., AWS IoT Certificate).
+     * certificate (for example, AWS IoT Certificate).
      * </p>
      * 
      * @return The ID of the certificate. AWS IoT issues a default subject name
-     *         for the certificate (e.g., AWS IoT Certificate).
+     *         for the certificate (for example, AWS IoT Certificate).
      */
 
     public String getCertificateId() {
@@ -125,12 +125,12 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (e.g., AWS IoT Certificate).
+     * certificate (for example, AWS IoT Certificate).
      * </p>
      * 
      * @param certificateId
      *        The ID of the certificate. AWS IoT issues a default subject name
-     *        for the certificate (e.g., AWS IoT Certificate).
+     *        for the certificate (for example, AWS IoT Certificate).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

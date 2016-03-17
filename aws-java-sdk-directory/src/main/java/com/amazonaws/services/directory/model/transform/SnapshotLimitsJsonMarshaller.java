@@ -40,31 +40,36 @@ import com.amazonaws.util.json.*;
 public class SnapshotLimitsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(SnapshotLimits snapshotLimits, JSONWriter jsonWriter) {
+    public void marshall(SnapshotLimits snapshotLimits,
+            SdkJsonGenerator jsonGenerator) {
         if (snapshotLimits == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (snapshotLimits.getManualSnapshotsLimit() != null) {
-                jsonWriter.key("ManualSnapshotsLimit").value(
-                        snapshotLimits.getManualSnapshotsLimit());
+                jsonGenerator.writeFieldName("ManualSnapshotsLimit")
+                        .writeValue(snapshotLimits.getManualSnapshotsLimit());
             }
             if (snapshotLimits.getManualSnapshotsCurrentCount() != null) {
-                jsonWriter.key("ManualSnapshotsCurrentCount").value(
-                        snapshotLimits.getManualSnapshotsCurrentCount());
+                jsonGenerator
+                        .writeFieldName("ManualSnapshotsCurrentCount")
+                        .writeValue(
+                                snapshotLimits.getManualSnapshotsCurrentCount());
             }
             if (snapshotLimits.getManualSnapshotsLimitReached() != null) {
-                jsonWriter.key("ManualSnapshotsLimitReached").value(
-                        snapshotLimits.getManualSnapshotsLimitReached());
+                jsonGenerator
+                        .writeFieldName("ManualSnapshotsLimitReached")
+                        .writeValue(
+                                snapshotLimits.getManualSnapshotsLimitReached());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

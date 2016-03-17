@@ -256,6 +256,41 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest request) {
+
+        return addTagsToResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            final AddTagsToResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AddTagsToResourceResult>() {
+                    @Override
+                    public AddTagsToResourceResult call() throws Exception {
+                        AddTagsToResourceResult result;
+
+                        try {
+                            result = addTagsToResource(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateHapgResult> createHapgAsync(
             CreateHapgRequest request) {
 
@@ -891,6 +926,41 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+                    @Override
+                    public ListTagsForResourceResult call() throws Exception {
+                        ListTagsForResourceResult result;
+
+                        try {
+                            result = listTagsForResource(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(
             ModifyHapgRequest request) {
 
@@ -980,6 +1050,41 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements
 
                         try {
                             result = modifyLunaClient(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest request) {
+
+        return removeTagsFromResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            final RemoveTagsFromResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RemoveTagsFromResourceResult>() {
+                    @Override
+                    public RemoveTagsFromResourceResult call() throws Exception {
+                        RemoveTagsFromResourceResult result;
+
+                        try {
+                            result = removeTagsFromResource(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

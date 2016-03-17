@@ -40,32 +40,34 @@ import com.amazonaws.util.json.*;
 public class InstanceStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(InstanceStatus instanceStatus, JSONWriter jsonWriter) {
+    public void marshall(InstanceStatus instanceStatus,
+            SdkJsonGenerator jsonGenerator) {
         if (instanceStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceStatus.getState() != null) {
-                jsonWriter.key("State").value(instanceStatus.getState());
+                jsonGenerator.writeFieldName("State").writeValue(
+                        instanceStatus.getState());
             }
             if (instanceStatus.getStateChangeReason() != null) {
-                jsonWriter.key("StateChangeReason");
+                jsonGenerator.writeFieldName("StateChangeReason");
                 InstanceStateChangeReasonJsonMarshaller.getInstance().marshall(
-                        instanceStatus.getStateChangeReason(), jsonWriter);
+                        instanceStatus.getStateChangeReason(), jsonGenerator);
             }
             if (instanceStatus.getTimeline() != null) {
-                jsonWriter.key("Timeline");
+                jsonGenerator.writeFieldName("Timeline");
                 InstanceTimelineJsonMarshaller.getInstance().marshall(
-                        instanceStatus.getTimeline(), jsonWriter);
+                        instanceStatus.getTimeline(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

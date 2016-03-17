@@ -40,32 +40,34 @@ import com.amazonaws.util.json.*;
 public class ClusterStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ClusterStatus clusterStatus, JSONWriter jsonWriter) {
+    public void marshall(ClusterStatus clusterStatus,
+            SdkJsonGenerator jsonGenerator) {
         if (clusterStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (clusterStatus.getState() != null) {
-                jsonWriter.key("State").value(clusterStatus.getState());
+                jsonGenerator.writeFieldName("State").writeValue(
+                        clusterStatus.getState());
             }
             if (clusterStatus.getStateChangeReason() != null) {
-                jsonWriter.key("StateChangeReason");
+                jsonGenerator.writeFieldName("StateChangeReason");
                 ClusterStateChangeReasonJsonMarshaller.getInstance().marshall(
-                        clusterStatus.getStateChangeReason(), jsonWriter);
+                        clusterStatus.getStateChangeReason(), jsonGenerator);
             }
             if (clusterStatus.getTimeline() != null) {
-                jsonWriter.key("Timeline");
+                jsonGenerator.writeFieldName("Timeline");
                 ClusterTimelineJsonMarshaller.getInstance().marshall(
-                        clusterStatus.getTimeline(), jsonWriter);
+                        clusterStatus.getTimeline(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

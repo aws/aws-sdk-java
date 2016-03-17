@@ -72,45 +72,49 @@ public class CreateAuthorizerRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createAuthorizerRequest.getName() != null) {
-                jsonWriter.key("name").value(createAuthorizerRequest.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        createAuthorizerRequest.getName());
             }
             if (createAuthorizerRequest.getType() != null) {
-                jsonWriter.key("type").value(createAuthorizerRequest.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        createAuthorizerRequest.getType());
             }
             if (createAuthorizerRequest.getAuthorizerUri() != null) {
-                jsonWriter.key("authorizerUri").value(
+                jsonGenerator.writeFieldName("authorizerUri").writeValue(
                         createAuthorizerRequest.getAuthorizerUri());
             }
             if (createAuthorizerRequest.getAuthorizerCredentials() != null) {
-                jsonWriter.key("authorizerCredentials").value(
-                        createAuthorizerRequest.getAuthorizerCredentials());
+                jsonGenerator.writeFieldName("authorizerCredentials")
+                        .writeValue(
+                                createAuthorizerRequest
+                                        .getAuthorizerCredentials());
             }
             if (createAuthorizerRequest.getIdentitySource() != null) {
-                jsonWriter.key("identitySource").value(
+                jsonGenerator.writeFieldName("identitySource").writeValue(
                         createAuthorizerRequest.getIdentitySource());
             }
             if (createAuthorizerRequest.getIdentityValidationExpression() != null) {
-                jsonWriter.key("identityValidationExpression").value(
-                        createAuthorizerRequest
-                                .getIdentityValidationExpression());
+                jsonGenerator.writeFieldName("identityValidationExpression")
+                        .writeValue(
+                                createAuthorizerRequest
+                                        .getIdentityValidationExpression());
             }
             if (createAuthorizerRequest.getAuthorizerResultTtlInSeconds() != null) {
-                jsonWriter.key("authorizerResultTtlInSeconds").value(
-                        createAuthorizerRequest
-                                .getAuthorizerResultTtlInSeconds());
+                jsonGenerator.writeFieldName("authorizerResultTtlInSeconds")
+                        .writeValue(
+                                createAuthorizerRequest
+                                        .getAuthorizerResultTtlInSeconds());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

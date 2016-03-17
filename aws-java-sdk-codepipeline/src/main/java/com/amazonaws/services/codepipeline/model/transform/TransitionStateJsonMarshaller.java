@@ -40,34 +40,36 @@ import com.amazonaws.util.json.*;
 public class TransitionStateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TransitionState transitionState, JSONWriter jsonWriter) {
+    public void marshall(TransitionState transitionState,
+            SdkJsonGenerator jsonGenerator) {
         if (transitionState == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (transitionState.getEnabled() != null) {
-                jsonWriter.key("enabled").value(transitionState.getEnabled());
+                jsonGenerator.writeFieldName("enabled").writeValue(
+                        transitionState.getEnabled());
             }
             if (transitionState.getLastChangedBy() != null) {
-                jsonWriter.key("lastChangedBy").value(
+                jsonGenerator.writeFieldName("lastChangedBy").writeValue(
                         transitionState.getLastChangedBy());
             }
             if (transitionState.getLastChangedAt() != null) {
-                jsonWriter.key("lastChangedAt").value(
+                jsonGenerator.writeFieldName("lastChangedAt").writeValue(
                         transitionState.getLastChangedAt());
             }
             if (transitionState.getDisabledReason() != null) {
-                jsonWriter.key("disabledReason").value(
+                jsonGenerator.writeFieldName("disabledReason").writeValue(
                         transitionState.getDisabledReason());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

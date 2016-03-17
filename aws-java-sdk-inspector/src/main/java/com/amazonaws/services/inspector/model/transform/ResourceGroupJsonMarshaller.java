@@ -40,27 +40,28 @@ import com.amazonaws.util.json.*;
 public class ResourceGroupJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ResourceGroup resourceGroup, JSONWriter jsonWriter) {
+    public void marshall(ResourceGroup resourceGroup,
+            SdkJsonGenerator jsonGenerator) {
         if (resourceGroup == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (resourceGroup.getResourceGroupArn() != null) {
-                jsonWriter.key("resourceGroupArn").value(
+                jsonGenerator.writeFieldName("resourceGroupArn").writeValue(
                         resourceGroup.getResourceGroupArn());
             }
             if (resourceGroup.getResourceGroupTags() != null) {
-                jsonWriter.key("resourceGroupTags").value(
+                jsonGenerator.writeFieldName("resourceGroupTags").writeValue(
                         resourceGroup.getResourceGroupTags());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

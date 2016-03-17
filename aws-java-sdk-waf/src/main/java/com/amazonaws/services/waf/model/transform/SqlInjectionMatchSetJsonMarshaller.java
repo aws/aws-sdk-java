@@ -40,43 +40,46 @@ import com.amazonaws.util.json.*;
 public class SqlInjectionMatchSetJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(SqlInjectionMatchSet sqlInjectionMatchSet,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (sqlInjectionMatchSet == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (sqlInjectionMatchSet.getSqlInjectionMatchSetId() != null) {
-                jsonWriter.key("SqlInjectionMatchSetId").value(
-                        sqlInjectionMatchSet.getSqlInjectionMatchSetId());
+                jsonGenerator.writeFieldName("SqlInjectionMatchSetId")
+                        .writeValue(
+                                sqlInjectionMatchSet
+                                        .getSqlInjectionMatchSetId());
             }
             if (sqlInjectionMatchSet.getName() != null) {
-                jsonWriter.key("Name").value(sqlInjectionMatchSet.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        sqlInjectionMatchSet.getName());
             }
 
             java.util.List<SqlInjectionMatchTuple> sqlInjectionMatchTuplesList = sqlInjectionMatchSet
                     .getSqlInjectionMatchTuples();
             if (sqlInjectionMatchTuplesList != null) {
-                jsonWriter.key("SqlInjectionMatchTuples");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SqlInjectionMatchTuples");
+                jsonGenerator.writeStartArray();
                 for (SqlInjectionMatchTuple sqlInjectionMatchTuplesListValue : sqlInjectionMatchTuplesList) {
                     if (sqlInjectionMatchTuplesListValue != null) {
 
                         SqlInjectionMatchTupleJsonMarshaller.getInstance()
                                 .marshall(sqlInjectionMatchTuplesListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

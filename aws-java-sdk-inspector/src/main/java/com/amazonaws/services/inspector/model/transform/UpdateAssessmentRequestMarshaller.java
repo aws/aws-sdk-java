@@ -64,29 +64,27 @@ public class UpdateAssessmentRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateAssessmentRequest.getAssessmentArn() != null) {
-                jsonWriter.key("assessmentArn").value(
+                jsonGenerator.writeFieldName("assessmentArn").writeValue(
                         updateAssessmentRequest.getAssessmentArn());
             }
             if (updateAssessmentRequest.getAssessmentName() != null) {
-                jsonWriter.key("assessmentName").value(
+                jsonGenerator.writeFieldName("assessmentName").writeValue(
                         updateAssessmentRequest.getAssessmentName());
             }
             if (updateAssessmentRequest.getDurationInSeconds() != null) {
-                jsonWriter.key("durationInSeconds").value(
+                jsonGenerator.writeFieldName("durationInSeconds").writeValue(
                         updateAssessmentRequest.getDurationInSeconds());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

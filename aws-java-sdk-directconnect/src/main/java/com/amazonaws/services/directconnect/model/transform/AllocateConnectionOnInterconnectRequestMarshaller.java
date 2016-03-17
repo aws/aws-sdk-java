@@ -66,40 +66,38 @@ public class AllocateConnectionOnInterconnectRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (allocateConnectionOnInterconnectRequest.getBandwidth() != null) {
-                jsonWriter.key("bandwidth").value(
+                jsonGenerator.writeFieldName("bandwidth").writeValue(
                         allocateConnectionOnInterconnectRequest.getBandwidth());
             }
             if (allocateConnectionOnInterconnectRequest.getConnectionName() != null) {
-                jsonWriter.key("connectionName").value(
+                jsonGenerator.writeFieldName("connectionName").writeValue(
                         allocateConnectionOnInterconnectRequest
                                 .getConnectionName());
             }
             if (allocateConnectionOnInterconnectRequest.getOwnerAccount() != null) {
-                jsonWriter.key("ownerAccount").value(
+                jsonGenerator.writeFieldName("ownerAccount").writeValue(
                         allocateConnectionOnInterconnectRequest
                                 .getOwnerAccount());
             }
             if (allocateConnectionOnInterconnectRequest.getInterconnectId() != null) {
-                jsonWriter.key("interconnectId").value(
+                jsonGenerator.writeFieldName("interconnectId").writeValue(
                         allocateConnectionOnInterconnectRequest
                                 .getInterconnectId());
             }
             if (allocateConnectionOnInterconnectRequest.getVlan() != null) {
-                jsonWriter.key("vlan").value(
+                jsonGenerator.writeFieldName("vlan").writeValue(
                         allocateConnectionOnInterconnectRequest.getVlan());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

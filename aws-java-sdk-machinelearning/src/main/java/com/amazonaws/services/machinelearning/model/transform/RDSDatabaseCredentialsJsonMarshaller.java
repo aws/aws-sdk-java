@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class RDSDatabaseCredentialsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RDSDatabaseCredentials rDSDatabaseCredentials,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (rDSDatabaseCredentials == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (rDSDatabaseCredentials.getUsername() != null) {
-                jsonWriter.key("Username").value(
+                jsonGenerator.writeFieldName("Username").writeValue(
                         rDSDatabaseCredentials.getUsername());
             }
             if (rDSDatabaseCredentials.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         rDSDatabaseCredentials.getPassword());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

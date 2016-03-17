@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an action to invoke a Lamdba function.
+ * Describes an action to invoke a Lambda function.
  * </p>
  */
 public class LambdaAction implements Serializable, Cloneable {

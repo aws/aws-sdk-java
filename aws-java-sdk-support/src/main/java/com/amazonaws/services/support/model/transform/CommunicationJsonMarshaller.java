@@ -40,29 +40,32 @@ import com.amazonaws.util.json.*;
 public class CommunicationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Communication communication, JSONWriter jsonWriter) {
+    public void marshall(Communication communication,
+            SdkJsonGenerator jsonGenerator) {
         if (communication == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (communication.getCaseId() != null) {
-                jsonWriter.key("caseId").value(communication.getCaseId());
+                jsonGenerator.writeFieldName("caseId").writeValue(
+                        communication.getCaseId());
             }
             if (communication.getBody() != null) {
-                jsonWriter.key("body").value(communication.getBody());
+                jsonGenerator.writeFieldName("body").writeValue(
+                        communication.getBody());
             }
             if (communication.getSubmittedBy() != null) {
-                jsonWriter.key("submittedBy").value(
+                jsonGenerator.writeFieldName("submittedBy").writeValue(
                         communication.getSubmittedBy());
             }
             if (communication.getTimeCreated() != null) {
-                jsonWriter.key("timeCreated").value(
+                jsonGenerator.writeFieldName("timeCreated").writeValue(
                         communication.getTimeCreated());
             }
 
@@ -70,19 +73,19 @@ public class CommunicationJsonMarshaller {
                     .getAttachmentSet();
             if (!attachmentSetList.isEmpty()
                     || !attachmentSetList.isAutoConstruct()) {
-                jsonWriter.key("attachmentSet");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("attachmentSet");
+                jsonGenerator.writeStartArray();
                 for (AttachmentDetails attachmentSetListValue : attachmentSetList) {
                     if (attachmentSetListValue != null) {
 
                         AttachmentDetailsJsonMarshaller.getInstance().marshall(
-                                attachmentSetListValue, jsonWriter);
+                                attachmentSetListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

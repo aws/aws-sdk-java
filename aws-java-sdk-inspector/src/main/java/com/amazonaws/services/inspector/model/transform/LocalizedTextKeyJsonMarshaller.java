@@ -40,27 +40,28 @@ import com.amazonaws.util.json.*;
 public class LocalizedTextKeyJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(LocalizedTextKey localizedTextKey,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (localizedTextKey == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (localizedTextKey.getFacility() != null) {
-                jsonWriter.key("facility")
-                        .value(localizedTextKey.getFacility());
+                jsonGenerator.writeFieldName("facility").writeValue(
+                        localizedTextKey.getFacility());
             }
             if (localizedTextKey.getId() != null) {
-                jsonWriter.key("id").value(localizedTextKey.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        localizedTextKey.getId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

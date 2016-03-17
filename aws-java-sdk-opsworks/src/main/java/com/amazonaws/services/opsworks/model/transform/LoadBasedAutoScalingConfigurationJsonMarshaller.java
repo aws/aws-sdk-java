@@ -40,41 +40,41 @@ import com.amazonaws.util.json.*;
 public class LoadBasedAutoScalingConfigurationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             LoadBasedAutoScalingConfiguration loadBasedAutoScalingConfiguration,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (loadBasedAutoScalingConfiguration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (loadBasedAutoScalingConfiguration.getLayerId() != null) {
-                jsonWriter.key("LayerId").value(
+                jsonGenerator.writeFieldName("LayerId").writeValue(
                         loadBasedAutoScalingConfiguration.getLayerId());
             }
             if (loadBasedAutoScalingConfiguration.getEnable() != null) {
-                jsonWriter.key("Enable").value(
+                jsonGenerator.writeFieldName("Enable").writeValue(
                         loadBasedAutoScalingConfiguration.getEnable());
             }
             if (loadBasedAutoScalingConfiguration.getUpScaling() != null) {
-                jsonWriter.key("UpScaling");
+                jsonGenerator.writeFieldName("UpScaling");
                 AutoScalingThresholdsJsonMarshaller.getInstance().marshall(
                         loadBasedAutoScalingConfiguration.getUpScaling(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (loadBasedAutoScalingConfiguration.getDownScaling() != null) {
-                jsonWriter.key("DownScaling");
+                jsonGenerator.writeFieldName("DownScaling");
                 AutoScalingThresholdsJsonMarshaller.getInstance().marshall(
                         loadBasedAutoScalingConfiguration.getDownScaling(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

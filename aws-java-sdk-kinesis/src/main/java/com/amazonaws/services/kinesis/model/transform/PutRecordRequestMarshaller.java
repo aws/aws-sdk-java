@@ -63,36 +63,37 @@ public class PutRecordRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putRecordRequest.getStreamName() != null) {
-                jsonWriter.key("StreamName").value(
+                jsonGenerator.writeFieldName("StreamName").writeValue(
                         putRecordRequest.getStreamName());
             }
             if (putRecordRequest.getData() != null) {
-                jsonWriter.key("Data").value(putRecordRequest.getData());
+                jsonGenerator.writeFieldName("Data").writeValue(
+                        putRecordRequest.getData());
             }
             if (putRecordRequest.getPartitionKey() != null) {
-                jsonWriter.key("PartitionKey").value(
+                jsonGenerator.writeFieldName("PartitionKey").writeValue(
                         putRecordRequest.getPartitionKey());
             }
             if (putRecordRequest.getExplicitHashKey() != null) {
-                jsonWriter.key("ExplicitHashKey").value(
+                jsonGenerator.writeFieldName("ExplicitHashKey").writeValue(
                         putRecordRequest.getExplicitHashKey());
             }
             if (putRecordRequest.getSequenceNumberForOrdering() != null) {
-                jsonWriter.key("SequenceNumberForOrdering").value(
-                        putRecordRequest.getSequenceNumberForOrdering());
+                jsonGenerator
+                        .writeFieldName("SequenceNumberForOrdering")
+                        .writeValue(
+                                putRecordRequest.getSequenceNumberForOrdering());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

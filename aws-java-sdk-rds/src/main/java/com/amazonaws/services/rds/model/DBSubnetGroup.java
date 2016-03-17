@@ -37,7 +37,7 @@ import java.io.Serializable;
 public class DBSubnetGroup implements Serializable, Cloneable {
 
     /**
-     * Specifies the name of the DB subnet group.
+     * The name of the DB subnet group.
      */
     private String dBSubnetGroupName;
 
@@ -62,29 +62,29 @@ public class DBSubnetGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnets;
 
     /**
-     * Specifies the name of the DB subnet group.
+     * The name of the DB subnet group.
      *
-     * @return Specifies the name of the DB subnet group.
+     * @return The name of the DB subnet group.
      */
     public String getDBSubnetGroupName() {
         return dBSubnetGroupName;
     }
     
     /**
-     * Specifies the name of the DB subnet group.
+     * The name of the DB subnet group.
      *
-     * @param dBSubnetGroupName Specifies the name of the DB subnet group.
+     * @param dBSubnetGroupName The name of the DB subnet group.
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
     }
     
     /**
-     * Specifies the name of the DB subnet group.
+     * The name of the DB subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSubnetGroupName Specifies the name of the DB subnet group.
+     * @param dBSubnetGroupName The name of the DB subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

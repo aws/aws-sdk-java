@@ -40,48 +40,53 @@ import com.amazonaws.util.json.*;
 public class AuthorizerJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Authorizer authorizer, JSONWriter jsonWriter) {
+    public void marshall(Authorizer authorizer, SdkJsonGenerator jsonGenerator) {
         if (authorizer == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (authorizer.getId() != null) {
-                jsonWriter.key("id").value(authorizer.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        authorizer.getId());
             }
             if (authorizer.getName() != null) {
-                jsonWriter.key("name").value(authorizer.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        authorizer.getName());
             }
             if (authorizer.getType() != null) {
-                jsonWriter.key("type").value(authorizer.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        authorizer.getType());
             }
             if (authorizer.getAuthorizerUri() != null) {
-                jsonWriter.key("authorizerUri").value(
+                jsonGenerator.writeFieldName("authorizerUri").writeValue(
                         authorizer.getAuthorizerUri());
             }
             if (authorizer.getAuthorizerCredentials() != null) {
-                jsonWriter.key("authorizerCredentials").value(
-                        authorizer.getAuthorizerCredentials());
+                jsonGenerator.writeFieldName("authorizerCredentials")
+                        .writeValue(authorizer.getAuthorizerCredentials());
             }
             if (authorizer.getIdentitySource() != null) {
-                jsonWriter.key("identitySource").value(
+                jsonGenerator.writeFieldName("identitySource").writeValue(
                         authorizer.getIdentitySource());
             }
             if (authorizer.getIdentityValidationExpression() != null) {
-                jsonWriter.key("identityValidationExpression").value(
-                        authorizer.getIdentityValidationExpression());
+                jsonGenerator.writeFieldName("identityValidationExpression")
+                        .writeValue(
+                                authorizer.getIdentityValidationExpression());
             }
             if (authorizer.getAuthorizerResultTtlInSeconds() != null) {
-                jsonWriter.key("authorizerResultTtlInSeconds").value(
-                        authorizer.getAuthorizerResultTtlInSeconds());
+                jsonGenerator.writeFieldName("authorizerResultTtlInSeconds")
+                        .writeValue(
+                                authorizer.getAuthorizerResultTtlInSeconds());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

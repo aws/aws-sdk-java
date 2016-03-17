@@ -40,32 +40,32 @@ import com.amazonaws.util.json.*;
 public class EC2InstanceLimitJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(EC2InstanceLimit eC2InstanceLimit,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (eC2InstanceLimit == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (eC2InstanceLimit.getEC2InstanceType() != null) {
-                jsonWriter.key("EC2InstanceType").value(
+                jsonGenerator.writeFieldName("EC2InstanceType").writeValue(
                         eC2InstanceLimit.getEC2InstanceType());
             }
             if (eC2InstanceLimit.getCurrentInstances() != null) {
-                jsonWriter.key("CurrentInstances").value(
+                jsonGenerator.writeFieldName("CurrentInstances").writeValue(
                         eC2InstanceLimit.getCurrentInstances());
             }
             if (eC2InstanceLimit.getInstanceLimit() != null) {
-                jsonWriter.key("InstanceLimit").value(
+                jsonGenerator.writeFieldName("InstanceLimit").writeValue(
                         eC2InstanceLimit.getInstanceLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

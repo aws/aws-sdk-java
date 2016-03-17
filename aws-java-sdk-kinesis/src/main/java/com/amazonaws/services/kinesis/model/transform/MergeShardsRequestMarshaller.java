@@ -64,29 +64,28 @@ public class MergeShardsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (mergeShardsRequest.getStreamName() != null) {
-                jsonWriter.key("StreamName").value(
+                jsonGenerator.writeFieldName("StreamName").writeValue(
                         mergeShardsRequest.getStreamName());
             }
             if (mergeShardsRequest.getShardToMerge() != null) {
-                jsonWriter.key("ShardToMerge").value(
+                jsonGenerator.writeFieldName("ShardToMerge").writeValue(
                         mergeShardsRequest.getShardToMerge());
             }
             if (mergeShardsRequest.getAdjacentShardToMerge() != null) {
-                jsonWriter.key("AdjacentShardToMerge").value(
-                        mergeShardsRequest.getAdjacentShardToMerge());
+                jsonGenerator.writeFieldName("AdjacentShardToMerge")
+                        .writeValue(
+                                mergeShardsRequest.getAdjacentShardToMerge());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

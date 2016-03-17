@@ -40,38 +40,40 @@ import com.amazonaws.util.json.*;
 public class InstanceGroupConfigJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(InstanceGroupConfig instanceGroupConfig,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (instanceGroupConfig == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceGroupConfig.getName() != null) {
-                jsonWriter.key("Name").value(instanceGroupConfig.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        instanceGroupConfig.getName());
             }
             if (instanceGroupConfig.getMarket() != null) {
-                jsonWriter.key("Market").value(instanceGroupConfig.getMarket());
+                jsonGenerator.writeFieldName("Market").writeValue(
+                        instanceGroupConfig.getMarket());
             }
             if (instanceGroupConfig.getInstanceRole() != null) {
-                jsonWriter.key("InstanceRole").value(
+                jsonGenerator.writeFieldName("InstanceRole").writeValue(
                         instanceGroupConfig.getInstanceRole());
             }
             if (instanceGroupConfig.getBidPrice() != null) {
-                jsonWriter.key("BidPrice").value(
+                jsonGenerator.writeFieldName("BidPrice").writeValue(
                         instanceGroupConfig.getBidPrice());
             }
             if (instanceGroupConfig.getInstanceType() != null) {
-                jsonWriter.key("InstanceType").value(
+                jsonGenerator.writeFieldName("InstanceType").writeValue(
                         instanceGroupConfig.getInstanceType());
             }
             if (instanceGroupConfig.getInstanceCount() != null) {
-                jsonWriter.key("InstanceCount").value(
+                jsonGenerator.writeFieldName("InstanceCount").writeValue(
                         instanceGroupConfig.getInstanceCount());
             }
 
@@ -79,24 +81,25 @@ public class InstanceGroupConfigJsonMarshaller {
                     .getConfigurations();
             if (!configurationsList.isEmpty()
                     || !configurationsList.isAutoConstruct()) {
-                jsonWriter.key("Configurations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Configurations");
+                jsonGenerator.writeStartArray();
                 for (Configuration configurationsListValue : configurationsList) {
                     if (configurationsListValue != null) {
 
                         ConfigurationJsonMarshaller.getInstance().marshall(
-                                configurationsListValue, jsonWriter);
+                                configurationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (instanceGroupConfig.getEbsConfiguration() != null) {
-                jsonWriter.key("EbsConfiguration");
+                jsonGenerator.writeFieldName("EbsConfiguration");
                 EbsConfigurationJsonMarshaller.getInstance().marshall(
-                        instanceGroupConfig.getEbsConfiguration(), jsonWriter);
+                        instanceGroupConfig.getEbsConfiguration(),
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

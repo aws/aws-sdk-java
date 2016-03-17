@@ -40,56 +40,56 @@ import com.amazonaws.util.json.*;
 public class ActionTypeJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ActionType actionType, JSONWriter jsonWriter) {
+    public void marshall(ActionType actionType, SdkJsonGenerator jsonGenerator) {
         if (actionType == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (actionType.getId() != null) {
-                jsonWriter.key("id");
+                jsonGenerator.writeFieldName("id");
                 ActionTypeIdJsonMarshaller.getInstance().marshall(
-                        actionType.getId(), jsonWriter);
+                        actionType.getId(), jsonGenerator);
             }
             if (actionType.getSettings() != null) {
-                jsonWriter.key("settings");
+                jsonGenerator.writeFieldName("settings");
                 ActionTypeSettingsJsonMarshaller.getInstance().marshall(
-                        actionType.getSettings(), jsonWriter);
+                        actionType.getSettings(), jsonGenerator);
             }
 
             java.util.List<ActionConfigurationProperty> actionConfigurationPropertiesList = actionType
                     .getActionConfigurationProperties();
             if (actionConfigurationPropertiesList != null) {
-                jsonWriter.key("actionConfigurationProperties");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("actionConfigurationProperties");
+                jsonGenerator.writeStartArray();
                 for (ActionConfigurationProperty actionConfigurationPropertiesListValue : actionConfigurationPropertiesList) {
                     if (actionConfigurationPropertiesListValue != null) {
 
                         ActionConfigurationPropertyJsonMarshaller.getInstance()
                                 .marshall(
                                         actionConfigurationPropertiesListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (actionType.getInputArtifactDetails() != null) {
-                jsonWriter.key("inputArtifactDetails");
+                jsonGenerator.writeFieldName("inputArtifactDetails");
                 ArtifactDetailsJsonMarshaller.getInstance().marshall(
-                        actionType.getInputArtifactDetails(), jsonWriter);
+                        actionType.getInputArtifactDetails(), jsonGenerator);
             }
             if (actionType.getOutputArtifactDetails() != null) {
-                jsonWriter.key("outputArtifactDetails");
+                jsonGenerator.writeFieldName("outputArtifactDetails");
                 ArtifactDetailsJsonMarshaller.getInstance().marshall(
-                        actionType.getOutputArtifactDetails(), jsonWriter);
+                        actionType.getOutputArtifactDetails(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

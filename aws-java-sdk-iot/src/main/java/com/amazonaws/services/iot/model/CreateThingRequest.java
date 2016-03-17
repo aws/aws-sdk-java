@@ -35,8 +35,8 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
     private String thingName;
     /**
      * <p>
-     * The attribute payload. Which consists of up to 3 name/value pairs in a
-     * JSON document. For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * The attribute payload, which consists of up to 3 name/value pairs in a
+     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      */
     private AttributePayload attributePayload;
@@ -84,14 +84,14 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute payload. Which consists of up to 3 name/value pairs in a
-     * JSON document. For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * The attribute payload, which consists of up to 3 name/value pairs in a
+     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
      * @param attributePayload
-     *        The attribute payload. Which consists of up to 3 name/value pairs
-     *        in a JSON document. For example:
-     *        {\"attributes\":{\"string1\":\"string2\"}}
+     *        The attribute payload, which consists of up to 3 name/value pairs
+     *        in a JSON document (for example,
+     *        {\"attributes\":{\"string1\":\"string2\"}}).
      */
 
     public void setAttributePayload(AttributePayload attributePayload) {
@@ -100,13 +100,13 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute payload. Which consists of up to 3 name/value pairs in a
-     * JSON document. For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * The attribute payload, which consists of up to 3 name/value pairs in a
+     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
-     * @return The attribute payload. Which consists of up to 3 name/value pairs
-     *         in a JSON document. For example:
-     *         {\"attributes\":{\"string1\":\"string2\"}}
+     * @return The attribute payload, which consists of up to 3 name/value pairs
+     *         in a JSON document (for example,
+     *         {\"attributes\":{\"string1\":\"string2\"}}).
      */
 
     public AttributePayload getAttributePayload() {
@@ -115,14 +115,14 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute payload. Which consists of up to 3 name/value pairs in a
-     * JSON document. For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * The attribute payload, which consists of up to 3 name/value pairs in a
+     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
      * @param attributePayload
-     *        The attribute payload. Which consists of up to 3 name/value pairs
-     *        in a JSON document. For example:
-     *        {\"attributes\":{\"string1\":\"string2\"}}
+     *        The attribute payload, which consists of up to 3 name/value pairs
+     *        in a JSON document (for example,
+     *        {\"attributes\":{\"string1\":\"string2\"}}).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

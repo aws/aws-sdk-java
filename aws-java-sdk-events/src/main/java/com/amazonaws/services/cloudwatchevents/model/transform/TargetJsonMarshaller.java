@@ -40,31 +40,33 @@ import com.amazonaws.util.json.*;
 public class TargetJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Target target, JSONWriter jsonWriter) {
+    public void marshall(Target target, SdkJsonGenerator jsonGenerator) {
         if (target == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (target.getId() != null) {
-                jsonWriter.key("Id").value(target.getId());
+                jsonGenerator.writeFieldName("Id").writeValue(target.getId());
             }
             if (target.getArn() != null) {
-                jsonWriter.key("Arn").value(target.getArn());
+                jsonGenerator.writeFieldName("Arn").writeValue(target.getArn());
             }
             if (target.getInput() != null) {
-                jsonWriter.key("Input").value(target.getInput());
+                jsonGenerator.writeFieldName("Input").writeValue(
+                        target.getInput());
             }
             if (target.getInputPath() != null) {
-                jsonWriter.key("InputPath").value(target.getInputPath());
+                jsonGenerator.writeFieldName("InputPath").writeValue(
+                        target.getInputPath());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

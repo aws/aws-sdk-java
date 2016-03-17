@@ -82,62 +82,63 @@ public class TestInvokeMethodRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (testInvokeMethodRequest.getPathWithQueryString() != null) {
-                jsonWriter.key("pathWithQueryString").value(
+                jsonGenerator.writeFieldName("pathWithQueryString").writeValue(
                         testInvokeMethodRequest.getPathWithQueryString());
             }
             if (testInvokeMethodRequest.getBody() != null) {
-                jsonWriter.key("body").value(testInvokeMethodRequest.getBody());
+                jsonGenerator.writeFieldName("body").writeValue(
+                        testInvokeMethodRequest.getBody());
             }
 
             java.util.Map<String, String> headersMap = testInvokeMethodRequest
                     .getHeaders();
             if (headersMap != null) {
-                jsonWriter.key("headers");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("headers");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> headersMapValue : headersMap
                         .entrySet()) {
                     if (headersMapValue.getValue() != null) {
-                        jsonWriter.key(headersMapValue.getKey());
+                        jsonGenerator.writeFieldName(headersMapValue.getKey());
 
-                        jsonWriter.value(headersMapValue.getValue());
+                        jsonGenerator.writeValue(headersMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (testInvokeMethodRequest.getClientCertificateId() != null) {
-                jsonWriter.key("clientCertificateId").value(
+                jsonGenerator.writeFieldName("clientCertificateId").writeValue(
                         testInvokeMethodRequest.getClientCertificateId());
             }
 
             java.util.Map<String, String> stageVariablesMap = testInvokeMethodRequest
                     .getStageVariables();
             if (stageVariablesMap != null) {
-                jsonWriter.key("stageVariables");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("stageVariables");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> stageVariablesMapValue : stageVariablesMap
                         .entrySet()) {
                     if (stageVariablesMapValue.getValue() != null) {
-                        jsonWriter.key(stageVariablesMapValue.getKey());
+                        jsonGenerator.writeFieldName(stageVariablesMapValue
+                                .getKey());
 
-                        jsonWriter.value(stageVariablesMapValue.getValue());
+                        jsonGenerator.writeValue(stageVariablesMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

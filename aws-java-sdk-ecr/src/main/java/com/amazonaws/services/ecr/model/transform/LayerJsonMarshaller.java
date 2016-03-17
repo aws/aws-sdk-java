@@ -40,29 +40,31 @@ import com.amazonaws.util.json.*;
 public class LayerJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Layer layer, JSONWriter jsonWriter) {
+    public void marshall(Layer layer, SdkJsonGenerator jsonGenerator) {
         if (layer == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (layer.getLayerDigest() != null) {
-                jsonWriter.key("layerDigest").value(layer.getLayerDigest());
+                jsonGenerator.writeFieldName("layerDigest").writeValue(
+                        layer.getLayerDigest());
             }
             if (layer.getLayerAvailability() != null) {
-                jsonWriter.key("layerAvailability").value(
+                jsonGenerator.writeFieldName("layerAvailability").writeValue(
                         layer.getLayerAvailability());
             }
             if (layer.getLayerSize() != null) {
-                jsonWriter.key("layerSize").value(layer.getLayerSize());
+                jsonGenerator.writeFieldName("layerSize").writeValue(
+                        layer.getLayerSize());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

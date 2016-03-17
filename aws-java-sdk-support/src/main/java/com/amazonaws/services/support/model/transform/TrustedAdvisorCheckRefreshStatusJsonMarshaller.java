@@ -40,35 +40,36 @@ import com.amazonaws.util.json.*;
 public class TrustedAdvisorCheckRefreshStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             TrustedAdvisorCheckRefreshStatus trustedAdvisorCheckRefreshStatus,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (trustedAdvisorCheckRefreshStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (trustedAdvisorCheckRefreshStatus.getCheckId() != null) {
-                jsonWriter.key("checkId").value(
+                jsonGenerator.writeFieldName("checkId").writeValue(
                         trustedAdvisorCheckRefreshStatus.getCheckId());
             }
             if (trustedAdvisorCheckRefreshStatus.getStatus() != null) {
-                jsonWriter.key("status").value(
+                jsonGenerator.writeFieldName("status").writeValue(
                         trustedAdvisorCheckRefreshStatus.getStatus());
             }
             if (trustedAdvisorCheckRefreshStatus
                     .getMillisUntilNextRefreshable() != null) {
-                jsonWriter.key("millisUntilNextRefreshable").value(
-                        trustedAdvisorCheckRefreshStatus
-                                .getMillisUntilNextRefreshable());
+                jsonGenerator.writeFieldName("millisUntilNextRefreshable")
+                        .writeValue(
+                                trustedAdvisorCheckRefreshStatus
+                                        .getMillisUntilNextRefreshable());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

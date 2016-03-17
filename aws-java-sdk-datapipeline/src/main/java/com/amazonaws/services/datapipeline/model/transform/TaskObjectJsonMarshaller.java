@@ -40,46 +40,49 @@ import com.amazonaws.util.json.*;
 public class TaskObjectJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TaskObject taskObject, JSONWriter jsonWriter) {
+    public void marshall(TaskObject taskObject, SdkJsonGenerator jsonGenerator) {
         if (taskObject == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (taskObject.getTaskId() != null) {
-                jsonWriter.key("taskId").value(taskObject.getTaskId());
+                jsonGenerator.writeFieldName("taskId").writeValue(
+                        taskObject.getTaskId());
             }
             if (taskObject.getPipelineId() != null) {
-                jsonWriter.key("pipelineId").value(taskObject.getPipelineId());
+                jsonGenerator.writeFieldName("pipelineId").writeValue(
+                        taskObject.getPipelineId());
             }
             if (taskObject.getAttemptId() != null) {
-                jsonWriter.key("attemptId").value(taskObject.getAttemptId());
+                jsonGenerator.writeFieldName("attemptId").writeValue(
+                        taskObject.getAttemptId());
             }
 
             java.util.Map<String, PipelineObject> objectsMap = taskObject
                     .getObjects();
             if (objectsMap != null) {
-                jsonWriter.key("objects");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("objects");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, PipelineObject> objectsMapValue : objectsMap
                         .entrySet()) {
                     if (objectsMapValue.getValue() != null) {
-                        jsonWriter.key(objectsMapValue.getKey());
+                        jsonGenerator.writeFieldName(objectsMapValue.getKey());
 
                         PipelineObjectJsonMarshaller.getInstance().marshall(
-                                objectsMapValue.getValue(), jsonWriter);
+                                objectsMapValue.getValue(), jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

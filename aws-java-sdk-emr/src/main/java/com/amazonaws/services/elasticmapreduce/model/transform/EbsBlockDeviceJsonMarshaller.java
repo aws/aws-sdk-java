@@ -40,27 +40,29 @@ import com.amazonaws.util.json.*;
 public class EbsBlockDeviceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(EbsBlockDevice ebsBlockDevice, JSONWriter jsonWriter) {
+    public void marshall(EbsBlockDevice ebsBlockDevice,
+            SdkJsonGenerator jsonGenerator) {
         if (ebsBlockDevice == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (ebsBlockDevice.getVolumeSpecification() != null) {
-                jsonWriter.key("VolumeSpecification");
+                jsonGenerator.writeFieldName("VolumeSpecification");
                 VolumeSpecificationJsonMarshaller.getInstance().marshall(
-                        ebsBlockDevice.getVolumeSpecification(), jsonWriter);
+                        ebsBlockDevice.getVolumeSpecification(), jsonGenerator);
             }
             if (ebsBlockDevice.getDevice() != null) {
-                jsonWriter.key("Device").value(ebsBlockDevice.getDevice());
+                jsonGenerator.writeFieldName("Device").writeValue(
+                        ebsBlockDevice.getDevice());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

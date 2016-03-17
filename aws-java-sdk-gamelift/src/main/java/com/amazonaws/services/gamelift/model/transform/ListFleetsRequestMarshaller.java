@@ -64,27 +64,27 @@ public class ListFleetsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listFleetsRequest.getBuildId() != null) {
-                jsonWriter.key("BuildId").value(listFleetsRequest.getBuildId());
+                jsonGenerator.writeFieldName("BuildId").writeValue(
+                        listFleetsRequest.getBuildId());
             }
             if (listFleetsRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(listFleetsRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(
+                        listFleetsRequest.getLimit());
             }
             if (listFleetsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         listFleetsRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

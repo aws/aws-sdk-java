@@ -40,28 +40,32 @@ import com.amazonaws.util.json.*;
 public class RoutingStrategyJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RoutingStrategy routingStrategy, JSONWriter jsonWriter) {
+    public void marshall(RoutingStrategy routingStrategy,
+            SdkJsonGenerator jsonGenerator) {
         if (routingStrategy == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (routingStrategy.getType() != null) {
-                jsonWriter.key("Type").value(routingStrategy.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        routingStrategy.getType());
             }
             if (routingStrategy.getFleetId() != null) {
-                jsonWriter.key("FleetId").value(routingStrategy.getFleetId());
+                jsonGenerator.writeFieldName("FleetId").writeValue(
+                        routingStrategy.getFleetId());
             }
             if (routingStrategy.getMessage() != null) {
-                jsonWriter.key("Message").value(routingStrategy.getMessage());
+                jsonGenerator.writeFieldName("Message").writeValue(
+                        routingStrategy.getMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

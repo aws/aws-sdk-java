@@ -65,34 +65,32 @@ public class CreatePlayerSessionsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createPlayerSessionsRequest.getGameSessionId() != null) {
-                jsonWriter.key("GameSessionId").value(
+                jsonGenerator.writeFieldName("GameSessionId").writeValue(
                         createPlayerSessionsRequest.getGameSessionId());
             }
 
             java.util.List<String> playerIdsList = createPlayerSessionsRequest
                     .getPlayerIds();
             if (playerIdsList != null) {
-                jsonWriter.key("PlayerIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("PlayerIds");
+                jsonGenerator.writeStartArray();
                 for (String playerIdsListValue : playerIdsList) {
                     if (playerIdsListValue != null) {
-                        jsonWriter.value(playerIdsListValue);
+                        jsonGenerator.writeValue(playerIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

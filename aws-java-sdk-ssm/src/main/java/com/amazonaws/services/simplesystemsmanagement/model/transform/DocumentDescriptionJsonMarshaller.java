@@ -40,66 +40,69 @@ import com.amazonaws.util.json.*;
 public class DocumentDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DocumentDescription documentDescription,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (documentDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (documentDescription.getSha1() != null) {
-                jsonWriter.key("Sha1").value(documentDescription.getSha1());
+                jsonGenerator.writeFieldName("Sha1").writeValue(
+                        documentDescription.getSha1());
             }
             if (documentDescription.getName() != null) {
-                jsonWriter.key("Name").value(documentDescription.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        documentDescription.getName());
             }
             if (documentDescription.getCreatedDate() != null) {
-                jsonWriter.key("CreatedDate").value(
+                jsonGenerator.writeFieldName("CreatedDate").writeValue(
                         documentDescription.getCreatedDate());
             }
             if (documentDescription.getStatus() != null) {
-                jsonWriter.key("Status").value(documentDescription.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        documentDescription.getStatus());
             }
             if (documentDescription.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         documentDescription.getDescription());
             }
 
             com.amazonaws.internal.SdkInternalList<DocumentParameter> parametersList = (com.amazonaws.internal.SdkInternalList<DocumentParameter>) documentDescription
                     .getParameters();
             if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
-                jsonWriter.key("Parameters");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Parameters");
+                jsonGenerator.writeStartArray();
                 for (DocumentParameter parametersListValue : parametersList) {
                     if (parametersListValue != null) {
 
                         DocumentParameterJsonMarshaller.getInstance().marshall(
-                                parametersListValue, jsonWriter);
+                                parametersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> platformTypesList = (com.amazonaws.internal.SdkInternalList<String>) documentDescription
                     .getPlatformTypes();
             if (!platformTypesList.isEmpty()
                     || !platformTypesList.isAutoConstruct()) {
-                jsonWriter.key("PlatformTypes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("PlatformTypes");
+                jsonGenerator.writeStartArray();
                 for (String platformTypesListValue : platformTypesList) {
                     if (platformTypesListValue != null) {
-                        jsonWriter.value(platformTypesListValue);
+                        jsonGenerator.writeValue(platformTypesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

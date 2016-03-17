@@ -40,38 +40,41 @@ import com.amazonaws.util.json.*;
 public class RulesPackageJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RulesPackage rulesPackage, JSONWriter jsonWriter) {
+    public void marshall(RulesPackage rulesPackage,
+            SdkJsonGenerator jsonGenerator) {
         if (rulesPackage == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (rulesPackage.getRulesPackageArn() != null) {
-                jsonWriter.key("rulesPackageArn").value(
+                jsonGenerator.writeFieldName("rulesPackageArn").writeValue(
                         rulesPackage.getRulesPackageArn());
             }
             if (rulesPackage.getRulesPackageName() != null) {
-                jsonWriter.key("rulesPackageName").value(
+                jsonGenerator.writeFieldName("rulesPackageName").writeValue(
                         rulesPackage.getRulesPackageName());
             }
             if (rulesPackage.getVersion() != null) {
-                jsonWriter.key("version").value(rulesPackage.getVersion());
+                jsonGenerator.writeFieldName("version").writeValue(
+                        rulesPackage.getVersion());
             }
             if (rulesPackage.getProvider() != null) {
-                jsonWriter.key("provider").value(rulesPackage.getProvider());
+                jsonGenerator.writeFieldName("provider").writeValue(
+                        rulesPackage.getProvider());
             }
             if (rulesPackage.getDescription() != null) {
-                jsonWriter.key("description");
+                jsonGenerator.writeFieldName("description");
                 LocalizedTextJsonMarshaller.getInstance().marshall(
-                        rulesPackage.getDescription(), jsonWriter);
+                        rulesPackage.getDescription(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

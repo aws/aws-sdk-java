@@ -40,25 +40,28 @@ import com.amazonaws.util.json.*;
 public class IPSetSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(IPSetSummary iPSetSummary, JSONWriter jsonWriter) {
+    public void marshall(IPSetSummary iPSetSummary,
+            SdkJsonGenerator jsonGenerator) {
         if (iPSetSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (iPSetSummary.getIPSetId() != null) {
-                jsonWriter.key("IPSetId").value(iPSetSummary.getIPSetId());
+                jsonGenerator.writeFieldName("IPSetId").writeValue(
+                        iPSetSummary.getIPSetId());
             }
             if (iPSetSummary.getName() != null) {
-                jsonWriter.key("Name").value(iPSetSummary.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        iPSetSummary.getName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

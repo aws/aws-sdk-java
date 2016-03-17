@@ -64,27 +64,27 @@ public class ListDevicePoolsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listDevicePoolsRequest.getArn() != null) {
-                jsonWriter.key("arn").value(listDevicePoolsRequest.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(
+                        listDevicePoolsRequest.getArn());
             }
             if (listDevicePoolsRequest.getType() != null) {
-                jsonWriter.key("type").value(listDevicePoolsRequest.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        listDevicePoolsRequest.getType());
             }
             if (listDevicePoolsRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         listDevicePoolsRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

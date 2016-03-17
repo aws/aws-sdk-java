@@ -40,28 +40,31 @@ import com.amazonaws.util.json.*;
 public class RuleJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Rule rule, JSONWriter jsonWriter) {
+    public void marshall(Rule rule, SdkJsonGenerator jsonGenerator) {
         if (rule == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (rule.getAttribute() != null) {
-                jsonWriter.key("attribute").value(rule.getAttribute());
+                jsonGenerator.writeFieldName("attribute").writeValue(
+                        rule.getAttribute());
             }
             if (rule.getOperator() != null) {
-                jsonWriter.key("operator").value(rule.getOperator());
+                jsonGenerator.writeFieldName("operator").writeValue(
+                        rule.getOperator());
             }
             if (rule.getValue() != null) {
-                jsonWriter.key("value").value(rule.getValue());
+                jsonGenerator.writeFieldName("value").writeValue(
+                        rule.getValue());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

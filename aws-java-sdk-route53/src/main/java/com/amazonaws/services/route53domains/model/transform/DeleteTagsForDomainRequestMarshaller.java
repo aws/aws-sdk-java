@@ -66,13 +66,12 @@ public class DeleteTagsForDomainRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deleteTagsForDomainRequest.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         deleteTagsForDomainRequest.getDomainName());
             }
 
@@ -80,21 +79,20 @@ public class DeleteTagsForDomainRequestMarshaller
                     .getTagsToDelete();
             if (!tagsToDeleteList.isEmpty()
                     || !tagsToDeleteList.isAutoConstruct()) {
-                jsonWriter.key("TagsToDelete");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TagsToDelete");
+                jsonGenerator.writeStartArray();
                 for (String tagsToDeleteListValue : tagsToDeleteList) {
                     if (tagsToDeleteListValue != null) {
-                        jsonWriter.value(tagsToDeleteListValue);
+                        jsonGenerator.writeValue(tagsToDeleteListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

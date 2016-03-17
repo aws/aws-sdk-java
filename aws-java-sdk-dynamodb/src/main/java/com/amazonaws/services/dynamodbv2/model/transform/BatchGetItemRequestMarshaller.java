@@ -64,38 +64,39 @@ public class BatchGetItemRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.Map<String, KeysAndAttributes> requestItemsMap = batchGetItemRequest
                     .getRequestItems();
             if (requestItemsMap != null) {
-                jsonWriter.key("RequestItems");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("RequestItems");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, KeysAndAttributes> requestItemsMapValue : requestItemsMap
                         .entrySet()) {
                     if (requestItemsMapValue.getValue() != null) {
-                        jsonWriter.key(requestItemsMapValue.getKey());
+                        jsonGenerator.writeFieldName(requestItemsMapValue
+                                .getKey());
 
                         KeysAndAttributesJsonMarshaller.getInstance().marshall(
-                                requestItemsMapValue.getValue(), jsonWriter);
+                                requestItemsMapValue.getValue(), jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (batchGetItemRequest.getReturnConsumedCapacity() != null) {
-                jsonWriter.key("ReturnConsumedCapacity").value(
-                        batchGetItemRequest.getReturnConsumedCapacity());
+                jsonGenerator
+                        .writeFieldName("ReturnConsumedCapacity")
+                        .writeValue(
+                                batchGetItemRequest.getReturnConsumedCapacity());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.0");

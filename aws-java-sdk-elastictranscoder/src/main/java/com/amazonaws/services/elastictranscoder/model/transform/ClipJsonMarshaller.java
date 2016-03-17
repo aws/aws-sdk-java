@@ -40,24 +40,24 @@ import com.amazonaws.util.json.*;
 public class ClipJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Clip clip, JSONWriter jsonWriter) {
+    public void marshall(Clip clip, SdkJsonGenerator jsonGenerator) {
         if (clip == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (clip.getTimeSpan() != null) {
-                jsonWriter.key("TimeSpan");
+                jsonGenerator.writeFieldName("TimeSpan");
                 TimeSpanJsonMarshaller.getInstance().marshall(
-                        clip.getTimeSpan(), jsonWriter);
+                        clip.getTimeSpan(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

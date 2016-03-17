@@ -65,56 +65,62 @@ public class CreateTrailRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createTrailRequest.getName() != null) {
-                jsonWriter.key("Name").value(createTrailRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createTrailRequest.getName());
             }
             if (createTrailRequest.getS3BucketName() != null) {
-                jsonWriter.key("S3BucketName").value(
+                jsonGenerator.writeFieldName("S3BucketName").writeValue(
                         createTrailRequest.getS3BucketName());
             }
             if (createTrailRequest.getS3KeyPrefix() != null) {
-                jsonWriter.key("S3KeyPrefix").value(
+                jsonGenerator.writeFieldName("S3KeyPrefix").writeValue(
                         createTrailRequest.getS3KeyPrefix());
             }
             if (createTrailRequest.getSnsTopicName() != null) {
-                jsonWriter.key("SnsTopicName").value(
+                jsonGenerator.writeFieldName("SnsTopicName").writeValue(
                         createTrailRequest.getSnsTopicName());
             }
             if (createTrailRequest.getIncludeGlobalServiceEvents() != null) {
-                jsonWriter.key("IncludeGlobalServiceEvents").value(
-                        createTrailRequest.getIncludeGlobalServiceEvents());
+                jsonGenerator.writeFieldName("IncludeGlobalServiceEvents")
+                        .writeValue(
+                                createTrailRequest
+                                        .getIncludeGlobalServiceEvents());
             }
             if (createTrailRequest.getIsMultiRegionTrail() != null) {
-                jsonWriter.key("IsMultiRegionTrail").value(
+                jsonGenerator.writeFieldName("IsMultiRegionTrail").writeValue(
                         createTrailRequest.getIsMultiRegionTrail());
             }
             if (createTrailRequest.getEnableLogFileValidation() != null) {
-                jsonWriter.key("EnableLogFileValidation").value(
-                        createTrailRequest.getEnableLogFileValidation());
+                jsonGenerator
+                        .writeFieldName("EnableLogFileValidation")
+                        .writeValue(
+                                createTrailRequest.getEnableLogFileValidation());
             }
             if (createTrailRequest.getCloudWatchLogsLogGroupArn() != null) {
-                jsonWriter.key("CloudWatchLogsLogGroupArn").value(
-                        createTrailRequest.getCloudWatchLogsLogGroupArn());
+                jsonGenerator.writeFieldName("CloudWatchLogsLogGroupArn")
+                        .writeValue(
+                                createTrailRequest
+                                        .getCloudWatchLogsLogGroupArn());
             }
             if (createTrailRequest.getCloudWatchLogsRoleArn() != null) {
-                jsonWriter.key("CloudWatchLogsRoleArn").value(
-                        createTrailRequest.getCloudWatchLogsRoleArn());
+                jsonGenerator.writeFieldName("CloudWatchLogsRoleArn")
+                        .writeValue(
+                                createTrailRequest.getCloudWatchLogsRoleArn());
             }
             if (createTrailRequest.getKmsKeyId() != null) {
-                jsonWriter.key("KmsKeyId").value(
+                jsonGenerator.writeFieldName("KmsKeyId").writeValue(
                         createTrailRequest.getKmsKeyId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,32 +40,32 @@ import com.amazonaws.util.json.*;
 public class RemoveTargetsResultEntryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RemoveTargetsResultEntry removeTargetsResultEntry,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (removeTargetsResultEntry == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (removeTargetsResultEntry.getTargetId() != null) {
-                jsonWriter.key("TargetId").value(
+                jsonGenerator.writeFieldName("TargetId").writeValue(
                         removeTargetsResultEntry.getTargetId());
             }
             if (removeTargetsResultEntry.getErrorCode() != null) {
-                jsonWriter.key("ErrorCode").value(
+                jsonGenerator.writeFieldName("ErrorCode").writeValue(
                         removeTargetsResultEntry.getErrorCode());
             }
             if (removeTargetsResultEntry.getErrorMessage() != null) {
-                jsonWriter.key("ErrorMessage").value(
+                jsonGenerator.writeFieldName("ErrorMessage").writeValue(
                         removeTargetsResultEntry.getErrorMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

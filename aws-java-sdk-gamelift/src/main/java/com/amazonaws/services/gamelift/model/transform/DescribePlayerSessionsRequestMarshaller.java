@@ -65,42 +65,41 @@ public class DescribePlayerSessionsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describePlayerSessionsRequest.getGameSessionId() != null) {
-                jsonWriter.key("GameSessionId").value(
+                jsonGenerator.writeFieldName("GameSessionId").writeValue(
                         describePlayerSessionsRequest.getGameSessionId());
             }
             if (describePlayerSessionsRequest.getPlayerId() != null) {
-                jsonWriter.key("PlayerId").value(
+                jsonGenerator.writeFieldName("PlayerId").writeValue(
                         describePlayerSessionsRequest.getPlayerId());
             }
             if (describePlayerSessionsRequest.getPlayerSessionId() != null) {
-                jsonWriter.key("PlayerSessionId").value(
+                jsonGenerator.writeFieldName("PlayerSessionId").writeValue(
                         describePlayerSessionsRequest.getPlayerSessionId());
             }
             if (describePlayerSessionsRequest.getPlayerSessionStatusFilter() != null) {
-                jsonWriter.key("PlayerSessionStatusFilter").value(
-                        describePlayerSessionsRequest
-                                .getPlayerSessionStatusFilter());
+                jsonGenerator.writeFieldName("PlayerSessionStatusFilter")
+                        .writeValue(
+                                describePlayerSessionsRequest
+                                        .getPlayerSessionStatusFilter());
             }
             if (describePlayerSessionsRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(
+                jsonGenerator.writeFieldName("Limit").writeValue(
                         describePlayerSessionsRequest.getLimit());
             }
             if (describePlayerSessionsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         describePlayerSessionsRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,29 +40,29 @@ import com.amazonaws.util.json.*;
 public class RedshiftDatabaseCredentialsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             RedshiftDatabaseCredentials redshiftDatabaseCredentials,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (redshiftDatabaseCredentials == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (redshiftDatabaseCredentials.getUsername() != null) {
-                jsonWriter.key("Username").value(
+                jsonGenerator.writeFieldName("Username").writeValue(
                         redshiftDatabaseCredentials.getUsername());
             }
             if (redshiftDatabaseCredentials.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         redshiftDatabaseCredentials.getPassword());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

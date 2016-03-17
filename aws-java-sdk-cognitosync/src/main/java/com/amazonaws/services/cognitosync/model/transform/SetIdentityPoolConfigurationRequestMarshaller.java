@@ -75,32 +75,30 @@ public class SetIdentityPoolConfigurationRequestMarshaller
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (setIdentityPoolConfigurationRequest.getPushSync() != null) {
-                jsonWriter.key("PushSync");
+                jsonGenerator.writeFieldName("PushSync");
                 PushSyncJsonMarshaller.getInstance().marshall(
                         setIdentityPoolConfigurationRequest.getPushSync(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (setIdentityPoolConfigurationRequest.getCognitoStreams() != null) {
-                jsonWriter.key("CognitoStreams");
+                jsonGenerator.writeFieldName("CognitoStreams");
                 CognitoStreamsJsonMarshaller
                         .getInstance()
                         .marshall(
                                 setIdentityPoolConfigurationRequest
                                         .getCognitoStreams(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

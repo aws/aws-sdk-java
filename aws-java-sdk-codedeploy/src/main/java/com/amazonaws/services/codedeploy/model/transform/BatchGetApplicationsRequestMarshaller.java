@@ -66,30 +66,28 @@ public class BatchGetApplicationsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> applicationNamesList = (com.amazonaws.internal.SdkInternalList<String>) batchGetApplicationsRequest
                     .getApplicationNames();
             if (!applicationNamesList.isEmpty()
                     || !applicationNamesList.isAutoConstruct()) {
-                jsonWriter.key("applicationNames");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("applicationNames");
+                jsonGenerator.writeStartArray();
                 for (String applicationNamesListValue : applicationNamesList) {
                     if (applicationNamesListValue != null) {
-                        jsonWriter.value(applicationNamesListValue);
+                        jsonGenerator.writeValue(applicationNamesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

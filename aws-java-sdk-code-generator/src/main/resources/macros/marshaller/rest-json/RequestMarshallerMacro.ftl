@@ -79,19 +79,17 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
                 }
                 <#elseif (member.http.isPayload)>
                 try {
-                    StringWriter stringWriter = new StringWriter();
-                    JSONWriter jsonWriter = new JSONWriter(stringWriter);
+                    final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
                     ${member.variable.variableType} ${member.variable.variableName} = ${shape.variable.variableName}.get${member.name}();
                     if (${member.variable.variableName} != null) {
-                        jsonWriter.object();
+                        jsonGenerator.writeStartObject();
                         <@MemberMarshallerMacro.content customConfig member.c2jShape member.variable.variableName shapes/>
-                        jsonWriter.endObject();
+                        jsonGenerator.writeEndObject();
                     }
 
-                    String snippet = stringWriter.toString();
-                    byte[] content = snippet.getBytes(UTF8);
-                    request.setContent(new StringInputStream(snippet));
+                    byte[] content = jsonGenerator.getBytes();
+                    request.setContent(new ByteArrayInputStream(content));
                     request.addHeader("Content-Length", Integer.toString(content.length));
                     if (!request.getHeaders().containsKey("Content-Type")) {
                         request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
@@ -110,18 +108,16 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
         }
         <#else>
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             <@MemberMarshallerMacro.content customConfig shapeName shape.variable.variableName shapes/>
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length", Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
                 request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);

@@ -40,31 +40,33 @@ import com.amazonaws.util.json.*;
 public class RadiosJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Radios radios, JSONWriter jsonWriter) {
+    public void marshall(Radios radios, SdkJsonGenerator jsonGenerator) {
         if (radios == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (radios.getWifi() != null) {
-                jsonWriter.key("wifi").value(radios.getWifi());
+                jsonGenerator.writeFieldName("wifi").writeValue(
+                        radios.getWifi());
             }
             if (radios.getBluetooth() != null) {
-                jsonWriter.key("bluetooth").value(radios.getBluetooth());
+                jsonGenerator.writeFieldName("bluetooth").writeValue(
+                        radios.getBluetooth());
             }
             if (radios.getNfc() != null) {
-                jsonWriter.key("nfc").value(radios.getNfc());
+                jsonGenerator.writeFieldName("nfc").writeValue(radios.getNfc());
             }
             if (radios.getGps() != null) {
-                jsonWriter.key("gps").value(radios.getGps());
+                jsonGenerator.writeFieldName("gps").writeValue(radios.getGps());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

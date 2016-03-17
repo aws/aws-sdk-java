@@ -63,13 +63,12 @@ public class ReEncryptRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (reEncryptRequest.getCiphertextBlob() != null) {
-                jsonWriter.key("CiphertextBlob").value(
+                jsonGenerator.writeFieldName("CiphertextBlob").writeValue(
                         reEncryptRequest.getCiphertextBlob());
             }
 
@@ -77,23 +76,25 @@ public class ReEncryptRequestMarshaller implements
                     .getSourceEncryptionContext();
             if (!sourceEncryptionContextMap.isEmpty()
                     || !sourceEncryptionContextMap.isAutoConstruct()) {
-                jsonWriter.key("SourceEncryptionContext");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("SourceEncryptionContext");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> sourceEncryptionContextMapValue : sourceEncryptionContextMap
                         .entrySet()) {
                     if (sourceEncryptionContextMapValue.getValue() != null) {
-                        jsonWriter
-                                .key(sourceEncryptionContextMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(sourceEncryptionContextMapValue
+                                        .getKey());
 
-                        jsonWriter.value(sourceEncryptionContextMapValue
-                                .getValue());
+                        jsonGenerator
+                                .writeValue(sourceEncryptionContextMapValue
+                                        .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (reEncryptRequest.getDestinationKeyId() != null) {
-                jsonWriter.key("DestinationKeyId").value(
+                jsonGenerator.writeFieldName("DestinationKeyId").writeValue(
                         reEncryptRequest.getDestinationKeyId());
             }
 
@@ -101,41 +102,42 @@ public class ReEncryptRequestMarshaller implements
                     .getDestinationEncryptionContext();
             if (!destinationEncryptionContextMap.isEmpty()
                     || !destinationEncryptionContextMap.isAutoConstruct()) {
-                jsonWriter.key("DestinationEncryptionContext");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("DestinationEncryptionContext");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> destinationEncryptionContextMapValue : destinationEncryptionContextMap
                         .entrySet()) {
                     if (destinationEncryptionContextMapValue.getValue() != null) {
-                        jsonWriter.key(destinationEncryptionContextMapValue
-                                .getKey());
+                        jsonGenerator
+                                .writeFieldName(destinationEncryptionContextMapValue
+                                        .getKey());
 
-                        jsonWriter.value(destinationEncryptionContextMapValue
-                                .getValue());
+                        jsonGenerator
+                                .writeValue(destinationEncryptionContextMapValue
+                                        .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalList<String> grantTokensList = (com.amazonaws.internal.SdkInternalList<String>) reEncryptRequest
                     .getGrantTokens();
             if (!grantTokensList.isEmpty()
                     || !grantTokensList.isAutoConstruct()) {
-                jsonWriter.key("GrantTokens");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("GrantTokens");
+                jsonGenerator.writeStartArray();
                 for (String grantTokensListValue : grantTokensList) {
                     if (grantTokensListValue != null) {
-                        jsonWriter.value(grantTokensListValue);
+                        jsonGenerator.writeValue(grantTokensListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

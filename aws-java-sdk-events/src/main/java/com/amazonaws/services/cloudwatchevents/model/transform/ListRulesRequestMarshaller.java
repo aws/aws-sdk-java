@@ -63,28 +63,27 @@ public class ListRulesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listRulesRequest.getNamePrefix() != null) {
-                jsonWriter.key("NamePrefix").value(
+                jsonGenerator.writeFieldName("NamePrefix").writeValue(
                         listRulesRequest.getNamePrefix());
             }
             if (listRulesRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         listRulesRequest.getNextToken());
             }
             if (listRulesRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(listRulesRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(
+                        listRulesRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

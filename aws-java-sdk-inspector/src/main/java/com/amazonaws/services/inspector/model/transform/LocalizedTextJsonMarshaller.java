@@ -40,39 +40,40 @@ import com.amazonaws.util.json.*;
 public class LocalizedTextJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(LocalizedText localizedText, JSONWriter jsonWriter) {
+    public void marshall(LocalizedText localizedText,
+            SdkJsonGenerator jsonGenerator) {
         if (localizedText == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (localizedText.getKey() != null) {
-                jsonWriter.key("key");
+                jsonGenerator.writeFieldName("key");
                 LocalizedTextKeyJsonMarshaller.getInstance().marshall(
-                        localizedText.getKey(), jsonWriter);
+                        localizedText.getKey(), jsonGenerator);
             }
 
             java.util.List<Parameter> parametersList = localizedText
                     .getParameters();
             if (parametersList != null) {
-                jsonWriter.key("parameters");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("parameters");
+                jsonGenerator.writeStartArray();
                 for (Parameter parametersListValue : parametersList) {
                     if (parametersListValue != null) {
 
                         ParameterJsonMarshaller.getInstance().marshall(
-                                parametersListValue, jsonWriter);
+                                parametersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -33,9 +33,9 @@ public class ${shapeName}JsonMarshaller {
 
     <#assign shape = shapes[shapeName]/>
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(${shapeName} ${shape.variable.variableName}, JSONWriter jsonWriter) {
+    public void marshall(${shapeName} ${shape.variable.variableName}, SdkJsonGenerator jsonGenerator) {
         if (${shape.variable.variableName} == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
@@ -43,11 +43,11 @@ public class ${shapeName}JsonMarshaller {
         <@RequiredParameterValidationInvocationMacro.content dataModel.customConfig shape/>
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             <@MemberMarshallerMacro.content customConfig shapeName shape.variable.variableName shapes/>
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch(Throwable t) {
             throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

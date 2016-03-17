@@ -40,54 +40,55 @@ import com.amazonaws.util.json.*;
 public class CaptionsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Captions captions, JSONWriter jsonWriter) {
+    public void marshall(Captions captions, SdkJsonGenerator jsonGenerator) {
         if (captions == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (captions.getMergePolicy() != null) {
-                jsonWriter.key("MergePolicy").value(captions.getMergePolicy());
+                jsonGenerator.writeFieldName("MergePolicy").writeValue(
+                        captions.getMergePolicy());
             }
 
             com.amazonaws.internal.SdkInternalList<CaptionSource> captionSourcesList = (com.amazonaws.internal.SdkInternalList<CaptionSource>) captions
                     .getCaptionSources();
             if (!captionSourcesList.isEmpty()
                     || !captionSourcesList.isAutoConstruct()) {
-                jsonWriter.key("CaptionSources");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("CaptionSources");
+                jsonGenerator.writeStartArray();
                 for (CaptionSource captionSourcesListValue : captionSourcesList) {
                     if (captionSourcesListValue != null) {
 
                         CaptionSourceJsonMarshaller.getInstance().marshall(
-                                captionSourcesListValue, jsonWriter);
+                                captionSourcesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<CaptionFormat> captionFormatsList = (com.amazonaws.internal.SdkInternalList<CaptionFormat>) captions
                     .getCaptionFormats();
             if (!captionFormatsList.isEmpty()
                     || !captionFormatsList.isAutoConstruct()) {
-                jsonWriter.key("CaptionFormats");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("CaptionFormats");
+                jsonGenerator.writeStartArray();
                 for (CaptionFormat captionFormatsListValue : captionFormatsList) {
                     if (captionFormatsListValue != null) {
 
                         CaptionFormatJsonMarshaller.getInstance().marshall(
-                                captionFormatsListValue, jsonWriter);
+                                captionFormatsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

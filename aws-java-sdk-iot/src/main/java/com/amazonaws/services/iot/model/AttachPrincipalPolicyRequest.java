@@ -35,8 +35,8 @@ public class AttachPrincipalPolicyRequest extends AmazonWebServiceRequest
     private String policyName;
     /**
      * <p>
-     * The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.
+     * The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.
      * </p>
      */
     private String principal;
@@ -84,13 +84,13 @@ public class AttachPrincipalPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.
+     * The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.
      * </p>
      * 
      * @param principal
-     *        The principal which can be a certificate ARN (as returned from the
-     *        CreateCertificate operation) or a Cognito ID.
+     *        The principal, which can be a certificate ARN (as returned from
+     *        the CreateCertificate operation) or an Amazon Cognito ID.
      */
 
     public void setPrincipal(String principal) {
@@ -99,12 +99,12 @@ public class AttachPrincipalPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.
+     * The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.
      * </p>
      * 
-     * @return The principal which can be a certificate ARN (as returned from
-     *         the CreateCertificate operation) or a Cognito ID.
+     * @return The principal, which can be a certificate ARN (as returned from
+     *         the CreateCertificate operation) or an Amazon Cognito ID.
      */
 
     public String getPrincipal() {
@@ -113,13 +113,13 @@ public class AttachPrincipalPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.
+     * The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.
      * </p>
      * 
      * @param principal
-     *        The principal which can be a certificate ARN (as returned from the
-     *        CreateCertificate operation) or a Cognito ID.
+     *        The principal, which can be a certificate ARN (as returned from
+     *        the CreateCertificate operation) or an Amazon Cognito ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

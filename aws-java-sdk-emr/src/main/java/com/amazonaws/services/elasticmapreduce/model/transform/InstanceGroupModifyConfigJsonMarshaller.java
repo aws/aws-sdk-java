@@ -40,24 +40,24 @@ import com.amazonaws.util.json.*;
 public class InstanceGroupModifyConfigJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(InstanceGroupModifyConfig instanceGroupModifyConfig,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (instanceGroupModifyConfig == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceGroupModifyConfig.getInstanceGroupId() != null) {
-                jsonWriter.key("InstanceGroupId").value(
+                jsonGenerator.writeFieldName("InstanceGroupId").writeValue(
                         instanceGroupModifyConfig.getInstanceGroupId());
             }
             if (instanceGroupModifyConfig.getInstanceCount() != null) {
-                jsonWriter.key("InstanceCount").value(
+                jsonGenerator.writeFieldName("InstanceCount").writeValue(
                         instanceGroupModifyConfig.getInstanceCount());
             }
 
@@ -65,17 +65,18 @@ public class InstanceGroupModifyConfigJsonMarshaller {
                     .getEC2InstanceIdsToTerminate();
             if (!eC2InstanceIdsToTerminateList.isEmpty()
                     || !eC2InstanceIdsToTerminateList.isAutoConstruct()) {
-                jsonWriter.key("EC2InstanceIdsToTerminate");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("EC2InstanceIdsToTerminate");
+                jsonGenerator.writeStartArray();
                 for (String eC2InstanceIdsToTerminateListValue : eC2InstanceIdsToTerminateList) {
                     if (eC2InstanceIdsToTerminateListValue != null) {
-                        jsonWriter.value(eC2InstanceIdsToTerminateListValue);
+                        jsonGenerator
+                                .writeValue(eC2InstanceIdsToTerminateListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

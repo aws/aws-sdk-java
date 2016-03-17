@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class InstanceIdentityJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(InstanceIdentity instanceIdentity,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (instanceIdentity == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceIdentity.getDocument() != null) {
-                jsonWriter.key("Document")
-                        .value(instanceIdentity.getDocument());
+                jsonGenerator.writeFieldName("Document").writeValue(
+                        instanceIdentity.getDocument());
             }
             if (instanceIdentity.getSignature() != null) {
-                jsonWriter.key("Signature").value(
+                jsonGenerator.writeFieldName("Signature").writeValue(
                         instanceIdentity.getSignature());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

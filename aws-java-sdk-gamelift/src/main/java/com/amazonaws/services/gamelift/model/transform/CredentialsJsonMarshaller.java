@@ -40,31 +40,31 @@ import com.amazonaws.util.json.*;
 public class CredentialsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Credentials credentials, JSONWriter jsonWriter) {
+    public void marshall(Credentials credentials, SdkJsonGenerator jsonGenerator) {
         if (credentials == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (credentials.getAccessKeyId() != null) {
-                jsonWriter.key("AccessKeyId").value(
+                jsonGenerator.writeFieldName("AccessKeyId").writeValue(
                         credentials.getAccessKeyId());
             }
             if (credentials.getSecretAccessKey() != null) {
-                jsonWriter.key("SecretAccessKey").value(
+                jsonGenerator.writeFieldName("SecretAccessKey").writeValue(
                         credentials.getSecretAccessKey());
             }
             if (credentials.getSessionToken() != null) {
-                jsonWriter.key("SessionToken").value(
+                jsonGenerator.writeFieldName("SessionToken").writeValue(
                         credentials.getSessionToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

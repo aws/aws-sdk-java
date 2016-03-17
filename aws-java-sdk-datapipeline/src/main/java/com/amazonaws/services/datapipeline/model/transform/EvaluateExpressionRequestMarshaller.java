@@ -65,29 +65,27 @@ public class EvaluateExpressionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (evaluateExpressionRequest.getPipelineId() != null) {
-                jsonWriter.key("pipelineId").value(
+                jsonGenerator.writeFieldName("pipelineId").writeValue(
                         evaluateExpressionRequest.getPipelineId());
             }
             if (evaluateExpressionRequest.getObjectId() != null) {
-                jsonWriter.key("objectId").value(
+                jsonGenerator.writeFieldName("objectId").writeValue(
                         evaluateExpressionRequest.getObjectId());
             }
             if (evaluateExpressionRequest.getExpression() != null) {
-                jsonWriter.key("expression").value(
+                jsonGenerator.writeFieldName("expression").writeValue(
                         evaluateExpressionRequest.getExpression());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

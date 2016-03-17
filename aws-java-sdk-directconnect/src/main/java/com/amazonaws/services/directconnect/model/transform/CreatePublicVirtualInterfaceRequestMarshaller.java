@@ -66,31 +66,29 @@ public class CreatePublicVirtualInterfaceRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createPublicVirtualInterfaceRequest.getConnectionId() != null) {
-                jsonWriter.key("connectionId").value(
+                jsonGenerator.writeFieldName("connectionId").writeValue(
                         createPublicVirtualInterfaceRequest.getConnectionId());
             }
             if (createPublicVirtualInterfaceRequest
                     .getNewPublicVirtualInterface() != null) {
-                jsonWriter.key("newPublicVirtualInterface");
+                jsonGenerator.writeFieldName("newPublicVirtualInterface");
                 NewPublicVirtualInterfaceJsonMarshaller
                         .getInstance()
                         .marshall(
                                 createPublicVirtualInterfaceRequest
                                         .getNewPublicVirtualInterface(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

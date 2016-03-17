@@ -40,83 +40,83 @@ import com.amazonaws.util.json.*;
 public class RecipesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Recipes recipes, JSONWriter jsonWriter) {
+    public void marshall(Recipes recipes, SdkJsonGenerator jsonGenerator) {
         if (recipes == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> setupList = (com.amazonaws.internal.SdkInternalList<String>) recipes
                     .getSetup();
             if (!setupList.isEmpty() || !setupList.isAutoConstruct()) {
-                jsonWriter.key("Setup");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Setup");
+                jsonGenerator.writeStartArray();
                 for (String setupListValue : setupList) {
                     if (setupListValue != null) {
-                        jsonWriter.value(setupListValue);
+                        jsonGenerator.writeValue(setupListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> configureList = (com.amazonaws.internal.SdkInternalList<String>) recipes
                     .getConfigure();
             if (!configureList.isEmpty() || !configureList.isAutoConstruct()) {
-                jsonWriter.key("Configure");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Configure");
+                jsonGenerator.writeStartArray();
                 for (String configureListValue : configureList) {
                     if (configureListValue != null) {
-                        jsonWriter.value(configureListValue);
+                        jsonGenerator.writeValue(configureListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> deployList = (com.amazonaws.internal.SdkInternalList<String>) recipes
                     .getDeploy();
             if (!deployList.isEmpty() || !deployList.isAutoConstruct()) {
-                jsonWriter.key("Deploy");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Deploy");
+                jsonGenerator.writeStartArray();
                 for (String deployListValue : deployList) {
                     if (deployListValue != null) {
-                        jsonWriter.value(deployListValue);
+                        jsonGenerator.writeValue(deployListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> undeployList = (com.amazonaws.internal.SdkInternalList<String>) recipes
                     .getUndeploy();
             if (!undeployList.isEmpty() || !undeployList.isAutoConstruct()) {
-                jsonWriter.key("Undeploy");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Undeploy");
+                jsonGenerator.writeStartArray();
                 for (String undeployListValue : undeployList) {
                     if (undeployListValue != null) {
-                        jsonWriter.value(undeployListValue);
+                        jsonGenerator.writeValue(undeployListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> shutdownList = (com.amazonaws.internal.SdkInternalList<String>) recipes
                     .getShutdown();
             if (!shutdownList.isEmpty() || !shutdownList.isAutoConstruct()) {
-                jsonWriter.key("Shutdown");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Shutdown");
+                jsonGenerator.writeStartArray();
                 for (String shutdownListValue : shutdownList) {
                     if (shutdownListValue != null) {
-                        jsonWriter.value(shutdownListValue);
+                        jsonGenerator.writeValue(shutdownListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

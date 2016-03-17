@@ -65,43 +65,44 @@ public class CreateDeploymentRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createDeploymentRequest.getApplicationName() != null) {
-                jsonWriter.key("applicationName").value(
+                jsonGenerator.writeFieldName("applicationName").writeValue(
                         createDeploymentRequest.getApplicationName());
             }
             if (createDeploymentRequest.getDeploymentGroupName() != null) {
-                jsonWriter.key("deploymentGroupName").value(
+                jsonGenerator.writeFieldName("deploymentGroupName").writeValue(
                         createDeploymentRequest.getDeploymentGroupName());
             }
             if (createDeploymentRequest.getRevision() != null) {
-                jsonWriter.key("revision");
+                jsonGenerator.writeFieldName("revision");
                 RevisionLocationJsonMarshaller.getInstance().marshall(
-                        createDeploymentRequest.getRevision(), jsonWriter);
+                        createDeploymentRequest.getRevision(), jsonGenerator);
             }
             if (createDeploymentRequest.getDeploymentConfigName() != null) {
-                jsonWriter.key("deploymentConfigName").value(
-                        createDeploymentRequest.getDeploymentConfigName());
+                jsonGenerator.writeFieldName("deploymentConfigName")
+                        .writeValue(
+                                createDeploymentRequest
+                                        .getDeploymentConfigName());
             }
             if (createDeploymentRequest.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         createDeploymentRequest.getDescription());
             }
             if (createDeploymentRequest.getIgnoreApplicationStopFailures() != null) {
-                jsonWriter.key("ignoreApplicationStopFailures").value(
-                        createDeploymentRequest
-                                .getIgnoreApplicationStopFailures());
+                jsonGenerator.writeFieldName("ignoreApplicationStopFailures")
+                        .writeValue(
+                                createDeploymentRequest
+                                        .getIgnoreApplicationStopFailures());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

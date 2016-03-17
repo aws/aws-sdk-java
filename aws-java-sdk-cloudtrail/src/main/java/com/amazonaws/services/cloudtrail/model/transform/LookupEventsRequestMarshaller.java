@@ -65,48 +65,46 @@ public class LookupEventsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<LookupAttribute> lookupAttributesList = (com.amazonaws.internal.SdkInternalList<LookupAttribute>) lookupEventsRequest
                     .getLookupAttributes();
             if (!lookupAttributesList.isEmpty()
                     || !lookupAttributesList.isAutoConstruct()) {
-                jsonWriter.key("LookupAttributes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("LookupAttributes");
+                jsonGenerator.writeStartArray();
                 for (LookupAttribute lookupAttributesListValue : lookupAttributesList) {
                     if (lookupAttributesListValue != null) {
 
                         LookupAttributeJsonMarshaller.getInstance().marshall(
-                                lookupAttributesListValue, jsonWriter);
+                                lookupAttributesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (lookupEventsRequest.getStartTime() != null) {
-                jsonWriter.key("StartTime").value(
+                jsonGenerator.writeFieldName("StartTime").writeValue(
                         lookupEventsRequest.getStartTime());
             }
             if (lookupEventsRequest.getEndTime() != null) {
-                jsonWriter.key("EndTime").value(
+                jsonGenerator.writeFieldName("EndTime").writeValue(
                         lookupEventsRequest.getEndTime());
             }
             if (lookupEventsRequest.getMaxResults() != null) {
-                jsonWriter.key("MaxResults").value(
+                jsonGenerator.writeFieldName("MaxResults").writeValue(
                         lookupEventsRequest.getMaxResults());
             }
             if (lookupEventsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         lookupEventsRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

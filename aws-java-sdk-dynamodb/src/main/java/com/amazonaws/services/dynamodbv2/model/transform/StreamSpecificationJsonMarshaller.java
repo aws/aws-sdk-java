@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class StreamSpecificationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(StreamSpecification streamSpecification,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (streamSpecification == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (streamSpecification.getStreamEnabled() != null) {
-                jsonWriter.key("StreamEnabled").value(
+                jsonGenerator.writeFieldName("StreamEnabled").writeValue(
                         streamSpecification.getStreamEnabled());
             }
             if (streamSpecification.getStreamViewType() != null) {
-                jsonWriter.key("StreamViewType").value(
+                jsonGenerator.writeFieldName("StreamViewType").writeValue(
                         streamSpecification.getStreamViewType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,52 +40,53 @@ import com.amazonaws.util.json.*;
 public class ContainerOverrideJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ContainerOverride containerOverride,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (containerOverride == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (containerOverride.getName() != null) {
-                jsonWriter.key("name").value(containerOverride.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        containerOverride.getName());
             }
 
             com.amazonaws.internal.SdkInternalList<String> commandList = (com.amazonaws.internal.SdkInternalList<String>) containerOverride
                     .getCommand();
             if (!commandList.isEmpty() || !commandList.isAutoConstruct()) {
-                jsonWriter.key("command");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("command");
+                jsonGenerator.writeStartArray();
                 for (String commandListValue : commandList) {
                     if (commandListValue != null) {
-                        jsonWriter.value(commandListValue);
+                        jsonGenerator.writeValue(commandListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<KeyValuePair> environmentList = (com.amazonaws.internal.SdkInternalList<KeyValuePair>) containerOverride
                     .getEnvironment();
             if (!environmentList.isEmpty()
                     || !environmentList.isAutoConstruct()) {
-                jsonWriter.key("environment");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("environment");
+                jsonGenerator.writeStartArray();
                 for (KeyValuePair environmentListValue : environmentList) {
                     if (environmentListValue != null) {
 
                         KeyValuePairJsonMarshaller.getInstance().marshall(
-                                environmentListValue, jsonWriter);
+                                environmentListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

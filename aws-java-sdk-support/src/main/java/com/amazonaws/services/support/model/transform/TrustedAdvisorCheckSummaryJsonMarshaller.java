@@ -40,54 +40,54 @@ import com.amazonaws.util.json.*;
 public class TrustedAdvisorCheckSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(TrustedAdvisorCheckSummary trustedAdvisorCheckSummary,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (trustedAdvisorCheckSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (trustedAdvisorCheckSummary.getCheckId() != null) {
-                jsonWriter.key("checkId").value(
+                jsonGenerator.writeFieldName("checkId").writeValue(
                         trustedAdvisorCheckSummary.getCheckId());
             }
             if (trustedAdvisorCheckSummary.getTimestamp() != null) {
-                jsonWriter.key("timestamp").value(
+                jsonGenerator.writeFieldName("timestamp").writeValue(
                         trustedAdvisorCheckSummary.getTimestamp());
             }
             if (trustedAdvisorCheckSummary.getStatus() != null) {
-                jsonWriter.key("status").value(
+                jsonGenerator.writeFieldName("status").writeValue(
                         trustedAdvisorCheckSummary.getStatus());
             }
             if (trustedAdvisorCheckSummary.getHasFlaggedResources() != null) {
-                jsonWriter.key("hasFlaggedResources").value(
+                jsonGenerator.writeFieldName("hasFlaggedResources").writeValue(
                         trustedAdvisorCheckSummary.getHasFlaggedResources());
             }
             if (trustedAdvisorCheckSummary.getResourcesSummary() != null) {
-                jsonWriter.key("resourcesSummary");
+                jsonGenerator.writeFieldName("resourcesSummary");
                 TrustedAdvisorResourcesSummaryJsonMarshaller
                         .getInstance()
                         .marshall(
                                 trustedAdvisorCheckSummary
                                         .getResourcesSummary(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (trustedAdvisorCheckSummary.getCategorySpecificSummary() != null) {
-                jsonWriter.key("categorySpecificSummary");
+                jsonGenerator.writeFieldName("categorySpecificSummary");
                 TrustedAdvisorCategorySpecificSummaryJsonMarshaller
                         .getInstance()
                         .marshall(
                                 trustedAdvisorCheckSummary
                                         .getCategorySpecificSummary(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

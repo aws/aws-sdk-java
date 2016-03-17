@@ -66,42 +66,40 @@ public class CompleteLayerUploadRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (completeLayerUploadRequest.getRegistryId() != null) {
-                jsonWriter.key("registryId").value(
+                jsonGenerator.writeFieldName("registryId").writeValue(
                         completeLayerUploadRequest.getRegistryId());
             }
             if (completeLayerUploadRequest.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         completeLayerUploadRequest.getRepositoryName());
             }
             if (completeLayerUploadRequest.getUploadId() != null) {
-                jsonWriter.key("uploadId").value(
+                jsonGenerator.writeFieldName("uploadId").writeValue(
                         completeLayerUploadRequest.getUploadId());
             }
 
             java.util.List<String> layerDigestsList = completeLayerUploadRequest
                     .getLayerDigests();
             if (layerDigestsList != null) {
-                jsonWriter.key("layerDigests");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("layerDigests");
+                jsonGenerator.writeStartArray();
                 for (String layerDigestsListValue : layerDigestsList) {
                     if (layerDigestsListValue != null) {
-                        jsonWriter.value(layerDigestsListValue);
+                        jsonGenerator.writeValue(layerDigestsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

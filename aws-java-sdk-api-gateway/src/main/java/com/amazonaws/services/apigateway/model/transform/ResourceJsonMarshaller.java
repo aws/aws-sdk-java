@@ -40,49 +40,54 @@ import com.amazonaws.util.json.*;
 public class ResourceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Resource resource, JSONWriter jsonWriter) {
+    public void marshall(Resource resource, SdkJsonGenerator jsonGenerator) {
         if (resource == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (resource.getId() != null) {
-                jsonWriter.key("id").value(resource.getId());
+                jsonGenerator.writeFieldName("id").writeValue(resource.getId());
             }
             if (resource.getParentId() != null) {
-                jsonWriter.key("parentId").value(resource.getParentId());
+                jsonGenerator.writeFieldName("parentId").writeValue(
+                        resource.getParentId());
             }
             if (resource.getPathPart() != null) {
-                jsonWriter.key("pathPart").value(resource.getPathPart());
+                jsonGenerator.writeFieldName("pathPart").writeValue(
+                        resource.getPathPart());
             }
             if (resource.getPath() != null) {
-                jsonWriter.key("path").value(resource.getPath());
+                jsonGenerator.writeFieldName("path").writeValue(
+                        resource.getPath());
             }
 
             java.util.Map<String, Method> resourceMethodsMap = resource
                     .getResourceMethods();
             if (resourceMethodsMap != null) {
-                jsonWriter.key("resourceMethods");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("resourceMethods");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Method> resourceMethodsMapValue : resourceMethodsMap
                         .entrySet()) {
                     if (resourceMethodsMapValue.getValue() != null) {
-                        jsonWriter.key(resourceMethodsMapValue.getKey());
+                        jsonGenerator.writeFieldName(resourceMethodsMapValue
+                                .getKey());
 
                         MethodJsonMarshaller.getInstance().marshall(
-                                resourceMethodsMapValue.getValue(), jsonWriter);
+                                resourceMethodsMapValue.getValue(),
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

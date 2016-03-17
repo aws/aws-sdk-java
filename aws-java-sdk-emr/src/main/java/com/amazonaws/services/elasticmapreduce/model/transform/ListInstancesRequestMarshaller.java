@@ -64,17 +64,16 @@ public class ListInstancesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listInstancesRequest.getClusterId() != null) {
-                jsonWriter.key("ClusterId").value(
+                jsonGenerator.writeFieldName("ClusterId").writeValue(
                         listInstancesRequest.getClusterId());
             }
             if (listInstancesRequest.getInstanceGroupId() != null) {
-                jsonWriter.key("InstanceGroupId").value(
+                jsonGenerator.writeFieldName("InstanceGroupId").writeValue(
                         listInstancesRequest.getInstanceGroupId());
             }
 
@@ -82,25 +81,24 @@ public class ListInstancesRequestMarshaller implements
                     .getInstanceGroupTypes();
             if (!instanceGroupTypesList.isEmpty()
                     || !instanceGroupTypesList.isAutoConstruct()) {
-                jsonWriter.key("InstanceGroupTypes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InstanceGroupTypes");
+                jsonGenerator.writeStartArray();
                 for (String instanceGroupTypesListValue : instanceGroupTypesList) {
                     if (instanceGroupTypesListValue != null) {
-                        jsonWriter.value(instanceGroupTypesListValue);
+                        jsonGenerator.writeValue(instanceGroupTypesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (listInstancesRequest.getMarker() != null) {
-                jsonWriter.key("Marker")
-                        .value(listInstancesRequest.getMarker());
+                jsonGenerator.writeFieldName("Marker").writeValue(
+                        listInstancesRequest.getMarker());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

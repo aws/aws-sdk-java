@@ -40,33 +40,36 @@ import com.amazonaws.util.json.*;
 public class DomainSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DomainSummary domainSummary, JSONWriter jsonWriter) {
+    public void marshall(DomainSummary domainSummary,
+            SdkJsonGenerator jsonGenerator) {
         if (domainSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (domainSummary.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         domainSummary.getDomainName());
             }
             if (domainSummary.getAutoRenew() != null) {
-                jsonWriter.key("AutoRenew").value(domainSummary.getAutoRenew());
+                jsonGenerator.writeFieldName("AutoRenew").writeValue(
+                        domainSummary.getAutoRenew());
             }
             if (domainSummary.getTransferLock() != null) {
-                jsonWriter.key("TransferLock").value(
+                jsonGenerator.writeFieldName("TransferLock").writeValue(
                         domainSummary.getTransferLock());
             }
             if (domainSummary.getExpiry() != null) {
-                jsonWriter.key("Expiry").value(domainSummary.getExpiry());
+                jsonGenerator.writeFieldName("Expiry").writeValue(
+                        domainSummary.getExpiry());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

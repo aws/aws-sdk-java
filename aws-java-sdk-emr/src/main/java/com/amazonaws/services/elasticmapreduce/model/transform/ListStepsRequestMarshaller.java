@@ -63,50 +63,49 @@ public class ListStepsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listStepsRequest.getClusterId() != null) {
-                jsonWriter.key("ClusterId").value(
+                jsonGenerator.writeFieldName("ClusterId").writeValue(
                         listStepsRequest.getClusterId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> stepStatesList = (com.amazonaws.internal.SdkInternalList<String>) listStepsRequest
                     .getStepStates();
             if (!stepStatesList.isEmpty() || !stepStatesList.isAutoConstruct()) {
-                jsonWriter.key("StepStates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("StepStates");
+                jsonGenerator.writeStartArray();
                 for (String stepStatesListValue : stepStatesList) {
                     if (stepStatesListValue != null) {
-                        jsonWriter.value(stepStatesListValue);
+                        jsonGenerator.writeValue(stepStatesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> stepIdsList = (com.amazonaws.internal.SdkInternalList<String>) listStepsRequest
                     .getStepIds();
             if (!stepIdsList.isEmpty() || !stepIdsList.isAutoConstruct()) {
-                jsonWriter.key("StepIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("StepIds");
+                jsonGenerator.writeStartArray();
                 for (String stepIdsListValue : stepIdsList) {
                     if (stepIdsListValue != null) {
-                        jsonWriter.value(stepIdsListValue);
+                        jsonGenerator.writeValue(stepIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (listStepsRequest.getMarker() != null) {
-                jsonWriter.key("Marker").value(listStepsRequest.getMarker());
+                jsonGenerator.writeFieldName("Marker").writeValue(
+                        listStepsRequest.getMarker());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

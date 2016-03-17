@@ -40,28 +40,32 @@ import com.amazonaws.util.json.*;
 public class DeviceMinutesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DeviceMinutes deviceMinutes, JSONWriter jsonWriter) {
+    public void marshall(DeviceMinutes deviceMinutes,
+            SdkJsonGenerator jsonGenerator) {
         if (deviceMinutes == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deviceMinutes.getTotal() != null) {
-                jsonWriter.key("total").value(deviceMinutes.getTotal());
+                jsonGenerator.writeFieldName("total").writeValue(
+                        deviceMinutes.getTotal());
             }
             if (deviceMinutes.getMetered() != null) {
-                jsonWriter.key("metered").value(deviceMinutes.getMetered());
+                jsonGenerator.writeFieldName("metered").writeValue(
+                        deviceMinutes.getMetered());
             }
             if (deviceMinutes.getUnmetered() != null) {
-                jsonWriter.key("unmetered").value(deviceMinutes.getUnmetered());
+                jsonGenerator.writeFieldName("unmetered").writeValue(
+                        deviceMinutes.getUnmetered());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,52 +40,53 @@ import com.amazonaws.util.json.*;
 public class ElasticsearchDomainConfigJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ElasticsearchDomainConfig elasticsearchDomainConfig,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (elasticsearchDomainConfig == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (elasticsearchDomainConfig.getElasticsearchClusterConfig() != null) {
-                jsonWriter.key("ElasticsearchClusterConfig");
+                jsonGenerator.writeFieldName("ElasticsearchClusterConfig");
                 ElasticsearchClusterConfigStatusJsonMarshaller
                         .getInstance()
                         .marshall(
                                 elasticsearchDomainConfig
                                         .getElasticsearchClusterConfig(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (elasticsearchDomainConfig.getEBSOptions() != null) {
-                jsonWriter.key("EBSOptions");
+                jsonGenerator.writeFieldName("EBSOptions");
                 EBSOptionsStatusJsonMarshaller.getInstance().marshall(
-                        elasticsearchDomainConfig.getEBSOptions(), jsonWriter);
+                        elasticsearchDomainConfig.getEBSOptions(),
+                        jsonGenerator);
             }
             if (elasticsearchDomainConfig.getAccessPolicies() != null) {
-                jsonWriter.key("AccessPolicies");
+                jsonGenerator.writeFieldName("AccessPolicies");
                 AccessPoliciesStatusJsonMarshaller.getInstance().marshall(
                         elasticsearchDomainConfig.getAccessPolicies(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (elasticsearchDomainConfig.getSnapshotOptions() != null) {
-                jsonWriter.key("SnapshotOptions");
+                jsonGenerator.writeFieldName("SnapshotOptions");
                 SnapshotOptionsStatusJsonMarshaller.getInstance().marshall(
                         elasticsearchDomainConfig.getSnapshotOptions(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (elasticsearchDomainConfig.getAdvancedOptions() != null) {
-                jsonWriter.key("AdvancedOptions");
+                jsonGenerator.writeFieldName("AdvancedOptions");
                 AdvancedOptionsStatusJsonMarshaller.getInstance().marshall(
                         elasticsearchDomainConfig.getAdvancedOptions(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

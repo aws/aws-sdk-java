@@ -40,27 +40,28 @@ import com.amazonaws.util.json.*;
 public class VirtualGatewayJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(VirtualGateway virtualGateway, JSONWriter jsonWriter) {
+    public void marshall(VirtualGateway virtualGateway,
+            SdkJsonGenerator jsonGenerator) {
         if (virtualGateway == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (virtualGateway.getVirtualGatewayId() != null) {
-                jsonWriter.key("virtualGatewayId").value(
+                jsonGenerator.writeFieldName("virtualGatewayId").writeValue(
                         virtualGateway.getVirtualGatewayId());
             }
             if (virtualGateway.getVirtualGatewayState() != null) {
-                jsonWriter.key("virtualGatewayState").value(
+                jsonGenerator.writeFieldName("virtualGatewayState").writeValue(
                         virtualGateway.getVirtualGatewayState());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

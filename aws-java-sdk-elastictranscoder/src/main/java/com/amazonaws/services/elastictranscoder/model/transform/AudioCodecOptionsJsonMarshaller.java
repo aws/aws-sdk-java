@@ -40,34 +40,36 @@ import com.amazonaws.util.json.*;
 public class AudioCodecOptionsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AudioCodecOptions audioCodecOptions,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (audioCodecOptions == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (audioCodecOptions.getProfile() != null) {
-                jsonWriter.key("Profile").value(audioCodecOptions.getProfile());
+                jsonGenerator.writeFieldName("Profile").writeValue(
+                        audioCodecOptions.getProfile());
             }
             if (audioCodecOptions.getBitDepth() != null) {
-                jsonWriter.key("BitDepth").value(
+                jsonGenerator.writeFieldName("BitDepth").writeValue(
                         audioCodecOptions.getBitDepth());
             }
             if (audioCodecOptions.getBitOrder() != null) {
-                jsonWriter.key("BitOrder").value(
+                jsonGenerator.writeFieldName("BitOrder").writeValue(
                         audioCodecOptions.getBitOrder());
             }
             if (audioCodecOptions.getSigned() != null) {
-                jsonWriter.key("Signed").value(audioCodecOptions.getSigned());
+                jsonGenerator.writeFieldName("Signed").writeValue(
+                        audioCodecOptions.getSigned());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

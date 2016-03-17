@@ -40,35 +40,36 @@ import com.amazonaws.util.json.*;
 public class OperatorJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Operator operator, JSONWriter jsonWriter) {
+    public void marshall(Operator operator, SdkJsonGenerator jsonGenerator) {
         if (operator == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (operator.getType() != null) {
-                jsonWriter.key("type").value(operator.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        operator.getType());
             }
 
             com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) operator
                     .getValues();
             if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
-                jsonWriter.key("values");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("values");
+                jsonGenerator.writeStartArray();
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
-                        jsonWriter.value(valuesListValue);
+                        jsonGenerator.writeValue(valuesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

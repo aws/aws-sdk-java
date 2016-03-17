@@ -40,37 +40,43 @@ import com.amazonaws.util.json.*;
 public class BuildJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Build build, JSONWriter jsonWriter) {
+    public void marshall(Build build, SdkJsonGenerator jsonGenerator) {
         if (build == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (build.getBuildId() != null) {
-                jsonWriter.key("BuildId").value(build.getBuildId());
+                jsonGenerator.writeFieldName("BuildId").writeValue(
+                        build.getBuildId());
             }
             if (build.getName() != null) {
-                jsonWriter.key("Name").value(build.getName());
+                jsonGenerator.writeFieldName("Name")
+                        .writeValue(build.getName());
             }
             if (build.getVersion() != null) {
-                jsonWriter.key("Version").value(build.getVersion());
+                jsonGenerator.writeFieldName("Version").writeValue(
+                        build.getVersion());
             }
             if (build.getStatus() != null) {
-                jsonWriter.key("Status").value(build.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        build.getStatus());
             }
             if (build.getSizeOnDisk() != null) {
-                jsonWriter.key("SizeOnDisk").value(build.getSizeOnDisk());
+                jsonGenerator.writeFieldName("SizeOnDisk").writeValue(
+                        build.getSizeOnDisk());
             }
             if (build.getCreationTime() != null) {
-                jsonWriter.key("CreationTime").value(build.getCreationTime());
+                jsonGenerator.writeFieldName("CreationTime").writeValue(
+                        build.getCreationTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

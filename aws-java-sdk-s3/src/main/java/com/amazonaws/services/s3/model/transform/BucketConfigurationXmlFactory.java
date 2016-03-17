@@ -347,6 +347,9 @@ public class BucketConfigurationXmlFactory {
                <Expiration>
                    <Date>2020-12-31T00:00:00.000Z</Date>
                </Expiration>
+               <AbortIncompleteMultipartUpload>
+                   <DaysAfterInitiation>10</DaysAfterInitiation>
+               </AbortIncompleteMultipartUpload>
           </Rule>
     </LifecycleConfiguration>
     */
@@ -406,9 +409,19 @@ public class BucketConfigurationXmlFactory {
         addTransitions(xml, rule.getTransitions());
         addNoncurrentTransitions(xml, rule.getNoncurrentVersionTransitions());
 
-        if (rule.getExpirationInDays() != -1) {
+        if (hasCurrentExpirationPolicy(rule)) {
+            // The rule attributes below are mutually exclusive, the service will throw an error if
+            // more than one is provided
             xml.start("Expiration");
-            xml.start("Days").value("" + rule.getExpirationInDays()).end();
+            if (rule.getExpirationInDays() != -1) {
+                xml.start("Days").value("" + rule.getExpirationInDays()).end();
+            }
+            if (rule.getExpirationDate() != null) {
+                xml.start("Date").value(ServiceUtils.formatIso8601Date(rule.getExpirationDate())).end();
+            }
+            if (rule.isExpiredObjectDeleteMarker() == true) {
+                xml.start("ExpiredObjectDeleteMarker").value("true").end();
+            }
             xml.end(); // </Expiration>
         }
 
@@ -421,10 +434,12 @@ public class BucketConfigurationXmlFactory {
             xml.end(); // </NoncurrentVersionExpiration>
         }
 
-        if (rule.getExpirationDate() != null) {
-            xml.start("Expiration");
-            xml.start("Date").value(ServiceUtils.formatIso8601Date(rule.getExpirationDate())).end();
-            xml.end(); // </Expiration>
+        if (rule.getAbortIncompleteMultipartUpload() != null) {
+            xml.start("AbortIncompleteMultipartUpload");
+            xml.start("DaysAfterInitiation").
+                    value(Integer.toString(rule.getAbortIncompleteMultipartUpload().getDaysAfterInitiation()))
+                    .end();
+            xml.end(); // </AbortIncompleteMultipartUpload>
         }
 
         xml.end(); // </Rule>
@@ -478,6 +493,15 @@ public class BucketConfigurationXmlFactory {
                 xml.end(); // </NoncurrentVersionTransition>
             }
         }
+    }
+
+
+    /**
+     * @param rule
+     * @return True if rule has a current expiration (<Expiration/>) policy set
+     */
+    private boolean hasCurrentExpirationPolicy(Rule rule) {
+        return rule.getExpirationInDays() != -1 || rule.getExpirationDate() != null || rule.isExpiredObjectDeleteMarker();
     }
 
     private void writeRule(XmlWriter xml, CORSRule rule) {

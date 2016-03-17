@@ -66,33 +66,31 @@ public class SetRepositoryPolicyRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (setRepositoryPolicyRequest.getRegistryId() != null) {
-                jsonWriter.key("registryId").value(
+                jsonGenerator.writeFieldName("registryId").writeValue(
                         setRepositoryPolicyRequest.getRegistryId());
             }
             if (setRepositoryPolicyRequest.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         setRepositoryPolicyRequest.getRepositoryName());
             }
             if (setRepositoryPolicyRequest.getPolicyText() != null) {
-                jsonWriter.key("policyText").value(
+                jsonGenerator.writeFieldName("policyText").writeValue(
                         setRepositoryPolicyRequest.getPolicyText());
             }
             if (setRepositoryPolicyRequest.getForce() != null) {
-                jsonWriter.key("force").value(
+                jsonGenerator.writeFieldName("force").writeValue(
                         setRepositoryPolicyRequest.getForce());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,60 +40,66 @@ import com.amazonaws.util.json.*;
 public class BatchPredictionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(BatchPrediction batchPrediction, JSONWriter jsonWriter) {
+    public void marshall(BatchPrediction batchPrediction,
+            SdkJsonGenerator jsonGenerator) {
         if (batchPrediction == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (batchPrediction.getBatchPredictionId() != null) {
-                jsonWriter.key("BatchPredictionId").value(
+                jsonGenerator.writeFieldName("BatchPredictionId").writeValue(
                         batchPrediction.getBatchPredictionId());
             }
             if (batchPrediction.getMLModelId() != null) {
-                jsonWriter.key("MLModelId").value(
+                jsonGenerator.writeFieldName("MLModelId").writeValue(
                         batchPrediction.getMLModelId());
             }
             if (batchPrediction.getBatchPredictionDataSourceId() != null) {
-                jsonWriter.key("BatchPredictionDataSourceId").value(
-                        batchPrediction.getBatchPredictionDataSourceId());
+                jsonGenerator.writeFieldName("BatchPredictionDataSourceId")
+                        .writeValue(
+                                batchPrediction
+                                        .getBatchPredictionDataSourceId());
             }
             if (batchPrediction.getInputDataLocationS3() != null) {
-                jsonWriter.key("InputDataLocationS3").value(
+                jsonGenerator.writeFieldName("InputDataLocationS3").writeValue(
                         batchPrediction.getInputDataLocationS3());
             }
             if (batchPrediction.getCreatedByIamUser() != null) {
-                jsonWriter.key("CreatedByIamUser").value(
+                jsonGenerator.writeFieldName("CreatedByIamUser").writeValue(
                         batchPrediction.getCreatedByIamUser());
             }
             if (batchPrediction.getCreatedAt() != null) {
-                jsonWriter.key("CreatedAt").value(
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(
                         batchPrediction.getCreatedAt());
             }
             if (batchPrediction.getLastUpdatedAt() != null) {
-                jsonWriter.key("LastUpdatedAt").value(
+                jsonGenerator.writeFieldName("LastUpdatedAt").writeValue(
                         batchPrediction.getLastUpdatedAt());
             }
             if (batchPrediction.getName() != null) {
-                jsonWriter.key("Name").value(batchPrediction.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        batchPrediction.getName());
             }
             if (batchPrediction.getStatus() != null) {
-                jsonWriter.key("Status").value(batchPrediction.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        batchPrediction.getStatus());
             }
             if (batchPrediction.getOutputUri() != null) {
-                jsonWriter.key("OutputUri").value(
+                jsonGenerator.writeFieldName("OutputUri").writeValue(
                         batchPrediction.getOutputUri());
             }
             if (batchPrediction.getMessage() != null) {
-                jsonWriter.key("Message").value(batchPrediction.getMessage());
+                jsonGenerator.writeFieldName("Message").writeValue(
+                        batchPrediction.getMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

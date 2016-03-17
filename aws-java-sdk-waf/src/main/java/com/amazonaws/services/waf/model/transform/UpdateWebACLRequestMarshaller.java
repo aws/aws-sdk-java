@@ -64,45 +64,43 @@ public class UpdateWebACLRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateWebACLRequest.getWebACLId() != null) {
-                jsonWriter.key("WebACLId").value(
+                jsonGenerator.writeFieldName("WebACLId").writeValue(
                         updateWebACLRequest.getWebACLId());
             }
             if (updateWebACLRequest.getChangeToken() != null) {
-                jsonWriter.key("ChangeToken").value(
+                jsonGenerator.writeFieldName("ChangeToken").writeValue(
                         updateWebACLRequest.getChangeToken());
             }
 
             java.util.List<WebACLUpdate> updatesList = updateWebACLRequest
                     .getUpdates();
             if (updatesList != null) {
-                jsonWriter.key("Updates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Updates");
+                jsonGenerator.writeStartArray();
                 for (WebACLUpdate updatesListValue : updatesList) {
                     if (updatesListValue != null) {
 
                         WebACLUpdateJsonMarshaller.getInstance().marshall(
-                                updatesListValue, jsonWriter);
+                                updatesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (updateWebACLRequest.getDefaultAction() != null) {
-                jsonWriter.key("DefaultAction");
+                jsonGenerator.writeFieldName("DefaultAction");
                 WafActionJsonMarshaller.getInstance().marshall(
-                        updateWebACLRequest.getDefaultAction(), jsonWriter);
+                        updateWebACLRequest.getDefaultAction(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

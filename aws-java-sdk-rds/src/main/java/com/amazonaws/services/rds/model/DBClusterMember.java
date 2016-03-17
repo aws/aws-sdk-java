@@ -41,6 +41,15 @@ public class DBClusterMember implements Serializable, Cloneable {
     private String dBClusterParameterGroupStatus;
 
     /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
+     */
+    private Integer promotionTier;
+
+    /**
      * Specifies the instance identifier for this member of the DB cluster.
      *
      * @return Specifies the instance identifier for this member of the DB cluster.
@@ -163,6 +172,63 @@ public class DBClusterMember implements Serializable, Cloneable {
     }
 
     /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
+     *
+     * @return A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>.
+     */
+    public Integer getPromotionTier() {
+        return promotionTier;
+    }
+    
+    /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
+     *
+     * @param promotionTier A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>.
+     */
+    public void setPromotionTier(Integer promotionTier) {
+        this.promotionTier = promotionTier;
+    }
+    
+    /**
+     * A value that specifies the order in which an Aurora Replica is
+     * promoted to the primary instance after a failure of the existing
+     * primary instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param promotionTier A value that specifies the order in which an Aurora Replica is
+     *         promoted to the primary instance after a failure of the existing
+     *         primary instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     *         Fault Tolerance for an Aurora DB Cluster</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBClusterMember withPromotionTier(Integer promotionTier) {
+        this.promotionTier = promotionTier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -176,7 +242,8 @@ public class DBClusterMember implements Serializable, Cloneable {
         sb.append("{");
         if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
         if (isClusterWriter() != null) sb.append("IsClusterWriter: " + isClusterWriter() + ",");
-        if (getDBClusterParameterGroupStatus() != null) sb.append("DBClusterParameterGroupStatus: " + getDBClusterParameterGroupStatus() );
+        if (getDBClusterParameterGroupStatus() != null) sb.append("DBClusterParameterGroupStatus: " + getDBClusterParameterGroupStatus() + ",");
+        if (getPromotionTier() != null) sb.append("PromotionTier: " + getPromotionTier() );
         sb.append("}");
         return sb.toString();
     }
@@ -189,6 +256,7 @@ public class DBClusterMember implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((isClusterWriter() == null) ? 0 : isClusterWriter().hashCode()); 
         hashCode = prime * hashCode + ((getDBClusterParameterGroupStatus() == null) ? 0 : getDBClusterParameterGroupStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode()); 
         return hashCode;
     }
     
@@ -206,6 +274,8 @@ public class DBClusterMember implements Serializable, Cloneable {
         if (other.isClusterWriter() != null && other.isClusterWriter().equals(this.isClusterWriter()) == false) return false; 
         if (other.getDBClusterParameterGroupStatus() == null ^ this.getDBClusterParameterGroupStatus() == null) return false;
         if (other.getDBClusterParameterGroupStatus() != null && other.getDBClusterParameterGroupStatus().equals(this.getDBClusterParameterGroupStatus()) == false) return false; 
+        if (other.getPromotionTier() == null ^ this.getPromotionTier() == null) return false;
+        if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false) return false; 
         return true;
     }
     

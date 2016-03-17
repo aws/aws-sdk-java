@@ -64,29 +64,27 @@ public class DeleteInstanceRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deleteInstanceRequest.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
                         deleteInstanceRequest.getInstanceId());
             }
             if (deleteInstanceRequest.getDeleteElasticIp() != null) {
-                jsonWriter.key("DeleteElasticIp").value(
+                jsonGenerator.writeFieldName("DeleteElasticIp").writeValue(
                         deleteInstanceRequest.getDeleteElasticIp());
             }
             if (deleteInstanceRequest.getDeleteVolumes() != null) {
-                jsonWriter.key("DeleteVolumes").value(
+                jsonGenerator.writeFieldName("DeleteVolumes").writeValue(
                         deleteInstanceRequest.getDeleteVolumes());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

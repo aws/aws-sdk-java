@@ -40,50 +40,54 @@ import com.amazonaws.util.json.*;
 public class EventJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Event event, JSONWriter jsonWriter) {
+    public void marshall(Event event, SdkJsonGenerator jsonGenerator) {
         if (event == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (event.getEventId() != null) {
-                jsonWriter.key("EventId").value(event.getEventId());
+                jsonGenerator.writeFieldName("EventId").writeValue(
+                        event.getEventId());
             }
             if (event.getEventName() != null) {
-                jsonWriter.key("EventName").value(event.getEventName());
+                jsonGenerator.writeFieldName("EventName").writeValue(
+                        event.getEventName());
             }
             if (event.getEventTime() != null) {
-                jsonWriter.key("EventTime").value(event.getEventTime());
+                jsonGenerator.writeFieldName("EventTime").writeValue(
+                        event.getEventTime());
             }
             if (event.getUsername() != null) {
-                jsonWriter.key("Username").value(event.getUsername());
+                jsonGenerator.writeFieldName("Username").writeValue(
+                        event.getUsername());
             }
 
             com.amazonaws.internal.SdkInternalList<Resource> resourcesList = (com.amazonaws.internal.SdkInternalList<Resource>) event
                     .getResources();
             if (!resourcesList.isEmpty() || !resourcesList.isAutoConstruct()) {
-                jsonWriter.key("Resources");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Resources");
+                jsonGenerator.writeStartArray();
                 for (Resource resourcesListValue : resourcesList) {
                     if (resourcesListValue != null) {
 
                         ResourceJsonMarshaller.getInstance().marshall(
-                                resourcesListValue, jsonWriter);
+                                resourcesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (event.getCloudTrailEvent() != null) {
-                jsonWriter.key("CloudTrailEvent").value(
+                jsonGenerator.writeFieldName("CloudTrailEvent").writeValue(
                         event.getCloudTrailEvent());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

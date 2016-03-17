@@ -66,62 +66,66 @@ public class CreateIdentityPoolRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createIdentityPoolRequest.getIdentityPoolName() != null) {
-                jsonWriter.key("IdentityPoolName").value(
+                jsonGenerator.writeFieldName("IdentityPoolName").writeValue(
                         createIdentityPoolRequest.getIdentityPoolName());
             }
             if (createIdentityPoolRequest.getAllowUnauthenticatedIdentities() != null) {
-                jsonWriter.key("AllowUnauthenticatedIdentities").value(
-                        createIdentityPoolRequest
-                                .getAllowUnauthenticatedIdentities());
+                jsonGenerator.writeFieldName("AllowUnauthenticatedIdentities")
+                        .writeValue(
+                                createIdentityPoolRequest
+                                        .getAllowUnauthenticatedIdentities());
             }
 
             java.util.Map<String, String> supportedLoginProvidersMap = createIdentityPoolRequest
                     .getSupportedLoginProviders();
             if (supportedLoginProvidersMap != null) {
-                jsonWriter.key("SupportedLoginProviders");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("SupportedLoginProviders");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> supportedLoginProvidersMapValue : supportedLoginProvidersMap
                         .entrySet()) {
                     if (supportedLoginProvidersMapValue.getValue() != null) {
-                        jsonWriter
-                                .key(supportedLoginProvidersMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(supportedLoginProvidersMapValue
+                                        .getKey());
 
-                        jsonWriter.value(supportedLoginProvidersMapValue
-                                .getValue());
+                        jsonGenerator
+                                .writeValue(supportedLoginProvidersMapValue
+                                        .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (createIdentityPoolRequest.getDeveloperProviderName() != null) {
-                jsonWriter.key("DeveloperProviderName").value(
-                        createIdentityPoolRequest.getDeveloperProviderName());
+                jsonGenerator.writeFieldName("DeveloperProviderName")
+                        .writeValue(
+                                createIdentityPoolRequest
+                                        .getDeveloperProviderName());
             }
 
             java.util.List<String> openIdConnectProviderARNsList = createIdentityPoolRequest
                     .getOpenIdConnectProviderARNs();
             if (openIdConnectProviderARNsList != null) {
-                jsonWriter.key("OpenIdConnectProviderARNs");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("OpenIdConnectProviderARNs");
+                jsonGenerator.writeStartArray();
                 for (String openIdConnectProviderARNsListValue : openIdConnectProviderARNsList) {
                     if (openIdConnectProviderARNsListValue != null) {
-                        jsonWriter.value(openIdConnectProviderARNsListValue);
+                        jsonGenerator
+                                .writeValue(openIdConnectProviderARNsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

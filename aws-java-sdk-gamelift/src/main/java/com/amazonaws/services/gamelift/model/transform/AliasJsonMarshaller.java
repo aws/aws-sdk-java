@@ -40,40 +40,44 @@ import com.amazonaws.util.json.*;
 public class AliasJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Alias alias, JSONWriter jsonWriter) {
+    public void marshall(Alias alias, SdkJsonGenerator jsonGenerator) {
         if (alias == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (alias.getAliasId() != null) {
-                jsonWriter.key("AliasId").value(alias.getAliasId());
+                jsonGenerator.writeFieldName("AliasId").writeValue(
+                        alias.getAliasId());
             }
             if (alias.getName() != null) {
-                jsonWriter.key("Name").value(alias.getName());
+                jsonGenerator.writeFieldName("Name")
+                        .writeValue(alias.getName());
             }
             if (alias.getDescription() != null) {
-                jsonWriter.key("Description").value(alias.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(
+                        alias.getDescription());
             }
             if (alias.getRoutingStrategy() != null) {
-                jsonWriter.key("RoutingStrategy");
+                jsonGenerator.writeFieldName("RoutingStrategy");
                 RoutingStrategyJsonMarshaller.getInstance().marshall(
-                        alias.getRoutingStrategy(), jsonWriter);
+                        alias.getRoutingStrategy(), jsonGenerator);
             }
             if (alias.getCreationTime() != null) {
-                jsonWriter.key("CreationTime").value(alias.getCreationTime());
+                jsonGenerator.writeFieldName("CreationTime").writeValue(
+                        alias.getCreationTime());
             }
             if (alias.getLastUpdatedTime() != null) {
-                jsonWriter.key("LastUpdatedTime").value(
+                jsonGenerator.writeFieldName("LastUpdatedTime").writeValue(
                         alias.getLastUpdatedTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

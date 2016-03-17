@@ -65,38 +65,37 @@ public class CreateMicrosoftADRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createMicrosoftADRequest.getName() != null) {
-                jsonWriter.key("Name")
-                        .value(createMicrosoftADRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createMicrosoftADRequest.getName());
             }
             if (createMicrosoftADRequest.getShortName() != null) {
-                jsonWriter.key("ShortName").value(
+                jsonGenerator.writeFieldName("ShortName").writeValue(
                         createMicrosoftADRequest.getShortName());
             }
             if (createMicrosoftADRequest.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         createMicrosoftADRequest.getPassword());
             }
             if (createMicrosoftADRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         createMicrosoftADRequest.getDescription());
             }
             if (createMicrosoftADRequest.getVpcSettings() != null) {
-                jsonWriter.key("VpcSettings");
+                jsonGenerator.writeFieldName("VpcSettings");
                 DirectoryVpcSettingsJsonMarshaller.getInstance().marshall(
-                        createMicrosoftADRequest.getVpcSettings(), jsonWriter);
+                        createMicrosoftADRequest.getVpcSettings(),
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

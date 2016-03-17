@@ -83,82 +83,86 @@ public class PutIntegrationRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putIntegrationRequest.getType() != null) {
-                jsonWriter.key("type").value(putIntegrationRequest.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        putIntegrationRequest.getType());
             }
             if (putIntegrationRequest.getIntegrationHttpMethod() != null) {
-                jsonWriter.key("httpMethod").value(
+                jsonGenerator.writeFieldName("httpMethod").writeValue(
                         putIntegrationRequest.getIntegrationHttpMethod());
             }
             if (putIntegrationRequest.getUri() != null) {
-                jsonWriter.key("uri").value(putIntegrationRequest.getUri());
+                jsonGenerator.writeFieldName("uri").writeValue(
+                        putIntegrationRequest.getUri());
             }
             if (putIntegrationRequest.getCredentials() != null) {
-                jsonWriter.key("credentials").value(
+                jsonGenerator.writeFieldName("credentials").writeValue(
                         putIntegrationRequest.getCredentials());
             }
 
             java.util.Map<String, String> requestParametersMap = putIntegrationRequest
                     .getRequestParameters();
             if (requestParametersMap != null) {
-                jsonWriter.key("requestParameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("requestParameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> requestParametersMapValue : requestParametersMap
                         .entrySet()) {
                     if (requestParametersMapValue.getValue() != null) {
-                        jsonWriter.key(requestParametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(requestParametersMapValue
+                                .getKey());
 
-                        jsonWriter.value(requestParametersMapValue.getValue());
+                        jsonGenerator.writeValue(requestParametersMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, String> requestTemplatesMap = putIntegrationRequest
                     .getRequestTemplates();
             if (requestTemplatesMap != null) {
-                jsonWriter.key("requestTemplates");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("requestTemplates");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> requestTemplatesMapValue : requestTemplatesMap
                         .entrySet()) {
                     if (requestTemplatesMapValue.getValue() != null) {
-                        jsonWriter.key(requestTemplatesMapValue.getKey());
+                        jsonGenerator.writeFieldName(requestTemplatesMapValue
+                                .getKey());
 
-                        jsonWriter.value(requestTemplatesMapValue.getValue());
+                        jsonGenerator.writeValue(requestTemplatesMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (putIntegrationRequest.getCacheNamespace() != null) {
-                jsonWriter.key("cacheNamespace").value(
+                jsonGenerator.writeFieldName("cacheNamespace").writeValue(
                         putIntegrationRequest.getCacheNamespace());
             }
 
             java.util.List<String> cacheKeyParametersList = putIntegrationRequest
                     .getCacheKeyParameters();
             if (cacheKeyParametersList != null) {
-                jsonWriter.key("cacheKeyParameters");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("cacheKeyParameters");
+                jsonGenerator.writeStartArray();
                 for (String cacheKeyParametersListValue : cacheKeyParametersList) {
                     if (cacheKeyParametersListValue != null) {
-                        jsonWriter.value(cacheKeyParametersListValue);
+                        jsonGenerator.writeValue(cacheKeyParametersListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

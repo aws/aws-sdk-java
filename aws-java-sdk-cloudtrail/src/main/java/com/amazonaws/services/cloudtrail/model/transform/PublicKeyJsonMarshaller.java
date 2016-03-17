@@ -40,33 +40,35 @@ import com.amazonaws.util.json.*;
 public class PublicKeyJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PublicKey publicKey, JSONWriter jsonWriter) {
+    public void marshall(PublicKey publicKey, SdkJsonGenerator jsonGenerator) {
         if (publicKey == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (publicKey.getValue() != null) {
-                jsonWriter.key("Value").value(publicKey.getValue());
+                jsonGenerator.writeFieldName("Value").writeValue(
+                        publicKey.getValue());
             }
             if (publicKey.getValidityStartTime() != null) {
-                jsonWriter.key("ValidityStartTime").value(
+                jsonGenerator.writeFieldName("ValidityStartTime").writeValue(
                         publicKey.getValidityStartTime());
             }
             if (publicKey.getValidityEndTime() != null) {
-                jsonWriter.key("ValidityEndTime").value(
+                jsonGenerator.writeFieldName("ValidityEndTime").writeValue(
                         publicKey.getValidityEndTime());
             }
             if (publicKey.getFingerprint() != null) {
-                jsonWriter.key("Fingerprint").value(publicKey.getFingerprint());
+                jsonGenerator.writeFieldName("Fingerprint").writeValue(
+                        publicKey.getFingerprint());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

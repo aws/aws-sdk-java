@@ -64,58 +64,58 @@ public class CreateMLModelRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createMLModelRequest.getMLModelId() != null) {
-                jsonWriter.key("MLModelId").value(
+                jsonGenerator.writeFieldName("MLModelId").writeValue(
                         createMLModelRequest.getMLModelId());
             }
             if (createMLModelRequest.getMLModelName() != null) {
-                jsonWriter.key("MLModelName").value(
+                jsonGenerator.writeFieldName("MLModelName").writeValue(
                         createMLModelRequest.getMLModelName());
             }
             if (createMLModelRequest.getMLModelType() != null) {
-                jsonWriter.key("MLModelType").value(
+                jsonGenerator.writeFieldName("MLModelType").writeValue(
                         createMLModelRequest.getMLModelType());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> parametersMap = (com.amazonaws.internal.SdkInternalMap<String, String>) createMLModelRequest
                     .getParameters();
             if (!parametersMap.isEmpty() || !parametersMap.isAutoConstruct()) {
-                jsonWriter.key("Parameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Parameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> parametersMapValue : parametersMap
                         .entrySet()) {
                     if (parametersMapValue.getValue() != null) {
-                        jsonWriter.key(parametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(parametersMapValue
+                                .getKey());
 
-                        jsonWriter.value(parametersMapValue.getValue());
+                        jsonGenerator.writeValue(parametersMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (createMLModelRequest.getTrainingDataSourceId() != null) {
-                jsonWriter.key("TrainingDataSourceId").value(
-                        createMLModelRequest.getTrainingDataSourceId());
+                jsonGenerator.writeFieldName("TrainingDataSourceId")
+                        .writeValue(
+                                createMLModelRequest.getTrainingDataSourceId());
             }
             if (createMLModelRequest.getRecipe() != null) {
-                jsonWriter.key("Recipe")
-                        .value(createMLModelRequest.getRecipe());
+                jsonGenerator.writeFieldName("Recipe").writeValue(
+                        createMLModelRequest.getRecipe());
             }
             if (createMLModelRequest.getRecipeUri() != null) {
-                jsonWriter.key("RecipeUri").value(
+                jsonGenerator.writeFieldName("RecipeUri").writeValue(
                         createMLModelRequest.getRecipeUri());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

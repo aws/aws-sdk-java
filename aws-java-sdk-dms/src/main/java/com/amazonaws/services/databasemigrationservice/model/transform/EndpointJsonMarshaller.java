@@ -40,56 +40,63 @@ import com.amazonaws.util.json.*;
 public class EndpointJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Endpoint endpoint, JSONWriter jsonWriter) {
+    public void marshall(Endpoint endpoint, SdkJsonGenerator jsonGenerator) {
         if (endpoint == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (endpoint.getEndpointIdentifier() != null) {
-                jsonWriter.key("EndpointIdentifier").value(
+                jsonGenerator.writeFieldName("EndpointIdentifier").writeValue(
                         endpoint.getEndpointIdentifier());
             }
             if (endpoint.getEndpointType() != null) {
-                jsonWriter.key("EndpointType")
-                        .value(endpoint.getEndpointType());
+                jsonGenerator.writeFieldName("EndpointType").writeValue(
+                        endpoint.getEndpointType());
             }
             if (endpoint.getEngineName() != null) {
-                jsonWriter.key("EngineName").value(endpoint.getEngineName());
+                jsonGenerator.writeFieldName("EngineName").writeValue(
+                        endpoint.getEngineName());
             }
             if (endpoint.getUsername() != null) {
-                jsonWriter.key("Username").value(endpoint.getUsername());
+                jsonGenerator.writeFieldName("Username").writeValue(
+                        endpoint.getUsername());
             }
             if (endpoint.getServerName() != null) {
-                jsonWriter.key("ServerName").value(endpoint.getServerName());
+                jsonGenerator.writeFieldName("ServerName").writeValue(
+                        endpoint.getServerName());
             }
             if (endpoint.getPort() != null) {
-                jsonWriter.key("Port").value(endpoint.getPort());
+                jsonGenerator.writeFieldName("Port").writeValue(
+                        endpoint.getPort());
             }
             if (endpoint.getDatabaseName() != null) {
-                jsonWriter.key("DatabaseName")
-                        .value(endpoint.getDatabaseName());
+                jsonGenerator.writeFieldName("DatabaseName").writeValue(
+                        endpoint.getDatabaseName());
             }
             if (endpoint.getExtraConnectionAttributes() != null) {
-                jsonWriter.key("ExtraConnectionAttributes").value(
-                        endpoint.getExtraConnectionAttributes());
+                jsonGenerator.writeFieldName("ExtraConnectionAttributes")
+                        .writeValue(endpoint.getExtraConnectionAttributes());
             }
             if (endpoint.getStatus() != null) {
-                jsonWriter.key("Status").value(endpoint.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        endpoint.getStatus());
             }
             if (endpoint.getKmsKeyId() != null) {
-                jsonWriter.key("KmsKeyId").value(endpoint.getKmsKeyId());
+                jsonGenerator.writeFieldName("KmsKeyId").writeValue(
+                        endpoint.getKmsKeyId());
             }
             if (endpoint.getEndpointArn() != null) {
-                jsonWriter.key("EndpointArn").value(endpoint.getEndpointArn());
+                jsonGenerator.writeFieldName("EndpointArn").writeValue(
+                        endpoint.getEndpointArn());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

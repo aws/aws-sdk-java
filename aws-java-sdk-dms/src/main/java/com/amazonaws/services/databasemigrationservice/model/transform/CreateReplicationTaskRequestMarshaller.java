@@ -66,67 +66,68 @@ public class CreateReplicationTaskRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createReplicationTaskRequest.getReplicationTaskIdentifier() != null) {
-                jsonWriter.key("ReplicationTaskIdentifier").value(
-                        createReplicationTaskRequest
-                                .getReplicationTaskIdentifier());
+                jsonGenerator.writeFieldName("ReplicationTaskIdentifier")
+                        .writeValue(
+                                createReplicationTaskRequest
+                                        .getReplicationTaskIdentifier());
             }
             if (createReplicationTaskRequest.getSourceEndpointArn() != null) {
-                jsonWriter.key("SourceEndpointArn").value(
+                jsonGenerator.writeFieldName("SourceEndpointArn").writeValue(
                         createReplicationTaskRequest.getSourceEndpointArn());
             }
             if (createReplicationTaskRequest.getTargetEndpointArn() != null) {
-                jsonWriter.key("TargetEndpointArn").value(
+                jsonGenerator.writeFieldName("TargetEndpointArn").writeValue(
                         createReplicationTaskRequest.getTargetEndpointArn());
             }
             if (createReplicationTaskRequest.getReplicationInstanceArn() != null) {
-                jsonWriter.key("ReplicationInstanceArn").value(
-                        createReplicationTaskRequest
-                                .getReplicationInstanceArn());
+                jsonGenerator.writeFieldName("ReplicationInstanceArn")
+                        .writeValue(
+                                createReplicationTaskRequest
+                                        .getReplicationInstanceArn());
             }
             if (createReplicationTaskRequest.getMigrationType() != null) {
-                jsonWriter.key("MigrationType").value(
+                jsonGenerator.writeFieldName("MigrationType").writeValue(
                         createReplicationTaskRequest.getMigrationType());
             }
             if (createReplicationTaskRequest.getTableMappings() != null) {
-                jsonWriter.key("TableMappings").value(
+                jsonGenerator.writeFieldName("TableMappings").writeValue(
                         createReplicationTaskRequest.getTableMappings());
             }
             if (createReplicationTaskRequest.getReplicationTaskSettings() != null) {
-                jsonWriter.key("ReplicationTaskSettings").value(
-                        createReplicationTaskRequest
-                                .getReplicationTaskSettings());
+                jsonGenerator.writeFieldName("ReplicationTaskSettings")
+                        .writeValue(
+                                createReplicationTaskRequest
+                                        .getReplicationTaskSettings());
             }
             if (createReplicationTaskRequest.getCdcStartTime() != null) {
-                jsonWriter.key("CdcStartTime").value(
+                jsonGenerator.writeFieldName("CdcStartTime").writeValue(
                         createReplicationTaskRequest.getCdcStartTime());
             }
 
             java.util.List<Tag> tagsList = createReplicationTaskRequest
                     .getTags();
             if (tagsList != null) {
-                jsonWriter.key("Tags");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

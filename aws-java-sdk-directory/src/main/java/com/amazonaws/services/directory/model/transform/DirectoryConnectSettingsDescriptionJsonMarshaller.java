@@ -40,43 +40,43 @@ import com.amazonaws.util.json.*;
 public class DirectoryConnectSettingsDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             DirectoryConnectSettingsDescription directoryConnectSettingsDescription,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (directoryConnectSettingsDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (directoryConnectSettingsDescription.getVpcId() != null) {
-                jsonWriter.key("VpcId").value(
+                jsonGenerator.writeFieldName("VpcId").writeValue(
                         directoryConnectSettingsDescription.getVpcId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) directoryConnectSettingsDescription
                     .getSubnetIds();
             if (!subnetIdsList.isEmpty() || !subnetIdsList.isAutoConstruct()) {
-                jsonWriter.key("SubnetIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SubnetIds");
+                jsonGenerator.writeStartArray();
                 for (String subnetIdsListValue : subnetIdsList) {
                     if (subnetIdsListValue != null) {
-                        jsonWriter.value(subnetIdsListValue);
+                        jsonGenerator.writeValue(subnetIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (directoryConnectSettingsDescription.getCustomerUserName() != null) {
-                jsonWriter.key("CustomerUserName").value(
+                jsonGenerator.writeFieldName("CustomerUserName").writeValue(
                         directoryConnectSettingsDescription
                                 .getCustomerUserName());
             }
             if (directoryConnectSettingsDescription.getSecurityGroupId() != null) {
-                jsonWriter.key("SecurityGroupId").value(
+                jsonGenerator.writeFieldName("SecurityGroupId").writeValue(
                         directoryConnectSettingsDescription
                                 .getSecurityGroupId());
             }
@@ -85,30 +85,30 @@ public class DirectoryConnectSettingsDescriptionJsonMarshaller {
                     .getAvailabilityZones();
             if (!availabilityZonesList.isEmpty()
                     || !availabilityZonesList.isAutoConstruct()) {
-                jsonWriter.key("AvailabilityZones");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AvailabilityZones");
+                jsonGenerator.writeStartArray();
                 for (String availabilityZonesListValue : availabilityZonesList) {
                     if (availabilityZonesListValue != null) {
-                        jsonWriter.value(availabilityZonesListValue);
+                        jsonGenerator.writeValue(availabilityZonesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> connectIpsList = (com.amazonaws.internal.SdkInternalList<String>) directoryConnectSettingsDescription
                     .getConnectIps();
             if (!connectIpsList.isEmpty() || !connectIpsList.isAutoConstruct()) {
-                jsonWriter.key("ConnectIps");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ConnectIps");
+                jsonGenerator.writeStartArray();
                 for (String connectIpsListValue : connectIpsList) {
                     if (connectIpsListValue != null) {
-                        jsonWriter.value(connectIpsListValue);
+                        jsonGenerator.writeValue(connectIpsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

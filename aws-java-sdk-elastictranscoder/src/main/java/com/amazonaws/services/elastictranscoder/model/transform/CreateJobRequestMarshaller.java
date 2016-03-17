@@ -66,83 +66,83 @@ public class CreateJobRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createJobRequest.getPipelineId() != null) {
-                jsonWriter.key("PipelineId").value(
+                jsonGenerator.writeFieldName("PipelineId").writeValue(
                         createJobRequest.getPipelineId());
             }
             if (createJobRequest.getInput() != null) {
-                jsonWriter.key("Input");
+                jsonGenerator.writeFieldName("Input");
                 JobInputJsonMarshaller.getInstance().marshall(
-                        createJobRequest.getInput(), jsonWriter);
+                        createJobRequest.getInput(), jsonGenerator);
             }
             if (createJobRequest.getOutput() != null) {
-                jsonWriter.key("Output");
+                jsonGenerator.writeFieldName("Output");
                 CreateJobOutputJsonMarshaller.getInstance().marshall(
-                        createJobRequest.getOutput(), jsonWriter);
+                        createJobRequest.getOutput(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<CreateJobOutput> outputsList = (com.amazonaws.internal.SdkInternalList<CreateJobOutput>) createJobRequest
                     .getOutputs();
             if (!outputsList.isEmpty() || !outputsList.isAutoConstruct()) {
-                jsonWriter.key("Outputs");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Outputs");
+                jsonGenerator.writeStartArray();
                 for (CreateJobOutput outputsListValue : outputsList) {
                     if (outputsListValue != null) {
 
                         CreateJobOutputJsonMarshaller.getInstance().marshall(
-                                outputsListValue, jsonWriter);
+                                outputsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (createJobRequest.getOutputKeyPrefix() != null) {
-                jsonWriter.key("OutputKeyPrefix").value(
+                jsonGenerator.writeFieldName("OutputKeyPrefix").writeValue(
                         createJobRequest.getOutputKeyPrefix());
             }
 
             com.amazonaws.internal.SdkInternalList<CreateJobPlaylist> playlistsList = (com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>) createJobRequest
                     .getPlaylists();
             if (!playlistsList.isEmpty() || !playlistsList.isAutoConstruct()) {
-                jsonWriter.key("Playlists");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Playlists");
+                jsonGenerator.writeStartArray();
                 for (CreateJobPlaylist playlistsListValue : playlistsList) {
                     if (playlistsListValue != null) {
 
                         CreateJobPlaylistJsonMarshaller.getInstance().marshall(
-                                playlistsListValue, jsonWriter);
+                                playlistsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> userMetadataMap = (com.amazonaws.internal.SdkInternalMap<String, String>) createJobRequest
                     .getUserMetadata();
             if (!userMetadataMap.isEmpty()
                     || !userMetadataMap.isAutoConstruct()) {
-                jsonWriter.key("UserMetadata");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("UserMetadata");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> userMetadataMapValue : userMetadataMap
                         .entrySet()) {
                     if (userMetadataMapValue.getValue() != null) {
-                        jsonWriter.key(userMetadataMapValue.getKey());
+                        jsonGenerator.writeFieldName(userMetadataMapValue
+                                .getKey());
 
-                        jsonWriter.value(userMetadataMapValue.getValue());
+                        jsonGenerator.writeValue(userMetadataMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

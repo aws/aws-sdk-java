@@ -40,73 +40,79 @@ import com.amazonaws.util.json.*;
 public class InstanceGroupDetailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(InstanceGroupDetail instanceGroupDetail,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (instanceGroupDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceGroupDetail.getInstanceGroupId() != null) {
-                jsonWriter.key("InstanceGroupId").value(
+                jsonGenerator.writeFieldName("InstanceGroupId").writeValue(
                         instanceGroupDetail.getInstanceGroupId());
             }
             if (instanceGroupDetail.getName() != null) {
-                jsonWriter.key("Name").value(instanceGroupDetail.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        instanceGroupDetail.getName());
             }
             if (instanceGroupDetail.getMarket() != null) {
-                jsonWriter.key("Market").value(instanceGroupDetail.getMarket());
+                jsonGenerator.writeFieldName("Market").writeValue(
+                        instanceGroupDetail.getMarket());
             }
             if (instanceGroupDetail.getInstanceRole() != null) {
-                jsonWriter.key("InstanceRole").value(
+                jsonGenerator.writeFieldName("InstanceRole").writeValue(
                         instanceGroupDetail.getInstanceRole());
             }
             if (instanceGroupDetail.getBidPrice() != null) {
-                jsonWriter.key("BidPrice").value(
+                jsonGenerator.writeFieldName("BidPrice").writeValue(
                         instanceGroupDetail.getBidPrice());
             }
             if (instanceGroupDetail.getInstanceType() != null) {
-                jsonWriter.key("InstanceType").value(
+                jsonGenerator.writeFieldName("InstanceType").writeValue(
                         instanceGroupDetail.getInstanceType());
             }
             if (instanceGroupDetail.getInstanceRequestCount() != null) {
-                jsonWriter.key("InstanceRequestCount").value(
-                        instanceGroupDetail.getInstanceRequestCount());
+                jsonGenerator.writeFieldName("InstanceRequestCount")
+                        .writeValue(
+                                instanceGroupDetail.getInstanceRequestCount());
             }
             if (instanceGroupDetail.getInstanceRunningCount() != null) {
-                jsonWriter.key("InstanceRunningCount").value(
-                        instanceGroupDetail.getInstanceRunningCount());
+                jsonGenerator.writeFieldName("InstanceRunningCount")
+                        .writeValue(
+                                instanceGroupDetail.getInstanceRunningCount());
             }
             if (instanceGroupDetail.getState() != null) {
-                jsonWriter.key("State").value(instanceGroupDetail.getState());
+                jsonGenerator.writeFieldName("State").writeValue(
+                        instanceGroupDetail.getState());
             }
             if (instanceGroupDetail.getLastStateChangeReason() != null) {
-                jsonWriter.key("LastStateChangeReason").value(
-                        instanceGroupDetail.getLastStateChangeReason());
+                jsonGenerator.writeFieldName("LastStateChangeReason")
+                        .writeValue(
+                                instanceGroupDetail.getLastStateChangeReason());
             }
             if (instanceGroupDetail.getCreationDateTime() != null) {
-                jsonWriter.key("CreationDateTime").value(
+                jsonGenerator.writeFieldName("CreationDateTime").writeValue(
                         instanceGroupDetail.getCreationDateTime());
             }
             if (instanceGroupDetail.getStartDateTime() != null) {
-                jsonWriter.key("StartDateTime").value(
+                jsonGenerator.writeFieldName("StartDateTime").writeValue(
                         instanceGroupDetail.getStartDateTime());
             }
             if (instanceGroupDetail.getReadyDateTime() != null) {
-                jsonWriter.key("ReadyDateTime").value(
+                jsonGenerator.writeFieldName("ReadyDateTime").writeValue(
                         instanceGroupDetail.getReadyDateTime());
             }
             if (instanceGroupDetail.getEndDateTime() != null) {
-                jsonWriter.key("EndDateTime").value(
+                jsonGenerator.writeFieldName("EndDateTime").writeValue(
                         instanceGroupDetail.getEndDateTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

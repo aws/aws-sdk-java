@@ -40,56 +40,60 @@ import com.amazonaws.util.json.*;
 public class ApplicationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Application application, JSONWriter jsonWriter) {
+    public void marshall(Application application, SdkJsonGenerator jsonGenerator) {
         if (application == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (application.getName() != null) {
-                jsonWriter.key("Name").value(application.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        application.getName());
             }
             if (application.getVersion() != null) {
-                jsonWriter.key("Version").value(application.getVersion());
+                jsonGenerator.writeFieldName("Version").writeValue(
+                        application.getVersion());
             }
 
             com.amazonaws.internal.SdkInternalList<String> argsList = (com.amazonaws.internal.SdkInternalList<String>) application
                     .getArgs();
             if (!argsList.isEmpty() || !argsList.isAutoConstruct()) {
-                jsonWriter.key("Args");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Args");
+                jsonGenerator.writeStartArray();
                 for (String argsListValue : argsList) {
                     if (argsListValue != null) {
-                        jsonWriter.value(argsListValue);
+                        jsonGenerator.writeValue(argsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> additionalInfoMap = (com.amazonaws.internal.SdkInternalMap<String, String>) application
                     .getAdditionalInfo();
             if (!additionalInfoMap.isEmpty()
                     || !additionalInfoMap.isAutoConstruct()) {
-                jsonWriter.key("AdditionalInfo");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("AdditionalInfo");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> additionalInfoMapValue : additionalInfoMap
                         .entrySet()) {
                     if (additionalInfoMapValue.getValue() != null) {
-                        jsonWriter.key(additionalInfoMapValue.getKey());
+                        jsonGenerator.writeFieldName(additionalInfoMapValue
+                                .getKey());
 
-                        jsonWriter.value(additionalInfoMapValue.getValue());
+                        jsonGenerator.writeValue(additionalInfoMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

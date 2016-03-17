@@ -40,27 +40,29 @@ import com.amazonaws.util.json.*;
 public class WebACLUpdateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(WebACLUpdate webACLUpdate, JSONWriter jsonWriter) {
+    public void marshall(WebACLUpdate webACLUpdate,
+            SdkJsonGenerator jsonGenerator) {
         if (webACLUpdate == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (webACLUpdate.getAction() != null) {
-                jsonWriter.key("Action").value(webACLUpdate.getAction());
+                jsonGenerator.writeFieldName("Action").writeValue(
+                        webACLUpdate.getAction());
             }
             if (webACLUpdate.getActivatedRule() != null) {
-                jsonWriter.key("ActivatedRule");
+                jsonGenerator.writeFieldName("ActivatedRule");
                 ActivatedRuleJsonMarshaller.getInstance().marshall(
-                        webACLUpdate.getActivatedRule(), jsonWriter);
+                        webACLUpdate.getActivatedRule(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -64,162 +64,162 @@ public class RunJobFlowRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (runJobFlowRequest.getName() != null) {
-                jsonWriter.key("Name").value(runJobFlowRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        runJobFlowRequest.getName());
             }
             if (runJobFlowRequest.getLogUri() != null) {
-                jsonWriter.key("LogUri").value(runJobFlowRequest.getLogUri());
+                jsonGenerator.writeFieldName("LogUri").writeValue(
+                        runJobFlowRequest.getLogUri());
             }
             if (runJobFlowRequest.getAdditionalInfo() != null) {
-                jsonWriter.key("AdditionalInfo").value(
+                jsonGenerator.writeFieldName("AdditionalInfo").writeValue(
                         runJobFlowRequest.getAdditionalInfo());
             }
             if (runJobFlowRequest.getAmiVersion() != null) {
-                jsonWriter.key("AmiVersion").value(
+                jsonGenerator.writeFieldName("AmiVersion").writeValue(
                         runJobFlowRequest.getAmiVersion());
             }
             if (runJobFlowRequest.getReleaseLabel() != null) {
-                jsonWriter.key("ReleaseLabel").value(
+                jsonGenerator.writeFieldName("ReleaseLabel").writeValue(
                         runJobFlowRequest.getReleaseLabel());
             }
             if (runJobFlowRequest.getInstances() != null) {
-                jsonWriter.key("Instances");
+                jsonGenerator.writeFieldName("Instances");
                 JobFlowInstancesConfigJsonMarshaller.getInstance().marshall(
-                        runJobFlowRequest.getInstances(), jsonWriter);
+                        runJobFlowRequest.getInstances(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<StepConfig> stepsList = (com.amazonaws.internal.SdkInternalList<StepConfig>) runJobFlowRequest
                     .getSteps();
             if (!stepsList.isEmpty() || !stepsList.isAutoConstruct()) {
-                jsonWriter.key("Steps");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Steps");
+                jsonGenerator.writeStartArray();
                 for (StepConfig stepsListValue : stepsList) {
                     if (stepsListValue != null) {
 
                         StepConfigJsonMarshaller.getInstance().marshall(
-                                stepsListValue, jsonWriter);
+                                stepsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<BootstrapActionConfig> bootstrapActionsList = (com.amazonaws.internal.SdkInternalList<BootstrapActionConfig>) runJobFlowRequest
                     .getBootstrapActions();
             if (!bootstrapActionsList.isEmpty()
                     || !bootstrapActionsList.isAutoConstruct()) {
-                jsonWriter.key("BootstrapActions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("BootstrapActions");
+                jsonGenerator.writeStartArray();
                 for (BootstrapActionConfig bootstrapActionsListValue : bootstrapActionsList) {
                     if (bootstrapActionsListValue != null) {
 
-                        BootstrapActionConfigJsonMarshaller
-                                .getInstance()
-                                .marshall(bootstrapActionsListValue, jsonWriter);
+                        BootstrapActionConfigJsonMarshaller.getInstance()
+                                .marshall(bootstrapActionsListValue,
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> supportedProductsList = (com.amazonaws.internal.SdkInternalList<String>) runJobFlowRequest
                     .getSupportedProducts();
             if (!supportedProductsList.isEmpty()
                     || !supportedProductsList.isAutoConstruct()) {
-                jsonWriter.key("SupportedProducts");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SupportedProducts");
+                jsonGenerator.writeStartArray();
                 for (String supportedProductsListValue : supportedProductsList) {
                     if (supportedProductsListValue != null) {
-                        jsonWriter.value(supportedProductsListValue);
+                        jsonGenerator.writeValue(supportedProductsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<SupportedProductConfig> newSupportedProductsList = (com.amazonaws.internal.SdkInternalList<SupportedProductConfig>) runJobFlowRequest
                     .getNewSupportedProducts();
             if (!newSupportedProductsList.isEmpty()
                     || !newSupportedProductsList.isAutoConstruct()) {
-                jsonWriter.key("NewSupportedProducts");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("NewSupportedProducts");
+                jsonGenerator.writeStartArray();
                 for (SupportedProductConfig newSupportedProductsListValue : newSupportedProductsList) {
                     if (newSupportedProductsListValue != null) {
 
                         SupportedProductConfigJsonMarshaller.getInstance()
                                 .marshall(newSupportedProductsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<Application> applicationsList = (com.amazonaws.internal.SdkInternalList<Application>) runJobFlowRequest
                     .getApplications();
             if (!applicationsList.isEmpty()
                     || !applicationsList.isAutoConstruct()) {
-                jsonWriter.key("Applications");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Applications");
+                jsonGenerator.writeStartArray();
                 for (Application applicationsListValue : applicationsList) {
                     if (applicationsListValue != null) {
 
                         ApplicationJsonMarshaller.getInstance().marshall(
-                                applicationsListValue, jsonWriter);
+                                applicationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<Configuration> configurationsList = (com.amazonaws.internal.SdkInternalList<Configuration>) runJobFlowRequest
                     .getConfigurations();
             if (!configurationsList.isEmpty()
                     || !configurationsList.isAutoConstruct()) {
-                jsonWriter.key("Configurations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Configurations");
+                jsonGenerator.writeStartArray();
                 for (Configuration configurationsListValue : configurationsList) {
                     if (configurationsListValue != null) {
 
                         ConfigurationJsonMarshaller.getInstance().marshall(
-                                configurationsListValue, jsonWriter);
+                                configurationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (runJobFlowRequest.getVisibleToAllUsers() != null) {
-                jsonWriter.key("VisibleToAllUsers").value(
+                jsonGenerator.writeFieldName("VisibleToAllUsers").writeValue(
                         runJobFlowRequest.getVisibleToAllUsers());
             }
             if (runJobFlowRequest.getJobFlowRole() != null) {
-                jsonWriter.key("JobFlowRole").value(
+                jsonGenerator.writeFieldName("JobFlowRole").writeValue(
                         runJobFlowRequest.getJobFlowRole());
             }
             if (runJobFlowRequest.getServiceRole() != null) {
-                jsonWriter.key("ServiceRole").value(
+                jsonGenerator.writeFieldName("ServiceRole").writeValue(
                         runJobFlowRequest.getServiceRole());
             }
 
             com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) runJobFlowRequest
                     .getTags();
             if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
-                jsonWriter.key("Tags");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

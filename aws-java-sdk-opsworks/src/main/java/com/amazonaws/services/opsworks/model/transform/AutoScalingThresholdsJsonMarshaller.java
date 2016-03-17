@@ -40,57 +40,57 @@ import com.amazonaws.util.json.*;
 public class AutoScalingThresholdsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AutoScalingThresholds autoScalingThresholds,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (autoScalingThresholds == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (autoScalingThresholds.getInstanceCount() != null) {
-                jsonWriter.key("InstanceCount").value(
+                jsonGenerator.writeFieldName("InstanceCount").writeValue(
                         autoScalingThresholds.getInstanceCount());
             }
             if (autoScalingThresholds.getThresholdsWaitTime() != null) {
-                jsonWriter.key("ThresholdsWaitTime").value(
+                jsonGenerator.writeFieldName("ThresholdsWaitTime").writeValue(
                         autoScalingThresholds.getThresholdsWaitTime());
             }
             if (autoScalingThresholds.getIgnoreMetricsTime() != null) {
-                jsonWriter.key("IgnoreMetricsTime").value(
+                jsonGenerator.writeFieldName("IgnoreMetricsTime").writeValue(
                         autoScalingThresholds.getIgnoreMetricsTime());
             }
             if (autoScalingThresholds.getCpuThreshold() != null) {
-                jsonWriter.key("CpuThreshold").value(
+                jsonGenerator.writeFieldName("CpuThreshold").writeValue(
                         autoScalingThresholds.getCpuThreshold());
             }
             if (autoScalingThresholds.getMemoryThreshold() != null) {
-                jsonWriter.key("MemoryThreshold").value(
+                jsonGenerator.writeFieldName("MemoryThreshold").writeValue(
                         autoScalingThresholds.getMemoryThreshold());
             }
             if (autoScalingThresholds.getLoadThreshold() != null) {
-                jsonWriter.key("LoadThreshold").value(
+                jsonGenerator.writeFieldName("LoadThreshold").writeValue(
                         autoScalingThresholds.getLoadThreshold());
             }
 
             com.amazonaws.internal.SdkInternalList<String> alarmsList = (com.amazonaws.internal.SdkInternalList<String>) autoScalingThresholds
                     .getAlarms();
             if (!alarmsList.isEmpty() || !alarmsList.isAutoConstruct()) {
-                jsonWriter.key("Alarms");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Alarms");
+                jsonGenerator.writeStartArray();
                 for (String alarmsListValue : alarmsList) {
                     if (alarmsListValue != null) {
-                        jsonWriter.value(alarmsListValue);
+                        jsonGenerator.writeValue(alarmsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

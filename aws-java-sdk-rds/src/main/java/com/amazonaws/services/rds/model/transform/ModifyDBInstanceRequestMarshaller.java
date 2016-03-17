@@ -138,6 +138,9 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         if (modifyDBInstanceRequest.getMonitoringRoleArn() != null) {
             request.addParameter("MonitoringRoleArn", StringUtils.fromString(modifyDBInstanceRequest.getMonitoringRoleArn()));
         }
+        if (modifyDBInstanceRequest.getPromotionTier() != null) {
+            request.addParameter("PromotionTier", StringUtils.fromInteger(modifyDBInstanceRequest.getPromotionTier()));
+        }
 
         return request;
     }

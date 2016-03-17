@@ -40,32 +40,32 @@ import com.amazonaws.util.json.*;
 public class EvaluationResultQualifierJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(EvaluationResultQualifier evaluationResultQualifier,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (evaluationResultQualifier == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (evaluationResultQualifier.getConfigRuleName() != null) {
-                jsonWriter.key("ConfigRuleName").value(
+                jsonGenerator.writeFieldName("ConfigRuleName").writeValue(
                         evaluationResultQualifier.getConfigRuleName());
             }
             if (evaluationResultQualifier.getResourceType() != null) {
-                jsonWriter.key("ResourceType").value(
+                jsonGenerator.writeFieldName("ResourceType").writeValue(
                         evaluationResultQualifier.getResourceType());
             }
             if (evaluationResultQualifier.getResourceId() != null) {
-                jsonWriter.key("ResourceId").value(
+                jsonGenerator.writeFieldName("ResourceId").writeValue(
                         evaluationResultQualifier.getResourceId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

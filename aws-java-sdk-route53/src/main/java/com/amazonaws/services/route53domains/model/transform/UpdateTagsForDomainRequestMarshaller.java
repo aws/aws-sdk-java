@@ -66,13 +66,12 @@ public class UpdateTagsForDomainRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateTagsForDomainRequest.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         updateTagsForDomainRequest.getDomainName());
             }
 
@@ -80,23 +79,22 @@ public class UpdateTagsForDomainRequestMarshaller
                     .getTagsToUpdate();
             if (!tagsToUpdateList.isEmpty()
                     || !tagsToUpdateList.isAutoConstruct()) {
-                jsonWriter.key("TagsToUpdate");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TagsToUpdate");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsToUpdateListValue : tagsToUpdateList) {
                     if (tagsToUpdateListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(
-                                tagsToUpdateListValue, jsonWriter);
+                                tagsToUpdateListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,41 +40,42 @@ import com.amazonaws.util.json.*;
 public class DeliveryChannelStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DeliveryChannelStatus deliveryChannelStatus,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (deliveryChannelStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deliveryChannelStatus.getName() != null) {
-                jsonWriter.key("name").value(deliveryChannelStatus.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        deliveryChannelStatus.getName());
             }
             if (deliveryChannelStatus.getConfigSnapshotDeliveryInfo() != null) {
-                jsonWriter.key("configSnapshotDeliveryInfo");
+                jsonGenerator.writeFieldName("configSnapshotDeliveryInfo");
                 ConfigExportDeliveryInfoJsonMarshaller.getInstance().marshall(
                         deliveryChannelStatus.getConfigSnapshotDeliveryInfo(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (deliveryChannelStatus.getConfigHistoryDeliveryInfo() != null) {
-                jsonWriter.key("configHistoryDeliveryInfo");
+                jsonGenerator.writeFieldName("configHistoryDeliveryInfo");
                 ConfigExportDeliveryInfoJsonMarshaller.getInstance().marshall(
                         deliveryChannelStatus.getConfigHistoryDeliveryInfo(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (deliveryChannelStatus.getConfigStreamDeliveryInfo() != null) {
-                jsonWriter.key("configStreamDeliveryInfo");
+                jsonGenerator.writeFieldName("configStreamDeliveryInfo");
                 ConfigStreamDeliveryInfoJsonMarshaller.getInstance().marshall(
                         deliveryChannelStatus.getConfigStreamDeliveryInfo(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

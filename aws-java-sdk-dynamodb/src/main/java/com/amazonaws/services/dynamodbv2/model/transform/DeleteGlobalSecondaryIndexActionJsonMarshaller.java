@@ -40,25 +40,25 @@ import com.amazonaws.util.json.*;
 public class DeleteGlobalSecondaryIndexActionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             DeleteGlobalSecondaryIndexAction deleteGlobalSecondaryIndexAction,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (deleteGlobalSecondaryIndexAction == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deleteGlobalSecondaryIndexAction.getIndexName() != null) {
-                jsonWriter.key("IndexName").value(
+                jsonGenerator.writeFieldName("IndexName").writeValue(
                         deleteGlobalSecondaryIndexAction.getIndexName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

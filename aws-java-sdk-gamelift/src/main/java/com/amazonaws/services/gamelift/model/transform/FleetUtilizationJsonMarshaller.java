@@ -40,35 +40,41 @@ import com.amazonaws.util.json.*;
 public class FleetUtilizationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(FleetUtilization fleetUtilization,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (fleetUtilization == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (fleetUtilization.getFleetId() != null) {
-                jsonWriter.key("FleetId").value(fleetUtilization.getFleetId());
+                jsonGenerator.writeFieldName("FleetId").writeValue(
+                        fleetUtilization.getFleetId());
             }
             if (fleetUtilization.getActiveGameSessionCount() != null) {
-                jsonWriter.key("ActiveGameSessionCount").value(
-                        fleetUtilization.getActiveGameSessionCount());
+                jsonGenerator.writeFieldName("ActiveGameSessionCount")
+                        .writeValue(
+                                fleetUtilization.getActiveGameSessionCount());
             }
             if (fleetUtilization.getCurrentPlayerSessionCount() != null) {
-                jsonWriter.key("CurrentPlayerSessionCount").value(
-                        fleetUtilization.getCurrentPlayerSessionCount());
+                jsonGenerator
+                        .writeFieldName("CurrentPlayerSessionCount")
+                        .writeValue(
+                                fleetUtilization.getCurrentPlayerSessionCount());
             }
             if (fleetUtilization.getMaximumPlayerSessionCount() != null) {
-                jsonWriter.key("MaximumPlayerSessionCount").value(
-                        fleetUtilization.getMaximumPlayerSessionCount());
+                jsonGenerator
+                        .writeFieldName("MaximumPlayerSessionCount")
+                        .writeValue(
+                                fleetUtilization.getMaximumPlayerSessionCount());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

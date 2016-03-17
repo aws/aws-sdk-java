@@ -64,31 +64,29 @@ public class CreateWorkspacesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<WorkspaceRequest> workspacesList = (com.amazonaws.internal.SdkInternalList<WorkspaceRequest>) createWorkspacesRequest
                     .getWorkspaces();
             if (!workspacesList.isEmpty() || !workspacesList.isAutoConstruct()) {
-                jsonWriter.key("Workspaces");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Workspaces");
+                jsonGenerator.writeStartArray();
                 for (WorkspaceRequest workspacesListValue : workspacesList) {
                     if (workspacesListValue != null) {
 
                         WorkspaceRequestJsonMarshaller.getInstance().marshall(
-                                workspacesListValue, jsonWriter);
+                                workspacesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

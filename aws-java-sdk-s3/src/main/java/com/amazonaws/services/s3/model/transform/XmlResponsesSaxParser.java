@@ -17,6 +17,7 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import com.amazonaws.services.s3.model.AbortIncompleteMultipartUpload;
 import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.BufferedReader;
@@ -2114,6 +2115,9 @@ public class XmlResponsesSaxParser {
          <Expiration>
              <Date>2020-12-31T00:00:00.000Z</Date>
          </Expiration>
+        <AbortIncompleteMultipartUpload>
+            <DaysAfterInitiation>10</DaysAfterInitiation>
+        </AbortIncompleteMultipartUpload>
      </Rule>
   </LifecycleConfiguration>
      */
@@ -2125,6 +2129,7 @@ public class XmlResponsesSaxParser {
         private Rule currentRule;
         private Transition currentTransition;
         private NoncurrentVersionTransition currentNcvTransition;
+        private AbortIncompleteMultipartUpload abortIncompleteMultipartUpload;
 
         public BucketLifecycleConfiguration getConfiguration() {
             return configuration;
@@ -2146,6 +2151,9 @@ public class XmlResponsesSaxParser {
                     currentTransition = new Transition();
                 } else if (name.equals("NoncurrentVersionTransition")) {
                     currentNcvTransition = new NoncurrentVersionTransition();
+                } else if (name.equals("AbortIncompleteMultipartUpload")) {
+                    abortIncompleteMultipartUpload = new
+                            AbortIncompleteMultipartUpload();
                 }
             }
         }
@@ -2177,16 +2185,21 @@ public class XmlResponsesSaxParser {
                     currentRule.addNoncurrentVersionTransition(
                             currentNcvTransition);
                     currentNcvTransition = null;
+                } else if (name.equals("AbortIncompleteMultipartUpload")) {
+                    currentRule.setAbortIncompleteMultipartUpload(abortIncompleteMultipartUpload);
+                    abortIncompleteMultipartUpload = null;
                 }
             }
 
             else if (in("LifecycleConfiguration", "Rule", "Expiration")) {
                 if (name.equals("Date")) {
-                    currentRule.setExpirationDate(
-                            ServiceUtils.parseIso8601Date(getText()));
+                    currentRule.setExpirationDate(ServiceUtils.parseIso8601Date(getText()));
                 } else if (name.equals("Days")) {
-                    currentRule.setExpirationInDays(
-                            Integer.parseInt(getText()));
+                    currentRule.setExpirationInDays(Integer.parseInt(getText()));
+                } else if (name.equals("ExpiredObjectDeleteMarker")) {
+                    if ("true".equals(getText())) {
+                        currentRule.setExpiredObjectDeleteMarker(true);
+                    }
                 }
             }
 
@@ -2214,6 +2227,13 @@ public class XmlResponsesSaxParser {
                     currentNcvTransition.setStorageClass(getText());
                 } else if (name.equals("NoncurrentDays")) {
                     currentNcvTransition.setDays(Integer.parseInt(getText()));
+                }
+            }
+
+            else if (in("LifecycleConfiguration", "Rule", "AbortIncompleteMultipartUpload")) {
+                if (name.equals("DaysAfterInitiation")) {
+                    abortIncompleteMultipartUpload.setDaysAfterInitiation
+                            (Integer.parseInt(getText()));
                 }
             }
         }

@@ -40,51 +40,52 @@ import com.amazonaws.util.json.*;
 public class RedshiftDataSpecJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RedshiftDataSpec redshiftDataSpec,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (redshiftDataSpec == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (redshiftDataSpec.getDatabaseInformation() != null) {
-                jsonWriter.key("DatabaseInformation");
+                jsonGenerator.writeFieldName("DatabaseInformation");
                 RedshiftDatabaseJsonMarshaller.getInstance().marshall(
-                        redshiftDataSpec.getDatabaseInformation(), jsonWriter);
+                        redshiftDataSpec.getDatabaseInformation(),
+                        jsonGenerator);
             }
             if (redshiftDataSpec.getSelectSqlQuery() != null) {
-                jsonWriter.key("SelectSqlQuery").value(
+                jsonGenerator.writeFieldName("SelectSqlQuery").writeValue(
                         redshiftDataSpec.getSelectSqlQuery());
             }
             if (redshiftDataSpec.getDatabaseCredentials() != null) {
-                jsonWriter.key("DatabaseCredentials");
+                jsonGenerator.writeFieldName("DatabaseCredentials");
                 RedshiftDatabaseCredentialsJsonMarshaller.getInstance()
                         .marshall(redshiftDataSpec.getDatabaseCredentials(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (redshiftDataSpec.getS3StagingLocation() != null) {
-                jsonWriter.key("S3StagingLocation").value(
+                jsonGenerator.writeFieldName("S3StagingLocation").writeValue(
                         redshiftDataSpec.getS3StagingLocation());
             }
             if (redshiftDataSpec.getDataRearrangement() != null) {
-                jsonWriter.key("DataRearrangement").value(
+                jsonGenerator.writeFieldName("DataRearrangement").writeValue(
                         redshiftDataSpec.getDataRearrangement());
             }
             if (redshiftDataSpec.getDataSchema() != null) {
-                jsonWriter.key("DataSchema").value(
+                jsonGenerator.writeFieldName("DataSchema").writeValue(
                         redshiftDataSpec.getDataSchema());
             }
             if (redshiftDataSpec.getDataSchemaUri() != null) {
-                jsonWriter.key("DataSchemaUri").value(
+                jsonGenerator.writeFieldName("DataSchemaUri").writeValue(
                         redshiftDataSpec.getDataSchemaUri());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

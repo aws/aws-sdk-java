@@ -40,25 +40,27 @@ import com.amazonaws.util.json.*;
 public class HostEntryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(HostEntry hostEntry, JSONWriter jsonWriter) {
+    public void marshall(HostEntry hostEntry, SdkJsonGenerator jsonGenerator) {
         if (hostEntry == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (hostEntry.getHostname() != null) {
-                jsonWriter.key("hostname").value(hostEntry.getHostname());
+                jsonGenerator.writeFieldName("hostname").writeValue(
+                        hostEntry.getHostname());
             }
             if (hostEntry.getIpAddress() != null) {
-                jsonWriter.key("ipAddress").value(hostEntry.getIpAddress());
+                jsonGenerator.writeFieldName("ipAddress").writeValue(
+                        hostEntry.getIpAddress());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,56 +40,57 @@ import com.amazonaws.util.json.*;
 public class RepositoryTriggerJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RepositoryTrigger repositoryTrigger,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (repositoryTrigger == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (repositoryTrigger.getName() != null) {
-                jsonWriter.key("name").value(repositoryTrigger.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        repositoryTrigger.getName());
             }
             if (repositoryTrigger.getDestinationArn() != null) {
-                jsonWriter.key("destinationArn").value(
+                jsonGenerator.writeFieldName("destinationArn").writeValue(
                         repositoryTrigger.getDestinationArn());
             }
             if (repositoryTrigger.getCustomData() != null) {
-                jsonWriter.key("customData").value(
+                jsonGenerator.writeFieldName("customData").writeValue(
                         repositoryTrigger.getCustomData());
             }
 
             java.util.List<String> branchesList = repositoryTrigger
                     .getBranches();
             if (branchesList != null) {
-                jsonWriter.key("branches");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("branches");
+                jsonGenerator.writeStartArray();
                 for (String branchesListValue : branchesList) {
                     if (branchesListValue != null) {
-                        jsonWriter.value(branchesListValue);
+                        jsonGenerator.writeValue(branchesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<String> eventsList = repositoryTrigger.getEvents();
             if (eventsList != null) {
-                jsonWriter.key("events");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("events");
+                jsonGenerator.writeStartArray();
                 for (String eventsListValue : eventsList) {
                     if (eventsListValue != null) {
-                        jsonWriter.value(eventsListValue);
+                        jsonGenerator.writeValue(eventsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,49 +40,55 @@ import com.amazonaws.util.json.*;
 public class RunJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Run run, JSONWriter jsonWriter) {
+    public void marshall(Run run, SdkJsonGenerator jsonGenerator) {
         if (run == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (run.getRunArn() != null) {
-                jsonWriter.key("runArn").value(run.getRunArn());
+                jsonGenerator.writeFieldName("runArn").writeValue(
+                        run.getRunArn());
             }
             if (run.getRunName() != null) {
-                jsonWriter.key("runName").value(run.getRunName());
+                jsonGenerator.writeFieldName("runName").writeValue(
+                        run.getRunName());
             }
             if (run.getAssessmentArn() != null) {
-                jsonWriter.key("assessmentArn").value(run.getAssessmentArn());
+                jsonGenerator.writeFieldName("assessmentArn").writeValue(
+                        run.getAssessmentArn());
             }
             if (run.getRunState() != null) {
-                jsonWriter.key("runState").value(run.getRunState());
+                jsonGenerator.writeFieldName("runState").writeValue(
+                        run.getRunState());
             }
 
             java.util.List<String> rulesPackagesList = run.getRulesPackages();
             if (rulesPackagesList != null) {
-                jsonWriter.key("rulesPackages");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("rulesPackages");
+                jsonGenerator.writeStartArray();
                 for (String rulesPackagesListValue : rulesPackagesList) {
                     if (rulesPackagesListValue != null) {
-                        jsonWriter.value(rulesPackagesListValue);
+                        jsonGenerator.writeValue(rulesPackagesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (run.getCreationTime() != null) {
-                jsonWriter.key("creationTime").value(run.getCreationTime());
+                jsonGenerator.writeFieldName("creationTime").writeValue(
+                        run.getCreationTime());
             }
             if (run.getCompletionTime() != null) {
-                jsonWriter.key("completionTime").value(run.getCompletionTime());
+                jsonGenerator.writeFieldName("completionTime").writeValue(
+                        run.getCompletionTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

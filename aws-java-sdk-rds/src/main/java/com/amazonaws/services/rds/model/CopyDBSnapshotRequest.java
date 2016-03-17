@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#copyDBSnapshot(CopyDBSnapshotRequest) CopyDBSnapshot operation}.
  * <p>
- * Copies the specified DBSnapshot. The source DB snapshot must be in
+ * Copies the specified DB Snapshot. The source DB snapshot must be in
  * the "available" state.
  * </p>
  * <p>

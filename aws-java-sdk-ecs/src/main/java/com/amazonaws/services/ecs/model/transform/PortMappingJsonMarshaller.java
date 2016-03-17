@@ -40,29 +40,31 @@ import com.amazonaws.util.json.*;
 public class PortMappingJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PortMapping portMapping, JSONWriter jsonWriter) {
+    public void marshall(PortMapping portMapping, SdkJsonGenerator jsonGenerator) {
         if (portMapping == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (portMapping.getContainerPort() != null) {
-                jsonWriter.key("containerPort").value(
+                jsonGenerator.writeFieldName("containerPort").writeValue(
                         portMapping.getContainerPort());
             }
             if (portMapping.getHostPort() != null) {
-                jsonWriter.key("hostPort").value(portMapping.getHostPort());
+                jsonGenerator.writeFieldName("hostPort").writeValue(
+                        portMapping.getHostPort());
             }
             if (portMapping.getProtocol() != null) {
-                jsonWriter.key("protocol").value(portMapping.getProtocol());
+                jsonGenerator.writeFieldName("protocol").writeValue(
+                        portMapping.getProtocol());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

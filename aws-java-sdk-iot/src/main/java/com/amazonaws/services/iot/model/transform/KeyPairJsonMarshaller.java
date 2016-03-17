@@ -40,25 +40,27 @@ import com.amazonaws.util.json.*;
 public class KeyPairJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(KeyPair keyPair, JSONWriter jsonWriter) {
+    public void marshall(KeyPair keyPair, SdkJsonGenerator jsonGenerator) {
         if (keyPair == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (keyPair.getPublicKey() != null) {
-                jsonWriter.key("PublicKey").value(keyPair.getPublicKey());
+                jsonGenerator.writeFieldName("PublicKey").writeValue(
+                        keyPair.getPublicKey());
             }
             if (keyPair.getPrivateKey() != null) {
-                jsonWriter.key("PrivateKey").value(keyPair.getPrivateKey());
+                jsonGenerator.writeFieldName("PrivateKey").writeValue(
+                        keyPair.getPrivateKey());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

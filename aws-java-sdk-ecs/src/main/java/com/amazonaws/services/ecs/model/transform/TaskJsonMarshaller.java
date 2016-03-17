@@ -40,74 +40,83 @@ import com.amazonaws.util.json.*;
 public class TaskJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Task task, JSONWriter jsonWriter) {
+    public void marshall(Task task, SdkJsonGenerator jsonGenerator) {
         if (task == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (task.getTaskArn() != null) {
-                jsonWriter.key("taskArn").value(task.getTaskArn());
+                jsonGenerator.writeFieldName("taskArn").writeValue(
+                        task.getTaskArn());
             }
             if (task.getClusterArn() != null) {
-                jsonWriter.key("clusterArn").value(task.getClusterArn());
+                jsonGenerator.writeFieldName("clusterArn").writeValue(
+                        task.getClusterArn());
             }
             if (task.getTaskDefinitionArn() != null) {
-                jsonWriter.key("taskDefinitionArn").value(
+                jsonGenerator.writeFieldName("taskDefinitionArn").writeValue(
                         task.getTaskDefinitionArn());
             }
             if (task.getContainerInstanceArn() != null) {
-                jsonWriter.key("containerInstanceArn").value(
-                        task.getContainerInstanceArn());
+                jsonGenerator.writeFieldName("containerInstanceArn")
+                        .writeValue(task.getContainerInstanceArn());
             }
             if (task.getOverrides() != null) {
-                jsonWriter.key("overrides");
+                jsonGenerator.writeFieldName("overrides");
                 TaskOverrideJsonMarshaller.getInstance().marshall(
-                        task.getOverrides(), jsonWriter);
+                        task.getOverrides(), jsonGenerator);
             }
             if (task.getLastStatus() != null) {
-                jsonWriter.key("lastStatus").value(task.getLastStatus());
+                jsonGenerator.writeFieldName("lastStatus").writeValue(
+                        task.getLastStatus());
             }
             if (task.getDesiredStatus() != null) {
-                jsonWriter.key("desiredStatus").value(task.getDesiredStatus());
+                jsonGenerator.writeFieldName("desiredStatus").writeValue(
+                        task.getDesiredStatus());
             }
 
             com.amazonaws.internal.SdkInternalList<Container> containersList = (com.amazonaws.internal.SdkInternalList<Container>) task
                     .getContainers();
             if (!containersList.isEmpty() || !containersList.isAutoConstruct()) {
-                jsonWriter.key("containers");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("containers");
+                jsonGenerator.writeStartArray();
                 for (Container containersListValue : containersList) {
                     if (containersListValue != null) {
 
                         ContainerJsonMarshaller.getInstance().marshall(
-                                containersListValue, jsonWriter);
+                                containersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (task.getStartedBy() != null) {
-                jsonWriter.key("startedBy").value(task.getStartedBy());
+                jsonGenerator.writeFieldName("startedBy").writeValue(
+                        task.getStartedBy());
             }
             if (task.getStoppedReason() != null) {
-                jsonWriter.key("stoppedReason").value(task.getStoppedReason());
+                jsonGenerator.writeFieldName("stoppedReason").writeValue(
+                        task.getStoppedReason());
             }
             if (task.getCreatedAt() != null) {
-                jsonWriter.key("createdAt").value(task.getCreatedAt());
+                jsonGenerator.writeFieldName("createdAt").writeValue(
+                        task.getCreatedAt());
             }
             if (task.getStartedAt() != null) {
-                jsonWriter.key("startedAt").value(task.getStartedAt());
+                jsonGenerator.writeFieldName("startedAt").writeValue(
+                        task.getStartedAt());
             }
             if (task.getStoppedAt() != null) {
-                jsonWriter.key("stoppedAt").value(task.getStoppedAt());
+                jsonGenerator.writeFieldName("stoppedAt").writeValue(
+                        task.getStoppedAt());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

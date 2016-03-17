@@ -40,35 +40,36 @@ import com.amazonaws.util.json.*;
 public class ApplicationInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ApplicationInfo applicationInfo, JSONWriter jsonWriter) {
+    public void marshall(ApplicationInfo applicationInfo,
+            SdkJsonGenerator jsonGenerator) {
         if (applicationInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (applicationInfo.getApplicationId() != null) {
-                jsonWriter.key("applicationId").value(
+                jsonGenerator.writeFieldName("applicationId").writeValue(
                         applicationInfo.getApplicationId());
             }
             if (applicationInfo.getApplicationName() != null) {
-                jsonWriter.key("applicationName").value(
+                jsonGenerator.writeFieldName("applicationName").writeValue(
                         applicationInfo.getApplicationName());
             }
             if (applicationInfo.getCreateTime() != null) {
-                jsonWriter.key("createTime").value(
+                jsonGenerator.writeFieldName("createTime").writeValue(
                         applicationInfo.getCreateTime());
             }
             if (applicationInfo.getLinkedToGitHub() != null) {
-                jsonWriter.key("linkedToGitHub").value(
+                jsonGenerator.writeFieldName("linkedToGitHub").writeValue(
                         applicationInfo.getLinkedToGitHub());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

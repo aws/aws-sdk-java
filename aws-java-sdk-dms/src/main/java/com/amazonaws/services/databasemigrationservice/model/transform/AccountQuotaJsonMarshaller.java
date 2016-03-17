@@ -40,29 +40,32 @@ import com.amazonaws.util.json.*;
 public class AccountQuotaJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(AccountQuota accountQuota, JSONWriter jsonWriter) {
+    public void marshall(AccountQuota accountQuota,
+            SdkJsonGenerator jsonGenerator) {
         if (accountQuota == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (accountQuota.getAccountQuotaName() != null) {
-                jsonWriter.key("AccountQuotaName").value(
+                jsonGenerator.writeFieldName("AccountQuotaName").writeValue(
                         accountQuota.getAccountQuotaName());
             }
             if (accountQuota.getUsed() != null) {
-                jsonWriter.key("Used").value(accountQuota.getUsed());
+                jsonGenerator.writeFieldName("Used").writeValue(
+                        accountQuota.getUsed());
             }
             if (accountQuota.getMax() != null) {
-                jsonWriter.key("Max").value(accountQuota.getMax());
+                jsonGenerator.writeFieldName("Max").writeValue(
+                        accountQuota.getMax());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -67,18 +67,17 @@ public class GetOpenIdTokenForDeveloperIdentityRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getOpenIdTokenForDeveloperIdentityRequest.getIdentityPoolId() != null) {
-                jsonWriter.key("IdentityPoolId").value(
+                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(
                         getOpenIdTokenForDeveloperIdentityRequest
                                 .getIdentityPoolId());
             }
             if (getOpenIdTokenForDeveloperIdentityRequest.getIdentityId() != null) {
-                jsonWriter.key("IdentityId").value(
+                jsonGenerator.writeFieldName("IdentityId").writeValue(
                         getOpenIdTokenForDeveloperIdentityRequest
                                 .getIdentityId());
             }
@@ -86,30 +85,29 @@ public class GetOpenIdTokenForDeveloperIdentityRequestMarshaller
             java.util.Map<String, String> loginsMap = getOpenIdTokenForDeveloperIdentityRequest
                     .getLogins();
             if (loginsMap != null) {
-                jsonWriter.key("Logins");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Logins");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> loginsMapValue : loginsMap
                         .entrySet()) {
                     if (loginsMapValue.getValue() != null) {
-                        jsonWriter.key(loginsMapValue.getKey());
+                        jsonGenerator.writeFieldName(loginsMapValue.getKey());
 
-                        jsonWriter.value(loginsMapValue.getValue());
+                        jsonGenerator.writeValue(loginsMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (getOpenIdTokenForDeveloperIdentityRequest.getTokenDuration() != null) {
-                jsonWriter.key("TokenDuration").value(
+                jsonGenerator.writeFieldName("TokenDuration").writeValue(
                         getOpenIdTokenForDeveloperIdentityRequest
                                 .getTokenDuration());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

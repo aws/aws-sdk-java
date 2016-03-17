@@ -40,36 +40,37 @@ import com.amazonaws.util.json.*;
 public class PerformanceMetricsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(PerformanceMetrics performanceMetrics,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (performanceMetrics == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalMap<String, String> propertiesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) performanceMetrics
                     .getProperties();
             if (!propertiesMap.isEmpty() || !propertiesMap.isAutoConstruct()) {
-                jsonWriter.key("Properties");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Properties");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> propertiesMapValue : propertiesMap
                         .entrySet()) {
                     if (propertiesMapValue.getValue() != null) {
-                        jsonWriter.key(propertiesMapValue.getKey());
+                        jsonGenerator.writeFieldName(propertiesMapValue
+                                .getKey());
 
-                        jsonWriter.value(propertiesMapValue.getValue());
+                        jsonGenerator.writeValue(propertiesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

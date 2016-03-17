@@ -40,34 +40,38 @@ import com.amazonaws.util.json.*;
 public class ModelJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Model model, JSONWriter jsonWriter) {
+    public void marshall(Model model, SdkJsonGenerator jsonGenerator) {
         if (model == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (model.getId() != null) {
-                jsonWriter.key("id").value(model.getId());
+                jsonGenerator.writeFieldName("id").writeValue(model.getId());
             }
             if (model.getName() != null) {
-                jsonWriter.key("name").value(model.getName());
+                jsonGenerator.writeFieldName("name")
+                        .writeValue(model.getName());
             }
             if (model.getDescription() != null) {
-                jsonWriter.key("description").value(model.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(
+                        model.getDescription());
             }
             if (model.getSchema() != null) {
-                jsonWriter.key("schema").value(model.getSchema());
+                jsonGenerator.writeFieldName("schema").writeValue(
+                        model.getSchema());
             }
             if (model.getContentType() != null) {
-                jsonWriter.key("contentType").value(model.getContentType());
+                jsonGenerator.writeFieldName("contentType").writeValue(
+                        model.getContentType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

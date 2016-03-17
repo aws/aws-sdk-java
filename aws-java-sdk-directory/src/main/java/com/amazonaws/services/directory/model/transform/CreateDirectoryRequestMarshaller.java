@@ -65,40 +65,40 @@ public class CreateDirectoryRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createDirectoryRequest.getName() != null) {
-                jsonWriter.key("Name").value(createDirectoryRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createDirectoryRequest.getName());
             }
             if (createDirectoryRequest.getShortName() != null) {
-                jsonWriter.key("ShortName").value(
+                jsonGenerator.writeFieldName("ShortName").writeValue(
                         createDirectoryRequest.getShortName());
             }
             if (createDirectoryRequest.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         createDirectoryRequest.getPassword());
             }
             if (createDirectoryRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         createDirectoryRequest.getDescription());
             }
             if (createDirectoryRequest.getSize() != null) {
-                jsonWriter.key("Size").value(createDirectoryRequest.getSize());
+                jsonGenerator.writeFieldName("Size").writeValue(
+                        createDirectoryRequest.getSize());
             }
             if (createDirectoryRequest.getVpcSettings() != null) {
-                jsonWriter.key("VpcSettings");
+                jsonGenerator.writeFieldName("VpcSettings");
                 DirectoryVpcSettingsJsonMarshaller.getInstance().marshall(
-                        createDirectoryRequest.getVpcSettings(), jsonWriter);
+                        createDirectoryRequest.getVpcSettings(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

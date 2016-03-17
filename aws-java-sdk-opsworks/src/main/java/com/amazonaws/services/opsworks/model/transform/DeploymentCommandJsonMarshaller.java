@@ -40,46 +40,47 @@ import com.amazonaws.util.json.*;
 public class DeploymentCommandJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DeploymentCommand deploymentCommand,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (deploymentCommand == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deploymentCommand.getName() != null) {
-                jsonWriter.key("Name").value(deploymentCommand.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        deploymentCommand.getName());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, java.util.List<String>> argsMap = (com.amazonaws.internal.SdkInternalMap<String, java.util.List<String>>) deploymentCommand
                     .getArgs();
             if (!argsMap.isEmpty() || !argsMap.isAutoConstruct()) {
-                jsonWriter.key("Args");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Args");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, java.util.List<String>> argsMapValue : argsMap
                         .entrySet()) {
                     if (argsMapValue.getValue() != null) {
-                        jsonWriter.key(argsMapValue.getKey());
+                        jsonGenerator.writeFieldName(argsMapValue.getKey());
 
-                        jsonWriter.array();
+                        jsonGenerator.writeStartArray();
                         for (String argsMapValueList : argsMapValue.getValue()) {
                             if (argsMapValueList != null) {
-                                jsonWriter.value(argsMapValueList);
+                                jsonGenerator.writeValue(argsMapValueList);
                             }
                         }
-                        jsonWriter.endArray();
+                        jsonGenerator.writeEndArray();
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

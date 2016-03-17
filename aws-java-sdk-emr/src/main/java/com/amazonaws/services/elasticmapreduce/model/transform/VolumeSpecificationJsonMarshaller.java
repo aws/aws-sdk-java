@@ -40,31 +40,32 @@ import com.amazonaws.util.json.*;
 public class VolumeSpecificationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(VolumeSpecification volumeSpecification,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (volumeSpecification == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (volumeSpecification.getVolumeType() != null) {
-                jsonWriter.key("VolumeType").value(
+                jsonGenerator.writeFieldName("VolumeType").writeValue(
                         volumeSpecification.getVolumeType());
             }
             if (volumeSpecification.getIops() != null) {
-                jsonWriter.key("Iops").value(volumeSpecification.getIops());
+                jsonGenerator.writeFieldName("Iops").writeValue(
+                        volumeSpecification.getIops());
             }
             if (volumeSpecification.getSizeInGB() != null) {
-                jsonWriter.key("SizeInGB").value(
+                jsonGenerator.writeFieldName("SizeInGB").writeValue(
                         volumeSpecification.getSizeInGB());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

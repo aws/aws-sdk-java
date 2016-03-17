@@ -40,28 +40,32 @@ import com.amazonaws.util.json.*;
 public class EC2TagFilterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(EC2TagFilter eC2TagFilter, JSONWriter jsonWriter) {
+    public void marshall(EC2TagFilter eC2TagFilter,
+            SdkJsonGenerator jsonGenerator) {
         if (eC2TagFilter == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (eC2TagFilter.getKey() != null) {
-                jsonWriter.key("Key").value(eC2TagFilter.getKey());
+                jsonGenerator.writeFieldName("Key").writeValue(
+                        eC2TagFilter.getKey());
             }
             if (eC2TagFilter.getValue() != null) {
-                jsonWriter.key("Value").value(eC2TagFilter.getValue());
+                jsonGenerator.writeFieldName("Value").writeValue(
+                        eC2TagFilter.getValue());
             }
             if (eC2TagFilter.getType() != null) {
-                jsonWriter.key("Type").value(eC2TagFilter.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        eC2TagFilter.getType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

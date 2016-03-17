@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class AttachmentDetailsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AttachmentDetails attachmentDetails,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (attachmentDetails == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (attachmentDetails.getAttachmentId() != null) {
-                jsonWriter.key("attachmentId").value(
+                jsonGenerator.writeFieldName("attachmentId").writeValue(
                         attachmentDetails.getAttachmentId());
             }
             if (attachmentDetails.getFileName() != null) {
-                jsonWriter.key("fileName").value(
+                jsonGenerator.writeFieldName("fileName").writeValue(
                         attachmentDetails.getFileName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

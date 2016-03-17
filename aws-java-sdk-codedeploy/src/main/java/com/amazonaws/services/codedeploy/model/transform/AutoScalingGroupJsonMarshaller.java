@@ -40,26 +40,28 @@ import com.amazonaws.util.json.*;
 public class AutoScalingGroupJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AutoScalingGroup autoScalingGroup,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (autoScalingGroup == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (autoScalingGroup.getName() != null) {
-                jsonWriter.key("name").value(autoScalingGroup.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        autoScalingGroup.getName());
             }
             if (autoScalingGroup.getHook() != null) {
-                jsonWriter.key("hook").value(autoScalingGroup.getHook());
+                jsonGenerator.writeFieldName("hook").writeValue(
+                        autoScalingGroup.getHook());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

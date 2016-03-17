@@ -40,26 +40,28 @@ import com.amazonaws.util.json.*;
 public class FirehoseActionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(FirehoseAction firehoseAction, JSONWriter jsonWriter) {
+    public void marshall(FirehoseAction firehoseAction,
+            SdkJsonGenerator jsonGenerator) {
         if (firehoseAction == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (firehoseAction.getRoleArn() != null) {
-                jsonWriter.key("roleArn").value(firehoseAction.getRoleArn());
+                jsonGenerator.writeFieldName("roleArn").writeValue(
+                        firehoseAction.getRoleArn());
             }
             if (firehoseAction.getDeliveryStreamName() != null) {
-                jsonWriter.key("deliveryStreamName").value(
+                jsonGenerator.writeFieldName("deliveryStreamName").writeValue(
                         firehoseAction.getDeliveryStreamName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

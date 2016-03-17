@@ -40,70 +40,78 @@ import com.amazonaws.util.json.*;
 public class DeploymentJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Deployment deployment, JSONWriter jsonWriter) {
+    public void marshall(Deployment deployment, SdkJsonGenerator jsonGenerator) {
         if (deployment == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deployment.getDeploymentId() != null) {
-                jsonWriter.key("DeploymentId").value(
+                jsonGenerator.writeFieldName("DeploymentId").writeValue(
                         deployment.getDeploymentId());
             }
             if (deployment.getStackId() != null) {
-                jsonWriter.key("StackId").value(deployment.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(
+                        deployment.getStackId());
             }
             if (deployment.getAppId() != null) {
-                jsonWriter.key("AppId").value(deployment.getAppId());
+                jsonGenerator.writeFieldName("AppId").writeValue(
+                        deployment.getAppId());
             }
             if (deployment.getCreatedAt() != null) {
-                jsonWriter.key("CreatedAt").value(deployment.getCreatedAt());
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(
+                        deployment.getCreatedAt());
             }
             if (deployment.getCompletedAt() != null) {
-                jsonWriter.key("CompletedAt")
-                        .value(deployment.getCompletedAt());
+                jsonGenerator.writeFieldName("CompletedAt").writeValue(
+                        deployment.getCompletedAt());
             }
             if (deployment.getDuration() != null) {
-                jsonWriter.key("Duration").value(deployment.getDuration());
+                jsonGenerator.writeFieldName("Duration").writeValue(
+                        deployment.getDuration());
             }
             if (deployment.getIamUserArn() != null) {
-                jsonWriter.key("IamUserArn").value(deployment.getIamUserArn());
+                jsonGenerator.writeFieldName("IamUserArn").writeValue(
+                        deployment.getIamUserArn());
             }
             if (deployment.getComment() != null) {
-                jsonWriter.key("Comment").value(deployment.getComment());
+                jsonGenerator.writeFieldName("Comment").writeValue(
+                        deployment.getComment());
             }
             if (deployment.getCommand() != null) {
-                jsonWriter.key("Command");
+                jsonGenerator.writeFieldName("Command");
                 DeploymentCommandJsonMarshaller.getInstance().marshall(
-                        deployment.getCommand(), jsonWriter);
+                        deployment.getCommand(), jsonGenerator);
             }
             if (deployment.getStatus() != null) {
-                jsonWriter.key("Status").value(deployment.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        deployment.getStatus());
             }
             if (deployment.getCustomJson() != null) {
-                jsonWriter.key("CustomJson").value(deployment.getCustomJson());
+                jsonGenerator.writeFieldName("CustomJson").writeValue(
+                        deployment.getCustomJson());
             }
 
             com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) deployment
                     .getInstanceIds();
             if (!instanceIdsList.isEmpty()
                     || !instanceIdsList.isAutoConstruct()) {
-                jsonWriter.key("InstanceIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InstanceIds");
+                jsonGenerator.writeStartArray();
                 for (String instanceIdsListValue : instanceIdsList) {
                     if (instanceIdsListValue != null) {
-                        jsonWriter.value(instanceIdsListValue);
+                        jsonGenerator.writeValue(instanceIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

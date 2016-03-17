@@ -64,47 +64,46 @@ public class StartTaskRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (startTaskRequest.getCluster() != null) {
-                jsonWriter.key("cluster").value(startTaskRequest.getCluster());
+                jsonGenerator.writeFieldName("cluster").writeValue(
+                        startTaskRequest.getCluster());
             }
             if (startTaskRequest.getTaskDefinition() != null) {
-                jsonWriter.key("taskDefinition").value(
+                jsonGenerator.writeFieldName("taskDefinition").writeValue(
                         startTaskRequest.getTaskDefinition());
             }
             if (startTaskRequest.getOverrides() != null) {
-                jsonWriter.key("overrides");
+                jsonGenerator.writeFieldName("overrides");
                 TaskOverrideJsonMarshaller.getInstance().marshall(
-                        startTaskRequest.getOverrides(), jsonWriter);
+                        startTaskRequest.getOverrides(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<String> containerInstancesList = (com.amazonaws.internal.SdkInternalList<String>) startTaskRequest
                     .getContainerInstances();
             if (!containerInstancesList.isEmpty()
                     || !containerInstancesList.isAutoConstruct()) {
-                jsonWriter.key("containerInstances");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("containerInstances");
+                jsonGenerator.writeStartArray();
                 for (String containerInstancesListValue : containerInstancesList) {
                     if (containerInstancesListValue != null) {
-                        jsonWriter.value(containerInstancesListValue);
+                        jsonGenerator.writeValue(containerInstancesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (startTaskRequest.getStartedBy() != null) {
-                jsonWriter.key("startedBy").value(
+                jsonGenerator.writeFieldName("startedBy").writeValue(
                         startTaskRequest.getStartedBy());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

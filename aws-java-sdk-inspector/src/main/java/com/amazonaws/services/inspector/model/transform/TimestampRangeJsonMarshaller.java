@@ -40,25 +40,28 @@ import com.amazonaws.util.json.*;
 public class TimestampRangeJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TimestampRange timestampRange, JSONWriter jsonWriter) {
+    public void marshall(TimestampRange timestampRange,
+            SdkJsonGenerator jsonGenerator) {
         if (timestampRange == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (timestampRange.getMinimum() != null) {
-                jsonWriter.key("minimum").value(timestampRange.getMinimum());
+                jsonGenerator.writeFieldName("minimum").writeValue(
+                        timestampRange.getMinimum());
             }
             if (timestampRange.getMaximum() != null) {
-                jsonWriter.key("maximum").value(timestampRange.getMaximum());
+                jsonGenerator.writeFieldName("maximum").writeValue(
+                        timestampRange.getMaximum());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

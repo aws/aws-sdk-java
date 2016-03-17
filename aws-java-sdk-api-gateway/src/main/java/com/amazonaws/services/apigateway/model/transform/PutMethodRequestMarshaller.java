@@ -78,63 +78,65 @@ public class PutMethodRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putMethodRequest.getAuthorizationType() != null) {
-                jsonWriter.key("authorizationType").value(
+                jsonGenerator.writeFieldName("authorizationType").writeValue(
                         putMethodRequest.getAuthorizationType());
             }
             if (putMethodRequest.getAuthorizerId() != null) {
-                jsonWriter.key("authorizerId").value(
+                jsonGenerator.writeFieldName("authorizerId").writeValue(
                         putMethodRequest.getAuthorizerId());
             }
             if (putMethodRequest.getApiKeyRequired() != null) {
-                jsonWriter.key("apiKeyRequired").value(
+                jsonGenerator.writeFieldName("apiKeyRequired").writeValue(
                         putMethodRequest.getApiKeyRequired());
             }
 
             java.util.Map<String, Boolean> requestParametersMap = putMethodRequest
                     .getRequestParameters();
             if (requestParametersMap != null) {
-                jsonWriter.key("requestParameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("requestParameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Boolean> requestParametersMapValue : requestParametersMap
                         .entrySet()) {
                     if (requestParametersMapValue.getValue() != null) {
-                        jsonWriter.key(requestParametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(requestParametersMapValue
+                                .getKey());
 
-                        jsonWriter.value(requestParametersMapValue.getValue());
+                        jsonGenerator.writeValue(requestParametersMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, String> requestModelsMap = putMethodRequest
                     .getRequestModels();
             if (requestModelsMap != null) {
-                jsonWriter.key("requestModels");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("requestModels");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> requestModelsMapValue : requestModelsMap
                         .entrySet()) {
                     if (requestModelsMapValue.getValue() != null) {
-                        jsonWriter.key(requestModelsMapValue.getKey());
+                        jsonGenerator.writeFieldName(requestModelsMapValue
+                                .getKey());
 
-                        jsonWriter.value(requestModelsMapValue.getValue());
+                        jsonGenerator.writeValue(requestModelsMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

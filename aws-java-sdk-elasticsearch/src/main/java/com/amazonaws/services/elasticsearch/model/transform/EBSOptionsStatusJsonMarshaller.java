@@ -40,30 +40,30 @@ import com.amazonaws.util.json.*;
 public class EBSOptionsStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(EBSOptionsStatus eBSOptionsStatus,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (eBSOptionsStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (eBSOptionsStatus.getOptions() != null) {
-                jsonWriter.key("Options");
+                jsonGenerator.writeFieldName("Options");
                 EBSOptionsJsonMarshaller.getInstance().marshall(
-                        eBSOptionsStatus.getOptions(), jsonWriter);
+                        eBSOptionsStatus.getOptions(), jsonGenerator);
             }
             if (eBSOptionsStatus.getStatus() != null) {
-                jsonWriter.key("Status");
+                jsonGenerator.writeFieldName("Status");
                 OptionStatusJsonMarshaller.getInstance().marshall(
-                        eBSOptionsStatus.getStatus(), jsonWriter);
+                        eBSOptionsStatus.getStatus(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

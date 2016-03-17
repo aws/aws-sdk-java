@@ -40,30 +40,32 @@ import com.amazonaws.util.json.*;
 public class PolicyVersionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PolicyVersion policyVersion, JSONWriter jsonWriter) {
+    public void marshall(PolicyVersion policyVersion,
+            SdkJsonGenerator jsonGenerator) {
         if (policyVersion == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (policyVersion.getVersionId() != null) {
-                jsonWriter.key("versionId").value(policyVersion.getVersionId());
+                jsonGenerator.writeFieldName("versionId").writeValue(
+                        policyVersion.getVersionId());
             }
             if (policyVersion.getIsDefaultVersion() != null) {
-                jsonWriter.key("isDefaultVersion").value(
+                jsonGenerator.writeFieldName("isDefaultVersion").writeValue(
                         policyVersion.getIsDefaultVersion());
             }
             if (policyVersion.getCreateDate() != null) {
-                jsonWriter.key("createDate").value(
+                jsonGenerator.writeFieldName("createDate").writeValue(
                         policyVersion.getCreateDate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

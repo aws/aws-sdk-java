@@ -40,99 +40,107 @@ import com.amazonaws.util.json.*;
 public class ServiceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Service service, JSONWriter jsonWriter) {
+    public void marshall(Service service, SdkJsonGenerator jsonGenerator) {
         if (service == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (service.getServiceArn() != null) {
-                jsonWriter.key("serviceArn").value(service.getServiceArn());
+                jsonGenerator.writeFieldName("serviceArn").writeValue(
+                        service.getServiceArn());
             }
             if (service.getServiceName() != null) {
-                jsonWriter.key("serviceName").value(service.getServiceName());
+                jsonGenerator.writeFieldName("serviceName").writeValue(
+                        service.getServiceName());
             }
             if (service.getClusterArn() != null) {
-                jsonWriter.key("clusterArn").value(service.getClusterArn());
+                jsonGenerator.writeFieldName("clusterArn").writeValue(
+                        service.getClusterArn());
             }
 
             com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancersList = (com.amazonaws.internal.SdkInternalList<LoadBalancer>) service
                     .getLoadBalancers();
             if (!loadBalancersList.isEmpty()
                     || !loadBalancersList.isAutoConstruct()) {
-                jsonWriter.key("loadBalancers");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("loadBalancers");
+                jsonGenerator.writeStartArray();
                 for (LoadBalancer loadBalancersListValue : loadBalancersList) {
                     if (loadBalancersListValue != null) {
 
                         LoadBalancerJsonMarshaller.getInstance().marshall(
-                                loadBalancersListValue, jsonWriter);
+                                loadBalancersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (service.getStatus() != null) {
-                jsonWriter.key("status").value(service.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        service.getStatus());
             }
             if (service.getDesiredCount() != null) {
-                jsonWriter.key("desiredCount").value(service.getDesiredCount());
+                jsonGenerator.writeFieldName("desiredCount").writeValue(
+                        service.getDesiredCount());
             }
             if (service.getRunningCount() != null) {
-                jsonWriter.key("runningCount").value(service.getRunningCount());
+                jsonGenerator.writeFieldName("runningCount").writeValue(
+                        service.getRunningCount());
             }
             if (service.getPendingCount() != null) {
-                jsonWriter.key("pendingCount").value(service.getPendingCount());
+                jsonGenerator.writeFieldName("pendingCount").writeValue(
+                        service.getPendingCount());
             }
             if (service.getTaskDefinition() != null) {
-                jsonWriter.key("taskDefinition").value(
+                jsonGenerator.writeFieldName("taskDefinition").writeValue(
                         service.getTaskDefinition());
             }
             if (service.getDeploymentConfiguration() != null) {
-                jsonWriter.key("deploymentConfiguration");
+                jsonGenerator.writeFieldName("deploymentConfiguration");
                 DeploymentConfigurationJsonMarshaller.getInstance().marshall(
-                        service.getDeploymentConfiguration(), jsonWriter);
+                        service.getDeploymentConfiguration(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<Deployment> deploymentsList = (com.amazonaws.internal.SdkInternalList<Deployment>) service
                     .getDeployments();
             if (!deploymentsList.isEmpty()
                     || !deploymentsList.isAutoConstruct()) {
-                jsonWriter.key("deployments");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("deployments");
+                jsonGenerator.writeStartArray();
                 for (Deployment deploymentsListValue : deploymentsList) {
                     if (deploymentsListValue != null) {
 
                         DeploymentJsonMarshaller.getInstance().marshall(
-                                deploymentsListValue, jsonWriter);
+                                deploymentsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (service.getRoleArn() != null) {
-                jsonWriter.key("roleArn").value(service.getRoleArn());
+                jsonGenerator.writeFieldName("roleArn").writeValue(
+                        service.getRoleArn());
             }
 
             com.amazonaws.internal.SdkInternalList<ServiceEvent> eventsList = (com.amazonaws.internal.SdkInternalList<ServiceEvent>) service
                     .getEvents();
             if (!eventsList.isEmpty() || !eventsList.isAutoConstruct()) {
-                jsonWriter.key("events");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("events");
+                jsonGenerator.writeStartArray();
                 for (ServiceEvent eventsListValue : eventsList) {
                     if (eventsListValue != null) {
 
                         ServiceEventJsonMarshaller.getInstance().marshall(
-                                eventsListValue, jsonWriter);
+                                eventsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -66,13 +66,12 @@ public class GetComplianceDetailsByConfigRuleRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getComplianceDetailsByConfigRuleRequest.getConfigRuleName() != null) {
-                jsonWriter.key("ConfigRuleName").value(
+                jsonGenerator.writeFieldName("ConfigRuleName").writeValue(
                         getComplianceDetailsByConfigRuleRequest
                                 .getConfigRuleName());
             }
@@ -81,29 +80,28 @@ public class GetComplianceDetailsByConfigRuleRequestMarshaller
                     .getComplianceTypes();
             if (!complianceTypesList.isEmpty()
                     || !complianceTypesList.isAutoConstruct()) {
-                jsonWriter.key("ComplianceTypes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ComplianceTypes");
+                jsonGenerator.writeStartArray();
                 for (String complianceTypesListValue : complianceTypesList) {
                     if (complianceTypesListValue != null) {
-                        jsonWriter.value(complianceTypesListValue);
+                        jsonGenerator.writeValue(complianceTypesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (getComplianceDetailsByConfigRuleRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(
+                jsonGenerator.writeFieldName("Limit").writeValue(
                         getComplianceDetailsByConfigRuleRequest.getLimit());
             }
             if (getComplianceDetailsByConfigRuleRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         getComplianceDetailsByConfigRuleRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

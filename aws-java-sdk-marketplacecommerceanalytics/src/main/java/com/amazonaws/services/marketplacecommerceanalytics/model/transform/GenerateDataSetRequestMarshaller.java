@@ -65,59 +65,63 @@ public class GenerateDataSetRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (generateDataSetRequest.getDataSetType() != null) {
-                jsonWriter.key("dataSetType").value(
+                jsonGenerator.writeFieldName("dataSetType").writeValue(
                         generateDataSetRequest.getDataSetType());
             }
             if (generateDataSetRequest.getDataSetPublicationDate() != null) {
-                jsonWriter.key("dataSetPublicationDate").value(
-                        generateDataSetRequest.getDataSetPublicationDate());
+                jsonGenerator.writeFieldName("dataSetPublicationDate")
+                        .writeValue(
+                                generateDataSetRequest
+                                        .getDataSetPublicationDate());
             }
             if (generateDataSetRequest.getRoleNameArn() != null) {
-                jsonWriter.key("roleNameArn").value(
+                jsonGenerator.writeFieldName("roleNameArn").writeValue(
                         generateDataSetRequest.getRoleNameArn());
             }
             if (generateDataSetRequest.getDestinationS3BucketName() != null) {
-                jsonWriter.key("destinationS3BucketName").value(
-                        generateDataSetRequest.getDestinationS3BucketName());
+                jsonGenerator.writeFieldName("destinationS3BucketName")
+                        .writeValue(
+                                generateDataSetRequest
+                                        .getDestinationS3BucketName());
             }
             if (generateDataSetRequest.getDestinationS3Prefix() != null) {
-                jsonWriter.key("destinationS3Prefix").value(
+                jsonGenerator.writeFieldName("destinationS3Prefix").writeValue(
                         generateDataSetRequest.getDestinationS3Prefix());
             }
             if (generateDataSetRequest.getSnsTopicArn() != null) {
-                jsonWriter.key("snsTopicArn").value(
+                jsonGenerator.writeFieldName("snsTopicArn").writeValue(
                         generateDataSetRequest.getSnsTopicArn());
             }
 
             java.util.Map<String, String> customerDefinedValuesMap = generateDataSetRequest
                     .getCustomerDefinedValues();
             if (customerDefinedValuesMap != null) {
-                jsonWriter.key("customerDefinedValues");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("customerDefinedValues");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> customerDefinedValuesMapValue : customerDefinedValuesMap
                         .entrySet()) {
                     if (customerDefinedValuesMapValue.getValue() != null) {
-                        jsonWriter.key(customerDefinedValuesMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(customerDefinedValuesMapValue
+                                        .getKey());
 
-                        jsonWriter.value(customerDefinedValuesMapValue
+                        jsonGenerator.writeValue(customerDefinedValuesMapValue
                                 .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

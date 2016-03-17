@@ -40,29 +40,29 @@ import com.amazonaws.util.json.*;
 public class StepDetailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(StepDetail stepDetail, JSONWriter jsonWriter) {
+    public void marshall(StepDetail stepDetail, SdkJsonGenerator jsonGenerator) {
         if (stepDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stepDetail.getStepConfig() != null) {
-                jsonWriter.key("StepConfig");
+                jsonGenerator.writeFieldName("StepConfig");
                 StepConfigJsonMarshaller.getInstance().marshall(
-                        stepDetail.getStepConfig(), jsonWriter);
+                        stepDetail.getStepConfig(), jsonGenerator);
             }
             if (stepDetail.getExecutionStatusDetail() != null) {
-                jsonWriter.key("ExecutionStatusDetail");
+                jsonGenerator.writeFieldName("ExecutionStatusDetail");
                 StepExecutionStatusDetailJsonMarshaller.getInstance().marshall(
-                        stepDetail.getExecutionStatusDetail(), jsonWriter);
+                        stepDetail.getExecutionStatusDetail(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

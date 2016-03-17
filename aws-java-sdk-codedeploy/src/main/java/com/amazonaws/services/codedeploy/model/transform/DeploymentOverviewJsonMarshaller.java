@@ -40,39 +40,40 @@ import com.amazonaws.util.json.*;
 public class DeploymentOverviewJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DeploymentOverview deploymentOverview,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (deploymentOverview == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deploymentOverview.getPending() != null) {
-                jsonWriter.key("Pending")
-                        .value(deploymentOverview.getPending());
+                jsonGenerator.writeFieldName("Pending").writeValue(
+                        deploymentOverview.getPending());
             }
             if (deploymentOverview.getInProgress() != null) {
-                jsonWriter.key("InProgress").value(
+                jsonGenerator.writeFieldName("InProgress").writeValue(
                         deploymentOverview.getInProgress());
             }
             if (deploymentOverview.getSucceeded() != null) {
-                jsonWriter.key("Succeeded").value(
+                jsonGenerator.writeFieldName("Succeeded").writeValue(
                         deploymentOverview.getSucceeded());
             }
             if (deploymentOverview.getFailed() != null) {
-                jsonWriter.key("Failed").value(deploymentOverview.getFailed());
+                jsonGenerator.writeFieldName("Failed").writeValue(
+                        deploymentOverview.getFailed());
             }
             if (deploymentOverview.getSkipped() != null) {
-                jsonWriter.key("Skipped")
-                        .value(deploymentOverview.getSkipped());
+                jsonGenerator.writeFieldName("Skipped").writeValue(
+                        deploymentOverview.getSkipped());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

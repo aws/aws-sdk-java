@@ -66,17 +66,16 @@ public class AddCommunicationToCaseRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (addCommunicationToCaseRequest.getCaseId() != null) {
-                jsonWriter.key("caseId").value(
+                jsonGenerator.writeFieldName("caseId").writeValue(
                         addCommunicationToCaseRequest.getCaseId());
             }
             if (addCommunicationToCaseRequest.getCommunicationBody() != null) {
-                jsonWriter.key("communicationBody").value(
+                jsonGenerator.writeFieldName("communicationBody").writeValue(
                         addCommunicationToCaseRequest.getCommunicationBody());
             }
 
@@ -84,25 +83,24 @@ public class AddCommunicationToCaseRequestMarshaller
                     .getCcEmailAddresses();
             if (!ccEmailAddressesList.isEmpty()
                     || !ccEmailAddressesList.isAutoConstruct()) {
-                jsonWriter.key("ccEmailAddresses");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ccEmailAddresses");
+                jsonGenerator.writeStartArray();
                 for (String ccEmailAddressesListValue : ccEmailAddressesList) {
                     if (ccEmailAddressesListValue != null) {
-                        jsonWriter.value(ccEmailAddressesListValue);
+                        jsonGenerator.writeValue(ccEmailAddressesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (addCommunicationToCaseRequest.getAttachmentSetId() != null) {
-                jsonWriter.key("attachmentSetId").value(
+                jsonGenerator.writeFieldName("attachmentSetId").writeValue(
                         addCommunicationToCaseRequest.getAttachmentSetId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

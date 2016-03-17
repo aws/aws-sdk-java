@@ -66,13 +66,12 @@ public class DescribeRdsDbInstancesRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeRdsDbInstancesRequest.getStackId() != null) {
-                jsonWriter.key("StackId").value(
+                jsonGenerator.writeFieldName("StackId").writeValue(
                         describeRdsDbInstancesRequest.getStackId());
             }
 
@@ -80,21 +79,20 @@ public class DescribeRdsDbInstancesRequestMarshaller
                     .getRdsDbInstanceArns();
             if (!rdsDbInstanceArnsList.isEmpty()
                     || !rdsDbInstanceArnsList.isAutoConstruct()) {
-                jsonWriter.key("RdsDbInstanceArns");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("RdsDbInstanceArns");
+                jsonGenerator.writeStartArray();
                 for (String rdsDbInstanceArnsListValue : rdsDbInstanceArnsList) {
                     if (rdsDbInstanceArnsListValue != null) {
-                        jsonWriter.value(rdsDbInstanceArnsListValue);
+                        jsonGenerator.writeValue(rdsDbInstanceArnsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

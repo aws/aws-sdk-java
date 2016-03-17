@@ -40,46 +40,49 @@ import com.amazonaws.util.json.*;
 public class ActionExecutionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ActionExecution actionExecution, JSONWriter jsonWriter) {
+    public void marshall(ActionExecution actionExecution,
+            SdkJsonGenerator jsonGenerator) {
         if (actionExecution == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (actionExecution.getStatus() != null) {
-                jsonWriter.key("status").value(actionExecution.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        actionExecution.getStatus());
             }
             if (actionExecution.getSummary() != null) {
-                jsonWriter.key("summary").value(actionExecution.getSummary());
+                jsonGenerator.writeFieldName("summary").writeValue(
+                        actionExecution.getSummary());
             }
             if (actionExecution.getLastStatusChange() != null) {
-                jsonWriter.key("lastStatusChange").value(
+                jsonGenerator.writeFieldName("lastStatusChange").writeValue(
                         actionExecution.getLastStatusChange());
             }
             if (actionExecution.getExternalExecutionId() != null) {
-                jsonWriter.key("externalExecutionId").value(
+                jsonGenerator.writeFieldName("externalExecutionId").writeValue(
                         actionExecution.getExternalExecutionId());
             }
             if (actionExecution.getExternalExecutionUrl() != null) {
-                jsonWriter.key("externalExecutionUrl").value(
-                        actionExecution.getExternalExecutionUrl());
+                jsonGenerator.writeFieldName("externalExecutionUrl")
+                        .writeValue(actionExecution.getExternalExecutionUrl());
             }
             if (actionExecution.getPercentComplete() != null) {
-                jsonWriter.key("percentComplete").value(
+                jsonGenerator.writeFieldName("percentComplete").writeValue(
                         actionExecution.getPercentComplete());
             }
             if (actionExecution.getErrorDetails() != null) {
-                jsonWriter.key("errorDetails");
+                jsonGenerator.writeFieldName("errorDetails");
                 ErrorDetailsJsonMarshaller.getInstance().marshall(
-                        actionExecution.getErrorDetails(), jsonWriter);
+                        actionExecution.getErrorDetails(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

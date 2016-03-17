@@ -64,44 +64,43 @@ public class GetLogEventsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getLogEventsRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         getLogEventsRequest.getLogGroupName());
             }
             if (getLogEventsRequest.getLogStreamName() != null) {
-                jsonWriter.key("logStreamName").value(
+                jsonGenerator.writeFieldName("logStreamName").writeValue(
                         getLogEventsRequest.getLogStreamName());
             }
             if (getLogEventsRequest.getStartTime() != null) {
-                jsonWriter.key("startTime").value(
+                jsonGenerator.writeFieldName("startTime").writeValue(
                         getLogEventsRequest.getStartTime());
             }
             if (getLogEventsRequest.getEndTime() != null) {
-                jsonWriter.key("endTime").value(
+                jsonGenerator.writeFieldName("endTime").writeValue(
                         getLogEventsRequest.getEndTime());
             }
             if (getLogEventsRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         getLogEventsRequest.getNextToken());
             }
             if (getLogEventsRequest.getLimit() != null) {
-                jsonWriter.key("limit").value(getLogEventsRequest.getLimit());
+                jsonGenerator.writeFieldName("limit").writeValue(
+                        getLogEventsRequest.getLimit());
             }
             if (getLogEventsRequest.getStartFromHead() != null) {
-                jsonWriter.key("startFromHead").value(
+                jsonGenerator.writeFieldName("startFromHead").writeValue(
                         getLogEventsRequest.getStartFromHead());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

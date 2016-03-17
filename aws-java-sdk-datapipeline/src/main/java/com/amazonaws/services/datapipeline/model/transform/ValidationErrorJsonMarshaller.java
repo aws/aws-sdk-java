@@ -40,35 +40,37 @@ import com.amazonaws.util.json.*;
 public class ValidationErrorJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ValidationError validationError, JSONWriter jsonWriter) {
+    public void marshall(ValidationError validationError,
+            SdkJsonGenerator jsonGenerator) {
         if (validationError == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (validationError.getId() != null) {
-                jsonWriter.key("id").value(validationError.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        validationError.getId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> errorsList = (com.amazonaws.internal.SdkInternalList<String>) validationError
                     .getErrors();
             if (!errorsList.isEmpty() || !errorsList.isAutoConstruct()) {
-                jsonWriter.key("errors");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("errors");
+                jsonGenerator.writeStartArray();
                 for (String errorsListValue : errorsList) {
                     if (errorsListValue != null) {
-                        jsonWriter.value(errorsListValue);
+                        jsonGenerator.writeValue(errorsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

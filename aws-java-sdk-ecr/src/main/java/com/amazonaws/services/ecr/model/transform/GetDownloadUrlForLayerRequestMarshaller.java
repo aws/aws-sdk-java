@@ -66,29 +66,27 @@ public class GetDownloadUrlForLayerRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getDownloadUrlForLayerRequest.getRegistryId() != null) {
-                jsonWriter.key("registryId").value(
+                jsonGenerator.writeFieldName("registryId").writeValue(
                         getDownloadUrlForLayerRequest.getRegistryId());
             }
             if (getDownloadUrlForLayerRequest.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         getDownloadUrlForLayerRequest.getRepositoryName());
             }
             if (getDownloadUrlForLayerRequest.getLayerDigest() != null) {
-                jsonWriter.key("layerDigest").value(
+                jsonGenerator.writeFieldName("layerDigest").writeValue(
                         getDownloadUrlForLayerRequest.getLayerDigest());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

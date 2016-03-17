@@ -11,10 +11,10 @@
         <#local getMember = getterFunctionPrefix + ".get" + member.name />
         <#if member.simple>
             <#if member.idempotencyToken>
-                jsonWriter.key("${http.marshallLocationName}").value(<@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);
+                jsonGenerator.writeFieldName("${http.marshallLocationName}").writeValue(<@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);
             <#else>
                 if(${getMember}() != null) {
-                    jsonWriter.key("${http.marshallLocationName}").value(${getMember}());
+                    jsonGenerator.writeFieldName("${http.marshallLocationName}").writeValue(${getMember}());
                 }
             </#if>
         <#elseif member.list>
@@ -31,14 +31,14 @@
               ${listModel.templateType} ${listVariable} = ${getMember}();
               if (${listVariable} != null) {
           </#if>
-                  jsonWriter.key("${http.marshallLocationName}");
-                  jsonWriter.array();
+                  jsonGenerator.writeFieldName("${http.marshallLocationName}");
+                  jsonGenerator.writeStartArray();
                   for (${listModel.memberType} ${loopVariable} : ${listVariable}) {
                       if (${loopVariable} != null) {
                       <@ListMemberMacro.content member loopVariable/>
                       }
                   }
-                  jsonWriter.endArray();
+                  jsonGenerator.writeEndArray();
               }
         <#elseif member.map>
             <#local mapModel = member.mapModel />
@@ -53,22 +53,22 @@
               ${mapModel.templateType} ${mapVariable} = ${getMember}();
               if (${mapVariable} != null) {
           </#if>
-                  jsonWriter.key("${http.marshallLocationName}");
-                  jsonWriter.object();
+                  jsonGenerator.writeFieldName("${http.marshallLocationName}");
+                  jsonGenerator.writeStartObject();
 
                   for(Map.Entry<${mapModel.keyType},${mapModel.valueType}> ${loopVariable} : ${mapVariable}.entrySet()) {
                       if (${loopVariable}.getValue() != null) {
-                          jsonWriter.key(${loopVariable}.getKey());
+                          jsonGenerator.writeFieldName(${loopVariable}.getKey());
 
                           <@MapMemberMacro.content member loopVariable+".getValue()"/>
                       }
                   }
-                  jsonWriter.endObject();
+                  jsonGenerator.writeEndObject();
               }
         <#else>
               if (${getMember}() != null) {
-                  jsonWriter.key("${http.marshallLocationName}");
-                  ${member.variable.variableType}JsonMarshaller.getInstance().marshall(${getMember}(), jsonWriter);
+                  jsonGenerator.writeFieldName("${http.marshallLocationName}");
+                  ${member.variable.variableType}JsonMarshaller.getInstance().marshall(${getMember}(), jsonGenerator);
               }
         </#if>
     </#if>

@@ -40,23 +40,24 @@ import com.amazonaws.util.json.*;
 public class RouteFilterPrefixJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RouteFilterPrefix routeFilterPrefix,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (routeFilterPrefix == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (routeFilterPrefix.getCidr() != null) {
-                jsonWriter.key("cidr").value(routeFilterPrefix.getCidr());
+                jsonGenerator.writeFieldName("cidr").writeValue(
+                        routeFilterPrefix.getCidr());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

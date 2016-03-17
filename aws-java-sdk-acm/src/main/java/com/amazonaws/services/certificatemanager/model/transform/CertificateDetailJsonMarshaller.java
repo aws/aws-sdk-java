@@ -40,112 +40,118 @@ import com.amazonaws.util.json.*;
 public class CertificateDetailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(CertificateDetail certificateDetail,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (certificateDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (certificateDetail.getCertificateArn() != null) {
-                jsonWriter.key("CertificateArn").value(
+                jsonGenerator.writeFieldName("CertificateArn").writeValue(
                         certificateDetail.getCertificateArn());
             }
             if (certificateDetail.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         certificateDetail.getDomainName());
             }
 
             java.util.List<String> subjectAlternativeNamesList = certificateDetail
                     .getSubjectAlternativeNames();
             if (subjectAlternativeNamesList != null) {
-                jsonWriter.key("SubjectAlternativeNames");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SubjectAlternativeNames");
+                jsonGenerator.writeStartArray();
                 for (String subjectAlternativeNamesListValue : subjectAlternativeNamesList) {
                     if (subjectAlternativeNamesListValue != null) {
-                        jsonWriter.value(subjectAlternativeNamesListValue);
+                        jsonGenerator
+                                .writeValue(subjectAlternativeNamesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<DomainValidation> domainValidationOptionsList = certificateDetail
                     .getDomainValidationOptions();
             if (domainValidationOptionsList != null) {
-                jsonWriter.key("DomainValidationOptions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("DomainValidationOptions");
+                jsonGenerator.writeStartArray();
                 for (DomainValidation domainValidationOptionsListValue : domainValidationOptionsList) {
                     if (domainValidationOptionsListValue != null) {
 
-                        DomainValidationJsonMarshaller.getInstance().marshall(
-                                domainValidationOptionsListValue, jsonWriter);
+                        DomainValidationJsonMarshaller.getInstance()
+                                .marshall(domainValidationOptionsListValue,
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (certificateDetail.getSerial() != null) {
-                jsonWriter.key("Serial").value(certificateDetail.getSerial());
+                jsonGenerator.writeFieldName("Serial").writeValue(
+                        certificateDetail.getSerial());
             }
             if (certificateDetail.getSubject() != null) {
-                jsonWriter.key("Subject").value(certificateDetail.getSubject());
+                jsonGenerator.writeFieldName("Subject").writeValue(
+                        certificateDetail.getSubject());
             }
             if (certificateDetail.getIssuer() != null) {
-                jsonWriter.key("Issuer").value(certificateDetail.getIssuer());
+                jsonGenerator.writeFieldName("Issuer").writeValue(
+                        certificateDetail.getIssuer());
             }
             if (certificateDetail.getCreatedAt() != null) {
-                jsonWriter.key("CreatedAt").value(
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(
                         certificateDetail.getCreatedAt());
             }
             if (certificateDetail.getIssuedAt() != null) {
-                jsonWriter.key("IssuedAt").value(
+                jsonGenerator.writeFieldName("IssuedAt").writeValue(
                         certificateDetail.getIssuedAt());
             }
             if (certificateDetail.getStatus() != null) {
-                jsonWriter.key("Status").value(certificateDetail.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        certificateDetail.getStatus());
             }
             if (certificateDetail.getRevokedAt() != null) {
-                jsonWriter.key("RevokedAt").value(
+                jsonGenerator.writeFieldName("RevokedAt").writeValue(
                         certificateDetail.getRevokedAt());
             }
             if (certificateDetail.getRevocationReason() != null) {
-                jsonWriter.key("RevocationReason").value(
+                jsonGenerator.writeFieldName("RevocationReason").writeValue(
                         certificateDetail.getRevocationReason());
             }
             if (certificateDetail.getNotBefore() != null) {
-                jsonWriter.key("NotBefore").value(
+                jsonGenerator.writeFieldName("NotBefore").writeValue(
                         certificateDetail.getNotBefore());
             }
             if (certificateDetail.getNotAfter() != null) {
-                jsonWriter.key("NotAfter").value(
+                jsonGenerator.writeFieldName("NotAfter").writeValue(
                         certificateDetail.getNotAfter());
             }
             if (certificateDetail.getKeyAlgorithm() != null) {
-                jsonWriter.key("KeyAlgorithm").value(
+                jsonGenerator.writeFieldName("KeyAlgorithm").writeValue(
                         certificateDetail.getKeyAlgorithm());
             }
             if (certificateDetail.getSignatureAlgorithm() != null) {
-                jsonWriter.key("SignatureAlgorithm").value(
+                jsonGenerator.writeFieldName("SignatureAlgorithm").writeValue(
                         certificateDetail.getSignatureAlgorithm());
             }
 
             java.util.List<String> inUseByList = certificateDetail.getInUseBy();
             if (inUseByList != null) {
-                jsonWriter.key("InUseBy");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InUseBy");
+                jsonGenerator.writeStartArray();
                 for (String inUseByListValue : inUseByList) {
                     if (inUseByListValue != null) {
-                        jsonWriter.value(inUseByListValue);
+                        jsonGenerator.writeValue(inUseByListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

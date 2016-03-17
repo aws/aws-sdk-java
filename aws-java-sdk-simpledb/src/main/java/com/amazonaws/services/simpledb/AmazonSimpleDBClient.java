@@ -71,8 +71,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
     /**
      * List of exception unmarshallers for all AmazonSimpleDB exceptions.
      */
-    protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
-            = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
+    protected final List<Unmarshaller<AmazonServiceException, org.w3c.dom.Node>> exceptionUnmarshallers
+            = new ArrayList<Unmarshaller<AmazonServiceException, org.w3c.dom.Node>>();
 
     /**
      * Constructs a new client to invoke service methods on

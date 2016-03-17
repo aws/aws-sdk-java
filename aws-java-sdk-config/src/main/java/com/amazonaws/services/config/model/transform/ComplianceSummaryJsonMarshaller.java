@@ -40,40 +40,42 @@ import com.amazonaws.util.json.*;
 public class ComplianceSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ComplianceSummary complianceSummary,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (complianceSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (complianceSummary.getCompliantResourceCount() != null) {
-                jsonWriter.key("CompliantResourceCount");
+                jsonGenerator.writeFieldName("CompliantResourceCount");
                 ComplianceContributorCountJsonMarshaller.getInstance()
                         .marshall(
                                 complianceSummary.getCompliantResourceCount(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (complianceSummary.getNonCompliantResourceCount() != null) {
-                jsonWriter.key("NonCompliantResourceCount");
+                jsonGenerator.writeFieldName("NonCompliantResourceCount");
                 ComplianceContributorCountJsonMarshaller
                         .getInstance()
                         .marshall(
                                 complianceSummary
                                         .getNonCompliantResourceCount(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (complianceSummary.getComplianceSummaryTimestamp() != null) {
-                jsonWriter.key("ComplianceSummaryTimestamp").value(
-                        complianceSummary.getComplianceSummaryTimestamp());
+                jsonGenerator.writeFieldName("ComplianceSummaryTimestamp")
+                        .writeValue(
+                                complianceSummary
+                                        .getComplianceSummaryTimestamp());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

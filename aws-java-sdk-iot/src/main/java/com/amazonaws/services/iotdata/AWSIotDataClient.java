@@ -42,10 +42,7 @@ import com.amazonaws.services.iotdata.model.transform.*;
  * Client for accessing AWS IoT Data Plane. All service calls made using this
  * client are blocking, and will not return until the service call completes.
  * <p>
- * <fullname>AWS IoT (Beta)</fullname>
- * <p>
- * <b>AWS IoT is considered a beta service as defined in the Service Terms</b>
- * </p>
+ * <fullname>AWS IoT</fullname>
  * <p>
  * AWS IoT-Data enables secure, bi-directional communication between
  * Internet-connected things (such as sensors, actuators, embedded devices, or

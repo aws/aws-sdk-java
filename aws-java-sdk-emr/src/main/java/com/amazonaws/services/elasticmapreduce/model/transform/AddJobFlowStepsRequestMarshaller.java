@@ -64,36 +64,34 @@ public class AddJobFlowStepsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (addJobFlowStepsRequest.getJobFlowId() != null) {
-                jsonWriter.key("JobFlowId").value(
+                jsonGenerator.writeFieldName("JobFlowId").writeValue(
                         addJobFlowStepsRequest.getJobFlowId());
             }
 
             com.amazonaws.internal.SdkInternalList<StepConfig> stepsList = (com.amazonaws.internal.SdkInternalList<StepConfig>) addJobFlowStepsRequest
                     .getSteps();
             if (!stepsList.isEmpty() || !stepsList.isAutoConstruct()) {
-                jsonWriter.key("Steps");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Steps");
+                jsonGenerator.writeStartArray();
                 for (StepConfig stepsListValue : stepsList) {
                     if (stepsListValue != null) {
 
                         StepConfigJsonMarshaller.getInstance().marshall(
-                                stepsListValue, jsonWriter);
+                                stepsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

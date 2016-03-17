@@ -64,72 +64,74 @@ public class CreateFleetRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createFleetRequest.getName() != null) {
-                jsonWriter.key("Name").value(createFleetRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createFleetRequest.getName());
             }
             if (createFleetRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         createFleetRequest.getDescription());
             }
             if (createFleetRequest.getBuildId() != null) {
-                jsonWriter.key("BuildId")
-                        .value(createFleetRequest.getBuildId());
+                jsonGenerator.writeFieldName("BuildId").writeValue(
+                        createFleetRequest.getBuildId());
             }
             if (createFleetRequest.getServerLaunchPath() != null) {
-                jsonWriter.key("ServerLaunchPath").value(
+                jsonGenerator.writeFieldName("ServerLaunchPath").writeValue(
                         createFleetRequest.getServerLaunchPath());
             }
             if (createFleetRequest.getServerLaunchParameters() != null) {
-                jsonWriter.key("ServerLaunchParameters").value(
-                        createFleetRequest.getServerLaunchParameters());
+                jsonGenerator.writeFieldName("ServerLaunchParameters")
+                        .writeValue(
+                                createFleetRequest.getServerLaunchParameters());
             }
 
             java.util.List<String> logPathsList = createFleetRequest
                     .getLogPaths();
             if (logPathsList != null) {
-                jsonWriter.key("LogPaths");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("LogPaths");
+                jsonGenerator.writeStartArray();
                 for (String logPathsListValue : logPathsList) {
                     if (logPathsListValue != null) {
-                        jsonWriter.value(logPathsListValue);
+                        jsonGenerator.writeValue(logPathsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (createFleetRequest.getEC2InstanceType() != null) {
-                jsonWriter.key("EC2InstanceType").value(
+                jsonGenerator.writeFieldName("EC2InstanceType").writeValue(
                         createFleetRequest.getEC2InstanceType());
             }
 
             java.util.List<IpPermission> eC2InboundPermissionsList = createFleetRequest
                     .getEC2InboundPermissions();
             if (eC2InboundPermissionsList != null) {
-                jsonWriter.key("EC2InboundPermissions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("EC2InboundPermissions");
+                jsonGenerator.writeStartArray();
                 for (IpPermission eC2InboundPermissionsListValue : eC2InboundPermissionsList) {
                     if (eC2InboundPermissionsListValue != null) {
 
                         IpPermissionJsonMarshaller.getInstance().marshall(
-                                eC2InboundPermissionsListValue, jsonWriter);
+                                eC2InboundPermissionsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (createFleetRequest.getNewGameSessionProtectionPolicy() != null) {
-                jsonWriter.key("NewGameSessionProtectionPolicy").value(
-                        createFleetRequest.getNewGameSessionProtectionPolicy());
+                jsonGenerator.writeFieldName("NewGameSessionProtectionPolicy")
+                        .writeValue(
+                                createFleetRequest
+                                        .getNewGameSessionProtectionPolicy());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

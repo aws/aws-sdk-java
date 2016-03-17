@@ -40,34 +40,35 @@ import com.amazonaws.util.json.*;
 public class EcsClusterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(EcsCluster ecsCluster, JSONWriter jsonWriter) {
+    public void marshall(EcsCluster ecsCluster, SdkJsonGenerator jsonGenerator) {
         if (ecsCluster == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (ecsCluster.getEcsClusterArn() != null) {
-                jsonWriter.key("EcsClusterArn").value(
+                jsonGenerator.writeFieldName("EcsClusterArn").writeValue(
                         ecsCluster.getEcsClusterArn());
             }
             if (ecsCluster.getEcsClusterName() != null) {
-                jsonWriter.key("EcsClusterName").value(
+                jsonGenerator.writeFieldName("EcsClusterName").writeValue(
                         ecsCluster.getEcsClusterName());
             }
             if (ecsCluster.getStackId() != null) {
-                jsonWriter.key("StackId").value(ecsCluster.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(
+                        ecsCluster.getStackId());
             }
             if (ecsCluster.getRegisteredAt() != null) {
-                jsonWriter.key("RegisteredAt").value(
+                jsonGenerator.writeFieldName("RegisteredAt").writeValue(
                         ecsCluster.getRegisteredAt());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

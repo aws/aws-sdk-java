@@ -40,68 +40,71 @@ import com.amazonaws.util.json.*;
 public class AssessmentJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Assessment assessment, JSONWriter jsonWriter) {
+    public void marshall(Assessment assessment, SdkJsonGenerator jsonGenerator) {
         if (assessment == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (assessment.getAssessmentArn() != null) {
-                jsonWriter.key("assessmentArn").value(
+                jsonGenerator.writeFieldName("assessmentArn").writeValue(
                         assessment.getAssessmentArn());
             }
             if (assessment.getAssessmentName() != null) {
-                jsonWriter.key("assessmentName").value(
+                jsonGenerator.writeFieldName("assessmentName").writeValue(
                         assessment.getAssessmentName());
             }
             if (assessment.getApplicationArn() != null) {
-                jsonWriter.key("applicationArn").value(
+                jsonGenerator.writeFieldName("applicationArn").writeValue(
                         assessment.getApplicationArn());
             }
             if (assessment.getAssessmentState() != null) {
-                jsonWriter.key("assessmentState").value(
+                jsonGenerator.writeFieldName("assessmentState").writeValue(
                         assessment.getAssessmentState());
             }
             if (assessment.getFailureMessage() != null) {
-                jsonWriter.key("failureMessage").value(
+                jsonGenerator.writeFieldName("failureMessage").writeValue(
                         assessment.getFailureMessage());
             }
             if (assessment.getDataCollected() != null) {
-                jsonWriter.key("dataCollected").value(
+                jsonGenerator.writeFieldName("dataCollected").writeValue(
                         assessment.getDataCollected());
             }
             if (assessment.getStartTime() != null) {
-                jsonWriter.key("startTime").value(assessment.getStartTime());
+                jsonGenerator.writeFieldName("startTime").writeValue(
+                        assessment.getStartTime());
             }
             if (assessment.getEndTime() != null) {
-                jsonWriter.key("endTime").value(assessment.getEndTime());
+                jsonGenerator.writeFieldName("endTime").writeValue(
+                        assessment.getEndTime());
             }
             if (assessment.getDurationInSeconds() != null) {
-                jsonWriter.key("durationInSeconds").value(
+                jsonGenerator.writeFieldName("durationInSeconds").writeValue(
                         assessment.getDurationInSeconds());
             }
 
             java.util.List<Attribute> userAttributesForFindingsList = assessment
                     .getUserAttributesForFindings();
             if (userAttributesForFindingsList != null) {
-                jsonWriter.key("userAttributesForFindings");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("userAttributesForFindings");
+                jsonGenerator.writeStartArray();
                 for (Attribute userAttributesForFindingsListValue : userAttributesForFindingsList) {
                     if (userAttributesForFindingsListValue != null) {
 
                         AttributeJsonMarshaller.getInstance().marshall(
-                                userAttributesForFindingsListValue, jsonWriter);
+                                userAttributesForFindingsListValue,
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,25 +40,28 @@ import com.amazonaws.util.json.*;
 public class EncryptionKeyJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(EncryptionKey encryptionKey, JSONWriter jsonWriter) {
+    public void marshall(EncryptionKey encryptionKey,
+            SdkJsonGenerator jsonGenerator) {
         if (encryptionKey == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (encryptionKey.getId() != null) {
-                jsonWriter.key("id").value(encryptionKey.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        encryptionKey.getId());
             }
             if (encryptionKey.getType() != null) {
-                jsonWriter.key("type").value(encryptionKey.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        encryptionKey.getType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

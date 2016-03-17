@@ -64,44 +64,43 @@ public class CreateAssessmentRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createAssessmentRequest.getApplicationArn() != null) {
-                jsonWriter.key("applicationArn").value(
+                jsonGenerator.writeFieldName("applicationArn").writeValue(
                         createAssessmentRequest.getApplicationArn());
             }
             if (createAssessmentRequest.getAssessmentName() != null) {
-                jsonWriter.key("assessmentName").value(
+                jsonGenerator.writeFieldName("assessmentName").writeValue(
                         createAssessmentRequest.getAssessmentName());
             }
             if (createAssessmentRequest.getDurationInSeconds() != null) {
-                jsonWriter.key("durationInSeconds").value(
+                jsonGenerator.writeFieldName("durationInSeconds").writeValue(
                         createAssessmentRequest.getDurationInSeconds());
             }
 
             java.util.List<Attribute> userAttributesForFindingsList = createAssessmentRequest
                     .getUserAttributesForFindings();
             if (userAttributesForFindingsList != null) {
-                jsonWriter.key("userAttributesForFindings");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("userAttributesForFindings");
+                jsonGenerator.writeStartArray();
                 for (Attribute userAttributesForFindingsListValue : userAttributesForFindingsList) {
                     if (userAttributesForFindingsListValue != null) {
 
                         AttributeJsonMarshaller.getInstance().marshall(
-                                userAttributesForFindingsListValue, jsonWriter);
+                                userAttributesForFindingsListValue,
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -64,37 +64,35 @@ public class ListCertificatesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.List<String> certificateStatusesList = listCertificatesRequest
                     .getCertificateStatuses();
             if (certificateStatusesList != null) {
-                jsonWriter.key("CertificateStatuses");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("CertificateStatuses");
+                jsonGenerator.writeStartArray();
                 for (String certificateStatusesListValue : certificateStatusesList) {
                     if (certificateStatusesListValue != null) {
-                        jsonWriter.value(certificateStatusesListValue);
+                        jsonGenerator.writeValue(certificateStatusesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (listCertificatesRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         listCertificatesRequest.getNextToken());
             }
             if (listCertificatesRequest.getMaxItems() != null) {
-                jsonWriter.key("MaxItems").value(
+                jsonGenerator.writeFieldName("MaxItems").writeValue(
                         listCertificatesRequest.getMaxItems());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,23 +40,24 @@ import com.amazonaws.util.json.*;
 public class AvailabilityZoneJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AvailabilityZone availabilityZone,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (availabilityZone == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (availabilityZone.getName() != null) {
-                jsonWriter.key("Name").value(availabilityZone.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        availabilityZone.getName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

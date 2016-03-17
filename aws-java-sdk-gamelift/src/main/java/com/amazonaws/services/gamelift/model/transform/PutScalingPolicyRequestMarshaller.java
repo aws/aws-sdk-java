@@ -64,48 +64,49 @@ public class PutScalingPolicyRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putScalingPolicyRequest.getName() != null) {
-                jsonWriter.key("Name").value(putScalingPolicyRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        putScalingPolicyRequest.getName());
             }
             if (putScalingPolicyRequest.getFleetId() != null) {
-                jsonWriter.key("FleetId").value(
+                jsonGenerator.writeFieldName("FleetId").writeValue(
                         putScalingPolicyRequest.getFleetId());
             }
             if (putScalingPolicyRequest.getScalingAdjustment() != null) {
-                jsonWriter.key("ScalingAdjustment").value(
+                jsonGenerator.writeFieldName("ScalingAdjustment").writeValue(
                         putScalingPolicyRequest.getScalingAdjustment());
             }
             if (putScalingPolicyRequest.getScalingAdjustmentType() != null) {
-                jsonWriter.key("ScalingAdjustmentType").value(
-                        putScalingPolicyRequest.getScalingAdjustmentType());
+                jsonGenerator.writeFieldName("ScalingAdjustmentType")
+                        .writeValue(
+                                putScalingPolicyRequest
+                                        .getScalingAdjustmentType());
             }
             if (putScalingPolicyRequest.getThreshold() != null) {
-                jsonWriter.key("Threshold").value(
+                jsonGenerator.writeFieldName("Threshold").writeValue(
                         putScalingPolicyRequest.getThreshold());
             }
             if (putScalingPolicyRequest.getComparisonOperator() != null) {
-                jsonWriter.key("ComparisonOperator").value(
+                jsonGenerator.writeFieldName("ComparisonOperator").writeValue(
                         putScalingPolicyRequest.getComparisonOperator());
             }
             if (putScalingPolicyRequest.getEvaluationPeriods() != null) {
-                jsonWriter.key("EvaluationPeriods").value(
+                jsonGenerator.writeFieldName("EvaluationPeriods").writeValue(
                         putScalingPolicyRequest.getEvaluationPeriods());
             }
             if (putScalingPolicyRequest.getMetricName() != null) {
-                jsonWriter.key("MetricName").value(
+                jsonGenerator.writeFieldName("MetricName").writeValue(
                         putScalingPolicyRequest.getMetricName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

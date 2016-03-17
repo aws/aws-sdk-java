@@ -40,26 +40,28 @@ import com.amazonaws.util.json.*;
 public class FileSystemSizeJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(FileSystemSize fileSystemSize, JSONWriter jsonWriter) {
+    public void marshall(FileSystemSize fileSystemSize,
+            SdkJsonGenerator jsonGenerator) {
         if (fileSystemSize == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (fileSystemSize.getValue() != null) {
-                jsonWriter.key("Value").value(fileSystemSize.getValue());
+                jsonGenerator.writeFieldName("Value").writeValue(
+                        fileSystemSize.getValue());
             }
             if (fileSystemSize.getTimestamp() != null) {
-                jsonWriter.key("Timestamp")
-                        .value(fileSystemSize.getTimestamp());
+                jsonGenerator.writeFieldName("Timestamp").writeValue(
+                        fileSystemSize.getTimestamp());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

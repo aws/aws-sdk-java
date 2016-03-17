@@ -40,47 +40,53 @@ import com.amazonaws.util.json.*;
 public class JobInputJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(JobInput jobInput, JSONWriter jsonWriter) {
+    public void marshall(JobInput jobInput, SdkJsonGenerator jsonGenerator) {
         if (jobInput == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (jobInput.getKey() != null) {
-                jsonWriter.key("Key").value(jobInput.getKey());
+                jsonGenerator.writeFieldName("Key").writeValue(
+                        jobInput.getKey());
             }
             if (jobInput.getFrameRate() != null) {
-                jsonWriter.key("FrameRate").value(jobInput.getFrameRate());
+                jsonGenerator.writeFieldName("FrameRate").writeValue(
+                        jobInput.getFrameRate());
             }
             if (jobInput.getResolution() != null) {
-                jsonWriter.key("Resolution").value(jobInput.getResolution());
+                jsonGenerator.writeFieldName("Resolution").writeValue(
+                        jobInput.getResolution());
             }
             if (jobInput.getAspectRatio() != null) {
-                jsonWriter.key("AspectRatio").value(jobInput.getAspectRatio());
+                jsonGenerator.writeFieldName("AspectRatio").writeValue(
+                        jobInput.getAspectRatio());
             }
             if (jobInput.getInterlaced() != null) {
-                jsonWriter.key("Interlaced").value(jobInput.getInterlaced());
+                jsonGenerator.writeFieldName("Interlaced").writeValue(
+                        jobInput.getInterlaced());
             }
             if (jobInput.getContainer() != null) {
-                jsonWriter.key("Container").value(jobInput.getContainer());
+                jsonGenerator.writeFieldName("Container").writeValue(
+                        jobInput.getContainer());
             }
             if (jobInput.getEncryption() != null) {
-                jsonWriter.key("Encryption");
+                jsonGenerator.writeFieldName("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(
-                        jobInput.getEncryption(), jsonWriter);
+                        jobInput.getEncryption(), jsonGenerator);
             }
             if (jobInput.getDetectedProperties() != null) {
-                jsonWriter.key("DetectedProperties");
+                jsonGenerator.writeFieldName("DetectedProperties");
                 DetectedPropertiesJsonMarshaller.getInstance().marshall(
-                        jobInput.getDetectedProperties(), jsonWriter);
+                        jobInput.getDetectedProperties(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

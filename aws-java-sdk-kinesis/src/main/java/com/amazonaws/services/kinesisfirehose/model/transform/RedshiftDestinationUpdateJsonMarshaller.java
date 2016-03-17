@@ -40,46 +40,47 @@ import com.amazonaws.util.json.*;
 public class RedshiftDestinationUpdateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RedshiftDestinationUpdate redshiftDestinationUpdate,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (redshiftDestinationUpdate == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (redshiftDestinationUpdate.getRoleARN() != null) {
-                jsonWriter.key("RoleARN").value(
+                jsonGenerator.writeFieldName("RoleARN").writeValue(
                         redshiftDestinationUpdate.getRoleARN());
             }
             if (redshiftDestinationUpdate.getClusterJDBCURL() != null) {
-                jsonWriter.key("ClusterJDBCURL").value(
+                jsonGenerator.writeFieldName("ClusterJDBCURL").writeValue(
                         redshiftDestinationUpdate.getClusterJDBCURL());
             }
             if (redshiftDestinationUpdate.getCopyCommand() != null) {
-                jsonWriter.key("CopyCommand");
+                jsonGenerator.writeFieldName("CopyCommand");
                 CopyCommandJsonMarshaller.getInstance().marshall(
-                        redshiftDestinationUpdate.getCopyCommand(), jsonWriter);
+                        redshiftDestinationUpdate.getCopyCommand(),
+                        jsonGenerator);
             }
             if (redshiftDestinationUpdate.getUsername() != null) {
-                jsonWriter.key("Username").value(
+                jsonGenerator.writeFieldName("Username").writeValue(
                         redshiftDestinationUpdate.getUsername());
             }
             if (redshiftDestinationUpdate.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         redshiftDestinationUpdate.getPassword());
             }
             if (redshiftDestinationUpdate.getS3Update() != null) {
-                jsonWriter.key("S3Update");
+                jsonGenerator.writeFieldName("S3Update");
                 S3DestinationUpdateJsonMarshaller.getInstance().marshall(
-                        redshiftDestinationUpdate.getS3Update(), jsonWriter);
+                        redshiftDestinationUpdate.getS3Update(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

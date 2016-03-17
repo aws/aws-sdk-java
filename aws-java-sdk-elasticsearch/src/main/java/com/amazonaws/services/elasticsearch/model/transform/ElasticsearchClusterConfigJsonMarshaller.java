@@ -40,44 +40,50 @@ import com.amazonaws.util.json.*;
 public class ElasticsearchClusterConfigJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ElasticsearchClusterConfig elasticsearchClusterConfig,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (elasticsearchClusterConfig == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (elasticsearchClusterConfig.getInstanceType() != null) {
-                jsonWriter.key("InstanceType").value(
+                jsonGenerator.writeFieldName("InstanceType").writeValue(
                         elasticsearchClusterConfig.getInstanceType());
             }
             if (elasticsearchClusterConfig.getInstanceCount() != null) {
-                jsonWriter.key("InstanceCount").value(
+                jsonGenerator.writeFieldName("InstanceCount").writeValue(
                         elasticsearchClusterConfig.getInstanceCount());
             }
             if (elasticsearchClusterConfig.getDedicatedMasterEnabled() != null) {
-                jsonWriter.key("DedicatedMasterEnabled").value(
-                        elasticsearchClusterConfig.getDedicatedMasterEnabled());
+                jsonGenerator.writeFieldName("DedicatedMasterEnabled")
+                        .writeValue(
+                                elasticsearchClusterConfig
+                                        .getDedicatedMasterEnabled());
             }
             if (elasticsearchClusterConfig.getZoneAwarenessEnabled() != null) {
-                jsonWriter.key("ZoneAwarenessEnabled").value(
-                        elasticsearchClusterConfig.getZoneAwarenessEnabled());
+                jsonGenerator.writeFieldName("ZoneAwarenessEnabled")
+                        .writeValue(
+                                elasticsearchClusterConfig
+                                        .getZoneAwarenessEnabled());
             }
             if (elasticsearchClusterConfig.getDedicatedMasterType() != null) {
-                jsonWriter.key("DedicatedMasterType").value(
+                jsonGenerator.writeFieldName("DedicatedMasterType").writeValue(
                         elasticsearchClusterConfig.getDedicatedMasterType());
             }
             if (elasticsearchClusterConfig.getDedicatedMasterCount() != null) {
-                jsonWriter.key("DedicatedMasterCount").value(
-                        elasticsearchClusterConfig.getDedicatedMasterCount());
+                jsonGenerator.writeFieldName("DedicatedMasterCount")
+                        .writeValue(
+                                elasticsearchClusterConfig
+                                        .getDedicatedMasterCount());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

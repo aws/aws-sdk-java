@@ -40,31 +40,32 @@ import com.amazonaws.util.json.*;
 public class SubnetJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Subnet subnet, JSONWriter jsonWriter) {
+    public void marshall(Subnet subnet, SdkJsonGenerator jsonGenerator) {
         if (subnet == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (subnet.getSubnetIdentifier() != null) {
-                jsonWriter.key("SubnetIdentifier").value(
+                jsonGenerator.writeFieldName("SubnetIdentifier").writeValue(
                         subnet.getSubnetIdentifier());
             }
             if (subnet.getSubnetAvailabilityZone() != null) {
-                jsonWriter.key("SubnetAvailabilityZone");
+                jsonGenerator.writeFieldName("SubnetAvailabilityZone");
                 AvailabilityZoneJsonMarshaller.getInstance().marshall(
-                        subnet.getSubnetAvailabilityZone(), jsonWriter);
+                        subnet.getSubnetAvailabilityZone(), jsonGenerator);
             }
             if (subnet.getSubnetStatus() != null) {
-                jsonWriter.key("SubnetStatus").value(subnet.getSubnetStatus());
+                jsonGenerator.writeFieldName("SubnetStatus").writeValue(
+                        subnet.getSubnetStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -64,27 +64,27 @@ public class ListBuildsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listBuildsRequest.getStatus() != null) {
-                jsonWriter.key("Status").value(listBuildsRequest.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        listBuildsRequest.getStatus());
             }
             if (listBuildsRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(listBuildsRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(
+                        listBuildsRequest.getLimit());
             }
             if (listBuildsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         listBuildsRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

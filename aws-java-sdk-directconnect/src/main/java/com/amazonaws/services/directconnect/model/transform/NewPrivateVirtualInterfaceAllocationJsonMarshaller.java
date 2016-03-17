@@ -40,48 +40,50 @@ import com.amazonaws.util.json.*;
 public class NewPrivateVirtualInterfaceAllocationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             NewPrivateVirtualInterfaceAllocation newPrivateVirtualInterfaceAllocation,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (newPrivateVirtualInterfaceAllocation == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (newPrivateVirtualInterfaceAllocation.getVirtualInterfaceName() != null) {
-                jsonWriter.key("virtualInterfaceName").value(
-                        newPrivateVirtualInterfaceAllocation
-                                .getVirtualInterfaceName());
+                jsonGenerator.writeFieldName("virtualInterfaceName")
+                        .writeValue(
+                                newPrivateVirtualInterfaceAllocation
+                                        .getVirtualInterfaceName());
             }
             if (newPrivateVirtualInterfaceAllocation.getVlan() != null) {
-                jsonWriter.key("vlan").value(
+                jsonGenerator.writeFieldName("vlan").writeValue(
                         newPrivateVirtualInterfaceAllocation.getVlan());
             }
             if (newPrivateVirtualInterfaceAllocation.getAsn() != null) {
-                jsonWriter.key("asn").value(
+                jsonGenerator.writeFieldName("asn").writeValue(
                         newPrivateVirtualInterfaceAllocation.getAsn());
             }
             if (newPrivateVirtualInterfaceAllocation.getAuthKey() != null) {
-                jsonWriter.key("authKey").value(
+                jsonGenerator.writeFieldName("authKey").writeValue(
                         newPrivateVirtualInterfaceAllocation.getAuthKey());
             }
             if (newPrivateVirtualInterfaceAllocation.getAmazonAddress() != null) {
-                jsonWriter.key("amazonAddress")
-                        .value(newPrivateVirtualInterfaceAllocation
-                                .getAmazonAddress());
+                jsonGenerator.writeFieldName("amazonAddress")
+                        .writeValue(
+                                newPrivateVirtualInterfaceAllocation
+                                        .getAmazonAddress());
             }
             if (newPrivateVirtualInterfaceAllocation.getCustomerAddress() != null) {
-                jsonWriter.key("customerAddress").value(
+                jsonGenerator.writeFieldName("customerAddress").writeValue(
                         newPrivateVirtualInterfaceAllocation
                                 .getCustomerAddress());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

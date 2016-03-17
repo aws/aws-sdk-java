@@ -40,29 +40,31 @@ import com.amazonaws.util.json.*;
 public class DataSourceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DataSource dataSource, JSONWriter jsonWriter) {
+    public void marshall(DataSource dataSource, SdkJsonGenerator jsonGenerator) {
         if (dataSource == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (dataSource.getType() != null) {
-                jsonWriter.key("Type").value(dataSource.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        dataSource.getType());
             }
             if (dataSource.getArn() != null) {
-                jsonWriter.key("Arn").value(dataSource.getArn());
+                jsonGenerator.writeFieldName("Arn").writeValue(
+                        dataSource.getArn());
             }
             if (dataSource.getDatabaseName() != null) {
-                jsonWriter.key("DatabaseName").value(
+                jsonGenerator.writeFieldName("DatabaseName").writeValue(
                         dataSource.getDatabaseName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

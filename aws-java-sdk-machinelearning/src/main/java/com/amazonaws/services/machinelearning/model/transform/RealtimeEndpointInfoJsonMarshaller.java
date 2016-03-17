@@ -40,36 +40,38 @@ import com.amazonaws.util.json.*;
 public class RealtimeEndpointInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RealtimeEndpointInfo realtimeEndpointInfo,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (realtimeEndpointInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (realtimeEndpointInfo.getPeakRequestsPerSecond() != null) {
-                jsonWriter.key("PeakRequestsPerSecond").value(
-                        realtimeEndpointInfo.getPeakRequestsPerSecond());
+                jsonGenerator
+                        .writeFieldName("PeakRequestsPerSecond")
+                        .writeValue(
+                                realtimeEndpointInfo.getPeakRequestsPerSecond());
             }
             if (realtimeEndpointInfo.getCreatedAt() != null) {
-                jsonWriter.key("CreatedAt").value(
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(
                         realtimeEndpointInfo.getCreatedAt());
             }
             if (realtimeEndpointInfo.getEndpointUrl() != null) {
-                jsonWriter.key("EndpointUrl").value(
+                jsonGenerator.writeFieldName("EndpointUrl").writeValue(
                         realtimeEndpointInfo.getEndpointUrl());
             }
             if (realtimeEndpointInfo.getEndpointStatus() != null) {
-                jsonWriter.key("EndpointStatus").value(
+                jsonGenerator.writeFieldName("EndpointStatus").writeValue(
                         realtimeEndpointInfo.getEndpointStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

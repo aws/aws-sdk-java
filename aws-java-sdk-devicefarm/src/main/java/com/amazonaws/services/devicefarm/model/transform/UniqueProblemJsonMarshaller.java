@@ -40,36 +40,38 @@ import com.amazonaws.util.json.*;
 public class UniqueProblemJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(UniqueProblem uniqueProblem, JSONWriter jsonWriter) {
+    public void marshall(UniqueProblem uniqueProblem,
+            SdkJsonGenerator jsonGenerator) {
         if (uniqueProblem == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (uniqueProblem.getMessage() != null) {
-                jsonWriter.key("message").value(uniqueProblem.getMessage());
+                jsonGenerator.writeFieldName("message").writeValue(
+                        uniqueProblem.getMessage());
             }
 
             java.util.List<Problem> problemsList = uniqueProblem.getProblems();
             if (problemsList != null) {
-                jsonWriter.key("problems");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("problems");
+                jsonGenerator.writeStartArray();
                 for (Problem problemsListValue : problemsList) {
                     if (problemsListValue != null) {
 
                         ProblemJsonMarshaller.getInstance().marshall(
-                                problemsListValue, jsonWriter);
+                                problemsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,31 +40,36 @@ import com.amazonaws.util.json.*;
 public class IpPermissionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(IpPermission ipPermission, JSONWriter jsonWriter) {
+    public void marshall(IpPermission ipPermission,
+            SdkJsonGenerator jsonGenerator) {
         if (ipPermission == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (ipPermission.getFromPort() != null) {
-                jsonWriter.key("FromPort").value(ipPermission.getFromPort());
+                jsonGenerator.writeFieldName("FromPort").writeValue(
+                        ipPermission.getFromPort());
             }
             if (ipPermission.getToPort() != null) {
-                jsonWriter.key("ToPort").value(ipPermission.getToPort());
+                jsonGenerator.writeFieldName("ToPort").writeValue(
+                        ipPermission.getToPort());
             }
             if (ipPermission.getIpRange() != null) {
-                jsonWriter.key("IpRange").value(ipPermission.getIpRange());
+                jsonGenerator.writeFieldName("IpRange").writeValue(
+                        ipPermission.getIpRange());
             }
             if (ipPermission.getProtocol() != null) {
-                jsonWriter.key("Protocol").value(ipPermission.getProtocol());
+                jsonGenerator.writeFieldName("Protocol").writeValue(
+                        ipPermission.getProtocol());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

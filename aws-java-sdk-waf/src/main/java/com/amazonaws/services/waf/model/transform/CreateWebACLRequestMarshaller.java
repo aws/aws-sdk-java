@@ -64,33 +64,32 @@ public class CreateWebACLRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createWebACLRequest.getName() != null) {
-                jsonWriter.key("Name").value(createWebACLRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createWebACLRequest.getName());
             }
             if (createWebACLRequest.getMetricName() != null) {
-                jsonWriter.key("MetricName").value(
+                jsonGenerator.writeFieldName("MetricName").writeValue(
                         createWebACLRequest.getMetricName());
             }
             if (createWebACLRequest.getDefaultAction() != null) {
-                jsonWriter.key("DefaultAction");
+                jsonGenerator.writeFieldName("DefaultAction");
                 WafActionJsonMarshaller.getInstance().marshall(
-                        createWebACLRequest.getDefaultAction(), jsonWriter);
+                        createWebACLRequest.getDefaultAction(), jsonGenerator);
             }
             if (createWebACLRequest.getChangeToken() != null) {
-                jsonWriter.key("ChangeToken").value(
+                jsonGenerator.writeFieldName("ChangeToken").writeValue(
                         createWebACLRequest.getChangeToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

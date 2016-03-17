@@ -40,36 +40,38 @@ import com.amazonaws.util.json.*;
 public class ConfigStreamDeliveryInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ConfigStreamDeliveryInfo configStreamDeliveryInfo,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (configStreamDeliveryInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (configStreamDeliveryInfo.getLastStatus() != null) {
-                jsonWriter.key("lastStatus").value(
+                jsonGenerator.writeFieldName("lastStatus").writeValue(
                         configStreamDeliveryInfo.getLastStatus());
             }
             if (configStreamDeliveryInfo.getLastErrorCode() != null) {
-                jsonWriter.key("lastErrorCode").value(
+                jsonGenerator.writeFieldName("lastErrorCode").writeValue(
                         configStreamDeliveryInfo.getLastErrorCode());
             }
             if (configStreamDeliveryInfo.getLastErrorMessage() != null) {
-                jsonWriter.key("lastErrorMessage").value(
+                jsonGenerator.writeFieldName("lastErrorMessage").writeValue(
                         configStreamDeliveryInfo.getLastErrorMessage());
             }
             if (configStreamDeliveryInfo.getLastStatusChangeTime() != null) {
-                jsonWriter.key("lastStatusChangeTime").value(
-                        configStreamDeliveryInfo.getLastStatusChangeTime());
+                jsonGenerator.writeFieldName("lastStatusChangeTime")
+                        .writeValue(
+                                configStreamDeliveryInfo
+                                        .getLastStatusChangeTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

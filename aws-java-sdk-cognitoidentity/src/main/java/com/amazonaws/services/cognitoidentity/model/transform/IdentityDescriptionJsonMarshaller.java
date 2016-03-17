@@ -40,44 +40,44 @@ import com.amazonaws.util.json.*;
 public class IdentityDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(IdentityDescription identityDescription,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (identityDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (identityDescription.getIdentityId() != null) {
-                jsonWriter.key("IdentityId").value(
+                jsonGenerator.writeFieldName("IdentityId").writeValue(
                         identityDescription.getIdentityId());
             }
 
             java.util.List<String> loginsList = identityDescription.getLogins();
             if (loginsList != null) {
-                jsonWriter.key("Logins");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Logins");
+                jsonGenerator.writeStartArray();
                 for (String loginsListValue : loginsList) {
                     if (loginsListValue != null) {
-                        jsonWriter.value(loginsListValue);
+                        jsonGenerator.writeValue(loginsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (identityDescription.getCreationDate() != null) {
-                jsonWriter.key("CreationDate").value(
+                jsonGenerator.writeFieldName("CreationDate").writeValue(
                         identityDescription.getCreationDate());
             }
             if (identityDescription.getLastModifiedDate() != null) {
-                jsonWriter.key("LastModifiedDate").value(
+                jsonGenerator.writeFieldName("LastModifiedDate").writeValue(
                         identityDescription.getLastModifiedDate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

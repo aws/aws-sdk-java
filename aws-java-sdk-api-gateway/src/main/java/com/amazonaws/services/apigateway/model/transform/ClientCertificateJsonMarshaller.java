@@ -40,40 +40,41 @@ import com.amazonaws.util.json.*;
 public class ClientCertificateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ClientCertificate clientCertificate,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (clientCertificate == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (clientCertificate.getClientCertificateId() != null) {
-                jsonWriter.key("clientCertificateId").value(
+                jsonGenerator.writeFieldName("clientCertificateId").writeValue(
                         clientCertificate.getClientCertificateId());
             }
             if (clientCertificate.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         clientCertificate.getDescription());
             }
             if (clientCertificate.getPemEncodedCertificate() != null) {
-                jsonWriter.key("pemEncodedCertificate").value(
-                        clientCertificate.getPemEncodedCertificate());
+                jsonGenerator.writeFieldName("pemEncodedCertificate")
+                        .writeValue(
+                                clientCertificate.getPemEncodedCertificate());
             }
             if (clientCertificate.getCreatedDate() != null) {
-                jsonWriter.key("createdDate").value(
+                jsonGenerator.writeFieldName("createdDate").writeValue(
                         clientCertificate.getCreatedDate());
             }
             if (clientCertificate.getExpirationDate() != null) {
-                jsonWriter.key("expirationDate").value(
+                jsonGenerator.writeFieldName("expirationDate").writeValue(
                         clientCertificate.getExpirationDate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

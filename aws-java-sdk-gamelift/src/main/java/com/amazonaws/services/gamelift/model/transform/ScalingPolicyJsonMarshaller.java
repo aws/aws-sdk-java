@@ -40,51 +40,56 @@ import com.amazonaws.util.json.*;
 public class ScalingPolicyJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ScalingPolicy scalingPolicy, JSONWriter jsonWriter) {
+    public void marshall(ScalingPolicy scalingPolicy,
+            SdkJsonGenerator jsonGenerator) {
         if (scalingPolicy == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (scalingPolicy.getFleetId() != null) {
-                jsonWriter.key("FleetId").value(scalingPolicy.getFleetId());
+                jsonGenerator.writeFieldName("FleetId").writeValue(
+                        scalingPolicy.getFleetId());
             }
             if (scalingPolicy.getName() != null) {
-                jsonWriter.key("Name").value(scalingPolicy.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        scalingPolicy.getName());
             }
             if (scalingPolicy.getStatus() != null) {
-                jsonWriter.key("Status").value(scalingPolicy.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        scalingPolicy.getStatus());
             }
             if (scalingPolicy.getScalingAdjustment() != null) {
-                jsonWriter.key("ScalingAdjustment").value(
+                jsonGenerator.writeFieldName("ScalingAdjustment").writeValue(
                         scalingPolicy.getScalingAdjustment());
             }
             if (scalingPolicy.getScalingAdjustmentType() != null) {
-                jsonWriter.key("ScalingAdjustmentType").value(
-                        scalingPolicy.getScalingAdjustmentType());
+                jsonGenerator.writeFieldName("ScalingAdjustmentType")
+                        .writeValue(scalingPolicy.getScalingAdjustmentType());
             }
             if (scalingPolicy.getComparisonOperator() != null) {
-                jsonWriter.key("ComparisonOperator").value(
+                jsonGenerator.writeFieldName("ComparisonOperator").writeValue(
                         scalingPolicy.getComparisonOperator());
             }
             if (scalingPolicy.getThreshold() != null) {
-                jsonWriter.key("Threshold").value(scalingPolicy.getThreshold());
+                jsonGenerator.writeFieldName("Threshold").writeValue(
+                        scalingPolicy.getThreshold());
             }
             if (scalingPolicy.getEvaluationPeriods() != null) {
-                jsonWriter.key("EvaluationPeriods").value(
+                jsonGenerator.writeFieldName("EvaluationPeriods").writeValue(
                         scalingPolicy.getEvaluationPeriods());
             }
             if (scalingPolicy.getMetricName() != null) {
-                jsonWriter.key("MetricName").value(
+                jsonGenerator.writeFieldName("MetricName").writeValue(
                         scalingPolicy.getMetricName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

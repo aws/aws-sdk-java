@@ -66,27 +66,25 @@ public class PollForThirdPartyJobsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (pollForThirdPartyJobsRequest.getActionTypeId() != null) {
-                jsonWriter.key("actionTypeId");
+                jsonGenerator.writeFieldName("actionTypeId");
                 ActionTypeIdJsonMarshaller.getInstance().marshall(
                         pollForThirdPartyJobsRequest.getActionTypeId(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (pollForThirdPartyJobsRequest.getMaxBatchSize() != null) {
-                jsonWriter.key("maxBatchSize").value(
+                jsonGenerator.writeFieldName("maxBatchSize").writeValue(
                         pollForThirdPartyJobsRequest.getMaxBatchSize());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

@@ -40,57 +40,60 @@ import com.amazonaws.util.json.*;
 public class ClusterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Cluster cluster, JSONWriter jsonWriter) {
+    public void marshall(Cluster cluster, SdkJsonGenerator jsonGenerator) {
         if (cluster == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (cluster.getId() != null) {
-                jsonWriter.key("Id").value(cluster.getId());
+                jsonGenerator.writeFieldName("Id").writeValue(cluster.getId());
             }
             if (cluster.getName() != null) {
-                jsonWriter.key("Name").value(cluster.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        cluster.getName());
             }
             if (cluster.getStatus() != null) {
-                jsonWriter.key("Status");
+                jsonGenerator.writeFieldName("Status");
                 ClusterStatusJsonMarshaller.getInstance().marshall(
-                        cluster.getStatus(), jsonWriter);
+                        cluster.getStatus(), jsonGenerator);
             }
             if (cluster.getEc2InstanceAttributes() != null) {
-                jsonWriter.key("Ec2InstanceAttributes");
+                jsonGenerator.writeFieldName("Ec2InstanceAttributes");
                 Ec2InstanceAttributesJsonMarshaller.getInstance().marshall(
-                        cluster.getEc2InstanceAttributes(), jsonWriter);
+                        cluster.getEc2InstanceAttributes(), jsonGenerator);
             }
             if (cluster.getLogUri() != null) {
-                jsonWriter.key("LogUri").value(cluster.getLogUri());
+                jsonGenerator.writeFieldName("LogUri").writeValue(
+                        cluster.getLogUri());
             }
             if (cluster.getRequestedAmiVersion() != null) {
-                jsonWriter.key("RequestedAmiVersion").value(
+                jsonGenerator.writeFieldName("RequestedAmiVersion").writeValue(
                         cluster.getRequestedAmiVersion());
             }
             if (cluster.getRunningAmiVersion() != null) {
-                jsonWriter.key("RunningAmiVersion").value(
+                jsonGenerator.writeFieldName("RunningAmiVersion").writeValue(
                         cluster.getRunningAmiVersion());
             }
             if (cluster.getReleaseLabel() != null) {
-                jsonWriter.key("ReleaseLabel").value(cluster.getReleaseLabel());
+                jsonGenerator.writeFieldName("ReleaseLabel").writeValue(
+                        cluster.getReleaseLabel());
             }
             if (cluster.getAutoTerminate() != null) {
-                jsonWriter.key("AutoTerminate").value(
+                jsonGenerator.writeFieldName("AutoTerminate").writeValue(
                         cluster.getAutoTerminate());
             }
             if (cluster.getTerminationProtected() != null) {
-                jsonWriter.key("TerminationProtected").value(
-                        cluster.getTerminationProtected());
+                jsonGenerator.writeFieldName("TerminationProtected")
+                        .writeValue(cluster.getTerminationProtected());
             }
             if (cluster.getVisibleToAllUsers() != null) {
-                jsonWriter.key("VisibleToAllUsers").value(
+                jsonGenerator.writeFieldName("VisibleToAllUsers").writeValue(
                         cluster.getVisibleToAllUsers());
             }
 
@@ -98,41 +101,42 @@ public class ClusterJsonMarshaller {
                     .getApplications();
             if (!applicationsList.isEmpty()
                     || !applicationsList.isAutoConstruct()) {
-                jsonWriter.key("Applications");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Applications");
+                jsonGenerator.writeStartArray();
                 for (Application applicationsListValue : applicationsList) {
                     if (applicationsListValue != null) {
 
                         ApplicationJsonMarshaller.getInstance().marshall(
-                                applicationsListValue, jsonWriter);
+                                applicationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) cluster
                     .getTags();
             if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
-                jsonWriter.key("Tags");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (cluster.getServiceRole() != null) {
-                jsonWriter.key("ServiceRole").value(cluster.getServiceRole());
+                jsonGenerator.writeFieldName("ServiceRole").writeValue(
+                        cluster.getServiceRole());
             }
             if (cluster.getNormalizedInstanceHours() != null) {
-                jsonWriter.key("NormalizedInstanceHours").value(
-                        cluster.getNormalizedInstanceHours());
+                jsonGenerator.writeFieldName("NormalizedInstanceHours")
+                        .writeValue(cluster.getNormalizedInstanceHours());
             }
             if (cluster.getMasterPublicDnsName() != null) {
-                jsonWriter.key("MasterPublicDnsName").value(
+                jsonGenerator.writeFieldName("MasterPublicDnsName").writeValue(
                         cluster.getMasterPublicDnsName());
             }
 
@@ -140,19 +144,19 @@ public class ClusterJsonMarshaller {
                     .getConfigurations();
             if (!configurationsList.isEmpty()
                     || !configurationsList.isAutoConstruct()) {
-                jsonWriter.key("Configurations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Configurations");
+                jsonGenerator.writeStartArray();
                 for (Configuration configurationsListValue : configurationsList) {
                     if (configurationsListValue != null) {
 
                         ConfigurationJsonMarshaller.getInstance().marshall(
-                                configurationsListValue, jsonWriter);
+                                configurationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

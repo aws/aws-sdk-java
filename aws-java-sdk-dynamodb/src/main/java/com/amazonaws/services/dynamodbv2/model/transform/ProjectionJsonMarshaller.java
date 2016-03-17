@@ -40,36 +40,36 @@ import com.amazonaws.util.json.*;
 public class ProjectionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Projection projection, JSONWriter jsonWriter) {
+    public void marshall(Projection projection, SdkJsonGenerator jsonGenerator) {
         if (projection == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (projection.getProjectionType() != null) {
-                jsonWriter.key("ProjectionType").value(
+                jsonGenerator.writeFieldName("ProjectionType").writeValue(
                         projection.getProjectionType());
             }
 
             java.util.List<String> nonKeyAttributesList = projection
                     .getNonKeyAttributes();
             if (nonKeyAttributesList != null) {
-                jsonWriter.key("NonKeyAttributes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("NonKeyAttributes");
+                jsonGenerator.writeStartArray();
                 for (String nonKeyAttributesListValue : nonKeyAttributesList) {
                     if (nonKeyAttributesListValue != null) {
-                        jsonWriter.value(nonKeyAttributesListValue);
+                        jsonGenerator.writeValue(nonKeyAttributesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,29 +40,32 @@ import com.amazonaws.util.json.*;
 public class EnvironmentVariableJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(EnvironmentVariable environmentVariable,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (environmentVariable == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (environmentVariable.getKey() != null) {
-                jsonWriter.key("Key").value(environmentVariable.getKey());
+                jsonGenerator.writeFieldName("Key").writeValue(
+                        environmentVariable.getKey());
             }
             if (environmentVariable.getValue() != null) {
-                jsonWriter.key("Value").value(environmentVariable.getValue());
+                jsonGenerator.writeFieldName("Value").writeValue(
+                        environmentVariable.getValue());
             }
             if (environmentVariable.getSecure() != null) {
-                jsonWriter.key("Secure").value(environmentVariable.getSecure());
+                jsonGenerator.writeFieldName("Secure").writeValue(
+                        environmentVariable.getSecure());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

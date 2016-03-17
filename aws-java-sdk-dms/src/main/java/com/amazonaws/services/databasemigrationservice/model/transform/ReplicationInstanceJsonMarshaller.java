@@ -40,91 +40,105 @@ import com.amazonaws.util.json.*;
 public class ReplicationInstanceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ReplicationInstance replicationInstance,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (replicationInstance == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (replicationInstance.getReplicationInstanceIdentifier() != null) {
-                jsonWriter.key("ReplicationInstanceIdentifier").value(
-                        replicationInstance.getReplicationInstanceIdentifier());
+                jsonGenerator.writeFieldName("ReplicationInstanceIdentifier")
+                        .writeValue(
+                                replicationInstance
+                                        .getReplicationInstanceIdentifier());
             }
             if (replicationInstance.getReplicationInstanceClass() != null) {
-                jsonWriter.key("ReplicationInstanceClass").value(
-                        replicationInstance.getReplicationInstanceClass());
+                jsonGenerator.writeFieldName("ReplicationInstanceClass")
+                        .writeValue(
+                                replicationInstance
+                                        .getReplicationInstanceClass());
             }
             if (replicationInstance.getReplicationInstanceStatus() != null) {
-                jsonWriter.key("ReplicationInstanceStatus").value(
-                        replicationInstance.getReplicationInstanceStatus());
+                jsonGenerator.writeFieldName("ReplicationInstanceStatus")
+                        .writeValue(
+                                replicationInstance
+                                        .getReplicationInstanceStatus());
             }
             if (replicationInstance.getAllocatedStorage() != null) {
-                jsonWriter.key("AllocatedStorage").value(
+                jsonGenerator.writeFieldName("AllocatedStorage").writeValue(
                         replicationInstance.getAllocatedStorage());
             }
             if (replicationInstance.getInstanceCreateTime() != null) {
-                jsonWriter.key("InstanceCreateTime").value(
+                jsonGenerator.writeFieldName("InstanceCreateTime").writeValue(
                         replicationInstance.getInstanceCreateTime());
             }
             if (replicationInstance.getAvailabilityZone() != null) {
-                jsonWriter.key("AvailabilityZone").value(
+                jsonGenerator.writeFieldName("AvailabilityZone").writeValue(
                         replicationInstance.getAvailabilityZone());
             }
             if (replicationInstance.getReplicationSubnetGroup() != null) {
-                jsonWriter.key("ReplicationSubnetGroup");
+                jsonGenerator.writeFieldName("ReplicationSubnetGroup");
                 ReplicationSubnetGroupJsonMarshaller.getInstance().marshall(
                         replicationInstance.getReplicationSubnetGroup(),
-                        jsonWriter);
+                        jsonGenerator);
             }
             if (replicationInstance.getPreferredMaintenanceWindow() != null) {
-                jsonWriter.key("PreferredMaintenanceWindow").value(
-                        replicationInstance.getPreferredMaintenanceWindow());
+                jsonGenerator.writeFieldName("PreferredMaintenanceWindow")
+                        .writeValue(
+                                replicationInstance
+                                        .getPreferredMaintenanceWindow());
             }
             if (replicationInstance.getPendingModifiedValues() != null) {
-                jsonWriter.key("PendingModifiedValues");
+                jsonGenerator.writeFieldName("PendingModifiedValues");
                 ReplicationPendingModifiedValuesJsonMarshaller.getInstance()
                         .marshall(
                                 replicationInstance.getPendingModifiedValues(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (replicationInstance.getEngineVersion() != null) {
-                jsonWriter.key("EngineVersion").value(
+                jsonGenerator.writeFieldName("EngineVersion").writeValue(
                         replicationInstance.getEngineVersion());
             }
             if (replicationInstance.getAutoMinorVersionUpgrade() != null) {
-                jsonWriter.key("AutoMinorVersionUpgrade").value(
-                        replicationInstance.getAutoMinorVersionUpgrade());
+                jsonGenerator.writeFieldName("AutoMinorVersionUpgrade")
+                        .writeValue(
+                                replicationInstance
+                                        .getAutoMinorVersionUpgrade());
             }
             if (replicationInstance.getKmsKeyId() != null) {
-                jsonWriter.key("KmsKeyId").value(
+                jsonGenerator.writeFieldName("KmsKeyId").writeValue(
                         replicationInstance.getKmsKeyId());
             }
             if (replicationInstance.getReplicationInstanceArn() != null) {
-                jsonWriter.key("ReplicationInstanceArn").value(
-                        replicationInstance.getReplicationInstanceArn());
+                jsonGenerator
+                        .writeFieldName("ReplicationInstanceArn")
+                        .writeValue(
+                                replicationInstance.getReplicationInstanceArn());
             }
             if (replicationInstance.getReplicationInstancePublicIpAddress() != null) {
-                jsonWriter.key("ReplicationInstancePublicIpAddress").value(
+                jsonGenerator.writeFieldName(
+                        "ReplicationInstancePublicIpAddress").writeValue(
                         replicationInstance
                                 .getReplicationInstancePublicIpAddress());
             }
             if (replicationInstance.getReplicationInstancePrivateIpAddress() != null) {
-                jsonWriter.key("ReplicationInstancePrivateIpAddress").value(
+                jsonGenerator.writeFieldName(
+                        "ReplicationInstancePrivateIpAddress").writeValue(
                         replicationInstance
                                 .getReplicationInstancePrivateIpAddress());
             }
             if (replicationInstance.getPubliclyAccessible() != null) {
-                jsonWriter.key("PubliclyAccessible").value(
+                jsonGenerator.writeFieldName("PubliclyAccessible").writeValue(
                         replicationInstance.getPubliclyAccessible());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

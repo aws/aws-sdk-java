@@ -40,20 +40,20 @@ import com.amazonaws.util.json.*;
 public class GenericRevisionInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(GenericRevisionInfo genericRevisionInfo,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (genericRevisionInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (genericRevisionInfo.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         genericRevisionInfo.getDescription());
             }
 
@@ -61,29 +61,29 @@ public class GenericRevisionInfoJsonMarshaller {
                     .getDeploymentGroups();
             if (!deploymentGroupsList.isEmpty()
                     || !deploymentGroupsList.isAutoConstruct()) {
-                jsonWriter.key("deploymentGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("deploymentGroups");
+                jsonGenerator.writeStartArray();
                 for (String deploymentGroupsListValue : deploymentGroupsList) {
                     if (deploymentGroupsListValue != null) {
-                        jsonWriter.value(deploymentGroupsListValue);
+                        jsonGenerator.writeValue(deploymentGroupsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (genericRevisionInfo.getFirstUsedTime() != null) {
-                jsonWriter.key("firstUsedTime").value(
+                jsonGenerator.writeFieldName("firstUsedTime").writeValue(
                         genericRevisionInfo.getFirstUsedTime());
             }
             if (genericRevisionInfo.getLastUsedTime() != null) {
-                jsonWriter.key("lastUsedTime").value(
+                jsonGenerator.writeFieldName("lastUsedTime").writeValue(
                         genericRevisionInfo.getLastUsedTime());
             }
             if (genericRevisionInfo.getRegisterTime() != null) {
-                jsonWriter.key("registerTime").value(
+                jsonGenerator.writeFieldName("registerTime").writeValue(
                         genericRevisionInfo.getRegisterTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

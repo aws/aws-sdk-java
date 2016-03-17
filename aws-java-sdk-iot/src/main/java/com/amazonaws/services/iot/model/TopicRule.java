@@ -34,7 +34,7 @@ public class TopicRule implements Serializable, Cloneable {
     /**
      * <p>
      * The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.
+     * multiple lines, be sure to escape the newline characters.
      * </p>
      */
     private String sql;
@@ -107,13 +107,12 @@ public class TopicRule implements Serializable, Cloneable {
     /**
      * <p>
      * The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.
+     * multiple lines, be sure to escape the newline characters.
      * </p>
      * 
      * @param sql
      *        The SQL statement used to query the topic. When using a SQL query
-     *        with multiple lines, be sure to escape the newline characters
-     *        properly.
+     *        with multiple lines, be sure to escape the newline characters.
      */
 
     public void setSql(String sql) {
@@ -123,12 +122,11 @@ public class TopicRule implements Serializable, Cloneable {
     /**
      * <p>
      * The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.
+     * multiple lines, be sure to escape the newline characters.
      * </p>
      * 
      * @return The SQL statement used to query the topic. When using a SQL query
-     *         with multiple lines, be sure to escape the newline characters
-     *         properly.
+     *         with multiple lines, be sure to escape the newline characters.
      */
 
     public String getSql() {
@@ -138,13 +136,12 @@ public class TopicRule implements Serializable, Cloneable {
     /**
      * <p>
      * The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.
+     * multiple lines, be sure to escape the newline characters.
      * </p>
      * 
      * @param sql
      *        The SQL statement used to query the topic. When using a SQL query
-     *        with multiple lines, be sure to escape the newline characters
-     *        properly.
+     *        with multiple lines, be sure to escape the newline characters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -64,74 +64,74 @@ public class SendCommandRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) sendCommandRequest
                     .getInstanceIds();
             if (!instanceIdsList.isEmpty()
                     || !instanceIdsList.isAutoConstruct()) {
-                jsonWriter.key("InstanceIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InstanceIds");
+                jsonGenerator.writeStartArray();
                 for (String instanceIdsListValue : instanceIdsList) {
                     if (instanceIdsListValue != null) {
-                        jsonWriter.value(instanceIdsListValue);
+                        jsonGenerator.writeValue(instanceIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (sendCommandRequest.getDocumentName() != null) {
-                jsonWriter.key("DocumentName").value(
+                jsonGenerator.writeFieldName("DocumentName").writeValue(
                         sendCommandRequest.getDocumentName());
             }
             if (sendCommandRequest.getTimeoutSeconds() != null) {
-                jsonWriter.key("TimeoutSeconds").value(
+                jsonGenerator.writeFieldName("TimeoutSeconds").writeValue(
                         sendCommandRequest.getTimeoutSeconds());
             }
             if (sendCommandRequest.getComment() != null) {
-                jsonWriter.key("Comment")
-                        .value(sendCommandRequest.getComment());
+                jsonGenerator.writeFieldName("Comment").writeValue(
+                        sendCommandRequest.getComment());
             }
 
             java.util.Map<String, java.util.List<String>> parametersMap = sendCommandRequest
                     .getParameters();
             if (parametersMap != null) {
-                jsonWriter.key("Parameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Parameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, java.util.List<String>> parametersMapValue : parametersMap
                         .entrySet()) {
                     if (parametersMapValue.getValue() != null) {
-                        jsonWriter.key(parametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(parametersMapValue
+                                .getKey());
 
-                        jsonWriter.array();
+                        jsonGenerator.writeStartArray();
                         for (String parametersMapValueList : parametersMapValue
                                 .getValue()) {
                             if (parametersMapValueList != null) {
-                                jsonWriter.value(parametersMapValueList);
+                                jsonGenerator
+                                        .writeValue(parametersMapValueList);
                             }
                         }
-                        jsonWriter.endArray();
+                        jsonGenerator.writeEndArray();
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
             if (sendCommandRequest.getOutputS3BucketName() != null) {
-                jsonWriter.key("OutputS3BucketName").value(
+                jsonGenerator.writeFieldName("OutputS3BucketName").writeValue(
                         sendCommandRequest.getOutputS3BucketName());
             }
             if (sendCommandRequest.getOutputS3KeyPrefix() != null) {
-                jsonWriter.key("OutputS3KeyPrefix").value(
+                jsonGenerator.writeFieldName("OutputS3KeyPrefix").writeValue(
                         sendCommandRequest.getOutputS3KeyPrefix());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

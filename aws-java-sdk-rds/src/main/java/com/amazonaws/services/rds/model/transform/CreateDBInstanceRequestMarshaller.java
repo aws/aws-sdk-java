@@ -173,6 +173,9 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
         if (createDBInstanceRequest.getMonitoringRoleArn() != null) {
             request.addParameter("MonitoringRoleArn", StringUtils.fromString(createDBInstanceRequest.getMonitoringRoleArn()));
         }
+        if (createDBInstanceRequest.getPromotionTier() != null) {
+            request.addParameter("PromotionTier", StringUtils.fromInteger(createDBInstanceRequest.getPromotionTier()));
+        }
 
         return request;
     }

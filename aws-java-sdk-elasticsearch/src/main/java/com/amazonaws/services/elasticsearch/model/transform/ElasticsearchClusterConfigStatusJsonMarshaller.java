@@ -40,34 +40,34 @@ import com.amazonaws.util.json.*;
 public class ElasticsearchClusterConfigStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             ElasticsearchClusterConfigStatus elasticsearchClusterConfigStatus,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (elasticsearchClusterConfigStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (elasticsearchClusterConfigStatus.getOptions() != null) {
-                jsonWriter.key("Options");
+                jsonGenerator.writeFieldName("Options");
                 ElasticsearchClusterConfigJsonMarshaller.getInstance()
                         .marshall(
                                 elasticsearchClusterConfigStatus.getOptions(),
-                                jsonWriter);
+                                jsonGenerator);
             }
             if (elasticsearchClusterConfigStatus.getStatus() != null) {
-                jsonWriter.key("Status");
+                jsonGenerator.writeFieldName("Status");
                 OptionStatusJsonMarshaller.getInstance().marshall(
                         elasticsearchClusterConfigStatus.getStatus(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,36 +40,38 @@ import com.amazonaws.util.json.*;
 public class VolumeRecoveryPointInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(VolumeRecoveryPointInfo volumeRecoveryPointInfo,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (volumeRecoveryPointInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (volumeRecoveryPointInfo.getVolumeARN() != null) {
-                jsonWriter.key("VolumeARN").value(
+                jsonGenerator.writeFieldName("VolumeARN").writeValue(
                         volumeRecoveryPointInfo.getVolumeARN());
             }
             if (volumeRecoveryPointInfo.getVolumeSizeInBytes() != null) {
-                jsonWriter.key("VolumeSizeInBytes").value(
+                jsonGenerator.writeFieldName("VolumeSizeInBytes").writeValue(
                         volumeRecoveryPointInfo.getVolumeSizeInBytes());
             }
             if (volumeRecoveryPointInfo.getVolumeUsageInBytes() != null) {
-                jsonWriter.key("VolumeUsageInBytes").value(
+                jsonGenerator.writeFieldName("VolumeUsageInBytes").writeValue(
                         volumeRecoveryPointInfo.getVolumeUsageInBytes());
             }
             if (volumeRecoveryPointInfo.getVolumeRecoveryPointTime() != null) {
-                jsonWriter.key("VolumeRecoveryPointTime").value(
-                        volumeRecoveryPointInfo.getVolumeRecoveryPointTime());
+                jsonGenerator.writeFieldName("VolumeRecoveryPointTime")
+                        .writeValue(
+                                volumeRecoveryPointInfo
+                                        .getVolumeRecoveryPointTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

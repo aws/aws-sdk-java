@@ -26,6 +26,41 @@
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
+    "AddTagsToResource" : {
+      "documentation" : "<p>Adds or overwrites one or more tags for the specified resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique per resource.</p>",
+      "operationName" : "AddTagsToResource",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "addTagsToResourceRequest",
+        "variableType" : "AddTagsToResourceRequest",
+        "variableDeclarationType" : "AddTagsToResourceRequest",
+        "documentation" : "",
+        "simpleType" : "AddTagsToResourceRequest",
+        "variableSetterType" : "AddTagsToResourceRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "AddTagsToResourceResult",
+        "documentation" : null
+      },
+      "exceptions" : [ {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
+      }, {
+        "exceptionName" : "CloudHsmInternalException",
+        "documentation" : "<p>Indicates that an internal error occurred.</p>"
+      }, {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "AddTagsToResourceResult",
+      "asyncReturnType" : "AddTagsToResourceResult",
+      "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToResourceResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>",
+      "methodName" : "addTagsToResource"
+    },
     "CreateHapg" : {
       "documentation" : "<p>Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.</p>",
       "operationName" : "CreateHapg",
@@ -62,21 +97,21 @@
       "methodName" : "createHapg"
     },
     "CreateHsm" : {
-      "documentation" : "<p>Creates an uninitialized HSM instance. Running this command provisions an HSM appliance and will result in charges to your AWS account for the HSM.</p>",
+      "documentation" : "<p>Creates an uninitialized HSM instance.</p> <p>There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a> operation, go to the <a href=\"https://console.aws.amazon.com/support/home#/\">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important> <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p> </important>",
       "operationName" : "CreateHsm",
       "deprecated" : false,
       "input" : {
         "variableName" : "createHsmRequest",
         "variableType" : "CreateHsmRequest",
         "variableDeclarationType" : "CreateHsmRequest",
-        "documentation" : "<p>Contains the inputs for the <a>CreateHsm</a> action. </p>",
+        "documentation" : "<p>Contains the inputs for the <a>CreateHsm</a> operation.</p>",
         "simpleType" : "CreateHsmRequest",
         "variableSetterType" : "CreateHsmRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "CreateHsmResult",
-        "documentation" : "<p>Contains the output of the <a>CreateHsm</a> action.</p>"
+        "documentation" : "<p>Contains the output of the <a>CreateHsm</a> operation.</p>"
       },
       "exceptions" : [ {
         "exceptionName" : "CloudHsmServiceException",
@@ -167,21 +202,21 @@
       "methodName" : "deleteHapg"
     },
     "DeleteHsm" : {
-      "documentation" : "<p>Deletes an HSM. Once complete, this operation cannot be undone and your key material cannot be recovered.</p>",
+      "documentation" : "<p>Deletes an HSM. After completion, this operation cannot be undone and your key material cannot be recovered.</p>",
       "operationName" : "DeleteHsm",
       "deprecated" : false,
       "input" : {
         "variableName" : "deleteHsmRequest",
         "variableType" : "DeleteHsmRequest",
         "variableDeclarationType" : "DeleteHsmRequest",
-        "documentation" : "<p>Contains the inputs for the <a>DeleteHsm</a> action. </p>",
+        "documentation" : "<p>Contains the inputs for the <a>DeleteHsm</a> operation.</p>",
         "simpleType" : "DeleteHsmRequest",
         "variableSetterType" : "DeleteHsmRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "DeleteHsmResult",
-        "documentation" : "<p>Contains the output of the <a>DeleteHsm</a> action.</p>"
+        "documentation" : "<p>Contains the output of the <a>DeleteHsm</a> operation.</p>"
       },
       "exceptions" : [ {
         "exceptionName" : "CloudHsmServiceException",
@@ -279,14 +314,14 @@
         "variableName" : "describeHsmRequest",
         "variableType" : "DescribeHsmRequest",
         "variableDeclarationType" : "DescribeHsmRequest",
-        "documentation" : "<p>Contains the inputs for the <a>DescribeHsm</a> action. </p>",
+        "documentation" : "<p>Contains the inputs for the <a>DescribeHsm</a> operation. </p>",
         "simpleType" : "DescribeHsmRequest",
         "variableSetterType" : "DescribeHsmRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "DescribeHsmResult",
-        "documentation" : "<p>Contains the output of the <a>DescribeHsm</a> action.</p>"
+        "documentation" : "<p>Contains the output of the <a>DescribeHsm</a> operation.</p>"
       },
       "exceptions" : [ {
         "exceptionName" : "CloudHsmServiceException",
@@ -384,7 +419,7 @@
         "variableName" : "listAvailableZonesRequest",
         "variableType" : "ListAvailableZonesRequest",
         "variableDeclarationType" : "ListAvailableZonesRequest",
-        "documentation" : "<p>Contains the inputs for the <a>ListAvailableZones</a> action. </p>",
+        "documentation" : "<p>Contains the inputs for the <a>ListAvailableZones</a> action.</p>",
         "simpleType" : "ListAvailableZonesRequest",
         "variableSetterType" : "ListAvailableZonesRequest"
       },
@@ -461,7 +496,7 @@
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "ListHsmsResult",
-        "documentation" : "<p>Contains the output of the <a>ListHsms</a> action.</p>"
+        "documentation" : "<p>Contains the output of the <a>ListHsms</a> operation.</p>"
       },
       "exceptions" : [ {
         "exceptionName" : "CloudHsmServiceException",
@@ -516,6 +551,41 @@
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult>",
       "methodName" : "listLunaClients"
     },
+    "ListTagsForResource" : {
+      "documentation" : "<p>Returns a list of all tags for the specified resource.</p>",
+      "operationName" : "ListTagsForResource",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "listTagsForResourceRequest",
+        "variableType" : "ListTagsForResourceRequest",
+        "variableDeclarationType" : "ListTagsForResourceRequest",
+        "documentation" : "",
+        "simpleType" : "ListTagsForResourceRequest",
+        "variableSetterType" : "ListTagsForResourceRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "ListTagsForResourceResult",
+        "documentation" : null
+      },
+      "exceptions" : [ {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
+      }, {
+        "exceptionName" : "CloudHsmInternalException",
+        "documentation" : "<p>Indicates that an internal error occurred.</p>"
+      }, {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "ListTagsForResourceResult",
+      "asyncReturnType" : "ListTagsForResourceResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
+      "methodName" : "listTagsForResource"
+    },
     "ModifyHapg" : {
       "documentation" : "<p>Modifies an existing high-availability partition group.</p>",
       "operationName" : "ModifyHapg",
@@ -552,21 +622,21 @@
       "methodName" : "modifyHapg"
     },
     "ModifyHsm" : {
-      "documentation" : "<p>Modifies an HSM.</p>",
+      "documentation" : "<p>Modifies an HSM.</p> <important> <p>This operation can result in the HSM being offline for up to 15 minutes while the AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should ensure that your AWS CloudHSM service is configured for high availability, and consider executing this operation during a maintenance window.</p> </important>",
       "operationName" : "ModifyHsm",
       "deprecated" : false,
       "input" : {
         "variableName" : "modifyHsmRequest",
         "variableType" : "ModifyHsmRequest",
         "variableDeclarationType" : "ModifyHsmRequest",
-        "documentation" : "<p>Contains the inputs for the <a>ModifyHsm</a> action. </p>",
+        "documentation" : "<p>Contains the inputs for the <a>ModifyHsm</a> operation.</p>",
         "simpleType" : "ModifyHsmRequest",
         "variableSetterType" : "ModifyHsmRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "ModifyHsmResult",
-        "documentation" : "<p>Contains the output of the <a>ModifyHsm</a> action.</p>"
+        "documentation" : "<p>Contains the output of the <a>ModifyHsm</a> operation.</p>"
       },
       "exceptions" : [ {
         "exceptionName" : "CloudHsmServiceException",
@@ -614,12 +684,47 @@
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyLunaClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult>",
       "methodName" : "modifyLunaClient"
+    },
+    "RemoveTagsFromResource" : {
+      "documentation" : "<p>Removes one or more tags from the specified resource.</p> <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
+      "operationName" : "RemoveTagsFromResource",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "removeTagsFromResourceRequest",
+        "variableType" : "RemoveTagsFromResourceRequest",
+        "variableDeclarationType" : "RemoveTagsFromResourceRequest",
+        "documentation" : "",
+        "simpleType" : "RemoveTagsFromResourceRequest",
+        "variableSetterType" : "RemoveTagsFromResourceRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "RemoveTagsFromResourceResult",
+        "documentation" : null
+      },
+      "exceptions" : [ {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
+      }, {
+        "exceptionName" : "CloudHsmInternalException",
+        "documentation" : "<p>Indicates that an internal error occurred.</p>"
+      }, {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "RemoveTagsFromResourceResult",
+      "asyncReturnType" : "RemoveTagsFromResourceResult",
+      "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromResourceResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>",
+      "methodName" : "removeTagsFromResource"
     }
   },
   "shapes" : {
     "CreateHsmRequest" : {
       "c2jName" : "CreateHsmRequest",
-      "documentation" : "<p>Contains the inputs for the <a>CreateHsm</a> action. </p>",
+      "documentation" : "<p>Contains the inputs for the <a>CreateHsm</a> operation.</p>",
       "shapeName" : "CreateHsmRequest",
       "deprecated" : false,
       "required" : [ "SubnetId", "SshKey", "IamRoleArn", "SubscriptionType" ],
@@ -732,7 +837,7 @@
         "fluentSetterDocumentation" : "/**<p>The SSH public key to install on the HSM.</p>\n@param sshKey The SSH public key to install on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The SSH public key to install on the HSM.</p>\n@param sshKey The SSH public key to install on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The IP address to assign to the HSM's ENI.</p>",
+        "documentation" : "<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>",
         "name" : "EniIp",
         "c2jName" : "EniIp",
         "c2jShape" : "IpAddress",
@@ -740,7 +845,7 @@
           "variableName" : "eniIp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The IP address to assign to the HSM's ENI.</p>",
+          "documentation" : "<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -779,10 +884,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p>\n@param eniIp The IP address to assign to the HSM's ENI.*/",
-        "getterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p>\n@return The IP address to assign to the HSM's ENI.*/",
-        "fluentSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p>\n@param eniIp The IP address to assign to the HSM's ENI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p>\n@param eniIp The IP address to assign to the HSM's ENI.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@param eniIp The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.*/",
+        "getterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@return The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.*/",
+        "fluentSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@param eniIp The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@param eniIp The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>",
         "name" : "IamRoleArn",
@@ -888,7 +993,7 @@
         "fluentSetterDocumentation" : "/**<p>The external ID from <b>IamRoleArn</b>, if present.</p>\n@param externalId The external ID from <b>IamRoleArn</b>, if present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The external ID from <b>IamRoleArn</b>, if present.</p>\n@param externalId The external ID from <b>IamRoleArn</b>, if present.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The subscription type.</p>",
+        "documentation" : "",
         "name" : "SubscriptionType",
         "c2jName" : "SubscriptionType",
         "c2jShape" : "SubscriptionType",
@@ -896,7 +1001,7 @@
           "variableName" : "subscriptionType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The subscription type.</p>",
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -935,12 +1040,12 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@see SubscriptionType*/",
-        "getterDocumentation" : "/**<p>The subscription type.</p>\n@return The subscription type.\n@see SubscriptionType*/",
-        "fluentSetterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
-        "varargSetterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/"
+        "setterDocumentation" : "/**\n@param subscriptionType \n@see SubscriptionType*/",
+        "getterDocumentation" : "/**\n@return \n@see SubscriptionType*/",
+        "fluentSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
+        "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/"
       }, {
-        "documentation" : "<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>",
+        "documentation" : "<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>",
         "name" : "ClientToken",
         "c2jName" : "ClientToken",
         "c2jShape" : "ClientToken",
@@ -948,7 +1053,7 @@
           "variableName" : "clientToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>",
+          "documentation" : "<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -987,12 +1092,12 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.*/",
-        "getterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>\n@return A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.*/",
-        "fluentSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.*/",
+        "getterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@return A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.*/",
+        "fluentSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The IP address for the syslog monitoring server.</p>",
+        "documentation" : "<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>",
         "name" : "SyslogIp",
         "c2jName" : "SyslogIp",
         "c2jShape" : "IpAddress",
@@ -1000,7 +1105,7 @@
           "variableName" : "syslogIp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The IP address for the syslog monitoring server.</p>",
+          "documentation" : "<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1039,10 +1144,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The IP address for the syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server.*/",
-        "getterDocumentation" : "/**<p>The IP address for the syslog monitoring server.</p>\n@return The IP address for the syslog monitoring server.*/",
-        "fluentSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.*/",
+        "getterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@return The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.*/",
+        "fluentSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1071,7 +1176,7 @@
       },
       "membersAsMap" : {
         "ClientToken" : {
-          "documentation" : "<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>",
+          "documentation" : "<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>",
           "name" : "ClientToken",
           "c2jName" : "ClientToken",
           "c2jShape" : "ClientToken",
@@ -1079,7 +1184,7 @@
             "variableName" : "clientToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>",
+            "documentation" : "<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1118,13 +1223,13 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.*/",
-          "getterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>\n@return A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.*/",
-          "fluentSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.*/",
+          "getterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@return A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.*/",
+          "fluentSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "EniIp" : {
-          "documentation" : "<p>The IP address to assign to the HSM's ENI.</p>",
+          "documentation" : "<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>",
           "name" : "EniIp",
           "c2jName" : "EniIp",
           "c2jShape" : "IpAddress",
@@ -1132,7 +1237,7 @@
             "variableName" : "eniIp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The IP address to assign to the HSM's ENI.</p>",
+            "documentation" : "<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1171,13 +1276,13 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p>\n@param eniIp The IP address to assign to the HSM's ENI.*/",
-          "getterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p>\n@return The IP address to assign to the HSM's ENI.*/",
-          "fluentSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p>\n@param eniIp The IP address to assign to the HSM's ENI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p>\n@param eniIp The IP address to assign to the HSM's ENI.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@param eniIp The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.*/",
+          "getterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@return The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.*/",
+          "fluentSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@param eniIp The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@param eniIp The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SubscriptionType" : {
-          "documentation" : "<p>The subscription type.</p>",
+          "documentation" : "",
           "name" : "SubscriptionType",
           "c2jName" : "SubscriptionType",
           "c2jShape" : "SubscriptionType",
@@ -1185,7 +1290,7 @@
             "variableName" : "subscriptionType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The subscription type.</p>",
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1224,10 +1329,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@see SubscriptionType*/",
-          "getterDocumentation" : "/**<p>The subscription type.</p>\n@return The subscription type.\n@see SubscriptionType*/",
-          "fluentSetterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
-          "varargSetterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/"
+          "setterDocumentation" : "/**\n@param subscriptionType \n@see SubscriptionType*/",
+          "getterDocumentation" : "/**\n@return \n@see SubscriptionType*/",
+          "fluentSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
+          "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/"
         },
         "IamRoleArn" : {
           "documentation" : "<p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>",
@@ -1442,7 +1547,7 @@
           "varargSetterDocumentation" : "/**<p>The SSH public key to install on the HSM.</p>\n@param sshKey The SSH public key to install on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SyslogIp" : {
-          "documentation" : "<p>The IP address for the syslog monitoring server.</p>",
+          "documentation" : "<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>",
           "name" : "SyslogIp",
           "c2jName" : "SyslogIp",
           "c2jShape" : "IpAddress",
@@ -1450,7 +1555,7 @@
             "variableName" : "syslogIp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The IP address for the syslog monitoring server.</p>",
+            "documentation" : "<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1489,10 +1594,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The IP address for the syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server.*/",
-          "getterDocumentation" : "/**<p>The IP address for the syslog monitoring server.</p>\n@return The IP address for the syslog monitoring server.*/",
-          "fluentSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.*/",
+          "getterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@return The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.*/",
+          "fluentSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -2009,7 +2114,7 @@
     },
     "DescribeHsmRequest" : {
       "c2jName" : "DescribeHsmRequest",
-      "documentation" : "<p>Contains the inputs for the <a>DescribeHsm</a> action. </p>",
+      "documentation" : "<p>Contains the inputs for the <a>DescribeHsm</a> operation. </p>",
       "shapeName" : "DescribeHsmRequest",
       "deprecated" : false,
       "required" : null,
@@ -2256,9 +2361,286 @@
         }
       }
     },
+    "RemoveTagsFromResourceRequest" : {
+      "c2jName" : "RemoveTagsFromResourceRequest",
+      "documentation" : "",
+      "shapeName" : "RemoveTagsFromResourceRequest",
+      "deprecated" : false,
+      "required" : [ "ResourceArn", "TagKeyList" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+        "name" : "ResourceArn",
+        "c2jName" : "ResourceArn",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "ResourceArn",
+          "marshallLocationName" : "ResourceArn",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@return The Amazon Resource Name (ARN) of the resource.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
+        "name" : "TagKeyList",
+        "c2jName" : "TagKeyList",
+        "c2jShape" : "TagKeyList",
+        "variable" : {
+          "variableName" : "tagKeyList",
+          "variableType" : "java.util.List<String>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "documentation" : "<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "setterModel" : {
+          "variableName" : "tagKeyList",
+          "variableType" : "java.util.List<String>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "TagKeyList",
+          "marshallLocationName" : "TagKeyList",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "String",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : null,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "map" : false,
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : true,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.*/",
+        "getterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n@return The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.*/",
+        "fluentSetterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "removeTagsFromResourceRequest",
+        "variableType" : "RemoveTagsFromResourceRequest",
+        "variableDeclarationType" : "RemoveTagsFromResourceRequest",
+        "documentation" : null,
+        "simpleType" : "RemoveTagsFromResourceRequest",
+        "variableSetterType" : "RemoveTagsFromResourceRequest"
+      },
+      "marshaller" : {
+        "action" : "RemoveTagsFromResource",
+        "verb" : "POST",
+        "target" : "CloudHsmFrontendService.RemoveTagsFromResource",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "TagKeyList" : {
+          "documentation" : "<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
+          "name" : "TagKeyList",
+          "c2jName" : "TagKeyList",
+          "c2jShape" : "TagKeyList",
+          "variable" : {
+            "variableName" : "tagKeyList",
+            "variableType" : "java.util.List<String>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "documentation" : "<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "setterModel" : {
+            "variableName" : "tagKeyList",
+            "variableType" : "java.util.List<String>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "TagKeyList",
+            "marshallLocationName" : "TagKeyList",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "String",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : null,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "map" : false,
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : true,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.*/",
+          "getterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n@return The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.*/",
+          "fluentSetterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "ResourceArn" : {
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "name" : "ResourceArn",
+          "c2jName" : "ResourceArn",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "ResourceArn",
+            "marshallLocationName" : "ResourceArn",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@return The Amazon Resource Name (ARN) of the resource.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "ListHsmsResult" : {
       "c2jName" : "ListHsmsResponse",
-      "documentation" : "<p>Contains the output of the <a>ListHsms</a> action.</p>",
+      "documentation" : "<p>Contains the output of the <a>ListHsms</a> operation.</p>",
       "shapeName" : "ListHsmsResult",
       "deprecated" : false,
       "required" : null,
@@ -2837,6 +3219,391 @@
         }
       }
     },
+    "Tag" : {
+      "c2jName" : "Tag",
+      "documentation" : "<p>A key-value pair that identifies or specifies metadata about a resource.</p>",
+      "shapeName" : "Tag",
+      "deprecated" : false,
+      "required" : [ "Key", "Value" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The key of the tag.</p>",
+        "name" : "Key",
+        "c2jName" : "Key",
+        "c2jShape" : "TagKey",
+        "variable" : {
+          "variableName" : "key",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The key of the tag.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "key",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Key",
+          "marshallLocationName" : "Key",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
+        "getterDocumentation" : "/**<p>The key of the tag.</p>\n@return The key of the tag.*/",
+        "fluentSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The value of the tag.</p>",
+        "name" : "Value",
+        "c2jName" : "Value",
+        "c2jShape" : "TagValue",
+        "variable" : {
+          "variableName" : "value",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The value of the tag.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "value",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Value",
+          "marshallLocationName" : "Value",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
+        "getterDocumentation" : "/**<p>The value of the tag.</p>\n@return The value of the tag.*/",
+        "fluentSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "tag",
+        "variableType" : "Tag",
+        "variableDeclarationType" : "Tag",
+        "documentation" : null,
+        "simpleType" : "Tag",
+        "variableSetterType" : "Tag"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Value" : {
+          "documentation" : "<p>The value of the tag.</p>",
+          "name" : "Value",
+          "c2jName" : "Value",
+          "c2jShape" : "TagValue",
+          "variable" : {
+            "variableName" : "value",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The value of the tag.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "value",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Value",
+            "marshallLocationName" : "Value",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.*/",
+          "getterDocumentation" : "/**<p>The value of the tag.</p>\n@return The value of the tag.*/",
+          "fluentSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Key" : {
+          "documentation" : "<p>The key of the tag.</p>",
+          "name" : "Key",
+          "c2jName" : "Key",
+          "c2jShape" : "TagKey",
+          "variable" : {
+            "variableName" : "key",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The key of the tag.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "key",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Key",
+            "marshallLocationName" : "Key",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.*/",
+          "getterDocumentation" : "/**<p>The key of the tag.</p>\n@return The key of the tag.*/",
+          "fluentSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "RemoveTagsFromResourceResult" : {
+      "c2jName" : "RemoveTagsFromResourceResponse",
+      "documentation" : "",
+      "shapeName" : "RemoveTagsFromResourceResult",
+      "deprecated" : false,
+      "required" : [ "Status" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The status of the operation.</p>",
+        "name" : "Status",
+        "c2jName" : "Status",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The status of the operation.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Status",
+          "marshallLocationName" : "Status",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.*/",
+        "getterDocumentation" : "/**<p>The status of the operation.</p>\n@return The status of the operation.*/",
+        "fluentSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "removeTagsFromResourceResult",
+        "variableType" : "RemoveTagsFromResourceResult",
+        "variableDeclarationType" : "RemoveTagsFromResourceResult",
+        "documentation" : null,
+        "simpleType" : "RemoveTagsFromResourceResult",
+        "variableSetterType" : "RemoveTagsFromResourceResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Status" : {
+          "documentation" : "<p>The status of the operation.</p>",
+          "name" : "Status",
+          "c2jName" : "Status",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The status of the operation.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Status",
+            "marshallLocationName" : "Status",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.*/",
+          "getterDocumentation" : "/**<p>The status of the operation.</p>\n@return The status of the operation.*/",
+          "fluentSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "ModifyHapgResult" : {
       "c2jName" : "ModifyHapgResponse",
       "documentation" : "",
@@ -2979,7 +3746,7 @@
     },
     "DeleteHsmRequest" : {
       "c2jName" : "DeleteHsmRequest",
-      "documentation" : "<p>Contains the inputs for the <a>DeleteHsm</a> action. </p>",
+      "documentation" : "<p>Contains the inputs for the <a>DeleteHsm</a> operation.</p>",
       "shapeName" : "DeleteHsmRequest",
       "deprecated" : false,
       "required" : [ "HsmArn" ],
@@ -3123,7 +3890,7 @@
     },
     "ListAvailableZonesRequest" : {
       "c2jName" : "ListAvailableZonesRequest",
-      "documentation" : "<p>Contains the inputs for the <a>ListAvailableZones</a> action. </p>",
+      "documentation" : "<p>Contains the inputs for the <a>ListAvailableZones</a> action.</p>",
       "shapeName" : "ListAvailableZonesRequest",
       "deprecated" : false,
       "required" : null,
@@ -3161,7 +3928,7 @@
     },
     "ModifyHsmResult" : {
       "c2jName" : "ModifyHsmResponse",
-      "documentation" : "<p>Contains the output of the <a>ModifyHsm</a> action.</p>",
+      "documentation" : "<p>Contains the output of the <a>ModifyHsm</a> operation.</p>",
       "shapeName" : "ModifyHsmResult",
       "deprecated" : false,
       "required" : null,
@@ -3301,7 +4068,7 @@
     },
     "ModifyHsmRequest" : {
       "c2jName" : "ModifyHsmRequest",
-      "documentation" : "<p>Contains the inputs for the <a>ModifyHsm</a> action. </p>",
+      "documentation" : "<p>Contains the inputs for the <a>ModifyHsm</a> operation.</p>",
       "shapeName" : "ModifyHsmRequest",
       "deprecated" : false,
       "required" : [ "HsmArn" ],
@@ -3362,7 +4129,7 @@
         "fluentSetterDocumentation" : "/**<p>The ARN of the HSM to modify.</p>\n@param hsmArn The ARN of the HSM to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM to modify.</p>\n@param hsmArn The ARN of the HSM to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The new identifier of the subnet that the HSM is in.</p>",
+        "documentation" : "<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>",
         "name" : "SubnetId",
         "c2jName" : "SubnetId",
         "c2jShape" : "SubnetId",
@@ -3370,7 +4137,7 @@
           "variableName" : "subnetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The new identifier of the subnet that the HSM is in.</p>",
+          "documentation" : "<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3409,12 +4176,12 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in.</p>\n@param subnetId The new identifier of the subnet that the HSM is in.*/",
-        "getterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in.</p>\n@return The new identifier of the subnet that the HSM is in.*/",
-        "fluentSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in.</p>\n@param subnetId The new identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in.</p>\n@param subnetId The new identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@param subnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.*/",
+        "getterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@return The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.*/",
+        "fluentSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@param subnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@param subnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The new IP address for the elastic network interface attached to the HSM.</p>",
+        "documentation" : "<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>",
         "name" : "EniIp",
         "c2jName" : "EniIp",
         "c2jShape" : "IpAddress",
@@ -3422,7 +4189,7 @@
           "variableName" : "eniIp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The new IP address for the elastic network interface attached to the HSM.</p>",
+          "documentation" : "<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3461,10 +4228,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The new IP address for the elastic network interface attached to the HSM.</p>\n@param eniIp The new IP address for the elastic network interface attached to the HSM.*/",
-        "getterDocumentation" : "/**<p>The new IP address for the elastic network interface attached to the HSM.</p>\n@return The new IP address for the elastic network interface attached to the HSM.*/",
-        "fluentSetterDocumentation" : "/**<p>The new IP address for the elastic network interface attached to the HSM.</p>\n@param eniIp The new IP address for the elastic network interface attached to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The new IP address for the elastic network interface attached to the HSM.</p>\n@param eniIp The new IP address for the elastic network interface attached to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@param eniIp The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.*/",
+        "getterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@return The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.*/",
+        "fluentSetterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@param eniIp The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@param eniIp The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The new IAM role ARN.</p>",
         "name" : "IamRoleArn",
@@ -3570,7 +4337,7 @@
         "fluentSetterDocumentation" : "/**<p>The new external ID.</p>\n@param externalId The new external ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The new external ID.</p>\n@param externalId The new external ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The new IP address for the syslog monitoring server.</p>",
+        "documentation" : "<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>",
         "name" : "SyslogIp",
         "c2jName" : "SyslogIp",
         "c2jShape" : "IpAddress",
@@ -3578,7 +4345,7 @@
           "variableName" : "syslogIp",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The new IP address for the syslog monitoring server.</p>",
+          "documentation" : "<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3617,10 +4384,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The new IP address for the syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server.*/",
-        "getterDocumentation" : "/**<p>The new IP address for the syslog monitoring server.</p>\n@return The new IP address for the syslog monitoring server.*/",
-        "fluentSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.*/",
+        "getterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@return The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.*/",
+        "fluentSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -3649,7 +4416,7 @@
       },
       "membersAsMap" : {
         "EniIp" : {
-          "documentation" : "<p>The new IP address for the elastic network interface attached to the HSM.</p>",
+          "documentation" : "<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>",
           "name" : "EniIp",
           "c2jName" : "EniIp",
           "c2jShape" : "IpAddress",
@@ -3657,7 +4424,7 @@
             "variableName" : "eniIp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The new IP address for the elastic network interface attached to the HSM.</p>",
+            "documentation" : "<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3696,10 +4463,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The new IP address for the elastic network interface attached to the HSM.</p>\n@param eniIp The new IP address for the elastic network interface attached to the HSM.*/",
-          "getterDocumentation" : "/**<p>The new IP address for the elastic network interface attached to the HSM.</p>\n@return The new IP address for the elastic network interface attached to the HSM.*/",
-          "fluentSetterDocumentation" : "/**<p>The new IP address for the elastic network interface attached to the HSM.</p>\n@param eniIp The new IP address for the elastic network interface attached to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The new IP address for the elastic network interface attached to the HSM.</p>\n@param eniIp The new IP address for the elastic network interface attached to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@param eniIp The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.*/",
+          "getterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@return The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.*/",
+          "fluentSetterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@param eniIp The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@param eniIp The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "IamRoleArn" : {
           "documentation" : "<p>The new IAM role ARN.</p>",
@@ -3861,7 +4628,7 @@
           "varargSetterDocumentation" : "/**<p>The new external ID.</p>\n@param externalId The new external ID.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SubnetId" : {
-          "documentation" : "<p>The new identifier of the subnet that the HSM is in.</p>",
+          "documentation" : "<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>",
           "name" : "SubnetId",
           "c2jName" : "SubnetId",
           "c2jShape" : "SubnetId",
@@ -3869,7 +4636,7 @@
             "variableName" : "subnetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The new identifier of the subnet that the HSM is in.</p>",
+            "documentation" : "<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3908,13 +4675,13 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in.</p>\n@param subnetId The new identifier of the subnet that the HSM is in.*/",
-          "getterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in.</p>\n@return The new identifier of the subnet that the HSM is in.*/",
-          "fluentSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in.</p>\n@param subnetId The new identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in.</p>\n@param subnetId The new identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@param subnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.*/",
+          "getterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@return The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.*/",
+          "fluentSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@param subnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@param subnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SyslogIp" : {
-          "documentation" : "<p>The new IP address for the syslog monitoring server.</p>",
+          "documentation" : "<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>",
           "name" : "SyslogIp",
           "c2jName" : "SyslogIp",
           "c2jShape" : "IpAddress",
@@ -3922,7 +4689,7 @@
             "variableName" : "syslogIp",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The new IP address for the syslog monitoring server.</p>",
+            "documentation" : "<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3961,10 +4728,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The new IP address for the syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server.*/",
-          "getterDocumentation" : "/**<p>The new IP address for the syslog monitoring server.</p>\n@return The new IP address for the syslog monitoring server.*/",
-          "fluentSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.*/",
+          "getterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@return The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.*/",
+          "fluentSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -4001,7 +4768,7 @@
     },
     "DeleteHsmResult" : {
       "c2jName" : "DeleteHsmResponse",
-      "documentation" : "<p>Contains the output of the <a>DeleteHsm</a> action.</p>",
+      "documentation" : "<p>Contains the output of the <a>DeleteHsm</a> operation.</p>",
       "shapeName" : "DeleteHsmResult",
       "deprecated" : false,
       "required" : [ "Status" ],
@@ -4010,7 +4777,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "<p>The status of the action.</p>",
+        "documentation" : "<p>The status of the operation.</p>",
         "name" : "Status",
         "c2jName" : "Status",
         "c2jShape" : "String",
@@ -4018,7 +4785,7 @@
           "variableName" : "status",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The status of the action.</p>",
+          "documentation" : "<p>The status of the operation.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4057,10 +4824,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.*/",
-        "getterDocumentation" : "/**<p>The status of the action.</p>\n@return The status of the action.*/",
-        "fluentSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.*/",
+        "getterDocumentation" : "/**<p>The status of the operation.</p>\n@return The status of the operation.*/",
+        "fluentSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -4085,7 +4852,7 @@
       },
       "membersAsMap" : {
         "Status" : {
-          "documentation" : "<p>The status of the action.</p>",
+          "documentation" : "<p>The status of the operation.</p>",
           "name" : "Status",
           "c2jName" : "Status",
           "c2jShape" : "String",
@@ -4093,7 +4860,7 @@
             "variableName" : "status",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The status of the action.</p>",
+            "documentation" : "<p>The status of the operation.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4132,16 +4899,16 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.*/",
-          "getterDocumentation" : "/**<p>The status of the action.</p>\n@return The status of the action.*/",
-          "fluentSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.*/",
+          "getterDocumentation" : "/**<p>The status of the operation.</p>\n@return The status of the operation.*/",
+          "fluentSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
     "SubscriptionType" : {
       "c2jName" : "SubscriptionType",
-      "documentation" : "",
+      "documentation" : "<p>Specifies the type of subscription for the HSM.</p> <ul> <li><b>PRODUCTION</b> - The HSM is being used in a production environment.</li> <li><b>TRIAL</b> - The HSM is being used in a product trial.</li> </ul>",
       "shapeName" : "SubscriptionType",
       "deprecated" : false,
       "required" : null,
@@ -4715,7 +5482,7 @@
     },
     "CreateHsmResult" : {
       "c2jName" : "CreateHsmResponse",
-      "documentation" : "<p>Contains the output of the <a>CreateHsm</a> action.</p>",
+      "documentation" : "<p>Contains the output of the <a>CreateHsm</a> operation.</p>",
       "shapeName" : "CreateHsmResult",
       "deprecated" : false,
       "required" : null,
@@ -4850,6 +5617,278 @@
           "getterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@return The ARN of the HSM.*/",
           "fluentSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "ListTagsForResourceResult" : {
+      "c2jName" : "ListTagsForResourceResponse",
+      "documentation" : "",
+      "shapeName" : "ListTagsForResourceResult",
+      "deprecated" : false,
+      "required" : [ "TagList" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>One or more tags.</p>",
+        "name" : "TagList",
+        "c2jName" : "TagList",
+        "c2jShape" : "TagList",
+        "variable" : {
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "documentation" : "<p>One or more tags.</p>",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "setterModel" : {
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "TagList",
+          "marshallLocationName" : "TagList",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "Tag",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "variableDeclarationType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "variableDeclarationType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "Tag",
+          "map" : false,
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : true,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>One or more tags.</p>\n@param tagList One or more tags.*/",
+        "getterDocumentation" : "/**<p>One or more tags.</p>\n@return One or more tags.*/",
+        "fluentSetterDocumentation" : "/**<p>One or more tags.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "listTagsForResourceResult",
+        "variableType" : "ListTagsForResourceResult",
+        "variableDeclarationType" : "ListTagsForResourceResult",
+        "documentation" : null,
+        "simpleType" : "ListTagsForResourceResult",
+        "variableSetterType" : "ListTagsForResourceResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "TagList" : {
+          "documentation" : "<p>One or more tags.</p>",
+          "name" : "TagList",
+          "c2jName" : "TagList",
+          "c2jShape" : "TagList",
+          "variable" : {
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "documentation" : "<p>One or more tags.</p>",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "setterModel" : {
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "TagList",
+            "marshallLocationName" : "TagList",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "Tag",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "variableDeclarationType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "variableDeclarationType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "Tag",
+            "map" : false,
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : true,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>One or more tags.</p>\n@param tagList One or more tags.*/",
+          "getterDocumentation" : "/**<p>One or more tags.</p>\n@return One or more tags.*/",
+          "fluentSetterDocumentation" : "/**<p>One or more tags.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -5172,6 +6211,150 @@
         }
       }
     },
+    "ListTagsForResourceRequest" : {
+      "c2jName" : "ListTagsForResourceRequest",
+      "documentation" : "",
+      "shapeName" : "ListTagsForResourceRequest",
+      "deprecated" : false,
+      "required" : [ "ResourceArn" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+        "name" : "ResourceArn",
+        "c2jName" : "ResourceArn",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "ResourceArn",
+          "marshallLocationName" : "ResourceArn",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@return The Amazon Resource Name (ARN) of the resource.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "listTagsForResourceRequest",
+        "variableType" : "ListTagsForResourceRequest",
+        "variableDeclarationType" : "ListTagsForResourceRequest",
+        "documentation" : null,
+        "simpleType" : "ListTagsForResourceRequest",
+        "variableSetterType" : "ListTagsForResourceRequest"
+      },
+      "marshaller" : {
+        "action" : "ListTagsForResource",
+        "verb" : "POST",
+        "target" : "CloudHsmFrontendService.ListTagsForResource",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "ResourceArn" : {
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "name" : "ResourceArn",
+          "c2jName" : "ResourceArn",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "ResourceArn",
+            "marshallLocationName" : "ResourceArn",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@return The Amazon Resource Name (ARN) of the resource.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "ModifyLunaClientRequest" : {
       "c2jName" : "ModifyLunaClientRequest",
       "documentation" : "",
@@ -5235,7 +6418,7 @@
         "fluentSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The new certificate for the client. </p>",
+        "documentation" : "<p>The new certificate for the client.</p>",
         "name" : "Certificate",
         "c2jName" : "Certificate",
         "c2jShape" : "Certificate",
@@ -5243,7 +6426,7 @@
           "variableName" : "certificate",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The new certificate for the client. </p>",
+          "documentation" : "<p>The new certificate for the client.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5282,10 +6465,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The new certificate for the client. </p>\n@param certificate The new certificate for the client.*/",
-        "getterDocumentation" : "/**<p>The new certificate for the client. </p>\n@return The new certificate for the client.*/",
-        "fluentSetterDocumentation" : "/**<p>The new certificate for the client. </p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The new certificate for the client. </p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The new certificate for the client.</p>\n@param certificate The new certificate for the client.*/",
+        "getterDocumentation" : "/**<p>The new certificate for the client.</p>\n@return The new certificate for the client.*/",
+        "fluentSetterDocumentation" : "/**<p>The new certificate for the client.</p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The new certificate for the client.</p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5367,7 +6550,7 @@
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Certificate" : {
-          "documentation" : "<p>The new certificate for the client. </p>",
+          "documentation" : "<p>The new certificate for the client.</p>",
           "name" : "Certificate",
           "c2jName" : "Certificate",
           "c2jShape" : "Certificate",
@@ -5375,7 +6558,7 @@
             "variableName" : "certificate",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The new certificate for the client. </p>",
+            "documentation" : "<p>The new certificate for the client.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5414,10 +6597,391 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The new certificate for the client. </p>\n@param certificate The new certificate for the client.*/",
-          "getterDocumentation" : "/**<p>The new certificate for the client. </p>\n@return The new certificate for the client.*/",
-          "fluentSetterDocumentation" : "/**<p>The new certificate for the client. </p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The new certificate for the client. </p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The new certificate for the client.</p>\n@param certificate The new certificate for the client.*/",
+          "getterDocumentation" : "/**<p>The new certificate for the client.</p>\n@return The new certificate for the client.*/",
+          "fluentSetterDocumentation" : "/**<p>The new certificate for the client.</p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The new certificate for the client.</p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "AddTagsToResourceRequest" : {
+      "c2jName" : "AddTagsToResourceRequest",
+      "documentation" : "",
+      "shapeName" : "AddTagsToResourceRequest",
+      "deprecated" : false,
+      "required" : [ "ResourceArn", "TagList" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the resource to tag.</p>",
+        "name" : "ResourceArn",
+        "c2jName" : "ResourceArn",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource to tag.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "resourceArn",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "ResourceArn",
+          "marshallLocationName" : "ResourceArn",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@return The Amazon Resource Name (ARN) of the resource to tag.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>One or more tags.</p>",
+        "name" : "TagList",
+        "c2jName" : "TagList",
+        "c2jShape" : "TagList",
+        "variable" : {
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "documentation" : "<p>One or more tags.</p>",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "setterModel" : {
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "TagList",
+          "marshallLocationName" : "TagList",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : {
+          "memberType" : "Tag",
+          "memberLocationName" : null,
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "variableDeclarationType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "variableDeclarationType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "Tag",
+          "map" : false,
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+        },
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : true,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>One or more tags.</p>\n@param tagList One or more tags.*/",
+        "getterDocumentation" : "/**<p>One or more tags.</p>\n@return One or more tags.*/",
+        "fluentSetterDocumentation" : "/**<p>One or more tags.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "addTagsToResourceRequest",
+        "variableType" : "AddTagsToResourceRequest",
+        "variableDeclarationType" : "AddTagsToResourceRequest",
+        "documentation" : null,
+        "simpleType" : "AddTagsToResourceRequest",
+        "variableSetterType" : "AddTagsToResourceRequest"
+      },
+      "marshaller" : {
+        "action" : "AddTagsToResource",
+        "verb" : "POST",
+        "target" : "CloudHsmFrontendService.AddTagsToResource",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "TagList" : {
+          "documentation" : "<p>One or more tags.</p>",
+          "name" : "TagList",
+          "c2jName" : "TagList",
+          "c2jShape" : "TagList",
+          "variable" : {
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "documentation" : "<p>One or more tags.</p>",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "setterModel" : {
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "TagList",
+            "marshallLocationName" : "TagList",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : {
+            "memberType" : "Tag",
+            "memberLocationName" : null,
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "variableDeclarationType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "variableDeclarationType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "Tag",
+            "map" : false,
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          },
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : true,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>One or more tags.</p>\n@param tagList One or more tags.*/",
+          "getterDocumentation" : "/**<p>One or more tags.</p>\n@return One or more tags.*/",
+          "fluentSetterDocumentation" : "/**<p>One or more tags.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "ResourceArn" : {
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource to tag.</p>",
+          "name" : "ResourceArn",
+          "c2jName" : "ResourceArn",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the resource to tag.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "resourceArn",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "ResourceArn",
+            "marshallLocationName" : "ResourceArn",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@return The Amazon Resource Name (ARN) of the resource to tag.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -5805,7 +7369,7 @@
     },
     "DescribeHsmResult" : {
       "c2jName" : "DescribeHsmResponse",
-      "documentation" : "<p>Contains the output of the <a>DescribeHsm</a> action.</p>",
+      "documentation" : "<p>Contains the output of the <a>DescribeHsm</a> operation.</p>",
       "shapeName" : "DescribeHsmResult",
       "deprecated" : false,
       "required" : null,
@@ -6126,7 +7690,7 @@
         "fluentSetterDocumentation" : "/**<p>The IP address assigned to the HSM's ENI.</p>\n@param eniIp The IP address assigned to the HSM's ENI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The IP address assigned to the HSM's ENI.</p>\n@param eniIp The IP address assigned to the HSM's ENI.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The subscription type.</p>",
+        "documentation" : "",
         "name" : "SubscriptionType",
         "c2jName" : "SubscriptionType",
         "c2jShape" : "SubscriptionType",
@@ -6134,7 +7698,7 @@
           "variableName" : "subscriptionType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The subscription type.</p>",
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6173,10 +7737,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@see SubscriptionType*/",
-        "getterDocumentation" : "/**<p>The subscription type.</p>\n@return The subscription type.\n@see SubscriptionType*/",
-        "fluentSetterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
-        "varargSetterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/"
+        "setterDocumentation" : "/**\n@param subscriptionType \n@see SubscriptionType*/",
+        "getterDocumentation" : "/**\n@return \n@see SubscriptionType*/",
+        "fluentSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
+        "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/"
       }, {
         "documentation" : "<p>The subscription start date.</p>",
         "name" : "SubscriptionStartDate",
@@ -6334,7 +7898,7 @@
         "fluentSetterDocumentation" : "/**<p>The identifier of the VPC that the HSM is in.</p>\n@param vpcId The identifier of the VPC that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The identifier of the VPC that the HSM is in.</p>\n@param vpcId The identifier of the VPC that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The identifier of the subnet the HSM is in.</p>",
+        "documentation" : "<p>The identifier of the subnet that the HSM is in.</p>",
         "name" : "SubnetId",
         "c2jName" : "SubnetId",
         "c2jShape" : "SubnetId",
@@ -6342,7 +7906,7 @@
           "variableName" : "subnetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The identifier of the subnet the HSM is in.</p>",
+          "documentation" : "<p>The identifier of the subnet that the HSM is in.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6381,10 +7945,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The identifier of the subnet the HSM is in.</p>\n@param subnetId The identifier of the subnet the HSM is in.*/",
-        "getterDocumentation" : "/**<p>The identifier of the subnet the HSM is in.</p>\n@return The identifier of the subnet the HSM is in.*/",
-        "fluentSetterDocumentation" : "/**<p>The identifier of the subnet the HSM is in.</p>\n@param subnetId The identifier of the subnet the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The identifier of the subnet the HSM is in.</p>\n@param subnetId The identifier of the subnet the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@param subnetId The identifier of the subnet that the HSM is in.*/",
+        "getterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@return The identifier of the subnet that the HSM is in.*/",
+        "fluentSetterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@param subnetId The identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@param subnetId The identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The ARN of the IAM role assigned to the HSM.</p>",
         "name" : "IamRoleArn",
@@ -6698,7 +8262,7 @@
         "fluentSetterDocumentation" : "/**<p>The public SSH key.</p>\n@param sshPublicKey The public SSH key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The public SSH key.</p>\n@param sshPublicKey The public SSH key.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The date and time the SSH key was last updated.</p>",
+        "documentation" : "<p>The date and time that the SSH key was last updated.</p>",
         "name" : "SshKeyLastUpdated",
         "c2jName" : "SshKeyLastUpdated",
         "c2jShape" : "Timestamp",
@@ -6706,7 +8270,7 @@
           "variableName" : "sshKeyLastUpdated",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The date and time the SSH key was last updated.</p>",
+          "documentation" : "<p>The date and time that the SSH key was last updated.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6745,10 +8309,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The date and time the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time the SSH key was last updated.*/",
-        "getterDocumentation" : "/**<p>The date and time the SSH key was last updated.</p>\n@return The date and time the SSH key was last updated.*/",
-        "fluentSetterDocumentation" : "/**<p>The date and time the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The date and time the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time that the SSH key was last updated.*/",
+        "getterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@return The date and time that the SSH key was last updated.*/",
+        "fluentSetterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time that the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time that the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The URI of the certificate server.</p>",
         "name" : "ServerCertUri",
@@ -6802,7 +8366,7 @@
         "fluentSetterDocumentation" : "/**<p>The URI of the certificate server.</p>\n@param serverCertUri The URI of the certificate server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The URI of the certificate server.</p>\n@param serverCertUri The URI of the certificate server.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The date and time the server certificate was last updated.</p>",
+        "documentation" : "<p>The date and time that the server certificate was last updated.</p>",
         "name" : "ServerCertLastUpdated",
         "c2jName" : "ServerCertLastUpdated",
         "c2jShape" : "Timestamp",
@@ -6810,7 +8374,7 @@
           "variableName" : "serverCertLastUpdated",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The date and time the server certificate was last updated.</p>",
+          "documentation" : "<p>The date and time that the server certificate was last updated.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6849,10 +8413,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The date and time the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time the server certificate was last updated.*/",
-        "getterDocumentation" : "/**<p>The date and time the server certificate was last updated.</p>\n@return The date and time the server certificate was last updated.*/",
-        "fluentSetterDocumentation" : "/**<p>The date and time the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The date and time the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time that the server certificate was last updated.*/",
+        "getterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@return The date and time that the server certificate was last updated.*/",
+        "fluentSetterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time that the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time that the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The list of partitions on the HSM.</p>",
         "name" : "Partitions",
@@ -7010,7 +8574,7 @@
           "varargSetterDocumentation" : "/**<p>The list of partitions on the HSM.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitions(java.util.Collection)} or {@link #withPartitions(java.util.Collection)} if you want to override the existing values.</p>\n@param partitions The list of partitions on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SubscriptionType" : {
-          "documentation" : "<p>The subscription type.</p>",
+          "documentation" : "",
           "name" : "SubscriptionType",
           "c2jName" : "SubscriptionType",
           "c2jShape" : "SubscriptionType",
@@ -7018,7 +8582,7 @@
             "variableName" : "subscriptionType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The subscription type.</p>",
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7057,13 +8621,13 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@see SubscriptionType*/",
-          "getterDocumentation" : "/**<p>The subscription type.</p>\n@return The subscription type.\n@see SubscriptionType*/",
-          "fluentSetterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
-          "varargSetterDocumentation" : "/**<p>The subscription type.</p>\n@param subscriptionType The subscription type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/"
+          "setterDocumentation" : "/**\n@param subscriptionType \n@see SubscriptionType*/",
+          "getterDocumentation" : "/**\n@return \n@see SubscriptionType*/",
+          "fluentSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
+          "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/"
         },
         "SshKeyLastUpdated" : {
-          "documentation" : "<p>The date and time the SSH key was last updated.</p>",
+          "documentation" : "<p>The date and time that the SSH key was last updated.</p>",
           "name" : "SshKeyLastUpdated",
           "c2jName" : "SshKeyLastUpdated",
           "c2jShape" : "Timestamp",
@@ -7071,7 +8635,7 @@
             "variableName" : "sshKeyLastUpdated",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The date and time the SSH key was last updated.</p>",
+            "documentation" : "<p>The date and time that the SSH key was last updated.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7110,10 +8674,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The date and time the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time the SSH key was last updated.*/",
-          "getterDocumentation" : "/**<p>The date and time the SSH key was last updated.</p>\n@return The date and time the SSH key was last updated.*/",
-          "fluentSetterDocumentation" : "/**<p>The date and time the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The date and time the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time that the SSH key was last updated.*/",
+          "getterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@return The date and time that the SSH key was last updated.*/",
+          "fluentSetterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time that the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time that the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SubscriptionStartDate" : {
           "documentation" : "<p>The subscription start date.</p>",
@@ -7805,7 +9369,7 @@
           "varargSetterDocumentation" : "/**<p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>\n@param eniId The identifier of the elastic network interface (ENI) attached to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ServerCertLastUpdated" : {
-          "documentation" : "<p>The date and time the server certificate was last updated.</p>",
+          "documentation" : "<p>The date and time that the server certificate was last updated.</p>",
           "name" : "ServerCertLastUpdated",
           "c2jName" : "ServerCertLastUpdated",
           "c2jShape" : "Timestamp",
@@ -7813,7 +9377,7 @@
             "variableName" : "serverCertLastUpdated",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The date and time the server certificate was last updated.</p>",
+            "documentation" : "<p>The date and time that the server certificate was last updated.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7852,13 +9416,13 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The date and time the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time the server certificate was last updated.*/",
-          "getterDocumentation" : "/**<p>The date and time the server certificate was last updated.</p>\n@return The date and time the server certificate was last updated.*/",
-          "fluentSetterDocumentation" : "/**<p>The date and time the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The date and time the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time that the server certificate was last updated.*/",
+          "getterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@return The date and time that the server certificate was last updated.*/",
+          "fluentSetterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time that the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time that the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SubnetId" : {
-          "documentation" : "<p>The identifier of the subnet the HSM is in.</p>",
+          "documentation" : "<p>The identifier of the subnet that the HSM is in.</p>",
           "name" : "SubnetId",
           "c2jName" : "SubnetId",
           "c2jShape" : "SubnetId",
@@ -7866,7 +9430,7 @@
             "variableName" : "subnetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The identifier of the subnet the HSM is in.</p>",
+            "documentation" : "<p>The identifier of the subnet that the HSM is in.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7905,10 +9469,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The identifier of the subnet the HSM is in.</p>\n@param subnetId The identifier of the subnet the HSM is in.*/",
-          "getterDocumentation" : "/**<p>The identifier of the subnet the HSM is in.</p>\n@return The identifier of the subnet the HSM is in.*/",
-          "fluentSetterDocumentation" : "/**<p>The identifier of the subnet the HSM is in.</p>\n@param subnetId The identifier of the subnet the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The identifier of the subnet the HSM is in.</p>\n@param subnetId The identifier of the subnet the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@param subnetId The identifier of the subnet that the HSM is in.*/",
+          "getterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@return The identifier of the subnet that the HSM is in.*/",
+          "fluentSetterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@param subnetId The identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@param subnetId The identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "StatusDetails" : {
           "documentation" : "<p>Contains additional information about the status of the HSM.</p>",
@@ -8068,6 +9632,146 @@
           "getterDocumentation" : "/**<p>The URI of the certificate server.</p>\n@return The URI of the certificate server.*/",
           "fluentSetterDocumentation" : "/**<p>The URI of the certificate server.</p>\n@param serverCertUri The URI of the certificate server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The URI of the certificate server.</p>\n@param serverCertUri The URI of the certificate server.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "AddTagsToResourceResult" : {
+      "c2jName" : "AddTagsToResourceResponse",
+      "documentation" : "",
+      "shapeName" : "AddTagsToResourceResult",
+      "deprecated" : false,
+      "required" : [ "Status" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "<p>The status of the operation.</p>",
+        "name" : "Status",
+        "c2jName" : "Status",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The status of the operation.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Status",
+          "marshallLocationName" : "Status",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.*/",
+        "getterDocumentation" : "/**<p>The status of the operation.</p>\n@return The status of the operation.*/",
+        "fluentSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "addTagsToResourceResult",
+        "variableType" : "AddTagsToResourceResult",
+        "variableDeclarationType" : "AddTagsToResourceResult",
+        "documentation" : null,
+        "simpleType" : "AddTagsToResourceResult",
+        "variableSetterType" : "AddTagsToResourceResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Status" : {
+          "documentation" : "<p>The status of the operation.</p>",
+          "name" : "Status",
+          "c2jName" : "Status",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The status of the operation.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Status",
+            "marshallLocationName" : "Status",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.*/",
+          "getterDocumentation" : "/**<p>The status of the operation.</p>\n@return The status of the operation.*/",
+          "fluentSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -10701,61 +12405,6 @@
         }
       }
     },
-    "HsmStatus" : {
-      "c2jName" : "HsmStatus",
-      "documentation" : "",
-      "shapeName" : "HsmStatus",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "members" : null,
-      "enums" : [ {
-        "name" : "PENDING",
-        "value" : "PENDING"
-      }, {
-        "name" : "RUNNING",
-        "value" : "RUNNING"
-      }, {
-        "name" : "UPDATING",
-        "value" : "UPDATING"
-      }, {
-        "name" : "SUSPENDED",
-        "value" : "SUSPENDED"
-      }, {
-        "name" : "TERMINATING",
-        "value" : "TERMINATING"
-      }, {
-        "name" : "TERMINATED",
-        "value" : "TERMINATED"
-      }, {
-        "name" : "DEGRADED",
-        "value" : "DEGRADED"
-      } ],
-      "variable" : {
-        "variableName" : "hsmStatus",
-        "variableType" : "HsmStatus",
-        "variableDeclarationType" : "HsmStatus",
-        "documentation" : null,
-        "simpleType" : "HsmStatus",
-        "variableSetterType" : "HsmStatus"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
     "DescribeLunaClientResult" : {
       "c2jName" : "DescribeLunaClientResponse",
       "documentation" : "",
@@ -11315,6 +12964,61 @@
           "varargSetterDocumentation" : "/**<p>The certificate fingerprint.</p>\n@param certificateFingerprint The certificate fingerprint.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "HsmStatus" : {
+      "c2jName" : "HsmStatus",
+      "documentation" : "",
+      "shapeName" : "HsmStatus",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "PENDING",
+        "value" : "PENDING"
+      }, {
+        "name" : "RUNNING",
+        "value" : "RUNNING"
+      }, {
+        "name" : "UPDATING",
+        "value" : "UPDATING"
+      }, {
+        "name" : "SUSPENDED",
+        "value" : "SUSPENDED"
+      }, {
+        "name" : "TERMINATING",
+        "value" : "TERMINATING"
+      }, {
+        "name" : "TERMINATED",
+        "value" : "TERMINATED"
+      }, {
+        "name" : "DEGRADED",
+        "value" : "DEGRADED"
+      } ],
+      "variable" : {
+        "variableName" : "hsmStatus",
+        "variableType" : "HsmStatus",
+        "variableDeclarationType" : "HsmStatus",
+        "documentation" : null,
+        "simpleType" : "HsmStatus",
+        "variableSetterType" : "HsmStatus"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "InvalidRequestException" : {
       "c2jName" : "InvalidRequestException",

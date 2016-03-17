@@ -17,7 +17,13 @@
 package com.amazonaws.services.cloudhsm.model;
 
 /**
- * 
+ * <p>
+ * Specifies the type of subscription for the HSM.
+ * </p>
+ * <ul>
+ * <li><b>PRODUCTION</b> - The HSM is being used in a production environment.</li>
+ * <li><b>TRIAL</b> - The HSM is being used in a product trial.</li>
+ * </ul>
  */
 public enum SubscriptionType {
 

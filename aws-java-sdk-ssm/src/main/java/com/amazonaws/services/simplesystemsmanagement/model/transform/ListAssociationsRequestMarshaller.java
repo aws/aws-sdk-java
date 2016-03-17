@@ -64,40 +64,38 @@ public class ListAssociationsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<AssociationFilter> associationFilterListList = (com.amazonaws.internal.SdkInternalList<AssociationFilter>) listAssociationsRequest
                     .getAssociationFilterList();
             if (!associationFilterListList.isEmpty()
                     || !associationFilterListList.isAutoConstruct()) {
-                jsonWriter.key("AssociationFilterList");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AssociationFilterList");
+                jsonGenerator.writeStartArray();
                 for (AssociationFilter associationFilterListListValue : associationFilterListList) {
                     if (associationFilterListListValue != null) {
 
                         AssociationFilterJsonMarshaller.getInstance().marshall(
-                                associationFilterListListValue, jsonWriter);
+                                associationFilterListListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (listAssociationsRequest.getMaxResults() != null) {
-                jsonWriter.key("MaxResults").value(
+                jsonGenerator.writeFieldName("MaxResults").writeValue(
                         listAssociationsRequest.getMaxResults());
             }
             if (listAssociationsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         listAssociationsRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

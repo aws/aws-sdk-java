@@ -40,36 +40,37 @@ import com.amazonaws.util.json.*;
 public class SupportedProductConfigJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(SupportedProductConfig supportedProductConfig,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (supportedProductConfig == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (supportedProductConfig.getName() != null) {
-                jsonWriter.key("Name").value(supportedProductConfig.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        supportedProductConfig.getName());
             }
 
             com.amazonaws.internal.SdkInternalList<String> argsList = (com.amazonaws.internal.SdkInternalList<String>) supportedProductConfig
                     .getArgs();
             if (!argsList.isEmpty() || !argsList.isAutoConstruct()) {
-                jsonWriter.key("Args");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Args");
+                jsonGenerator.writeStartArray();
                 for (String argsListValue : argsList) {
                     if (argsListValue != null) {
-                        jsonWriter.value(argsListValue);
+                        jsonGenerator.writeValue(argsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

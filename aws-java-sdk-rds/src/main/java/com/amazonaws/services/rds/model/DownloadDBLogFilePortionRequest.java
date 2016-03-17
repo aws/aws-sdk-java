@@ -57,16 +57,18 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      * block of lines returned can be from the beginning or the end of the
      * log file, depending on the value of the Marker parameter.
      * <ul><li><p>If neither Marker or NumberOfLines are specified, the
-     * entire log file is returned.</li><li><p>If NumberOfLines is specified
-     * and Marker is not specified, then the most recent lines from the end
-     * of the log file are returned.</li><li><p>If Marker is specified as
-     * "0", then the specified number of lines from the beginning of the log
-     * file are returned.</li><li><p>You can download the log file in blocks
-     * of lines by specifying the size of the block using the NumberOfLines
-     * parameter, and by specifying a value of "0" for the Marker parameter
-     * in your first request. Include the Marker value returned in the
-     * response as the Marker value for the next request, continuing until
-     * the AdditionalDataPending response element returns false.</li></ul>
+     * entire log file is returned up to a maximum of 10000 lines, starting
+     * with the most recent log entries first.</li><li><p>If NumberOfLines is
+     * specified and Marker is not specified, then the most recent lines from
+     * the end of the log file are returned.</li><li><p>If Marker is
+     * specified as "0", then the specified number of lines from the
+     * beginning of the log file are returned.</li><li><p>You can download
+     * the log file in blocks of lines by specifying the size of the block
+     * using the NumberOfLines parameter, and by specifying a value of "0"
+     * for the Marker parameter in your first request. Include the Marker
+     * value returned in the response as the Marker value for the next
+     * request, continuing until the AdditionalDataPending response element
+     * returns false.</li></ul>
      */
     private Integer numberOfLines;
 
@@ -212,16 +214,18 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      * block of lines returned can be from the beginning or the end of the
      * log file, depending on the value of the Marker parameter.
      * <ul><li><p>If neither Marker or NumberOfLines are specified, the
-     * entire log file is returned.</li><li><p>If NumberOfLines is specified
-     * and Marker is not specified, then the most recent lines from the end
-     * of the log file are returned.</li><li><p>If Marker is specified as
-     * "0", then the specified number of lines from the beginning of the log
-     * file are returned.</li><li><p>You can download the log file in blocks
-     * of lines by specifying the size of the block using the NumberOfLines
-     * parameter, and by specifying a value of "0" for the Marker parameter
-     * in your first request. Include the Marker value returned in the
-     * response as the Marker value for the next request, continuing until
-     * the AdditionalDataPending response element returns false.</li></ul>
+     * entire log file is returned up to a maximum of 10000 lines, starting
+     * with the most recent log entries first.</li><li><p>If NumberOfLines is
+     * specified and Marker is not specified, then the most recent lines from
+     * the end of the log file are returned.</li><li><p>If Marker is
+     * specified as "0", then the specified number of lines from the
+     * beginning of the log file are returned.</li><li><p>You can download
+     * the log file in blocks of lines by specifying the size of the block
+     * using the NumberOfLines parameter, and by specifying a value of "0"
+     * for the Marker parameter in your first request. Include the Marker
+     * value returned in the response as the Marker value for the next
+     * request, continuing until the AdditionalDataPending response element
+     * returns false.</li></ul>
      *
      * @return The number of lines to download. If the number of lines specified
      *         results in a file over 1 MB in size, the file will be truncated at 1
@@ -229,16 +233,18 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      *         block of lines returned can be from the beginning or the end of the
      *         log file, depending on the value of the Marker parameter.
      *         <ul><li><p>If neither Marker or NumberOfLines are specified, the
-     *         entire log file is returned.</li><li><p>If NumberOfLines is specified
-     *         and Marker is not specified, then the most recent lines from the end
-     *         of the log file are returned.</li><li><p>If Marker is specified as
-     *         "0", then the specified number of lines from the beginning of the log
-     *         file are returned.</li><li><p>You can download the log file in blocks
-     *         of lines by specifying the size of the block using the NumberOfLines
-     *         parameter, and by specifying a value of "0" for the Marker parameter
-     *         in your first request. Include the Marker value returned in the
-     *         response as the Marker value for the next request, continuing until
-     *         the AdditionalDataPending response element returns false.</li></ul>
+     *         entire log file is returned up to a maximum of 10000 lines, starting
+     *         with the most recent log entries first.</li><li><p>If NumberOfLines is
+     *         specified and Marker is not specified, then the most recent lines from
+     *         the end of the log file are returned.</li><li><p>If Marker is
+     *         specified as "0", then the specified number of lines from the
+     *         beginning of the log file are returned.</li><li><p>You can download
+     *         the log file in blocks of lines by specifying the size of the block
+     *         using the NumberOfLines parameter, and by specifying a value of "0"
+     *         for the Marker parameter in your first request. Include the Marker
+     *         value returned in the response as the Marker value for the next
+     *         request, continuing until the AdditionalDataPending response element
+     *         returns false.</li></ul>
      */
     public Integer getNumberOfLines() {
         return numberOfLines;
@@ -251,16 +257,18 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      * block of lines returned can be from the beginning or the end of the
      * log file, depending on the value of the Marker parameter.
      * <ul><li><p>If neither Marker or NumberOfLines are specified, the
-     * entire log file is returned.</li><li><p>If NumberOfLines is specified
-     * and Marker is not specified, then the most recent lines from the end
-     * of the log file are returned.</li><li><p>If Marker is specified as
-     * "0", then the specified number of lines from the beginning of the log
-     * file are returned.</li><li><p>You can download the log file in blocks
-     * of lines by specifying the size of the block using the NumberOfLines
-     * parameter, and by specifying a value of "0" for the Marker parameter
-     * in your first request. Include the Marker value returned in the
-     * response as the Marker value for the next request, continuing until
-     * the AdditionalDataPending response element returns false.</li></ul>
+     * entire log file is returned up to a maximum of 10000 lines, starting
+     * with the most recent log entries first.</li><li><p>If NumberOfLines is
+     * specified and Marker is not specified, then the most recent lines from
+     * the end of the log file are returned.</li><li><p>If Marker is
+     * specified as "0", then the specified number of lines from the
+     * beginning of the log file are returned.</li><li><p>You can download
+     * the log file in blocks of lines by specifying the size of the block
+     * using the NumberOfLines parameter, and by specifying a value of "0"
+     * for the Marker parameter in your first request. Include the Marker
+     * value returned in the response as the Marker value for the next
+     * request, continuing until the AdditionalDataPending response element
+     * returns false.</li></ul>
      *
      * @param numberOfLines The number of lines to download. If the number of lines specified
      *         results in a file over 1 MB in size, the file will be truncated at 1
@@ -268,16 +276,18 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      *         block of lines returned can be from the beginning or the end of the
      *         log file, depending on the value of the Marker parameter.
      *         <ul><li><p>If neither Marker or NumberOfLines are specified, the
-     *         entire log file is returned.</li><li><p>If NumberOfLines is specified
-     *         and Marker is not specified, then the most recent lines from the end
-     *         of the log file are returned.</li><li><p>If Marker is specified as
-     *         "0", then the specified number of lines from the beginning of the log
-     *         file are returned.</li><li><p>You can download the log file in blocks
-     *         of lines by specifying the size of the block using the NumberOfLines
-     *         parameter, and by specifying a value of "0" for the Marker parameter
-     *         in your first request. Include the Marker value returned in the
-     *         response as the Marker value for the next request, continuing until
-     *         the AdditionalDataPending response element returns false.</li></ul>
+     *         entire log file is returned up to a maximum of 10000 lines, starting
+     *         with the most recent log entries first.</li><li><p>If NumberOfLines is
+     *         specified and Marker is not specified, then the most recent lines from
+     *         the end of the log file are returned.</li><li><p>If Marker is
+     *         specified as "0", then the specified number of lines from the
+     *         beginning of the log file are returned.</li><li><p>You can download
+     *         the log file in blocks of lines by specifying the size of the block
+     *         using the NumberOfLines parameter, and by specifying a value of "0"
+     *         for the Marker parameter in your first request. Include the Marker
+     *         value returned in the response as the Marker value for the next
+     *         request, continuing until the AdditionalDataPending response element
+     *         returns false.</li></ul>
      */
     public void setNumberOfLines(Integer numberOfLines) {
         this.numberOfLines = numberOfLines;
@@ -290,16 +300,18 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      * block of lines returned can be from the beginning or the end of the
      * log file, depending on the value of the Marker parameter.
      * <ul><li><p>If neither Marker or NumberOfLines are specified, the
-     * entire log file is returned.</li><li><p>If NumberOfLines is specified
-     * and Marker is not specified, then the most recent lines from the end
-     * of the log file are returned.</li><li><p>If Marker is specified as
-     * "0", then the specified number of lines from the beginning of the log
-     * file are returned.</li><li><p>You can download the log file in blocks
-     * of lines by specifying the size of the block using the NumberOfLines
-     * parameter, and by specifying a value of "0" for the Marker parameter
-     * in your first request. Include the Marker value returned in the
-     * response as the Marker value for the next request, continuing until
-     * the AdditionalDataPending response element returns false.</li></ul>
+     * entire log file is returned up to a maximum of 10000 lines, starting
+     * with the most recent log entries first.</li><li><p>If NumberOfLines is
+     * specified and Marker is not specified, then the most recent lines from
+     * the end of the log file are returned.</li><li><p>If Marker is
+     * specified as "0", then the specified number of lines from the
+     * beginning of the log file are returned.</li><li><p>You can download
+     * the log file in blocks of lines by specifying the size of the block
+     * using the NumberOfLines parameter, and by specifying a value of "0"
+     * for the Marker parameter in your first request. Include the Marker
+     * value returned in the response as the Marker value for the next
+     * request, continuing until the AdditionalDataPending response element
+     * returns false.</li></ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -309,16 +321,18 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
      *         block of lines returned can be from the beginning or the end of the
      *         log file, depending on the value of the Marker parameter.
      *         <ul><li><p>If neither Marker or NumberOfLines are specified, the
-     *         entire log file is returned.</li><li><p>If NumberOfLines is specified
-     *         and Marker is not specified, then the most recent lines from the end
-     *         of the log file are returned.</li><li><p>If Marker is specified as
-     *         "0", then the specified number of lines from the beginning of the log
-     *         file are returned.</li><li><p>You can download the log file in blocks
-     *         of lines by specifying the size of the block using the NumberOfLines
-     *         parameter, and by specifying a value of "0" for the Marker parameter
-     *         in your first request. Include the Marker value returned in the
-     *         response as the Marker value for the next request, continuing until
-     *         the AdditionalDataPending response element returns false.</li></ul>
+     *         entire log file is returned up to a maximum of 10000 lines, starting
+     *         with the most recent log entries first.</li><li><p>If NumberOfLines is
+     *         specified and Marker is not specified, then the most recent lines from
+     *         the end of the log file are returned.</li><li><p>If Marker is
+     *         specified as "0", then the specified number of lines from the
+     *         beginning of the log file are returned.</li><li><p>You can download
+     *         the log file in blocks of lines by specifying the size of the block
+     *         using the NumberOfLines parameter, and by specifying a value of "0"
+     *         for the Marker parameter in your first request. Include the Marker
+     *         value returned in the response as the Marker value for the next
+     *         request, continuing until the AdditionalDataPending response element
+     *         returns false.</li></ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

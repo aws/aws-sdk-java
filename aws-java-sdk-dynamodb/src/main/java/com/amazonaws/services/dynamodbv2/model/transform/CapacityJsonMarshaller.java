@@ -40,23 +40,23 @@ import com.amazonaws.util.json.*;
 public class CapacityJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Capacity capacity, JSONWriter jsonWriter) {
+    public void marshall(Capacity capacity, SdkJsonGenerator jsonGenerator) {
         if (capacity == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (capacity.getCapacityUnits() != null) {
-                jsonWriter.key("CapacityUnits").value(
+                jsonGenerator.writeFieldName("CapacityUnits").writeValue(
                         capacity.getCapacityUnits());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

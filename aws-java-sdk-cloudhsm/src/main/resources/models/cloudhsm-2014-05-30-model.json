@@ -11,6 +11,21 @@
     "targetPrefix":"CloudHsmFrontendService"
   },
   "operations":{
+    "AddTagsToResource":{
+      "name":"AddTagsToResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AddTagsToResourceRequest"},
+      "output":{"shape":"AddTagsToResourceResponse"},
+      "errors":[
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Adds or overwrites one or more tags for the specified resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique per resource.</p>"
+    },
     "CreateHapg":{
       "name":"CreateHapg",
       "http":{
@@ -39,7 +54,7 @@
         {"shape":"CloudHsmInternalException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Creates an uninitialized HSM instance. Running this command provisions an HSM appliance and will result in charges to your AWS account for the HSM.</p>"
+      "documentation":"<p>Creates an uninitialized HSM instance.</p> <p>There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a> operation, go to the <a href=\"https://console.aws.amazon.com/support/home#/\">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important> <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p> </important>"
     },
     "CreateLunaClient":{
       "name":"CreateLunaClient",
@@ -84,7 +99,7 @@
         {"shape":"CloudHsmInternalException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Deletes an HSM. Once complete, this operation cannot be undone and your key material cannot be recovered.</p>"
+      "documentation":"<p>Deletes an HSM. After completion, this operation cannot be undone and your key material cannot be recovered.</p>"
     },
     "DeleteLunaClient":{
       "name":"DeleteLunaClient",
@@ -221,6 +236,21 @@
       ],
       "documentation":"<p>Lists all of the clients.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListLunaClients</a> to retrieve the next set of items.</p>"
     },
+    "ListTagsForResource":{
+      "name":"ListTagsForResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListTagsForResourceRequest"},
+      "output":{"shape":"ListTagsForResourceResponse"},
+      "errors":[
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Returns a list of all tags for the specified resource.</p>"
+    },
     "ModifyHapg":{
       "name":"ModifyHapg",
       "http":{
@@ -249,7 +279,7 @@
         {"shape":"CloudHsmInternalException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Modifies an HSM.</p>"
+      "documentation":"<p>Modifies an HSM.</p> <important> <p>This operation can result in the HSM being offline for up to 15 minutes while the AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should ensure that your AWS CloudHSM service is configured for high availability, and consider executing this operation during a maintenance window.</p> </important>"
     },
     "ModifyLunaClient":{
       "name":"ModifyLunaClient",
@@ -263,6 +293,21 @@
         {"shape":"CloudHsmServiceException"}
       ],
       "documentation":"<p>Modifies the certificate used by the client.</p> <p>This action can potentially start a workflow to install the new certificate on the client's HSMs.</p>"
+    },
+    "RemoveTagsFromResource":{
+      "name":"RemoveTagsFromResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RemoveTagsFromResourceRequest"},
+      "output":{"shape":"RemoveTagsFromResourceResponse"},
+      "errors":[
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmInternalException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Removes one or more tags from the specified resource.</p> <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>"
     }
   },
   "shapes":{
@@ -273,6 +318,33 @@
     "AZList":{
       "type":"list",
       "member":{"shape":"AZ"}
+    },
+    "AddTagsToResourceRequest":{
+      "type":"structure",
+      "required":[
+        "ResourceArn",
+        "TagList"
+      ],
+      "members":{
+        "ResourceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource to tag.</p>"
+        },
+        "TagList":{
+          "shape":"TagList",
+          "documentation":"<p>One or more tags.</p>"
+        }
+      }
+    },
+    "AddTagsToResourceResponse":{
+      "type":"structure",
+      "required":["Status"],
+      "members":{
+        "Status":{
+          "shape":"String",
+          "documentation":"<p>The status of the operation.</p>"
+        }
+      }
     },
     "Boolean":{"type":"boolean"},
     "Certificate":{
@@ -381,7 +453,7 @@
         },
         "EniIp":{
           "shape":"IpAddress",
-          "documentation":"<p>The IP address to assign to the HSM's ENI.</p>",
+          "documentation":"<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>",
           "locationName":"EniIp"
         },
         "IamRoleArn":{
@@ -396,21 +468,20 @@
         },
         "SubscriptionType":{
           "shape":"SubscriptionType",
-          "documentation":"<p>The subscription type.</p>",
           "locationName":"SubscriptionType"
         },
         "ClientToken":{
           "shape":"ClientToken",
-          "documentation":"<p>A user-defined token to ensure idempotence. Subsequent calls to this action with the same token will be ignored.</p>",
+          "documentation":"<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>",
           "locationName":"ClientToken"
         },
         "SyslogIp":{
           "shape":"IpAddress",
-          "documentation":"<p>The IP address for the syslog monitoring server.</p>",
+          "documentation":"<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>",
           "locationName":"SyslogIp"
         }
       },
-      "documentation":"<p>Contains the inputs for the <a>CreateHsm</a> action. </p>",
+      "documentation":"<p>Contains the inputs for the <a>CreateHsm</a> operation.</p>",
       "locationName":"CreateHsmRequest"
     },
     "CreateHsmResponse":{
@@ -421,7 +492,7 @@
           "documentation":"<p>The ARN of the HSM.</p>"
         }
       },
-      "documentation":"<p>Contains the output of the <a>CreateHsm</a> action.</p>"
+      "documentation":"<p>Contains the output of the <a>CreateHsm</a> operation.</p>"
     },
     "CreateLunaClientRequest":{
       "type":"structure",
@@ -480,7 +551,7 @@
           "locationName":"HsmArn"
         }
       },
-      "documentation":"<p>Contains the inputs for the <a>DeleteHsm</a> action. </p>",
+      "documentation":"<p>Contains the inputs for the <a>DeleteHsm</a> operation.</p>",
       "locationName":"DeleteHsmRequest"
     },
     "DeleteHsmResponse":{
@@ -489,10 +560,10 @@
       "members":{
         "Status":{
           "shape":"String",
-          "documentation":"<p>The status of the action.</p>"
+          "documentation":"<p>The status of the operation.</p>"
         }
       },
-      "documentation":"<p>Contains the output of the <a>DeleteHsm</a> action.</p>"
+      "documentation":"<p>Contains the output of the <a>DeleteHsm</a> operation.</p>"
     },
     "DeleteLunaClientRequest":{
       "type":"structure",
@@ -570,7 +641,7 @@
           "documentation":"<p>The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be specified.</p>"
         }
       },
-      "documentation":"<p>Contains the inputs for the <a>DescribeHsm</a> action. </p>"
+      "documentation":"<p>Contains the inputs for the <a>DescribeHsm</a> operation. </p>"
     },
     "DescribeHsmResponse":{
       "type":"structure",
@@ -599,10 +670,7 @@
           "shape":"IpAddress",
           "documentation":"<p>The IP address assigned to the HSM's ENI.</p>"
         },
-        "SubscriptionType":{
-          "shape":"SubscriptionType",
-          "documentation":"<p>The subscription type.</p>"
-        },
+        "SubscriptionType":{"shape":"SubscriptionType"},
         "SubscriptionStartDate":{
           "shape":"Timestamp",
           "documentation":"<p>The subscription start date.</p>"
@@ -617,7 +685,7 @@
         },
         "SubnetId":{
           "shape":"SubnetId",
-          "documentation":"<p>The identifier of the subnet the HSM is in.</p>"
+          "documentation":"<p>The identifier of the subnet that the HSM is in.</p>"
         },
         "IamRoleArn":{
           "shape":"IamRoleArn",
@@ -645,7 +713,7 @@
         },
         "SshKeyLastUpdated":{
           "shape":"Timestamp",
-          "documentation":"<p>The date and time the SSH key was last updated.</p>"
+          "documentation":"<p>The date and time that the SSH key was last updated.</p>"
         },
         "ServerCertUri":{
           "shape":"String",
@@ -653,14 +721,14 @@
         },
         "ServerCertLastUpdated":{
           "shape":"Timestamp",
-          "documentation":"<p>The date and time the server certificate was last updated.</p>"
+          "documentation":"<p>The date and time that the server certificate was last updated.</p>"
         },
         "Partitions":{
           "shape":"PartitionList",
           "documentation":"<p>The list of partitions on the HSM.</p>"
         }
       },
-      "documentation":"<p>Contains the output of the <a>DescribeHsm</a> action.</p>"
+      "documentation":"<p>Contains the output of the <a>DescribeHsm</a> operation.</p>"
     },
     "DescribeLunaClientRequest":{
       "type":"structure",
@@ -804,7 +872,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p>Contains the inputs for the <a>ListAvailableZones</a> action. </p>"
+      "documentation":"<p>Contains the inputs for the <a>ListAvailableZones</a> action.</p>"
     },
     "ListAvailableZonesResponse":{
       "type":"structure",
@@ -859,7 +927,7 @@
           "documentation":"<p>If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of items.</p>"
         }
       },
-      "documentation":"<p>Contains the output of the <a>ListHsms</a> action.</p>"
+      "documentation":"<p>Contains the output of the <a>ListHsms</a> operation.</p>"
     },
     "ListLunaClientsRequest":{
       "type":"structure",
@@ -881,6 +949,26 @@
         "NextToken":{
           "shape":"PaginationToken",
           "documentation":"<p>If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of items.</p>"
+        }
+      }
+    },
+    "ListTagsForResourceRequest":{
+      "type":"structure",
+      "required":["ResourceArn"],
+      "members":{
+        "ResourceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>"
+        }
+      }
+    },
+    "ListTagsForResourceResponse":{
+      "type":"structure",
+      "required":["TagList"],
+      "members":{
+        "TagList":{
+          "shape":"TagList",
+          "documentation":"<p>One or more tags.</p>"
         }
       }
     },
@@ -922,12 +1010,12 @@
         },
         "SubnetId":{
           "shape":"SubnetId",
-          "documentation":"<p>The new identifier of the subnet that the HSM is in.</p>",
+          "documentation":"<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>",
           "locationName":"SubnetId"
         },
         "EniIp":{
           "shape":"IpAddress",
-          "documentation":"<p>The new IP address for the elastic network interface attached to the HSM.</p>",
+          "documentation":"<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>",
           "locationName":"EniIp"
         },
         "IamRoleArn":{
@@ -942,11 +1030,11 @@
         },
         "SyslogIp":{
           "shape":"IpAddress",
-          "documentation":"<p>The new IP address for the syslog monitoring server.</p>",
+          "documentation":"<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>",
           "locationName":"SyslogIp"
         }
       },
-      "documentation":"<p>Contains the inputs for the <a>ModifyHsm</a> action. </p>",
+      "documentation":"<p>Contains the inputs for the <a>ModifyHsm</a> operation.</p>",
       "locationName":"ModifyHsmRequest"
     },
     "ModifyHsmResponse":{
@@ -957,7 +1045,7 @@
           "documentation":"<p>The ARN of the HSM.</p>"
         }
       },
-      "documentation":"<p>Contains the output of the <a>ModifyHsm</a> action.</p>"
+      "documentation":"<p>Contains the output of the <a>ModifyHsm</a> operation.</p>"
     },
     "ModifyLunaClientRequest":{
       "type":"structure",
@@ -972,7 +1060,7 @@
         },
         "Certificate":{
           "shape":"Certificate",
-          "documentation":"<p>The new certificate for the client. </p>"
+          "documentation":"<p>The new certificate for the client.</p>"
         }
       }
     },
@@ -999,11 +1087,38 @@
     },
     "PartitionSerial":{
       "type":"string",
-      "pattern":"\\d{9}"
+      "pattern":"\\d{6,12}"
     },
     "PartitionSerialList":{
       "type":"list",
       "member":{"shape":"PartitionSerial"}
+    },
+    "RemoveTagsFromResourceRequest":{
+      "type":"structure",
+      "required":[
+        "ResourceArn",
+        "TagKeyList"
+      ],
+      "members":{
+        "ResourceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>"
+        },
+        "TagKeyList":{
+          "shape":"TagKeyList",
+          "documentation":"<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>"
+        }
+      }
+    },
+    "RemoveTagsFromResourceResponse":{
+      "type":"structure",
+      "required":["Status"],
+      "members":{
+        "Status":{
+          "shape":"String",
+          "documentation":"<p>The status of the operation.</p>"
+        }
+      }
     },
     "SshKey":{
       "type":"string",
@@ -1019,7 +1134,44 @@
     },
     "SubscriptionType":{
       "type":"string",
+      "documentation":"<p>Specifies the type of subscription for the HSM.</p> <ul> <li><b>PRODUCTION</b> - The HSM is being used in a production environment.</li> <li><b>TRIAL</b> - The HSM is being used in a product trial.</li> </ul>",
       "enum":["PRODUCTION"]
+    },
+    "Tag":{
+      "type":"structure",
+      "required":[
+        "Key",
+        "Value"
+      ],
+      "members":{
+        "Key":{
+          "shape":"TagKey",
+          "documentation":"<p>The key of the tag.</p>"
+        },
+        "Value":{
+          "shape":"TagValue",
+          "documentation":"<p>The value of the tag.</p>"
+        }
+      },
+      "documentation":"<p>A key-value pair that identifies or specifies metadata about a resource.</p>"
+    },
+    "TagKey":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "TagKeyList":{
+      "type":"list",
+      "member":{"shape":"TagKey"}
+    },
+    "TagList":{
+      "type":"list",
+      "member":{"shape":"Tag"}
+    },
+    "TagValue":{
+      "type":"string",
+      "max":256,
+      "min":0
     },
     "Timestamp":{
       "type":"string",

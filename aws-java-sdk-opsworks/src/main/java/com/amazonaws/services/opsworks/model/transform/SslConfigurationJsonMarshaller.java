@@ -40,31 +40,32 @@ import com.amazonaws.util.json.*;
 public class SslConfigurationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(SslConfiguration sslConfiguration,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (sslConfiguration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (sslConfiguration.getCertificate() != null) {
-                jsonWriter.key("Certificate").value(
+                jsonGenerator.writeFieldName("Certificate").writeValue(
                         sslConfiguration.getCertificate());
             }
             if (sslConfiguration.getPrivateKey() != null) {
-                jsonWriter.key("PrivateKey").value(
+                jsonGenerator.writeFieldName("PrivateKey").writeValue(
                         sslConfiguration.getPrivateKey());
             }
             if (sslConfiguration.getChain() != null) {
-                jsonWriter.key("Chain").value(sslConfiguration.getChain());
+                jsonGenerator.writeFieldName("Chain").writeValue(
+                        sslConfiguration.getChain());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

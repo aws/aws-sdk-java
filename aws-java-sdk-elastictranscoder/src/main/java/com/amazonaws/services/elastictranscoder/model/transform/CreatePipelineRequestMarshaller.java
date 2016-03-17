@@ -67,50 +67,53 @@ public class CreatePipelineRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createPipelineRequest.getName() != null) {
-                jsonWriter.key("Name").value(createPipelineRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createPipelineRequest.getName());
             }
             if (createPipelineRequest.getInputBucket() != null) {
-                jsonWriter.key("InputBucket").value(
+                jsonGenerator.writeFieldName("InputBucket").writeValue(
                         createPipelineRequest.getInputBucket());
             }
             if (createPipelineRequest.getOutputBucket() != null) {
-                jsonWriter.key("OutputBucket").value(
+                jsonGenerator.writeFieldName("OutputBucket").writeValue(
                         createPipelineRequest.getOutputBucket());
             }
             if (createPipelineRequest.getRole() != null) {
-                jsonWriter.key("Role").value(createPipelineRequest.getRole());
+                jsonGenerator.writeFieldName("Role").writeValue(
+                        createPipelineRequest.getRole());
             }
             if (createPipelineRequest.getAwsKmsKeyArn() != null) {
-                jsonWriter.key("AwsKmsKeyArn").value(
+                jsonGenerator.writeFieldName("AwsKmsKeyArn").writeValue(
                         createPipelineRequest.getAwsKmsKeyArn());
             }
             if (createPipelineRequest.getNotifications() != null) {
-                jsonWriter.key("Notifications");
-                NotificationsJsonMarshaller.getInstance().marshall(
-                        createPipelineRequest.getNotifications(), jsonWriter);
+                jsonGenerator.writeFieldName("Notifications");
+                NotificationsJsonMarshaller.getInstance()
+                        .marshall(createPipelineRequest.getNotifications(),
+                                jsonGenerator);
             }
             if (createPipelineRequest.getContentConfig() != null) {
-                jsonWriter.key("ContentConfig");
-                PipelineOutputConfigJsonMarshaller.getInstance().marshall(
-                        createPipelineRequest.getContentConfig(), jsonWriter);
+                jsonGenerator.writeFieldName("ContentConfig");
+                PipelineOutputConfigJsonMarshaller.getInstance()
+                        .marshall(createPipelineRequest.getContentConfig(),
+                                jsonGenerator);
             }
             if (createPipelineRequest.getThumbnailConfig() != null) {
-                jsonWriter.key("ThumbnailConfig");
+                jsonGenerator.writeFieldName("ThumbnailConfig");
                 PipelineOutputConfigJsonMarshaller.getInstance().marshall(
-                        createPipelineRequest.getThumbnailConfig(), jsonWriter);
+                        createPipelineRequest.getThumbnailConfig(),
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

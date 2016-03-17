@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output of the <a>ModifyHsm</a> action.
+ * Contains the output of the <a>ModifyHsm</a> operation.
  * </p>
  */
 public class ModifyHsmResult implements Serializable, Cloneable {

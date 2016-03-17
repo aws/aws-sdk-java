@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output of the <a>DescribeHsm</a> action.
+ * Contains the output of the <a>DescribeHsm</a> operation.
  * </p>
  */
 public class DescribeHsmResult implements Serializable, Cloneable {
@@ -62,11 +62,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * </p>
      */
     private String eniIp;
-    /**
-     * <p>
-     * The subscription type.
-     * </p>
-     */
+
     private String subscriptionType;
     /**
      * <p>
@@ -88,7 +84,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * The identifier of the subnet the HSM is in.
+     * The identifier of the subnet that the HSM is in.
      * </p>
      */
     private String subnetId;
@@ -130,7 +126,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
     private String sshPublicKey;
     /**
      * <p>
-     * The date and time the SSH key was last updated.
+     * The date and time that the SSH key was last updated.
      * </p>
      */
     private String sshKeyLastUpdated;
@@ -142,7 +138,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
     private String serverCertUri;
     /**
      * <p>
-     * The date and time the server certificate was last updated.
+     * The date and time that the server certificate was last updated.
      * </p>
      */
     private String serverCertLastUpdated;
@@ -442,12 +438,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The subscription type.
-     * </p>
-     * 
      * @param subscriptionType
-     *        The subscription type.
      * @see SubscriptionType
      */
 
@@ -456,11 +447,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The subscription type.
-     * </p>
-     * 
-     * @return The subscription type.
+     * @return
      * @see SubscriptionType
      */
 
@@ -469,12 +456,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The subscription type.
-     * </p>
-     * 
      * @param subscriptionType
-     *        The subscription type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SubscriptionType
@@ -486,12 +468,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The subscription type.
-     * </p>
-     * 
      * @param subscriptionType
-     *        The subscription type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SubscriptionType
@@ -502,12 +479,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The subscription type.
-     * </p>
-     * 
      * @param subscriptionType
-     *        The subscription type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SubscriptionType
@@ -645,11 +617,11 @@ public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the subnet the HSM is in.
+     * The identifier of the subnet that the HSM is in.
      * </p>
      * 
      * @param subnetId
-     *        The identifier of the subnet the HSM is in.
+     *        The identifier of the subnet that the HSM is in.
      */
 
     public void setSubnetId(String subnetId) {
@@ -658,10 +630,10 @@ public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the subnet the HSM is in.
+     * The identifier of the subnet that the HSM is in.
      * </p>
      * 
-     * @return The identifier of the subnet the HSM is in.
+     * @return The identifier of the subnet that the HSM is in.
      */
 
     public String getSubnetId() {
@@ -670,11 +642,11 @@ public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the subnet the HSM is in.
+     * The identifier of the subnet that the HSM is in.
      * </p>
      * 
      * @param subnetId
-     *        The identifier of the subnet the HSM is in.
+     *        The identifier of the subnet that the HSM is in.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -932,11 +904,11 @@ public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the SSH key was last updated.
+     * The date and time that the SSH key was last updated.
      * </p>
      * 
      * @param sshKeyLastUpdated
-     *        The date and time the SSH key was last updated.
+     *        The date and time that the SSH key was last updated.
      */
 
     public void setSshKeyLastUpdated(String sshKeyLastUpdated) {
@@ -945,10 +917,10 @@ public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the SSH key was last updated.
+     * The date and time that the SSH key was last updated.
      * </p>
      * 
-     * @return The date and time the SSH key was last updated.
+     * @return The date and time that the SSH key was last updated.
      */
 
     public String getSshKeyLastUpdated() {
@@ -957,11 +929,11 @@ public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the SSH key was last updated.
+     * The date and time that the SSH key was last updated.
      * </p>
      * 
      * @param sshKeyLastUpdated
-     *        The date and time the SSH key was last updated.
+     *        The date and time that the SSH key was last updated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1014,11 +986,11 @@ public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the server certificate was last updated.
+     * The date and time that the server certificate was last updated.
      * </p>
      * 
      * @param serverCertLastUpdated
-     *        The date and time the server certificate was last updated.
+     *        The date and time that the server certificate was last updated.
      */
 
     public void setServerCertLastUpdated(String serverCertLastUpdated) {
@@ -1027,10 +999,10 @@ public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the server certificate was last updated.
+     * The date and time that the server certificate was last updated.
      * </p>
      * 
-     * @return The date and time the server certificate was last updated.
+     * @return The date and time that the server certificate was last updated.
      */
 
     public String getServerCertLastUpdated() {
@@ -1039,11 +1011,11 @@ public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the server certificate was last updated.
+     * The date and time that the server certificate was last updated.
      * </p>
      * 
      * @param serverCertLastUpdated
-     *        The date and time the server certificate was last updated.
+     *        The date and time that the server certificate was last updated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

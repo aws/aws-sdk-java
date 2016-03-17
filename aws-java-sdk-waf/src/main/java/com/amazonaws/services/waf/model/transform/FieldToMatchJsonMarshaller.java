@@ -40,25 +40,28 @@ import com.amazonaws.util.json.*;
 public class FieldToMatchJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(FieldToMatch fieldToMatch, JSONWriter jsonWriter) {
+    public void marshall(FieldToMatch fieldToMatch,
+            SdkJsonGenerator jsonGenerator) {
         if (fieldToMatch == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (fieldToMatch.getType() != null) {
-                jsonWriter.key("Type").value(fieldToMatch.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        fieldToMatch.getType());
             }
             if (fieldToMatch.getData() != null) {
-                jsonWriter.key("Data").value(fieldToMatch.getData());
+                jsonGenerator.writeFieldName("Data").writeValue(
+                        fieldToMatch.getData());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,60 +40,67 @@ import com.amazonaws.util.json.*;
 public class TrailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Trail trail, JSONWriter jsonWriter) {
+    public void marshall(Trail trail, SdkJsonGenerator jsonGenerator) {
         if (trail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (trail.getName() != null) {
-                jsonWriter.key("Name").value(trail.getName());
+                jsonGenerator.writeFieldName("Name")
+                        .writeValue(trail.getName());
             }
             if (trail.getS3BucketName() != null) {
-                jsonWriter.key("S3BucketName").value(trail.getS3BucketName());
+                jsonGenerator.writeFieldName("S3BucketName").writeValue(
+                        trail.getS3BucketName());
             }
             if (trail.getS3KeyPrefix() != null) {
-                jsonWriter.key("S3KeyPrefix").value(trail.getS3KeyPrefix());
+                jsonGenerator.writeFieldName("S3KeyPrefix").writeValue(
+                        trail.getS3KeyPrefix());
             }
             if (trail.getSnsTopicName() != null) {
-                jsonWriter.key("SnsTopicName").value(trail.getSnsTopicName());
+                jsonGenerator.writeFieldName("SnsTopicName").writeValue(
+                        trail.getSnsTopicName());
             }
             if (trail.getIncludeGlobalServiceEvents() != null) {
-                jsonWriter.key("IncludeGlobalServiceEvents").value(
-                        trail.getIncludeGlobalServiceEvents());
+                jsonGenerator.writeFieldName("IncludeGlobalServiceEvents")
+                        .writeValue(trail.getIncludeGlobalServiceEvents());
             }
             if (trail.getIsMultiRegionTrail() != null) {
-                jsonWriter.key("IsMultiRegionTrail").value(
+                jsonGenerator.writeFieldName("IsMultiRegionTrail").writeValue(
                         trail.getIsMultiRegionTrail());
             }
             if (trail.getHomeRegion() != null) {
-                jsonWriter.key("HomeRegion").value(trail.getHomeRegion());
+                jsonGenerator.writeFieldName("HomeRegion").writeValue(
+                        trail.getHomeRegion());
             }
             if (trail.getTrailARN() != null) {
-                jsonWriter.key("TrailARN").value(trail.getTrailARN());
+                jsonGenerator.writeFieldName("TrailARN").writeValue(
+                        trail.getTrailARN());
             }
             if (trail.getLogFileValidationEnabled() != null) {
-                jsonWriter.key("LogFileValidationEnabled").value(
-                        trail.getLogFileValidationEnabled());
+                jsonGenerator.writeFieldName("LogFileValidationEnabled")
+                        .writeValue(trail.getLogFileValidationEnabled());
             }
             if (trail.getCloudWatchLogsLogGroupArn() != null) {
-                jsonWriter.key("CloudWatchLogsLogGroupArn").value(
-                        trail.getCloudWatchLogsLogGroupArn());
+                jsonGenerator.writeFieldName("CloudWatchLogsLogGroupArn")
+                        .writeValue(trail.getCloudWatchLogsLogGroupArn());
             }
             if (trail.getCloudWatchLogsRoleArn() != null) {
-                jsonWriter.key("CloudWatchLogsRoleArn").value(
-                        trail.getCloudWatchLogsRoleArn());
+                jsonGenerator.writeFieldName("CloudWatchLogsRoleArn")
+                        .writeValue(trail.getCloudWatchLogsRoleArn());
             }
             if (trail.getKmsKeyId() != null) {
-                jsonWriter.key("KmsKeyId").value(trail.getKmsKeyId());
+                jsonGenerator.writeFieldName("KmsKeyId").writeValue(
+                        trail.getKmsKeyId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

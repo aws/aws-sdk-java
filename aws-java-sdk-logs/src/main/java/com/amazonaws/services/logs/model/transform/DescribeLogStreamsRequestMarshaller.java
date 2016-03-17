@@ -65,41 +65,39 @@ public class DescribeLogStreamsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeLogStreamsRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         describeLogStreamsRequest.getLogGroupName());
             }
             if (describeLogStreamsRequest.getLogStreamNamePrefix() != null) {
-                jsonWriter.key("logStreamNamePrefix").value(
+                jsonGenerator.writeFieldName("logStreamNamePrefix").writeValue(
                         describeLogStreamsRequest.getLogStreamNamePrefix());
             }
             if (describeLogStreamsRequest.getOrderBy() != null) {
-                jsonWriter.key("orderBy").value(
+                jsonGenerator.writeFieldName("orderBy").writeValue(
                         describeLogStreamsRequest.getOrderBy());
             }
             if (describeLogStreamsRequest.getDescending() != null) {
-                jsonWriter.key("descending").value(
+                jsonGenerator.writeFieldName("descending").writeValue(
                         describeLogStreamsRequest.getDescending());
             }
             if (describeLogStreamsRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         describeLogStreamsRequest.getNextToken());
             }
             if (describeLogStreamsRequest.getLimit() != null) {
-                jsonWriter.key("limit").value(
+                jsonGenerator.writeFieldName("limit").writeValue(
                         describeLogStreamsRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

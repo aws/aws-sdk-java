@@ -40,42 +40,43 @@ import com.amazonaws.util.json.*;
 public class StageStateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(StageState stageState, JSONWriter jsonWriter) {
+    public void marshall(StageState stageState, SdkJsonGenerator jsonGenerator) {
         if (stageState == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stageState.getStageName() != null) {
-                jsonWriter.key("stageName").value(stageState.getStageName());
+                jsonGenerator.writeFieldName("stageName").writeValue(
+                        stageState.getStageName());
             }
             if (stageState.getInboundTransitionState() != null) {
-                jsonWriter.key("inboundTransitionState");
+                jsonGenerator.writeFieldName("inboundTransitionState");
                 TransitionStateJsonMarshaller.getInstance().marshall(
-                        stageState.getInboundTransitionState(), jsonWriter);
+                        stageState.getInboundTransitionState(), jsonGenerator);
             }
 
             java.util.List<ActionState> actionStatesList = stageState
                     .getActionStates();
             if (actionStatesList != null) {
-                jsonWriter.key("actionStates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("actionStates");
+                jsonGenerator.writeStartArray();
                 for (ActionState actionStatesListValue : actionStatesList) {
                     if (actionStatesListValue != null) {
 
                         ActionStateJsonMarshaller.getInstance().marshall(
-                                actionStatesListValue, jsonWriter);
+                                actionStatesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

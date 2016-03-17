@@ -40,50 +40,52 @@ import com.amazonaws.util.json.*;
 public class ProblemJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Problem problem, JSONWriter jsonWriter) {
+    public void marshall(Problem problem, SdkJsonGenerator jsonGenerator) {
         if (problem == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (problem.getRun() != null) {
-                jsonWriter.key("run");
+                jsonGenerator.writeFieldName("run");
                 ProblemDetailJsonMarshaller.getInstance().marshall(
-                        problem.getRun(), jsonWriter);
+                        problem.getRun(), jsonGenerator);
             }
             if (problem.getJob() != null) {
-                jsonWriter.key("job");
+                jsonGenerator.writeFieldName("job");
                 ProblemDetailJsonMarshaller.getInstance().marshall(
-                        problem.getJob(), jsonWriter);
+                        problem.getJob(), jsonGenerator);
             }
             if (problem.getSuite() != null) {
-                jsonWriter.key("suite");
+                jsonGenerator.writeFieldName("suite");
                 ProblemDetailJsonMarshaller.getInstance().marshall(
-                        problem.getSuite(), jsonWriter);
+                        problem.getSuite(), jsonGenerator);
             }
             if (problem.getTest() != null) {
-                jsonWriter.key("test");
+                jsonGenerator.writeFieldName("test");
                 ProblemDetailJsonMarshaller.getInstance().marshall(
-                        problem.getTest(), jsonWriter);
+                        problem.getTest(), jsonGenerator);
             }
             if (problem.getDevice() != null) {
-                jsonWriter.key("device");
+                jsonGenerator.writeFieldName("device");
                 DeviceJsonMarshaller.getInstance().marshall(
-                        problem.getDevice(), jsonWriter);
+                        problem.getDevice(), jsonGenerator);
             }
             if (problem.getResult() != null) {
-                jsonWriter.key("result").value(problem.getResult());
+                jsonGenerator.writeFieldName("result").writeValue(
+                        problem.getResult());
             }
             if (problem.getMessage() != null) {
-                jsonWriter.key("message").value(problem.getMessage());
+                jsonGenerator.writeFieldName("message").writeValue(
+                        problem.getMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

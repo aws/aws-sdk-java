@@ -40,36 +40,36 @@ import com.amazonaws.util.json.*;
 public class TemporaryCredentialJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(TemporaryCredential temporaryCredential,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (temporaryCredential == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (temporaryCredential.getUsername() != null) {
-                jsonWriter.key("Username").value(
+                jsonGenerator.writeFieldName("Username").writeValue(
                         temporaryCredential.getUsername());
             }
             if (temporaryCredential.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         temporaryCredential.getPassword());
             }
             if (temporaryCredential.getValidForInMinutes() != null) {
-                jsonWriter.key("ValidForInMinutes").value(
+                jsonGenerator.writeFieldName("ValidForInMinutes").writeValue(
                         temporaryCredential.getValidForInMinutes());
             }
             if (temporaryCredential.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
                         temporaryCredential.getInstanceId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

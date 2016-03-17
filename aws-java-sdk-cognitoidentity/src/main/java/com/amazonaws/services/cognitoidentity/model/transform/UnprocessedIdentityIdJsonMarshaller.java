@@ -40,28 +40,28 @@ import com.amazonaws.util.json.*;
 public class UnprocessedIdentityIdJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(UnprocessedIdentityId unprocessedIdentityId,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (unprocessedIdentityId == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (unprocessedIdentityId.getIdentityId() != null) {
-                jsonWriter.key("IdentityId").value(
+                jsonGenerator.writeFieldName("IdentityId").writeValue(
                         unprocessedIdentityId.getIdentityId());
             }
             if (unprocessedIdentityId.getErrorCode() != null) {
-                jsonWriter.key("ErrorCode").value(
+                jsonGenerator.writeFieldName("ErrorCode").writeValue(
                         unprocessedIdentityId.getErrorCode());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

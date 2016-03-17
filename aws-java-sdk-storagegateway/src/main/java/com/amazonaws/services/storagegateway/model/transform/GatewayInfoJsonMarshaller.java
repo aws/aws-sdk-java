@@ -40,34 +40,35 @@ import com.amazonaws.util.json.*;
 public class GatewayInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(GatewayInfo gatewayInfo, JSONWriter jsonWriter) {
+    public void marshall(GatewayInfo gatewayInfo, SdkJsonGenerator jsonGenerator) {
         if (gatewayInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (gatewayInfo.getGatewayARN() != null) {
-                jsonWriter.key("GatewayARN").value(gatewayInfo.getGatewayARN());
+                jsonGenerator.writeFieldName("GatewayARN").writeValue(
+                        gatewayInfo.getGatewayARN());
             }
             if (gatewayInfo.getGatewayType() != null) {
-                jsonWriter.key("GatewayType").value(
+                jsonGenerator.writeFieldName("GatewayType").writeValue(
                         gatewayInfo.getGatewayType());
             }
             if (gatewayInfo.getGatewayOperationalState() != null) {
-                jsonWriter.key("GatewayOperationalState").value(
-                        gatewayInfo.getGatewayOperationalState());
+                jsonGenerator.writeFieldName("GatewayOperationalState")
+                        .writeValue(gatewayInfo.getGatewayOperationalState());
             }
             if (gatewayInfo.getGatewayName() != null) {
-                jsonWriter.key("GatewayName").value(
+                jsonGenerator.writeFieldName("GatewayName").writeValue(
                         gatewayInfo.getGatewayName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

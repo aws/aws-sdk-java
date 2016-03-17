@@ -40,50 +40,54 @@ import com.amazonaws.util.json.*;
 public class ApiKeyJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ApiKey apiKey, JSONWriter jsonWriter) {
+    public void marshall(ApiKey apiKey, SdkJsonGenerator jsonGenerator) {
         if (apiKey == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (apiKey.getId() != null) {
-                jsonWriter.key("id").value(apiKey.getId());
+                jsonGenerator.writeFieldName("id").writeValue(apiKey.getId());
             }
             if (apiKey.getName() != null) {
-                jsonWriter.key("name").value(apiKey.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        apiKey.getName());
             }
             if (apiKey.getDescription() != null) {
-                jsonWriter.key("description").value(apiKey.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(
+                        apiKey.getDescription());
             }
             if (apiKey.getEnabled() != null) {
-                jsonWriter.key("enabled").value(apiKey.getEnabled());
+                jsonGenerator.writeFieldName("enabled").writeValue(
+                        apiKey.getEnabled());
             }
 
             java.util.List<String> stageKeysList = apiKey.getStageKeys();
             if (stageKeysList != null) {
-                jsonWriter.key("stageKeys");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("stageKeys");
+                jsonGenerator.writeStartArray();
                 for (String stageKeysListValue : stageKeysList) {
                     if (stageKeysListValue != null) {
-                        jsonWriter.value(stageKeysListValue);
+                        jsonGenerator.writeValue(stageKeysListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (apiKey.getCreatedDate() != null) {
-                jsonWriter.key("createdDate").value(apiKey.getCreatedDate());
+                jsonGenerator.writeFieldName("createdDate").writeValue(
+                        apiKey.getCreatedDate());
             }
             if (apiKey.getLastUpdatedDate() != null) {
-                jsonWriter.key("lastUpdatedDate").value(
+                jsonGenerator.writeFieldName("lastUpdatedDate").writeValue(
                         apiKey.getLastUpdatedDate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

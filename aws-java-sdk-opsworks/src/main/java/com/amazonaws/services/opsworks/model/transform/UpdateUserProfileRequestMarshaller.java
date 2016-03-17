@@ -64,33 +64,31 @@ public class UpdateUserProfileRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateUserProfileRequest.getIamUserArn() != null) {
-                jsonWriter.key("IamUserArn").value(
+                jsonGenerator.writeFieldName("IamUserArn").writeValue(
                         updateUserProfileRequest.getIamUserArn());
             }
             if (updateUserProfileRequest.getSshUsername() != null) {
-                jsonWriter.key("SshUsername").value(
+                jsonGenerator.writeFieldName("SshUsername").writeValue(
                         updateUserProfileRequest.getSshUsername());
             }
             if (updateUserProfileRequest.getSshPublicKey() != null) {
-                jsonWriter.key("SshPublicKey").value(
+                jsonGenerator.writeFieldName("SshPublicKey").writeValue(
                         updateUserProfileRequest.getSshPublicKey());
             }
             if (updateUserProfileRequest.getAllowSelfManagement() != null) {
-                jsonWriter.key("AllowSelfManagement").value(
+                jsonGenerator.writeFieldName("AllowSelfManagement").writeValue(
                         updateUserProfileRequest.getAllowSelfManagement());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

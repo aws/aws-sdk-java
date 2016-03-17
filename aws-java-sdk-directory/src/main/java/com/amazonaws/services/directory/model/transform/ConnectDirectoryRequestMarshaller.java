@@ -65,41 +65,41 @@ public class ConnectDirectoryRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (connectDirectoryRequest.getName() != null) {
-                jsonWriter.key("Name").value(connectDirectoryRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        connectDirectoryRequest.getName());
             }
             if (connectDirectoryRequest.getShortName() != null) {
-                jsonWriter.key("ShortName").value(
+                jsonGenerator.writeFieldName("ShortName").writeValue(
                         connectDirectoryRequest.getShortName());
             }
             if (connectDirectoryRequest.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         connectDirectoryRequest.getPassword());
             }
             if (connectDirectoryRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         connectDirectoryRequest.getDescription());
             }
             if (connectDirectoryRequest.getSize() != null) {
-                jsonWriter.key("Size").value(connectDirectoryRequest.getSize());
+                jsonGenerator.writeFieldName("Size").writeValue(
+                        connectDirectoryRequest.getSize());
             }
             if (connectDirectoryRequest.getConnectSettings() != null) {
-                jsonWriter.key("ConnectSettings");
+                jsonGenerator.writeFieldName("ConnectSettings");
                 DirectoryConnectSettingsJsonMarshaller.getInstance().marshall(
                         connectDirectoryRequest.getConnectSettings(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

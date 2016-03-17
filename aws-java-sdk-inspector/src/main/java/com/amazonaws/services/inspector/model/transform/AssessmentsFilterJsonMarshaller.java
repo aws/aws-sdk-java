@@ -40,64 +40,65 @@ import com.amazonaws.util.json.*;
 public class AssessmentsFilterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AssessmentsFilter assessmentsFilter,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (assessmentsFilter == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.List<String> assessmentNamePatternsList = assessmentsFilter
                     .getAssessmentNamePatterns();
             if (assessmentNamePatternsList != null) {
-                jsonWriter.key("assessmentNamePatterns");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("assessmentNamePatterns");
+                jsonGenerator.writeStartArray();
                 for (String assessmentNamePatternsListValue : assessmentNamePatternsList) {
                     if (assessmentNamePatternsListValue != null) {
-                        jsonWriter.value(assessmentNamePatternsListValue);
+                        jsonGenerator
+                                .writeValue(assessmentNamePatternsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<String> assessmentStatesList = assessmentsFilter
                     .getAssessmentStates();
             if (assessmentStatesList != null) {
-                jsonWriter.key("assessmentStates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("assessmentStates");
+                jsonGenerator.writeStartArray();
                 for (String assessmentStatesListValue : assessmentStatesList) {
                     if (assessmentStatesListValue != null) {
-                        jsonWriter.value(assessmentStatesListValue);
+                        jsonGenerator.writeValue(assessmentStatesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (assessmentsFilter.getDataCollected() != null) {
-                jsonWriter.key("dataCollected").value(
+                jsonGenerator.writeFieldName("dataCollected").writeValue(
                         assessmentsFilter.getDataCollected());
             }
             if (assessmentsFilter.getStartTimeRange() != null) {
-                jsonWriter.key("startTimeRange");
+                jsonGenerator.writeFieldName("startTimeRange");
                 TimestampRangeJsonMarshaller.getInstance().marshall(
-                        assessmentsFilter.getStartTimeRange(), jsonWriter);
+                        assessmentsFilter.getStartTimeRange(), jsonGenerator);
             }
             if (assessmentsFilter.getEndTimeRange() != null) {
-                jsonWriter.key("endTimeRange");
+                jsonGenerator.writeFieldName("endTimeRange");
                 TimestampRangeJsonMarshaller.getInstance().marshall(
-                        assessmentsFilter.getEndTimeRange(), jsonWriter);
+                        assessmentsFilter.getEndTimeRange(), jsonGenerator);
             }
             if (assessmentsFilter.getDurationRange() != null) {
-                jsonWriter.key("durationRange");
+                jsonGenerator.writeFieldName("durationRange");
                 DurationRangeJsonMarshaller.getInstance().marshall(
-                        assessmentsFilter.getDurationRange(), jsonWriter);
+                        assessmentsFilter.getDurationRange(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

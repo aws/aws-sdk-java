@@ -1,6 +1,6 @@
 <#macro content member getterFunction>
 <#if member.listModel.simple>
-    jsonWriter.value(${getterFunction});
+    jsonGenerator.writeValue(${getterFunction});
 <#elseif member.listModel.listMemberModel??>
     <#local listMember = member.listModel.listMemberModel/>
 
@@ -8,20 +8,20 @@
         TODO : Add support for list of lists
     <#elseif listMember.map>
         <#local loopVariable = member.name + "ListMapEntry"/>
-        jsonWriter.object();
+        jsonGenerator.writeStartObject();
         for(Map.Entry<${listMember.mapModel.keyType},${listMember.mapModel.valueType}> ${loopVariable} : ${getterFunction}.entrySet()) {
             if (${loopVariable}.getValue() != null) {
-              jsonWriter.key(${loopVariable}.getKey());
+              jsonGenerator.writeFieldName(${loopVariable}.getKey());
             <#if listMember.mapModel.valueSimple>
-              jsonWriter.value(${loopVariable}.getValue());
+              jsonGenerator.writeValue(${loopVariable}.getValue());
             <#else>
-            ${listMember.mapModel.valueType}JsonMarshaller.getInstance().marshall(${loopVariable}.getValue(), jsonWriter);
+            ${listMember.mapModel.valueType}JsonMarshaller.getInstance().marshall(${loopVariable}.getValue(), jsonGenerator);
             </#if>
             }
         }
-        jsonWriter.endObject();
+        jsonGenerator.writeEndObject();
     <#else>
-        ${member.listModel.memberType}JsonMarshaller.getInstance().marshall(${getterFunction}, jsonWriter);
+        ${member.listModel.memberType}JsonMarshaller.getInstance().marshall(${getterFunction}, jsonGenerator);
     </#if>
 </#if>
 </#macro>

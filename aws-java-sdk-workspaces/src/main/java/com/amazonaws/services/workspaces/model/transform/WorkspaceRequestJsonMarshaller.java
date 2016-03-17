@@ -40,44 +40,48 @@ import com.amazonaws.util.json.*;
 public class WorkspaceRequestJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(WorkspaceRequest workspaceRequest,
-            JSONWriter jsonWriter) {
+            SdkJsonGenerator jsonGenerator) {
         if (workspaceRequest == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (workspaceRequest.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         workspaceRequest.getDirectoryId());
             }
             if (workspaceRequest.getUserName() != null) {
-                jsonWriter.key("UserName")
-                        .value(workspaceRequest.getUserName());
+                jsonGenerator.writeFieldName("UserName").writeValue(
+                        workspaceRequest.getUserName());
             }
             if (workspaceRequest.getBundleId() != null) {
-                jsonWriter.key("BundleId")
-                        .value(workspaceRequest.getBundleId());
+                jsonGenerator.writeFieldName("BundleId").writeValue(
+                        workspaceRequest.getBundleId());
             }
             if (workspaceRequest.getVolumeEncryptionKey() != null) {
-                jsonWriter.key("VolumeEncryptionKey").value(
+                jsonGenerator.writeFieldName("VolumeEncryptionKey").writeValue(
                         workspaceRequest.getVolumeEncryptionKey());
             }
             if (workspaceRequest.getUserVolumeEncryptionEnabled() != null) {
-                jsonWriter.key("UserVolumeEncryptionEnabled").value(
-                        workspaceRequest.getUserVolumeEncryptionEnabled());
+                jsonGenerator.writeFieldName("UserVolumeEncryptionEnabled")
+                        .writeValue(
+                                workspaceRequest
+                                        .getUserVolumeEncryptionEnabled());
             }
             if (workspaceRequest.getRootVolumeEncryptionEnabled() != null) {
-                jsonWriter.key("RootVolumeEncryptionEnabled").value(
-                        workspaceRequest.getRootVolumeEncryptionEnabled());
+                jsonGenerator.writeFieldName("RootVolumeEncryptionEnabled")
+                        .writeValue(
+                                workspaceRequest
+                                        .getRootVolumeEncryptionEnabled());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

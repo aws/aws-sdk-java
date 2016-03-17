@@ -40,26 +40,28 @@ import com.amazonaws.util.json.*;
 public class AgentPreviewJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(AgentPreview agentPreview, JSONWriter jsonWriter) {
+    public void marshall(AgentPreview agentPreview,
+            SdkJsonGenerator jsonGenerator) {
         if (agentPreview == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (agentPreview.getAgentId() != null) {
-                jsonWriter.key("agentId").value(agentPreview.getAgentId());
+                jsonGenerator.writeFieldName("agentId").writeValue(
+                        agentPreview.getAgentId());
             }
             if (agentPreview.getAutoScalingGroup() != null) {
-                jsonWriter.key("autoScalingGroup").value(
+                jsonGenerator.writeFieldName("autoScalingGroup").writeValue(
                         agentPreview.getAutoScalingGroup());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

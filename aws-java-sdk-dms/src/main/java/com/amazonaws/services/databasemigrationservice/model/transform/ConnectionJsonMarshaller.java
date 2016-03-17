@@ -40,42 +40,44 @@ import com.amazonaws.util.json.*;
 public class ConnectionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Connection connection, JSONWriter jsonWriter) {
+    public void marshall(Connection connection, SdkJsonGenerator jsonGenerator) {
         if (connection == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (connection.getReplicationInstanceArn() != null) {
-                jsonWriter.key("ReplicationInstanceArn").value(
-                        connection.getReplicationInstanceArn());
+                jsonGenerator.writeFieldName("ReplicationInstanceArn")
+                        .writeValue(connection.getReplicationInstanceArn());
             }
             if (connection.getEndpointArn() != null) {
-                jsonWriter.key("EndpointArn")
-                        .value(connection.getEndpointArn());
+                jsonGenerator.writeFieldName("EndpointArn").writeValue(
+                        connection.getEndpointArn());
             }
             if (connection.getStatus() != null) {
-                jsonWriter.key("Status").value(connection.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        connection.getStatus());
             }
             if (connection.getLastFailureMessage() != null) {
-                jsonWriter.key("LastFailureMessage").value(
+                jsonGenerator.writeFieldName("LastFailureMessage").writeValue(
                         connection.getLastFailureMessage());
             }
             if (connection.getEndpointIdentifier() != null) {
-                jsonWriter.key("EndpointIdentifier").value(
+                jsonGenerator.writeFieldName("EndpointIdentifier").writeValue(
                         connection.getEndpointIdentifier());
             }
             if (connection.getReplicationInstanceIdentifier() != null) {
-                jsonWriter.key("ReplicationInstanceIdentifier").value(
-                        connection.getReplicationInstanceIdentifier());
+                jsonGenerator.writeFieldName("ReplicationInstanceIdentifier")
+                        .writeValue(
+                                connection.getReplicationInstanceIdentifier());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

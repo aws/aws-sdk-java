@@ -29,6 +29,46 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * Adds or overwrites one or more tags for the specified resource.
+     * </p>
+     * <p>
+     * Each tag consists of a key and a value. Tag keys must be unique per
+     * resource.
+     * </p>
+     * 
+     * @param addTagsToResourceRequest
+     * @return A Java Future containing the result of the AddTagsToResource
+     *         operation returned by the service.
+     * @sample AWSCloudHSMAsync.AddTagsToResource
+     */
+    java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest addTagsToResourceRequest);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified resource.
+     * </p>
+     * <p>
+     * Each tag consists of a key and a value. Tag keys must be unique per
+     * resource.
+     * </p>
+     * 
+     * @param addTagsToResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddTagsToResource
+     *         operation returned by the service.
+     * @sample AWSCloudHSMAsyncHandler.AddTagsToResource
+     */
+    java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest addTagsToResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a high-availability partition group. A high-availability
      * partition group is a group of partitions that spans multiple physical
      * HSMs.
@@ -67,12 +107,28 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
-     * Creates an uninitialized HSM instance. Running this command provisions an
-     * HSM appliance and will result in charges to your AWS account for the HSM.
+     * Creates an uninitialized HSM instance.
      * </p>
+     * <p>
+     * There is an upfront fee charged for each HSM instance that you create
+     * with the <a>CreateHsm</a> operation. If you accidentally provision an HSM
+     * and want to request a refund, delete the instance using the
+     * <a>DeleteHsm</a> operation, go to the <a
+     * href="https://console.aws.amazon.com/support/home#/">AWS Support
+     * Center</a>, create a new case, and select <b>Account and Billing
+     * Support</b>.
+     * </p>
+     * <important>
+     * <p>
+     * It can take up to 20 minutes to create and provision an HSM. You can
+     * monitor the status of the HSM with the <a>DescribeHsm</a> operation. The
+     * HSM is ready to be initialized when the status changes to
+     * <code>RUNNING</code>.
+     * </p>
+     * </important>
      * 
      * @param createHsmRequest
-     *        Contains the inputs for the <a>CreateHsm</a> action.
+     *        Contains the inputs for the <a>CreateHsm</a> operation.
      * @return A Java Future containing the result of the CreateHsm operation
      *         returned by the service.
      * @sample AWSCloudHSMAsync.CreateHsm
@@ -82,12 +138,28 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
-     * Creates an uninitialized HSM instance. Running this command provisions an
-     * HSM appliance and will result in charges to your AWS account for the HSM.
+     * Creates an uninitialized HSM instance.
      * </p>
+     * <p>
+     * There is an upfront fee charged for each HSM instance that you create
+     * with the <a>CreateHsm</a> operation. If you accidentally provision an HSM
+     * and want to request a refund, delete the instance using the
+     * <a>DeleteHsm</a> operation, go to the <a
+     * href="https://console.aws.amazon.com/support/home#/">AWS Support
+     * Center</a>, create a new case, and select <b>Account and Billing
+     * Support</b>.
+     * </p>
+     * <important>
+     * <p>
+     * It can take up to 20 minutes to create and provision an HSM. You can
+     * monitor the status of the HSM with the <a>DescribeHsm</a> operation. The
+     * HSM is ready to be initialized when the status changes to
+     * <code>RUNNING</code>.
+     * </p>
+     * </important>
      * 
      * @param createHsmRequest
-     *        Contains the inputs for the <a>CreateHsm</a> action.
+     *        Contains the inputs for the <a>CreateHsm</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -171,12 +243,12 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
-     * Deletes an HSM. Once complete, this operation cannot be undone and your
-     * key material cannot be recovered.
+     * Deletes an HSM. After completion, this operation cannot be undone and
+     * your key material cannot be recovered.
      * </p>
      * 
      * @param deleteHsmRequest
-     *        Contains the inputs for the <a>DeleteHsm</a> action.
+     *        Contains the inputs for the <a>DeleteHsm</a> operation.
      * @return A Java Future containing the result of the DeleteHsm operation
      *         returned by the service.
      * @sample AWSCloudHSMAsync.DeleteHsm
@@ -186,12 +258,12 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
-     * Deletes an HSM. Once complete, this operation cannot be undone and your
-     * key material cannot be recovered.
+     * Deletes an HSM. After completion, this operation cannot be undone and
+     * your key material cannot be recovered.
      * </p>
      * 
      * @param deleteHsmRequest
-     *        Contains the inputs for the <a>DeleteHsm</a> action.
+     *        Contains the inputs for the <a>DeleteHsm</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -278,7 +350,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * </p>
      * 
      * @param describeHsmRequest
-     *        Contains the inputs for the <a>DescribeHsm</a> action.
+     *        Contains the inputs for the <a>DescribeHsm</a> operation.
      * @return A Java Future containing the result of the DescribeHsm operation
      *         returned by the service.
      * @sample AWSCloudHSMAsync.DescribeHsm
@@ -293,7 +365,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * </p>
      * 
      * @param describeHsmRequest
-     *        Contains the inputs for the <a>DescribeHsm</a> action.
+     *        Contains the inputs for the <a>DescribeHsm</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -644,6 +716,38 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * Returns a list of all tags for the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource
+     *         operation returned by the service.
+     * @sample AWSCloudHSMAsync.ListTagsForResource
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of all tags for the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource
+     *         operation returned by the service.
+     * @sample AWSCloudHSMAsyncHandler.ListTagsForResource
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies an existing high-availability partition group.
      * </p>
      * 
@@ -678,9 +782,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * <p>
      * Modifies an HSM.
      * </p>
+     * <important>
+     * <p>
+     * This operation can result in the HSM being offline for up to 15 minutes
+     * while the AWS CloudHSM service is reconfigured. If you are modifying a
+     * production HSM, you should ensure that your AWS CloudHSM service is
+     * configured for high availability, and consider executing this operation
+     * during a maintenance window.
+     * </p>
+     * </important>
      * 
      * @param modifyHsmRequest
-     *        Contains the inputs for the <a>ModifyHsm</a> action.
+     *        Contains the inputs for the <a>ModifyHsm</a> operation.
      * @return A Java Future containing the result of the ModifyHsm operation
      *         returned by the service.
      * @sample AWSCloudHSMAsync.ModifyHsm
@@ -692,9 +805,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * <p>
      * Modifies an HSM.
      * </p>
+     * <important>
+     * <p>
+     * This operation can result in the HSM being offline for up to 15 minutes
+     * while the AWS CloudHSM service is reconfigured. If you are modifying a
+     * production HSM, you should ensure that your AWS CloudHSM service is
+     * configured for high availability, and consider executing this operation
+     * during a maintenance window.
+     * </p>
+     * </important>
      * 
      * @param modifyHsmRequest
-     *        Contains the inputs for the <a>ModifyHsm</a> action.
+     *        Contains the inputs for the <a>ModifyHsm</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -747,5 +869,45 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(
             ModifyLunaClientRequest modifyLunaClientRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * <p>
+     * To remove a tag, specify only the tag key to remove (not the value). To
+     * overwrite the value for an existing tag, use <a>AddTagsToResource</a>.
+     * </p>
+     * 
+     * @param removeTagsFromResourceRequest
+     * @return A Java Future containing the result of the RemoveTagsFromResource
+     *         operation returned by the service.
+     * @sample AWSCloudHSMAsync.RemoveTagsFromResource
+     */
+    java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * <p>
+     * To remove a tag, specify only the tag key to remove (not the value). To
+     * overwrite the value for an existing tag, use <a>AddTagsToResource</a>.
+     * </p>
+     * 
+     * @param removeTagsFromResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveTagsFromResource
+     *         operation returned by the service.
+     * @sample AWSCloudHSMAsyncHandler.RemoveTagsFromResource
+     */
+    java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest removeTagsFromResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler);
 
 }

@@ -66,13 +66,12 @@ public class RegisterTaskDefinitionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (registerTaskDefinitionRequest.getFamily() != null) {
-                jsonWriter.key("family").value(
+                jsonGenerator.writeFieldName("family").writeValue(
                         registerTaskDefinitionRequest.getFamily());
             }
 
@@ -80,39 +79,38 @@ public class RegisterTaskDefinitionRequestMarshaller
                     .getContainerDefinitions();
             if (!containerDefinitionsList.isEmpty()
                     || !containerDefinitionsList.isAutoConstruct()) {
-                jsonWriter.key("containerDefinitions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("containerDefinitions");
+                jsonGenerator.writeStartArray();
                 for (ContainerDefinition containerDefinitionsListValue : containerDefinitionsList) {
                     if (containerDefinitionsListValue != null) {
 
                         ContainerDefinitionJsonMarshaller.getInstance()
                                 .marshall(containerDefinitionsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<Volume> volumesList = (com.amazonaws.internal.SdkInternalList<Volume>) registerTaskDefinitionRequest
                     .getVolumes();
             if (!volumesList.isEmpty() || !volumesList.isAutoConstruct()) {
-                jsonWriter.key("volumes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("volumes");
+                jsonGenerator.writeStartArray();
                 for (Volume volumesListValue : volumesList) {
                     if (volumesListValue != null) {
 
                         VolumeJsonMarshaller.getInstance().marshall(
-                                volumesListValue, jsonWriter);
+                                volumesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

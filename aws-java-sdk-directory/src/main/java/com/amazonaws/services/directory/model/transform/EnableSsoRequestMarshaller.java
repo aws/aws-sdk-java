@@ -63,29 +63,27 @@ public class EnableSsoRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (enableSsoRequest.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         enableSsoRequest.getDirectoryId());
             }
             if (enableSsoRequest.getUserName() != null) {
-                jsonWriter.key("UserName")
-                        .value(enableSsoRequest.getUserName());
+                jsonGenerator.writeFieldName("UserName").writeValue(
+                        enableSsoRequest.getUserName());
             }
             if (enableSsoRequest.getPassword() != null) {
-                jsonWriter.key("Password")
-                        .value(enableSsoRequest.getPassword());
+                jsonGenerator.writeFieldName("Password").writeValue(
+                        enableSsoRequest.getPassword());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

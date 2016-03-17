@@ -40,35 +40,36 @@ import com.amazonaws.util.json.*;
 public class PushSyncJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PushSync pushSync, JSONWriter jsonWriter) {
+    public void marshall(PushSync pushSync, SdkJsonGenerator jsonGenerator) {
         if (pushSync == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> applicationArnsList = (com.amazonaws.internal.SdkInternalList<String>) pushSync
                     .getApplicationArns();
             if (!applicationArnsList.isEmpty()
                     || !applicationArnsList.isAutoConstruct()) {
-                jsonWriter.key("ApplicationArns");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ApplicationArns");
+                jsonGenerator.writeStartArray();
                 for (String applicationArnsListValue : applicationArnsList) {
                     if (applicationArnsListValue != null) {
-                        jsonWriter.value(applicationArnsListValue);
+                        jsonGenerator.writeValue(applicationArnsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
             if (pushSync.getRoleArn() != null) {
-                jsonWriter.key("RoleArn").value(pushSync.getRoleArn());
+                jsonGenerator.writeFieldName("RoleArn").writeValue(
+                        pushSync.getRoleArn());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

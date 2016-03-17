@@ -65,25 +65,23 @@ public class GetPipelineDefinitionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getPipelineDefinitionRequest.getPipelineId() != null) {
-                jsonWriter.key("pipelineId").value(
+                jsonGenerator.writeFieldName("pipelineId").writeValue(
                         getPipelineDefinitionRequest.getPipelineId());
             }
             if (getPipelineDefinitionRequest.getVersion() != null) {
-                jsonWriter.key("version").value(
+                jsonGenerator.writeFieldName("version").writeValue(
                         getPipelineDefinitionRequest.getVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             request.addHeader("Content-Type", "application/x-amz-json-1.1");

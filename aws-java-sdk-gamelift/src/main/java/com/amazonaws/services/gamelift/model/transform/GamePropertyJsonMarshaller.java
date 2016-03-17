@@ -40,25 +40,28 @@ import com.amazonaws.util.json.*;
 public class GamePropertyJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(GameProperty gameProperty, JSONWriter jsonWriter) {
+    public void marshall(GameProperty gameProperty,
+            SdkJsonGenerator jsonGenerator) {
         if (gameProperty == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (gameProperty.getKey() != null) {
-                jsonWriter.key("Key").value(gameProperty.getKey());
+                jsonGenerator.writeFieldName("Key").writeValue(
+                        gameProperty.getKey());
             }
             if (gameProperty.getValue() != null) {
-                jsonWriter.key("Value").value(gameProperty.getValue());
+                jsonGenerator.writeFieldName("Value").writeValue(
+                        gameProperty.getValue());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,39 +40,44 @@ import com.amazonaws.util.json.*;
 public class PlayReadyDrmJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PlayReadyDrm playReadyDrm, JSONWriter jsonWriter) {
+    public void marshall(PlayReadyDrm playReadyDrm,
+            SdkJsonGenerator jsonGenerator) {
         if (playReadyDrm == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (playReadyDrm.getFormat() != null) {
-                jsonWriter.key("Format").value(playReadyDrm.getFormat());
+                jsonGenerator.writeFieldName("Format").writeValue(
+                        playReadyDrm.getFormat());
             }
             if (playReadyDrm.getKey() != null) {
-                jsonWriter.key("Key").value(playReadyDrm.getKey());
+                jsonGenerator.writeFieldName("Key").writeValue(
+                        playReadyDrm.getKey());
             }
             if (playReadyDrm.getKeyMd5() != null) {
-                jsonWriter.key("KeyMd5").value(playReadyDrm.getKeyMd5());
+                jsonGenerator.writeFieldName("KeyMd5").writeValue(
+                        playReadyDrm.getKeyMd5());
             }
             if (playReadyDrm.getKeyId() != null) {
-                jsonWriter.key("KeyId").value(playReadyDrm.getKeyId());
+                jsonGenerator.writeFieldName("KeyId").writeValue(
+                        playReadyDrm.getKeyId());
             }
             if (playReadyDrm.getInitializationVector() != null) {
-                jsonWriter.key("InitializationVector").value(
-                        playReadyDrm.getInitializationVector());
+                jsonGenerator.writeFieldName("InitializationVector")
+                        .writeValue(playReadyDrm.getInitializationVector());
             }
             if (playReadyDrm.getLicenseAcquisitionUrl() != null) {
-                jsonWriter.key("LicenseAcquisitionUrl").value(
-                        playReadyDrm.getLicenseAcquisitionUrl());
+                jsonGenerator.writeFieldName("LicenseAcquisitionUrl")
+                        .writeValue(playReadyDrm.getLicenseAcquisitionUrl());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);
