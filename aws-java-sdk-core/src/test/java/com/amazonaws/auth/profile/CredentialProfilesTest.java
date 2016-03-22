@@ -199,6 +199,42 @@ public class CredentialProfilesTest {
     }
 
     /**
+     * Tests loading a profile that assumes a role, but the source profile does not exist.
+     */
+    @Test
+    public void testRoleProfileWithNoSourceName() {
+        checkExpectedException(
+                "RoleProfileWithNoSourceName.tst",
+                AmazonClientException.class,
+                "Should throw an exception as there is a role profile with a missing source role"
+        );
+    }
+
+    /**
+     * Tests loading a profile that assumes a role, but the source profile does not exist.
+     */
+    @Test
+    public void testRoleProfileMissingSource() {
+        checkExpectedException(
+                "RoleProfileMissingSource.tst",
+                AmazonClientException.class,
+                "Should throw an exception as there is a role profile without a source specified"
+        );
+    }
+
+    /**
+     * Tests loading a profile that assumes a role, but the source profile does not exist.
+     */
+    @Test
+    public void testRoleProfileWithRoleSource() {
+        checkExpectedException(
+                "RoleProfileWithRoleSource.tst",
+                AmazonClientException.class,
+                "Should throw an exception as a role profile can not use a role profile as its source"
+        );
+    }
+
+    /**
      * Loads the file with the given name from the tst/resources/profile
      * directory. Returns a reference to the file.
      *
