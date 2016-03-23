@@ -4929,10 +4929,10 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
+          "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "templateImplType" : "java.util.HashMap<String,String>",
-          "keySimple" : true,
           "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
@@ -5798,10 +5798,10 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
+            "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "templateImplType" : "java.util.HashMap<String,String>",
-            "keySimple" : true,
             "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,

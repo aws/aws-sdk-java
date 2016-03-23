@@ -165,6 +165,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param composeEnvironmentsRequest
+     *        Request to create or update a group of environments.
      * @return Result of the ComposeEnvironments operation returned by the
      *         service.
      * @throws TooManyEnvironmentsException
@@ -184,6 +185,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param createApplicationRequest
+     *        Request to create an application.
      * @return Result of the CreateApplication operation returned by the
      *         service.
      * @throws TooManyApplicationsException
@@ -237,6 +239,7 @@ public interface AWSElasticBeanstalk {
      * </ul>
      * 
      * @param createConfigurationTemplateRequest
+     *        Request to create a configuration template.
      * @return Result of the CreateConfigurationTemplate operation returned by
      *         the service.
      * @throws InsufficientPrivilegesException
@@ -309,6 +312,7 @@ public interface AWSElasticBeanstalk {
      * </note>
      * 
      * @param deleteApplicationRequest
+     *        Request to delete an application.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
      *         operation that effects an element in this activity is already in
@@ -325,6 +329,7 @@ public interface AWSElasticBeanstalk {
      * running environment.</note>
      * 
      * @param deleteApplicationVersionRequest
+     *        Request to delete an application version.
      * @throws SourceBundleDeletionException
      *         Unable to delete the Amazon S3 source bundle associated with the
      *         application version. The application version was deleted
@@ -354,6 +359,7 @@ public interface AWSElasticBeanstalk {
      * environment.</note>
      * 
      * @param deleteConfigurationTemplateRequest
+     *        Request to delete a configuration template.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
      *         operation that effects an element in this activity is already in
@@ -378,6 +384,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param deleteEnvironmentConfigurationRequest
+     *        Request to delete a draft environment configuration.
      * @sample AWSElasticBeanstalk.DeleteEnvironmentConfiguration
      */
     void deleteEnvironmentConfiguration(
@@ -412,6 +419,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param describeApplicationsRequest
+     *        Request to describe one or more applications.
      * @return Result of the DescribeApplications operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.DescribeApplications
@@ -502,6 +510,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param describeEnvironmentResourcesRequest
+     *        Request to describe the resources in an environment.
      * @return Result of the DescribeEnvironmentResources operation returned by
      *         the service.
      * @throws InsufficientPrivilegesException
@@ -518,6 +527,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param describeEnvironmentsRequest
+     *        Request to describe one or more environments.
      * @return Result of the DescribeEnvironments operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.DescribeEnvironments
@@ -537,10 +547,11 @@ public interface AWSElasticBeanstalk {
      * Returns list of event descriptions matching criteria up to the last 6
      * weeks.
      * </p>
-     * <note> This action returns the most recent 1,000 events from the
-     * specified <code>NextToken</code>. </note>
+     * <note>This action returns the most recent 1,000 events from the specified
+     * <code>NextToken</code>.</note>
      * 
      * @param describeEventsRequest
+     *        Request to retrieve a list of events for an environment.
      * @return Result of the DescribeEvents operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeEvents
      */
@@ -639,6 +650,8 @@ public interface AWSElasticBeanstalk {
      * </ul>
      * 
      * @param requestEnvironmentInfoRequest
+     *        Request to retrieve logs from an environment and store them in
+     *        your Elastic Beanstalk storage bucket.
      * @sample AWSElasticBeanstalk.RequestEnvironmentInfo
      */
     void requestEnvironmentInfo(
@@ -668,6 +681,8 @@ public interface AWSElasticBeanstalk {
      * </ul>
      * 
      * @param retrieveEnvironmentInfoRequest
+     *        Request to download logs retrieved with
+     *        <a>RequestEnvironmentInfo</a>.
      * @return Result of the RetrieveEnvironmentInfo operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.RetrieveEnvironmentInfo
@@ -700,6 +715,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param terminateEnvironmentRequest
+     *        Request to terminate an environment.
      * @return Result of the TerminateEnvironment operation returned by the
      *         service.
      * @throws InsufficientPrivilegesException
@@ -719,6 +735,7 @@ public interface AWSElasticBeanstalk {
      * an empty string. </note>
      * 
      * @param updateApplicationRequest
+     *        Request to update an application.
      * @return Result of the UpdateApplication operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.UpdateApplication
@@ -791,6 +808,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param updateEnvironmentRequest
+     *        Request to update an environment.
      * @return Result of the UpdateEnvironment operation returned by the
      *         service.
      * @throws InsufficientPrivilegesException

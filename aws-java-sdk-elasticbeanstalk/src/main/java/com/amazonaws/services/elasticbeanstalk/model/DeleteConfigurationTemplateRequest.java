@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to delete a configuration template.
+ * </p>
  */
 public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

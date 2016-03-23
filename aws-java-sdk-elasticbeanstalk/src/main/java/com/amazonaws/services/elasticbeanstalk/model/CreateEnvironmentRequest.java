@@ -59,7 +59,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      */
@@ -383,7 +383,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -392,7 +392,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        Specify a group name only if the environment's name is specified
      *        in an environment manifest and not with the environment name
      *        parameter. See <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *        >Environment Manifest (env.yaml)</a> for details.
      */
 
@@ -405,7 +405,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -413,7 +413,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         Specify a group name only if the environment's name is specified
      *         in an environment manifest and not with the environment name
      *         parameter. See <a href=
-     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *         >Environment Manifest (env.yaml)</a> for details.
      */
 
@@ -426,7 +426,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -435,7 +435,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        Specify a group name only if the environment's name is specified
      *        in an environment manifest and not with the environment name
      *        parameter. See <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *        >Environment Manifest (env.yaml)</a> for details.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

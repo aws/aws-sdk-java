@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to delete a draft environment configuration.
+ * </p>
  */
 public class DeleteEnvironmentConfigurationRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

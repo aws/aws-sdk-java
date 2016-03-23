@@ -261,7 +261,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      * all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      * <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code></li>
      * <li><b>Version 5.7 (Available in all regions):</b> <code>
      * 5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region
@@ -2044,7 +2044,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      * all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      * <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code></li>
      * <li><b>Version 5.7 (Available in all regions):</b> <code>
      * 5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region
@@ -2125,7 +2125,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      *         all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      *         <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code></li>
      *         <li><b>Version 5.7 (Available in all regions):</b> <code>
      *         5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
      *         (Available in all regions except AWS GovCloud (US) Region
@@ -2211,7 +2211,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      * all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      * <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code></li>
      * <li><b>Version 5.7 (Available in all regions):</b> <code>
      * 5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region
@@ -2292,7 +2292,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      *         all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      *         <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code></li>
      *         <li><b>Version 5.7 (Available in all regions):</b> <code>
      *         5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
      *         (Available in all regions except AWS GovCloud (US) Region
@@ -2378,7 +2378,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      * all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      * <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     * 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code></li>
      * <li><b>Version 5.7 (Available in all regions):</b> <code>
      * 5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region
@@ -2461,7 +2461,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code> 5.5.40 | 5.5.40a</code></li> <li><b>Version 5.5 (Available in
      *         all regions):</b> <code> 5.5.40b | 5.5.41 | 5.5.42</code></li>
      *         <li><b>Version 5.6 (Available in all regions):</b> <code> 5.6.19a |
-     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23</code></li>
+     *         5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 | 5.6.27</code></li>
      *         <li><b>Version 5.7 (Available in all regions):</b> <code>
      *         5.7.10</code></li> </ul> <p><b>MariaDB</b> <ul> <li><b>Version 10.0
      *         (Available in all regions except AWS GovCloud (US) Region

@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to describe the resources in an environment.
+ * </p>
  */
 public class DescribeEnvironmentResourcesRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

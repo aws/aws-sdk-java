@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to update an application.
+ * </p>
  */
 public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

@@ -243,7 +243,7 @@ public class TableUtils {
     }
 
     /**
-     * Deletes teh table and ignores any errors if it doesn't exist.
+     * Deletes the table and ignores any errors if it doesn't exist.
      * @param dynamo The Dynamo client to use.
      * @param deleteTableRequest The delete table request.
      * @return True if deleted, false otherwise.

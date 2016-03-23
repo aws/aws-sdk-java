@@ -152,7 +152,7 @@ public abstract class AbstractProfilesConfigFileScanner {
         if (pair.length != 2) {
             throw new IllegalArgumentException(
                     "Invalid property format: no '=' character is found in the line ["
-                            + propertyLine + "].");
+                    + propertyLine + "].");
         }
 
         String propertyKey   = pair[0].trim();
@@ -163,11 +163,11 @@ public abstract class AbstractProfilesConfigFileScanner {
 
     private static boolean isSupportedProperty(String propertyName) {
         return Profile.AWS_ACCESS_KEY_ID.equals(propertyName)
-                || Profile.AWS_SECRET_ACCESS_KEY.equals(propertyName)
-                || Profile.AWS_SESSION_TOKEN.equals(propertyName)
-                || Profile.EXTERNAL_ID.equals(propertyName)
-                || Profile.ROLE_ARN.equals(propertyName)
-                || Profile.ROLE_SESSION_NAME.equals(propertyName)
-                || Profile.SOURCE_PROFILE.equals(propertyName);
+               || Profile.AWS_SECRET_ACCESS_KEY.equals(propertyName)
+               || Profile.AWS_SESSION_TOKEN.equals(propertyName)
+               || Profile.EXTERNAL_ID.equals(propertyName)
+               || Profile.ROLE_ARN.equals(propertyName)
+               || Profile.ROLE_SESSION_NAME.equals(propertyName)
+               || Profile.SOURCE_PROFILE.equals(propertyName);
     }
 }

@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to describe one or more applications.
+ * </p>
  */
 public class DescribeApplicationsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

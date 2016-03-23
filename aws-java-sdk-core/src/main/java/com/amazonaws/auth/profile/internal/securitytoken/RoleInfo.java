@@ -20,10 +20,7 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.internal.StaticCredentialsProvider;
 
-/**
- *
- */
-public class RoleInfo implements Serializable, Cloneable {
+public class RoleInfo implements Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the role to assume.
@@ -395,18 +392,18 @@ public class RoleInfo implements Serializable, Cloneable {
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null
-                && other.getRoleArn().equals(this.getRoleArn()) == false)
+            && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         if (other.getRoleSessionName() == null
-                ^ this.getRoleSessionName() == null)
+            ^ this.getRoleSessionName() == null)
             return false;
         if (other.getRoleSessionName() != null
-                && other.getRoleSessionName().equals(this.getRoleSessionName()) == false)
+            && other.getRoleSessionName().equals(this.getRoleSessionName()) == false)
             return false;
         if (other.getExternalId() == null ^ this.getExternalId() == null)
             return false;
         if (other.getExternalId() != null
-                && other.getExternalId().equals(this.getExternalId()) == false)
+            && other.getExternalId().equals(this.getExternalId()) == false)
             return false;
         if (other.getLongLivedCredentialsProvider() != this.getLongLivedCredentialsProvider())
             return false;
@@ -419,15 +416,15 @@ public class RoleInfo implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode
-                + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+                   + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime
-                * hashCode
-                + ((getRoleSessionName() == null) ? 0 : getRoleSessionName()
+                   * hashCode
+                   + ((getRoleSessionName() == null) ? 0 : getRoleSessionName()
                 .hashCode());
         hashCode = prime * hashCode
-                + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
+                   + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         hashCode = prime * hashCode
-                + ((getLongLivedCredentialsProvider() == null) ? 0 : getLongLivedCredentialsProvider().hashCode());
+                   + ((getLongLivedCredentialsProvider() == null) ? 0 : getLongLivedCredentialsProvider().hashCode());
         return hashCode;
     }
 
@@ -438,7 +435,7 @@ public class RoleInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                            + "even though we're Cloneable!", e);
+                    + "even though we're Cloneable!", e);
         }
     }
 }

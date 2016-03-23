@@ -152,18 +152,4 @@ public class BinaryUtils {
         return dst;
     }
 
-    /**
-     * Returns the contents of the ByteBuffer as a byte array. Calls ByteBuffer#array if possible
-     * otherwise copies the contents into a new array.
-     *
-     * @param bb ByteBuffer to transform into byte array
-     * @return Byte array
-     */
-    public static byte[] toArray(ByteBuffer bb) {
-        if (bb.hasArray()) {
-            return bb.array();
-        } else {
-            return copyAllBytesFrom(bb);
-        }
-    }
 }

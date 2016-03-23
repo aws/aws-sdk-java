@@ -23,8 +23,6 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 public class STSProfileCredentialsServiceLoader implements ProfileCredentialsService {
     private static final STSProfileCredentialsServiceLoader INSTANCE = new STSProfileCredentialsServiceLoader();
 
-    private ProfileCredentialsService profileCredentialsService;
-
     private STSProfileCredentialsServiceLoader() {
     }
 

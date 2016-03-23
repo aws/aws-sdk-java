@@ -23,7 +23,7 @@ import java.io.Serializable;
  * A link to another environment, defined in the environment's manifest. Links
  * provide connection information in system properties that can be used to
  * connect to another environment in the same group. See <a href=
- * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+ * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
  * >Environment Manifest (env.yaml)</a> for details.
  * </p>
  */

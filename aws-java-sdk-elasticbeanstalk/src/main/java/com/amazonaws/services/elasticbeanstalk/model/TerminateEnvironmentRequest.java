@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to terminate an environment.
+ * </p>
  */
 public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

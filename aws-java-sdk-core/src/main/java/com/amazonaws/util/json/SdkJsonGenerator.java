@@ -146,7 +146,7 @@ public class SdkJsonGenerator {
 
     public SdkJsonGenerator writeValue(ByteBuffer bytes) {
         try {
-            generator.writeBinary(BinaryUtils.toArray(bytes));
+            generator.writeBinary(BinaryUtils.copyBytesFrom(bytes));
         } catch (IOException e) {
             throw new JsonGenerationException(e);
         }

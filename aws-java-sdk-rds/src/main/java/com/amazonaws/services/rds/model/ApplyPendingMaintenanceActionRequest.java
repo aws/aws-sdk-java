@@ -39,7 +39,8 @@ public class ApplyPendingMaintenanceActionRequest extends AmazonWebServiceReques
     private String resourceIdentifier;
 
     /**
-     * The pending maintenance action to apply to this resource.
+     * The pending maintenance action to apply to this resource. <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code>
      */
     private String applyAction;
 
@@ -113,29 +114,35 @@ public class ApplyPendingMaintenanceActionRequest extends AmazonWebServiceReques
     }
 
     /**
-     * The pending maintenance action to apply to this resource.
+     * The pending maintenance action to apply to this resource. <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code>
      *
-     * @return The pending maintenance action to apply to this resource.
+     * @return The pending maintenance action to apply to this resource. <p>Valid
+     *         values: <code>system-update</code>, <code>db-upgrade</code>
      */
     public String getApplyAction() {
         return applyAction;
     }
     
     /**
-     * The pending maintenance action to apply to this resource.
+     * The pending maintenance action to apply to this resource. <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code>
      *
-     * @param applyAction The pending maintenance action to apply to this resource.
+     * @param applyAction The pending maintenance action to apply to this resource. <p>Valid
+     *         values: <code>system-update</code>, <code>db-upgrade</code>
      */
     public void setApplyAction(String applyAction) {
         this.applyAction = applyAction;
     }
     
     /**
-     * The pending maintenance action to apply to this resource.
+     * The pending maintenance action to apply to this resource. <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param applyAction The pending maintenance action to apply to this resource.
+     * @param applyAction The pending maintenance action to apply to this resource. <p>Valid
+     *         values: <code>system-update</code>, <code>db-upgrade</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

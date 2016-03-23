@@ -27,7 +27,8 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -98,7 +99,8 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -127,7 +129,8 @@ public class Rule implements Serializable, Cloneable {
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute.</p>
+     *        The rule's stringified attribute. For example, specify the value
+     *        as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
@@ -161,7 +164,8 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -189,7 +193,8 @@ public class Rule implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The rule's attribute.</p>
+     * @return The rule's stringified attribute. For example, specify the value
+     *         as <code>"\"abc\""</code>.</p>
      *         <p>
      *         Allowed values include:
      *         </p>
@@ -223,7 +228,8 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -252,7 +258,8 @@ public class Rule implements Serializable, Cloneable {
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute.</p>
+     *        The rule's stringified attribute. For example, specify the value
+     *        as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
@@ -289,7 +296,8 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -318,7 +326,8 @@ public class Rule implements Serializable, Cloneable {
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute.</p>
+     *        The rule's stringified attribute. For example, specify the value
+     *        as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
@@ -354,7 +363,8 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -383,7 +393,8 @@ public class Rule implements Serializable, Cloneable {
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute.</p>
+     *        The rule's stringified attribute. For example, specify the value
+     *        as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>

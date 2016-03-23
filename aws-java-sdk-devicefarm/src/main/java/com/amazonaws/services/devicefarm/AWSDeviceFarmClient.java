@@ -230,6 +230,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
     private void init() {
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.devicefarm.model.NotEligibleException.class,
+                        "NotEligibleException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.devicefarm.model.ArgumentException.class,
                         "ArgumentException"));
         jsonErrorUnmarshallers
@@ -643,6 +647,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param getAccountSettingsRequest
+     *        Represents the request sent to retrieve the account settings.
      * @return Result of the GetAccountSettings operation returned by the
      *         service.
      * @throws ArgumentException
@@ -888,6 +893,71 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
             JsonResponseHandler<GetJobResult> responseHandler = new JsonResponseHandler<GetJobResult>(
                     new GetJobResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the current status and future status of all offerings purchased by
+     * an AWS account. The response indicates how many offerings are currently
+     * available and the offerings that will be available in the next period.
+     * The API returns a <code>NotEligible</code> error if the user is not
+     * permitted to invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param getOfferingStatusRequest
+     *        Represents the request to retrieve the offering status for the
+     *        specified customer or account.
+     * @return Result of the GetOfferingStatus operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws NotEligibleException
+     *         Exception gets thrown when a user is not eligible to perform the
+     *         specified transaction.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetOfferingStatus
+     */
+    @Override
+    public GetOfferingStatusResult getOfferingStatus(
+            GetOfferingStatusRequest getOfferingStatusRequest) {
+        ExecutionContext executionContext = createExecutionContext(getOfferingStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOfferingStatusRequest> request = null;
+        Response<GetOfferingStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOfferingStatusRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(getOfferingStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<GetOfferingStatusResult> responseHandler = new JsonResponseHandler<GetOfferingStatusResult>(
+                    new GetOfferingStatusResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1362,6 +1432,132 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Returns a list of all historical purchases, renewals, and system renewal
+     * transactions for an AWS account. The list is paginated and ordered by a
+     * descending timestamp (most recent transactions are first). The API
+     * returns a <code>NotEligible</code> error if the user is not permitted to
+     * invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingTransactionsRequest
+     *        Represents the request to list the offering transaction history.
+     * @return Result of the ListOfferingTransactions operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws NotEligibleException
+     *         Exception gets thrown when a user is not eligible to perform the
+     *         specified transaction.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListOfferingTransactions
+     */
+    @Override
+    public ListOfferingTransactionsResult listOfferingTransactions(
+            ListOfferingTransactionsRequest listOfferingTransactionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listOfferingTransactionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOfferingTransactionsRequest> request = null;
+        Response<ListOfferingTransactionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOfferingTransactionsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listOfferingTransactionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ListOfferingTransactionsResult> responseHandler = new JsonResponseHandler<ListOfferingTransactionsResult>(
+                    new ListOfferingTransactionsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of products or offerings that the user can manage through
+     * the API. Each offering record indicates the recurring price per unit and
+     * the frequency for that offering. The API returns a
+     * <code>NotEligible</code> error if the user is not permitted to invoke the
+     * operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingsRequest
+     *        Represents the request to list all offerings.
+     * @return Result of the ListOfferings operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws NotEligibleException
+     *         Exception gets thrown when a user is not eligible to perform the
+     *         specified transaction.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListOfferings
+     */
+    @Override
+    public ListOfferingsResult listOfferings(
+            ListOfferingsRequest listOfferingsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOfferingsRequest> request = null;
+        Response<ListOfferingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOfferingsRequestMarshaller().marshall(super
+                        .beforeMarshalling(listOfferingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ListOfferingsResult> responseHandler = new JsonResponseHandler<ListOfferingsResult>(
+                    new ListOfferingsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about projects.
      * </p>
      * 
@@ -1723,6 +1919,129 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Immediately purchases offerings for an AWS account. Offerings renew with
+     * the latest total purchased quantity for an offering, unless the renewal
+     * was overridden. The API returns a <code>NotEligible</code> error if the
+     * user is not permitted to invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param purchaseOfferingRequest
+     *        Represents a request for a purchase offering.
+     * @return Result of the PurchaseOffering operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws NotEligibleException
+     *         Exception gets thrown when a user is not eligible to perform the
+     *         specified transaction.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.PurchaseOffering
+     */
+    @Override
+    public PurchaseOfferingResult purchaseOffering(
+            PurchaseOfferingRequest purchaseOfferingRequest) {
+        ExecutionContext executionContext = createExecutionContext(purchaseOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PurchaseOfferingRequest> request = null;
+        Response<PurchaseOfferingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PurchaseOfferingRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(purchaseOfferingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<PurchaseOfferingResult> responseHandler = new JsonResponseHandler<PurchaseOfferingResult>(
+                    new PurchaseOfferingResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Explicitly sets the quantity of devices to renew for an offering,
+     * starting from the <code>effectiveDate</code> of the next period. The API
+     * returns a <code>NotEligible</code> error if the user is not permitted to
+     * invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param renewOfferingRequest
+     *        A request representing an offering renewal.
+     * @return Result of the RenewOffering operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws NotEligibleException
+     *         Exception gets thrown when a user is not eligible to perform the
+     *         specified transaction.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.RenewOffering
+     */
+    @Override
+    public RenewOfferingResult renewOffering(
+            RenewOfferingRequest renewOfferingRequest) {
+        ExecutionContext executionContext = createExecutionContext(renewOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RenewOfferingRequest> request = null;
+        Response<RenewOfferingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RenewOfferingRequestMarshaller().marshall(super
+                        .beforeMarshalling(renewOfferingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<RenewOfferingResult> responseHandler = new JsonResponseHandler<RenewOfferingResult>(
+                    new RenewOfferingResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Schedules a run.
      * </p>
      * 
@@ -1763,6 +2082,63 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
             JsonResponseHandler<ScheduleRunResult> responseHandler = new JsonResponseHandler<ScheduleRunResult>(
                     new ScheduleRunResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Initiates a stop request for the current test run. AWS Device Farm will
+     * immediately stop the run on devices where tests have not started
+     * executing, and you will not be billed for these devices. On devices where
+     * tests have started executing, Setup Suite and Teardown Suite tests will
+     * run to completion before stopping execution on those devices. You will be
+     * billed for Setup, Teardown, and any tests that were in progress or
+     * already completed.
+     * </p>
+     * 
+     * @param stopRunRequest
+     *        Represents the request to stop a specific run.
+     * @return Result of the StopRun operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.StopRun
+     */
+    @Override
+    public StopRunResult stopRun(StopRunRequest stopRunRequest) {
+        ExecutionContext executionContext = createExecutionContext(stopRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopRunRequest> request = null;
+        Response<StopRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopRunRequestMarshaller().marshall(super
+                        .beforeMarshalling(stopRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<StopRunResult> responseHandler = new JsonResponseHandler<StopRunResult>(
+                    new StopRunResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 

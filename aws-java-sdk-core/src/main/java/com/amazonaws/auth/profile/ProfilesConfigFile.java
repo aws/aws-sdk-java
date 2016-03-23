@@ -174,12 +174,12 @@ public class ProfilesConfigFile {
             String legacyConfigFileOverride = System.getenv(LEGACY_CONFIG_FILE_ENVIRONMENT_VARIABLE);
             if (legacyConfigFileOverride != null) {
                 LOG.warn(String.format(
-                            "Found the legacy environment variable [%s=%s]. " +
-                            "Please use the latest environment variable to specify your credentials file override: [%s=%s]",
-                            LEGACY_CONFIG_FILE_ENVIRONMENT_VARIABLE,
-                            legacyConfigFileOverride,
-                            CREDENTIAL_PROFILES_FILE_ENVIRONMENT_VARIABLE,
-                            legacyConfigFileOverride));
+                        "Found the legacy environment variable [%s=%s]. " +
+                        "Please use the latest environment variable to specify your credentials file override: [%s=%s]",
+                        LEGACY_CONFIG_FILE_ENVIRONMENT_VARIABLE,
+                        legacyConfigFileOverride,
+                        CREDENTIAL_PROFILES_FILE_ENVIRONMENT_VARIABLE,
+                        legacyConfigFileOverride));
             }
         }
 
@@ -191,7 +191,7 @@ public class ProfilesConfigFile {
         String userHome = System.getProperty("user.home");
         if (userHome == null) {
             throw new AmazonClientException("Unable to load AWS profiles: "
-                    + "'user.home' System property is not set.");
+                                            + "'user.home' System property is not set.");
         }
 
         File awsDirectory = new File(userHome, ".aws");
@@ -201,9 +201,9 @@ public class ProfilesConfigFile {
         boolean foundlegacyConfigProfiles = legacyConfigProfiles.exists() && legacyConfigProfiles.isFile();
         if (!foundCredentialProfiles && foundlegacyConfigProfiles) {
             LOG.warn("Found the legacy config profiles file at ["
-                    + legacyConfigProfiles.getAbsolutePath()
-                    + "]. Please move it to the latest default location ["
-                    + credentialProfiles + "].");
+                     + legacyConfigProfiles.getAbsolutePath()
+                     + "]. Please move it to the latest default location ["
+                     + credentialProfiles + "].");
             return legacyConfigProfiles;
         }
 

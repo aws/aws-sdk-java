@@ -210,6 +210,21 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetOfferingStatusResult> getOfferingStatusAsync(
+            GetOfferingStatusRequest request) {
+
+        return getOfferingStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOfferingStatusResult> getOfferingStatusAsync(
+            GetOfferingStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetOfferingStatusRequest, GetOfferingStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProjectResult> getProjectAsync(
             GetProjectRequest request) {
 
@@ -345,6 +360,36 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListOfferingTransactionsResult> listOfferingTransactionsAsync(
+            ListOfferingTransactionsRequest request) {
+
+        return listOfferingTransactionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOfferingTransactionsResult> listOfferingTransactionsAsync(
+            ListOfferingTransactionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOfferingTransactionsRequest, ListOfferingTransactionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(
+            ListOfferingsRequest request) {
+
+        return listOfferingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(
+            ListOfferingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOfferingsRequest, ListOfferingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(
             ListProjectsRequest request) {
 
@@ -450,6 +495,36 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     }
 
     @Override
+    public java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(
+            PurchaseOfferingRequest request) {
+
+        return purchaseOfferingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(
+            PurchaseOfferingRequest request,
+            com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewOfferingResult> renewOfferingAsync(
+            RenewOfferingRequest request) {
+
+        return renewOfferingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewOfferingResult> renewOfferingAsync(
+            RenewOfferingRequest request,
+            com.amazonaws.handlers.AsyncHandler<RenewOfferingRequest, RenewOfferingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(
             ScheduleRunRequest request) {
 
@@ -460,6 +535,21 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(
             ScheduleRunRequest request,
             com.amazonaws.handlers.AsyncHandler<ScheduleRunRequest, ScheduleRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRunResult> stopRunAsync(
+            StopRunRequest request) {
+
+        return stopRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRunResult> stopRunAsync(
+            StopRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopRunRequest, StopRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

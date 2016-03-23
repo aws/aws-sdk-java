@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to describe one or more environments.
+ * </p>
  */
 public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -365,7 +367,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param includeDeleted
-     *        Indicates whether to include deleted environments: </p>
+     *        Indicates whether to include deleted environments:</p>
      *        <p>
      *        <code>true</code>: Environments that have been deleted after
      *        <code>IncludedDeletedBackTo</code> are displayed.
@@ -390,7 +392,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * <code>false</code>: Do not include deleted environments.
      * </p>
      * 
-     * @return Indicates whether to include deleted environments: </p>
+     * @return Indicates whether to include deleted environments:</p>
      *         <p>
      *         <code>true</code>: Environments that have been deleted after
      *         <code>IncludedDeletedBackTo</code> are displayed.
@@ -416,7 +418,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param includeDeleted
-     *        Indicates whether to include deleted environments: </p>
+     *        Indicates whether to include deleted environments:</p>
      *        <p>
      *        <code>true</code>: Environments that have been deleted after
      *        <code>IncludedDeletedBackTo</code> are displayed.
@@ -444,7 +446,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * <code>false</code>: Do not include deleted environments.
      * </p>
      * 
-     * @return Indicates whether to include deleted environments: </p>
+     * @return Indicates whether to include deleted environments:</p>
      *         <p>
      *         <code>true</code>: Environments that have been deleted after
      *         <code>IncludedDeletedBackTo</code> are displayed.

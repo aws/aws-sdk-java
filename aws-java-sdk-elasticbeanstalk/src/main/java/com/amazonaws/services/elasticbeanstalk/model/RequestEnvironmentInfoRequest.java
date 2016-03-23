@@ -20,7 +20,10 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to retrieve logs from an environment and store them in your Elastic
+ * Beanstalk storage bucket.
+ * </p>
  */
 public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

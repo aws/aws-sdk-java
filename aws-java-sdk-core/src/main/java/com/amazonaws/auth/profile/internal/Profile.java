@@ -19,6 +19,7 @@ import java.util.Map;
 
 import org.apache.http.annotation.Immutable;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSSessionCredentials;
@@ -93,6 +94,41 @@ public class Profile {
         this.profileName = profileName;
         this.properties = properties;
         this.awsCredentials = awsCredentials;
+    }
+
+    private Profile(String profileName, Map<String, String> properties,
+                    AWSCredentialsProvider awsCredentials) {
+        this.profileName = profileName;
+        this.properties = properties;
+        this.awsCredentials = awsCredentials;
+    }
+
+    /**
+     * Ideally we should throw an exception when parsing the profile but for backwards compatiblity
+     * we return a dummy profile that will throw an exception if it is used.
+     *
+     * @param profileName   Name of profile
+     * @param invalidReason Reason why the profile is invalid
+     * @return Dummy profile that will throw an exception if used to supply credentials.
+     */
+    static Profile createInvalidProfile(final String profileName, final String invalidReason) {
+        return new Profile(profileName, null, new AWSCredentialsProvider() {
+            @Override
+            public AWSCredentials getCredentials() {
+                throw invalidException();
+            }
+
+            @Override
+            public void refresh() {
+                throw invalidException();
+            }
+
+            private AmazonClientException invalidException() {
+                return new AmazonClientException(
+                        String.format("The profile %s is invalid. Reason: %s", profileName,
+                                      invalidReason));
+            }
+        });
     }
 
     public String getProfileName() {

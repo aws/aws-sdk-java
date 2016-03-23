@@ -818,7 +818,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * *must* specify a location constraint. Try to derive the region from
          * the endpoint.
          */
-        if (!isStandardEndpoint() && (region == null || region.isEmpty())) {
+        if (!isUSEastEndpoint() && (region == null || region.isEmpty())) {
             try {
                 region = RegionUtils.getRegionByEndpoint(this.endpoint.getHost()).getName();
             } catch (IllegalArgumentException exception) {
@@ -3125,6 +3125,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     private boolean isStandardEndpoint() {
         return Constants.S3_HOSTNAME.equals(endpoint.getHost());
+    }
+
+    private boolean isUSEastEndpoint() {
+        return isStandardEndpoint() || Constants.S3_EXTERNAL_1_HOSTNAME
+                .equals(endpoint.getHost()) ;
     }
 
     /**

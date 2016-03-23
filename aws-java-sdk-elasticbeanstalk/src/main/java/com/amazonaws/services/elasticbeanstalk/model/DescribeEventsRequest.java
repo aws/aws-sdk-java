@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to retrieve a list of events for an environment.
+ * </p>
  */
 public class DescribeEventsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

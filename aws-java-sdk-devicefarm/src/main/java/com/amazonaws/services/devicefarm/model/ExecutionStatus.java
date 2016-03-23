@@ -25,7 +25,8 @@ public enum ExecutionStatus {
     PROCESSING("PROCESSING"),
     SCHEDULING("SCHEDULING"),
     RUNNING("RUNNING"),
-    COMPLETED("COMPLETED");
+    COMPLETED("COMPLETED"),
+    STOPPING("STOPPING");
 
     private String value;
 
@@ -58,6 +59,8 @@ public enum ExecutionStatus {
             return RUNNING;
         } else if ("COMPLETED".equals(value)) {
             return COMPLETED;
+        } else if ("STOPPING".equals(value)) {
+            return STOPPING;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

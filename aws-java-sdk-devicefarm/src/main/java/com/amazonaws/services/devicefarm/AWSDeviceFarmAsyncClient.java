@@ -682,6 +682,41 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetOfferingStatusResult> getOfferingStatusAsync(
+            GetOfferingStatusRequest request) {
+
+        return getOfferingStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOfferingStatusResult> getOfferingStatusAsync(
+            final GetOfferingStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOfferingStatusRequest, GetOfferingStatusResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetOfferingStatusResult>() {
+                    @Override
+                    public GetOfferingStatusResult call() throws Exception {
+                        GetOfferingStatusResult result;
+
+                        try {
+                            result = getOfferingStatus(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProjectResult> getProjectAsync(
             GetProjectRequest request) {
 
@@ -997,6 +1032,77 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListOfferingTransactionsResult> listOfferingTransactionsAsync(
+            ListOfferingTransactionsRequest request) {
+
+        return listOfferingTransactionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOfferingTransactionsResult> listOfferingTransactionsAsync(
+            final ListOfferingTransactionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOfferingTransactionsRequest, ListOfferingTransactionsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListOfferingTransactionsResult>() {
+                    @Override
+                    public ListOfferingTransactionsResult call()
+                            throws Exception {
+                        ListOfferingTransactionsResult result;
+
+                        try {
+                            result = listOfferingTransactions(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(
+            ListOfferingsRequest request) {
+
+        return listOfferingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(
+            final ListOfferingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOfferingsRequest, ListOfferingsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListOfferingsResult>() {
+                    @Override
+                    public ListOfferingsResult call() throws Exception {
+                        ListOfferingsResult result;
+
+                        try {
+                            result = listOfferings(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(
             ListProjectsRequest request) {
 
@@ -1242,6 +1348,76 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(
+            PurchaseOfferingRequest request) {
+
+        return purchaseOfferingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(
+            final PurchaseOfferingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<PurchaseOfferingResult>() {
+                    @Override
+                    public PurchaseOfferingResult call() throws Exception {
+                        PurchaseOfferingResult result;
+
+                        try {
+                            result = purchaseOffering(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewOfferingResult> renewOfferingAsync(
+            RenewOfferingRequest request) {
+
+        return renewOfferingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewOfferingResult> renewOfferingAsync(
+            final RenewOfferingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RenewOfferingRequest, RenewOfferingResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RenewOfferingResult>() {
+                    @Override
+                    public RenewOfferingResult call() throws Exception {
+                        RenewOfferingResult result;
+
+                        try {
+                            result = renewOffering(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(
             ScheduleRunRequest request) {
 
@@ -1261,6 +1437,41 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
 
                         try {
                             result = scheduleRun(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRunResult> stopRunAsync(
+            StopRunRequest request) {
+
+        return stopRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRunResult> stopRunAsync(
+            final StopRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopRunRequest, StopRunResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<StopRunResult>() {
+                    @Override
+                    public StopRunResult call() throws Exception {
+                        StopRunResult result;
+
+                        try {
+                            result = stopRun(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

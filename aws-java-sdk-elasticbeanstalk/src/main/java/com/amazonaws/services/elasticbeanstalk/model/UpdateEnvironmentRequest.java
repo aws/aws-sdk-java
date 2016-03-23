@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to update an environment.
+ * </p>
  */
 public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -65,7 +67,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters.
      * See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      */
@@ -349,7 +351,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters.
      * See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -358,7 +360,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        Specify a group name only if the environment's name is specified
      *        in an environment manifest and not with the environment name or
      *        environment ID parameters. See <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *        >Environment Manifest (env.yaml)</a> for details.
      */
 
@@ -372,7 +374,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters.
      * See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -380,7 +382,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         Specify a group name only if the environment's name is specified
      *         in an environment manifest and not with the environment name or
      *         environment ID parameters. See <a href=
-     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *         >Environment Manifest (env.yaml)</a> for details.
      */
 
@@ -394,7 +396,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters.
      * See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -403,7 +405,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        Specify a group name only if the environment's name is specified
      *        in an environment manifest and not with the environment name or
      *        environment ID parameters. See <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *        >Environment Manifest (env.yaml)</a> for details.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

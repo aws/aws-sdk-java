@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
+ * </p>
  */
 public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

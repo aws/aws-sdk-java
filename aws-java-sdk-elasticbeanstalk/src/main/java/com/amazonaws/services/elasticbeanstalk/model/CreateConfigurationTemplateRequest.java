@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to create a configuration template.
+ * </p>
  */
 public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

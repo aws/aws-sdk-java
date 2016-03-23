@@ -61,7 +61,7 @@ public class ProfileCredentialsProviderTest {
         // Yep, this is correct - they're backwards in
         // ProfilesContainingOtherConfigurations.tst
         Assert.assertEquals("defaultSecretAccessKey",
-                credentials.getAWSAccessKeyId());
+                            credentials.getAWSAccessKeyId());
 
         Assert.assertEquals("defaultAccessKey", credentials.getAWSSecretKey());
     }
@@ -224,7 +224,7 @@ public class ProfileCredentialsProviderTest {
          * Sleep for 1 second so that the profiles file last modified time has a chance to update.
          * If this wait is not here, com.amazonaws.auth.profile.ProfilesConfigFile.refresh() profileFile.lastModified() will not be updated, therefore the
          * credentials will not refresh.
-         * 
+         *
          * This is also in testRefresh()
          */
         Thread.sleep(1000);
