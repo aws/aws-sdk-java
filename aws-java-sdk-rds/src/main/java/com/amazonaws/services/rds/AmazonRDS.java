@@ -248,6 +248,7 @@ public interface AmazonRDS {
      * @throws InvalidVPCNetworkStateException
      * @throws StorageTypeNotSupportedException
      * @throws DBSecurityGroupNotFoundException
+     * @throws DomainNotFoundException
      * @throws InvalidSubnetException
      * @throws AuthorizationNotFoundException
      * @throws KMSKeyNotAccessibleException
@@ -299,7 +300,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Copies the specified DB Snapshot. The source DB snapshot must be in
+     * Copies the specified DB snapshot. The source DB snapshot must be in
      * the "available" state.
      * </p>
      * <p>
@@ -314,6 +315,7 @@ public interface AmazonRDS {
      * @return The response from the CopyDBSnapshot service method, as
      *         returned by AmazonRDS.
      * 
+     * @throws KMSKeyNotAccessibleException
      * @throws InvalidDBSnapshotStateException
      * @throws SnapshotQuotaExceededException
      * @throws DBSnapshotAlreadyExistsException
@@ -400,6 +402,7 @@ public interface AmazonRDS {
      * @throws InvalidVPCNetworkStateException
      * @throws StorageTypeNotSupportedException
      * @throws DBSecurityGroupNotFoundException
+     * @throws DomainNotFoundException
      * @throws InvalidSubnetException
      * @throws AuthorizationNotFoundException
      * @throws KMSKeyNotAccessibleException
@@ -730,6 +733,7 @@ public interface AmazonRDS {
      * @throws InvalidVPCNetworkStateException
      * @throws StorageTypeNotSupportedException
      * @throws DBSecurityGroupNotFoundException
+     * @throws DomainNotFoundException
      * @throws DBUpgradeDependencyFailureException
      * @throws AuthorizationNotFoundException
      * @throws StorageQuotaExceededException
@@ -1225,7 +1229,10 @@ public interface AmazonRDS {
      *         returned by AmazonRDS.
      * 
      * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterSnapshotStateException
      * @throws InvalidDBClusterStateException
+     * @throws DBClusterSnapshotAlreadyExistsException
+     * @throws SnapshotQuotaExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1546,6 +1553,7 @@ public interface AmazonRDS {
      * 
      * @throws DBInstanceNotFoundException
      * @throws InvalidDBInstanceStateException
+     * @throws InvalidDBClusterStateException
      * @throws SnapshotQuotaExceededException
      * @throws DBSnapshotAlreadyExistsException
      *
@@ -1601,6 +1609,7 @@ public interface AmazonRDS {
      * @throws InvalidDBSnapshotStateException
      * @throws StorageTypeNotSupportedException
      * @throws DBSecurityGroupNotFoundException
+     * @throws DomainNotFoundException
      * @throws InvalidSubnetException
      * @throws AuthorizationNotFoundException
      * @throws DBSnapshotNotFoundException
@@ -1845,6 +1854,7 @@ public interface AmazonRDS {
      * @throws InvalidVPCNetworkStateException
      * @throws DBClusterParameterGroupNotFoundException
      * @throws InvalidDBSubnetGroupStateException
+     * @throws DBClusterNotFoundException
      * @throws InvalidDBClusterStateException
      * @throws InvalidSubnetException
      * @throws DBClusterAlreadyExistsException
@@ -2171,6 +2181,7 @@ public interface AmazonRDS {
      *         as returned by AmazonRDS.
      * 
      * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterSnapshotStateException
      * @throws InvalidDBClusterStateException
      * @throws DBClusterSnapshotAlreadyExistsException
      * @throws SnapshotQuotaExceededException

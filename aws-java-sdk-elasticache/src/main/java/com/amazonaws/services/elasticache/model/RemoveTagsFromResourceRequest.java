@@ -30,9 +30,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the ElastiCache resource from which you want the listed
+     * The Amazon Resource Name (ARN) of the resource from which you want the
      * tags removed, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     * or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
     private String resourceName;
 
@@ -46,41 +51,71 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagKeys;
 
     /**
-     * The name of the ElastiCache resource from which you want the listed
+     * The Amazon Resource Name (ARN) of the resource from which you want the
      * tags removed, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     * or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.
      *
-     * @return The name of the ElastiCache resource from which you want the listed
+     * @return The Amazon Resource Name (ARN) of the resource from which you want the
      *         tags removed, for example
-     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     *         or
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     *         <p>For more information on ARNs, go to <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
     public String getResourceName() {
         return resourceName;
     }
     
     /**
-     * The name of the ElastiCache resource from which you want the listed
+     * The Amazon Resource Name (ARN) of the resource from which you want the
      * tags removed, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     * or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.
      *
-     * @param resourceName The name of the ElastiCache resource from which you want the listed
+     * @param resourceName The Amazon Resource Name (ARN) of the resource from which you want the
      *         tags removed, for example
-     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     *         or
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     *         <p>For more information on ARNs, go to <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
     
     /**
-     * The name of the ElastiCache resource from which you want the listed
+     * The Amazon Resource Name (ARN) of the resource from which you want the
      * tags removed, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     * or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceName The name of the ElastiCache resource from which you want the listed
+     * @param resourceName The Amazon Resource Name (ARN) of the resource from which you want the
      *         tags removed, for example
-     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     *         or
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     *         <p>For more information on ARNs, go to <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resource Names (ARNs) and AWS Service Namespaces</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

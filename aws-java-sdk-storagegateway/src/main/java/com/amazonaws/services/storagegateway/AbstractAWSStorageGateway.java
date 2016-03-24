@@ -312,6 +312,12 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public SetLocalConsolePasswordResult setLocalConsolePassword(
+            SetLocalConsolePasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

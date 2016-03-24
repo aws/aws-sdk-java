@@ -358,7 +358,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Copies the specified DB Snapshot. The source DB snapshot must be in
+     * Copies the specified DB snapshot. The source DB snapshot must be in
      * the "available" state.
      * </p>
      * <p>
@@ -387,7 +387,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Copies the specified DB Snapshot. The source DB snapshot must be in
+     * Copies the specified DB snapshot. The source DB snapshot must be in
      * the "available" state.
      * </p>
      * <p>

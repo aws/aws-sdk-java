@@ -38,6 +38,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      */
     private String targetSnapshotName;
 
+    private String targetBucket;
+
     /**
      * The name of an existing snapshot from which to copy.
      *
@@ -105,6 +107,39 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * Returns the value of the TargetBucket property for this object.
+     *
+     * @return The value of the TargetBucket property for this object.
+     */
+    public String getTargetBucket() {
+        return targetBucket;
+    }
+    
+    /**
+     * Sets the value of the TargetBucket property for this object.
+     *
+     * @param targetBucket The new value for the TargetBucket property for this object.
+     */
+    public void setTargetBucket(String targetBucket) {
+        this.targetBucket = targetBucket;
+    }
+    
+    /**
+     * Sets the value of the TargetBucket property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param targetBucket The new value for the TargetBucket property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CopySnapshotRequest withTargetBucket(String targetBucket) {
+        this.targetBucket = targetBucket;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -117,7 +152,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceSnapshotName() != null) sb.append("SourceSnapshotName: " + getSourceSnapshotName() + ",");
-        if (getTargetSnapshotName() != null) sb.append("TargetSnapshotName: " + getTargetSnapshotName() );
+        if (getTargetSnapshotName() != null) sb.append("TargetSnapshotName: " + getTargetSnapshotName() + ",");
+        if (getTargetBucket() != null) sb.append("TargetBucket: " + getTargetBucket() );
         sb.append("}");
         return sb.toString();
     }
@@ -129,6 +165,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         
         hashCode = prime * hashCode + ((getSourceSnapshotName() == null) ? 0 : getSourceSnapshotName().hashCode()); 
         hashCode = prime * hashCode + ((getTargetSnapshotName() == null) ? 0 : getTargetSnapshotName().hashCode()); 
+        hashCode = prime * hashCode + ((getTargetBucket() == null) ? 0 : getTargetBucket().hashCode()); 
         return hashCode;
     }
     
@@ -144,6 +181,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         if (other.getSourceSnapshotName() != null && other.getSourceSnapshotName().equals(this.getSourceSnapshotName()) == false) return false; 
         if (other.getTargetSnapshotName() == null ^ this.getTargetSnapshotName() == null) return false;
         if (other.getTargetSnapshotName() != null && other.getTargetSnapshotName().equals(this.getTargetSnapshotName()) == false) return false; 
+        if (other.getTargetBucket() == null ^ this.getTargetBucket() == null) return false;
+        if (other.getTargetBucket() != null && other.getTargetBucket().equals(this.getTargetBucket()) == false) return false; 
         return true;
     }
     

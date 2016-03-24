@@ -56,8 +56,8 @@ import com.amazonaws.annotation.ThreadSafe;
  * possible errors, and examples of requests and responses.</li>
  * <li><a
  * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
- * Storage Gateway Regions and Endpoints</a>: Provides a list of each of the
- * regions and endpoints available for use with AWS Storage Gateway.</li>
+ * Storage Gateway Regions and Endpoints</a>: Provides a list of each of the s
+ * and endpoints available for use with AWS Storage Gateway.</li>
  * </ul>
  * <note>AWS Storage Gateway resource IDs are in uppercase. When you use these
  * resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase.
@@ -1969,6 +1969,42 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
                         try {
                             result = retrieveTapeRecoveryPoint(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetLocalConsolePasswordResult> setLocalConsolePasswordAsync(
+            SetLocalConsolePasswordRequest request) {
+
+        return setLocalConsolePasswordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetLocalConsolePasswordResult> setLocalConsolePasswordAsync(
+            final SetLocalConsolePasswordRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetLocalConsolePasswordRequest, SetLocalConsolePasswordResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<SetLocalConsolePasswordResult>() {
+                    @Override
+                    public SetLocalConsolePasswordResult call()
+                            throws Exception {
+                        SetLocalConsolePasswordResult result;
+
+                        try {
+                            result = setLocalConsolePassword(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

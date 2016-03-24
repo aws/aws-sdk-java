@@ -41,10 +41,10 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     private String replicationGroupDescription;
 
     /**
-     * If this parameter is specified, ElastiCache will promote each of the
-     * cache clusters in the specified replication group to the primary role.
-     * The nodes of all other cache clusters in the replication group will be
-     * read replicas.
+     * If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The
+     * nodes of all other clusters in the replication group will be read
+     * replicas.
      */
     private String primaryClusterId;
 
@@ -131,7 +131,13 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * The upgraded version of the cache engine to be run on the cache
-     * clusters in the replication group.
+     * clusters in the replication group. <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing replication group and create it anew with
+     * the earlier engine version.
      */
     private String engineVersion;
 
@@ -158,6 +164,14 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
      * automatically choose an appropriate time range.
      */
     private String snapshotWindow;
+
+    /**
+     * A valid cache node type that you want to scale this replication group
+     * to. The value of this parameter must be one of the
+     * <i>ScaleUpModifications</i> values returned by the
+     * <code>ListAllowedCacheNodeTypeModification</code> action.
+     */
+    private String cacheNodeType;
 
     /**
      * The identifier of the replication group to modify.
@@ -232,47 +246,47 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * If this parameter is specified, ElastiCache will promote each of the
-     * cache clusters in the specified replication group to the primary role.
-     * The nodes of all other cache clusters in the replication group will be
-     * read replicas.
+     * If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The
+     * nodes of all other clusters in the replication group will be read
+     * replicas.
      *
-     * @return If this parameter is specified, ElastiCache will promote each of the
-     *         cache clusters in the specified replication group to the primary role.
-     *         The nodes of all other cache clusters in the replication group will be
-     *         read replicas.
+     * @return If this parameter is specified, ElastiCache will promote the specified
+     *         cluster in the specified replication group to the primary role. The
+     *         nodes of all other clusters in the replication group will be read
+     *         replicas.
      */
     public String getPrimaryClusterId() {
         return primaryClusterId;
     }
     
     /**
-     * If this parameter is specified, ElastiCache will promote each of the
-     * cache clusters in the specified replication group to the primary role.
-     * The nodes of all other cache clusters in the replication group will be
-     * read replicas.
+     * If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The
+     * nodes of all other clusters in the replication group will be read
+     * replicas.
      *
-     * @param primaryClusterId If this parameter is specified, ElastiCache will promote each of the
-     *         cache clusters in the specified replication group to the primary role.
-     *         The nodes of all other cache clusters in the replication group will be
-     *         read replicas.
+     * @param primaryClusterId If this parameter is specified, ElastiCache will promote the specified
+     *         cluster in the specified replication group to the primary role. The
+     *         nodes of all other clusters in the replication group will be read
+     *         replicas.
      */
     public void setPrimaryClusterId(String primaryClusterId) {
         this.primaryClusterId = primaryClusterId;
     }
     
     /**
-     * If this parameter is specified, ElastiCache will promote each of the
-     * cache clusters in the specified replication group to the primary role.
-     * The nodes of all other cache clusters in the replication group will be
-     * read replicas.
+     * If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The
+     * nodes of all other clusters in the replication group will be read
+     * replicas.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param primaryClusterId If this parameter is specified, ElastiCache will promote each of the
-     *         cache clusters in the specified replication group to the primary role.
-     *         The nodes of all other cache clusters in the replication group will be
-     *         read replicas.
+     * @param primaryClusterId If this parameter is specified, ElastiCache will promote the specified
+     *         cluster in the specified replication group to the primary role. The
+     *         nodes of all other clusters in the replication group will be read
+     *         replicas.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -935,10 +949,22 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * The upgraded version of the cache engine to be run on the cache
-     * clusters in the replication group.
+     * clusters in the replication group. <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing replication group and create it anew with
+     * the earlier engine version.
      *
      * @return The upgraded version of the cache engine to be run on the cache
-     *         clusters in the replication group.
+     *         clusters in the replication group. <p><b>Important:</b> You can
+     *         upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     *         a Cache Engine and Version</a>), but you cannot downgrade to an
+     *         earlier engine version. If you want to use an earlier engine version,
+     *         you must delete the existing replication group and create it anew with
+     *         the earlier engine version.
      */
     public String getEngineVersion() {
         return engineVersion;
@@ -946,10 +972,22 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The upgraded version of the cache engine to be run on the cache
-     * clusters in the replication group.
+     * clusters in the replication group. <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing replication group and create it anew with
+     * the earlier engine version.
      *
      * @param engineVersion The upgraded version of the cache engine to be run on the cache
-     *         clusters in the replication group.
+     *         clusters in the replication group. <p><b>Important:</b> You can
+     *         upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     *         a Cache Engine and Version</a>), but you cannot downgrade to an
+     *         earlier engine version. If you want to use an earlier engine version,
+     *         you must delete the existing replication group and create it anew with
+     *         the earlier engine version.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -957,12 +995,24 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The upgraded version of the cache engine to be run on the cache
-     * clusters in the replication group.
+     * clusters in the replication group. <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing replication group and create it anew with
+     * the earlier engine version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The upgraded version of the cache engine to be run on the cache
-     *         clusters in the replication group.
+     *         clusters in the replication group. <p><b>Important:</b> You can
+     *         upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     *         a Cache Engine and Version</a>), but you cannot downgrade to an
+     *         earlier engine version. If you want to use an earlier engine version,
+     *         you must delete the existing replication group and create it anew with
+     *         the earlier engine version.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1135,6 +1185,57 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * A valid cache node type that you want to scale this replication group
+     * to. The value of this parameter must be one of the
+     * <i>ScaleUpModifications</i> values returned by the
+     * <code>ListAllowedCacheNodeTypeModification</code> action.
+     *
+     * @return A valid cache node type that you want to scale this replication group
+     *         to. The value of this parameter must be one of the
+     *         <i>ScaleUpModifications</i> values returned by the
+     *         <code>ListAllowedCacheNodeTypeModification</code> action.
+     */
+    public String getCacheNodeType() {
+        return cacheNodeType;
+    }
+    
+    /**
+     * A valid cache node type that you want to scale this replication group
+     * to. The value of this parameter must be one of the
+     * <i>ScaleUpModifications</i> values returned by the
+     * <code>ListAllowedCacheNodeTypeModification</code> action.
+     *
+     * @param cacheNodeType A valid cache node type that you want to scale this replication group
+     *         to. The value of this parameter must be one of the
+     *         <i>ScaleUpModifications</i> values returned by the
+     *         <code>ListAllowedCacheNodeTypeModification</code> action.
+     */
+    public void setCacheNodeType(String cacheNodeType) {
+        this.cacheNodeType = cacheNodeType;
+    }
+    
+    /**
+     * A valid cache node type that you want to scale this replication group
+     * to. The value of this parameter must be one of the
+     * <i>ScaleUpModifications</i> values returned by the
+     * <code>ListAllowedCacheNodeTypeModification</code> action.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cacheNodeType A valid cache node type that you want to scale this replication group
+     *         to. The value of this parameter must be one of the
+     *         <i>ScaleUpModifications</i> values returned by the
+     *         <code>ListAllowedCacheNodeTypeModification</code> action.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyReplicationGroupRequest withCacheNodeType(String cacheNodeType) {
+        this.cacheNodeType = cacheNodeType;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1161,7 +1262,8 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
         if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
         if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
         if (getSnapshotRetentionLimit() != null) sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
-        if (getSnapshotWindow() != null) sb.append("SnapshotWindow: " + getSnapshotWindow() );
+        if (getSnapshotWindow() != null) sb.append("SnapshotWindow: " + getSnapshotWindow() + ",");
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() );
         sb.append("}");
         return sb.toString();
     }
@@ -1187,6 +1289,7 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode()); 
         return hashCode;
     }
     
@@ -1230,6 +1333,8 @@ public class ModifyReplicationGroupRequest extends AmazonWebServiceRequest imple
         if (other.getSnapshotRetentionLimit() != null && other.getSnapshotRetentionLimit().equals(this.getSnapshotRetentionLimit()) == false) return false; 
         if (other.getSnapshotWindow() == null ^ this.getSnapshotWindow() == null) return false;
         if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false) return false; 
+        if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null) return false;
+        if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false) return false; 
         return true;
     }
     

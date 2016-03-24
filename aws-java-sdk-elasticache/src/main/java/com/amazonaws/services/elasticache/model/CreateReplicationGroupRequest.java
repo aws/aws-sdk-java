@@ -142,6 +142,12 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * The version number of the cache engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
      * versions, use the <i>DescribeCacheEngineVersions</i> action.
+     * <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing cache cluster or replication group and
+     * create it anew with the earlier engine version.
      */
     private String engineVersion;
 
@@ -942,10 +948,22 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * The version number of the cache engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
      * versions, use the <i>DescribeCacheEngineVersions</i> action.
+     * <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing cache cluster or replication group and
+     * create it anew with the earlier engine version.
      *
      * @return The version number of the cache engine to be used for the cache
      *         clusters in this replication group. To view the supported cache engine
      *         versions, use the <i>DescribeCacheEngineVersions</i> action.
+     *         <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     *         a Cache Engine and Version</a>), but you cannot downgrade to an
+     *         earlier engine version. If you want to use an earlier engine version,
+     *         you must delete the existing cache cluster or replication group and
+     *         create it anew with the earlier engine version.
      */
     public String getEngineVersion() {
         return engineVersion;
@@ -955,10 +973,22 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * The version number of the cache engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
      * versions, use the <i>DescribeCacheEngineVersions</i> action.
+     * <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing cache cluster or replication group and
+     * create it anew with the earlier engine version.
      *
      * @param engineVersion The version number of the cache engine to be used for the cache
      *         clusters in this replication group. To view the supported cache engine
      *         versions, use the <i>DescribeCacheEngineVersions</i> action.
+     *         <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     *         a Cache Engine and Version</a>), but you cannot downgrade to an
+     *         earlier engine version. If you want to use an earlier engine version,
+     *         you must delete the existing cache cluster or replication group and
+     *         create it anew with the earlier engine version.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -968,12 +998,24 @@ public class CreateReplicationGroupRequest extends AmazonWebServiceRequest imple
      * The version number of the cache engine to be used for the cache
      * clusters in this replication group. To view the supported cache engine
      * versions, use the <i>DescribeCacheEngineVersions</i> action.
+     * <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing cache cluster or replication group and
+     * create it anew with the earlier engine version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The version number of the cache engine to be used for the cache
      *         clusters in this replication group. To view the supported cache engine
      *         versions, use the <i>DescribeCacheEngineVersions</i> action.
+     *         <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     *         a Cache Engine and Version</a>), but you cannot downgrade to an
+     *         earlier engine version. If you want to use an earlier engine version,
+     *         you must delete the existing cache cluster or replication group and
+     *         create it anew with the earlier engine version.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

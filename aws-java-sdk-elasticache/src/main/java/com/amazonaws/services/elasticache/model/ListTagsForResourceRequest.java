@@ -39,48 +39,83 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListTagsForResourceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The name of the resource for which you want the list of tags, for
-     * example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * The Amazon Resource Name (ARN) of the resource for which you want the
+     * list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     * or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
     private String resourceName;
 
     /**
-     * The name of the resource for which you want the list of tags, for
-     * example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * The Amazon Resource Name (ARN) of the resource for which you want the
+     * list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     * or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.
      *
-     * @return The name of the resource for which you want the list of tags, for
-     *         example
-     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * @return The Amazon Resource Name (ARN) of the resource for which you want the
+     *         list of tags, for example
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     *         or
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     *         <p>For more information on ARNs, go to <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
     public String getResourceName() {
         return resourceName;
     }
     
     /**
-     * The name of the resource for which you want the list of tags, for
-     * example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * The Amazon Resource Name (ARN) of the resource for which you want the
+     * list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     * or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.
      *
-     * @param resourceName The name of the resource for which you want the list of tags, for
-     *         example
-     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * @param resourceName The Amazon Resource Name (ARN) of the resource for which you want the
+     *         list of tags, for example
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     *         or
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     *         <p>For more information on ARNs, go to <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
     
     /**
-     * The name of the resource for which you want the list of tags, for
-     * example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * The Amazon Resource Name (ARN) of the resource for which you want the
+     * list of tags, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     * or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceName The name of the resource for which you want the list of tags, for
-     *         example
-     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.
+     * @param resourceName The Amazon Resource Name (ARN) of the resource for which you want the
+     *         list of tags, for example
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+     *         or
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     *         <p>For more information on ARNs, go to <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resource Names (ARNs) and AWS Service Namespaces</a>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

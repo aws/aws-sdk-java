@@ -36,8 +36,11 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
     private String reservedCacheNodesOfferingId;
 
     /**
-     * A customer-specified identifier to track this reservation. <p>Example:
-     * myreservationID
+     * A customer-specified identifier to track this reservation.
+     * <p><b>Note:</b><br/>The Reserved Cache Node ID is an unique
+     * customer-specified identifier to track this reservation. If this
+     * parameter is not specified, ElastiCache automatically generates an
+     * identifier for the reservation. <p>Example: myreservationID
      */
     private String reservedCacheNodeId;
 
@@ -87,35 +90,53 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
     }
 
     /**
-     * A customer-specified identifier to track this reservation. <p>Example:
-     * myreservationID
+     * A customer-specified identifier to track this reservation.
+     * <p><b>Note:</b><br/>The Reserved Cache Node ID is an unique
+     * customer-specified identifier to track this reservation. If this
+     * parameter is not specified, ElastiCache automatically generates an
+     * identifier for the reservation. <p>Example: myreservationID
      *
-     * @return A customer-specified identifier to track this reservation. <p>Example:
-     *         myreservationID
+     * @return A customer-specified identifier to track this reservation.
+     *         <p><b>Note:</b><br/>The Reserved Cache Node ID is an unique
+     *         customer-specified identifier to track this reservation. If this
+     *         parameter is not specified, ElastiCache automatically generates an
+     *         identifier for the reservation. <p>Example: myreservationID
      */
     public String getReservedCacheNodeId() {
         return reservedCacheNodeId;
     }
     
     /**
-     * A customer-specified identifier to track this reservation. <p>Example:
-     * myreservationID
+     * A customer-specified identifier to track this reservation.
+     * <p><b>Note:</b><br/>The Reserved Cache Node ID is an unique
+     * customer-specified identifier to track this reservation. If this
+     * parameter is not specified, ElastiCache automatically generates an
+     * identifier for the reservation. <p>Example: myreservationID
      *
-     * @param reservedCacheNodeId A customer-specified identifier to track this reservation. <p>Example:
-     *         myreservationID
+     * @param reservedCacheNodeId A customer-specified identifier to track this reservation.
+     *         <p><b>Note:</b><br/>The Reserved Cache Node ID is an unique
+     *         customer-specified identifier to track this reservation. If this
+     *         parameter is not specified, ElastiCache automatically generates an
+     *         identifier for the reservation. <p>Example: myreservationID
      */
     public void setReservedCacheNodeId(String reservedCacheNodeId) {
         this.reservedCacheNodeId = reservedCacheNodeId;
     }
     
     /**
-     * A customer-specified identifier to track this reservation. <p>Example:
-     * myreservationID
+     * A customer-specified identifier to track this reservation.
+     * <p><b>Note:</b><br/>The Reserved Cache Node ID is an unique
+     * customer-specified identifier to track this reservation. If this
+     * parameter is not specified, ElastiCache automatically generates an
+     * identifier for the reservation. <p>Example: myreservationID
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedCacheNodeId A customer-specified identifier to track this reservation. <p>Example:
-     *         myreservationID
+     * @param reservedCacheNodeId A customer-specified identifier to track this reservation.
+     *         <p><b>Note:</b><br/>The Reserved Cache Node ID is an unique
+     *         customer-specified identifier to track this reservation. If this
+     *         parameter is not specified, ElastiCache automatically generates an
+     *         identifier for the reservation. <p>Example: myreservationID
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

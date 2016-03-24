@@ -164,6 +164,9 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
         if (createDBInstanceRequest.getKmsKeyId() != null) {
             request.addParameter("KmsKeyId", StringUtils.fromString(createDBInstanceRequest.getKmsKeyId()));
         }
+        if (createDBInstanceRequest.getDomain() != null) {
+            request.addParameter("Domain", StringUtils.fromString(createDBInstanceRequest.getDomain()));
+        }
         if (createDBInstanceRequest.isCopyTagsToSnapshot() != null) {
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(createDBInstanceRequest.isCopyTagsToSnapshot()));
         }
@@ -172,6 +175,9 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
         }
         if (createDBInstanceRequest.getMonitoringRoleArn() != null) {
             request.addParameter("MonitoringRoleArn", StringUtils.fromString(createDBInstanceRequest.getMonitoringRoleArn()));
+        }
+        if (createDBInstanceRequest.getDomainIAMRoleName() != null) {
+            request.addParameter("DomainIAMRoleName", StringUtils.fromString(createDBInstanceRequest.getDomainIAMRoleName()));
         }
         if (createDBInstanceRequest.getPromotionTier() != null) {
             request.addParameter("PromotionTier", StringUtils.fromInteger(createDBInstanceRequest.getPromotionTier()));

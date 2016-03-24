@@ -121,6 +121,9 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
         if (modifyCacheClusterRequest.getSnapshotWindow() != null) {
             request.addParameter("SnapshotWindow", StringUtils.fromString(modifyCacheClusterRequest.getSnapshotWindow()));
         }
+        if (modifyCacheClusterRequest.getCacheNodeType() != null) {
+            request.addParameter("CacheNodeType", StringUtils.fromString(modifyCacheClusterRequest.getCacheNodeType()));
+        }
 
         return request;
     }

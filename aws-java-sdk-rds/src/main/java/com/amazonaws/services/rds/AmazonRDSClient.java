@@ -308,10 +308,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new SharedSnapshotQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientStorageClusterCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InstanceQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSTopicArnNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InstanceQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedDBInstanceQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidEventSubscriptionStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
@@ -330,6 +330,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new SNSNoAuthorizationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DomainNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSKeyNotAccessibleExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupAlreadyExistsExceptionUnmarshaller());
@@ -489,6 +490,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidVPCNetworkStateException
      * @throws StorageTypeNotSupportedException
      * @throws DBSecurityGroupNotFoundException
+     * @throws DomainNotFoundException
      * @throws InvalidSubnetException
      * @throws AuthorizationNotFoundException
      * @throws KMSKeyNotAccessibleException
@@ -586,7 +588,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     
     /**
      * <p>
-     * Copies the specified DB Snapshot. The source DB snapshot must be in
+     * Copies the specified DB snapshot. The source DB snapshot must be in
      * the "available" state.
      * </p>
      * <p>
@@ -601,6 +603,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @return The response from the CopyDBSnapshot service method, as
      *         returned by AmazonRDS.
      * 
+     * @throws KMSKeyNotAccessibleException
      * @throws InvalidDBSnapshotStateException
      * @throws SnapshotQuotaExceededException
      * @throws DBSnapshotAlreadyExistsException
@@ -756,6 +759,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidVPCNetworkStateException
      * @throws StorageTypeNotSupportedException
      * @throws DBSecurityGroupNotFoundException
+     * @throws DomainNotFoundException
      * @throws InvalidSubnetException
      * @throws AuthorizationNotFoundException
      * @throws KMSKeyNotAccessibleException
@@ -1291,6 +1295,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidVPCNetworkStateException
      * @throws StorageTypeNotSupportedException
      * @throws DBSecurityGroupNotFoundException
+     * @throws DomainNotFoundException
      * @throws DBUpgradeDependencyFailureException
      * @throws AuthorizationNotFoundException
      * @throws StorageQuotaExceededException
@@ -2106,7 +2111,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         returned by AmazonRDS.
      * 
      * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterSnapshotStateException
      * @throws InvalidDBClusterStateException
+     * @throws DBClusterSnapshotAlreadyExistsException
+     * @throws SnapshotQuotaExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2634,6 +2642,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * 
      * @throws DBInstanceNotFoundException
      * @throws InvalidDBInstanceStateException
+     * @throws InvalidDBClusterStateException
      * @throws SnapshotQuotaExceededException
      * @throws DBSnapshotAlreadyExistsException
      *
@@ -2712,6 +2721,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBSnapshotStateException
      * @throws StorageTypeNotSupportedException
      * @throws DBSecurityGroupNotFoundException
+     * @throws DomainNotFoundException
      * @throws InvalidSubnetException
      * @throws AuthorizationNotFoundException
      * @throws DBSnapshotNotFoundException
@@ -3140,6 +3150,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidVPCNetworkStateException
      * @throws DBClusterParameterGroupNotFoundException
      * @throws InvalidDBSubnetGroupStateException
+     * @throws DBClusterNotFoundException
      * @throws InvalidDBClusterStateException
      * @throws InvalidSubnetException
      * @throws DBClusterAlreadyExistsException
@@ -3694,6 +3705,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         as returned by AmazonRDS.
      * 
      * @throws DBClusterNotFoundException
+     * @throws InvalidDBClusterSnapshotStateException
      * @throws InvalidDBClusterStateException
      * @throws DBClusterSnapshotAlreadyExistsException
      * @throws SnapshotQuotaExceededException

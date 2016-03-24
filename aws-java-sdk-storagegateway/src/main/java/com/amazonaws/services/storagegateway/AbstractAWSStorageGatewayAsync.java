@@ -804,6 +804,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway
     }
 
     @Override
+    public java.util.concurrent.Future<SetLocalConsolePasswordResult> setLocalConsolePasswordAsync(
+            SetLocalConsolePasswordRequest request) {
+
+        return setLocalConsolePasswordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetLocalConsolePasswordResult> setLocalConsolePasswordAsync(
+            SetLocalConsolePasswordRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetLocalConsolePasswordRequest, SetLocalConsolePasswordResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ShutdownGatewayResult> shutdownGatewayAsync(
             ShutdownGatewayRequest request) {
 

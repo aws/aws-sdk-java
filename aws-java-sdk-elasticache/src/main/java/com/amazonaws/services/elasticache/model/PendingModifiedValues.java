@@ -44,6 +44,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String engineVersion;
 
     /**
+     * The cache node type that this cache cluster or replication group will
+     * be scaled to.
+     */
+    private String cacheNodeType;
+
+    /**
      * Default constructor for a new PendingModifiedValues object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -217,6 +223,45 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * The cache node type that this cache cluster or replication group will
+     * be scaled to.
+     *
+     * @return The cache node type that this cache cluster or replication group will
+     *         be scaled to.
+     */
+    public String getCacheNodeType() {
+        return cacheNodeType;
+    }
+    
+    /**
+     * The cache node type that this cache cluster or replication group will
+     * be scaled to.
+     *
+     * @param cacheNodeType The cache node type that this cache cluster or replication group will
+     *         be scaled to.
+     */
+    public void setCacheNodeType(String cacheNodeType) {
+        this.cacheNodeType = cacheNodeType;
+    }
+    
+    /**
+     * The cache node type that this cache cluster or replication group will
+     * be scaled to.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cacheNodeType The cache node type that this cache cluster or replication group will
+     *         be scaled to.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PendingModifiedValues withCacheNodeType(String cacheNodeType) {
+        this.cacheNodeType = cacheNodeType;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -230,7 +275,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         sb.append("{");
         if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");
         if (getCacheNodeIdsToRemove() != null) sb.append("CacheNodeIdsToRemove: " + getCacheNodeIdsToRemove() + ",");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() );
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() );
         sb.append("}");
         return sb.toString();
     }
@@ -243,6 +289,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNumCacheNodes() == null) ? 0 : getNumCacheNodes().hashCode()); 
         hashCode = prime * hashCode + ((getCacheNodeIdsToRemove() == null) ? 0 : getCacheNodeIdsToRemove().hashCode()); 
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode()); 
         return hashCode;
     }
     
@@ -260,6 +307,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (other.getCacheNodeIdsToRemove() != null && other.getCacheNodeIdsToRemove().equals(this.getCacheNodeIdsToRemove()) == false) return false; 
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null) return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
+        if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null) return false;
+        if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false) return false; 
         return true;
     }
     

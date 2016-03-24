@@ -105,6 +105,9 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
         if (modifyReplicationGroupRequest.getSnapshotWindow() != null) {
             request.addParameter("SnapshotWindow", StringUtils.fromString(modifyReplicationGroupRequest.getSnapshotWindow()));
         }
+        if (modifyReplicationGroupRequest.getCacheNodeType() != null) {
+            request.addParameter("CacheNodeType", StringUtils.fromString(modifyReplicationGroupRequest.getCacheNodeType()));
+        }
 
         return request;
     }

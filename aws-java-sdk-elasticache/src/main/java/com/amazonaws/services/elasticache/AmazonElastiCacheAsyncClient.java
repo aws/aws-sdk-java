@@ -1140,6 +1140,98 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
     
     /**
      * <p>
+     * The <code>ListAllowedNodeTypeModifications</code> action lists all
+     * available node types that you can scale your Redis cluster's or
+     * replication group's current node type up to.
+     * </p>
+     * <p>
+     * When you use the <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code> APIs to scale up your cluster or
+     * replication group, the value of the <i>CacheNodeType</i> parameter
+     * must be one of the node types returned by this action.
+     * </p>
+     *
+     * @param listAllowedNodeTypeModificationsRequest Container for the
+     *           necessary parameters to execute the ListAllowedNodeTypeModifications
+     *           operation on AmazonElastiCache.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListAllowedNodeTypeModifications service method, as returned by
+     *         AmazonElastiCache.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListAllowedNodeTypeModificationsResult> listAllowedNodeTypeModificationsAsync(final ListAllowedNodeTypeModificationsRequest listAllowedNodeTypeModificationsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListAllowedNodeTypeModificationsResult>() {
+            public ListAllowedNodeTypeModificationsResult call() throws Exception {
+                return listAllowedNodeTypeModifications(listAllowedNodeTypeModificationsRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * The <code>ListAllowedNodeTypeModifications</code> action lists all
+     * available node types that you can scale your Redis cluster's or
+     * replication group's current node type up to.
+     * </p>
+     * <p>
+     * When you use the <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code> APIs to scale up your cluster or
+     * replication group, the value of the <i>CacheNodeType</i> parameter
+     * must be one of the node types returned by this action.
+     * </p>
+     *
+     * @param listAllowedNodeTypeModificationsRequest Container for the
+     *           necessary parameters to execute the ListAllowedNodeTypeModifications
+     *           operation on AmazonElastiCache.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListAllowedNodeTypeModifications service method, as returned by
+     *         AmazonElastiCache.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListAllowedNodeTypeModificationsResult> listAllowedNodeTypeModificationsAsync(
+            final ListAllowedNodeTypeModificationsRequest listAllowedNodeTypeModificationsRequest,
+            final AsyncHandler<ListAllowedNodeTypeModificationsRequest, ListAllowedNodeTypeModificationsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListAllowedNodeTypeModificationsResult>() {
+            public ListAllowedNodeTypeModificationsResult call() throws Exception {
+              ListAllowedNodeTypeModificationsResult result;
+                try {
+                result = listAllowedNodeTypeModifications(listAllowedNodeTypeModificationsRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(listAllowedNodeTypeModificationsRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
      * The <i>AddTagsToResource</i> action adds up to 10 cost allocation
      * tags to the named resource. A <i>cost allocation tag</i> is a
      * key-value pair where the key and value are case-sensitive. Cost

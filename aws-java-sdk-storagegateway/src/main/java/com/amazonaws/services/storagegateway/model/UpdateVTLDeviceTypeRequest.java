@@ -20,9 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * UpdateVTLDeviceTypeInput
- * </p>
+ * 
  */
 public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

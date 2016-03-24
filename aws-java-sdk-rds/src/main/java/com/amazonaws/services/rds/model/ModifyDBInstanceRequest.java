@@ -122,7 +122,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB instance. <p>If this parameter is set to <code>false</code>,
+     * the DB instance. <p> If this parameter is set to <code>false</code>,
      * changes to the DB instance are applied during the next maintenance
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -347,6 +347,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     private String cACertificateIdentifier;
 
     /**
+     * Specify the Active Directory Domain to move the instance to. <p>The
+     * specified Active Directory Domain must be created prior to this
+     * operation. Currently only a SQL Server instance can be created in a
+     * Active Directory Domain.
+     */
+    private String domain;
+
+    /**
      * True to copy all tags from the DB instance to snapshots of the DB
      * instance; otherwise false. The default is false.
      */
@@ -372,9 +380,9 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
      * <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
      * <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
-     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
-     * <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>Type:
+     * Integer <p> <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid
+     * Values: <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
      * <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
      * <code>1434</code>, <code>3389</code>, <code>47001</code>,
      * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
@@ -409,6 +417,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * you must supply a <code>MonitoringRoleArn</code> value.
      */
     private String monitoringRoleArn;
+
+    /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     */
+    private String domainIAMRoleName;
 
     /**
      * A value that specifies the order in which an Aurora Replica is
@@ -1087,7 +1101,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB instance. <p>If this parameter is set to <code>false</code>,
+     * the DB instance. <p> If this parameter is set to <code>false</code>,
      * changes to the DB instance are applied during the next maintenance
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1101,7 +1115,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @return Specifies whether the modifications in this request and any pending
      *         modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB instance. <p>If this parameter is set to <code>false</code>,
+     *         the DB instance. <p> If this parameter is set to <code>false</code>,
      *         changes to the DB instance are applied during the next maintenance
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1120,7 +1134,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB instance. <p>If this parameter is set to <code>false</code>,
+     * the DB instance. <p> If this parameter is set to <code>false</code>,
      * changes to the DB instance are applied during the next maintenance
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1134,7 +1148,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param applyImmediately Specifies whether the modifications in this request and any pending
      *         modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB instance. <p>If this parameter is set to <code>false</code>,
+     *         the DB instance. <p> If this parameter is set to <code>false</code>,
      *         changes to the DB instance are applied during the next maintenance
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1153,7 +1167,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB instance. <p>If this parameter is set to <code>false</code>,
+     * the DB instance. <p> If this parameter is set to <code>false</code>,
      * changes to the DB instance are applied during the next maintenance
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1169,7 +1183,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @param applyImmediately Specifies whether the modifications in this request and any pending
      *         modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB instance. <p>If this parameter is set to <code>false</code>,
+     *         the DB instance. <p> If this parameter is set to <code>false</code>,
      *         changes to the DB instance are applied during the next maintenance
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1192,7 +1206,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible,
      * regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     * the DB instance. <p>If this parameter is set to <code>false</code>,
+     * the DB instance. <p> If this parameter is set to <code>false</code>,
      * changes to the DB instance are applied during the next maintenance
      * window. Some parameter changes can cause an outage and will be applied
      * on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -1206,7 +1220,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * @return Specifies whether the modifications in this request and any pending
      *         modifications are asynchronously applied as soon as possible,
      *         regardless of the <code>PreferredMaintenanceWindow</code> setting for
-     *         the DB instance. <p>If this parameter is set to <code>false</code>,
+     *         the DB instance. <p> If this parameter is set to <code>false</code>,
      *         changes to the DB instance are applied during the next maintenance
      *         window. Some parameter changes can cause an outage and will be applied
      *         on the next call to <a>RebootDBInstance</a>, or the next failure
@@ -2601,6 +2615,57 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * Specify the Active Directory Domain to move the instance to. <p>The
+     * specified Active Directory Domain must be created prior to this
+     * operation. Currently only a SQL Server instance can be created in a
+     * Active Directory Domain.
+     *
+     * @return Specify the Active Directory Domain to move the instance to. <p>The
+     *         specified Active Directory Domain must be created prior to this
+     *         operation. Currently only a SQL Server instance can be created in a
+     *         Active Directory Domain.
+     */
+    public String getDomain() {
+        return domain;
+    }
+    
+    /**
+     * Specify the Active Directory Domain to move the instance to. <p>The
+     * specified Active Directory Domain must be created prior to this
+     * operation. Currently only a SQL Server instance can be created in a
+     * Active Directory Domain.
+     *
+     * @param domain Specify the Active Directory Domain to move the instance to. <p>The
+     *         specified Active Directory Domain must be created prior to this
+     *         operation. Currently only a SQL Server instance can be created in a
+     *         Active Directory Domain.
+     */
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+    
+    /**
+     * Specify the Active Directory Domain to move the instance to. <p>The
+     * specified Active Directory Domain must be created prior to this
+     * operation. Currently only a SQL Server instance can be created in a
+     * Active Directory Domain.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param domain Specify the Active Directory Domain to move the instance to. <p>The
+     *         specified Active Directory Domain must be created prior to this
+     *         operation. Currently only a SQL Server instance can be created in a
+     *         Active Directory Domain.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyDBInstanceRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
      * True to copy all tags from the DB instance to snapshots of the DB
      * instance; otherwise false. The default is false.
      *
@@ -2723,9 +2788,9 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
      * <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
      * <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
-     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
-     * <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>Type:
+     * Integer <p> <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid
+     * Values: <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
      * <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
      * <code>1434</code>, <code>3389</code>, <code>47001</code>,
      * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
@@ -2741,9 +2806,9 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
      *         <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
      *         <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
-     *         <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
-     *         <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     *         <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>Type:
+     *         Integer <p> <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid
+     *         Values: <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
      *         <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
      *         <code>1434</code>, <code>3389</code>, <code>47001</code>,
      *         <code>49152</code>, and <code>49152</code> through <code>49156</code>.
@@ -2764,9 +2829,9 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
      * <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
      * <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
-     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
-     * <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>Type:
+     * Integer <p> <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid
+     * Values: <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
      * <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
      * <code>1434</code>, <code>3389</code>, <code>47001</code>,
      * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
@@ -2782,9 +2847,9 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
      *         <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
      *         <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
-     *         <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
-     *         <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     *         <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>Type:
+     *         Integer <p> <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid
+     *         Values: <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
      *         <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
      *         <code>1434</code>, <code>3389</code>, <code>47001</code>,
      *         <code>49152</code>, and <code>49152</code> through <code>49156</code>.
@@ -2805,9 +2870,9 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      * <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
      * <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
      * <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
-     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
-     * <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
-     * <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     * <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>Type:
+     * Integer <p> <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid
+     * Values: <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
      * <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
      * <code>1434</code>, <code>3389</code>, <code>47001</code>,
      * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
@@ -2825,9 +2890,9 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         <code>3306</code> <p> Valid Values: <code>1150-65535</code> <p>
      *         <b>MariaDB</b> <p> Default: <code>3306</code> <p> Valid Values:
      *         <code>1150-65535</code> <p> <b>PostgreSQL</b> <p> Default:
-     *         <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>
-     *         <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid Values:
-     *         <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
+     *         <code>5432</code> <p> Valid Values: <code>1150-65535</code> <p>Type:
+     *         Integer <p> <b>Oracle</b> <p> Default: <code>1521</code> <p> Valid
+     *         Values: <code>1150-65535</code> <p> <b>SQL Server</b> <p> Default:
      *         <code>1433</code> <p> Valid Values: <code>1150-65535</code> except for
      *         <code>1434</code>, <code>3389</code>, <code>47001</code>,
      *         <code>49152</code>, and <code>49152</code> through <code>49156</code>.
@@ -3040,6 +3105,45 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     *
+     * @return Specify the name of the IAM role to be used when making API calls to
+     *         the Directory Service.
+     */
+    public String getDomainIAMRoleName() {
+        return domainIAMRoleName;
+    }
+    
+    /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     *
+     * @param domainIAMRoleName Specify the name of the IAM role to be used when making API calls to
+     *         the Directory Service.
+     */
+    public void setDomainIAMRoleName(String domainIAMRoleName) {
+        this.domainIAMRoleName = domainIAMRoleName;
+    }
+    
+    /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param domainIAMRoleName Specify the name of the IAM role to be used when making API calls to
+     *         the Directory Service.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyDBInstanceRequest withDomainIAMRoleName(String domainIAMRoleName) {
+        this.domainIAMRoleName = domainIAMRoleName;
+        return this;
+    }
+
+    /**
      * A value that specifies the order in which an Aurora Replica is
      * promoted to the primary instance after a failure of the existing
      * primary instance. For more information, see <a
@@ -3136,11 +3240,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
         if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() + ",");
         if (getCACertificateIdentifier() != null) sb.append("CACertificateIdentifier: " + getCACertificateIdentifier() + ",");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
         if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() + ",");
         if (getMonitoringInterval() != null) sb.append("MonitoringInterval: " + getMonitoringInterval() + ",");
         if (getDBPortNumber() != null) sb.append("DBPortNumber: " + getDBPortNumber() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
         if (getMonitoringRoleArn() != null) sb.append("MonitoringRoleArn: " + getMonitoringRoleArn() + ",");
+        if (getDomainIAMRoleName() != null) sb.append("DomainIAMRoleName: " + getDomainIAMRoleName() + ",");
         if (getPromotionTier() != null) sb.append("PromotionTier: " + getPromotionTier() );
         sb.append("}");
         return sb.toString();
@@ -3173,11 +3279,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
         hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode()); 
         hashCode = prime * hashCode + ((isCopyTagsToSnapshot() == null) ? 0 : isCopyTagsToSnapshot().hashCode()); 
         hashCode = prime * hashCode + ((getMonitoringInterval() == null) ? 0 : getMonitoringInterval().hashCode()); 
         hashCode = prime * hashCode + ((getDBPortNumber() == null) ? 0 : getDBPortNumber().hashCode()); 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         hashCode = prime * hashCode + ((getMonitoringRoleArn() == null) ? 0 : getMonitoringRoleArn().hashCode()); 
+        hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode()); 
         hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode()); 
         return hashCode;
     }
@@ -3234,6 +3342,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.getTdeCredentialPassword() != null && other.getTdeCredentialPassword().equals(this.getTdeCredentialPassword()) == false) return false; 
         if (other.getCACertificateIdentifier() == null ^ this.getCACertificateIdentifier() == null) return false;
         if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false) return false; 
+        if (other.getDomain() == null ^ this.getDomain() == null) return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false) return false; 
         if (other.isCopyTagsToSnapshot() == null ^ this.isCopyTagsToSnapshot() == null) return false;
         if (other.isCopyTagsToSnapshot() != null && other.isCopyTagsToSnapshot().equals(this.isCopyTagsToSnapshot()) == false) return false; 
         if (other.getMonitoringInterval() == null ^ this.getMonitoringInterval() == null) return false;
@@ -3244,6 +3354,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         if (other.getMonitoringRoleArn() == null ^ this.getMonitoringRoleArn() == null) return false;
         if (other.getMonitoringRoleArn() != null && other.getMonitoringRoleArn().equals(this.getMonitoringRoleArn()) == false) return false; 
+        if (other.getDomainIAMRoleName() == null ^ this.getDomainIAMRoleName() == null) return false;
+        if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false) return false; 
         if (other.getPromotionTier() == null ^ this.getPromotionTier() == null) return false;
         if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false) return false; 
         return true;

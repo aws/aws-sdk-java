@@ -33,7 +33,7 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      * The name for the DB subnet group. This value is stored as a lowercase
      * string. <p>Constraints: Must contain no more than 255 alphanumeric
      * characters, periods, underscores, spaces, or hyphens. Must not be
-     * "default". <p>Example: <code>mySubnetgroup</code>
+     * default. <p>Example: <code>mySubnetgroup</code>
      */
     private String dBSubnetGroupName;
 
@@ -51,12 +51,12 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      * The name for the DB subnet group. This value is stored as a lowercase
      * string. <p>Constraints: Must contain no more than 255 alphanumeric
      * characters, periods, underscores, spaces, or hyphens. Must not be
-     * "default". <p>Example: <code>mySubnetgroup</code>
+     * default. <p>Example: <code>mySubnetgroup</code>
      *
      * @return The name for the DB subnet group. This value is stored as a lowercase
      *         string. <p>Constraints: Must contain no more than 255 alphanumeric
      *         characters, periods, underscores, spaces, or hyphens. Must not be
-     *         "default". <p>Example: <code>mySubnetgroup</code>
+     *         default. <p>Example: <code>mySubnetgroup</code>
      */
     public String getDBSubnetGroupName() {
         return dBSubnetGroupName;
@@ -66,12 +66,12 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      * The name for the DB subnet group. This value is stored as a lowercase
      * string. <p>Constraints: Must contain no more than 255 alphanumeric
      * characters, periods, underscores, spaces, or hyphens. Must not be
-     * "default". <p>Example: <code>mySubnetgroup</code>
+     * default. <p>Example: <code>mySubnetgroup</code>
      *
      * @param dBSubnetGroupName The name for the DB subnet group. This value is stored as a lowercase
      *         string. <p>Constraints: Must contain no more than 255 alphanumeric
      *         characters, periods, underscores, spaces, or hyphens. Must not be
-     *         "default". <p>Example: <code>mySubnetgroup</code>
+     *         default. <p>Example: <code>mySubnetgroup</code>
      */
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -81,14 +81,14 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
      * The name for the DB subnet group. This value is stored as a lowercase
      * string. <p>Constraints: Must contain no more than 255 alphanumeric
      * characters, periods, underscores, spaces, or hyphens. Must not be
-     * "default". <p>Example: <code>mySubnetgroup</code>
+     * default. <p>Example: <code>mySubnetgroup</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSubnetGroupName The name for the DB subnet group. This value is stored as a lowercase
      *         string. <p>Constraints: Must contain no more than 255 alphanumeric
      *         characters, periods, underscores, spaces, or hyphens. Must not be
-     *         "default". <p>Example: <code>mySubnetgroup</code>
+     *         default. <p>Example: <code>mySubnetgroup</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

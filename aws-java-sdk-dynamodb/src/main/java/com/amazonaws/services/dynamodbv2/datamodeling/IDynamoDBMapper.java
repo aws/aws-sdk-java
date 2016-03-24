@@ -1,16 +1,16 @@
-/*   
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.   
- *   
- * Licensed under the Apache License, Version 2.0 (the "License");   
- * you may not use this file except in compliance with the License.   
- * You may obtain a copy of the License at:   
- *   
- *    http://aws.amazon.com/apache2.0   
- *   
- * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES   
- * OR CONDITIONS OF ANY KIND, either express or implied. See the   
- * License for the specific language governing permissions and   
- * limitations under the License.   
+/*
+ * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at:
+ *
+ *    http://aws.amazon.com/apache2.0
+ *
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+ * OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
@@ -33,7 +33,7 @@ import com.amazonaws.services.s3.model.Region;
 /**
  * Interface for DynamoDBMapper. See the standard implementation {@link DynamoDBMapper} for the
  * usage.
- * 
+ *
  * @see DynamoDBMapper
  */
 public interface IDynamoDBMapper {
@@ -41,21 +41,21 @@ public interface IDynamoDBMapper {
     /**
      * Loads an object with the hash key given and a configuration override. This configuration
      * overrides the default provided at object construction.
-     * 
+     *
      * @see DynamoDBMapper#load(Class, Object, Object, DynamoDBMapperConfig)
      */
     <T extends Object> T load(Class<T> clazz, Object hashKey, DynamoDBMapperConfig config);
 
     /**
      * Loads an object with the hash key given, using the default configuration.
-     * 
+     *
      * @see DynamoDBMapper#load(Class, Object, Object, DynamoDBMapperConfig)
      */
     <T extends Object> T load(Class<T> clazz, Object hashKey);
 
     /**
      * Loads an object with a hash and range key, using the default configuration.
-     * 
+     *
      * @see DynamoDBMapper#load(Class, Object, Object, DynamoDBMapperConfig)
      */
     <T extends Object> T load(Class<T> clazz, Object hashKey, Object rangeKey);
@@ -63,7 +63,7 @@ public interface IDynamoDBMapper {
     /**
      * Returns an object whose keys match those of the prototype key object given, or null if no
      * such item exists.
-     * 
+     *
      * @param keyObject
      *            An object of the class to load with the keys values to match.
      * @see DynamoDBMapper#load(Object, DynamoDBMapperConfig)
@@ -73,7 +73,7 @@ public interface IDynamoDBMapper {
     /**
      * Returns an object whose keys match those of the prototype key object given, or null if no
      * such item exists.
-     * 
+     *
      * @param keyObject
      *            An object of the class to load with the keys values to match.
      * @param config
@@ -84,7 +84,7 @@ public interface IDynamoDBMapper {
 
     /**
      * Returns an object with the given hash key, or null if no such object exists.
-     * 
+     *
      * @param clazz
      *            The class to load, corresponding to a DynamoDB table.
      * @param hashKey
@@ -106,7 +106,7 @@ public interface IDynamoDBMapper {
      * <p>
      * This method is no longer called by load/scan/query methods. If you are overriding this
      * method, please switch to using an AttributeTransformer
-     * 
+     *
      * @param clazz
      *            The class to instantiate and hydrate
      * @param itemAttributes
@@ -119,14 +119,14 @@ public interface IDynamoDBMapper {
      * <p>
      * This method is no longer called by load/scan/query methods. If you are overriding this
      * method, please switch to using an AttributeTransformer
-     * 
+     *
      * @see DynamoDBMapper#marshallIntoObject(Class, Map)
      */
     <T> List<T> marshallIntoObjects(Class<T> clazz, List<Map<String, AttributeValue>> itemAttributes);
 
     /**
      * Saves the object given into DynamoDB, using the default configuration.
-     * 
+     *
      * @see DynamoDBMapper#save(Object, DynamoDBSaveExpression, DynamoDBMapperConfig)
      */
     <T extends Object> void save(T object);
@@ -134,14 +134,14 @@ public interface IDynamoDBMapper {
     /**
      * Saves the object given into DynamoDB, using the default configuration and the specified
      * saveExpression.
-     * 
+     *
      * @see DynamoDBMapper#save(Object, DynamoDBSaveExpression, DynamoDBMapperConfig)
      */
     <T extends Object> void save(T object, DynamoDBSaveExpression saveExpression);
 
     /**
      * Saves the object given into DynamoDB, using the specified configuration.
-     * 
+     *
      * @see DynamoDBMapper#save(Object, DynamoDBSaveExpression, DynamoDBMapperConfig)
      */
     <T extends Object> void save(T object, DynamoDBMapperConfig config);
@@ -165,7 +165,7 @@ public interface IDynamoDBMapper {
      * </ul>
      * Any options specified in the saveExpression parameter will be overlaid on any constraints due
      * to versioned attributes.
-     * 
+     *
      * @param object
      *            The object to save into DynamoDB
      * @param saveExpression
@@ -197,7 +197,7 @@ public interface IDynamoDBMapper {
      * Deletes the given object from its DynamoDB table using the provided deleteExpression and
      * provided configuration. Any options specified in the deleteExpression parameter will be
      * overlaid on any constraints due to versioned attributes.
-     * 
+     *
      * @param deleteExpression
      *            The options to apply to this delete request
      * @param config
@@ -210,7 +210,7 @@ public interface IDynamoDBMapper {
      * Deletes the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No version checks are
      * performed</b>, as required by the API.
-     * 
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     List<FailedBatch> batchDelete(List<? extends Object> objectsToDelete);
@@ -228,7 +228,7 @@ public interface IDynamoDBMapper {
      * Deletes the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No version checks are
      * performed</b>, as required by the API.
-     * 
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     List<FailedBatch> batchDelete(Object... objectsToDelete);
@@ -246,7 +246,7 @@ public interface IDynamoDBMapper {
      * 400 KB. For more information on batch restrictions see, http://docs.aws.amazon
      * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
      * </p>
-     * 
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     List<FailedBatch> batchSave(List<? extends Object> objectsToSave);
@@ -264,7 +264,7 @@ public interface IDynamoDBMapper {
      * 400 KB. For more information on batch restrictions see, http://docs.aws.amazon
      * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
      * </p>
-     * 
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     List<FailedBatch> batchSave(Iterable<? extends Object> objectsToSave);
@@ -282,7 +282,7 @@ public interface IDynamoDBMapper {
      * 400 KB. For more information on batch restrictions see, http://docs.aws.amazon
      * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
      * </p>
-     * 
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     List<FailedBatch> batchSave(Object... objectsToSave);
@@ -300,7 +300,12 @@ public interface IDynamoDBMapper {
      * 400 KB. For more information on batch restrictions see, http://docs.aws.amazon
      * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
      * </p>
-     * 
+     * <p>
+     * If one of the write requests is for a table that is not present, this method does not throw a
+     * ResourceNotFoundException but returns a FailedBatch which includes this exception and the
+     * unprocessed items.
+     * </p>
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite, List<? extends Object> objectsToDelete);
@@ -318,7 +323,12 @@ public interface IDynamoDBMapper {
      * 400 KB. For more information on batch restrictions see, http://docs.aws.amazon
      * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
      * </p>
-     * 
+     * <p>
+     * If one of the write requests is for a table that is not present, this method does not throw a
+     * ResourceNotFoundException but returns a FailedBatch which includes this exception and the
+     * unprocessed items.
+     * </p>
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     List<FailedBatch> batchWrite(Iterable<? extends Object> objectsToWrite, Iterable<? extends Object> objectsToDelete);
@@ -332,7 +342,12 @@ public interface IDynamoDBMapper {
      * 400 KB. For more information on batch restrictions see, http://docs.aws.amazon
      * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
      * </p>
-     * 
+     * <p>
+     * If one of the write requests is for a table that is not present, this method does not throw a
+     * ResourceNotFoundException but returns a FailedBatch which includes this exception and the
+     * unprocessed items.
+     * </p>
+     *
      * @param objectsToWrite
      *            A list of objects to save to DynamoDB. <b>No version checks are performed</b>, as
      *            required by the {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
@@ -365,7 +380,12 @@ public interface IDynamoDBMapper {
      * 400 KB. For more information on batch restrictions see, http://docs.aws.amazon
      * .com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
      * </p>
-     * 
+     * <p>
+     * If one of the write requests is for a table that is not present, this method does not throw a
+     * ResourceNotFoundException but returns a FailedBatch which includes this exception and the
+     * unprocessed items.
+     * </p>
+     *
      * @param objectsToWrite
      *            A list of objects to save to DynamoDB. <b>No version checks are performed</b>, as
      *            required by the {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
@@ -391,7 +411,7 @@ public interface IDynamoDBMapper {
 
     /**
      * Retrieves multiple items from multiple tables using their primary keys.
-     * 
+     *
      * @see DynamoDBMapper#batchLoad(List, DynamoDBMapperConfig)
      * @return A map of the loaded objects. Each key in the map is the name of a DynamoDB table.
      *         Each value in the map is a list of objects that have been loaded from that table. All
@@ -402,7 +422,7 @@ public interface IDynamoDBMapper {
 
     /**
      * Retrieves multiple items from multiple tables using their primary keys.
-     * 
+     *
      * @see DynamoDBMapper#batchLoad(List, DynamoDBMapperConfig)
      * @return A map of the loaded objects. Each key in the map is the name of a DynamoDB table.
      *         Each value in the map is a list of objects that have been loaded from that table. All
@@ -413,7 +433,7 @@ public interface IDynamoDBMapper {
 
     /**
      * Retrieves multiple items from multiple tables using their primary keys.
-     * 
+     *
      * @param itemsToGet
      *            Key objects, corresponding to the class to fetch, with their primary key values
      *            set.
@@ -429,7 +449,7 @@ public interface IDynamoDBMapper {
 
     /**
      * Retrieves multiple items from multiple tables using their primary keys.
-     * 
+     *
      * @param itemsToGet
      *            Key objects, corresponding to the class to fetch, with their primary key values
      *            set.
@@ -446,7 +466,7 @@ public interface IDynamoDBMapper {
     /**
      * Retrieves the attributes for multiple items from multiple tables using their primary keys.
      * {@link AmazonDynamoDB#batchGetItem(BatchGetItemRequest)} API.
-     * 
+     *
      * @return A map of the loaded objects. Each key in the map is the name of a DynamoDB table.
      *         Each value in the map is a list of objects that have been loaded from that table. All
      *         objects for each table can be cast to the associated user defined type that is
@@ -460,7 +480,7 @@ public interface IDynamoDBMapper {
      * Retrieves multiple items from multiple tables using their primary keys. Valid only for tables
      * with a single hash key, or a single hash and range key. For other schemas, use
      * {@link DynamoDBMapper#batchLoad(List, DynamoDBMapperConfig)}
-     * 
+     *
      * @param itemsToGet
      *            Map from class to load to list of primary key attributes.
      * @param config
@@ -476,7 +496,7 @@ public interface IDynamoDBMapper {
     /**
      * Scans through an Amazon DynamoDB table and returns the matching results as an unmodifiable
      * list of instantiated objects, using the default configuration.
-     * 
+     *
      * @see DynamoDBMapper#scan(Class, DynamoDBScanExpression, DynamoDBMapperConfig)
      */
     <T> PaginatedScanList<T> scan(Class<T> clazz, DynamoDBScanExpression scanExpression);
@@ -493,7 +513,7 @@ public interface IDynamoDBMapper {
      * <p>
      * You can specify the pagination loading strategy for this scan operation. By default, the list
      * returned is lazily loaded when possible.
-     * 
+     *
      * @param <T>
      *            The type of the objects being returned.
      * @param clazz
@@ -515,7 +535,7 @@ public interface IDynamoDBMapper {
      * Scans through an Amazon DynamoDB table on logically partitioned segments in parallel and
      * returns the matching results in one unmodifiable list of instantiated objects, using the
      * default configuration.
-     * 
+     *
      * @see DynamoDBMapper#parallelScan(Class, DynamoDBScanExpression,int, DynamoDBMapperConfig)
      */
     <T> PaginatedParallelScanList<T> parallelScan(Class<T> clazz,
@@ -538,7 +558,7 @@ public interface IDynamoDBMapper {
      * <p>
      * You can specify the pagination loading strategy for this parallel scan operation. By default,
      * the list returned is lazily loaded when possible.
-     * 
+     *
      * @param <T>
      *            The type of the objects being returned.
      * @param clazz
@@ -566,7 +586,7 @@ public interface IDynamoDBMapper {
      * table to scan is determined by looking at the annotations on the specified class, which
      * declares where to store the object data in AWS DynamoDB, and the scan expression parameter
      * allows the caller to filter results and control how the scan is executed.
-     * 
+     *
      * @param <T>
      *            The type of the objects being returned.
      * @param clazz
@@ -582,7 +602,7 @@ public interface IDynamoDBMapper {
 
     /**
      * Scans through an Amazon DynamoDB table and returns a single page of matching results.
-     * 
+     *
      * @see DynamoDBMapper#scanPage(Class, DynamoDBScanExpression, DynamoDBMapperConfig)
      */
     <T> ScanResultPage<T> scanPage(Class<T> clazz, DynamoDBScanExpression scanExpression);
@@ -590,7 +610,7 @@ public interface IDynamoDBMapper {
     /**
      * Queries an Amazon DynamoDB table and returns the matching results as an unmodifiable list of
      * instantiated objects, using the default configuration.
-     * 
+     *
      * @see DynamoDBMapper#query(Class, DynamoDBQueryExpression, DynamoDBMapperConfig)
      */
     <T> PaginatedQueryList<T> query(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression);
@@ -611,7 +631,7 @@ public interface IDynamoDBMapper {
      * <p>
      * You can specify the pagination loading strategy for this query operation. By default, the
      * list returned is lazily loaded when possible.
-     * 
+     *
      * @param <T>
      *            The type of the objects being returned.
      * @param clazz
@@ -636,7 +656,7 @@ public interface IDynamoDBMapper {
      * query is determined by looking at the annotations on the specified class, which declares
      * where to store the object data in Amazon DynamoDB, and the query expression parameter allows
      * the caller to filter results and control how the query is executed.
-     * 
+     *
      * @see DynamoDBMapper#queryPage(Class, DynamoDBQueryExpression, DynamoDBMapperConfig)
      */
     <T> QueryResultPage<T> queryPage(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression);
@@ -646,7 +666,7 @@ public interface IDynamoDBMapper {
      * query is determined by looking at the annotations on the specified class, which declares
      * where to store the object data in Amazon DynamoDB, and the query expression parameter allows
      * the caller to filter results and control how the query is executed.
-     * 
+     *
      * @param <T>
      *            The type of the objects being returned.
      * @param clazz
@@ -665,7 +685,7 @@ public interface IDynamoDBMapper {
     /**
      * Evaluates the specified scan expression and returns the count of matching items, without
      * returning any of the actual item data, using the default configuration.
-     * 
+     *
      * @see DynamoDBMapper#count(Class, DynamoDBScanExpression, DynamoDBMapperConfig)
      */
     int count(Class<?> clazz, DynamoDBScanExpression scanExpression);
@@ -676,7 +696,7 @@ public interface IDynamoDBMapper {
      * <p>
      * This operation will scan your entire table, and can therefore be very expensive. Use with
      * caution.
-     * 
+     *
      * @param clazz
      *            The class mapped to a DynamoDB table.
      * @param scanExpression
@@ -691,7 +711,7 @@ public interface IDynamoDBMapper {
     /**
      * Evaluates the specified query expression and returns the count of matching items, without
      * returning any of the actual item data, using the default configuration.
-     * 
+     *
      * @see DynamoDBMapper#count(Class, DynamoDBQueryExpression, DynamoDBMapperConfig)
      */
     <T> int count(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression);
@@ -699,7 +719,7 @@ public interface IDynamoDBMapper {
     /**
      * Evaluates the specified query expression and returns the count of matching items, without
      * returning any of the actual item data.
-     * 
+     *
      * @param clazz
      *            The class mapped to a DynamoDB table.
      * @param queryExpression
@@ -720,7 +740,7 @@ public interface IDynamoDBMapper {
      * Creates an S3Link with the specified bucket name and key using the default S3 region. This
      * method requires the mapper to have been initialized with the necessary credentials for
      * accessing S3.
-     * 
+     *
      * @throws IllegalStateException
      *             if the mapper has not been constructed with the necessary S3 AWS credentials.
      */
@@ -729,7 +749,7 @@ public interface IDynamoDBMapper {
     /**
      * Creates an S3Link with the specified region, bucket name and key. This method requires the
      * mapper to have been initialized with the necessary credentials for accessing S3.
-     * 
+     *
      * @throws IllegalStateException
      *             if the mapper has not been constructed with the necessary S3 AWS credentials.
      */

@@ -135,19 +135,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
-     * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     * <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
-     * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
-     * delete, pending or immediate, replaces the pending delete.</td> </tr>
-     * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
-     * create, pending or immediate, replaces the pending delete.</td> </tr>
-     * <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
-     * delete, pending or immediate, replaces the pending create.</td> </tr>
-     * <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
-     * create is added to the pending create.<br/> <b>Important:</b><br/>If
-     * the new create request is <b>Apply Immediately - Yes</b>, all creates
-     * are performed immediately. If the new create request is <b>Apply
-     * Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     * requests upon pending requests</b> <ul> <li>Scenario-1 <ul>
+     * <li>Pending Action: Delete</li> <li>New Request: Delete</li>
+     * <li>Result: The new delete, pending or immediate, replaces the pending
+     * delete.</li> </ul></li> <li>Scenario-2 <ul> <li>Pending Action:
+     * Delete</li> <li>New Request: Create</li> <li>Result: The new create,
+     * pending or immediate, replaces the pending delete.</li> </ul></li>
+     * <li>Scenario-3 <ul> <li>Pending Action: Create</li> <li>New Request:
+     * Delete</li> <li>Result: The new delete, pending or immediate, replaces
+     * the pending create.</li> </ul></li> <li>Scenario-4 <ul> <li>Pending
+     * Action: Create</li> <li>New Request: Create</li> <li>Result: The new
+     * create is added to the pending create. <b>Important:</b><br/>If the
+     * new create request is <b>Apply Immediately - Yes</b>, all creates are
+     * performed immediately.<br/> If the new create request is <b>Apply
+     * Immediately - No</b>, all creates are pending.</li> </ul></li> </ul>
      * <p>Example:
      * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      */
@@ -222,6 +223,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
 
     /**
      * The upgraded version of the cache engine to be run on the cache nodes.
+     * <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing cache cluster and create it anew with the
+     * earlier engine version.
      */
     private String engineVersion;
 
@@ -245,6 +252,14 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * taking a daily snapshot of your cache cluster.
      */
     private String snapshotWindow;
+
+    /**
+     * A valid cache node type that you want to scale this cache cluster to.
+     * The value of this parameter must be one of the
+     * <i>ScaleUpModifications</i> values returned by the
+     * <code>ListAllowedCacheNodeTypeModification</code> action.
+     */
+    private String cacheNodeType;
 
     /**
      * Default constructor for a new ModifyCacheClusterRequest object.  Callers should use the
@@ -901,19 +916,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
-     * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     * <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
-     * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
-     * delete, pending or immediate, replaces the pending delete.</td> </tr>
-     * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
-     * create, pending or immediate, replaces the pending delete.</td> </tr>
-     * <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
-     * delete, pending or immediate, replaces the pending create.</td> </tr>
-     * <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
-     * create is added to the pending create.<br/> <b>Important:</b><br/>If
-     * the new create request is <b>Apply Immediately - Yes</b>, all creates
-     * are performed immediately. If the new create request is <b>Apply
-     * Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     * requests upon pending requests</b> <ul> <li>Scenario-1 <ul>
+     * <li>Pending Action: Delete</li> <li>New Request: Delete</li>
+     * <li>Result: The new delete, pending or immediate, replaces the pending
+     * delete.</li> </ul></li> <li>Scenario-2 <ul> <li>Pending Action:
+     * Delete</li> <li>New Request: Create</li> <li>Result: The new create,
+     * pending or immediate, replaces the pending delete.</li> </ul></li>
+     * <li>Scenario-3 <ul> <li>Pending Action: Create</li> <li>New Request:
+     * Delete</li> <li>Result: The new delete, pending or immediate, replaces
+     * the pending create.</li> </ul></li> <li>Scenario-4 <ul> <li>Pending
+     * Action: Create</li> <li>New Request: Create</li> <li>Result: The new
+     * create is added to the pending create. <b>Important:</b><br/>If the
+     * new create request is <b>Apply Immediately - Yes</b>, all creates are
+     * performed immediately.<br/> If the new create request is <b>Apply
+     * Immediately - No</b>, all creates are pending.</li> </ul></li> </ul>
      * <p>Example:
      * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      *
@@ -944,19 +960,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         Considerations</b> section of <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
-     *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     *         <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
-     *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
-     *         delete, pending or immediate, replaces the pending delete.</td> </tr>
-     *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
-     *         create, pending or immediate, replaces the pending delete.</td> </tr>
-     *         <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
-     *         delete, pending or immediate, replaces the pending create.</td> </tr>
-     *         <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
-     *         create is added to the pending create.<br/> <b>Important:</b><br/>If
-     *         the new create request is <b>Apply Immediately - Yes</b>, all creates
-     *         are performed immediately. If the new create request is <b>Apply
-     *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     *         requests upon pending requests</b> <ul> <li>Scenario-1 <ul>
+     *         <li>Pending Action: Delete</li> <li>New Request: Delete</li>
+     *         <li>Result: The new delete, pending or immediate, replaces the pending
+     *         delete.</li> </ul></li> <li>Scenario-2 <ul> <li>Pending Action:
+     *         Delete</li> <li>New Request: Create</li> <li>Result: The new create,
+     *         pending or immediate, replaces the pending delete.</li> </ul></li>
+     *         <li>Scenario-3 <ul> <li>Pending Action: Create</li> <li>New Request:
+     *         Delete</li> <li>Result: The new delete, pending or immediate, replaces
+     *         the pending create.</li> </ul></li> <li>Scenario-4 <ul> <li>Pending
+     *         Action: Create</li> <li>New Request: Create</li> <li>Result: The new
+     *         create is added to the pending create. <b>Important:</b><br/>If the
+     *         new create request is <b>Apply Immediately - Yes</b>, all creates are
+     *         performed immediately.<br/> If the new create request is <b>Apply
+     *         Immediately - No</b>, all creates are pending.</li> </ul></li> </ul>
      *         <p>Example:
      *         <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      */
@@ -996,19 +1013,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
-     * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     * <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
-     * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
-     * delete, pending or immediate, replaces the pending delete.</td> </tr>
-     * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
-     * create, pending or immediate, replaces the pending delete.</td> </tr>
-     * <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
-     * delete, pending or immediate, replaces the pending create.</td> </tr>
-     * <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
-     * create is added to the pending create.<br/> <b>Important:</b><br/>If
-     * the new create request is <b>Apply Immediately - Yes</b>, all creates
-     * are performed immediately. If the new create request is <b>Apply
-     * Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     * requests upon pending requests</b> <ul> <li>Scenario-1 <ul>
+     * <li>Pending Action: Delete</li> <li>New Request: Delete</li>
+     * <li>Result: The new delete, pending or immediate, replaces the pending
+     * delete.</li> </ul></li> <li>Scenario-2 <ul> <li>Pending Action:
+     * Delete</li> <li>New Request: Create</li> <li>Result: The new create,
+     * pending or immediate, replaces the pending delete.</li> </ul></li>
+     * <li>Scenario-3 <ul> <li>Pending Action: Create</li> <li>New Request:
+     * Delete</li> <li>Result: The new delete, pending or immediate, replaces
+     * the pending create.</li> </ul></li> <li>Scenario-4 <ul> <li>Pending
+     * Action: Create</li> <li>New Request: Create</li> <li>Result: The new
+     * create is added to the pending create. <b>Important:</b><br/>If the
+     * new create request is <b>Apply Immediately - Yes</b>, all creates are
+     * performed immediately.<br/> If the new create request is <b>Apply
+     * Immediately - No</b>, all creates are pending.</li> </ul></li> </ul>
      * <p>Example:
      * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      *
@@ -1039,19 +1057,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         Considerations</b> section of <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
-     *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     *         <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
-     *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
-     *         delete, pending or immediate, replaces the pending delete.</td> </tr>
-     *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
-     *         create, pending or immediate, replaces the pending delete.</td> </tr>
-     *         <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
-     *         delete, pending or immediate, replaces the pending create.</td> </tr>
-     *         <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
-     *         create is added to the pending create.<br/> <b>Important:</b><br/>If
-     *         the new create request is <b>Apply Immediately - Yes</b>, all creates
-     *         are performed immediately. If the new create request is <b>Apply
-     *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     *         requests upon pending requests</b> <ul> <li>Scenario-1 <ul>
+     *         <li>Pending Action: Delete</li> <li>New Request: Delete</li>
+     *         <li>Result: The new delete, pending or immediate, replaces the pending
+     *         delete.</li> </ul></li> <li>Scenario-2 <ul> <li>Pending Action:
+     *         Delete</li> <li>New Request: Create</li> <li>Result: The new create,
+     *         pending or immediate, replaces the pending delete.</li> </ul></li>
+     *         <li>Scenario-3 <ul> <li>Pending Action: Create</li> <li>New Request:
+     *         Delete</li> <li>Result: The new delete, pending or immediate, replaces
+     *         the pending create.</li> </ul></li> <li>Scenario-4 <ul> <li>Pending
+     *         Action: Create</li> <li>New Request: Create</li> <li>Result: The new
+     *         create is added to the pending create. <b>Important:</b><br/>If the
+     *         new create request is <b>Apply Immediately - Yes</b>, all creates are
+     *         performed immediately.<br/> If the new create request is <b>Apply
+     *         Immediately - No</b>, all creates are pending.</li> </ul></li> </ul>
      *         <p>Example:
      *         <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      */
@@ -1093,19 +1112,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
-     * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     * <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
-     * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
-     * delete, pending or immediate, replaces the pending delete.</td> </tr>
-     * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
-     * create, pending or immediate, replaces the pending delete.</td> </tr>
-     * <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
-     * delete, pending or immediate, replaces the pending create.</td> </tr>
-     * <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
-     * create is added to the pending create.<br/> <b>Important:</b><br/>If
-     * the new create request is <b>Apply Immediately - Yes</b>, all creates
-     * are performed immediately. If the new create request is <b>Apply
-     * Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     * requests upon pending requests</b> <ul> <li>Scenario-1 <ul>
+     * <li>Pending Action: Delete</li> <li>New Request: Delete</li>
+     * <li>Result: The new delete, pending or immediate, replaces the pending
+     * delete.</li> </ul></li> <li>Scenario-2 <ul> <li>Pending Action:
+     * Delete</li> <li>New Request: Create</li> <li>Result: The new create,
+     * pending or immediate, replaces the pending delete.</li> </ul></li>
+     * <li>Scenario-3 <ul> <li>Pending Action: Create</li> <li>New Request:
+     * Delete</li> <li>Result: The new delete, pending or immediate, replaces
+     * the pending create.</li> </ul></li> <li>Scenario-4 <ul> <li>Pending
+     * Action: Create</li> <li>New Request: Create</li> <li>Result: The new
+     * create is added to the pending create. <b>Important:</b><br/>If the
+     * new create request is <b>Apply Immediately - Yes</b>, all creates are
+     * performed immediately.<br/> If the new create request is <b>Apply
+     * Immediately - No</b>, all creates are pending.</li> </ul></li> </ul>
      * <p>Example:
      * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      * <p>
@@ -1143,19 +1163,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         Considerations</b> section of <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
-     *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     *         <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
-     *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
-     *         delete, pending or immediate, replaces the pending delete.</td> </tr>
-     *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
-     *         create, pending or immediate, replaces the pending delete.</td> </tr>
-     *         <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
-     *         delete, pending or immediate, replaces the pending create.</td> </tr>
-     *         <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
-     *         create is added to the pending create.<br/> <b>Important:</b><br/>If
-     *         the new create request is <b>Apply Immediately - Yes</b>, all creates
-     *         are performed immediately. If the new create request is <b>Apply
-     *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     *         requests upon pending requests</b> <ul> <li>Scenario-1 <ul>
+     *         <li>Pending Action: Delete</li> <li>New Request: Delete</li>
+     *         <li>Result: The new delete, pending or immediate, replaces the pending
+     *         delete.</li> </ul></li> <li>Scenario-2 <ul> <li>Pending Action:
+     *         Delete</li> <li>New Request: Create</li> <li>Result: The new create,
+     *         pending or immediate, replaces the pending delete.</li> </ul></li>
+     *         <li>Scenario-3 <ul> <li>Pending Action: Create</li> <li>New Request:
+     *         Delete</li> <li>Result: The new delete, pending or immediate, replaces
+     *         the pending create.</li> </ul></li> <li>Scenario-4 <ul> <li>Pending
+     *         Action: Create</li> <li>New Request: Create</li> <li>Result: The new
+     *         create is added to the pending create. <b>Important:</b><br/>If the
+     *         new create request is <b>Apply Immediately - Yes</b>, all creates are
+     *         performed immediately.<br/> If the new create request is <b>Apply
+     *         Immediately - No</b>, all creates are pending.</li> </ul></li> </ul>
      *         <p>Example:
      *         <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      *
@@ -1198,19 +1219,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
-     * requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     * <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
-     * <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
-     * delete, pending or immediate, replaces the pending delete.</td> </tr>
-     * <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
-     * create, pending or immediate, replaces the pending delete.</td> </tr>
-     * <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
-     * delete, pending or immediate, replaces the pending create.</td> </tr>
-     * <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
-     * create is added to the pending create.<br/> <b>Important:</b><br/>If
-     * the new create request is <b>Apply Immediately - Yes</b>, all creates
-     * are performed immediately. If the new create request is <b>Apply
-     * Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     * requests upon pending requests</b> <ul> <li>Scenario-1 <ul>
+     * <li>Pending Action: Delete</li> <li>New Request: Delete</li>
+     * <li>Result: The new delete, pending or immediate, replaces the pending
+     * delete.</li> </ul></li> <li>Scenario-2 <ul> <li>Pending Action:
+     * Delete</li> <li>New Request: Create</li> <li>Result: The new create,
+     * pending or immediate, replaces the pending delete.</li> </ul></li>
+     * <li>Scenario-3 <ul> <li>Pending Action: Create</li> <li>New Request:
+     * Delete</li> <li>Result: The new delete, pending or immediate, replaces
+     * the pending create.</li> </ul></li> <li>Scenario-4 <ul> <li>Pending
+     * Action: Create</li> <li>New Request: Create</li> <li>Result: The new
+     * create is added to the pending create. <b>Important:</b><br/>If the
+     * new create request is <b>Apply Immediately - Yes</b>, all creates are
+     * performed immediately.<br/> If the new create request is <b>Apply
+     * Immediately - No</b>, all creates are pending.</li> </ul></li> </ul>
      * <p>Example:
      * <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      * <p>
@@ -1243,19 +1265,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      *         Considerations</b> section of <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      *         Node Considerations for Memcached</a>. <p><b>Impact of new add/remove
-     *         requests upon pending requests</b> <table> <tr> <th>Scenarios</th>
-     *         <th>Pending action</th> <th>New Request</th> <th>Results</th> </tr>
-     *         <tr> <td>Scenario-1</td> <td>Delete</td> <td>Delete</td> <td>The new
-     *         delete, pending or immediate, replaces the pending delete.</td> </tr>
-     *         <tr> <td>Scenario-2</td> <td>Delete</td> <td>Create</td> <td>The new
-     *         create, pending or immediate, replaces the pending delete.</td> </tr>
-     *         <tr> <td>Scenario-3</td> <td>Create</td> <td>Delete</td> <td>The new
-     *         delete, pending or immediate, replaces the pending create.</td> </tr>
-     *         <tr> <td>Scenario-4</td> <td>Create</td> <td>Create</td> <td>The new
-     *         create is added to the pending create.<br/> <b>Important:</b><br/>If
-     *         the new create request is <b>Apply Immediately - Yes</b>, all creates
-     *         are performed immediately. If the new create request is <b>Apply
-     *         Immediately - No</b>, all creates are pending.</td> </tr> </table>
+     *         requests upon pending requests</b> <ul> <li>Scenario-1 <ul>
+     *         <li>Pending Action: Delete</li> <li>New Request: Delete</li>
+     *         <li>Result: The new delete, pending or immediate, replaces the pending
+     *         delete.</li> </ul></li> <li>Scenario-2 <ul> <li>Pending Action:
+     *         Delete</li> <li>New Request: Create</li> <li>Result: The new create,
+     *         pending or immediate, replaces the pending delete.</li> </ul></li>
+     *         <li>Scenario-3 <ul> <li>Pending Action: Create</li> <li>New Request:
+     *         Delete</li> <li>Result: The new delete, pending or immediate, replaces
+     *         the pending create.</li> </ul></li> <li>Scenario-4 <ul> <li>Pending
+     *         Action: Create</li> <li>New Request: Create</li> <li>Result: The new
+     *         create is added to the pending create. <b>Important:</b><br/>If the
+     *         new create request is <b>Apply Immediately - Yes</b>, all creates are
+     *         performed immediately.<br/> If the new create request is <b>Apply
+     *         Immediately - No</b>, all creates are pending.</li> </ul></li> </ul>
      *         <p>Example:
      *         <code>NewAvailabilityZones.member.1=us-west-2a&NewAvailabilityZones.member.2=us-west-2b&NewAvailabilityZones.member.3=us-west-2c</code>
      *
@@ -1822,8 +1845,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
 
     /**
      * The upgraded version of the cache engine to be run on the cache nodes.
+     * <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing cache cluster and create it anew with the
+     * earlier engine version.
      *
      * @return The upgraded version of the cache engine to be run on the cache nodes.
+     *         <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     *         a Cache Engine and Version</a>), but you cannot downgrade to an
+     *         earlier engine version. If you want to use an earlier engine version,
+     *         you must delete the existing cache cluster and create it anew with the
+     *         earlier engine version.
      */
     public String getEngineVersion() {
         return engineVersion;
@@ -1831,8 +1866,20 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The upgraded version of the cache engine to be run on the cache nodes.
+     * <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing cache cluster and create it anew with the
+     * earlier engine version.
      *
      * @param engineVersion The upgraded version of the cache engine to be run on the cache nodes.
+     *         <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     *         a Cache Engine and Version</a>), but you cannot downgrade to an
+     *         earlier engine version. If you want to use an earlier engine version,
+     *         you must delete the existing cache cluster and create it anew with the
+     *         earlier engine version.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -1840,10 +1887,22 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The upgraded version of the cache engine to be run on the cache nodes.
+     * <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an
+     * earlier engine version. If you want to use an earlier engine version,
+     * you must delete the existing cache cluster and create it anew with the
+     * earlier engine version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The upgraded version of the cache engine to be run on the cache nodes.
+     *         <p><b>Important:</b> You can upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     *         a Cache Engine and Version</a>), but you cannot downgrade to an
+     *         earlier engine version. If you want to use an earlier engine version,
+     *         you must delete the existing cache cluster and create it anew with the
+     *         earlier engine version.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1998,6 +2057,57 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * A valid cache node type that you want to scale this cache cluster to.
+     * The value of this parameter must be one of the
+     * <i>ScaleUpModifications</i> values returned by the
+     * <code>ListAllowedCacheNodeTypeModification</code> action.
+     *
+     * @return A valid cache node type that you want to scale this cache cluster to.
+     *         The value of this parameter must be one of the
+     *         <i>ScaleUpModifications</i> values returned by the
+     *         <code>ListAllowedCacheNodeTypeModification</code> action.
+     */
+    public String getCacheNodeType() {
+        return cacheNodeType;
+    }
+    
+    /**
+     * A valid cache node type that you want to scale this cache cluster to.
+     * The value of this parameter must be one of the
+     * <i>ScaleUpModifications</i> values returned by the
+     * <code>ListAllowedCacheNodeTypeModification</code> action.
+     *
+     * @param cacheNodeType A valid cache node type that you want to scale this cache cluster to.
+     *         The value of this parameter must be one of the
+     *         <i>ScaleUpModifications</i> values returned by the
+     *         <code>ListAllowedCacheNodeTypeModification</code> action.
+     */
+    public void setCacheNodeType(String cacheNodeType) {
+        this.cacheNodeType = cacheNodeType;
+    }
+    
+    /**
+     * A valid cache node type that you want to scale this cache cluster to.
+     * The value of this parameter must be one of the
+     * <i>ScaleUpModifications</i> values returned by the
+     * <code>ListAllowedCacheNodeTypeModification</code> action.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cacheNodeType A valid cache node type that you want to scale this cache cluster to.
+     *         The value of this parameter must be one of the
+     *         <i>ScaleUpModifications</i> values returned by the
+     *         <code>ListAllowedCacheNodeTypeModification</code> action.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyCacheClusterRequest withCacheNodeType(String cacheNodeType) {
+        this.cacheNodeType = cacheNodeType;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -2024,7 +2134,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
         if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
         if (getSnapshotRetentionLimit() != null) sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
-        if (getSnapshotWindow() != null) sb.append("SnapshotWindow: " + getSnapshotWindow() );
+        if (getSnapshotWindow() != null) sb.append("SnapshotWindow: " + getSnapshotWindow() + ",");
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() );
         sb.append("}");
         return sb.toString();
     }
@@ -2050,6 +2161,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode()); 
         return hashCode;
     }
     
@@ -2093,6 +2205,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
         if (other.getSnapshotRetentionLimit() != null && other.getSnapshotRetentionLimit().equals(this.getSnapshotRetentionLimit()) == false) return false; 
         if (other.getSnapshotWindow() == null ^ this.getSnapshotWindow() == null) return false;
         if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false) return false; 
+        if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null) return false;
+        if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false) return false; 
         return true;
     }
     

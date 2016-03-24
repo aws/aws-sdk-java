@@ -79,8 +79,7 @@ public class CacheCluster implements Serializable, Cloneable {
     private String engine;
 
     /**
-     * The version of the cache engine version that is used in this cache
-     * cluster.
+     * The version of the cache engine that is used in this cache cluster.
      */
     private String engineVersion;
 
@@ -538,35 +537,29 @@ public class CacheCluster implements Serializable, Cloneable {
     }
 
     /**
-     * The version of the cache engine version that is used in this cache
-     * cluster.
+     * The version of the cache engine that is used in this cache cluster.
      *
-     * @return The version of the cache engine version that is used in this cache
-     *         cluster.
+     * @return The version of the cache engine that is used in this cache cluster.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * The version of the cache engine version that is used in this cache
-     * cluster.
+     * The version of the cache engine that is used in this cache cluster.
      *
-     * @param engineVersion The version of the cache engine version that is used in this cache
-     *         cluster.
+     * @param engineVersion The version of the cache engine that is used in this cache cluster.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * The version of the cache engine version that is used in this cache
-     * cluster.
+     * The version of the cache engine that is used in this cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The version of the cache engine version that is used in this cache
-     *         cluster.
+     * @param engineVersion The version of the cache engine that is used in this cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

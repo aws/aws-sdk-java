@@ -28,6 +28,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.ec2.model.CopySnapshotRequest;
+import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.StringUtils;
 
@@ -66,8 +67,8 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
             URI endPointDestination = request.getEndpoint();
             String destinationRegion = originalCopySnapshotRequest
                     .getDestinationRegion() != null ? originalCopySnapshotRequest
-                    .getDestinationRegion() : RegionUtils.getRegionByEndpoint(
-                    endPointDestination.getHost()).toString();
+                    .getDestinationRegion() : AwsHostNameUtils
+                    .parseRegionName(endPointDestination.getHost(), null);
 
             URI endPointSource = createEndpoint(sourceRegion, serviceName);
 

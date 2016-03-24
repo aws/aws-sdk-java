@@ -201,6 +201,10 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     dBInstance.setCACertificateIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("DomainMemberships/DomainMembership", targetDepth)) {
+                    dBInstance.getDomainMemberships().add(DomainMembershipStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("CopyTagsToSnapshot", targetDepth)) {
                     dBInstance.setCopyTagsToSnapshot(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

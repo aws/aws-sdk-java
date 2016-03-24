@@ -442,6 +442,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     private String kmsKeyId;
 
     /**
+     * Specify the Active Directory Domain to create the instance in.
+     */
+    private String domain;
+
+    /**
      * True to copy all tags from the DB instance to snapshots of the DB
      * instance; otherwise false. The default is false.
      */
@@ -468,6 +473,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      * you must supply a <code>MonitoringRoleArn</code> value.
      */
     private String monitoringRoleArn;
+
+    /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     */
+    private String domainIAMRoleName;
 
     /**
      * A value that specifies the order in which an Aurora Replica is
@@ -3327,6 +3338,39 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * Specify the Active Directory Domain to create the instance in.
+     *
+     * @return Specify the Active Directory Domain to create the instance in.
+     */
+    public String getDomain() {
+        return domain;
+    }
+    
+    /**
+     * Specify the Active Directory Domain to create the instance in.
+     *
+     * @param domain Specify the Active Directory Domain to create the instance in.
+     */
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+    
+    /**
+     * Specify the Active Directory Domain to create the instance in.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param domain Specify the Active Directory Domain to create the instance in.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
      * True to copy all tags from the DB instance to snapshots of the DB
      * instance; otherwise false. The default is false.
      *
@@ -3515,6 +3559,45 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     *
+     * @return Specify the name of the IAM role to be used when making API calls to
+     *         the Directory Service.
+     */
+    public String getDomainIAMRoleName() {
+        return domainIAMRoleName;
+    }
+    
+    /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     *
+     * @param domainIAMRoleName Specify the name of the IAM role to be used when making API calls to
+     *         the Directory Service.
+     */
+    public void setDomainIAMRoleName(String domainIAMRoleName) {
+        this.domainIAMRoleName = domainIAMRoleName;
+    }
+    
+    /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param domainIAMRoleName Specify the name of the IAM role to be used when making API calls to
+     *         the Directory Service.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateDBInstanceRequest withDomainIAMRoleName(String domainIAMRoleName) {
+        this.domainIAMRoleName = domainIAMRoleName;
+        return this;
+    }
+
+    /**
      * A value that specifies the order in which an Aurora Replica is
      * promoted to the primary instance after a failure of the existing
      * primary instance. For more information, see <a
@@ -3620,9 +3703,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() + ",");
         if (isStorageEncrypted() != null) sb.append("StorageEncrypted: " + isStorageEncrypted() + ",");
         if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
         if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() + ",");
         if (getMonitoringInterval() != null) sb.append("MonitoringInterval: " + getMonitoringInterval() + ",");
         if (getMonitoringRoleArn() != null) sb.append("MonitoringRoleArn: " + getMonitoringRoleArn() + ",");
+        if (getDomainIAMRoleName() != null) sb.append("DomainIAMRoleName: " + getDomainIAMRoleName() + ",");
         if (getPromotionTier() != null) sb.append("PromotionTier: " + getPromotionTier() );
         sb.append("}");
         return sb.toString();
@@ -3664,9 +3749,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
         hashCode = prime * hashCode + ((isStorageEncrypted() == null) ? 0 : isStorageEncrypted().hashCode()); 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode()); 
         hashCode = prime * hashCode + ((isCopyTagsToSnapshot() == null) ? 0 : isCopyTagsToSnapshot().hashCode()); 
         hashCode = prime * hashCode + ((getMonitoringInterval() == null) ? 0 : getMonitoringInterval().hashCode()); 
         hashCode = prime * hashCode + ((getMonitoringRoleArn() == null) ? 0 : getMonitoringRoleArn().hashCode()); 
+        hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode()); 
         hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode()); 
         return hashCode;
     }
@@ -3741,12 +3828,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         if (other.isStorageEncrypted() != null && other.isStorageEncrypted().equals(this.isStorageEncrypted()) == false) return false; 
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
+        if (other.getDomain() == null ^ this.getDomain() == null) return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false) return false; 
         if (other.isCopyTagsToSnapshot() == null ^ this.isCopyTagsToSnapshot() == null) return false;
         if (other.isCopyTagsToSnapshot() != null && other.isCopyTagsToSnapshot().equals(this.isCopyTagsToSnapshot()) == false) return false; 
         if (other.getMonitoringInterval() == null ^ this.getMonitoringInterval() == null) return false;
         if (other.getMonitoringInterval() != null && other.getMonitoringInterval().equals(this.getMonitoringInterval()) == false) return false; 
         if (other.getMonitoringRoleArn() == null ^ this.getMonitoringRoleArn() == null) return false;
         if (other.getMonitoringRoleArn() != null && other.getMonitoringRoleArn().equals(this.getMonitoringRoleArn()) == false) return false; 
+        if (other.getDomainIAMRoleName() == null ^ this.getDomainIAMRoleName() == null) return false;
+        if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false) return false; 
         if (other.getPromotionTier() == null ^ this.getPromotionTier() == null) return false;
         if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false) return false; 
         return true;

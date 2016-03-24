@@ -123,6 +123,9 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         if (modifyDBInstanceRequest.getCACertificateIdentifier() != null) {
             request.addParameter("CACertificateIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getCACertificateIdentifier()));
         }
+        if (modifyDBInstanceRequest.getDomain() != null) {
+            request.addParameter("Domain", StringUtils.fromString(modifyDBInstanceRequest.getDomain()));
+        }
         if (modifyDBInstanceRequest.isCopyTagsToSnapshot() != null) {
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(modifyDBInstanceRequest.isCopyTagsToSnapshot()));
         }
@@ -137,6 +140,9 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         }
         if (modifyDBInstanceRequest.getMonitoringRoleArn() != null) {
             request.addParameter("MonitoringRoleArn", StringUtils.fromString(modifyDBInstanceRequest.getMonitoringRoleArn()));
+        }
+        if (modifyDBInstanceRequest.getDomainIAMRoleName() != null) {
+            request.addParameter("DomainIAMRoleName", StringUtils.fromString(modifyDBInstanceRequest.getDomainIAMRoleName()));
         }
         if (modifyDBInstanceRequest.getPromotionTier() != null) {
             request.addParameter("PromotionTier", StringUtils.fromInteger(modifyDBInstanceRequest.getPromotionTier()));

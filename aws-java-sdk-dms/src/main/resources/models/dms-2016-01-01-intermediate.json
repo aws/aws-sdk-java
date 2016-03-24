@@ -3761,8 +3761,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3960,8 +3960,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4091,8 +4091,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4233,8 +4233,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4416,8 +4416,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4534,8 +4534,8 @@
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4733,8 +4733,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4852,8 +4852,8 @@
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5399,8 +5399,8 @@
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5915,8 +5915,8 @@
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6151,8 +6151,8 @@
           "simpleType" : "SupportedEndpointType",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<SupportedEndpointType>",
-          "templateImplType" : "java.util.ArrayList<SupportedEndpointType>"
+          "templateImplType" : "java.util.ArrayList<SupportedEndpointType>",
+          "templateType" : "java.util.List<SupportedEndpointType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6345,8 +6345,8 @@
             "simpleType" : "SupportedEndpointType",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<SupportedEndpointType>",
-            "templateImplType" : "java.util.ArrayList<SupportedEndpointType>"
+            "templateImplType" : "java.util.ArrayList<SupportedEndpointType>",
+            "templateType" : "java.util.List<SupportedEndpointType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6476,8 +6476,8 @@
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6617,8 +6617,8 @@
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6748,8 +6748,8 @@
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Filter>",
-          "templateImplType" : "java.util.ArrayList<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>",
+          "templateType" : "java.util.List<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6997,8 +6997,8 @@
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Filter>",
-            "templateImplType" : "java.util.ArrayList<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>",
+            "templateType" : "java.util.List<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7802,8 +7802,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7948,8 +7948,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9477,8 +9477,8 @@
           "simpleType" : "Subnet",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Subnet>",
-          "templateImplType" : "java.util.ArrayList<Subnet>"
+          "templateImplType" : "java.util.ArrayList<Subnet>",
+          "templateType" : "java.util.List<Subnet>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9618,8 +9618,8 @@
             "simpleType" : "Subnet",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Subnet>",
-            "templateImplType" : "java.util.ArrayList<Subnet>"
+            "templateImplType" : "java.util.ArrayList<Subnet>",
+            "templateType" : "java.util.List<Subnet>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11361,8 +11361,8 @@
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Filter>",
-          "templateImplType" : "java.util.ArrayList<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>",
+          "templateType" : "java.util.List<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11610,8 +11610,8 @@
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Filter>",
-            "templateImplType" : "java.util.ArrayList<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>",
+            "templateType" : "java.util.List<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12263,8 +12263,8 @@
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12989,8 +12989,8 @@
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13256,8 +13256,8 @@
           "simpleType" : "Connection",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Connection>",
-          "templateImplType" : "java.util.ArrayList<Connection>"
+          "templateImplType" : "java.util.ArrayList<Connection>",
+          "templateType" : "java.util.List<Connection>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13397,8 +13397,8 @@
             "simpleType" : "Connection",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Connection>",
-            "templateImplType" : "java.util.ArrayList<Connection>"
+            "templateImplType" : "java.util.ArrayList<Connection>",
+            "templateType" : "java.util.List<Connection>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14075,8 +14075,8 @@
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Filter>",
-          "templateImplType" : "java.util.ArrayList<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>",
+          "templateType" : "java.util.List<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14324,8 +14324,8 @@
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Filter>",
-            "templateImplType" : "java.util.ArrayList<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>",
+            "templateType" : "java.util.List<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15904,8 +15904,8 @@
           "simpleType" : "ReplicationInstance",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<ReplicationInstance>",
-          "templateImplType" : "java.util.ArrayList<ReplicationInstance>"
+          "templateImplType" : "java.util.ArrayList<ReplicationInstance>",
+          "templateType" : "java.util.List<ReplicationInstance>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16045,8 +16045,8 @@
             "simpleType" : "ReplicationInstance",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<ReplicationInstance>",
-            "templateImplType" : "java.util.ArrayList<ReplicationInstance>"
+            "templateImplType" : "java.util.ArrayList<ReplicationInstance>",
+            "templateType" : "java.util.List<ReplicationInstance>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16870,8 +16870,8 @@
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Filter>",
-          "templateImplType" : "java.util.ArrayList<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>",
+          "templateType" : "java.util.List<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17119,8 +17119,8 @@
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Filter>",
-            "templateImplType" : "java.util.ArrayList<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>",
+            "templateType" : "java.util.List<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19390,8 +19390,8 @@
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Filter>",
-          "templateImplType" : "java.util.ArrayList<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>",
+          "templateType" : "java.util.List<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19639,8 +19639,8 @@
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Filter>",
-            "templateImplType" : "java.util.ArrayList<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>",
+            "templateType" : "java.util.List<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19928,8 +19928,8 @@
           "simpleType" : "ReplicationTask",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<ReplicationTask>",
-          "templateImplType" : "java.util.ArrayList<ReplicationTask>"
+          "templateImplType" : "java.util.ArrayList<ReplicationTask>",
+          "templateType" : "java.util.List<ReplicationTask>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20122,8 +20122,8 @@
             "simpleType" : "ReplicationTask",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<ReplicationTask>",
-            "templateImplType" : "java.util.ArrayList<ReplicationTask>"
+            "templateImplType" : "java.util.ArrayList<ReplicationTask>",
+            "templateType" : "java.util.List<ReplicationTask>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22282,8 +22282,8 @@
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22851,8 +22851,8 @@
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24282,8 +24282,8 @@
           "simpleType" : "AccountQuota",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<AccountQuota>",
-          "templateImplType" : "java.util.ArrayList<AccountQuota>"
+          "templateImplType" : "java.util.ArrayList<AccountQuota>",
+          "templateType" : "java.util.List<AccountQuota>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24423,8 +24423,8 @@
             "simpleType" : "AccountQuota",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<AccountQuota>",
-            "templateImplType" : "java.util.ArrayList<AccountQuota>"
+            "templateImplType" : "java.util.ArrayList<AccountQuota>",
+            "templateType" : "java.util.List<AccountQuota>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24606,8 +24606,8 @@
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24804,8 +24804,8 @@
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25021,8 +25021,8 @@
           "simpleType" : "Endpoint",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Endpoint>",
-          "templateImplType" : "java.util.ArrayList<Endpoint>"
+          "templateImplType" : "java.util.ArrayList<Endpoint>",
+          "templateType" : "java.util.List<Endpoint>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25162,8 +25162,8 @@
             "simpleType" : "Endpoint",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Endpoint>",
-            "templateImplType" : "java.util.ArrayList<Endpoint>"
+            "templateImplType" : "java.util.ArrayList<Endpoint>",
+            "templateType" : "java.util.List<Endpoint>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26466,8 +26466,8 @@
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<Filter>",
-          "templateImplType" : "java.util.ArrayList<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>",
+          "templateType" : "java.util.List<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26715,8 +26715,8 @@
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<Filter>",
-            "templateImplType" : "java.util.ArrayList<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>",
+            "templateType" : "java.util.List<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27546,8 +27546,8 @@
           "simpleType" : "OrderableReplicationInstance",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<OrderableReplicationInstance>",
-          "templateImplType" : "java.util.ArrayList<OrderableReplicationInstance>"
+          "templateImplType" : "java.util.ArrayList<OrderableReplicationInstance>",
+          "templateType" : "java.util.List<OrderableReplicationInstance>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27792,8 +27792,8 @@
             "simpleType" : "OrderableReplicationInstance",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<OrderableReplicationInstance>",
-            "templateImplType" : "java.util.ArrayList<OrderableReplicationInstance>"
+            "templateImplType" : "java.util.ArrayList<OrderableReplicationInstance>",
+            "templateType" : "java.util.List<OrderableReplicationInstance>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28094,8 +28094,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28183,8 +28183,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30605,8 +30605,8 @@
           "simpleType" : "ReplicationSubnetGroup",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<ReplicationSubnetGroup>",
-          "templateImplType" : "java.util.ArrayList<ReplicationSubnetGroup>"
+          "templateImplType" : "java.util.ArrayList<ReplicationSubnetGroup>",
+          "templateType" : "java.util.List<ReplicationSubnetGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30746,8 +30746,8 @@
             "simpleType" : "ReplicationSubnetGroup",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<ReplicationSubnetGroup>",
-            "templateImplType" : "java.util.ArrayList<ReplicationSubnetGroup>"
+            "templateImplType" : "java.util.ArrayList<ReplicationSubnetGroup>",
+            "templateType" : "java.util.List<ReplicationSubnetGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31332,8 +31332,8 @@
           "simpleType" : "TableStatistics",
           "simple" : false,
           "map" : false,
-          "templateType" : "java.util.List<TableStatistics>",
-          "templateImplType" : "java.util.ArrayList<TableStatistics>"
+          "templateImplType" : "java.util.ArrayList<TableStatistics>",
+          "templateType" : "java.util.List<TableStatistics>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31578,8 +31578,8 @@
             "simpleType" : "TableStatistics",
             "simple" : false,
             "map" : false,
-            "templateType" : "java.util.List<TableStatistics>",
-            "templateImplType" : "java.util.ArrayList<TableStatistics>"
+            "templateImplType" : "java.util.ArrayList<TableStatistics>",
+            "templateType" : "java.util.List<TableStatistics>"
           },
           "mapModel" : null,
           "enumType" : null,

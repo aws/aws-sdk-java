@@ -281,6 +281,12 @@ public class DBInstance implements Serializable, Cloneable {
     private String cACertificateIdentifier;
 
     /**
+     * The Active Directory Domain membership records associated with the DB
+     * instance.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DomainMembership> domainMemberships;
+
+    /**
      * Specifies whether tags are copied from the DB instance to snapshots of
      * the DB instance.
      */
@@ -2213,6 +2219,87 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * The Active Directory Domain membership records associated with the DB
+     * instance.
+     *
+     * @return The Active Directory Domain membership records associated with the DB
+     *         instance.
+     */
+    public java.util.List<DomainMembership> getDomainMemberships() {
+        if (domainMemberships == null) {
+              domainMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<DomainMembership>();
+              domainMemberships.setAutoConstruct(true);
+        }
+        return domainMemberships;
+    }
+    
+    /**
+     * The Active Directory Domain membership records associated with the DB
+     * instance.
+     *
+     * @param domainMemberships The Active Directory Domain membership records associated with the DB
+     *         instance.
+     */
+    public void setDomainMemberships(java.util.Collection<DomainMembership> domainMemberships) {
+        if (domainMemberships == null) {
+            this.domainMemberships = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<DomainMembership> domainMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DomainMembership>(domainMemberships.size());
+        domainMembershipsCopy.addAll(domainMemberships);
+        this.domainMemberships = domainMembershipsCopy;
+    }
+    
+    /**
+     * The Active Directory Domain membership records associated with the DB
+     * instance.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setDomainMemberships(java.util.Collection)} or
+     * {@link #withDomainMemberships(java.util.Collection)} if you want to
+     * override the existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param domainMemberships The Active Directory Domain membership records associated with the DB
+     *         instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withDomainMemberships(DomainMembership... domainMemberships) {
+        if (getDomainMemberships() == null) setDomainMemberships(new java.util.ArrayList<DomainMembership>(domainMemberships.length));
+        for (DomainMembership value : domainMemberships) {
+            getDomainMemberships().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The Active Directory Domain membership records associated with the DB
+     * instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param domainMemberships The Active Directory Domain membership records associated with the DB
+     *         instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public DBInstance withDomainMemberships(java.util.Collection<DomainMembership> domainMemberships) {
+        if (domainMemberships == null) {
+            this.domainMemberships = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<DomainMembership> domainMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DomainMembership>(domainMemberships.size());
+            domainMembershipsCopy.addAll(domainMemberships);
+            this.domainMemberships = domainMembershipsCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Specifies whether tags are copied from the DB instance to snapshots of
      * the DB instance.
      *
@@ -2493,6 +2580,7 @@ public class DBInstance implements Serializable, Cloneable {
         if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getDbiResourceId() != null) sb.append("DbiResourceId: " + getDbiResourceId() + ",");
         if (getCACertificateIdentifier() != null) sb.append("CACertificateIdentifier: " + getCACertificateIdentifier() + ",");
+        if (getDomainMemberships() != null) sb.append("DomainMemberships: " + getDomainMemberships() + ",");
         if (isCopyTagsToSnapshot() != null) sb.append("CopyTagsToSnapshot: " + isCopyTagsToSnapshot() + ",");
         if (getMonitoringInterval() != null) sb.append("MonitoringInterval: " + getMonitoringInterval() + ",");
         if (getEnhancedMonitoringResourceArn() != null) sb.append("EnhancedMonitoringResourceArn: " + getEnhancedMonitoringResourceArn() + ",");
@@ -2546,6 +2634,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode()); 
         hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getDomainMemberships() == null) ? 0 : getDomainMemberships().hashCode()); 
         hashCode = prime * hashCode + ((isCopyTagsToSnapshot() == null) ? 0 : isCopyTagsToSnapshot().hashCode()); 
         hashCode = prime * hashCode + ((getMonitoringInterval() == null) ? 0 : getMonitoringInterval().hashCode()); 
         hashCode = prime * hashCode + ((getEnhancedMonitoringResourceArn() == null) ? 0 : getEnhancedMonitoringResourceArn().hashCode()); 
@@ -2640,6 +2729,8 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getDbiResourceId() != null && other.getDbiResourceId().equals(this.getDbiResourceId()) == false) return false; 
         if (other.getCACertificateIdentifier() == null ^ this.getCACertificateIdentifier() == null) return false;
         if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false) return false; 
+        if (other.getDomainMemberships() == null ^ this.getDomainMemberships() == null) return false;
+        if (other.getDomainMemberships() != null && other.getDomainMemberships().equals(this.getDomainMemberships()) == false) return false; 
         if (other.isCopyTagsToSnapshot() == null ^ this.isCopyTagsToSnapshot() == null) return false;
         if (other.isCopyTagsToSnapshot() != null && other.isCopyTagsToSnapshot().equals(this.isCopyTagsToSnapshot()) == false) return false; 
         if (other.getMonitoringInterval() == null ^ this.getMonitoringInterval() == null) return false;

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A JSON Object containing a list of
+ * A JSON object containing a list of
  * <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>.
  * </p>
  */

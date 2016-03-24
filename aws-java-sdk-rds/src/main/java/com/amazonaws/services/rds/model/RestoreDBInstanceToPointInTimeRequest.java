@@ -220,6 +220,17 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     private String tdeCredentialPassword;
 
     /**
+     * Specify the Active Directory Domain to restore the instance in.
+     */
+    private String domain;
+
+    /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     */
+    private String domainIAMRoleName;
+
+    /**
      * Default constructor for a new RestoreDBInstanceToPointInTimeRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -1502,6 +1513,78 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     }
 
     /**
+     * Specify the Active Directory Domain to restore the instance in.
+     *
+     * @return Specify the Active Directory Domain to restore the instance in.
+     */
+    public String getDomain() {
+        return domain;
+    }
+    
+    /**
+     * Specify the Active Directory Domain to restore the instance in.
+     *
+     * @param domain Specify the Active Directory Domain to restore the instance in.
+     */
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+    
+    /**
+     * Specify the Active Directory Domain to restore the instance in.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param domain Specify the Active Directory Domain to restore the instance in.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreDBInstanceToPointInTimeRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     *
+     * @return Specify the name of the IAM role to be used when making API calls to
+     *         the Directory Service.
+     */
+    public String getDomainIAMRoleName() {
+        return domainIAMRoleName;
+    }
+    
+    /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     *
+     * @param domainIAMRoleName Specify the name of the IAM role to be used when making API calls to
+     *         the Directory Service.
+     */
+    public void setDomainIAMRoleName(String domainIAMRoleName) {
+        this.domainIAMRoleName = domainIAMRoleName;
+    }
+    
+    /**
+     * Specify the name of the IAM role to be used when making API calls to
+     * the Directory Service.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param domainIAMRoleName Specify the name of the IAM role to be used when making API calls to
+     *         the Directory Service.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreDBInstanceToPointInTimeRequest withDomainIAMRoleName(String domainIAMRoleName) {
+        this.domainIAMRoleName = domainIAMRoleName;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1533,7 +1616,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getStorageType() != null) sb.append("StorageType: " + getStorageType() + ",");
         if (getTdeCredentialArn() != null) sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
-        if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() );
+        if (getTdeCredentialPassword() != null) sb.append("TdeCredentialPassword: " + getTdeCredentialPassword() + ",");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
+        if (getDomainIAMRoleName() != null) sb.append("DomainIAMRoleName: " + getDomainIAMRoleName() );
         sb.append("}");
         return sb.toString();
     }
@@ -1564,6 +1649,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialArn() == null) ? 0 : getTdeCredentialArn().hashCode()); 
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode()); 
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode()); 
+        hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode()); 
         return hashCode;
     }
     
@@ -1617,6 +1704,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         if (other.getTdeCredentialArn() != null && other.getTdeCredentialArn().equals(this.getTdeCredentialArn()) == false) return false; 
         if (other.getTdeCredentialPassword() == null ^ this.getTdeCredentialPassword() == null) return false;
         if (other.getTdeCredentialPassword() != null && other.getTdeCredentialPassword().equals(this.getTdeCredentialPassword()) == false) return false; 
+        if (other.getDomain() == null ^ this.getDomain() == null) return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false) return false; 
+        if (other.getDomainIAMRoleName() == null ^ this.getDomainIAMRoleName() == null) return false;
+        if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false) return false; 
         return true;
     }
     

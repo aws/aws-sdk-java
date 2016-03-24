@@ -118,6 +118,12 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
         if (restoreDBInstanceToPointInTimeRequest.getTdeCredentialPassword() != null) {
             request.addParameter("TdeCredentialPassword", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getTdeCredentialPassword()));
         }
+        if (restoreDBInstanceToPointInTimeRequest.getDomain() != null) {
+            request.addParameter("Domain", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDomain()));
+        }
+        if (restoreDBInstanceToPointInTimeRequest.getDomainIAMRoleName() != null) {
+            request.addParameter("DomainIAMRoleName", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDomainIAMRoleName()));
+        }
 
         return request;
     }

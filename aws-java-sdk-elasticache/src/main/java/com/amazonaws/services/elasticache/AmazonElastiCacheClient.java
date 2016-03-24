@@ -818,6 +818,65 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     
     /**
      * <p>
+     * The <code>ListAllowedNodeTypeModifications</code> action lists all
+     * available node types that you can scale your Redis cluster's or
+     * replication group's current node type up to.
+     * </p>
+     * <p>
+     * When you use the <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code> APIs to scale up your cluster or
+     * replication group, the value of the <i>CacheNodeType</i> parameter
+     * must be one of the node types returned by this action.
+     * </p>
+     *
+     * @param listAllowedNodeTypeModificationsRequest Container for the
+     *           necessary parameters to execute the ListAllowedNodeTypeModifications
+     *           service method on AmazonElastiCache.
+     * 
+     * @return The response from the ListAllowedNodeTypeModifications service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws CacheClusterNotFoundException
+     * @throws ReplicationGroupNotFoundException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListAllowedNodeTypeModificationsResult listAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest listAllowedNodeTypeModificationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listAllowedNodeTypeModificationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAllowedNodeTypeModificationsRequest> request = null;
+        Response<ListAllowedNodeTypeModificationsResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAllowedNodeTypeModificationsRequestMarshaller().marshall(super.beforeMarshalling(listAllowedNodeTypeModificationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new ListAllowedNodeTypeModificationsResultStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * The <i>AddTagsToResource</i> action adds up to 10 cost allocation
      * tags to the named resource. A <i>cost allocation tag</i> is a
      * key-value pair where the key and value are case-sensitive. Cost
@@ -2367,6 +2426,39 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      */
     public DescribeReservedCacheNodesResult describeReservedCacheNodes() throws AmazonServiceException, AmazonClientException {
         return describeReservedCacheNodes(new DescribeReservedCacheNodesRequest());
+    }
+    
+    /**
+     * <p>
+     * The <code>ListAllowedNodeTypeModifications</code> action lists all
+     * available node types that you can scale your Redis cluster's or
+     * replication group's current node type up to.
+     * </p>
+     * <p>
+     * When you use the <code>ModifyCacheCluster</code> or
+     * <code>ModifyReplicationGroup</code> APIs to scale up your cluster or
+     * replication group, the value of the <i>CacheNodeType</i> parameter
+     * must be one of the node types returned by this action.
+     * </p>
+     * 
+     * @return The response from the ListAllowedNodeTypeModifications service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws CacheClusterNotFoundException
+     * @throws ReplicationGroupNotFoundException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListAllowedNodeTypeModificationsResult listAllowedNodeTypeModifications() throws AmazonServiceException, AmazonClientException {
+        return listAllowedNodeTypeModifications(new ListAllowedNodeTypeModificationsRequest());
     }
     
     /**
