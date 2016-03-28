@@ -31,6 +31,7 @@ import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.S3ResponseMetadata;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.util.DateUtils;
+import org.apache.http.HttpHeaders;
 
 /**
  * Abstract HTTP response handler for Amazon S3 responses. Provides common
@@ -55,6 +56,7 @@ public abstract class AbstractS3ResponseHandler<T>
         ignoredHeaders.add(Headers.SERVER);
         ignoredHeaders.add(Headers.REQUEST_ID);
         ignoredHeaders.add(Headers.EXTENDED_REQUEST_ID);
+        ignoredHeaders.add(HttpHeaders.CONNECTION);
     }
 
     /**
