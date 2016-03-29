@@ -21,71 +21,38 @@ package com.amazonaws.services.sqs.model;
  */
 public enum QueueAttributeName {
 
-    Policy("Policy"),
-    VisibilityTimeout("VisibilityTimeout"),
-    MaximumMessageSize("MaximumMessageSize"),
-    MessageRetentionPeriod("MessageRetentionPeriod"),
-    ApproximateNumberOfMessages("ApproximateNumberOfMessages"),
-    ApproximateNumberOfMessagesNotVisible(
-            "ApproximateNumberOfMessagesNotVisible"),
-    CreatedTimestamp("CreatedTimestamp"),
-    LastModifiedTimestamp("LastModifiedTimestamp"),
-    QueueArn("QueueArn"),
-    ApproximateNumberOfMessagesDelayed("ApproximateNumberOfMessagesDelayed"),
-    DelaySeconds("DelaySeconds"),
-    ReceiveMessageWaitTimeSeconds("ReceiveMessageWaitTimeSeconds"),
-    RedrivePolicy("RedrivePolicy");
+	Policy,
+	VisibilityTimeout,
+	MaximumMessageSize,
+	MessageRetentionPeriod,
+	ApproximateNumberOfMessages,
+	ApproximateNumberOfMessagesNotVisible,
+	CreatedTimestamp,
+	LastModifiedTimestamp,
+	QueueArn,
+	ApproximateNumberOfMessagesDelayed,
+	DelaySeconds,
+	ReceiveMessageWaitTimeSeconds,
+	RedrivePolicy;
 
-    private String value;
+	/**
+	 * Use this in place of valueOf.
+	 *
+	 * @param value
+	 *        real value
+	 * @return QueueAttributeName corresponding to the value
+	 */
+	public static QueueAttributeName fromValue(final String value) {
+		if (value == null || "".equals(value)) {
+			throw new IllegalArgumentException("Value cannot be null or empty!");
+		}
 
-    private QueueAttributeName(String value) {
-        this.value = value;
-    }
+		for (final QueueAttributeName queueAttributeName : values()) {
+			if (queueAttributeName.name().equals(value)) {
+				return queueAttributeName;
+			}
+		}
 
-    @Override
-    public String toString() {
-        return this.value;
-    }
-
-    /**
-     * Use this in place of valueOf.
-     *
-     * @param value
-     *        real value
-     * @return QueueAttributeName corresponding to the value
-     */
-    public static QueueAttributeName fromValue(String value) {
-        if (value == null || "".equals(value)) {
-            throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("Policy".equals(value)) {
-            return Policy;
-        } else if ("VisibilityTimeout".equals(value)) {
-            return VisibilityTimeout;
-        } else if ("MaximumMessageSize".equals(value)) {
-            return MaximumMessageSize;
-        } else if ("MessageRetentionPeriod".equals(value)) {
-            return MessageRetentionPeriod;
-        } else if ("ApproximateNumberOfMessages".equals(value)) {
-            return ApproximateNumberOfMessages;
-        } else if ("ApproximateNumberOfMessagesNotVisible".equals(value)) {
-            return ApproximateNumberOfMessagesNotVisible;
-        } else if ("CreatedTimestamp".equals(value)) {
-            return CreatedTimestamp;
-        } else if ("LastModifiedTimestamp".equals(value)) {
-            return LastModifiedTimestamp;
-        } else if ("QueueArn".equals(value)) {
-            return QueueArn;
-        } else if ("ApproximateNumberOfMessagesDelayed".equals(value)) {
-            return ApproximateNumberOfMessagesDelayed;
-        } else if ("DelaySeconds".equals(value)) {
-            return DelaySeconds;
-        } else if ("ReceiveMessageWaitTimeSeconds".equals(value)) {
-            return ReceiveMessageWaitTimeSeconds;
-        } else if ("RedrivePolicy".equals(value)) {
-            return RedrivePolicy;
-        } else {
-            throw new IllegalArgumentException("Cannot create enum from "
-                    + value + " value!");
-        }
-    }
+		throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+	}
 }
