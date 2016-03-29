@@ -68,21 +68,21 @@ public class ListFindingsRequestMarshaller implements
 
             jsonGenerator.writeStartObject();
 
-            java.util.List<String> runArnsList = listFindingsRequest
-                    .getRunArns();
-            if (runArnsList != null) {
-                jsonGenerator.writeFieldName("runArns");
+            java.util.List<String> assessmentRunArnsList = listFindingsRequest
+                    .getAssessmentRunArns();
+            if (assessmentRunArnsList != null) {
+                jsonGenerator.writeFieldName("assessmentRunArns");
                 jsonGenerator.writeStartArray();
-                for (String runArnsListValue : runArnsList) {
-                    if (runArnsListValue != null) {
-                        jsonGenerator.writeValue(runArnsListValue);
+                for (String assessmentRunArnsListValue : assessmentRunArnsList) {
+                    if (assessmentRunArnsListValue != null) {
+                        jsonGenerator.writeValue(assessmentRunArnsListValue);
                     }
                 }
                 jsonGenerator.writeEndArray();
             }
             if (listFindingsRequest.getFilter() != null) {
                 jsonGenerator.writeFieldName("filter");
-                FindingsFilterJsonMarshaller.getInstance().marshall(
+                FindingFilterJsonMarshaller.getInstance().marshall(
                         listFindingsRequest.getFilter(), jsonGenerator);
             }
             if (listFindingsRequest.getNextToken() != null) {

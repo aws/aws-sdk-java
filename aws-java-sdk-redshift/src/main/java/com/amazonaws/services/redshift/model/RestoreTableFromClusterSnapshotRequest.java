@@ -62,6 +62,8 @@ public class RestoreTableFromClusterSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * The name of the source schema that contains the table to restore from.
+     * If you do not specify a <code>SourceSchemaName</code> value, the
+     * default is <code>public</code>.
      */
     private String sourceSchemaName;
 
@@ -204,8 +206,12 @@ public class RestoreTableFromClusterSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * The name of the source schema that contains the table to restore from.
+     * If you do not specify a <code>SourceSchemaName</code> value, the
+     * default is <code>public</code>.
      *
      * @return The name of the source schema that contains the table to restore from.
+     *         If you do not specify a <code>SourceSchemaName</code> value, the
+     *         default is <code>public</code>.
      */
     public String getSourceSchemaName() {
         return sourceSchemaName;
@@ -213,8 +219,12 @@ public class RestoreTableFromClusterSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the source schema that contains the table to restore from.
+     * If you do not specify a <code>SourceSchemaName</code> value, the
+     * default is <code>public</code>.
      *
      * @param sourceSchemaName The name of the source schema that contains the table to restore from.
+     *         If you do not specify a <code>SourceSchemaName</code> value, the
+     *         default is <code>public</code>.
      */
     public void setSourceSchemaName(String sourceSchemaName) {
         this.sourceSchemaName = sourceSchemaName;
@@ -222,10 +232,14 @@ public class RestoreTableFromClusterSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the source schema that contains the table to restore from.
+     * If you do not specify a <code>SourceSchemaName</code> value, the
+     * default is <code>public</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSchemaName The name of the source schema that contains the table to restore from.
+     *         If you do not specify a <code>SourceSchemaName</code> value, the
+     *         default is <code>public</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

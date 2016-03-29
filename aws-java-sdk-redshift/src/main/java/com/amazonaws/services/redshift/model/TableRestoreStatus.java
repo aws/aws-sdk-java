@@ -31,7 +31,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     /**
      * A value that describes the current state of the table restore request.
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED
@@ -41,8 +41,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     /**
      * A description of the status of the table restore request. Status
      * values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>,
-     * <code>IN_PROGRESS</code>.
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      */
     private String message;
 
@@ -143,14 +142,14 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     /**
      * A value that describes the current state of the table restore request.
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED
      *
      * @return A value that describes the current state of the table restore request.
      *         <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     *         <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      *
      * @see TableRestoreStatusType
      */
@@ -161,14 +160,14 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     /**
      * A value that describes the current state of the table restore request.
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED
      *
      * @param status A value that describes the current state of the table restore request.
      *         <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     *         <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      *
      * @see TableRestoreStatusType
      */
@@ -179,7 +178,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     /**
      * A value that describes the current state of the table restore request.
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -188,7 +187,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      *
      * @param status A value that describes the current state of the table restore request.
      *         <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     *         <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -203,14 +202,14 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     /**
      * A value that describes the current state of the table restore request.
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED
      *
      * @param status A value that describes the current state of the table restore request.
      *         <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     *         <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      *
      * @see TableRestoreStatusType
      */
@@ -221,7 +220,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     /**
      * A value that describes the current state of the table restore request.
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -230,7 +229,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      *
      * @param status A value that describes the current state of the table restore request.
      *         <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
+     *         <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -245,13 +244,11 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     /**
      * A description of the status of the table restore request. Status
      * values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>,
-     * <code>IN_PROGRESS</code>.
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      *
      * @return A description of the status of the table restore request. Status
      *         values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>CANCELLED</code>, <code>PENDING</code>,
-     *         <code>IN_PROGRESS</code>.
+     *         <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      */
     public String getMessage() {
         return message;
@@ -260,13 +257,11 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     /**
      * A description of the status of the table restore request. Status
      * values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>,
-     * <code>IN_PROGRESS</code>.
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      *
      * @param message A description of the status of the table restore request. Status
      *         values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>CANCELLED</code>, <code>PENDING</code>,
-     *         <code>IN_PROGRESS</code>.
+     *         <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      */
     public void setMessage(String message) {
         this.message = message;
@@ -275,15 +270,13 @@ public class TableRestoreStatus implements Serializable, Cloneable {
     /**
      * A description of the status of the table restore request. Status
      * values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>,
-     * <code>IN_PROGRESS</code>.
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message A description of the status of the table restore request. Status
      *         values include <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>CANCELLED</code>, <code>PENDING</code>,
-     *         <code>IN_PROGRESS</code>.
+     *         <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

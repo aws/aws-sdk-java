@@ -27,25 +27,25 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the assessment that you want to set tags to.
+     * The ARN of the assessment template that you want to set tags to.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * A collection of key and value pairs that you want to set to an
-     * assessment.
+     * A collection of key and value pairs that you want to set to the
+     * assessment template.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The ARN of the assessment that you want to set tags to.
+     * The ARN of the assessment template that you want to set tags to.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the assessment that you want to set tags to.
+     *        The ARN of the assessment template that you want to set tags to.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -54,10 +54,10 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the assessment that you want to set tags to.
+     * The ARN of the assessment template that you want to set tags to.
      * </p>
      * 
-     * @return The ARN of the assessment that you want to set tags to.
+     * @return The ARN of the assessment template that you want to set tags to.
      */
 
     public String getResourceArn() {
@@ -66,11 +66,11 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the assessment that you want to set tags to.
+     * The ARN of the assessment template that you want to set tags to.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the assessment that you want to set tags to.
+     *        The ARN of the assessment template that you want to set tags to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -82,12 +82,12 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A collection of key and value pairs that you want to set to an
-     * assessment.
+     * A collection of key and value pairs that you want to set to the
+     * assessment template.
      * </p>
      * 
-     * @return A collection of key and value pairs that you want to set to an
-     *         assessment.
+     * @return A collection of key and value pairs that you want to set to the
+     *         assessment template.
      */
 
     public java.util.List<Tag> getTags() {
@@ -96,13 +96,13 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A collection of key and value pairs that you want to set to an
-     * assessment.
+     * A collection of key and value pairs that you want to set to the
+     * assessment template.
      * </p>
      * 
      * @param tags
-     *        A collection of key and value pairs that you want to set to an
-     *        assessment.
+     *        A collection of key and value pairs that you want to set to the
+     *        assessment template.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -116,8 +116,8 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A collection of key and value pairs that you want to set to an
-     * assessment.
+     * A collection of key and value pairs that you want to set to the
+     * assessment template.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -127,8 +127,8 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
-     *        A collection of key and value pairs that you want to set to an
-     *        assessment.
+     *        A collection of key and value pairs that you want to set to the
+     *        assessment template.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -145,13 +145,13 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A collection of key and value pairs that you want to set to an
-     * assessment.
+     * A collection of key and value pairs that you want to set to the
+     * assessment template.
      * </p>
      * 
      * @param tags
-     *        A collection of key and value pairs that you want to set to an
-     *        assessment.
+     *        A collection of key and value pairs that you want to set to the
+     *        assessment template.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

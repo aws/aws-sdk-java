@@ -52,13 +52,27 @@ public class ResourceGroupJsonMarshaller {
         try {
             jsonGenerator.writeStartObject();
 
-            if (resourceGroup.getResourceGroupArn() != null) {
-                jsonGenerator.writeFieldName("resourceGroupArn").writeValue(
-                        resourceGroup.getResourceGroupArn());
+            if (resourceGroup.getArn() != null) {
+                jsonGenerator.writeFieldName("arn").writeValue(
+                        resourceGroup.getArn());
             }
-            if (resourceGroup.getResourceGroupTags() != null) {
-                jsonGenerator.writeFieldName("resourceGroupTags").writeValue(
-                        resourceGroup.getResourceGroupTags());
+
+            java.util.List<ResourceGroupTag> tagsList = resourceGroup.getTags();
+            if (tagsList != null) {
+                jsonGenerator.writeFieldName("tags");
+                jsonGenerator.writeStartArray();
+                for (ResourceGroupTag tagsListValue : tagsList) {
+                    if (tagsListValue != null) {
+
+                        ResourceGroupTagJsonMarshaller.getInstance().marshall(
+                                tagsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+            if (resourceGroup.getCreatedAt() != null) {
+                jsonGenerator.writeFieldName("createdAt").writeValue(
+                        resourceGroup.getCreatedAt());
             }
 
             jsonGenerator.writeEndObject();

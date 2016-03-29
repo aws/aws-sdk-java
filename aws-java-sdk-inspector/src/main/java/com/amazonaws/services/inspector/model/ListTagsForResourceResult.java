@@ -28,7 +28,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * A collection of key and value pairs.
      * </p>
      */
-    private java.util.List<Tag> tagList;
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -38,8 +38,8 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return A collection of key and value pairs.
      */
 
-    public java.util.List<Tag> getTagList() {
-        return tagList;
+    public java.util.List<Tag> getTags() {
+        return tags;
     }
 
     /**
@@ -47,17 +47,17 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * A collection of key and value pairs.
      * </p>
      * 
-     * @param tagList
+     * @param tags
      *        A collection of key and value pairs.
      */
 
-    public void setTagList(java.util.Collection<Tag> tagList) {
-        if (tagList == null) {
-            this.tagList = null;
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
             return;
         }
 
-        this.tagList = new java.util.ArrayList<Tag>(tagList);
+        this.tags = new java.util.ArrayList<Tag>(tags);
     }
 
     /**
@@ -66,23 +66,23 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagList(java.util.Collection)} or
-     * {@link #withTagList(java.util.Collection)} if you want to override the
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
-     * @param tagList
+     * @param tags
      *        A collection of key and value pairs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public ListTagsForResourceResult withTagList(Tag... tagList) {
-        if (this.tagList == null) {
-            setTagList(new java.util.ArrayList<Tag>(tagList.length));
+    public ListTagsForResourceResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
         }
-        for (Tag ele : tagList) {
-            this.tagList.add(ele);
+        for (Tag ele : tags) {
+            this.tags.add(ele);
         }
         return this;
     }
@@ -92,15 +92,14 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * A collection of key and value pairs.
      * </p>
      * 
-     * @param tagList
+     * @param tags
      *        A collection of key and value pairs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public ListTagsForResourceResult withTagList(
-            java.util.Collection<Tag> tagList) {
-        setTagList(tagList);
+    public ListTagsForResourceResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -116,8 +115,8 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTagList() != null)
-            sb.append("TagList: " + getTagList());
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -132,10 +131,10 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
         if (obj instanceof ListTagsForResourceResult == false)
             return false;
         ListTagsForResourceResult other = (ListTagsForResourceResult) obj;
-        if (other.getTagList() == null ^ this.getTagList() == null)
+        if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getTagList() != null
-                && other.getTagList().equals(this.getTagList()) == false)
+        if (other.getTags() != null
+                && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -146,7 +145,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode
-                + ((getTagList() == null) ? 0 : getTagList().hashCode());
+                + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

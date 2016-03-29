@@ -20,8 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used in the <a>AssessmentsFilter</a> and <a>RunsFilter</a>
- * data types.
+ * This data type is used in the <a>AssessmentRunFilter</a> data type.
  * </p>
  */
 public class TimestampRange implements Serializable, Cloneable {
@@ -31,25 +30,25 @@ public class TimestampRange implements Serializable, Cloneable {
      * The minimum value of the timestamp range.
      * </p>
      */
-    private java.util.Date minimum;
+    private java.util.Date beginDate;
     /**
      * <p>
      * The maximum value of the timestamp range.
      * </p>
      */
-    private java.util.Date maximum;
+    private java.util.Date endDate;
 
     /**
      * <p>
      * The minimum value of the timestamp range.
      * </p>
      * 
-     * @param minimum
+     * @param beginDate
      *        The minimum value of the timestamp range.
      */
 
-    public void setMinimum(java.util.Date minimum) {
-        this.minimum = minimum;
+    public void setBeginDate(java.util.Date beginDate) {
+        this.beginDate = beginDate;
     }
 
     /**
@@ -60,8 +59,8 @@ public class TimestampRange implements Serializable, Cloneable {
      * @return The minimum value of the timestamp range.
      */
 
-    public java.util.Date getMinimum() {
-        return this.minimum;
+    public java.util.Date getBeginDate() {
+        return this.beginDate;
     }
 
     /**
@@ -69,14 +68,14 @@ public class TimestampRange implements Serializable, Cloneable {
      * The minimum value of the timestamp range.
      * </p>
      * 
-     * @param minimum
+     * @param beginDate
      *        The minimum value of the timestamp range.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public TimestampRange withMinimum(java.util.Date minimum) {
-        setMinimum(minimum);
+    public TimestampRange withBeginDate(java.util.Date beginDate) {
+        setBeginDate(beginDate);
         return this;
     }
 
@@ -85,12 +84,12 @@ public class TimestampRange implements Serializable, Cloneable {
      * The maximum value of the timestamp range.
      * </p>
      * 
-     * @param maximum
+     * @param endDate
      *        The maximum value of the timestamp range.
      */
 
-    public void setMaximum(java.util.Date maximum) {
-        this.maximum = maximum;
+    public void setEndDate(java.util.Date endDate) {
+        this.endDate = endDate;
     }
 
     /**
@@ -101,8 +100,8 @@ public class TimestampRange implements Serializable, Cloneable {
      * @return The maximum value of the timestamp range.
      */
 
-    public java.util.Date getMaximum() {
-        return this.maximum;
+    public java.util.Date getEndDate() {
+        return this.endDate;
     }
 
     /**
@@ -110,14 +109,14 @@ public class TimestampRange implements Serializable, Cloneable {
      * The maximum value of the timestamp range.
      * </p>
      * 
-     * @param maximum
+     * @param endDate
      *        The maximum value of the timestamp range.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public TimestampRange withMaximum(java.util.Date maximum) {
-        setMaximum(maximum);
+    public TimestampRange withEndDate(java.util.Date endDate) {
+        setEndDate(endDate);
         return this;
     }
 
@@ -133,10 +132,10 @@ public class TimestampRange implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMinimum() != null)
-            sb.append("Minimum: " + getMinimum() + ",");
-        if (getMaximum() != null)
-            sb.append("Maximum: " + getMaximum());
+        if (getBeginDate() != null)
+            sb.append("BeginDate: " + getBeginDate() + ",");
+        if (getEndDate() != null)
+            sb.append("EndDate: " + getEndDate());
         sb.append("}");
         return sb.toString();
     }
@@ -151,15 +150,15 @@ public class TimestampRange implements Serializable, Cloneable {
         if (obj instanceof TimestampRange == false)
             return false;
         TimestampRange other = (TimestampRange) obj;
-        if (other.getMinimum() == null ^ this.getMinimum() == null)
+        if (other.getBeginDate() == null ^ this.getBeginDate() == null)
             return false;
-        if (other.getMinimum() != null
-                && other.getMinimum().equals(this.getMinimum()) == false)
+        if (other.getBeginDate() != null
+                && other.getBeginDate().equals(this.getBeginDate()) == false)
             return false;
-        if (other.getMaximum() == null ^ this.getMaximum() == null)
+        if (other.getEndDate() == null ^ this.getEndDate() == null)
             return false;
-        if (other.getMaximum() != null
-                && other.getMaximum().equals(this.getMaximum()) == false)
+        if (other.getEndDate() != null
+                && other.getEndDate().equals(this.getEndDate()) == false)
             return false;
         return true;
     }
@@ -170,9 +169,9 @@ public class TimestampRange implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode
-                + ((getMinimum() == null) ? 0 : getMinimum().hashCode());
+                + ((getBeginDate() == null) ? 0 : getBeginDate().hashCode());
         hashCode = prime * hashCode
-                + ((getMaximum() == null) ? 0 : getMaximum().hashCode());
+                + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         return hashCode;
     }
 

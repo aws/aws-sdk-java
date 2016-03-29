@@ -19,7 +19,9 @@ package com.amazonaws.services.databasemigrationservice.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * The subnet provided is invalid.
+ * </p>
  */
 public class InvalidSubnetException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

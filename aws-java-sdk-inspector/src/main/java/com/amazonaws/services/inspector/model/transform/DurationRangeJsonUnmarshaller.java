@@ -51,14 +51,14 @@ public class DurationRangeJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("minimum", targetDepth)) {
+                if (context.testExpression("minSeconds", targetDepth)) {
                     context.nextToken();
-                    durationRange.setMinimum(IntegerJsonUnmarshaller
+                    durationRange.setMinSeconds(IntegerJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("maximum", targetDepth)) {
+                if (context.testExpression("maxSeconds", targetDepth)) {
                     context.nextToken();
-                    durationRange.setMaximum(IntegerJsonUnmarshaller
+                    durationRange.setMaxSeconds(IntegerJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

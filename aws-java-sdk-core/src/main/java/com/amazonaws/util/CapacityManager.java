@@ -121,6 +121,6 @@ public class CapacityManager {
      * @return available capacity
      */
     public int availableCapacity() {
-        return (availableCapacity < 0) ? 0 : (availableCapacity);
+        return availableCapacity;
     }
 }

@@ -305,7 +305,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * For internal use only
+     * Adds metadata tags to a DMS resource, including replication instance,
+     * endpoint, security group, and migration task. These tags can also be used
+     * with cost allocation reporting to track cost associated with DMS
+     * resources, or used in a Condition statement in an IAM policy for DMS.
      * </p>
      * <note/>
      * <p/>
@@ -314,6 +317,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the AddTagsToResource operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.AddTagsToResource
      */
     @Override
@@ -361,8 +365,11 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @param createEndpointRequest
      * @return Result of the CreateEndpoint operation returned by the service.
      * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the KMS key.
      * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
      * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.CreateEndpoint
      */
     @Override
@@ -410,15 +417,28 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the CreateReplicationInstance operation returned by the
      *         service.
      * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint.
      * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
      * @throws InsufficientResourceCapacityException
+     *         There are not enough resources allocated to the database
+     *         migration.
      * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
      * @throws StorageQuotaExceededException
+     *         The storage quota has been exceeded.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws ReplicationSubnetGroupDoesNotCoverEnoughAZsException
+     *         The replication subnet group does not cover enough Availability
+     *         Zones (AZs). Edit the replication subnet group and add more AZs.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @throws InvalidSubnetException
+     *         The subnet provided is invalid.
      * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the KMS key.
      * @sample AWSDatabaseMigrationService.CreateReplicationInstance
      */
     @Override
@@ -468,11 +488,18 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the CreateReplicationSubnetGroup operation returned by
      *         the service.
      * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint.
      * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
      * @throws ReplicationSubnetGroupDoesNotCoverEnoughAZsException
+     *         The replication subnet group does not cover enough Availability
+     *         Zones (AZs). Edit the replication subnet group and add more AZs.
      * @throws InvalidSubnetException
+     *         The subnet provided is invalid.
      * @sample AWSDatabaseMigrationService.CreateReplicationSubnetGroup
      */
     @Override
@@ -521,10 +548,16 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the CreateReplicationTask operation returned by the
      *         service.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the KMS key.
      * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.CreateReplicationTask
      */
     @Override
@@ -573,7 +606,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @param deleteEndpointRequest
      * @return Result of the DeleteEndpoint operation returned by the service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @sample AWSDatabaseMigrationService.DeleteEndpoint
      */
     @Override
@@ -622,7 +658,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the DeleteReplicationInstance operation returned by the
      *         service.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DeleteReplicationInstance
      */
     @Override
@@ -671,7 +710,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the DeleteReplicationSubnetGroup operation returned by
      *         the service.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DeleteReplicationSubnetGroup
      */
     @Override
@@ -720,7 +762,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the DeleteReplicationTask operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @sample AWSDatabaseMigrationService.DeleteReplicationTask
      */
     @Override
@@ -825,6 +870,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the DescribeConnections operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeConnections
      */
     @Override
@@ -921,6 +967,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the DescribeEndpoints operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeEndpoints
      */
     @Override
@@ -1017,7 +1064,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the DescribeRefreshSchemasStatus operation returned by
      *         the service.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeRefreshSchemasStatus
      */
     @Override
@@ -1067,6 +1117,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the DescribeReplicationInstances operation returned by
      *         the service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeReplicationInstances
      */
     @Override
@@ -1115,6 +1166,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the DescribeReplicationSubnetGroups operation returned
      *         by the service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeReplicationSubnetGroups
      */
     @Override
@@ -1164,6 +1216,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the DescribeReplicationTasks operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeReplicationTasks
      */
     @Override
@@ -1211,7 +1264,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @param describeSchemasRequest
      * @return Result of the DescribeSchemas operation returned by the service.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.DescribeSchemas
      */
     @Override
@@ -1260,7 +1316,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the DescribeTableStatistics operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @sample AWSDatabaseMigrationService.DescribeTableStatistics
      */
     @Override
@@ -1300,7 +1359,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * For internal use only
+     * Lists all tags for an AWS DMS resource.
      * </p>
      * <note/>
      * <p/>
@@ -1309,6 +1368,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the ListTagsForResource operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.ListTagsForResource
      */
     @Override
@@ -1356,9 +1416,14 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @param modifyEndpointRequest
      * @return Result of the ModifyEndpoint operation returned by the service.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
      * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the KMS key.
      * @sample AWSDatabaseMigrationService.ModifyEndpoint
      */
     @Override
@@ -1409,11 +1474,19 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the ModifyReplicationInstance operation returned by the
      *         service.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InsufficientResourceCapacityException
+     *         There are not enough resources allocated to the database
+     *         migration.
      * @throws StorageQuotaExceededException
+     *         The storage quota has been exceeded.
      * @throws UpgradeDependencyFailureException
+     *         An upgrade dependency is preventing the database migration.
      * @sample AWSDatabaseMigrationService.ModifyReplicationInstance
      */
     @Override
@@ -1462,10 +1535,16 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the ModifyReplicationSubnetGroup operation returned by
      *         the service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
      * @throws SubnetAlreadyInUseException
+     *         The specified subnet is already in use.
      * @throws ReplicationSubnetGroupDoesNotCoverEnoughAZsException
+     *         The replication subnet group does not cover enough Availability
+     *         Zones (AZs). Edit the replication subnet group and add more AZs.
      * @throws InvalidSubnetException
+     *         The subnet provided is invalid.
      * @sample AWSDatabaseMigrationService.ModifyReplicationSubnetGroup
      */
     @Override
@@ -1515,9 +1594,14 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @param refreshSchemasRequest
      * @return Result of the RefreshSchemas operation returned by the service.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the KMS key.
      * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.RefreshSchemas
      */
     @Override
@@ -1556,7 +1640,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * For internal use only
+     * Removes metadata tags from a DMS resource.
      * </p>
      * <note/>
      * <p/>
@@ -1565,6 +1649,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the RemoveTagsFromResource operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.RemoveTagsFromResource
      */
     @Override
@@ -1613,7 +1698,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the StartReplicationTask operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @sample AWSDatabaseMigrationService.StartReplicationTask
      */
     @Override
@@ -1662,7 +1750,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @return Result of the StopReplicationTask operation returned by the
      *         service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @sample AWSDatabaseMigrationService.StopReplicationTask
      */
     @Override
@@ -1710,9 +1801,14 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @param testConnectionRequest
      * @return Result of the TestConnection operation returned by the service.
      * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
      * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the KMS key.
      * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.TestConnection
      */
     @Override

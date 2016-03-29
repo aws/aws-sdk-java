@@ -60,6 +60,21 @@ public class AbstractAmazonCloudFormationAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<CreateChangeSetResult> createChangeSetAsync(
+            CreateChangeSetRequest request) {
+
+        return createChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChangeSetResult> createChangeSetAsync(
+            CreateChangeSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateChangeSetRequest, CreateChangeSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateStackResult> createStackAsync(
             CreateStackRequest request) {
 
@@ -70,6 +85,21 @@ public class AbstractAmazonCloudFormationAsync extends
     public java.util.concurrent.Future<CreateStackResult> createStackAsync(
             CreateStackRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateStackRequest, CreateStackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChangeSetResult> deleteChangeSetAsync(
+            DeleteChangeSetRequest request) {
+
+        return deleteChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChangeSetResult> deleteChangeSetAsync(
+            DeleteChangeSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteChangeSetRequest, DeleteChangeSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -100,6 +130,21 @@ public class AbstractAmazonCloudFormationAsync extends
     public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(
             DescribeAccountLimitsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChangeSetResult> describeChangeSetAsync(
+            DescribeChangeSetRequest request) {
+
+        return describeChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChangeSetResult> describeChangeSetAsync(
+            DescribeChangeSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeChangeSetRequest, DescribeChangeSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,6 +274,21 @@ public class AbstractAmazonCloudFormationAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteChangeSetResult> executeChangeSetAsync(
+            ExecuteChangeSetRequest request) {
+
+        return executeChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteChangeSetResult> executeChangeSetAsync(
+            ExecuteChangeSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteChangeSetRequest, ExecuteChangeSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStackPolicyResult> getStackPolicyAsync(
             GetStackPolicyRequest request) {
 
@@ -296,6 +356,21 @@ public class AbstractAmazonCloudFormationAsync extends
 
         return getTemplateSummaryAsync(new GetTemplateSummaryRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChangeSetsResult> listChangeSetsAsync(
+            ListChangeSetsRequest request) {
+
+        return listChangeSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChangeSetsResult> listChangeSetsAsync(
+            ListChangeSetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListChangeSetsRequest, ListChangeSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

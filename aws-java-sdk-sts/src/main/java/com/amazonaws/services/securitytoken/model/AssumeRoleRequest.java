@@ -62,7 +62,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -91,7 +91,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * ID, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
      * >How to Use an External ID When Granting Access to Your AWS Resources to
-     * a Third Party</a> in the <i>Using IAM</i>.
+     * a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String externalId;
@@ -272,7 +272,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -294,7 +294,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        being assumed. For more information, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      *        >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     *        AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     *        AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *        </p>
      *        <note>The policy plain text must be 2048 bytes or shorter.
      *        However, an internal conversion compresses it into a packed binary
@@ -322,7 +322,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -343,7 +343,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         being assumed. For more information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      *         >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     *         AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     *         AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *         </p>
      *         <note>The policy plain text must be 2048 bytes or shorter.
      *         However, an internal conversion compresses it into a packed
@@ -372,7 +372,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>The policy plain text must be 2048 bytes or shorter. However, an
      * internal conversion compresses it into a packed binary format with a
@@ -394,7 +394,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        being assumed. For more information, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      *        >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     *        AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     *        AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *        </p>
      *        <note>The policy plain text must be 2048 bytes or shorter.
      *        However, an internal conversion compresses it into a packed binary
@@ -475,7 +475,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * ID, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
      * >How to Use an External ID When Granting Access to Your AWS Resources to
-     * a Third Party</a> in the <i>Using IAM</i>.
+     * a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param externalId
@@ -490,7 +490,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
      *        >How to Use an External ID When Granting Access to Your AWS
-     *        Resources to a Third Party</a> in the <i>Using IAM</i>.
+     *        Resources to a Third Party</a> in the <i>IAM User Guide</i>.
      */
 
     public void setExternalId(String externalId) {
@@ -509,7 +509,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * ID, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
      * >How to Use an External ID When Granting Access to Your AWS Resources to
-     * a Third Party</a> in the <i>Using IAM</i>.
+     * a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return A unique identifier that is used by third parties when assuming
@@ -523,7 +523,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
      *         >How to Use an External ID When Granting Access to Your AWS
-     *         Resources to a Third Party</a> in the <i>Using IAM</i>.
+     *         Resources to a Third Party</a> in the <i>IAM User Guide</i>.
      */
 
     public String getExternalId() {
@@ -542,7 +542,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * ID, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
      * >How to Use an External ID When Granting Access to Your AWS Resources to
-     * a Third Party</a> in the <i>Using IAM</i>.
+     * a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param externalId
@@ -557,7 +557,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
      *        >How to Use an External ID When Granting Access to Your AWS
-     *        Resources to a Third Party</a> in the <i>Using IAM</i>.
+     *        Resources to a Third Party</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

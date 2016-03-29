@@ -84,7 +84,7 @@ final class DynamoDBReflectionRegistry {
             this.getter = getterMethod;
             this.setter = ReflectionUtils.getDeclaredSetterByGetter(getGetter());
             this.fieldName = ReflectionUtils.getFieldNameByGetter(getGetter(), true);
-            this.field = ReflectionUtils.getClassFieldByName(getGetter().getDeclaringClass(), getFieldName());
+            this.field = ReflectionUtils.getClassFieldByName(getDeclaringType(), getFieldName());
             this.getterType = getGetter().getReturnType();
             this.setterType = (setter == null || setter.getParameterTypes().length != 1 ? null : setter.getParameterTypes()[0]);
         }
@@ -105,7 +105,7 @@ final class DynamoDBReflectionRegistry {
             if (setter == null) {
                 throw new DynamoDBMappingException("No access to public, one-argument method called " +
                     "set" + ReflectionUtils.getFieldNameByGetter(getGetter(), false) +
-                    " on class " + getGetter().getDeclaringClass());
+                    " on class " + getDeclaringType());
             }
             return setter;
         }
@@ -140,6 +140,14 @@ final class DynamoDBReflectionRegistry {
          */
         final String getFieldName() {
             return fieldName;
+        }
+
+        /**
+         * Gets the declaring type.
+         * @return The declaring type.
+         */
+        final Class<?> getDeclaringType() {
+            return getGetter().getDeclaringClass();
         }
 
         /**

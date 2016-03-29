@@ -27,11 +27,11 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARNs of the assessment runs that generate the findings that you want
-     * to list.
+     * The ARNs of the assessment run(s) that generate the findings that you
+     * want to list.
      * </p>
      */
-    private java.util.List<String> runArns;
+    private java.util.List<String> assessmentRunArns;
     /**
      * <p>
      * You can use this parameter to specify a subset of data to be included in
@@ -43,7 +43,7 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
      * the values can match.
      * </p>
      */
-    private FindingsFilter filter;
+    private FindingFilter filter;
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this
@@ -64,82 +64,87 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARNs of the assessment runs that generate the findings that you want
-     * to list.
+     * The ARNs of the assessment run(s) that generate the findings that you
+     * want to list.
      * </p>
      * 
-     * @return The ARNs of the assessment runs that generate the findings that
+     * @return The ARNs of the assessment run(s) that generate the findings that
      *         you want to list.
      */
 
-    public java.util.List<String> getRunArns() {
-        return runArns;
+    public java.util.List<String> getAssessmentRunArns() {
+        return assessmentRunArns;
     }
 
     /**
      * <p>
-     * The ARNs of the assessment runs that generate the findings that you want
-     * to list.
+     * The ARNs of the assessment run(s) that generate the findings that you
+     * want to list.
      * </p>
      * 
-     * @param runArns
-     *        The ARNs of the assessment runs that generate the findings that
+     * @param assessmentRunArns
+     *        The ARNs of the assessment run(s) that generate the findings that
      *        you want to list.
      */
 
-    public void setRunArns(java.util.Collection<String> runArns) {
-        if (runArns == null) {
-            this.runArns = null;
+    public void setAssessmentRunArns(
+            java.util.Collection<String> assessmentRunArns) {
+        if (assessmentRunArns == null) {
+            this.assessmentRunArns = null;
             return;
         }
 
-        this.runArns = new java.util.ArrayList<String>(runArns);
+        this.assessmentRunArns = new java.util.ArrayList<String>(
+                assessmentRunArns);
     }
 
     /**
      * <p>
-     * The ARNs of the assessment runs that generate the findings that you want
-     * to list.
+     * The ARNs of the assessment run(s) that generate the findings that you
+     * want to list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRunArns(java.util.Collection)} or
-     * {@link #withRunArns(java.util.Collection)} if you want to override the
-     * existing values.
+     * any). Use {@link #setAssessmentRunArns(java.util.Collection)} or
+     * {@link #withAssessmentRunArns(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param runArns
-     *        The ARNs of the assessment runs that generate the findings that
+     * @param assessmentRunArns
+     *        The ARNs of the assessment run(s) that generate the findings that
      *        you want to list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public ListFindingsRequest withRunArns(String... runArns) {
-        if (this.runArns == null) {
-            setRunArns(new java.util.ArrayList<String>(runArns.length));
+    public ListFindingsRequest withAssessmentRunArns(
+            String... assessmentRunArns) {
+        if (this.assessmentRunArns == null) {
+            setAssessmentRunArns(new java.util.ArrayList<String>(
+                    assessmentRunArns.length));
         }
-        for (String ele : runArns) {
-            this.runArns.add(ele);
+        for (String ele : assessmentRunArns) {
+            this.assessmentRunArns.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * The ARNs of the assessment runs that generate the findings that you want
-     * to list.
+     * The ARNs of the assessment run(s) that generate the findings that you
+     * want to list.
      * </p>
      * 
-     * @param runArns
-     *        The ARNs of the assessment runs that generate the findings that
+     * @param assessmentRunArns
+     *        The ARNs of the assessment run(s) that generate the findings that
      *        you want to list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public ListFindingsRequest withRunArns(java.util.Collection<String> runArns) {
-        setRunArns(runArns);
+    public ListFindingsRequest withAssessmentRunArns(
+            java.util.Collection<String> assessmentRunArns) {
+        setAssessmentRunArns(assessmentRunArns);
         return this;
     }
 
@@ -163,7 +168,7 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
      *        attribute, any of the values can match.
      */
 
-    public void setFilter(FindingsFilter filter) {
+    public void setFilter(FindingFilter filter) {
         this.filter = filter;
     }
 
@@ -186,7 +191,7 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
      *         attribute, any of the values can match.
      */
 
-    public FindingsFilter getFilter() {
+    public FindingFilter getFilter() {
         return this.filter;
     }
 
@@ -212,7 +217,7 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      */
 
-    public ListFindingsRequest withFilter(FindingsFilter filter) {
+    public ListFindingsRequest withFilter(FindingFilter filter) {
         setFilter(filter);
         return this;
     }
@@ -344,8 +349,8 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRunArns() != null)
-            sb.append("RunArns: " + getRunArns() + ",");
+        if (getAssessmentRunArns() != null)
+            sb.append("AssessmentRunArns: " + getAssessmentRunArns() + ",");
         if (getFilter() != null)
             sb.append("Filter: " + getFilter() + ",");
         if (getNextToken() != null)
@@ -366,10 +371,12 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
         if (obj instanceof ListFindingsRequest == false)
             return false;
         ListFindingsRequest other = (ListFindingsRequest) obj;
-        if (other.getRunArns() == null ^ this.getRunArns() == null)
+        if (other.getAssessmentRunArns() == null
+                ^ this.getAssessmentRunArns() == null)
             return false;
-        if (other.getRunArns() != null
-                && other.getRunArns().equals(this.getRunArns()) == false)
+        if (other.getAssessmentRunArns() != null
+                && other.getAssessmentRunArns().equals(
+                        this.getAssessmentRunArns()) == false)
             return false;
         if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
@@ -394,8 +401,10 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getRunArns() == null) ? 0 : getRunArns().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAssessmentRunArns() == null) ? 0
+                        : getAssessmentRunArns().hashCode());
         hashCode = prime * hashCode
                 + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode

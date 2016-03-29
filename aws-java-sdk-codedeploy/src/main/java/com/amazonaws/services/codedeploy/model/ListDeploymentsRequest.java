@@ -50,7 +50,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * <li>In Progress: Include in-progress deployments in the resulting list.</li>
      * <li>Succeeded: Include successful deployments in the resulting list.</li>
      * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Aborted: Include aborted deployments in the resulting list.</li>
+     * <li>Stopped: Include stopped deployments in the resulting list.</li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> includeOnlyStatuses;
@@ -171,7 +171,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * <li>In Progress: Include in-progress deployments in the resulting list.</li>
      * <li>Succeeded: Include successful deployments in the resulting list.</li>
      * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Aborted: Include aborted deployments in the resulting list.</li>
+     * <li>Stopped: Include stopped deployments in the resulting list.</li>
      * </ul>
      * 
      * @return A subset of deployments to list by status:</p>
@@ -183,7 +183,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *         <li>Succeeded: Include successful deployments in the resulting
      *         list.</li>
      *         <li>Failed: Include failed deployments in the resulting list.</li>
-     *         <li>Aborted: Include aborted deployments in the resulting list.</li>
+     *         <li>Stopped: Include stopped deployments in the resulting list.</li>
      * @see DeploymentStatus
      */
 
@@ -204,7 +204,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * <li>In Progress: Include in-progress deployments in the resulting list.</li>
      * <li>Succeeded: Include successful deployments in the resulting list.</li>
      * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Aborted: Include aborted deployments in the resulting list.</li>
+     * <li>Stopped: Include stopped deployments in the resulting list.</li>
      * </ul>
      * 
      * @param includeOnlyStatuses
@@ -217,7 +217,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *        <li>Succeeded: Include successful deployments in the resulting
      *        list.</li>
      *        <li>Failed: Include failed deployments in the resulting list.</li>
-     *        <li>Aborted: Include aborted deployments in the resulting list.</li>
+     *        <li>Stopped: Include stopped deployments in the resulting list.</li>
      * @see DeploymentStatus
      */
 
@@ -242,7 +242,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * <li>In Progress: Include in-progress deployments in the resulting list.</li>
      * <li>Succeeded: Include successful deployments in the resulting list.</li>
      * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Aborted: Include aborted deployments in the resulting list.</li>
+     * <li>Stopped: Include stopped deployments in the resulting list.</li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -261,7 +261,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *        <li>Succeeded: Include successful deployments in the resulting
      *        list.</li>
      *        <li>Failed: Include failed deployments in the resulting list.</li>
-     *        <li>Aborted: Include aborted deployments in the resulting list.</li>
+     *        <li>Stopped: Include stopped deployments in the resulting list.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentStatus
@@ -289,7 +289,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * <li>In Progress: Include in-progress deployments in the resulting list.</li>
      * <li>Succeeded: Include successful deployments in the resulting list.</li>
      * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Aborted: Include aborted deployments in the resulting list.</li>
+     * <li>Stopped: Include stopped deployments in the resulting list.</li>
      * </ul>
      * 
      * @param includeOnlyStatuses
@@ -302,7 +302,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *        <li>Succeeded: Include successful deployments in the resulting
      *        list.</li>
      *        <li>Failed: Include failed deployments in the resulting list.</li>
-     *        <li>Aborted: Include aborted deployments in the resulting list.</li>
+     *        <li>Stopped: Include stopped deployments in the resulting list.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentStatus
@@ -324,7 +324,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * <li>In Progress: Include in-progress deployments in the resulting list.</li>
      * <li>Succeeded: Include successful deployments in the resulting list.</li>
      * <li>Failed: Include failed deployments in the resulting list.</li>
-     * <li>Aborted: Include aborted deployments in the resulting list.</li>
+     * <li>Stopped: Include stopped deployments in the resulting list.</li>
      * </ul>
      * 
      * @param includeOnlyStatuses
@@ -337,7 +337,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *        <li>Succeeded: Include successful deployments in the resulting
      *        list.</li>
      *        <li>Failed: Include failed deployments in the resulting list.</li>
-     *        <li>Aborted: Include aborted deployments in the resulting list.</li>
+     *        <li>Stopped: Include stopped deployments in the resulting list.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentStatus

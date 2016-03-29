@@ -27,7 +27,7 @@
   },
   "operations" : {
     "AddTagsToResource" : {
-      "documentation" : "<p>For internal use only</p> <note/><p/>",
+      "documentation" : "<p> Adds metadata tags to a DMS resource, including replication instance, endpoint, security group, and migration task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or used in a Condition statement in an IAM policy for DMS.</p> <note/><p/>",
       "operationName" : "AddTagsToResource",
       "deprecated" : false,
       "input" : {
@@ -45,7 +45,7 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "addTagsToResource",
@@ -74,13 +74,13 @@
       },
       "exceptions" : [ {
         "exceptionName" : "KMSKeyNotAccessibleException",
-        "documentation" : null
+        "documentation" : "<p>AWS DMS cannot access the KMS key.</p>"
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
-        "documentation" : null
+        "documentation" : "<p>The resource you are attempting to create already exists.</p>"
       }, {
         "exceptionName" : "ResourceQuotaExceededException",
-        "documentation" : null
+        "documentation" : "<p>The quota for this resource quota has been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createEndpoint",
@@ -109,34 +109,34 @@
       },
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : null
+        "documentation" : "<p>AWS DMS was denied access to the endpoint.</p>"
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
-        "documentation" : null
+        "documentation" : "<p>The resource you are attempting to create already exists.</p>"
       }, {
         "exceptionName" : "InsufficientResourceCapacityException",
-        "documentation" : null
+        "documentation" : "<p>There are not enough resources allocated to the database migration.</p>"
       }, {
         "exceptionName" : "ResourceQuotaExceededException",
-        "documentation" : null
+        "documentation" : "<p>The quota for this resource quota has been exceeded.</p>"
       }, {
         "exceptionName" : "StorageQuotaExceededException",
-        "documentation" : null
+        "documentation" : "<p>The storage quota has been exceeded.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "ReplicationSubnetGroupDoesNotCoverEnoughAZsException",
-        "documentation" : null
+        "documentation" : "<p>The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet group and add more AZs.</p>"
       }, {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       }, {
         "exceptionName" : "InvalidSubnetException",
-        "documentation" : null
+        "documentation" : "<p>The subnet provided is invalid.</p>"
       }, {
         "exceptionName" : "KMSKeyNotAccessibleException",
-        "documentation" : null
+        "documentation" : "<p>AWS DMS cannot access the KMS key.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createReplicationInstance",
@@ -165,22 +165,22 @@
       },
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : null
+        "documentation" : "<p>AWS DMS was denied access to the endpoint.</p>"
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
-        "documentation" : null
+        "documentation" : "<p>The resource you are attempting to create already exists.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "ResourceQuotaExceededException",
-        "documentation" : null
+        "documentation" : "<p>The quota for this resource quota has been exceeded.</p>"
       }, {
         "exceptionName" : "ReplicationSubnetGroupDoesNotCoverEnoughAZsException",
-        "documentation" : null
+        "documentation" : "<p>The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet group and add more AZs.</p>"
       }, {
         "exceptionName" : "InvalidSubnetException",
-        "documentation" : null
+        "documentation" : "<p>The subnet provided is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createReplicationSubnetGroup",
@@ -209,19 +209,19 @@
       },
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
-        "documentation" : null
+        "documentation" : "<p>The resource you are attempting to create already exists.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "KMSKeyNotAccessibleException",
-        "documentation" : null
+        "documentation" : "<p>AWS DMS cannot access the KMS key.</p>"
       }, {
         "exceptionName" : "ResourceQuotaExceededException",
-        "documentation" : null
+        "documentation" : "<p>The quota for this resource quota has been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createReplicationTask",
@@ -250,10 +250,10 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteEndpoint",
@@ -282,10 +282,10 @@
       },
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteReplicationInstance",
@@ -314,10 +314,10 @@
       },
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteReplicationSubnetGroup",
@@ -346,10 +346,10 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteReplicationTask",
@@ -404,7 +404,7 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeConnections",
@@ -459,7 +459,7 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeEndpoints",
@@ -514,10 +514,10 @@
       },
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeRefreshSchemasStatus",
@@ -546,7 +546,7 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeReplicationInstances",
@@ -575,7 +575,7 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeReplicationSubnetGroups",
@@ -604,7 +604,7 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeReplicationTasks",
@@ -633,10 +633,10 @@
       },
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeSchemas",
@@ -665,10 +665,10 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeTableStatistics",
@@ -679,7 +679,7 @@
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTableStatisticsRequest, DescribeTableStatisticsResult>"
     },
     "ListTagsForResource" : {
-      "documentation" : "<p>For internal use only</p> <note/><p/>",
+      "documentation" : "<p> Lists all tags for an AWS DMS resource.</p> <note/><p/>",
       "operationName" : "ListTagsForResource",
       "deprecated" : false,
       "input" : {
@@ -697,7 +697,7 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listTagsForResource",
@@ -726,16 +726,16 @@
       },
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
-        "documentation" : null
+        "documentation" : "<p>The resource you are attempting to create already exists.</p>"
       }, {
         "exceptionName" : "KMSKeyNotAccessibleException",
-        "documentation" : null
+        "documentation" : "<p>AWS DMS cannot access the KMS key.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "modifyEndpoint",
@@ -764,22 +764,22 @@
       },
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
-        "documentation" : null
+        "documentation" : "<p>The resource you are attempting to create already exists.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "InsufficientResourceCapacityException",
-        "documentation" : null
+        "documentation" : "<p>There are not enough resources allocated to the database migration.</p>"
       }, {
         "exceptionName" : "StorageQuotaExceededException",
-        "documentation" : null
+        "documentation" : "<p>The storage quota has been exceeded.</p>"
       }, {
         "exceptionName" : "UpgradeDependencyFailureException",
-        "documentation" : null
+        "documentation" : "<p>An upgrade dependency is preventing the database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "modifyReplicationInstance",
@@ -808,19 +808,19 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "ResourceQuotaExceededException",
-        "documentation" : null
+        "documentation" : "<p>The quota for this resource quota has been exceeded.</p>"
       }, {
         "exceptionName" : "SubnetAlreadyInUseException",
-        "documentation" : null
+        "documentation" : "<p>The specified subnet is already in use.</p>"
       }, {
         "exceptionName" : "ReplicationSubnetGroupDoesNotCoverEnoughAZsException",
-        "documentation" : null
+        "documentation" : "<p>The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet group and add more AZs.</p>"
       }, {
         "exceptionName" : "InvalidSubnetException",
-        "documentation" : null
+        "documentation" : "<p>The subnet provided is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "modifyReplicationSubnetGroup",
@@ -849,16 +849,16 @@
       },
       "exceptions" : [ {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "KMSKeyNotAccessibleException",
-        "documentation" : null
+        "documentation" : "<p>AWS DMS cannot access the KMS key.</p>"
       }, {
         "exceptionName" : "ResourceQuotaExceededException",
-        "documentation" : null
+        "documentation" : "<p>The quota for this resource quota has been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "refreshSchemas",
@@ -869,7 +869,7 @@
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RefreshSchemasRequest, RefreshSchemasResult>"
     },
     "RemoveTagsFromResource" : {
-      "documentation" : "<p>For internal use only</p> <note/><p/>",
+      "documentation" : "<p> Removes metadata tags from a DMS resource.</p> <note/><p/>",
       "operationName" : "RemoveTagsFromResource",
       "deprecated" : false,
       "input" : {
@@ -887,7 +887,7 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "removeTagsFromResource",
@@ -916,10 +916,10 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "startReplicationTask",
@@ -948,10 +948,10 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "stopReplicationTask",
@@ -980,16 +980,16 @@
       },
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : null
+        "documentation" : "<p>The resource could not be found.</p>"
       }, {
         "exceptionName" : "InvalidResourceStateException",
-        "documentation" : null
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       }, {
         "exceptionName" : "KMSKeyNotAccessibleException",
-        "documentation" : null
+        "documentation" : "<p>AWS DMS cannot access the KMS key.</p>"
       }, {
         "exceptionName" : "ResourceQuotaExceededException",
-        "documentation" : null
+        "documentation" : "<p>The quota for this resource quota has been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "testConnection",
@@ -1003,7 +1003,7 @@
   "shapes" : {
     "AccessDeniedException" : {
       "c2jName" : "AccessDeniedFault",
-      "documentation" : "",
+      "documentation" : "<p>AWS DMS was denied access to the endpoint.</p>",
       "shapeName" : "AccessDeniedException",
       "deprecated" : false,
       "required" : null,
@@ -3758,11 +3758,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<String>",
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3957,11 +3957,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<String>",
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4088,11 +4088,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<String>",
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4230,11 +4230,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<String>",
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4413,11 +4413,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<String>",
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4531,11 +4531,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Tag>",
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4730,11 +4730,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<String>",
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4849,11 +4849,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Tag>",
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5396,11 +5396,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Tag>",
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5912,11 +5912,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Tag>",
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6148,11 +6148,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<SupportedEndpointType>",
           "simpleType" : "SupportedEndpointType",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<SupportedEndpointType>",
-          "templateType" : "java.util.List<SupportedEndpointType>"
+          "templateImplType" : "java.util.ArrayList<SupportedEndpointType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6342,11 +6342,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<SupportedEndpointType>",
             "simpleType" : "SupportedEndpointType",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<SupportedEndpointType>",
-            "templateType" : "java.util.List<SupportedEndpointType>"
+            "templateImplType" : "java.util.ArrayList<SupportedEndpointType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6473,11 +6473,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Tag>",
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6614,11 +6614,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Tag>",
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6745,11 +6745,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Filter>",
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Filter>",
-          "templateType" : "java.util.List<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6994,11 +6994,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Filter>",
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Filter>",
-            "templateType" : "java.util.List<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7799,11 +7799,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<String>",
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7945,11 +7945,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<String>",
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9474,11 +9474,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Subnet>",
           "simpleType" : "Subnet",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Subnet>",
-          "templateType" : "java.util.List<Subnet>"
+          "templateImplType" : "java.util.ArrayList<Subnet>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9615,11 +9615,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Subnet>",
             "simpleType" : "Subnet",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Subnet>",
-            "templateType" : "java.util.List<Subnet>"
+            "templateImplType" : "java.util.ArrayList<Subnet>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11358,11 +11358,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Filter>",
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Filter>",
-          "templateType" : "java.util.List<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11607,11 +11607,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Filter>",
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Filter>",
-            "templateType" : "java.util.List<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12260,11 +12260,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Tag>",
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12986,11 +12986,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Tag>",
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13061,7 +13061,7 @@
     },
     "InvalidResourceStateException" : {
       "c2jName" : "InvalidResourceStateFault",
-      "documentation" : "",
+      "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>",
       "shapeName" : "InvalidResourceStateException",
       "deprecated" : false,
       "required" : null,
@@ -13253,11 +13253,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Connection>",
           "simpleType" : "Connection",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Connection>",
-          "templateType" : "java.util.List<Connection>"
+          "templateImplType" : "java.util.ArrayList<Connection>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13394,11 +13394,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Connection>",
             "simpleType" : "Connection",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Connection>",
-            "templateType" : "java.util.List<Connection>"
+            "templateImplType" : "java.util.ArrayList<Connection>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14072,11 +14072,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Filter>",
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Filter>",
-          "templateType" : "java.util.List<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14321,11 +14321,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Filter>",
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Filter>",
-            "templateType" : "java.util.List<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14449,7 +14449,7 @@
     },
     "ResourceNotFoundException" : {
       "c2jName" : "ResourceNotFoundFault",
-      "documentation" : "",
+      "documentation" : "<p>The resource could not be found.</p>",
       "shapeName" : "ResourceNotFoundException",
       "deprecated" : false,
       "required" : null,
@@ -15901,11 +15901,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<ReplicationInstance>",
           "simpleType" : "ReplicationInstance",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<ReplicationInstance>",
-          "templateType" : "java.util.List<ReplicationInstance>"
+          "templateImplType" : "java.util.ArrayList<ReplicationInstance>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16042,11 +16042,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<ReplicationInstance>",
             "simpleType" : "ReplicationInstance",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<ReplicationInstance>",
-            "templateType" : "java.util.List<ReplicationInstance>"
+            "templateImplType" : "java.util.ArrayList<ReplicationInstance>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16727,7 +16727,7 @@
     },
     "KMSKeyNotAccessibleException" : {
       "c2jName" : "KMSKeyNotAccessibleFault",
-      "documentation" : "",
+      "documentation" : "<p>AWS DMS cannot access the KMS key.</p>",
       "shapeName" : "KMSKeyNotAccessibleException",
       "deprecated" : false,
       "required" : null,
@@ -16867,11 +16867,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Filter>",
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Filter>",
-          "templateType" : "java.util.List<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17116,11 +17116,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Filter>",
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Filter>",
-            "templateType" : "java.util.List<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19387,11 +19387,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Filter>",
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Filter>",
-          "templateType" : "java.util.List<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19636,11 +19636,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Filter>",
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Filter>",
-            "templateType" : "java.util.List<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19925,11 +19925,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<ReplicationTask>",
           "simpleType" : "ReplicationTask",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<ReplicationTask>",
-          "templateType" : "java.util.List<ReplicationTask>"
+          "templateImplType" : "java.util.ArrayList<ReplicationTask>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20119,11 +20119,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<ReplicationTask>",
             "simpleType" : "ReplicationTask",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<ReplicationTask>",
-            "templateType" : "java.util.List<ReplicationTask>"
+            "templateImplType" : "java.util.ArrayList<ReplicationTask>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22279,11 +22279,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Tag>",
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22848,11 +22848,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Tag>",
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22976,7 +22976,7 @@
     },
     "SubnetAlreadyInUseException" : {
       "c2jName" : "SubnetAlreadyInUse",
-      "documentation" : "",
+      "documentation" : "<p>The specified subnet is already in use.</p>",
       "shapeName" : "SubnetAlreadyInUseException",
       "deprecated" : false,
       "required" : null,
@@ -23287,7 +23287,7 @@
     },
     "UpgradeDependencyFailureException" : {
       "c2jName" : "UpgradeDependencyFailureFault",
-      "documentation" : "",
+      "documentation" : "<p>An upgrade dependency is preventing the database migration.</p>",
       "shapeName" : "UpgradeDependencyFailureException",
       "deprecated" : false,
       "required" : null,
@@ -24279,11 +24279,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<AccountQuota>",
           "simpleType" : "AccountQuota",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<AccountQuota>",
-          "templateType" : "java.util.List<AccountQuota>"
+          "templateImplType" : "java.util.ArrayList<AccountQuota>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24420,11 +24420,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<AccountQuota>",
             "simpleType" : "AccountQuota",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<AccountQuota>",
-            "templateType" : "java.util.List<AccountQuota>"
+            "templateImplType" : "java.util.ArrayList<AccountQuota>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24603,11 +24603,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Tag>",
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24801,11 +24801,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Tag>",
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25018,11 +25018,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Endpoint>",
           "simpleType" : "Endpoint",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Endpoint>",
-          "templateType" : "java.util.List<Endpoint>"
+          "templateImplType" : "java.util.ArrayList<Endpoint>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25159,11 +25159,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Endpoint>",
             "simpleType" : "Endpoint",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Endpoint>",
-            "templateType" : "java.util.List<Endpoint>"
+            "templateImplType" : "java.util.ArrayList<Endpoint>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26292,7 +26292,7 @@
     },
     "ResourceAlreadyExistsException" : {
       "c2jName" : "ResourceAlreadyExistsFault",
-      "documentation" : "",
+      "documentation" : "<p>The resource you are attempting to create already exists.</p>",
       "shapeName" : "ResourceAlreadyExistsException",
       "deprecated" : false,
       "required" : null,
@@ -26323,7 +26323,7 @@
     },
     "InvalidSubnetException" : {
       "c2jName" : "InvalidSubnet",
-      "documentation" : "",
+      "documentation" : "<p>The subnet provided is invalid.</p>",
       "shapeName" : "InvalidSubnetException",
       "deprecated" : false,
       "required" : null,
@@ -26463,11 +26463,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<Filter>",
           "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Filter>",
-          "templateType" : "java.util.List<Filter>"
+          "templateImplType" : "java.util.ArrayList<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26712,11 +26712,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<Filter>",
             "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Filter>",
-            "templateType" : "java.util.List<Filter>"
+            "templateImplType" : "java.util.ArrayList<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27228,7 +27228,7 @@
     },
     "InsufficientResourceCapacityException" : {
       "c2jName" : "InsufficientResourceCapacityFault",
-      "documentation" : "",
+      "documentation" : "<p>There are not enough resources allocated to the database migration.</p>",
       "shapeName" : "InsufficientResourceCapacityException",
       "deprecated" : false,
       "required" : null,
@@ -27259,7 +27259,7 @@
     },
     "StorageQuotaExceededException" : {
       "c2jName" : "StorageQuotaExceededFault",
-      "documentation" : "",
+      "documentation" : "<p>The storage quota has been exceeded.</p>",
       "shapeName" : "StorageQuotaExceededException",
       "deprecated" : false,
       "required" : null,
@@ -27543,11 +27543,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<OrderableReplicationInstance>",
           "simpleType" : "OrderableReplicationInstance",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<OrderableReplicationInstance>",
-          "templateType" : "java.util.List<OrderableReplicationInstance>"
+          "templateImplType" : "java.util.ArrayList<OrderableReplicationInstance>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27789,11 +27789,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<OrderableReplicationInstance>",
             "simpleType" : "OrderableReplicationInstance",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<OrderableReplicationInstance>",
-            "templateType" : "java.util.List<OrderableReplicationInstance>"
+            "templateImplType" : "java.util.ArrayList<OrderableReplicationInstance>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27811,7 +27811,7 @@
     },
     "ResourceQuotaExceededException" : {
       "c2jName" : "ResourceQuotaExceededFault",
-      "documentation" : "",
+      "documentation" : "<p>The quota for this resource quota has been exceeded.</p>",
       "shapeName" : "ResourceQuotaExceededException",
       "deprecated" : false,
       "required" : null,
@@ -28091,11 +28091,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<String>",
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28180,11 +28180,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<String>",
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29974,7 +29974,7 @@
     },
     "ReplicationSubnetGroupDoesNotCoverEnoughAZsException" : {
       "c2jName" : "ReplicationSubnetGroupDoesNotCoverEnoughAZs",
-      "documentation" : "",
+      "documentation" : "<p>The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet group and add more AZs.</p>",
       "shapeName" : "ReplicationSubnetGroupDoesNotCoverEnoughAZsException",
       "deprecated" : false,
       "required" : null,
@@ -30602,11 +30602,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<ReplicationSubnetGroup>",
           "simpleType" : "ReplicationSubnetGroup",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<ReplicationSubnetGroup>",
-          "templateType" : "java.util.List<ReplicationSubnetGroup>"
+          "templateImplType" : "java.util.ArrayList<ReplicationSubnetGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30743,11 +30743,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<ReplicationSubnetGroup>",
             "simpleType" : "ReplicationSubnetGroup",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<ReplicationSubnetGroup>",
-            "templateType" : "java.util.List<ReplicationSubnetGroup>"
+            "templateImplType" : "java.util.ArrayList<ReplicationSubnetGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31329,11 +31329,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "templateType" : "java.util.List<TableStatistics>",
           "simpleType" : "TableStatistics",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<TableStatistics>",
-          "templateType" : "java.util.List<TableStatistics>"
+          "templateImplType" : "java.util.ArrayList<TableStatistics>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31575,11 +31575,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "templateType" : "java.util.List<TableStatistics>",
             "simpleType" : "TableStatistics",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<TableStatistics>",
-            "templateType" : "java.util.List<TableStatistics>"
+            "templateImplType" : "java.util.ArrayList<TableStatistics>"
           },
           "mapModel" : null,
           "enumType" : null,

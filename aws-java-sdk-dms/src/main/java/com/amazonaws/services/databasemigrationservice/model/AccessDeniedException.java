@@ -19,7 +19,9 @@ package com.amazonaws.services.databasemigrationservice.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * AWS DMS was denied access to the endpoint.
+ * </p>
  */
 public class AccessDeniedException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

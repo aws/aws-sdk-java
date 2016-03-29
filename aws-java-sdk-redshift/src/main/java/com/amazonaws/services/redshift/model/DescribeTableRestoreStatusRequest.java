@@ -25,9 +25,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * RestoreTableFromClusterSnapshot API action. If you don't specify a
  * value for the <code>TableRestoreRequestId</code> parameter, then
  * <code>DescribeTableRestoreStatus</code> returns the status of all
- * in-progress table restore requests. Otherwise
- * <code>DescribeTableRestoreStatus</code> returns the status of the
- * table specified by <code>TableRestoreRequestId</code> .
+ * table restore requests ordered by the date and time of the request in
+ * ascending order. Otherwise <code>DescribeTableRestoreStatus</code>
+ * returns the status of the table specified by
+ * <code>TableRestoreRequestId</code> .
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeTableRestoreStatus(DescribeTableRestoreStatusRequest)

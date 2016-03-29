@@ -16,23 +16,22 @@ package com.amazonaws.services.s3.internal;
 
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.services.s3.Headers;
-import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 
 /**
  * Header handler to pull the S3_VERSION_ID header out of the response. This
  * header is required for the copyPart and copyObject api methods.
  */
-public class S3VersionHeaderHandler implements HeaderHandler<CopyObjectResultHandler> {
+public class S3VersionHeaderHandler<T extends S3VersionResult> implements HeaderHandler<T> {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see
      * com.amazonaws.services.s3.internal.HeaderHandler#handle(java.lang.Object,
      * com.amazonaws.http.HttpResponse)
      */
     @Override
-    public void handle(CopyObjectResultHandler result, HttpResponse response) {
+    public void handle(T result, HttpResponse response) {
         result.setVersionId(response.getHeaders().get(Headers.S3_VERSION_ID));
     }
 }

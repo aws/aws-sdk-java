@@ -51,48 +51,63 @@ public class FindingJsonMarshaller {
         try {
             jsonGenerator.writeStartObject();
 
-            if (finding.getFindingArn() != null) {
-                jsonGenerator.writeFieldName("findingArn").writeValue(
-                        finding.getFindingArn());
+            if (finding.getArn() != null) {
+                jsonGenerator.writeFieldName("arn")
+                        .writeValue(finding.getArn());
             }
-            if (finding.getRunArn() != null) {
-                jsonGenerator.writeFieldName("runArn").writeValue(
-                        finding.getRunArn());
+            if (finding.getSchemaVersion() != null) {
+                jsonGenerator.writeFieldName("schemaVersion").writeValue(
+                        finding.getSchemaVersion());
             }
-            if (finding.getRulesPackageArn() != null) {
-                jsonGenerator.writeFieldName("rulesPackageArn").writeValue(
-                        finding.getRulesPackageArn());
+            if (finding.getService() != null) {
+                jsonGenerator.writeFieldName("service").writeValue(
+                        finding.getService());
             }
-            if (finding.getRuleName() != null) {
-                jsonGenerator.writeFieldName("ruleName").writeValue(
-                        finding.getRuleName());
+            if (finding.getServiceAttributes() != null) {
+                jsonGenerator.writeFieldName("serviceAttributes");
+                InspectorServiceAttributesJsonMarshaller
+                        .getInstance()
+                        .marshall(finding.getServiceAttributes(), jsonGenerator);
             }
-            if (finding.getAgentId() != null) {
-                jsonGenerator.writeFieldName("agentId").writeValue(
-                        finding.getAgentId());
+            if (finding.getAssetType() != null) {
+                jsonGenerator.writeFieldName("assetType").writeValue(
+                        finding.getAssetType());
             }
-            if (finding.getAutoScalingGroup() != null) {
-                jsonGenerator.writeFieldName("autoScalingGroup").writeValue(
-                        finding.getAutoScalingGroup());
+            if (finding.getAssetAttributes() != null) {
+                jsonGenerator.writeFieldName("assetAttributes");
+                AssetAttributesJsonMarshaller.getInstance().marshall(
+                        finding.getAssetAttributes(), jsonGenerator);
+            }
+            if (finding.getId() != null) {
+                jsonGenerator.writeFieldName("id").writeValue(finding.getId());
+            }
+            if (finding.getTitle() != null) {
+                jsonGenerator.writeFieldName("title").writeValue(
+                        finding.getTitle());
+            }
+            if (finding.getDescription() != null) {
+                jsonGenerator.writeFieldName("description").writeValue(
+                        finding.getDescription());
+            }
+            if (finding.getRecommendation() != null) {
+                jsonGenerator.writeFieldName("recommendation").writeValue(
+                        finding.getRecommendation());
             }
             if (finding.getSeverity() != null) {
                 jsonGenerator.writeFieldName("severity").writeValue(
                         finding.getSeverity());
             }
-            if (finding.getFinding() != null) {
-                jsonGenerator.writeFieldName("finding");
-                LocalizedTextJsonMarshaller.getInstance().marshall(
-                        finding.getFinding(), jsonGenerator);
+            if (finding.getNumericSeverity() != null) {
+                jsonGenerator.writeFieldName("numericSeverity").writeValue(
+                        finding.getNumericSeverity());
             }
-            if (finding.getDescription() != null) {
-                jsonGenerator.writeFieldName("description");
-                LocalizedTextJsonMarshaller.getInstance().marshall(
-                        finding.getDescription(), jsonGenerator);
+            if (finding.getConfidence() != null) {
+                jsonGenerator.writeFieldName("confidence").writeValue(
+                        finding.getConfidence());
             }
-            if (finding.getRecommendation() != null) {
-                jsonGenerator.writeFieldName("recommendation");
-                LocalizedTextJsonMarshaller.getInstance().marshall(
-                        finding.getRecommendation(), jsonGenerator);
+            if (finding.getIndicatorOfCompromise() != null) {
+                jsonGenerator.writeFieldName("indicatorOfCompromise")
+                        .writeValue(finding.getIndicatorOfCompromise());
             }
 
             java.util.List<Attribute> attributesList = finding.getAttributes();
@@ -122,6 +137,14 @@ public class FindingJsonMarshaller {
                     }
                 }
                 jsonGenerator.writeEndArray();
+            }
+            if (finding.getCreatedAt() != null) {
+                jsonGenerator.writeFieldName("createdAt").writeValue(
+                        finding.getCreatedAt());
+            }
+            if (finding.getUpdatedAt() != null) {
+                jsonGenerator.writeFieldName("updatedAt").writeValue(
+                        finding.getUpdatedAt());
             }
 
             jsonGenerator.writeEndObject();

@@ -19,10 +19,28 @@ package com.amazonaws.services.inspector.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * The request was rejected because an invalid or out-of-range value was
+ * supplied for an input parameter.
+ * </p>
  */
 public class InvalidInputException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
+    private String errorCode;
+    /**
+     * <p>
+     * You can immediately retry your request.
+     * </p>
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
+    private Boolean canRetry;
 
     /**
      * Constructs a new InvalidInputException with the specified error message.
@@ -32,6 +50,136 @@ public class InvalidInputException extends AmazonServiceException {
      */
     public InvalidInputException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     * 
+     * @param errorCode
+     *        Code that indicates the type of error that is generated.
+     * @see InvalidInputErrorCode
+     */
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     * 
+     * @return Code that indicates the type of error that is generated.
+     * @see InvalidInputErrorCode
+     */
+
+    public String getErrorCode() {
+        return this.errorCode;
+    }
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     * 
+     * @param errorCode
+     *        Code that indicates the type of error that is generated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InvalidInputErrorCode
+     */
+
+    public InvalidInputException withErrorCode(String errorCode) {
+        setErrorCode(errorCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     * 
+     * @param errorCode
+     *        Code that indicates the type of error that is generated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InvalidInputErrorCode
+     */
+
+    public void setErrorCode(InvalidInputErrorCode errorCode) {
+        this.errorCode = errorCode.toString();
+    }
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     * 
+     * @param errorCode
+     *        Code that indicates the type of error that is generated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InvalidInputErrorCode
+     */
+
+    public InvalidInputException withErrorCode(InvalidInputErrorCode errorCode) {
+        setErrorCode(errorCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can immediately retry your request.
+     * </p>
+     * 
+     * @param canRetry
+     *        You can immediately retry your request.
+     */
+
+    public void setCanRetry(Boolean canRetry) {
+        this.canRetry = canRetry;
+    }
+
+    /**
+     * <p>
+     * You can immediately retry your request.
+     * </p>
+     * 
+     * @return You can immediately retry your request.
+     */
+
+    public Boolean getCanRetry() {
+        return this.canRetry;
+    }
+
+    /**
+     * <p>
+     * You can immediately retry your request.
+     * </p>
+     * 
+     * @param canRetry
+     *        You can immediately retry your request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public InvalidInputException withCanRetry(Boolean canRetry) {
+        setCanRetry(canRetry);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can immediately retry your request.
+     * </p>
+     * 
+     * @return You can immediately retry your request.
+     */
+
+    public Boolean isCanRetry() {
+        return this.canRetry;
     }
 
 }

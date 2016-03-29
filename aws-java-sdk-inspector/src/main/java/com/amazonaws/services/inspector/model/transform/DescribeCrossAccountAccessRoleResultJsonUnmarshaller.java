@@ -64,6 +64,12 @@ public class DescribeCrossAccountAccessRoleResultJsonUnmarshaller
                             .setValid(BooleanJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
+                if (context.testExpression("registeredAt", targetDepth)) {
+                    context.nextToken();
+                    describeCrossAccountAccessRoleResult
+                            .setRegisteredAt(DateJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

@@ -26,18 +26,25 @@ public class RegisterCrossAccountAccessRoleRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The ARN of the IAM role that Inspector uses to list your EC2 instances
-     * during the assessment.
+     * during the assessment run or when you call the <a>PreviewAgents</a>
+     * action.
+     * </p>
      */
     private String roleArn;
 
     /**
+     * <p>
      * The ARN of the IAM role that Inspector uses to list your EC2 instances
-     * during the assessment.
+     * during the assessment run or when you call the <a>PreviewAgents</a>
+     * action.
+     * </p>
      * 
      * @param roleArn
      *        The ARN of the IAM role that Inspector uses to list your EC2
-     *        instances during the assessment.
+     *        instances during the assessment run or when you call the
+     *        <a>PreviewAgents</a> action.
      */
 
     public void setRoleArn(String roleArn) {
@@ -45,11 +52,15 @@ public class RegisterCrossAccountAccessRoleRequest extends
     }
 
     /**
+     * <p>
      * The ARN of the IAM role that Inspector uses to list your EC2 instances
-     * during the assessment.
+     * during the assessment run or when you call the <a>PreviewAgents</a>
+     * action.
+     * </p>
      * 
      * @return The ARN of the IAM role that Inspector uses to list your EC2
-     *         instances during the assessment.
+     *         instances during the assessment run or when you call the
+     *         <a>PreviewAgents</a> action.
      */
 
     public String getRoleArn() {
@@ -57,12 +68,16 @@ public class RegisterCrossAccountAccessRoleRequest extends
     }
 
     /**
+     * <p>
      * The ARN of the IAM role that Inspector uses to list your EC2 instances
-     * during the assessment.
+     * during the assessment run or when you call the <a>PreviewAgents</a>
+     * action.
+     * </p>
      * 
      * @param roleArn
      *        The ARN of the IAM role that Inspector uses to list your EC2
-     *        instances during the assessment.
+     *        instances during the assessment run or when you call the
+     *        <a>PreviewAgents</a> action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

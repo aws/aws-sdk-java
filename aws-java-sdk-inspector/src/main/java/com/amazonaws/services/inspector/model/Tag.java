@@ -20,10 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A key and value pair.
- * </p>
- * <p>
- * This data type is used as a request parameter in the
+ * A key and value pair. This data type is used as a request parameter in the
  * <a>SetTagsForResource</a> action and a response element in the
  * <a>ListTagsForResource</a> action.
  * </p>
@@ -32,24 +29,24 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag key.
+     * A tag key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The value assigned to a tag key.
+     * A value assigned to a tag key.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The tag key.
+     * A tag key.
      * </p>
      * 
      * @param key
-     *        The tag key.
+     *        A tag key.
      */
 
     public void setKey(String key) {
@@ -58,10 +55,10 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag key.
+     * A tag key.
      * </p>
      * 
-     * @return The tag key.
+     * @return A tag key.
      */
 
     public String getKey() {
@@ -70,11 +67,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag key.
+     * A tag key.
      * </p>
      * 
      * @param key
-     *        The tag key.
+     *        A tag key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -86,11 +83,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value assigned to a tag key.
+     * A value assigned to a tag key.
      * </p>
      * 
      * @param value
-     *        The value assigned to a tag key.
+     *        A value assigned to a tag key.
      */
 
     public void setValue(String value) {
@@ -99,10 +96,10 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value assigned to a tag key.
+     * A value assigned to a tag key.
      * </p>
      * 
-     * @return The value assigned to a tag key.
+     * @return A value assigned to a tag key.
      */
 
     public String getValue() {
@@ -111,11 +108,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value assigned to a tag key.
+     * A value assigned to a tag key.
      * </p>
      * 
      * @param value
-     *        The value assigned to a tag key.
+     *        A value assigned to a tag key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

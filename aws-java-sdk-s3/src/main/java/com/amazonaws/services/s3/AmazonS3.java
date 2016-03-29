@@ -70,6 +70,7 @@ import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
+import com.amazonaws.services.s3.model.GetObjectAclRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
@@ -1481,6 +1482,37 @@ public interface AmazonS3 extends S3DirectSpi {
      * @see AmazonS3#getObjectAcl(String, String)
      */
     public AccessControlList getObjectAcl(String bucketName, String key, String versionId)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
+     * Gets the {@link AccessControlList} (ACL) for the specified object in Amazon S3.
+     * </p>
+     * <p>
+     * Each bucket and object in Amazon S3 has an ACL that defines its access
+     * control policy. When a request is made, Amazon S3 authenticates the
+     * request using its standard authentication procedure and then checks the
+     * ACL to verify the sender was granted access to the bucket or object. If
+     * the sender is approved, the request proceeds. Otherwise, Amazon S3
+     * returns an error.
+     * </p>
+     *
+     * @param getObjectRequest
+     *            the request object containing all the information needed for retrieving
+     *            the object ACL.
+     *
+     * @return The <code>AccessControlList</code> for the specified Amazon S3 object.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3#getObjectAcl(String, String, String)
+     */
+    public AccessControlList getObjectAcl(GetObjectAclRequest getObjectAclRequest)
         throws AmazonClientException, AmazonServiceException;
 
     /**

@@ -1406,9 +1406,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * RestoreTableFromClusterSnapshot API action. If you don't specify a
      * value for the <code>TableRestoreRequestId</code> parameter, then
      * <code>DescribeTableRestoreStatus</code> returns the status of all
-     * in-progress table restore requests. Otherwise
-     * <code>DescribeTableRestoreStatus</code> returns the status of the
-     * table specified by <code>TableRestoreRequestId</code> .
+     * table restore requests ordered by the date and time of the request in
+     * ascending order. Otherwise <code>DescribeTableRestoreStatus</code>
+     * returns the status of the table specified by
+     * <code>TableRestoreRequestId</code> .
      * </p>
      *
      * @param describeTableRestoreStatusRequest Container for the necessary
@@ -1443,9 +1444,10 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * RestoreTableFromClusterSnapshot API action. If you don't specify a
      * value for the <code>TableRestoreRequestId</code> parameter, then
      * <code>DescribeTableRestoreStatus</code> returns the status of all
-     * in-progress table restore requests. Otherwise
-     * <code>DescribeTableRestoreStatus</code> returns the status of the
-     * table specified by <code>TableRestoreRequestId</code> .
+     * table restore requests ordered by the date and time of the request in
+     * ascending order. Otherwise <code>DescribeTableRestoreStatus</code>
+     * returns the status of the table specified by
+     * <code>TableRestoreRequestId</code> .
      * </p>
      *
      * @param describeTableRestoreStatusRequest Container for the necessary
@@ -3093,6 +3095,88 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
             throw ex;
               }
               asyncHandler.onSuccess(restoreFromClusterSnapshotRequest, result);
+                 return result;
+        }
+    });
+    }
+    
+    /**
+     * <p>
+     * Modifies the list of AWS Identity and Access Management (IAM) roles
+     * that can be used by the cluster to access other AWS services.
+     * </p>
+     * <p>
+     * A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     *
+     * @param modifyClusterIamRolesRequest Container for the necessary
+     *           parameters to execute the ModifyClusterIamRoles operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyClusterIamRoles service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Cluster> modifyClusterIamRolesAsync(final ModifyClusterIamRolesRequest modifyClusterIamRolesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Cluster>() {
+            public Cluster call() throws Exception {
+                return modifyClusterIamRoles(modifyClusterIamRolesRequest);
+        }
+    });
+    }
+
+    /**
+     * <p>
+     * Modifies the list of AWS Identity and Access Management (IAM) roles
+     * that can be used by the cluster to access other AWS services.
+     * </p>
+     * <p>
+     * A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     *
+     * @param modifyClusterIamRolesRequest Container for the necessary
+     *           parameters to execute the ModifyClusterIamRoles operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyClusterIamRoles service method, as returned by AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Cluster> modifyClusterIamRolesAsync(
+            final ModifyClusterIamRolesRequest modifyClusterIamRolesRequest,
+            final AsyncHandler<ModifyClusterIamRolesRequest, Cluster> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Cluster>() {
+            public Cluster call() throws Exception {
+              Cluster result;
+                try {
+                result = modifyClusterIamRoles(modifyClusterIamRolesRequest);
+              } catch (Exception ex) {
+                  asyncHandler.onError(ex);
+            throw ex;
+              }
+              asyncHandler.onSuccess(modifyClusterIamRolesRequest, result);
                  return result;
         }
     });

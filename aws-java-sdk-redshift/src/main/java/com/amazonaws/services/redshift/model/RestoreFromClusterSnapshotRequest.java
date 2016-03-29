@@ -208,6 +208,15 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     private String additionalInfo;
 
     /**
+     * A list of AWS Identity and Access Management (IAM) roles that can be
+     * used by the cluster to access other AWS services. You must supply the
+     * IAM roles in their Amazon Resource Name (ARN) format. You can supply
+     * up to 10 IAM roles in a single request. <p>A cluster can have up to 10
+     * IAM roles associated at any time.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> iamRoles;
+
+    /**
      * The identifier of the cluster that will be created from restoring the
      * snapshot. <p> <p>Constraints: <ul> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</li> <li>Alphabetic characters
@@ -1354,6 +1363,111 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     }
 
     /**
+     * A list of AWS Identity and Access Management (IAM) roles that can be
+     * used by the cluster to access other AWS services. You must supply the
+     * IAM roles in their Amazon Resource Name (ARN) format. You can supply
+     * up to 10 IAM roles in a single request. <p>A cluster can have up to 10
+     * IAM roles associated at any time.
+     *
+     * @return A list of AWS Identity and Access Management (IAM) roles that can be
+     *         used by the cluster to access other AWS services. You must supply the
+     *         IAM roles in their Amazon Resource Name (ARN) format. You can supply
+     *         up to 10 IAM roles in a single request. <p>A cluster can have up to 10
+     *         IAM roles associated at any time.
+     */
+    public java.util.List<String> getIamRoles() {
+        if (iamRoles == null) {
+              iamRoles = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              iamRoles.setAutoConstruct(true);
+        }
+        return iamRoles;
+    }
+    
+    /**
+     * A list of AWS Identity and Access Management (IAM) roles that can be
+     * used by the cluster to access other AWS services. You must supply the
+     * IAM roles in their Amazon Resource Name (ARN) format. You can supply
+     * up to 10 IAM roles in a single request. <p>A cluster can have up to 10
+     * IAM roles associated at any time.
+     *
+     * @param iamRoles A list of AWS Identity and Access Management (IAM) roles that can be
+     *         used by the cluster to access other AWS services. You must supply the
+     *         IAM roles in their Amazon Resource Name (ARN) format. You can supply
+     *         up to 10 IAM roles in a single request. <p>A cluster can have up to 10
+     *         IAM roles associated at any time.
+     */
+    public void setIamRoles(java.util.Collection<String> iamRoles) {
+        if (iamRoles == null) {
+            this.iamRoles = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> iamRolesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(iamRoles.size());
+        iamRolesCopy.addAll(iamRoles);
+        this.iamRoles = iamRolesCopy;
+    }
+    
+    /**
+     * A list of AWS Identity and Access Management (IAM) roles that can be
+     * used by the cluster to access other AWS services. You must supply the
+     * IAM roles in their Amazon Resource Name (ARN) format. You can supply
+     * up to 10 IAM roles in a single request. <p>A cluster can have up to 10
+     * IAM roles associated at any time.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIamRoles(java.util.Collection)} or {@link
+     * #withIamRoles(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iamRoles A list of AWS Identity and Access Management (IAM) roles that can be
+     *         used by the cluster to access other AWS services. You must supply the
+     *         IAM roles in their Amazon Resource Name (ARN) format. You can supply
+     *         up to 10 IAM roles in a single request. <p>A cluster can have up to 10
+     *         IAM roles associated at any time.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withIamRoles(String... iamRoles) {
+        if (getIamRoles() == null) setIamRoles(new java.util.ArrayList<String>(iamRoles.length));
+        for (String value : iamRoles) {
+            getIamRoles().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of AWS Identity and Access Management (IAM) roles that can be
+     * used by the cluster to access other AWS services. You must supply the
+     * IAM roles in their Amazon Resource Name (ARN) format. You can supply
+     * up to 10 IAM roles in a single request. <p>A cluster can have up to 10
+     * IAM roles associated at any time.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iamRoles A list of AWS Identity and Access Management (IAM) roles that can be
+     *         used by the cluster to access other AWS services. You must supply the
+     *         IAM roles in their Amazon Resource Name (ARN) format. You can supply
+     *         up to 10 IAM roles in a single request. <p>A cluster can have up to 10
+     *         IAM roles associated at any time.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withIamRoles(java.util.Collection<String> iamRoles) {
+        if (iamRoles == null) {
+            this.iamRoles = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> iamRolesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(iamRoles.size());
+            iamRolesCopy.addAll(iamRoles);
+            this.iamRoles = iamRolesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1384,7 +1498,8 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
         if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");
-        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() );
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");
+        if (getIamRoles() != null) sb.append("IamRoles: " + getIamRoles() );
         sb.append("}");
         return sb.toString();
     }
@@ -1414,6 +1529,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         hashCode = prime * hashCode + ((getNodeType() == null) ? 0 : getNodeType().hashCode()); 
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
+        hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode()); 
         return hashCode;
     }
     
@@ -1465,6 +1581,8 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (other.getNodeType() != null && other.getNodeType().equals(this.getNodeType()) == false) return false; 
         if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null) return false;
         if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
+        if (other.getIamRoles() == null ^ this.getIamRoles() == null) return false;
+        if (other.getIamRoles() != null && other.getIamRoles().equals(this.getIamRoles()) == false) return false; 
         return true;
     }
     

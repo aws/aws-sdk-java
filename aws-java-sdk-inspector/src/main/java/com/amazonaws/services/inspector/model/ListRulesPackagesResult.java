@@ -28,7 +28,7 @@ public class ListRulesPackagesResult implements Serializable, Cloneable {
      * The list of ARNs specifying the rules packages returned by the action.
      * </p>
      */
-    private java.util.List<String> rulesPackageArnList;
+    private java.util.List<String> rulesPackageArns;
     /**
      * <p>
      * When a response is generated, if there is more data to be listed, this
@@ -48,8 +48,8 @@ public class ListRulesPackagesResult implements Serializable, Cloneable {
      *         action.
      */
 
-    public java.util.List<String> getRulesPackageArnList() {
-        return rulesPackageArnList;
+    public java.util.List<String> getRulesPackageArns() {
+        return rulesPackageArns;
     }
 
     /**
@@ -57,20 +57,20 @@ public class ListRulesPackagesResult implements Serializable, Cloneable {
      * The list of ARNs specifying the rules packages returned by the action.
      * </p>
      * 
-     * @param rulesPackageArnList
+     * @param rulesPackageArns
      *        The list of ARNs specifying the rules packages returned by the
      *        action.
      */
 
-    public void setRulesPackageArnList(
-            java.util.Collection<String> rulesPackageArnList) {
-        if (rulesPackageArnList == null) {
-            this.rulesPackageArnList = null;
+    public void setRulesPackageArns(
+            java.util.Collection<String> rulesPackageArns) {
+        if (rulesPackageArns == null) {
+            this.rulesPackageArns = null;
             return;
         }
 
-        this.rulesPackageArnList = new java.util.ArrayList<String>(
-                rulesPackageArnList);
+        this.rulesPackageArns = new java.util.ArrayList<String>(
+                rulesPackageArns);
     }
 
     /**
@@ -79,26 +79,26 @@ public class ListRulesPackagesResult implements Serializable, Cloneable {
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setRulesPackageArnList(java.util.Collection)} or
-     * {@link #withRulesPackageArnList(java.util.Collection)} if you want to
+     * any). Use {@link #setRulesPackageArns(java.util.Collection)} or
+     * {@link #withRulesPackageArns(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
-     * @param rulesPackageArnList
+     * @param rulesPackageArns
      *        The list of ARNs specifying the rules packages returned by the
      *        action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public ListRulesPackagesResult withRulesPackageArnList(
-            String... rulesPackageArnList) {
-        if (this.rulesPackageArnList == null) {
-            setRulesPackageArnList(new java.util.ArrayList<String>(
-                    rulesPackageArnList.length));
+    public ListRulesPackagesResult withRulesPackageArns(
+            String... rulesPackageArns) {
+        if (this.rulesPackageArns == null) {
+            setRulesPackageArns(new java.util.ArrayList<String>(
+                    rulesPackageArns.length));
         }
-        for (String ele : rulesPackageArnList) {
-            this.rulesPackageArnList.add(ele);
+        for (String ele : rulesPackageArns) {
+            this.rulesPackageArns.add(ele);
         }
         return this;
     }
@@ -108,16 +108,16 @@ public class ListRulesPackagesResult implements Serializable, Cloneable {
      * The list of ARNs specifying the rules packages returned by the action.
      * </p>
      * 
-     * @param rulesPackageArnList
+     * @param rulesPackageArns
      *        The list of ARNs specifying the rules packages returned by the
      *        action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public ListRulesPackagesResult withRulesPackageArnList(
-            java.util.Collection<String> rulesPackageArnList) {
-        setRulesPackageArnList(rulesPackageArnList);
+    public ListRulesPackagesResult withRulesPackageArns(
+            java.util.Collection<String> rulesPackageArns) {
+        setRulesPackageArns(rulesPackageArns);
         return this;
     }
 
@@ -195,8 +195,8 @@ public class ListRulesPackagesResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRulesPackageArnList() != null)
-            sb.append("RulesPackageArnList: " + getRulesPackageArnList() + ",");
+        if (getRulesPackageArns() != null)
+            sb.append("RulesPackageArns: " + getRulesPackageArns() + ",");
         if (getNextToken() != null)
             sb.append("NextToken: " + getNextToken());
         sb.append("}");
@@ -213,12 +213,12 @@ public class ListRulesPackagesResult implements Serializable, Cloneable {
         if (obj instanceof ListRulesPackagesResult == false)
             return false;
         ListRulesPackagesResult other = (ListRulesPackagesResult) obj;
-        if (other.getRulesPackageArnList() == null
-                ^ this.getRulesPackageArnList() == null)
+        if (other.getRulesPackageArns() == null
+                ^ this.getRulesPackageArns() == null)
             return false;
-        if (other.getRulesPackageArnList() != null
-                && other.getRulesPackageArnList().equals(
-                        this.getRulesPackageArnList()) == false)
+        if (other.getRulesPackageArns() != null
+                && other.getRulesPackageArns().equals(
+                        this.getRulesPackageArns()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
@@ -235,8 +235,8 @@ public class ListRulesPackagesResult implements Serializable, Cloneable {
 
         hashCode = prime
                 * hashCode
-                + ((getRulesPackageArnList() == null) ? 0
-                        : getRulesPackageArnList().hashCode());
+                + ((getRulesPackageArns() == null) ? 0 : getRulesPackageArns()
+                        .hashCode());
         hashCode = prime * hashCode
                 + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

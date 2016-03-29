@@ -17,12 +17,12 @@
  */
 package com.amazonaws.services.s3.model;
 import java.io.Serializable;
-
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 
 /**
  * Represents an object stored in Amazon S3. This object contains
@@ -32,11 +32,11 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see ObjectMetadata
  */
-public class S3Object implements Closeable,Serializable {
+public class S3Object implements Closeable,Serializable, S3RequesterChargedResult {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/** The key under which this object is stored */
+    /** The key under which this object is stored */
     private String key = null;
 
     /** The name of the bucket in which this object is contained */
@@ -215,34 +215,12 @@ public class S3Object implements Closeable,Serializable {
             is.close();
     }
 
-    /**
-     * Returns true if the user is charged for downloading the object from an
-     * Requester Pays Bucket; else false.
-     *
-     * <p>
-     * If a bucket is enabled for Requester Pays, then any attempt to read an
-     * object from it without Requester Pays enabled will result in a 403 error
-     * and the bucket owner will be charged for the request.
-     *
-     * @return true if the user has been charged for the download operation from
-     *         Requester Pays Bucket.
-     */
+    @Override
     public boolean isRequesterCharged() {
         return isRequesterCharged;
     }
 
-    /**
-     * Used for downloading an Amazon S3 Object from a Requester Pays Bucket. If
-     * set the requester is charged for downloading the data from the bucket.
-     *
-     * <p>
-     * If a bucket is enabled for Requester Pays, then any attempt to read an
-     * object from it without Requester Pays enabled will result in a 403 error
-     * and the bucket owner will be charged for the request.
-     *
-     * @param isRequesterCharged
-     *            Indicates requester is charged for this operation.
-     */
+    @Override
     public void setRequesterCharged(boolean isRequesterCharged) {
         this.isRequesterCharged = isRequesterCharged;
     }

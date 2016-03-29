@@ -72,6 +72,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public CreateXssMatchSetResult createXssMatchSet(
+            CreateXssMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteByteMatchSetResult deleteByteMatchSet(
             DeleteByteMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -101,6 +107,12 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public DeleteWebACLResult deleteWebACL(DeleteWebACLRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteXssMatchSetResult deleteXssMatchSet(
+            DeleteXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,6 +166,11 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public GetXssMatchSetResult getXssMatchSet(GetXssMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListByteMatchSetsResult listByteMatchSets(
             ListByteMatchSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -187,6 +204,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public ListXssMatchSetsResult listXssMatchSets(
+            ListXssMatchSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateByteMatchSetResult updateByteMatchSet(
             UpdateByteMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -216,6 +239,12 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public UpdateWebACLResult updateWebACL(UpdateWebACLRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateXssMatchSetResult updateXssMatchSet(
+            UpdateXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

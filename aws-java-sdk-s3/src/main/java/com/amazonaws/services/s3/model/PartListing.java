@@ -19,11 +19,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
+
 /**
  * The ListPartsResponse contains all the information about the ListParts
  * method.
  */
-public class PartListing implements Serializable {
+public class PartListing implements Serializable, S3RequesterChargedResult {
 
     /**
      * The name of the bucket containing the listed parts, as specified in the
@@ -91,6 +93,11 @@ public class PartListing implements Serializable {
     /** Id of the lifecycle rule that makes a multipart upload eligible for abort operation. */
     private String abortRuleId;
 
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Returns the name of the bucket containing the listed parts, as specified
@@ -401,4 +408,14 @@ public class PartListing implements Serializable {
     public void setAbortRuleId(String abortRuleId) {
         this.abortRuleId = abortRuleId;
     }
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
+    }
+
 }

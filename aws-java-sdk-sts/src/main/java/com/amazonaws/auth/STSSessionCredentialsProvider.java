@@ -15,21 +15,14 @@
 
 package com.amazonaws.auth;
 
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenService;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClient;
-import com.amazonaws.services.securitytoken.model.Credentials;
 import com.amazonaws.services.securitytoken.model.GetSessionTokenRequest;
 import com.amazonaws.services.securitytoken.model.GetSessionTokenResult;
 
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.Callable;
 
 /**
  * AWSCredentialsProvider implementation that uses the AWS Security Token Service to create
@@ -38,69 +31,29 @@ import java.util.concurrent.locks.ReentrantLock;
 @ThreadSafe
 public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvider {
 
-    /** Default duration for started sessions */
+    /**
+     * Default duration for started sessions
+     */
     public static final int DEFAULT_DURATION_SECONDS = 3600;
 
-    /** Time before expiry within which credentials will be renewed synchronously. */
-    private static final int EXPIRY_TIME_MILLIS = 60 * 1000;
-
-    /** Maximum time to wait for STS service to respond */
-    private static final long NEW_SESSION_MAX_WAIT_SECONDS = 5;
-
     /**
-     * Time before expiry within which credentials will be asynchronously refreshed.
+     * The client for starting STS sessions
      */
-    private static final long ASYNC_REFRESH_EXPIRATION_IN_MILLIS = TimeUnit.MINUTES.toMillis(5);
-
-    /**
-     * Private class used to atomically store a session with its expiration time.
-     */
-    private static final class SessionCredentialsHolder {
-        private final AWSSessionCredentials sessionCredentials;
-        private final Date sessionCredentialsExpiration;
-
-        private SessionCredentialsHolder(AWSSessionCredentials sessionCredentials, Date sessionCredentialsExpiration) {
-            this.sessionCredentials = sessionCredentials;
-            this.sessionCredentialsExpiration = sessionCredentialsExpiration;
-        }
-
-        @Override
-        public int hashCode() {
-            return sessionCredentials.hashCode();
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (null == obj) {
-                return false;
-            }
-            if (getClass() != obj.getClass()) {
-                return false;
-            }
-            final SessionCredentialsHolder other = (SessionCredentialsHolder) obj;
-            return !(this.sessionCredentials != other.sessionCredentials
-                    && (null == this.sessionCredentials || !this.sessionCredentials.equals(other.sessionCredentials)));
-        }
-    }
-
-    /** The client for starting STS sessions */
     private final AWSSecurityTokenService securityTokenService;
 
+    private final Callable<SessionCredentialsHolder> refreshCallable = new Callable<SessionCredentialsHolder>() {
+        @Override
+        public SessionCredentialsHolder call() throws Exception {
+            return newSession();
+        }
+    };
+
     /**
-     * Used to synchronize blocking session creation. This is used when the credentials are first
-     * fetched from STS and whenever the credentials are expiring (which thanks to the async refresh
-     * should be rare).
+     * Handles the refreshing of sessions. Ideally this should be final but #setSTSClientEndpoint
+     * forces us to create a new one.
      */
-    private final Lock blockingNewSessionLock = new ReentrantLock();
+    private volatile RefreshableTask<SessionCredentialsHolder> refreshableTask;
 
-    /** The current session credentials and expiration time */
-    private final AtomicReference<SessionCredentialsHolder> sessionCredentials = new AtomicReference<SessionCredentialsHolder>();
-
-    /** Used to interrupt the latest refresh thread */
-    private final AtomicReference<Thread> refreshThread = new AtomicReference<Thread>();
-
-    /** Used to ensure only one thread at any given time refreshes the re-usable session */
-    private final AtomicBoolean asyncRefreshing = new AtomicBoolean(false);
 
     /**
      * Constructs a new STSSessionCredentialsProvider, which will use the specified long lived AWS
@@ -108,8 +61,7 @@ public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvi
      * session credentials, which will then be returned by this class's {@link #getCredentials()}
      * method.
      *
-     * @param longLivedCredentials
-     *            The main AWS credentials for a user's account.
+     * @param longLivedCredentials The main AWS credentials for a user's account.
      */
     public STSSessionCredentialsProvider(AWSCredentials longLivedCredentials) {
         this(longLivedCredentials, new ClientConfiguration());
@@ -121,13 +73,12 @@ public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvi
      * session credentials, which will then be returned by this class's {@link #getCredentials()}
      * method.
      *
-     * @param longLivedCredentials
-     *            The main AWS credentials for a user's account.
-     * @param clientConfiguration
-     *            Client configuration connection parameters.
+     * @param longLivedCredentials The main AWS credentials for a user's account.
+     * @param clientConfiguration  Client configuration connection parameters.
      */
-    public STSSessionCredentialsProvider(AWSCredentials longLivedCredentials, ClientConfiguration clientConfiguration) {
-        securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentials, clientConfiguration);
+    public STSSessionCredentialsProvider(AWSCredentials longLivedCredentials,
+                                         ClientConfiguration clientConfiguration) {
+        this(new AWSSecurityTokenServiceClient(longLivedCredentials, clientConfiguration));
     }
 
     /**
@@ -136,11 +87,11 @@ public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvi
      * Service (STS) to request short lived session credentials, which will then be returned by this
      * class's {@link #getCredentials()} method.
      *
-     * @param longLivedCredentialsProvider
-     *            Credentials provider for the main AWS credentials for a user's account.
+     * @param longLivedCredentialsProvider Credentials provider for the main AWS credentials for a
+     *                                     user's account.
      */
     public STSSessionCredentialsProvider(AWSCredentialsProvider longLivedCredentialsProvider) {
-        securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentialsProvider);
+        this(new AWSSecurityTokenServiceClient(longLivedCredentialsProvider));
     }
 
     /**
@@ -149,35 +100,52 @@ public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvi
      * Service (STS) to request short lived session credentials, which will then be returned by this
      * class's {@link #getCredentials()} method.
      *
-     * @param longLivedCredentialsProvider
-     *            Credentials provider for the main AWS credentials for a user's account.
-     * @param clientConfiguration
-     *            Client configuration connection parameters.
+     * @param longLivedCredentialsProvider Credentials provider for the main AWS credentials for a
+     *                                     user's account.
+     * @param clientConfiguration          Client configuration connection parameters.
      */
     public STSSessionCredentialsProvider(AWSCredentialsProvider longLivedCredentialsProvider,
-            ClientConfiguration clientConfiguration) {
-        securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentialsProvider, clientConfiguration);
+                                         ClientConfiguration clientConfiguration) {
+
+        this(new AWSSecurityTokenServiceClient(longLivedCredentialsProvider, clientConfiguration));
     }
+
+    private RefreshableTask<SessionCredentialsHolder> createRefreshableTask() {
+        return new RefreshableTask.Builder<SessionCredentialsHolder>()
+                .withRefreshCallable(refreshCallable)
+                .withBlockingRefreshPredicate(new ShouldDoBlockingSessionRefresh())
+                .withAsyncRefreshPredicate(new ShouldDoAsyncSessionRefresh()).build();
+    }
+
+    /**
+     * Constructs a new STSSessionCredentialsProvider with the alredy configured STS client.
+     *
+     * @param sts Preconfigured STS client to use for this provider
+     */
+    public STSSessionCredentialsProvider(AWSSecurityTokenService sts) {
+        this.securityTokenService = sts;
+        this.refreshableTask = createRefreshableTask();
+    }
+
 
     /**
      * Sets the AWS Security Token Service (STS) endpoint where session credentials are retrieved
-     * from.
-     * <p>
-     * </p>
-     * The default AWS Security Token Service (STS) endpoint ("sts.amazonaws.com") works for all
-     * accounts that are not for China (Beijing) region or GovCloud. You only need to change the
-     * endpoint to "sts.cn-north-1.amazonaws.com.cn" when you are requesting session credentials for
-     * services in China(Beijing) region or "sts.us-gov-west-1.amazonaws.com" for GovCloud.
-     * <p>
-     * </p>
-     * Setting this invalidates existing session credentials. Calling this method will temporarily
-     * cause getCredentials() to block until a new session is fetched from the STS service.
-     * 
-     * @param endpoint
+     * from. <p> </p> The default AWS Security Token Service (STS) endpoint ("sts.amazonaws.com")
+     * works for all accounts that are not for China (Beijing) region or GovCloud. You only need to
+     * change the endpoint to "sts.cn-north-1.amazonaws.com.cn" when you are requesting session
+     * credentials for services in China(Beijing) region or "sts.us-gov-west-1.amazonaws.com" for
+     * GovCloud. <p> </p> Setting this invalidates existing session credentials. Calling this method
+     * will temporarily cause getCredentials() to block until a new session is fetched from the STS
+     * service.
+     *
+     * @deprecated This method may be removed in a future major version. Create multiple providers
+     * if you need to work with multiple STS endpoints.
      */
-    public void setSTSClientEndpoint(String endpoint) {
+    @Deprecated
+    public synchronized void setSTSClientEndpoint(String endpoint) {
         securityTokenService.setEndpoint(endpoint);
-        sessionCredentials.set(null);
+        // Create a new task rather then trying to synchronize this in the refreshable task
+        this.refreshableTask = createRefreshableTask();
     }
 
     /**
@@ -187,174 +155,28 @@ public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvi
      * valid. Expiring credentials are automatically refreshed via a background thread. Multiple
      * threads may call this method concurrently without causing simultaneous network calls to the
      * STS service. Care has been taken to resist Throttling exceptions.
-     * 
-     * @return
      */
     @Override
     public AWSSessionCredentials getCredentials() {
-        SessionCredentialsHolder credsHolder = sessionCredentials.get();
-
-        if (needsNewSession(credsHolder)) {
-            blockingNewSession();
-        } else if (shouldAsyncRefresh()) {
-            asyncNewSession();
-        }
-
-        credsHolder = sessionCredentials.get();
-        if (credsHolder != null && credsHolder.sessionCredentials != null) {
-            return credsHolder.sessionCredentials;
-        } else {
-            throw new IllegalStateException("Session credentials should never be null.");
-        }
+        return refreshableTask.getValue().getSessionCredentials();
     }
 
     /**
-     * Brute-force refresh of session credentials. A decision to use this method should be made
+     * Force refresh of session credentials. A decision to use this method should be made
      * judiciously since this class automatically manages refreshing expiring credentials limiting
      * its usefulness. Calling this method may temporarily cause getCredentials() to block until a
      * new session is fetched from the STS service.
      */
     @Override
     public void refresh() {
-        sessionCredentials.set(null);
-        blockingNewSession();
+        refreshableTask.forceGetValue();
     }
 
-    /**
-     * Unconditionally calls STS to generate a new session
-     */
-    private void newSession() {
-        GetSessionTokenResult sessionTokenResult = securityTokenService
-                .getSessionToken(new GetSessionTokenRequest().withDurationSeconds(DEFAULT_DURATION_SECONDS));
-
-        Credentials stsCredentials = sessionTokenResult.getCredentials();
-
-        AWSSessionCredentials credentials = new BasicSessionCredentials(stsCredentials.getAccessKeyId(),
-                stsCredentials.getSecretAccessKey(), stsCredentials.getSessionToken());
-
-        SessionCredentialsHolder credsHolder = new SessionCredentialsHolder(credentials,
-                stsCredentials.getExpiration());
-        sessionCredentials.compareAndSet(sessionCredentials.get(), credsHolder);
+    private SessionCredentialsHolder newSession() {
+        GetSessionTokenResult sessionTokenResult = securityTokenService.getSessionToken(
+                new GetSessionTokenRequest().withDurationSeconds(DEFAULT_DURATION_SECONDS));
+        return new SessionCredentialsHolder(sessionTokenResult.getCredentials());
     }
 
-    /**
-     * Called when a blocking session refresh times-out or is interrupted. Wraps the underlying
-     * cause in an AmazonClientException which is then thrown.
-     *
-     * @param error
-     *            The description of the error
-     * @param cause
-     *            The Exception causing the error or null
-     */
-    private void handleWaitError(String error, Exception cause) {
 
-        // set the interrupt flag on the refresh thread in case of temporary error
-        Thread newSessionThread = refreshThread.get();
-        if (null != newSessionThread) {
-            try {
-                newSessionThread.interrupt();
-            } catch (SecurityException ex) {
-                // ignore the security exception when interrupting threads is not allowed by JVM
-            }
-        }
-
-        throw new AmazonClientException(error, cause);
-    }
-
-    /**
-     * Used when there is no valid session to return. Callers are blocked until a new session is
-     * created or an exception is thrown. Throws AmazonClientException if new session is not created
-     * within 5 seconds.
-     */
-    private void blockingNewSession() {
-        try {
-            if (blockingNewSessionLock.tryLock(NEW_SESSION_MAX_WAIT_SECONDS,
-                    TimeUnit.SECONDS)) {
-                try {
-                    // Return if successful refresh occurred while waiting
-                    // for the lock
-
-                    if (!needsNewSession()) {
-                        return;
-                    } else {
-                        // Otherwise fetch a new session from STS
-                        newSession();
-                        return;
-                    }
-                } finally {
-                    blockingNewSessionLock.unlock();
-                }
-            }
-        } catch (InterruptedException ex) {
-            handleWaitError("Interrupted waiting for new session credentials.", ex);
-        }
-        // Couldn't acquire the lock. Just try and call STS ourselves.
-        newSession();
-    }
-
-    /**
-     * Used to asynchronously refresh the session. Ensures only one thread is spawned at any given
-     * time to refresh the session. Caller is never blocked.
-     */
-    private void asyncNewSession() {
-        // Immediately return if refresh already in progress
-        if (asyncRefreshing.compareAndSet(false, true)) {
-            try {
-                refreshThread.set(new Thread() {
-                    @Override
-                    public void run() {
-                        try {
-                            newSession();
-                        } finally {
-                            asyncRefreshing.set(false);
-                        }
-                    }
-                });
-                refreshThread.get().start();
-            } catch (RuntimeException ex) {
-                asyncRefreshing.set(false);
-                throw ex;
-            }
-        }
-    }
-
-    /**
-     * @return True if we should kick of an asynchronous refresh of session credentials. False
-     *         otherwise.
-     */
-    private boolean shouldAsyncRefresh() {
-        Date expiryTime = sessionCredentials.get().sessionCredentialsExpiration;
-        if (expiryTime != null) {
-            long timeRemaining = expiryTime.getTime() - System.currentTimeMillis();
-            return timeRemaining < ASYNC_REFRESH_EXPIRATION_IN_MILLIS;
-        }
-        return false;
-    }
-
-    /**
-     * Session credentials that expire in less than a minute are considered expiring.
-     * 
-     * @param expiry
-     *            expiration time of a session
-     * @return
-     */
-    private static boolean expiring(Date expiry) {
-        long timeRemaining = expiry.getTime() - System.currentTimeMillis();
-        return timeRemaining < EXPIRY_TIME_MILLIS;
-    }
-
-    private boolean needsNewSession() {
-        return needsNewSession(sessionCredentials.get());
-    }
-
-    /**
-     * Returns true if a new STS session needs to be started. A new STS session is needed when no
-     * session has been started yet, or if the last session is within {@link #EXPIRY_TIME_MILLIS}
-     * millisecond of expiring.
-     *
-     * @return True if a new STS session needs to be started.
-     */
-    private boolean needsNewSession(SessionCredentialsHolder credentialsHolder) {
-        return credentialsHolder == null || expiring(credentialsHolder.sessionCredentialsExpiration);
-    }
 }

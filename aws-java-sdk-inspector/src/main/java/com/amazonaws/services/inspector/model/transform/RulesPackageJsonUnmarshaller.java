@@ -51,15 +51,15 @@ public class RulesPackageJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("rulesPackageArn", targetDepth)) {
+                if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    rulesPackage.setRulesPackageArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rulesPackage.setArn(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
-                if (context.testExpression("rulesPackageName", targetDepth)) {
+                if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    rulesPackage.setRulesPackageName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rulesPackage.setName(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
@@ -73,7 +73,7 @@ public class RulesPackageJsonUnmarshaller implements
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    rulesPackage.setDescription(LocalizedTextJsonUnmarshaller
+                    rulesPackage.setDescription(StringJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

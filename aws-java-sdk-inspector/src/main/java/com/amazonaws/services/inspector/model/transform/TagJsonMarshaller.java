@@ -52,10 +52,10 @@ public class TagJsonMarshaller {
             jsonGenerator.writeStartObject();
 
             if (tag.getKey() != null) {
-                jsonGenerator.writeFieldName("Key").writeValue(tag.getKey());
+                jsonGenerator.writeFieldName("key").writeValue(tag.getKey());
             }
             if (tag.getValue() != null) {
-                jsonGenerator.writeFieldName("Value")
+                jsonGenerator.writeFieldName("value")
                         .writeValue(tag.getValue());
             }
 

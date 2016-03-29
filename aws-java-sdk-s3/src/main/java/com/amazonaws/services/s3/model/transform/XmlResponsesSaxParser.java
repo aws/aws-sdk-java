@@ -46,6 +46,8 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
+import com.amazonaws.services.s3.internal.S3VersionResult;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AccessControlList;
@@ -912,7 +914,8 @@ public class XmlResponsesSaxParser {
         }
     }
 
-    public static class CopyObjectResultHandler extends AbstractSSEHandler implements ObjectExpirationResult {
+    public static class CopyObjectResultHandler extends AbstractSSEHandler
+            implements ObjectExpirationResult, S3RequesterChargedResult, S3VersionResult {
 
         // Data items for successful copy
         private final CopyObjectResult result = new CopyObjectResult();
@@ -933,10 +936,12 @@ public class XmlResponsesSaxParser {
             return result.getLastModifiedDate();
         }
 
+        @Override
         public String getVersionId() {
             return result.getVersionId();
         }
 
+        @Override
         public void setVersionId(String versionId) {
             result.setVersionId(versionId);
         }
@@ -984,6 +989,15 @@ public class XmlResponsesSaxParser {
         public boolean isErrorResponse() {
             return receivedErrorResponse;
         }
+
+        public boolean isRequesterCharged() {
+            return result.isRequesterCharged();
+        }
+
+        public void setRequesterCharged(boolean isRequesterCharged) {
+            result.setRequesterCharged(isRequesterCharged);
+        }
+
 
         @Override
         protected void doStartElement(
@@ -1374,7 +1388,7 @@ public class XmlResponsesSaxParser {
      * </Error>
      */
     public static class CompleteMultipartUploadHandler extends AbstractSSEHandler
-            implements ObjectExpirationResult {
+            implements ObjectExpirationResult, S3VersionResult, S3RequesterChargedResult {
         // Successful completion
         private CompleteMultipartUploadResult result;
 
@@ -1421,6 +1435,34 @@ public class XmlResponsesSaxParser {
         public void setExpirationTimeRuleId(String expirationTimeRuleId) {
             if (result != null) {
                 result.setExpirationTimeRuleId(expirationTimeRuleId);
+            }
+        }
+
+        @Override
+        public void setVersionId(String versionId) {
+            if (result != null) {
+                result.setVersionId(versionId);
+            }
+        }
+
+        @Override
+        public String getVersionId() {
+            return result == null ? null : result.getVersionId();
+        }
+
+        /**
+         * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#isRequesterCharged()
+         */
+        public boolean isRequesterCharged() {
+            return result == null ? false : result.isRequesterCharged();
+        }
+
+        /**
+         * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#setRequesterCharged(boolean)
+         */
+        public void setRequesterCharged(boolean isRequesterCharged) {
+            if (result != null) {
+                result.setRequesterCharged(isRequesterCharged);
             }
         }
 

@@ -80,7 +80,7 @@ public class PojoReflectionTest {
 
             // @DynamoDBVersionAttribute
             if (m.getter().getName().equals("getVersionedAttr")) {
-                assertTrue(m.isVersionAttribute());
+                assertTrue(m.isVersion());
             }
         }
 

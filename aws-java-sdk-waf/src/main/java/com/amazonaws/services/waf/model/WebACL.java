@@ -38,8 +38,9 @@ public class WebACL implements Serializable, Cloneable {
      * <p>
      * A unique identifier for a <code>WebACL</code>. You use
      * <code>WebACLId</code> to get information about a <code>WebACL</code> (see
-     * <a>GetWebACL</a>), update a <code>WebACL</code> (see <a>UpdateWebACL</a>,
-     * and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
+     * <a>GetWebACL</a>), update a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see
+     * <a>DeleteWebACL</a>).
      * </p>
      * <p>
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -77,8 +78,9 @@ public class WebACL implements Serializable, Cloneable {
      * <p>
      * A unique identifier for a <code>WebACL</code>. You use
      * <code>WebACLId</code> to get information about a <code>WebACL</code> (see
-     * <a>GetWebACL</a>), update a <code>WebACL</code> (see <a>UpdateWebACL</a>,
-     * and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
+     * <a>GetWebACL</a>), update a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see
+     * <a>DeleteWebACL</a>).
      * </p>
      * <p>
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -89,7 +91,7 @@ public class WebACL implements Serializable, Cloneable {
      *        A unique identifier for a <code>WebACL</code>. You use
      *        <code>WebACLId</code> to get information about a
      *        <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     *        <code>WebACL</code> (see <a>UpdateWebACL</a>, and delete a
+     *        <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a
      *        <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).</p>
      *        <p>
      *        <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -104,8 +106,9 @@ public class WebACL implements Serializable, Cloneable {
      * <p>
      * A unique identifier for a <code>WebACL</code>. You use
      * <code>WebACLId</code> to get information about a <code>WebACL</code> (see
-     * <a>GetWebACL</a>), update a <code>WebACL</code> (see <a>UpdateWebACL</a>,
-     * and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
+     * <a>GetWebACL</a>), update a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see
+     * <a>DeleteWebACL</a>).
      * </p>
      * <p>
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -115,7 +118,7 @@ public class WebACL implements Serializable, Cloneable {
      * @return A unique identifier for a <code>WebACL</code>. You use
      *         <code>WebACLId</code> to get information about a
      *         <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     *         <code>WebACL</code> (see <a>UpdateWebACL</a>, and delete a
+     *         <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a
      *         <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).</p>
      *         <p>
      *         <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -130,8 +133,9 @@ public class WebACL implements Serializable, Cloneable {
      * <p>
      * A unique identifier for a <code>WebACL</code>. You use
      * <code>WebACLId</code> to get information about a <code>WebACL</code> (see
-     * <a>GetWebACL</a>), update a <code>WebACL</code> (see <a>UpdateWebACL</a>,
-     * and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
+     * <a>GetWebACL</a>), update a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see
+     * <a>DeleteWebACL</a>).
      * </p>
      * <p>
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -142,7 +146,7 @@ public class WebACL implements Serializable, Cloneable {
      *        A unique identifier for a <code>WebACL</code>. You use
      *        <code>WebACLId</code> to get information about a
      *        <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     *        <code>WebACL</code> (see <a>UpdateWebACL</a>, and delete a
+     *        <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a
      *        <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).</p>
      *        <p>
      *        <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by

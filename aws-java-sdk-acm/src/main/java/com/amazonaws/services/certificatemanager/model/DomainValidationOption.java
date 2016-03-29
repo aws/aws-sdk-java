@@ -41,8 +41,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * certificate for <code>site.subdomain.example.com</code> and specify a
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS for the base domain and the and the following five
-     * addresses:
+     * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
      * <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
@@ -107,8 +106,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * certificate for <code>site.subdomain.example.com</code> and specify a
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS for the base domain and the and the following five
-     * addresses:
+     * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
      * <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
@@ -127,8 +125,8 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        <code>site.subdomain.example.com</code> and specify a
      *        <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
-     *        administrative contact in WHOIS for the base domain and the and
-     *        the following five addresses:
+     *        administrative contact in WHOIS for the base domain and the
+     *        following five addresses:
      *        <ul>
      *        <li>admin@subdomain.example.com</li>
      *        <li>administrator@subdomain.example.com</li>
@@ -151,8 +149,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * certificate for <code>site.subdomain.example.com</code> and specify a
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS for the base domain and the and the following five
-     * addresses:
+     * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
      * <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
@@ -170,8 +167,8 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *         <code>site.subdomain.example.com</code> and specify a
      *         <b>ValidationDomain</b> of <code>subdomain.example.com</code>,
      *         ACM sends email to the domain registrant, technical contact, and
-     *         administrative contact in WHOIS for the base domain and the and
-     *         the following five addresses:
+     *         administrative contact in WHOIS for the base domain and the
+     *         following five addresses:
      *         <ul>
      *         <li>admin@subdomain.example.com</li>
      *         <li>administrator@subdomain.example.com</li>
@@ -194,8 +191,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * certificate for <code>site.subdomain.example.com</code> and specify a
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS for the base domain and the and the following five
-     * addresses:
+     * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
      * <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
@@ -214,8 +210,8 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        <code>site.subdomain.example.com</code> and specify a
      *        <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
-     *        administrative contact in WHOIS for the base domain and the and
-     *        the following five addresses:
+     *        administrative contact in WHOIS for the base domain and the
+     *        following five addresses:
      *        <ul>
      *        <li>admin@subdomain.example.com</li>
      *        <li>administrator@subdomain.example.com</li>

@@ -19,7 +19,10 @@ package com.amazonaws.services.databasemigrationservice.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * The replication subnet group does not cover enough Availability Zones (AZs).
+ * Edit the replication subnet group and add more AZs.
+ * </p>
  */
 public class ReplicationSubnetGroupDoesNotCoverEnoughAZsException extends
         AmazonServiceException {

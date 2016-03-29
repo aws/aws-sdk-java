@@ -47,9 +47,9 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the
-     * stack. You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region
+     * as the stack. You can specify either the <code>StackPolicyBody</code> or
+     * the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      */
     private String stackPolicyURL;
@@ -175,15 +175,15 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the
-     * stack. You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region
+     * as the stack. You can specify either the <code>StackPolicyBody</code> or
+     * the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @param stackPolicyURL
      *        Location of a file containing the stack policy. The URL must point
-     *        to a policy (max size: 16KB) located in an S3 bucket in the same
-     *        region as the stack. You can specify either the
+     *        to a policy (maximum size: 16 KB) located in an S3 bucket in the
+     *        same region as the stack. You can specify either the
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *        parameter, but not both.
      */
@@ -195,14 +195,14 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the
-     * stack. You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region
+     * as the stack. You can specify either the <code>StackPolicyBody</code> or
+     * the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @return Location of a file containing the stack policy. The URL must
-     *         point to a policy (max size: 16KB) located in an S3 bucket in the
-     *         same region as the stack. You can specify either the
+     *         point to a policy (maximum size: 16 KB) located in an S3 bucket
+     *         in the same region as the stack. You can specify either the
      *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *         parameter, but not both.
      */
@@ -214,15 +214,15 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the
-     * stack. You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region
+     * as the stack. You can specify either the <code>StackPolicyBody</code> or
+     * the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @param stackPolicyURL
      *        Location of a file containing the stack policy. The URL must point
-     *        to a policy (max size: 16KB) located in an S3 bucket in the same
-     *        region as the stack. You can specify either the
+     *        to a policy (maximum size: 16 KB) located in an S3 bucket in the
+     *        same region as the stack. You can specify either the
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *        parameter, but not both.
      * @return Returns a reference to this object so that method calls can be

@@ -52,13 +52,13 @@ public class TimestampRangeJsonMarshaller {
         try {
             jsonGenerator.writeStartObject();
 
-            if (timestampRange.getMinimum() != null) {
-                jsonGenerator.writeFieldName("minimum").writeValue(
-                        timestampRange.getMinimum());
+            if (timestampRange.getBeginDate() != null) {
+                jsonGenerator.writeFieldName("beginDate").writeValue(
+                        timestampRange.getBeginDate());
             }
-            if (timestampRange.getMaximum() != null) {
-                jsonGenerator.writeFieldName("maximum").writeValue(
-                        timestampRange.getMaximum());
+            if (timestampRange.getEndDate() != null) {
+                jsonGenerator.writeFieldName("endDate").writeValue(
+                        timestampRange.getEndDate());
             }
 
             jsonGenerator.writeEndObject();

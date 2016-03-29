@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.model;
 
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 import com.amazonaws.services.s3.internal.SSEResultBase;
 
 import java.io.Serializable;
@@ -26,7 +27,8 @@ import java.util.Date;
  *
  * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
  */
-public class InitiateMultipartUploadResult extends SSEResultBase implements Serializable {
+public class InitiateMultipartUploadResult extends SSEResultBase
+        implements S3RequesterChargedResult, Serializable {
 
     /** The name of the bucket in which the new multipart upload was initiated */
     private String bucketName;
@@ -42,6 +44,12 @@ public class InitiateMultipartUploadResult extends SSEResultBase implements Seri
 
     /** Id of the lifecycle rule that makes a multipart upload eligible for abort operation. */
     private String abortRuleId;
+
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Returns the name of the bucket in which the new multipart upload was
@@ -140,4 +148,15 @@ public class InitiateMultipartUploadResult extends SSEResultBase implements Seri
     public void setAbortRuleId(String abortRuleId) {
         this.abortRuleId = abortRuleId;
     }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
+    }
+
 }

@@ -614,6 +614,90 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Creates an <a>XssMatchSet</a>, which you use to allow, block, or count
+     * requests that contain cross-site scripting attacks in the specified part
+     * of web requests. AWS WAF searches for character sequences that are likely
+     * to be malicious strings.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateXssMatchSet</code> request.</li>
+     * <li>Submit a <code>CreateXssMatchSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <a>UpdateXssMatchSet</a> request.</li>
+     * <li>Submit an <a>UpdateXssMatchSet</a> request to specify the parts of
+     * web requests in which you want to allow, block, or count cross-site
+     * scripting attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createXssMatchSetRequest
+     *        A request to create an <a>XssMatchSet</a>.
+     * @return A Java Future containing the result of the CreateXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.CreateXssMatchSet
+     */
+    java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(
+            CreateXssMatchSetRequest createXssMatchSetRequest);
+
+    /**
+     * <p>
+     * Creates an <a>XssMatchSet</a>, which you use to allow, block, or count
+     * requests that contain cross-site scripting attacks in the specified part
+     * of web requests. AWS WAF searches for character sequences that are likely
+     * to be malicious strings.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateXssMatchSet</code> request.</li>
+     * <li>Submit a <code>CreateXssMatchSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <a>UpdateXssMatchSet</a> request.</li>
+     * <li>Submit an <a>UpdateXssMatchSet</a> request to specify the parts of
+     * web requests in which you want to allow, block, or count cross-site
+     * scripting attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createXssMatchSetRequest
+     *        A request to create an <a>XssMatchSet</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateXssMatchSet
+     */
+    java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(
+            CreateXssMatchSetRequest createXssMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateXssMatchSetRequest, CreateXssMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Permanently deletes a <a>ByteMatchSet</a>. You can't delete a
      * <code>ByteMatchSet</code> if it's still used in any <code>Rules</code> or
      * if it still includes any <a>ByteMatchTuple</a> objects (any filters).
@@ -1016,6 +1100,76 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Permanently deletes an <a>XssMatchSet</a>. You can't delete an
+     * <code>XssMatchSet</code> if it's still used in any <code>Rules</code> or
+     * if it still contains any <a>XssMatchTuple</a> objects.
+     * </p>
+     * <p>
+     * If you just want to remove an <code>XssMatchSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform
+     * the following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>XssMatchSet</code> to remove filters, if any. For
+     * more information, see <a>UpdateXssMatchSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteXssMatchSet</code> request.</li>
+     * <li>Submit a <code>DeleteXssMatchSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteXssMatchSetRequest
+     *        A request to delete an <a>XssMatchSet</a> from AWS WAF.
+     * @return A Java Future containing the result of the DeleteXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.DeleteXssMatchSet
+     */
+    java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(
+            DeleteXssMatchSetRequest deleteXssMatchSetRequest);
+
+    /**
+     * <p>
+     * Permanently deletes an <a>XssMatchSet</a>. You can't delete an
+     * <code>XssMatchSet</code> if it's still used in any <code>Rules</code> or
+     * if it still contains any <a>XssMatchTuple</a> objects.
+     * </p>
+     * <p>
+     * If you just want to remove an <code>XssMatchSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform
+     * the following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>XssMatchSet</code> to remove filters, if any. For
+     * more information, see <a>UpdateXssMatchSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteXssMatchSet</code> request.</li>
+     * <li>Submit a <code>DeleteXssMatchSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteXssMatchSetRequest
+     *        A request to delete an <a>XssMatchSet</a> from AWS WAF.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteXssMatchSet
+     */
+    java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(
+            DeleteXssMatchSetRequest deleteXssMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteXssMatchSetRequest, DeleteXssMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the <a>ByteMatchSet</a> specified by <code>ByteMatchSetId</code>.
      * </p>
      * 
@@ -1392,6 +1546,42 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Returns the <a>XssMatchSet</a> that is specified by
+     * <code>XssMatchSetId</code>.
+     * </p>
+     * 
+     * @param getXssMatchSetRequest
+     *        A request to get an <a>XssMatchSet</a>.
+     * @return A Java Future containing the result of the GetXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.GetXssMatchSet
+     */
+    java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(
+            GetXssMatchSetRequest getXssMatchSetRequest);
+
+    /**
+     * <p>
+     * Returns the <a>XssMatchSet</a> that is specified by
+     * <code>XssMatchSetId</code>.
+     * </p>
+     * 
+     * @param getXssMatchSetRequest
+     *        A request to get an <a>XssMatchSet</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetXssMatchSet
+     */
+    java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(
+            GetXssMatchSetRequest getXssMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetXssMatchSetRequest, GetXssMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of <a>ByteMatchSetSummary</a> objects.
      * </p>
      * 
@@ -1585,6 +1775,42 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListWebACLsResult> listWebACLsAsync(
             ListWebACLsRequest listWebACLsRequest,
             com.amazonaws.handlers.AsyncHandler<ListWebACLsRequest, ListWebACLsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <a>XssMatchSet</a> objects.
+     * </p>
+     * 
+     * @param listXssMatchSetsRequest
+     *        A request to list the <a>XssMatchSet</a> objects created by the
+     *        current AWS account.
+     * @return A Java Future containing the result of the ListXssMatchSets
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.ListXssMatchSets
+     */
+    java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(
+            ListXssMatchSetsRequest listXssMatchSetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>XssMatchSet</a> objects.
+     * </p>
+     * 
+     * @param listXssMatchSetsRequest
+     *        A request to list the <a>XssMatchSet</a> objects created by the
+     *        current AWS account.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListXssMatchSets
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.ListXssMatchSets
+     */
+    java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(
+            ListXssMatchSetsRequest listXssMatchSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListXssMatchSetsRequest, ListXssMatchSetsResult> asyncHandler);
 
     /**
      * <p>
@@ -2339,5 +2565,117 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateWebACLResult> updateWebACLAsync(
             UpdateWebACLRequest updateWebACLRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateWebACLRequest, UpdateWebACLResult> asyncHandler);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an
+     * <a>XssMatchSet</a>. For each <code>XssMatchTuple</code> object, you
+     * specify the following values:
+     * </p>
+     * <ul>
+     * <li><code>Action</code>: Whether to insert the object into or delete the
+     * object from the array. To change a <code>XssMatchTuple</code>, you delete
+     * the existing object and add a new one.</li>
+     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS
+     * WAF to inspect and, if you want AWS WAF to inspect a header, the name of
+     * the header.</li>
+     * <li><code>TextTransformation</code>: Which text transformation, if any,
+     * to perform on the web request before inspecting the request for
+     * cross-site scripting attacks.</li>
+     * </ul>
+     * <p>
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront
+     * requests you want to allow, block, or count. For example, if you're
+     * receiving requests that contain cross-site scripting attacks in the
+     * request body and you want to block the requests, you can create an
+     * <code>XssMatchSet</code> with the applicable settings, and then configure
+     * AWS WAF to block the requests.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Submit a <a>CreateXssMatchSet</a> request.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</li>
+     * <li>Submit an <code>UpdateXssMatchSet</code> request to specify the parts
+     * of web requests that you want AWS WAF to inspect for cross-site scripting
+     * attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateXssMatchSetRequest
+     *        A request to update an <a>XssMatchSet</a>.
+     * @return A Java Future containing the result of the UpdateXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.UpdateXssMatchSet
+     */
+    java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(
+            UpdateXssMatchSetRequest updateXssMatchSetRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an
+     * <a>XssMatchSet</a>. For each <code>XssMatchTuple</code> object, you
+     * specify the following values:
+     * </p>
+     * <ul>
+     * <li><code>Action</code>: Whether to insert the object into or delete the
+     * object from the array. To change a <code>XssMatchTuple</code>, you delete
+     * the existing object and add a new one.</li>
+     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS
+     * WAF to inspect and, if you want AWS WAF to inspect a header, the name of
+     * the header.</li>
+     * <li><code>TextTransformation</code>: Which text transformation, if any,
+     * to perform on the web request before inspecting the request for
+     * cross-site scripting attacks.</li>
+     * </ul>
+     * <p>
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront
+     * requests you want to allow, block, or count. For example, if you're
+     * receiving requests that contain cross-site scripting attacks in the
+     * request body and you want to block the requests, you can create an
+     * <code>XssMatchSet</code> with the applicable settings, and then configure
+     * AWS WAF to block the requests.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Submit a <a>CreateXssMatchSet</a> request.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</li>
+     * <li>Submit an <code>UpdateXssMatchSet</code> request to specify the parts
+     * of web requests that you want AWS WAF to inspect for cross-site scripting
+     * attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateXssMatchSetRequest
+     *        A request to update an <a>XssMatchSet</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateXssMatchSet
+     */
+    java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(
+            UpdateXssMatchSetRequest updateXssMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateXssMatchSetRequest, UpdateXssMatchSetResult> asyncHandler);
 
 }

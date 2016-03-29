@@ -20,11 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an Inspector finding.
- * </p>
- * <p>
- * This data type is used as the response element in the <a>DescribeFinding</a>
- * action.
+ * Contains information about an Inspector finding. This data type is used as
+ * the response element in the <a>DescribeFindings</a> action.
  * </p>
  */
 public class Finding implements Serializable, Cloneable {
@@ -34,64 +31,85 @@ public class Finding implements Serializable, Cloneable {
      * The ARN specifying the finding.
      * </p>
      */
-    private String findingArn;
+    private String arn;
     /**
      * <p>
-     * The ARN of the assessment run that generated the finding.
+     * The schema version of this data type.
      * </p>
      */
-    private String runArn;
+    private Integer schemaVersion;
     /**
      * <p>
-     * The ARN of the rules package that is used to generate the finding.
+     * The data element is set to "Inspector".
      * </p>
      */
-    private String rulesPackageArn;
+    private String service;
+
+    private InspectorServiceAttributes serviceAttributes;
     /**
      * <p>
-     * The rule name that is used to generate the finding.
+     * The type of the host from which the finding is generated.
      * </p>
      */
-    private String ruleName;
+    private String assetType;
     /**
      * <p>
-     * The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding.
+     * A collection of attributes of the host from which the finding is
+     * generated.
      * </p>
      */
-    private String agentId;
+    private AssetAttributes assetAttributes;
     /**
      * <p>
-     * The autoscaling group of the EC2 instance where the agent is installed
-     * that is used during the assessment that generates the finding.
+     * The ID of the finding.
      * </p>
      */
-    private String autoScalingGroup;
+    private String id;
     /**
      * <p>
-     * The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.
+     * The name of the finding.
      * </p>
      */
-    private String severity;
-    /**
-     * <p>
-     * A short description that identifies the finding.
-     * </p>
-     */
-    private LocalizedText finding;
+    private String title;
     /**
      * <p>
      * The description of the finding.
      * </p>
      */
-    private LocalizedText description;
+    private String description;
     /**
      * <p>
      * The recommendation for the finding.
      * </p>
      */
-    private LocalizedText recommendation;
+    private String recommendation;
+    /**
+     * <p>
+     * The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.
+     * </p>
+     */
+    private String severity;
+    /**
+     * <p>
+     * <p>
+     * The numeric value of the finding severity.
+     * </p>
+     * </p>
+     */
+    private Double numericSeverity;
+    /**
+     * <p>
+     * This data element is currently not used.
+     * </p>
+     */
+    private Integer confidence;
+    /**
+     * <p>
+     * This data element is currently not used.
+     * </p>
+     */
+    private Boolean indicatorOfCompromise;
     /**
      * <p>
      * The system-defined attributes for the finding.
@@ -104,18 +122,30 @@ public class Finding implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<Attribute> userAttributes;
+    /**
+     * <p>
+     * The time when the finding was generated.
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
+     * The time when <a>AddAttributesToFindings</a> API is called.
+     * </p>
+     */
+    private java.util.Date updatedAt;
 
     /**
      * <p>
      * The ARN specifying the finding.
      * </p>
      * 
-     * @param findingArn
+     * @param arn
      *        The ARN specifying the finding.
      */
 
-    public void setFindingArn(String findingArn) {
-        this.findingArn = findingArn;
+    public void setArn(String arn) {
+        this.arn = arn;
     }
 
     /**
@@ -126,8 +156,8 @@ public class Finding implements Serializable, Cloneable {
      * @return The ARN specifying the finding.
      */
 
-    public String getFindingArn() {
-        return this.findingArn;
+    public String getArn() {
+        return this.arn;
     }
 
     /**
@@ -135,323 +165,331 @@ public class Finding implements Serializable, Cloneable {
      * The ARN specifying the finding.
      * </p>
      * 
-     * @param findingArn
+     * @param arn
      *        The ARN specifying the finding.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public Finding withFindingArn(String findingArn) {
-        setFindingArn(findingArn);
+    public Finding withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
     /**
      * <p>
-     * The ARN of the assessment run that generated the finding.
+     * The schema version of this data type.
      * </p>
      * 
-     * @param runArn
-     *        The ARN of the assessment run that generated the finding.
+     * @param schemaVersion
+     *        The schema version of this data type.
      */
 
-    public void setRunArn(String runArn) {
-        this.runArn = runArn;
+    public void setSchemaVersion(Integer schemaVersion) {
+        this.schemaVersion = schemaVersion;
     }
 
     /**
      * <p>
-     * The ARN of the assessment run that generated the finding.
+     * The schema version of this data type.
      * </p>
      * 
-     * @return The ARN of the assessment run that generated the finding.
+     * @return The schema version of this data type.
      */
 
-    public String getRunArn() {
-        return this.runArn;
+    public Integer getSchemaVersion() {
+        return this.schemaVersion;
     }
 
     /**
      * <p>
-     * The ARN of the assessment run that generated the finding.
+     * The schema version of this data type.
      * </p>
      * 
-     * @param runArn
-     *        The ARN of the assessment run that generated the finding.
+     * @param schemaVersion
+     *        The schema version of this data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public Finding withRunArn(String runArn) {
-        setRunArn(runArn);
+    public Finding withSchemaVersion(Integer schemaVersion) {
+        setSchemaVersion(schemaVersion);
         return this;
     }
 
     /**
      * <p>
-     * The ARN of the rules package that is used to generate the finding.
+     * The data element is set to "Inspector".
      * </p>
      * 
-     * @param rulesPackageArn
-     *        The ARN of the rules package that is used to generate the finding.
+     * @param service
+     *        The data element is set to "Inspector".
      */
 
-    public void setRulesPackageArn(String rulesPackageArn) {
-        this.rulesPackageArn = rulesPackageArn;
+    public void setService(String service) {
+        this.service = service;
     }
 
     /**
      * <p>
-     * The ARN of the rules package that is used to generate the finding.
+     * The data element is set to "Inspector".
      * </p>
      * 
-     * @return The ARN of the rules package that is used to generate the
-     *         finding.
+     * @return The data element is set to "Inspector".
      */
 
-    public String getRulesPackageArn() {
-        return this.rulesPackageArn;
+    public String getService() {
+        return this.service;
     }
 
     /**
      * <p>
-     * The ARN of the rules package that is used to generate the finding.
+     * The data element is set to "Inspector".
      * </p>
      * 
-     * @param rulesPackageArn
-     *        The ARN of the rules package that is used to generate the finding.
+     * @param service
+     *        The data element is set to "Inspector".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public Finding withRulesPackageArn(String rulesPackageArn) {
-        setRulesPackageArn(rulesPackageArn);
+    public Finding withService(String service) {
+        setService(service);
+        return this;
+    }
+
+    /**
+     * @param serviceAttributes
+     */
+
+    public void setServiceAttributes(
+            InspectorServiceAttributes serviceAttributes) {
+        this.serviceAttributes = serviceAttributes;
+    }
+
+    /**
+     * @return
+     */
+
+    public InspectorServiceAttributes getServiceAttributes() {
+        return this.serviceAttributes;
+    }
+
+    /**
+     * @param serviceAttributes
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Finding withServiceAttributes(
+            InspectorServiceAttributes serviceAttributes) {
+        setServiceAttributes(serviceAttributes);
         return this;
     }
 
     /**
      * <p>
-     * The rule name that is used to generate the finding.
+     * The type of the host from which the finding is generated.
      * </p>
      * 
-     * @param ruleName
-     *        The rule name that is used to generate the finding.
+     * @param assetType
+     *        The type of the host from which the finding is generated.
+     * @see AssetType
      */
 
-    public void setRuleName(String ruleName) {
-        this.ruleName = ruleName;
+    public void setAssetType(String assetType) {
+        this.assetType = assetType;
     }
 
     /**
      * <p>
-     * The rule name that is used to generate the finding.
+     * The type of the host from which the finding is generated.
      * </p>
      * 
-     * @return The rule name that is used to generate the finding.
+     * @return The type of the host from which the finding is generated.
+     * @see AssetType
      */
 
-    public String getRuleName() {
-        return this.ruleName;
+    public String getAssetType() {
+        return this.assetType;
     }
 
     /**
      * <p>
-     * The rule name that is used to generate the finding.
+     * The type of the host from which the finding is generated.
      * </p>
      * 
-     * @param ruleName
-     *        The rule name that is used to generate the finding.
+     * @param assetType
+     *        The type of the host from which the finding is generated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
+     * @see AssetType
      */
 
-    public Finding withRuleName(String ruleName) {
-        setRuleName(ruleName);
+    public Finding withAssetType(String assetType) {
+        setAssetType(assetType);
         return this;
     }
 
     /**
      * <p>
-     * The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding.
+     * The type of the host from which the finding is generated.
      * </p>
      * 
-     * @param agentId
-     *        The EC2 instance ID where the agent is installed that is used
-     *        during the assessment that generates the finding.
-     */
-
-    public void setAgentId(String agentId) {
-        this.agentId = agentId;
-    }
-
-    /**
-     * <p>
-     * The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding.
-     * </p>
-     * 
-     * @return The EC2 instance ID where the agent is installed that is used
-     *         during the assessment that generates the finding.
-     */
-
-    public String getAgentId() {
-        return this.agentId;
-    }
-
-    /**
-     * <p>
-     * The EC2 instance ID where the agent is installed that is used during the
-     * assessment that generates the finding.
-     * </p>
-     * 
-     * @param agentId
-     *        The EC2 instance ID where the agent is installed that is used
-     *        during the assessment that generates the finding.
+     * @param assetType
+     *        The type of the host from which the finding is generated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
+     * @see AssetType
      */
 
-    public Finding withAgentId(String agentId) {
-        setAgentId(agentId);
+    public void setAssetType(AssetType assetType) {
+        this.assetType = assetType.toString();
+    }
+
+    /**
+     * <p>
+     * The type of the host from which the finding is generated.
+     * </p>
+     * 
+     * @param assetType
+     *        The type of the host from which the finding is generated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see AssetType
+     */
+
+    public Finding withAssetType(AssetType assetType) {
+        setAssetType(assetType);
         return this;
     }
 
     /**
      * <p>
-     * The autoscaling group of the EC2 instance where the agent is installed
-     * that is used during the assessment that generates the finding.
+     * A collection of attributes of the host from which the finding is
+     * generated.
      * </p>
      * 
-     * @param autoScalingGroup
-     *        The autoscaling group of the EC2 instance where the agent is
-     *        installed that is used during the assessment that generates the
-     *        finding.
+     * @param assetAttributes
+     *        A collection of attributes of the host from which the finding is
+     *        generated.
      */
 
-    public void setAutoScalingGroup(String autoScalingGroup) {
-        this.autoScalingGroup = autoScalingGroup;
+    public void setAssetAttributes(AssetAttributes assetAttributes) {
+        this.assetAttributes = assetAttributes;
     }
 
     /**
      * <p>
-     * The autoscaling group of the EC2 instance where the agent is installed
-     * that is used during the assessment that generates the finding.
+     * A collection of attributes of the host from which the finding is
+     * generated.
      * </p>
      * 
-     * @return The autoscaling group of the EC2 instance where the agent is
-     *         installed that is used during the assessment that generates the
-     *         finding.
+     * @return A collection of attributes of the host from which the finding is
+     *         generated.
      */
 
-    public String getAutoScalingGroup() {
-        return this.autoScalingGroup;
+    public AssetAttributes getAssetAttributes() {
+        return this.assetAttributes;
     }
 
     /**
      * <p>
-     * The autoscaling group of the EC2 instance where the agent is installed
-     * that is used during the assessment that generates the finding.
+     * A collection of attributes of the host from which the finding is
+     * generated.
      * </p>
      * 
-     * @param autoScalingGroup
-     *        The autoscaling group of the EC2 instance where the agent is
-     *        installed that is used during the assessment that generates the
-     *        finding.
+     * @param assetAttributes
+     *        A collection of attributes of the host from which the finding is
+     *        generated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public Finding withAutoScalingGroup(String autoScalingGroup) {
-        setAutoScalingGroup(autoScalingGroup);
+    public Finding withAssetAttributes(AssetAttributes assetAttributes) {
+        setAssetAttributes(assetAttributes);
         return this;
     }
 
     /**
      * <p>
-     * The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.
+     * The ID of the finding.
      * </p>
      * 
-     * @param severity
-     *        The finding severity. Values can be set to <i>High</i>,
-     *        <i>Medium</i>, <i>Low</i>, and <i>Informational</i>.
+     * @param id
+     *        The ID of the finding.
      */
 
-    public void setSeverity(String severity) {
-        this.severity = severity;
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
      * <p>
-     * The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.
+     * The ID of the finding.
      * </p>
      * 
-     * @return The finding severity. Values can be set to <i>High</i>,
-     *         <i>Medium</i>, <i>Low</i>, and <i>Informational</i>.
+     * @return The ID of the finding.
      */
 
-    public String getSeverity() {
-        return this.severity;
+    public String getId() {
+        return this.id;
     }
 
     /**
      * <p>
-     * The finding severity. Values can be set to <i>High</i>, <i>Medium</i>,
-     * <i>Low</i>, and <i>Informational</i>.
+     * The ID of the finding.
      * </p>
      * 
-     * @param severity
-     *        The finding severity. Values can be set to <i>High</i>,
-     *        <i>Medium</i>, <i>Low</i>, and <i>Informational</i>.
+     * @param id
+     *        The ID of the finding.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public Finding withSeverity(String severity) {
-        setSeverity(severity);
+    public Finding withId(String id) {
+        setId(id);
         return this;
     }
 
     /**
      * <p>
-     * A short description that identifies the finding.
+     * The name of the finding.
      * </p>
      * 
-     * @param finding
-     *        A short description that identifies the finding.
+     * @param title
+     *        The name of the finding.
      */
 
-    public void setFinding(LocalizedText finding) {
-        this.finding = finding;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     /**
      * <p>
-     * A short description that identifies the finding.
+     * The name of the finding.
      * </p>
      * 
-     * @return A short description that identifies the finding.
+     * @return The name of the finding.
      */
 
-    public LocalizedText getFinding() {
-        return this.finding;
+    public String getTitle() {
+        return this.title;
     }
 
     /**
      * <p>
-     * A short description that identifies the finding.
+     * The name of the finding.
      * </p>
      * 
-     * @param finding
-     *        A short description that identifies the finding.
+     * @param title
+     *        The name of the finding.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public Finding withFinding(LocalizedText finding) {
-        setFinding(finding);
+    public Finding withTitle(String title) {
+        setTitle(title);
         return this;
     }
 
@@ -464,7 +502,7 @@ public class Finding implements Serializable, Cloneable {
      *        The description of the finding.
      */
 
-    public void setDescription(LocalizedText description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -476,7 +514,7 @@ public class Finding implements Serializable, Cloneable {
      * @return The description of the finding.
      */
 
-    public LocalizedText getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -491,7 +529,7 @@ public class Finding implements Serializable, Cloneable {
      *         chained together.
      */
 
-    public Finding withDescription(LocalizedText description) {
+    public Finding withDescription(String description) {
         setDescription(description);
         return this;
     }
@@ -505,7 +543,7 @@ public class Finding implements Serializable, Cloneable {
      *        The recommendation for the finding.
      */
 
-    public void setRecommendation(LocalizedText recommendation) {
+    public void setRecommendation(String recommendation) {
         this.recommendation = recommendation;
     }
 
@@ -517,7 +555,7 @@ public class Finding implements Serializable, Cloneable {
      * @return The recommendation for the finding.
      */
 
-    public LocalizedText getRecommendation() {
+    public String getRecommendation() {
         return this.recommendation;
     }
 
@@ -532,9 +570,243 @@ public class Finding implements Serializable, Cloneable {
      *         chained together.
      */
 
-    public Finding withRecommendation(LocalizedText recommendation) {
+    public Finding withRecommendation(String recommendation) {
         setRecommendation(recommendation);
         return this;
+    }
+
+    /**
+     * <p>
+     * The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.
+     * </p>
+     * 
+     * @param severity
+     *        The finding severity. Values can be set to High, Medium, Low, and
+     *        Informational.
+     * @see Severity
+     */
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+
+    /**
+     * <p>
+     * The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.
+     * </p>
+     * 
+     * @return The finding severity. Values can be set to High, Medium, Low, and
+     *         Informational.
+     * @see Severity
+     */
+
+    public String getSeverity() {
+        return this.severity;
+    }
+
+    /**
+     * <p>
+     * The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.
+     * </p>
+     * 
+     * @param severity
+     *        The finding severity. Values can be set to High, Medium, Low, and
+     *        Informational.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see Severity
+     */
+
+    public Finding withSeverity(String severity) {
+        setSeverity(severity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.
+     * </p>
+     * 
+     * @param severity
+     *        The finding severity. Values can be set to High, Medium, Low, and
+     *        Informational.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see Severity
+     */
+
+    public void setSeverity(Severity severity) {
+        this.severity = severity.toString();
+    }
+
+    /**
+     * <p>
+     * The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.
+     * </p>
+     * 
+     * @param severity
+     *        The finding severity. Values can be set to High, Medium, Low, and
+     *        Informational.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see Severity
+     */
+
+    public Finding withSeverity(Severity severity) {
+        setSeverity(severity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <p>
+     * The numeric value of the finding severity.
+     * </p>
+     * </p>
+     * 
+     * @param numericSeverity
+     *        <p>
+     *        The numeric value of the finding severity.
+     *        </p>
+     */
+
+    public void setNumericSeverity(Double numericSeverity) {
+        this.numericSeverity = numericSeverity;
+    }
+
+    /**
+     * <p>
+     * <p>
+     * The numeric value of the finding severity.
+     * </p>
+     * </p>
+     * 
+     * @return <p>
+     *         The numeric value of the finding severity.
+     *         </p>
+     */
+
+    public Double getNumericSeverity() {
+        return this.numericSeverity;
+    }
+
+    /**
+     * <p>
+     * <p>
+     * The numeric value of the finding severity.
+     * </p>
+     * </p>
+     * 
+     * @param numericSeverity
+     *        <p>
+     *        The numeric value of the finding severity.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Finding withNumericSeverity(Double numericSeverity) {
+        setNumericSeverity(numericSeverity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This data element is currently not used.
+     * </p>
+     * 
+     * @param confidence
+     *        This data element is currently not used.
+     */
+
+    public void setConfidence(Integer confidence) {
+        this.confidence = confidence;
+    }
+
+    /**
+     * <p>
+     * This data element is currently not used.
+     * </p>
+     * 
+     * @return This data element is currently not used.
+     */
+
+    public Integer getConfidence() {
+        return this.confidence;
+    }
+
+    /**
+     * <p>
+     * This data element is currently not used.
+     * </p>
+     * 
+     * @param confidence
+     *        This data element is currently not used.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Finding withConfidence(Integer confidence) {
+        setConfidence(confidence);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This data element is currently not used.
+     * </p>
+     * 
+     * @param indicatorOfCompromise
+     *        This data element is currently not used.
+     */
+
+    public void setIndicatorOfCompromise(Boolean indicatorOfCompromise) {
+        this.indicatorOfCompromise = indicatorOfCompromise;
+    }
+
+    /**
+     * <p>
+     * This data element is currently not used.
+     * </p>
+     * 
+     * @return This data element is currently not used.
+     */
+
+    public Boolean getIndicatorOfCompromise() {
+        return this.indicatorOfCompromise;
+    }
+
+    /**
+     * <p>
+     * This data element is currently not used.
+     * </p>
+     * 
+     * @param indicatorOfCompromise
+     *        This data element is currently not used.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Finding withIndicatorOfCompromise(Boolean indicatorOfCompromise) {
+        setIndicatorOfCompromise(indicatorOfCompromise);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This data element is currently not used.
+     * </p>
+     * 
+     * @return This data element is currently not used.
+     */
+
+    public Boolean isIndicatorOfCompromise() {
+        return this.indicatorOfCompromise;
     }
 
     /**
@@ -686,6 +958,88 @@ public class Finding implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time when the finding was generated.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the finding was generated.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the finding was generated.
+     * </p>
+     * 
+     * @return The time when the finding was generated.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the finding was generated.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the finding was generated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Finding withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when <a>AddAttributesToFindings</a> API is called.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The time when <a>AddAttributesToFindings</a> API is called.
+     */
+
+    public void setUpdatedAt(java.util.Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    /**
+     * <p>
+     * The time when <a>AddAttributesToFindings</a> API is called.
+     * </p>
+     * 
+     * @return The time when <a>AddAttributesToFindings</a> API is called.
+     */
+
+    public java.util.Date getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    /**
+     * <p>
+     * The time when <a>AddAttributesToFindings</a> API is called.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The time when <a>AddAttributesToFindings</a> API is called.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Finding withUpdatedAt(java.util.Date updatedAt) {
+        setUpdatedAt(updatedAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -697,30 +1051,43 @@ public class Finding implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFindingArn() != null)
-            sb.append("FindingArn: " + getFindingArn() + ",");
-        if (getRunArn() != null)
-            sb.append("RunArn: " + getRunArn() + ",");
-        if (getRulesPackageArn() != null)
-            sb.append("RulesPackageArn: " + getRulesPackageArn() + ",");
-        if (getRuleName() != null)
-            sb.append("RuleName: " + getRuleName() + ",");
-        if (getAgentId() != null)
-            sb.append("AgentId: " + getAgentId() + ",");
-        if (getAutoScalingGroup() != null)
-            sb.append("AutoScalingGroup: " + getAutoScalingGroup() + ",");
-        if (getSeverity() != null)
-            sb.append("Severity: " + getSeverity() + ",");
-        if (getFinding() != null)
-            sb.append("Finding: " + getFinding() + ",");
+        if (getArn() != null)
+            sb.append("Arn: " + getArn() + ",");
+        if (getSchemaVersion() != null)
+            sb.append("SchemaVersion: " + getSchemaVersion() + ",");
+        if (getService() != null)
+            sb.append("Service: " + getService() + ",");
+        if (getServiceAttributes() != null)
+            sb.append("ServiceAttributes: " + getServiceAttributes() + ",");
+        if (getAssetType() != null)
+            sb.append("AssetType: " + getAssetType() + ",");
+        if (getAssetAttributes() != null)
+            sb.append("AssetAttributes: " + getAssetAttributes() + ",");
+        if (getId() != null)
+            sb.append("Id: " + getId() + ",");
+        if (getTitle() != null)
+            sb.append("Title: " + getTitle() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getRecommendation() != null)
             sb.append("Recommendation: " + getRecommendation() + ",");
+        if (getSeverity() != null)
+            sb.append("Severity: " + getSeverity() + ",");
+        if (getNumericSeverity() != null)
+            sb.append("NumericSeverity: " + getNumericSeverity() + ",");
+        if (getConfidence() != null)
+            sb.append("Confidence: " + getConfidence() + ",");
+        if (getIndicatorOfCompromise() != null)
+            sb.append("IndicatorOfCompromise: " + getIndicatorOfCompromise()
+                    + ",");
         if (getAttributes() != null)
             sb.append("Attributes: " + getAttributes() + ",");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes());
+            sb.append("UserAttributes: " + getUserAttributes() + ",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: " + getCreatedAt() + ",");
+        if (getUpdatedAt() != null)
+            sb.append("UpdatedAt: " + getUpdatedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -735,48 +1102,48 @@ public class Finding implements Serializable, Cloneable {
         if (obj instanceof Finding == false)
             return false;
         Finding other = (Finding) obj;
-        if (other.getFindingArn() == null ^ this.getFindingArn() == null)
+        if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getFindingArn() != null
-                && other.getFindingArn().equals(this.getFindingArn()) == false)
+        if (other.getArn() != null
+                && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getRunArn() == null ^ this.getRunArn() == null)
+        if (other.getSchemaVersion() == null ^ this.getSchemaVersion() == null)
             return false;
-        if (other.getRunArn() != null
-                && other.getRunArn().equals(this.getRunArn()) == false)
+        if (other.getSchemaVersion() != null
+                && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
             return false;
-        if (other.getRulesPackageArn() == null
-                ^ this.getRulesPackageArn() == null)
+        if (other.getService() == null ^ this.getService() == null)
             return false;
-        if (other.getRulesPackageArn() != null
-                && other.getRulesPackageArn().equals(this.getRulesPackageArn()) == false)
+        if (other.getService() != null
+                && other.getService().equals(this.getService()) == false)
             return false;
-        if (other.getRuleName() == null ^ this.getRuleName() == null)
+        if (other.getServiceAttributes() == null
+                ^ this.getServiceAttributes() == null)
             return false;
-        if (other.getRuleName() != null
-                && other.getRuleName().equals(this.getRuleName()) == false)
+        if (other.getServiceAttributes() != null
+                && other.getServiceAttributes().equals(
+                        this.getServiceAttributes()) == false)
             return false;
-        if (other.getAgentId() == null ^ this.getAgentId() == null)
+        if (other.getAssetType() == null ^ this.getAssetType() == null)
             return false;
-        if (other.getAgentId() != null
-                && other.getAgentId().equals(this.getAgentId()) == false)
+        if (other.getAssetType() != null
+                && other.getAssetType().equals(this.getAssetType()) == false)
             return false;
-        if (other.getAutoScalingGroup() == null
-                ^ this.getAutoScalingGroup() == null)
+        if (other.getAssetAttributes() == null
+                ^ this.getAssetAttributes() == null)
             return false;
-        if (other.getAutoScalingGroup() != null
-                && other.getAutoScalingGroup().equals(
-                        this.getAutoScalingGroup()) == false)
+        if (other.getAssetAttributes() != null
+                && other.getAssetAttributes().equals(this.getAssetAttributes()) == false)
             return false;
-        if (other.getSeverity() == null ^ this.getSeverity() == null)
+        if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getSeverity() != null
-                && other.getSeverity().equals(this.getSeverity()) == false)
+        if (other.getId() != null
+                && other.getId().equals(this.getId()) == false)
             return false;
-        if (other.getFinding() == null ^ this.getFinding() == null)
+        if (other.getTitle() == null ^ this.getTitle() == null)
             return false;
-        if (other.getFinding() != null
-                && other.getFinding().equals(this.getFinding()) == false)
+        if (other.getTitle() != null
+                && other.getTitle().equals(this.getTitle()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -789,6 +1156,29 @@ public class Finding implements Serializable, Cloneable {
         if (other.getRecommendation() != null
                 && other.getRecommendation().equals(this.getRecommendation()) == false)
             return false;
+        if (other.getSeverity() == null ^ this.getSeverity() == null)
+            return false;
+        if (other.getSeverity() != null
+                && other.getSeverity().equals(this.getSeverity()) == false)
+            return false;
+        if (other.getNumericSeverity() == null
+                ^ this.getNumericSeverity() == null)
+            return false;
+        if (other.getNumericSeverity() != null
+                && other.getNumericSeverity().equals(this.getNumericSeverity()) == false)
+            return false;
+        if (other.getConfidence() == null ^ this.getConfidence() == null)
+            return false;
+        if (other.getConfidence() != null
+                && other.getConfidence().equals(this.getConfidence()) == false)
+            return false;
+        if (other.getIndicatorOfCompromise() == null
+                ^ this.getIndicatorOfCompromise() == null)
+            return false;
+        if (other.getIndicatorOfCompromise() != null
+                && other.getIndicatorOfCompromise().equals(
+                        this.getIndicatorOfCompromise()) == false)
+            return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null
@@ -800,6 +1190,16 @@ public class Finding implements Serializable, Cloneable {
         if (other.getUserAttributes() != null
                 && other.getUserAttributes().equals(this.getUserAttributes()) == false)
             return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null
+                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
+            return false;
+        if (other.getUpdatedAt() != null
+                && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
+            return false;
         return true;
     }
 
@@ -809,25 +1209,27 @@ public class Finding implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode
-                + ((getFindingArn() == null) ? 0 : getFindingArn().hashCode());
-        hashCode = prime * hashCode
-                + ((getRunArn() == null) ? 0 : getRunArn().hashCode());
+                + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime
                 * hashCode
-                + ((getRulesPackageArn() == null) ? 0 : getRulesPackageArn()
+                + ((getSchemaVersion() == null) ? 0 : getSchemaVersion()
                         .hashCode());
         hashCode = prime * hashCode
-                + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
-        hashCode = prime * hashCode
-                + ((getAgentId() == null) ? 0 : getAgentId().hashCode());
+                + ((getService() == null) ? 0 : getService().hashCode());
         hashCode = prime
                 * hashCode
-                + ((getAutoScalingGroup() == null) ? 0 : getAutoScalingGroup()
+                + ((getServiceAttributes() == null) ? 0
+                        : getServiceAttributes().hashCode());
+        hashCode = prime * hashCode
+                + ((getAssetType() == null) ? 0 : getAssetType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAssetAttributes() == null) ? 0 : getAssetAttributes()
                         .hashCode());
         hashCode = prime * hashCode
-                + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
+                + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode
-                + ((getFinding() == null) ? 0 : getFinding().hashCode());
+                + ((getTitle() == null) ? 0 : getTitle().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getDescription() == null) ? 0 : getDescription().hashCode());
@@ -836,11 +1238,27 @@ public class Finding implements Serializable, Cloneable {
                 + ((getRecommendation() == null) ? 0 : getRecommendation()
                         .hashCode());
         hashCode = prime * hashCode
+                + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNumericSeverity() == null) ? 0 : getNumericSeverity()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getConfidence() == null) ? 0 : getConfidence().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIndicatorOfCompromise() == null) ? 0
+                        : getIndicatorOfCompromise().hashCode());
+        hashCode = prime * hashCode
                 + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getUserAttributes() == null) ? 0 : getUserAttributes()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode
+                + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }
 

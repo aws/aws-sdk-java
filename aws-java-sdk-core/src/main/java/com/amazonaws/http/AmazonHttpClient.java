@@ -1076,8 +1076,14 @@ public class AmazonHttpClient {
      *            Request context containing retry information
      */
     private void updateRetryHeaderInfo(Request<?> request, ExecOneRequestParams execOneRequestParams) {
-        request.addHeader(HEADER_SDK_RETRY_INFO,
-                String.format("%d/%d", execOneRequestParams.requestCount - 1, execOneRequestParams.lastBackoffDelay));
+        int availableRetryCapacity = retryCapacity.availableCapacity();
+
+        String headerValue = String.format("%s/%s/%s",
+                execOneRequestParams.requestCount - 1,
+                execOneRequestParams.lastBackoffDelay,
+                availableRetryCapacity >= 0 ? availableRetryCapacity : "");
+
+        request.addHeader(HEADER_SDK_RETRY_INFO, headerValue);
     }
 
     /**

@@ -112,8 +112,7 @@ public class Stack implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Output> outputs;
     /**
      * <p>
-     * A list of <code>Tag</code>s that specify cost allocation information for
-     * the stack.
+     * A list of <code>Tag</code>s that specify information about the stack.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -935,12 +934,11 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>Tag</code>s that specify cost allocation information for
-     * the stack.
+     * A list of <code>Tag</code>s that specify information about the stack.
      * </p>
      * 
-     * @return A list of <code>Tag</code>s that specify cost allocation
-     *         information for the stack.
+     * @return A list of <code>Tag</code>s that specify information about the
+     *         stack.
      */
 
     public java.util.List<Tag> getTags() {
@@ -952,13 +950,12 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>Tag</code>s that specify cost allocation information for
-     * the stack.
+     * A list of <code>Tag</code>s that specify information about the stack.
      * </p>
      * 
      * @param tags
-     *        A list of <code>Tag</code>s that specify cost allocation
-     *        information for the stack.
+     *        A list of <code>Tag</code>s that specify information about the
+     *        stack.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -972,8 +969,7 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>Tag</code>s that specify cost allocation information for
-     * the stack.
+     * A list of <code>Tag</code>s that specify information about the stack.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -983,8 +979,8 @@ public class Stack implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        A list of <code>Tag</code>s that specify cost allocation
-     *        information for the stack.
+     *        A list of <code>Tag</code>s that specify information about the
+     *        stack.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1001,13 +997,12 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code>Tag</code>s that specify cost allocation information for
-     * the stack.
+     * A list of <code>Tag</code>s that specify information about the stack.
      * </p>
      * 
      * @param tags
-     *        A list of <code>Tag</code>s that specify cost allocation
-     *        information for the stack.
+     *        A list of <code>Tag</code>s that specify information about the
+     *        stack.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

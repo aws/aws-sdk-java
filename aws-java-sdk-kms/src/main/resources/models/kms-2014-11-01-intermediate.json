@@ -1411,11 +1411,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -1479,8 +1479,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1570,11 +1570,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -1745,8 +1745,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2126,7 +2126,7 @@
         "fluentSetterDocumentation" : "/**<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p><p>Currently only 1 policy can be attached to a key.</p>\n@param limit When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p><p>Currently only 1 policy can be attached to a key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p><p>Currently only 1 policy can be attached to a key.</p>\n@param limit When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p><p>Currently only 1 policy can be attached to a key.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+        "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
         "name" : "Marker",
         "c2jName" : "Marker",
         "c2jShape" : "MarkerType",
@@ -2134,7 +2134,7 @@
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2173,10 +2173,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-        "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-        "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+        "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+        "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -2258,7 +2258,7 @@
           "varargSetterDocumentation" : "/**<p>A unique identifier for the customer master key. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by \"alias/\". <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name Example - alias/MyAliasName</li> </ul> </p>\n@param keyId A unique identifier for the customer master key. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by \"alias/\". <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name Example - alias/MyAliasName</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Marker" : {
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
           "name" : "Marker",
           "c2jName" : "Marker",
           "c2jShape" : "MarkerType",
@@ -2266,7 +2266,7 @@
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+            "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2305,10 +2305,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-          "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-          "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+          "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+          "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Limit" : {
           "documentation" : "<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p><p>Currently only 1 policy can be attached to a key.</p>",
@@ -3941,7 +3941,7 @@
         "fluentSetterDocumentation" : "/**<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>\n@param limit When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>\n@param limit When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+        "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
         "name" : "Marker",
         "c2jName" : "Marker",
         "c2jShape" : "MarkerType",
@@ -3949,7 +3949,7 @@
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3988,10 +3988,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-        "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-        "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+        "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+        "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The retiring principal for which to list grants.</p> <p>To specify the retiring principal, use the <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, go to <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam\">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>",
         "name" : "RetiringPrincipal",
@@ -4125,7 +4125,7 @@
           "varargSetterDocumentation" : "/**<p>The retiring principal for which to list grants.</p> <p>To specify the retiring principal, use the <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, go to <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam\">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>\n@param retiringPrincipal The retiring principal for which to list grants.</p> <p>To specify the retiring principal, use the <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, go to <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam\">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Marker" : {
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
           "name" : "Marker",
           "c2jName" : "Marker",
           "c2jShape" : "MarkerType",
@@ -4133,7 +4133,7 @@
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+            "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4172,10 +4172,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-          "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-          "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+          "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+          "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Limit" : {
           "documentation" : "<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>",
@@ -4710,8 +4710,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : "GrantOperation",
@@ -4956,8 +4956,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : "GrantOperation",
@@ -5614,8 +5614,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : "GrantOperation",
@@ -5732,8 +5732,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5982,8 +5982,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : "GrantOperation",
@@ -6261,8 +6261,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6777,8 +6777,8 @@
           "simple" : false,
           "simpleType" : "KeyListEntry",
           "map" : false,
-          "templateType" : "java.util.List<KeyListEntry>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyListEntry>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyListEntry>",
+          "templateType" : "java.util.List<KeyListEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7075,8 +7075,8 @@
             "simple" : false,
             "simpleType" : "KeyListEntry",
             "map" : false,
-            "templateType" : "java.util.List<KeyListEntry>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyListEntry>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<KeyListEntry>",
+            "templateType" : "java.util.List<KeyListEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7257,11 +7257,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7325,8 +7325,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7416,11 +7416,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7538,8 +7538,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7811,11 +7811,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7929,11 +7929,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7997,8 +7997,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8141,11 +8141,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8261,11 +8261,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8330,8 +8330,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8632,8 +8632,8 @@
           "simple" : false,
           "simpleType" : "AliasListEntry",
           "map" : false,
-          "templateType" : "java.util.List<AliasListEntry>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasListEntry>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasListEntry>",
+          "templateType" : "java.util.List<AliasListEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8877,8 +8877,8 @@
             "simple" : false,
             "simpleType" : "AliasListEntry",
             "map" : false,
-            "templateType" : "java.util.List<AliasListEntry>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasListEntry>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasListEntry>",
+            "templateType" : "java.util.List<AliasListEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10094,8 +10094,8 @@
           "simple" : false,
           "simpleType" : "GrantListEntry",
           "map" : false,
-          "templateType" : "java.util.List<GrantListEntry>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<GrantListEntry>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<GrantListEntry>",
+          "templateType" : "java.util.List<GrantListEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10392,8 +10392,8 @@
             "simple" : false,
             "simpleType" : "GrantListEntry",
             "map" : false,
-            "templateType" : "java.util.List<GrantListEntry>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<GrantListEntry>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<GrantListEntry>",
+            "templateType" : "java.util.List<GrantListEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11294,8 +11294,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11487,8 +11487,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12694,8 +12694,8 @@
           "simple" : false,
           "simpleType" : "GrantListEntry",
           "map" : false,
-          "templateType" : "java.util.List<GrantListEntry>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<GrantListEntry>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<GrantListEntry>",
+          "templateType" : "java.util.List<GrantListEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12992,8 +12992,8 @@
             "simple" : false,
             "simpleType" : "GrantListEntry",
             "map" : false,
-            "templateType" : "java.util.List<GrantListEntry>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<GrantListEntry>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<GrantListEntry>",
+            "templateType" : "java.util.List<GrantListEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13419,11 +13419,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -13591,8 +13591,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13735,11 +13735,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -13857,8 +13857,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14130,7 +14130,7 @@
         "fluentSetterDocumentation" : "/**<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>\n@param limit When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>\n@param limit When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+        "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
         "name" : "Marker",
         "c2jName" : "Marker",
         "c2jShape" : "MarkerType",
@@ -14138,7 +14138,7 @@
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -14177,10 +14177,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-        "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-        "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+        "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+        "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>",
         "name" : "KeyId",
@@ -14314,7 +14314,7 @@
           "varargSetterDocumentation" : "/**<p>A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul> </p>\n@param keyId A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li> <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Marker" : {
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
           "name" : "Marker",
           "c2jName" : "Marker",
           "c2jShape" : "MarkerType",
@@ -14322,7 +14322,7 @@
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+            "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -14361,10 +14361,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-          "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-          "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+          "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+          "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Limit" : {
           "documentation" : "<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>",
@@ -15249,7 +15249,7 @@
         "fluentSetterDocumentation" : "/**<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>\n@param limit When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>\n@param limit When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+        "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
         "name" : "Marker",
         "c2jName" : "Marker",
         "c2jShape" : "MarkerType",
@@ -15257,7 +15257,7 @@
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -15296,10 +15296,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-        "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-        "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+        "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+        "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -15328,7 +15328,7 @@
       },
       "membersAsMap" : {
         "Marker" : {
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
           "name" : "Marker",
           "c2jName" : "Marker",
           "c2jShape" : "MarkerType",
@@ -15336,7 +15336,7 @@
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+            "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -15375,10 +15375,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-          "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-          "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+          "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+          "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Limit" : {
           "documentation" : "<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>",
@@ -15611,8 +15611,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15757,8 +15757,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16227,7 +16227,7 @@
         "fluentSetterDocumentation" : "/**<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>\n@param limit When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>\n@param limit When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+        "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
         "name" : "Marker",
         "c2jName" : "Marker",
         "c2jShape" : "MarkerType",
@@ -16235,7 +16235,7 @@
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -16274,10 +16274,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-        "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-        "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+        "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+        "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -16306,7 +16306,7 @@
       },
       "membersAsMap" : {
         "Marker" : {
-          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+          "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
           "name" : "Marker",
           "c2jName" : "Marker",
           "c2jShape" : "MarkerType",
@@ -16314,7 +16314,7 @@
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
+            "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -16353,10 +16353,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-          "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
-          "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you've received a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+          "getterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@return Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.*/",
+          "fluentSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.</p>\n@param marker Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Limit" : {
           "documentation" : "<p>When paginating results, specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to true.</p><p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>",
@@ -17282,11 +17282,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -17348,11 +17348,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -17437,11 +17437,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -17504,11 +17504,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -17985,11 +17985,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -18157,8 +18157,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18301,11 +18301,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -18423,8 +18423,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,

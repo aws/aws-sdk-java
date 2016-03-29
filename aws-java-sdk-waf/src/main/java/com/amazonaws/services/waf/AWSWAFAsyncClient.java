@@ -471,6 +471,41 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(
+            CreateXssMatchSetRequest request) {
+
+        return createXssMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(
+            final CreateXssMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateXssMatchSetRequest, CreateXssMatchSetResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateXssMatchSetResult>() {
+                    @Override
+                    public CreateXssMatchSetResult call() throws Exception {
+                        CreateXssMatchSetResult result;
+
+                        try {
+                            result = createXssMatchSet(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteByteMatchSetResult> deleteByteMatchSetAsync(
             DeleteByteMatchSetRequest request) {
 
@@ -667,6 +702,41 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                         try {
                             result = deleteWebACL(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(
+            DeleteXssMatchSetRequest request) {
+
+        return deleteXssMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(
+            final DeleteXssMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteXssMatchSetRequest, DeleteXssMatchSetResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteXssMatchSetResult>() {
+                    @Override
+                    public DeleteXssMatchSetResult call() throws Exception {
+                        DeleteXssMatchSetResult result;
+
+                        try {
+                            result = deleteXssMatchSet(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -999,6 +1069,41 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(
+            GetXssMatchSetRequest request) {
+
+        return getXssMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(
+            final GetXssMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetXssMatchSetRequest, GetXssMatchSetResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetXssMatchSetResult>() {
+                    @Override
+                    public GetXssMatchSetResult call() throws Exception {
+                        GetXssMatchSetResult result;
+
+                        try {
+                            result = getXssMatchSet(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListByteMatchSetsResult> listByteMatchSetsAsync(
             ListByteMatchSetsRequest request) {
 
@@ -1194,6 +1299,41 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                         try {
                             result = listWebACLs(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(
+            ListXssMatchSetsRequest request) {
+
+        return listXssMatchSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(
+            final ListXssMatchSetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListXssMatchSetsRequest, ListXssMatchSetsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListXssMatchSetsResult>() {
+                    @Override
+                    public ListXssMatchSetsResult call() throws Exception {
+                        ListXssMatchSetsResult result;
+
+                        try {
+                            result = listXssMatchSets(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1406,6 +1546,41 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                         try {
                             result = updateWebACL(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(
+            UpdateXssMatchSetRequest request) {
+
+        return updateXssMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(
+            final UpdateXssMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateXssMatchSetRequest, UpdateXssMatchSetResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateXssMatchSetResult>() {
+                    @Override
+                    public UpdateXssMatchSetResult call() throws Exception {
+                        UpdateXssMatchSetResult result;
+
+                        try {
+                            result = updateXssMatchSet(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

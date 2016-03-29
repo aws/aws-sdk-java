@@ -47,9 +47,6 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
         if (copySnapshotRequest.getTargetSnapshotName() != null) {
             request.addParameter("TargetSnapshotName", StringUtils.fromString(copySnapshotRequest.getTargetSnapshotName()));
         }
-        if (copySnapshotRequest.getTargetBucket() != null) {
-            request.addParameter("TargetBucket", StringUtils.fromString(copySnapshotRequest.getTargetBucket()));
-        }
 
         return request;
     }

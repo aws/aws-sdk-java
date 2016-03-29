@@ -117,7 +117,7 @@ public interface AmazonCloudFormation {
      * stack configuration.
      * </p>
      * <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS
-     * state.</note>
+     * state.</note> <examples></examples>
      * 
      * @param cancelUpdateStackRequest
      *        The input for the <a>CancelUpdateStack</a> action.
@@ -146,6 +146,7 @@ public interface AmazonCloudFormation {
      * the database instance still exists and attempts to roll back to it,
      * causing the update rollback to fail.
      * </p>
+     * <examples></examples>
      * 
      * @param continueUpdateRollbackRequest
      *        The input for the <a>ContinueUpdateRollback</a> action.
@@ -158,10 +159,47 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Creates a list of changes for a stack. AWS CloudFormation generates the
+     * change set by comparing the stack's information with the information that
+     * you submit. A change set can help you understand which resources AWS
+     * CloudFormation will change and how it will change them before you update
+     * your stack. Change sets allow you to check before you make a change so
+     * that you don't delete or replace critical resources.
+     * </p>
+     * <p>
+     * AWS CloudFormation doesn't make any changes to the stack when you create
+     * a change set. To make the specified changes, you must execute the change
+     * set by using the <a>ExecuteChangeSet</a> action.
+     * </p>
+     * <p>
+     * After the call successfully completes, AWS CloudFormation starts creating
+     * the change set. To check the status of the change set, use the
+     * <a>DescribeChangeSet</a> action.
+     * </p>
+     * <examples></examples>
+     * 
+     * @param createChangeSetRequest
+     *        The input for the <a>CreateChangeSet</a> action.
+     * @return Result of the CreateChangeSet operation returned by the service.
+     * @throws AlreadyExistsException
+     *         Resource with the name requested already exists.
+     * @throws InsufficientCapabilitiesException
+     *         The template contains resources with capabilities that were not
+     *         specified in the Capabilities parameter.
+     * @throws LimitExceededException
+     *         Quota for the resource has already been reached.
+     * @sample AmazonCloudFormation.CreateChangeSet
+     */
+    CreateChangeSetResult createChangeSet(
+            CreateChangeSetRequest createChangeSetRequest);
+
+    /**
+     * <p>
      * Creates a stack as specified in the template. After the call completes
      * successfully, the stack creation starts. You can check the status of the
      * stack via the <a>DescribeStacks</a> API.
      * </p>
+     * <examples></examples>
      * 
      * @param createStackRequest
      *        The input for <a>CreateStack</a> action.
@@ -179,11 +217,31 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Deletes the specified change set. Deleting change sets ensures that no
+     * one executes the wrong change set.
+     * </p>
+     * <p>
+     * If the call successfully completes, AWS CloudFormation successfully
+     * deleted the change set.
+     * </p>
+     * <examples></examples>
+     * 
+     * @param deleteChangeSetRequest
+     *        The input for the <a>DeleteChangeSet</a> action.
+     * @return Result of the DeleteChangeSet operation returned by the service.
+     * @sample AmazonCloudFormation.DeleteChangeSet
+     */
+    DeleteChangeSetResult deleteChangeSet(
+            DeleteChangeSetRequest deleteChangeSetRequest);
+
+    /**
+     * <p>
      * Deletes a specified stack. Once the call completes successfully, stack
      * deletion starts. Deleted stacks do not show up in the
      * <a>DescribeStacks</a> API if the deletion has been completed
      * successfully.
      * </p>
+     * <examples></examples>
      * 
      * @param deleteStackRequest
      *        The input for <a>DeleteStack</a> action.
@@ -196,6 +254,7 @@ public interface AmazonCloudFormation {
      * Retrieves your account's AWS CloudFormation limits, such as the maximum
      * number of stacks that you can create in your account.
      * </p>
+     * <examples></examples>
      * 
      * @param describeAccountLimitsRequest
      *        The input for the <a>DescribeAccountLimits</a> action.
@@ -208,6 +267,30 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Returns the inputs for the change set and a list of changes that AWS
+     * CloudFormation will make if you execute the change set. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html"
+     * >Updating Stacks Using Change Sets</a> in the AWS CloudFormation User
+     * Guide.
+     * </p>
+     * <examples></examples>
+     * 
+     * @param describeChangeSetRequest
+     *        The input for the <a>DescribeChangeSet</a> action.
+     * @return Result of the DescribeChangeSet operation returned by the
+     *         service.
+     * @throws ChangeSetNotFoundException
+     *         The specified change set name or ID doesn't exit. To view valid
+     *         change sets for a stack, use the <code>ListChangeSets</code>
+     *         action.
+     * @sample AmazonCloudFormation.DescribeChangeSet
+     */
+    DescribeChangeSetResult describeChangeSet(
+            DescribeChangeSetRequest describeChangeSetRequest);
+
+    /**
+     * <p>
      * Returns all stack related events for a specified stack. For more
      * information about a stack's event history, go to <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html"
@@ -215,6 +298,7 @@ public interface AmazonCloudFormation {
      * </p>
      * <note>You can list events for stacks that have failed to create or have
      * been deleted by specifying the unique stack identifier (stack ID).</note>
+     * <examples></examples>
      * 
      * @param describeStackEventsRequest
      *        The input for <a>DescribeStackEvents</a> action.
@@ -233,6 +317,7 @@ public interface AmazonCloudFormation {
      * For deleted stacks, DescribeStackResource returns resource information
      * for up to 90 days after the stack has been deleted.
      * </p>
+     * <examples></examples>
      * 
      * @param describeStackResourceRequest
      *        The input for <a>DescribeStackResource</a> action.
@@ -269,7 +354,7 @@ public interface AmazonCloudFormation {
      * </p>
      * <note>A <code>ValidationError</code> is returned if you specify both
      * <code>StackName</code> and <code>PhysicalResourceId</code> in the same
-     * request.</note>
+     * request.</note> <examples></examples>
      * 
      * @param describeStackResourcesRequest
      *        The input for <a>DescribeStackResources</a> action.
@@ -285,6 +370,7 @@ public interface AmazonCloudFormation {
      * Returns the description for the specified stack; if no stack name was
      * specified, then it returns the description for all the stacks created.
      * </p>
+     * <examples></examples>
      * 
      * @param describeStacksRequest
      *        The input for <a>DescribeStacks</a> action.
@@ -307,6 +393,7 @@ public interface AmazonCloudFormation {
      * AWS Simple Monthly Calculator URL with a query string that describes the
      * resources required to run the template.
      * </p>
+     * <examples></examples>
      * 
      * @param estimateTemplateCostRequest
      * @return Result of the EstimateTemplateCost operation returned by the
@@ -325,9 +412,46 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Updates a stack using the input information that was provided when the
+     * specified change set was created. After the call successfully completes,
+     * AWS CloudFormation starts updating the stack. Use the
+     * <a>DescribeStacks</a> action to view the status of the update.
+     * </p>
+     * <p>
+     * When you execute a change set, AWS CloudFormation deletes all other
+     * change sets associated with the stack because they aren't valid for the
+     * updated stack.
+     * </p>
+     * <p>
+     * If a stack policy is associated with the stack, AWS CloudFormation
+     * enforces the policy during the update. You can't specify a temporary
+     * stack policy that overrides the current policy.
+     * </p>
+     * <examples></examples>
+     * 
+     * @param executeChangeSetRequest
+     *        The input for the <a>ExecuteChangeSet</a> action.
+     * @return Result of the ExecuteChangeSet operation returned by the service.
+     * @throws InvalidChangeSetStatusException
+     *         The specified change set cannot be used to update the stack. For
+     *         example, the change set status might be
+     *         <code>CREATE_IN_PROGRESS</code> or the stack status might be
+     *         <code>UPDATE_IN_PROGRESS</code>.
+     * @throws ChangeSetNotFoundException
+     *         The specified change set name or ID doesn't exit. To view valid
+     *         change sets for a stack, use the <code>ListChangeSets</code>
+     *         action.
+     * @sample AmazonCloudFormation.ExecuteChangeSet
+     */
+    ExecuteChangeSetResult executeChangeSet(
+            ExecuteChangeSetRequest executeChangeSetRequest);
+
+    /**
+     * <p>
      * Returns the stack policy for a specified stack. If a stack doesn't have a
      * policy, a null value is returned.
      * </p>
+     * <examples></examples>
      * 
      * @param getStackPolicyRequest
      *        The input for the <a>GetStackPolicy</a> action.
@@ -347,7 +471,7 @@ public interface AmazonCloudFormation {
      * after the stack has been deleted.
      * </p>
      * <note> If the template does not exist, a <code>ValidationError</code> is
-     * returned. </note>
+     * returned. </note> <examples></examples>
      * 
      * @param getTemplateRequest
      *        The input for a <a>GetTemplate</a> action.
@@ -373,6 +497,7 @@ public interface AmazonCloudFormation {
      * information for up to 90 days after the stack has been deleted. If the
      * template does not exist, a <code>ValidationError</code> is returned.
      * </p>
+     * <examples></examples>
      * 
      * @param getTemplateSummaryRequest
      *        The input for the <a>GetTemplateSummary</a> action.
@@ -392,12 +517,29 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Returns the ID and status of each active change set for a stack. For
+     * example, AWS CloudFormation lists change sets that are in the
+     * <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.
+     * </p>
+     * <examples></examples>
+     * 
+     * @param listChangeSetsRequest
+     *        The input for the <a>ListChangeSets</a> action.
+     * @return Result of the ListChangeSets operation returned by the service.
+     * @sample AmazonCloudFormation.ListChangeSets
+     */
+    ListChangeSetsResult listChangeSets(
+            ListChangeSetsRequest listChangeSetsRequest);
+
+    /**
+     * <p>
      * Returns descriptions of all resources of the specified stack.
      * </p>
      * <p>
      * For deleted stacks, ListStackResources returns resource information for
      * up to 90 days after the stack has been deleted.
      * </p>
+     * <examples></examples>
      * 
      * @param listStackResourcesRequest
      *        The input for the <a>ListStackResource</a> action.
@@ -416,6 +558,7 @@ public interface AmazonCloudFormation {
      * StackStatusFilter is specified, summary information for all stacks is
      * returned (including existing stacks and stacks that have been deleted).
      * </p>
+     * <examples></examples>
      * 
      * @param listStacksRequest
      *        The input for <a>ListStacks</a> action.
@@ -435,6 +578,7 @@ public interface AmazonCloudFormation {
      * <p>
      * Sets a stack policy for a specified stack.
      * </p>
+     * <examples></examples>
      * 
      * @param setStackPolicyRequest
      *        The input for the <a>SetStackPolicy</a> action.
@@ -452,6 +596,7 @@ public interface AmazonCloudFormation {
      * cases where you want to send signals from anywhere other than an Amazon
      * EC2 instance.
      * </p>
+     * <examples></examples>
      * 
      * @param signalResourceRequest
      *        The input for the <a>SignalResource</a> action.
@@ -475,6 +620,7 @@ public interface AmazonCloudFormation {
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"
      * >Updating a Stack</a>.
      * </p>
+     * <examples></examples>
      * 
      * @param updateStackRequest
      *        The input for <a>UpdateStack</a> action.
@@ -490,6 +636,7 @@ public interface AmazonCloudFormation {
      * <p>
      * Validates a specified template.
      * </p>
+     * <examples></examples>
      * 
      * @param validateTemplateRequest
      *        The input for <a>ValidateTemplate</a> action.

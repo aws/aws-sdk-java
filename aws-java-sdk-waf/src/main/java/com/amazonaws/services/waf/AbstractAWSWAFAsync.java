@@ -118,6 +118,21 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(
+            CreateXssMatchSetRequest request) {
+
+        return createXssMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(
+            CreateXssMatchSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateXssMatchSetRequest, CreateXssMatchSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteByteMatchSetResult> deleteByteMatchSetAsync(
             DeleteByteMatchSetRequest request) {
 
@@ -203,6 +218,21 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     public java.util.concurrent.Future<DeleteWebACLResult> deleteWebACLAsync(
             DeleteWebACLRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteWebACLRequest, DeleteWebACLResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(
+            DeleteXssMatchSetRequest request) {
+
+        return deleteXssMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(
+            DeleteXssMatchSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteXssMatchSetRequest, DeleteXssMatchSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -343,6 +373,21 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(
+            GetXssMatchSetRequest request) {
+
+        return getXssMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(
+            GetXssMatchSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetXssMatchSetRequest, GetXssMatchSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListByteMatchSetsResult> listByteMatchSetsAsync(
             ListByteMatchSetsRequest request) {
 
@@ -433,6 +478,21 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(
+            ListXssMatchSetsRequest request) {
+
+        return listXssMatchSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(
+            ListXssMatchSetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListXssMatchSetsRequest, ListXssMatchSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateByteMatchSetResult> updateByteMatchSetAsync(
             UpdateByteMatchSetRequest request) {
 
@@ -518,6 +578,21 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     public java.util.concurrent.Future<UpdateWebACLResult> updateWebACLAsync(
             UpdateWebACLRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateWebACLRequest, UpdateWebACLResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(
+            UpdateXssMatchSetRequest request) {
+
+        return updateXssMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(
+            UpdateXssMatchSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateXssMatchSetRequest, UpdateXssMatchSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

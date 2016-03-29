@@ -19,7 +19,10 @@ package com.amazonaws.services.databasemigrationservice.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * The resource is in a state that prevents it from being used for database
+ * migration.
+ * </p>
  */
 public class InvalidResourceStateException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

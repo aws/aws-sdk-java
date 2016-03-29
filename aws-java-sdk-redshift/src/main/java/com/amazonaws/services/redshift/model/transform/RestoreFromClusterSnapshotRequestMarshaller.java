@@ -118,6 +118,17 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
             request.addParameter("AdditionalInfo", StringUtils.fromString(restoreFromClusterSnapshotRequest.getAdditionalInfo()));
         }
 
+        java.util.List<String> iamRolesList = restoreFromClusterSnapshotRequest.getIamRoles();
+        int iamRolesListIndex = 1;
+
+        for (String iamRolesListValue : iamRolesList) {
+            if (iamRolesListValue != null) {
+                request.addParameter("IamRoles.IamRoleArn." + iamRolesListIndex, StringUtils.fromString(iamRolesListValue));
+            }
+
+            iamRolesListIndex++;
+        }
+
         return request;
     }
 }

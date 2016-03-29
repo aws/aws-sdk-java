@@ -51,11 +51,13 @@ public class AddAttributesToFindingsResultJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("message", targetDepth)) {
+                if (context.testExpression("failedItems", targetDepth)) {
                     context.nextToken();
                     addAttributesToFindingsResult
-                            .setMessage(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                            .setFailedItems(new MapUnmarshaller<String, FailedItemDetails>(
+                                    StringJsonUnmarshaller.getInstance(),
+                                    FailedItemDetailsJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -19,7 +19,9 @@ package com.amazonaws.services.databasemigrationservice.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * The resource you are attempting to create already exists.
+ * </p>
  */
 public class ResourceAlreadyExistsException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

@@ -51,10 +51,10 @@ public class ListFindingsResultJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("findingArnList", targetDepth)) {
+                if (context.testExpression("findingArns", targetDepth)) {
                     context.nextToken();
                     listFindingsResult
-                            .setFindingArnList(new ListUnmarshaller<String>(
+                            .setFindingArns(new ListUnmarshaller<String>(
                                     StringJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }

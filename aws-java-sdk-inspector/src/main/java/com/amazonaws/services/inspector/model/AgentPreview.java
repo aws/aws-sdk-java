@@ -20,8 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * <a>PreviewAgentsForResourceGroup</a> action.
+ * This data type is used as a response element in the <a>PreviewAgents</a>
+ * action.
  * </p>
  */
 public class AgentPreview implements Serializable, Cloneable {

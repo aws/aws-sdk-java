@@ -70,9 +70,19 @@ public class CreateResourceGroupRequestMarshaller
 
             jsonGenerator.writeStartObject();
 
-            if (createResourceGroupRequest.getResourceGroupTags() != null) {
-                jsonGenerator.writeFieldName("resourceGroupTags").writeValue(
-                        createResourceGroupRequest.getResourceGroupTags());
+            java.util.List<ResourceGroupTag> resourceGroupTagsList = createResourceGroupRequest
+                    .getResourceGroupTags();
+            if (resourceGroupTagsList != null) {
+                jsonGenerator.writeFieldName("resourceGroupTags");
+                jsonGenerator.writeStartArray();
+                for (ResourceGroupTag resourceGroupTagsListValue : resourceGroupTagsList) {
+                    if (resourceGroupTagsListValue != null) {
+
+                        ResourceGroupTagJsonMarshaller.getInstance().marshall(
+                                resourceGroupTagsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
             }
 
             jsonGenerator.writeEndObject();

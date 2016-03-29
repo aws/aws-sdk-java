@@ -19,7 +19,9 @@ package com.amazonaws.services.databasemigrationservice.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * There are not enough resources allocated to the database migration.
+ * </p>
  */
 public class InsufficientResourceCapacityException extends
         AmazonServiceException {

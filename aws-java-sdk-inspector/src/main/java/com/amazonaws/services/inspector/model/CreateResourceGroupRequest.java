@@ -27,84 +27,126 @@ public class CreateResourceGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A collection of keys and an array of possible values in JSON format.
+     * A collection of keys and an array of possible values,
+     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'
+     * .
      * </p>
      * <p>
-     * For example,
-     * [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values"
-     * :["Value3"]}]
+     * For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
      * </p>
      */
-    private String resourceGroupTags;
+    private java.util.List<ResourceGroupTag> resourceGroupTags;
 
     /**
      * <p>
-     * A collection of keys and an array of possible values in JSON format.
+     * A collection of keys and an array of possible values,
+     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'
+     * .
      * </p>
      * <p>
-     * For example,
-     * [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values"
-     * :["Value3"]}]
+     * For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
      * </p>
      * 
-     * @param resourceGroupTags
-     *        A collection of keys and an array of possible values in JSON
-     *        format.</p>
-     *        <p>
-     *        For example,
-     *        [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2"
-     *        ,"values":["Value3"]}]
-     */
-
-    public void setResourceGroupTags(String resourceGroupTags) {
-        this.resourceGroupTags = resourceGroupTags;
-    }
-
-    /**
-     * <p>
-     * A collection of keys and an array of possible values in JSON format.
-     * </p>
-     * <p>
-     * For example,
-     * [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values"
-     * :["Value3"]}]
-     * </p>
-     * 
-     * @return A collection of keys and an array of possible values in JSON
-     *         format.</p>
+     * @return A collection of keys and an array of possible values,
+     *         '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p
+     *         >
      *         <p>
-     *         For example,
-     *         [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2"
-     *         ,"values":["Value3"]}]
+     *         For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
      */
 
-    public String getResourceGroupTags() {
-        return this.resourceGroupTags;
+    public java.util.List<ResourceGroupTag> getResourceGroupTags() {
+        return resourceGroupTags;
     }
 
     /**
      * <p>
-     * A collection of keys and an array of possible values in JSON format.
+     * A collection of keys and an array of possible values,
+     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'
+     * .
      * </p>
      * <p>
-     * For example,
-     * [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values"
-     * :["Value3"]}]
+     * For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
      * </p>
      * 
      * @param resourceGroupTags
-     *        A collection of keys and an array of possible values in JSON
-     *        format.</p>
+     *        A collection of keys and an array of possible values,
+     *        '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p
+     *        >
      *        <p>
-     *        For example,
-     *        [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2"
-     *        ,"values":["Value3"]}]
+     *        For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
+     */
+
+    public void setResourceGroupTags(
+            java.util.Collection<ResourceGroupTag> resourceGroupTags) {
+        if (resourceGroupTags == null) {
+            this.resourceGroupTags = null;
+            return;
+        }
+
+        this.resourceGroupTags = new java.util.ArrayList<ResourceGroupTag>(
+                resourceGroupTags);
+    }
+
+    /**
+     * <p>
+     * A collection of keys and an array of possible values,
+     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'
+     * .
+     * </p>
+     * <p>
+     * For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setResourceGroupTags(java.util.Collection)} or
+     * {@link #withResourceGroupTags(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param resourceGroupTags
+     *        A collection of keys and an array of possible values,
+     *        '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p
+     *        >
+     *        <p>
+     *        For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
     public CreateResourceGroupRequest withResourceGroupTags(
-            String resourceGroupTags) {
+            ResourceGroupTag... resourceGroupTags) {
+        if (this.resourceGroupTags == null) {
+            setResourceGroupTags(new java.util.ArrayList<ResourceGroupTag>(
+                    resourceGroupTags.length));
+        }
+        for (ResourceGroupTag ele : resourceGroupTags) {
+            this.resourceGroupTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of keys and an array of possible values,
+     * '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'
+     * .
+     * </p>
+     * <p>
+     * For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
+     * </p>
+     * 
+     * @param resourceGroupTags
+     *        A collection of keys and an array of possible values,
+     *        '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p
+     *        >
+     *        <p>
+     *        For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateResourceGroupRequest withResourceGroupTags(
+            java.util.Collection<ResourceGroupTag> resourceGroupTags) {
         setResourceGroupTags(resourceGroupTags);
         return this;
     }

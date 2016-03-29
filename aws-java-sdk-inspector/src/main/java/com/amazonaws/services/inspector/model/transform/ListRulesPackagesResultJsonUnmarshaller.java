@@ -51,10 +51,10 @@ public class ListRulesPackagesResultJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("rulesPackageArnList", targetDepth)) {
+                if (context.testExpression("rulesPackageArns", targetDepth)) {
                     context.nextToken();
                     listRulesPackagesResult
-                            .setRulesPackageArnList(new ListUnmarshaller<String>(
+                            .setRulesPackageArns(new ListUnmarshaller<String>(
                                     StringJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }

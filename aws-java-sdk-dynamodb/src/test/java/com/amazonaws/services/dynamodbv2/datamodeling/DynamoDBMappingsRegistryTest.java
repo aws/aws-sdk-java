@@ -47,7 +47,7 @@ public class DynamoDBMappingsRegistryTest {
 
         // To make sure the bridge method is ruled out.
         final DynamoDBMappingsRegistry.Mapping m = mappings.getMappings().iterator().next();
-        assertEquals("return type should be Integer rather than Object", Integer.class, m.getGetterType());
+        assertEquals("return type should be Integer rather than Object", Integer.class, m.getter().getReturnType());
     }
 
     @DynamoDBTable(tableName = "")
@@ -97,18 +97,6 @@ public class DynamoDBMappingsRegistryTest {
 
         for (final DynamoDBMappingsRegistry.Mapping m : mappings.getMappings()) {
             assertEquals((mappings.getRangeKey() == m), m.isRangeKey());
-        }
-    }
-
-    @Test
-    public void testVersion() {
-        final DynamoDBMappingsRegistry.Mappings mappings = DynamoDBMappingsRegistry.instance().mappingsOf(TestObject.class);
-
-        assertNotNull(mappings.getVersionAttribute());
-        assertTrue(mappings.hasVersionAttribute());
-
-        for (final DynamoDBMappingsRegistry.Mapping m : mappings.getMappings()) {
-            assertEquals((mappings.getVersionAttribute() == m), m.isVersionAttribute());
         }
     }
 

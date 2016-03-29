@@ -38,6 +38,12 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
      * </p>
      */
     private Boolean valid;
+    /**
+     * <p>
+     * The date when the cross account access role was registered.
+     * </p>
+     */
+    private java.util.Date registeredAt;
 
     /**
      * <p>
@@ -152,6 +158,48 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
     }
 
     /**
+     * <p>
+     * The date when the cross account access role was registered.
+     * </p>
+     * 
+     * @param registeredAt
+     *        The date when the cross account access role was registered.
+     */
+
+    public void setRegisteredAt(java.util.Date registeredAt) {
+        this.registeredAt = registeredAt;
+    }
+
+    /**
+     * <p>
+     * The date when the cross account access role was registered.
+     * </p>
+     * 
+     * @return The date when the cross account access role was registered.
+     */
+
+    public java.util.Date getRegisteredAt() {
+        return this.registeredAt;
+    }
+
+    /**
+     * <p>
+     * The date when the cross account access role was registered.
+     * </p>
+     * 
+     * @param registeredAt
+     *        The date when the cross account access role was registered.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeCrossAccountAccessRoleResult withRegisteredAt(
+            java.util.Date registeredAt) {
+        setRegisteredAt(registeredAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -166,7 +214,9 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
         if (getRoleArn() != null)
             sb.append("RoleArn: " + getRoleArn() + ",");
         if (getValid() != null)
-            sb.append("Valid: " + getValid());
+            sb.append("Valid: " + getValid() + ",");
+        if (getRegisteredAt() != null)
+            sb.append("RegisteredAt: " + getRegisteredAt());
         sb.append("}");
         return sb.toString();
     }
@@ -191,6 +241,11 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
         if (other.getValid() != null
                 && other.getValid().equals(this.getValid()) == false)
             return false;
+        if (other.getRegisteredAt() == null ^ this.getRegisteredAt() == null)
+            return false;
+        if (other.getRegisteredAt() != null
+                && other.getRegisteredAt().equals(this.getRegisteredAt()) == false)
+            return false;
         return true;
     }
 
@@ -203,6 +258,10 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
                 + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode
                 + ((getValid() == null) ? 0 : getValid().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRegisteredAt() == null) ? 0 : getRegisteredAt()
+                        .hashCode());
         return hashCode;
     }
 

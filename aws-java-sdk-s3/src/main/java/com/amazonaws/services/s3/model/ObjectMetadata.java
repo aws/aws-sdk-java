@@ -23,8 +23,10 @@ import java.util.TreeMap;
 import java.util.Map;
 
 import com.amazonaws.services.s3.Headers;
+import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
 import com.amazonaws.services.s3.internal.ObjectRestoreResult;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 
 /**
@@ -32,7 +34,7 @@ import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
  * user-supplied metadata, as well as the standard HTTP headers that Amazon S3
  * sends and receives (Content-Length, ETag, Content-MD5, etc.).
  */
-public class ObjectMetadata implements ServerSideEncryptionResult,
+public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterChargedResult,
         ObjectExpirationResult, ObjectRestoreResult, Cloneable, Serializable
 {
     /*
@@ -840,5 +842,17 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
     public String getSSEAwsKmsKeyId() {
         return (String) metadata
                 .get(Headers.SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID);
+    }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return metadata.get(Headers.REQUESTER_CHARGED_HEADER) != null;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        if (isRequesterCharged) {
+            metadata.put(Headers.REQUESTER_CHARGED_HEADER, Constants.REQUESTER_PAYS);
+        }
     }
 }

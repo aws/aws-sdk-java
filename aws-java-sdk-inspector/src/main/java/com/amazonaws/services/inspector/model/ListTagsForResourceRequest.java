@@ -27,18 +27,19 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the resource whose tags you want to list.
+     * The ARN specifying the assessment template whose tags you want to list.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The ARN specifying the resource whose tags you want to list.
+     * The ARN specifying the assessment template whose tags you want to list.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN specifying the resource whose tags you want to list.
+     *        The ARN specifying the assessment template whose tags you want to
+     *        list.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +48,11 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the resource whose tags you want to list.
+     * The ARN specifying the assessment template whose tags you want to list.
      * </p>
      * 
-     * @return The ARN specifying the resource whose tags you want to list.
+     * @return The ARN specifying the assessment template whose tags you want to
+     *         list.
      */
 
     public String getResourceArn() {
@@ -59,11 +61,12 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the resource whose tags you want to list.
+     * The ARN specifying the assessment template whose tags you want to list.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN specifying the resource whose tags you want to list.
+     *        The ARN specifying the assessment template whose tags you want to
+     *        list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

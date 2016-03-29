@@ -55,6 +55,7 @@ public abstract class AbstractS3ResponseHandler<T>
         ignoredHeaders.add(Headers.SERVER);
         ignoredHeaders.add(Headers.REQUEST_ID);
         ignoredHeaders.add(Headers.EXTENDED_REQUEST_ID);
+        ignoredHeaders.add(Headers.CONNECTION);
     }
 
     /**
@@ -134,6 +135,8 @@ public abstract class AbstractS3ResponseHandler<T>
                 new ObjectExpirationHeaderHandler<ObjectMetadata>().handle(metadata, response);
             } else if (key.equalsIgnoreCase(Headers.RESTORE)) {
                 new ObjectRestoreHeaderHandler<ObjectRestoreResult>().handle(metadata, response);
+            } else if (key.equalsIgnoreCase(Headers.REQUESTER_CHARGED_HEADER)) {
+                new S3RequesterChargedHeaderHandler<S3RequesterChargedResult>().handle(metadata, response);
             } else {
                 metadata.setHeader(key, header.getValue());
             }

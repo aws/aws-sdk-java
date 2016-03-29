@@ -50,12 +50,12 @@ public class TagJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Key", targetDepth)) {
+                if (context.testExpression("key", targetDepth)) {
                     context.nextToken();
                     tag.setKey(StringJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
-                if (context.testExpression("Value", targetDepth)) {
+                if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
                     tag.setValue(StringJsonUnmarshaller.getInstance()
                             .unmarshall(context));

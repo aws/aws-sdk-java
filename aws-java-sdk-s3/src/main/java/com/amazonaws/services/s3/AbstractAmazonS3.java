@@ -68,6 +68,7 @@ import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
+import com.amazonaws.services.s3.model.GetObjectAclRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
@@ -302,15 +303,20 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     @Override
     public AccessControlList getObjectAcl(String bucketName, String key)
             throws AmazonClientException, AmazonServiceException {
-        return getObjectAcl(bucketName, key, null);
+        return getObjectAcl(new GetObjectAclRequest(bucketName, key));
     }
 
     @Override
     public AccessControlList getObjectAcl(String bucketName, String key,
             String versionId) throws AmazonClientException,
             AmazonServiceException {
-        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+        return getObjectAcl(new GetObjectAclRequest(bucketName, key, versionId));
+    }
 
+    @Override
+    public AccessControlList getObjectAcl(GetObjectAclRequest getObjectAclRequest)
+            throws AmazonClientException, AmazonServiceException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
 
     @Override

@@ -147,6 +147,17 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             request.addParameter("AdditionalInfo", StringUtils.fromString(createClusterRequest.getAdditionalInfo()));
         }
 
+        java.util.List<String> iamRolesList = createClusterRequest.getIamRoles();
+        int iamRolesListIndex = 1;
+
+        for (String iamRolesListValue : iamRolesList) {
+            if (iamRolesListValue != null) {
+                request.addParameter("IamRoles.IamRoleArn." + iamRolesListIndex, StringUtils.fromString(iamRolesListValue));
+            }
+
+            iamRolesListIndex++;
+        }
+
         return request;
     }
 }

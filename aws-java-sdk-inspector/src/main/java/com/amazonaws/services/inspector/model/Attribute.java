@@ -20,9 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * <a>AddAttributesToFindings</a> action and a request parameter in the
- * <a>CreateAssessment</a> action.
+ * This data type is used as a request parameter in the
+ * <a>AddAttributesToFindings</a> and <a>CreateAssessmentTemplate</a> actions.
  * </p>
  */
 public class Attribute implements Serializable, Cloneable {

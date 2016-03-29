@@ -545,9 +545,10 @@ public interface AmazonRedshift {
      * RestoreTableFromClusterSnapshot API action. If you don't specify a
      * value for the <code>TableRestoreRequestId</code> parameter, then
      * <code>DescribeTableRestoreStatus</code> returns the status of all
-     * in-progress table restore requests. Otherwise
-     * <code>DescribeTableRestoreStatus</code> returns the status of the
-     * table specified by <code>TableRestoreRequestId</code> .
+     * table restore requests ordered by the date and time of the request in
+     * ascending order. Otherwise <code>DescribeTableRestoreStatus</code>
+     * returns the status of the table specified by
+     * <code>TableRestoreRequestId</code> .
      * </p>
      *
      * @param describeTableRestoreStatusRequest Container for the necessary
@@ -1215,6 +1216,36 @@ public interface AmazonRedshift {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Cluster restoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest restoreFromClusterSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Modifies the list of AWS Identity and Access Management (IAM) roles
+     * that can be used by the cluster to access other AWS services.
+     * </p>
+     * <p>
+     * A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     *
+     * @param modifyClusterIamRolesRequest Container for the necessary
+     *           parameters to execute the ModifyClusterIamRoles service method on
+     *           AmazonRedshift.
+     * 
+     * @return The response from the ModifyClusterIamRoles service method, as
+     *         returned by AmazonRedshift.
+     * 
+     * @throws InvalidClusterStateException
+     * @throws ClusterNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Cluster modifyClusterIamRoles(ModifyClusterIamRolesRequest modifyClusterIamRolesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -2339,9 +2370,10 @@ public interface AmazonRedshift {
      * RestoreTableFromClusterSnapshot API action. If you don't specify a
      * value for the <code>TableRestoreRequestId</code> parameter, then
      * <code>DescribeTableRestoreStatus</code> returns the status of all
-     * in-progress table restore requests. Otherwise
-     * <code>DescribeTableRestoreStatus</code> returns the status of the
-     * table specified by <code>TableRestoreRequestId</code> .
+     * table restore requests ordered by the date and time of the request in
+     * ascending order. Otherwise <code>DescribeTableRestoreStatus</code>
+     * returns the status of the table specified by
+     * <code>TableRestoreRequestId</code> .
      * </p>
      * 
      * @return The response from the DescribeTableRestoreStatus service

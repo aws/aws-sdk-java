@@ -44,9 +44,8 @@ import com.amazonaws.services.inspector.model.transform.*;
  * <p>
  * <fullname>Amazon Inspector</fullname>
  * <p>
- * Amazon Inspector enables you to analyze the behavior of the applications you
- * run in AWS and to identify potential security issues. For more information,
- * see <a href=
+ * Amazon Inspector enables you to analyze the behavior of your AWS resources
+ * and to identify potential security issues. For more information, see <a href=
  * "https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html"
  * > Amazon Inspector User Guide</a>.
  * </p>
@@ -237,8 +236,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                         "NoSuchEntityException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.inspector.model.OperationInProgressException.class,
-                        "OperationInProgressException"));
+                        com.amazonaws.services.inspector.model.LimitExceededException.class,
+                        "LimitExceededException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.inspector.model.InvalidInputException.class,
@@ -250,6 +249,14 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.inspector.model.AccessDeniedException.class,
                         "AccessDeniedException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException.class,
+                        "AgentsAlreadyRunningAssessmentException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.inspector.model.AssessmentRunInProgressException.class,
+                        "AssessmentRunInProgressException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException.class,
@@ -280,9 +287,16 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @return Result of the AddAttributesToFindings operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.AddAttributesToFindings
      */
     @Override
@@ -322,97 +336,58 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Attaches the rules package specified by the rules package ARN to the
-     * assessment specified by the assessment ARN.
-     * </p>
-     * 
-     * @param attachAssessmentAndRulesPackageRequest
-     * @return Result of the AttachAssessmentAndRulesPackage operation returned
-     *         by the service.
-     * @throws InternalException
-     * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.AttachAssessmentAndRulesPackage
-     */
-    @Override
-    public AttachAssessmentAndRulesPackageResult attachAssessmentAndRulesPackage(
-            AttachAssessmentAndRulesPackageRequest attachAssessmentAndRulesPackageRequest) {
-        ExecutionContext executionContext = createExecutionContext(attachAssessmentAndRulesPackageRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<AttachAssessmentAndRulesPackageRequest> request = null;
-        Response<AttachAssessmentAndRulesPackageResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new AttachAssessmentAndRulesPackageRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(attachAssessmentAndRulesPackageRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<AttachAssessmentAndRulesPackageResult> responseHandler = new JsonResponseHandler<AttachAssessmentAndRulesPackageResult>(
-                    new AttachAssessmentAndRulesPackageResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Creates a new application using the resource group ARN generated by
-     * <a>CreateResourceGroup</a>. You can create up to 50 applications per AWS
-     * account. You can run up to 500 concurrent agents per AWS account. For
-     * more information, see <a href=
+     * Creates a new assessment target using the resource group ARN generated by
+     * <a>CreateResourceGroup</a>. You can create up to 50 assessment targets
+     * per AWS account. You can run up to 500 concurrent agents per AWS account.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html"
-     * > Inspector Applications.</a>
+     * > Amazon Inspector Assessment Targets</a>.
      * </p>
      * 
-     * @param createApplicationRequest
-     * @return Result of the CreateApplication operation returned by the
+     * @param createAssessmentTargetRequest
+     * @return Result of the CreateAssessmentTarget operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources
+     *         beyond the current AWS account limits. The error code describes
+     *         the limit exceeded.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
-     * @sample AmazonInspector.CreateApplication
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.CreateAssessmentTarget
      */
     @Override
-    public CreateApplicationResult createApplication(
-            CreateApplicationRequest createApplicationRequest) {
-        ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
+    public CreateAssessmentTargetResult createAssessmentTarget(
+            CreateAssessmentTargetRequest createAssessmentTargetRequest) {
+        ExecutionContext executionContext = createExecutionContext(createAssessmentTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateApplicationRequest> request = null;
-        Response<CreateApplicationResult> response = null;
+        Request<CreateAssessmentTargetRequest> request = null;
+        Response<CreateAssessmentTargetResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateApplicationRequestMarshaller()
+                request = new CreateAssessmentTargetRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(createApplicationRequest));
+                                .beforeMarshalling(createAssessmentTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateApplicationResult> responseHandler = new JsonResponseHandler<CreateApplicationResult>(
-                    new CreateApplicationResultJsonUnmarshaller());
+            JsonResponseHandler<CreateAssessmentTargetResult> responseHandler = new JsonResponseHandler<CreateAssessmentTargetResult>(
+                    new CreateAssessmentTargetResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -426,42 +401,54 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates an assessment for the application specified by the application
-     * ARN. You can create up to 500 assessments per AWS account.
+     * Creates an assessment template for the assessment target specified by the
+     * assessment target ARN.
      * </p>
      * 
-     * @param createAssessmentRequest
-     * @return Result of the CreateAssessment operation returned by the service.
+     * @param createAssessmentTemplateRequest
+     * @return Result of the CreateAssessmentTemplate operation returned by the
+     *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources
+     *         beyond the current AWS account limits. The error code describes
+     *         the limit exceeded.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
-     * @sample AmazonInspector.CreateAssessment
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.CreateAssessmentTemplate
      */
     @Override
-    public CreateAssessmentResult createAssessment(
-            CreateAssessmentRequest createAssessmentRequest) {
-        ExecutionContext executionContext = createExecutionContext(createAssessmentRequest);
+    public CreateAssessmentTemplateResult createAssessmentTemplate(
+            CreateAssessmentTemplateRequest createAssessmentTemplateRequest) {
+        ExecutionContext executionContext = createExecutionContext(createAssessmentTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateAssessmentRequest> request = null;
-        Response<CreateAssessmentResult> response = null;
+        Request<CreateAssessmentTemplateRequest> request = null;
+        Response<CreateAssessmentTemplateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssessmentRequestMarshaller()
+                request = new CreateAssessmentTemplateRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(createAssessmentRequest));
+                                .beforeMarshalling(createAssessmentTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAssessmentResult> responseHandler = new JsonResponseHandler<CreateAssessmentResult>(
-                    new CreateAssessmentResultJsonUnmarshaller());
+            JsonResponseHandler<CreateAssessmentTemplateResult> responseHandler = new JsonResponseHandler<CreateAssessmentTemplateResult>(
+                    new CreateAssessmentTemplateResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -477,16 +464,25 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * <p>
      * Creates a resource group using the specified set of tags (key and value
      * pairs) that are used to select the EC2 instances to be included in an
-     * Inspector application. The created resource group is then used to create
-     * an Inspector application.
+     * Inspector assessment target. The created resource group is then used to
+     * create an Inspector assessment target.
      * </p>
      * 
      * @param createResourceGroupRequest
      * @return Result of the CreateResourceGroup operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources
+     *         beyond the current AWS account limits. The error code describes
+     *         the limit exceeded.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @sample AmazonInspector.CreateResourceGroup
      */
     @Override
@@ -526,43 +522,208 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes the application specified by the application ARN.
+     * Deletes the assessment run specified by the assessment run ARN.
      * </p>
      * 
-     * @param deleteApplicationRequest
-     * @return Result of the DeleteApplication operation returned by the
+     * @param deleteAssessmentRunRequest
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws AssessmentRunInProgressException
+     *         You cannot perform a specified action if an assessment run is
+     *         currently in progress.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.DeleteAssessmentRun
+     */
+    @Override
+    public void deleteAssessmentRun(
+            DeleteAssessmentRunRequest deleteAssessmentRunRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteAssessmentRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAssessmentRunRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAssessmentRunRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deleteAssessmentRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the assessment target specified by the assessment target ARN.
+     * </p>
+     * 
+     * @param deleteAssessmentTargetRequest
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws AssessmentRunInProgressException
+     *         You cannot perform a specified action if an assessment run is
+     *         currently in progress.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.DeleteAssessmentTarget
+     */
+    @Override
+    public void deleteAssessmentTarget(
+            DeleteAssessmentTargetRequest deleteAssessmentTargetRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteAssessmentTargetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAssessmentTargetRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAssessmentTargetRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deleteAssessmentTargetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the assessment template specified by the assessment template ARN.
+     * </p>
+     * 
+     * @param deleteAssessmentTemplateRequest
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws AssessmentRunInProgressException
+     *         You cannot perform a specified action if an assessment run is
+     *         currently in progress.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.DeleteAssessmentTemplate
+     */
+    @Override
+    public void deleteAssessmentTemplate(
+            DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteAssessmentTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAssessmentTemplateRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAssessmentTemplateRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deleteAssessmentTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the assessment run(s) specified by the assessment run ARN(s).
+     * </p>
+     * 
+     * @param describeAssessmentRunsRequest
+     * @return Result of the DescribeAssessmentRuns operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
-     * @throws OperationInProgressException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.DeleteApplication
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @sample AmazonInspector.DescribeAssessmentRuns
      */
     @Override
-    public DeleteApplicationResult deleteApplication(
-            DeleteApplicationRequest deleteApplicationRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
+    public DescribeAssessmentRunsResult describeAssessmentRuns(
+            DescribeAssessmentRunsRequest describeAssessmentRunsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeAssessmentRunsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteApplicationRequest> request = null;
-        Response<DeleteApplicationResult> response = null;
+        Request<DescribeAssessmentRunsRequest> request = null;
+        Response<DescribeAssessmentRunsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationRequestMarshaller()
+                request = new DescribeAssessmentRunsRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(deleteApplicationRequest));
+                                .beforeMarshalling(describeAssessmentRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteApplicationResult> responseHandler = new JsonResponseHandler<DeleteApplicationResult>(
-                    new DeleteApplicationResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeAssessmentRunsResult> responseHandler = new JsonResponseHandler<DescribeAssessmentRunsResult>(
+                    new DescribeAssessmentRunsResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -576,137 +737,44 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes the assessment specified by the assessment ARN.
+     * Describes the assessment target(s) specified by the assessment target
+     * ARN(s).
      * </p>
      * 
-     * @param deleteAssessmentRequest
-     * @return Result of the DeleteAssessment operation returned by the service.
-     * @throws InternalException
-     * @throws InvalidInputException
-     * @throws OperationInProgressException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.DeleteAssessment
-     */
-    @Override
-    public DeleteAssessmentResult deleteAssessment(
-            DeleteAssessmentRequest deleteAssessmentRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteAssessmentRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteAssessmentRequest> request = null;
-        Response<DeleteAssessmentResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteAssessmentRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteAssessmentRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<DeleteAssessmentResult> responseHandler = new JsonResponseHandler<DeleteAssessmentResult>(
-                    new DeleteAssessmentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Deletes the assessment run specified by the run ARN.
-     * </p>
-     * 
-     * @param deleteRunRequest
-     * @return Result of the DeleteRun operation returned by the service.
-     * @throws InternalException
-     * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.DeleteRun
-     */
-    @Override
-    public DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteRunRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteRunRequest> request = null;
-        Response<DeleteRunResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteRunRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteRunRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<DeleteRunResult> responseHandler = new JsonResponseHandler<DeleteRunResult>(
-                    new DeleteRunResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Describes the application specified by the application ARN.
-     * </p>
-     * 
-     * @param describeApplicationRequest
-     * @return Result of the DescribeApplication operation returned by the
+     * @param describeAssessmentTargetsRequest
+     * @return Result of the DescribeAssessmentTargets operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.DescribeApplication
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @sample AmazonInspector.DescribeAssessmentTargets
      */
     @Override
-    public DescribeApplicationResult describeApplication(
-            DescribeApplicationRequest describeApplicationRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeApplicationRequest);
+    public DescribeAssessmentTargetsResult describeAssessmentTargets(
+            DescribeAssessmentTargetsRequest describeAssessmentTargetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeAssessmentTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeApplicationRequest> request = null;
-        Response<DescribeApplicationResult> response = null;
+        Request<DescribeAssessmentTargetsRequest> request = null;
+        Response<DescribeAssessmentTargetsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeApplicationRequestMarshaller()
+                request = new DescribeAssessmentTargetsRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(describeApplicationRequest));
+                                .beforeMarshalling(describeAssessmentTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeApplicationResult> responseHandler = new JsonResponseHandler<DescribeApplicationResult>(
-                    new DescribeApplicationResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeAssessmentTargetsResult> responseHandler = new JsonResponseHandler<DescribeAssessmentTargetsResult>(
+                    new DescribeAssessmentTargetsResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -720,42 +788,44 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Describes the assessment specified by the assessment ARN.
+     * Describes the assessment template(s) specified by the assessment
+     * template(s) ARN(s).
      * </p>
      * 
-     * @param describeAssessmentRequest
-     * @return Result of the DescribeAssessment operation returned by the
-     *         service.
+     * @param describeAssessmentTemplatesRequest
+     * @return Result of the DescribeAssessmentTemplates operation returned by
+     *         the service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.DescribeAssessment
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @sample AmazonInspector.DescribeAssessmentTemplates
      */
     @Override
-    public DescribeAssessmentResult describeAssessment(
-            DescribeAssessmentRequest describeAssessmentRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeAssessmentRequest);
+    public DescribeAssessmentTemplatesResult describeAssessmentTemplates(
+            DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeAssessmentTemplatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeAssessmentRequest> request = null;
-        Response<DescribeAssessmentResult> response = null;
+        Request<DescribeAssessmentTemplatesRequest> request = null;
+        Response<DescribeAssessmentTemplatesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssessmentRequestMarshaller()
+                request = new DescribeAssessmentTemplatesRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(describeAssessmentRequest));
+                                .beforeMarshalling(describeAssessmentTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAssessmentResult> responseHandler = new JsonResponseHandler<DescribeAssessmentResult>(
-                    new DescribeAssessmentResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeAssessmentTemplatesResult> responseHandler = new JsonResponseHandler<DescribeAssessmentTemplatesResult>(
+                    new DescribeAssessmentTemplatesResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -776,7 +846,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeCrossAccountAccessRole operation returned
      *         by the service.
      * @throws InternalException
-     * @throws AccessDeniedException
+     *         Internal server error.
      * @sample AmazonInspector.DescribeCrossAccountAccessRole
      */
     @Override
@@ -816,40 +886,42 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Describes the finding specified by the finding ARN.
+     * Describes the finding(s) specified by the finding ARN(s).
      * </p>
      * 
-     * @param describeFindingRequest
-     * @return Result of the DescribeFinding operation returned by the service.
+     * @param describeFindingsRequest
+     * @return Result of the DescribeFindings operation returned by the service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.DescribeFinding
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @sample AmazonInspector.DescribeFindings
      */
     @Override
-    public DescribeFindingResult describeFinding(
-            DescribeFindingRequest describeFindingRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeFindingRequest);
+    public DescribeFindingsResult describeFindings(
+            DescribeFindingsRequest describeFindingsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeFindingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeFindingRequest> request = null;
-        Response<DescribeFindingResult> response = null;
+        Request<DescribeFindingsRequest> request = null;
+        Response<DescribeFindingsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFindingRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeFindingRequest));
+                request = new DescribeFindingsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFindingResult> responseHandler = new JsonResponseHandler<DescribeFindingResult>(
-                    new DescribeFindingResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeFindingsResult> responseHandler = new JsonResponseHandler<DescribeFindingsResult>(
+                    new DescribeFindingsResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -863,42 +935,43 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Describes the resource group specified by the resource group ARN.
+     * Describes resource group(s) specified by the resource group ARN(s).
      * </p>
      * 
-     * @param describeResourceGroupRequest
-     * @return Result of the DescribeResourceGroup operation returned by the
+     * @param describeResourceGroupsRequest
+     * @return Result of the DescribeResourceGroups operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.DescribeResourceGroup
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @sample AmazonInspector.DescribeResourceGroups
      */
     @Override
-    public DescribeResourceGroupResult describeResourceGroup(
-            DescribeResourceGroupRequest describeResourceGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeResourceGroupRequest);
+    public DescribeResourceGroupsResult describeResourceGroups(
+            DescribeResourceGroupsRequest describeResourceGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeResourceGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeResourceGroupRequest> request = null;
-        Response<DescribeResourceGroupResult> response = null;
+        Request<DescribeResourceGroupsRequest> request = null;
+        Response<DescribeResourceGroupsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeResourceGroupRequestMarshaller()
+                request = new DescribeResourceGroupsRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(describeResourceGroupRequest));
+                                .beforeMarshalling(describeResourceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeResourceGroupResult> responseHandler = new JsonResponseHandler<DescribeResourceGroupResult>(
-                    new DescribeResourceGroupResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeResourceGroupsResult> responseHandler = new JsonResponseHandler<DescribeResourceGroupsResult>(
+                    new DescribeResourceGroupsResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -912,42 +985,43 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Describes the rules package specified by the rules package ARN.
+     * Describes the rules package(s) specified by the rules package ARN(s).
      * </p>
      * 
-     * @param describeRulesPackageRequest
-     * @return Result of the DescribeRulesPackage operation returned by the
+     * @param describeRulesPackagesRequest
+     * @return Result of the DescribeRulesPackages operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.DescribeRulesPackage
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @sample AmazonInspector.DescribeRulesPackages
      */
     @Override
-    public DescribeRulesPackageResult describeRulesPackage(
-            DescribeRulesPackageRequest describeRulesPackageRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeRulesPackageRequest);
+    public DescribeRulesPackagesResult describeRulesPackages(
+            DescribeRulesPackagesRequest describeRulesPackagesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeRulesPackagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeRulesPackageRequest> request = null;
-        Response<DescribeRulesPackageResult> response = null;
+        Request<DescribeRulesPackagesRequest> request = null;
+        Response<DescribeRulesPackagesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRulesPackageRequestMarshaller()
+                request = new DescribeRulesPackagesRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(describeRulesPackageRequest));
+                                .beforeMarshalling(describeRulesPackagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeRulesPackageResult> responseHandler = new JsonResponseHandler<DescribeRulesPackageResult>(
-                    new DescribeRulesPackageResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeRulesPackagesResult> responseHandler = new JsonResponseHandler<DescribeRulesPackagesResult>(
+                    new DescribeRulesPackagesResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -961,139 +1035,49 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Describes the assessment run specified by the run ARN.
+     * Information about the data collected for the specified assessment run.
      * </p>
      * 
-     * @param describeRunRequest
-     * @return Result of the DescribeRun operation returned by the service.
-     * @throws InternalException
-     * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.DescribeRun
-     */
-    @Override
-    public DescribeRunResult describeRun(DescribeRunRequest describeRunRequest) {
-        ExecutionContext executionContext = createExecutionContext(describeRunRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DescribeRunRequest> request = null;
-        Response<DescribeRunResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DescribeRunRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeRunRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<DescribeRunResult> responseHandler = new JsonResponseHandler<DescribeRunResult>(
-                    new DescribeRunResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Detaches the rules package specified by the rules package ARN from the
-     * assessment specified by the assessment ARN.
-     * </p>
-     * 
-     * @param detachAssessmentAndRulesPackageRequest
-     * @return Result of the DetachAssessmentAndRulesPackage operation returned
-     *         by the service.
-     * @throws InternalException
-     * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.DetachAssessmentAndRulesPackage
-     */
-    @Override
-    public DetachAssessmentAndRulesPackageResult detachAssessmentAndRulesPackage(
-            DetachAssessmentAndRulesPackageRequest detachAssessmentAndRulesPackageRequest) {
-        ExecutionContext executionContext = createExecutionContext(detachAssessmentAndRulesPackageRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DetachAssessmentAndRulesPackageRequest> request = null;
-        Response<DetachAssessmentAndRulesPackageResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DetachAssessmentAndRulesPackageRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(detachAssessmentAndRulesPackageRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<DetachAssessmentAndRulesPackageResult> responseHandler = new JsonResponseHandler<DetachAssessmentAndRulesPackageResult>(
-                    new DetachAssessmentAndRulesPackageResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Returns the metadata about the telemetry (application behavioral data)
-     * for the assessment specified by the assessment ARN.
-     * </p>
-     * 
-     * @param getAssessmentTelemetryRequest
-     * @return Result of the GetAssessmentTelemetry operation returned by the
+     * @param getTelemetryMetadataRequest
+     * @return Result of the GetTelemetryMetadata operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
-     * @sample AmazonInspector.GetAssessmentTelemetry
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.GetTelemetryMetadata
      */
     @Override
-    public GetAssessmentTelemetryResult getAssessmentTelemetry(
-            GetAssessmentTelemetryRequest getAssessmentTelemetryRequest) {
-        ExecutionContext executionContext = createExecutionContext(getAssessmentTelemetryRequest);
+    public GetTelemetryMetadataResult getTelemetryMetadata(
+            GetTelemetryMetadataRequest getTelemetryMetadataRequest) {
+        ExecutionContext executionContext = createExecutionContext(getTelemetryMetadataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetAssessmentTelemetryRequest> request = null;
-        Response<GetAssessmentTelemetryResult> response = null;
+        Request<GetTelemetryMetadataRequest> request = null;
+        Response<GetTelemetryMetadataResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAssessmentTelemetryRequestMarshaller()
+                request = new GetTelemetryMetadataRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(getAssessmentTelemetryRequest));
+                                .beforeMarshalling(getTelemetryMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetAssessmentTelemetryResult> responseHandler = new JsonResponseHandler<GetAssessmentTelemetryResult>(
-                    new GetAssessmentTelemetryResultJsonUnmarshaller());
+            JsonResponseHandler<GetTelemetryMetadataResult> responseHandler = new JsonResponseHandler<GetTelemetryMetadataResult>(
+                    new GetTelemetryMetadataResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1107,92 +1091,163 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists the ARNs of the applications within this AWS account. For more
-     * information about applications, see <a href=
+     * Lists the agents of the assessment run specified by the assessment run
+     * ARN.
+     * </p>
+     * 
+     * @param listAssessmentRunAgentsRequest
+     * @return Result of the ListAssessmentRunAgents operation returned by the
+     *         service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.ListAssessmentRunAgents
+     */
+    @Override
+    public ListAssessmentRunAgentsResult listAssessmentRunAgents(
+            ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listAssessmentRunAgentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssessmentRunAgentsRequest> request = null;
+        Response<ListAssessmentRunAgentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssessmentRunAgentsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listAssessmentRunAgentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ListAssessmentRunAgentsResult> responseHandler = new JsonResponseHandler<ListAssessmentRunAgentsResult>(
+                    new ListAssessmentRunAgentsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the assessments run corresponding to assessment template(s)
+     * specified by the assessment template(s)' ARN(s).
+     * </p>
+     * 
+     * @param listAssessmentRunsRequest
+     * @return Result of the ListAssessmentRuns operation returned by the
+     *         service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.ListAssessmentRuns
+     */
+    @Override
+    public ListAssessmentRunsResult listAssessmentRuns(
+            ListAssessmentRunsRequest listAssessmentRunsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listAssessmentRunsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssessmentRunsRequest> request = null;
+        Response<ListAssessmentRunsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssessmentRunsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listAssessmentRunsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ListAssessmentRunsResult> responseHandler = new JsonResponseHandler<ListAssessmentRunsResult>(
+                    new ListAssessmentRunsResultJsonUnmarshaller());
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the ARN(s) of the assessment target(s) within this AWS account. For
+     * more information about assessment targets, see <a href=
      * "https://docs.aws.amazon.com/inspector/latest/userguide//inspector_applications.html"
-     * >Inspector Applications</a>.
+     * >Amazon Inspector Assessment Targets</a>.
      * </p>
      * 
-     * @param listApplicationsRequest
-     * @return Result of the ListApplications operation returned by the service.
-     * @throws InternalException
-     * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @sample AmazonInspector.ListApplications
-     */
-    @Override
-    public ListApplicationsResult listApplications(
-            ListApplicationsRequest listApplicationsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listApplicationsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListApplicationsRequest> request = null;
-        Response<ListApplicationsResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListApplicationsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listApplicationsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<ListApplicationsResult> responseHandler = new JsonResponseHandler<ListApplicationsResult>(
-                    new ListApplicationsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Lists the agents of the assessment specified by the assessment ARN.
-     * </p>
-     * 
-     * @param listAssessmentAgentsRequest
-     * @return Result of the ListAssessmentAgents operation returned by the
+     * @param listAssessmentTargetsRequest
+     * @return Result of the ListAssessmentTargets operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.ListAssessmentAgents
+     *         You do not have required permissions to access the requested
+     *         resource.
+     * @sample AmazonInspector.ListAssessmentTargets
      */
     @Override
-    public ListAssessmentAgentsResult listAssessmentAgents(
-            ListAssessmentAgentsRequest listAssessmentAgentsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listAssessmentAgentsRequest);
+    public ListAssessmentTargetsResult listAssessmentTargets(
+            ListAssessmentTargetsRequest listAssessmentTargetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listAssessmentTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListAssessmentAgentsRequest> request = null;
-        Response<ListAssessmentAgentsResult> response = null;
+        Request<ListAssessmentTargetsRequest> request = null;
+        Response<ListAssessmentTargetsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentAgentsRequestMarshaller()
+                request = new ListAssessmentTargetsRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(listAssessmentAgentsRequest));
+                                .beforeMarshalling(listAssessmentTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAssessmentAgentsResult> responseHandler = new JsonResponseHandler<ListAssessmentAgentsResult>(
-                    new ListAssessmentAgentsResultJsonUnmarshaller());
+            JsonResponseHandler<ListAssessmentTargetsResult> responseHandler = new JsonResponseHandler<ListAssessmentTargetsResult>(
+                    new ListAssessmentTargetsResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1206,91 +1261,50 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists the assessments corresponding to applications specified by the
-     * applications' ARNs.
+     * Lists the assessment template(s) corresponding to the assessment
+     * target(s) specified by the assessment targets' ARN(s).
      * </p>
      * 
-     * @param listAssessmentsRequest
-     * @return Result of the ListAssessments operation returned by the service.
-     * @throws InternalException
-     * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.ListAssessments
-     */
-    @Override
-    public ListAssessmentsResult listAssessments(
-            ListAssessmentsRequest listAssessmentsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listAssessmentsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListAssessmentsRequest> request = null;
-        Response<ListAssessmentsResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListAssessmentsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listAssessmentsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<ListAssessmentsResult> responseHandler = new JsonResponseHandler<ListAssessmentsResult>(
-                    new ListAssessmentsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Lists the assessments attached to the rules package specified by the
-     * rules package ARN.
-     * </p>
-     * 
-     * @param listAttachedAssessmentsRequest
-     * @return Result of the ListAttachedAssessments operation returned by the
+     * @param listAssessmentTemplatesRequest
+     * @return Result of the ListAssessmentTemplates operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
-     * @sample AmazonInspector.ListAttachedAssessments
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.ListAssessmentTemplates
      */
     @Override
-    public ListAttachedAssessmentsResult listAttachedAssessments(
-            ListAttachedAssessmentsRequest listAttachedAssessmentsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listAttachedAssessmentsRequest);
+    public ListAssessmentTemplatesResult listAssessmentTemplates(
+            ListAssessmentTemplatesRequest listAssessmentTemplatesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listAssessmentTemplatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListAttachedAssessmentsRequest> request = null;
-        Response<ListAttachedAssessmentsResult> response = null;
+        Request<ListAssessmentTemplatesRequest> request = null;
+        Response<ListAssessmentTemplatesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAttachedAssessmentsRequestMarshaller()
+                request = new ListAssessmentTemplatesRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(listAttachedAssessmentsRequest));
+                                .beforeMarshalling(listAssessmentTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAttachedAssessmentsResult> responseHandler = new JsonResponseHandler<ListAttachedAssessmentsResult>(
-                    new ListAttachedAssessmentsResultJsonUnmarshaller());
+            JsonResponseHandler<ListAssessmentTemplatesResult> responseHandler = new JsonResponseHandler<ListAssessmentTemplatesResult>(
+                    new ListAssessmentTemplatesResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1304,43 +1318,51 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists the rules packages attached to the assessment specified by the
-     * assessment ARN.
+     * Lists all the event subscriptions for the assessment template specified
+     * by the assessment template ARN. For more information, see
+     * <a>SubscribeToEvent</a> and <a>UnsubscribeFromEvent</a>.
      * </p>
      * 
-     * @param listAttachedRulesPackagesRequest
-     * @return Result of the ListAttachedRulesPackages operation returned by the
+     * @param listEventSubscriptionsRequest
+     * @return Result of the ListEventSubscriptions operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
-     * @sample AmazonInspector.ListAttachedRulesPackages
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.ListEventSubscriptions
      */
     @Override
-    public ListAttachedRulesPackagesResult listAttachedRulesPackages(
-            ListAttachedRulesPackagesRequest listAttachedRulesPackagesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listAttachedRulesPackagesRequest);
+    public ListEventSubscriptionsResult listEventSubscriptions(
+            ListEventSubscriptionsRequest listEventSubscriptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listEventSubscriptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListAttachedRulesPackagesRequest> request = null;
-        Response<ListAttachedRulesPackagesResult> response = null;
+        Request<ListEventSubscriptionsRequest> request = null;
+        Response<ListEventSubscriptionsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAttachedRulesPackagesRequestMarshaller()
+                request = new ListEventSubscriptionsRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(listAttachedRulesPackagesRequest));
+                                .beforeMarshalling(listEventSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAttachedRulesPackagesResult> responseHandler = new JsonResponseHandler<ListAttachedRulesPackagesResult>(
-                    new ListAttachedRulesPackagesResultJsonUnmarshaller());
+            JsonResponseHandler<ListEventSubscriptionsResult> responseHandler = new JsonResponseHandler<ListEventSubscriptionsResult>(
+                    new ListEventSubscriptionsResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1354,15 +1376,23 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists findings generated by the assessment run specified by the run ARNs.
+     * Lists findings generated by the assessment run(s) specified by the
+     * assessment run ARN(s).
      * </p>
      * 
      * @param listFindingsRequest
      * @return Result of the ListFindings operation returned by the service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.ListFindings
      */
     @Override
@@ -1408,8 +1438,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @return Result of the ListRulesPackages operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @sample AmazonInspector.ListRulesPackages
      */
     @Override
@@ -1449,63 +1484,23 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists the assessment runs associated with the assessments specified by
-     * the assessment ARNs.
-     * </p>
-     * 
-     * @param listRunsRequest
-     * @return Result of the ListRuns operation returned by the service.
-     * @throws InternalException
-     * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.ListRuns
-     */
-    @Override
-    public ListRunsResult listRuns(ListRunsRequest listRunsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listRunsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListRunsRequest> request = null;
-        Response<ListRunsResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListRunsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listRunsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<ListRunsResult> responseHandler = new JsonResponseHandler<ListRunsResult>(
-                    new ListRunsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Lists all tags associated with a resource.
+     * Lists all tags associated with an assessment template.
      * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.ListTagsForResource
      */
     @Override
@@ -1545,92 +1540,51 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Translates a textual identifier into a user-readable text in a specified
-     * locale.
+     * Previews the agents installed on the EC2 instances that are part of the
+     * specified assessment target.
      * </p>
      * 
-     * @param localizeTextRequest
-     * @return Result of the LocalizeText operation returned by the service.
+     * @param previewAgentsRequest
+     * @return Result of the PreviewAgents operation returned by the service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
-     * @sample AmazonInspector.LocalizeText
-     */
-    @Override
-    public LocalizeTextResult localizeText(
-            LocalizeTextRequest localizeTextRequest) {
-        ExecutionContext executionContext = createExecutionContext(localizeTextRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<LocalizeTextRequest> request = null;
-        Response<LocalizeTextResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new LocalizeTextRequestMarshaller().marshall(super
-                        .beforeMarshalling(localizeTextRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<LocalizeTextResult> responseHandler = new JsonResponseHandler<LocalizeTextResult>(
-                    new LocalizeTextResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Previews the agents installed on the EC2 instances that are included in
-     * the application created with the specified resource group.
-     * </p>
-     * 
-     * @param previewAgentsForResourceGroupRequest
-     * @return Result of the PreviewAgentsForResourceGroup operation returned by
-     *         the service.
-     * @throws InternalException
-     * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
      * @throws InvalidCrossAccountRoleException
-     * @sample AmazonInspector.PreviewAgentsForResourceGroup
+     *         Inspector cannot assume the cross account role it needs to list
+     *         your EC2 instances during the assessment run.
+     * @sample AmazonInspector.PreviewAgents
      */
     @Override
-    public PreviewAgentsForResourceGroupResult previewAgentsForResourceGroup(
-            PreviewAgentsForResourceGroupRequest previewAgentsForResourceGroupRequest) {
-        ExecutionContext executionContext = createExecutionContext(previewAgentsForResourceGroupRequest);
+    public PreviewAgentsResult previewAgents(
+            PreviewAgentsRequest previewAgentsRequest) {
+        ExecutionContext executionContext = createExecutionContext(previewAgentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<PreviewAgentsForResourceGroupRequest> request = null;
-        Response<PreviewAgentsForResourceGroupResult> response = null;
+        Request<PreviewAgentsRequest> request = null;
+        Response<PreviewAgentsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PreviewAgentsForResourceGroupRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(previewAgentsForResourceGroupRequest));
+                request = new PreviewAgentsRequestMarshaller().marshall(super
+                        .beforeMarshalling(previewAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PreviewAgentsForResourceGroupResult> responseHandler = new JsonResponseHandler<PreviewAgentsForResourceGroupResult>(
-                    new PreviewAgentsForResourceGroupResultJsonUnmarshaller());
+            JsonResponseHandler<PreviewAgentsResult> responseHandler = new JsonResponseHandler<PreviewAgentsResult>(
+                    new PreviewAgentsResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1644,28 +1598,34 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Register the role that Inspector uses to list your EC2 instances during
-     * the assessment.
+     * Registers the IAM role that Inspector uses to list your EC2 instances at
+     * the start of the assessment run or when you call the <a>PreviewAgents</a>
+     * action.
      * </p>
      * 
      * @param registerCrossAccountAccessRoleRequest
-     * @return Result of the RegisterCrossAccountAccessRole operation returned
-     *         by the service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws InvalidCrossAccountRoleException
+     *         Inspector cannot assume the cross account role it needs to list
+     *         your EC2 instances during the assessment run.
      * @sample AmazonInspector.RegisterCrossAccountAccessRole
      */
     @Override
-    public RegisterCrossAccountAccessRoleResult registerCrossAccountAccessRole(
+    public void registerCrossAccountAccessRole(
             RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest) {
         ExecutionContext executionContext = createExecutionContext(registerCrossAccountAccessRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RegisterCrossAccountAccessRoleRequest> request = null;
-        Response<RegisterCrossAccountAccessRoleResult> response = null;
+        Response<Void> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1679,12 +1639,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterCrossAccountAccessRoleResult> responseHandler = new JsonResponseHandler<RegisterCrossAccountAccessRoleResult>(
-                    new RegisterCrossAccountAccessRoleResultJsonUnmarshaller());
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
             responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -1694,7 +1652,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Removes the entire attribute (key and value pair) from the findings
+     * Removes entire attributes (key and value pairs) from the findings
      * specified by the finding ARNs where an attribute with the specified key
      * exists.
      * </p>
@@ -1703,9 +1661,16 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @return Result of the RemoveAttributesFromFindings operation returned by
      *         the service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.RemoveAttributesFromFindings
      */
     @Override
@@ -1745,76 +1710,33 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Starts the analysis of the application’s behavior against selected rule
-     * packages for the assessment specified by the assessment ARN.
-     * </p>
-     * 
-     * @param runAssessmentRequest
-     * @return Result of the RunAssessment operation returned by the service.
-     * @throws InternalException
-     * @throws InvalidInputException
-     * @throws AccessDeniedException
-     * @throws NoSuchEntityException
-     * @sample AmazonInspector.RunAssessment
-     */
-    @Override
-    public RunAssessmentResult runAssessment(
-            RunAssessmentRequest runAssessmentRequest) {
-        ExecutionContext executionContext = createExecutionContext(runAssessmentRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RunAssessmentRequest> request = null;
-        Response<RunAssessmentResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RunAssessmentRequestMarshaller().marshall(super
-                        .beforeMarshalling(runAssessmentRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<RunAssessmentResult> responseHandler = new JsonResponseHandler<RunAssessmentResult>(
-                    new RunAssessmentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Sets tags (key and value pairs) to the assessment specified by the
-     * assessment ARN.
+     * Sets tags (key and value pairs) to the assessment template specified by
+     * the assessment template ARN.
      * </p>
      * 
      * @param setTagsForResourceRequest
-     * @return Result of the SetTagsForResource operation returned by the
-     *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
      * @sample AmazonInspector.SetTagsForResource
      */
     @Override
-    public SetTagsForResourceResult setTagsForResource(
+    public void setTagsForResource(
             SetTagsForResourceRequest setTagsForResourceRequest) {
         ExecutionContext executionContext = createExecutionContext(setTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetTagsForResourceRequest> request = null;
-        Response<SetTagsForResourceResult> response = null;
+        Response<Void> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1828,12 +1750,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SetTagsForResourceResult> responseHandler = new JsonResponseHandler<SetTagsForResourceResult>(
-                    new SetTagsForResourceResultJsonUnmarshaller());
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
             responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -1843,45 +1763,61 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Starts data collection for the assessment specified by the assessment
-     * ARN. For this API to function properly, you must not exceed the limit of
-     * running up to 500 concurrent agents per AWS account.
+     * Starts the assessment run specified by the assessment template ARN. For
+     * this API to function properly, you must not exceed the limit of running
+     * up to 500 concurrent agents per AWS account.
      * </p>
      * 
-     * @param startDataCollectionRequest
-     * @return Result of the StartDataCollection operation returned by the
+     * @param startAssessmentRunRequest
+     * @return Result of the StartAssessmentRun operation returned by the
      *         service.
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources
+     *         beyond the current AWS account limits. The error code describes
+     *         the limit exceeded.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
      * @throws InvalidCrossAccountRoleException
-     * @sample AmazonInspector.StartDataCollection
+     *         Inspector cannot assume the cross account role it needs to list
+     *         your EC2 instances during the assessment run.
+     * @throws AgentsAlreadyRunningAssessmentException
+     *         You start an assessment run and one of the instances is already
+     *         participating in another assessment run.
+     * @sample AmazonInspector.StartAssessmentRun
      */
     @Override
-    public StartDataCollectionResult startDataCollection(
-            StartDataCollectionRequest startDataCollectionRequest) {
-        ExecutionContext executionContext = createExecutionContext(startDataCollectionRequest);
+    public StartAssessmentRunResult startAssessmentRun(
+            StartAssessmentRunRequest startAssessmentRunRequest) {
+        ExecutionContext executionContext = createExecutionContext(startAssessmentRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<StartDataCollectionRequest> request = null;
-        Response<StartDataCollectionResult> response = null;
+        Request<StartAssessmentRunRequest> request = null;
+        Response<StartAssessmentRunResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartDataCollectionRequestMarshaller()
+                request = new StartAssessmentRunRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(startDataCollectionRequest));
+                                .beforeMarshalling(startAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartDataCollectionResult> responseHandler = new JsonResponseHandler<StartDataCollectionResult>(
-                    new StartDataCollectionResultJsonUnmarshaller());
+            JsonResponseHandler<StartAssessmentRunResult> responseHandler = new JsonResponseHandler<StartAssessmentRunResult>(
+                    new StartAssessmentRunResultJsonUnmarshaller());
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1895,46 +1831,49 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Stop data collection for the assessment specified by the assessment ARN.
+     * Stops the assessment run specified by the assessment run ARN.
      * </p>
      * 
-     * @param stopDataCollectionRequest
-     * @return Result of the StopDataCollection operation returned by the
-     *         service.
+     * @param stopAssessmentRunRequest
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
-     * @sample AmazonInspector.StopDataCollection
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.StopAssessmentRun
      */
     @Override
-    public StopDataCollectionResult stopDataCollection(
-            StopDataCollectionRequest stopDataCollectionRequest) {
-        ExecutionContext executionContext = createExecutionContext(stopDataCollectionRequest);
+    public void stopAssessmentRun(
+            StopAssessmentRunRequest stopAssessmentRunRequest) {
+        ExecutionContext executionContext = createExecutionContext(stopAssessmentRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<StopDataCollectionRequest> request = null;
-        Response<StopDataCollectionResult> response = null;
+        Request<StopAssessmentRunRequest> request = null;
+        Response<Void> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopDataCollectionRequestMarshaller()
+                request = new StopAssessmentRunRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(stopDataCollectionRequest));
+                                .beforeMarshalling(stopAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StopDataCollectionResult> responseHandler = new JsonResponseHandler<StopDataCollectionResult>(
-                    new StopDataCollectionResultJsonUnmarshaller());
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
             responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -1944,46 +1883,53 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Updates application specified by the application ARN.
+     * Enables the process of sending Amazon Simple Notification Service (SNS)
+     * notifications about a specified event to a specified topic.
      * </p>
      * 
-     * @param updateApplicationRequest
-     * @return Result of the UpdateApplication operation returned by the
-     *         service.
+     * @param subscribeToEventRequest
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources
+     *         beyond the current AWS account limits. The error code describes
+     *         the limit exceeded.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
-     * @sample AmazonInspector.UpdateApplication
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.SubscribeToEvent
      */
     @Override
-    public UpdateApplicationResult updateApplication(
-            UpdateApplicationRequest updateApplicationRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
+    public void subscribeToEvent(SubscribeToEventRequest subscribeToEventRequest) {
+        ExecutionContext executionContext = createExecutionContext(subscribeToEventRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateApplicationRequest> request = null;
-        Response<UpdateApplicationResult> response = null;
+        Request<SubscribeToEventRequest> request = null;
+        Response<Void> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateApplicationRequestMarshaller()
+                request = new SubscribeToEventRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(updateApplicationRequest));
+                                .beforeMarshalling(subscribeToEventRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateApplicationResult> responseHandler = new JsonResponseHandler<UpdateApplicationResult>(
-                    new UpdateApplicationResultJsonUnmarshaller());
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
             responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 
@@ -1993,45 +1939,102 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Updates the assessment specified by the assessment ARN.
+     * Disables the process of sending Amazon Simple Notification Service (SNS)
+     * notifications about a specified event to a specified topic.
      * </p>
      * 
-     * @param updateAssessmentRequest
-     * @return Result of the UpdateAssessment operation returned by the service.
+     * @param unsubscribeFromEventRequest
      * @throws InternalException
+     *         Internal server error.
      * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
      * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
      * @throws NoSuchEntityException
-     * @sample AmazonInspector.UpdateAssessment
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.UnsubscribeFromEvent
      */
     @Override
-    public UpdateAssessmentResult updateAssessment(
-            UpdateAssessmentRequest updateAssessmentRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateAssessmentRequest);
+    public void unsubscribeFromEvent(
+            UnsubscribeFromEventRequest unsubscribeFromEventRequest) {
+        ExecutionContext executionContext = createExecutionContext(unsubscribeFromEventRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateAssessmentRequest> request = null;
-        Response<UpdateAssessmentResult> response = null;
+        Request<UnsubscribeFromEventRequest> request = null;
+        Response<Void> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAssessmentRequestMarshaller()
+                request = new UnsubscribeFromEventRequestMarshaller()
                         .marshall(super
-                                .beforeMarshalling(updateAssessmentRequest));
+                                .beforeMarshalling(unsubscribeFromEventRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateAssessmentResult> responseHandler = new JsonResponseHandler<UpdateAssessmentResult>(
-                    new UpdateAssessmentResultJsonUnmarshaller());
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
             responseHandler.setIsPayloadJson(true);
-            response = invoke(request, responseHandler, executionContext);
+            invoke(request, responseHandler, executionContext);
 
-            return response.getAwsResponse();
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the assessment target specified by the assessment target ARN.
+     * </p>
+     * 
+     * @param updateAssessmentTargetRequest
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value
+     *         was supplied for an input parameter.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested
+     *         resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that
+     *         does not exist. The error code describes the entity.
+     * @sample AmazonInspector.UpdateAssessmentTarget
+     */
+    @Override
+    public void updateAssessmentTarget(
+            UpdateAssessmentTargetRequest updateAssessmentTargetRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateAssessmentTargetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAssessmentTargetRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAssessmentTargetRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(updateAssessmentTargetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
+                    null);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 

@@ -51,14 +51,14 @@ public class TimestampRangeJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("minimum", targetDepth)) {
+                if (context.testExpression("beginDate", targetDepth)) {
                     context.nextToken();
-                    timestampRange.setMinimum(DateJsonUnmarshaller
+                    timestampRange.setBeginDate(DateJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("maximum", targetDepth)) {
+                if (context.testExpression("endDate", targetDepth)) {
                     context.nextToken();
-                    timestampRange.setMaximum(DateJsonUnmarshaller
+                    timestampRange.setEndDate(DateJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

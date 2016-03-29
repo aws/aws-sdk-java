@@ -14,11 +14,12 @@
  */
 package com.amazonaws.services.s3.model;
 import java.io.Serializable;
-
 import java.util.Date;
 
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
+import com.amazonaws.services.s3.internal.S3VersionResult;
 import com.amazonaws.services.s3.internal.SSEResultBase;
 
 /**
@@ -36,7 +37,8 @@ import com.amazonaws.services.s3.internal.SSEResultBase;
  *      ObjectMetadata)
  * @see AmazonS3Client#putObject(PutObjectRequest)
  */
-public class PutObjectResult extends SSEResultBase implements ObjectExpirationResult,Serializable {
+public class PutObjectResult extends SSEResultBase
+        implements ObjectExpirationResult, S3RequesterChargedResult, S3VersionResult, Serializable {
 
     /**
      * The version ID of the new, uploaded object. This field will only be
@@ -61,6 +63,12 @@ public class PutObjectResult extends SSEResultBase implements ObjectExpirationRe
     private ObjectMetadata metadata;
 
     /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
+
+    /**
      * Gets the optional version ID of the newly uploaded object. This field will
      * be set only if object versioning is enabled for the bucket the
      * object was uploaded to.
@@ -69,6 +77,7 @@ public class PutObjectResult extends SSEResultBase implements ObjectExpirationRe
      *
      * @see PutObjectResult#setVersionId(String)
      */
+    @Override
     public String getVersionId() {
         return versionId;
     }
@@ -82,6 +91,7 @@ public class PutObjectResult extends SSEResultBase implements ObjectExpirationRe
      *
      * @see PutObjectResult#getVersionId()
      */
+    @Override
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
@@ -181,5 +191,15 @@ public class PutObjectResult extends SSEResultBase implements ObjectExpirationRe
      */
     public void setMetadata(ObjectMetadata metadata) {
         this.metadata = metadata;
+    }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
     }
 }

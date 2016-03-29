@@ -22,11 +22,8 @@ import java.io.Serializable;
  * <p>
  * Contains information about a resource group. The resource group defines a set
  * of tags that, when queried, identify the AWS resources that comprise the
- * application.
- * </p>
- * <p>
- * This data type is used as the response element in the
- * <a>DescribeResourceGroup</a> action.
+ * assessment target. This data type is used as the response element in the
+ * <a>DescribeResourceGroups</a> action.
  * </p>
  */
 public class ResourceGroup implements Serializable, Cloneable {
@@ -36,34 +33,32 @@ public class ResourceGroup implements Serializable, Cloneable {
      * The ARN of the resource group.
      * </p>
      */
-    private String resourceGroupArn;
+    private String arn;
     /**
      * <p>
-     * The tags (key and value pairs) of the resource group.
-     * </p>
-     * <p>
-     * This data type property is used in the <a>CreateResourceGroup</a> action.
-     * </p>
-     * <p>
-     * A collection of keys and an array of possible values in JSON format.
-     * </p>
-     * <p>
-     * For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]
+     * The tags (key and value pairs) of the resource group. This data type
+     * property is used in the <a>CreateResourceGroup</a> action.
      * </p>
      */
-    private String resourceGroupTags;
+    private java.util.List<ResourceGroupTag> tags;
+    /**
+     * <p>
+     * The time at which resource group is created.
+     * </p>
+     */
+    private java.util.Date createdAt;
 
     /**
      * <p>
      * The ARN of the resource group.
      * </p>
      * 
-     * @param resourceGroupArn
+     * @param arn
      *        The ARN of the resource group.
      */
 
-    public void setResourceGroupArn(String resourceGroupArn) {
-        this.resourceGroupArn = resourceGroupArn;
+    public void setArn(String arn) {
+        this.arn = arn;
     }
 
     /**
@@ -74,8 +69,8 @@ public class ResourceGroup implements Serializable, Cloneable {
      * @return The ARN of the resource group.
      */
 
-    public String getResourceGroupArn() {
-        return this.resourceGroupArn;
+    public String getArn() {
+        return this.arn;
     }
 
     /**
@@ -83,115 +78,136 @@ public class ResourceGroup implements Serializable, Cloneable {
      * The ARN of the resource group.
      * </p>
      * 
-     * @param resourceGroupArn
+     * @param arn
      *        The ARN of the resource group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public ResourceGroup withResourceGroupArn(String resourceGroupArn) {
-        setResourceGroupArn(resourceGroupArn);
+    public ResourceGroup withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
     /**
      * <p>
-     * The tags (key and value pairs) of the resource group.
-     * </p>
-     * <p>
-     * This data type property is used in the <a>CreateResourceGroup</a> action.
-     * </p>
-     * <p>
-     * A collection of keys and an array of possible values in JSON format.
-     * </p>
-     * <p>
-     * For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]
+     * The tags (key and value pairs) of the resource group. This data type
+     * property is used in the <a>CreateResourceGroup</a> action.
      * </p>
      * 
-     * @param resourceGroupTags
-     *        The tags (key and value pairs) of the resource group.</p>
-     *        <p>
-     *        This data type property is used in the <a>CreateResourceGroup</a>
-     *        action.
-     *        </p>
-     *        <p>
-     *        A collection of keys and an array of possible values in JSON
-     *        format.
-     *        </p>
-     *        <p>
-     *        For example, [{ "key1" : ["Value1","Value2"]},{"Key2":
-     *        ["Value3"]}]
+     * @return The tags (key and value pairs) of the resource group. This data
+     *         type property is used in the <a>CreateResourceGroup</a> action.
      */
 
-    public void setResourceGroupTags(String resourceGroupTags) {
-        this.resourceGroupTags = resourceGroupTags;
+    public java.util.List<ResourceGroupTag> getTags() {
+        return tags;
     }
 
     /**
      * <p>
-     * The tags (key and value pairs) of the resource group.
-     * </p>
-     * <p>
-     * This data type property is used in the <a>CreateResourceGroup</a> action.
-     * </p>
-     * <p>
-     * A collection of keys and an array of possible values in JSON format.
-     * </p>
-     * <p>
-     * For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]
+     * The tags (key and value pairs) of the resource group. This data type
+     * property is used in the <a>CreateResourceGroup</a> action.
      * </p>
      * 
-     * @return The tags (key and value pairs) of the resource group.</p>
-     *         <p>
-     *         This data type property is used in the <a>CreateResourceGroup</a>
-     *         action.
-     *         </p>
-     *         <p>
-     *         A collection of keys and an array of possible values in JSON
-     *         format.
-     *         </p>
-     *         <p>
-     *         For example, [{ "key1" : ["Value1","Value2"]},{"Key2":
-     *         ["Value3"]}]
+     * @param tags
+     *        The tags (key and value pairs) of the resource group. This data
+     *        type property is used in the <a>CreateResourceGroup</a> action.
      */
 
-    public String getResourceGroupTags() {
-        return this.resourceGroupTags;
+    public void setTags(java.util.Collection<ResourceGroupTag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<ResourceGroupTag>(tags);
     }
 
     /**
      * <p>
-     * The tags (key and value pairs) of the resource group.
+     * The tags (key and value pairs) of the resource group. This data type
+     * property is used in the <a>CreateResourceGroup</a> action.
      * </p>
      * <p>
-     * This data type property is used in the <a>CreateResourceGroup</a> action.
-     * </p>
-     * <p>
-     * A collection of keys and an array of possible values in JSON format.
-     * </p>
-     * <p>
-     * For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
-     * @param resourceGroupTags
-     *        The tags (key and value pairs) of the resource group.</p>
-     *        <p>
-     *        This data type property is used in the <a>CreateResourceGroup</a>
-     *        action.
-     *        </p>
-     *        <p>
-     *        A collection of keys and an array of possible values in JSON
-     *        format.
-     *        </p>
-     *        <p>
-     *        For example, [{ "key1" : ["Value1","Value2"]},{"Key2":
-     *        ["Value3"]}]
+     * @param tags
+     *        The tags (key and value pairs) of the resource group. This data
+     *        type property is used in the <a>CreateResourceGroup</a> action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public ResourceGroup withResourceGroupTags(String resourceGroupTags) {
-        setResourceGroupTags(resourceGroupTags);
+    public ResourceGroup withTags(ResourceGroupTag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<ResourceGroupTag>(tags.length));
+        }
+        for (ResourceGroupTag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags (key and value pairs) of the resource group. This data type
+     * property is used in the <a>CreateResourceGroup</a> action.
+     * </p>
+     * 
+     * @param tags
+     *        The tags (key and value pairs) of the resource group. This data
+     *        type property is used in the <a>CreateResourceGroup</a> action.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ResourceGroup withTags(java.util.Collection<ResourceGroupTag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time at which resource group is created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time at which resource group is created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The time at which resource group is created.
+     * </p>
+     * 
+     * @return The time at which resource group is created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The time at which resource group is created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time at which resource group is created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ResourceGroup withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -207,10 +223,12 @@ public class ResourceGroup implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getResourceGroupArn() != null)
-            sb.append("ResourceGroupArn: " + getResourceGroupArn() + ",");
-        if (getResourceGroupTags() != null)
-            sb.append("ResourceGroupTags: " + getResourceGroupTags());
+        if (getArn() != null)
+            sb.append("Arn: " + getArn() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags() + ",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: " + getCreatedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -225,19 +243,20 @@ public class ResourceGroup implements Serializable, Cloneable {
         if (obj instanceof ResourceGroup == false)
             return false;
         ResourceGroup other = (ResourceGroup) obj;
-        if (other.getResourceGroupArn() == null
-                ^ this.getResourceGroupArn() == null)
+        if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getResourceGroupArn() != null
-                && other.getResourceGroupArn().equals(
-                        this.getResourceGroupArn()) == false)
+        if (other.getArn() != null
+                && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getResourceGroupTags() == null
-                ^ this.getResourceGroupTags() == null)
+        if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getResourceGroupTags() != null
-                && other.getResourceGroupTags().equals(
-                        this.getResourceGroupTags()) == false)
+        if (other.getTags() != null
+                && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null
+                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         return true;
     }
@@ -247,14 +266,12 @@ public class ResourceGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getResourceGroupArn() == null) ? 0 : getResourceGroupArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getResourceGroupTags() == null) ? 0
-                        : getResourceGroupTags().hashCode());
+        hashCode = prime * hashCode
+                + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode
+                + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode
+                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         return hashCode;
     }
 

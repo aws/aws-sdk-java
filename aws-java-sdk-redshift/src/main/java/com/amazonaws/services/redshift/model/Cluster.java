@@ -215,6 +215,12 @@ public class Cluster implements Serializable, Cloneable {
     private String kmsKeyId;
 
     /**
+     * A list of AWS Identity and Access Management (IAM) roles that can be
+     * used by the cluster to access other AWS services.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ClusterIamRole> iamRoles;
+
+    /**
      * The unique identifier of the cluster.
      *
      * @return The unique identifier of the cluster.
@@ -1703,6 +1709,87 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * A list of AWS Identity and Access Management (IAM) roles that can be
+     * used by the cluster to access other AWS services.
+     *
+     * @return A list of AWS Identity and Access Management (IAM) roles that can be
+     *         used by the cluster to access other AWS services.
+     */
+    public java.util.List<ClusterIamRole> getIamRoles() {
+        if (iamRoles == null) {
+              iamRoles = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterIamRole>();
+              iamRoles.setAutoConstruct(true);
+        }
+        return iamRoles;
+    }
+    
+    /**
+     * A list of AWS Identity and Access Management (IAM) roles that can be
+     * used by the cluster to access other AWS services.
+     *
+     * @param iamRoles A list of AWS Identity and Access Management (IAM) roles that can be
+     *         used by the cluster to access other AWS services.
+     */
+    public void setIamRoles(java.util.Collection<ClusterIamRole> iamRoles) {
+        if (iamRoles == null) {
+            this.iamRoles = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<ClusterIamRole> iamRolesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterIamRole>(iamRoles.size());
+        iamRolesCopy.addAll(iamRoles);
+        this.iamRoles = iamRolesCopy;
+    }
+    
+    /**
+     * A list of AWS Identity and Access Management (IAM) roles that can be
+     * used by the cluster to access other AWS services.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setIamRoles(java.util.Collection)} or {@link
+     * #withIamRoles(java.util.Collection)} if you want to override the
+     * existing values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iamRoles A list of AWS Identity and Access Management (IAM) roles that can be
+     *         used by the cluster to access other AWS services.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withIamRoles(ClusterIamRole... iamRoles) {
+        if (getIamRoles() == null) setIamRoles(new java.util.ArrayList<ClusterIamRole>(iamRoles.length));
+        for (ClusterIamRole value : iamRoles) {
+            getIamRoles().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of AWS Identity and Access Management (IAM) roles that can be
+     * used by the cluster to access other AWS services.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iamRoles A list of AWS Identity and Access Management (IAM) roles that can be
+     *         used by the cluster to access other AWS services.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public Cluster withIamRoles(java.util.Collection<ClusterIamRole> iamRoles) {
+        if (iamRoles == null) {
+            this.iamRoles = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<ClusterIamRole> iamRolesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterIamRole>(iamRoles.size());
+            iamRolesCopy.addAll(iamRoles);
+            this.iamRoles = iamRolesCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1744,7 +1831,8 @@ public class Cluster implements Serializable, Cloneable {
         if (getElasticIpStatus() != null) sb.append("ElasticIpStatus: " + getElasticIpStatus() + ",");
         if (getClusterRevisionNumber() != null) sb.append("ClusterRevisionNumber: " + getClusterRevisionNumber() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
-        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getIamRoles() != null) sb.append("IamRoles: " + getIamRoles() );
         sb.append("}");
         return sb.toString();
     }
@@ -1785,6 +1873,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getClusterRevisionNumber() == null) ? 0 : getClusterRevisionNumber().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
+        hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode()); 
         return hashCode;
     }
     
@@ -1858,6 +1947,8 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
+        if (other.getIamRoles() == null ^ this.getIamRoles() == null) return false;
+        if (other.getIamRoles() != null && other.getIamRoles().equals(this.getIamRoles()) == false) return false; 
         return true;
     }
     

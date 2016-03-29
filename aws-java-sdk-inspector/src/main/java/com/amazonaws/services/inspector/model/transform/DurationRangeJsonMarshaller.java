@@ -52,13 +52,13 @@ public class DurationRangeJsonMarshaller {
         try {
             jsonGenerator.writeStartObject();
 
-            if (durationRange.getMinimum() != null) {
-                jsonGenerator.writeFieldName("minimum").writeValue(
-                        durationRange.getMinimum());
+            if (durationRange.getMinSeconds() != null) {
+                jsonGenerator.writeFieldName("minSeconds").writeValue(
+                        durationRange.getMinSeconds());
             }
-            if (durationRange.getMaximum() != null) {
-                jsonGenerator.writeFieldName("maximum").writeValue(
-                        durationRange.getMaximum());
+            if (durationRange.getMaxSeconds() != null) {
+                jsonGenerator.writeFieldName("maxSeconds").writeValue(
+                        durationRange.getMaxSeconds());
             }
 
             jsonGenerator.writeEndObject();

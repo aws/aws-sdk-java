@@ -51,14 +51,21 @@ public class ResourceGroupJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("resourceGroupArn", targetDepth)) {
+                if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    resourceGroup.setResourceGroupArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resourceGroup.setArn(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
-                if (context.testExpression("resourceGroupTags", targetDepth)) {
+                if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    resourceGroup.setResourceGroupTags(StringJsonUnmarshaller
+                    resourceGroup
+                            .setTags(new ListUnmarshaller<ResourceGroupTag>(
+                                    ResourceGroupTagJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    resourceGroup.setCreatedAt(DateJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

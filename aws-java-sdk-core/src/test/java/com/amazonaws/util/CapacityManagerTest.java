@@ -67,7 +67,7 @@ public class CapacityManagerTest {
         Assert.assertTrue(mgr.acquire());
         mgr.release();
         Assert.assertTrue(mgr.acquire());
-        Assert.assertEquals(mgr.availableCapacity(), 0);
+        Assert.assertEquals(mgr.availableCapacity(), -1);
         Assert.assertEquals(mgr.consumedCapacity(), 0);
     }
 

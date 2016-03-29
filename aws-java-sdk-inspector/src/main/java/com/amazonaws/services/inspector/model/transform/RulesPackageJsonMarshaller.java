@@ -52,13 +52,13 @@ public class RulesPackageJsonMarshaller {
         try {
             jsonGenerator.writeStartObject();
 
-            if (rulesPackage.getRulesPackageArn() != null) {
-                jsonGenerator.writeFieldName("rulesPackageArn").writeValue(
-                        rulesPackage.getRulesPackageArn());
+            if (rulesPackage.getArn() != null) {
+                jsonGenerator.writeFieldName("arn").writeValue(
+                        rulesPackage.getArn());
             }
-            if (rulesPackage.getRulesPackageName() != null) {
-                jsonGenerator.writeFieldName("rulesPackageName").writeValue(
-                        rulesPackage.getRulesPackageName());
+            if (rulesPackage.getName() != null) {
+                jsonGenerator.writeFieldName("name").writeValue(
+                        rulesPackage.getName());
             }
             if (rulesPackage.getVersion() != null) {
                 jsonGenerator.writeFieldName("version").writeValue(
@@ -69,9 +69,8 @@ public class RulesPackageJsonMarshaller {
                         rulesPackage.getProvider());
             }
             if (rulesPackage.getDescription() != null) {
-                jsonGenerator.writeFieldName("description");
-                LocalizedTextJsonMarshaller.getInstance().marshall(
-                        rulesPackage.getDescription(), jsonGenerator);
+                jsonGenerator.writeFieldName("description").writeValue(
+                        rulesPackage.getDescription());
             }
 
             jsonGenerator.writeEndObject();
