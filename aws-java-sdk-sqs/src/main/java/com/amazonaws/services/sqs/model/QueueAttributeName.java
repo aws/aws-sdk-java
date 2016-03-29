@@ -21,6 +21,7 @@ package com.amazonaws.services.sqs.model;
  */
 public enum QueueAttributeName {
 
+	All,
 	Policy,
 	VisibilityTimeout,
 	MaximumMessageSize,
