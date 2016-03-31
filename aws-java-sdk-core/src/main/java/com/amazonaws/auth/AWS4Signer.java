@@ -46,6 +46,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
     protected static final InternalLogApi log = InternalLogFactory.getLog(AWS4Signer.class);
     private static final int SIGNER_CACHE_MAX_SIZE = 300;
     private static final FIFOCache<SignerKey> signerCache = new FIFOCache<SignerKey>(SIGNER_CACHE_MAX_SIZE);
+    private static final List<String> listOfHeadersToIgnoreInLowerCase = Arrays.asList("connection");
 
     /**
      * Service name override for use when the endpoint can't be used to
@@ -473,7 +474,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
      * Hook to allow subclasses to skip headers during signing.
      */
     protected boolean shouldExcludeHeaderFromSigning(String header) {
-        return false;
+        return (listOfHeadersToIgnoreInLowerCase.contains(header.toLowerCase()));
     }
 
     protected void addHostHeader(SignableRequest<?> request) {
