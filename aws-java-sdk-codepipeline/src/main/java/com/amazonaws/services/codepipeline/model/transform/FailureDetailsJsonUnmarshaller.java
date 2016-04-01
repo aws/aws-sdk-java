@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,19 +55,18 @@ public class FailureDetailsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    failureDetails.setType(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    failureDetails.setType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    failureDetails.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    failureDetails.setMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("externalExecutionId", targetDepth)) {
                     context.nextToken();
-                    failureDetails
-                            .setExternalExecutionId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    failureDetails.setExternalExecutionId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,38 +56,36 @@ public class TestInvokeAuthorizerResultJsonUnmarshaller implements
                 if (context.testExpression("clientStatus", targetDepth)) {
                     context.nextToken();
                     testInvokeAuthorizerResult
-                            .setClientStatus(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setClientStatus(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("log", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult.setLog(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    testInvokeAuthorizerResult.setLog(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("latency", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult.setLatency(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    testInvokeAuthorizerResult.setLatency(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("principalId", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult
-                            .setPrincipalId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    testInvokeAuthorizerResult.setPrincipalId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policy", targetDepth)) {
                     context.nextToken();
-                    testInvokeAuthorizerResult.setPolicy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    testInvokeAuthorizerResult.setPolicy(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorization", targetDepth)) {
                     context.nextToken();
                     testInvokeAuthorizerResult
                             .setAuthorization(new MapUnmarshaller<String, java.util.List<String>>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    new ListUnmarshaller<String>(
-                                            StringJsonUnmarshaller
-                                                    .getInstance()))
+                                    context.getUnmarshaller(String.class),
+                                    new ListUnmarshaller<String>(context
+                                            .getUnmarshaller(String.class)))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

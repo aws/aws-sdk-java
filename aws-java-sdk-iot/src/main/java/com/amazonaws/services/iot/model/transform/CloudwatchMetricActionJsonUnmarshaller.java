@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,36 +55,33 @@ public class CloudwatchMetricActionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    cloudwatchMetricAction.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cloudwatchMetricAction.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricNamespace", targetDepth)) {
                     context.nextToken();
-                    cloudwatchMetricAction
-                            .setMetricNamespace(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    cloudwatchMetricAction.setMetricNamespace(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricName", targetDepth)) {
                     context.nextToken();
-                    cloudwatchMetricAction.setMetricName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cloudwatchMetricAction.setMetricName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricValue", targetDepth)) {
                     context.nextToken();
-                    cloudwatchMetricAction
-                            .setMetricValue(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    cloudwatchMetricAction.setMetricValue(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricUnit", targetDepth)) {
                     context.nextToken();
-                    cloudwatchMetricAction.setMetricUnit(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cloudwatchMetricAction.setMetricUnit(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricTimestamp", targetDepth)) {
                     context.nextToken();
-                    cloudwatchMetricAction
-                            .setMetricTimestamp(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    cloudwatchMetricAction.setMetricTimestamp(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

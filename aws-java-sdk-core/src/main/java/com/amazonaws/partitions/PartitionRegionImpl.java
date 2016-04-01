@@ -26,6 +26,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * A region implementation backed by the partition.
@@ -49,8 +50,8 @@ public class PartitionRegionImpl implements RegionImpl {
     /**
      * endpoint cache for a service.
      */
-    private final Map<String, Endpoint> endpointCache = new HashMap<String,
-            Endpoint>();
+    private final Map<String, Endpoint> endpointCache = new ConcurrentHashMap<String,
+                Endpoint>();
 
     public PartitionRegionImpl(String region, Partition p) {
         this.partition = ValidationUtils.assertNotNull(p, "partition");

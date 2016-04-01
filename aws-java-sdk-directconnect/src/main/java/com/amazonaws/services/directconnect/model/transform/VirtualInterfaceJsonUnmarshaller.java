@@ -18,6 +18,8 @@ package com.amazonaws.services.directconnect.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,79 +55,74 @@ public class VirtualInterfaceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ownerAccount", targetDepth)) {
                     context.nextToken();
-                    virtualInterface.setOwnerAccount(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    virtualInterface.setOwnerAccount(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualInterfaceId", targetDepth)) {
                     context.nextToken();
-                    virtualInterface
-                            .setVirtualInterfaceId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    virtualInterface.setVirtualInterfaceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
-                    virtualInterface.setLocation(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    virtualInterface.setLocation(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionId", targetDepth)) {
                     context.nextToken();
-                    virtualInterface.setConnectionId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    virtualInterface.setConnectionId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualInterfaceType", targetDepth)) {
                     context.nextToken();
-                    virtualInterface
-                            .setVirtualInterfaceType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    virtualInterface.setVirtualInterfaceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualInterfaceName", targetDepth)) {
                     context.nextToken();
-                    virtualInterface
-                            .setVirtualInterfaceName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    virtualInterface.setVirtualInterfaceName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vlan", targetDepth)) {
                     context.nextToken();
-                    virtualInterface.setVlan(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    virtualInterface.setVlan(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("asn", targetDepth)) {
                     context.nextToken();
-                    virtualInterface.setAsn(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    virtualInterface.setAsn(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("authKey", targetDepth)) {
                     context.nextToken();
-                    virtualInterface.setAuthKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    virtualInterface.setAuthKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("amazonAddress", targetDepth)) {
                     context.nextToken();
-                    virtualInterface.setAmazonAddress(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    virtualInterface.setAmazonAddress(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("customerAddress", targetDepth)) {
                     context.nextToken();
-                    virtualInterface.setCustomerAddress(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    virtualInterface.setCustomerAddress(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("virtualInterfaceState", targetDepth)) {
                     context.nextToken();
-                    virtualInterface
-                            .setVirtualInterfaceState(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    virtualInterface.setVirtualInterfaceState(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("customerRouterConfig", targetDepth)) {
                     context.nextToken();
-                    virtualInterface
-                            .setCustomerRouterConfig(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    virtualInterface.setCustomerRouterConfig(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
-                    virtualInterface.setVirtualGatewayId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    virtualInterface.setVirtualGatewayId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeFilterPrefixes", targetDepth)) {
                     context.nextToken();

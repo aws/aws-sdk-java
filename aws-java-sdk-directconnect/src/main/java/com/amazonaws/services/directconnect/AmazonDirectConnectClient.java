@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -308,8 +309,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AllocateConnectionOnInterconnectResult> responseHandler = new JsonResponseHandler<AllocateConnectionOnInterconnectResult>(
-                    new AllocateConnectionOnInterconnectResultJsonUnmarshaller());
+            JsonResponseHandler<AllocateConnectionOnInterconnectResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new AllocateConnectionOnInterconnectResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -372,8 +375,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AllocatePrivateVirtualInterfaceResult> responseHandler = new JsonResponseHandler<AllocatePrivateVirtualInterfaceResult>(
-                    new AllocatePrivateVirtualInterfaceResultJsonUnmarshaller());
+            JsonResponseHandler<AllocatePrivateVirtualInterfaceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new AllocatePrivateVirtualInterfaceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -436,8 +441,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AllocatePublicVirtualInterfaceResult> responseHandler = new JsonResponseHandler<AllocatePublicVirtualInterfaceResult>(
-                    new AllocatePublicVirtualInterfaceResultJsonUnmarshaller());
+            JsonResponseHandler<AllocatePublicVirtualInterfaceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new AllocatePublicVirtualInterfaceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -493,8 +500,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ConfirmConnectionResult> responseHandler = new JsonResponseHandler<ConfirmConnectionResult>(
-                    new ConfirmConnectionResultJsonUnmarshaller());
+            JsonResponseHandler<ConfirmConnectionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ConfirmConnectionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -552,8 +561,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ConfirmPrivateVirtualInterfaceResult> responseHandler = new JsonResponseHandler<ConfirmPrivateVirtualInterfaceResult>(
-                    new ConfirmPrivateVirtualInterfaceResultJsonUnmarshaller());
+            JsonResponseHandler<ConfirmPrivateVirtualInterfaceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ConfirmPrivateVirtualInterfaceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -611,8 +622,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ConfirmPublicVirtualInterfaceResult> responseHandler = new JsonResponseHandler<ConfirmPublicVirtualInterfaceResult>(
-                    new ConfirmPublicVirtualInterfaceResultJsonUnmarshaller());
+            JsonResponseHandler<ConfirmPublicVirtualInterfaceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ConfirmPublicVirtualInterfaceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -673,8 +686,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateConnectionResult> responseHandler = new JsonResponseHandler<CreateConnectionResult>(
-                    new CreateConnectionResultJsonUnmarshaller());
+            JsonResponseHandler<CreateConnectionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateConnectionResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -743,8 +757,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateInterconnectResult> responseHandler = new JsonResponseHandler<CreateInterconnectResult>(
-                    new CreateInterconnectResultJsonUnmarshaller());
+            JsonResponseHandler<CreateInterconnectResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateInterconnectResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -798,8 +814,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePrivateVirtualInterfaceResult> responseHandler = new JsonResponseHandler<CreatePrivateVirtualInterfaceResult>(
-                    new CreatePrivateVirtualInterfaceResultJsonUnmarshaller());
+            JsonResponseHandler<CreatePrivateVirtualInterfaceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreatePrivateVirtualInterfaceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -854,8 +872,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePublicVirtualInterfaceResult> responseHandler = new JsonResponseHandler<CreatePublicVirtualInterfaceResult>(
-                    new CreatePublicVirtualInterfaceResultJsonUnmarshaller());
+            JsonResponseHandler<CreatePublicVirtualInterfaceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreatePublicVirtualInterfaceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -911,8 +931,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteConnectionResult> responseHandler = new JsonResponseHandler<DeleteConnectionResult>(
-                    new DeleteConnectionResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteConnectionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteConnectionResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -963,8 +984,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteInterconnectResult> responseHandler = new JsonResponseHandler<DeleteInterconnectResult>(
-                    new DeleteInterconnectResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteInterconnectResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteInterconnectResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1016,8 +1039,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteVirtualInterfaceResult> responseHandler = new JsonResponseHandler<DeleteVirtualInterfaceResult>(
-                    new DeleteVirtualInterfaceResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteVirtualInterfaceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteVirtualInterfaceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1072,8 +1097,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeConnectionsResult> responseHandler = new JsonResponseHandler<DescribeConnectionsResult>(
-                    new DescribeConnectionsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeConnectionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeConnectionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1131,8 +1158,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeConnectionsOnInterconnectResult> responseHandler = new JsonResponseHandler<DescribeConnectionsOnInterconnectResult>(
-                    new DescribeConnectionsOnInterconnectResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeConnectionsOnInterconnectResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeConnectionsOnInterconnectResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1188,8 +1217,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeInterconnectsResult> responseHandler = new JsonResponseHandler<DescribeInterconnectsResult>(
-                    new DescribeInterconnectsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeInterconnectsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeInterconnectsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1246,8 +1277,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeLocationsResult> responseHandler = new JsonResponseHandler<DescribeLocationsResult>(
-                    new DescribeLocationsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeLocationsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeLocationsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1309,8 +1342,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeVirtualGatewaysResult> responseHandler = new JsonResponseHandler<DescribeVirtualGatewaysResult>(
-                    new DescribeVirtualGatewaysResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeVirtualGatewaysResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeVirtualGatewaysResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1381,8 +1416,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeVirtualInterfacesResult> responseHandler = new JsonResponseHandler<DescribeVirtualInterfacesResult>(
-                    new DescribeVirtualInterfacesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeVirtualInterfacesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeVirtualInterfacesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1447,8 +1484,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

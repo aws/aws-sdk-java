@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,30 +55,33 @@ public class GenericRevisionInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    genericRevisionInfo.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    genericRevisionInfo.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentGroups", targetDepth)) {
                     context.nextToken();
                     genericRevisionInfo
                             .setDeploymentGroups(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("firstUsedTime", targetDepth)) {
                     context.nextToken();
-                    genericRevisionInfo.setFirstUsedTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    genericRevisionInfo.setFirstUsedTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("lastUsedTime", targetDepth)) {
                     context.nextToken();
-                    genericRevisionInfo.setLastUsedTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    genericRevisionInfo.setLastUsedTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("registerTime", targetDepth)) {
                     context.nextToken();
-                    genericRevisionInfo.setRegisterTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    genericRevisionInfo.setRegisterTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

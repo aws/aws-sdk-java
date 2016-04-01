@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class AssessmentRunFilterJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("namePattern", targetDepth)) {
                     context.nextToken();
-                    assessmentRunFilter.setNamePattern(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRunFilter.setNamePattern(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("states", targetDepth)) {
                     context.nextToken();
                     assessmentRunFilter.setStates(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("durationRange", targetDepth)) {
@@ -72,7 +74,7 @@ public class AssessmentRunFilterJsonUnmarshaller implements
                     context.nextToken();
                     assessmentRunFilter
                             .setRulesPackageArns(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("startTimeRange", targetDepth)) {

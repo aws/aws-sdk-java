@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,12 +55,12 @@ public class ByteMatchSetJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ByteMatchSetId", targetDepth)) {
                     context.nextToken();
-                    byteMatchSet.setByteMatchSetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    byteMatchSet.setByteMatchSetId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    byteMatchSet.setName(StringJsonUnmarshaller.getInstance()
+                    byteMatchSet.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ByteMatchTuples", targetDepth)) {

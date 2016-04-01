@@ -18,6 +18,8 @@ package com.amazonaws.services.ecr.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,13 @@ public class InitiateLayerUploadResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("uploadId", targetDepth)) {
                     context.nextToken();
-                    initiateLayerUploadResult
-                            .setUploadId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    initiateLayerUploadResult.setUploadId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("partSize", targetDepth)) {
                     context.nextToken();
-                    initiateLayerUploadResult.setPartSize(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    initiateLayerUploadResult.setPartSize(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

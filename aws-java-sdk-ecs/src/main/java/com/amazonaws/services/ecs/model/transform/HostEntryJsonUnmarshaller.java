@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class HostEntryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("hostname", targetDepth)) {
                     context.nextToken();
-                    hostEntry.setHostname(StringJsonUnmarshaller.getInstance()
+                    hostEntry.setHostname(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ipAddress", targetDepth)) {
                     context.nextToken();
-                    hostEntry.setIpAddress(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    hostEntry.setIpAddress(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

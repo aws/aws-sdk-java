@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudwatchevents.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,15 +56,14 @@ public class ListRuleNamesByTargetResultJsonUnmarshaller implements
                 if (context.testExpression("RuleNames", targetDepth)) {
                     context.nextToken();
                     listRuleNamesByTargetResult
-                            .setRuleNames(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setRuleNames(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    listRuleNamesByTargetResult
-                            .setNextToken(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listRuleNamesByTargetResult.setNextToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

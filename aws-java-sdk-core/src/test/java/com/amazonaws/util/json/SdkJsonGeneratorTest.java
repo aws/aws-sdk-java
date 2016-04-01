@@ -21,7 +21,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.io.StringWriter;
 import java.nio.ByteBuffer;
 import java.util.Date;
 
@@ -37,7 +36,7 @@ public class SdkJsonGeneratorTest {
      */
     private static final double DELTA = .0001;
 
-    private SdkJsonGenerator jsonGenerator;
+    private StructuredJsonGenerator jsonGenerator;
 
     @Before
     public void setup() {

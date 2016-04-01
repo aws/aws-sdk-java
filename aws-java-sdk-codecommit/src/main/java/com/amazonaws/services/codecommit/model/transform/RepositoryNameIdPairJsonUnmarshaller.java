@@ -18,6 +18,8 @@ package com.amazonaws.services.codecommit.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,13 @@ public class RepositoryNameIdPairJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("repositoryName", targetDepth)) {
                     context.nextToken();
-                    repositoryNameIdPair
-                            .setRepositoryName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    repositoryNameIdPair.setRepositoryName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryId", targetDepth)) {
                     context.nextToken();
-                    repositoryNameIdPair.setRepositoryId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryNameIdPair.setRepositoryId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

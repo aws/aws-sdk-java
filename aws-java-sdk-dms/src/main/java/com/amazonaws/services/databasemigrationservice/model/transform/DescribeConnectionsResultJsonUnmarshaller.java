@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class DescribeConnectionsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();
-                    describeConnectionsResult.setMarker(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeConnectionsResult.setMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Connections", targetDepth)) {
                     context.nextToken();

@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,16 +56,15 @@ public class ListTablesResultJsonUnmarshaller implements
                 if (context.testExpression("TableNames", targetDepth)) {
                     context.nextToken();
                     listTablesResult
-                            .setTableNames(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setTableNames(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedTableName",
                         targetDepth)) {
                     context.nextToken();
-                    listTablesResult
-                            .setLastEvaluatedTableName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    listTablesResult.setLastEvaluatedTableName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

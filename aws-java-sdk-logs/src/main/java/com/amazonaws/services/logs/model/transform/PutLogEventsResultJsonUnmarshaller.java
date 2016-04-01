@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class PutLogEventsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("nextSequenceToken", targetDepth)) {
                     context.nextToken();
-                    putLogEventsResult
-                            .setNextSequenceToken(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    putLogEventsResult.setNextSequenceToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("rejectedLogEventsInfo", targetDepth)) {

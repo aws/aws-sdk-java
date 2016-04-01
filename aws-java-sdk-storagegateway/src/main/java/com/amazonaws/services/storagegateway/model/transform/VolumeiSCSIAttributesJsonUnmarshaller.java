@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,31 +55,30 @@ public class VolumeiSCSIAttributesJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetARN", targetDepth)) {
                     context.nextToken();
-                    volumeiSCSIAttributes.setTargetARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volumeiSCSIAttributes.setTargetARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
                     context.nextToken();
-                    volumeiSCSIAttributes
-                            .setNetworkInterfaceId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    volumeiSCSIAttributes.setNetworkInterfaceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfacePort", targetDepth)) {
                     context.nextToken();
                     volumeiSCSIAttributes
-                            .setNetworkInterfacePort(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setNetworkInterfacePort(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LunNumber", targetDepth)) {
                     context.nextToken();
-                    volumeiSCSIAttributes.setLunNumber(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volumeiSCSIAttributes.setLunNumber(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ChapEnabled", targetDepth)) {
                     context.nextToken();
                     volumeiSCSIAttributes
-                            .setChapEnabled(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setChapEnabled(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

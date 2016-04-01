@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -59,8 +61,8 @@ public class EbsBlockDeviceJsonUnmarshaller implements
                 }
                 if (context.testExpression("Device", targetDepth)) {
                     context.nextToken();
-                    ebsBlockDevice.setDevice(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    ebsBlockDevice.setDevice(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

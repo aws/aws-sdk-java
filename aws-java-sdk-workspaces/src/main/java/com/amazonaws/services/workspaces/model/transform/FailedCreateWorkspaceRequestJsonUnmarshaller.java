@@ -18,6 +18,8 @@ package com.amazonaws.services.workspaces.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -59,15 +61,13 @@ public class FailedCreateWorkspaceRequestJsonUnmarshaller implements
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
                     context.nextToken();
-                    failedCreateWorkspaceRequest
-                            .setErrorCode(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    failedCreateWorkspaceRequest.setErrorCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
-                    failedCreateWorkspaceRequest
-                            .setErrorMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    failedCreateWorkspaceRequest.setErrorMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

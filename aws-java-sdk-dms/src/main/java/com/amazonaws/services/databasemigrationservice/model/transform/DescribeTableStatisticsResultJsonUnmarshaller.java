@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class DescribeTableStatisticsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReplicationTaskArn", targetDepth)) {
                     context.nextToken();
-                    describeTableStatisticsResult
-                            .setReplicationTaskArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeTableStatisticsResult.setReplicationTaskArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableStatistics", targetDepth)) {
                     context.nextToken();
@@ -66,9 +67,8 @@ public class DescribeTableStatisticsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();
-                    describeTableStatisticsResult
-                            .setMarker(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeTableStatisticsResult.setMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

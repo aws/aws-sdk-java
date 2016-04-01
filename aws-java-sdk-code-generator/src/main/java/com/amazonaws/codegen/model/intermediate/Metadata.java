@@ -54,6 +54,8 @@ public class Metadata {
 
     private String jsonContentVersion;
 
+    private String jsonVersion;
+
     private String endpointPrefix;
 
     private String signingName;
@@ -316,9 +318,28 @@ public class Metadata {
         return this;
     }
 
+    public String getJsonVersion() {
+        return jsonVersion;
+    }
+
+    public void setJsonVersion(String jsonVersion) {
+        this.jsonVersion = jsonVersion;
+    }
+
+    public Metadata withJsonVersion(String jsonVersion) {
+        setJsonVersion(jsonVersion);
+        return this;
+    }
+
+    public boolean isCborProtocol() {
+        return protocol == Protocol.CBOR || protocol == Protocol.REST_CBOR;
+    }
+
     public boolean isJsonProtocol() {
         return protocol == Protocol.REST_JSON ||
-                protocol == Protocol.JSON;
+                protocol == Protocol.JSON ||
+                protocol == Protocol.CBOR ||
+                protocol == Protocol.REST_CBOR;
     }
 
     public String getEndpointPrefix() {
@@ -355,6 +376,8 @@ public class Metadata {
             return "StaxUnmarshallerContext";
         case JSON:
         case REST_JSON:
+        case CBOR:
+        case REST_CBOR:
             return "JsonUnmarshallerContext";
         default:
             throw new RuntimeException(
@@ -371,6 +394,8 @@ public class Metadata {
             return "StaxUnmarshaller";
         case JSON:
         case REST_JSON:
+        case CBOR:
+        case REST_CBOR:
             return "JsonUnmarshaller";
         default:
             throw new RuntimeException(
@@ -387,6 +412,8 @@ public class Metadata {
             return "StandardErrorUnmarshaller";
         case JSON:
         case REST_JSON:
+        case CBOR:
+        case REST_CBOR:
             return "JsonErrorUnmarshaller";
         default:
             throw new RuntimeException(

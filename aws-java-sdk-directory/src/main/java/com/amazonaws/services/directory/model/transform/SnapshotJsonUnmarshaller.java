@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,33 @@ public class SnapshotJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
                     context.nextToken();
-                    snapshot.setDirectoryId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    snapshot.setDirectoryId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotId", targetDepth)) {
                     context.nextToken();
-                    snapshot.setSnapshotId(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    snapshot.setSnapshotId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    snapshot.setType(StringJsonUnmarshaller.getInstance()
+                    snapshot.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    snapshot.setName(StringJsonUnmarshaller.getInstance()
+                    snapshot.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    snapshot.setStatus(StringJsonUnmarshaller.getInstance()
+                    snapshot.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    snapshot.setStartTime(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    snapshot.setStartTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

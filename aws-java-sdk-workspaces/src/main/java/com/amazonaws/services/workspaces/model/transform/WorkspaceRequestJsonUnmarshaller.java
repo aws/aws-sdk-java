@@ -18,6 +18,8 @@ package com.amazonaws.services.workspaces.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,38 +55,39 @@ public class WorkspaceRequestJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
                     context.nextToken();
-                    workspaceRequest.setDirectoryId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceRequest.setDirectoryId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
                     context.nextToken();
-                    workspaceRequest.setUserName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceRequest.setUserName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("BundleId", targetDepth)) {
                     context.nextToken();
-                    workspaceRequest.setBundleId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceRequest.setBundleId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeEncryptionKey", targetDepth)) {
                     context.nextToken();
-                    workspaceRequest
-                            .setVolumeEncryptionKey(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    workspaceRequest.setVolumeEncryptionKey(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserVolumeEncryptionEnabled",
                         targetDepth)) {
                     context.nextToken();
                     workspaceRequest
-                            .setUserVolumeEncryptionEnabled(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setUserVolumeEncryptionEnabled(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("RootVolumeEncryptionEnabled",
                         targetDepth)) {
                     context.nextToken();
                     workspaceRequest
-                            .setRootVolumeEncryptionEnabled(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setRootVolumeEncryptionEnabled(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

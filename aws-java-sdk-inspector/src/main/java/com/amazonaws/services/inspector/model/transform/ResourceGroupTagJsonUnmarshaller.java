@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ResourceGroupTagJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("key", targetDepth)) {
                     context.nextToken();
-                    resourceGroupTag.setKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resourceGroupTag.setKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
-                    resourceGroupTag.setValue(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resourceGroupTag.setValue(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class AssociationDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    associationDescription.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    associationDescription.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    associationDescription.setInstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    associationDescription.setInstanceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Date", targetDepth)) {
                     context.nextToken();
-                    associationDescription.setDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    associationDescription.setDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -76,10 +78,9 @@ public class AssociationDescriptionJsonUnmarshaller implements
                     context.nextToken();
                     associationDescription
                             .setParameters(new MapUnmarshaller<String, java.util.List<String>>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    new ListUnmarshaller<String>(
-                                            StringJsonUnmarshaller
-                                                    .getInstance()))
+                                    context.getUnmarshaller(String.class),
+                                    new ListUnmarshaller<String>(context
+                                            .getUnmarshaller(String.class)))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

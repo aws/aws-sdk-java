@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class JobFlowDetailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobFlowId", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setJobFlowId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobFlowDetail.setJobFlowId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setName(StringJsonUnmarshaller.getInstance()
+                    jobFlowDetail.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setLogUri(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobFlowDetail.setLogUri(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AmiVersion", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setAmiVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobFlowDetail.setAmiVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("ExecutionStatusDetail", targetDepth)) {
@@ -101,23 +103,23 @@ public class JobFlowDetailJsonUnmarshaller implements
                     context.nextToken();
                     jobFlowDetail
                             .setSupportedProducts(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("VisibleToAllUsers", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setVisibleToAllUsers(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobFlowDetail.setVisibleToAllUsers(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("JobFlowRole", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setJobFlowRole(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobFlowDetail.setJobFlowRole(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
                     context.nextToken();
-                    jobFlowDetail.setServiceRole(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobFlowDetail.setServiceRole(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

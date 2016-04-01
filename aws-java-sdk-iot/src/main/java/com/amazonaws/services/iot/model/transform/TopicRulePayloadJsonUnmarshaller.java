@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class TopicRulePayloadJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sql", targetDepth)) {
                     context.nextToken();
-                    topicRulePayload.setSql(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    topicRulePayload.setSql(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    topicRulePayload.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    topicRulePayload.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
@@ -69,8 +71,8 @@ public class TopicRulePayloadJsonUnmarshaller implements
                 }
                 if (context.testExpression("ruleDisabled", targetDepth)) {
                     context.nextToken();
-                    topicRulePayload.setRuleDisabled(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    topicRulePayload.setRuleDisabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

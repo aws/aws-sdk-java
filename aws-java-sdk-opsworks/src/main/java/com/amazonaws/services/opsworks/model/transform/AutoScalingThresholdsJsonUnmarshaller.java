@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,44 +56,41 @@ public class AutoScalingThresholdsJsonUnmarshaller implements
                 if (context.testExpression("InstanceCount", targetDepth)) {
                     context.nextToken();
                     autoScalingThresholds
-                            .setInstanceCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setInstanceCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ThresholdsWaitTime", targetDepth)) {
                     context.nextToken();
                     autoScalingThresholds
-                            .setThresholdsWaitTime(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setThresholdsWaitTime(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IgnoreMetricsTime", targetDepth)) {
                     context.nextToken();
                     autoScalingThresholds
-                            .setIgnoreMetricsTime(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setIgnoreMetricsTime(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CpuThreshold", targetDepth)) {
                     context.nextToken();
-                    autoScalingThresholds
-                            .setCpuThreshold(DoubleJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    autoScalingThresholds.setCpuThreshold(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("MemoryThreshold", targetDepth)) {
                     context.nextToken();
-                    autoScalingThresholds
-                            .setMemoryThreshold(DoubleJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    autoScalingThresholds.setMemoryThreshold(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("LoadThreshold", targetDepth)) {
                     context.nextToken();
-                    autoScalingThresholds
-                            .setLoadThreshold(DoubleJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    autoScalingThresholds.setLoadThreshold(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Alarms", targetDepth)) {
                     context.nextToken();
                     autoScalingThresholds
-                            .setAlarms(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setAlarms(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

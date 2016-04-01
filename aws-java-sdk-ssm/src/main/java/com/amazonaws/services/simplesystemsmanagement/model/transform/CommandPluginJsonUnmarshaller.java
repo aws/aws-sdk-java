@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,46 +55,47 @@ public class CommandPluginJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    commandPlugin.setName(StringJsonUnmarshaller.getInstance()
+                    commandPlugin.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    commandPlugin.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandPlugin.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResponseCode", targetDepth)) {
                     context.nextToken();
-                    commandPlugin.setResponseCode(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandPlugin.setResponseCode(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("ResponseStartDateTime", targetDepth)) {
                     context.nextToken();
-                    commandPlugin.setResponseStartDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandPlugin.setResponseStartDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("ResponseFinishDateTime",
                         targetDepth)) {
                     context.nextToken();
-                    commandPlugin
-                            .setResponseFinishDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    commandPlugin.setResponseFinishDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("Output", targetDepth)) {
                     context.nextToken();
-                    commandPlugin.setOutput(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandPlugin.setOutput(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputS3BucketName", targetDepth)) {
                     context.nextToken();
-                    commandPlugin.setOutputS3BucketName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandPlugin.setOutputS3BucketName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputS3KeyPrefix", targetDepth)) {
                     context.nextToken();
-                    commandPlugin.setOutputS3KeyPrefix(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandPlugin.setOutputS3KeyPrefix(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

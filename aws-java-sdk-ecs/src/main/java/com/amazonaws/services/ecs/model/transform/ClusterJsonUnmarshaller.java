@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,39 +54,39 @@ public class ClusterJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clusterArn", targetDepth)) {
                     context.nextToken();
-                    cluster.setClusterArn(StringJsonUnmarshaller.getInstance()
+                    cluster.setClusterArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("clusterName", targetDepth)) {
                     context.nextToken();
-                    cluster.setClusterName(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    cluster.setClusterName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    cluster.setStatus(StringJsonUnmarshaller.getInstance()
+                    cluster.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("registeredContainerInstancesCount",
                         targetDepth)) {
                     context.nextToken();
-                    cluster.setRegisteredContainerInstancesCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setRegisteredContainerInstancesCount(context
+                            .getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("runningTasksCount", targetDepth)) {
                     context.nextToken();
-                    cluster.setRunningTasksCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setRunningTasksCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingTasksCount", targetDepth)) {
                     context.nextToken();
-                    cluster.setPendingTasksCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setPendingTasksCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("activeServicesCount", targetDepth)) {
                     context.nextToken();
-                    cluster.setActiveServicesCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setActiveServicesCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

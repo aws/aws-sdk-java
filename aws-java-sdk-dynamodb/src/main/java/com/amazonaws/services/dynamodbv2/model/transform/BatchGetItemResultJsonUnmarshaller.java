@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,11 +57,10 @@ public class BatchGetItemResultJsonUnmarshaller implements
                     context.nextToken();
                     batchGetItemResult
                             .setResponses(new MapUnmarshaller<String, java.util.List<java.util.Map<String, AttributeValue>>>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     new ListUnmarshaller<java.util.Map<String, AttributeValue>>(
                                             new MapUnmarshaller<String, AttributeValue>(
-                                                    StringJsonUnmarshaller
-                                                            .getInstance(),
+                                                    context.getUnmarshaller(String.class),
                                                     AttributeValueJsonUnmarshaller
                                                             .getInstance())))
                                     .unmarshall(context));
@@ -68,7 +69,7 @@ public class BatchGetItemResultJsonUnmarshaller implements
                     context.nextToken();
                     batchGetItemResult
                             .setUnprocessedKeys(new MapUnmarshaller<String, KeysAndAttributes>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     KeysAndAttributesJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }

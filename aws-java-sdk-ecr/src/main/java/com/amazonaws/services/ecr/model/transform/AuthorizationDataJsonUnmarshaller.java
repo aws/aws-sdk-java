@@ -18,6 +18,8 @@ package com.amazonaws.services.ecr.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,19 +55,18 @@ public class AuthorizationDataJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authorizationToken", targetDepth)) {
                     context.nextToken();
-                    authorizationData
-                            .setAuthorizationToken(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    authorizationData.setAuthorizationToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("expiresAt", targetDepth)) {
                     context.nextToken();
-                    authorizationData.setExpiresAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    authorizationData.setExpiresAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("proxyEndpoint", targetDepth)) {
                     context.nextToken();
-                    authorizationData.setProxyEndpoint(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    authorizationData.setProxyEndpoint(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

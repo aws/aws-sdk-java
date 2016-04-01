@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class CaptionSourceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    captionSource.setKey(StringJsonUnmarshaller.getInstance()
+                    captionSource.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Language", targetDepth)) {
                     context.nextToken();
-                    captionSource.setLanguage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    captionSource.setLanguage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeOffset", targetDepth)) {
                     context.nextToken();
-                    captionSource.setTimeOffset(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    captionSource.setTimeOffset(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
                     context.nextToken();
-                    captionSource.setLabel(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    captionSource.setLabel(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encryption", targetDepth)) {
                     context.nextToken();

@@ -18,6 +18,8 @@ package com.amazonaws.services.certificatemanager.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,13 @@ public class DomainValidationOptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
                     context.nextToken();
-                    domainValidationOption.setDomainName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    domainValidationOption.setDomainName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidationDomain", targetDepth)) {
                     context.nextToken();
-                    domainValidationOption
-                            .setValidationDomain(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    domainValidationOption.setValidationDomain(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

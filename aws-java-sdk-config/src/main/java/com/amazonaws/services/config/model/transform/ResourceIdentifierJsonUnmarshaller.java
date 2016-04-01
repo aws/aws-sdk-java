@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,24 +55,24 @@ public class ResourceIdentifierJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
-                    resourceIdentifier.setResourceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resourceIdentifier.setResourceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
-                    resourceIdentifier.setResourceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resourceIdentifier.setResourceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceName", targetDepth)) {
                     context.nextToken();
-                    resourceIdentifier.setResourceName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resourceIdentifier.setResourceName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceDeletionTime", targetDepth)) {
                     context.nextToken();
-                    resourceIdentifier
-                            .setResourceDeletionTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    resourceIdentifier.setResourceDeletionTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

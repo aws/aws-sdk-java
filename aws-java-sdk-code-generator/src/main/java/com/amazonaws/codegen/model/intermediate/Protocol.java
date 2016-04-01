@@ -22,6 +22,8 @@ public enum Protocol {
     EC2("ec2"),
     JSON("json"),
     REST_JSON("rest-json"),
+    CBOR("cbor"),
+    REST_CBOR("rest-cbor"),
     QUERY("query"),
     REST_XML("rest-xml");
 
@@ -41,6 +43,10 @@ public enum Protocol {
             return JSON;
         if (REST_JSON.protocol.equals(protocol))
             return REST_JSON;
+        if (CBOR.protocol.equals(protocol))
+            return CBOR;
+        if (REST_CBOR.protocol.equals(protocol))
+            return REST_CBOR;
         if (QUERY.protocol.equals(protocol))
             return QUERY;
         if (REST_XML.protocol.equals(protocol))

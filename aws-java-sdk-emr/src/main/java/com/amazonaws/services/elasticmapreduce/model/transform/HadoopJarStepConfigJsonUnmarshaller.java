@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,18 +62,18 @@ public class HadoopJarStepConfigJsonUnmarshaller implements
                 }
                 if (context.testExpression("Jar", targetDepth)) {
                     context.nextToken();
-                    hadoopJarStepConfig.setJar(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hadoopJarStepConfig.setJar(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("MainClass", targetDepth)) {
                     context.nextToken();
-                    hadoopJarStepConfig.setMainClass(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hadoopJarStepConfig.setMainClass(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Args", targetDepth)) {
                     context.nextToken();
                     hadoopJarStepConfig.setArgs(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

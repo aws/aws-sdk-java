@@ -18,6 +18,8 @@ package com.amazonaws.services.certificatemanager.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,20 +55,20 @@ public class CertificateDetailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CertificateArn", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setCertificateArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setCertificateArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setDomainName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setDomainName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubjectAlternativeNames",
                         targetDepth)) {
                     context.nextToken();
                     certificateDetail
                             .setSubjectAlternativeNames(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("DomainValidationOptions",
@@ -79,70 +81,68 @@ public class CertificateDetailJsonUnmarshaller implements
                 }
                 if (context.testExpression("Serial", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setSerial(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setSerial(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subject", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setSubject(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setSubject(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Issuer", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setIssuer(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setIssuer(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setCreatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("IssuedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setIssuedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setIssuedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("RevokedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setRevokedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setRevokedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("RevocationReason", targetDepth)) {
                     context.nextToken();
-                    certificateDetail
-                            .setRevocationReason(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    certificateDetail.setRevocationReason(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotBefore", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setNotBefore(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setNotBefore(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("NotAfter", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setNotAfter(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setNotAfter(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyAlgorithm", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setKeyAlgorithm(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDetail.setKeyAlgorithm(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SignatureAlgorithm", targetDepth)) {
                     context.nextToken();
-                    certificateDetail
-                            .setSignatureAlgorithm(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    certificateDetail.setSignatureAlgorithm(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InUseBy", targetDepth)) {
                     context.nextToken();
                     certificateDetail.setInUseBy(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

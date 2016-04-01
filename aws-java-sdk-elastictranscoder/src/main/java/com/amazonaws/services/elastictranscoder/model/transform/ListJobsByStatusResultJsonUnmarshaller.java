@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -59,9 +61,8 @@ public class ListJobsByStatusResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();
-                    listJobsByStatusResult
-                            .setNextPageToken(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    listJobsByStatusResult.setNextPageToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

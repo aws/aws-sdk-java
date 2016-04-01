@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class TimestampRangeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("beginDate", targetDepth)) {
                     context.nextToken();
-                    timestampRange.setBeginDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    timestampRange.setBeginDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("endDate", targetDepth)) {
                     context.nextToken();
-                    timestampRange.setEndDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    timestampRange.setEndDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

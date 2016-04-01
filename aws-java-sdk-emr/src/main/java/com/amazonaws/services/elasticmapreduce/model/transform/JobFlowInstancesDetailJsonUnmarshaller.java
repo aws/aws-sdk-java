@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,29 @@ public class JobFlowInstancesDetailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MasterInstanceType", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesDetail
-                            .setMasterInstanceType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowInstancesDetail.setMasterInstanceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterPublicDnsName", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesDetail
-                            .setMasterPublicDnsName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowInstancesDetail.setMasterPublicDnsName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterInstanceId", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesDetail
-                            .setMasterInstanceId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowInstancesDetail.setMasterInstanceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SlaveInstanceType", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesDetail
-                            .setSlaveInstanceType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowInstancesDetail.setSlaveInstanceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesDetail
-                            .setInstanceCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setInstanceCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceGroups", targetDepth)) {
                     context.nextToken();
@@ -92,19 +90,19 @@ public class JobFlowInstancesDetailJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesDetail
-                            .setNormalizedInstanceHours(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setNormalizedInstanceHours(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("Ec2KeyName", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesDetail.setEc2KeyName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobFlowInstancesDetail.setEc2KeyName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2SubnetId", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesDetail
-                            .setEc2SubnetId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowInstancesDetail.setEc2SubnetId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Placement", targetDepth)) {
                     context.nextToken();
@@ -116,20 +114,20 @@ public class JobFlowInstancesDetailJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesDetail
-                            .setKeepJobFlowAliveWhenNoSteps(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setKeepJobFlowAliveWhenNoSteps(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("TerminationProtected", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesDetail
-                            .setTerminationProtected(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setTerminationProtected(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HadoopVersion", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesDetail
-                            .setHadoopVersion(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowInstancesDetail.setHadoopVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

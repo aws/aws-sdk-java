@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class GetClientCertificatesResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("position", targetDepth)) {
                     context.nextToken();
-                    getClientCertificatesResult
-                            .setPosition(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getClientCertificatesResult.setPosition(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("item", targetDepth)) {
                     context.nextToken();

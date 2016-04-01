@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,46 +55,45 @@ public class InstanceInformationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    instanceInformation.setInstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInformation.setInstanceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PingStatus", targetDepth)) {
                     context.nextToken();
-                    instanceInformation.setPingStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInformation.setPingStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastPingDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceInformation
-                            .setLastPingDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    instanceInformation.setLastPingDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("AgentVersion", targetDepth)) {
                     context.nextToken();
-                    instanceInformation.setAgentVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInformation.setAgentVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IsLatestVersion", targetDepth)) {
                     context.nextToken();
                     instanceInformation
-                            .setIsLatestVersion(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setIsLatestVersion(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("PlatformType", targetDepth)) {
                     context.nextToken();
-                    instanceInformation.setPlatformType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInformation.setPlatformType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlatformName", targetDepth)) {
                     context.nextToken();
-                    instanceInformation.setPlatformName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInformation.setPlatformName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlatformVersion", targetDepth)) {
                     context.nextToken();
-                    instanceInformation
-                            .setPlatformVersion(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    instanceInformation.setPlatformVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

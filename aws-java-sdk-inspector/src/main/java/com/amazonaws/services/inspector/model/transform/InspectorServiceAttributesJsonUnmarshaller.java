@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,20 +56,18 @@ public class InspectorServiceAttributesJsonUnmarshaller implements
                 if (context.testExpression("schemaVersion", targetDepth)) {
                     context.nextToken();
                     inspectorServiceAttributes
-                            .setSchemaVersion(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setSchemaVersion(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentRunArn", targetDepth)) {
                     context.nextToken();
-                    inspectorServiceAttributes
-                            .setAssessmentRunArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    inspectorServiceAttributes.setAssessmentRunArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rulesPackageArn", targetDepth)) {
                     context.nextToken();
-                    inspectorServiceAttributes
-                            .setRulesPackageArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    inspectorServiceAttributes.setRulesPackageArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

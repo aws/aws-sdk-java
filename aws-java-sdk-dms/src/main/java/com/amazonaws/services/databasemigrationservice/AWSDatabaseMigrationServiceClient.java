@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -342,8 +343,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddTagsToResourceResult> responseHandler = new JsonResponseHandler<AddTagsToResourceResult>(
-                    new AddTagsToResourceResultJsonUnmarshaller());
+            JsonResponseHandler<AddTagsToResourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new AddTagsToResourceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -393,8 +396,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateEndpointResult> responseHandler = new JsonResponseHandler<CreateEndpointResult>(
-                    new CreateEndpointResultJsonUnmarshaller());
+            JsonResponseHandler<CreateEndpointResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateEndpointResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -463,8 +467,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateReplicationInstanceResult> responseHandler = new JsonResponseHandler<CreateReplicationInstanceResult>(
-                    new CreateReplicationInstanceResultJsonUnmarshaller());
+            JsonResponseHandler<CreateReplicationInstanceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateReplicationInstanceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -524,8 +530,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateReplicationSubnetGroupResult> responseHandler = new JsonResponseHandler<CreateReplicationSubnetGroupResult>(
-                    new CreateReplicationSubnetGroupResultJsonUnmarshaller());
+            JsonResponseHandler<CreateReplicationSubnetGroupResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateReplicationSubnetGroupResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -582,8 +590,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateReplicationTaskResult> responseHandler = new JsonResponseHandler<CreateReplicationTaskResult>(
-                    new CreateReplicationTaskResultJsonUnmarshaller());
+            JsonResponseHandler<CreateReplicationTaskResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateReplicationTaskResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -633,8 +643,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteEndpointResult> responseHandler = new JsonResponseHandler<DeleteEndpointResult>(
-                    new DeleteEndpointResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteEndpointResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteEndpointResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -686,8 +697,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteReplicationInstanceResult> responseHandler = new JsonResponseHandler<DeleteReplicationInstanceResult>(
-                    new DeleteReplicationInstanceResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteReplicationInstanceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteReplicationInstanceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -738,8 +751,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteReplicationSubnetGroupResult> responseHandler = new JsonResponseHandler<DeleteReplicationSubnetGroupResult>(
-                    new DeleteReplicationSubnetGroupResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteReplicationSubnetGroupResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteReplicationSubnetGroupResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -790,8 +805,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteReplicationTaskResult> responseHandler = new JsonResponseHandler<DeleteReplicationTaskResult>(
-                    new DeleteReplicationTaskResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteReplicationTaskResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteReplicationTaskResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -844,8 +861,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAccountAttributesResult> responseHandler = new JsonResponseHandler<DescribeAccountAttributesResult>(
-                    new DescribeAccountAttributesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeAccountAttributesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeAccountAttributesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -895,8 +914,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeConnectionsResult> responseHandler = new JsonResponseHandler<DescribeConnectionsResult>(
-                    new DescribeConnectionsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeConnectionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeConnectionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -942,8 +963,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeEndpointTypesResult> responseHandler = new JsonResponseHandler<DescribeEndpointTypesResult>(
-                    new DescribeEndpointTypesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeEndpointTypesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeEndpointTypesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -992,8 +1015,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeEndpointsResult> responseHandler = new JsonResponseHandler<DescribeEndpointsResult>(
-                    new DescribeEndpointsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeEndpointsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeEndpointsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1040,8 +1065,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeOrderableReplicationInstancesResult> responseHandler = new JsonResponseHandler<DescribeOrderableReplicationInstancesResult>(
-                    new DescribeOrderableReplicationInstancesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeOrderableReplicationInstancesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeOrderableReplicationInstancesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1092,8 +1119,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeRefreshSchemasStatusResult> responseHandler = new JsonResponseHandler<DescribeRefreshSchemasStatusResult>(
-                    new DescribeRefreshSchemasStatusResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeRefreshSchemasStatusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeRefreshSchemasStatusResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1142,8 +1171,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeReplicationInstancesResult> responseHandler = new JsonResponseHandler<DescribeReplicationInstancesResult>(
-                    new DescribeReplicationInstancesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeReplicationInstancesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeReplicationInstancesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1191,8 +1222,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeReplicationSubnetGroupsResult> responseHandler = new JsonResponseHandler<DescribeReplicationSubnetGroupsResult>(
-                    new DescribeReplicationSubnetGroupsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeReplicationSubnetGroupsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeReplicationSubnetGroupsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1241,8 +1274,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeReplicationTasksResult> responseHandler = new JsonResponseHandler<DescribeReplicationTasksResult>(
-                    new DescribeReplicationTasksResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeReplicationTasksResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeReplicationTasksResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1291,8 +1326,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeSchemasResult> responseHandler = new JsonResponseHandler<DescribeSchemasResult>(
-                    new DescribeSchemasResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeSchemasResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeSchemasResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1344,8 +1380,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTableStatisticsResult> responseHandler = new JsonResponseHandler<DescribeTableStatisticsResult>(
-                    new DescribeTableStatisticsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeTableStatisticsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeTableStatisticsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1393,8 +1431,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsForResourceResult> responseHandler = new JsonResponseHandler<ListTagsForResourceResult>(
-                    new ListTagsForResourceResultJsonUnmarshaller());
+            JsonResponseHandler<ListTagsForResourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListTagsForResourceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1447,8 +1487,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ModifyEndpointResult> responseHandler = new JsonResponseHandler<ModifyEndpointResult>(
-                    new ModifyEndpointResultJsonUnmarshaller());
+            JsonResponseHandler<ModifyEndpointResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ModifyEndpointResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1511,8 +1552,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ModifyReplicationInstanceResult> responseHandler = new JsonResponseHandler<ModifyReplicationInstanceResult>(
-                    new ModifyReplicationInstanceResultJsonUnmarshaller());
+            JsonResponseHandler<ModifyReplicationInstanceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ModifyReplicationInstanceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1569,8 +1612,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ModifyReplicationSubnetGroupResult> responseHandler = new JsonResponseHandler<ModifyReplicationSubnetGroupResult>(
-                    new ModifyReplicationSubnetGroupResultJsonUnmarshaller());
+            JsonResponseHandler<ModifyReplicationSubnetGroupResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ModifyReplicationSubnetGroupResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1625,8 +1670,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RefreshSchemasResult> responseHandler = new JsonResponseHandler<RefreshSchemasResult>(
-                    new RefreshSchemasResultJsonUnmarshaller());
+            JsonResponseHandler<RefreshSchemasResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RefreshSchemasResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1674,8 +1720,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveTagsFromResourceResult> responseHandler = new JsonResponseHandler<RemoveTagsFromResourceResult>(
-                    new RemoveTagsFromResourceResultJsonUnmarshaller());
+            JsonResponseHandler<RemoveTagsFromResourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RemoveTagsFromResourceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1726,8 +1774,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartReplicationTaskResult> responseHandler = new JsonResponseHandler<StartReplicationTaskResult>(
-                    new StartReplicationTaskResultJsonUnmarshaller());
+            JsonResponseHandler<StartReplicationTaskResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new StartReplicationTaskResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1778,8 +1828,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StopReplicationTaskResult> responseHandler = new JsonResponseHandler<StopReplicationTaskResult>(
-                    new StopReplicationTaskResultJsonUnmarshaller());
+            JsonResponseHandler<StopReplicationTaskResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new StopReplicationTaskResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1832,8 +1884,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TestConnectionResult> responseHandler = new JsonResponseHandler<TestConnectionResult>(
-                    new TestConnectionResultJsonUnmarshaller());
+            JsonResponseHandler<TestConnectionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new TestConnectionResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1893,8 +1946,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

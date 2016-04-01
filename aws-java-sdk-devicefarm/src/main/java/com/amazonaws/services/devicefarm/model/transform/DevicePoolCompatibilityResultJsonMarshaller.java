@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.devicefarm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -44,7 +38,8 @@ public class DevicePoolCompatibilityResultJsonMarshaller {
      */
     public void marshall(
             DevicePoolCompatibilityResult devicePoolCompatibilityResult,
-            SdkJsonGenerator jsonGenerator) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (devicePoolCompatibilityResult == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

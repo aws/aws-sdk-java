@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,79 +55,79 @@ public class InstanceGroupDetailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceGroupId", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail
-                            .setInstanceGroupId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    instanceGroupDetail.setInstanceGroupId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupDetail.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Market", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setMarket(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupDetail.setMarket(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceRole", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setInstanceRole(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupDetail.setInstanceRole(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BidPrice", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setBidPrice(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupDetail.setBidPrice(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setInstanceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupDetail.setInstanceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceRequestCount", targetDepth)) {
                     context.nextToken();
                     instanceGroupDetail
-                            .setInstanceRequestCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setInstanceRequestCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceRunningCount", targetDepth)) {
                     context.nextToken();
                     instanceGroupDetail
-                            .setInstanceRunningCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setInstanceRunningCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setState(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupDetail.setState(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("LastStateChangeReason", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail
-                            .setLastStateChangeReason(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    instanceGroupDetail.setLastStateChangeReason(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail
-                            .setCreationDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    instanceGroupDetail.setCreationDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setStartDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupDetail.setStartDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("ReadyDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setReadyDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupDetail.setReadyDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setEndDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupDetail.setEndDateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

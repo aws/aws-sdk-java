@@ -18,6 +18,8 @@ package com.amazonaws.services.codecommit.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,7 +57,7 @@ public class TestRepositoryTriggersResultJsonUnmarshaller implements
                     context.nextToken();
                     testRepositoryTriggersResult
                             .setSuccessfulExecutions(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("failedExecutions", targetDepth)) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,29 +55,31 @@ public class FleetUtilizationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FleetId", targetDepth)) {
                     context.nextToken();
-                    fleetUtilization.setFleetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetUtilization.setFleetId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ActiveGameSessionCount",
                         targetDepth)) {
                     context.nextToken();
                     fleetUtilization
-                            .setActiveGameSessionCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setActiveGameSessionCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentPlayerSessionCount",
                         targetDepth)) {
                     context.nextToken();
                     fleetUtilization
-                            .setCurrentPlayerSessionCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCurrentPlayerSessionCount(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("MaximumPlayerSessionCount",
                         targetDepth)) {
                     context.nextToken();
                     fleetUtilization
-                            .setMaximumPlayerSessionCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setMaximumPlayerSessionCount(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

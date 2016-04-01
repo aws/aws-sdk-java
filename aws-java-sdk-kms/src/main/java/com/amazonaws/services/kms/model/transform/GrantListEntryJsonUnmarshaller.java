@@ -18,6 +18,8 @@ package com.amazonaws.services.kms.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,43 +55,43 @@ public class GrantListEntryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KeyId", targetDepth)) {
                     context.nextToken();
-                    grantListEntry.setKeyId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    grantListEntry.setKeyId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("GrantId", targetDepth)) {
                     context.nextToken();
-                    grantListEntry.setGrantId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    grantListEntry.setGrantId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    grantListEntry.setName(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    grantListEntry.setName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    grantListEntry.setCreationDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    grantListEntry.setCreationDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("GranteePrincipal", targetDepth)) {
                     context.nextToken();
-                    grantListEntry.setGranteePrincipal(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    grantListEntry.setGranteePrincipal(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("RetiringPrincipal", targetDepth)) {
                     context.nextToken();
-                    grantListEntry.setRetiringPrincipal(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    grantListEntry.setRetiringPrincipal(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IssuingAccount", targetDepth)) {
                     context.nextToken();
-                    grantListEntry.setIssuingAccount(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    grantListEntry.setIssuingAccount(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Operations", targetDepth)) {
                     context.nextToken();
                     grantListEntry.setOperations(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Constraints", targetDepth)) {

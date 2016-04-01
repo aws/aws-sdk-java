@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class RDSDatabaseCredentialsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
-                    rDSDatabaseCredentials.setUsername(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSDatabaseCredentials.setUsername(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
                     context.nextToken();
-                    rDSDatabaseCredentials.setPassword(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSDatabaseCredentials.setPassword(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

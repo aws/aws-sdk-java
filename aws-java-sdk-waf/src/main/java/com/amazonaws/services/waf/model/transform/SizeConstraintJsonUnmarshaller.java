@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -58,17 +60,17 @@ public class SizeConstraintJsonUnmarshaller implements
                 }
                 if (context.testExpression("TextTransformation", targetDepth)) {
                     context.nextToken();
-                    sizeConstraint.setTextTransformation(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sizeConstraint.setTextTransformation(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComparisonOperator", targetDepth)) {
                     context.nextToken();
-                    sizeConstraint.setComparisonOperator(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sizeConstraint.setComparisonOperator(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
                     context.nextToken();
-                    sizeConstraint.setSize(LongJsonUnmarshaller.getInstance()
+                    sizeConstraint.setSize(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

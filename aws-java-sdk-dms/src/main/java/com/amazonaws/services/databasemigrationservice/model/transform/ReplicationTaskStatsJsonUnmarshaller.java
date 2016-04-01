@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,38 +57,38 @@ public class ReplicationTaskStatsJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     replicationTaskStats
-                            .setFullLoadProgressPercent(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setFullLoadProgressPercent(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("ElapsedTimeMillis", targetDepth)) {
                     context.nextToken();
-                    replicationTaskStats
-                            .setElapsedTimeMillis(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationTaskStats.setElapsedTimeMillis(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesLoaded", targetDepth)) {
                     context.nextToken();
                     replicationTaskStats
-                            .setTablesLoaded(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setTablesLoaded(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesLoading", targetDepth)) {
                     context.nextToken();
                     replicationTaskStats
-                            .setTablesLoading(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setTablesLoading(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesQueued", targetDepth)) {
                     context.nextToken();
                     replicationTaskStats
-                            .setTablesQueued(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setTablesQueued(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TablesErrored", targetDepth)) {
                     context.nextToken();
                     replicationTaskStats
-                            .setTablesErrored(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setTablesErrored(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

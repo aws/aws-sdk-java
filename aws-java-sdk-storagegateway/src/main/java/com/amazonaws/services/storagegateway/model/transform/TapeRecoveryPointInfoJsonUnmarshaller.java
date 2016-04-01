@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,26 +55,25 @@ public class TapeRecoveryPointInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TapeARN", targetDepth)) {
                     context.nextToken();
-                    tapeRecoveryPointInfo.setTapeARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tapeRecoveryPointInfo.setTapeARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("TapeRecoveryPointTime", targetDepth)) {
                     context.nextToken();
-                    tapeRecoveryPointInfo
-                            .setTapeRecoveryPointTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    tapeRecoveryPointInfo.setTapeRecoveryPointTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("TapeSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    tapeRecoveryPointInfo
-                            .setTapeSizeInBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    tapeRecoveryPointInfo.setTapeSizeInBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TapeStatus", targetDepth)) {
                     context.nextToken();
-                    tapeRecoveryPointInfo.setTapeStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tapeRecoveryPointInfo.setTapeStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

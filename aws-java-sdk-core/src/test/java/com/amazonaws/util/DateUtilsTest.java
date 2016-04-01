@@ -31,11 +31,10 @@ import java.util.Locale;
 import java.util.SimpleTimeZone;
 
 import com.amazonaws.util.json.SdkJsonGenerator;
+import com.amazonaws.util.json.StructuredJsonGenerator;
 import org.joda.time.DateTime;
 import org.joda.time.IllegalFieldValueException;
 import org.junit.Test;
-
-import sun.nio.cs.StandardCharsets;
 
 public class DateUtilsTest {
     private static final boolean DEBUG = false;
@@ -251,7 +250,7 @@ public class DateUtilsTest {
     // See https://forums.aws.amazon.com/thread.jspa?threadID=158756
     @Test
     public void testNumericNoQuote() {
-        SdkJsonGenerator jw = new SdkJsonGenerator();
+        StructuredJsonGenerator jw = new SdkJsonGenerator();
         jw.writeStartObject();
         jw.writeFieldName("foo").writeValue(new Date());
         jw.writeEndObject();

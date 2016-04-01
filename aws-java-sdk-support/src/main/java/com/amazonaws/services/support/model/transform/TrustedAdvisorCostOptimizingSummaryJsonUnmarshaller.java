@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -56,15 +58,17 @@ public class TrustedAdvisorCostOptimizingSummaryJsonUnmarshaller
                         targetDepth)) {
                     context.nextToken();
                     trustedAdvisorCostOptimizingSummary
-                            .setEstimatedMonthlySavings(DoubleJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setEstimatedMonthlySavings(context
+                                    .getUnmarshaller(Double.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("estimatedPercentMonthlySavings",
                         targetDepth)) {
                     context.nextToken();
                     trustedAdvisorCostOptimizingSummary
-                            .setEstimatedPercentMonthlySavings(DoubleJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setEstimatedPercentMonthlySavings(context
+                                    .getUnmarshaller(Double.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

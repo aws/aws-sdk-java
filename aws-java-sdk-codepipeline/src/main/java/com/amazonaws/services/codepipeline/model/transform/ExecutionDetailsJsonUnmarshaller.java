@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,19 +55,19 @@ public class ExecutionDetailsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("summary", targetDepth)) {
                     context.nextToken();
-                    executionDetails.setSummary(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    executionDetails.setSummary(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("externalExecutionId", targetDepth)) {
                     context.nextToken();
-                    executionDetails
-                            .setExternalExecutionId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    executionDetails.setExternalExecutionId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("percentComplete", targetDepth)) {
                     context.nextToken();
-                    executionDetails.setPercentComplete(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    executionDetails
+                            .setPercentComplete(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

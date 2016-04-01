@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class RelationshipJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
-                    relationship.setResourceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    relationship.setResourceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
-                    relationship.setResourceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    relationship.setResourceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceName", targetDepth)) {
                     context.nextToken();
-                    relationship.setResourceName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    relationship.setResourceName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("relationshipName", targetDepth)) {
                     context.nextToken();
-                    relationship.setRelationshipName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    relationship.setRelationshipName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

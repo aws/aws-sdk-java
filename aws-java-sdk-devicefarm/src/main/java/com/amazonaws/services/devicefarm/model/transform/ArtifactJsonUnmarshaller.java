@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,27 +55,27 @@ public class ArtifactJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    artifact.setArn(StringJsonUnmarshaller.getInstance()
+                    artifact.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    artifact.setName(StringJsonUnmarshaller.getInstance()
+                    artifact.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    artifact.setType(StringJsonUnmarshaller.getInstance()
+                    artifact.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("extension", targetDepth)) {
                     context.nextToken();
-                    artifact.setExtension(StringJsonUnmarshaller.getInstance()
+                    artifact.setExtension(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
                     context.nextToken();
-                    artifact.setUrl(StringJsonUnmarshaller.getInstance()
+                    artifact.setUrl(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

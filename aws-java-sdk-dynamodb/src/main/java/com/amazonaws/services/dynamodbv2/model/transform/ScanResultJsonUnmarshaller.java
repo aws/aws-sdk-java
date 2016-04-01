@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -56,27 +58,26 @@ public class ScanResultJsonUnmarshaller implements
                     scanResult
                             .setItems(new ListUnmarshaller<java.util.Map<String, AttributeValue>>(
                                     new MapUnmarshaller<String, AttributeValue>(
-                                            StringJsonUnmarshaller
-                                                    .getInstance(),
+                                            context.getUnmarshaller(String.class),
                                             AttributeValueJsonUnmarshaller
                                                     .getInstance()))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
                     context.nextToken();
-                    scanResult.setCount(IntegerJsonUnmarshaller.getInstance()
+                    scanResult.setCount(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ScannedCount", targetDepth)) {
                     context.nextToken();
-                    scanResult.setScannedCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scanResult.setScannedCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("LastEvaluatedKey", targetDepth)) {
                     context.nextToken();
                     scanResult
                             .setLastEvaluatedKey(new MapUnmarshaller<String, AttributeValue>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     AttributeValueJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }

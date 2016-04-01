@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,22 +55,21 @@ public class InstanceGroupModifyConfigJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceGroupId", targetDepth)) {
                     context.nextToken();
-                    instanceGroupModifyConfig
-                            .setInstanceGroupId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    instanceGroupModifyConfig.setInstanceGroupId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
                     context.nextToken();
                     instanceGroupModifyConfig
-                            .setInstanceCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setInstanceCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EC2InstanceIdsToTerminate",
                         targetDepth)) {
                     context.nextToken();
                     instanceGroupModifyConfig
                             .setEC2InstanceIdsToTerminate(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

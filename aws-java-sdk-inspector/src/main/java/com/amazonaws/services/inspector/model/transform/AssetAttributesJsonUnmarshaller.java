@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,34 +55,34 @@ public class AssetAttributesJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("schemaVersion", targetDepth)) {
                     context.nextToken();
-                    assetAttributes.setSchemaVersion(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assetAttributes.setSchemaVersion(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("agentId", targetDepth)) {
                     context.nextToken();
-                    assetAttributes.setAgentId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assetAttributes.setAgentId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroup", targetDepth)) {
                     context.nextToken();
-                    assetAttributes.setAutoScalingGroup(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assetAttributes.setAutoScalingGroup(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("amiId", targetDepth)) {
                     context.nextToken();
-                    assetAttributes.setAmiId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assetAttributes.setAmiId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("hostname", targetDepth)) {
                     context.nextToken();
-                    assetAttributes.setHostname(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assetAttributes.setHostname(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ipv4Addresses", targetDepth)) {
                     context.nextToken();
                     assetAttributes
                             .setIpv4Addresses(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

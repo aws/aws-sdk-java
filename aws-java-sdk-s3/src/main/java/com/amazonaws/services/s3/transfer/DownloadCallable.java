@@ -19,6 +19,9 @@ import java.net.SocketException;
 import java.util.Arrays;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLProtocolException;
 
@@ -48,14 +51,17 @@ final class DownloadCallable implements Callable<File> {
     private final DownloadImpl download;
     private final File dstfile;
     private final long origStartingByte;
-    
+    private final long timeout;
+    private final ScheduledExecutorService executor;
+
     private long expectedFileLength;
 
     DownloadCallable(AmazonS3 s3, CountDownLatch latch,
             GetObjectRequest req,
             boolean resumeExistingDownload,
             DownloadImpl download, File dstfile, long origStartingByte,
-            long expectedFileLength) 
+            long expectedFileLength, long timeout,
+                     ScheduledExecutorService executor)
     {
         if (s3 == null || latch == null || req == null || dstfile == null || download == null)
             throw new IllegalArgumentException();
@@ -67,6 +73,8 @@ final class DownloadCallable implements Callable<File> {
         this.dstfile = dstfile;
         this.origStartingByte = origStartingByte;
         this.expectedFileLength = expectedFileLength;
+        this.timeout = timeout;
+        this.executor = executor;
     }
 
     /**
@@ -80,6 +88,21 @@ final class DownloadCallable implements Callable<File> {
     public File call() throws Exception {
         try {
             latch.await();
+
+            if (isTimeoutEnabled()) {
+                executor.schedule(new Runnable() {
+                    public void run() {
+                        try {
+                            if (download.getState() != TransferState.Completed) {
+                                download.abort();
+                            }
+                        } catch(Exception e) {
+                            throw new AmazonClientException(
+                                    "Unable to abort download after timeout", e);
+                        }
+                    }
+                }, timeout, TimeUnit.MILLISECONDS);
+            }
             download.setState(TransferState.InProgress);
             S3Object s3Object = retryableDownloadS3ObjectToFile(dstfile,
                 new DownloadTaskImpl(s3, download, req), 
@@ -186,6 +209,10 @@ final class DownloadCallable implements Callable<File> {
                 s3Object.getObjectContent().abort();
             }
         }
+    }
+
+    private boolean isTimeoutEnabled() {
+        return timeout > 0;
     }
 
     private static boolean testing;

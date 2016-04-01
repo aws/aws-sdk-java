@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,7 +57,7 @@ public class GetOfferingStatusResultJsonUnmarshaller implements
                     context.nextToken();
                     getOfferingStatusResult
                             .setCurrent(new MapUnmarshaller<String, OfferingStatus>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     OfferingStatusJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }
@@ -63,14 +65,14 @@ public class GetOfferingStatusResultJsonUnmarshaller implements
                     context.nextToken();
                     getOfferingStatusResult
                             .setNextPeriod(new MapUnmarshaller<String, OfferingStatus>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     OfferingStatusJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
-                    getOfferingStatusResult.setNextToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getOfferingStatusResult.setNextToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

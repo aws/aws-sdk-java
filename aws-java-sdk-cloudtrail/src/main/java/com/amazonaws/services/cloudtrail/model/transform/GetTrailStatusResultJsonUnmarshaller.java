@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudtrail.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,114 +55,113 @@ public class GetTrailStatusResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IsLogging", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult.setIsLogging(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getTrailStatusResult.setIsLogging(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestDeliveryError", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setLatestDeliveryError(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setLatestDeliveryError(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestNotificationError",
                         targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setLatestNotificationError(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setLatestNotificationError(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestDeliveryTime", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setLatestDeliveryTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setLatestDeliveryTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("LatestNotificationTime",
                         targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setLatestNotificationTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setLatestNotificationTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("StartLoggingTime", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setStartLoggingTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setStartLoggingTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("StopLoggingTime", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setStopLoggingTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setStopLoggingTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("LatestCloudWatchLogsDeliveryError",
                         targetDepth)) {
                     context.nextToken();
                     getTrailStatusResult
-                            .setLatestCloudWatchLogsDeliveryError(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLatestCloudWatchLogsDeliveryError(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("LatestCloudWatchLogsDeliveryTime",
                         targetDepth)) {
                     context.nextToken();
                     getTrailStatusResult
-                            .setLatestCloudWatchLogsDeliveryTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLatestCloudWatchLogsDeliveryTime(context
+                                    .getUnmarshaller(java.util.Date.class)
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("LatestDigestDeliveryTime",
                         targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setLatestDigestDeliveryTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setLatestDigestDeliveryTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("LatestDigestDeliveryError",
                         targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setLatestDigestDeliveryError(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setLatestDigestDeliveryError(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestDeliveryAttemptTime",
                         targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setLatestDeliveryAttemptTime(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setLatestDeliveryAttemptTime(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestNotificationAttemptTime",
                         targetDepth)) {
                     context.nextToken();
                     getTrailStatusResult
-                            .setLatestNotificationAttemptTime(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLatestNotificationAttemptTime(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression(
                         "LatestNotificationAttemptSucceeded", targetDepth)) {
                     context.nextToken();
                     getTrailStatusResult
-                            .setLatestNotificationAttemptSucceeded(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLatestNotificationAttemptSucceeded(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("LatestDeliveryAttemptSucceeded",
                         targetDepth)) {
                     context.nextToken();
                     getTrailStatusResult
-                            .setLatestDeliveryAttemptSucceeded(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLatestDeliveryAttemptSucceeded(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("TimeLoggingStarted", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setTimeLoggingStarted(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setTimeLoggingStarted(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeLoggingStopped", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult
-                            .setTimeLoggingStopped(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getTrailStatusResult.setTimeLoggingStopped(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

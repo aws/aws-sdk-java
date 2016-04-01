@@ -18,6 +18,8 @@ package com.amazonaws.services.certificatemanager.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class ListCertificatesResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    listCertificatesResult.setNextToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listCertificatesResult.setNextToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateSummaryList",
                         targetDepth)) {

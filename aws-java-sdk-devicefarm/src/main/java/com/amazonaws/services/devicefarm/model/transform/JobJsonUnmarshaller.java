@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,43 +54,46 @@ public class JobJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    job.setArn(StringJsonUnmarshaller.getInstance().unmarshall(
-                            context));
+                    job.setArn(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    job.setName(StringJsonUnmarshaller.getInstance()
+                    job.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    job.setType(StringJsonUnmarshaller.getInstance()
+                    job.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    job.setCreated(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    job.setCreated(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    job.setStatus(StringJsonUnmarshaller.getInstance()
+                    job.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("result", targetDepth)) {
                     context.nextToken();
-                    job.setResult(StringJsonUnmarshaller.getInstance()
+                    job.setResult(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    job.setStarted(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    job.setStarted(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    job.setStopped(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    job.setStopped(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
                     context.nextToken();
@@ -97,7 +102,7 @@ public class JobJsonUnmarshaller implements
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    job.setMessage(StringJsonUnmarshaller.getInstance()
+                    job.setMessage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("device", targetDepth)) {

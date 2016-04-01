@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,8 +62,8 @@ public class DevicePoolCompatibilityResultJsonUnmarshaller implements
                 if (context.testExpression("compatible", targetDepth)) {
                     context.nextToken();
                     devicePoolCompatibilityResult
-                            .setCompatible(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCompatible(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("incompatibilityMessages",
                         targetDepth)) {

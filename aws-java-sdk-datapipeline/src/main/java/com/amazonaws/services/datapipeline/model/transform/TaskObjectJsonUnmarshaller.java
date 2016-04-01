@@ -18,6 +18,8 @@ package com.amazonaws.services.datapipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,24 +55,24 @@ public class TaskObjectJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskId", targetDepth)) {
                     context.nextToken();
-                    taskObject.setTaskId(StringJsonUnmarshaller.getInstance()
+                    taskObject.setTaskId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("pipelineId", targetDepth)) {
                     context.nextToken();
-                    taskObject.setPipelineId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    taskObject.setPipelineId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("attemptId", targetDepth)) {
                     context.nextToken();
-                    taskObject.setAttemptId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    taskObject.setAttemptId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("objects", targetDepth)) {
                     context.nextToken();
                     taskObject
                             .setObjects(new MapUnmarshaller<String, PipelineObject>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     PipelineObjectJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }

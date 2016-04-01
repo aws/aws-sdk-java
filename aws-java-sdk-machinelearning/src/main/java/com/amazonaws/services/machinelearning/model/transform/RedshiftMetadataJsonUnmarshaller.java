@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -59,13 +61,13 @@ public class RedshiftMetadataJsonUnmarshaller implements
                 }
                 if (context.testExpression("DatabaseUserName", targetDepth)) {
                     context.nextToken();
-                    redshiftMetadata.setDatabaseUserName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    redshiftMetadata.setDatabaseUserName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectSqlQuery", targetDepth)) {
                     context.nextToken();
-                    redshiftMetadata.setSelectSqlQuery(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    redshiftMetadata.setSelectSqlQuery(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

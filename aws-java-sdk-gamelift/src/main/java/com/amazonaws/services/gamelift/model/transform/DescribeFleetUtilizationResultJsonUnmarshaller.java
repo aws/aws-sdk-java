@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,9 +62,8 @@ public class DescribeFleetUtilizationResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    describeFleetUtilizationResult
-                            .setNextToken(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeFleetUtilizationResult.setNextToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

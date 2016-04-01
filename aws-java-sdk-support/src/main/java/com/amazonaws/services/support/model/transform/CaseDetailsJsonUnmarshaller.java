@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,48 +55,48 @@ public class CaseDetailsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("caseId", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setCaseId(StringJsonUnmarshaller.getInstance()
+                    caseDetails.setCaseId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("displayId", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setDisplayId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    caseDetails.setDisplayId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("subject", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setSubject(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    caseDetails.setSubject(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setStatus(StringJsonUnmarshaller.getInstance()
+                    caseDetails.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("serviceCode", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setServiceCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    caseDetails.setServiceCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("categoryCode", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setCategoryCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    caseDetails.setCategoryCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("severityCode", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setSeverityCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    caseDetails.setSeverityCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("submittedBy", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setSubmittedBy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    caseDetails.setSubmittedBy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeCreated", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setTimeCreated(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    caseDetails.setTimeCreated(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("recentCommunications", targetDepth)) {
                     context.nextToken();
@@ -106,13 +108,13 @@ public class CaseDetailsJsonUnmarshaller implements
                     context.nextToken();
                     caseDetails
                             .setCcEmailAddresses(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("language", targetDepth)) {
                     context.nextToken();
-                    caseDetails.setLanguage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    caseDetails.setLanguage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

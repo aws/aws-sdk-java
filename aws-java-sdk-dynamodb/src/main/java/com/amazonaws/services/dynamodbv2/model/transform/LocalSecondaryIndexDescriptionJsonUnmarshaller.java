@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class LocalSecondaryIndexDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexName", targetDepth)) {
                     context.nextToken();
-                    localSecondaryIndexDescription
-                            .setIndexName(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    localSecondaryIndexDescription.setIndexName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
@@ -72,21 +73,18 @@ public class LocalSecondaryIndexDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("IndexSizeBytes", targetDepth)) {
                     context.nextToken();
-                    localSecondaryIndexDescription
-                            .setIndexSizeBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    localSecondaryIndexDescription.setIndexSizeBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ItemCount", targetDepth)) {
                     context.nextToken();
-                    localSecondaryIndexDescription
-                            .setItemCount(LongJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    localSecondaryIndexDescription.setItemCount(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexArn", targetDepth)) {
                     context.nextToken();
-                    localSecondaryIndexDescription
-                            .setIndexArn(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    localSecondaryIndexDescription.setIndexArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

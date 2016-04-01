@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticfilesystem.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,42 +55,38 @@ public class MountTargetDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OwnerId", targetDepth)) {
                     context.nextToken();
-                    mountTargetDescription.setOwnerId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mountTargetDescription.setOwnerId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("MountTargetId", targetDepth)) {
                     context.nextToken();
-                    mountTargetDescription
-                            .setMountTargetId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    mountTargetDescription.setMountTargetId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
                     context.nextToken();
-                    mountTargetDescription
-                            .setFileSystemId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    mountTargetDescription.setFileSystemId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
                     context.nextToken();
-                    mountTargetDescription.setSubnetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mountTargetDescription.setSubnetId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("LifeCycleState", targetDepth)) {
                     context.nextToken();
-                    mountTargetDescription
-                            .setLifeCycleState(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    mountTargetDescription.setLifeCycleState(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
                     context.nextToken();
-                    mountTargetDescription.setIpAddress(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mountTargetDescription.setIpAddress(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
                     context.nextToken();
-                    mountTargetDescription
-                            .setNetworkInterfaceId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    mountTargetDescription.setNetworkInterfaceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

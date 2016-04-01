@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class EncryptionConfigurationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NoEncryptionConfig", targetDepth)) {
                     context.nextToken();
-                    encryptionConfiguration
-                            .setNoEncryptionConfig(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    encryptionConfiguration.setNoEncryptionConfig(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KMSEncryptionConfig", targetDepth)) {
                     context.nextToken();

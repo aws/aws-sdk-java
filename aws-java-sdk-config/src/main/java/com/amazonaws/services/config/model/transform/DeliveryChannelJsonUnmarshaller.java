@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class DeliveryChannelJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    deliveryChannel.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deliveryChannel.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3BucketName", targetDepth)) {
                     context.nextToken();
-                    deliveryChannel.setS3BucketName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deliveryChannel.setS3BucketName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3KeyPrefix", targetDepth)) {
                     context.nextToken();
-                    deliveryChannel.setS3KeyPrefix(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deliveryChannel.setS3KeyPrefix(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("snsTopicARN", targetDepth)) {
                     context.nextToken();
-                    deliveryChannel.setSnsTopicARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deliveryChannel.setSnsTopicARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("configSnapshotDeliveryProperties",
                         targetDepth)) {

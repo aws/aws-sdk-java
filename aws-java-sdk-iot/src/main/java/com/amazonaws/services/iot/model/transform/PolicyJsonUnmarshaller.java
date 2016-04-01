@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,12 +54,12 @@ public class PolicyJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyName", targetDepth)) {
                     context.nextToken();
-                    policy.setPolicyName(StringJsonUnmarshaller.getInstance()
+                    policy.setPolicyName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("policyArn", targetDepth)) {
                     context.nextToken();
-                    policy.setPolicyArn(StringJsonUnmarshaller.getInstance()
+                    policy.setPolicyArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

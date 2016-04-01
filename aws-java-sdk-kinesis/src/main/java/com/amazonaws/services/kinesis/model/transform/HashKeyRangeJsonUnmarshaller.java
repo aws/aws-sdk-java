@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class HashKeyRangeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartingHashKey", targetDepth)) {
                     context.nextToken();
-                    hashKeyRange.setStartingHashKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hashKeyRange.setStartingHashKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndingHashKey", targetDepth)) {
                     context.nextToken();
-                    hashKeyRange.setEndingHashKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hashKeyRange.setEndingHashKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

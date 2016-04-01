@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class MinimumHealthyHostsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
-                    minimumHealthyHosts.setValue(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    minimumHealthyHosts.setValue(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    minimumHealthyHosts.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    minimumHealthyHosts.setType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

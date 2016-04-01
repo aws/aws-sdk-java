@@ -319,7 +319,15 @@ public class CodeEmitter implements AutoCloseable {
 
     private CodeGenTemplatesConfig loadProtocolTemplatesConfig(Protocol protocol) {
 
-        CodeGenTemplatesConfig protocolDefaultConfig = CodeGenTemplatesConfig.load(protocol);
+        // CBOR is a type of JSON Protocol.  Use JSON Protocol for templates
+        Protocol templateProtocol = protocol;
+        if (Protocol.CBOR.equals(protocol)) {
+            templateProtocol = Protocol.JSON;
+        }
+        if (Protocol.REST_CBOR.equals(protocol)) {
+            templateProtocol = Protocol.REST_JSON;
+        }
+        CodeGenTemplatesConfig protocolDefaultConfig = CodeGenTemplatesConfig.load(templateProtocol);
 
         CustomizationConfig customConfig = model.getCustomizationConfig();
 

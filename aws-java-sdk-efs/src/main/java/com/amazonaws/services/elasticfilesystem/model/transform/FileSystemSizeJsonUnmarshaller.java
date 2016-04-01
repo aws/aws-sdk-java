@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticfilesystem.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class FileSystemSizeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Value", targetDepth)) {
                     context.nextToken();
-                    fileSystemSize.setValue(LongJsonUnmarshaller.getInstance()
+                    fileSystemSize.setValue(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Timestamp", targetDepth)) {
                     context.nextToken();
-                    fileSystemSize.setTimestamp(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fileSystemSize.setTimestamp(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

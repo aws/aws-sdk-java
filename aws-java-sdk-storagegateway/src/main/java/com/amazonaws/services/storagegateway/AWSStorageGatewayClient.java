@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -346,8 +347,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ActivateGatewayResult> responseHandler = new JsonResponseHandler<ActivateGatewayResult>(
-                    new ActivateGatewayResultJsonUnmarshaller());
+            JsonResponseHandler<ActivateGatewayResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ActivateGatewayResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -404,8 +406,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddCacheResult> responseHandler = new JsonResponseHandler<AddCacheResult>(
-                    new AddCacheResultJsonUnmarshaller());
+            JsonResponseHandler<AddCacheResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new AddCacheResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -486,8 +489,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddTagsToResourceResult> responseHandler = new JsonResponseHandler<AddTagsToResourceResult>(
-                    new AddTagsToResourceResultJsonUnmarshaller());
+            JsonResponseHandler<AddTagsToResourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new AddTagsToResourceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -543,8 +548,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddUploadBufferResult> responseHandler = new JsonResponseHandler<AddUploadBufferResult>(
-                    new AddUploadBufferResultJsonUnmarshaller());
+            JsonResponseHandler<AddUploadBufferResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new AddUploadBufferResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -613,8 +619,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddWorkingStorageResult> responseHandler = new JsonResponseHandler<AddWorkingStorageResult>(
-                    new AddWorkingStorageResultJsonUnmarshaller());
+            JsonResponseHandler<AddWorkingStorageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new AddWorkingStorageResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -665,8 +673,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CancelArchivalResult> responseHandler = new JsonResponseHandler<CancelArchivalResult>(
-                    new CancelArchivalResultJsonUnmarshaller());
+            JsonResponseHandler<CancelArchivalResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CancelArchivalResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -718,8 +727,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CancelRetrievalResult> responseHandler = new JsonResponseHandler<CancelRetrievalResult>(
-                    new CancelRetrievalResultJsonUnmarshaller());
+            JsonResponseHandler<CancelRetrievalResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CancelRetrievalResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -782,8 +792,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateCachediSCSIVolumeResult> responseHandler = new JsonResponseHandler<CreateCachediSCSIVolumeResult>(
-                    new CreateCachediSCSIVolumeResultJsonUnmarshaller());
+            JsonResponseHandler<CreateCachediSCSIVolumeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateCachediSCSIVolumeResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -859,8 +871,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateSnapshotResult> responseHandler = new JsonResponseHandler<CreateSnapshotResult>(
-                    new CreateSnapshotResultJsonUnmarshaller());
+            JsonResponseHandler<CreateSnapshotResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateSnapshotResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -934,8 +947,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateSnapshotFromVolumeRecoveryPointResult> responseHandler = new JsonResponseHandler<CreateSnapshotFromVolumeRecoveryPointResult>(
-                    new CreateSnapshotFromVolumeRecoveryPointResultJsonUnmarshaller());
+            JsonResponseHandler<CreateSnapshotFromVolumeRecoveryPointResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateSnapshotFromVolumeRecoveryPointResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1007,8 +1022,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateStorediSCSIVolumeResult> responseHandler = new JsonResponseHandler<CreateStorediSCSIVolumeResult>(
-                    new CreateStorediSCSIVolumeResultJsonUnmarshaller());
+            JsonResponseHandler<CreateStorediSCSIVolumeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateStorediSCSIVolumeResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1064,8 +1081,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateTapeWithBarcodeResult> responseHandler = new JsonResponseHandler<CreateTapeWithBarcodeResult>(
-                    new CreateTapeWithBarcodeResultJsonUnmarshaller());
+            JsonResponseHandler<CreateTapeWithBarcodeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateTapeWithBarcodeResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1118,8 +1137,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateTapesResult> responseHandler = new JsonResponseHandler<CreateTapesResult>(
-                    new CreateTapesResultJsonUnmarshaller());
+            JsonResponseHandler<CreateTapesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateTapesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1174,8 +1194,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteBandwidthRateLimitResult> responseHandler = new JsonResponseHandler<DeleteBandwidthRateLimitResult>(
-                    new DeleteBandwidthRateLimitResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteBandwidthRateLimitResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteBandwidthRateLimitResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1231,8 +1253,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteChapCredentialsResult> responseHandler = new JsonResponseHandler<DeleteChapCredentialsResult>(
-                    new DeleteChapCredentialsResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteChapCredentialsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteChapCredentialsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1303,8 +1327,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteGatewayResult> responseHandler = new JsonResponseHandler<DeleteGatewayResult>(
-                    new DeleteGatewayResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteGatewayResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteGatewayResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1370,8 +1395,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteSnapshotScheduleResult> responseHandler = new JsonResponseHandler<DeleteSnapshotScheduleResult>(
-                    new DeleteSnapshotScheduleResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteSnapshotScheduleResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteSnapshotScheduleResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1420,8 +1447,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTapeResult> responseHandler = new JsonResponseHandler<DeleteTapeResult>(
-                    new DeleteTapeResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteTapeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteTapeResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1473,8 +1501,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTapeArchiveResult> responseHandler = new JsonResponseHandler<DeleteTapeArchiveResult>(
-                    new DeleteTapeArchiveResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteTapeArchiveResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteTapeArchiveResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1543,8 +1573,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteVolumeResult> responseHandler = new JsonResponseHandler<DeleteVolumeResult>(
-                    new DeleteVolumeResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteVolumeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteVolumeResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1604,8 +1635,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeBandwidthRateLimitResult> responseHandler = new JsonResponseHandler<DescribeBandwidthRateLimitResult>(
-                    new DescribeBandwidthRateLimitResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeBandwidthRateLimitResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeBandwidthRateLimitResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1659,8 +1692,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCacheResult> responseHandler = new JsonResponseHandler<DescribeCacheResult>(
-                    new DescribeCacheResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeCacheResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeCacheResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1718,8 +1752,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCachediSCSIVolumesResult> responseHandler = new JsonResponseHandler<DescribeCachediSCSIVolumesResult>(
-                    new DescribeCachediSCSIVolumesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeCachediSCSIVolumesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeCachediSCSIVolumesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1774,8 +1810,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeChapCredentialsResult> responseHandler = new JsonResponseHandler<DescribeChapCredentialsResult>(
-                    new DescribeChapCredentialsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeChapCredentialsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeChapCredentialsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1830,8 +1868,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeGatewayInformationResult> responseHandler = new JsonResponseHandler<DescribeGatewayInformationResult>(
-                    new DescribeGatewayInformationResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeGatewayInformationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeGatewayInformationResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1885,8 +1925,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeMaintenanceStartTimeResult> responseHandler = new JsonResponseHandler<DescribeMaintenanceStartTimeResult>(
-                    new DescribeMaintenanceStartTimeResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeMaintenanceStartTimeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeMaintenanceStartTimeResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1941,8 +1983,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeSnapshotScheduleResult> responseHandler = new JsonResponseHandler<DescribeSnapshotScheduleResult>(
-                    new DescribeSnapshotScheduleResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeSnapshotScheduleResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeSnapshotScheduleResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1998,8 +2042,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeStorediSCSIVolumesResult> responseHandler = new JsonResponseHandler<DescribeStorediSCSIVolumesResult>(
-                    new DescribeStorediSCSIVolumesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeStorediSCSIVolumesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeStorediSCSIVolumesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2057,8 +2103,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTapeArchivesResult> responseHandler = new JsonResponseHandler<DescribeTapeArchivesResult>(
-                    new DescribeTapeArchivesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeTapeArchivesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeTapeArchivesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2122,8 +2170,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTapeRecoveryPointsResult> responseHandler = new JsonResponseHandler<DescribeTapeRecoveryPointsResult>(
-                    new DescribeTapeRecoveryPointsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeTapeRecoveryPointsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeTapeRecoveryPointsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2175,8 +2225,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTapesResult> responseHandler = new JsonResponseHandler<DescribeTapesResult>(
-                    new DescribeTapesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeTapesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeTapesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2234,8 +2285,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeUploadBufferResult> responseHandler = new JsonResponseHandler<DescribeUploadBufferResult>(
-                    new DescribeUploadBufferResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeUploadBufferResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeUploadBufferResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2292,8 +2345,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeVTLDevicesResult> responseHandler = new JsonResponseHandler<DescribeVTLDevicesResult>(
-                    new DescribeVTLDevicesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeVTLDevicesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeVTLDevicesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2359,8 +2414,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeWorkingStorageResult> responseHandler = new JsonResponseHandler<DescribeWorkingStorageResult>(
-                    new DescribeWorkingStorageResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeWorkingStorageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeWorkingStorageResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2417,8 +2474,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableGatewayResult> responseHandler = new JsonResponseHandler<DisableGatewayResult>(
-                    new DisableGatewayResultJsonUnmarshaller());
+            JsonResponseHandler<DisableGatewayResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DisableGatewayResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2484,8 +2542,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListGatewaysResult> responseHandler = new JsonResponseHandler<ListGatewaysResult>(
-                    new ListGatewaysResultJsonUnmarshaller());
+            JsonResponseHandler<ListGatewaysResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListGatewaysResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2551,8 +2610,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListLocalDisksResult> responseHandler = new JsonResponseHandler<ListLocalDisksResult>(
-                    new ListLocalDisksResultJsonUnmarshaller());
+            JsonResponseHandler<ListLocalDisksResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListLocalDisksResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2604,8 +2664,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsForResourceResult> responseHandler = new JsonResponseHandler<ListTagsForResourceResult>(
-                    new ListTagsForResourceResultJsonUnmarshaller());
+            JsonResponseHandler<ListTagsForResourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListTagsForResourceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2663,8 +2725,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListVolumeInitiatorsResult> responseHandler = new JsonResponseHandler<ListVolumeInitiatorsResult>(
-                    new ListVolumeInitiatorsResultJsonUnmarshaller());
+            JsonResponseHandler<ListVolumeInitiatorsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListVolumeInitiatorsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2723,8 +2787,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListVolumeRecoveryPointsResult> responseHandler = new JsonResponseHandler<ListVolumeRecoveryPointsResult>(
-                    new ListVolumeRecoveryPointsResultJsonUnmarshaller());
+            JsonResponseHandler<ListVolumeRecoveryPointsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListVolumeRecoveryPointsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2787,8 +2853,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListVolumesResult> responseHandler = new JsonResponseHandler<ListVolumesResult>(
-                    new ListVolumesResultJsonUnmarshaller());
+            JsonResponseHandler<ListVolumesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListVolumesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2840,8 +2907,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveTagsFromResourceResult> responseHandler = new JsonResponseHandler<RemoveTagsFromResourceResult>(
-                    new RemoveTagsFromResourceResultJsonUnmarshaller());
+            JsonResponseHandler<RemoveTagsFromResourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RemoveTagsFromResourceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2909,8 +2978,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ResetCacheResult> responseHandler = new JsonResponseHandler<ResetCacheResult>(
-                    new ResetCacheResultJsonUnmarshaller());
+            JsonResponseHandler<ResetCacheResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ResetCacheResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2970,8 +3040,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RetrieveTapeArchiveResult> responseHandler = new JsonResponseHandler<RetrieveTapeArchiveResult>(
-                    new RetrieveTapeArchiveResultJsonUnmarshaller());
+            JsonResponseHandler<RetrieveTapeArchiveResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RetrieveTapeArchiveResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3031,8 +3103,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RetrieveTapeRecoveryPointResult> responseHandler = new JsonResponseHandler<RetrieveTapeRecoveryPointResult>(
-                    new RetrieveTapeRecoveryPointResultJsonUnmarshaller());
+            JsonResponseHandler<RetrieveTapeRecoveryPointResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RetrieveTapeRecoveryPointResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3087,8 +3161,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SetLocalConsolePasswordResult> responseHandler = new JsonResponseHandler<SetLocalConsolePasswordResult>(
-                    new SetLocalConsolePasswordResultJsonUnmarshaller());
+            JsonResponseHandler<SetLocalConsolePasswordResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new SetLocalConsolePasswordResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3163,8 +3239,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ShutdownGatewayResult> responseHandler = new JsonResponseHandler<ShutdownGatewayResult>(
-                    new ShutdownGatewayResultJsonUnmarshaller());
+            JsonResponseHandler<ShutdownGatewayResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ShutdownGatewayResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3226,8 +3303,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartGatewayResult> responseHandler = new JsonResponseHandler<StartGatewayResult>(
-                    new StartGatewayResultJsonUnmarshaller());
+            JsonResponseHandler<StartGatewayResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new StartGatewayResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3297,8 +3375,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateBandwidthRateLimitResult> responseHandler = new JsonResponseHandler<UpdateBandwidthRateLimitResult>(
-                    new UpdateBandwidthRateLimitResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateBandwidthRateLimitResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateBandwidthRateLimitResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3364,8 +3444,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateChapCredentialsResult> responseHandler = new JsonResponseHandler<UpdateChapCredentialsResult>(
-                    new UpdateChapCredentialsResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateChapCredentialsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateChapCredentialsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3421,8 +3503,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateGatewayInformationResult> responseHandler = new JsonResponseHandler<UpdateGatewayInformationResult>(
-                    new UpdateGatewayInformationResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateGatewayInformationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateGatewayInformationResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3487,8 +3571,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateGatewaySoftwareNowResult> responseHandler = new JsonResponseHandler<UpdateGatewaySoftwareNowResult>(
-                    new UpdateGatewaySoftwareNowResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateGatewaySoftwareNowResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateGatewaySoftwareNowResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3546,8 +3632,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateMaintenanceStartTimeResult> responseHandler = new JsonResponseHandler<UpdateMaintenanceStartTimeResult>(
-                    new UpdateMaintenanceStartTimeResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateMaintenanceStartTimeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateMaintenanceStartTimeResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3615,8 +3703,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateSnapshotScheduleResult> responseHandler = new JsonResponseHandler<UpdateSnapshotScheduleResult>(
-                    new UpdateSnapshotScheduleResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateSnapshotScheduleResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateSnapshotScheduleResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3670,8 +3760,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateVTLDeviceTypeResult> responseHandler = new JsonResponseHandler<UpdateVTLDeviceTypeResult>(
-                    new UpdateVTLDeviceTypeResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateVTLDeviceTypeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateVTLDeviceTypeResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3731,8 +3823,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

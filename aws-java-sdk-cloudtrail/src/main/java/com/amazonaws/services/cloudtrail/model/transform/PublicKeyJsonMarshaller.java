@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.cloudtrail.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -42,7 +36,9 @@ public class PublicKeyJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PublicKey publicKey, SdkJsonGenerator jsonGenerator) {
+    public void marshall(PublicKey publicKey,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (publicKey == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

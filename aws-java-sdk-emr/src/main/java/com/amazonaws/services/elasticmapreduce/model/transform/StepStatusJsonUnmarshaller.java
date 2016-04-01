@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,7 +55,7 @@ public class StepStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    stepStatus.setState(StringJsonUnmarshaller.getInstance()
+                    stepStatus.setState(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("StateChangeReason", targetDepth)) {

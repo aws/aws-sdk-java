@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,33 +56,33 @@ public class FindingFilterJsonUnmarshaller implements
                 if (context.testExpression("agentIds", targetDepth)) {
                     context.nextToken();
                     findingFilter.setAgentIds(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroups", targetDepth)) {
                     context.nextToken();
                     findingFilter
                             .setAutoScalingGroups(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("ruleNames", targetDepth)) {
                     context.nextToken();
                     findingFilter.setRuleNames(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("severities", targetDepth)) {
                     context.nextToken();
                     findingFilter.setSeverities(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
                     context.nextToken();
                     findingFilter
                             .setRulesPackageArns(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {

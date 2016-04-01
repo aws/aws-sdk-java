@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class LoadBalancerJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("loadBalancerName", targetDepth)) {
                     context.nextToken();
-                    loadBalancer.setLoadBalancerName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    loadBalancer.setLoadBalancerName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerName", targetDepth)) {
                     context.nextToken();
-                    loadBalancer.setContainerName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    loadBalancer.setContainerName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerPort", targetDepth)) {
                     context.nextToken();
-                    loadBalancer.setContainerPort(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    loadBalancer.setContainerPort(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,15 +62,13 @@ public class GetLogEventsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("nextForwardToken", targetDepth)) {
                     context.nextToken();
-                    getLogEventsResult
-                            .setNextForwardToken(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getLogEventsResult.setNextForwardToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("nextBackwardToken", targetDepth)) {
                     context.nextToken();
-                    getLogEventsResult
-                            .setNextBackwardToken(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getLogEventsResult.setNextBackwardToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

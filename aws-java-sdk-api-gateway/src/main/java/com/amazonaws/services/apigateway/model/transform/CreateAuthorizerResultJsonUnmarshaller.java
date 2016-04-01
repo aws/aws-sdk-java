@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,51 +55,50 @@ public class CreateAuthorizerResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    createAuthorizerResult.setId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createAuthorizerResult.setId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    createAuthorizerResult.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createAuthorizerResult.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    createAuthorizerResult.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createAuthorizerResult.setType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizerUri", targetDepth)) {
                     context.nextToken();
-                    createAuthorizerResult
-                            .setAuthorizerUri(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createAuthorizerResult.setAuthorizerUri(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("authorizerCredentials", targetDepth)) {
                     context.nextToken();
-                    createAuthorizerResult
-                            .setAuthorizerCredentials(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createAuthorizerResult.setAuthorizerCredentials(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identitySource", targetDepth)) {
                     context.nextToken();
-                    createAuthorizerResult
-                            .setIdentitySource(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createAuthorizerResult.setIdentitySource(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identityValidationExpression",
                         targetDepth)) {
                     context.nextToken();
                     createAuthorizerResult
-                            .setIdentityValidationExpression(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setIdentityValidationExpression(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("authorizerResultTtlInSeconds",
                         targetDepth)) {
                     context.nextToken();
                     createAuthorizerResult
-                            .setAuthorizerResultTtlInSeconds(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAuthorizerResultTtlInSeconds(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

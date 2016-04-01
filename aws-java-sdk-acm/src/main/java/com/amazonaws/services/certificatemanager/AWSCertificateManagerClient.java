@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -323,8 +324,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -376,8 +377,10 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCertificateResult> responseHandler = new JsonResponseHandler<DescribeCertificateResult>(
-                    new DescribeCertificateResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeCertificateResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -435,8 +438,9 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetCertificateResult> responseHandler = new JsonResponseHandler<GetCertificateResult>(
-                    new GetCertificateResultJsonUnmarshaller());
+            JsonResponseHandler<GetCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetCertificateResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -486,8 +490,9 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListCertificatesResult> responseHandler = new JsonResponseHandler<ListCertificatesResult>(
-                    new ListCertificatesResultJsonUnmarshaller());
+            JsonResponseHandler<ListCertificatesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListCertificatesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -550,8 +555,10 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RequestCertificateResult> responseHandler = new JsonResponseHandler<RequestCertificateResult>(
-                    new RequestCertificateResultJsonUnmarshaller());
+            JsonResponseHandler<RequestCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RequestCertificateResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -617,8 +624,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -676,8 +683,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

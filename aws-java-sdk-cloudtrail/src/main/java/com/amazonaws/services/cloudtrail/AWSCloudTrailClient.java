@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -459,8 +460,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddTagsResult> responseHandler = new JsonResponseHandler<AddTagsResult>(
-                    new AddTagsResultJsonUnmarshaller());
+            JsonResponseHandler<AddTagsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new AddTagsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -568,8 +570,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateTrailResult> responseHandler = new JsonResponseHandler<CreateTrailResult>(
-                    new CreateTrailResultJsonUnmarshaller());
+            JsonResponseHandler<CreateTrailResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateTrailResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -634,8 +637,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTrailResult> responseHandler = new JsonResponseHandler<DeleteTrailResult>(
-                    new DeleteTrailResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteTrailResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteTrailResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -685,8 +689,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTrailsResult> responseHandler = new JsonResponseHandler<DescribeTrailsResult>(
-                    new DescribeTrailsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeTrailsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeTrailsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -754,8 +759,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetTrailStatusResult> responseHandler = new JsonResponseHandler<GetTrailStatusResult>(
-                    new GetTrailStatusResultJsonUnmarshaller());
+            JsonResponseHandler<GetTrailStatusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetTrailStatusResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -817,8 +823,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPublicKeysResult> responseHandler = new JsonResponseHandler<ListPublicKeysResult>(
-                    new ListPublicKeysResultJsonUnmarshaller());
+            JsonResponseHandler<ListPublicKeysResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListPublicKeysResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -900,8 +907,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsResult> responseHandler = new JsonResponseHandler<ListTagsResult>(
-                    new ListTagsResultJsonUnmarshaller());
+            JsonResponseHandler<ListTagsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListTagsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -970,8 +978,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<LookupEventsResult> responseHandler = new JsonResponseHandler<LookupEventsResult>(
-                    new LookupEventsResultJsonUnmarshaller());
+            JsonResponseHandler<LookupEventsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new LookupEventsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1052,8 +1061,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveTagsResult> responseHandler = new JsonResponseHandler<RemoveTagsResult>(
-                    new RemoveTagsResultJsonUnmarshaller());
+            JsonResponseHandler<RemoveTagsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RemoveTagsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1121,8 +1131,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartLoggingResult> responseHandler = new JsonResponseHandler<StartLoggingResult>(
-                    new StartLoggingResultJsonUnmarshaller());
+            JsonResponseHandler<StartLoggingResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new StartLoggingResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1192,8 +1203,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StopLoggingResult> responseHandler = new JsonResponseHandler<StopLoggingResult>(
-                    new StopLoggingResultJsonUnmarshaller());
+            JsonResponseHandler<StopLoggingResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new StopLoggingResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1307,8 +1319,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateTrailResult> responseHandler = new JsonResponseHandler<UpdateTrailResult>(
-                    new UpdateTrailResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateTrailResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateTrailResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1368,8 +1381,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

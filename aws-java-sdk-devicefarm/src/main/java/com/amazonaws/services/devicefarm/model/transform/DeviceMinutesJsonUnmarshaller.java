@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class DeviceMinutesJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("total", targetDepth)) {
                     context.nextToken();
-                    deviceMinutes.setTotal(DoubleJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    deviceMinutes.setTotal(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("metered", targetDepth)) {
                     context.nextToken();
-                    deviceMinutes.setMetered(DoubleJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deviceMinutes.setMetered(context.getUnmarshaller(
+                            Double.class).unmarshall(context));
                 }
                 if (context.testExpression("unmetered", targetDepth)) {
                     context.nextToken();
-                    deviceMinutes.setUnmetered(DoubleJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deviceMinutes.setUnmetered(context.getUnmarshaller(
+                            Double.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

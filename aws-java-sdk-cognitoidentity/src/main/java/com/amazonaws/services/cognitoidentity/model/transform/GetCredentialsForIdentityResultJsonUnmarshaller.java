@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitoidentity.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class GetCredentialsForIdentityResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityId", targetDepth)) {
                     context.nextToken();
-                    getCredentialsForIdentityResult
-                            .setIdentityId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getCredentialsForIdentityResult.setIdentityId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Credentials", targetDepth)) {
                     context.nextToken();

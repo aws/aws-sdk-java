@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,38 +55,38 @@ public class DynamoDBActionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tableName", targetDepth)) {
                     context.nextToken();
-                    dynamoDBAction.setTableName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dynamoDBAction.setTableName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    dynamoDBAction.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dynamoDBAction.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("hashKeyField", targetDepth)) {
                     context.nextToken();
-                    dynamoDBAction.setHashKeyField(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dynamoDBAction.setHashKeyField(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("hashKeyValue", targetDepth)) {
                     context.nextToken();
-                    dynamoDBAction.setHashKeyValue(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dynamoDBAction.setHashKeyValue(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("rangeKeyField", targetDepth)) {
                     context.nextToken();
-                    dynamoDBAction.setRangeKeyField(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dynamoDBAction.setRangeKeyField(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("rangeKeyValue", targetDepth)) {
                     context.nextToken();
-                    dynamoDBAction.setRangeKeyValue(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dynamoDBAction.setRangeKeyValue(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("payloadField", targetDepth)) {
                     context.nextToken();
-                    dynamoDBAction.setPayloadField(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dynamoDBAction.setPayloadField(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

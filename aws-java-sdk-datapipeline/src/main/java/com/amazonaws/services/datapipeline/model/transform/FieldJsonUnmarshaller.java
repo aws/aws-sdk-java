@@ -18,6 +18,8 @@ package com.amazonaws.services.datapipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class FieldJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("key", targetDepth)) {
                     context.nextToken();
-                    field.setKey(StringJsonUnmarshaller.getInstance()
+                    field.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("stringValue", targetDepth)) {
                     context.nextToken();
-                    field.setStringValue(StringJsonUnmarshaller.getInstance()
+                    field.setStringValue(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("refValue", targetDepth)) {
                     context.nextToken();
-                    field.setRefValue(StringJsonUnmarshaller.getInstance()
+                    field.setRefValue(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

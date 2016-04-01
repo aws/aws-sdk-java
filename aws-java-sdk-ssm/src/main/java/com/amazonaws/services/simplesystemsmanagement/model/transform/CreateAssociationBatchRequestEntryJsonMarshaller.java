@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -44,7 +38,8 @@ public class CreateAssociationBatchRequestEntryJsonMarshaller {
      */
     public void marshall(
             CreateAssociationBatchRequestEntry createAssociationBatchRequestEntry,
-            SdkJsonGenerator jsonGenerator) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (createAssociationBatchRequestEntry == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

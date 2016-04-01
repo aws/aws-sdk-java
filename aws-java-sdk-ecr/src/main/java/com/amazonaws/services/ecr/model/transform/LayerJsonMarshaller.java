@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.ecr.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -42,7 +36,8 @@ public class LayerJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Layer layer, SdkJsonGenerator jsonGenerator) {
+    public void marshall(Layer layer, StructuredJsonGenerator jsonGenerator) {
+
         if (layer == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

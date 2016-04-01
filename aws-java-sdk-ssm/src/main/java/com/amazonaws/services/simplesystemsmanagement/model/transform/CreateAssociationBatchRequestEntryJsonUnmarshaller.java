@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,24 +56,21 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    createAssociationBatchRequestEntry
-                            .setName(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    createAssociationBatchRequestEntry.setName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    createAssociationBatchRequestEntry
-                            .setInstanceId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    createAssociationBatchRequestEntry.setInstanceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     createAssociationBatchRequestEntry
                             .setParameters(new MapUnmarshaller<String, java.util.List<String>>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    new ListUnmarshaller<String>(
-                                            StringJsonUnmarshaller
-                                                    .getInstance()))
+                                    context.getUnmarshaller(String.class),
+                                    new ListUnmarshaller<String>(context
+                                            .getUnmarshaller(String.class)))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

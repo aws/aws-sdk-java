@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,48 +55,49 @@ public class OrderableReplicationInstanceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EngineVersion", targetDepth)) {
                     context.nextToken();
-                    orderableReplicationInstance
-                            .setEngineVersion(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    orderableReplicationInstance.setEngineVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceClass",
                         targetDepth)) {
                     context.nextToken();
                     orderableReplicationInstance
-                            .setReplicationInstanceClass(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setReplicationInstanceClass(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("StorageType", targetDepth)) {
                     context.nextToken();
-                    orderableReplicationInstance
-                            .setStorageType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    orderableReplicationInstance.setStorageType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MinAllocatedStorage", targetDepth)) {
                     context.nextToken();
                     orderableReplicationInstance
-                            .setMinAllocatedStorage(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setMinAllocatedStorage(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxAllocatedStorage", targetDepth)) {
                     context.nextToken();
                     orderableReplicationInstance
-                            .setMaxAllocatedStorage(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setMaxAllocatedStorage(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultAllocatedStorage",
                         targetDepth)) {
                     context.nextToken();
                     orderableReplicationInstance
-                            .setDefaultAllocatedStorage(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setDefaultAllocatedStorage(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("IncludedAllocatedStorage",
                         targetDepth)) {
                     context.nextToken();
                     orderableReplicationInstance
-                            .setIncludedAllocatedStorage(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setIncludedAllocatedStorage(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

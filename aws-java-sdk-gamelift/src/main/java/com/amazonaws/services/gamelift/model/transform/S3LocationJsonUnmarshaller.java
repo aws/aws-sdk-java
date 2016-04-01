@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,17 +55,17 @@ public class S3LocationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Bucket", targetDepth)) {
                     context.nextToken();
-                    s3Location.setBucket(StringJsonUnmarshaller.getInstance()
+                    s3Location.setBucket(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    s3Location.setKey(StringJsonUnmarshaller.getInstance()
+                    s3Location.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();
-                    s3Location.setRoleArn(StringJsonUnmarshaller.getInstance()
+                    s3Location.setRoleArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

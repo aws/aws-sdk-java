@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codedeploy.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -43,7 +37,8 @@ public class InstanceSummaryJsonMarshaller {
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(InstanceSummary instanceSummary,
-            SdkJsonGenerator jsonGenerator) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (instanceSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

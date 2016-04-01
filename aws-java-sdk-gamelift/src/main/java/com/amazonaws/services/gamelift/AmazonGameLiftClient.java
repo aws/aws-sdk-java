@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -454,8 +455,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAliasResult> responseHandler = new JsonResponseHandler<CreateAliasResult>(
-                    new CreateAliasResultJsonUnmarshaller());
+            JsonResponseHandler<CreateAliasResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateAliasResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -532,8 +534,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateBuildResult> responseHandler = new JsonResponseHandler<CreateBuildResult>(
-                    new CreateBuildResultJsonUnmarshaller());
+            JsonResponseHandler<CreateBuildResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateBuildResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -636,8 +639,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateFleetResult> responseHandler = new JsonResponseHandler<CreateFleetResult>(
-                    new CreateFleetResultJsonUnmarshaller());
+            JsonResponseHandler<CreateFleetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateFleetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -727,8 +731,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateGameSessionResult> responseHandler = new JsonResponseHandler<CreateGameSessionResult>(
-                    new CreateGameSessionResultJsonUnmarshaller());
+            JsonResponseHandler<CreateGameSessionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateGameSessionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -810,8 +816,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePlayerSessionResult> responseHandler = new JsonResponseHandler<CreatePlayerSessionResult>(
-                    new CreatePlayerSessionResultJsonUnmarshaller());
+            JsonResponseHandler<CreatePlayerSessionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreatePlayerSessionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -895,8 +903,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePlayerSessionsResult> responseHandler = new JsonResponseHandler<CreatePlayerSessionsResult>(
-                    new CreatePlayerSessionsResultJsonUnmarshaller());
+            JsonResponseHandler<CreatePlayerSessionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreatePlayerSessionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -952,8 +962,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1011,8 +1021,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1077,8 +1087,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1135,8 +1145,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1191,8 +1201,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAliasResult> responseHandler = new JsonResponseHandler<DescribeAliasResult>(
-                    new DescribeAliasResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeAliasResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeAliasResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1249,8 +1260,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeBuildResult> responseHandler = new JsonResponseHandler<DescribeBuildResult>(
-                    new DescribeBuildResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeBuildResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeBuildResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1314,8 +1326,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeEC2InstanceLimitsResult> responseHandler = new JsonResponseHandler<DescribeEC2InstanceLimitsResult>(
-                    new DescribeEC2InstanceLimitsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeEC2InstanceLimitsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeEC2InstanceLimitsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1386,8 +1400,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFleetAttributesResult> responseHandler = new JsonResponseHandler<DescribeFleetAttributesResult>(
-                    new DescribeFleetAttributesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeFleetAttributesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeFleetAttributesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1460,8 +1476,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFleetCapacityResult> responseHandler = new JsonResponseHandler<DescribeFleetCapacityResult>(
-                    new DescribeFleetCapacityResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeFleetCapacityResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeFleetCapacityResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1522,8 +1540,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFleetEventsResult> responseHandler = new JsonResponseHandler<DescribeFleetEventsResult>(
-                    new DescribeFleetEventsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeFleetEventsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeFleetEventsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1585,8 +1605,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFleetPortSettingsResult> responseHandler = new JsonResponseHandler<DescribeFleetPortSettingsResult>(
-                    new DescribeFleetPortSettingsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeFleetPortSettingsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeFleetPortSettingsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1657,8 +1679,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFleetUtilizationResult> responseHandler = new JsonResponseHandler<DescribeFleetUtilizationResult>(
-                    new DescribeFleetUtilizationResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeFleetUtilizationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeFleetUtilizationResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1734,8 +1758,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeGameSessionDetailsResult> responseHandler = new JsonResponseHandler<DescribeGameSessionDetailsResult>(
-                    new DescribeGameSessionDetailsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeGameSessionDetailsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeGameSessionDetailsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1811,8 +1837,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeGameSessionsResult> responseHandler = new JsonResponseHandler<DescribeGameSessionsResult>(
-                    new DescribeGameSessionsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeGameSessionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeGameSessionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1884,8 +1912,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribePlayerSessionsResult> responseHandler = new JsonResponseHandler<DescribePlayerSessionsResult>(
-                    new DescribePlayerSessionsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribePlayerSessionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribePlayerSessionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1950,8 +1980,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeScalingPoliciesResult> responseHandler = new JsonResponseHandler<DescribeScalingPoliciesResult>(
-                    new DescribeScalingPoliciesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeScalingPoliciesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeScalingPoliciesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2019,8 +2051,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetGameSessionLogUrlResult> responseHandler = new JsonResponseHandler<GetGameSessionLogUrlResult>(
-                    new GetGameSessionLogUrlResultJsonUnmarshaller());
+            JsonResponseHandler<GetGameSessionLogUrlResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetGameSessionLogUrlResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2079,8 +2113,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAliasesResult> responseHandler = new JsonResponseHandler<ListAliasesResult>(
-                    new ListAliasesResultJsonUnmarshaller());
+            JsonResponseHandler<ListAliasesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListAliasesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2139,8 +2174,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListBuildsResult> responseHandler = new JsonResponseHandler<ListBuildsResult>(
-                    new ListBuildsResultJsonUnmarshaller());
+            JsonResponseHandler<ListBuildsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListBuildsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2202,8 +2238,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListFleetsResult> responseHandler = new JsonResponseHandler<ListFleetsResult>(
-                    new ListFleetsResultJsonUnmarshaller());
+            JsonResponseHandler<ListFleetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListFleetsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2288,8 +2325,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutScalingPolicyResult> responseHandler = new JsonResponseHandler<PutScalingPolicyResult>(
-                    new PutScalingPolicyResultJsonUnmarshaller());
+            JsonResponseHandler<PutScalingPolicyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutScalingPolicyResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2363,8 +2401,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RequestUploadCredentialsResult> responseHandler = new JsonResponseHandler<RequestUploadCredentialsResult>(
-                    new RequestUploadCredentialsResultJsonUnmarshaller());
+            JsonResponseHandler<RequestUploadCredentialsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RequestUploadCredentialsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2427,8 +2467,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ResolveAliasResult> responseHandler = new JsonResponseHandler<ResolveAliasResult>(
-                    new ResolveAliasResultJsonUnmarshaller());
+            JsonResponseHandler<ResolveAliasResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ResolveAliasResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2486,8 +2527,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateAliasResult> responseHandler = new JsonResponseHandler<UpdateAliasResult>(
-                    new UpdateAliasResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateAliasResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateAliasResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2545,8 +2587,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateBuildResult> responseHandler = new JsonResponseHandler<UpdateBuildResult>(
-                    new UpdateBuildResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateBuildResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateBuildResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2617,8 +2660,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateFleetAttributesResult> responseHandler = new JsonResponseHandler<UpdateFleetAttributesResult>(
-                    new UpdateFleetAttributesResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateFleetAttributesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateFleetAttributesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2708,8 +2753,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateFleetCapacityResult> responseHandler = new JsonResponseHandler<UpdateFleetCapacityResult>(
-                    new UpdateFleetCapacityResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateFleetCapacityResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateFleetCapacityResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2784,8 +2831,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateFleetPortSettingsResult> responseHandler = new JsonResponseHandler<UpdateFleetPortSettingsResult>(
-                    new UpdateFleetPortSettingsResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateFleetPortSettingsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateFleetPortSettingsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2858,8 +2907,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateGameSessionResult> responseHandler = new JsonResponseHandler<UpdateGameSessionResult>(
-                    new UpdateGameSessionResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateGameSessionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateGameSessionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2919,8 +2970,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

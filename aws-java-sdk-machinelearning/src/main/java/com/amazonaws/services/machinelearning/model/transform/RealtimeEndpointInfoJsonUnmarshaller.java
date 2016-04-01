@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,24 +57,23 @@ public class RealtimeEndpointInfoJsonUnmarshaller implements
                         .testExpression("PeakRequestsPerSecond", targetDepth)) {
                     context.nextToken();
                     realtimeEndpointInfo
-                            .setPeakRequestsPerSecond(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setPeakRequestsPerSecond(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    realtimeEndpointInfo.setCreatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    realtimeEndpointInfo.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointUrl", targetDepth)) {
                     context.nextToken();
-                    realtimeEndpointInfo.setEndpointUrl(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    realtimeEndpointInfo.setEndpointUrl(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointStatus", targetDepth)) {
                     context.nextToken();
-                    realtimeEndpointInfo
-                            .setEndpointStatus(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    realtimeEndpointInfo.setEndpointStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

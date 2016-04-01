@@ -18,6 +18,8 @@ package com.amazonaws.services.codecommit.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class GetRepositoryTriggersResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("configurationId", targetDepth)) {
                     context.nextToken();
-                    getRepositoryTriggersResult
-                            .setConfigurationId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getRepositoryTriggersResult.setConfigurationId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("triggers", targetDepth)) {
                     context.nextToken();

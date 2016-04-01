@@ -26,6 +26,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Region metadata provider based on partitions.
@@ -36,7 +37,7 @@ public class PartitionMetadataProvider extends AbstractRegionMetadataProvider {
     private final Map<String, Partition> partitionMap = new HashMap<String,
             Partition>();
 
-    private final Map<String, Region> regionCache = new HashMap<String, Region>();
+    private final Map<String, Region> regionCache = new ConcurrentHashMap<String, Region>();
 
     public PartitionMetadataProvider(List<Partition> partitions) {
         ValidationUtils.assertNotNull(partitions, "partitions");

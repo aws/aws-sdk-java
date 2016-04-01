@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,20 +55,19 @@ public class SupportedEndpointTypeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EngineName", targetDepth)) {
                     context.nextToken();
-                    supportedEndpointType.setEngineName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    supportedEndpointType.setEngineName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportsCDC", targetDepth)) {
                     context.nextToken();
                     supportedEndpointType
-                            .setSupportsCDC(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setSupportsCDC(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointType", targetDepth)) {
                     context.nextToken();
-                    supportedEndpointType
-                            .setEndpointType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    supportedEndpointType.setEndpointType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

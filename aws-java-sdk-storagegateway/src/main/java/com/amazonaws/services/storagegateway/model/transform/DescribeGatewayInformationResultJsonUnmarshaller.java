@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,28 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
-                    describeGatewayInformationResult
-                            .setGatewayARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeGatewayInformationResult.setGatewayARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayId", targetDepth)) {
                     context.nextToken();
-                    describeGatewayInformationResult
-                            .setGatewayId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeGatewayInformationResult.setGatewayId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayName", targetDepth)) {
                     context.nextToken();
-                    describeGatewayInformationResult
-                            .setGatewayName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeGatewayInformationResult.setGatewayName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayTimezone", targetDepth)) {
                     context.nextToken();
-                    describeGatewayInformationResult
-                            .setGatewayTimezone(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeGatewayInformationResult.setGatewayTimezone(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayState", targetDepth)) {
                     context.nextToken();
-                    describeGatewayInformationResult
-                            .setGatewayState(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeGatewayInformationResult.setGatewayState(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayNetworkInterfaces",
                         targetDepth)) {
@@ -91,22 +88,22 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("GatewayType", targetDepth)) {
                     context.nextToken();
-                    describeGatewayInformationResult
-                            .setGatewayType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeGatewayInformationResult.setGatewayType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NextUpdateAvailabilityDate",
                         targetDepth)) {
                     context.nextToken();
                     describeGatewayInformationResult
-                            .setNextUpdateAvailabilityDate(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setNextUpdateAvailabilityDate(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("LastSoftwareUpdate", targetDepth)) {
                     context.nextToken();
                     describeGatewayInformationResult
-                            .setLastSoftwareUpdate(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLastSoftwareUpdate(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

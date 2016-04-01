@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,14 @@ public class BufferingHintsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SizeInMBs", targetDepth)) {
                     context.nextToken();
-                    bufferingHints.setSizeInMBs(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    bufferingHints.setSizeInMBs(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IntervalInSeconds", targetDepth)) {
                     context.nextToken();
-                    bufferingHints.setIntervalInSeconds(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    bufferingHints
+                            .setIntervalInSeconds(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

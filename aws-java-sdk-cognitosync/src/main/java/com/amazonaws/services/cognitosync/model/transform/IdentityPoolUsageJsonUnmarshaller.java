@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitosync.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,24 @@ public class IdentityPoolUsageJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityPoolId", targetDepth)) {
                     context.nextToken();
-                    identityPoolUsage.setIdentityPoolId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    identityPoolUsage.setIdentityPoolId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SyncSessionsCount", targetDepth)) {
                     context.nextToken();
-                    identityPoolUsage.setSyncSessionsCount(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    identityPoolUsage.setSyncSessionsCount(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DataStorage", targetDepth)) {
                     context.nextToken();
-                    identityPoolUsage.setDataStorage(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    identityPoolUsage.setDataStorage(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    identityPoolUsage.setLastModifiedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    identityPoolUsage.setLastModifiedDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

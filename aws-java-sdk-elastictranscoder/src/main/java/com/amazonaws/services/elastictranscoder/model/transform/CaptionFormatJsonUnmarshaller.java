@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class CaptionFormatJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Format", targetDepth)) {
                     context.nextToken();
-                    captionFormat.setFormat(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    captionFormat.setFormat(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Pattern", targetDepth)) {
                     context.nextToken();
-                    captionFormat.setPattern(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    captionFormat.setPattern(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encryption", targetDepth)) {
                     context.nextToken();

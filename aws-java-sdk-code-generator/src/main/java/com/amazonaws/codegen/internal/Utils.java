@@ -110,6 +110,8 @@ public class Utils {
             // configurable like XML based protocols
         case JSON:
         case REST_JSON:
+        case CBOR:
+        case REST_CBOR:
             return null;
         default:
             throw new RuntimeException("Unknown protocol " + protocol);

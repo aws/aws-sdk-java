@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,22 +54,22 @@ public class RadiosJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("wifi", targetDepth)) {
                     context.nextToken();
-                    radios.setWifi(BooleanJsonUnmarshaller.getInstance()
+                    radios.setWifi(context.getUnmarshaller(Boolean.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("bluetooth", targetDepth)) {
                     context.nextToken();
-                    radios.setBluetooth(BooleanJsonUnmarshaller.getInstance()
+                    radios.setBluetooth(context.getUnmarshaller(Boolean.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("nfc", targetDepth)) {
                     context.nextToken();
-                    radios.setNfc(BooleanJsonUnmarshaller.getInstance()
+                    radios.setNfc(context.getUnmarshaller(Boolean.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("gps", targetDepth)) {
                     context.nextToken();
-                    radios.setGps(BooleanJsonUnmarshaller.getInstance()
+                    radios.setGps(context.getUnmarshaller(Boolean.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

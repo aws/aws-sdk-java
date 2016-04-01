@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,27 +55,23 @@ public class DeploymentGroupInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationName", targetDepth)) {
                     context.nextToken();
-                    deploymentGroupInfo
-                            .setApplicationName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentGroupInfo.setApplicationName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentGroupId", targetDepth)) {
                     context.nextToken();
-                    deploymentGroupInfo
-                            .setDeploymentGroupId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentGroupInfo.setDeploymentGroupId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentGroupName", targetDepth)) {
                     context.nextToken();
-                    deploymentGroupInfo
-                            .setDeploymentGroupName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentGroupInfo.setDeploymentGroupName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentConfigName", targetDepth)) {
                     context.nextToken();
-                    deploymentGroupInfo
-                            .setDeploymentConfigName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentGroupInfo.setDeploymentConfigName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ec2TagFilters", targetDepth)) {
                     context.nextToken();
@@ -99,9 +97,8 @@ public class DeploymentGroupInfoJsonUnmarshaller implements
                 }
                 if (context.testExpression("serviceRoleArn", targetDepth)) {
                     context.nextToken();
-                    deploymentGroupInfo
-                            .setServiceRoleArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentGroupInfo.setServiceRoleArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetRevision", targetDepth)) {
                     context.nextToken();

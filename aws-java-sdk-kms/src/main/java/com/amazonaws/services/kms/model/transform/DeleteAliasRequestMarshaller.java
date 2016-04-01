@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.kms.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -64,7 +57,8 @@ public class DeleteAliasRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
+            final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
+                    .createWriter(false, "1.1");
 
             jsonGenerator.writeStartObject();
 
@@ -79,7 +73,7 @@ public class DeleteAliasRequestMarshaller implements
             request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

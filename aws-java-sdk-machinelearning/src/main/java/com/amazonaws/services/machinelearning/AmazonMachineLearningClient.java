@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -330,8 +331,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateBatchPredictionResult> responseHandler = new JsonResponseHandler<CreateBatchPredictionResult>(
-                    new CreateBatchPredictionResultJsonUnmarshaller());
+            JsonResponseHandler<CreateBatchPredictionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateBatchPredictionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -405,8 +408,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDataSourceFromRDSResult> responseHandler = new JsonResponseHandler<CreateDataSourceFromRDSResult>(
-                    new CreateDataSourceFromRDSResultJsonUnmarshaller());
+            JsonResponseHandler<CreateDataSourceFromRDSResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateDataSourceFromRDSResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -501,8 +506,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDataSourceFromRedshiftResult> responseHandler = new JsonResponseHandler<CreateDataSourceFromRedshiftResult>(
-                    new CreateDataSourceFromRedshiftResultJsonUnmarshaller());
+            JsonResponseHandler<CreateDataSourceFromRedshiftResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateDataSourceFromRedshiftResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -597,8 +604,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDataSourceFromS3Result> responseHandler = new JsonResponseHandler<CreateDataSourceFromS3Result>(
-                    new CreateDataSourceFromS3ResultJsonUnmarshaller());
+            JsonResponseHandler<CreateDataSourceFromS3Result> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateDataSourceFromS3ResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -672,8 +681,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateEvaluationResult> responseHandler = new JsonResponseHandler<CreateEvaluationResult>(
-                    new CreateEvaluationResultJsonUnmarshaller());
+            JsonResponseHandler<CreateEvaluationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateEvaluationResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -748,8 +758,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateMLModelResult> responseHandler = new JsonResponseHandler<CreateMLModelResult>(
-                    new CreateMLModelResultJsonUnmarshaller());
+            JsonResponseHandler<CreateMLModelResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateMLModelResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -803,8 +814,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateRealtimeEndpointResult> responseHandler = new JsonResponseHandler<CreateRealtimeEndpointResult>(
-                    new CreateRealtimeEndpointResultJsonUnmarshaller());
+            JsonResponseHandler<CreateRealtimeEndpointResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateRealtimeEndpointResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -865,8 +878,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteBatchPredictionResult> responseHandler = new JsonResponseHandler<DeleteBatchPredictionResult>(
-                    new DeleteBatchPredictionResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteBatchPredictionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteBatchPredictionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -926,8 +941,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteDataSourceResult> responseHandler = new JsonResponseHandler<DeleteDataSourceResult>(
-                    new DeleteDataSourceResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteDataSourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteDataSourceResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -987,8 +1003,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteEvaluationResult> responseHandler = new JsonResponseHandler<DeleteEvaluationResult>(
-                    new DeleteEvaluationResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteEvaluationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteEvaluationResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1047,8 +1064,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteMLModelResult> responseHandler = new JsonResponseHandler<DeleteMLModelResult>(
-                    new DeleteMLModelResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteMLModelResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteMLModelResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1099,8 +1117,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteRealtimeEndpointResult> responseHandler = new JsonResponseHandler<DeleteRealtimeEndpointResult>(
-                    new DeleteRealtimeEndpointResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteRealtimeEndpointResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteRealtimeEndpointResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1150,8 +1170,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeBatchPredictionsResult> responseHandler = new JsonResponseHandler<DescribeBatchPredictionsResult>(
-                    new DescribeBatchPredictionsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeBatchPredictionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeBatchPredictionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1206,8 +1228,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDataSourcesResult> responseHandler = new JsonResponseHandler<DescribeDataSourcesResult>(
-                    new DescribeDataSourcesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeDataSourcesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeDataSourcesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1262,8 +1286,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeEvaluationsResult> responseHandler = new JsonResponseHandler<DescribeEvaluationsResult>(
-                    new DescribeEvaluationsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeEvaluationsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeEvaluationsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1317,8 +1343,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeMLModelsResult> responseHandler = new JsonResponseHandler<DescribeMLModelsResult>(
-                    new DescribeMLModelsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeMLModelsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeMLModelsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1376,8 +1403,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetBatchPredictionResult> responseHandler = new JsonResponseHandler<GetBatchPredictionResult>(
-                    new GetBatchPredictionResultJsonUnmarshaller());
+            JsonResponseHandler<GetBatchPredictionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetBatchPredictionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1433,8 +1462,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDataSourceResult> responseHandler = new JsonResponseHandler<GetDataSourceResult>(
-                    new GetDataSourceResultJsonUnmarshaller());
+            JsonResponseHandler<GetDataSourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDataSourceResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1484,8 +1514,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetEvaluationResult> responseHandler = new JsonResponseHandler<GetEvaluationResult>(
-                    new GetEvaluationResultJsonUnmarshaller());
+            JsonResponseHandler<GetEvaluationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetEvaluationResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1538,8 +1569,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetMLModelResult> responseHandler = new JsonResponseHandler<GetMLModelResult>(
-                    new GetMLModelResultJsonUnmarshaller());
+            JsonResponseHandler<GetMLModelResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetMLModelResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1601,8 +1633,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PredictResult> responseHandler = new JsonResponseHandler<PredictResult>(
-                    new PredictResultJsonUnmarshaller());
+            JsonResponseHandler<PredictResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new PredictResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1658,8 +1691,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateBatchPredictionResult> responseHandler = new JsonResponseHandler<UpdateBatchPredictionResult>(
-                    new UpdateBatchPredictionResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateBatchPredictionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateBatchPredictionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1713,8 +1748,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDataSourceResult> responseHandler = new JsonResponseHandler<UpdateDataSourceResult>(
-                    new UpdateDataSourceResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateDataSourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateDataSourceResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1768,8 +1804,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateEvaluationResult> responseHandler = new JsonResponseHandler<UpdateEvaluationResult>(
-                    new UpdateEvaluationResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateEvaluationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateEvaluationResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1823,8 +1860,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateMLModelResult> responseHandler = new JsonResponseHandler<UpdateMLModelResult>(
-                    new UpdateMLModelResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateMLModelResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateMLModelResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1884,8 +1922,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

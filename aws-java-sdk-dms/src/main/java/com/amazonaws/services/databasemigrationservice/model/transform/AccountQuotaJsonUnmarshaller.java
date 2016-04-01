@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,17 +55,17 @@ public class AccountQuotaJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccountQuotaName", targetDepth)) {
                     context.nextToken();
-                    accountQuota.setAccountQuotaName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    accountQuota.setAccountQuotaName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Used", targetDepth)) {
                     context.nextToken();
-                    accountQuota.setUsed(LongJsonUnmarshaller.getInstance()
+                    accountQuota.setUsed(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Max", targetDepth)) {
                     context.nextToken();
-                    accountQuota.setMax(LongJsonUnmarshaller.getInstance()
+                    accountQuota.setMax(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

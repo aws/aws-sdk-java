@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,58 +55,61 @@ public class MethodSettingJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("metricsEnabled", targetDepth)) {
                     context.nextToken();
-                    methodSetting.setMetricsEnabled(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    methodSetting.setMetricsEnabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("loggingLevel", targetDepth)) {
                     context.nextToken();
-                    methodSetting.setLoggingLevel(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    methodSetting.setLoggingLevel(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataTraceEnabled", targetDepth)) {
                     context.nextToken();
-                    methodSetting.setDataTraceEnabled(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    methodSetting.setDataTraceEnabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("throttlingBurstLimit", targetDepth)) {
                     context.nextToken();
                     methodSetting
-                            .setThrottlingBurstLimit(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setThrottlingBurstLimit(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("throttlingRateLimit", targetDepth)) {
                     context.nextToken();
-                    methodSetting.setThrottlingRateLimit(DoubleJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    methodSetting.setThrottlingRateLimit(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("cachingEnabled", targetDepth)) {
                     context.nextToken();
-                    methodSetting.setCachingEnabled(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    methodSetting.setCachingEnabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheTtlInSeconds", targetDepth)) {
                     context.nextToken();
-                    methodSetting.setCacheTtlInSeconds(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    methodSetting.setCacheTtlInSeconds(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheDataEncrypted", targetDepth)) {
                     context.nextToken();
-                    methodSetting.setCacheDataEncrypted(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    methodSetting
+                            .setCacheDataEncrypted(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression(
                         "requireAuthorizationForCacheControl", targetDepth)) {
                     context.nextToken();
                     methodSetting
-                            .setRequireAuthorizationForCacheControl(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setRequireAuthorizationForCacheControl(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression(
                         "unauthorizedCacheControlHeaderStrategy", targetDepth)) {
                     context.nextToken();
                     methodSetting
-                            .setUnauthorizedCacheControlHeaderStrategy(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setUnauthorizedCacheControlHeaderStrategy(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

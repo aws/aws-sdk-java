@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,67 +55,67 @@ public class DirectoryDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setDirectoryId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setDirectoryId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShortName", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setShortName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setShortName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setSize(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setSize(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Alias", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setAlias(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setAlias(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AccessUrl", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setAccessUrl(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setAccessUrl(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setDescription(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsIpAddrs", targetDepth)) {
                     context.nextToken();
                     directoryDescription
-                            .setDnsIpAddrs(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setDnsIpAddrs(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("Stage", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setStage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setStage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("LaunchTime", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setLaunchTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setLaunchTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("StageLastUpdatedDateTime",
                         targetDepth)) {
                     context.nextToken();
-                    directoryDescription
-                            .setStageLastUpdatedDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    directoryDescription.setStageLastUpdatedDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VpcSettings", targetDepth)) {
                     context.nextToken();
@@ -135,18 +137,18 @@ public class DirectoryDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("RadiusStatus", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setRadiusStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setRadiusStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StageReason", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setStageReason(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setStageReason(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SsoEnabled", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setSsoEnabled(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryDescription.setSsoEnabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

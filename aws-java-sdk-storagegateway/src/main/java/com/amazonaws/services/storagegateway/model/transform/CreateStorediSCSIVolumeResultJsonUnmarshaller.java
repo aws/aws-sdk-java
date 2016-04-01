@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,21 +55,18 @@ public class CreateStorediSCSIVolumeResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
-                    createStorediSCSIVolumeResult
-                            .setVolumeARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    createStorediSCSIVolumeResult.setVolumeARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    createStorediSCSIVolumeResult
-                            .setVolumeSizeInBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createStorediSCSIVolumeResult.setVolumeSizeInBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetARN", targetDepth)) {
                     context.nextToken();
-                    createStorediSCSIVolumeResult
-                            .setTargetARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    createStorediSCSIVolumeResult.setTargetARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

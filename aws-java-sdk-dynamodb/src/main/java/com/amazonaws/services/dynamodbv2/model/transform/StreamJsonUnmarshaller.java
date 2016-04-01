@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class StreamJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamArn", targetDepth)) {
                     context.nextToken();
-                    stream.setStreamArn(StringJsonUnmarshaller.getInstance()
+                    stream.setStreamArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
                     context.nextToken();
-                    stream.setTableName(StringJsonUnmarshaller.getInstance()
+                    stream.setTableName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("StreamLabel", targetDepth)) {
                     context.nextToken();
-                    stream.setStreamLabel(StringJsonUnmarshaller.getInstance()
+                    stream.setStreamLabel(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

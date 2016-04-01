@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class FailedItemDetailsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("failureCode", targetDepth)) {
                     context.nextToken();
-                    failedItemDetails.setFailureCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    failedItemDetails.setFailureCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("retryable", targetDepth)) {
                     context.nextToken();
-                    failedItemDetails.setRetryable(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    failedItemDetails.setRetryable(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

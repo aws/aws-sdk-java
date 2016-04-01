@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class AudioParametersJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Codec", targetDepth)) {
                     context.nextToken();
-                    audioParameters.setCodec(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    audioParameters.setCodec(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SampleRate", targetDepth)) {
                     context.nextToken();
-                    audioParameters.setSampleRate(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    audioParameters.setSampleRate(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("BitRate", targetDepth)) {
                     context.nextToken();
-                    audioParameters.setBitRate(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    audioParameters.setBitRate(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Channels", targetDepth)) {
                     context.nextToken();
-                    audioParameters.setChannels(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    audioParameters.setChannels(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AudioPackingMode", targetDepth)) {
                     context.nextToken();
-                    audioParameters.setAudioPackingMode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    audioParameters.setAudioPackingMode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodecOptions", targetDepth)) {
                     context.nextToken();

@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -39,13 +41,13 @@ public class GetExportResultJsonUnmarshaller implements
         if (context.isStartOfDocument()) {
             if (context.getHeader("Content-Type") != null) {
                 context.setCurrentHeader("Content-Type");
-                getExportResult.setContentType(StringJsonUnmarshaller
-                        .getInstance().unmarshall(context));
+                getExportResult.setContentType(context.getUnmarshaller(
+                        String.class).unmarshall(context));
             }
             if (context.getHeader("Content-Disposition") != null) {
                 context.setCurrentHeader("Content-Disposition");
-                getExportResult.setContentDisposition(StringJsonUnmarshaller
-                        .getInstance().unmarshall(context));
+                getExportResult.setContentDisposition(context.getUnmarshaller(
+                        String.class).unmarshall(context));
             }
         }
 

@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitoidentity.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,13 @@ public class IdentityPoolShortDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityPoolId", targetDepth)) {
                     context.nextToken();
-                    identityPoolShortDescription
-                            .setIdentityPoolId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    identityPoolShortDescription.setIdentityPoolId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityPoolName", targetDepth)) {
                     context.nextToken();
-                    identityPoolShortDescription
-                            .setIdentityPoolName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    identityPoolShortDescription.setIdentityPoolName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

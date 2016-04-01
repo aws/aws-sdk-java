@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,27 +54,27 @@ public class RecordJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventID", targetDepth)) {
                     context.nextToken();
-                    record.setEventID(StringJsonUnmarshaller.getInstance()
+                    record.setEventID(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("eventName", targetDepth)) {
                     context.nextToken();
-                    record.setEventName(StringJsonUnmarshaller.getInstance()
+                    record.setEventName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("eventVersion", targetDepth)) {
                     context.nextToken();
-                    record.setEventVersion(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    record.setEventVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventSource", targetDepth)) {
                     context.nextToken();
-                    record.setEventSource(StringJsonUnmarshaller.getInstance()
+                    record.setEventSource(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("awsRegion", targetDepth)) {
                     context.nextToken();
-                    record.setAwsRegion(StringJsonUnmarshaller.getInstance()
+                    record.setAwsRegion(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("dynamodb", targetDepth)) {

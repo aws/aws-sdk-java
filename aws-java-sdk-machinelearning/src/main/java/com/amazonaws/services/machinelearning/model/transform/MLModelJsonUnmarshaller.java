@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,42 +54,42 @@ public class MLModelJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MLModelId", targetDepth)) {
                     context.nextToken();
-                    mLModel.setMLModelId(StringJsonUnmarshaller.getInstance()
+                    mLModel.setMLModelId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("TrainingDataSourceId", targetDepth)) {
                     context.nextToken();
-                    mLModel.setTrainingDataSourceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mLModel.setTrainingDataSourceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
                     context.nextToken();
-                    mLModel.setCreatedByIamUser(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mLModel.setCreatedByIamUser(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    mLModel.setCreatedAt(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    mLModel.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    mLModel.setLastUpdatedAt(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    mLModel.setLastUpdatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    mLModel.setName(StringJsonUnmarshaller.getInstance()
+                    mLModel.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    mLModel.setStatus(StringJsonUnmarshaller.getInstance()
+                    mLModel.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SizeInBytes", targetDepth)) {
                     context.nextToken();
-                    mLModel.setSizeInBytes(LongJsonUnmarshaller.getInstance()
+                    mLModel.setSizeInBytes(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("EndpointInfo", targetDepth)) {
@@ -98,39 +100,40 @@ public class MLModelJsonUnmarshaller implements
                 if (context.testExpression("TrainingParameters", targetDepth)) {
                     context.nextToken();
                     mLModel.setTrainingParameters(new MapUnmarshaller<String, String>(
-                            StringJsonUnmarshaller.getInstance(),
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class), context
+                                    .getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("InputDataLocationS3", targetDepth)) {
                     context.nextToken();
-                    mLModel.setInputDataLocationS3(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mLModel.setInputDataLocationS3(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Algorithm", targetDepth)) {
                     context.nextToken();
-                    mLModel.setAlgorithm(StringJsonUnmarshaller.getInstance()
+                    mLModel.setAlgorithm(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("MLModelType", targetDepth)) {
                     context.nextToken();
-                    mLModel.setMLModelType(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    mLModel.setMLModelType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScoreThreshold", targetDepth)) {
                     context.nextToken();
-                    mLModel.setScoreThreshold(FloatJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mLModel.setScoreThreshold(context.getUnmarshaller(
+                            Float.class).unmarshall(context));
                 }
                 if (context.testExpression("ScoreThresholdLastUpdatedAt",
                         targetDepth)) {
                     context.nextToken();
-                    mLModel.setScoreThresholdLastUpdatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mLModel.setScoreThresholdLastUpdatedAt(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    mLModel.setMessage(StringJsonUnmarshaller.getInstance()
+                    mLModel.setMessage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

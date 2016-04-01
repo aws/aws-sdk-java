@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,42 +55,40 @@ public class CertificateDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("certificateArn", targetDepth)) {
                     context.nextToken();
-                    certificateDescription
-                            .setCertificateArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    certificateDescription.setCertificateArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateId", targetDepth)) {
                     context.nextToken();
-                    certificateDescription
-                            .setCertificateId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    certificateDescription.setCertificateId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    certificateDescription.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDescription.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificatePem", targetDepth)) {
                     context.nextToken();
-                    certificateDescription
-                            .setCertificatePem(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    certificateDescription.setCertificatePem(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ownedBy", targetDepth)) {
                     context.nextToken();
-                    certificateDescription.setOwnedBy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDescription.setOwnedBy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    certificateDescription.setCreationDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificateDescription.setCreationDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    certificateDescription
-                            .setLastModifiedDate(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    certificateDescription.setLastModifiedDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

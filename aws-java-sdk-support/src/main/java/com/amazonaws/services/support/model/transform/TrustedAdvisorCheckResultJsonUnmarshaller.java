@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,19 +55,18 @@ public class TrustedAdvisorCheckResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("checkId", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckResult.setCheckId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    trustedAdvisorCheckResult.setCheckId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckResult
-                            .setTimestamp(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    trustedAdvisorCheckResult.setTimestamp(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckResult.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    trustedAdvisorCheckResult.setStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourcesSummary", targetDepth)) {
                     context.nextToken();

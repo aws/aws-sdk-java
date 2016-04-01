@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class ComplianceByConfigRuleJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigRuleName", targetDepth)) {
                     context.nextToken();
-                    complianceByConfigRule
-                            .setConfigRuleName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    complianceByConfigRule.setConfigRuleName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Compliance", targetDepth)) {
                     context.nextToken();

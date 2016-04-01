@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,14 @@ public class InstanceInformationFilterJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("key", targetDepth)) {
                     context.nextToken();
-                    instanceInformationFilter.setKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInformationFilter.setKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("valueSet", targetDepth)) {
                     context.nextToken();
                     instanceInformationFilter
-                            .setValueSet(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setValueSet(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,43 +55,43 @@ public class DeploymentJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    deployment.setId(StringJsonUnmarshaller.getInstance()
+                    deployment.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    deployment.setStatus(StringJsonUnmarshaller.getInstance()
+                    deployment.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("taskDefinition", targetDepth)) {
                     context.nextToken();
-                    deployment.setTaskDefinition(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setTaskDefinition(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("desiredCount", targetDepth)) {
                     context.nextToken();
-                    deployment.setDesiredCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setDesiredCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingCount", targetDepth)) {
                     context.nextToken();
-                    deployment.setPendingCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setPendingCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("runningCount", targetDepth)) {
                     context.nextToken();
-                    deployment.setRunningCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setRunningCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    deployment.setCreatedAt(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    deployment.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    deployment.setUpdatedAt(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    deployment.setUpdatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

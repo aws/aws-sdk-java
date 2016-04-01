@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,26 +56,24 @@ public class TrustedAdvisorResourcesSummaryJsonUnmarshaller implements
                 if (context.testExpression("resourcesProcessed", targetDepth)) {
                     context.nextToken();
                     trustedAdvisorResourcesSummary
-                            .setResourcesProcessed(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setResourcesProcessed(context.getUnmarshaller(
+                                    Long.class).unmarshall(context));
                 }
                 if (context.testExpression("resourcesFlagged", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorResourcesSummary
-                            .setResourcesFlagged(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    trustedAdvisorResourcesSummary.setResourcesFlagged(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("resourcesIgnored", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorResourcesSummary
-                            .setResourcesIgnored(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    trustedAdvisorResourcesSummary.setResourcesIgnored(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("resourcesSuppressed", targetDepth)) {
                     context.nextToken();
                     trustedAdvisorResourcesSummary
-                            .setResourcesSuppressed(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setResourcesSuppressed(context.getUnmarshaller(
+                                    Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

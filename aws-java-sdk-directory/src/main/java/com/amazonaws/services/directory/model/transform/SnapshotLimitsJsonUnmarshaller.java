@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,22 +56,24 @@ public class SnapshotLimitsJsonUnmarshaller implements
                 if (context.testExpression("ManualSnapshotsLimit", targetDepth)) {
                     context.nextToken();
                     snapshotLimits
-                            .setManualSnapshotsLimit(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setManualSnapshotsLimit(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ManualSnapshotsCurrentCount",
                         targetDepth)) {
                     context.nextToken();
                     snapshotLimits
-                            .setManualSnapshotsCurrentCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setManualSnapshotsCurrentCount(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("ManualSnapshotsLimitReached",
                         targetDepth)) {
                     context.nextToken();
                     snapshotLimits
-                            .setManualSnapshotsLimitReached(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setManualSnapshotsLimitReached(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.route53domains.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,67 +55,67 @@ public class ContactDetailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FirstName", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setFirstName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    contactDetail.setFirstName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastName", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setLastName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    contactDetail.setLastName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ContactType", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setContactType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    contactDetail.setContactType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrganizationName", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setOrganizationName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    contactDetail.setOrganizationName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AddressLine1", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setAddressLine1(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    contactDetail.setAddressLine1(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AddressLine2", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setAddressLine2(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    contactDetail.setAddressLine2(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("City", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setCity(StringJsonUnmarshaller.getInstance()
+                    contactDetail.setCity(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setState(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    contactDetail.setState(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CountryCode", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setCountryCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    contactDetail.setCountryCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ZipCode", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setZipCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    contactDetail.setZipCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PhoneNumber", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setPhoneNumber(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    contactDetail.setPhoneNumber(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Email", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setEmail(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    contactDetail.setEmail(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Fax", targetDepth)) {
                     context.nextToken();
-                    contactDetail.setFax(StringJsonUnmarshaller.getInstance()
+                    contactDetail.setFax(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ExtraParams", targetDepth)) {

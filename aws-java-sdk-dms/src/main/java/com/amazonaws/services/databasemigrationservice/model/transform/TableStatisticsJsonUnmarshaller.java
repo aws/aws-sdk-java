@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,48 +55,48 @@ public class TableStatisticsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SchemaName", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setSchemaName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableStatistics.setSchemaName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setTableName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableStatistics.setTableName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Inserts", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setInserts(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableStatistics.setInserts(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Deletes", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setDeletes(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableStatistics.setDeletes(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Updates", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setUpdates(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableStatistics.setUpdates(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Ddls", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setDdls(LongJsonUnmarshaller.getInstance()
+                    tableStatistics.setDdls(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("FullLoadRows", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setFullLoadRows(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableStatistics.setFullLoadRows(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setLastUpdateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableStatistics.setLastUpdateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("TableState", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setTableState(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableStatistics.setTableState(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

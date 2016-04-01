@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,15 @@ public class LogConfigurationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logDriver", targetDepth)) {
                     context.nextToken();
-                    logConfiguration.setLogDriver(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    logConfiguration.setLogDriver(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("options", targetDepth)) {
                     context.nextToken();
                     logConfiguration
                             .setOptions(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitosync.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -61,20 +63,19 @@ public class ListIdentityPoolUsageResultJsonUnmarshaller implements
                 if (context.testExpression("MaxResults", targetDepth)) {
                     context.nextToken();
                     listIdentityPoolUsageResult
-                            .setMaxResults(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setMaxResults(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
                     context.nextToken();
                     listIdentityPoolUsageResult
-                            .setCount(IntegerJsonUnmarshaller.getInstance()
+                            .setCount(context.getUnmarshaller(Integer.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    listIdentityPoolUsageResult
-                            .setNextToken(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listIdentityPoolUsageResult.setNextToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

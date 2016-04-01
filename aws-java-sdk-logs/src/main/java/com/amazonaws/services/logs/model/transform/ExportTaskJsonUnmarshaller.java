@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,38 +55,38 @@ public class ExportTaskJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskId", targetDepth)) {
                     context.nextToken();
-                    exportTask.setTaskId(StringJsonUnmarshaller.getInstance()
+                    exportTask.setTaskId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("taskName", targetDepth)) {
                     context.nextToken();
-                    exportTask.setTaskName(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    exportTask.setTaskName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logGroupName", targetDepth)) {
                     context.nextToken();
-                    exportTask.setLogGroupName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    exportTask.setLogGroupName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("from", targetDepth)) {
                     context.nextToken();
-                    exportTask.setFrom(LongJsonUnmarshaller.getInstance()
+                    exportTask.setFrom(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("to", targetDepth)) {
                     context.nextToken();
-                    exportTask.setTo(LongJsonUnmarshaller.getInstance()
+                    exportTask.setTo(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("destination", targetDepth)) {
                     context.nextToken();
-                    exportTask.setDestination(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    exportTask.setDestination(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationPrefix", targetDepth)) {
                     context.nextToken();
-                    exportTask.setDestinationPrefix(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    exportTask.setDestinationPrefix(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

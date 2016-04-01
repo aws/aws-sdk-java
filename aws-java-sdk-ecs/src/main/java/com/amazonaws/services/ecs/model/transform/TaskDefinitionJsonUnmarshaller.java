@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class TaskDefinitionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskDefinitionArn", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setTaskDefinitionArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    taskDefinition.setTaskDefinitionArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerDefinitions", targetDepth)) {
                     context.nextToken();
@@ -65,13 +67,13 @@ public class TaskDefinitionJsonUnmarshaller implements
                 }
                 if (context.testExpression("family", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setFamily(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    taskDefinition.setFamily(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("revision", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setRevision(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    taskDefinition.setRevision(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("volumes", targetDepth)) {
                     context.nextToken();
@@ -81,8 +83,8 @@ public class TaskDefinitionJsonUnmarshaller implements
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    taskDefinition.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("requiresAttributes", targetDepth)) {
                     context.nextToken();

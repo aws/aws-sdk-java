@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -394,8 +395,9 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateFileSystemResult> responseHandler = new JsonResponseHandler<CreateFileSystemResult>(
-                    new CreateFileSystemResultJsonUnmarshaller());
+            JsonResponseHandler<CreateFileSystemResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateFileSystemResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -594,8 +596,10 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateMountTargetResult> responseHandler = new JsonResponseHandler<CreateMountTargetResult>(
-                    new CreateMountTargetResultJsonUnmarshaller());
+            JsonResponseHandler<CreateMountTargetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateMountTargetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -652,8 +656,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -721,8 +725,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -801,8 +805,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -858,8 +862,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -944,8 +948,10 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFileSystemsResult> responseHandler = new JsonResponseHandler<DescribeFileSystemsResult>(
-                    new DescribeFileSystemsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeFileSystemsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeFileSystemsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1017,8 +1023,10 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeMountTargetSecurityGroupsResult> responseHandler = new JsonResponseHandler<DescribeMountTargetSecurityGroupsResult>(
-                    new DescribeMountTargetSecurityGroupsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeMountTargetSecurityGroupsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeMountTargetSecurityGroupsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1083,8 +1091,10 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeMountTargetsResult> responseHandler = new JsonResponseHandler<DescribeMountTargetsResult>(
-                    new DescribeMountTargetsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeMountTargetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeMountTargetsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1141,8 +1151,9 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTagsResult> responseHandler = new JsonResponseHandler<DescribeTagsResult>(
-                    new DescribeTagsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeTagsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeTagsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1219,8 +1230,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1278,8 +1289,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class PutRecordResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ShardId", targetDepth)) {
                     context.nextToken();
-                    putRecordResult.setShardId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    putRecordResult.setShardId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SequenceNumber", targetDepth)) {
                     context.nextToken();
-                    putRecordResult.setSequenceNumber(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    putRecordResult.setSequenceNumber(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

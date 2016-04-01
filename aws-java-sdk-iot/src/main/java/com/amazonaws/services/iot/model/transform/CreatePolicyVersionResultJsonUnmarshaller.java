@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,27 +55,24 @@ public class CreatePolicyVersionResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyArn", targetDepth)) {
                     context.nextToken();
-                    createPolicyVersionResult
-                            .setPolicyArn(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    createPolicyVersionResult.setPolicyArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyDocument", targetDepth)) {
                     context.nextToken();
-                    createPolicyVersionResult
-                            .setPolicyDocument(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createPolicyVersionResult.setPolicyDocument(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyVersionId", targetDepth)) {
                     context.nextToken();
-                    createPolicyVersionResult
-                            .setPolicyVersionId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createPolicyVersionResult.setPolicyVersionId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isDefaultVersion", targetDepth)) {
                     context.nextToken();
                     createPolicyVersionResult
-                            .setIsDefaultVersion(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setIsDefaultVersion(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

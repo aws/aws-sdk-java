@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -299,8 +300,9 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateWorkspacesResult> responseHandler = new JsonResponseHandler<CreateWorkspacesResult>(
-                    new CreateWorkspacesResultJsonUnmarshaller());
+            JsonResponseHandler<CreateWorkspacesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateWorkspacesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -360,8 +362,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeWorkspaceBundlesResult> responseHandler = new JsonResponseHandler<DescribeWorkspaceBundlesResult>(
-                    new DescribeWorkspaceBundlesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeWorkspaceBundlesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeWorkspaceBundlesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -423,8 +427,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeWorkspaceDirectoriesResult> responseHandler = new JsonResponseHandler<DescribeWorkspaceDirectoriesResult>(
-                    new DescribeWorkspaceDirectoriesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeWorkspaceDirectoriesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeWorkspaceDirectoriesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -490,8 +496,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeWorkspacesResult> responseHandler = new JsonResponseHandler<DescribeWorkspacesResult>(
-                    new DescribeWorkspacesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeWorkspacesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeWorkspacesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -551,8 +559,9 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RebootWorkspacesResult> responseHandler = new JsonResponseHandler<RebootWorkspacesResult>(
-                    new RebootWorkspacesResultJsonUnmarshaller());
+            JsonResponseHandler<RebootWorkspacesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RebootWorkspacesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -622,8 +631,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RebuildWorkspacesResult> responseHandler = new JsonResponseHandler<RebuildWorkspacesResult>(
-                    new RebuildWorkspacesResultJsonUnmarshaller());
+            JsonResponseHandler<RebuildWorkspacesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RebuildWorkspacesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -684,8 +695,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TerminateWorkspacesResult> responseHandler = new JsonResponseHandler<TerminateWorkspacesResult>(
-                    new TerminateWorkspacesResultJsonUnmarshaller());
+            JsonResponseHandler<TerminateWorkspacesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new TerminateWorkspacesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -745,8 +758,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

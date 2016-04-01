@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class DocumentDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Sha1", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setSha1(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    documentDescription.setSha1(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    documentDescription.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setCreatedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    documentDescription.setCreatedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    documentDescription.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    documentDescription.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
@@ -87,7 +89,7 @@ public class DocumentDescriptionJsonUnmarshaller implements
                     context.nextToken();
                     documentDescription
                             .setPlatformTypes(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

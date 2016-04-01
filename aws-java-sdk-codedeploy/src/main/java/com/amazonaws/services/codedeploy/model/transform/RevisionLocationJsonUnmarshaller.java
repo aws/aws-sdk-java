@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class RevisionLocationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("revisionType", targetDepth)) {
                     context.nextToken();
-                    revisionLocation.setRevisionType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    revisionLocation.setRevisionType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3Location", targetDepth)) {
                     context.nextToken();

@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class SizeConstraintSetUpdateJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Action", targetDepth)) {
                     context.nextToken();
-                    sizeConstraintSetUpdate.setAction(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sizeConstraintSetUpdate.setAction(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeConstraint", targetDepth)) {
                     context.nextToken();

@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ArtifactDetailsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("minimumCount", targetDepth)) {
                     context.nextToken();
-                    artifactDetails.setMinimumCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    artifactDetails.setMinimumCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maximumCount", targetDepth)) {
                     context.nextToken();
-                    artifactDetails.setMaximumCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    artifactDetails.setMaximumCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.kms.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,15 +62,15 @@ public class ListRetirableGrantsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();
-                    listRetirableGrantsResult
-                            .setNextMarker(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listRetirableGrantsResult.setNextMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Truncated", targetDepth)) {
                     context.nextToken();
                     listRetirableGrantsResult
-                            .setTruncated(BooleanJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                            .setTruncated(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

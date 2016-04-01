@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class GitHubLocationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("repository", targetDepth)) {
                     context.nextToken();
-                    gitHubLocation.setRepository(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    gitHubLocation.setRepository(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("commitId", targetDepth)) {
                     context.nextToken();
-                    gitHubLocation.setCommitId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    gitHubLocation.setCommitId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

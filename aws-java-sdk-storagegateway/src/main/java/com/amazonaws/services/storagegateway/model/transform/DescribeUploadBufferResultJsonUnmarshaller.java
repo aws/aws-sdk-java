@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,30 +55,31 @@ public class DescribeUploadBufferResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
-                    describeUploadBufferResult
-                            .setGatewayARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeUploadBufferResult.setGatewayARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiskIds", targetDepth)) {
                     context.nextToken();
                     describeUploadBufferResult
-                            .setDiskIds(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setDiskIds(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("UploadBufferUsedInBytes",
                         targetDepth)) {
                     context.nextToken();
                     describeUploadBufferResult
-                            .setUploadBufferUsedInBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setUploadBufferUsedInBytes(context
+                                    .getUnmarshaller(Long.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("UploadBufferAllocatedInBytes",
                         targetDepth)) {
                     context.nextToken();
                     describeUploadBufferResult
-                            .setUploadBufferAllocatedInBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setUploadBufferAllocatedInBytes(context
+                                    .getUnmarshaller(Long.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

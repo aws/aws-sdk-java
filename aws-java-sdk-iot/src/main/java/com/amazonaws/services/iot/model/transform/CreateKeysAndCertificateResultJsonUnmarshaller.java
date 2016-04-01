@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,21 +55,18 @@ public class CreateKeysAndCertificateResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("certificateArn", targetDepth)) {
                     context.nextToken();
-                    createKeysAndCertificateResult
-                            .setCertificateArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createKeysAndCertificateResult.setCertificateArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateId", targetDepth)) {
                     context.nextToken();
-                    createKeysAndCertificateResult
-                            .setCertificateId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createKeysAndCertificateResult.setCertificateId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificatePem", targetDepth)) {
                     context.nextToken();
-                    createKeysAndCertificateResult
-                            .setCertificatePem(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createKeysAndCertificateResult.setCertificatePem(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("keyPair", targetDepth)) {
                     context.nextToken();

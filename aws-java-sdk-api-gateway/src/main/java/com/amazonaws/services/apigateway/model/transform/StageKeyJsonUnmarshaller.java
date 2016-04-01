@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,12 +55,12 @@ public class StageKeyJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("restApiId", targetDepth)) {
                     context.nextToken();
-                    stageKey.setRestApiId(StringJsonUnmarshaller.getInstance()
+                    stageKey.setRestApiId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("stageName", targetDepth)) {
                     context.nextToken();
-                    stageKey.setStageName(StringJsonUnmarshaller.getInstance()
+                    stageKey.setStageName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

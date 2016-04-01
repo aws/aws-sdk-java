@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class SubscriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("resourceArn", targetDepth)) {
                     context.nextToken();
-                    subscription.setResourceArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    subscription.setResourceArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("topicArn", targetDepth)) {
                     context.nextToken();
-                    subscription.setTopicArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    subscription.setTopicArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("eventSubscriptions", targetDepth)) {
                     context.nextToken();

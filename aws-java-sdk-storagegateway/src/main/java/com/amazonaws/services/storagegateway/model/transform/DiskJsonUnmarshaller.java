@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,39 +54,39 @@ public class DiskJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DiskId", targetDepth)) {
                     context.nextToken();
-                    disk.setDiskId(StringJsonUnmarshaller.getInstance()
+                    disk.setDiskId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DiskPath", targetDepth)) {
                     context.nextToken();
-                    disk.setDiskPath(StringJsonUnmarshaller.getInstance()
+                    disk.setDiskPath(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DiskNode", targetDepth)) {
                     context.nextToken();
-                    disk.setDiskNode(StringJsonUnmarshaller.getInstance()
+                    disk.setDiskNode(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DiskStatus", targetDepth)) {
                     context.nextToken();
-                    disk.setDiskStatus(StringJsonUnmarshaller.getInstance()
+                    disk.setDiskStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DiskSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    disk.setDiskSizeInBytes(LongJsonUnmarshaller.getInstance()
+                    disk.setDiskSizeInBytes(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DiskAllocationType", targetDepth)) {
                     context.nextToken();
-                    disk.setDiskAllocationType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    disk.setDiskAllocationType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiskAllocationResource",
                         targetDepth)) {
                     context.nextToken();
-                    disk.setDiskAllocationResource(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    disk.setDiskAllocationResource(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

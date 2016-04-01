@@ -54,6 +54,7 @@ final class AddMetadata {
                 .withSyncClient(Utils.getClientName(interfaceName))
                 .withSyncInterface(interfaceName)
                 .withProtocol(Protocol.fromValue(serviceMetadata.getProtocol()))
+                .withJsonVersion(serviceMetadata.getJsonVersion())
                 .withEndpointPrefix(serviceMetadata.getEndpointPrefix())
                 .withSigningName(serviceMetadata.getSigningName());
 

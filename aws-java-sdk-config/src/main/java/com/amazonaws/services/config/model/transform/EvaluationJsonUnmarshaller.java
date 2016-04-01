@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,28 +56,28 @@ public class EvaluationJsonUnmarshaller implements
                 if (context.testExpression("ComplianceResourceType",
                         targetDepth)) {
                     context.nextToken();
-                    evaluation.setComplianceResourceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setComplianceResourceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComplianceResourceId", targetDepth)) {
                     context.nextToken();
-                    evaluation.setComplianceResourceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setComplianceResourceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComplianceType", targetDepth)) {
                     context.nextToken();
-                    evaluation.setComplianceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setComplianceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Annotation", targetDepth)) {
                     context.nextToken();
-                    evaluation.setAnnotation(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setAnnotation(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("OrderingTimestamp", targetDepth)) {
                     context.nextToken();
-                    evaluation.setOrderingTimestamp(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setOrderingTimestamp(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

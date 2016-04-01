@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,32 +55,29 @@ public class TrustedAdvisorCheckDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckDescription.setId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    trustedAdvisorCheckDescription.setId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckDescription
-                            .setName(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    trustedAdvisorCheckDescription.setName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckDescription
-                            .setDescription(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    trustedAdvisorCheckDescription.setDescription(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("category", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckDescription
-                            .setCategory(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    trustedAdvisorCheckDescription.setCategory(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
                     context.nextToken();
                     trustedAdvisorCheckDescription
-                            .setMetadata(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setMetadata(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

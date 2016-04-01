@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitoidentity.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,45 +55,43 @@ public class UpdateIdentityPoolResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityPoolId", targetDepth)) {
                     context.nextToken();
-                    updateIdentityPoolResult
-                            .setIdentityPoolId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateIdentityPoolResult.setIdentityPoolId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityPoolName", targetDepth)) {
                     context.nextToken();
-                    updateIdentityPoolResult
-                            .setIdentityPoolName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateIdentityPoolResult.setIdentityPoolName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowUnauthenticatedIdentities",
                         targetDepth)) {
                     context.nextToken();
                     updateIdentityPoolResult
-                            .setAllowUnauthenticatedIdentities(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAllowUnauthenticatedIdentities(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("SupportedLoginProviders",
                         targetDepth)) {
                     context.nextToken();
                     updateIdentityPoolResult
                             .setSupportedLoginProviders(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context
                         .testExpression("DeveloperProviderName", targetDepth)) {
                     context.nextToken();
-                    updateIdentityPoolResult
-                            .setDeveloperProviderName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateIdentityPoolResult.setDeveloperProviderName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("OpenIdConnectProviderARNs",
                         targetDepth)) {
                     context.nextToken();
                     updateIdentityPoolResult
                             .setOpenIdConnectProviderARNs(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

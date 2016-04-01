@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ConfigurationRecorderJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    configurationRecorder.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationRecorder.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleARN", targetDepth)) {
                     context.nextToken();
-                    configurationRecorder.setRoleARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationRecorder.setRoleARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("recordingGroup", targetDepth)) {
                     context.nextToken();

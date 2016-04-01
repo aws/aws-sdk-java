@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -582,8 +583,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchGetItemResult> responseHandler = new JsonResponseHandler<BatchGetItemResult>(
-                    new BatchGetItemResultJsonUnmarshaller());
+            JsonResponseHandler<BatchGetItemResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchGetItemResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -770,8 +772,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchWriteItemResult> responseHandler = new JsonResponseHandler<BatchWriteItemResult>(
-                    new BatchWriteItemResultJsonUnmarshaller());
+            JsonResponseHandler<BatchWriteItemResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchWriteItemResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -860,8 +863,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateTableResult> responseHandler = new JsonResponseHandler<CreateTableResult>(
-                    new CreateTableResultJsonUnmarshaller());
+            JsonResponseHandler<CreateTableResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateTableResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -950,8 +954,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteItemResult> responseHandler = new JsonResponseHandler<DeleteItemResult>(
-                    new DeleteItemResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteItemResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteItemResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1056,8 +1061,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTableResult> responseHandler = new JsonResponseHandler<DeleteTableResult>(
-                    new DeleteTableResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteTableResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteTableResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1179,8 +1185,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeLimitsResult> responseHandler = new JsonResponseHandler<DescribeLimitsResult>(
-                    new DescribeLimitsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeLimitsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeLimitsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1241,8 +1248,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTableResult> responseHandler = new JsonResponseHandler<DescribeTableResult>(
-                    new DescribeTableResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeTableResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeTableResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1314,8 +1322,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetItemResult> responseHandler = new JsonResponseHandler<GetItemResult>(
-                    new GetItemResultJsonUnmarshaller());
+            JsonResponseHandler<GetItemResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new GetItemResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1375,8 +1384,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTablesResult> responseHandler = new JsonResponseHandler<ListTablesResult>(
-                    new ListTablesResultJsonUnmarshaller());
+            JsonResponseHandler<ListTablesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListTablesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1498,8 +1508,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutItemResult> responseHandler = new JsonResponseHandler<PutItemResult>(
-                    new PutItemResultJsonUnmarshaller());
+            JsonResponseHandler<PutItemResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new PutItemResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1602,8 +1613,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<QueryResult> responseHandler = new JsonResponseHandler<QueryResult>(
-                    new QueryResultJsonUnmarshaller());
+            JsonResponseHandler<QueryResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new QueryResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1684,8 +1696,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ScanResult> responseHandler = new JsonResponseHandler<ScanResult>(
-                    new ScanResultJsonUnmarshaller());
+            JsonResponseHandler<ScanResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new ScanResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1778,8 +1791,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateItemResult> responseHandler = new JsonResponseHandler<UpdateItemResult>(
-                    new UpdateItemResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateItemResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateItemResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1896,8 +1910,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateTableResult> responseHandler = new JsonResponseHandler<UpdateTableResult>(
-                    new UpdateTableResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateTableResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateTableResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1964,8 +1979,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

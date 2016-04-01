@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,33 +54,33 @@ public class ArtworkJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InputKey", targetDepth)) {
                     context.nextToken();
-                    artwork.setInputKey(StringJsonUnmarshaller.getInstance()
+                    artwork.setInputKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("MaxWidth", targetDepth)) {
                     context.nextToken();
-                    artwork.setMaxWidth(StringJsonUnmarshaller.getInstance()
+                    artwork.setMaxWidth(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("MaxHeight", targetDepth)) {
                     context.nextToken();
-                    artwork.setMaxHeight(StringJsonUnmarshaller.getInstance()
+                    artwork.setMaxHeight(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SizingPolicy", targetDepth)) {
                     context.nextToken();
-                    artwork.setSizingPolicy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    artwork.setSizingPolicy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaddingPolicy", targetDepth)) {
                     context.nextToken();
-                    artwork.setPaddingPolicy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    artwork.setPaddingPolicy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AlbumArtFormat", targetDepth)) {
                     context.nextToken();
-                    artwork.setAlbumArtFormat(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    artwork.setAlbumArtFormat(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encryption", targetDepth)) {
                     context.nextToken();

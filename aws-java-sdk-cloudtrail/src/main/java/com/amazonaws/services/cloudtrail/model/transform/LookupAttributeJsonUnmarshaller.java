@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudtrail.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class LookupAttributeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttributeKey", targetDepth)) {
                     context.nextToken();
-                    lookupAttribute.setAttributeKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    lookupAttribute.setAttributeKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeValue", targetDepth)) {
                     context.nextToken();
-                    lookupAttribute.setAttributeValue(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    lookupAttribute.setAttributeValue(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

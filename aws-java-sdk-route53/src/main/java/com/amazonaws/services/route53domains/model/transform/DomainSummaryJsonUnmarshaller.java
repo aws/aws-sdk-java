@@ -18,6 +18,8 @@ package com.amazonaws.services.route53domains.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class DomainSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
                     context.nextToken();
-                    domainSummary.setDomainName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    domainSummary.setDomainName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoRenew", targetDepth)) {
                     context.nextToken();
-                    domainSummary.setAutoRenew(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    domainSummary.setAutoRenew(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TransferLock", targetDepth)) {
                     context.nextToken();
-                    domainSummary.setTransferLock(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    domainSummary.setTransferLock(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Expiry", targetDepth)) {
                     context.nextToken();
-                    domainSummary.setExpiry(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    domainSummary.setExpiry(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

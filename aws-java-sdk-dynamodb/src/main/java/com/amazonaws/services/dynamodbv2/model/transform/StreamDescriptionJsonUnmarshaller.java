@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,35 +55,35 @@ public class StreamDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamArn", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamDescription.setStreamArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamLabel", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamLabel(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamDescription.setStreamLabel(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamStatus", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamDescription.setStreamStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamViewType", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamViewType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamDescription.setStreamViewType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationRequestDateTime",
                         targetDepth)) {
                     context.nextToken();
-                    streamDescription
-                            .setCreationRequestDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    streamDescription.setCreationRequestDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("TableName", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setTableName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamDescription.setTableName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
@@ -98,9 +100,8 @@ public class StreamDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("LastEvaluatedShardId", targetDepth)) {
                     context.nextToken();
-                    streamDescription
-                            .setLastEvaluatedShardId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    streamDescription.setLastEvaluatedShardId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

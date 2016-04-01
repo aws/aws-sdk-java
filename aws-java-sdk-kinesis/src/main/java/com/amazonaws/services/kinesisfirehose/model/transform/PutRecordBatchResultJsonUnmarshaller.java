@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,8 +56,8 @@ public class PutRecordBatchResultJsonUnmarshaller implements
                 if (context.testExpression("FailedPutCount", targetDepth)) {
                     context.nextToken();
                     putRecordBatchResult
-                            .setFailedPutCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setFailedPutCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestResponses", targetDepth)) {
                     context.nextToken();

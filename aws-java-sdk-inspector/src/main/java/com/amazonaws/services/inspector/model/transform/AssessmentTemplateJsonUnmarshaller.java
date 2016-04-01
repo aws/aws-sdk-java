@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,31 +55,30 @@ public class AssessmentTemplateJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    assessmentTemplate.setArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentTemplate.setArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    assessmentTemplate.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentTemplate.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentTargetArn", targetDepth)) {
                     context.nextToken();
-                    assessmentTemplate
-                            .setAssessmentTargetArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    assessmentTemplate.setAssessmentTargetArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("durationInSeconds", targetDepth)) {
                     context.nextToken();
                     assessmentTemplate
-                            .setDurationInSeconds(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setDurationInSeconds(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
                     context.nextToken();
                     assessmentTemplate
                             .setRulesPackageArns(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("userAttributesForFindings",
@@ -90,8 +91,8 @@ public class AssessmentTemplateJsonUnmarshaller implements
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    assessmentTemplate.setCreatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentTemplate.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

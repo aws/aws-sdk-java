@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,13 @@ public class RedshiftDestinationUpdateJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationUpdate.setRoleARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    redshiftDestinationUpdate.setRoleARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterJDBCURL", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationUpdate
-                            .setClusterJDBCURL(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    redshiftDestinationUpdate.setClusterJDBCURL(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyCommand", targetDepth)) {
                     context.nextToken();
@@ -70,15 +71,13 @@ public class RedshiftDestinationUpdateJsonUnmarshaller implements
                 }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationUpdate
-                            .setUsername(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    redshiftDestinationUpdate.setUsername(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationUpdate
-                            .setPassword(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    redshiftDestinationUpdate.setPassword(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Update", targetDepth)) {
                     context.nextToken();

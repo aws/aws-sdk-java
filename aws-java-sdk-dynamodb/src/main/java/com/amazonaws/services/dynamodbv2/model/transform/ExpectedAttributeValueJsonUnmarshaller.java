@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -59,14 +61,13 @@ public class ExpectedAttributeValueJsonUnmarshaller implements
                 }
                 if (context.testExpression("Exists", targetDepth)) {
                     context.nextToken();
-                    expectedAttributeValue.setExists(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    expectedAttributeValue.setExists(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ComparisonOperator", targetDepth)) {
                     context.nextToken();
-                    expectedAttributeValue
-                            .setComparisonOperator(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    expectedAttributeValue.setComparisonOperator(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AttributeValueList", targetDepth)) {
                     context.nextToken();

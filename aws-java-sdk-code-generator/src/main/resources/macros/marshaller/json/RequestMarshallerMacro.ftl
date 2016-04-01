@@ -8,15 +8,8 @@
 
 package ${metadata.packageName}.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -32,6 +25,7 @@ import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
+
 
 
 /**
@@ -59,7 +53,8 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
         request.setResourcePath("");
 
         try {
-          final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
+          final StructuredJsonGenerator jsonGenerator = SdkJsonProtocolFactory
+          .createWriter(${metadata.cborProtocol?c}, "${metadata.jsonVersion}");
 
           jsonGenerator.writeStartObject();
 
@@ -70,7 +65,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
           byte[] content = jsonGenerator.getBytes();
           request.setContent(new ByteArrayInputStream(content));
           request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "${metadata.jsonContentVersion}");
+          request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

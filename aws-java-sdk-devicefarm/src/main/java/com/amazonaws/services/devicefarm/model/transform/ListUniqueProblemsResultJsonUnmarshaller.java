@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,7 +57,7 @@ public class ListUniqueProblemsResultJsonUnmarshaller implements
                     context.nextToken();
                     listUniqueProblemsResult
                             .setUniqueProblems(new MapUnmarshaller<String, java.util.List<UniqueProblem>>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     new ListUnmarshaller<UniqueProblem>(
                                             UniqueProblemJsonUnmarshaller
                                                     .getInstance()))
@@ -63,9 +65,8 @@ public class ListUniqueProblemsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
-                    listUniqueProblemsResult
-                            .setNextToken(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listUniqueProblemsResult.setNextToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

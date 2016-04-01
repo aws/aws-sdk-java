@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,32 +54,32 @@ public class SourceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    source.setType(StringJsonUnmarshaller.getInstance()
+                    source.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
                     context.nextToken();
-                    source.setUrl(StringJsonUnmarshaller.getInstance()
+                    source.setUrl(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
-                    source.setUsername(StringJsonUnmarshaller.getInstance()
+                    source.setUsername(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
                     context.nextToken();
-                    source.setPassword(StringJsonUnmarshaller.getInstance()
+                    source.setPassword(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SshKey", targetDepth)) {
                     context.nextToken();
-                    source.setSshKey(StringJsonUnmarshaller.getInstance()
+                    source.setSshKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Revision", targetDepth)) {
                     context.nextToken();
-                    source.setRevision(StringJsonUnmarshaller.getInstance()
+                    source.setRevision(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class DeploymentOverviewJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Pending", targetDepth)) {
                     context.nextToken();
-                    deploymentOverview.setPending(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentOverview.setPending(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("InProgress", targetDepth)) {
                     context.nextToken();
-                    deploymentOverview.setInProgress(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentOverview.setInProgress(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Succeeded", targetDepth)) {
                     context.nextToken();
-                    deploymentOverview.setSucceeded(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentOverview.setSucceeded(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Failed", targetDepth)) {
                     context.nextToken();
-                    deploymentOverview.setFailed(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentOverview.setFailed(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Skipped", targetDepth)) {
                     context.nextToken();
-                    deploymentOverview.setSkipped(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentOverview.setSkipped(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

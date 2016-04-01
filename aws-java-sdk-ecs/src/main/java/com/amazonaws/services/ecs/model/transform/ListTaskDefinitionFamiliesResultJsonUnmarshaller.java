@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,15 +56,14 @@ public class ListTaskDefinitionFamiliesResultJsonUnmarshaller implements
                 if (context.testExpression("families", targetDepth)) {
                     context.nextToken();
                     listTaskDefinitionFamiliesResult
-                            .setFamilies(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setFamilies(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
-                    listTaskDefinitionFamiliesResult
-                            .setNextToken(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listTaskDefinitionFamiliesResult.setNextToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

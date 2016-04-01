@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -42,7 +36,9 @@ public class EBSOptionsJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(EBSOptions eBSOptions, SdkJsonGenerator jsonGenerator) {
+    public void marshall(EBSOptions eBSOptions,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (eBSOptions == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

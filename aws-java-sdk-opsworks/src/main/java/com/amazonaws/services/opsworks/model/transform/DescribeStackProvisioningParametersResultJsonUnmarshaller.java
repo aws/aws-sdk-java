@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,15 +57,15 @@ public class DescribeStackProvisioningParametersResultJsonUnmarshaller
                 if (context.testExpression("AgentInstallerUrl", targetDepth)) {
                     context.nextToken();
                     describeStackProvisioningParametersResult
-                            .setAgentInstallerUrl(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAgentInstallerUrl(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     describeStackProvisioningParametersResult
                             .setParameters(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

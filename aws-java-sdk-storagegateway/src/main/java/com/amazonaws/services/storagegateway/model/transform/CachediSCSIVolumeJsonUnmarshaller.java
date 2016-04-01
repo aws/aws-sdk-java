@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,39 +55,38 @@ public class CachediSCSIVolumeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
-                    cachediSCSIVolume.setVolumeARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cachediSCSIVolume.setVolumeARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeId", targetDepth)) {
                     context.nextToken();
-                    cachediSCSIVolume.setVolumeId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cachediSCSIVolume.setVolumeId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
                     context.nextToken();
-                    cachediSCSIVolume.setVolumeType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cachediSCSIVolume.setVolumeType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeStatus", targetDepth)) {
                     context.nextToken();
-                    cachediSCSIVolume.setVolumeStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cachediSCSIVolume.setVolumeStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    cachediSCSIVolume.setVolumeSizeInBytes(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cachediSCSIVolume.setVolumeSizeInBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeProgress", targetDepth)) {
                     context.nextToken();
-                    cachediSCSIVolume.setVolumeProgress(DoubleJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cachediSCSIVolume.setVolumeProgress(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceSnapshotId", targetDepth)) {
                     context.nextToken();
-                    cachediSCSIVolume
-                            .setSourceSnapshotId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    cachediSCSIVolume.setSourceSnapshotId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("VolumeiSCSIAttributes", targetDepth)) {

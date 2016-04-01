@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codepipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -43,7 +37,8 @@ public class ActionTypeSettingsJsonMarshaller {
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ActionTypeSettings actionTypeSettings,
-            SdkJsonGenerator jsonGenerator) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (actionTypeSettings == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

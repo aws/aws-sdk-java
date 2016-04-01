@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -607,8 +608,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -667,8 +668,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchGetApplicationRevisionsResult> responseHandler = new JsonResponseHandler<BatchGetApplicationRevisionsResult>(
-                    new BatchGetApplicationRevisionsResultJsonUnmarshaller());
+            JsonResponseHandler<BatchGetApplicationRevisionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchGetApplicationRevisionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -724,8 +727,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchGetApplicationsResult> responseHandler = new JsonResponseHandler<BatchGetApplicationsResult>(
-                    new BatchGetApplicationsResultJsonUnmarshaller());
+            JsonResponseHandler<BatchGetApplicationsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchGetApplicationsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -790,8 +795,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchGetDeploymentGroupsResult> responseHandler = new JsonResponseHandler<BatchGetDeploymentGroupsResult>(
-                    new BatchGetDeploymentGroupsResultJsonUnmarshaller());
+            JsonResponseHandler<BatchGetDeploymentGroupsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchGetDeploymentGroupsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -854,8 +861,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchGetDeploymentInstancesResult> responseHandler = new JsonResponseHandler<BatchGetDeploymentInstancesResult>(
-                    new BatchGetDeploymentInstancesResultJsonUnmarshaller());
+            JsonResponseHandler<BatchGetDeploymentInstancesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchGetDeploymentInstancesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -908,8 +917,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchGetDeploymentsResult> responseHandler = new JsonResponseHandler<BatchGetDeploymentsResult>(
-                    new BatchGetDeploymentsResultJsonUnmarshaller());
+            JsonResponseHandler<BatchGetDeploymentsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchGetDeploymentsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -968,8 +979,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchGetOnPremisesInstancesResult> responseHandler = new JsonResponseHandler<BatchGetOnPremisesInstancesResult>(
-                    new BatchGetOnPremisesInstancesResultJsonUnmarshaller());
+            JsonResponseHandler<BatchGetOnPremisesInstancesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchGetOnPremisesInstancesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1029,8 +1042,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateApplicationResult> responseHandler = new JsonResponseHandler<CreateApplicationResult>(
-                    new CreateApplicationResultJsonUnmarshaller());
+            JsonResponseHandler<CreateApplicationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateApplicationResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1103,8 +1118,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDeploymentResult> responseHandler = new JsonResponseHandler<CreateDeploymentResult>(
-                    new CreateDeploymentResultJsonUnmarshaller());
+            JsonResponseHandler<CreateDeploymentResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateDeploymentResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1163,8 +1179,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDeploymentConfigResult> responseHandler = new JsonResponseHandler<CreateDeploymentConfigResult>(
-                    new CreateDeploymentConfigResultJsonUnmarshaller());
+            JsonResponseHandler<CreateDeploymentConfigResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateDeploymentConfigResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1252,8 +1270,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDeploymentGroupResult> responseHandler = new JsonResponseHandler<CreateDeploymentGroupResult>(
-                    new CreateDeploymentGroupResultJsonUnmarshaller());
+            JsonResponseHandler<CreateDeploymentGroupResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateDeploymentGroupResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1301,8 +1321,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1355,8 +1375,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1412,8 +1432,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteDeploymentGroupResult> responseHandler = new JsonResponseHandler<DeleteDeploymentGroupResult>(
-                    new DeleteDeploymentGroupResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteDeploymentGroupResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteDeploymentGroupResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1462,8 +1484,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1512,8 +1534,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetApplicationResult> responseHandler = new JsonResponseHandler<GetApplicationResult>(
-                    new GetApplicationResultJsonUnmarshaller());
+            JsonResponseHandler<GetApplicationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetApplicationResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1573,8 +1596,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetApplicationRevisionResult> responseHandler = new JsonResponseHandler<GetApplicationRevisionResult>(
-                    new GetApplicationRevisionResultJsonUnmarshaller());
+            JsonResponseHandler<GetApplicationRevisionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetApplicationRevisionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1625,8 +1650,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDeploymentResult> responseHandler = new JsonResponseHandler<GetDeploymentResult>(
-                    new GetDeploymentResultJsonUnmarshaller());
+            JsonResponseHandler<GetDeploymentResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDeploymentResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1679,8 +1705,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDeploymentConfigResult> responseHandler = new JsonResponseHandler<GetDeploymentConfigResult>(
-                    new GetDeploymentConfigResultJsonUnmarshaller());
+            JsonResponseHandler<GetDeploymentConfigResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDeploymentConfigResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1740,8 +1768,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDeploymentGroupResult> responseHandler = new JsonResponseHandler<GetDeploymentGroupResult>(
-                    new GetDeploymentGroupResultJsonUnmarshaller());
+            JsonResponseHandler<GetDeploymentGroupResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDeploymentGroupResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1801,8 +1831,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDeploymentInstanceResult> responseHandler = new JsonResponseHandler<GetDeploymentInstanceResult>(
-                    new GetDeploymentInstanceResultJsonUnmarshaller());
+            JsonResponseHandler<GetDeploymentInstanceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDeploymentInstanceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1854,8 +1886,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetOnPremisesInstanceResult> responseHandler = new JsonResponseHandler<GetOnPremisesInstanceResult>(
-                    new GetOnPremisesInstanceResultJsonUnmarshaller());
+            JsonResponseHandler<GetOnPremisesInstanceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetOnPremisesInstanceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1925,8 +1959,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListApplicationRevisionsResult> responseHandler = new JsonResponseHandler<ListApplicationRevisionsResult>(
-                    new ListApplicationRevisionsResultJsonUnmarshaller());
+            JsonResponseHandler<ListApplicationRevisionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListApplicationRevisionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1973,8 +2009,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListApplicationsResult> responseHandler = new JsonResponseHandler<ListApplicationsResult>(
-                    new ListApplicationsResultJsonUnmarshaller());
+            JsonResponseHandler<ListApplicationsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListApplicationsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2028,8 +2065,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDeploymentConfigsResult> responseHandler = new JsonResponseHandler<ListDeploymentConfigsResult>(
-                    new ListDeploymentConfigsResultJsonUnmarshaller());
+            JsonResponseHandler<ListDeploymentConfigsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListDeploymentConfigsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2090,8 +2129,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDeploymentGroupsResult> responseHandler = new JsonResponseHandler<ListDeploymentGroupsResult>(
-                    new ListDeploymentGroupsResultJsonUnmarshaller());
+            JsonResponseHandler<ListDeploymentGroupsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListDeploymentGroupsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2151,8 +2192,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDeploymentInstancesResult> responseHandler = new JsonResponseHandler<ListDeploymentInstancesResult>(
-                    new ListDeploymentInstancesResultJsonUnmarshaller());
+            JsonResponseHandler<ListDeploymentInstancesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListDeploymentInstancesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2218,8 +2261,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDeploymentsResult> responseHandler = new JsonResponseHandler<ListDeploymentsResult>(
-                    new ListDeploymentsResultJsonUnmarshaller());
+            JsonResponseHandler<ListDeploymentsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListDeploymentsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2280,8 +2324,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListOnPremisesInstancesResult> responseHandler = new JsonResponseHandler<ListOnPremisesInstancesResult>(
-                    new ListOnPremisesInstancesResultJsonUnmarshaller());
+            JsonResponseHandler<ListOnPremisesInstancesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListOnPremisesInstancesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2343,8 +2389,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2400,8 +2446,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2456,8 +2502,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2508,8 +2554,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StopDeploymentResult> responseHandler = new JsonResponseHandler<StopDeploymentResult>(
-                    new StopDeploymentResultJsonUnmarshaller());
+            JsonResponseHandler<StopDeploymentResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new StopDeploymentResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2563,8 +2610,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2653,8 +2700,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDeploymentGroupResult> responseHandler = new JsonResponseHandler<UpdateDeploymentGroupResult>(
-                    new UpdateDeploymentGroupResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateDeploymentGroupResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateDeploymentGroupResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2714,8 +2763,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

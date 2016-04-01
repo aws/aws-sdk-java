@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,24 +55,23 @@ public class CreatePolicyResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("policyName", targetDepth)) {
                     context.nextToken();
-                    createPolicyResult.setPolicyName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createPolicyResult.setPolicyName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyArn", targetDepth)) {
                     context.nextToken();
-                    createPolicyResult.setPolicyArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createPolicyResult.setPolicyArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyDocument", targetDepth)) {
                     context.nextToken();
-                    createPolicyResult.setPolicyDocument(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createPolicyResult.setPolicyDocument(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyVersionId", targetDepth)) {
                     context.nextToken();
-                    createPolicyResult
-                            .setPolicyVersionId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createPolicyResult.setPolicyVersionId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

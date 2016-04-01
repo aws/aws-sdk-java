@@ -18,6 +18,8 @@ package com.amazonaws.services.ecr.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,25 +55,23 @@ public class UploadLayerPartResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("registryId", targetDepth)) {
                     context.nextToken();
-                    uploadLayerPartResult.setRegistryId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    uploadLayerPartResult.setRegistryId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
                     context.nextToken();
-                    uploadLayerPartResult
-                            .setRepositoryName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    uploadLayerPartResult.setRepositoryName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("uploadId", targetDepth)) {
                     context.nextToken();
-                    uploadLayerPartResult.setUploadId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    uploadLayerPartResult.setUploadId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastByteReceived", targetDepth)) {
                     context.nextToken();
-                    uploadLayerPartResult
-                            .setLastByteReceived(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    uploadLayerPartResult.setLastByteReceived(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.directconnect.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,53 +55,48 @@ public class DeleteConnectionResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ownerAccount", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult
-                            .setOwnerAccount(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deleteConnectionResult.setOwnerAccount(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionId", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult
-                            .setConnectionId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deleteConnectionResult.setConnectionId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionName", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult
-                            .setConnectionName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deleteConnectionResult.setConnectionName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionState", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult
-                            .setConnectionState(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deleteConnectionResult.setConnectionState(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult.setRegion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deleteConnectionResult.setRegion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult.setLocation(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deleteConnectionResult.setLocation(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("bandwidth", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult.setBandwidth(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deleteConnectionResult.setBandwidth(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vlan", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult.setVlan(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deleteConnectionResult.setVlan(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("partnerName", targetDepth)) {
                     context.nextToken();
-                    deleteConnectionResult
-                            .setPartnerName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deleteConnectionResult.setPartnerName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

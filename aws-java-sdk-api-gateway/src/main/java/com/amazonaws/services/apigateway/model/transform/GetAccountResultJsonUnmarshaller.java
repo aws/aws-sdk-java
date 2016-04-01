@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class GetAccountResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cloudwatchRoleArn", targetDepth)) {
                     context.nextToken();
-                    getAccountResult
-                            .setCloudwatchRoleArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getAccountResult.setCloudwatchRoleArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("throttleSettings", targetDepth)) {
                     context.nextToken();

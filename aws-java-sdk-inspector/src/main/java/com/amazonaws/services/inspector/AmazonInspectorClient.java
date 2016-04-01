@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -321,8 +322,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddAttributesToFindingsResult> responseHandler = new JsonResponseHandler<AddAttributesToFindingsResult>(
-                    new AddAttributesToFindingsResultJsonUnmarshaller());
+            JsonResponseHandler<AddAttributesToFindingsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new AddAttributesToFindingsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -386,8 +389,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAssessmentTargetResult> responseHandler = new JsonResponseHandler<CreateAssessmentTargetResult>(
-                    new CreateAssessmentTargetResultJsonUnmarshaller());
+            JsonResponseHandler<CreateAssessmentTargetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateAssessmentTargetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -447,8 +452,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAssessmentTemplateResult> responseHandler = new JsonResponseHandler<CreateAssessmentTemplateResult>(
-                    new CreateAssessmentTemplateResultJsonUnmarshaller());
+            JsonResponseHandler<CreateAssessmentTemplateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateAssessmentTemplateResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -507,8 +514,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateResourceGroupResult> responseHandler = new JsonResponseHandler<CreateResourceGroupResult>(
-                    new CreateResourceGroupResultJsonUnmarshaller());
+            JsonResponseHandler<CreateResourceGroupResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateResourceGroupResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -564,8 +573,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -619,8 +628,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -674,8 +683,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -722,8 +731,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAssessmentRunsResult> responseHandler = new JsonResponseHandler<DescribeAssessmentRunsResult>(
-                    new DescribeAssessmentRunsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeAssessmentRunsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeAssessmentRunsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -773,8 +784,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAssessmentTargetsResult> responseHandler = new JsonResponseHandler<DescribeAssessmentTargetsResult>(
-                    new DescribeAssessmentTargetsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeAssessmentTargetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeAssessmentTargetsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -824,8 +837,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAssessmentTemplatesResult> responseHandler = new JsonResponseHandler<DescribeAssessmentTemplatesResult>(
-                    new DescribeAssessmentTemplatesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeAssessmentTemplatesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeAssessmentTemplatesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -871,8 +886,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCrossAccountAccessRoleResult> responseHandler = new JsonResponseHandler<DescribeCrossAccountAccessRoleResult>(
-                    new DescribeCrossAccountAccessRoleResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeCrossAccountAccessRoleResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeCrossAccountAccessRoleResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -920,8 +937,9 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFindingsResult> responseHandler = new JsonResponseHandler<DescribeFindingsResult>(
-                    new DescribeFindingsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeFindingsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeFindingsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -970,8 +988,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeResourceGroupsResult> responseHandler = new JsonResponseHandler<DescribeResourceGroupsResult>(
-                    new DescribeResourceGroupsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeResourceGroupsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeResourceGroupsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1020,8 +1040,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeRulesPackagesResult> responseHandler = new JsonResponseHandler<DescribeRulesPackagesResult>(
-                    new DescribeRulesPackagesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeRulesPackagesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeRulesPackagesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1076,8 +1098,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetTelemetryMetadataResult> responseHandler = new JsonResponseHandler<GetTelemetryMetadataResult>(
-                    new GetTelemetryMetadataResultJsonUnmarshaller());
+            JsonResponseHandler<GetTelemetryMetadataResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetTelemetryMetadataResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1133,8 +1157,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAssessmentRunAgentsResult> responseHandler = new JsonResponseHandler<ListAssessmentRunAgentsResult>(
-                    new ListAssessmentRunAgentsResultJsonUnmarshaller());
+            JsonResponseHandler<ListAssessmentRunAgentsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListAssessmentRunAgentsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1190,8 +1216,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAssessmentRunsResult> responseHandler = new JsonResponseHandler<ListAssessmentRunsResult>(
-                    new ListAssessmentRunsResultJsonUnmarshaller());
+            JsonResponseHandler<ListAssessmentRunsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListAssessmentRunsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1246,8 +1274,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAssessmentTargetsResult> responseHandler = new JsonResponseHandler<ListAssessmentTargetsResult>(
-                    new ListAssessmentTargetsResultJsonUnmarshaller());
+            JsonResponseHandler<ListAssessmentTargetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListAssessmentTargetsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1303,8 +1333,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAssessmentTemplatesResult> responseHandler = new JsonResponseHandler<ListAssessmentTemplatesResult>(
-                    new ListAssessmentTemplatesResultJsonUnmarshaller());
+            JsonResponseHandler<ListAssessmentTemplatesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListAssessmentTemplatesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1361,8 +1393,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListEventSubscriptionsResult> responseHandler = new JsonResponseHandler<ListEventSubscriptionsResult>(
-                    new ListEventSubscriptionsResultJsonUnmarshaller());
+            JsonResponseHandler<ListEventSubscriptionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListEventSubscriptionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1416,8 +1450,9 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListFindingsResult> responseHandler = new JsonResponseHandler<ListFindingsResult>(
-                    new ListFindingsResultJsonUnmarshaller());
+            JsonResponseHandler<ListFindingsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListFindingsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1469,8 +1504,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRulesPackagesResult> responseHandler = new JsonResponseHandler<ListRulesPackagesResult>(
-                    new ListRulesPackagesResultJsonUnmarshaller());
+            JsonResponseHandler<ListRulesPackagesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListRulesPackagesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1525,8 +1562,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsForResourceResult> responseHandler = new JsonResponseHandler<ListTagsForResourceResult>(
-                    new ListTagsForResourceResultJsonUnmarshaller());
+            JsonResponseHandler<ListTagsForResourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListTagsForResourceResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1583,8 +1622,9 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PreviewAgentsResult> responseHandler = new JsonResponseHandler<PreviewAgentsResult>(
-                    new PreviewAgentsResultJsonUnmarshaller());
+            JsonResponseHandler<PreviewAgentsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PreviewAgentsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1639,8 +1679,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1695,8 +1735,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveAttributesFromFindingsResult> responseHandler = new JsonResponseHandler<RemoveAttributesFromFindingsResult>(
-                    new RemoveAttributesFromFindingsResultJsonUnmarshaller());
+            JsonResponseHandler<RemoveAttributesFromFindingsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RemoveAttributesFromFindingsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1750,8 +1792,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1816,8 +1858,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartAssessmentRunResult> responseHandler = new JsonResponseHandler<StartAssessmentRunResult>(
-                    new StartAssessmentRunResultJsonUnmarshaller());
+            JsonResponseHandler<StartAssessmentRunResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new StartAssessmentRunResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1870,8 +1914,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1926,8 +1970,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1979,8 +2023,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2031,8 +2075,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2090,8 +2134,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

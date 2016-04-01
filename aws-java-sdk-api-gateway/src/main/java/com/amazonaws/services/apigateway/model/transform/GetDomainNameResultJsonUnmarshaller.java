@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,26 @@ public class GetDomainNameResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("domainName", targetDepth)) {
                     context.nextToken();
-                    getDomainNameResult.setDomainName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDomainNameResult.setDomainName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateName", targetDepth)) {
                     context.nextToken();
-                    getDomainNameResult
-                            .setCertificateName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDomainNameResult.setCertificateName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("certificateUploadDate", targetDepth)) {
                     context.nextToken();
-                    getDomainNameResult
-                            .setCertificateUploadDate(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDomainNameResult.setCertificateUploadDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("distributionDomainName",
                         targetDepth)) {
                     context.nextToken();
-                    getDomainNameResult
-                            .setDistributionDomainName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDomainNameResult.setDistributionDomainName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

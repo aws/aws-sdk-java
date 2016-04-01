@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ActivatedRuleJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Priority", targetDepth)) {
                     context.nextToken();
-                    activatedRule.setPriority(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    activatedRule.setPriority(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RuleId", targetDepth)) {
                     context.nextToken();
-                    activatedRule.setRuleId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    activatedRule.setRuleId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
                     context.nextToken();

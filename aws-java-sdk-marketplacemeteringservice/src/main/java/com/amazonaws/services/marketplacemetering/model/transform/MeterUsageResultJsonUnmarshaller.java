@@ -18,6 +18,8 @@ package com.amazonaws.services.marketplacemetering.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.marketplacemetering.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class MeterUsageResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MeteringRecordId", targetDepth)) {
                     context.nextToken();
-                    meterUsageResult.setMeteringRecordId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    meterUsageResult.setMeteringRecordId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

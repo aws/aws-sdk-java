@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,50 +55,49 @@ public class ScalingPolicyJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FleetId", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy.setFleetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scalingPolicy.setFleetId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy.setName(StringJsonUnmarshaller.getInstance()
+                    scalingPolicy.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scalingPolicy.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScalingAdjustment", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy.setScalingAdjustment(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scalingPolicy.setScalingAdjustment(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("ScalingAdjustmentType", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy
-                            .setScalingAdjustmentType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scalingPolicy.setScalingAdjustmentType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComparisonOperator", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy.setComparisonOperator(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scalingPolicy.setComparisonOperator(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Threshold", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy.setThreshold(DoubleJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scalingPolicy.setThreshold(context.getUnmarshaller(
+                            Double.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationPeriods", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy.setEvaluationPeriods(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scalingPolicy.setEvaluationPeriods(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MetricName", targetDepth)) {
                     context.nextToken();
-                    scalingPolicy.setMetricName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scalingPolicy.setMetricName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

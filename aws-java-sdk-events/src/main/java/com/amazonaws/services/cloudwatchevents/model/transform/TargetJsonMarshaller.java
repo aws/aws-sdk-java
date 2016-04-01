@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.cloudwatchevents.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -42,7 +36,8 @@ public class TargetJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Target target, SdkJsonGenerator jsonGenerator) {
+    public void marshall(Target target, StructuredJsonGenerator jsonGenerator) {
+
         if (target == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

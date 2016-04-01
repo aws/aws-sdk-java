@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -58,8 +60,8 @@ public class XssMatchTupleJsonUnmarshaller implements
                 }
                 if (context.testExpression("TextTransformation", targetDepth)) {
                     context.nextToken();
-                    xssMatchTuple.setTextTransformation(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    xssMatchTuple.setTextTransformation(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

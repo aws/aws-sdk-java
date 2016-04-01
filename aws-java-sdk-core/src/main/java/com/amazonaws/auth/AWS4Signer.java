@@ -470,11 +470,8 @@ public class AWS4Signer extends AbstractAWSSigner implements
         return buffer.toString();
     }
 
-    /**
-     * Hook to allow subclasses to skip headers during signing.
-     */
     protected boolean shouldExcludeHeaderFromSigning(String header) {
-        return (listOfHeadersToIgnoreInLowerCase.contains(header.toLowerCase()));
+        return listOfHeadersToIgnoreInLowerCase.contains(header.toLowerCase());
     }
 
     protected void addHostHeader(SignableRequest<?> request) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitoidentity.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class CredentialsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AccessKeyId", targetDepth)) {
                     context.nextToken();
-                    credentials.setAccessKeyId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    credentials.setAccessKeyId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretKey", targetDepth)) {
                     context.nextToken();
-                    credentials.setSecretKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    credentials.setSecretKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionToken", targetDepth)) {
                     context.nextToken();
-                    credentials.setSessionToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    credentials.setSessionToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Expiration", targetDepth)) {
                     context.nextToken();
-                    credentials.setExpiration(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    credentials.setExpiration(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

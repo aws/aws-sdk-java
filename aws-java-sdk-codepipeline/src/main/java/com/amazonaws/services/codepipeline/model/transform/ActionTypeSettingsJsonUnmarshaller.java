@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,27 +56,23 @@ public class ActionTypeSettingsJsonUnmarshaller implements
                 if (context.testExpression("thirdPartyConfigurationUrl",
                         targetDepth)) {
                     context.nextToken();
-                    actionTypeSettings
-                            .setThirdPartyConfigurationUrl(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    actionTypeSettings.setThirdPartyConfigurationUrl(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entityUrlTemplate", targetDepth)) {
                     context.nextToken();
-                    actionTypeSettings
-                            .setEntityUrlTemplate(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    actionTypeSettings.setEntityUrlTemplate(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("executionUrlTemplate", targetDepth)) {
                     context.nextToken();
-                    actionTypeSettings
-                            .setExecutionUrlTemplate(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    actionTypeSettings.setExecutionUrlTemplate(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionUrlTemplate", targetDepth)) {
                     context.nextToken();
-                    actionTypeSettings
-                            .setRevisionUrlTemplate(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    actionTypeSettings.setRevisionUrlTemplate(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

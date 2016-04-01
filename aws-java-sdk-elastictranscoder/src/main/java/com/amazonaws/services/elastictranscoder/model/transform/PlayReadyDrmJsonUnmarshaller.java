@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,35 +55,34 @@ public class PlayReadyDrmJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Format", targetDepth)) {
                     context.nextToken();
-                    playReadyDrm.setFormat(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    playReadyDrm.setFormat(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    playReadyDrm.setKey(StringJsonUnmarshaller.getInstance()
+                    playReadyDrm.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("KeyMd5", targetDepth)) {
                     context.nextToken();
-                    playReadyDrm.setKeyMd5(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    playReadyDrm.setKeyMd5(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyId", targetDepth)) {
                     context.nextToken();
-                    playReadyDrm.setKeyId(StringJsonUnmarshaller.getInstance()
+                    playReadyDrm.setKeyId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("InitializationVector", targetDepth)) {
                     context.nextToken();
-                    playReadyDrm.setInitializationVector(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    playReadyDrm.setInitializationVector(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("LicenseAcquisitionUrl", targetDepth)) {
                     context.nextToken();
-                    playReadyDrm
-                            .setLicenseAcquisitionUrl(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    playReadyDrm.setLicenseAcquisitionUrl(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

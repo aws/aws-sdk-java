@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class PatchOperationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("op", targetDepth)) {
                     context.nextToken();
-                    patchOperation.setOp(StringJsonUnmarshaller.getInstance()
+                    patchOperation.setOp(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
                     context.nextToken();
-                    patchOperation.setPath(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    patchOperation.setPath(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
-                    patchOperation.setValue(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    patchOperation.setValue(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("from", targetDepth)) {
                     context.nextToken();
-                    patchOperation.setFrom(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    patchOperation.setFrom(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

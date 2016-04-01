@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class KinesisActionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    kinesisAction.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    kinesisAction.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamName", targetDepth)) {
                     context.nextToken();
-                    kinesisAction.setStreamName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    kinesisAction.setStreamName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("partitionKey", targetDepth)) {
                     context.nextToken();
-                    kinesisAction.setPartitionKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    kinesisAction.setPartitionKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

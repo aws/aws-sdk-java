@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class PortMappingJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerPort", targetDepth)) {
                     context.nextToken();
-                    portMapping.setContainerPort(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    portMapping.setContainerPort(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hostPort", targetDepth)) {
                     context.nextToken();
-                    portMapping.setHostPort(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    portMapping.setHostPort(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
                     context.nextToken();
-                    portMapping.setProtocol(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    portMapping.setProtocol(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

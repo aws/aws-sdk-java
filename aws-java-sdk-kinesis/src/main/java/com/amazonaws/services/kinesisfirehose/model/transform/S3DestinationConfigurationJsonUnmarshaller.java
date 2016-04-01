@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,20 +55,18 @@ public class S3DestinationConfigurationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
                     context.nextToken();
-                    s3DestinationConfiguration
-                            .setRoleARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    s3DestinationConfiguration.setRoleARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BucketARN", targetDepth)) {
                     context.nextToken();
-                    s3DestinationConfiguration
-                            .setBucketARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    s3DestinationConfiguration.setBucketARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Prefix", targetDepth)) {
                     context.nextToken();
-                    s3DestinationConfiguration.setPrefix(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    s3DestinationConfiguration.setPrefix(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BufferingHints", targetDepth)) {
                     context.nextToken();
@@ -76,9 +76,8 @@ public class S3DestinationConfigurationJsonUnmarshaller implements
                 }
                 if (context.testExpression("CompressionFormat", targetDepth)) {
                     context.nextToken();
-                    s3DestinationConfiguration
-                            .setCompressionFormat(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    s3DestinationConfiguration.setCompressionFormat(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EncryptionConfiguration",
                         targetDepth)) {

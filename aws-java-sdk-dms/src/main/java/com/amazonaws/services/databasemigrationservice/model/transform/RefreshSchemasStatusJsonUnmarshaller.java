@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,32 +55,30 @@ public class RefreshSchemasStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EndpointArn", targetDepth)) {
                     context.nextToken();
-                    refreshSchemasStatus.setEndpointArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    refreshSchemasStatus.setEndpointArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceArn",
                         targetDepth)) {
                     context.nextToken();
-                    refreshSchemasStatus
-                            .setReplicationInstanceArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    refreshSchemasStatus.setReplicationInstanceArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    refreshSchemasStatus.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    refreshSchemasStatus.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastRefreshDate", targetDepth)) {
                     context.nextToken();
-                    refreshSchemasStatus
-                            .setLastRefreshDate(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    refreshSchemasStatus.setLastRefreshDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("LastFailureMessage", targetDepth)) {
                     context.nextToken();
-                    refreshSchemasStatus
-                            .setLastFailureMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    refreshSchemasStatus.setLastFailureMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

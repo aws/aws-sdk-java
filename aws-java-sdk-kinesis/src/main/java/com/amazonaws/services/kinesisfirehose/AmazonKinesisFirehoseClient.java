@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -375,8 +376,10 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDeliveryStreamResult> responseHandler = new JsonResponseHandler<CreateDeliveryStreamResult>(
-                    new CreateDeliveryStreamResultJsonUnmarshaller());
+            JsonResponseHandler<CreateDeliveryStreamResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateDeliveryStreamResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -443,8 +446,10 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteDeliveryStreamResult> responseHandler = new JsonResponseHandler<DeleteDeliveryStreamResult>(
-                    new DeleteDeliveryStreamResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteDeliveryStreamResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteDeliveryStreamResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -494,8 +499,10 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDeliveryStreamResult> responseHandler = new JsonResponseHandler<DescribeDeliveryStreamResult>(
-                    new DescribeDeliveryStreamResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeDeliveryStreamResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeDeliveryStreamResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -551,8 +558,10 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDeliveryStreamsResult> responseHandler = new JsonResponseHandler<ListDeliveryStreamsResult>(
-                    new ListDeliveryStreamsResultJsonUnmarshaller());
+            JsonResponseHandler<ListDeliveryStreamsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListDeliveryStreamsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -654,8 +663,9 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutRecordResult> responseHandler = new JsonResponseHandler<PutRecordResult>(
-                    new PutRecordResultJsonUnmarshaller());
+            JsonResponseHandler<PutRecordResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutRecordResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -784,8 +794,9 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutRecordBatchResult> responseHandler = new JsonResponseHandler<PutRecordBatchResult>(
-                    new PutRecordBatchResultJsonUnmarshaller());
+            JsonResponseHandler<PutRecordBatchResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutRecordBatchResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -879,8 +890,10 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDestinationResult> responseHandler = new JsonResponseHandler<UpdateDestinationResult>(
-                    new UpdateDestinationResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateDestinationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateDestinationResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -940,8 +953,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

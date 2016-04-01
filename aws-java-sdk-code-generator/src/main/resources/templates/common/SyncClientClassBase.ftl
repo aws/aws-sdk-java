@@ -22,6 +22,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 <#if customizationConfig.serviceClientHoldInputStream>
@@ -271,7 +272,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
 
         executionContext.setCredentials(credentials);
 
-        <@ClientInvokeMethodErrorResponseHandlerCreation.content />
+        <@ClientInvokeMethodErrorResponseHandlerCreation.content metadata/>
 
         return client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);

@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,22 +55,22 @@ public class OfferingJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    offering.setId(StringJsonUnmarshaller.getInstance()
+                    offering.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    offering.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    offering.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    offering.setType(StringJsonUnmarshaller.getInstance()
+                    offering.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
                     context.nextToken();
-                    offering.setPlatform(StringJsonUnmarshaller.getInstance()
+                    offering.setPlatform(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("recurringCharges", targetDepth)) {

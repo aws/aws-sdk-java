@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class ListByteMatchSetsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();
-                    listByteMatchSetsResult
-                            .setNextMarker(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listByteMatchSetsResult.setNextMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ByteMatchSets", targetDepth)) {
                     context.nextToken();

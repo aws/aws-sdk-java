@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudsearchdomain.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,42 +55,42 @@ public class FieldStatsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("min", targetDepth)) {
                     context.nextToken();
-                    fieldStats.setMin(StringJsonUnmarshaller.getInstance()
+                    fieldStats.setMin(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("max", targetDepth)) {
                     context.nextToken();
-                    fieldStats.setMax(StringJsonUnmarshaller.getInstance()
+                    fieldStats.setMax(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("count", targetDepth)) {
                     context.nextToken();
-                    fieldStats.setCount(LongJsonUnmarshaller.getInstance()
+                    fieldStats.setCount(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("missing", targetDepth)) {
                     context.nextToken();
-                    fieldStats.setMissing(LongJsonUnmarshaller.getInstance()
+                    fieldStats.setMissing(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("sum", targetDepth)) {
                     context.nextToken();
-                    fieldStats.setSum(DoubleJsonUnmarshaller.getInstance()
+                    fieldStats.setSum(context.getUnmarshaller(Double.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("sumOfSquares", targetDepth)) {
                     context.nextToken();
-                    fieldStats.setSumOfSquares(DoubleJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fieldStats.setSumOfSquares(context.getUnmarshaller(
+                            Double.class).unmarshall(context));
                 }
                 if (context.testExpression("mean", targetDepth)) {
                     context.nextToken();
-                    fieldStats.setMean(StringJsonUnmarshaller.getInstance()
+                    fieldStats.setMean(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("stddev", targetDepth)) {
                     context.nextToken();
-                    fieldStats.setStddev(DoubleJsonUnmarshaller.getInstance()
+                    fieldStats.setStddev(context.getUnmarshaller(Double.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

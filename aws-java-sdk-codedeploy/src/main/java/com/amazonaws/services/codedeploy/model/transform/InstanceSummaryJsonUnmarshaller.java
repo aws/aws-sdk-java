@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class InstanceSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentId", targetDepth)) {
                     context.nextToken();
-                    instanceSummary.setDeploymentId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceSummary.setDeploymentId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceId", targetDepth)) {
                     context.nextToken();
-                    instanceSummary.setInstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceSummary.setInstanceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    instanceSummary.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceSummary.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    instanceSummary.setLastUpdatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceSummary.setLastUpdatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("lifecycleEvents", targetDepth)) {
                     context.nextToken();

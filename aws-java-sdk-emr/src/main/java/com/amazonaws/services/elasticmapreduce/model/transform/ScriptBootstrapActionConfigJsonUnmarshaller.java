@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,14 @@ public class ScriptBootstrapActionConfigJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Path", targetDepth)) {
                     context.nextToken();
-                    scriptBootstrapActionConfig.setPath(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scriptBootstrapActionConfig.setPath(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Args", targetDepth)) {
                     context.nextToken();
                     scriptBootstrapActionConfig
-                            .setArgs(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setArgs(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

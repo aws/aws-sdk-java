@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -507,8 +508,10 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchGetRepositoriesResult> responseHandler = new JsonResponseHandler<BatchGetRepositoriesResult>(
-                    new BatchGetRepositoriesResultJsonUnmarshaller());
+            JsonResponseHandler<BatchGetRepositoriesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchGetRepositoriesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -590,8 +593,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -659,8 +662,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateRepositoryResult> responseHandler = new JsonResponseHandler<CreateRepositoryResult>(
-                    new CreateRepositoryResultJsonUnmarshaller());
+            JsonResponseHandler<CreateRepositoryResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateRepositoryResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -728,8 +732,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteRepositoryResult> responseHandler = new JsonResponseHandler<DeleteRepositoryResult>(
-                    new DeleteRepositoryResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteRepositoryResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteRepositoryResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -800,8 +805,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetBranchResult> responseHandler = new JsonResponseHandler<GetBranchResult>(
-                    new GetBranchResultJsonUnmarshaller());
+            JsonResponseHandler<GetBranchResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetBranchResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -872,8 +878,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetCommitResult> responseHandler = new JsonResponseHandler<GetCommitResult>(
-                    new GetCommitResultJsonUnmarshaller());
+            JsonResponseHandler<GetCommitResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetCommitResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -948,8 +955,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRepositoryResult> responseHandler = new JsonResponseHandler<GetRepositoryResult>(
-                    new GetRepositoryResultJsonUnmarshaller());
+            JsonResponseHandler<GetRepositoryResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetRepositoryResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1016,8 +1024,10 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRepositoryTriggersResult> responseHandler = new JsonResponseHandler<GetRepositoryTriggersResult>(
-                    new GetRepositoryTriggersResultJsonUnmarshaller());
+            JsonResponseHandler<GetRepositoryTriggersResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetRepositoryTriggersResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1084,8 +1094,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListBranchesResult> responseHandler = new JsonResponseHandler<ListBranchesResult>(
-                    new ListBranchesResultJsonUnmarshaller());
+            JsonResponseHandler<ListBranchesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListBranchesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1135,8 +1146,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRepositoriesResult> responseHandler = new JsonResponseHandler<ListRepositoriesResult>(
-                    new ListRepositoriesResultJsonUnmarshaller());
+            JsonResponseHandler<ListRepositoriesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListRepositoriesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1241,8 +1253,10 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutRepositoryTriggersResult> responseHandler = new JsonResponseHandler<PutRepositoryTriggersResult>(
-                    new PutRepositoryTriggersResultJsonUnmarshaller());
+            JsonResponseHandler<PutRepositoryTriggersResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutRepositoryTriggersResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1349,8 +1363,10 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TestRepositoryTriggersResult> responseHandler = new JsonResponseHandler<TestRepositoryTriggersResult>(
-                    new TestRepositoryTriggersResultJsonUnmarshaller());
+            JsonResponseHandler<TestRepositoryTriggersResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new TestRepositoryTriggersResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1428,8 +1444,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1505,8 +1521,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1568,8 +1584,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1627,8 +1643,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

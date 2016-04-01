@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,28 +54,28 @@ public class EventJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventId", targetDepth)) {
                     context.nextToken();
-                    event.setEventId(StringJsonUnmarshaller.getInstance()
+                    event.setEventId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
                     context.nextToken();
-                    event.setResourceId(StringJsonUnmarshaller.getInstance()
+                    event.setResourceId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("EventCode", targetDepth)) {
                     context.nextToken();
-                    event.setEventCode(StringJsonUnmarshaller.getInstance()
+                    event.setEventCode(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    event.setMessage(StringJsonUnmarshaller.getInstance()
+                    event.setMessage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("EventTime", targetDepth)) {
                     context.nextToken();
-                    event.setEventTime(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    event.setEventTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

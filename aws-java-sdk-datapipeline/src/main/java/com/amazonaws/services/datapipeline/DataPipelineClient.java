@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -339,8 +340,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ActivatePipelineResult> responseHandler = new JsonResponseHandler<ActivatePipelineResult>(
-                    new ActivatePipelineResultJsonUnmarshaller());
+            JsonResponseHandler<ActivatePipelineResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ActivatePipelineResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -394,8 +396,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddTagsResult> responseHandler = new JsonResponseHandler<AddTagsResult>(
-                    new AddTagsResultJsonUnmarshaller());
+            JsonResponseHandler<AddTagsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new AddTagsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -446,8 +449,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePipelineResult> responseHandler = new JsonResponseHandler<CreatePipelineResult>(
-                    new CreatePipelineResultJsonUnmarshaller());
+            JsonResponseHandler<CreatePipelineResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreatePipelineResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -510,8 +514,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeactivatePipelineResult> responseHandler = new JsonResponseHandler<DeactivatePipelineResult>(
-                    new DeactivatePipelineResultJsonUnmarshaller());
+            JsonResponseHandler<DeactivatePipelineResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeactivatePipelineResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -571,8 +577,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -627,8 +633,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeObjectsResult> responseHandler = new JsonResponseHandler<DescribeObjectsResult>(
-                    new DescribeObjectsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeObjectsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeObjectsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -695,8 +702,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribePipelinesResult> responseHandler = new JsonResponseHandler<DescribePipelinesResult>(
-                    new DescribePipelinesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribePipelinesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribePipelinesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -757,8 +766,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EvaluateExpressionResult> responseHandler = new JsonResponseHandler<EvaluateExpressionResult>(
-                    new EvaluateExpressionResultJsonUnmarshaller());
+            JsonResponseHandler<EvaluateExpressionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new EvaluateExpressionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -817,8 +828,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetPipelineDefinitionResult> responseHandler = new JsonResponseHandler<GetPipelineDefinitionResult>(
-                    new GetPipelineDefinitionResultJsonUnmarshaller());
+            JsonResponseHandler<GetPipelineDefinitionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetPipelineDefinitionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -869,8 +882,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPipelinesResult> responseHandler = new JsonResponseHandler<ListPipelinesResult>(
-                    new ListPipelinesResultJsonUnmarshaller());
+            JsonResponseHandler<ListPipelinesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListPipelinesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -942,8 +956,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PollForTaskResult> responseHandler = new JsonResponseHandler<PollForTaskResult>(
-                    new PollForTaskResultJsonUnmarshaller());
+            JsonResponseHandler<PollForTaskResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PollForTaskResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1018,8 +1033,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutPipelineDefinitionResult> responseHandler = new JsonResponseHandler<PutPipelineDefinitionResult>(
-                    new PutPipelineDefinitionResultJsonUnmarshaller());
+            JsonResponseHandler<PutPipelineDefinitionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutPipelineDefinitionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1075,8 +1092,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<QueryObjectsResult> responseHandler = new JsonResponseHandler<QueryObjectsResult>(
-                    new QueryObjectsResultJsonUnmarshaller());
+            JsonResponseHandler<QueryObjectsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new QueryObjectsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1130,8 +1148,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveTagsResult> responseHandler = new JsonResponseHandler<RemoveTagsResult>(
-                    new RemoveTagsResultJsonUnmarshaller());
+            JsonResponseHandler<RemoveTagsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RemoveTagsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1203,8 +1222,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ReportTaskProgressResult> responseHandler = new JsonResponseHandler<ReportTaskProgressResult>(
-                    new ReportTaskProgressResultJsonUnmarshaller());
+            JsonResponseHandler<ReportTaskProgressResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ReportTaskProgressResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1260,8 +1281,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ReportTaskRunnerHeartbeatResult> responseHandler = new JsonResponseHandler<ReportTaskRunnerHeartbeatResult>(
-                    new ReportTaskRunnerHeartbeatResultJsonUnmarshaller());
+            JsonResponseHandler<ReportTaskRunnerHeartbeatResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ReportTaskRunnerHeartbeatResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1319,8 +1342,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1380,8 +1403,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SetTaskStatusResult> responseHandler = new JsonResponseHandler<SetTaskStatusResult>(
-                    new SetTaskStatusResultJsonUnmarshaller());
+            JsonResponseHandler<SetTaskStatusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new SetTaskStatusResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1439,8 +1463,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ValidatePipelineDefinitionResult> responseHandler = new JsonResponseHandler<ValidatePipelineDefinitionResult>(
-                    new ValidatePipelineDefinitionResultJsonUnmarshaller());
+            JsonResponseHandler<ValidatePipelineDefinitionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ValidatePipelineDefinitionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1500,8 +1526,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

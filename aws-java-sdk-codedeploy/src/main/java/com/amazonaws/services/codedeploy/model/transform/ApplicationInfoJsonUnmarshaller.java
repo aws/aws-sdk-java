@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class ApplicationInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationId", targetDepth)) {
                     context.nextToken();
-                    applicationInfo.setApplicationId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    applicationInfo.setApplicationId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationName", targetDepth)) {
                     context.nextToken();
-                    applicationInfo.setApplicationName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    applicationInfo.setApplicationName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("createTime", targetDepth)) {
                     context.nextToken();
-                    applicationInfo.setCreateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    applicationInfo.setCreateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("linkedToGitHub", targetDepth)) {
                     context.nextToken();
-                    applicationInfo.setLinkedToGitHub(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    applicationInfo.setLinkedToGitHub(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

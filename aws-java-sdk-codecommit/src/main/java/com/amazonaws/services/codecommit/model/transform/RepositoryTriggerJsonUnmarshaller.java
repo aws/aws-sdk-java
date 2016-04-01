@@ -18,6 +18,8 @@ package com.amazonaws.services.codecommit.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,29 +55,29 @@ public class RepositoryTriggerJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    repositoryTrigger.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryTrigger.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationArn", targetDepth)) {
                     context.nextToken();
-                    repositoryTrigger.setDestinationArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryTrigger.setDestinationArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("customData", targetDepth)) {
                     context.nextToken();
-                    repositoryTrigger.setCustomData(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryTrigger.setCustomData(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("branches", targetDepth)) {
                     context.nextToken();
                     repositoryTrigger.setBranches(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
                     repositoryTrigger.setEvents(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

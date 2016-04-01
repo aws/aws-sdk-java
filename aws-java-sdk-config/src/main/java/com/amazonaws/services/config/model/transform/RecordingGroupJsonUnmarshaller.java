@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,21 +55,22 @@ public class RecordingGroupJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("allSupported", targetDepth)) {
                     context.nextToken();
-                    recordingGroup.setAllSupported(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    recordingGroup.setAllSupported(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("includeGlobalResourceTypes",
                         targetDepth)) {
                     context.nextToken();
                     recordingGroup
-                            .setIncludeGlobalResourceTypes(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setIncludeGlobalResourceTypes(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("resourceTypes", targetDepth)) {
                     context.nextToken();
                     recordingGroup
                             .setResourceTypes(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

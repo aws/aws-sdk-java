@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,8 +54,8 @@ public class SubnetJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SubnetIdentifier", targetDepth)) {
                     context.nextToken();
-                    subnet.setSubnetIdentifier(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    subnet.setSubnetIdentifier(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetAvailabilityZone",
                         targetDepth)) {
@@ -63,8 +65,8 @@ public class SubnetJsonUnmarshaller implements
                 }
                 if (context.testExpression("SubnetStatus", targetDepth)) {
                     context.nextToken();
-                    subnet.setSubnetStatus(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    subnet.setSubnetStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

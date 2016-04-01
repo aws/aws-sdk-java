@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -328,8 +329,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CancelJobResult> responseHandler = new JsonResponseHandler<CancelJobResult>(
-                    new CancelJobResultJsonUnmarshaller());
+            JsonResponseHandler<CancelJobResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CancelJobResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -396,8 +398,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateJobResult> responseHandler = new JsonResponseHandler<CreateJobResult>(
-                    new CreateJobResultJsonUnmarshaller());
+            JsonResponseHandler<CreateJobResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateJobResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -458,8 +461,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePipelineResult> responseHandler = new JsonResponseHandler<CreatePipelineResult>(
-                    new CreatePipelineResultJsonUnmarshaller());
+            JsonResponseHandler<CreatePipelineResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreatePipelineResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -533,8 +537,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePresetResult> responseHandler = new JsonResponseHandler<CreatePresetResult>(
-                    new CreatePresetResultJsonUnmarshaller());
+            JsonResponseHandler<CreatePresetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreatePresetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -599,8 +604,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeletePipelineResult> responseHandler = new JsonResponseHandler<DeletePipelineResult>(
-                    new DeletePipelineResultJsonUnmarshaller());
+            JsonResponseHandler<DeletePipelineResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeletePipelineResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -664,8 +670,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeletePresetResult> responseHandler = new JsonResponseHandler<DeletePresetResult>(
-                    new DeletePresetResultJsonUnmarshaller());
+            JsonResponseHandler<DeletePresetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeletePresetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -730,8 +737,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListJobsByPipelineResult> responseHandler = new JsonResponseHandler<ListJobsByPipelineResult>(
-                    new ListJobsByPipelineResultJsonUnmarshaller());
+            JsonResponseHandler<ListJobsByPipelineResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListJobsByPipelineResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -791,8 +800,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListJobsByStatusResult> responseHandler = new JsonResponseHandler<ListJobsByStatusResult>(
-                    new ListJobsByStatusResultJsonUnmarshaller());
+            JsonResponseHandler<ListJobsByStatusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListJobsByStatusResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -846,8 +856,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPipelinesResult> responseHandler = new JsonResponseHandler<ListPipelinesResult>(
-                    new ListPipelinesResultJsonUnmarshaller());
+            JsonResponseHandler<ListPipelinesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListPipelinesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -906,8 +917,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPresetsResult> responseHandler = new JsonResponseHandler<ListPresetsResult>(
-                    new ListPresetsResultJsonUnmarshaller());
+            JsonResponseHandler<ListPresetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListPresetsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -968,8 +980,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ReadJobResult> responseHandler = new JsonResponseHandler<ReadJobResult>(
-                    new ReadJobResultJsonUnmarshaller());
+            JsonResponseHandler<ReadJobResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new ReadJobResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1026,8 +1039,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ReadPipelineResult> responseHandler = new JsonResponseHandler<ReadPipelineResult>(
-                    new ReadPipelineResultJsonUnmarshaller());
+            JsonResponseHandler<ReadPipelineResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ReadPipelineResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1083,8 +1097,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ReadPresetResult> responseHandler = new JsonResponseHandler<ReadPresetResult>(
-                    new ReadPresetResultJsonUnmarshaller());
+            JsonResponseHandler<ReadPresetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ReadPresetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1148,8 +1163,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TestRoleResult> responseHandler = new JsonResponseHandler<TestRoleResult>(
-                    new TestRoleResultJsonUnmarshaller());
+            JsonResponseHandler<TestRoleResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new TestRoleResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1213,8 +1229,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdatePipelineResult> responseHandler = new JsonResponseHandler<UpdatePipelineResult>(
-                    new UpdatePipelineResultJsonUnmarshaller());
+            JsonResponseHandler<UpdatePipelineResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdatePipelineResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1281,8 +1298,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdatePipelineNotificationsResult> responseHandler = new JsonResponseHandler<UpdatePipelineNotificationsResult>(
-                    new UpdatePipelineNotificationsResultJsonUnmarshaller());
+            JsonResponseHandler<UpdatePipelineNotificationsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdatePipelineNotificationsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1352,8 +1371,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdatePipelineStatusResult> responseHandler = new JsonResponseHandler<UpdatePipelineStatusResult>(
-                    new UpdatePipelineStatusResultJsonUnmarshaller());
+            JsonResponseHandler<UpdatePipelineStatusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdatePipelineStatusResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1413,8 +1434,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

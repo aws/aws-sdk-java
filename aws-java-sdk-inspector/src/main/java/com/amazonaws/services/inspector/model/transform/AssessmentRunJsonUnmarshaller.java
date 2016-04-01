@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,36 +55,35 @@ public class AssessmentRunJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setArn(StringJsonUnmarshaller.getInstance()
+                    assessmentRun.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setName(StringJsonUnmarshaller.getInstance()
+                    assessmentRun.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context
                         .testExpression("assessmentTemplateArn", targetDepth)) {
                     context.nextToken();
-                    assessmentRun
-                            .setAssessmentTemplateArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    assessmentRun.setAssessmentTemplateArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setState(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    assessmentRun.setState(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("durationInSeconds", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setDurationInSeconds(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRun.setDurationInSeconds(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
                     context.nextToken();
                     assessmentRun
                             .setRulesPackageArns(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("userAttributesForFindings",
@@ -95,28 +96,28 @@ public class AssessmentRunJsonUnmarshaller implements
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setCreatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRun.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setStartedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRun.setStartedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("completedAt", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setCompletedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRun.setCompletedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("stateChangedAt", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setStateChangedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRun.setStateChangedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("dataCollected", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setDataCollected(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRun.setDataCollected(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("stateChanges", targetDepth)) {
                     context.nextToken();

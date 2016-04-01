@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,26 +55,26 @@ public class HadoopStepConfigJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Jar", targetDepth)) {
                     context.nextToken();
-                    hadoopStepConfig.setJar(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hadoopStepConfig.setJar(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Properties", targetDepth)) {
                     context.nextToken();
                     hadoopStepConfig
                             .setProperties(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("MainClass", targetDepth)) {
                     context.nextToken();
-                    hadoopStepConfig.setMainClass(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hadoopStepConfig.setMainClass(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Args", targetDepth)) {
                     context.nextToken();
                     hadoopStepConfig.setArgs(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -42,7 +36,9 @@ public class StepDetailJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(StepDetail stepDetail, SdkJsonGenerator jsonGenerator) {
+    public void marshall(StepDetail stepDetail,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (stepDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

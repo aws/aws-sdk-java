@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class NotificationsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Progressing", targetDepth)) {
                     context.nextToken();
-                    notifications.setProgressing(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    notifications.setProgressing(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Completed", targetDepth)) {
                     context.nextToken();
-                    notifications.setCompleted(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    notifications.setCompleted(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Warning", targetDepth)) {
                     context.nextToken();
-                    notifications.setWarning(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    notifications.setWarning(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Error", targetDepth)) {
                     context.nextToken();
-                    notifications.setError(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    notifications.setError(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

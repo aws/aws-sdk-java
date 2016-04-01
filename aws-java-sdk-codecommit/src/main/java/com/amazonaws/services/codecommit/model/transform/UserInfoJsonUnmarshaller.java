@@ -18,6 +18,8 @@ package com.amazonaws.services.codecommit.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,17 +55,17 @@ public class UserInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    userInfo.setName(StringJsonUnmarshaller.getInstance()
+                    userInfo.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("email", targetDepth)) {
                     context.nextToken();
-                    userInfo.setEmail(StringJsonUnmarshaller.getInstance()
+                    userInfo.setEmail(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("date", targetDepth)) {
                     context.nextToken();
-                    userInfo.setDate(StringJsonUnmarshaller.getInstance()
+                    userInfo.setDate(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

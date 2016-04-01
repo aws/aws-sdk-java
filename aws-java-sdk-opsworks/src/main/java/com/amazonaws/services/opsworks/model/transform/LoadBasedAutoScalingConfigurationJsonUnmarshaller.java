@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,14 +56,13 @@ public class LoadBasedAutoScalingConfigurationJsonUnmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LayerId", targetDepth)) {
                     context.nextToken();
-                    loadBasedAutoScalingConfiguration
-                            .setLayerId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    loadBasedAutoScalingConfiguration.setLayerId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enable", targetDepth)) {
                     context.nextToken();
                     loadBasedAutoScalingConfiguration
-                            .setEnable(BooleanJsonUnmarshaller.getInstance()
+                            .setEnable(context.getUnmarshaller(Boolean.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("UpScaling", targetDepth)) {

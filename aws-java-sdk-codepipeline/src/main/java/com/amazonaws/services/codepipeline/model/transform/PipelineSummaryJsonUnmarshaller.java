@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class PipelineSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    pipelineSummary.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipelineSummary.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
-                    pipelineSummary.setVersion(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipelineSummary.setVersion(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    pipelineSummary.setCreated(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipelineSummary.setCreated(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("updated", targetDepth)) {
                     context.nextToken();
-                    pipelineSummary.setUpdated(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipelineSummary.setUpdated(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

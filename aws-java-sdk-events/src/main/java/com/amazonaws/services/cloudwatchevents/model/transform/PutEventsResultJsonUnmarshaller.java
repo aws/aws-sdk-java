@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudwatchevents.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,9 @@ public class PutEventsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FailedEntryCount", targetDepth)) {
                     context.nextToken();
-                    putEventsResult.setFailedEntryCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    putEventsResult
+                            .setFailedEntryCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Entries", targetDepth)) {
                     context.nextToken();

@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,27 +55,26 @@ public class DeploymentJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    deployment.setId(StringJsonUnmarshaller.getInstance()
+                    deployment.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    deployment.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    deployment.setCreatedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setCreatedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("apiSummary", targetDepth)) {
                     context.nextToken();
                     deployment
                             .setApiSummary(new MapUnmarshaller<String, java.util.Map<String, MethodSnapshot>>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     new MapUnmarshaller<String, MethodSnapshot>(
-                                            StringJsonUnmarshaller
-                                                    .getInstance(),
+                                            context.getUnmarshaller(String.class),
                                             MethodSnapshotJsonUnmarshaller
                                                     .getInstance()))
                                     .unmarshall(context));

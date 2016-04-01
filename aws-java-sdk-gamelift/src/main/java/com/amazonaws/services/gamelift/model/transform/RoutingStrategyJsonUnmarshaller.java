@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class RoutingStrategyJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    routingStrategy.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    routingStrategy.setType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetId", targetDepth)) {
                     context.nextToken();
-                    routingStrategy.setFleetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    routingStrategy.setFleetId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    routingStrategy.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    routingStrategy.setMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

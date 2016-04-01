@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,33 +56,33 @@ public class ProvisionedThroughputDescriptionJsonUnmarshaller implements
                 if (context.testExpression("LastIncreaseDateTime", targetDepth)) {
                     context.nextToken();
                     provisionedThroughputDescription
-                            .setLastIncreaseDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLastIncreaseDateTime(context.getUnmarshaller(
+                                    java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastDecreaseDateTime", targetDepth)) {
                     context.nextToken();
                     provisionedThroughputDescription
-                            .setLastDecreaseDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLastDecreaseDateTime(context.getUnmarshaller(
+                                    java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfDecreasesToday",
                         targetDepth)) {
                     context.nextToken();
                     provisionedThroughputDescription
-                            .setNumberOfDecreasesToday(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setNumberOfDecreasesToday(context.getUnmarshaller(
+                                    Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ReadCapacityUnits", targetDepth)) {
                     context.nextToken();
                     provisionedThroughputDescription
-                            .setReadCapacityUnits(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setReadCapacityUnits(context.getUnmarshaller(
+                                    Long.class).unmarshall(context));
                 }
                 if (context.testExpression("WriteCapacityUnits", targetDepth)) {
                     context.nextToken();
                     provisionedThroughputDescription
-                            .setWriteCapacityUnits(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setWriteCapacityUnits(context.getUnmarshaller(
+                                    Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

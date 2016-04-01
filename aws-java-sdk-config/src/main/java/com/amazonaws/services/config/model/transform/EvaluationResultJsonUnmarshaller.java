@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,30 +62,31 @@ public class EvaluationResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("ComplianceType", targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setComplianceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluationResult.setComplianceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultRecordedTime", targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setResultRecordedTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluationResult.setResultRecordedTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context
                         .testExpression("ConfigRuleInvokedTime", targetDepth)) {
                     context.nextToken();
-                    evaluationResult
-                            .setConfigRuleInvokedTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    evaluationResult.setConfigRuleInvokedTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("Annotation", targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setAnnotation(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluationResult.setAnnotation(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResultToken", targetDepth)) {
                     context.nextToken();
-                    evaluationResult.setResultToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluationResult.setResultToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

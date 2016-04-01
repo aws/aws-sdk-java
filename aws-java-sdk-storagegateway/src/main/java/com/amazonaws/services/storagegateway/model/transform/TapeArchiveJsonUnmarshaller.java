@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,33 @@ public class TapeArchiveJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TapeARN", targetDepth)) {
                     context.nextToken();
-                    tapeArchive.setTapeARN(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    tapeArchive.setTapeARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TapeBarcode", targetDepth)) {
                     context.nextToken();
-                    tapeArchive.setTapeBarcode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tapeArchive.setTapeBarcode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TapeSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    tapeArchive.setTapeSizeInBytes(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tapeArchive.setTapeSizeInBytes(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
                     context.nextToken();
-                    tapeArchive.setCompletionTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tapeArchive.setCompletionTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("RetrievedTo", targetDepth)) {
                     context.nextToken();
-                    tapeArchive.setRetrievedTo(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tapeArchive.setRetrievedTo(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TapeStatus", targetDepth)) {
                     context.nextToken();
-                    tapeArchive.setTapeStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tapeArchive.setTapeStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class ActionDeclarationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionDeclaration.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("actionTypeId", targetDepth)) {
                     context.nextToken();
@@ -64,15 +66,15 @@ public class ActionDeclarationJsonUnmarshaller implements
                 }
                 if (context.testExpression("runOrder", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration.setRunOrder(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionDeclaration.setRunOrder(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
                     context.nextToken();
                     actionDeclaration
                             .setConfiguration(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("outputArtifacts", targetDepth)) {
@@ -91,8 +93,8 @@ public class ActionDeclarationJsonUnmarshaller implements
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    actionDeclaration.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionDeclaration.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

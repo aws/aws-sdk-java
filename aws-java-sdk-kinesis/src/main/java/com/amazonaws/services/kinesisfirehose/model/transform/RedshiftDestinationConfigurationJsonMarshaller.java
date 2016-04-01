@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.kinesisfirehose.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -44,7 +38,8 @@ public class RedshiftDestinationConfigurationJsonMarshaller {
      */
     public void marshall(
             RedshiftDestinationConfiguration redshiftDestinationConfiguration,
-            SdkJsonGenerator jsonGenerator) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (redshiftDestinationConfiguration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

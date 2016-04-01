@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class IpPermissionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FromPort", targetDepth)) {
                     context.nextToken();
-                    ipPermission.setFromPort(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    ipPermission.setFromPort(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ToPort", targetDepth)) {
                     context.nextToken();
-                    ipPermission.setToPort(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    ipPermission.setToPort(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IpRange", targetDepth)) {
                     context.nextToken();
-                    ipPermission.setIpRange(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    ipPermission.setIpRange(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Protocol", targetDepth)) {
                     context.nextToken();
-                    ipPermission.setProtocol(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    ipPermission.setProtocol(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

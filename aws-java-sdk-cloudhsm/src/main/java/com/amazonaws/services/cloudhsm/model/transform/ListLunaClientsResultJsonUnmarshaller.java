@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudhsm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,14 +56,14 @@ public class ListLunaClientsResultJsonUnmarshaller implements
                 if (context.testExpression("ClientList", targetDepth)) {
                     context.nextToken();
                     listLunaClientsResult
-                            .setClientList(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setClientList(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    listLunaClientsResult.setNextToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listLunaClientsResult.setNextToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

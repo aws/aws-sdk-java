@@ -187,6 +187,19 @@ public class SDKGlobalConfiguration {
     public static final String AWS_SESSION_TOKEN_ENV_VAR = "AWS_SESSION_TOKEN";
 
     /**
+     * Environment variable to disable CBOR protocol. This forces the request
+     * to be sent over the wire as a AWS JSON.
+     */
+    public static final String AWS_CBOR_DISABLE_ENV_VAR = "AWS_CBOR_DISABLE";
+
+    /**
+     * System property to disable CBOR protocol. This forces the request to be sent over the wire
+     * as a AWS JSON
+     */
+    public static final String AWS_CBOR_DISABLE_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableCbor";
+
+
+    /**
      * @deprecated by {@link SDKGlobalTime#setGlobalTimeOffset(int)}
      */
     @Deprecated
@@ -210,6 +223,11 @@ public class SDKGlobalConfiguration {
         return isPropertyEnabled(System.getProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY));
     }
 
+    public static boolean isCborDisabled() {
+        return isPropertyEnabled(System.getProperty(AWS_CBOR_DISABLE_SYSTEM_PROPERTY)) ||
+                isPropertyEnabled(System.getenv(AWS_CBOR_DISABLE_ENV_VAR));
+    }
+
     private static boolean isPropertyEnabled(final String property) {
         if (property == null || property.equalsIgnoreCase("false")) {
             return false;
@@ -217,4 +235,6 @@ public class SDKGlobalConfiguration {
             return true;
         }
     }
+
+
 }

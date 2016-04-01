@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -383,8 +384,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateByteMatchSetResult> responseHandler = new JsonResponseHandler<CreateByteMatchSetResult>(
-                    new CreateByteMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<CreateByteMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateByteMatchSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -492,8 +495,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateIPSetResult> responseHandler = new JsonResponseHandler<CreateIPSetResult>(
-                    new CreateIPSetResultJsonUnmarshaller());
+            JsonResponseHandler<CreateIPSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateIPSetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -614,8 +618,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateRuleResult> responseHandler = new JsonResponseHandler<CreateRuleResult>(
-                    new CreateRuleResultJsonUnmarshaller());
+            JsonResponseHandler<CreateRuleResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateRuleResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -727,8 +732,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateSizeConstraintSetResult> responseHandler = new JsonResponseHandler<CreateSizeConstraintSetResult>(
-                    new CreateSizeConstraintSetResultJsonUnmarshaller());
+            JsonResponseHandler<CreateSizeConstraintSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateSizeConstraintSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -838,8 +845,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateSqlInjectionMatchSetResult> responseHandler = new JsonResponseHandler<CreateSqlInjectionMatchSetResult>(
-                    new CreateSqlInjectionMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<CreateSqlInjectionMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateSqlInjectionMatchSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -961,8 +970,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateWebACLResult> responseHandler = new JsonResponseHandler<CreateWebACLResult>(
-                    new CreateWebACLResultJsonUnmarshaller());
+            JsonResponseHandler<CreateWebACLResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateWebACLResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1072,8 +1082,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateXssMatchSetResult> responseHandler = new JsonResponseHandler<CreateXssMatchSetResult>(
-                    new CreateXssMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<CreateXssMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateXssMatchSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1169,8 +1181,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteByteMatchSetResult> responseHandler = new JsonResponseHandler<DeleteByteMatchSetResult>(
-                    new DeleteByteMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteByteMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteByteMatchSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1263,8 +1277,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteIPSetResult> responseHandler = new JsonResponseHandler<DeleteIPSetResult>(
-                    new DeleteIPSetResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteIPSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteIPSetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1357,8 +1372,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteRuleResult> responseHandler = new JsonResponseHandler<DeleteRuleResult>(
-                    new DeleteRuleResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteRuleResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteRuleResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1455,8 +1471,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteSizeConstraintSetResult> responseHandler = new JsonResponseHandler<DeleteSizeConstraintSetResult>(
-                    new DeleteSizeConstraintSetResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteSizeConstraintSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteSizeConstraintSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1554,8 +1572,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteSqlInjectionMatchSetResult> responseHandler = new JsonResponseHandler<DeleteSqlInjectionMatchSetResult>(
-                    new DeleteSqlInjectionMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteSqlInjectionMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteSqlInjectionMatchSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1643,8 +1663,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteWebACLResult> responseHandler = new JsonResponseHandler<DeleteWebACLResult>(
-                    new DeleteWebACLResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteWebACLResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteWebACLResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1741,8 +1762,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteXssMatchSetResult> responseHandler = new JsonResponseHandler<DeleteXssMatchSetResult>(
-                    new DeleteXssMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteXssMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteXssMatchSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1792,8 +1815,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetByteMatchSetResult> responseHandler = new JsonResponseHandler<GetByteMatchSetResult>(
-                    new GetByteMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<GetByteMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetByteMatchSetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1856,8 +1880,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetChangeTokenResult> responseHandler = new JsonResponseHandler<GetChangeTokenResult>(
-                    new GetChangeTokenResultJsonUnmarshaller());
+            JsonResponseHandler<GetChangeTokenResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetChangeTokenResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1916,8 +1941,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetChangeTokenStatusResult> responseHandler = new JsonResponseHandler<GetChangeTokenStatusResult>(
-                    new GetChangeTokenStatusResultJsonUnmarshaller());
+            JsonResponseHandler<GetChangeTokenStatusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetChangeTokenStatusResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1966,8 +1993,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetIPSetResult> responseHandler = new JsonResponseHandler<GetIPSetResult>(
-                    new GetIPSetResultJsonUnmarshaller());
+            JsonResponseHandler<GetIPSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetIPSetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2017,8 +2045,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRuleResult> responseHandler = new JsonResponseHandler<GetRuleResult>(
-                    new GetRuleResultJsonUnmarshaller());
+            JsonResponseHandler<GetRuleResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new GetRuleResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2079,8 +2108,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetSampledRequestsResult> responseHandler = new JsonResponseHandler<GetSampledRequestsResult>(
-                    new GetSampledRequestsResultJsonUnmarshaller());
+            JsonResponseHandler<GetSampledRequestsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetSampledRequestsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2133,8 +2164,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetSizeConstraintSetResult> responseHandler = new JsonResponseHandler<GetSizeConstraintSetResult>(
-                    new GetSizeConstraintSetResultJsonUnmarshaller());
+            JsonResponseHandler<GetSizeConstraintSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetSizeConstraintSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2188,8 +2221,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetSqlInjectionMatchSetResult> responseHandler = new JsonResponseHandler<GetSqlInjectionMatchSetResult>(
-                    new GetSqlInjectionMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<GetSqlInjectionMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetSqlInjectionMatchSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2238,8 +2273,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetWebACLResult> responseHandler = new JsonResponseHandler<GetWebACLResult>(
-                    new GetWebACLResultJsonUnmarshaller());
+            JsonResponseHandler<GetWebACLResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetWebACLResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2291,8 +2327,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetXssMatchSetResult> responseHandler = new JsonResponseHandler<GetXssMatchSetResult>(
-                    new GetXssMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<GetXssMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetXssMatchSetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2342,8 +2379,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListByteMatchSetsResult> responseHandler = new JsonResponseHandler<ListByteMatchSetsResult>(
-                    new ListByteMatchSetsResultJsonUnmarshaller());
+            JsonResponseHandler<ListByteMatchSetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListByteMatchSetsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2390,8 +2429,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListIPSetsResult> responseHandler = new JsonResponseHandler<ListIPSetsResult>(
-                    new ListIPSetsResultJsonUnmarshaller());
+            JsonResponseHandler<ListIPSetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListIPSetsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2438,8 +2478,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRulesResult> responseHandler = new JsonResponseHandler<ListRulesResult>(
-                    new ListRulesResultJsonUnmarshaller());
+            JsonResponseHandler<ListRulesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListRulesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2489,8 +2530,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListSizeConstraintSetsResult> responseHandler = new JsonResponseHandler<ListSizeConstraintSetsResult>(
-                    new ListSizeConstraintSetsResultJsonUnmarshaller());
+            JsonResponseHandler<ListSizeConstraintSetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListSizeConstraintSetsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2542,8 +2585,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListSqlInjectionMatchSetsResult> responseHandler = new JsonResponseHandler<ListSqlInjectionMatchSetsResult>(
-                    new ListSqlInjectionMatchSetsResultJsonUnmarshaller());
+            JsonResponseHandler<ListSqlInjectionMatchSetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListSqlInjectionMatchSetsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2590,8 +2635,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListWebACLsResult> responseHandler = new JsonResponseHandler<ListWebACLsResult>(
-                    new ListWebACLsResultJsonUnmarshaller());
+            JsonResponseHandler<ListWebACLsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListWebACLsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2642,8 +2688,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListXssMatchSetsResult> responseHandler = new JsonResponseHandler<ListXssMatchSetsResult>(
-                    new ListXssMatchSetsResultJsonUnmarshaller());
+            JsonResponseHandler<ListXssMatchSetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListXssMatchSetsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2806,8 +2853,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateByteMatchSetResult> responseHandler = new JsonResponseHandler<UpdateByteMatchSetResult>(
-                    new UpdateByteMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateByteMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateByteMatchSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2983,8 +3032,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateIPSetResult> responseHandler = new JsonResponseHandler<UpdateIPSetResult>(
-                    new UpdateIPSetResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateIPSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateIPSetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3155,8 +3205,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateRuleResult> responseHandler = new JsonResponseHandler<UpdateRuleResult>(
-                    new UpdateRuleResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateRuleResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateRuleResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3332,8 +3383,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateSizeConstraintSetResult> responseHandler = new JsonResponseHandler<UpdateSizeConstraintSetResult>(
-                    new UpdateSizeConstraintSetResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateSizeConstraintSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateSizeConstraintSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3493,8 +3546,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateSqlInjectionMatchSetResult> responseHandler = new JsonResponseHandler<UpdateSqlInjectionMatchSetResult>(
-                    new UpdateSqlInjectionMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateSqlInjectionMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateSqlInjectionMatchSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3677,8 +3732,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateWebACLResult> responseHandler = new JsonResponseHandler<UpdateWebACLResult>(
-                    new UpdateWebACLResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateWebACLResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateWebACLResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3838,8 +3894,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateXssMatchSetResult> responseHandler = new JsonResponseHandler<UpdateXssMatchSetResult>(
-                    new UpdateXssMatchSetResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateXssMatchSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateXssMatchSetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3899,8 +3957,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

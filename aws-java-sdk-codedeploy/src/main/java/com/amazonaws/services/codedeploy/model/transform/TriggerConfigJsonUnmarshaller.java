@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,19 +55,19 @@ public class TriggerConfigJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("triggerName", targetDepth)) {
                     context.nextToken();
-                    triggerConfig.setTriggerName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    triggerConfig.setTriggerName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("triggerTargetArn", targetDepth)) {
                     context.nextToken();
-                    triggerConfig.setTriggerTargetArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    triggerConfig.setTriggerTargetArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("triggerEvents", targetDepth)) {
                     context.nextToken();
                     triggerConfig
                             .setTriggerEvents(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

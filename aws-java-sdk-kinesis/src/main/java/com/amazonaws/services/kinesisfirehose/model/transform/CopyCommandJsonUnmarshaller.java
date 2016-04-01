@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class CopyCommandJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataTableName", targetDepth)) {
                     context.nextToken();
-                    copyCommand.setDataTableName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    copyCommand.setDataTableName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataTableColumns", targetDepth)) {
                     context.nextToken();
-                    copyCommand.setDataTableColumns(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    copyCommand.setDataTableColumns(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyOptions", targetDepth)) {
                     context.nextToken();
-                    copyCommand.setCopyOptions(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    copyCommand.setCopyOptions(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

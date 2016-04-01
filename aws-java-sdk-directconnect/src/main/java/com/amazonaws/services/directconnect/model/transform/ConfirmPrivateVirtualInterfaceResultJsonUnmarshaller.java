@@ -18,6 +18,8 @@ package com.amazonaws.services.directconnect.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -56,8 +58,8 @@ public class ConfirmPrivateVirtualInterfaceResultJsonUnmarshaller
                         .testExpression("virtualInterfaceState", targetDepth)) {
                     context.nextToken();
                     confirmPrivateVirtualInterfaceResult
-                            .setVirtualInterfaceState(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setVirtualInterfaceState(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

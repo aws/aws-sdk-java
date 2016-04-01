@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,19 +55,19 @@ public class CreateJobPlaylistJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    createJobPlaylist.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createJobPlaylist.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
                     context.nextToken();
-                    createJobPlaylist.setFormat(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createJobPlaylist.setFormat(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputKeys", targetDepth)) {
                     context.nextToken();
                     createJobPlaylist
-                            .setOutputKeys(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setOutputKeys(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("HlsContentProtection", targetDepth)) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudwatchevents.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,30 +55,30 @@ public class PutEventsRequestEntryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Time", targetDepth)) {
                     context.nextToken();
-                    putEventsRequestEntry.setTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    putEventsRequestEntry.setTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Source", targetDepth)) {
                     context.nextToken();
-                    putEventsRequestEntry.setSource(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    putEventsRequestEntry.setSource(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Resources", targetDepth)) {
                     context.nextToken();
                     putEventsRequestEntry
-                            .setResources(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setResources(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("DetailType", targetDepth)) {
                     context.nextToken();
-                    putEventsRequestEntry.setDetailType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    putEventsRequestEntry.setDetailType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Detail", targetDepth)) {
                     context.nextToken();
-                    putEventsRequestEntry.setDetail(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    putEventsRequestEntry.setDetail(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

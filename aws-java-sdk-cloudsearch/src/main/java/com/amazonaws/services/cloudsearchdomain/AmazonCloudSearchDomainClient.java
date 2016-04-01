@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -330,8 +331,9 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SearchResult> responseHandler = new JsonResponseHandler<SearchResult>(
-                    new SearchResultJsonUnmarshaller());
+            JsonResponseHandler<SearchResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new SearchResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -397,8 +399,9 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SuggestResult> responseHandler = new JsonResponseHandler<SuggestResult>(
-                    new SuggestResultJsonUnmarshaller());
+            JsonResponseHandler<SuggestResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new SuggestResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -473,8 +476,9 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UploadDocumentsResult> responseHandler = new JsonResponseHandler<UploadDocumentsResult>(
-                    new UploadDocumentsResultJsonUnmarshaller());
+            JsonResponseHandler<UploadDocumentsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UploadDocumentsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -534,8 +538,8 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

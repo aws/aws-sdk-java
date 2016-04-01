@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -336,8 +337,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ConnectDirectoryResult> responseHandler = new JsonResponseHandler<ConnectDirectoryResult>(
-                    new ConnectDirectoryResultJsonUnmarshaller());
+            JsonResponseHandler<ConnectDirectoryResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ConnectDirectoryResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -398,8 +400,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAliasResult> responseHandler = new JsonResponseHandler<CreateAliasResult>(
-                    new CreateAliasResultJsonUnmarshaller());
+            JsonResponseHandler<CreateAliasResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateAliasResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -459,8 +462,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateComputerResult> responseHandler = new JsonResponseHandler<CreateComputerResult>(
-                    new CreateComputerResultJsonUnmarshaller());
+            JsonResponseHandler<CreateComputerResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateComputerResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -513,8 +517,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDirectoryResult> responseHandler = new JsonResponseHandler<CreateDirectoryResult>(
-                    new CreateDirectoryResultJsonUnmarshaller());
+            JsonResponseHandler<CreateDirectoryResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateDirectoryResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -569,8 +574,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateMicrosoftADResult> responseHandler = new JsonResponseHandler<CreateMicrosoftADResult>(
-                    new CreateMicrosoftADResultJsonUnmarshaller());
+            JsonResponseHandler<CreateMicrosoftADResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateMicrosoftADResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -631,8 +638,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateSnapshotResult> responseHandler = new JsonResponseHandler<CreateSnapshotResult>(
-                    new CreateSnapshotResultJsonUnmarshaller());
+            JsonResponseHandler<CreateSnapshotResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateSnapshotResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -705,8 +713,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateTrustResult> responseHandler = new JsonResponseHandler<CreateTrustResult>(
-                    new CreateTrustResultJsonUnmarshaller());
+            JsonResponseHandler<CreateTrustResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateTrustResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -755,8 +764,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteDirectoryResult> responseHandler = new JsonResponseHandler<DeleteDirectoryResult>(
-                    new DeleteDirectoryResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteDirectoryResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteDirectoryResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -807,8 +817,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteSnapshotResult> responseHandler = new JsonResponseHandler<DeleteSnapshotResult>(
-                    new DeleteSnapshotResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteSnapshotResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteSnapshotResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -860,8 +871,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTrustResult> responseHandler = new JsonResponseHandler<DeleteTrustResult>(
-                    new DeleteTrustResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteTrustResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteTrustResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -916,8 +928,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeregisterEventTopicResult> responseHandler = new JsonResponseHandler<DeregisterEventTopicResult>(
-                    new DeregisterEventTopicResultJsonUnmarshaller());
+            JsonResponseHandler<DeregisterEventTopicResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeregisterEventTopicResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -988,8 +1002,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDirectoriesResult> responseHandler = new JsonResponseHandler<DescribeDirectoriesResult>(
-                    new DescribeDirectoriesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeDirectoriesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeDirectoriesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1051,8 +1067,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeEventTopicsResult> responseHandler = new JsonResponseHandler<DescribeEventTopicsResult>(
-                    new DescribeEventTopicsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeEventTopicsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeEventTopicsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1119,8 +1137,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeSnapshotsResult> responseHandler = new JsonResponseHandler<DescribeSnapshotsResult>(
-                    new DescribeSnapshotsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeSnapshotsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeSnapshotsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1188,8 +1208,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTrustsResult> responseHandler = new JsonResponseHandler<DescribeTrustsResult>(
-                    new DescribeTrustsResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeTrustsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeTrustsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1239,8 +1260,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableRadiusResult> responseHandler = new JsonResponseHandler<DisableRadiusResult>(
-                    new DisableRadiusResultJsonUnmarshaller());
+            JsonResponseHandler<DisableRadiusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DisableRadiusResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1293,8 +1315,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableSsoResult> responseHandler = new JsonResponseHandler<DisableSsoResult>(
-                    new DisableSsoResultJsonUnmarshaller());
+            JsonResponseHandler<DisableSsoResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DisableSsoResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1348,8 +1371,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EnableRadiusResult> responseHandler = new JsonResponseHandler<EnableRadiusResult>(
-                    new EnableRadiusResultJsonUnmarshaller());
+            JsonResponseHandler<EnableRadiusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new EnableRadiusResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1402,8 +1426,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EnableSsoResult> responseHandler = new JsonResponseHandler<EnableSsoResult>(
-                    new EnableSsoResultJsonUnmarshaller());
+            JsonResponseHandler<EnableSsoResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new EnableSsoResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1454,8 +1479,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDirectoryLimitsResult> responseHandler = new JsonResponseHandler<GetDirectoryLimitsResult>(
-                    new GetDirectoryLimitsResultJsonUnmarshaller());
+            JsonResponseHandler<GetDirectoryLimitsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDirectoryLimitsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1511,8 +1538,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetSnapshotLimitsResult> responseHandler = new JsonResponseHandler<GetSnapshotLimitsResult>(
-                    new GetSnapshotLimitsResultJsonUnmarshaller());
+            JsonResponseHandler<GetSnapshotLimitsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetSnapshotLimitsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1569,8 +1598,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterEventTopicResult> responseHandler = new JsonResponseHandler<RegisterEventTopicResult>(
-                    new RegisterEventTopicResultJsonUnmarshaller());
+            JsonResponseHandler<RegisterEventTopicResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RegisterEventTopicResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1635,8 +1666,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RestoreFromSnapshotResult> responseHandler = new JsonResponseHandler<RestoreFromSnapshotResult>(
-                    new RestoreFromSnapshotResultJsonUnmarshaller());
+            JsonResponseHandler<RestoreFromSnapshotResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RestoreFromSnapshotResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1688,8 +1721,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateRadiusResult> responseHandler = new JsonResponseHandler<UpdateRadiusResult>(
-                    new UpdateRadiusResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateRadiusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateRadiusResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1747,8 +1781,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<VerifyTrustResult> responseHandler = new JsonResponseHandler<VerifyTrustResult>(
-                    new VerifyTrustResultJsonUnmarshaller());
+            JsonResponseHandler<VerifyTrustResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new VerifyTrustResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1808,8 +1843,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class ListXssMatchSetsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();
-                    listXssMatchSetsResult.setNextMarker(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listXssMatchSetsResult.setNextMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("XssMatchSets", targetDepth)) {
                     context.nextToken();

@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -59,8 +61,8 @@ public class RDSDataSpecJsonUnmarshaller implements
                 }
                 if (context.testExpression("SelectSqlQuery", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setSelectSqlQuery(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSDataSpec.setSelectSqlQuery(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseCredentials", targetDepth)) {
                     context.nextToken();
@@ -70,44 +72,44 @@ public class RDSDataSpecJsonUnmarshaller implements
                 }
                 if (context.testExpression("S3StagingLocation", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setS3StagingLocation(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSDataSpec.setS3StagingLocation(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRearrangement", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setDataRearrangement(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSDataSpec.setDataRearrangement(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchema", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setDataSchema(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSDataSpec.setDataSchema(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchemaUri", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setDataSchemaUri(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSDataSpec.setDataSchemaUri(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceRole", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setResourceRole(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSDataSpec.setResourceRole(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setServiceRole(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSDataSpec.setServiceRole(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
                     context.nextToken();
-                    rDSDataSpec.setSubnetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSDataSpec.setSubnetId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
                     rDSDataSpec
                             .setSecurityGroupIds(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

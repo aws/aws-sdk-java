@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,74 +56,69 @@ public class ReplicationTaskJsonUnmarshaller implements
                 if (context.testExpression("ReplicationTaskIdentifier",
                         targetDepth)) {
                     context.nextToken();
-                    replicationTask
-                            .setReplicationTaskIdentifier(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationTask.setReplicationTaskIdentifier(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceEndpointArn", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setSourceEndpointArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    replicationTask.setSourceEndpointArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetEndpointArn", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setTargetEndpointArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    replicationTask.setTargetEndpointArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceArn",
                         targetDepth)) {
                     context.nextToken();
-                    replicationTask
-                            .setReplicationInstanceArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationTask.setReplicationInstanceArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MigrationType", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setMigrationType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    replicationTask.setMigrationType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TableMappings", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setTableMappings(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    replicationTask.setTableMappings(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationTaskSettings",
                         targetDepth)) {
                     context.nextToken();
-                    replicationTask
-                            .setReplicationTaskSettings(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationTask.setReplicationTaskSettings(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    replicationTask.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    replicationTask.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastFailureMessage", targetDepth)) {
                     context.nextToken();
-                    replicationTask
-                            .setLastFailureMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationTask.setLastFailureMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationTaskCreationDate",
                         targetDepth)) {
                     context.nextToken();
-                    replicationTask
-                            .setReplicationTaskCreationDate(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationTask.setReplicationTaskCreationDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("ReplicationTaskStartDate",
                         targetDepth)) {
                     context.nextToken();
-                    replicationTask
-                            .setReplicationTaskStartDate(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationTask.setReplicationTaskStartDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("ReplicationTaskArn", targetDepth)) {
                     context.nextToken();
-                    replicationTask
-                            .setReplicationTaskArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationTask.setReplicationTaskArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationTaskStats", targetDepth)) {
                     context.nextToken();

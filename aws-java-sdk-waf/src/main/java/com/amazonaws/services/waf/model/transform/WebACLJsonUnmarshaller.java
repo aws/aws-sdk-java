@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class WebACLJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WebACLId", targetDepth)) {
                     context.nextToken();
-                    webACL.setWebACLId(StringJsonUnmarshaller.getInstance()
+                    webACL.setWebACLId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    webACL.setName(StringJsonUnmarshaller.getInstance()
+                    webACL.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("MetricName", targetDepth)) {
                     context.nextToken();
-                    webACL.setMetricName(StringJsonUnmarshaller.getInstance()
+                    webACL.setMetricName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DefaultAction", targetDepth)) {

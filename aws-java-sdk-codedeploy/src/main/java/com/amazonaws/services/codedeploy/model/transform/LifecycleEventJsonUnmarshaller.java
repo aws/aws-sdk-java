@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class LifecycleEventJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lifecycleEventName", targetDepth)) {
                     context.nextToken();
-                    lifecycleEvent.setLifecycleEventName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    lifecycleEvent.setLifecycleEventName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("diagnostics", targetDepth)) {
                     context.nextToken();
@@ -63,18 +65,18 @@ public class LifecycleEventJsonUnmarshaller implements
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
-                    lifecycleEvent.setStartTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    lifecycleEvent.setStartTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
                     context.nextToken();
-                    lifecycleEvent.setEndTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    lifecycleEvent.setEndTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    lifecycleEvent.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    lifecycleEvent.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

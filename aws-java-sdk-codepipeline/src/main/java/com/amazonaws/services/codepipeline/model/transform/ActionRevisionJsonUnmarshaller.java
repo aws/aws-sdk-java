@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class ActionRevisionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("revisionId", targetDepth)) {
                     context.nextToken();
-                    actionRevision.setRevisionId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionRevision.setRevisionId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionChangeId", targetDepth)) {
                     context.nextToken();
-                    actionRevision.setRevisionChangeId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionRevision.setRevisionChangeId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    actionRevision.setCreated(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionRevision.setCreated(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

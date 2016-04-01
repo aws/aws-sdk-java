@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -59,13 +61,13 @@ public class FailedCreateAssociationJsonUnmarshaller implements
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    failedCreateAssociation.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    failedCreateAssociation.setMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Fault", targetDepth)) {
                     context.nextToken();
-                    failedCreateAssociation.setFault(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    failedCreateAssociation.setFault(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

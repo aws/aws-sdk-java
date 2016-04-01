@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class RuleJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attribute", targetDepth)) {
                     context.nextToken();
-                    rule.setAttribute(StringJsonUnmarshaller.getInstance()
+                    rule.setAttribute(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("operator", targetDepth)) {
                     context.nextToken();
-                    rule.setOperator(StringJsonUnmarshaller.getInstance()
+                    rule.setOperator(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
-                    rule.setValue(StringJsonUnmarshaller.getInstance()
+                    rule.setValue(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

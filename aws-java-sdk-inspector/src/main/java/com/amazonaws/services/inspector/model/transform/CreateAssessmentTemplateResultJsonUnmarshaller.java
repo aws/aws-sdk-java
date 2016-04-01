@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,8 +57,8 @@ public class CreateAssessmentTemplateResultJsonUnmarshaller implements
                         .testExpression("assessmentTemplateArn", targetDepth)) {
                     context.nextToken();
                     createAssessmentTemplateResult
-                            .setAssessmentTemplateArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAssessmentTemplateArn(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

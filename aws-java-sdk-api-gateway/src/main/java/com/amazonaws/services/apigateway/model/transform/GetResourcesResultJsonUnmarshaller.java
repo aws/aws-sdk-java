@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class GetResourcesResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("position", targetDepth)) {
                     context.nextToken();
-                    getResourcesResult.setPosition(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getResourcesResult.setPosition(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("item", targetDepth)) {
                     context.nextToken();

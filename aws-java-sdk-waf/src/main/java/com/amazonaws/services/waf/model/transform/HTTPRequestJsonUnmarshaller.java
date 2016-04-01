@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class HTTPRequestJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClientIP", targetDepth)) {
                     context.nextToken();
-                    hTTPRequest.setClientIP(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hTTPRequest.setClientIP(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Country", targetDepth)) {
                     context.nextToken();
-                    hTTPRequest.setCountry(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    hTTPRequest.setCountry(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("URI", targetDepth)) {
                     context.nextToken();
-                    hTTPRequest.setURI(StringJsonUnmarshaller.getInstance()
+                    hTTPRequest.setURI(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Method", targetDepth)) {
                     context.nextToken();
-                    hTTPRequest.setMethod(StringJsonUnmarshaller.getInstance()
+                    hTTPRequest.setMethod(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("HTTPVersion", targetDepth)) {
                     context.nextToken();
-                    hTTPRequest.setHTTPVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hTTPRequest.setHTTPVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Headers", targetDepth)) {
                     context.nextToken();

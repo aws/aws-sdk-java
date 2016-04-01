@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class DurationRangeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("minSeconds", targetDepth)) {
                     context.nextToken();
-                    durationRange.setMinSeconds(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    durationRange.setMinSeconds(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("maxSeconds", targetDepth)) {
                     context.nextToken();
-                    durationRange.setMaxSeconds(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    durationRange.setMaxSeconds(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

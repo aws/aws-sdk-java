@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,49 +55,48 @@ public class RdsDbInstanceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RdsDbInstanceArn", targetDepth)) {
                     context.nextToken();
-                    rdsDbInstance.setRdsDbInstanceArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rdsDbInstance.setRdsDbInstanceArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbInstanceIdentifier", targetDepth)) {
                     context.nextToken();
-                    rdsDbInstance
-                            .setDbInstanceIdentifier(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    rdsDbInstance.setDbInstanceIdentifier(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbUser", targetDepth)) {
                     context.nextToken();
-                    rdsDbInstance.setDbUser(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rdsDbInstance.setDbUser(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DbPassword", targetDepth)) {
                     context.nextToken();
-                    rdsDbInstance.setDbPassword(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rdsDbInstance.setDbPassword(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
                     context.nextToken();
-                    rdsDbInstance.setRegion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rdsDbInstance.setRegion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Address", targetDepth)) {
                     context.nextToken();
-                    rdsDbInstance.setAddress(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rdsDbInstance.setAddress(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Engine", targetDepth)) {
                     context.nextToken();
-                    rdsDbInstance.setEngine(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rdsDbInstance.setEngine(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    rdsDbInstance.setStackId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rdsDbInstance.setStackId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("MissingOnRds", targetDepth)) {
                     context.nextToken();
-                    rdsDbInstance.setMissingOnRds(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rdsDbInstance.setMissingOnRds(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

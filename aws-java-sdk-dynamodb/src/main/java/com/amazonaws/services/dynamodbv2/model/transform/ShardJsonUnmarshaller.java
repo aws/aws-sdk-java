@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,7 +54,7 @@ public class ShardJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ShardId", targetDepth)) {
                     context.nextToken();
-                    shard.setShardId(StringJsonUnmarshaller.getInstance()
+                    shard.setShardId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SequenceNumberRange", targetDepth)) {
@@ -62,8 +64,8 @@ public class ShardJsonUnmarshaller implements
                 }
                 if (context.testExpression("ParentShardId", targetDepth)) {
                     context.nextToken();
-                    shard.setParentShardId(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    shard.setParentShardId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

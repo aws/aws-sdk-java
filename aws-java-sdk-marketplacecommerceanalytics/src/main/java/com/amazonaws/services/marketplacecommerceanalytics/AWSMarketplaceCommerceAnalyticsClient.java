@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -293,8 +294,9 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateDataSetResult> responseHandler = new JsonResponseHandler<GenerateDataSetResult>(
-                    new GenerateDataSetResultJsonUnmarshaller());
+            JsonResponseHandler<GenerateDataSetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GenerateDataSetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -354,8 +356,8 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

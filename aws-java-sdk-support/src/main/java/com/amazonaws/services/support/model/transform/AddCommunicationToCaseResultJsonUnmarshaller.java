@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,7 +56,7 @@ public class AddCommunicationToCaseResultJsonUnmarshaller implements
                 if (context.testExpression("result", targetDepth)) {
                     context.nextToken();
                     addCommunicationToCaseResult
-                            .setResult(BooleanJsonUnmarshaller.getInstance()
+                            .setResult(context.getUnmarshaller(Boolean.class)
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

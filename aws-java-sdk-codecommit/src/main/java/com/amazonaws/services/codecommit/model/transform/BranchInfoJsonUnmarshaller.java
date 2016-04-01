@@ -18,6 +18,8 @@ package com.amazonaws.services.codecommit.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class BranchInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("branchName", targetDepth)) {
                     context.nextToken();
-                    branchInfo.setBranchName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    branchInfo.setBranchName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("commitId", targetDepth)) {
                     context.nextToken();
-                    branchInfo.setCommitId(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    branchInfo.setCommitId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

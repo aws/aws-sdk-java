@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticfilesystem.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,42 +55,40 @@ public class CreateFileSystemResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OwnerId", targetDepth)) {
                     context.nextToken();
-                    createFileSystemResult.setOwnerId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createFileSystemResult.setOwnerId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationToken", targetDepth)) {
                     context.nextToken();
-                    createFileSystemResult
-                            .setCreationToken(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createFileSystemResult.setCreationToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSystemId", targetDepth)) {
                     context.nextToken();
-                    createFileSystemResult
-                            .setFileSystemId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createFileSystemResult.setFileSystemId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    createFileSystemResult.setCreationTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createFileSystemResult.setCreationTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("LifeCycleState", targetDepth)) {
                     context.nextToken();
-                    createFileSystemResult
-                            .setLifeCycleState(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createFileSystemResult.setLifeCycleState(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    createFileSystemResult.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createFileSystemResult.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfMountTargets", targetDepth)) {
                     context.nextToken();
                     createFileSystemResult
-                            .setNumberOfMountTargets(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setNumberOfMountTargets(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeInBytes", targetDepth)) {
                     context.nextToken();

@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,43 +54,43 @@ public class TestJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    test.setArn(StringJsonUnmarshaller.getInstance()
+                    test.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    test.setName(StringJsonUnmarshaller.getInstance()
+                    test.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    test.setType(StringJsonUnmarshaller.getInstance()
+                    test.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    test.setCreated(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    test.setCreated(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    test.setStatus(StringJsonUnmarshaller.getInstance()
+                    test.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("result", targetDepth)) {
                     context.nextToken();
-                    test.setResult(StringJsonUnmarshaller.getInstance()
+                    test.setResult(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    test.setStarted(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    test.setStarted(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    test.setStopped(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    test.setStopped(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
                     context.nextToken();
@@ -97,7 +99,7 @@ public class TestJsonUnmarshaller implements
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    test.setMessage(StringJsonUnmarshaller.getInstance()
+                    test.setMessage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("deviceMinutes", targetDepth)) {

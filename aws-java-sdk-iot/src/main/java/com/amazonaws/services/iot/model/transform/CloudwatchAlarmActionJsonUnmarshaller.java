@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class CloudwatchAlarmActionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    cloudwatchAlarmAction.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cloudwatchAlarmAction.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("alarmName", targetDepth)) {
                     context.nextToken();
-                    cloudwatchAlarmAction.setAlarmName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cloudwatchAlarmAction.setAlarmName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateReason", targetDepth)) {
                     context.nextToken();
-                    cloudwatchAlarmAction.setStateReason(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cloudwatchAlarmAction.setStateReason(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stateValue", targetDepth)) {
                     context.nextToken();
-                    cloudwatchAlarmAction.setStateValue(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cloudwatchAlarmAction.setStateValue(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

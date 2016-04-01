@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -308,8 +309,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateApiKeyResult> responseHandler = new JsonResponseHandler<CreateApiKeyResult>(
-                    new CreateApiKeyResultJsonUnmarshaller());
+            JsonResponseHandler<CreateApiKeyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateApiKeyResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -353,8 +355,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAuthorizerResult> responseHandler = new JsonResponseHandler<CreateAuthorizerResult>(
-                    new CreateAuthorizerResultJsonUnmarshaller());
+            JsonResponseHandler<CreateAuthorizerResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateAuthorizerResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -405,8 +408,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateBasePathMappingResult> responseHandler = new JsonResponseHandler<CreateBasePathMappingResult>(
-                    new CreateBasePathMappingResultJsonUnmarshaller());
+            JsonResponseHandler<CreateBasePathMappingResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateBasePathMappingResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -459,8 +464,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDeploymentResult> responseHandler = new JsonResponseHandler<CreateDeploymentResult>(
-                    new CreateDeploymentResultJsonUnmarshaller());
+            JsonResponseHandler<CreateDeploymentResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateDeploymentResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -507,8 +513,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDomainNameResult> responseHandler = new JsonResponseHandler<CreateDomainNameResult>(
-                    new CreateDomainNameResultJsonUnmarshaller());
+            JsonResponseHandler<CreateDomainNameResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateDomainNameResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -557,8 +564,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateModelResult> responseHandler = new JsonResponseHandler<CreateModelResult>(
-                    new CreateModelResultJsonUnmarshaller());
+            JsonResponseHandler<CreateModelResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateModelResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -607,8 +615,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateResourceResult> responseHandler = new JsonResponseHandler<CreateResourceResult>(
-                    new CreateResourceResultJsonUnmarshaller());
+            JsonResponseHandler<CreateResourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateResourceResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -655,8 +664,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateRestApiResult> responseHandler = new JsonResponseHandler<CreateRestApiResult>(
-                    new CreateRestApiResultJsonUnmarshaller());
+            JsonResponseHandler<CreateRestApiResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateRestApiResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -705,8 +715,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateStageResult> responseHandler = new JsonResponseHandler<CreateStageResult>(
-                    new CreateStageResultJsonUnmarshaller());
+            JsonResponseHandler<CreateStageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateStageResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -750,8 +761,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -796,8 +807,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -841,8 +852,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -882,8 +893,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -929,8 +940,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -973,8 +984,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1018,8 +1029,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1063,8 +1074,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1106,8 +1117,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1151,8 +1162,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1197,8 +1208,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1241,8 +1252,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1284,8 +1295,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1327,8 +1338,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1373,8 +1384,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1417,8 +1428,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1459,8 +1470,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateClientCertificateResult> responseHandler = new JsonResponseHandler<GenerateClientCertificateResult>(
-                    new GenerateClientCertificateResultJsonUnmarshaller());
+            JsonResponseHandler<GenerateClientCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GenerateClientCertificateResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1506,8 +1519,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetAccountResult> responseHandler = new JsonResponseHandler<GetAccountResult>(
-                    new GetAccountResultJsonUnmarshaller());
+            JsonResponseHandler<GetAccountResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetAccountResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1553,8 +1567,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetApiKeyResult> responseHandler = new JsonResponseHandler<GetApiKeyResult>(
-                    new GetApiKeyResultJsonUnmarshaller());
+            JsonResponseHandler<GetApiKeyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetApiKeyResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1600,8 +1615,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetApiKeysResult> responseHandler = new JsonResponseHandler<GetApiKeysResult>(
-                    new GetApiKeysResultJsonUnmarshaller());
+            JsonResponseHandler<GetApiKeysResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetApiKeysResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1647,8 +1663,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetAuthorizerResult> responseHandler = new JsonResponseHandler<GetAuthorizerResult>(
-                    new GetAuthorizerResultJsonUnmarshaller());
+            JsonResponseHandler<GetAuthorizerResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetAuthorizerResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1695,8 +1712,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetAuthorizersResult> responseHandler = new JsonResponseHandler<GetAuthorizersResult>(
-                    new GetAuthorizersResultJsonUnmarshaller());
+            JsonResponseHandler<GetAuthorizersResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetAuthorizersResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1744,8 +1762,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetBasePathMappingResult> responseHandler = new JsonResponseHandler<GetBasePathMappingResult>(
-                    new GetBasePathMappingResultJsonUnmarshaller());
+            JsonResponseHandler<GetBasePathMappingResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetBasePathMappingResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1794,8 +1814,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetBasePathMappingsResult> responseHandler = new JsonResponseHandler<GetBasePathMappingsResult>(
-                    new GetBasePathMappingsResultJsonUnmarshaller());
+            JsonResponseHandler<GetBasePathMappingsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetBasePathMappingsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1838,8 +1860,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetClientCertificateResult> responseHandler = new JsonResponseHandler<GetClientCertificateResult>(
-                    new GetClientCertificateResultJsonUnmarshaller());
+            JsonResponseHandler<GetClientCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetClientCertificateResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1882,8 +1906,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetClientCertificatesResult> responseHandler = new JsonResponseHandler<GetClientCertificatesResult>(
-                    new GetClientCertificatesResultJsonUnmarshaller());
+            JsonResponseHandler<GetClientCertificatesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetClientCertificatesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1931,8 +1957,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDeploymentResult> responseHandler = new JsonResponseHandler<GetDeploymentResult>(
-                    new GetDeploymentResultJsonUnmarshaller());
+            JsonResponseHandler<GetDeploymentResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDeploymentResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1980,8 +2007,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDeploymentsResult> responseHandler = new JsonResponseHandler<GetDeploymentsResult>(
-                    new GetDeploymentsResultJsonUnmarshaller());
+            JsonResponseHandler<GetDeploymentsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDeploymentsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2029,8 +2057,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDomainNameResult> responseHandler = new JsonResponseHandler<GetDomainNameResult>(
-                    new GetDomainNameResultJsonUnmarshaller());
+            JsonResponseHandler<GetDomainNameResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDomainNameResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2076,8 +2105,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDomainNamesResult> responseHandler = new JsonResponseHandler<GetDomainNamesResult>(
-                    new GetDomainNamesResultJsonUnmarshaller());
+            JsonResponseHandler<GetDomainNamesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDomainNamesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2118,8 +2148,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetExportResult> responseHandler = new JsonResponseHandler<GetExportResult>(
-                    new GetExportResultJsonUnmarshaller());
+            JsonResponseHandler<GetExportResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetExportResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(false);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2165,8 +2196,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetIntegrationResult> responseHandler = new JsonResponseHandler<GetIntegrationResult>(
-                    new GetIntegrationResultJsonUnmarshaller());
+            JsonResponseHandler<GetIntegrationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetIntegrationResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2214,8 +2246,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetIntegrationResponseResult> responseHandler = new JsonResponseHandler<GetIntegrationResponseResult>(
-                    new GetIntegrationResponseResultJsonUnmarshaller());
+            JsonResponseHandler<GetIntegrationResponseResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetIntegrationResponseResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2260,8 +2294,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetMethodResult> responseHandler = new JsonResponseHandler<GetMethodResult>(
-                    new GetMethodResultJsonUnmarshaller());
+            JsonResponseHandler<GetMethodResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetMethodResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2309,8 +2344,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetMethodResponseResult> responseHandler = new JsonResponseHandler<GetMethodResponseResult>(
-                    new GetMethodResponseResultJsonUnmarshaller());
+            JsonResponseHandler<GetMethodResponseResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetMethodResponseResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2356,8 +2393,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetModelResult> responseHandler = new JsonResponseHandler<GetModelResult>(
-                    new GetModelResultJsonUnmarshaller());
+            JsonResponseHandler<GetModelResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetModelResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2407,8 +2445,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetModelTemplateResult> responseHandler = new JsonResponseHandler<GetModelTemplateResult>(
-                    new GetModelTemplateResultJsonUnmarshaller());
+            JsonResponseHandler<GetModelTemplateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetModelTemplateResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2455,8 +2494,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetModelsResult> responseHandler = new JsonResponseHandler<GetModelsResult>(
-                    new GetModelsResultJsonUnmarshaller());
+            JsonResponseHandler<GetModelsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetModelsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2501,8 +2541,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetResourceResult> responseHandler = new JsonResponseHandler<GetResourceResult>(
-                    new GetResourceResultJsonUnmarshaller());
+            JsonResponseHandler<GetResourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetResourceResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2549,8 +2590,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetResourcesResult> responseHandler = new JsonResponseHandler<GetResourcesResult>(
-                    new GetResourcesResultJsonUnmarshaller());
+            JsonResponseHandler<GetResourcesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetResourcesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2596,8 +2638,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRestApiResult> responseHandler = new JsonResponseHandler<GetRestApiResult>(
-                    new GetRestApiResultJsonUnmarshaller());
+            JsonResponseHandler<GetRestApiResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetRestApiResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2643,8 +2686,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRestApisResult> responseHandler = new JsonResponseHandler<GetRestApisResult>(
-                    new GetRestApisResultJsonUnmarshaller());
+            JsonResponseHandler<GetRestApisResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetRestApisResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2685,8 +2729,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetSdkResult> responseHandler = new JsonResponseHandler<GetSdkResult>(
-                    new GetSdkResultJsonUnmarshaller());
+            JsonResponseHandler<GetSdkResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new GetSdkResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(false);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2732,8 +2777,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetStageResult> responseHandler = new JsonResponseHandler<GetStageResult>(
-                    new GetStageResultJsonUnmarshaller());
+            JsonResponseHandler<GetStageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetStageResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2779,8 +2825,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetStagesResult> responseHandler = new JsonResponseHandler<GetStagesResult>(
-                    new GetStagesResultJsonUnmarshaller());
+            JsonResponseHandler<GetStagesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetStagesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2827,8 +2874,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutIntegrationResult> responseHandler = new JsonResponseHandler<PutIntegrationResult>(
-                    new PutIntegrationResultJsonUnmarshaller());
+            JsonResponseHandler<PutIntegrationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutIntegrationResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2878,8 +2926,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutIntegrationResponseResult> responseHandler = new JsonResponseHandler<PutIntegrationResponseResult>(
-                    new PutIntegrationResponseResultJsonUnmarshaller());
+            JsonResponseHandler<PutIntegrationResponseResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutIntegrationResponseResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2927,8 +2977,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutMethodResult> responseHandler = new JsonResponseHandler<PutMethodResult>(
-                    new PutMethodResultJsonUnmarshaller());
+            JsonResponseHandler<PutMethodResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutMethodResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2980,8 +3031,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutMethodResponseResult> responseHandler = new JsonResponseHandler<PutMethodResponseResult>(
-                    new PutMethodResponseResultJsonUnmarshaller());
+            JsonResponseHandler<PutMethodResponseResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutMethodResponseResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3025,8 +3078,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TestInvokeAuthorizerResult> responseHandler = new JsonResponseHandler<TestInvokeAuthorizerResult>(
-                    new TestInvokeAuthorizerResultJsonUnmarshaller());
+            JsonResponseHandler<TestInvokeAuthorizerResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new TestInvokeAuthorizerResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3069,8 +3124,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TestInvokeMethodResult> responseHandler = new JsonResponseHandler<TestInvokeMethodResult>(
-                    new TestInvokeMethodResultJsonUnmarshaller());
+            JsonResponseHandler<TestInvokeMethodResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new TestInvokeMethodResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3118,8 +3174,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateAccountResult> responseHandler = new JsonResponseHandler<UpdateAccountResult>(
-                    new UpdateAccountResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateAccountResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateAccountResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3166,8 +3223,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateApiKeyResult> responseHandler = new JsonResponseHandler<UpdateApiKeyResult>(
-                    new UpdateApiKeyResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateApiKeyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateApiKeyResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3215,8 +3273,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateAuthorizerResult> responseHandler = new JsonResponseHandler<UpdateAuthorizerResult>(
-                    new UpdateAuthorizerResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateAuthorizerResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateAuthorizerResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3267,8 +3326,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateBasePathMappingResult> responseHandler = new JsonResponseHandler<UpdateBasePathMappingResult>(
-                    new UpdateBasePathMappingResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateBasePathMappingResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateBasePathMappingResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3312,8 +3373,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateClientCertificateResult> responseHandler = new JsonResponseHandler<UpdateClientCertificateResult>(
-                    new UpdateClientCertificateResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateClientCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateClientCertificateResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3363,8 +3426,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDeploymentResult> responseHandler = new JsonResponseHandler<UpdateDeploymentResult>(
-                    new UpdateDeploymentResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateDeploymentResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateDeploymentResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3413,8 +3477,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDomainNameResult> responseHandler = new JsonResponseHandler<UpdateDomainNameResult>(
-                    new UpdateDomainNameResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateDomainNameResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateDomainNameResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3463,8 +3528,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateIntegrationResult> responseHandler = new JsonResponseHandler<UpdateIntegrationResult>(
-                    new UpdateIntegrationResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateIntegrationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateIntegrationResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3513,8 +3580,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateIntegrationResponseResult> responseHandler = new JsonResponseHandler<UpdateIntegrationResponseResult>(
-                    new UpdateIntegrationResponseResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateIntegrationResponseResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateIntegrationResponseResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3561,8 +3630,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateMethodResult> responseHandler = new JsonResponseHandler<UpdateMethodResult>(
-                    new UpdateMethodResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateMethodResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateMethodResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3613,8 +3683,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateMethodResponseResult> responseHandler = new JsonResponseHandler<UpdateMethodResponseResult>(
-                    new UpdateMethodResponseResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateMethodResponseResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateMethodResponseResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3661,8 +3733,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateModelResult> responseHandler = new JsonResponseHandler<UpdateModelResult>(
-                    new UpdateModelResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateModelResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateModelResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3710,8 +3783,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateResourceResult> responseHandler = new JsonResponseHandler<UpdateResourceResult>(
-                    new UpdateResourceResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateResourceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateResourceResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3760,8 +3834,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateRestApiResult> responseHandler = new JsonResponseHandler<UpdateRestApiResult>(
-                    new UpdateRestApiResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateRestApiResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateRestApiResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3809,8 +3884,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateStageResult> responseHandler = new JsonResponseHandler<UpdateStageResult>(
-                    new UpdateStageResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateStageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateStageResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -3870,8 +3946,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

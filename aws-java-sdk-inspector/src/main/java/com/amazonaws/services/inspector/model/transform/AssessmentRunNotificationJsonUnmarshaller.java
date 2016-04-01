@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,35 +55,33 @@ public class AssessmentRunNotificationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("date", targetDepth)) {
                     context.nextToken();
-                    assessmentRunNotification.setDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRunNotification.setDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("event", targetDepth)) {
                     context.nextToken();
-                    assessmentRunNotification.setEvent(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRunNotification.setEvent(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    assessmentRunNotification.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRunNotification.setMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
                     context.nextToken();
-                    assessmentRunNotification.setError(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRunNotification.setError(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("snsTopicArn", targetDepth)) {
                     context.nextToken();
-                    assessmentRunNotification
-                            .setSnsTopicArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    assessmentRunNotification.setSnsTopicArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snsPublishStatusCode", targetDepth)) {
                     context.nextToken();
-                    assessmentRunNotification
-                            .setSnsPublishStatusCode(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    assessmentRunNotification.setSnsPublishStatusCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

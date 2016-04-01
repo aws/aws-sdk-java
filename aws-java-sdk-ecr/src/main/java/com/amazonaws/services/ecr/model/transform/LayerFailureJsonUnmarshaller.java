@@ -18,6 +18,8 @@ package com.amazonaws.services.ecr.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class LayerFailureJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("layerDigest", targetDepth)) {
                     context.nextToken();
-                    layerFailure.setLayerDigest(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    layerFailure.setLayerDigest(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureCode", targetDepth)) {
                     context.nextToken();
-                    layerFailure.setFailureCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    layerFailure.setFailureCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
                     context.nextToken();
-                    layerFailure.setFailureReason(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    layerFailure.setFailureReason(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.codecommit.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,18 +54,17 @@ public class CommitJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("treeId", targetDepth)) {
                     context.nextToken();
-                    commit.setTreeId(StringJsonUnmarshaller.getInstance()
+                    commit.setTreeId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("parents", targetDepth)) {
                     context.nextToken();
-                    commit.setParents(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    commit.setParents(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    commit.setMessage(StringJsonUnmarshaller.getInstance()
+                    commit.setMessage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("author", targetDepth)) {
@@ -78,8 +79,8 @@ public class CommitJsonUnmarshaller implements
                 }
                 if (context.testExpression("additionalData", targetDepth)) {
                     context.nextToken();
-                    commit.setAdditionalData(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commit.setAdditionalData(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

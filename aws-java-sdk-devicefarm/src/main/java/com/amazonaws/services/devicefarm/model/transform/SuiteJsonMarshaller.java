@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.devicefarm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -42,7 +36,8 @@ public class SuiteJsonMarshaller {
     /**
      * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Suite suite, SdkJsonGenerator jsonGenerator) {
+    public void marshall(Suite suite, StructuredJsonGenerator jsonGenerator) {
+
         if (suite == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");

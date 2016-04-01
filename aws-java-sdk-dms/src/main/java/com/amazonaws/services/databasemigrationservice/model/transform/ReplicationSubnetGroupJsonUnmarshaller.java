@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,26 +57,27 @@ public class ReplicationSubnetGroupJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     replicationSubnetGroup
-                            .setReplicationSubnetGroupIdentifier(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setReplicationSubnetGroupIdentifier(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("ReplicationSubnetGroupDescription",
                         targetDepth)) {
                     context.nextToken();
                     replicationSubnetGroup
-                            .setReplicationSubnetGroupDescription(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setReplicationSubnetGroupDescription(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("VpcId", targetDepth)) {
                     context.nextToken();
-                    replicationSubnetGroup.setVpcId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    replicationSubnetGroup.setVpcId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetGroupStatus", targetDepth)) {
                     context.nextToken();
-                    replicationSubnetGroup
-                            .setSubnetGroupStatus(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationSubnetGroup.setSubnetGroupStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Subnets", targetDepth)) {
                     context.nextToken();

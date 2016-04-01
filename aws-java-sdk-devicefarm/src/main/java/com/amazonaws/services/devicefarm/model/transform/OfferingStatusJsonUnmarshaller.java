@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class OfferingStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    offeringStatus.setType(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    offeringStatus.setType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("offering", targetDepth)) {
                     context.nextToken();
@@ -63,13 +65,13 @@ public class OfferingStatusJsonUnmarshaller implements
                 }
                 if (context.testExpression("quantity", targetDepth)) {
                     context.nextToken();
-                    offeringStatus.setQuantity(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    offeringStatus.setQuantity(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("effectiveOn", targetDepth)) {
                     context.nextToken();
-                    offeringStatus.setEffectiveOn(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    offeringStatus.setEffectiveOn(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,63 +55,61 @@ public class FleetAttributesJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FleetId", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setFleetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetAttributes.setFleetId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetAttributes.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetAttributes.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setCreationTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetAttributes.setCreationTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("TerminationTime", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setTerminationTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetAttributes.setTerminationTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetAttributes.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("BuildId", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setBuildId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetAttributes.setBuildId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerLaunchPath", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setServerLaunchPath(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetAttributes.setServerLaunchPath(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerLaunchParameters",
                         targetDepth)) {
                     context.nextToken();
-                    fleetAttributes
-                            .setServerLaunchParameters(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    fleetAttributes.setServerLaunchParameters(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogPaths", targetDepth)) {
                     context.nextToken();
                     fleetAttributes.setLogPaths(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("NewGameSessionProtectionPolicy",
                         targetDepth)) {
                     context.nextToken();
-                    fleetAttributes
-                            .setNewGameSessionProtectionPolicy(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    fleetAttributes.setNewGameSessionProtectionPolicy(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

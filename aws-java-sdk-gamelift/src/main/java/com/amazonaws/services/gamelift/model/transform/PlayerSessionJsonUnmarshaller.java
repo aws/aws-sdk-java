@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,43 +55,43 @@ public class PlayerSessionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PlayerSessionId", targetDepth)) {
                     context.nextToken();
-                    playerSession.setPlayerSessionId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    playerSession.setPlayerSessionId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PlayerId", targetDepth)) {
                     context.nextToken();
-                    playerSession.setPlayerId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    playerSession.setPlayerId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("GameSessionId", targetDepth)) {
                     context.nextToken();
-                    playerSession.setGameSessionId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    playerSession.setGameSessionId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("FleetId", targetDepth)) {
                     context.nextToken();
-                    playerSession.setFleetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    playerSession.setFleetId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    playerSession.setCreationTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    playerSession.setCreationTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("TerminationTime", targetDepth)) {
                     context.nextToken();
-                    playerSession.setTerminationTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    playerSession.setTerminationTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    playerSession.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    playerSession.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
                     context.nextToken();
-                    playerSession.setIpAddress(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    playerSession.setIpAddress(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

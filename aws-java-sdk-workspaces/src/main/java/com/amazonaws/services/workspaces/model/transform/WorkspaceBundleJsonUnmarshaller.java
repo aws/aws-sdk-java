@@ -18,6 +18,8 @@ package com.amazonaws.services.workspaces.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class WorkspaceBundleJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BundleId", targetDepth)) {
                     context.nextToken();
-                    workspaceBundle.setBundleId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceBundle.setBundleId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    workspaceBundle.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceBundle.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Owner", targetDepth)) {
                     context.nextToken();
-                    workspaceBundle.setOwner(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceBundle.setOwner(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    workspaceBundle.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceBundle.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserStorage", targetDepth)) {
                     context.nextToken();

@@ -208,4 +208,12 @@ public abstract class JsonUnmarshallerContext {
         return true;
     }
 
+    /**
+     * Returns the JsonUnmarsheller for the specified scalar type. Returns null
+     * by default.
+     */
+    public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller(Class<T> type) {
+        return null;
+    }
+
 }

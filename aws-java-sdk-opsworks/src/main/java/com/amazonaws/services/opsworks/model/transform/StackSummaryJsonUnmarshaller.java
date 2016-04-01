@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class StackSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    stackSummary.setStackId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stackSummary.setStackId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    stackSummary.setName(StringJsonUnmarshaller.getInstance()
+                    stackSummary.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
-                    stackSummary.setArn(StringJsonUnmarshaller.getInstance()
+                    stackSummary.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("LayersCount", targetDepth)) {
                     context.nextToken();
-                    stackSummary.setLayersCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stackSummary.setLayersCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("AppsCount", targetDepth)) {
                     context.nextToken();
-                    stackSummary.setAppsCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stackSummary.setAppsCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstancesCount", targetDepth)) {
                     context.nextToken();

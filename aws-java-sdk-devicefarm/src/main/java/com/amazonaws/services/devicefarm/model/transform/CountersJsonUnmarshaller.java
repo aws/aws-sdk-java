@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,37 +55,37 @@ public class CountersJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("total", targetDepth)) {
                     context.nextToken();
-                    counters.setTotal(IntegerJsonUnmarshaller.getInstance()
+                    counters.setTotal(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("passed", targetDepth)) {
                     context.nextToken();
-                    counters.setPassed(IntegerJsonUnmarshaller.getInstance()
+                    counters.setPassed(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("failed", targetDepth)) {
                     context.nextToken();
-                    counters.setFailed(IntegerJsonUnmarshaller.getInstance()
+                    counters.setFailed(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("warned", targetDepth)) {
                     context.nextToken();
-                    counters.setWarned(IntegerJsonUnmarshaller.getInstance()
+                    counters.setWarned(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("errored", targetDepth)) {
                     context.nextToken();
-                    counters.setErrored(IntegerJsonUnmarshaller.getInstance()
+                    counters.setErrored(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    counters.setStopped(IntegerJsonUnmarshaller.getInstance()
+                    counters.setStopped(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("skipped", targetDepth)) {
                     context.nextToken();
-                    counters.setSkipped(IntegerJsonUnmarshaller.getInstance()
+                    counters.setSkipped(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

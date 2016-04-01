@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class StepConfigJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    stepConfig.setName(StringJsonUnmarshaller.getInstance()
+                    stepConfig.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ActionOnFailure", targetDepth)) {
                     context.nextToken();
-                    stepConfig.setActionOnFailure(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stepConfig.setActionOnFailure(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("HadoopJarStep", targetDepth)) {
                     context.nextToken();

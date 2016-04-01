@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class GetLoggingOptionsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    getLoggingOptionsResult.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getLoggingOptionsResult.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("logLevel", targetDepth)) {
                     context.nextToken();
-                    getLoggingOptionsResult.setLogLevel(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getLoggingOptionsResult.setLogLevel(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

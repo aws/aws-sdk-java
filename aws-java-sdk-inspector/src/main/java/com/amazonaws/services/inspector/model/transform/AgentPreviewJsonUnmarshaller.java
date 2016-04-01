@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class AgentPreviewJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentId", targetDepth)) {
                     context.nextToken();
-                    agentPreview.setAgentId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    agentPreview.setAgentId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroup", targetDepth)) {
                     context.nextToken();
-                    agentPreview.setAutoScalingGroup(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    agentPreview.setAutoScalingGroup(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,35 +56,34 @@ public class ConnectionJsonUnmarshaller implements
                 if (context.testExpression("ReplicationInstanceArn",
                         targetDepth)) {
                     context.nextToken();
-                    connection.setReplicationInstanceArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    connection.setReplicationInstanceArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointArn", targetDepth)) {
                     context.nextToken();
-                    connection.setEndpointArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    connection.setEndpointArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    connection.setStatus(StringJsonUnmarshaller.getInstance()
+                    connection.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("LastFailureMessage", targetDepth)) {
                     context.nextToken();
-                    connection.setLastFailureMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    connection.setLastFailureMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("EndpointIdentifier", targetDepth)) {
                     context.nextToken();
-                    connection.setEndpointIdentifier(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    connection.setEndpointIdentifier(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceIdentifier",
                         targetDepth)) {
                     context.nextToken();
-                    connection
-                            .setReplicationInstanceIdentifier(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    connection.setReplicationInstanceIdentifier(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

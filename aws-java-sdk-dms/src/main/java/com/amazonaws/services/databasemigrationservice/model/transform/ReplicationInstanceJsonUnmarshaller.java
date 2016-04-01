@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,40 +57,38 @@ public class ReplicationInstanceJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     replicationInstance
-                            .setReplicationInstanceIdentifier(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setReplicationInstanceIdentifier(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("ReplicationInstanceClass",
                         targetDepth)) {
                     context.nextToken();
-                    replicationInstance
-                            .setReplicationInstanceClass(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationInstance.setReplicationInstanceClass(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceStatus",
                         targetDepth)) {
                     context.nextToken();
-                    replicationInstance
-                            .setReplicationInstanceStatus(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationInstance.setReplicationInstanceStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllocatedStorage", targetDepth)) {
                     context.nextToken();
                     replicationInstance
-                            .setAllocatedStorage(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAllocatedStorage(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCreateTime", targetDepth)) {
                     context.nextToken();
-                    replicationInstance
-                            .setInstanceCreateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationInstance.setInstanceCreateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();
-                    replicationInstance
-                            .setAvailabilityZone(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationInstance.setAvailabilityZone(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationSubnetGroup",
                         targetDepth)) {
@@ -100,9 +100,8 @@ public class ReplicationInstanceJsonUnmarshaller implements
                 if (context.testExpression("PreferredMaintenanceWindow",
                         targetDepth)) {
                     context.nextToken();
-                    replicationInstance
-                            .setPreferredMaintenanceWindow(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationInstance.setPreferredMaintenanceWindow(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("PendingModifiedValues", targetDepth)) {
@@ -113,47 +112,49 @@ public class ReplicationInstanceJsonUnmarshaller implements
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
                     context.nextToken();
-                    replicationInstance.setEngineVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    replicationInstance.setEngineVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoMinorVersionUpgrade",
                         targetDepth)) {
                     context.nextToken();
                     replicationInstance
-                            .setAutoMinorVersionUpgrade(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAutoMinorVersionUpgrade(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("KmsKeyId", targetDepth)) {
                     context.nextToken();
-                    replicationInstance.setKmsKeyId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    replicationInstance.setKmsKeyId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReplicationInstanceArn",
                         targetDepth)) {
                     context.nextToken();
-                    replicationInstance
-                            .setReplicationInstanceArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationInstance.setReplicationInstanceArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression(
                         "ReplicationInstancePublicIpAddress", targetDepth)) {
                     context.nextToken();
                     replicationInstance
-                            .setReplicationInstancePublicIpAddress(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setReplicationInstancePublicIpAddress(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression(
                         "ReplicationInstancePrivateIpAddress", targetDepth)) {
                     context.nextToken();
                     replicationInstance
-                            .setReplicationInstancePrivateIpAddress(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setReplicationInstancePrivateIpAddress(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("PubliclyAccessible", targetDepth)) {
                     context.nextToken();
                     replicationInstance
-                            .setPubliclyAccessible(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setPubliclyAccessible(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,29 +55,29 @@ public class GetResourceResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    getResourceResult.setId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getResourceResult.setId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("parentId", targetDepth)) {
                     context.nextToken();
-                    getResourceResult.setParentId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getResourceResult.setParentId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("pathPart", targetDepth)) {
                     context.nextToken();
-                    getResourceResult.setPathPart(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getResourceResult.setPathPart(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("path", targetDepth)) {
                     context.nextToken();
-                    getResourceResult.setPath(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getResourceResult.setPath(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceMethods", targetDepth)) {
                     context.nextToken();
                     getResourceResult
                             .setResourceMethods(new MapUnmarshaller<String, Method>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     MethodJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }

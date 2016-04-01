@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,37 +55,34 @@ public class HlsContentProtectionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Method", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection.setMethod(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hlsContentProtection.setMethod(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection.setKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hlsContentProtection.setKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyMd5", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection.setKeyMd5(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    hlsContentProtection.setKeyMd5(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitializationVector", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection
-                            .setInitializationVector(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    hlsContentProtection.setInitializationVector(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("LicenseAcquisitionUrl", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection
-                            .setLicenseAcquisitionUrl(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    hlsContentProtection.setLicenseAcquisitionUrl(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyStoragePolicy", targetDepth)) {
                     context.nextToken();
-                    hlsContentProtection
-                            .setKeyStoragePolicy(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    hlsContentProtection.setKeyStoragePolicy(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -58,8 +60,8 @@ public class CreatePresetResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("Warning", targetDepth)) {
                     context.nextToken();
-                    createPresetResult.setWarning(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createPresetResult.setWarning(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

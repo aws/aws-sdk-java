@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitoidentity.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,26 +55,27 @@ public class DescribeIdentityResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityId", targetDepth)) {
                     context.nextToken();
-                    describeIdentityResult.setIdentityId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeIdentityResult.setIdentityId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Logins", targetDepth)) {
                     context.nextToken();
                     describeIdentityResult
-                            .setLogins(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setLogins(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    describeIdentityResult.setCreationDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeIdentityResult.setCreationDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    describeIdentityResult
-                            .setLastModifiedDate(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeIdentityResult.setLastModifiedDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

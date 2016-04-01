@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class ElasticIpJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ip", targetDepth)) {
                     context.nextToken();
-                    elasticIp.setIp(StringJsonUnmarshaller.getInstance()
+                    elasticIp.setIp(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    elasticIp.setName(StringJsonUnmarshaller.getInstance()
+                    elasticIp.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Domain", targetDepth)) {
                     context.nextToken();
-                    elasticIp.setDomain(StringJsonUnmarshaller.getInstance()
+                    elasticIp.setDomain(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
                     context.nextToken();
-                    elasticIp.setRegion(StringJsonUnmarshaller.getInstance()
+                    elasticIp.setRegion(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    elasticIp.setInstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    elasticIp.setInstanceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

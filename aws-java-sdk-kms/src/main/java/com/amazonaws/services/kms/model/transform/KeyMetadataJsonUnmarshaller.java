@@ -18,6 +18,8 @@ package com.amazonaws.services.kms.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,48 +55,48 @@ public class KeyMetadataJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AWSAccountId", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setAWSAccountId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    keyMetadata.setAWSAccountId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyId", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setKeyId(StringJsonUnmarshaller.getInstance()
+                    keyMetadata.setKeyId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setArn(StringJsonUnmarshaller.getInstance()
+                    keyMetadata.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setCreationDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    keyMetadata.setCreationDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setEnabled(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    keyMetadata.setEnabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    keyMetadata.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyUsage", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setKeyUsage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    keyMetadata.setKeyUsage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyState", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setKeyState(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    keyMetadata.setKeyState(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeletionDate", targetDepth)) {
                     context.nextToken();
-                    keyMetadata.setDeletionDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    keyMetadata.setDeletionDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

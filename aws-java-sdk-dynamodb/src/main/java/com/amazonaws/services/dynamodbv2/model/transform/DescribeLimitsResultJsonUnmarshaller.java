@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,30 +56,28 @@ public class DescribeLimitsResultJsonUnmarshaller implements
                 if (context.testExpression("AccountMaxReadCapacityUnits",
                         targetDepth)) {
                     context.nextToken();
-                    describeLimitsResult
-                            .setAccountMaxReadCapacityUnits(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeLimitsResult.setAccountMaxReadCapacityUnits(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("AccountMaxWriteCapacityUnits",
                         targetDepth)) {
                     context.nextToken();
                     describeLimitsResult
-                            .setAccountMaxWriteCapacityUnits(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAccountMaxWriteCapacityUnits(context
+                                    .getUnmarshaller(Long.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("TableMaxReadCapacityUnits",
                         targetDepth)) {
                     context.nextToken();
-                    describeLimitsResult
-                            .setTableMaxReadCapacityUnits(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeLimitsResult.setTableMaxReadCapacityUnits(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TableMaxWriteCapacityUnits",
                         targetDepth)) {
                     context.nextToken();
-                    describeLimitsResult
-                            .setTableMaxWriteCapacityUnits(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeLimitsResult.setTableMaxWriteCapacityUnits(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

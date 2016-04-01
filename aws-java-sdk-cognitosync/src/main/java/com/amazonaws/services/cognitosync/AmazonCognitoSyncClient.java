@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -377,8 +378,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BulkPublishResult> responseHandler = new JsonResponseHandler<BulkPublishResult>(
-                    new BulkPublishResultJsonUnmarshaller());
+            JsonResponseHandler<BulkPublishResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BulkPublishResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -443,8 +445,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteDatasetResult> responseHandler = new JsonResponseHandler<DeleteDatasetResult>(
-                    new DeleteDatasetResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteDatasetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteDatasetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -508,8 +511,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDatasetResult> responseHandler = new JsonResponseHandler<DescribeDatasetResult>(
-                    new DescribeDatasetResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeDatasetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeDatasetResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -572,8 +576,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeIdentityPoolUsageResult> responseHandler = new JsonResponseHandler<DescribeIdentityPoolUsageResult>(
-                    new DescribeIdentityPoolUsageResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeIdentityPoolUsageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeIdentityPoolUsageResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -635,8 +641,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeIdentityUsageResult> responseHandler = new JsonResponseHandler<DescribeIdentityUsageResult>(
-                    new DescribeIdentityUsageResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeIdentityUsageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeIdentityUsageResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -696,8 +704,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetBulkPublishDetailsResult> responseHandler = new JsonResponseHandler<GetBulkPublishDetailsResult>(
-                    new GetBulkPublishDetailsResultJsonUnmarshaller());
+            JsonResponseHandler<GetBulkPublishDetailsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetBulkPublishDetailsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -759,8 +769,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetCognitoEventsResult> responseHandler = new JsonResponseHandler<GetCognitoEventsResult>(
-                    new GetCognitoEventsResultJsonUnmarshaller());
+            JsonResponseHandler<GetCognitoEventsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetCognitoEventsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -822,8 +833,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetIdentityPoolConfigurationResult> responseHandler = new JsonResponseHandler<GetIdentityPoolConfigurationResult>(
-                    new GetIdentityPoolConfigurationResultJsonUnmarshaller());
+            JsonResponseHandler<GetIdentityPoolConfigurationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetIdentityPoolConfigurationResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -883,8 +896,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDatasetsResult> responseHandler = new JsonResponseHandler<ListDatasetsResult>(
-                    new ListDatasetsResultJsonUnmarshaller());
+            JsonResponseHandler<ListDatasetsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListDatasetsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -944,8 +958,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListIdentityPoolUsageResult> responseHandler = new JsonResponseHandler<ListIdentityPoolUsageResult>(
-                    new ListIdentityPoolUsageResultJsonUnmarshaller());
+            JsonResponseHandler<ListIdentityPoolUsageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListIdentityPoolUsageResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1005,8 +1021,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRecordsResult> responseHandler = new JsonResponseHandler<ListRecordsResult>(
-                    new ListRecordsResultJsonUnmarshaller());
+            JsonResponseHandler<ListRecordsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListRecordsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1066,8 +1083,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterDeviceResult> responseHandler = new JsonResponseHandler<RegisterDeviceResult>(
-                    new RegisterDeviceResultJsonUnmarshaller());
+            JsonResponseHandler<RegisterDeviceResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RegisterDeviceResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1129,8 +1147,8 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1192,8 +1210,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SetIdentityPoolConfigurationResult> responseHandler = new JsonResponseHandler<SetIdentityPoolConfigurationResult>(
-                    new SetIdentityPoolConfigurationResultJsonUnmarshaller());
+            JsonResponseHandler<SetIdentityPoolConfigurationResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new SetIdentityPoolConfigurationResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1256,8 +1276,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SubscribeToDatasetResult> responseHandler = new JsonResponseHandler<SubscribeToDatasetResult>(
-                    new SubscribeToDatasetResultJsonUnmarshaller());
+            JsonResponseHandler<SubscribeToDatasetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new SubscribeToDatasetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1320,8 +1342,10 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UnsubscribeFromDatasetResult> responseHandler = new JsonResponseHandler<UnsubscribeFromDatasetResult>(
-                    new UnsubscribeFromDatasetResultJsonUnmarshaller());
+            JsonResponseHandler<UnsubscribeFromDatasetResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UnsubscribeFromDatasetResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1407,8 +1431,9 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateRecordsResult> responseHandler = new JsonResponseHandler<UpdateRecordsResult>(
-                    new UpdateRecordsResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateRecordsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateRecordsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1468,8 +1493,8 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

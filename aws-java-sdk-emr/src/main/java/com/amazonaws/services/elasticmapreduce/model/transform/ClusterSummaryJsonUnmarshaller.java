@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ClusterSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    clusterSummary.setId(StringJsonUnmarshaller.getInstance()
+                    clusterSummary.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    clusterSummary.setName(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    clusterSummary.setName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -70,8 +72,9 @@ public class ClusterSummaryJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     clusterSummary
-                            .setNormalizedInstanceHours(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setNormalizedInstanceHours(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

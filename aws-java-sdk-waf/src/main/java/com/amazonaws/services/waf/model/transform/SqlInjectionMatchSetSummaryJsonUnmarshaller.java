@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,13 +57,13 @@ public class SqlInjectionMatchSetSummaryJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     sqlInjectionMatchSetSummary
-                            .setSqlInjectionMatchSetId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setSqlInjectionMatchSetId(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    sqlInjectionMatchSetSummary.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sqlInjectionMatchSetSummary.setName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

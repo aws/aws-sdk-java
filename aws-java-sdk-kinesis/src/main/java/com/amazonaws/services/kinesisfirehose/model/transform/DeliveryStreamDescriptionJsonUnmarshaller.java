@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,39 +55,35 @@ public class DeliveryStreamDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeliveryStreamName", targetDepth)) {
                     context.nextToken();
-                    deliveryStreamDescription
-                            .setDeliveryStreamName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deliveryStreamDescription.setDeliveryStreamName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryStreamARN", targetDepth)) {
                     context.nextToken();
-                    deliveryStreamDescription
-                            .setDeliveryStreamARN(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deliveryStreamDescription.setDeliveryStreamARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeliveryStreamStatus", targetDepth)) {
                     context.nextToken();
-                    deliveryStreamDescription
-                            .setDeliveryStreamStatus(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deliveryStreamDescription.setDeliveryStreamStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VersionId", targetDepth)) {
                     context.nextToken();
-                    deliveryStreamDescription
-                            .setVersionId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    deliveryStreamDescription.setVersionId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreateTimestamp", targetDepth)) {
                     context.nextToken();
-                    deliveryStreamDescription
-                            .setCreateTimestamp(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deliveryStreamDescription.setCreateTimestamp(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("LastUpdateTimestamp", targetDepth)) {
                     context.nextToken();
-                    deliveryStreamDescription
-                            .setLastUpdateTimestamp(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deliveryStreamDescription.setLastUpdateTimestamp(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("Destinations", targetDepth)) {
                     context.nextToken();
@@ -97,8 +95,8 @@ public class DeliveryStreamDescriptionJsonUnmarshaller implements
                 if (context.testExpression("HasMoreDestinations", targetDepth)) {
                     context.nextToken();
                     deliveryStreamDescription
-                            .setHasMoreDestinations(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setHasMoreDestinations(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

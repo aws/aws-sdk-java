@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudsearchdomain.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,28 +54,28 @@ public class HitJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    hit.setId(StringJsonUnmarshaller.getInstance().unmarshall(
+                    hit.setId(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("fields", targetDepth)) {
                     context.nextToken();
                     hit.setFields(new MapUnmarshaller<String, java.util.List<String>>(
-                            StringJsonUnmarshaller.getInstance(),
-                            new ListUnmarshaller<String>(StringJsonUnmarshaller
-                                    .getInstance())).unmarshall(context));
+                            context.getUnmarshaller(String.class),
+                            new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class)))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("exprs", targetDepth)) {
                     context.nextToken();
-                    hit.setExprs(new MapUnmarshaller<String, String>(
-                            StringJsonUnmarshaller.getInstance(),
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    hit.setExprs(new MapUnmarshaller<String, String>(context
+                            .getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("highlights", targetDepth)) {
                     context.nextToken();
                     hit.setHighlights(new MapUnmarshaller<String, String>(
-                            StringJsonUnmarshaller.getInstance(),
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class), context
+                                    .getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,33 +54,33 @@ public class BuildJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BuildId", targetDepth)) {
                     context.nextToken();
-                    build.setBuildId(StringJsonUnmarshaller.getInstance()
+                    build.setBuildId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    build.setName(StringJsonUnmarshaller.getInstance()
+                    build.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();
-                    build.setVersion(StringJsonUnmarshaller.getInstance()
+                    build.setVersion(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    build.setStatus(StringJsonUnmarshaller.getInstance()
+                    build.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SizeOnDisk", targetDepth)) {
                     context.nextToken();
-                    build.setSizeOnDisk(LongJsonUnmarshaller.getInstance()
+                    build.setSizeOnDisk(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    build.setCreationTime(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    build.setCreationTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

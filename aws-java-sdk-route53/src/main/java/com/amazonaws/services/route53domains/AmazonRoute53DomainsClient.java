@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -314,8 +315,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CheckDomainAvailabilityResult> responseHandler = new JsonResponseHandler<CheckDomainAvailabilityResult>(
-                    new CheckDomainAvailabilityResultJsonUnmarshaller());
+            JsonResponseHandler<CheckDomainAvailabilityResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CheckDomainAvailabilityResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -374,8 +377,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTagsForDomainResult> responseHandler = new JsonResponseHandler<DeleteTagsForDomainResult>(
-                    new DeleteTagsForDomainResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteTagsForDomainResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteTagsForDomainResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -431,8 +436,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableDomainAutoRenewResult> responseHandler = new JsonResponseHandler<DisableDomainAutoRenewResult>(
-                    new DisableDomainAutoRenewResultJsonUnmarshaller());
+            JsonResponseHandler<DisableDomainAutoRenewResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DisableDomainAutoRenewResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -498,8 +505,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableDomainTransferLockResult> responseHandler = new JsonResponseHandler<DisableDomainTransferLockResult>(
-                    new DisableDomainTransferLockResultJsonUnmarshaller());
+            JsonResponseHandler<DisableDomainTransferLockResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DisableDomainTransferLockResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -561,8 +570,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EnableDomainAutoRenewResult> responseHandler = new JsonResponseHandler<EnableDomainAutoRenewResult>(
-                    new EnableDomainAutoRenewResultJsonUnmarshaller());
+            JsonResponseHandler<EnableDomainAutoRenewResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new EnableDomainAutoRenewResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -626,8 +637,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EnableDomainTransferLockResult> responseHandler = new JsonResponseHandler<EnableDomainTransferLockResult>(
-                    new EnableDomainTransferLockResultJsonUnmarshaller());
+            JsonResponseHandler<EnableDomainTransferLockResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new EnableDomainTransferLockResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -678,8 +691,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDomainDetailResult> responseHandler = new JsonResponseHandler<GetDomainDetailResult>(
-                    new GetDomainDetailResultJsonUnmarshaller());
+            JsonResponseHandler<GetDomainDetailResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDomainDetailResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -730,8 +744,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetOperationDetailResult> responseHandler = new JsonResponseHandler<GetOperationDetailResult>(
-                    new GetOperationDetailResultJsonUnmarshaller());
+            JsonResponseHandler<GetOperationDetailResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetOperationDetailResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -779,8 +795,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDomainsResult> responseHandler = new JsonResponseHandler<ListDomainsResult>(
-                    new ListDomainsResultJsonUnmarshaller());
+            JsonResponseHandler<ListDomainsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListDomainsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -834,8 +851,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListOperationsResult> responseHandler = new JsonResponseHandler<ListOperationsResult>(
-                    new ListOperationsResultJsonUnmarshaller());
+            JsonResponseHandler<ListOperationsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListOperationsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -900,8 +918,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsForDomainResult> responseHandler = new JsonResponseHandler<ListTagsForDomainResult>(
-                    new ListTagsForDomainResultJsonUnmarshaller());
+            JsonResponseHandler<ListTagsForDomainResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListTagsForDomainResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -985,8 +1005,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterDomainResult> responseHandler = new JsonResponseHandler<RegisterDomainResult>(
-                    new RegisterDomainResultJsonUnmarshaller());
+            JsonResponseHandler<RegisterDomainResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RegisterDomainResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1039,8 +1060,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RetrieveDomainAuthCodeResult> responseHandler = new JsonResponseHandler<RetrieveDomainAuthCodeResult>(
-                    new RetrieveDomainAuthCodeResultJsonUnmarshaller());
+            JsonResponseHandler<RetrieveDomainAuthCodeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RetrieveDomainAuthCodeResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1128,8 +1151,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TransferDomainResult> responseHandler = new JsonResponseHandler<TransferDomainResult>(
-                    new TransferDomainResultJsonUnmarshaller());
+            JsonResponseHandler<TransferDomainResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new TransferDomainResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1196,8 +1220,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDomainContactResult> responseHandler = new JsonResponseHandler<UpdateDomainContactResult>(
-                    new UpdateDomainContactResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateDomainContactResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateDomainContactResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1270,8 +1296,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDomainContactPrivacyResult> responseHandler = new JsonResponseHandler<UpdateDomainContactPrivacyResult>(
-                    new UpdateDomainContactPrivacyResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateDomainContactPrivacyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateDomainContactPrivacyResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1339,8 +1367,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDomainNameserversResult> responseHandler = new JsonResponseHandler<UpdateDomainNameserversResult>(
-                    new UpdateDomainNameserversResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateDomainNameserversResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateDomainNameserversResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1399,8 +1429,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateTagsForDomainResult> responseHandler = new JsonResponseHandler<UpdateTagsForDomainResult>(
-                    new UpdateTagsForDomainResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateTagsForDomainResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateTagsForDomainResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1460,8 +1492,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

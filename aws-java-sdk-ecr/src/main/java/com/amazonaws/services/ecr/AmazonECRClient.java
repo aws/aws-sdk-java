@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -350,8 +351,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchCheckLayerAvailabilityResult> responseHandler = new JsonResponseHandler<BatchCheckLayerAvailabilityResult>(
-                    new BatchCheckLayerAvailabilityResultJsonUnmarshaller());
+            JsonResponseHandler<BatchCheckLayerAvailabilityResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchCheckLayerAvailabilityResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -408,8 +411,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchDeleteImageResult> responseHandler = new JsonResponseHandler<BatchDeleteImageResult>(
-                    new BatchDeleteImageResultJsonUnmarshaller());
+            JsonResponseHandler<BatchDeleteImageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchDeleteImageResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -462,8 +466,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<BatchGetImageResult> responseHandler = new JsonResponseHandler<BatchGetImageResult>(
-                    new BatchGetImageResultJsonUnmarshaller());
+            JsonResponseHandler<BatchGetImageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new BatchGetImageResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -538,8 +543,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CompleteLayerUploadResult> responseHandler = new JsonResponseHandler<CompleteLayerUploadResult>(
-                    new CompleteLayerUploadResultJsonUnmarshaller());
+            JsonResponseHandler<CompleteLayerUploadResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CompleteLayerUploadResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -597,8 +604,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateRepositoryResult> responseHandler = new JsonResponseHandler<CreateRepositoryResult>(
-                    new CreateRepositoryResultJsonUnmarshaller());
+            JsonResponseHandler<CreateRepositoryResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateRepositoryResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -655,8 +663,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteRepositoryResult> responseHandler = new JsonResponseHandler<DeleteRepositoryResult>(
-                    new DeleteRepositoryResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteRepositoryResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteRepositoryResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -712,8 +721,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteRepositoryPolicyResult> responseHandler = new JsonResponseHandler<DeleteRepositoryPolicyResult>(
-                    new DeleteRepositoryPolicyResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteRepositoryPolicyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteRepositoryPolicyResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -766,8 +777,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeRepositoriesResult> responseHandler = new JsonResponseHandler<DescribeRepositoriesResult>(
-                    new DescribeRepositoriesResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeRepositoriesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeRepositoriesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -826,8 +839,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetAuthorizationTokenResult> responseHandler = new JsonResponseHandler<GetAuthorizationTokenResult>(
-                    new GetAuthorizationTokenResultJsonUnmarshaller());
+            JsonResponseHandler<GetAuthorizationTokenResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetAuthorizationTokenResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -896,8 +911,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDownloadUrlForLayerResult> responseHandler = new JsonResponseHandler<GetDownloadUrlForLayerResult>(
-                    new GetDownloadUrlForLayerResultJsonUnmarshaller());
+            JsonResponseHandler<GetDownloadUrlForLayerResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetDownloadUrlForLayerResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -953,8 +970,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRepositoryPolicyResult> responseHandler = new JsonResponseHandler<GetRepositoryPolicyResult>(
-                    new GetRepositoryPolicyResultJsonUnmarshaller());
+            JsonResponseHandler<GetRepositoryPolicyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetRepositoryPolicyResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1014,8 +1033,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<InitiateLayerUploadResult> responseHandler = new JsonResponseHandler<InitiateLayerUploadResult>(
-                    new InitiateLayerUploadResultJsonUnmarshaller());
+            JsonResponseHandler<InitiateLayerUploadResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new InitiateLayerUploadResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1065,8 +1086,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListImagesResult> responseHandler = new JsonResponseHandler<ListImagesResult>(
-                    new ListImagesResultJsonUnmarshaller());
+            JsonResponseHandler<ListImagesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListImagesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1136,8 +1158,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutImageResult> responseHandler = new JsonResponseHandler<PutImageResult>(
-                    new PutImageResultJsonUnmarshaller());
+            JsonResponseHandler<PutImageResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutImageResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1191,8 +1214,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SetRepositoryPolicyResult> responseHandler = new JsonResponseHandler<SetRepositoryPolicyResult>(
-                    new SetRepositoryPolicyResultJsonUnmarshaller());
+            JsonResponseHandler<SetRepositoryPolicyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new SetRepositoryPolicyResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1263,8 +1288,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UploadLayerPartResult> responseHandler = new JsonResponseHandler<UploadLayerPartResult>(
-                    new UploadLayerPartResultJsonUnmarshaller());
+            JsonResponseHandler<UploadLayerPartResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UploadLayerPartResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1324,8 +1350,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

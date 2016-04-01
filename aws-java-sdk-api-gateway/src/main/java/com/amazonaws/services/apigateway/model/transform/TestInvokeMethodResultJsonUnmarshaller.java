@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,31 +55,31 @@ public class TestInvokeMethodResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    testInvokeMethodResult.setStatus(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    testInvokeMethodResult.setStatus(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("body", targetDepth)) {
                     context.nextToken();
-                    testInvokeMethodResult.setBody(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    testInvokeMethodResult.setBody(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("headers", targetDepth)) {
                     context.nextToken();
                     testInvokeMethodResult
                             .setHeaders(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("log", targetDepth)) {
                     context.nextToken();
-                    testInvokeMethodResult.setLog(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    testInvokeMethodResult.setLog(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("latency", targetDepth)) {
                     context.nextToken();
-                    testInvokeMethodResult.setLatency(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    testInvokeMethodResult.setLatency(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

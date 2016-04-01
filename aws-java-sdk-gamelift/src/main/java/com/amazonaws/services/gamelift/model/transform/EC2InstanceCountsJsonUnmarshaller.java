@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,38 +55,38 @@ public class EC2InstanceCountsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DESIRED", targetDepth)) {
                     context.nextToken();
-                    eC2InstanceCounts.setDESIRED(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eC2InstanceCounts.setDESIRED(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MINIMUM", targetDepth)) {
                     context.nextToken();
-                    eC2InstanceCounts.setMINIMUM(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eC2InstanceCounts.setMINIMUM(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MAXIMUM", targetDepth)) {
                     context.nextToken();
-                    eC2InstanceCounts.setMAXIMUM(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eC2InstanceCounts.setMAXIMUM(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PENDING", targetDepth)) {
                     context.nextToken();
-                    eC2InstanceCounts.setPENDING(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eC2InstanceCounts.setPENDING(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ACTIVE", targetDepth)) {
                     context.nextToken();
-                    eC2InstanceCounts.setACTIVE(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eC2InstanceCounts.setACTIVE(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IDLE", targetDepth)) {
                     context.nextToken();
-                    eC2InstanceCounts.setIDLE(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eC2InstanceCounts.setIDLE(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TERMINATING", targetDepth)) {
                     context.nextToken();
-                    eC2InstanceCounts.setTERMINATING(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eC2InstanceCounts.setTERMINATING(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

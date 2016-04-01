@@ -146,7 +146,10 @@ public class TransferManager {
     /** The thread pool in which transfers are uploaded or downloaded. */
     private final ExecutorService threadPool;
 
-    /** Thread used for periodicially checking transfers and updating thier state. */
+    /**
+     * Thread used for periodically checking transfers and updating their state, as well as enforcing
+     * timeouts.
+     */
     private final ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1, daemonThreadFactory);
 
     private static final Log log = LogFactory.getLog(TransferManager.class);
@@ -651,7 +654,54 @@ public class TransferManager {
      *             request.
      */
     public Download download(String bucket, String key, File file) {
-        return download(new GetObjectRequest(bucket, key), file);
+        return download(bucket, key, file, 0);
+    }
+
+    /**
+     * Schedules a new transfer to download data from Amazon S3 and save it to
+     * the specified file. This method is non-blocking and returns immediately
+     * (i.e. before the data has been fully downloaded).
+     * <p>
+     * Use the returned Download object to query the progress of the transfer,
+     * add listeners for progress events, and wait for the download to complete.
+     * </p>
+     * <p>
+     * If you are downloading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     *
+     * @param bucket
+     *            The name of the bucket containing the object to download.
+     * @param key
+     *            The key under which the object to download is stored.
+     * @param file
+     *            The file to download the object's data to.
+     * @param timeoutMillis
+     *            Timeout, in milliseconds, for waiting for this download to
+     *            complete.  Note that the timeout time will be approximate
+     *            and is not strictly guaranteed.  As a result this timeout
+     *            should not be relied on in cases where exact precision is
+     *            required.
+     *
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Download download(String bucket, String key,
+                             File file, long timeoutMillis) {
+        return download(new GetObjectRequest(bucket, key), file,
+                timeoutMillis);
     }
 
     /**
@@ -688,7 +738,52 @@ public class TransferManager {
      *             request.
      */
     public Download download(final GetObjectRequest getObjectRequest, final File file) {
-        return doDownload(getObjectRequest, file, null, null, OVERWRITE_MODE);
+        return download(getObjectRequest, file, 0);
+    }
+
+    /**
+     * Schedules a new transfer to download data from Amazon S3 and save it to
+     * the specified file. This method is non-blocking and returns immediately
+     * (i.e. before the data has been fully downloaded).
+     * <p>
+     * Use the returned Download object to query the progress of the transfer,
+     * add listeners for progress events, and wait for the download to complete.
+     * </p>
+     * <p>
+     * If you are downloading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     *
+     * @param getObjectRequest
+     *            The request containing all the parameters for the download.
+     * @param file
+     *            The file to download the object data to.
+     * @param timeoutMillis
+     *            Timeout, in milliseconds, for waiting for this download to
+     *            complete.  Note that the timeout time will be approximate
+     *            and is not strictly guaranteed.  As a result this timeout
+     *            should not be relied on in cases where exact precision is
+     *            required.
+     *
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Download download(final GetObjectRequest getObjectRequest,
+                             final File file, long timeoutMillis) {
+        return doDownload(getObjectRequest, file, null, null, OVERWRITE_MODE,
+                timeoutMillis);
     }
 
     /**
@@ -730,7 +825,56 @@ public class TransferManager {
     public Download download(final GetObjectRequest getObjectRequest,
             final File file, final S3ProgressListener progressListener) {
         return doDownload(getObjectRequest, file, null, progressListener,
-                OVERWRITE_MODE);
+                OVERWRITE_MODE, 0);
+    }
+
+    /**
+     * Schedules a new transfer to download data from Amazon S3 and save it to
+     * the specified file. This method is non-blocking and returns immediately
+     * (i.e. before the data has been fully downloaded).
+     * <p>
+     * Use the returned Download object to query the progress of the transfer,
+     * add listeners for progress events, and wait for the download to complete.
+     * </p>
+     * <p>
+     * If you are downloading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     *
+     * @param getObjectRequest
+     *            The request containing all the parameters for the download.
+     * @param file
+     *            The file to download the object data to.
+     * @param progressListener
+     *            An optional callback listener to get the progress of the
+     *            download.
+     * @param timeoutMillis
+     *            Timeout, in milliseconds, for waiting for this download to
+     *            complete.  Note that the timeout time will be approximate
+     *            and is not strictly guaranteed.  As a result this timeout
+     *            should not be relied on in cases where exact precision is
+     *            required.
+     *
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Download download(final GetObjectRequest getObjectRequest,
+                             final File file, final S3ProgressListener progressListener,
+                             final long timeoutMillis) {
+        return doDownload(getObjectRequest, file, null, progressListener,
+                OVERWRITE_MODE, timeoutMillis);
     }
 
     /**
@@ -742,8 +886,14 @@ public class TransferManager {
     private Download doDownload(final GetObjectRequest getObjectRequest,
             final File file, final TransferStateChangeListener stateListener,
             final S3ProgressListener s3progressListener,
-            final boolean resumeExistingDownload)
+            final boolean resumeExistingDownload,
+            final long timeoutMillis)
     {
+        assertParameterNotNull(getObjectRequest,
+                "A valid GetObjectRequest must be provided to initiate download");
+        assertParameterNotNull(file,
+                "A valid file must be provided to download into");
+
         appendSingleObjectUserAgent(getObjectRequest);
         String description = "Downloading from " + getObjectRequest.getBucketName() + "/" + getObjectRequest.getKey();
 
@@ -825,7 +975,7 @@ public class TransferManager {
         Future<?> future = threadPool.submit(
             new DownloadCallable(s3, latch,
                 getObjectRequest, resumeExistingDownload, download, file,
-                origStartingByte, fileLength));
+                origStartingByte, fileLength, timeoutMillis, timedThreadPool));
         download.setMonitor(new DownloadMonitor(download, future));
         latch.countDown();
         return download;
@@ -935,7 +1085,7 @@ public class TransferManager {
                                     .<GetObjectRequest>withGeneralProgressListener(
                                             listener),
                             f,
-                            transferListener, null, false));
+                            transferListener, null, false, 0));
         }
 
         if ( downloads.isEmpty() ) {
@@ -1546,7 +1696,7 @@ public class TransferManager {
         request.setResponseHeaders(persistableDownload.getResponseHeaders());
 
         return doDownload(request, new File(persistableDownload.getFile()), null, null,
-                APPEND_MODE);
+                APPEND_MODE, 0);
     }
 
     /**

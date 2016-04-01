@@ -18,6 +18,8 @@ package com.amazonaws.services.directconnect.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,56 +57,53 @@ public class AllocateConnectionOnInterconnectResultJsonUnmarshaller
                 if (context.testExpression("ownerAccount", targetDepth)) {
                     context.nextToken();
                     allocateConnectionOnInterconnectResult
-                            .setOwnerAccount(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setOwnerAccount(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionId", targetDepth)) {
                     context.nextToken();
                     allocateConnectionOnInterconnectResult
-                            .setConnectionId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setConnectionId(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionName", targetDepth)) {
                     context.nextToken();
                     allocateConnectionOnInterconnectResult
-                            .setConnectionName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setConnectionName(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("connectionState", targetDepth)) {
                     context.nextToken();
                     allocateConnectionOnInterconnectResult
-                            .setConnectionState(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setConnectionState(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
                     context.nextToken();
-                    allocateConnectionOnInterconnectResult
-                            .setRegion(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    allocateConnectionOnInterconnectResult.setRegion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
-                    allocateConnectionOnInterconnectResult
-                            .setLocation(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    allocateConnectionOnInterconnectResult.setLocation(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bandwidth", targetDepth)) {
                     context.nextToken();
-                    allocateConnectionOnInterconnectResult
-                            .setBandwidth(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    allocateConnectionOnInterconnectResult.setBandwidth(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vlan", targetDepth)) {
                     context.nextToken();
                     allocateConnectionOnInterconnectResult
-                            .setVlan(IntegerJsonUnmarshaller.getInstance()
+                            .setVlan(context.getUnmarshaller(Integer.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("partnerName", targetDepth)) {
                     context.nextToken();
                     allocateConnectionOnInterconnectResult
-                            .setPartnerName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setPartnerName(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

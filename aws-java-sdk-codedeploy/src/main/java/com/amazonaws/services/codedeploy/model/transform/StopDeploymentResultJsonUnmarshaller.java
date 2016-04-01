@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,13 @@ public class StopDeploymentResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    stopDeploymentResult.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stopDeploymentResult.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
-                    stopDeploymentResult
-                            .setStatusMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    stopDeploymentResult.setStatusMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

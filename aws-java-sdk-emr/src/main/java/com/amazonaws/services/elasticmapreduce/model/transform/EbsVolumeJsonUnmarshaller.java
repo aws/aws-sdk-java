@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,12 +55,12 @@ public class EbsVolumeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Device", targetDepth)) {
                     context.nextToken();
-                    ebsVolume.setDevice(StringJsonUnmarshaller.getInstance()
+                    ebsVolume.setDevice(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("VolumeId", targetDepth)) {
                     context.nextToken();
-                    ebsVolume.setVolumeId(StringJsonUnmarshaller.getInstance()
+                    ebsVolume.setVolumeId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,26 +55,25 @@ public class DeviceiSCSIAttributesJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetARN", targetDepth)) {
                     context.nextToken();
-                    deviceiSCSIAttributes.setTargetARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deviceiSCSIAttributes.setTargetARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
                     context.nextToken();
-                    deviceiSCSIAttributes
-                            .setNetworkInterfaceId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deviceiSCSIAttributes.setNetworkInterfaceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfacePort", targetDepth)) {
                     context.nextToken();
                     deviceiSCSIAttributes
-                            .setNetworkInterfacePort(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setNetworkInterfacePort(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("ChapEnabled", targetDepth)) {
                     context.nextToken();
                     deviceiSCSIAttributes
-                            .setChapEnabled(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setChapEnabled(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class AliasJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AliasId", targetDepth)) {
                     context.nextToken();
-                    alias.setAliasId(StringJsonUnmarshaller.getInstance()
+                    alias.setAliasId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    alias.setName(StringJsonUnmarshaller.getInstance()
+                    alias.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    alias.setDescription(StringJsonUnmarshaller.getInstance()
+                    alias.setDescription(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("RoutingStrategy", targetDepth)) {
@@ -72,13 +74,13 @@ public class AliasJsonUnmarshaller implements
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    alias.setCreationTime(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    alias.setCreationTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
                     context.nextToken();
-                    alias.setLastUpdatedTime(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    alias.setLastUpdatedTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

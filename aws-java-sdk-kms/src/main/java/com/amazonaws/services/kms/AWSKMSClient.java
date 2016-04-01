@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -445,8 +446,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CancelKeyDeletionResult> responseHandler = new JsonResponseHandler<CancelKeyDeletionResult>(
-                    new CancelKeyDeletionResultJsonUnmarshaller());
+            JsonResponseHandler<CancelKeyDeletionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CancelKeyDeletionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -529,8 +532,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -607,8 +610,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateGrantResult> responseHandler = new JsonResponseHandler<CreateGrantResult>(
-                    new CreateGrantResultJsonUnmarshaller());
+            JsonResponseHandler<CreateGrantResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateGrantResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -673,8 +677,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateKeyResult> responseHandler = new JsonResponseHandler<CreateKeyResult>(
-                    new CreateKeyResultJsonUnmarshaller());
+            JsonResponseHandler<CreateKeyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateKeyResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -767,8 +772,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DecryptResult> responseHandler = new JsonResponseHandler<DecryptResult>(
-                    new DecryptResultJsonUnmarshaller());
+            JsonResponseHandler<DecryptResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new DecryptResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -827,8 +833,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -878,8 +884,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeKeyResult> responseHandler = new JsonResponseHandler<DescribeKeyResult>(
-                    new DescribeKeyResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeKeyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeKeyResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -944,8 +951,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1008,8 +1015,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1073,8 +1080,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1137,8 +1144,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1231,8 +1238,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EncryptResult> responseHandler = new JsonResponseHandler<EncryptResult>(
-                    new EncryptResultJsonUnmarshaller());
+            JsonResponseHandler<EncryptResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(new EncryptResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1341,8 +1349,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateDataKeyResult> responseHandler = new JsonResponseHandler<GenerateDataKeyResult>(
-                    new GenerateDataKeyResultJsonUnmarshaller());
+            JsonResponseHandler<GenerateDataKeyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GenerateDataKeyResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1420,8 +1429,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateDataKeyWithoutPlaintextResult> responseHandler = new JsonResponseHandler<GenerateDataKeyWithoutPlaintextResult>(
-                    new GenerateDataKeyWithoutPlaintextResultJsonUnmarshaller());
+            JsonResponseHandler<GenerateDataKeyWithoutPlaintextResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GenerateDataKeyWithoutPlaintextResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1469,8 +1480,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateRandomResult> responseHandler = new JsonResponseHandler<GenerateRandomResult>(
-                    new GenerateRandomResultJsonUnmarshaller());
+            JsonResponseHandler<GenerateRandomResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GenerateRandomResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1537,8 +1549,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetKeyPolicyResult> responseHandler = new JsonResponseHandler<GetKeyPolicyResult>(
-                    new GetKeyPolicyResultJsonUnmarshaller());
+            JsonResponseHandler<GetKeyPolicyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetKeyPolicyResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1603,8 +1616,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetKeyRotationStatusResult> responseHandler = new JsonResponseHandler<GetKeyRotationStatusResult>(
-                    new GetKeyRotationStatusResultJsonUnmarshaller());
+            JsonResponseHandler<GetKeyRotationStatusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetKeyRotationStatusResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1654,8 +1669,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAliasesResult> responseHandler = new JsonResponseHandler<ListAliasesResult>(
-                    new ListAliasesResultJsonUnmarshaller());
+            JsonResponseHandler<ListAliasesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListAliasesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1724,8 +1740,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListGrantsResult> responseHandler = new JsonResponseHandler<ListGrantsResult>(
-                    new ListGrantsResultJsonUnmarshaller());
+            JsonResponseHandler<ListGrantsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListGrantsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1787,8 +1804,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListKeyPoliciesResult> responseHandler = new JsonResponseHandler<ListKeyPoliciesResult>(
-                    new ListKeyPoliciesResultJsonUnmarshaller());
+            JsonResponseHandler<ListKeyPoliciesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListKeyPoliciesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1835,8 +1853,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListKeysResult> responseHandler = new JsonResponseHandler<ListKeysResult>(
-                    new ListKeysResultJsonUnmarshaller());
+            JsonResponseHandler<ListKeysResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListKeysResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1904,8 +1923,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRetirableGrantsResult> responseHandler = new JsonResponseHandler<ListRetirableGrantsResult>(
-                    new ListRetirableGrantsResultJsonUnmarshaller());
+            JsonResponseHandler<ListRetirableGrantsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListRetirableGrantsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1979,8 +2000,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2065,8 +2086,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ReEncryptResult> responseHandler = new JsonResponseHandler<ReEncryptResult>(
-                    new ReEncryptResultJsonUnmarshaller());
+            JsonResponseHandler<ReEncryptResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ReEncryptResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2144,8 +2166,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2212,8 +2234,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2296,8 +2318,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ScheduleKeyDeletionResult> responseHandler = new JsonResponseHandler<ScheduleKeyDeletionResult>(
-                    new ScheduleKeyDeletionResultJsonUnmarshaller());
+            JsonResponseHandler<ScheduleKeyDeletionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ScheduleKeyDeletionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2371,8 +2395,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2432,8 +2456,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2491,8 +2515,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

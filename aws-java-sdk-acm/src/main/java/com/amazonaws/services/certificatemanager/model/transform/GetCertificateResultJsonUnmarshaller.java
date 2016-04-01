@@ -18,6 +18,8 @@ package com.amazonaws.services.certificatemanager.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,13 @@ public class GetCertificateResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Certificate", targetDepth)) {
                     context.nextToken();
-                    getCertificateResult.setCertificate(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getCertificateResult.setCertificate(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateChain", targetDepth)) {
                     context.nextToken();
-                    getCertificateResult
-                            .setCertificateChain(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getCertificateResult.setCertificateChain(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

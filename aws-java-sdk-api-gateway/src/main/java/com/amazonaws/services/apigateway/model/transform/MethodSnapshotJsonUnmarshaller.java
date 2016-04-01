@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class MethodSnapshotJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("authorizationType", targetDepth)) {
                     context.nextToken();
-                    methodSnapshot.setAuthorizationType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    methodSnapshot.setAuthorizationType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
                     context.nextToken();
-                    methodSnapshot.setApiKeyRequired(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    methodSnapshot.setApiKeyRequired(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,37 +55,33 @@ public class AssessmentRunAgentJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentId", targetDepth)) {
                     context.nextToken();
-                    assessmentRunAgent.setAgentId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRunAgent.setAgentId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("assessmentRunArn", targetDepth)) {
                     context.nextToken();
-                    assessmentRunAgent
-                            .setAssessmentRunArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    assessmentRunAgent.setAssessmentRunArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentHealth", targetDepth)) {
                     context.nextToken();
-                    assessmentRunAgent.setAgentHealth(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    assessmentRunAgent.setAgentHealth(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentHealthCode", targetDepth)) {
                     context.nextToken();
-                    assessmentRunAgent
-                            .setAgentHealthCode(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    assessmentRunAgent.setAgentHealthCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentHealthDetails", targetDepth)) {
                     context.nextToken();
-                    assessmentRunAgent
-                            .setAgentHealthDetails(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    assessmentRunAgent.setAgentHealthDetails(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroup", targetDepth)) {
                     context.nextToken();
-                    assessmentRunAgent
-                            .setAutoScalingGroup(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    assessmentRunAgent.setAutoScalingGroup(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("telemetryMetadata", targetDepth)) {
                     context.nextToken();

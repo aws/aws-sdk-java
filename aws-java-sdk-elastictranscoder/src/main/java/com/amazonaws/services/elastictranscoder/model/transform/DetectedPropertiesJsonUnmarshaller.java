@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class DetectedPropertiesJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Width", targetDepth)) {
                     context.nextToken();
-                    detectedProperties.setWidth(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    detectedProperties.setWidth(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Height", targetDepth)) {
                     context.nextToken();
-                    detectedProperties.setHeight(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    detectedProperties.setHeight(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameRate", targetDepth)) {
                     context.nextToken();
-                    detectedProperties.setFrameRate(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    detectedProperties.setFrameRate(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSize", targetDepth)) {
                     context.nextToken();
-                    detectedProperties.setFileSize(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    detectedProperties.setFileSize(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DurationMillis", targetDepth)) {
                     context.nextToken();
-                    detectedProperties.setDurationMillis(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    detectedProperties.setDurationMillis(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -1,22 +1,26 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Copyright (c) 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
  *
- *  http://aws.amazon.com/apache2.0
+ * http://aws.amazon.com/apache2.0
  *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ *
  */
 package com.amazonaws.http;
 
 import java.io.IOException;
 import java.util.Map;
 
+import com.amazonaws.util.ValidationUtils;
+import com.amazonaws.util.json.SdkJsonProtocolFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.fasterxml.jackson.core.JsonFactory;
@@ -47,11 +51,14 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     /** Shared logger for profiling information */
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
 
-    private static JsonFactory jsonFactory = new JsonFactory();
+    private final JsonFactory jsonFactory;
 
     public boolean needsConnectionLeftOpen = false;
 
     private boolean isPayloadJson = true;
+
+    private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>
+            simpleTypeUnmarshallers;
 
     /**
      * Constructs a new response handler that will use the specified JSON
@@ -62,9 +69,29 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      * @param responseUnmarshaller
      *            The JSON unmarshaller to use on the response.
      */
+    @Deprecated
     public JsonResponseHandler(Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller) {
-        this.responseUnmarshaller = responseUnmarshaller;
+        this(responseUnmarshaller,
+                SdkJsonProtocolFactory.DEFAULT_SCALAR_UNMARSHALLERS,
+                SdkJsonProtocolFactory.DEFAULT_FACTORY);
+    }
 
+    /**
+     * Constructs a new response handler that will use the specified JSON
+     * unmarshaller to unmarshall the service response and uses the specified
+     * response element path to find the root of the business data in the
+     * service's response.
+     *
+     * @param responseUnmarshaller
+     *            The JSON unmarshaller to use on the response.
+     * @param simpleTypeUnmarshallers
+     *              List of unmarshallers to be used for scalar types.
+     * @param jsonFactory the json factory to be used for parsing the response.
+     *
+     */
+    public JsonResponseHandler(Unmarshaller<T, JsonUnmarshallerContext>
+                                       responseUnmarshaller, Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>
+            simpleTypeUnmarshallers, JsonFactory jsonFactory) {
         /*
          * Even if the invoked operation just returns null, we still need an
          * unmarshaller to run so we can pull out response metadata.
@@ -72,14 +99,18 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
          * We might want to pass this in through the client class so that we
          * don't have to do this check here.
          */
-        if (this.responseUnmarshaller == null) {
-            this.responseUnmarshaller = new VoidJsonUnmarshaller<T>();
-        }
+        this.responseUnmarshaller = responseUnmarshaller != null ?
+                responseUnmarshaller : new VoidJsonUnmarshaller<T>();
+
+        this.simpleTypeUnmarshallers = ValidationUtils.assertNotNull
+                (simpleTypeUnmarshallers, "simple type unmarshallers");
+        this.jsonFactory = ValidationUtils.assertNotNull(jsonFactory,
+                "JSONFactory");
     }
 
 
     /**
-     * @see com.amazonaws.http.HttpResponseHandler#handle(com.amazonaws.http.HttpResponse)
+     * @see HttpResponseHandler#handle(HttpResponse)
      */
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         log.trace("Parsing service response JSON");
@@ -101,7 +132,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         try {
             AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
             JsonUnmarshallerContext unmarshallerContext = new JsonUnmarshallerContextImpl(
-                    jsonParser, response);
+                    jsonParser, simpleTypeUnmarshallers, response);
             registerAdditionalMetadataExpressions(unmarshallerContext);
 
             T result = responseUnmarshaller.unmarshall(unmarshallerContext);

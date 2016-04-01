@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,21 +55,20 @@ public class DescribeThingResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("defaultClientId", targetDepth)) {
                     context.nextToken();
-                    describeThingResult
-                            .setDefaultClientId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeThingResult.setDefaultClientId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("thingName", targetDepth)) {
                     context.nextToken();
-                    describeThingResult.setThingName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeThingResult.setThingName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
                     describeThingResult
                             .setAttributes(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -32,6 +32,7 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.util.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 
@@ -356,8 +357,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -413,8 +414,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -469,8 +470,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AttachThingPrincipalResult> responseHandler = new JsonResponseHandler<AttachThingPrincipalResult>(
-                    new AttachThingPrincipalResultJsonUnmarshaller());
+            JsonResponseHandler<AttachThingPrincipalResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new AttachThingPrincipalResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -540,8 +543,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -647,8 +650,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateCertificateFromCsrResult> responseHandler = new JsonResponseHandler<CreateCertificateFromCsrResult>(
-                    new CreateCertificateFromCsrResultJsonUnmarshaller());
+            JsonResponseHandler<CreateCertificateFromCsrResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateCertificateFromCsrResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -708,8 +713,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateKeysAndCertificateResult> responseHandler = new JsonResponseHandler<CreateKeysAndCertificateResult>(
-                    new CreateKeysAndCertificateResultJsonUnmarshaller());
+            JsonResponseHandler<CreateKeysAndCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateKeysAndCertificateResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -771,8 +778,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePolicyResult> responseHandler = new JsonResponseHandler<CreatePolicyResult>(
-                    new CreatePolicyResultJsonUnmarshaller());
+            JsonResponseHandler<CreatePolicyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreatePolicyResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -842,8 +850,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePolicyVersionResult> responseHandler = new JsonResponseHandler<CreatePolicyVersionResult>(
-                    new CreatePolicyVersionResultJsonUnmarshaller());
+            JsonResponseHandler<CreatePolicyVersionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreatePolicyVersionResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -897,8 +907,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateThingResult> responseHandler = new JsonResponseHandler<CreateThingResult>(
-                    new CreateThingResultJsonUnmarshaller());
+            JsonResponseHandler<CreateThingResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateThingResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -951,8 +962,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1007,8 +1018,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1076,8 +1087,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1136,8 +1147,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1189,8 +1200,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteThingResult> responseHandler = new JsonResponseHandler<DeleteThingResult>(
-                    new DeleteThingResultJsonUnmarshaller());
+            JsonResponseHandler<DeleteThingResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteThingResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1239,8 +1251,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1295,8 +1307,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCertificateResult> responseHandler = new JsonResponseHandler<DescribeCertificateResult>(
-                    new DescribeCertificateResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeCertificateResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1348,8 +1362,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeEndpointResult> responseHandler = new JsonResponseHandler<DescribeEndpointResult>(
-                    new DescribeEndpointResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeEndpointResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeEndpointResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1404,8 +1419,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeThingResult> responseHandler = new JsonResponseHandler<DescribeThingResult>(
-                    new DescribeThingResultJsonUnmarshaller());
+            JsonResponseHandler<DescribeThingResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeThingResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1460,8 +1476,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1516,8 +1532,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DetachThingPrincipalResult> responseHandler = new JsonResponseHandler<DetachThingPrincipalResult>(
-                    new DetachThingPrincipalResultJsonUnmarshaller());
+            JsonResponseHandler<DetachThingPrincipalResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DetachThingPrincipalResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1567,8 +1585,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1615,8 +1633,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -1665,8 +1683,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetLoggingOptionsResult> responseHandler = new JsonResponseHandler<GetLoggingOptionsResult>(
-                    new GetLoggingOptionsResultJsonUnmarshaller());
+            JsonResponseHandler<GetLoggingOptionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetLoggingOptionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1721,8 +1741,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetPolicyResult> responseHandler = new JsonResponseHandler<GetPolicyResult>(
-                    new GetPolicyResultJsonUnmarshaller());
+            JsonResponseHandler<GetPolicyResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetPolicyResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1778,8 +1799,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetPolicyVersionResult> responseHandler = new JsonResponseHandler<GetPolicyVersionResult>(
-                    new GetPolicyVersionResultJsonUnmarshaller());
+            JsonResponseHandler<GetPolicyVersionResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetPolicyVersionResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1830,8 +1852,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetTopicRuleResult> responseHandler = new JsonResponseHandler<GetTopicRuleResult>(
-                    new GetTopicRuleResultJsonUnmarshaller());
+            JsonResponseHandler<GetTopicRuleResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetTopicRuleResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1889,8 +1912,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListCertificatesResult> responseHandler = new JsonResponseHandler<ListCertificatesResult>(
-                    new ListCertificatesResultJsonUnmarshaller());
+            JsonResponseHandler<ListCertificatesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListCertificatesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1943,8 +1967,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPoliciesResult> responseHandler = new JsonResponseHandler<ListPoliciesResult>(
-                    new ListPoliciesResultJsonUnmarshaller());
+            JsonResponseHandler<ListPoliciesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListPoliciesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2002,8 +2027,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPolicyVersionsResult> responseHandler = new JsonResponseHandler<ListPolicyVersionsResult>(
-                    new ListPolicyVersionsResultJsonUnmarshaller());
+            JsonResponseHandler<ListPolicyVersionsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListPolicyVersionsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2063,8 +2090,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPrincipalPoliciesResult> responseHandler = new JsonResponseHandler<ListPrincipalPoliciesResult>(
-                    new ListPrincipalPoliciesResultJsonUnmarshaller());
+            JsonResponseHandler<ListPrincipalPoliciesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListPrincipalPoliciesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2119,8 +2148,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPrincipalThingsResult> responseHandler = new JsonResponseHandler<ListPrincipalThingsResult>(
-                    new ListPrincipalThingsResultJsonUnmarshaller());
+            JsonResponseHandler<ListPrincipalThingsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListPrincipalThingsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2175,8 +2206,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListThingPrincipalsResult> responseHandler = new JsonResponseHandler<ListThingPrincipalsResult>(
-                    new ListThingPrincipalsResultJsonUnmarshaller());
+            JsonResponseHandler<ListThingPrincipalsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListThingPrincipalsResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2230,8 +2263,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListThingsResult> responseHandler = new JsonResponseHandler<ListThingsResult>(
-                    new ListThingsResultJsonUnmarshaller());
+            JsonResponseHandler<ListThingsResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListThingsResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2280,8 +2314,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTopicRulesResult> responseHandler = new JsonResponseHandler<ListTopicRulesResult>(
-                    new ListTopicRulesResultJsonUnmarshaller());
+            JsonResponseHandler<ListTopicRulesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListTopicRulesResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2350,8 +2385,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2404,8 +2439,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2461,8 +2496,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2509,8 +2544,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2585,8 +2620,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TransferCertificateResult> responseHandler = new JsonResponseHandler<TransferCertificateResult>(
-                    new TransferCertificateResultJsonUnmarshaller());
+            JsonResponseHandler<TransferCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new TransferCertificateResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2653,8 +2690,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
 
@@ -2706,8 +2743,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateThingResult> responseHandler = new JsonResponseHandler<UpdateThingResult>(
-                    new UpdateThingResultJsonUnmarshaller());
+            JsonResponseHandler<UpdateThingResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateThingResultJsonUnmarshaller(), false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2767,8 +2805,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
         executionContext.setCredentials(credentials);
 
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        JsonErrorResponseHandlerV2 errorResponseHandler = SdkJsonProtocolFactory
+                .createErrorResponseHandler(jsonErrorUnmarshallers, false);
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

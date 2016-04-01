@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class CertificateJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("certificateArn", targetDepth)) {
                     context.nextToken();
-                    certificate.setCertificateArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificate.setCertificateArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("certificateId", targetDepth)) {
                     context.nextToken();
-                    certificate.setCertificateId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificate.setCertificateId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    certificate.setStatus(StringJsonUnmarshaller.getInstance()
+                    certificate.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    certificate.setCreationDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    certificate.setCreationDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

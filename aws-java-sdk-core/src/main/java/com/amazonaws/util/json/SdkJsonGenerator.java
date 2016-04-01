@@ -22,13 +22,15 @@ import com.fasterxml.jackson.core.JsonGenerator;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.Date;
 
 /**
  * Thin wrapper around Jackson's JSON generator.
  */
-public class SdkJsonGenerator {
+public class SdkJsonGenerator implements StructuredJsonGenerator {
 
     /**
      * Default buffer size for the BAOS. Chosen somewhat arbitrarily. Should be large enough to
@@ -46,24 +48,33 @@ public class SdkJsonGenerator {
         }
     }
 
-    /**
-     * Recommended to share JsonFactory instances per http://wiki.fasterxml.com/JacksonBestPracticesPerformance
-     */
-    private static final JsonFactory FACTORY = new JsonFactory();
-
     private final ByteArrayOutputStream baos = new ByteArrayOutputStream(DEFAULT_BUFFER_SIZE);
+
     private final JsonGenerator generator;
 
+    private final String contentType;
+
+    @Deprecated
     public SdkJsonGenerator() {
+        this(SdkJsonProtocolFactory.DEFAULT_FACTORY,
+                SdkJsonProtocolFactory.DEFAULT_CONTENT_TYPE);
+    }
+
+    public SdkJsonGenerator(JsonFactory factory, String contentType) {
         try {
-            // Create generator with UTF-8 encoding
-            this.generator = FACTORY.createGenerator(baos);
+            /**
+             * A {@link JsonGenerator} created is by default enabled with
+             * UTF-8 encoding
+             */
+            this.generator = factory.createGenerator(baos);
+            this.contentType = contentType;
         } catch (IOException e) {
             throw new JsonGenerationException(e);
         }
     }
 
-    public SdkJsonGenerator writeStartArray() {
+    @Override
+    public StructuredJsonGenerator writeStartArray() {
         try {
             generator.writeStartArray();
         } catch (IOException e) {
@@ -72,7 +83,8 @@ public class SdkJsonGenerator {
         return this;
     }
 
-    public SdkJsonGenerator writeEndArray() {
+    @Override
+    public StructuredJsonGenerator writeEndArray() {
         try {
             generator.writeEndArray();
         } catch (IOException e) {
@@ -81,7 +93,8 @@ public class SdkJsonGenerator {
         return this;
     }
 
-    public SdkJsonGenerator writeStartObject() {
+    @Override
+    public StructuredJsonGenerator writeStartObject() {
         try {
             generator.writeStartObject();
         } catch (IOException e) {
@@ -90,7 +103,8 @@ public class SdkJsonGenerator {
         return this;
     }
 
-    public SdkJsonGenerator writeEndObject() {
+    @Override
+    public StructuredJsonGenerator writeEndObject() {
         try {
             generator.writeEndObject();
         } catch (IOException e) {
@@ -99,7 +113,8 @@ public class SdkJsonGenerator {
         return this;
     }
 
-    public SdkJsonGenerator writeFieldName(String fieldName) {
+    @Override
+    public StructuredJsonGenerator writeFieldName(String fieldName) {
         try {
             generator.writeFieldName(fieldName);
         } catch (IOException e) {
@@ -108,7 +123,8 @@ public class SdkJsonGenerator {
         return this;
     }
 
-    public SdkJsonGenerator writeValue(String val) {
+    @Override
+    public StructuredJsonGenerator writeValue(String val) {
         try {
             generator.writeString(val);
         } catch (IOException e) {
@@ -117,7 +133,8 @@ public class SdkJsonGenerator {
         return this;
     }
 
-    public SdkJsonGenerator writeValue(boolean bool) {
+    @Override
+    public StructuredJsonGenerator writeValue(boolean bool) {
         try {
             generator.writeBoolean(bool);
         } catch (IOException e) {
@@ -126,7 +143,8 @@ public class SdkJsonGenerator {
         return this;
     }
 
-    public SdkJsonGenerator writeValue(long val) {
+    @Override
+    public StructuredJsonGenerator writeValue(long val) {
         try {
             generator.writeNumber(val);
         } catch (IOException e) {
@@ -135,7 +153,8 @@ public class SdkJsonGenerator {
         return this;
     }
 
-    public SdkJsonGenerator writeValue(double val) {
+    @Override
+    public StructuredJsonGenerator writeValue(double val) {
         try {
             generator.writeNumber(val);
         } catch (IOException e) {
@@ -144,7 +163,38 @@ public class SdkJsonGenerator {
         return this;
     }
 
-    public SdkJsonGenerator writeValue(ByteBuffer bytes) {
+    @Override
+    public StructuredJsonGenerator writeValue(float val) {
+        try {
+            generator.writeNumber(val);
+        } catch (IOException e) {
+            throw new JsonGenerationException(e);
+        }
+        return this;
+    }
+
+    @Override
+    public StructuredJsonGenerator writeValue(short val) {
+        try {
+            generator.writeNumber(val);
+        } catch (IOException e) {
+            throw new JsonGenerationException(e);
+        }
+        return this;
+    }
+
+    @Override
+    public StructuredJsonGenerator writeValue(int val) {
+        try {
+            generator.writeNumber(val);
+        } catch (IOException e) {
+            throw new JsonGenerationException(e);
+        }
+        return this;
+    }
+
+    @Override
+    public StructuredJsonGenerator writeValue(ByteBuffer bytes) {
         try {
             generator.writeBinary(BinaryUtils.copyBytesFrom(bytes));
         } catch (IOException e) {
@@ -153,9 +203,30 @@ public class SdkJsonGenerator {
         return this;
     }
 
-    public SdkJsonGenerator writeValue(Date date) {
+    @Override
+    public StructuredJsonGenerator writeValue(Date date) {
         try {
             generator.writeNumber(DateUtils.formatServiceSpecificDate(date));
+        } catch (IOException e) {
+            throw new JsonGenerationException(e);
+        }
+        return this;
+    }
+
+    @Override
+    public StructuredJsonGenerator writeValue(BigDecimal value) {
+        try {
+            generator.writeNumber(value);
+        } catch (IOException e) {
+            throw new JsonGenerationException(e);
+        }
+        return this;
+    }
+
+    @Override
+    public StructuredJsonGenerator writeValue(BigInteger value) {
+        try {
+            generator.writeNumber(value);
         } catch (IOException e) {
             throw new JsonGenerationException(e);
         }
@@ -181,9 +252,18 @@ public class SdkJsonGenerator {
      *
      * @return Array of UTF-8 encoded bytes that make up the generated JSON.
      */
+    @Override
     public byte[] getBytes() {
         close();
         return baos.toByteArray();
     }
 
+    @Override
+    public String getContentType() {
+        return contentType;
+    }
+
+    protected JsonGenerator getGenerator() {
+        return generator;
+    }
 }

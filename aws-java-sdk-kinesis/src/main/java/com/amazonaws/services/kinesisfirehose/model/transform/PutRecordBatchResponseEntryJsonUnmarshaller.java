@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,21 +55,18 @@ public class PutRecordBatchResponseEntryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RecordId", targetDepth)) {
                     context.nextToken();
-                    putRecordBatchResponseEntry
-                            .setRecordId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    putRecordBatchResponseEntry.setRecordId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
                     context.nextToken();
-                    putRecordBatchResponseEntry
-                            .setErrorCode(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    putRecordBatchResponseEntry.setErrorCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
-                    putRecordBatchResponseEntry
-                            .setErrorMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    putRecordBatchResponseEntry.setErrorMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

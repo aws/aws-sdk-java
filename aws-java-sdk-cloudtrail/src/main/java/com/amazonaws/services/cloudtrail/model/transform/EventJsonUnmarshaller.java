@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudtrail.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,22 +54,22 @@ public class EventJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventId", targetDepth)) {
                     context.nextToken();
-                    event.setEventId(StringJsonUnmarshaller.getInstance()
+                    event.setEventId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("EventName", targetDepth)) {
                     context.nextToken();
-                    event.setEventName(StringJsonUnmarshaller.getInstance()
+                    event.setEventName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("EventTime", targetDepth)) {
                     context.nextToken();
-                    event.setEventTime(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    event.setEventTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
-                    event.setUsername(StringJsonUnmarshaller.getInstance()
+                    event.setUsername(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Resources", targetDepth)) {
@@ -78,8 +80,8 @@ public class EventJsonUnmarshaller implements
                 }
                 if (context.testExpression("CloudTrailEvent", targetDepth)) {
                     context.nextToken();
-                    event.setCloudTrailEvent(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    event.setCloudTrailEvent(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

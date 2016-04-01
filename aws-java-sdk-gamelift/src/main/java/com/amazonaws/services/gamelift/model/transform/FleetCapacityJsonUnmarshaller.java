@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class FleetCapacityJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FleetId", targetDepth)) {
                     context.nextToken();
-                    fleetCapacity.setFleetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetCapacity.setFleetId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();
-                    fleetCapacity.setInstanceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    fleetCapacity.setInstanceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCounts", targetDepth)) {
                     context.nextToken();

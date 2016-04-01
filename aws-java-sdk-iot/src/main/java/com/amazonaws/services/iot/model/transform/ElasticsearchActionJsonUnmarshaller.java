@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class ElasticsearchActionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    elasticsearchAction.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    elasticsearchAction.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("endpoint", targetDepth)) {
                     context.nextToken();
-                    elasticsearchAction.setEndpoint(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    elasticsearchAction.setEndpoint(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("index", targetDepth)) {
                     context.nextToken();
-                    elasticsearchAction.setIndex(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    elasticsearchAction.setIndex(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    elasticsearchAction.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    elasticsearchAction.setType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    elasticsearchAction.setId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    elasticsearchAction.setId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

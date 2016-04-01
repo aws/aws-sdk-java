@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ThirdPartyJobJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clientId", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJob.setClientId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    thirdPartyJob.setClientId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("jobId", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJob.setJobId(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    thirdPartyJob.setJobId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

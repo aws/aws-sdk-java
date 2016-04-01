@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class NetworkInterfaceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ipv4Address", targetDepth)) {
                     context.nextToken();
-                    networkInterface.setIpv4Address(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    networkInterface.setIpv4Address(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("MacAddress", targetDepth)) {
                     context.nextToken();
-                    networkInterface.setMacAddress(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    networkInterface.setMacAddress(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ipv6Address", targetDepth)) {
                     context.nextToken();
-                    networkInterface.setIpv6Address(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    networkInterface.setIpv6Address(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

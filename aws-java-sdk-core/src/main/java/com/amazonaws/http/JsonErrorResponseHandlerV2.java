@@ -18,6 +18,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.json.SdkJsonProtocolFactory;
+import com.fasterxml.jackson.core.JsonFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -38,11 +41,18 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
     private final List<JsonErrorUnmarshallerV2> unmarshallers;
     private final JsonErrorCodeParser errorCodeParser;
     private final JsonErrorMessageParser errorMessageParser;
+    private final JsonFactory jsonFactory;
 
     public JsonErrorResponseHandlerV2(
             List<JsonErrorUnmarshallerV2> errorUnmarshallers) {
         this(errorUnmarshallers, JsonErrorCodeParser.DEFAULT_ERROR_CODE_PARSER,
                 JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER);
+    }
+
+    public JsonErrorResponseHandlerV2(
+            List<JsonErrorUnmarshallerV2> errorUnmarshallers, JsonFactory factory) {
+        this(errorUnmarshallers, JsonErrorCodeParser.DEFAULT_ERROR_CODE_PARSER,
+                JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER, factory);
     }
 
     public JsonErrorResponseHandlerV2(
@@ -56,9 +66,19 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
             List<JsonErrorUnmarshallerV2> errorUnmarshallers,
             JsonErrorCodeParser errorCodeParser,
             JsonErrorMessageParser errorMessageParser) {
+        this(errorUnmarshallers,errorCodeParser,errorMessageParser,
+                SdkJsonProtocolFactory.DEFAULT_FACTORY);
+    }
+
+    private JsonErrorResponseHandlerV2(
+            List<JsonErrorUnmarshallerV2> errorUnmarshallers,
+            JsonErrorCodeParser errorCodeParser,
+            JsonErrorMessageParser errorMessageParser,
+            JsonFactory jsonFactory) {
         this.unmarshallers = errorUnmarshallers;
         this.errorCodeParser = errorCodeParser;
         this.errorMessageParser = errorMessageParser;
+        this.jsonFactory = jsonFactory;
     }
 
     @Override
@@ -68,7 +88,7 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
 
     @Override
     public AmazonServiceException handle(HttpResponse response) throws Exception {
-        JsonContent jsonContent = JsonContent.createJsonContent(response);
+        JsonContent jsonContent = JsonContent.createJsonContent(response, jsonFactory);
         String errorCode = errorCodeParser.parseErrorCode(response.getHeaders(), jsonContent.jsonNode);
         AmazonServiceException ase = createException(errorCode, jsonContent);
 
@@ -84,7 +104,7 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
         ase.setServiceName(response.getRequest().getServiceName());
         ase.setStatusCode(response.getStatusCode());
         ase.setErrorType(getErrorTypeFromStatusCode(response.getStatusCode()));
-        ase.setRawResponseContent(jsonContent.rawJsonContent);
+        ase.setRawResponse(jsonContent.rawContent);
         String requestId = getRequestIdFromHeaders(response.getHeaders());
         if (requestId != null) {
             ase.setRequestId(requestId);
@@ -98,7 +118,7 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
      *
      * @param errorCode
      *            Error code to find an appropriate unmarshaller
-     * @param JsonContent
+     * @param jsonContent
      *            JsonContent of HTTP response
      * @return AmazonServiceException
      */
@@ -145,38 +165,44 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
      */
     private static class JsonContent {
 
-        private static final ObjectMapper MAPPER = new ObjectMapper()
-                .configure(JsonParser.Feature.ALLOW_COMMENTS, true);
-
-        public final String rawJsonContent;
+        public final byte[] rawContent;
         public final JsonNode jsonNode;
+        private final ObjectMapper mapper;
 
         /**
          * Static factory method to create a JsonContent object from the contents of the
          * HttpResponse provided
          */
-        public static JsonContent createJsonContent(HttpResponse httpResponse) {
-            String rawJsonContent = null;
+        public static JsonContent createJsonContent(HttpResponse
+                                                            httpResponse,
+                                                    JsonFactory jsonFactory) {
+            byte[] rawJsonContent = null;
             try {
-                rawJsonContent = IOUtils.toString(httpResponse.getContent());
+                if (httpResponse.getContent() != null) {
+                    rawJsonContent = IOUtils.toByteArray(httpResponse.getContent());
+                }
             } catch (Exception e) {
                 LOG.info("Unable to read HTTP response content", e);
             }
-            return new JsonContent(rawJsonContent);
+            return new JsonContent(rawJsonContent, new ObjectMapper
+                    (jsonFactory).configure(JsonParser.Feature
+                    .ALLOW_COMMENTS, true));
 
         }
 
-        private JsonContent(String rawJsonContent) {
-            this.rawJsonContent = rawJsonContent;
-            this.jsonNode = parseJsonContent(rawJsonContent);
+        private JsonContent(byte[] rawJsonContent, ObjectMapper mapper) {
+            this.rawContent = rawJsonContent;
+            this.jsonNode = parseJsonContent(rawJsonContent, mapper);
+            this.mapper = mapper;
         }
 
-        private static JsonNode parseJsonContent(String rawJsonContent) {
+        private static JsonNode parseJsonContent(byte[] rawJsonContent,
+                                                 ObjectMapper mapper) {
             if (rawJsonContent == null) {
                 return null;
             }
             try {
-                return MAPPER.readTree(rawJsonContent);
+                return mapper.readTree(rawJsonContent);
             } catch (Exception e) {
                 LOG.info("Unable to parse HTTP response content", e);
                 return null;
@@ -186,6 +212,5 @@ public class JsonErrorResponseHandlerV2 implements HttpResponseHandler<AmazonSer
         public boolean isJsonValid() {
             return jsonNode != null;
         }
-
     }
 }

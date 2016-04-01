@@ -18,6 +18,8 @@ package com.amazonaws.services.gamelift.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,19 +55,19 @@ public class EC2InstanceLimitJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EC2InstanceType", targetDepth)) {
                     context.nextToken();
-                    eC2InstanceLimit.setEC2InstanceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eC2InstanceLimit.setEC2InstanceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CurrentInstances", targetDepth)) {
                     context.nextToken();
                     eC2InstanceLimit
-                            .setCurrentInstances(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCurrentInstances(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceLimit", targetDepth)) {
                     context.nextToken();
-                    eC2InstanceLimit.setInstanceLimit(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eC2InstanceLimit.setInstanceLimit(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

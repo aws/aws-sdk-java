@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,27 +55,27 @@ public class EventTopicJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
                     context.nextToken();
-                    eventTopic.setDirectoryId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventTopic.setDirectoryId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicName", targetDepth)) {
                     context.nextToken();
-                    eventTopic.setTopicName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventTopic.setTopicName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TopicArn", targetDepth)) {
                     context.nextToken();
-                    eventTopic.setTopicArn(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    eventTopic.setTopicArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDateTime", targetDepth)) {
                     context.nextToken();
-                    eventTopic.setCreatedDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eventTopic.setCreatedDateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    eventTopic.setStatus(StringJsonUnmarshaller.getInstance()
+                    eventTopic.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

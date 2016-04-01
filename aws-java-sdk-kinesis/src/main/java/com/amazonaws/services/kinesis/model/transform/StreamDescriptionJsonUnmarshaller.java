@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class StreamDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamName", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamDescription.setStreamName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamARN", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamDescription.setStreamARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamStatus", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setStreamStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamDescription.setStreamStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Shards", targetDepth)) {
                     context.nextToken();
@@ -74,14 +76,14 @@ public class StreamDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("HasMoreShards", targetDepth)) {
                     context.nextToken();
-                    streamDescription.setHasMoreShards(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamDescription.setHasMoreShards(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RetentionPeriodHours", targetDepth)) {
                     context.nextToken();
                     streamDescription
-                            .setRetentionPeriodHours(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setRetentionPeriodHours(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

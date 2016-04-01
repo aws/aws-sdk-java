@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,8 +62,8 @@ public class ListInstancesResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();
-                    listInstancesResult.setMarker(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listInstancesResult.setMarker(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

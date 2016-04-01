@@ -18,6 +18,8 @@ package com.amazonaws.services.route53domains.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,36 +55,34 @@ public class GetOperationDetailResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OperationId", targetDepth)) {
                     context.nextToken();
-                    getOperationDetailResult
-                            .setOperationId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getOperationDetailResult.setOperationId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    getOperationDetailResult.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getOperationDetailResult.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    getOperationDetailResult.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getOperationDetailResult.setMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
                     context.nextToken();
-                    getOperationDetailResult
-                            .setDomainName(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getOperationDetailResult.setDomainName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    getOperationDetailResult.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getOperationDetailResult.setType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubmittedDate", targetDepth)) {
                     context.nextToken();
-                    getOperationDetailResult
-                            .setSubmittedDate(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getOperationDetailResult.setSubmittedDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

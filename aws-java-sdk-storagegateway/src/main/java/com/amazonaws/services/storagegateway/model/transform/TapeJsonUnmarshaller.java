@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,32 +54,32 @@ public class TapeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TapeARN", targetDepth)) {
                     context.nextToken();
-                    tape.setTapeARN(StringJsonUnmarshaller.getInstance()
+                    tape.setTapeARN(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("TapeBarcode", targetDepth)) {
                     context.nextToken();
-                    tape.setTapeBarcode(StringJsonUnmarshaller.getInstance()
+                    tape.setTapeBarcode(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("TapeSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    tape.setTapeSizeInBytes(LongJsonUnmarshaller.getInstance()
+                    tape.setTapeSizeInBytes(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("TapeStatus", targetDepth)) {
                     context.nextToken();
-                    tape.setTapeStatus(StringJsonUnmarshaller.getInstance()
+                    tape.setTapeStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("VTLDevice", targetDepth)) {
                     context.nextToken();
-                    tape.setVTLDevice(StringJsonUnmarshaller.getInstance()
+                    tape.setVTLDevice(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Progress", targetDepth)) {
                     context.nextToken();
-                    tape.setProgress(DoubleJsonUnmarshaller.getInstance()
+                    tape.setProgress(context.getUnmarshaller(Double.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

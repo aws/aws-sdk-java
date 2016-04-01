@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class AssociationStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Date", targetDepth)) {
                     context.nextToken();
-                    associationStatus.setDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    associationStatus.setDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    associationStatus.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    associationStatus.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    associationStatus.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    associationStatus.setMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalInfo", targetDepth)) {
                     context.nextToken();
-                    associationStatus.setAdditionalInfo(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    associationStatus.setAdditionalInfo(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

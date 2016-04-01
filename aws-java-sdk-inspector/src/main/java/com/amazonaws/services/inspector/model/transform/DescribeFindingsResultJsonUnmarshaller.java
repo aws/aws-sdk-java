@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -62,7 +64,7 @@ public class DescribeFindingsResultJsonUnmarshaller implements
                     context.nextToken();
                     describeFindingsResult
                             .setFailedItems(new MapUnmarshaller<String, FailedItemDetails>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     FailedItemDetailsJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }

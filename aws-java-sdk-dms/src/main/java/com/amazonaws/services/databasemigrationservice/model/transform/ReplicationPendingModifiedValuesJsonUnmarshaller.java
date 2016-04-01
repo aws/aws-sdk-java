@@ -18,6 +18,8 @@ package com.amazonaws.services.databasemigrationservice.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,20 +57,20 @@ public class ReplicationPendingModifiedValuesJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     replicationPendingModifiedValues
-                            .setReplicationInstanceClass(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setReplicationInstanceClass(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("AllocatedStorage", targetDepth)) {
                     context.nextToken();
                     replicationPendingModifiedValues
-                            .setAllocatedStorage(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAllocatedStorage(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("EngineVersion", targetDepth)) {
                     context.nextToken();
-                    replicationPendingModifiedValues
-                            .setEngineVersion(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    replicationPendingModifiedValues.setEngineVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

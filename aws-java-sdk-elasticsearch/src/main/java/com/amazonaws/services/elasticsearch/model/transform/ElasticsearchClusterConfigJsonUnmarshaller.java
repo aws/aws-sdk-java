@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticsearch.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,40 +55,38 @@ public class ElasticsearchClusterConfigJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();
-                    elasticsearchClusterConfig
-                            .setInstanceType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    elasticsearchClusterConfig.setInstanceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
                     context.nextToken();
                     elasticsearchClusterConfig
-                            .setInstanceCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setInstanceCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterEnabled",
                         targetDepth)) {
                     context.nextToken();
                     elasticsearchClusterConfig
-                            .setDedicatedMasterEnabled(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setDedicatedMasterEnabled(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ZoneAwarenessEnabled", targetDepth)) {
                     context.nextToken();
                     elasticsearchClusterConfig
-                            .setZoneAwarenessEnabled(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setZoneAwarenessEnabled(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterType", targetDepth)) {
                     context.nextToken();
-                    elasticsearchClusterConfig
-                            .setDedicatedMasterType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    elasticsearchClusterConfig.setDedicatedMasterType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterCount", targetDepth)) {
                     context.nextToken();
                     elasticsearchClusterConfig
-                            .setDedicatedMasterCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setDedicatedMasterCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

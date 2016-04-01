@@ -4,6 +4,8 @@ package ${metadata.packageName}.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import ${metadata.packageName}.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;

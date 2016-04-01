@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,14 +57,13 @@ public class BatchGetApplicationRevisionsResultJsonUnmarshaller
                 if (context.testExpression("applicationName", targetDepth)) {
                     context.nextToken();
                     batchGetApplicationRevisionsResult
-                            .setApplicationName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setApplicationName(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorMessage", targetDepth)) {
                     context.nextToken();
-                    batchGetApplicationRevisionsResult
-                            .setErrorMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    batchGetApplicationRevisionsResult.setErrorMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisions", targetDepth)) {
                     context.nextToken();

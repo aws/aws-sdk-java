@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,43 +55,43 @@ public class LogStreamJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logStreamName", targetDepth)) {
                     context.nextToken();
-                    logStream.setLogStreamName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    logStream.setLogStreamName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    logStream.setCreationTime(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    logStream.setCreationTime(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("firstEventTimestamp", targetDepth)) {
                     context.nextToken();
-                    logStream.setFirstEventTimestamp(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    logStream.setFirstEventTimestamp(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lastEventTimestamp", targetDepth)) {
                     context.nextToken();
-                    logStream.setLastEventTimestamp(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    logStream.setLastEventTimestamp(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("lastIngestionTime", targetDepth)) {
                     context.nextToken();
-                    logStream.setLastIngestionTime(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    logStream.setLastIngestionTime(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("uploadSequenceToken", targetDepth)) {
                     context.nextToken();
-                    logStream.setUploadSequenceToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    logStream.setUploadSequenceToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    logStream.setArn(StringJsonUnmarshaller.getInstance()
+                    logStream.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("storedBytes", targetDepth)) {
                     context.nextToken();
-                    logStream.setStoredBytes(LongJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    logStream.setStoredBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

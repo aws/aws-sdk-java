@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitosync.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,29 +55,30 @@ public class RecordPatchJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Op", targetDepth)) {
                     context.nextToken();
-                    recordPatch.setOp(StringJsonUnmarshaller.getInstance()
+                    recordPatch.setOp(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    recordPatch.setKey(StringJsonUnmarshaller.getInstance()
+                    recordPatch.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
                     context.nextToken();
-                    recordPatch.setValue(StringJsonUnmarshaller.getInstance()
+                    recordPatch.setValue(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SyncCount", targetDepth)) {
                     context.nextToken();
-                    recordPatch.setSyncCount(LongJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    recordPatch.setSyncCount(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceLastModifiedDate",
                         targetDepth)) {
                     context.nextToken();
-                    recordPatch.setDeviceLastModifiedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    recordPatch.setDeviceLastModifiedDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

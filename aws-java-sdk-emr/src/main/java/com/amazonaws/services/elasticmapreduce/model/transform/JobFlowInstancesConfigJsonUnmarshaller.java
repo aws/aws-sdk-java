@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,21 +55,19 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MasterInstanceType", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesConfig
-                            .setMasterInstanceType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowInstancesConfig.setMasterInstanceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SlaveInstanceType", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesConfig
-                            .setSlaveInstanceType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowInstancesConfig.setSlaveInstanceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig
-                            .setInstanceCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setInstanceCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceGroups", targetDepth)) {
                     context.nextToken();
@@ -78,8 +78,8 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements
                 }
                 if (context.testExpression("Ec2KeyName", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesConfig.setEc2KeyName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobFlowInstancesConfig.setEc2KeyName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Placement", targetDepth)) {
                     context.nextToken();
@@ -91,54 +91,56 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig
-                            .setKeepJobFlowAliveWhenNoSteps(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setKeepJobFlowAliveWhenNoSteps(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("TerminationProtected", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig
-                            .setTerminationProtected(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setTerminationProtected(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("HadoopVersion", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesConfig
-                            .setHadoopVersion(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowInstancesConfig.setHadoopVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2SubnetId", targetDepth)) {
                     context.nextToken();
-                    jobFlowInstancesConfig
-                            .setEc2SubnetId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowInstancesConfig.setEc2SubnetId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmrManagedMasterSecurityGroup",
                         targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig
-                            .setEmrManagedMasterSecurityGroup(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setEmrManagedMasterSecurityGroup(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("EmrManagedSlaveSecurityGroup",
                         targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig
-                            .setEmrManagedSlaveSecurityGroup(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setEmrManagedSlaveSecurityGroup(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("ServiceAccessSecurityGroup",
                         targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig
-                            .setServiceAccessSecurityGroup(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setServiceAccessSecurityGroup(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("AdditionalMasterSecurityGroups",
                         targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig
                             .setAdditionalMasterSecurityGroups(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("AdditionalSlaveSecurityGroups",
@@ -146,7 +148,7 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements
                     context.nextToken();
                     jobFlowInstancesConfig
                             .setAdditionalSlaveSecurityGroups(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

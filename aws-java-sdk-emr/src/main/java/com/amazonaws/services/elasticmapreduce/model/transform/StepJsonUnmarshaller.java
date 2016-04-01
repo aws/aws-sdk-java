@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,12 +54,12 @@ public class StepJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    step.setId(StringJsonUnmarshaller.getInstance().unmarshall(
-                            context));
+                    step.setId(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    step.setName(StringJsonUnmarshaller.getInstance()
+                    step.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Config", targetDepth)) {
@@ -67,8 +69,8 @@ public class StepJsonUnmarshaller implements
                 }
                 if (context.testExpression("ActionOnFailure", targetDepth)) {
                     context.nextToken();
-                    step.setActionOnFailure(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    step.setActionOnFailure(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class BasePathMappingJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("basePath", targetDepth)) {
                     context.nextToken();
-                    basePathMapping.setBasePath(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    basePathMapping.setBasePath(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("restApiId", targetDepth)) {
                     context.nextToken();
-                    basePathMapping.setRestApiId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    basePathMapping.setRestApiId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("stage", targetDepth)) {
                     context.nextToken();
-                    basePathMapping.setStage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    basePathMapping.setStage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

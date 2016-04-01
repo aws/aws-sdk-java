@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,46 +55,46 @@ public class InstanceGroupJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    instanceGroup.setId(StringJsonUnmarshaller.getInstance()
+                    instanceGroup.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    instanceGroup.setName(StringJsonUnmarshaller.getInstance()
+                    instanceGroup.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Market", targetDepth)) {
                     context.nextToken();
-                    instanceGroup.setMarket(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroup.setMarket(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceGroupType", targetDepth)) {
                     context.nextToken();
-                    instanceGroup.setInstanceGroupType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroup.setInstanceGroupType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("BidPrice", targetDepth)) {
                     context.nextToken();
-                    instanceGroup.setBidPrice(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroup.setBidPrice(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();
-                    instanceGroup.setInstanceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroup.setInstanceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestedInstanceCount",
                         targetDepth)) {
                     context.nextToken();
                     instanceGroup
-                            .setRequestedInstanceCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setRequestedInstanceCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RunningInstanceCount", targetDepth)) {
                     context.nextToken();
                     instanceGroup
-                            .setRunningInstanceCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setRunningInstanceCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -115,8 +117,8 @@ public class InstanceGroupJsonUnmarshaller implements
                 }
                 if (context.testExpression("EbsOptimized", targetDepth)) {
                     context.nextToken();
-                    instanceGroup.setEbsOptimized(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroup.setEbsOptimized(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

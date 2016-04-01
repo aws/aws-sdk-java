@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,13 @@ public class RedshiftDestinationDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationDescription
-                            .setRoleARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    redshiftDestinationDescription.setRoleARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterJDBCURL", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationDescription
-                            .setClusterJDBCURL(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    redshiftDestinationDescription.setClusterJDBCURL(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyCommand", targetDepth)) {
                     context.nextToken();
@@ -71,9 +71,8 @@ public class RedshiftDestinationDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationDescription
-                            .setUsername(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    redshiftDestinationDescription.setUsername(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DestinationDescription",
                         targetDepth)) {

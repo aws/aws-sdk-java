@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,37 +54,37 @@ public class DeviceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    device.setArn(StringJsonUnmarshaller.getInstance()
+                    device.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    device.setName(StringJsonUnmarshaller.getInstance()
+                    device.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("manufacturer", targetDepth)) {
                     context.nextToken();
-                    device.setManufacturer(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    device.setManufacturer(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("model", targetDepth)) {
                     context.nextToken();
-                    device.setModel(StringJsonUnmarshaller.getInstance()
+                    device.setModel(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("formFactor", targetDepth)) {
                     context.nextToken();
-                    device.setFormFactor(StringJsonUnmarshaller.getInstance()
+                    device.setFormFactor(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
                     context.nextToken();
-                    device.setPlatform(StringJsonUnmarshaller.getInstance()
+                    device.setPlatform(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("os", targetDepth)) {
                     context.nextToken();
-                    device.setOs(StringJsonUnmarshaller.getInstance()
+                    device.setOs(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
@@ -97,27 +99,27 @@ public class DeviceJsonUnmarshaller implements
                 }
                 if (context.testExpression("heapSize", targetDepth)) {
                     context.nextToken();
-                    device.setHeapSize(LongJsonUnmarshaller.getInstance()
+                    device.setHeapSize(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("memory", targetDepth)) {
                     context.nextToken();
-                    device.setMemory(LongJsonUnmarshaller.getInstance()
+                    device.setMemory(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("image", targetDepth)) {
                     context.nextToken();
-                    device.setImage(StringJsonUnmarshaller.getInstance()
+                    device.setImage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("carrier", targetDepth)) {
                     context.nextToken();
-                    device.setCarrier(StringJsonUnmarshaller.getInstance()
+                    device.setCarrier(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("radio", targetDepth)) {
                     context.nextToken();
-                    device.setRadio(StringJsonUnmarshaller.getInstance()
+                    device.setRadio(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

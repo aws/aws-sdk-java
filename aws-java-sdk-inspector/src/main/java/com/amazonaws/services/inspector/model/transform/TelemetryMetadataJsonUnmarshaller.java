@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class TelemetryMetadataJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("messageType", targetDepth)) {
                     context.nextToken();
-                    telemetryMetadata.setMessageType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    telemetryMetadata.setMessageType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("count", targetDepth)) {
                     context.nextToken();
-                    telemetryMetadata.setCount(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    telemetryMetadata.setCount(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("dataSize", targetDepth)) {
                     context.nextToken();
-                    telemetryMetadata.setDataSize(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    telemetryMetadata.setDataSize(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,42 +55,42 @@ public class DeploymentJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeploymentId", targetDepth)) {
                     context.nextToken();
-                    deployment.setDeploymentId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setDeploymentId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    deployment.setStackId(StringJsonUnmarshaller.getInstance()
+                    deployment.setStackId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("AppId", targetDepth)) {
                     context.nextToken();
-                    deployment.setAppId(StringJsonUnmarshaller.getInstance()
+                    deployment.setAppId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    deployment.setCreatedAt(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setCreatedAt(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletedAt", targetDepth)) {
                     context.nextToken();
-                    deployment.setCompletedAt(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setCompletedAt(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
                     context.nextToken();
-                    deployment.setDuration(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setDuration(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("IamUserArn", targetDepth)) {
                     context.nextToken();
-                    deployment.setIamUserArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setIamUserArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Comment", targetDepth)) {
                     context.nextToken();
-                    deployment.setComment(StringJsonUnmarshaller.getInstance()
+                    deployment.setComment(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Command", targetDepth)) {
@@ -98,18 +100,18 @@ public class DeploymentJsonUnmarshaller implements
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    deployment.setStatus(StringJsonUnmarshaller.getInstance()
+                    deployment.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("CustomJson", targetDepth)) {
                     context.nextToken();
-                    deployment.setCustomJson(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deployment.setCustomJson(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceIds", targetDepth)) {
                     context.nextToken();
                     deployment.setInstanceIds(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

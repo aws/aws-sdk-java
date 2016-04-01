@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,24 +54,25 @@ public class RecordJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SequenceNumber", targetDepth)) {
                     context.nextToken();
-                    record.setSequenceNumber(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    record.setSequenceNumber(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ApproximateArrivalTimestamp",
                         targetDepth)) {
                     context.nextToken();
-                    record.setApproximateArrivalTimestamp(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    record.setApproximateArrivalTimestamp(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("Data", targetDepth)) {
                     context.nextToken();
-                    record.setData(ByteBufferJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    record.setData(context.getUnmarshaller(
+                            java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("PartitionKey", targetDepth)) {
                     context.nextToken();
-                    record.setPartitionKey(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    record.setPartitionKey(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

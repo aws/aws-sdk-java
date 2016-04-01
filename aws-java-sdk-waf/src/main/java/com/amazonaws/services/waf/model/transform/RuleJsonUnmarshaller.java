@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class RuleJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RuleId", targetDepth)) {
                     context.nextToken();
-                    rule.setRuleId(StringJsonUnmarshaller.getInstance()
+                    rule.setRuleId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    rule.setName(StringJsonUnmarshaller.getInstance()
+                    rule.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("MetricName", targetDepth)) {
                     context.nextToken();
-                    rule.setMetricName(StringJsonUnmarshaller.getInstance()
+                    rule.setMetricName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Predicates", targetDepth)) {
