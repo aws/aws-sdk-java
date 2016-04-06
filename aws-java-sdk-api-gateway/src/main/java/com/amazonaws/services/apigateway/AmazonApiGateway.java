@@ -93,7 +93,12 @@ public interface AmazonApiGateway {
     void setRegion(Region region);
 
     /**
+     * <p>
+     * Create an <a>ApiKey</a> resource.
+     * </p>
+     * 
      * @param createApiKeyRequest
+     *        Request to create an <a>ApiKey</a> resource.
      * @return Result of the CreateApiKey operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -105,7 +110,14 @@ public interface AmazonApiGateway {
     CreateApiKeyResult createApiKey(CreateApiKeyRequest createApiKeyRequest);
 
     /**
+     * <p>
+     * Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
+     * resource.
+     * </p>
+     * 
      * @param createAuthorizerRequest
+     *        Request to add a new <a>Authorizer</a> to an existing
+     *        <a>RestApi</a> resource.
      * @return Result of the CreateAuthorizer operation returned by the service.
      * @throws BadRequestException
      * @throws UnauthorizedException
@@ -219,7 +231,8 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param createRestApiRequest
-     *        Request to add a new <a>RestApi</a> resource to your collection.
+     *        The POST Request to add a new <a>RestApi</a> resource to your
+     *        collection.
      * @return Result of the CreateRestApi operation returned by the service.
      * @throws UnauthorizedException
      * @throws LimitExceededException
@@ -294,7 +307,12 @@ public interface AmazonApiGateway {
             DeleteBasePathMappingRequest deleteBasePathMappingRequest);
 
     /**
+     * <p>
+     * Deletes the <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param deleteClientCertificateRequest
+     *        A request to delete the <a>ClientCertificate</a> resource.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws BadRequestException
@@ -435,6 +453,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteRestApi
      */
     void deleteRestApi(DeleteRestApiRequest deleteRestApiRequest);
@@ -449,6 +468,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteStage
      */
     void deleteStage(DeleteStageRequest deleteStageRequest);
@@ -485,7 +505,12 @@ public interface AmazonApiGateway {
     void flushStageCache(FlushStageCacheRequest flushStageCacheRequest);
 
     /**
+     * <p>
+     * Generates a <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param generateClientCertificateRequest
+     *        A request to generate a <a>ClientCertificate</a> resource.
      * @return Result of the GenerateClientCertificate operation returned by the
      *         service.
      * @throws UnauthorizedException
@@ -612,7 +637,13 @@ public interface AmazonApiGateway {
             GetBasePathMappingsRequest getBasePathMappingsRequest);
 
     /**
+     * <p>
+     * Gets information about the current <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param getClientCertificateRequest
+     *        A request to get information about the current
+     *        <a>ClientCertificate</a> resource.
      * @return Result of the GetClientCertificate operation returned by the
      *         service.
      * @throws UnauthorizedException
@@ -624,7 +655,13 @@ public interface AmazonApiGateway {
             GetClientCertificateRequest getClientCertificateRequest);
 
     /**
+     * <p>
+     * Gets a collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * 
      * @param getClientCertificatesRequest
+     *        A request to get information about a collection of
+     *        <a>ClientCertificate</a> resources.
      * @return Result of the GetClientCertificates operation returned by the
      *         service.
      * @throws BadRequestException
@@ -704,7 +741,13 @@ public interface AmazonApiGateway {
             GetDomainNamesRequest getDomainNamesRequest);
 
     /**
+     * <p>
+     * Exports a deployed version of a <a>RestApi</a> in a specified format.
+     * </p>
+     * 
      * @param getExportRequest
+     *        Request a new export of a <a>RestApi</a> for a particular
+     *        <a>Stage</a>.
      * @return Result of the GetExport operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -868,8 +911,8 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param getRestApiRequest
-     *        Request to list an existing <a>RestApi</a> defined for your
-     *        collection.
+     *        The GET request to list an existing <a>RestApi</a> defined for
+     *        your collection.
      * @return Result of the GetRestApi operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -884,7 +927,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param getRestApisRequest
-     *        Request to list existing <a>RestApis</a> defined for your
+     *        The GET request to list existing <a>RestApis</a> defined for your
      *        collection.
      * @return Result of the GetRestApis operation returned by the service.
      * @throws BadRequestException
@@ -895,7 +938,13 @@ public interface AmazonApiGateway {
     GetRestApisResult getRestApis(GetRestApisRequest getRestApisRequest);
 
     /**
+     * <p>
+     * Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.
+     * </p>
+     * 
      * @param getSdkRequest
+     *        Request a new generated client SDK for a <a>RestApi</a> and
+     *        <a>Stage</a>.
      * @return Result of the GetSdk operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -939,6 +988,24 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * A feature of the Amazon API Gateway control service for creating a new
+     * API from an external API definition file.
+     * </p>
+     * 
+     * @param importRestApiRequest
+     *        A POST request to import an API to Amazon API Gateway using an
+     *        input of an API definition file.
+     * @return Result of the ImportRestApi operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws LimitExceededException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.ImportRestApi
+     */
+    ImportRestApiResult importRestApi(ImportRestApiRequest importRestApiRequest);
+
+    /**
+     * <p>
      * Represents a put integration.
      * </p>
      * 
@@ -968,6 +1035,7 @@ public interface AmazonApiGateway {
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.PutIntegrationResponse
      */
     PutIntegrationResponseResult putIntegrationResponse(
@@ -1013,7 +1081,33 @@ public interface AmazonApiGateway {
             PutMethodResponseRequest putMethodResponseRequest);
 
     /**
+     * <p>
+     * A feature of the Amazon API Gateway control service for updating an
+     * existing API with an input of external API definitions. The update can
+     * take the form of merging the supplied definition into the existing API or
+     * overwriting the existing API.
+     * </p>
+     * 
+     * @param putRestApiRequest
+     *        A PUT request to update an existing API, with external API
+     *        definitions specified as the request body.
+     * @return Result of the PutRestApi operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws LimitExceededException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutRestApi
+     */
+    PutRestApiResult putRestApi(PutRestApiRequest putRestApiRequest);
+
+    /**
+     * <p>
+     * Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a>
+     * with headers, parameters, and an incoming request body.
+     * </p>
+     * 
      * @param testInvokeAuthorizerRequest
+     *        Make a request to simulate the execution of an <a>Authorizer</a>.
      * @return Result of the TestInvokeAuthorizer operation returned by the
      *         service.
      * @throws BadRequestException
@@ -1026,7 +1120,13 @@ public interface AmazonApiGateway {
             TestInvokeAuthorizerRequest testInvokeAuthorizerRequest);
 
     /**
+     * <p>
+     * Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with
+     * headers, parameters, and an incoming request body.
+     * </p>
+     * 
      * @param testInvokeMethodRequest
+     *        Make a request to simulate the execution of a <a>Method</a>.
      * @return Result of the TestInvokeMethod operation returned by the service.
      * @throws BadRequestException
      * @throws UnauthorizedException
@@ -1108,7 +1208,13 @@ public interface AmazonApiGateway {
             UpdateBasePathMappingRequest updateBasePathMappingRequest);
 
     /**
+     * <p>
+     * Changes information about an <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param updateClientCertificateRequest
+     *        A request to change information about an <a>ClientCertificate</a>
+     *        resource.
      * @return Result of the UpdateClientCertificate operation returned by the
      *         service.
      * @throws UnauthorizedException
@@ -1170,6 +1276,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.UpdateIntegration
      */
     UpdateIntegrationResult updateIntegration(

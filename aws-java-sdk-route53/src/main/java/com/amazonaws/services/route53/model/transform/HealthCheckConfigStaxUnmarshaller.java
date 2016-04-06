@@ -133,6 +133,28 @@ public class HealthCheckConfigStaxUnmarshaller implements
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Regions/Region", targetDepth)) {
+                    healthCheckConfig.getRegions().add(
+                            StringStaxUnmarshaller.getInstance().unmarshall(
+                                    context));
+                    continue;
+                }
+
+                if (context.testExpression("AlarmIdentifier", targetDepth)) {
+                    healthCheckConfig
+                            .setAlarmIdentifier(AlarmIdentifierStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("InsufficientDataHealthStatus",
+                        targetDepth)) {
+                    healthCheckConfig
+                            .setInsufficientDataHealthStatus(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return healthCheckConfig;

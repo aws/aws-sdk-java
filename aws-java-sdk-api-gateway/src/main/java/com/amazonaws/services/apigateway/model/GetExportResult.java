@@ -19,18 +19,42 @@ package com.amazonaws.services.apigateway.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The binary blob response to <a>GetExport</a>, which contains the generated
+ * SDK.
+ * </p>
  */
 public class GetExportResult implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The content-type header value in the HTTP response. This will correspond
+     * to a valid 'accept' type in the request.
+     * </p>
+     */
     private String contentType;
-
+    /**
+     * <p>
+     * The content-disposition header value in the HTTP reseponse.
+     * </p>
+     */
     private String contentDisposition;
-
+    /**
+     * <p>
+     * The binary blob response to <a>GetExport</a>, which contains the export.
+     * </p>
+     */
     private java.nio.ByteBuffer body;
 
     /**
+     * <p>
+     * The content-type header value in the HTTP response. This will correspond
+     * to a valid 'accept' type in the request.
+     * </p>
+     * 
      * @param contentType
+     *        The content-type header value in the HTTP response. This will
+     *        correspond to a valid 'accept' type in the request.
      */
 
     public void setContentType(String contentType) {
@@ -38,7 +62,13 @@ public class GetExportResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The content-type header value in the HTTP response. This will correspond
+     * to a valid 'accept' type in the request.
+     * </p>
+     * 
+     * @return The content-type header value in the HTTP response. This will
+     *         correspond to a valid 'accept' type in the request.
      */
 
     public String getContentType() {
@@ -46,7 +76,14 @@ public class GetExportResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The content-type header value in the HTTP response. This will correspond
+     * to a valid 'accept' type in the request.
+     * </p>
+     * 
      * @param contentType
+     *        The content-type header value in the HTTP response. This will
+     *        correspond to a valid 'accept' type in the request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -57,7 +94,12 @@ public class GetExportResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The content-disposition header value in the HTTP reseponse.
+     * </p>
+     * 
      * @param contentDisposition
+     *        The content-disposition header value in the HTTP reseponse.
      */
 
     public void setContentDisposition(String contentDisposition) {
@@ -65,7 +107,11 @@ public class GetExportResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The content-disposition header value in the HTTP reseponse.
+     * </p>
+     * 
+     * @return The content-disposition header value in the HTTP reseponse.
      */
 
     public String getContentDisposition() {
@@ -73,7 +119,12 @@ public class GetExportResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The content-disposition header value in the HTTP reseponse.
+     * </p>
+     * 
      * @param contentDisposition
+     *        The content-disposition header value in the HTTP reseponse.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -85,12 +136,17 @@ public class GetExportResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The binary blob response to <a>GetExport</a>, which contains the export.
+     * </p>
+     * <p>
      * AWS SDK for Java performs a Base64 encoding on this field before sending
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
      * 
      * @param body
+     *        The binary blob response to <a>GetExport</a>, which contains the
+     *        export.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -99,17 +155,21 @@ public class GetExportResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The binary blob response to <a>GetExport</a>, which contains the export.
+     * </p>
+     * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
      * changes their {@code position}. We recommend using
      * {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view
      * of the buffer with an independent {@code position}, and calling
      * {@code get} methods on this rather than directly on the returned
      * {@code ByteBuffer}. Doing so will ensure that anyone else using the
-     * {@code ByteBuffer} will not be affected by changes to the
-     * {@code position}.
+     * {@code ByteBuffer} will not be affected by changes to the {@code position}
+     * .
      * </p>
      * 
-     * @return
+     * @return The binary blob response to <a>GetExport</a>, which contains the
+     *         export.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -117,7 +177,13 @@ public class GetExportResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The binary blob response to <a>GetExport</a>, which contains the export.
+     * </p>
+     * 
      * @param body
+     *        The binary blob response to <a>GetExport</a>, which contains the
+     *        export.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -35,30 +35,42 @@ public enum CodecommitActions implements Action {
     CreateRepository("codecommit:CreateRepository"),
     /** Action for the DeleteRepository operation. */
     DeleteRepository("codecommit:DeleteRepository"),
+    /** Action for the GetBlob operation. */
+    GetBlob("codecommit:GetBlob"),
     /** Action for the GetBranch operation. */
     GetBranch("codecommit:GetBranch"),
     /** Action for the GetCommit operation. */
+    @Deprecated
     GetCommit("codecommit:GetCommit"),
+    /** Action for the GetObjectIdentifier operation. */
+    GetObjectIdentifier("codecommit:GetObjectIdentifier"),
     /** Action for the GetRepository operation. */
     GetRepository("codecommit:GetRepository"),
     /** Action for the GetRepositoryTriggers operation. */
+    @Deprecated
     GetRepositoryTriggers("codecommit:GetRepositoryTriggers"),
+    /** Action for the GetTree operation. */
+    GetTree("codecommit:GetTree"),
+    /** Action for the GitPull operation. */
+    GitPull("codecommit:GitPull"),
+    /** Action for the GitPush operation. */
+    GitPush("codecommit:GitPush"),
     /** Action for the ListBranches operation. */
     ListBranches("codecommit:ListBranches"),
     /** Action for the ListRepositories operation. */
     ListRepositories("codecommit:ListRepositories"),
     /** Action for the PutRepositoryTriggers operation. */
+    @Deprecated
     PutRepositoryTriggers("codecommit:PutRepositoryTriggers"),
     /** Action for the TestRepositoryTriggers operation. */
+    @Deprecated
     TestRepositoryTriggers("codecommit:TestRepositoryTriggers"),
     /** Action for the UpdateDefaultBranch operation. */
     UpdateDefaultBranch("codecommit:UpdateDefaultBranch"),
     /** Action for the UpdateRepositoryDescription operation. */
     UpdateRepositoryDescription("codecommit:UpdateRepositoryDescription"),
     /** Action for the UpdateRepositoryName operation. */
-    UpdateRepositoryName("codecommit:UpdateRepositoryName"),
-
-    ;
+    UpdateRepositoryName("codecommit:UpdateRepositoryName");
 
     private final String action;
 

@@ -2171,6 +2171,41 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
+    public java.util.concurrent.Future<ImportRestApiResult> importRestApiAsync(
+            ImportRestApiRequest request) {
+
+        return importRestApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportRestApiResult> importRestApiAsync(
+            final ImportRestApiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportRestApiRequest, ImportRestApiResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ImportRestApiResult>() {
+                    @Override
+                    public ImportRestApiResult call() throws Exception {
+                        ImportRestApiResult result;
+
+                        try {
+                            result = importRestApi(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutIntegrationResult> putIntegrationAsync(
             PutIntegrationRequest request) {
 
@@ -2295,6 +2330,41 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
 
                         try {
                             result = putMethodResponse(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRestApiResult> putRestApiAsync(
+            PutRestApiRequest request) {
+
+        return putRestApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRestApiResult> putRestApiAsync(
+            final PutRestApiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRestApiRequest, PutRestApiResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<PutRestApiResult>() {
+                    @Override
+                    public PutRestApiResult call() throws Exception {
+                        PutRestApiResult result;
+
+                        try {
+                            result = putRestApi(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

@@ -73,6 +73,13 @@ public class UpdateRestApiResultJsonUnmarshaller implements
                     updateRestApiResult.setCreatedDate(context.getUnmarshaller(
                             java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("warnings", targetDepth)) {
+                    context.nextToken();
+                    updateRestApiResult
+                            .setWarnings(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
+                                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

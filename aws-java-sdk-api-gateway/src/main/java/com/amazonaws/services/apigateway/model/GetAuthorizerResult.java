@@ -47,6 +47,13 @@ public class GetAuthorizerResult implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
+     * Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.
+     * </p>
+     */
+    private String authType;
+    /**
+     * <p>
      * [Required] Specifies the authorizer's Uniform Resource Identifier (URI).
      * For TOKEN authorizers, this must be a well-formed Lambda function URI.
      * The URI should be of the form
@@ -264,6 +271,53 @@ public class GetAuthorizerResult implements Serializable, Cloneable {
 
     public GetAuthorizerResult withType(AuthorizerType type) {
         setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.
+     * </p>
+     * 
+     * @param authType
+     *        Optional customer-defined field, used in Swagger imports/exports.
+     *        Has no functional impact.
+     */
+
+    public void setAuthType(String authType) {
+        this.authType = authType;
+    }
+
+    /**
+     * <p>
+     * Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.
+     * </p>
+     * 
+     * @return Optional customer-defined field, used in Swagger imports/exports.
+     *         Has no functional impact.
+     */
+
+    public String getAuthType() {
+        return this.authType;
+    }
+
+    /**
+     * <p>
+     * Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.
+     * </p>
+     * 
+     * @param authType
+     *        Optional customer-defined field, used in Swagger imports/exports.
+     *        Has no functional impact.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GetAuthorizerResult withAuthType(String authType) {
+        setAuthType(authType);
         return this;
     }
 
@@ -636,6 +690,8 @@ public class GetAuthorizerResult implements Serializable, Cloneable {
             sb.append("Name: " + getName() + ",");
         if (getType() != null)
             sb.append("Type: " + getType() + ",");
+        if (getAuthType() != null)
+            sb.append("AuthType: " + getAuthType() + ",");
         if (getAuthorizerUri() != null)
             sb.append("AuthorizerUri: " + getAuthorizerUri() + ",");
         if (getAuthorizerCredentials() != null)
@@ -677,6 +733,11 @@ public class GetAuthorizerResult implements Serializable, Cloneable {
             return false;
         if (other.getType() != null
                 && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getAuthType() == null ^ this.getAuthType() == null)
+            return false;
+        if (other.getAuthType() != null
+                && other.getAuthType().equals(this.getAuthType()) == false)
             return false;
         if (other.getAuthorizerUri() == null ^ this.getAuthorizerUri() == null)
             return false;
@@ -724,6 +785,8 @@ public class GetAuthorizerResult implements Serializable, Cloneable {
                 + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode
                 + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode
+                + ((getAuthType() == null) ? 0 : getAuthType().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getAuthorizerUri() == null) ? 0 : getAuthorizerUri()

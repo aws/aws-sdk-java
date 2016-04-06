@@ -84,6 +84,10 @@ public class CreateAuthorizerRequestMarshaller implements
                 jsonGenerator.writeFieldName("type").writeValue(
                         createAuthorizerRequest.getType());
             }
+            if (createAuthorizerRequest.getAuthType() != null) {
+                jsonGenerator.writeFieldName("authType").writeValue(
+                        createAuthorizerRequest.getAuthType());
+            }
             if (createAuthorizerRequest.getAuthorizerUri() != null) {
                 jsonGenerator.writeFieldName("authorizerUri").writeValue(
                         createAuthorizerRequest.getAuthorizerUri());

@@ -28,7 +28,14 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Route 53 health checker that performed the
+     * The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker
+     * that performed this health check.
+     * </p>
+     */
+    private String region;
+    /**
+     * <p>
+     * The IP address of the Amazon Route 53 health checker that performed this
      * health check.
      * </p>
      */
@@ -43,13 +50,100 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Route 53 health checker that performed the
+     * The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker
+     * that performed this health check.
+     * </p>
+     * 
+     * @param region
+     *        The <code>HealthCheckRegion</code> of the Amazon Route 53 health
+     *        checker that performed this health check.
+     * @see HealthCheckRegion
+     */
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    /**
+     * <p>
+     * The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker
+     * that performed this health check.
+     * </p>
+     * 
+     * @return The <code>HealthCheckRegion</code> of the Amazon Route 53 health
+     *         checker that performed this health check.
+     * @see HealthCheckRegion
+     */
+
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * <p>
+     * The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker
+     * that performed this health check.
+     * </p>
+     * 
+     * @param region
+     *        The <code>HealthCheckRegion</code> of the Amazon Route 53 health
+     *        checker that performed this health check.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HealthCheckRegion
+     */
+
+    public HealthCheckObservation withRegion(String region) {
+        setRegion(region);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker
+     * that performed this health check.
+     * </p>
+     * 
+     * @param region
+     *        The <code>HealthCheckRegion</code> of the Amazon Route 53 health
+     *        checker that performed this health check.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HealthCheckRegion
+     */
+
+    public void setRegion(HealthCheckRegion region) {
+        this.region = region.toString();
+    }
+
+    /**
+     * <p>
+     * The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker
+     * that performed this health check.
+     * </p>
+     * 
+     * @param region
+     *        The <code>HealthCheckRegion</code> of the Amazon Route 53 health
+     *        checker that performed this health check.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HealthCheckRegion
+     */
+
+    public HealthCheckObservation withRegion(HealthCheckRegion region) {
+        setRegion(region);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address of the Amazon Route 53 health checker that performed this
      * health check.
      * </p>
      * 
      * @param iPAddress
      *        The IP address of the Amazon Route 53 health checker that
-     *        performed the health check.
+     *        performed this health check.
      */
 
     public void setIPAddress(String iPAddress) {
@@ -58,12 +152,12 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Route 53 health checker that performed the
+     * The IP address of the Amazon Route 53 health checker that performed this
      * health check.
      * </p>
      * 
      * @return The IP address of the Amazon Route 53 health checker that
-     *         performed the health check.
+     *         performed this health check.
      */
 
     public String getIPAddress() {
@@ -72,13 +166,13 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Route 53 health checker that performed the
+     * The IP address of the Amazon Route 53 health checker that performed this
      * health check.
      * </p>
      * 
      * @param iPAddress
      *        The IP address of the Amazon Route 53 health checker that
-     *        performed the health check.
+     *        performed this health check.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -147,6 +241,8 @@ public class HealthCheckObservation implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getRegion() != null)
+            sb.append("Region: " + getRegion() + ",");
         if (getIPAddress() != null)
             sb.append("IPAddress: " + getIPAddress() + ",");
         if (getStatusReport() != null)
@@ -165,6 +261,11 @@ public class HealthCheckObservation implements Serializable, Cloneable {
         if (obj instanceof HealthCheckObservation == false)
             return false;
         HealthCheckObservation other = (HealthCheckObservation) obj;
+        if (other.getRegion() == null ^ this.getRegion() == null)
+            return false;
+        if (other.getRegion() != null
+                && other.getRegion().equals(this.getRegion()) == false)
+            return false;
         if (other.getIPAddress() == null ^ this.getIPAddress() == null)
             return false;
         if (other.getIPAddress() != null
@@ -183,6 +284,8 @@ public class HealthCheckObservation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode
+                + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode
                 + ((getIPAddress() == null) ? 0 : getIPAddress().hashCode());
         hashCode = prime

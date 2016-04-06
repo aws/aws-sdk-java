@@ -840,6 +840,21 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     }
 
     @Override
+    public java.util.concurrent.Future<ImportRestApiResult> importRestApiAsync(
+            ImportRestApiRequest request) {
+
+        return importRestApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportRestApiResult> importRestApiAsync(
+            ImportRestApiRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportRestApiRequest, ImportRestApiResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutIntegrationResult> putIntegrationAsync(
             PutIntegrationRequest request) {
 
@@ -895,6 +910,21 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     public java.util.concurrent.Future<PutMethodResponseResult> putMethodResponseAsync(
             PutMethodResponseRequest request,
             com.amazonaws.handlers.AsyncHandler<PutMethodResponseRequest, PutMethodResponseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRestApiResult> putRestApiAsync(
+            PutRestApiRequest request) {
+
+        return putRestApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRestApiResult> putRestApiAsync(
+            PutRestApiRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutRestApiRequest, PutRestApiResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

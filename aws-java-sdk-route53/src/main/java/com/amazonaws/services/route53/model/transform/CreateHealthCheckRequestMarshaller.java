@@ -168,6 +168,47 @@ public class CreateHealthCheckRequestMarshaller implements
                                 .value(healthCheckConfig.getEnableSNI())
                                 .endElement();
                     }
+
+                    com.amazonaws.internal.SdkInternalList<String> healthCheckConfigRegionsList = (com.amazonaws.internal.SdkInternalList<String>) healthCheckConfig
+                            .getRegions();
+                    if (!healthCheckConfigRegionsList.isEmpty()
+                            || !healthCheckConfigRegionsList.isAutoConstruct()) {
+                        xmlWriter.startElement("Regions");
+
+                        for (String healthCheckConfigRegionsListValue : healthCheckConfigRegionsList) {
+                            xmlWriter.startElement("Region");
+                            xmlWriter.value(healthCheckConfigRegionsListValue);
+                            xmlWriter.endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+
+                    AlarmIdentifier alarmIdentifier = healthCheckConfig
+                            .getAlarmIdentifier();
+                    if (alarmIdentifier != null) {
+                        xmlWriter.startElement("AlarmIdentifier");
+
+                        if (alarmIdentifier.getRegion() != null) {
+                            xmlWriter.startElement("Region")
+                                    .value(alarmIdentifier.getRegion())
+                                    .endElement();
+                        }
+
+                        if (alarmIdentifier.getName() != null) {
+                            xmlWriter.startElement("Name")
+                                    .value(alarmIdentifier.getName())
+                                    .endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+
+                    if (healthCheckConfig.getInsufficientDataHealthStatus() != null) {
+                        xmlWriter
+                                .startElement("InsufficientDataHealthStatus")
+                                .value(healthCheckConfig
+                                        .getInsufficientDataHealthStatus())
+                                .endElement();
+                    }
                     xmlWriter.endElement();
                 }
             }

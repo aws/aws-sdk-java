@@ -279,7 +279,12 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Create an <a>ApiKey</a> resource.
+     * </p>
+     * 
      * @param createApiKeyRequest
+     *        Request to create an <a>ApiKey</a> resource.
      * @return Result of the CreateApiKey operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -324,7 +329,14 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
+     * resource.
+     * </p>
+     * 
      * @param createAuthorizerRequest
+     *        Request to add a new <a>Authorizer</a> to an existing
+     *        <a>RestApi</a> resource.
      * @return Result of the CreateAuthorizer operation returned by the service.
      * @throws BadRequestException
      * @throws UnauthorizedException
@@ -635,7 +647,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createRestApiRequest
-     *        Request to add a new <a>RestApi</a> resource to your collection.
+     *        The POST Request to add a new <a>RestApi</a> resource to your
+     *        collection.
      * @return Result of the CreateRestApi operation returned by the service.
      * @throws UnauthorizedException
      * @throws LimitExceededException
@@ -864,7 +877,12 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Deletes the <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param deleteClientCertificateRequest
+     *        A request to delete the <a>ClientCertificate</a> resource.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws BadRequestException
@@ -1273,6 +1291,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteRestApi
      */
     @Override
@@ -1316,6 +1335,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteStage
      */
     @Override
@@ -1440,7 +1460,12 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Generates a <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param generateClientCertificateRequest
+     *        A request to generate a <a>ClientCertificate</a> resource.
      * @return Result of the GenerateClientCertificate operation returned by the
      *         service.
      * @throws UnauthorizedException
@@ -1830,7 +1855,13 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Gets information about the current <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param getClientCertificateRequest
+     *        A request to get information about the current
+     *        <a>ClientCertificate</a> resource.
      * @return Result of the GetClientCertificate operation returned by the
      *         service.
      * @throws UnauthorizedException
@@ -1876,7 +1907,13 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Gets a collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * 
      * @param getClientCertificatesRequest
+     *        A request to get information about a collection of
+     *        <a>ClientCertificate</a> resources.
      * @return Result of the GetClientCertificates operation returned by the
      *         service.
      * @throws BadRequestException
@@ -2120,7 +2157,13 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Exports a deployed version of a <a>RestApi</a> in a specified format.
+     * </p>
+     * 
      * @param getExportRequest
+     *        Request a new export of a <a>RestApi</a> for a particular
+     *        <a>Stage</a>.
      * @return Result of the GetExport operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -2610,8 +2653,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param getRestApiRequest
-     *        Request to list an existing <a>RestApi</a> defined for your
-     *        collection.
+     *        The GET request to list an existing <a>RestApi</a> defined for
+     *        your collection.
      * @return Result of the GetRestApi operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -2658,7 +2701,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param getRestApisRequest
-     *        Request to list existing <a>RestApis</a> defined for your
+     *        The GET request to list existing <a>RestApis</a> defined for your
      *        collection.
      * @return Result of the GetRestApis operation returned by the service.
      * @throws BadRequestException
@@ -2701,7 +2744,13 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.
+     * </p>
+     * 
      * @param getSdkRequest
+     *        Request a new generated client SDK for a <a>RestApi</a> and
+     *        <a>Stage</a>.
      * @return Result of the GetSdk operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -2841,6 +2890,57 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * A feature of the Amazon API Gateway control service for creating a new
+     * API from an external API definition file.
+     * </p>
+     * 
+     * @param importRestApiRequest
+     *        A POST request to import an API to Amazon API Gateway using an
+     *        input of an API definition file.
+     * @return Result of the ImportRestApi operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws LimitExceededException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.ImportRestApi
+     */
+    @Override
+    public ImportRestApiResult importRestApi(
+            ImportRestApiRequest importRestApiRequest) {
+        ExecutionContext executionContext = createExecutionContext(importRestApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportRestApiRequest> request = null;
+        Response<ImportRestApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportRestApiRequestMarshaller().marshall(super
+                        .beforeMarshalling(importRestApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ImportRestApiResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ImportRestApiResultJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Represents a put integration.
      * </p>
      * 
@@ -2902,6 +3002,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.PutIntegrationResponse
      */
     @Override
@@ -3047,7 +3148,65 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * A feature of the Amazon API Gateway control service for updating an
+     * existing API with an input of external API definitions. The update can
+     * take the form of merging the supplied definition into the existing API or
+     * overwriting the existing API.
+     * </p>
+     * 
+     * @param putRestApiRequest
+     *        A PUT request to update an existing API, with external API
+     *        definitions specified as the request body.
+     * @return Result of the PutRestApi operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws LimitExceededException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutRestApi
+     */
+    @Override
+    public PutRestApiResult putRestApi(PutRestApiRequest putRestApiRequest) {
+        ExecutionContext executionContext = createExecutionContext(putRestApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRestApiRequest> request = null;
+        Response<PutRestApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRestApiRequestMarshaller().marshall(super
+                        .beforeMarshalling(putRestApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<PutRestApiResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new PutRestApiResultJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a>
+     * with headers, parameters, and an incoming request body.
+     * </p>
+     * 
      * @param testInvokeAuthorizerRequest
+     *        Make a request to simulate the execution of an <a>Authorizer</a>.
      * @return Result of the TestInvokeAuthorizer operation returned by the
      *         service.
      * @throws BadRequestException
@@ -3094,7 +3253,13 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with
+     * headers, parameters, and an incoming request body.
+     * </p>
+     * 
      * @param testInvokeMethodRequest
+     *        Make a request to simulate the execution of a <a>Method</a>.
      * @return Result of the TestInvokeMethod operation returned by the service.
      * @throws BadRequestException
      * @throws UnauthorizedException
@@ -3342,7 +3507,13 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Changes information about an <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param updateClientCertificateRequest
+     *        A request to change information about an <a>ClientCertificate</a>
+     *        resource.
      * @return Result of the UpdateClientCertificate operation returned by the
      *         service.
      * @throws UnauthorizedException
@@ -3504,6 +3675,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.UpdateIntegration
      */
     @Override

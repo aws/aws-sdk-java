@@ -20,11 +20,20 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a>
+ * resource.
+ * </p>
  */
 public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.
+     * </p>
+     */
     private String restApiId;
     /**
      * <p>
@@ -38,6 +47,13 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.
+     * </p>
+     */
+    private String authType;
     /**
      * <p>
      * [Required] Specifies the authorizer's Uniform Resource Identifier (URI).
@@ -70,7 +86,14 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
     private Integer authorizerResultTtlInSeconds;
 
     /**
+     * <p>
+     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.
+     * </p>
+     * 
      * @param restApiId
+     *        The <a>RestApi</a> identifier under which the <a>Authorizer</a>
+     *        will be created.
      */
 
     public void setRestApiId(String restApiId) {
@@ -78,7 +101,13 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.
+     * </p>
+     * 
+     * @return The <a>RestApi</a> identifier under which the <a>Authorizer</a>
+     *         will be created.
      */
 
     public String getRestApiId() {
@@ -86,7 +115,14 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.
+     * </p>
+     * 
      * @param restApiId
+     *        The <a>RestApi</a> identifier under which the <a>Authorizer</a>
+     *        will be created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -211,6 +247,53 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
 
     public CreateAuthorizerRequest withType(AuthorizerType type) {
         setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.
+     * </p>
+     * 
+     * @param authType
+     *        Optional customer-defined field, used in Swagger imports/exports.
+     *        Has no functional impact.
+     */
+
+    public void setAuthType(String authType) {
+        this.authType = authType;
+    }
+
+    /**
+     * <p>
+     * Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.
+     * </p>
+     * 
+     * @return Optional customer-defined field, used in Swagger imports/exports.
+     *         Has no functional impact.
+     */
+
+    public String getAuthType() {
+        return this.authType;
+    }
+
+    /**
+     * <p>
+     * Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.
+     * </p>
+     * 
+     * @param authType
+     *        Optional customer-defined field, used in Swagger imports/exports.
+     *        Has no functional impact.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateAuthorizerRequest withAuthType(String authType) {
+        setAuthType(authType);
         return this;
     }
 
@@ -445,6 +528,8 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
             sb.append("Name: " + getName() + ",");
         if (getType() != null)
             sb.append("Type: " + getType() + ",");
+        if (getAuthType() != null)
+            sb.append("AuthType: " + getAuthType() + ",");
         if (getAuthorizerUri() != null)
             sb.append("AuthorizerUri: " + getAuthorizerUri() + ",");
         if (getAuthorizerCredentials() != null)
@@ -486,6 +571,11 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getType() != null
                 && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getAuthType() == null ^ this.getAuthType() == null)
+            return false;
+        if (other.getAuthType() != null
+                && other.getAuthType().equals(this.getAuthType()) == false)
             return false;
         if (other.getAuthorizerUri() == null ^ this.getAuthorizerUri() == null)
             return false;
@@ -533,6 +623,8 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
                 + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode
                 + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode
+                + ((getAuthType() == null) ? 0 : getAuthType().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getAuthorizerUri() == null) ? 0 : getAuthorizerUri()

@@ -51,6 +51,14 @@ public class HealthCheck implements Serializable, Cloneable {
      * </p>
      */
     private Long healthCheckVersion;
+    /**
+     * <p>
+     * For CLOUDWATCH_METRIC health checks, a complex type that contains
+     * information about the CloudWatch alarm that you're associating with the
+     * health check.
+     * </p>
+     */
+    private CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration;
 
     /**
      * <p>
@@ -232,6 +240,61 @@ public class HealthCheck implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * For CLOUDWATCH_METRIC health checks, a complex type that contains
+     * information about the CloudWatch alarm that you're associating with the
+     * health check.
+     * </p>
+     * 
+     * @param cloudWatchAlarmConfiguration
+     *        For CLOUDWATCH_METRIC health checks, a complex type that contains
+     *        information about the CloudWatch alarm that you're associating
+     *        with the health check.
+     */
+
+    public void setCloudWatchAlarmConfiguration(
+            CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration) {
+        this.cloudWatchAlarmConfiguration = cloudWatchAlarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * For CLOUDWATCH_METRIC health checks, a complex type that contains
+     * information about the CloudWatch alarm that you're associating with the
+     * health check.
+     * </p>
+     * 
+     * @return For CLOUDWATCH_METRIC health checks, a complex type that contains
+     *         information about the CloudWatch alarm that you're associating
+     *         with the health check.
+     */
+
+    public CloudWatchAlarmConfiguration getCloudWatchAlarmConfiguration() {
+        return this.cloudWatchAlarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * For CLOUDWATCH_METRIC health checks, a complex type that contains
+     * information about the CloudWatch alarm that you're associating with the
+     * health check.
+     * </p>
+     * 
+     * @param cloudWatchAlarmConfiguration
+     *        For CLOUDWATCH_METRIC health checks, a complex type that contains
+     *        information about the CloudWatch alarm that you're associating
+     *        with the health check.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public HealthCheck withCloudWatchAlarmConfiguration(
+            CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration) {
+        setCloudWatchAlarmConfiguration(cloudWatchAlarmConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -250,7 +313,10 @@ public class HealthCheck implements Serializable, Cloneable {
         if (getHealthCheckConfig() != null)
             sb.append("HealthCheckConfig: " + getHealthCheckConfig() + ",");
         if (getHealthCheckVersion() != null)
-            sb.append("HealthCheckVersion: " + getHealthCheckVersion());
+            sb.append("HealthCheckVersion: " + getHealthCheckVersion() + ",");
+        if (getCloudWatchAlarmConfiguration() != null)
+            sb.append("CloudWatchAlarmConfiguration: "
+                    + getCloudWatchAlarmConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -290,6 +356,13 @@ public class HealthCheck implements Serializable, Cloneable {
                 && other.getHealthCheckVersion().equals(
                         this.getHealthCheckVersion()) == false)
             return false;
+        if (other.getCloudWatchAlarmConfiguration() == null
+                ^ this.getCloudWatchAlarmConfiguration() == null)
+            return false;
+        if (other.getCloudWatchAlarmConfiguration() != null
+                && other.getCloudWatchAlarmConfiguration().equals(
+                        this.getCloudWatchAlarmConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -312,6 +385,10 @@ public class HealthCheck implements Serializable, Cloneable {
                 * hashCode
                 + ((getHealthCheckVersion() == null) ? 0
                         : getHealthCheckVersion().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudWatchAlarmConfiguration() == null) ? 0
+                        : getCloudWatchAlarmConfiguration().hashCode());
         return hashCode;
     }
 

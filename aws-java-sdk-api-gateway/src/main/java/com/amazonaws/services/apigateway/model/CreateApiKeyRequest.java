@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Request to create an <a>ApiKey</a> resource.
+ * </p>
  */
 public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

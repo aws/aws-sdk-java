@@ -90,6 +90,21 @@ public class AbstractAWSSecurityTokenServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<GetCallerIdentityResult> getCallerIdentityAsync(
+            GetCallerIdentityRequest request) {
+
+        return getCallerIdentityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCallerIdentityResult> getCallerIdentityAsync(
+            GetCallerIdentityRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCallerIdentityRequest, GetCallerIdentityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetFederationTokenResult> getFederationTokenAsync(
             GetFederationTokenRequest request) {
 

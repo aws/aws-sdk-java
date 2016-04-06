@@ -20,11 +20,18 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * A request to change information about an <a>ClientCertificate</a> resource.
+ * </p>
  */
 public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * </p>
+     */
     private String clientCertificateId;
     /**
      * <p>
@@ -35,7 +42,13 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
     private java.util.List<PatchOperation> patchOperations;
 
     /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        The identifier of the <a>ClientCertificate</a> resource to be
+     *        updated.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -43,7 +56,12 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * </p>
+     * 
+     * @return The identifier of the <a>ClientCertificate</a> resource to be
+     *         updated.
      */
 
     public String getClientCertificateId() {
@@ -51,7 +69,13 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        The identifier of the <a>ClientCertificate</a> resource to be
+     *        updated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

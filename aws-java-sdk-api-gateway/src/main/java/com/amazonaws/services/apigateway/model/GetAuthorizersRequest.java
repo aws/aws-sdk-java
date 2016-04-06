@@ -33,9 +33,18 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String restApiId;
-
+    /**
+     * <p>
+     * If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.
+     * </p>
+     */
     private String position;
-
+    /**
+     * <p>
+     * Limit the number of <a>Authorizer</a> resources in the response.
+     * </p>
+     */
     private Integer limit;
 
     /**
@@ -81,7 +90,15 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.
+     * </p>
+     * 
      * @param position
+     *        If not all <a>Authorizer</a> resources in the response were
+     *        present, the position will specificy where to start the next page
+     *        of results.
      */
 
     public void setPosition(String position) {
@@ -89,7 +106,14 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.
+     * </p>
+     * 
+     * @return If not all <a>Authorizer</a> resources in the response were
+     *         present, the position will specificy where to start the next page
+     *         of results.
      */
 
     public String getPosition() {
@@ -97,7 +121,15 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.
+     * </p>
+     * 
      * @param position
+     *        If not all <a>Authorizer</a> resources in the response were
+     *        present, the position will specificy where to start the next page
+     *        of results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -108,7 +140,12 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Limit the number of <a>Authorizer</a> resources in the response.
+     * </p>
+     * 
      * @param limit
+     *        Limit the number of <a>Authorizer</a> resources in the response.
      */
 
     public void setLimit(Integer limit) {
@@ -116,7 +153,11 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * Limit the number of <a>Authorizer</a> resources in the response.
+     * </p>
+     * 
+     * @return Limit the number of <a>Authorizer</a> resources in the response.
      */
 
     public Integer getLimit() {
@@ -124,7 +165,12 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Limit the number of <a>Authorizer</a> resources in the response.
+     * </p>
+     * 
      * @param limit
+     *        Limit the number of <a>Authorizer</a> resources in the response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

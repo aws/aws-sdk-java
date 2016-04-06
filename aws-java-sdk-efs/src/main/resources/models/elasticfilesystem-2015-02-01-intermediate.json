@@ -37,8 +37,8 @@
         "variableType" : "CreateFileSystemRequest",
         "variableDeclarationType" : "CreateFileSystemRequest",
         "documentation" : "",
-        "variableSetterType" : "CreateFileSystemRequest",
-        "simpleType" : "CreateFileSystemRequest"
+        "simpleType" : "CreateFileSystemRequest",
+        "variableSetterType" : "CreateFileSystemRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -75,8 +75,8 @@
         "variableType" : "CreateMountTargetRequest",
         "variableDeclarationType" : "CreateMountTargetRequest",
         "documentation" : "",
-        "variableSetterType" : "CreateMountTargetRequest",
-        "simpleType" : "CreateMountTargetRequest"
+        "simpleType" : "CreateMountTargetRequest",
+        "variableSetterType" : "CreateMountTargetRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -137,8 +137,8 @@
         "variableType" : "CreateTagsRequest",
         "variableDeclarationType" : "CreateTagsRequest",
         "documentation" : "",
-        "variableSetterType" : "CreateTagsRequest",
-        "simpleType" : "CreateTagsRequest"
+        "simpleType" : "CreateTagsRequest",
+        "variableSetterType" : "CreateTagsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : null,
@@ -169,8 +169,8 @@
         "variableType" : "DeleteFileSystemRequest",
         "variableDeclarationType" : "DeleteFileSystemRequest",
         "documentation" : "",
-        "variableSetterType" : "DeleteFileSystemRequest",
-        "simpleType" : "DeleteFileSystemRequest"
+        "simpleType" : "DeleteFileSystemRequest",
+        "variableSetterType" : "DeleteFileSystemRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : null,
@@ -204,8 +204,8 @@
         "variableType" : "DeleteMountTargetRequest",
         "variableDeclarationType" : "DeleteMountTargetRequest",
         "documentation" : "",
-        "variableSetterType" : "DeleteMountTargetRequest",
-        "simpleType" : "DeleteMountTargetRequest"
+        "simpleType" : "DeleteMountTargetRequest",
+        "variableSetterType" : "DeleteMountTargetRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : null,
@@ -239,8 +239,8 @@
         "variableType" : "DeleteTagsRequest",
         "variableDeclarationType" : "DeleteTagsRequest",
         "documentation" : "",
-        "variableSetterType" : "DeleteTagsRequest",
-        "simpleType" : "DeleteTagsRequest"
+        "simpleType" : "DeleteTagsRequest",
+        "variableSetterType" : "DeleteTagsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : null,
@@ -271,8 +271,8 @@
         "variableType" : "DescribeFileSystemsRequest",
         "variableDeclarationType" : "DescribeFileSystemsRequest",
         "documentation" : "",
-        "variableSetterType" : "DescribeFileSystemsRequest",
-        "simpleType" : "DescribeFileSystemsRequest"
+        "simpleType" : "DescribeFileSystemsRequest",
+        "variableSetterType" : "DescribeFileSystemsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -306,8 +306,8 @@
         "variableType" : "DescribeMountTargetSecurityGroupsRequest",
         "variableDeclarationType" : "DescribeMountTargetSecurityGroupsRequest",
         "documentation" : "",
-        "variableSetterType" : "DescribeMountTargetSecurityGroupsRequest",
-        "simpleType" : "DescribeMountTargetSecurityGroupsRequest"
+        "simpleType" : "DescribeMountTargetSecurityGroupsRequest",
+        "variableSetterType" : "DescribeMountTargetSecurityGroupsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -344,8 +344,8 @@
         "variableType" : "DescribeMountTargetsRequest",
         "variableDeclarationType" : "DescribeMountTargetsRequest",
         "documentation" : "",
-        "variableSetterType" : "DescribeMountTargetsRequest",
-        "simpleType" : "DescribeMountTargetsRequest"
+        "simpleType" : "DescribeMountTargetsRequest",
+        "variableSetterType" : "DescribeMountTargetsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -382,8 +382,8 @@
         "variableType" : "DescribeTagsRequest",
         "variableDeclarationType" : "DescribeTagsRequest",
         "documentation" : "",
-        "variableSetterType" : "DescribeTagsRequest",
-        "simpleType" : "DescribeTagsRequest"
+        "simpleType" : "DescribeTagsRequest",
+        "variableSetterType" : "DescribeTagsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -417,8 +417,8 @@
         "variableType" : "ModifyMountTargetSecurityGroupsRequest",
         "variableDeclarationType" : "ModifyMountTargetSecurityGroupsRequest",
         "documentation" : "",
-        "variableSetterType" : "ModifyMountTargetSecurityGroupsRequest",
-        "simpleType" : "ModifyMountTargetSecurityGroupsRequest"
+        "simpleType" : "ModifyMountTargetSecurityGroupsRequest",
+        "variableSetterType" : "ModifyMountTargetSecurityGroupsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : null,
@@ -471,16 +471,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -520,8 +520,8 @@
         "variableType" : "FileSystemInUseException",
         "variableDeclarationType" : "FileSystemInUseException",
         "documentation" : null,
-        "variableSetterType" : "FileSystemInUseException",
-        "simpleType" : "FileSystemInUseException"
+        "simpleType" : "FileSystemInUseException",
+        "variableSetterType" : "FileSystemInUseException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -543,16 +543,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -608,16 +608,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -657,8 +657,8 @@
         "variableType" : "IncorrectFileSystemLifeCycleStateException",
         "variableDeclarationType" : "IncorrectFileSystemLifeCycleStateException",
         "documentation" : null,
-        "variableSetterType" : "IncorrectFileSystemLifeCycleStateException",
-        "simpleType" : "IncorrectFileSystemLifeCycleStateException"
+        "simpleType" : "IncorrectFileSystemLifeCycleStateException",
+        "variableSetterType" : "IncorrectFileSystemLifeCycleStateException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -680,16 +680,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -745,16 +745,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>Optional. Maximum number of file system tags to return in the response. It must be an integer with a value greater than zero.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "maxItems",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -797,16 +797,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Optional. String. Opaque pagination token returned from a previous <code>DescribeTags</code> operation. If present, it specifies to continue the list from where the previous call left off.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -849,16 +849,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the file system whose tag set you want to retrieve.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -898,8 +898,8 @@
         "variableType" : "DescribeTagsRequest",
         "variableDeclarationType" : "DescribeTagsRequest",
         "documentation" : null,
-        "variableSetterType" : "DescribeTagsRequest",
-        "simpleType" : "DescribeTagsRequest"
+        "simpleType" : "DescribeTagsRequest",
+        "variableSetterType" : "DescribeTagsRequest"
       },
       "marshaller" : {
         "action" : "DescribeTags",
@@ -928,16 +928,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>Optional. Maximum number of file system tags to return in the response. It must be an integer with a value greater than zero.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "maxItems",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -981,16 +981,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the file system whose tag set you want to retrieve.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1034,16 +1034,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Optional. String. Opaque pagination token returned from a previous <code>DescribeTags</code> operation. If present, it specifies to continue the list from where the previous call left off.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1099,16 +1099,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1148,8 +1148,8 @@
         "variableType" : "DependencyTimeoutException",
         "variableDeclarationType" : "DependencyTimeoutException",
         "documentation" : null,
-        "variableSetterType" : "DependencyTimeoutException",
-        "simpleType" : "DependencyTimeoutException"
+        "simpleType" : "DependencyTimeoutException",
+        "variableSetterType" : "DependencyTimeoutException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1171,16 +1171,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1236,16 +1236,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1285,8 +1285,8 @@
         "variableType" : "SubnetNotFoundException",
         "variableDeclarationType" : "SubnetNotFoundException",
         "documentation" : null,
-        "variableSetterType" : "SubnetNotFoundException",
-        "simpleType" : "SubnetNotFoundException"
+        "simpleType" : "SubnetNotFoundException",
+        "variableSetterType" : "SubnetNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1308,16 +1308,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1373,16 +1373,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1422,8 +1422,8 @@
         "variableType" : "SecurityGroupNotFoundException",
         "variableDeclarationType" : "SecurityGroupNotFoundException",
         "documentation" : null,
-        "variableSetterType" : "SecurityGroupNotFoundException",
-        "simpleType" : "SecurityGroupNotFoundException"
+        "simpleType" : "SecurityGroupNotFoundException",
+        "variableSetterType" : "SecurityGroupNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1445,16 +1445,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1510,16 +1510,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1559,8 +1559,8 @@
         "variableType" : "FileSystemNotFoundException",
         "variableDeclarationType" : "FileSystemNotFoundException",
         "documentation" : null,
-        "variableSetterType" : "FileSystemNotFoundException",
-        "simpleType" : "FileSystemNotFoundException"
+        "simpleType" : "FileSystemNotFoundException",
+        "variableSetterType" : "FileSystemNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1582,16 +1582,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1647,16 +1647,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the file system for which to create the mount target.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1699,16 +1699,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the subnet to add the mount target in.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "subnetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1751,16 +1751,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A valid IPv4 address within the address range of the specified subnet.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "ipAddress",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1803,16 +1803,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "<p> Up to 5 VPC security group IDs, of the form \"sg-xxxxxxxx\". These must be for the same VPC as subnet specified. </p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "securityGroups",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -1866,8 +1866,8 @@
         "variableType" : "CreateMountTargetRequest",
         "variableDeclarationType" : "CreateMountTargetRequest",
         "documentation" : null,
-        "variableSetterType" : "CreateMountTargetRequest",
-        "simpleType" : "CreateMountTargetRequest"
+        "simpleType" : "CreateMountTargetRequest",
+        "variableSetterType" : "CreateMountTargetRequest"
       },
       "marshaller" : {
         "action" : "CreateMountTarget",
@@ -1896,16 +1896,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the file system for which to create the mount target.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1949,16 +1949,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the subnet to add the mount target in.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "subnetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2002,16 +2002,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "<p> Up to 5 VPC security group IDs, of the form \"sg-xxxxxxxx\". These must be for the same VPC as subnet specified. </p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "securityGroups",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -2069,16 +2069,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A valid IPv4 address within the address range of the specified subnet.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "ipAddress",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2134,16 +2134,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the mount target whose security groups you want to modify.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "mountTargetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2186,16 +2186,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "<p>An array of up to five VPC security group IDs.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "securityGroups",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -2249,8 +2249,8 @@
         "variableType" : "ModifyMountTargetSecurityGroupsRequest",
         "variableDeclarationType" : "ModifyMountTargetSecurityGroupsRequest",
         "documentation" : null,
-        "variableSetterType" : "ModifyMountTargetSecurityGroupsRequest",
-        "simpleType" : "ModifyMountTargetSecurityGroupsRequest"
+        "simpleType" : "ModifyMountTargetSecurityGroupsRequest",
+        "variableSetterType" : "ModifyMountTargetSecurityGroupsRequest"
       },
       "marshaller" : {
         "action" : "ModifyMountTargetSecurityGroups",
@@ -2279,16 +2279,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the mount target whose security groups you want to modify.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "mountTargetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2332,16 +2332,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "<p>An array of up to five VPC security group IDs.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "securityGroups",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -2411,16 +2411,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2463,16 +2463,16 @@
           "variableType" : "java.util.List<MountTargetDescription>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<MountTargetDescription>",
           "documentation" : "<p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>",
-          "variableSetterType" : "java.util.Collection<MountTargetDescription>",
-          "simpleType" : "List<MountTargetDescription>"
+          "simpleType" : "List<MountTargetDescription>",
+          "variableSetterType" : "java.util.Collection<MountTargetDescription>"
         },
         "setterModel" : {
           "variableName" : "mountTargets",
           "variableType" : "java.util.List<MountTargetDescription>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<MountTargetDescription>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<MountTargetDescription>",
-          "simpleType" : "List<MountTargetDescription>"
+          "simpleType" : "List<MountTargetDescription>",
+          "variableSetterType" : "java.util.Collection<MountTargetDescription>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<MountTargetDescription>",
@@ -2508,16 +2508,16 @@
               "variableType" : "MountTargetDescription",
               "variableDeclarationType" : "MountTargetDescription",
               "documentation" : "",
-              "variableSetterType" : "MountTargetDescription",
-              "simpleType" : "MountTargetDescription"
+              "simpleType" : "MountTargetDescription",
+              "variableSetterType" : "MountTargetDescription"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "MountTargetDescription",
               "variableDeclarationType" : "MountTargetDescription",
               "documentation" : "",
-              "variableSetterType" : "MountTargetDescription",
-              "simpleType" : "MountTargetDescription"
+              "simpleType" : "MountTargetDescription",
+              "variableSetterType" : "MountTargetDescription"
             },
             "getterModel" : {
               "returnType" : "MountTargetDescription",
@@ -2581,16 +2581,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextMarker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2630,8 +2630,8 @@
         "variableType" : "DescribeMountTargetsResult",
         "variableDeclarationType" : "DescribeMountTargetsResult",
         "documentation" : null,
-        "variableSetterType" : "DescribeMountTargetsResult",
-        "simpleType" : "DescribeMountTargetsResult"
+        "simpleType" : "DescribeMountTargetsResult",
+        "variableSetterType" : "DescribeMountTargetsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2656,16 +2656,16 @@
             "variableType" : "java.util.List<MountTargetDescription>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<MountTargetDescription>",
             "documentation" : "<p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>",
-            "variableSetterType" : "java.util.Collection<MountTargetDescription>",
-            "simpleType" : "List<MountTargetDescription>"
+            "simpleType" : "List<MountTargetDescription>",
+            "variableSetterType" : "java.util.Collection<MountTargetDescription>"
           },
           "setterModel" : {
             "variableName" : "mountTargets",
             "variableType" : "java.util.List<MountTargetDescription>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<MountTargetDescription>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<MountTargetDescription>",
-            "simpleType" : "List<MountTargetDescription>"
+            "simpleType" : "List<MountTargetDescription>",
+            "variableSetterType" : "java.util.Collection<MountTargetDescription>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<MountTargetDescription>",
@@ -2701,16 +2701,16 @@
                 "variableType" : "MountTargetDescription",
                 "variableDeclarationType" : "MountTargetDescription",
                 "documentation" : "",
-                "variableSetterType" : "MountTargetDescription",
-                "simpleType" : "MountTargetDescription"
+                "simpleType" : "MountTargetDescription",
+                "variableSetterType" : "MountTargetDescription"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "MountTargetDescription",
                 "variableDeclarationType" : "MountTargetDescription",
                 "documentation" : "",
-                "variableSetterType" : "MountTargetDescription",
-                "simpleType" : "MountTargetDescription"
+                "simpleType" : "MountTargetDescription",
+                "variableSetterType" : "MountTargetDescription"
               },
               "getterModel" : {
                 "returnType" : "MountTargetDescription",
@@ -2775,16 +2775,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2828,16 +2828,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextMarker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2893,16 +2893,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the mount target whose security groups you want to retrieve.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "mountTargetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2942,8 +2942,8 @@
         "variableType" : "DescribeMountTargetSecurityGroupsRequest",
         "variableDeclarationType" : "DescribeMountTargetSecurityGroupsRequest",
         "documentation" : null,
-        "variableSetterType" : "DescribeMountTargetSecurityGroupsRequest",
-        "simpleType" : "DescribeMountTargetSecurityGroupsRequest"
+        "simpleType" : "DescribeMountTargetSecurityGroupsRequest",
+        "variableSetterType" : "DescribeMountTargetSecurityGroupsRequest"
       },
       "marshaller" : {
         "action" : "DescribeMountTargetSecurityGroups",
@@ -2972,16 +2972,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the mount target whose security groups you want to retrieve.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "mountTargetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3037,16 +3037,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3086,8 +3086,8 @@
         "variableType" : "IpAddressInUseException",
         "variableDeclarationType" : "IpAddressInUseException",
         "documentation" : null,
-        "variableSetterType" : "IpAddressInUseException",
-        "simpleType" : "IpAddressInUseException"
+        "simpleType" : "IpAddressInUseException",
+        "variableSetterType" : "IpAddressInUseException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -3109,16 +3109,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3174,16 +3174,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3223,8 +3223,8 @@
         "variableType" : "UnsupportedAvailabilityZoneException",
         "variableDeclarationType" : "UnsupportedAvailabilityZoneException",
         "documentation" : null,
-        "variableSetterType" : "UnsupportedAvailabilityZoneException",
-        "simpleType" : "UnsupportedAvailabilityZoneException"
+        "simpleType" : "UnsupportedAvailabilityZoneException",
+        "variableSetterType" : "UnsupportedAvailabilityZoneException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -3246,16 +3246,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3311,16 +3311,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "<p>An array of security groups.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "securityGroups",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -3374,8 +3374,8 @@
         "variableType" : "DescribeMountTargetSecurityGroupsResult",
         "variableDeclarationType" : "DescribeMountTargetSecurityGroupsResult",
         "documentation" : null,
-        "variableSetterType" : "DescribeMountTargetSecurityGroupsResult",
-        "simpleType" : "DescribeMountTargetSecurityGroupsResult"
+        "simpleType" : "DescribeMountTargetSecurityGroupsResult",
+        "variableSetterType" : "DescribeMountTargetSecurityGroupsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3400,16 +3400,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "<p>An array of security groups.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "securityGroups",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -3479,16 +3479,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3528,8 +3528,8 @@
         "variableType" : "InternalServerErrorException",
         "variableDeclarationType" : "InternalServerErrorException",
         "documentation" : null,
-        "variableSetterType" : "InternalServerErrorException",
-        "simpleType" : "InternalServerErrorException"
+        "simpleType" : "InternalServerErrorException",
+        "variableSetterType" : "InternalServerErrorException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -3551,16 +3551,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3616,16 +3616,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3665,8 +3665,8 @@
         "variableType" : "SecurityGroupLimitExceededException",
         "variableDeclarationType" : "SecurityGroupLimitExceededException",
         "documentation" : null,
-        "variableSetterType" : "SecurityGroupLimitExceededException",
-        "simpleType" : "SecurityGroupLimitExceededException"
+        "simpleType" : "SecurityGroupLimitExceededException",
+        "variableSetterType" : "SecurityGroupLimitExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -3688,16 +3688,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3753,16 +3753,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3802,8 +3802,8 @@
         "variableType" : "MountTargetConflictException",
         "variableDeclarationType" : "MountTargetConflictException",
         "documentation" : null,
-        "variableSetterType" : "MountTargetConflictException",
-        "simpleType" : "MountTargetConflictException"
+        "simpleType" : "MountTargetConflictException",
+        "variableSetterType" : "MountTargetConflictException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -3825,16 +3825,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3890,16 +3890,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the file system you want to delete.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3939,8 +3939,8 @@
         "variableType" : "DeleteFileSystemRequest",
         "variableDeclarationType" : "DeleteFileSystemRequest",
         "documentation" : null,
-        "variableSetterType" : "DeleteFileSystemRequest",
-        "simpleType" : "DeleteFileSystemRequest"
+        "simpleType" : "DeleteFileSystemRequest",
+        "variableSetterType" : "DeleteFileSystemRequest"
       },
       "marshaller" : {
         "action" : "DeleteFileSystem",
@@ -3969,16 +3969,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the file system you want to delete.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4034,16 +4034,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "ownerId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4086,16 +4086,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Opaque string specified in the request. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "creationToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4138,16 +4138,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The file system ID assigned by Amazon EFS.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4190,16 +4190,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The time at which the file system was created, in seconds, since 1970-01-01T00:00:00Z.</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "creationTime",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -4242,16 +4242,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A predefined string value that indicates the lifecycle phase of the file system. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "lifeCycleState",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4294,16 +4294,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>You can add tags to a file system (see <a>CreateTags</a>) including a \"Name\" tag. If the file system has a \"Name\" tag, Amazon EFS returns the value in this field. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4346,16 +4346,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The current number of mount targets (see <a>CreateMountTarget</a>) the file system has.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "numberOfMountTargets",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -4398,16 +4398,16 @@
           "variableType" : "FileSystemSize",
           "variableDeclarationType" : "FileSystemSize",
           "documentation" : "<p> This object provides the latest known metered size of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time. </p>",
-          "variableSetterType" : "FileSystemSize",
-          "simpleType" : "FileSystemSize"
+          "simpleType" : "FileSystemSize",
+          "variableSetterType" : "FileSystemSize"
         },
         "setterModel" : {
           "variableName" : "sizeInBytes",
           "variableType" : "FileSystemSize",
           "variableDeclarationType" : "FileSystemSize",
           "documentation" : "",
-          "variableSetterType" : "FileSystemSize",
-          "simpleType" : "FileSystemSize"
+          "simpleType" : "FileSystemSize",
+          "variableSetterType" : "FileSystemSize"
         },
         "getterModel" : {
           "returnType" : "FileSystemSize",
@@ -4447,8 +4447,8 @@
         "variableType" : "FileSystemDescription",
         "variableDeclarationType" : "FileSystemDescription",
         "documentation" : null,
-        "variableSetterType" : "FileSystemDescription",
-        "simpleType" : "FileSystemDescription"
+        "simpleType" : "FileSystemDescription",
+        "variableSetterType" : "FileSystemDescription"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4473,16 +4473,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>You can add tags to a file system (see <a>CreateTags</a>) including a \"Name\" tag. If the file system has a \"Name\" tag, Amazon EFS returns the value in this field. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4526,16 +4526,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The time at which the file system was created, in seconds, since 1970-01-01T00:00:00Z.</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "creationTime",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -4579,16 +4579,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The file system ID assigned by Amazon EFS.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4632,16 +4632,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A predefined string value that indicates the lifecycle phase of the file system. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "lifeCycleState",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4685,16 +4685,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Opaque string specified in the request. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "creationToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4738,16 +4738,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "ownerId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4791,16 +4791,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The current number of mount targets (see <a>CreateMountTarget</a>) the file system has.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "numberOfMountTargets",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -4844,16 +4844,16 @@
             "variableType" : "FileSystemSize",
             "variableDeclarationType" : "FileSystemSize",
             "documentation" : "<p> This object provides the latest known metered size of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time. </p>",
-            "variableSetterType" : "FileSystemSize",
-            "simpleType" : "FileSystemSize"
+            "simpleType" : "FileSystemSize",
+            "variableSetterType" : "FileSystemSize"
           },
           "setterModel" : {
             "variableName" : "sizeInBytes",
             "variableType" : "FileSystemSize",
             "variableDeclarationType" : "FileSystemSize",
             "documentation" : "",
-            "variableSetterType" : "FileSystemSize",
-            "simpleType" : "FileSystemSize"
+            "simpleType" : "FileSystemSize",
+            "variableSetterType" : "FileSystemSize"
           },
           "getterModel" : {
             "returnType" : "FileSystemSize",
@@ -4909,16 +4909,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The AWS account ID that owns the resource.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "ownerId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4961,16 +4961,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The system-assigned mount target ID. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "mountTargetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5013,16 +5013,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the file system for which the mount target is intended.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5065,16 +5065,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the subnet that the mount target is in.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "subnetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5117,16 +5117,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The lifecycle state the mount target is in.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "lifeCycleState",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5169,16 +5169,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The address at which the file system may be mounted via the mount target.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "ipAddress",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5221,16 +5221,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "networkInterfaceId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5270,8 +5270,8 @@
         "variableType" : "CreateMountTargetResult",
         "variableDeclarationType" : "CreateMountTargetResult",
         "documentation" : null,
-        "variableSetterType" : "CreateMountTargetResult",
-        "simpleType" : "CreateMountTargetResult"
+        "simpleType" : "CreateMountTargetResult",
+        "variableSetterType" : "CreateMountTargetResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5296,16 +5296,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the file system for which the mount target is intended.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5349,16 +5349,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The system-assigned mount target ID. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "mountTargetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5402,16 +5402,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The lifecycle state the mount target is in.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "lifeCycleState",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5455,16 +5455,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the subnet that the mount target is in.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "subnetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5508,16 +5508,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The AWS account ID that owns the resource.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "ownerId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5561,16 +5561,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The address at which the file system may be mounted via the mount target.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "ipAddress",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5614,16 +5614,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "networkInterfaceId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5679,16 +5679,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5728,8 +5728,8 @@
         "variableType" : "NoFreeAddressesInSubnetException",
         "variableDeclarationType" : "NoFreeAddressesInSubnetException",
         "documentation" : null,
-        "variableSetterType" : "NoFreeAddressesInSubnetException",
-        "simpleType" : "NoFreeAddressesInSubnetException"
+        "simpleType" : "NoFreeAddressesInSubnetException",
+        "variableSetterType" : "NoFreeAddressesInSubnetException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -5751,16 +5751,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5816,16 +5816,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5865,8 +5865,8 @@
         "variableType" : "BadRequestException",
         "variableDeclarationType" : "BadRequestException",
         "documentation" : null,
-        "variableSetterType" : "BadRequestException",
-        "simpleType" : "BadRequestException"
+        "simpleType" : "BadRequestException",
+        "variableSetterType" : "BadRequestException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -5888,16 +5888,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5953,16 +5953,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Tag key, a string. The key must not start with \"aws:\".</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "key",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6005,16 +6005,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Value of the tag key.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "value",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6054,8 +6054,8 @@
         "variableType" : "Tag",
         "variableDeclarationType" : "Tag",
         "documentation" : null,
-        "variableSetterType" : "Tag",
-        "simpleType" : "Tag"
+        "simpleType" : "Tag",
+        "variableSetterType" : "Tag"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6080,16 +6080,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Value of the tag key.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "value",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6133,16 +6133,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Tag key, a string. The key must not start with \"aws:\".</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "key",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6198,16 +6198,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>Optional. Maximum number of mount targets to return in the response. It must be an integer with a value greater than zero.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "maxItems",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -6250,16 +6250,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Optional. String. Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation. If present, it specifies to continue the list from where the previous returning call left off.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6302,16 +6302,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Optional. String. The ID of the file system whose mount targets you want to list. It must be included in your request if <code>MountTargetId</code> is not included.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6354,16 +6354,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Optional. String. The ID of the mount target that you want to have described. It must be included in your request if <code>FileSystemId</code> is not included.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "mountTargetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6403,8 +6403,8 @@
         "variableType" : "DescribeMountTargetsRequest",
         "variableDeclarationType" : "DescribeMountTargetsRequest",
         "documentation" : null,
-        "variableSetterType" : "DescribeMountTargetsRequest",
-        "simpleType" : "DescribeMountTargetsRequest"
+        "simpleType" : "DescribeMountTargetsRequest",
+        "variableSetterType" : "DescribeMountTargetsRequest"
       },
       "marshaller" : {
         "action" : "DescribeMountTargets",
@@ -6433,16 +6433,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>Optional. Maximum number of mount targets to return in the response. It must be an integer with a value greater than zero.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "maxItems",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -6486,16 +6486,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Optional. String. The ID of the file system whose mount targets you want to list. It must be included in your request if <code>MountTargetId</code> is not included.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6539,16 +6539,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Optional. String. The ID of the mount target that you want to have described. It must be included in your request if <code>FileSystemId</code> is not included.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "mountTargetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6592,16 +6592,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Optional. String. Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation. If present, it specifies to continue the list from where the previous returning call left off.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6666,8 +6666,8 @@
         "variableType" : "LifeCycleState",
         "variableDeclarationType" : "LifeCycleState",
         "documentation" : null,
-        "variableSetterType" : "LifeCycleState",
-        "simpleType" : "LifeCycleState"
+        "simpleType" : "LifeCycleState",
+        "variableSetterType" : "LifeCycleState"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6703,16 +6703,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The AWS account ID that owns the resource.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "ownerId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6755,16 +6755,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The system-assigned mount target ID. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "mountTargetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6807,16 +6807,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the file system for which the mount target is intended.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6859,16 +6859,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the subnet that the mount target is in.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "subnetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6911,16 +6911,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The lifecycle state the mount target is in.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "lifeCycleState",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6963,16 +6963,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The address at which the file system may be mounted via the mount target.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "ipAddress",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7015,16 +7015,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "networkInterfaceId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7064,8 +7064,8 @@
         "variableType" : "MountTargetDescription",
         "variableDeclarationType" : "MountTargetDescription",
         "documentation" : null,
-        "variableSetterType" : "MountTargetDescription",
-        "simpleType" : "MountTargetDescription"
+        "simpleType" : "MountTargetDescription",
+        "variableSetterType" : "MountTargetDescription"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7090,16 +7090,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the file system for which the mount target is intended.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7143,16 +7143,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The system-assigned mount target ID. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "mountTargetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7196,16 +7196,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The lifecycle state the mount target is in.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "lifeCycleState",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7249,16 +7249,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the subnet that the mount target is in.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "subnetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7302,16 +7302,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The AWS account ID that owns the resource.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "ownerId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7355,16 +7355,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The address at which the file system may be mounted via the mount target.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "ipAddress",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7408,16 +7408,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "networkInterfaceId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7473,16 +7473,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7525,16 +7525,16 @@
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
           "documentation" : "<p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "setterModel" : {
           "variableName" : "tags",
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -7570,16 +7570,16 @@
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "getterModel" : {
               "returnType" : "Tag",
@@ -7643,16 +7643,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextMarker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7692,8 +7692,8 @@
         "variableType" : "DescribeTagsResult",
         "variableDeclarationType" : "DescribeTagsResult",
         "documentation" : null,
-        "variableSetterType" : "DescribeTagsResult",
-        "simpleType" : "DescribeTagsResult"
+        "simpleType" : "DescribeTagsResult",
+        "variableSetterType" : "DescribeTagsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7718,16 +7718,16 @@
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
             "documentation" : "<p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "setterModel" : {
             "variableName" : "tags",
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -7763,16 +7763,16 @@
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "getterModel" : {
                 "returnType" : "Tag",
@@ -7837,16 +7837,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7890,16 +7890,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextMarker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7955,16 +7955,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8004,8 +8004,8 @@
         "variableType" : "NetworkInterfaceLimitExceededException",
         "variableDeclarationType" : "NetworkInterfaceLimitExceededException",
         "documentation" : null,
-        "variableSetterType" : "NetworkInterfaceLimitExceededException",
-        "simpleType" : "NetworkInterfaceLimitExceededException"
+        "simpleType" : "NetworkInterfaceLimitExceededException",
+        "variableSetterType" : "NetworkInterfaceLimitExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -8027,16 +8027,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8092,16 +8092,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8144,16 +8144,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8193,8 +8193,8 @@
         "variableType" : "FileSystemAlreadyExistsException",
         "variableDeclarationType" : "FileSystemAlreadyExistsException",
         "documentation" : null,
-        "variableSetterType" : "FileSystemAlreadyExistsException",
-        "simpleType" : "FileSystemAlreadyExistsException"
+        "simpleType" : "FileSystemAlreadyExistsException",
+        "variableSetterType" : "FileSystemAlreadyExistsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -8216,16 +8216,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8269,16 +8269,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8334,16 +8334,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A string, present if provided by caller in the request.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8386,16 +8386,16 @@
           "variableType" : "java.util.List<FileSystemDescription>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FileSystemDescription>",
           "documentation" : "<p>An array of file system descriptions.</p>",
-          "variableSetterType" : "java.util.Collection<FileSystemDescription>",
-          "simpleType" : "List<FileSystemDescription>"
+          "simpleType" : "List<FileSystemDescription>",
+          "variableSetterType" : "java.util.Collection<FileSystemDescription>"
         },
         "setterModel" : {
           "variableName" : "fileSystems",
           "variableType" : "java.util.List<FileSystemDescription>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FileSystemDescription>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<FileSystemDescription>",
-          "simpleType" : "List<FileSystemDescription>"
+          "simpleType" : "List<FileSystemDescription>",
+          "variableSetterType" : "java.util.Collection<FileSystemDescription>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<FileSystemDescription>",
@@ -8431,16 +8431,16 @@
               "variableType" : "FileSystemDescription",
               "variableDeclarationType" : "FileSystemDescription",
               "documentation" : "",
-              "variableSetterType" : "FileSystemDescription",
-              "simpleType" : "FileSystemDescription"
+              "simpleType" : "FileSystemDescription",
+              "variableSetterType" : "FileSystemDescription"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "FileSystemDescription",
               "variableDeclarationType" : "FileSystemDescription",
               "documentation" : "",
-              "variableSetterType" : "FileSystemDescription",
-              "simpleType" : "FileSystemDescription"
+              "simpleType" : "FileSystemDescription",
+              "variableSetterType" : "FileSystemDescription"
             },
             "getterModel" : {
               "returnType" : "FileSystemDescription",
@@ -8504,16 +8504,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A string, present if there are more file systems than returned in the response. You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextMarker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8553,8 +8553,8 @@
         "variableType" : "DescribeFileSystemsResult",
         "variableDeclarationType" : "DescribeFileSystemsResult",
         "documentation" : null,
-        "variableSetterType" : "DescribeFileSystemsResult",
-        "simpleType" : "DescribeFileSystemsResult"
+        "simpleType" : "DescribeFileSystemsResult",
+        "variableSetterType" : "DescribeFileSystemsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8579,16 +8579,16 @@
             "variableType" : "java.util.List<FileSystemDescription>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FileSystemDescription>",
             "documentation" : "<p>An array of file system descriptions.</p>",
-            "variableSetterType" : "java.util.Collection<FileSystemDescription>",
-            "simpleType" : "List<FileSystemDescription>"
+            "simpleType" : "List<FileSystemDescription>",
+            "variableSetterType" : "java.util.Collection<FileSystemDescription>"
           },
           "setterModel" : {
             "variableName" : "fileSystems",
             "variableType" : "java.util.List<FileSystemDescription>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<FileSystemDescription>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<FileSystemDescription>",
-            "simpleType" : "List<FileSystemDescription>"
+            "simpleType" : "List<FileSystemDescription>",
+            "variableSetterType" : "java.util.Collection<FileSystemDescription>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<FileSystemDescription>",
@@ -8624,16 +8624,16 @@
                 "variableType" : "FileSystemDescription",
                 "variableDeclarationType" : "FileSystemDescription",
                 "documentation" : "",
-                "variableSetterType" : "FileSystemDescription",
-                "simpleType" : "FileSystemDescription"
+                "simpleType" : "FileSystemDescription",
+                "variableSetterType" : "FileSystemDescription"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "FileSystemDescription",
                 "variableDeclarationType" : "FileSystemDescription",
                 "documentation" : "",
-                "variableSetterType" : "FileSystemDescription",
-                "simpleType" : "FileSystemDescription"
+                "simpleType" : "FileSystemDescription",
+                "variableSetterType" : "FileSystemDescription"
               },
               "getterModel" : {
                 "returnType" : "FileSystemDescription",
@@ -8698,16 +8698,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A string, present if provided by caller in the request.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8751,16 +8751,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A string, present if there are more file systems than returned in the response. You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextMarker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8816,16 +8816,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>Optional integer. Specifies the maximum number of file systems to return in the response. This parameter value must be greater than 0. The number of items Amazon EFS returns will be the minimum of the <code>MaxItems</code> parameter specified in the request and the service's internal maximum number of items per page. </p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "maxItems",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -8868,16 +8868,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p> Optional string. Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation. If present, specifies to continue the list from where the returning call had left off. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "marker",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8920,16 +8920,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p> Optional string. Restricts the list to the file system with this creation token (you specify a creation token at the time of creating an Amazon EFS file system). </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "creationToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8972,16 +8972,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Optional string. File system ID whose description you want to retrieve. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9021,8 +9021,8 @@
         "variableType" : "DescribeFileSystemsRequest",
         "variableDeclarationType" : "DescribeFileSystemsRequest",
         "documentation" : null,
-        "variableSetterType" : "DescribeFileSystemsRequest",
-        "simpleType" : "DescribeFileSystemsRequest"
+        "simpleType" : "DescribeFileSystemsRequest",
+        "variableSetterType" : "DescribeFileSystemsRequest"
       },
       "marshaller" : {
         "action" : "DescribeFileSystems",
@@ -9051,16 +9051,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>Optional integer. Specifies the maximum number of file systems to return in the response. This parameter value must be greater than 0. The number of items Amazon EFS returns will be the minimum of the <code>MaxItems</code> parameter specified in the request and the service's internal maximum number of items per page. </p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "maxItems",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -9104,16 +9104,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Optional string. File system ID whose description you want to retrieve. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9157,16 +9157,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p> Optional string. Restricts the list to the file system with this creation token (you specify a creation token at the time of creating an Amazon EFS file system). </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "creationToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9210,16 +9210,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p> Optional string. Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation. If present, specifies to continue the list from where the returning call had left off. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "marker",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9275,16 +9275,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9324,8 +9324,8 @@
         "variableType" : "IncorrectMountTargetStateException",
         "variableDeclarationType" : "IncorrectMountTargetStateException",
         "documentation" : null,
-        "variableSetterType" : "IncorrectMountTargetStateException",
-        "simpleType" : "IncorrectMountTargetStateException"
+        "simpleType" : "IncorrectMountTargetStateException",
+        "variableSetterType" : "IncorrectMountTargetStateException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -9347,16 +9347,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9412,16 +9412,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9461,8 +9461,8 @@
         "variableType" : "MountTargetNotFoundException",
         "variableDeclarationType" : "MountTargetNotFoundException",
         "documentation" : null,
-        "variableSetterType" : "MountTargetNotFoundException",
-        "simpleType" : "MountTargetNotFoundException"
+        "simpleType" : "MountTargetNotFoundException",
+        "variableSetterType" : "MountTargetNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -9484,16 +9484,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9549,16 +9549,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String. The ID of the file system whose tags you want to delete.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9601,16 +9601,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "<p>A list of tag keys to delete.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "tagKeys",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -9664,8 +9664,8 @@
         "variableType" : "DeleteTagsRequest",
         "variableDeclarationType" : "DeleteTagsRequest",
         "documentation" : null,
-        "variableSetterType" : "DeleteTagsRequest",
-        "simpleType" : "DeleteTagsRequest"
+        "simpleType" : "DeleteTagsRequest",
+        "variableSetterType" : "DeleteTagsRequest"
       },
       "marshaller" : {
         "action" : "DeleteTags",
@@ -9694,16 +9694,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String. The ID of the file system whose tags you want to delete.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9747,16 +9747,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "<p>A list of tag keys to delete.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "tagKeys",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -9826,16 +9826,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String. The ID of the mount target to delete.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "mountTargetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9875,8 +9875,8 @@
         "variableType" : "DeleteMountTargetRequest",
         "variableDeclarationType" : "DeleteMountTargetRequest",
         "documentation" : null,
-        "variableSetterType" : "DeleteMountTargetRequest",
-        "simpleType" : "DeleteMountTargetRequest"
+        "simpleType" : "DeleteMountTargetRequest",
+        "variableSetterType" : "DeleteMountTargetRequest"
       },
       "marshaller" : {
         "action" : "DeleteMountTarget",
@@ -9905,16 +9905,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String. The ID of the mount target to delete.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "mountTargetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9970,16 +9970,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10019,8 +10019,8 @@
         "variableType" : "FileSystemLimitExceededException",
         "variableDeclarationType" : "FileSystemLimitExceededException",
         "documentation" : null,
-        "variableSetterType" : "FileSystemLimitExceededException",
-        "simpleType" : "FileSystemLimitExceededException"
+        "simpleType" : "FileSystemLimitExceededException",
+        "variableSetterType" : "FileSystemLimitExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -10042,16 +10042,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10107,16 +10107,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String. The ID of the file system whose tags you want to modify. This operation modifies only the tags and not the file system.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10159,16 +10159,16 @@
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
           "documentation" : "<p> An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "setterModel" : {
           "variableName" : "tags",
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -10204,16 +10204,16 @@
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "getterModel" : {
               "returnType" : "Tag",
@@ -10274,8 +10274,8 @@
         "variableType" : "CreateTagsRequest",
         "variableDeclarationType" : "CreateTagsRequest",
         "documentation" : null,
-        "variableSetterType" : "CreateTagsRequest",
-        "simpleType" : "CreateTagsRequest"
+        "simpleType" : "CreateTagsRequest",
+        "variableSetterType" : "CreateTagsRequest"
       },
       "marshaller" : {
         "action" : "CreateTags",
@@ -10304,16 +10304,16 @@
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
             "documentation" : "<p> An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "setterModel" : {
             "variableName" : "tags",
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -10349,16 +10349,16 @@
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "getterModel" : {
                 "returnType" : "Tag",
@@ -10423,16 +10423,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String. The ID of the file system whose tags you want to modify. This operation modifies only the tags and not the file system.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10488,16 +10488,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "creationToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10537,8 +10537,8 @@
         "variableType" : "CreateFileSystemRequest",
         "variableDeclarationType" : "CreateFileSystemRequest",
         "documentation" : null,
-        "variableSetterType" : "CreateFileSystemRequest",
-        "simpleType" : "CreateFileSystemRequest"
+        "simpleType" : "CreateFileSystemRequest",
+        "variableSetterType" : "CreateFileSystemRequest"
       },
       "marshaller" : {
         "action" : "CreateFileSystem",
@@ -10567,16 +10567,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "creationToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10632,16 +10632,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "ownerId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10684,16 +10684,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Opaque string specified in the request. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "creationToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10736,16 +10736,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The file system ID assigned by Amazon EFS.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "fileSystemId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10788,16 +10788,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The time at which the file system was created, in seconds, since 1970-01-01T00:00:00Z.</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "creationTime",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -10840,16 +10840,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A predefined string value that indicates the lifecycle phase of the file system. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "lifeCycleState",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10892,16 +10892,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>You can add tags to a file system (see <a>CreateTags</a>) including a \"Name\" tag. If the file system has a \"Name\" tag, Amazon EFS returns the value in this field. </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10944,16 +10944,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The current number of mount targets (see <a>CreateMountTarget</a>) the file system has.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "numberOfMountTargets",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -10996,16 +10996,16 @@
           "variableType" : "FileSystemSize",
           "variableDeclarationType" : "FileSystemSize",
           "documentation" : "<p> This object provides the latest known metered size of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time. </p>",
-          "variableSetterType" : "FileSystemSize",
-          "simpleType" : "FileSystemSize"
+          "simpleType" : "FileSystemSize",
+          "variableSetterType" : "FileSystemSize"
         },
         "setterModel" : {
           "variableName" : "sizeInBytes",
           "variableType" : "FileSystemSize",
           "variableDeclarationType" : "FileSystemSize",
           "documentation" : "",
-          "variableSetterType" : "FileSystemSize",
-          "simpleType" : "FileSystemSize"
+          "simpleType" : "FileSystemSize",
+          "variableSetterType" : "FileSystemSize"
         },
         "getterModel" : {
           "returnType" : "FileSystemSize",
@@ -11045,8 +11045,8 @@
         "variableType" : "CreateFileSystemResult",
         "variableDeclarationType" : "CreateFileSystemResult",
         "documentation" : null,
-        "variableSetterType" : "CreateFileSystemResult",
-        "simpleType" : "CreateFileSystemResult"
+        "simpleType" : "CreateFileSystemResult",
+        "variableSetterType" : "CreateFileSystemResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -11071,16 +11071,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>You can add tags to a file system (see <a>CreateTags</a>) including a \"Name\" tag. If the file system has a \"Name\" tag, Amazon EFS returns the value in this field. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -11124,16 +11124,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The time at which the file system was created, in seconds, since 1970-01-01T00:00:00Z.</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "creationTime",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -11177,16 +11177,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The file system ID assigned by Amazon EFS.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "fileSystemId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -11230,16 +11230,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A predefined string value that indicates the lifecycle phase of the file system. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "lifeCycleState",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -11283,16 +11283,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Opaque string specified in the request. </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "creationToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -11336,16 +11336,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "ownerId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -11389,16 +11389,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The current number of mount targets (see <a>CreateMountTarget</a>) the file system has.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "numberOfMountTargets",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -11442,16 +11442,16 @@
             "variableType" : "FileSystemSize",
             "variableDeclarationType" : "FileSystemSize",
             "documentation" : "<p> This object provides the latest known metered size of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time. </p>",
-            "variableSetterType" : "FileSystemSize",
-            "simpleType" : "FileSystemSize"
+            "simpleType" : "FileSystemSize",
+            "variableSetterType" : "FileSystemSize"
           },
           "setterModel" : {
             "variableName" : "sizeInBytes",
             "variableType" : "FileSystemSize",
             "variableDeclarationType" : "FileSystemSize",
             "documentation" : "",
-            "variableSetterType" : "FileSystemSize",
-            "simpleType" : "FileSystemSize"
+            "simpleType" : "FileSystemSize",
+            "variableSetterType" : "FileSystemSize"
           },
           "getterModel" : {
             "returnType" : "FileSystemSize",
@@ -11507,16 +11507,16 @@
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
           "documentation" : "<p>The latest known metered size, in bytes, of data stored in the file system.</p>",
-          "variableSetterType" : "Long",
-          "simpleType" : "Long"
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
         },
         "setterModel" : {
           "variableName" : "value",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
           "documentation" : "",
-          "variableSetterType" : "Long",
-          "simpleType" : "Long"
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
         },
         "getterModel" : {
           "returnType" : "Long",
@@ -11559,16 +11559,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "timestamp",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -11608,8 +11608,8 @@
         "variableType" : "FileSystemSize",
         "variableDeclarationType" : "FileSystemSize",
         "documentation" : null,
-        "variableSetterType" : "FileSystemSize",
-        "simpleType" : "FileSystemSize"
+        "simpleType" : "FileSystemSize",
+        "variableSetterType" : "FileSystemSize"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -11634,16 +11634,16 @@
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
             "documentation" : "<p>The latest known metered size, in bytes, of data stored in the file system.</p>",
-            "variableSetterType" : "Long",
-            "simpleType" : "Long"
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
           },
           "setterModel" : {
             "variableName" : "value",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
             "documentation" : "",
-            "variableSetterType" : "Long",
-            "simpleType" : "Long"
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
           },
           "getterModel" : {
             "returnType" : "Long",
@@ -11687,16 +11687,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "timestamp",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",

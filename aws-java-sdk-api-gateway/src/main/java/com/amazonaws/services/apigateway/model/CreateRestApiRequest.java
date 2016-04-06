@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to add a new <a>RestApi</a> resource to your collection.
+ * The POST Request to add a new <a>RestApi</a> resource to your collection.
  * </p>
  */
 public class CreateRestApiRequest extends AmazonWebServiceRequest implements

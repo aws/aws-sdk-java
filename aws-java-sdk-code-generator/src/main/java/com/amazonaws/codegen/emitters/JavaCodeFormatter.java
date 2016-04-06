@@ -16,6 +16,7 @@
 package com.amazonaws.codegen.emitters;
 
 import java.util.Map;
+import java.util.HashMap;
 
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.ToolFactory;
@@ -35,36 +36,52 @@ public class JavaCodeFormatter {
 
     private final CodeFormatter codeFormatter;
 
-    @SuppressWarnings("rawtypes")
-    private static final Map options;
+    private static final Map<String, Object> DEFAULT_FORMATTER_OPTIONS;
 
     static {
-        options = DefaultCodeFormatterConstants.getEclipseDefaultSettings();
+        DEFAULT_FORMATTER_OPTIONS = DefaultCodeFormatterConstants.getEclipseDefaultSettings();
 
-        options.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_6);
-        options.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM,
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_6);
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM,
                 JavaCore.VERSION_1_6);
-        options.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_6);
-        options.put(DefaultCodeFormatterConstants.FORMATTER_TAB_CHAR,
+        DEFAULT_FORMATTER_OPTIONS.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_6);
+        DEFAULT_FORMATTER_OPTIONS.put(DefaultCodeFormatterConstants.FORMATTER_TAB_CHAR,
                 JavaCore.SPACE);
-        options.put(
+        DEFAULT_FORMATTER_OPTIONS.put(
                 DefaultCodeFormatterConstants.FORMATTER_COMMENT_INDENT_PARAMETER_DESCRIPTION,
                 DefaultCodeFormatterConstants.FALSE);
-        options.put(
+        DEFAULT_FORMATTER_OPTIONS.put(
                 DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_ENUM_CONSTANTS,
                 DefaultCodeFormatterConstants.createAlignmentValue(true,
                         DefaultCodeFormatterConstants.WRAP_ONE_PER_LINE,
                         DefaultCodeFormatterConstants.INDENT_ON_COLUMN));
-        options.put(
+        DEFAULT_FORMATTER_OPTIONS.put(
                 DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_PARAMETERS_IN_CONSTRUCTOR_DECLARATION,
                 DefaultCodeFormatterConstants.createAlignmentValue(false,
                         DefaultCodeFormatterConstants.WRAP_COMPACT,
                         DefaultCodeFormatterConstants.INDENT_DEFAULT));
     }
 
+    /**
+     * Creates a JavaCodeFormatter using the default formatter options.
+     */
     public JavaCodeFormatter() {
+        this(new HashMap<String, Object>());
+    }
 
-        this.codeFormatter = ToolFactory.createCodeFormatter(options,
+    /**
+     * Creates a JavaCodeFormatter using the default formatter options and
+     * optionally applying user provided options on top.
+     *
+     * @param overrideOptions user provided options to apply on top of defaults
+     */
+    public JavaCodeFormatter(final Map<String, Object> overrideOptions) {
+        Map formatterOptions = new HashMap<String, Object>(DEFAULT_FORMATTER_OPTIONS);
+        if (overrideOptions != null) {
+            formatterOptions.putAll(overrideOptions);
+        }
+
+        this.codeFormatter = ToolFactory.createCodeFormatter(formatterOptions,
                 ToolFactory.M_FORMAT_EXISTING);
         if (codeFormatter == null) {
             throw new RuntimeException(

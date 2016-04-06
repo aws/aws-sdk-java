@@ -21,9 +21,9 @@
     "endpointPrefix" : "logs",
     "signingName" : "logs",
     "serviceName" : "Amazon CloudWatch Logs",
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
@@ -12552,11 +12552,11 @@
           "valueType" : "String",
           "valueLocationName" : "value",
           "valueModel" : null,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-          "templateType" : "java.util.Map<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false
+          "valueList" : false,
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "templateType" : "java.util.Map<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12747,11 +12747,11 @@
             "valueType" : "String",
             "valueLocationName" : "value",
             "valueModel" : null,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-            "templateType" : "java.util.Map<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false
+            "valueList" : false,
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "templateType" : "java.util.Map<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

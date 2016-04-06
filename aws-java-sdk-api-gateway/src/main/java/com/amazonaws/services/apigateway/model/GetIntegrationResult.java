@@ -27,7 +27,8 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      */
     private String type;
@@ -106,11 +107,13 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      * 
      * @param type
-     *        Specifies the integration's type.
+     *        Specifies the integration's type. The valid value is
+     *        <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
      * @see IntegrationType
      */
 
@@ -120,10 +123,12 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      * 
-     * @return Specifies the integration's type.
+     * @return Specifies the integration's type. The valid value is
+     *         <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
      * @see IntegrationType
      */
 
@@ -133,11 +138,13 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      * 
      * @param type
-     *        Specifies the integration's type.
+     *        Specifies the integration's type. The valid value is
+     *        <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see IntegrationType
@@ -150,11 +157,13 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      * 
      * @param type
-     *        Specifies the integration's type.
+     *        Specifies the integration's type. The valid value is
+     *        <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see IntegrationType
@@ -166,11 +175,13 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      * 
      * @param type
-     *        Specifies the integration's type.
+     *        Specifies the integration's type. The valid value is
+     *        <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see IntegrationType

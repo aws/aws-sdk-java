@@ -153,6 +153,48 @@ public class UpdateHealthCheckRequestMarshaller implements
                             .value(updateHealthCheckRequest.getEnableSNI())
                             .endElement();
                 }
+
+                com.amazonaws.internal.SdkInternalList<String> updateHealthCheckRequestRegionsList = (com.amazonaws.internal.SdkInternalList<String>) updateHealthCheckRequest
+                        .getRegions();
+                if (!updateHealthCheckRequestRegionsList.isEmpty()
+                        || !updateHealthCheckRequestRegionsList
+                                .isAutoConstruct()) {
+                    xmlWriter.startElement("Regions");
+
+                    for (String updateHealthCheckRequestRegionsListValue : updateHealthCheckRequestRegionsList) {
+                        xmlWriter.startElement("Region");
+                        xmlWriter
+                                .value(updateHealthCheckRequestRegionsListValue);
+                        xmlWriter.endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                AlarmIdentifier alarmIdentifier = updateHealthCheckRequest
+                        .getAlarmIdentifier();
+                if (alarmIdentifier != null) {
+                    xmlWriter.startElement("AlarmIdentifier");
+
+                    if (alarmIdentifier.getRegion() != null) {
+                        xmlWriter.startElement("Region")
+                                .value(alarmIdentifier.getRegion())
+                                .endElement();
+                    }
+
+                    if (alarmIdentifier.getName() != null) {
+                        xmlWriter.startElement("Name")
+                                .value(alarmIdentifier.getName()).endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                if (updateHealthCheckRequest.getInsufficientDataHealthStatus() != null) {
+                    xmlWriter
+                            .startElement("InsufficientDataHealthStatus")
+                            .value(updateHealthCheckRequest
+                                    .getInsufficientDataHealthStatus())
+                            .endElement();
+                }
             }
             xmlWriter.endElement();
 

@@ -323,6 +323,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public ImportRestApiResult importRestApi(ImportRestApiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutIntegrationResult putIntegration(PutIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -341,6 +346,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     @Override
     public PutMethodResponseResult putMethodResponse(
             PutMethodResponseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutRestApiResult putRestApi(PutRestApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

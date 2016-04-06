@@ -20,23 +20,59 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Request a new export of a <a>RestApi</a> for a particular <a>Stage</a>.
+ * </p>
  */
 public class GetExportRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the <a>RestApi</a> to be exported.
+     * </p>
+     */
     private String restApiId;
-
+    /**
+     * <p>
+     * The name of the <a>Stage</a> that will be exported.
+     * </p>
+     */
     private String stageName;
-
+    /**
+     * <p>
+     * The type of export. Currently only 'swagger' is supported.
+     * </p>
+     */
     private String exportType;
-
+    /**
+     * <p>
+     * A key-value map of query string parameters that specify properties of the
+     * export, depending on the requested exportType. For exportType 'swagger',
+     * any combination of the following parameters are supported: 'integrations'
+     * will export x-amazon-apigateway-integration extensions 'authorizers' will
+     * export x-amazon-apigateway-authorizer extensions 'postman' will export
+     * with Postman extensions, allowing for import to the Postman tool
+     * </p>
+     */
     private java.util.Map<String, String> parameters;
-
+    /**
+     * <p>
+     * The content-type of the export, for example 'application/json'. Currently
+     * 'application/json' and 'application/yaml' are supported for exportType
+     * 'swagger'. Should be specifed in the 'Accept' header for direct API
+     * requests.
+     * </p>
+     */
     private String accepts;
 
     /**
+     * <p>
+     * The identifier of the <a>RestApi</a> to be exported.
+     * </p>
+     * 
      * @param restApiId
+     *        The identifier of the <a>RestApi</a> to be exported.
      */
 
     public void setRestApiId(String restApiId) {
@@ -44,7 +80,11 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the <a>RestApi</a> to be exported.
+     * </p>
+     * 
+     * @return The identifier of the <a>RestApi</a> to be exported.
      */
 
     public String getRestApiId() {
@@ -52,7 +92,12 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The identifier of the <a>RestApi</a> to be exported.
+     * </p>
+     * 
      * @param restApiId
+     *        The identifier of the <a>RestApi</a> to be exported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -63,7 +108,12 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The name of the <a>Stage</a> that will be exported.
+     * </p>
+     * 
      * @param stageName
+     *        The name of the <a>Stage</a> that will be exported.
      */
 
     public void setStageName(String stageName) {
@@ -71,7 +121,11 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the <a>Stage</a> that will be exported.
+     * </p>
+     * 
+     * @return The name of the <a>Stage</a> that will be exported.
      */
 
     public String getStageName() {
@@ -79,7 +133,12 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The name of the <a>Stage</a> that will be exported.
+     * </p>
+     * 
      * @param stageName
+     *        The name of the <a>Stage</a> that will be exported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -90,7 +149,12 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The type of export. Currently only 'swagger' is supported.
+     * </p>
+     * 
      * @param exportType
+     *        The type of export. Currently only 'swagger' is supported.
      */
 
     public void setExportType(String exportType) {
@@ -98,7 +162,11 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The type of export. Currently only 'swagger' is supported.
+     * </p>
+     * 
+     * @return The type of export. Currently only 'swagger' is supported.
      */
 
     public String getExportType() {
@@ -106,7 +174,12 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The type of export. Currently only 'swagger' is supported.
+     * </p>
+     * 
      * @param exportType
+     *        The type of export. Currently only 'swagger' is supported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -117,7 +190,23 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * A key-value map of query string parameters that specify properties of the
+     * export, depending on the requested exportType. For exportType 'swagger',
+     * any combination of the following parameters are supported: 'integrations'
+     * will export x-amazon-apigateway-integration extensions 'authorizers' will
+     * export x-amazon-apigateway-authorizer extensions 'postman' will export
+     * with Postman extensions, allowing for import to the Postman tool
+     * </p>
+     * 
+     * @return A key-value map of query string parameters that specify
+     *         properties of the export, depending on the requested exportType.
+     *         For exportType 'swagger', any combination of the following
+     *         parameters are supported: 'integrations' will export
+     *         x-amazon-apigateway-integration extensions 'authorizers' will
+     *         export x-amazon-apigateway-authorizer extensions 'postman' will
+     *         export with Postman extensions, allowing for import to the
+     *         Postman tool
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -125,7 +214,24 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A key-value map of query string parameters that specify properties of the
+     * export, depending on the requested exportType. For exportType 'swagger',
+     * any combination of the following parameters are supported: 'integrations'
+     * will export x-amazon-apigateway-integration extensions 'authorizers' will
+     * export x-amazon-apigateway-authorizer extensions 'postman' will export
+     * with Postman extensions, allowing for import to the Postman tool
+     * </p>
+     * 
      * @param parameters
+     *        A key-value map of query string parameters that specify properties
+     *        of the export, depending on the requested exportType. For
+     *        exportType 'swagger', any combination of the following parameters
+     *        are supported: 'integrations' will export
+     *        x-amazon-apigateway-integration extensions 'authorizers' will
+     *        export x-amazon-apigateway-authorizer extensions 'postman' will
+     *        export with Postman extensions, allowing for import to the Postman
+     *        tool
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -133,7 +239,24 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A key-value map of query string parameters that specify properties of the
+     * export, depending on the requested exportType. For exportType 'swagger',
+     * any combination of the following parameters are supported: 'integrations'
+     * will export x-amazon-apigateway-integration extensions 'authorizers' will
+     * export x-amazon-apigateway-authorizer extensions 'postman' will export
+     * with Postman extensions, allowing for import to the Postman tool
+     * </p>
+     * 
      * @param parameters
+     *        A key-value map of query string parameters that specify properties
+     *        of the export, depending on the requested exportType. For
+     *        exportType 'swagger', any combination of the following parameters
+     *        are supported: 'integrations' will export
+     *        x-amazon-apigateway-integration extensions 'authorizers' will
+     *        export x-amazon-apigateway-authorizer extensions 'postman' will
+     *        export with Postman extensions, allowing for import to the Postman
+     *        tool
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -166,7 +289,18 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The content-type of the export, for example 'application/json'. Currently
+     * 'application/json' and 'application/yaml' are supported for exportType
+     * 'swagger'. Should be specifed in the 'Accept' header for direct API
+     * requests.
+     * </p>
+     * 
      * @param accepts
+     *        The content-type of the export, for example 'application/json'.
+     *        Currently 'application/json' and 'application/yaml' are supported
+     *        for exportType 'swagger'. Should be specifed in the 'Accept'
+     *        header for direct API requests.
      */
 
     public void setAccepts(String accepts) {
@@ -174,7 +308,17 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The content-type of the export, for example 'application/json'. Currently
+     * 'application/json' and 'application/yaml' are supported for exportType
+     * 'swagger'. Should be specifed in the 'Accept' header for direct API
+     * requests.
+     * </p>
+     * 
+     * @return The content-type of the export, for example 'application/json'.
+     *         Currently 'application/json' and 'application/yaml' are supported
+     *         for exportType 'swagger'. Should be specifed in the 'Accept'
+     *         header for direct API requests.
      */
 
     public String getAccepts() {
@@ -182,7 +326,18 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The content-type of the export, for example 'application/json'. Currently
+     * 'application/json' and 'application/yaml' are supported for exportType
+     * 'swagger'. Should be specifed in the 'Accept' header for direct API
+     * requests.
+     * </p>
+     * 
      * @param accepts
+     *        The content-type of the export, for example 'application/json'.
+     *        Currently 'application/json' and 'application/yaml' are supported
+     *        for exportType 'swagger'. Should be specifed in the 'Accept'
+     *        header for direct API requests.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

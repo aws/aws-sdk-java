@@ -53,6 +53,8 @@ public class UpdateRestApiResult implements Serializable, Cloneable {
      */
     private java.util.Date createdDate;
 
+    private java.util.List<String> warnings;
+
     /**
      * <p>
      * The API's identifier. This identifier is unique across all of your APIs
@@ -236,6 +238,62 @@ public class UpdateRestApiResult implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<String> getWarnings() {
+        return warnings;
+    }
+
+    /**
+     * @param warnings
+     */
+
+    public void setWarnings(java.util.Collection<String> warnings) {
+        if (warnings == null) {
+            this.warnings = null;
+            return;
+        }
+
+        this.warnings = new java.util.ArrayList<String>(warnings);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWarnings(java.util.Collection)} or
+     * {@link #withWarnings(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param warnings
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateRestApiResult withWarnings(String... warnings) {
+        if (this.warnings == null) {
+            setWarnings(new java.util.ArrayList<String>(warnings.length));
+        }
+        for (String ele : warnings) {
+            this.warnings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param warnings
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateRestApiResult withWarnings(
+            java.util.Collection<String> warnings) {
+        setWarnings(warnings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -254,7 +312,9 @@ public class UpdateRestApiResult implements Serializable, Cloneable {
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: " + getCreatedDate());
+            sb.append("CreatedDate: " + getCreatedDate() + ",");
+        if (getWarnings() != null)
+            sb.append("Warnings: " + getWarnings());
         sb.append("}");
         return sb.toString();
     }
@@ -289,6 +349,11 @@ public class UpdateRestApiResult implements Serializable, Cloneable {
         if (other.getCreatedDate() != null
                 && other.getCreatedDate().equals(this.getCreatedDate()) == false)
             return false;
+        if (other.getWarnings() == null ^ this.getWarnings() == null)
+            return false;
+        if (other.getWarnings() != null
+                && other.getWarnings().equals(this.getWarnings()) == false)
+            return false;
         return true;
     }
 
@@ -307,6 +372,8 @@ public class UpdateRestApiResult implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode
+                + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         return hashCode;
     }
 

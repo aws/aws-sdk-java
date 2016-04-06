@@ -48,7 +48,7 @@ public class EventSubscription implements Serializable, Cloneable {
      * @param event
      *        The event for which Amazon Simple Notification Service (SNS)
      *        notifications are sent.
-     * @see Event
+     * @see InspectorEvent
      */
 
     public void setEvent(String event) {
@@ -63,7 +63,7 @@ public class EventSubscription implements Serializable, Cloneable {
      * 
      * @return The event for which Amazon Simple Notification Service (SNS)
      *         notifications are sent.
-     * @see Event
+     * @see InspectorEvent
      */
 
     public String getEvent() {
@@ -81,7 +81,7 @@ public class EventSubscription implements Serializable, Cloneable {
      *        notifications are sent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
-     * @see Event
+     * @see InspectorEvent
      */
 
     public EventSubscription withEvent(String event) {
@@ -100,10 +100,10 @@ public class EventSubscription implements Serializable, Cloneable {
      *        notifications are sent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
-     * @see Event
+     * @see InspectorEvent
      */
 
-    public void setEvent(Event event) {
+    public void setEvent(InspectorEvent event) {
         this.event = event.toString();
     }
 
@@ -118,10 +118,10 @@ public class EventSubscription implements Serializable, Cloneable {
      *        notifications are sent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
-     * @see Event
+     * @see InspectorEvent
      */
 
-    public EventSubscription withEvent(Event event) {
+    public EventSubscription withEvent(InspectorEvent event) {
         setEvent(event);
         return this;
     }

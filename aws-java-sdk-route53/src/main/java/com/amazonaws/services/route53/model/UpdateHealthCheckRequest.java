@@ -162,6 +162,23 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private Boolean enableSNI;
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
+     * EC2 regions that you want Amazon Route 53 to use to perform health
+     * checks. You must specify at least three regions.
+     * </p>
+     * <note>When you remove a region from the list, Amazon Route 53 will
+     * briefly continue to check your endpoint from that region.</note>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> regions;
+
+    private AlarmIdentifier alarmIdentifier;
+
+    private String insufficientDataHealthStatus;
 
     /**
      * <p>
@@ -1119,6 +1136,267 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
+     * EC2 regions that you want Amazon Route 53 to use to perform health
+     * checks. You must specify at least three regions.
+     * </p>
+     * <note>When you remove a region from the list, Amazon Route 53 will
+     * briefly continue to check your endpoint from that region.</note>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     * 
+     * @return A list of <code>HealthCheckRegion</code> values that specify the
+     *         Amazon EC2 regions that you want Amazon Route 53 to use to
+     *         perform health checks. You must specify at least three
+     *         regions.</p> <note>When you remove a region from the list, Amazon
+     *         Route 53 will briefly continue to check your endpoint from that
+     *         region.</note>
+     *         <p>
+     *         Specify this value only if you want to change it.
+     * @see HealthCheckRegion
+     */
+
+    public java.util.List<String> getRegions() {
+        if (regions == null) {
+            regions = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return regions;
+    }
+
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
+     * EC2 regions that you want Amazon Route 53 to use to perform health
+     * checks. You must specify at least three regions.
+     * </p>
+     * <note>When you remove a region from the list, Amazon Route 53 will
+     * briefly continue to check your endpoint from that region.</note>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     * 
+     * @param regions
+     *        A list of <code>HealthCheckRegion</code> values that specify the
+     *        Amazon EC2 regions that you want Amazon Route 53 to use to perform
+     *        health checks. You must specify at least three regions.</p>
+     *        <note>When you remove a region from the list, Amazon Route 53 will
+     *        briefly continue to check your endpoint from that region.</note>
+     *        <p>
+     *        Specify this value only if you want to change it.
+     * @see HealthCheckRegion
+     */
+
+    public void setRegions(java.util.Collection<String> regions) {
+        if (regions == null) {
+            this.regions = null;
+            return;
+        }
+
+        this.regions = new com.amazonaws.internal.SdkInternalList<String>(
+                regions);
+    }
+
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
+     * EC2 regions that you want Amazon Route 53 to use to perform health
+     * checks. You must specify at least three regions.
+     * </p>
+     * <note>When you remove a region from the list, Amazon Route 53 will
+     * briefly continue to check your endpoint from that region.</note>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRegions(java.util.Collection)} or
+     * {@link #withRegions(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param regions
+     *        A list of <code>HealthCheckRegion</code> values that specify the
+     *        Amazon EC2 regions that you want Amazon Route 53 to use to perform
+     *        health checks. You must specify at least three regions.</p>
+     *        <note>When you remove a region from the list, Amazon Route 53 will
+     *        briefly continue to check your endpoint from that region.</note>
+     *        <p>
+     *        Specify this value only if you want to change it.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HealthCheckRegion
+     */
+
+    public UpdateHealthCheckRequest withRegions(String... regions) {
+        if (this.regions == null) {
+            setRegions(new com.amazonaws.internal.SdkInternalList<String>(
+                    regions.length));
+        }
+        for (String ele : regions) {
+            this.regions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
+     * EC2 regions that you want Amazon Route 53 to use to perform health
+     * checks. You must specify at least three regions.
+     * </p>
+     * <note>When you remove a region from the list, Amazon Route 53 will
+     * briefly continue to check your endpoint from that region.</note>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     * 
+     * @param regions
+     *        A list of <code>HealthCheckRegion</code> values that specify the
+     *        Amazon EC2 regions that you want Amazon Route 53 to use to perform
+     *        health checks. You must specify at least three regions.</p>
+     *        <note>When you remove a region from the list, Amazon Route 53 will
+     *        briefly continue to check your endpoint from that region.</note>
+     *        <p>
+     *        Specify this value only if you want to change it.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HealthCheckRegion
+     */
+
+    public UpdateHealthCheckRequest withRegions(
+            java.util.Collection<String> regions) {
+        setRegions(regions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that specify the Amazon
+     * EC2 regions that you want Amazon Route 53 to use to perform health
+     * checks. You must specify at least three regions.
+     * </p>
+     * <note>When you remove a region from the list, Amazon Route 53 will
+     * briefly continue to check your endpoint from that region.</note>
+     * <p>
+     * Specify this value only if you want to change it.
+     * </p>
+     * 
+     * @param regions
+     *        A list of <code>HealthCheckRegion</code> values that specify the
+     *        Amazon EC2 regions that you want Amazon Route 53 to use to perform
+     *        health checks. You must specify at least three regions.</p>
+     *        <note>When you remove a region from the list, Amazon Route 53 will
+     *        briefly continue to check your endpoint from that region.</note>
+     *        <p>
+     *        Specify this value only if you want to change it.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HealthCheckRegion
+     */
+
+    public UpdateHealthCheckRequest withRegions(HealthCheckRegion... regions) {
+        com.amazonaws.internal.SdkInternalList<String> regionsCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                regions.length);
+        for (HealthCheckRegion value : regions) {
+            regionsCopy.add(value.toString());
+        }
+        if (getRegions() == null) {
+            setRegions(regionsCopy);
+        } else {
+            getRegions().addAll(regionsCopy);
+        }
+        return this;
+    }
+
+    /**
+     * @param alarmIdentifier
+     */
+
+    public void setAlarmIdentifier(AlarmIdentifier alarmIdentifier) {
+        this.alarmIdentifier = alarmIdentifier;
+    }
+
+    /**
+     * @return
+     */
+
+    public AlarmIdentifier getAlarmIdentifier() {
+        return this.alarmIdentifier;
+    }
+
+    /**
+     * @param alarmIdentifier
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateHealthCheckRequest withAlarmIdentifier(
+            AlarmIdentifier alarmIdentifier) {
+        setAlarmIdentifier(alarmIdentifier);
+        return this;
+    }
+
+    /**
+     * @param insufficientDataHealthStatus
+     * @see InsufficientDataHealthStatus
+     */
+
+    public void setInsufficientDataHealthStatus(
+            String insufficientDataHealthStatus) {
+        this.insufficientDataHealthStatus = insufficientDataHealthStatus;
+    }
+
+    /**
+     * @return
+     * @see InsufficientDataHealthStatus
+     */
+
+    public String getInsufficientDataHealthStatus() {
+        return this.insufficientDataHealthStatus;
+    }
+
+    /**
+     * @param insufficientDataHealthStatus
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InsufficientDataHealthStatus
+     */
+
+    public UpdateHealthCheckRequest withInsufficientDataHealthStatus(
+            String insufficientDataHealthStatus) {
+        setInsufficientDataHealthStatus(insufficientDataHealthStatus);
+        return this;
+    }
+
+    /**
+     * @param insufficientDataHealthStatus
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InsufficientDataHealthStatus
+     */
+
+    public void setInsufficientDataHealthStatus(
+            InsufficientDataHealthStatus insufficientDataHealthStatus) {
+        this.insufficientDataHealthStatus = insufficientDataHealthStatus
+                .toString();
+    }
+
+    /**
+     * @param insufficientDataHealthStatus
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InsufficientDataHealthStatus
+     */
+
+    public UpdateHealthCheckRequest withInsufficientDataHealthStatus(
+            InsufficientDataHealthStatus insufficientDataHealthStatus) {
+        setInsufficientDataHealthStatus(insufficientDataHealthStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1154,7 +1432,14 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
         if (getChildHealthChecks() != null)
             sb.append("ChildHealthChecks: " + getChildHealthChecks() + ",");
         if (getEnableSNI() != null)
-            sb.append("EnableSNI: " + getEnableSNI());
+            sb.append("EnableSNI: " + getEnableSNI() + ",");
+        if (getRegions() != null)
+            sb.append("Regions: " + getRegions() + ",");
+        if (getAlarmIdentifier() != null)
+            sb.append("AlarmIdentifier: " + getAlarmIdentifier() + ",");
+        if (getInsufficientDataHealthStatus() != null)
+            sb.append("InsufficientDataHealthStatus: "
+                    + getInsufficientDataHealthStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -1238,6 +1523,24 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
         if (other.getEnableSNI() != null
                 && other.getEnableSNI().equals(this.getEnableSNI()) == false)
             return false;
+        if (other.getRegions() == null ^ this.getRegions() == null)
+            return false;
+        if (other.getRegions() != null
+                && other.getRegions().equals(this.getRegions()) == false)
+            return false;
+        if (other.getAlarmIdentifier() == null
+                ^ this.getAlarmIdentifier() == null)
+            return false;
+        if (other.getAlarmIdentifier() != null
+                && other.getAlarmIdentifier().equals(this.getAlarmIdentifier()) == false)
+            return false;
+        if (other.getInsufficientDataHealthStatus() == null
+                ^ this.getInsufficientDataHealthStatus() == null)
+            return false;
+        if (other.getInsufficientDataHealthStatus() != null
+                && other.getInsufficientDataHealthStatus().equals(
+                        this.getInsufficientDataHealthStatus()) == false)
+            return false;
         return true;
     }
 
@@ -1286,6 +1589,16 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
                         : getChildHealthChecks().hashCode());
         hashCode = prime * hashCode
                 + ((getEnableSNI() == null) ? 0 : getEnableSNI().hashCode());
+        hashCode = prime * hashCode
+                + ((getRegions() == null) ? 0 : getRegions().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAlarmIdentifier() == null) ? 0 : getAlarmIdentifier()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInsufficientDataHealthStatus() == null) ? 0
+                        : getInsufficientDataHealthStatus().hashCode());
         return hashCode;
     }
 

@@ -21,7 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to list an existing <a>RestApi</a> defined for your collection.
+ * The GET request to list an existing <a>RestApi</a> defined for your
+ * collection.
  * </p>
  */
 public class GetRestApiRequest extends AmazonWebServiceRequest implements

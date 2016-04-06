@@ -14,22 +14,22 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.inspector.model;
+package com.amazonaws.services.route53.model;
 
 /**
  * 
  */
-public enum Event {
+public enum Statistic {
 
-    ASSESSMENT_RUN_STARTED("ASSESSMENT_RUN_STARTED"),
-    ASSESSMENT_RUN_COMPLETED("ASSESSMENT_RUN_COMPLETED"),
-    ASSESSMENT_RUN_STATE_CHANGED("ASSESSMENT_RUN_STATE_CHANGED"),
-    FINDING_REPORTED("FINDING_REPORTED"),
-    OTHER("OTHER");
+    Average("Average"),
+    Sum("Sum"),
+    SampleCount("SampleCount"),
+    Maximum("Maximum"),
+    Minimum("Minimum");
 
     private String value;
 
-    private Event(String value) {
+    private Statistic(String value) {
         this.value = value;
     }
 
@@ -43,21 +43,21 @@ public enum Event {
      *
      * @param value
      *        real value
-     * @return Event corresponding to the value
+     * @return Statistic corresponding to the value
      */
-    public static Event fromValue(String value) {
+    public static Statistic fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        } else if ("ASSESSMENT_RUN_STARTED".equals(value)) {
-            return ASSESSMENT_RUN_STARTED;
-        } else if ("ASSESSMENT_RUN_COMPLETED".equals(value)) {
-            return ASSESSMENT_RUN_COMPLETED;
-        } else if ("ASSESSMENT_RUN_STATE_CHANGED".equals(value)) {
-            return ASSESSMENT_RUN_STATE_CHANGED;
-        } else if ("FINDING_REPORTED".equals(value)) {
-            return FINDING_REPORTED;
-        } else if ("OTHER".equals(value)) {
-            return OTHER;
+        } else if ("Average".equals(value)) {
+            return Average;
+        } else if ("Sum".equals(value)) {
+            return Sum;
+        } else if ("SampleCount".equals(value)) {
+            return SampleCount;
+        } else if ("Maximum".equals(value)) {
+            return Maximum;
+        } else if ("Minimum".equals(value)) {
+            return Minimum;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

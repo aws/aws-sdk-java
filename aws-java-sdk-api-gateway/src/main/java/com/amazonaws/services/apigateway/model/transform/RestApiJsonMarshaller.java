@@ -62,6 +62,18 @@ public class RestApiJsonMarshaller {
                         restApi.getCreatedDate());
             }
 
+            java.util.List<String> warningsList = restApi.getWarnings();
+            if (warningsList != null) {
+                jsonGenerator.writeFieldName("warnings");
+                jsonGenerator.writeStartArray();
+                for (String warningsListValue : warningsList) {
+                    if (warningsListValue != null) {
+                        jsonGenerator.writeValue(warningsListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

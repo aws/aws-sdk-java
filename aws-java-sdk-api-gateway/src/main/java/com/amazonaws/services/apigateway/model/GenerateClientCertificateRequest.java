@@ -20,15 +20,27 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * A request to generate a <a>ClientCertificate</a> resource.
+ * </p>
  */
 public class GenerateClientCertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The description of the <a>ClientCertificate</a>.
+     * </p>
+     */
     private String description;
 
     /**
+     * <p>
+     * The description of the <a>ClientCertificate</a>.
+     * </p>
+     * 
      * @param description
+     *        The description of the <a>ClientCertificate</a>.
      */
 
     public void setDescription(String description) {
@@ -36,7 +48,11 @@ public class GenerateClientCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The description of the <a>ClientCertificate</a>.
+     * </p>
+     * 
+     * @return The description of the <a>ClientCertificate</a>.
      */
 
     public String getDescription() {
@@ -44,7 +60,12 @@ public class GenerateClientCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The description of the <a>ClientCertificate</a>.
+     * </p>
+     * 
      * @param description
+     *        The description of the <a>ClientCertificate</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

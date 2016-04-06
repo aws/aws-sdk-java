@@ -68,11 +68,11 @@ import com.amazonaws.annotation.ThreadSafe;
  * <p>
  * The AWS Security Token Service (STS) has a default endpoint of
  * https://sts.amazonaws.com that maps to the US East (N. Virginia) region.
- * Additional regions are available, but must first be activated in the AWS
- * Management Console before you can use a different region's endpoint. For more
- * information about activating a region for STS see <a href=
+ * Additional regions are available and are activated by default. For more
+ * information, see <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
- * >Activating STS in a New Region</a> in the <i>IAM User Guide</i>.
+ * >Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User
+ * Guide</i>.
  * </p>
  * <p>
  * For information about STS endpoints, see <a
@@ -449,6 +449,41 @@ public class AWSSecurityTokenServiceAsyncClient extends
 
                         try {
                             result = decodeAuthorizationMessage(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCallerIdentityResult> getCallerIdentityAsync(
+            GetCallerIdentityRequest request) {
+
+        return getCallerIdentityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCallerIdentityResult> getCallerIdentityAsync(
+            final GetCallerIdentityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCallerIdentityRequest, GetCallerIdentityResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetCallerIdentityResult>() {
+                    @Override
+                    public GetCallerIdentityResult call() throws Exception {
+                        GetCallerIdentityResult result;
+
+                        try {
+                            result = getCallerIdentity(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

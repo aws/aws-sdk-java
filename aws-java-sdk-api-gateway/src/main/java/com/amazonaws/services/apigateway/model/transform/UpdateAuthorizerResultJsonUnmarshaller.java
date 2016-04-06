@@ -68,6 +68,11 @@ public class UpdateAuthorizerResultJsonUnmarshaller implements
                     updateAuthorizerResult.setType(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("authType", targetDepth)) {
+                    context.nextToken();
+                    updateAuthorizerResult.setAuthType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("authorizerUri", targetDepth)) {
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerUri(context

@@ -20,21 +20,50 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Request a new generated client SDK for a <a>RestApi</a> and <a>Stage</a>.
+ * </p>
  */
 public class GetSdkRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the <a>RestApi</a> that the SDK will use.
+     * </p>
+     */
     private String restApiId;
-
+    /**
+     * <p>
+     * The name of the <a>Stage</a> that the SDK will use.
+     * </p>
+     */
     private String stageName;
-
+    /**
+     * <p>
+     * The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.
+     * </p>
+     */
     private String sdkType;
-
+    /**
+     * <p>
+     * A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a
+     * parameter named "classPrefix" is required. For sdkType 'android',
+     * parameters named "groupId", "artifactId", "artifactVersion", and
+     * "invokerPackage" are required.
+     * </p>
+     */
     private java.util.Map<String, String> parameters;
 
     /**
+     * <p>
+     * The identifier of the <a>RestApi</a> that the SDK will use.
+     * </p>
+     * 
      * @param restApiId
+     *        The identifier of the <a>RestApi</a> that the SDK will use.
      */
 
     public void setRestApiId(String restApiId) {
@@ -42,7 +71,11 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the <a>RestApi</a> that the SDK will use.
+     * </p>
+     * 
+     * @return The identifier of the <a>RestApi</a> that the SDK will use.
      */
 
     public String getRestApiId() {
@@ -50,7 +83,12 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The identifier of the <a>RestApi</a> that the SDK will use.
+     * </p>
+     * 
      * @param restApiId
+     *        The identifier of the <a>RestApi</a> that the SDK will use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -61,7 +99,12 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The name of the <a>Stage</a> that the SDK will use.
+     * </p>
+     * 
      * @param stageName
+     *        The name of the <a>Stage</a> that the SDK will use.
      */
 
     public void setStageName(String stageName) {
@@ -69,7 +112,11 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the <a>Stage</a> that the SDK will use.
+     * </p>
+     * 
+     * @return The name of the <a>Stage</a> that the SDK will use.
      */
 
     public String getStageName() {
@@ -77,7 +124,12 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The name of the <a>Stage</a> that the SDK will use.
+     * </p>
+     * 
      * @param stageName
+     *        The name of the <a>Stage</a> that the SDK will use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -88,7 +140,14 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.
+     * </p>
+     * 
      * @param sdkType
+     *        The language for the generated SDK. Currently javascript, android,
+     *        and objectivec (for iOS) are supported.
      */
 
     public void setSdkType(String sdkType) {
@@ -96,7 +155,13 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.
+     * </p>
+     * 
+     * @return The language for the generated SDK. Currently javascript,
+     *         android, and objectivec (for iOS) are supported.
      */
 
     public String getSdkType() {
@@ -104,7 +169,14 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.
+     * </p>
+     * 
      * @param sdkType
+     *        The language for the generated SDK. Currently javascript, android,
+     *        and objectivec (for iOS) are supported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -115,7 +187,20 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a
+     * parameter named "classPrefix" is required. For sdkType 'android',
+     * parameters named "groupId", "artifactId", "artifactVersion", and
+     * "invokerPackage" are required.
+     * </p>
+     * 
+     * @return A key-value map of query string parameters that specify
+     *         properties of the SDK, depending on the requested sdkType. For
+     *         sdkType 'objectivec', a parameter named "classPrefix" is
+     *         required. For sdkType 'android', parameters named "groupId",
+     *         "artifactId", "artifactVersion", and "invokerPackage" are
+     *         required.
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -123,7 +208,20 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a
+     * parameter named "classPrefix" is required. For sdkType 'android',
+     * parameters named "groupId", "artifactId", "artifactVersion", and
+     * "invokerPackage" are required.
+     * </p>
+     * 
      * @param parameters
+     *        A key-value map of query string parameters that specify properties
+     *        of the SDK, depending on the requested sdkType. For sdkType
+     *        'objectivec', a parameter named "classPrefix" is required. For
+     *        sdkType 'android', parameters named "groupId", "artifactId",
+     *        "artifactVersion", and "invokerPackage" are required.
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -131,7 +229,20 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a
+     * parameter named "classPrefix" is required. For sdkType 'android',
+     * parameters named "groupId", "artifactId", "artifactVersion", and
+     * "invokerPackage" are required.
+     * </p>
+     * 
      * @param parameters
+     *        A key-value map of query string parameters that specify properties
+     *        of the SDK, depending on the requested sdkType. For sdkType
+     *        'objectivec', a parameter named "classPrefix" is required. For
+     *        sdkType 'android', parameters named "groupId", "artifactId",
+     *        "artifactVersion", and "invokerPackage" are required.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -62,6 +62,12 @@ public class AbstractAWSSecurityTokenService implements AWSSecurityTokenService 
     }
 
     @Override
+    public GetCallerIdentityResult getCallerIdentity(
+            GetCallerIdentityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetFederationTokenResult getFederationToken(
             GetFederationTokenRequest request) {
         throw new java.lang.UnsupportedOperationException();

@@ -73,6 +73,14 @@ public class HealthCheckStaxUnmarshaller implements
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("CloudWatchAlarmConfiguration",
+                        targetDepth)) {
+                    healthCheck
+                            .setCloudWatchAlarmConfiguration(CloudWatchAlarmConfigurationStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return healthCheck;

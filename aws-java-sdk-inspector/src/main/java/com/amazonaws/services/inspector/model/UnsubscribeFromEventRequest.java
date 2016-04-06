@@ -99,7 +99,7 @@ public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
      * 
      * @param event
      *        The event for which you want to stop receiving SNS notifications.
-     * @see Event
+     * @see InspectorEvent
      */
 
     public void setEvent(String event) {
@@ -112,7 +112,7 @@ public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return The event for which you want to stop receiving SNS notifications.
-     * @see Event
+     * @see InspectorEvent
      */
 
     public String getEvent() {
@@ -128,7 +128,7 @@ public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
      *        The event for which you want to stop receiving SNS notifications.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
-     * @see Event
+     * @see InspectorEvent
      */
 
     public UnsubscribeFromEventRequest withEvent(String event) {
@@ -145,10 +145,10 @@ public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
      *        The event for which you want to stop receiving SNS notifications.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
-     * @see Event
+     * @see InspectorEvent
      */
 
-    public void setEvent(Event event) {
+    public void setEvent(InspectorEvent event) {
         this.event = event.toString();
     }
 
@@ -161,10 +161,10 @@ public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
      *        The event for which you want to stop receiving SNS notifications.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
-     * @see Event
+     * @see InspectorEvent
      */
 
-    public UnsubscribeFromEventRequest withEvent(Event event) {
+    public UnsubscribeFromEventRequest withEvent(InspectorEvent event) {
         setEvent(event);
         return this;
     }

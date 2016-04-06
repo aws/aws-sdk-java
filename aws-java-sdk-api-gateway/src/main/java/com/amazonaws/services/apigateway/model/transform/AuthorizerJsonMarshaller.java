@@ -59,6 +59,10 @@ public class AuthorizerJsonMarshaller {
                 jsonGenerator.writeFieldName("type").writeValue(
                         authorizer.getType());
             }
+            if (authorizer.getAuthType() != null) {
+                jsonGenerator.writeFieldName("authType").writeValue(
+                        authorizer.getAuthType());
+            }
             if (authorizer.getAuthorizerUri() != null) {
                 jsonGenerator.writeFieldName("authorizerUri").writeValue(
                         authorizer.getAuthorizerUri());

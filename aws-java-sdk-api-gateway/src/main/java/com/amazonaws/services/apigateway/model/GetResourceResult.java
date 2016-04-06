@@ -51,8 +51,8 @@ public class GetResourceResult implements Serializable, Cloneable {
     private String path;
     /**
      * <p>
-     * Map of methods for this resource, which is included only if requested
-     * using the <b>embed</b> option.
+     * Map of methods for this resource, which is included only if the request
+     * uses the <b>embed</b> query option.
      * </p>
      */
     private java.util.Map<String, Method> resourceMethods;
@@ -223,12 +223,12 @@ public class GetResourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Map of methods for this resource, which is included only if requested
-     * using the <b>embed</b> option.
+     * Map of methods for this resource, which is included only if the request
+     * uses the <b>embed</b> query option.
      * </p>
      * 
-     * @return Map of methods for this resource, which is included only if
-     *         requested using the <b>embed</b> option.
+     * @return Map of methods for this resource, which is included only if the
+     *         request uses the <b>embed</b> query option.
      */
 
     public java.util.Map<String, Method> getResourceMethods() {
@@ -237,13 +237,13 @@ public class GetResourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Map of methods for this resource, which is included only if requested
-     * using the <b>embed</b> option.
+     * Map of methods for this resource, which is included only if the request
+     * uses the <b>embed</b> query option.
      * </p>
      * 
      * @param resourceMethods
-     *        Map of methods for this resource, which is included only if
-     *        requested using the <b>embed</b> option.
+     *        Map of methods for this resource, which is included only if the
+     *        request uses the <b>embed</b> query option.
      */
 
     public void setResourceMethods(java.util.Map<String, Method> resourceMethods) {
@@ -252,13 +252,13 @@ public class GetResourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Map of methods for this resource, which is included only if requested
-     * using the <b>embed</b> option.
+     * Map of methods for this resource, which is included only if the request
+     * uses the <b>embed</b> query option.
      * </p>
      * 
      * @param resourceMethods
-     *        Map of methods for this resource, which is included only if
-     *        requested using the <b>embed</b> option.
+     *        Map of methods for this resource, which is included only if the
+     *        request uses the <b>embed</b> query option.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

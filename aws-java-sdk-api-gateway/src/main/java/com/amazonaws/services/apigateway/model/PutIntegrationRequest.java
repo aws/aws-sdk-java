@@ -61,7 +61,10 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
-     * When the integration type is HTTP or AWS, this field is required.
+     * When the integration type is HTTP or AWS, this field is required. For
+     * integration with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.
      * </p>
      */
     private String uri;
@@ -357,13 +360,19 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
-     * When the integration type is HTTP or AWS, this field is required.
+     * When the integration type is HTTP or AWS, this field is required. For
+     * integration with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.
      * </p>
      * 
      * @param uri
      *        Specifies a put integration input's Uniform Resource Identifier
      *        (URI). When the integration type is HTTP or AWS, this field is
-     *        required.
+     *        required. For integration with Lambda as an AWS service proxy,
+     *        this value is of the
+     *        'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     *        format.
      */
 
     public void setUri(String uri) {
@@ -373,12 +382,18 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
-     * When the integration type is HTTP or AWS, this field is required.
+     * When the integration type is HTTP or AWS, this field is required. For
+     * integration with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.
      * </p>
      * 
      * @return Specifies a put integration input's Uniform Resource Identifier
      *         (URI). When the integration type is HTTP or AWS, this field is
-     *         required.
+     *         required. For integration with Lambda as an AWS service proxy,
+     *         this value is of the
+     *         'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     *         format.
      */
 
     public String getUri() {
@@ -388,13 +403,19 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
-     * When the integration type is HTTP or AWS, this field is required.
+     * When the integration type is HTTP or AWS, this field is required. For
+     * integration with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.
      * </p>
      * 
      * @param uri
      *        Specifies a put integration input's Uniform Resource Identifier
      *        (URI). When the integration type is HTTP or AWS, this field is
-     *        required.
+     *        required. For integration with Lambda as an AWS service proxy,
+     *        this value is of the
+     *        'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     *        format.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

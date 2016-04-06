@@ -20,15 +20,28 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * A request to delete the <a>ClientCertificate</a> resource.
+ * </p>
  */
 public class DeleteClientCertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     * </p>
+     */
     private String clientCertificateId;
 
     /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        The identifier of the <a>ClientCertificate</a> resource to be
+     *        deleted.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -36,7 +49,12 @@ public class DeleteClientCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     * </p>
+     * 
+     * @return The identifier of the <a>ClientCertificate</a> resource to be
+     *         deleted.
      */
 
     public String getClientCertificateId() {
@@ -44,7 +62,13 @@ public class DeleteClientCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be deleted.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        The identifier of the <a>ClientCertificate</a> resource to be
+     *        deleted.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

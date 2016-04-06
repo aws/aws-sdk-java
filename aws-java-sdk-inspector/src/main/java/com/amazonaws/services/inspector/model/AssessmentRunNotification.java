@@ -108,7 +108,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * 
      * @param event
      *        The event for which a notification is sent.
-     * @see Event
+     * @see InspectorEvent
      */
 
     public void setEvent(String event) {
@@ -121,7 +121,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * </p>
      * 
      * @return The event for which a notification is sent.
-     * @see Event
+     * @see InspectorEvent
      */
 
     public String getEvent() {
@@ -137,7 +137,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      *        The event for which a notification is sent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
-     * @see Event
+     * @see InspectorEvent
      */
 
     public AssessmentRunNotification withEvent(String event) {
@@ -154,10 +154,10 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      *        The event for which a notification is sent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
-     * @see Event
+     * @see InspectorEvent
      */
 
-    public void setEvent(Event event) {
+    public void setEvent(InspectorEvent event) {
         this.event = event.toString();
     }
 
@@ -170,10 +170,10 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      *        The event for which a notification is sent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
-     * @see Event
+     * @see InspectorEvent
      */
 
-    public AssessmentRunNotification withEvent(Event event) {
+    public AssessmentRunNotification withEvent(InspectorEvent event) {
         setEvent(event);
         return this;
     }

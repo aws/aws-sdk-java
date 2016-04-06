@@ -20,29 +20,73 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Make a request to simulate the execution of a <a>Method</a>.
+ * </p>
  */
 public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Specifies a test invoke method request's API identifier.
+     * </p>
+     */
     private String restApiId;
-
+    /**
+     * <p>
+     * Specifies a test invoke method request's resource ID.
+     * </p>
+     */
     private String resourceId;
-
+    /**
+     * <p>
+     * Specifies a test invoke method request's HTTP method.
+     * </p>
+     */
     private String httpMethod;
-
+    /**
+     * <p>
+     * The URI path, including query string, of the simulated invocation
+     * request. Use this to specify path parameters and query string parameters.
+     * </p>
+     */
     private String pathWithQueryString;
-
+    /**
+     * <p>
+     * The simulated request body of an incoming invocation request.
+     * </p>
+     */
     private String body;
-
+    /**
+     * <p>
+     * A key-value map of headers to simulate an incoming invocation request.
+     * </p>
+     */
     private java.util.Map<String, String> headers;
-
+    /**
+     * <p>
+     * A <a>ClientCertificate</a> identifier to use in the test invocation. API
+     * Gateway will use use the certificate when making the HTTPS request to the
+     * defined backend endpoint.
+     * </p>
+     */
     private String clientCertificateId;
-
+    /**
+     * <p>
+     * A key-value map of stage variables to simulate an invocation on a
+     * deployed <a>Stage</a>.
+     * </p>
+     */
     private java.util.Map<String, String> stageVariables;
 
     /**
+     * <p>
+     * Specifies a test invoke method request's API identifier.
+     * </p>
+     * 
      * @param restApiId
+     *        Specifies a test invoke method request's API identifier.
      */
 
     public void setRestApiId(String restApiId) {
@@ -50,7 +94,11 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies a test invoke method request's API identifier.
+     * </p>
+     * 
+     * @return Specifies a test invoke method request's API identifier.
      */
 
     public String getRestApiId() {
@@ -58,7 +106,12 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Specifies a test invoke method request's API identifier.
+     * </p>
+     * 
      * @param restApiId
+     *        Specifies a test invoke method request's API identifier.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -69,7 +122,12 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Specifies a test invoke method request's resource ID.
+     * </p>
+     * 
      * @param resourceId
+     *        Specifies a test invoke method request's resource ID.
      */
 
     public void setResourceId(String resourceId) {
@@ -77,7 +135,11 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies a test invoke method request's resource ID.
+     * </p>
+     * 
+     * @return Specifies a test invoke method request's resource ID.
      */
 
     public String getResourceId() {
@@ -85,7 +147,12 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Specifies a test invoke method request's resource ID.
+     * </p>
+     * 
      * @param resourceId
+     *        Specifies a test invoke method request's resource ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -96,7 +163,12 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Specifies a test invoke method request's HTTP method.
+     * </p>
+     * 
      * @param httpMethod
+     *        Specifies a test invoke method request's HTTP method.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -104,7 +176,11 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies a test invoke method request's HTTP method.
+     * </p>
+     * 
+     * @return Specifies a test invoke method request's HTTP method.
      */
 
     public String getHttpMethod() {
@@ -112,7 +188,12 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Specifies a test invoke method request's HTTP method.
+     * </p>
+     * 
      * @param httpMethod
+     *        Specifies a test invoke method request's HTTP method.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -123,7 +204,15 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The URI path, including query string, of the simulated invocation
+     * request. Use this to specify path parameters and query string parameters.
+     * </p>
+     * 
      * @param pathWithQueryString
+     *        The URI path, including query string, of the simulated invocation
+     *        request. Use this to specify path parameters and query string
+     *        parameters.
      */
 
     public void setPathWithQueryString(String pathWithQueryString) {
@@ -131,7 +220,14 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The URI path, including query string, of the simulated invocation
+     * request. Use this to specify path parameters and query string parameters.
+     * </p>
+     * 
+     * @return The URI path, including query string, of the simulated invocation
+     *         request. Use this to specify path parameters and query string
+     *         parameters.
      */
 
     public String getPathWithQueryString() {
@@ -139,7 +235,15 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The URI path, including query string, of the simulated invocation
+     * request. Use this to specify path parameters and query string parameters.
+     * </p>
+     * 
      * @param pathWithQueryString
+     *        The URI path, including query string, of the simulated invocation
+     *        request. Use this to specify path parameters and query string
+     *        parameters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -151,7 +255,12 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The simulated request body of an incoming invocation request.
+     * </p>
+     * 
      * @param body
+     *        The simulated request body of an incoming invocation request.
      */
 
     public void setBody(String body) {
@@ -159,7 +268,11 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The simulated request body of an incoming invocation request.
+     * </p>
+     * 
+     * @return The simulated request body of an incoming invocation request.
      */
 
     public String getBody() {
@@ -167,7 +280,12 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The simulated request body of an incoming invocation request.
+     * </p>
+     * 
      * @param body
+     *        The simulated request body of an incoming invocation request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -178,7 +296,12 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * A key-value map of headers to simulate an incoming invocation request.
+     * </p>
+     * 
+     * @return A key-value map of headers to simulate an incoming invocation
+     *         request.
      */
 
     public java.util.Map<String, String> getHeaders() {
@@ -186,7 +309,13 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A key-value map of headers to simulate an incoming invocation request.
+     * </p>
+     * 
      * @param headers
+     *        A key-value map of headers to simulate an incoming invocation
+     *        request.
      */
 
     public void setHeaders(java.util.Map<String, String> headers) {
@@ -194,7 +323,13 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A key-value map of headers to simulate an incoming invocation request.
+     * </p>
+     * 
      * @param headers
+     *        A key-value map of headers to simulate an incoming invocation
+     *        request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -227,7 +362,16 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A <a>ClientCertificate</a> identifier to use in the test invocation. API
+     * Gateway will use use the certificate when making the HTTPS request to the
+     * defined backend endpoint.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        A <a>ClientCertificate</a> identifier to use in the test
+     *        invocation. API Gateway will use use the certificate when making
+     *        the HTTPS request to the defined backend endpoint.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -235,7 +379,15 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * A <a>ClientCertificate</a> identifier to use in the test invocation. API
+     * Gateway will use use the certificate when making the HTTPS request to the
+     * defined backend endpoint.
+     * </p>
+     * 
+     * @return A <a>ClientCertificate</a> identifier to use in the test
+     *         invocation. API Gateway will use use the certificate when making
+     *         the HTTPS request to the defined backend endpoint.
      */
 
     public String getClientCertificateId() {
@@ -243,7 +395,16 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A <a>ClientCertificate</a> identifier to use in the test invocation. API
+     * Gateway will use use the certificate when making the HTTPS request to the
+     * defined backend endpoint.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        A <a>ClientCertificate</a> identifier to use in the test
+     *        invocation. API Gateway will use use the certificate when making
+     *        the HTTPS request to the defined backend endpoint.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -255,7 +416,13 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * A key-value map of stage variables to simulate an invocation on a
+     * deployed <a>Stage</a>.
+     * </p>
+     * 
+     * @return A key-value map of stage variables to simulate an invocation on a
+     *         deployed <a>Stage</a>.
      */
 
     public java.util.Map<String, String> getStageVariables() {
@@ -263,7 +430,14 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A key-value map of stage variables to simulate an invocation on a
+     * deployed <a>Stage</a>.
+     * </p>
+     * 
      * @param stageVariables
+     *        A key-value map of stage variables to simulate an invocation on a
+     *        deployed <a>Stage</a>.
      */
 
     public void setStageVariables(java.util.Map<String, String> stageVariables) {
@@ -271,7 +445,14 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A key-value map of stage variables to simulate an invocation on a
+     * deployed <a>Stage</a>.
+     * </p>
+     * 
      * @param stageVariables
+     *        A key-value map of stage variables to simulate an invocation on a
+     *        deployed <a>Stage</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

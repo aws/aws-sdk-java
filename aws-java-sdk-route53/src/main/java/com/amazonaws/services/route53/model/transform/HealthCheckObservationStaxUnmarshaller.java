@@ -49,6 +49,12 @@ public class HealthCheckObservationStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Region", targetDepth)) {
+                    healthCheckObservation.setRegion(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("IPAddress", targetDepth)) {
                     healthCheckObservation.setIPAddress(StringStaxUnmarshaller
                             .getInstance().unmarshall(context));

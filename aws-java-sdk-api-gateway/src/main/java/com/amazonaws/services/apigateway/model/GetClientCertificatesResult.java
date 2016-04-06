@@ -19,12 +19,19 @@ package com.amazonaws.services.apigateway.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents a collection of <a>ClientCertificate</a> resources.
+ * </p>
  */
 public class GetClientCertificatesResult implements Serializable, Cloneable {
 
     private String position;
-
+    /**
+     * <p>
+     * The current page of any <a>ClientCertificate</a> resources in the
+     * collection of <a>ClientCertificate</a> resources.
+     * </p>
+     */
     private java.util.List<ClientCertificate> items;
 
     /**
@@ -55,7 +62,13 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The current page of any <a>ClientCertificate</a> resources in the
+     * collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * 
+     * @return The current page of any <a>ClientCertificate</a> resources in the
+     *         collection of <a>ClientCertificate</a> resources.
      */
 
     public java.util.List<ClientCertificate> getItems() {
@@ -63,7 +76,14 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The current page of any <a>ClientCertificate</a> resources in the
+     * collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * 
      * @param items
+     *        The current page of any <a>ClientCertificate</a> resources in the
+     *        collection of <a>ClientCertificate</a> resources.
      */
 
     public void setItems(java.util.Collection<ClientCertificate> items) {
@@ -77,6 +97,10 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The current page of any <a>ClientCertificate</a> resources in the
+     * collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
      * {@link #withItems(java.util.Collection)} if you want to override the
@@ -84,6 +108,8 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        The current page of any <a>ClientCertificate</a> resources in the
+     *        collection of <a>ClientCertificate</a> resources.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,7 +125,14 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The current page of any <a>ClientCertificate</a> resources in the
+     * collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * 
      * @param items
+     *        The current page of any <a>ClientCertificate</a> resources in the
+     *        collection of <a>ClientCertificate</a> resources.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

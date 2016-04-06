@@ -17,7 +17,9 @@
 package com.amazonaws.services.apigateway.model;
 
 /**
- * 
+ * <p>
+ * The authorizer type. Only current value is TOKEN.
+ * </p>
  */
 public enum AuthorizerType {
 
