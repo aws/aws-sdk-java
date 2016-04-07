@@ -82,6 +82,10 @@ public class TrustJsonMarshaller {
                 jsonGenerator.writeFieldName("StateLastUpdatedDateTime")
                         .writeValue(trust.getStateLastUpdatedDateTime());
             }
+            if (trust.getTrustStateReason() != null) {
+                jsonGenerator.writeFieldName("TrustStateReason").writeValue(
+                        trust.getTrustStateReason());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

@@ -44,7 +44,7 @@ public class CreateFunctionResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8, python2.7
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
      */
     private String runtime;
 
@@ -215,7 +215,7 @@ public class CreateFunctionResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8, python2.7
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
      *
      * @return The runtime environment for the Lambda function.
      *
@@ -229,7 +229,7 @@ public class CreateFunctionResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8, python2.7
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -245,7 +245,7 @@ public class CreateFunctionResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8, python2.7
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -263,7 +263,7 @@ public class CreateFunctionResult implements Serializable, Cloneable {
      * The runtime environment for the Lambda function.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8, python2.7
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function.
      *
@@ -279,7 +279,7 @@ public class CreateFunctionResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>nodejs, java8, python2.7
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
      *
      * @param runtime The runtime environment for the Lambda function.
      *

@@ -47,6 +47,12 @@ public class Trust implements Serializable, Cloneable {
     private java.util.Date lastUpdatedDateTime;
     /** The date and time that the TrustState was last updated. */
     private java.util.Date stateLastUpdatedDateTime;
+    /**
+     * <p>
+     * The reason for the TrustState.
+     * </p>
+     */
+    private String trustStateReason;
 
     /**
      * The Directory ID of the AWS directory involved in the trust relationship.
@@ -471,6 +477,47 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The reason for the TrustState.
+     * </p>
+     * 
+     * @param trustStateReason
+     *        The reason for the TrustState.
+     */
+
+    public void setTrustStateReason(String trustStateReason) {
+        this.trustStateReason = trustStateReason;
+    }
+
+    /**
+     * <p>
+     * The reason for the TrustState.
+     * </p>
+     * 
+     * @return The reason for the TrustState.
+     */
+
+    public String getTrustStateReason() {
+        return this.trustStateReason;
+    }
+
+    /**
+     * <p>
+     * The reason for the TrustState.
+     * </p>
+     * 
+     * @param trustStateReason
+     *        The reason for the TrustState.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Trust withTrustStateReason(String trustStateReason) {
+        setTrustStateReason(trustStateReason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -500,7 +547,9 @@ public class Trust implements Serializable, Cloneable {
             sb.append("LastUpdatedDateTime: " + getLastUpdatedDateTime() + ",");
         if (getStateLastUpdatedDateTime() != null)
             sb.append("StateLastUpdatedDateTime: "
-                    + getStateLastUpdatedDateTime());
+                    + getStateLastUpdatedDateTime() + ",");
+        if (getTrustStateReason() != null)
+            sb.append("TrustStateReason: " + getTrustStateReason());
         sb.append("}");
         return sb.toString();
     }
@@ -568,6 +617,13 @@ public class Trust implements Serializable, Cloneable {
                 && other.getStateLastUpdatedDateTime().equals(
                         this.getStateLastUpdatedDateTime()) == false)
             return false;
+        if (other.getTrustStateReason() == null
+                ^ this.getTrustStateReason() == null)
+            return false;
+        if (other.getTrustStateReason() != null
+                && other.getTrustStateReason().equals(
+                        this.getTrustStateReason()) == false)
+            return false;
         return true;
     }
 
@@ -605,6 +661,10 @@ public class Trust implements Serializable, Cloneable {
                 * hashCode
                 + ((getStateLastUpdatedDateTime() == null) ? 0
                         : getStateLastUpdatedDateTime().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTrustStateReason() == null) ? 0 : getTrustStateReason()
+                        .hashCode());
         return hashCode;
     }
 

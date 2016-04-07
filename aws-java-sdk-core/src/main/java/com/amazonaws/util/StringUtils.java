@@ -37,6 +37,14 @@ public class StringUtils {
 
     private static final Locale LOCALE_ENGLSIH = Locale.ENGLISH;
 
+    // white space character that match Pattern.compile("\\s")
+    private static final char CHAR_SPACE = ' ';
+    private static final char CHAR_TAB = '\t';
+    private static final char CHAR_NEW_LINE = '\n';
+    private static final char CHAR_VERTICAL_TAB = '\u000b';
+    private static final char CHAR_CARRIAGE_RETURN = '\r';
+    private static final char CHAR_FORM_FEED = '\f';
+
     public static Integer toInteger(StringBuilder value) {
         return Integer.parseInt(value.toString());
     }
@@ -231,5 +239,52 @@ public class StringUtils {
 
         Collator collator = Collator.getInstance(LOCALE_ENGLSIH);
         return collator.compare(str1, str2);
+    }
+
+    /**
+     * Tests a char to see if is it whitespace.
+     * This method considers the same characters to be white
+     * space as the Pattern class does when matching \s
+     * 
+     * @param ch the character to be tested
+     * @return true if the character is white  space, false otherwise.
+     */
+    private static boolean isWhiteSpace(final char ch) {
+        if (ch == CHAR_SPACE) return true;
+        if (ch == CHAR_TAB) return true;
+        if (ch == CHAR_NEW_LINE) return true;
+        if (ch == CHAR_VERTICAL_TAB) return true;
+        if (ch == CHAR_CARRIAGE_RETURN) return true;
+        if (ch == CHAR_FORM_FEED) return true;
+        return false;
+    }
+
+    /**
+     * This method appends a string to a string builder and collapses contiguous
+     * white space is a single space.
+     * 
+     * This is equivalent to: 
+     *      destination.append(source.replaceAll("\\s+", " "))
+     * but does not create a Pattern object that needs to compile the match 
+     * string; it also prevents us from having to make a Matcher object as well.
+     * 
+     */
+    public static void appendCompactedString(final StringBuilder destination, final String source) {
+        boolean previousIsWhiteSpace = false;
+        int length = source.length();
+
+        for (int i = 0; i < length; i++) {
+            char ch = source.charAt(i);
+            if (isWhiteSpace(ch)) {
+                if (previousIsWhiteSpace) {
+                    continue;
+                }
+                destination.append(CHAR_SPACE);
+                previousIsWhiteSpace = true;
+            } else {
+                destination.append(ch);
+                previousIsWhiteSpace = false;
+            }
+        }
     }
 }

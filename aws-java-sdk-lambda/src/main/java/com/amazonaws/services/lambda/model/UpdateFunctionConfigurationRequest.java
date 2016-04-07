@@ -120,6 +120,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
      */
     private VpcConfig vpcConfig;
 
+    private String runtime;
+
     /**
      * The name of the Lambda function. <p> You can specify a function name
      * (for example, <code>Thumbnail</code>) or you can specify Amazon
@@ -544,6 +546,88 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
     }
 
     /**
+     * Returns the value of the Runtime property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
+     *
+     * @return The value of the Runtime property for this object.
+     *
+     * @see Runtime
+     */
+    public String getRuntime() {
+        return runtime;
+    }
+    
+    /**
+     * Sets the value of the Runtime property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
+     *
+     * @param runtime The new value for the Runtime property for this object.
+     *
+     * @see Runtime
+     */
+    public void setRuntime(String runtime) {
+        this.runtime = runtime;
+    }
+    
+    /**
+     * Sets the value of the Runtime property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
+     *
+     * @param runtime The new value for the Runtime property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see Runtime
+     */
+    public UpdateFunctionConfigurationRequest withRuntime(String runtime) {
+        this.runtime = runtime;
+        return this;
+    }
+
+    /**
+     * Sets the value of the Runtime property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
+     *
+     * @param runtime The new value for the Runtime property for this object.
+     *
+     * @see Runtime
+     */
+    public void setRuntime(Runtime runtime) {
+        this.runtime = runtime.toString();
+    }
+    
+    /**
+     * Sets the value of the Runtime property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>nodejs, nodejs4.3, java8, python2.7
+     *
+     * @param runtime The new value for the Runtime property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     *
+     * @see Runtime
+     */
+    public UpdateFunctionConfigurationRequest withRuntime(Runtime runtime) {
+        this.runtime = runtime.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -561,7 +645,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ",");
         if (getMemorySize() != null) sb.append("MemorySize: " + getMemorySize() + ",");
-        if (getVpcConfig() != null) sb.append("VpcConfig: " + getVpcConfig() );
+        if (getVpcConfig() != null) sb.append("VpcConfig: " + getVpcConfig() + ",");
+        if (getRuntime() != null) sb.append("Runtime: " + getRuntime() );
         sb.append("}");
         return sb.toString();
     }
@@ -578,6 +663,7 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode()); 
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode()); 
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode()); 
+        hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode()); 
         return hashCode;
     }
     
@@ -603,6 +689,8 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest 
         if (other.getMemorySize() != null && other.getMemorySize().equals(this.getMemorySize()) == false) return false; 
         if (other.getVpcConfig() == null ^ this.getVpcConfig() == null) return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false) return false; 
+        if (other.getRuntime() == null ^ this.getRuntime() == null) return false;
+        if (other.getRuntime() != null && other.getRuntime().equals(this.getRuntime()) == false) return false; 
         return true;
     }
     

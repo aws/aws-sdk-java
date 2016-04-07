@@ -84,6 +84,21 @@ public class CreateTrustRequestMarshaller implements
                         createTrustRequest.getTrustType());
             }
 
+            com.amazonaws.internal.SdkInternalList<String> conditionalForwarderIpAddrsList = (com.amazonaws.internal.SdkInternalList<String>) createTrustRequest
+                    .getConditionalForwarderIpAddrs();
+            if (!conditionalForwarderIpAddrsList.isEmpty()
+                    || !conditionalForwarderIpAddrsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("ConditionalForwarderIpAddrs");
+                jsonGenerator.writeStartArray();
+                for (String conditionalForwarderIpAddrsListValue : conditionalForwarderIpAddrsList) {
+                    if (conditionalForwarderIpAddrsListValue != null) {
+                        jsonGenerator
+                                .writeValue(conditionalForwarderIpAddrsListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

@@ -29,6 +29,8 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     /** The Trust ID of the trust relationship to be deleted. */
     private String trustId;
 
+    private Boolean deleteAssociatedConditionalForwarder;
+
     /**
      * The Trust ID of the trust relationship to be deleted.
      * 
@@ -65,6 +67,43 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * @param deleteAssociatedConditionalForwarder
+     */
+
+    public void setDeleteAssociatedConditionalForwarder(
+            Boolean deleteAssociatedConditionalForwarder) {
+        this.deleteAssociatedConditionalForwarder = deleteAssociatedConditionalForwarder;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getDeleteAssociatedConditionalForwarder() {
+        return this.deleteAssociatedConditionalForwarder;
+    }
+
+    /**
+     * @param deleteAssociatedConditionalForwarder
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeleteTrustRequest withDeleteAssociatedConditionalForwarder(
+            Boolean deleteAssociatedConditionalForwarder) {
+        setDeleteAssociatedConditionalForwarder(deleteAssociatedConditionalForwarder);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isDeleteAssociatedConditionalForwarder() {
+        return this.deleteAssociatedConditionalForwarder;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -77,7 +116,10 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrustId() != null)
-            sb.append("TrustId: " + getTrustId());
+            sb.append("TrustId: " + getTrustId() + ",");
+        if (getDeleteAssociatedConditionalForwarder() != null)
+            sb.append("DeleteAssociatedConditionalForwarder: "
+                    + getDeleteAssociatedConditionalForwarder());
         sb.append("}");
         return sb.toString();
     }
@@ -97,6 +139,13 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
         if (other.getTrustId() != null
                 && other.getTrustId().equals(this.getTrustId()) == false)
             return false;
+        if (other.getDeleteAssociatedConditionalForwarder() == null
+                ^ this.getDeleteAssociatedConditionalForwarder() == null)
+            return false;
+        if (other.getDeleteAssociatedConditionalForwarder() != null
+                && other.getDeleteAssociatedConditionalForwarder().equals(
+                        this.getDeleteAssociatedConditionalForwarder()) == false)
+            return false;
         return true;
     }
 
@@ -107,6 +156,10 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
 
         hashCode = prime * hashCode
                 + ((getTrustId() == null) ? 0 : getTrustId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDeleteAssociatedConditionalForwarder() == null) ? 0
+                        : getDeleteAssociatedConditionalForwarder().hashCode());
         return hashCode;
     }
 

@@ -156,6 +156,52 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Creates a conditional forwarder associated with your AWS directory.
+     * Conditional forwarders are required in order to set up a trust
+     * relationship with another domain. The conditional forwarder points to the
+     * trusted domain.
+     * </p>
+     * 
+     * @param createConditionalForwarderRequest
+     *        Initiates the creation of a conditional forwarder for your AWS
+     *        Directory Service for Microsoft Active Directory. Conditional
+     *        forwarders are required in order to set up a trust relationship
+     *        with another domain.
+     * @return A Java Future containing the result of the
+     *         CreateConditionalForwarder operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.CreateConditionalForwarder
+     */
+    java.util.concurrent.Future<CreateConditionalForwarderResult> createConditionalForwarderAsync(
+            CreateConditionalForwarderRequest createConditionalForwarderRequest);
+
+    /**
+     * <p>
+     * Creates a conditional forwarder associated with your AWS directory.
+     * Conditional forwarders are required in order to set up a trust
+     * relationship with another domain. The conditional forwarder points to the
+     * trusted domain.
+     * </p>
+     * 
+     * @param createConditionalForwarderRequest
+     *        Initiates the creation of a conditional forwarder for your AWS
+     *        Directory Service for Microsoft Active Directory. Conditional
+     *        forwarders are required in order to set up a trust relationship
+     *        with another domain.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CreateConditionalForwarder operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.CreateConditionalForwarder
+     */
+    java.util.concurrent.Future<CreateConditionalForwarderResult> createConditionalForwarderAsync(
+            CreateConditionalForwarderRequest createConditionalForwarderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConditionalForwarderRequest, CreateConditionalForwarderResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a Simple AD directory.
      * </p>
      * 
@@ -338,6 +384,40 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Deletes a conditional forwarder that has been set up for your AWS
+     * directory.
+     * </p>
+     * 
+     * @param deleteConditionalForwarderRequest
+     * @return A Java Future containing the result of the
+     *         DeleteConditionalForwarder operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DeleteConditionalForwarder
+     */
+    java.util.concurrent.Future<DeleteConditionalForwarderResult> deleteConditionalForwarderAsync(
+            DeleteConditionalForwarderRequest deleteConditionalForwarderRequest);
+
+    /**
+     * <p>
+     * Deletes a conditional forwarder that has been set up for your AWS
+     * directory.
+     * </p>
+     * 
+     * @param deleteConditionalForwarderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteConditionalForwarder operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DeleteConditionalForwarder
+     */
+    java.util.concurrent.Future<DeleteConditionalForwarderResult> deleteConditionalForwarderAsync(
+            DeleteConditionalForwarderRequest deleteConditionalForwarderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConditionalForwarderRequest, DeleteConditionalForwarderResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an AWS Directory Service directory.
      * </p>
      * 
@@ -475,6 +555,46 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(
             DeregisterEventTopicRequest deregisterEventTopicRequest,
             com.amazonaws.handlers.AsyncHandler<DeregisterEventTopicRequest, DeregisterEventTopicResult> asyncHandler);
+
+    /**
+     * <p>
+     * Obtains information about the conditional forwarders for this account.
+     * </p>
+     * <p>
+     * If no input parameters are provided for RemoteDomainNames, this request
+     * describes all conditional forwarders for the specified directory ID.
+     * </p>
+     * 
+     * @param describeConditionalForwardersRequest
+     * @return A Java Future containing the result of the
+     *         DescribeConditionalForwarders operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DescribeConditionalForwarders
+     */
+    java.util.concurrent.Future<DescribeConditionalForwardersResult> describeConditionalForwardersAsync(
+            DescribeConditionalForwardersRequest describeConditionalForwardersRequest);
+
+    /**
+     * <p>
+     * Obtains information about the conditional forwarders for this account.
+     * </p>
+     * <p>
+     * If no input parameters are provided for RemoteDomainNames, this request
+     * describes all conditional forwarders for the specified directory ID.
+     * </p>
+     * 
+     * @param describeConditionalForwardersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeConditionalForwarders operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DescribeConditionalForwarders
+     */
+    java.util.concurrent.Future<DescribeConditionalForwardersResult> describeConditionalForwardersAsync(
+            DescribeConditionalForwardersRequest describeConditionalForwardersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConditionalForwardersRequest, DescribeConditionalForwardersResult> asyncHandler);
 
     /**
      * <p>
@@ -1050,6 +1170,40 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     java.util.concurrent.Future<RestoreFromSnapshotResult> restoreFromSnapshotAsync(
             RestoreFromSnapshotRequest restoreFromSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<RestoreFromSnapshotRequest, RestoreFromSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a conditional forwarder that has been set up for your AWS
+     * directory.
+     * </p>
+     * 
+     * @param updateConditionalForwarderRequest
+     * @return A Java Future containing the result of the
+     *         UpdateConditionalForwarder operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.UpdateConditionalForwarder
+     */
+    java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(
+            UpdateConditionalForwarderRequest updateConditionalForwarderRequest);
+
+    /**
+     * <p>
+     * Updates a conditional forwarder that has been set up for your AWS
+     * directory.
+     * </p>
+     * 
+     * @param updateConditionalForwarderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateConditionalForwarder operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.UpdateConditionalForwarder
+     */
+    java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(
+            UpdateConditionalForwarderRequest updateConditionalForwarderRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConditionalForwarderRequest, UpdateConditionalForwarderResult> asyncHandler);
 
     /**
      * <p>

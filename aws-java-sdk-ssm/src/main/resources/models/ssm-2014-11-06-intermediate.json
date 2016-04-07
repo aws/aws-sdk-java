@@ -21,9 +21,9 @@
     "endpointPrefix" : "ssm",
     "signingName" : "ssm",
     "serviceName" : "Amazon SSM",
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },

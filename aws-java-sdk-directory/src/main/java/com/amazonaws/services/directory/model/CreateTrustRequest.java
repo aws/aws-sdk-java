@@ -55,6 +55,8 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     /** The trust relationship type. */
     private String trustType;
 
+    private com.amazonaws.internal.SdkInternalList<String> conditionalForwarderIpAddrs;
+
     /**
      * The Directory ID of the Microsoft AD in the AWS cloud for which to
      * establish the trust relationship.
@@ -313,6 +315,69 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<String> getConditionalForwarderIpAddrs() {
+        if (conditionalForwarderIpAddrs == null) {
+            conditionalForwarderIpAddrs = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return conditionalForwarderIpAddrs;
+    }
+
+    /**
+     * @param conditionalForwarderIpAddrs
+     */
+
+    public void setConditionalForwarderIpAddrs(
+            java.util.Collection<String> conditionalForwarderIpAddrs) {
+        if (conditionalForwarderIpAddrs == null) {
+            this.conditionalForwarderIpAddrs = null;
+            return;
+        }
+
+        this.conditionalForwarderIpAddrs = new com.amazonaws.internal.SdkInternalList<String>(
+                conditionalForwarderIpAddrs);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConditionalForwarderIpAddrs(java.util.Collection)}
+     * or {@link #withConditionalForwarderIpAddrs(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param conditionalForwarderIpAddrs
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateTrustRequest withConditionalForwarderIpAddrs(
+            String... conditionalForwarderIpAddrs) {
+        if (this.conditionalForwarderIpAddrs == null) {
+            setConditionalForwarderIpAddrs(new com.amazonaws.internal.SdkInternalList<String>(
+                    conditionalForwarderIpAddrs.length));
+        }
+        for (String ele : conditionalForwarderIpAddrs) {
+            this.conditionalForwarderIpAddrs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param conditionalForwarderIpAddrs
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateTrustRequest withConditionalForwarderIpAddrs(
+            java.util.Collection<String> conditionalForwarderIpAddrs) {
+        setConditionalForwarderIpAddrs(conditionalForwarderIpAddrs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -333,7 +398,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
         if (getTrustDirection() != null)
             sb.append("TrustDirection: " + getTrustDirection() + ",");
         if (getTrustType() != null)
-            sb.append("TrustType: " + getTrustType());
+            sb.append("TrustType: " + getTrustType() + ",");
+        if (getConditionalForwarderIpAddrs() != null)
+            sb.append("ConditionalForwarderIpAddrs: "
+                    + getConditionalForwarderIpAddrs());
         sb.append("}");
         return sb.toString();
     }
@@ -376,6 +444,13 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
         if (other.getTrustType() != null
                 && other.getTrustType().equals(this.getTrustType()) == false)
             return false;
+        if (other.getConditionalForwarderIpAddrs() == null
+                ^ this.getConditionalForwarderIpAddrs() == null)
+            return false;
+        if (other.getConditionalForwarderIpAddrs() != null
+                && other.getConditionalForwarderIpAddrs().equals(
+                        this.getConditionalForwarderIpAddrs()) == false)
+            return false;
         return true;
     }
 
@@ -401,6 +476,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getTrustType() == null) ? 0 : getTrustType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConditionalForwarderIpAddrs() == null) ? 0
+                        : getConditionalForwarderIpAddrs().hashCode());
         return hashCode;
     }
 

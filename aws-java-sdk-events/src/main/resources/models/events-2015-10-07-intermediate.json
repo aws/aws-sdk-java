@@ -702,8 +702,8 @@
           "simpleType" : "PutEventsRequestEntry",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<PutEventsRequestEntry>",
-          "templateType" : "java.util.List<PutEventsRequestEntry>"
+          "templateType" : "java.util.List<PutEventsRequestEntry>",
+          "templateImplType" : "java.util.ArrayList<PutEventsRequestEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -847,8 +847,8 @@
             "simpleType" : "PutEventsRequestEntry",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<PutEventsRequestEntry>",
-            "templateType" : "java.util.List<PutEventsRequestEntry>"
+            "templateType" : "java.util.List<PutEventsRequestEntry>",
+            "templateImplType" : "java.util.ArrayList<PutEventsRequestEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1384,8 +1384,8 @@
           "simpleType" : "RemoveTargetsResultEntry",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<RemoveTargetsResultEntry>",
-          "templateType" : "java.util.List<RemoveTargetsResultEntry>"
+          "templateType" : "java.util.List<RemoveTargetsResultEntry>",
+          "templateImplType" : "java.util.ArrayList<RemoveTargetsResultEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1525,8 +1525,8 @@
             "simpleType" : "RemoveTargetsResultEntry",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<RemoveTargetsResultEntry>",
-            "templateType" : "java.util.List<RemoveTargetsResultEntry>"
+            "templateType" : "java.util.List<RemoveTargetsResultEntry>",
+            "templateImplType" : "java.util.ArrayList<RemoveTargetsResultEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2255,8 +2255,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2660,8 +2660,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3277,8 +3277,8 @@
           "simpleType" : "Target",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Target>",
-          "templateType" : "java.util.List<Target>"
+          "templateType" : "java.util.List<Target>",
+          "templateImplType" : "java.util.ArrayList<Target>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3523,8 +3523,8 @@
             "simpleType" : "Target",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Target>",
-            "templateType" : "java.util.List<Target>"
+            "templateType" : "java.util.List<Target>",
+            "templateImplType" : "java.util.ArrayList<Target>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4358,8 +4358,8 @@
           "simpleType" : "Rule",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Rule>",
-          "templateType" : "java.util.List<Rule>"
+          "templateType" : "java.util.List<Rule>",
+          "templateImplType" : "java.util.ArrayList<Rule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4604,8 +4604,8 @@
             "simpleType" : "Rule",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Rule>",
-            "templateType" : "java.util.List<Rule>"
+            "templateType" : "java.util.List<Rule>",
+            "templateImplType" : "java.util.ArrayList<Rule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5277,8 +5277,8 @@
           "simpleType" : "Target",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Target>",
-          "templateType" : "java.util.List<Target>"
+          "templateType" : "java.util.List<Target>",
+          "templateImplType" : "java.util.ArrayList<Target>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5475,8 +5475,8 @@
             "simpleType" : "Target",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Target>",
-            "templateType" : "java.util.List<Target>"
+            "templateType" : "java.util.List<Target>",
+            "templateImplType" : "java.util.ArrayList<Target>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5750,8 +5750,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5896,8 +5896,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6892,8 +6892,8 @@
           "simpleType" : "PutEventsResultEntry",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<PutEventsResultEntry>",
-          "templateType" : "java.util.List<PutEventsResultEntry>"
+          "templateType" : "java.util.List<PutEventsResultEntry>",
+          "templateImplType" : "java.util.ArrayList<PutEventsResultEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7033,8 +7033,8 @@
             "simpleType" : "PutEventsResultEntry",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<PutEventsResultEntry>",
-            "templateType" : "java.util.List<PutEventsResultEntry>"
+            "templateType" : "java.util.List<PutEventsResultEntry>",
+            "templateImplType" : "java.util.ArrayList<PutEventsResultEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9234,8 +9234,8 @@
           "simpleType" : "PutTargetsResultEntry",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<PutTargetsResultEntry>",
-          "templateType" : "java.util.List<PutTargetsResultEntry>"
+          "templateType" : "java.util.List<PutTargetsResultEntry>",
+          "templateImplType" : "java.util.ArrayList<PutTargetsResultEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9375,8 +9375,8 @@
             "simpleType" : "PutTargetsResultEntry",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<PutTargetsResultEntry>",
-            "templateType" : "java.util.List<PutTargetsResultEntry>"
+            "templateType" : "java.util.List<PutTargetsResultEntry>",
+            "templateImplType" : "java.util.ArrayList<PutTargetsResultEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9507,8 +9507,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9701,8 +9701,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,

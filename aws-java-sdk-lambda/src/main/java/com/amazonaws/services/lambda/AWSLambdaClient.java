@@ -1527,6 +1527,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * 
      * @throws InvalidParameterValueException
      * @throws ServiceException
+     * @throws ResourceNotFoundException
      * @throws ResourceConflictException
      * @throws TooManyRequestsException
      *

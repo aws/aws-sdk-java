@@ -133,6 +133,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      */
     private String sourceAccount;
 
+    private String eventSourceToken;
+
     /**
      * You can use this optional query parameter to describe a qualified ARN
      * using a function version or an alias name. The permission will then
@@ -610,6 +612,51 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * Returns the value of the EventSourceToken property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9._\-]+<br/>
+     *
+     * @return The value of the EventSourceToken property for this object.
+     */
+    public String getEventSourceToken() {
+        return eventSourceToken;
+    }
+    
+    /**
+     * Sets the value of the EventSourceToken property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9._\-]+<br/>
+     *
+     * @param eventSourceToken The new value for the EventSourceToken property for this object.
+     */
+    public void setEventSourceToken(String eventSourceToken) {
+        this.eventSourceToken = eventSourceToken;
+    }
+    
+    /**
+     * Sets the value of the EventSourceToken property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9._\-]+<br/>
+     *
+     * @param eventSourceToken The new value for the EventSourceToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public AddPermissionRequest withEventSourceToken(String eventSourceToken) {
+        this.eventSourceToken = eventSourceToken;
+        return this;
+    }
+
+    /**
      * You can use this optional query parameter to describe a qualified ARN
      * using a function version or an alias name. The permission will then
      * apply to the specific qualified ARN. For example, if you specify
@@ -738,6 +785,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
         if (getPrincipal() != null) sb.append("Principal: " + getPrincipal() + ",");
         if (getSourceArn() != null) sb.append("SourceArn: " + getSourceArn() + ",");
         if (getSourceAccount() != null) sb.append("SourceAccount: " + getSourceAccount() + ",");
+        if (getEventSourceToken() != null) sb.append("EventSourceToken: " + getEventSourceToken() + ",");
         if (getQualifier() != null) sb.append("Qualifier: " + getQualifier() );
         sb.append("}");
         return sb.toString();
@@ -754,6 +802,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode()); 
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode()); 
         hashCode = prime * hashCode + ((getSourceAccount() == null) ? 0 : getSourceAccount().hashCode()); 
+        hashCode = prime * hashCode + ((getEventSourceToken() == null) ? 0 : getEventSourceToken().hashCode()); 
         hashCode = prime * hashCode + ((getQualifier() == null) ? 0 : getQualifier().hashCode()); 
         return hashCode;
     }
@@ -778,6 +827,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
         if (other.getSourceArn() != null && other.getSourceArn().equals(this.getSourceArn()) == false) return false; 
         if (other.getSourceAccount() == null ^ this.getSourceAccount() == null) return false;
         if (other.getSourceAccount() != null && other.getSourceAccount().equals(this.getSourceAccount()) == false) return false; 
+        if (other.getEventSourceToken() == null ^ this.getEventSourceToken() == null) return false;
+        if (other.getEventSourceToken() != null && other.getEventSourceToken().equals(this.getEventSourceToken()) == false) return false; 
         if (other.getQualifier() == null ^ this.getQualifier() == null) return false;
         if (other.getQualifier() != null && other.getQualifier().equals(this.getQualifier()) == false) return false; 
         return true;

@@ -55,6 +55,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public CreateConditionalForwarderResult createConditionalForwarder(
+            CreateConditionalForwarderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDirectoryResult createDirectory(CreateDirectoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -76,6 +82,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public DeleteConditionalForwarderResult deleteConditionalForwarder(
+            DeleteConditionalForwarderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,6 +105,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     @Override
     public DeregisterEventTopicResult deregisterEventTopic(
             DeregisterEventTopicRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeConditionalForwardersResult describeConditionalForwarders(
+            DescribeConditionalForwardersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -175,6 +193,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     @Override
     public RestoreFromSnapshotResult restoreFromSnapshot(
             RestoreFromSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConditionalForwarderResult updateConditionalForwarder(
+            UpdateConditionalForwarderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

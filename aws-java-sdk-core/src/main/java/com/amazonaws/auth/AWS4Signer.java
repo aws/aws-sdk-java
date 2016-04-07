@@ -438,12 +438,13 @@ public class AWS4Signer extends AbstractAWSSigner implements
             if (shouldExcludeHeaderFromSigning(header)) {
                 continue;
             }
-            String key = StringUtils.lowerCase(header).replaceAll("\\s+", " ");
+            String key = StringUtils.lowerCase(header);
             String value = requestHeaders.get(header);
 
-            buffer.append(key).append(":");
+            StringUtils.appendCompactedString(buffer, key);
+            buffer.append(":");
             if (value != null) {
-                buffer.append(value.replaceAll("\\s+", " "));
+                StringUtils.appendCompactedString(buffer, value);
             }
 
             buffer.append("\n");

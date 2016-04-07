@@ -20,6 +20,7 @@ package com.amazonaws.services.lambda.model;
 public enum Runtime {
     
     Nodejs("nodejs"),
+    Nodejs43("nodejs4.3"),
     Java8("java8"),
     Python27("python2.7");
 
@@ -47,6 +48,8 @@ public enum Runtime {
         
         } else if ("nodejs".equals(value)) {
             return Runtime.Nodejs;
+        } else if ("nodejs4.3".equals(value)) {
+            return Runtime.Nodejs43;
         } else if ("java8".equals(value)) {
             return Runtime.Java8;
         } else if ("python2.7".equals(value)) {

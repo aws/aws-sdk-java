@@ -478,6 +478,74 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Creates a conditional forwarder associated with your AWS directory.
+     * Conditional forwarders are required in order to set up a trust
+     * relationship with another domain. The conditional forwarder points to the
+     * trusted domain.
+     * </p>
+     * 
+     * @param createConditionalForwarderRequest
+     *        Initiates the creation of a conditional forwarder for your AWS
+     *        Directory Service for Microsoft Active Directory. Conditional
+     *        forwarders are required in order to set up a trust relationship
+     *        with another domain.
+     * @return Result of the CreateConditionalForwarder operation returned by
+     *         the service.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateConditionalForwarder
+     */
+    @Override
+    public CreateConditionalForwarderResult createConditionalForwarder(
+            CreateConditionalForwarderRequest createConditionalForwarderRequest) {
+        ExecutionContext executionContext = createExecutionContext(createConditionalForwarderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConditionalForwarderRequest> request = null;
+        Response<CreateConditionalForwarderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConditionalForwarderRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(createConditionalForwarderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<CreateConditionalForwarderResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new CreateConditionalForwarderResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a Simple AD directory.
      * </p>
      * 
@@ -729,6 +797,66 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Deletes a conditional forwarder that has been set up for your AWS
+     * directory.
+     * </p>
+     * 
+     * @param deleteConditionalForwarderRequest
+     * @return Result of the DeleteConditionalForwarder operation returned by
+     *         the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeleteConditionalForwarder
+     */
+    @Override
+    public DeleteConditionalForwarderResult deleteConditionalForwarder(
+            DeleteConditionalForwarderRequest deleteConditionalForwarderRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteConditionalForwarderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConditionalForwarderRequest> request = null;
+        Response<DeleteConditionalForwarderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConditionalForwarderRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deleteConditionalForwarderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DeleteConditionalForwarderResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteConditionalForwarderResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an AWS Directory Service directory.
      * </p>
      * 
@@ -931,6 +1059,69 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
             JsonResponseHandler<DeregisterEventTopicResult> responseHandler = SdkJsonProtocolFactory
                     .createResponseHandler(
                             new DeregisterEventTopicResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Obtains information about the conditional forwarders for this account.
+     * </p>
+     * <p>
+     * If no input parameters are provided for RemoteDomainNames, this request
+     * describes all conditional forwarders for the specified directory ID.
+     * </p>
+     * 
+     * @param describeConditionalForwardersRequest
+     * @return Result of the DescribeConditionalForwarders operation returned by
+     *         the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeConditionalForwarders
+     */
+    @Override
+    public DescribeConditionalForwardersResult describeConditionalForwarders(
+            DescribeConditionalForwardersRequest describeConditionalForwardersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeConditionalForwardersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConditionalForwardersRequest> request = null;
+        Response<DescribeConditionalForwardersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConditionalForwardersRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeConditionalForwardersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeConditionalForwardersResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeConditionalForwardersResultJsonUnmarshaller(),
                             false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
@@ -1669,6 +1860,66 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
             JsonResponseHandler<RestoreFromSnapshotResult> responseHandler = SdkJsonProtocolFactory
                     .createResponseHandler(
                             new RestoreFromSnapshotResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a conditional forwarder that has been set up for your AWS
+     * directory.
+     * </p>
+     * 
+     * @param updateConditionalForwarderRequest
+     * @return Result of the UpdateConditionalForwarder operation returned by
+     *         the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UpdateConditionalForwarder
+     */
+    @Override
+    public UpdateConditionalForwarderResult updateConditionalForwarder(
+            UpdateConditionalForwarderRequest updateConditionalForwarderRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateConditionalForwarderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConditionalForwarderRequest> request = null;
+        Response<UpdateConditionalForwarderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConditionalForwarderRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(updateConditionalForwarderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<UpdateConditionalForwarderResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new UpdateConditionalForwarderResultJsonUnmarshaller(),
                             false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);

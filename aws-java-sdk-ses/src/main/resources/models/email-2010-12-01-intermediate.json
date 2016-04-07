@@ -56,12 +56,12 @@
         "documentation" : "<p>Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html\">Amazon SES Developer Guide</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "cloneReceiptRuleSet",
       "syncReturnType" : "CloneReceiptRuleSetResult",
       "asyncReturnType" : "CloneReceiptRuleSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CloneReceiptRuleSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CloneReceiptRuleSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CloneReceiptRuleSetRequest, CloneReceiptRuleSetResult>",
-      "methodName" : "cloneReceiptRuleSet"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CloneReceiptRuleSetRequest, CloneReceiptRuleSetResult>"
     },
     "CreateReceiptFilter" : {
       "documentation" : "<p>Creates a new IP address filter.</p> <p>For information about setting up IP address filters, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -88,12 +88,12 @@
         "documentation" : "<p>Indicates that a resource could not be created due to a naming conflict.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createReceiptFilter",
       "syncReturnType" : "CreateReceiptFilterResult",
       "asyncReturnType" : "CreateReceiptFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReceiptFilterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReceiptFilterResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReceiptFilterRequest, CreateReceiptFilterResult>",
-      "methodName" : "createReceiptFilter"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReceiptFilterRequest, CreateReceiptFilterResult>"
     },
     "CreateReceiptRule" : {
       "documentation" : "<p>Creates a receipt rule.</p> <p>For information about setting up receipt rules, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -135,12 +135,12 @@
         "documentation" : "<p>Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html\">Amazon SES Developer Guide</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createReceiptRule",
       "syncReturnType" : "CreateReceiptRuleResult",
       "asyncReturnType" : "CreateReceiptRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReceiptRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReceiptRuleResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReceiptRuleRequest, CreateReceiptRuleResult>",
-      "methodName" : "createReceiptRule"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReceiptRuleRequest, CreateReceiptRuleResult>"
     },
     "CreateReceiptRuleSet" : {
       "documentation" : "<p>Creates an empty receipt rule set.</p> <p>For information about setting up receipt rule sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -167,12 +167,12 @@
         "documentation" : "<p>Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html\">Amazon SES Developer Guide</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createReceiptRuleSet",
       "syncReturnType" : "CreateReceiptRuleSetResult",
       "asyncReturnType" : "CreateReceiptRuleSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReceiptRuleSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReceiptRuleSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReceiptRuleSetRequest, CreateReceiptRuleSetResult>",
-      "methodName" : "createReceiptRuleSet"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReceiptRuleSetRequest, CreateReceiptRuleSetResult>"
     },
     "DeleteIdentity" : {
       "documentation" : "<p>Deletes the specified identity (email address or domain) from the list of verified identities.</p> <p>This action is throttled at one request per second.</p>",
@@ -193,12 +193,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteIdentity",
       "syncReturnType" : "DeleteIdentityResult",
       "asyncReturnType" : "DeleteIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteIdentityResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIdentityRequest, DeleteIdentityResult>",
-      "methodName" : "deleteIdentity"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIdentityRequest, DeleteIdentityResult>"
     },
     "DeleteIdentityPolicy" : {
       "documentation" : "<p>Deletes the specified sending authorization policy for the given identity (email address or domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -219,12 +219,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteIdentityPolicy",
       "syncReturnType" : "DeleteIdentityPolicyResult",
       "asyncReturnType" : "DeleteIdentityPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteIdentityPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteIdentityPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIdentityPolicyRequest, DeleteIdentityPolicyResult>",
-      "methodName" : "deleteIdentityPolicy"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIdentityPolicyRequest, DeleteIdentityPolicyResult>"
     },
     "DeleteReceiptFilter" : {
       "documentation" : "<p>Deletes the specified IP address filter.</p> <p>For information about managing IP address filters, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -245,12 +245,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteReceiptFilter",
       "syncReturnType" : "DeleteReceiptFilterResult",
       "asyncReturnType" : "DeleteReceiptFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReceiptFilterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReceiptFilterResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReceiptFilterRequest, DeleteReceiptFilterResult>",
-      "methodName" : "deleteReceiptFilter"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReceiptFilterRequest, DeleteReceiptFilterResult>"
     },
     "DeleteReceiptRule" : {
       "documentation" : "<p>Deletes the specified receipt rule.</p> <p>For information about managing receipt rules, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -274,12 +274,12 @@
         "documentation" : "<p>Indicates that the provided receipt rule set does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteReceiptRule",
       "syncReturnType" : "DeleteReceiptRuleResult",
       "asyncReturnType" : "DeleteReceiptRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReceiptRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReceiptRuleResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReceiptRuleRequest, DeleteReceiptRuleResult>",
-      "methodName" : "deleteReceiptRule"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReceiptRuleRequest, DeleteReceiptRuleResult>"
     },
     "DeleteReceiptRuleSet" : {
       "documentation" : "<p>Deletes the specified receipt rule set and all of the receipt rules it contains.</p> <note>The currently active rule set cannot be deleted.</note> <p>For information about managing receipt rule sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -303,12 +303,12 @@
         "documentation" : "<p>Indicates that the delete operation could not be completed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteReceiptRuleSet",
       "syncReturnType" : "DeleteReceiptRuleSetResult",
       "asyncReturnType" : "DeleteReceiptRuleSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReceiptRuleSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReceiptRuleSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReceiptRuleSetRequest, DeleteReceiptRuleSetResult>",
-      "methodName" : "deleteReceiptRuleSet"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReceiptRuleSetRequest, DeleteReceiptRuleSetResult>"
     },
     "DeleteVerifiedEmailAddress" : {
       "documentation" : "<p>Deletes the specified email address from the list of verified addresses.</p> <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>",
@@ -326,12 +326,12 @@
       "returnType" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteVerifiedEmailAddress",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, Void>",
-      "methodName" : "deleteVerifiedEmailAddress"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, Void>"
     },
     "DescribeActiveReceiptRuleSet" : {
       "documentation" : "<p>Returns the metadata and receipt rules for the receipt rule set that is currently active.</p> <p>For information about setting up receipt rule sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -352,12 +352,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeActiveReceiptRuleSet",
       "syncReturnType" : "DescribeActiveReceiptRuleSetResult",
       "asyncReturnType" : "DescribeActiveReceiptRuleSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeActiveReceiptRuleSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeActiveReceiptRuleSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeActiveReceiptRuleSetRequest, DescribeActiveReceiptRuleSetResult>",
-      "methodName" : "describeActiveReceiptRuleSet"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeActiveReceiptRuleSetRequest, DescribeActiveReceiptRuleSetResult>"
     },
     "DescribeReceiptRule" : {
       "documentation" : "<p>Returns the details of the specified receipt rule.</p> <p>For information about setting up receipt rules, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -384,12 +384,12 @@
         "documentation" : "<p>Indicates that the provided receipt rule set does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeReceiptRule",
       "syncReturnType" : "DescribeReceiptRuleResult",
       "asyncReturnType" : "DescribeReceiptRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReceiptRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReceiptRuleResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReceiptRuleRequest, DescribeReceiptRuleResult>",
-      "methodName" : "describeReceiptRule"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReceiptRuleRequest, DescribeReceiptRuleResult>"
     },
     "DescribeReceiptRuleSet" : {
       "documentation" : "<p>Returns the details of the specified receipt rule set.</p> <p>For information about managing receipt rule sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -413,12 +413,12 @@
         "documentation" : "<p>Indicates that the provided receipt rule set does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeReceiptRuleSet",
       "syncReturnType" : "DescribeReceiptRuleSetResult",
       "asyncReturnType" : "DescribeReceiptRuleSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReceiptRuleSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReceiptRuleSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReceiptRuleSetRequest, DescribeReceiptRuleSetResult>",
-      "methodName" : "describeReceiptRuleSet"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReceiptRuleSetRequest, DescribeReceiptRuleSetResult>"
     },
     "GetIdentityDkimAttributes" : {
       "documentation" : "<p>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.</p> <p>This action takes a list of identities as input and returns the following information for each:</p> <ul> <li>Whether Easy DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that represent the identity. If the identity is an email address, the tokens represent the domain of that address.</li> <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain's DNS. This information is only returned for domain name identities, not for email addresses.</li> </ul> <p>This action is throttled at one request per second and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html\">Amazon SES Developer Guide</a>.</p>",
@@ -439,12 +439,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getIdentityDkimAttributes",
       "syncReturnType" : "GetIdentityDkimAttributesResult",
       "asyncReturnType" : "GetIdentityDkimAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIdentityDkimAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityDkimAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityDkimAttributesRequest, GetIdentityDkimAttributesResult>",
-      "methodName" : "getIdentityDkimAttributes"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityDkimAttributesRequest, GetIdentityDkimAttributesResult>"
     },
     "GetIdentityMailFromDomainAttributes" : {
       "documentation" : "<p>Returns the custom MAIL FROM attributes for a list of identities (email addresses and/or domains).</p> <p>This action is throttled at one request per second and can only get custom MAIL FROM attributes for up to 100 identities at a time.</p>",
@@ -465,12 +465,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getIdentityMailFromDomainAttributes",
       "syncReturnType" : "GetIdentityMailFromDomainAttributesResult",
       "asyncReturnType" : "GetIdentityMailFromDomainAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityMailFromDomainAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityMailFromDomainAttributesRequest, GetIdentityMailFromDomainAttributesResult>",
-      "methodName" : "getIdentityMailFromDomainAttributes"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityMailFromDomainAttributesRequest, GetIdentityMailFromDomainAttributesResult>"
     },
     "GetIdentityNotificationAttributes" : {
       "documentation" : "<p>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes.</p> <p>This action is throttled at one request per second and can only get notification attributes for up to 100 identities at a time.</p> <p>For more information about using notifications with Amazon SES, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html\">Amazon SES Developer Guide</a>.</p>",
@@ -491,12 +491,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getIdentityNotificationAttributes",
       "syncReturnType" : "GetIdentityNotificationAttributesResult",
       "asyncReturnType" : "GetIdentityNotificationAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIdentityNotificationAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityNotificationAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityNotificationAttributesRequest, GetIdentityNotificationAttributesResult>",
-      "methodName" : "getIdentityNotificationAttributes"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityNotificationAttributesRequest, GetIdentityNotificationAttributesResult>"
     },
     "GetIdentityPolicies" : {
       "documentation" : "<p>Returns the requested sending authorization policies for the given identity (email address or domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -517,12 +517,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getIdentityPolicies",
       "syncReturnType" : "GetIdentityPoliciesResult",
       "asyncReturnType" : "GetIdentityPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIdentityPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityPoliciesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityPoliciesRequest, GetIdentityPoliciesResult>",
-      "methodName" : "getIdentityPolicies"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityPoliciesRequest, GetIdentityPoliciesResult>"
     },
     "GetIdentityVerificationAttributes" : {
       "documentation" : "<p>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity.</p> <p>This action is throttled at one request per second and can only get verification attributes for up to 100 identities at a time.</p>",
@@ -543,12 +543,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getIdentityVerificationAttributes",
       "syncReturnType" : "GetIdentityVerificationAttributesResult",
       "asyncReturnType" : "GetIdentityVerificationAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIdentityVerificationAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityVerificationAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResult>",
-      "methodName" : "getIdentityVerificationAttributes"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResult>"
     },
     "GetSendQuota" : {
       "documentation" : "<p>Returns the user's current sending limits.</p> <p>This action is throttled at one request per second.</p>",
@@ -569,12 +569,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getSendQuota",
       "syncReturnType" : "GetSendQuotaResult",
       "asyncReturnType" : "GetSendQuotaResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSendQuotaResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSendQuotaResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSendQuotaRequest, GetSendQuotaResult>",
-      "methodName" : "getSendQuota"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSendQuotaRequest, GetSendQuotaResult>"
     },
     "GetSendStatistics" : {
       "documentation" : "<p>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity. </p> <p>Each data point in the list contains statistics for a 15-minute interval.</p> <p>This action is throttled at one request per second.</p>",
@@ -595,12 +595,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getSendStatistics",
       "syncReturnType" : "GetSendStatisticsResult",
       "asyncReturnType" : "GetSendStatisticsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSendStatisticsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSendStatisticsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSendStatisticsRequest, GetSendStatisticsResult>",
-      "methodName" : "getSendStatistics"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSendStatisticsRequest, GetSendStatisticsResult>"
     },
     "ListIdentities" : {
       "documentation" : "<p>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification status.</p> <p>This action is throttled at one request per second.</p>",
@@ -621,12 +621,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listIdentities",
       "syncReturnType" : "ListIdentitiesResult",
       "asyncReturnType" : "ListIdentitiesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListIdentitiesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListIdentitiesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIdentitiesRequest, ListIdentitiesResult>",
-      "methodName" : "listIdentities"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIdentitiesRequest, ListIdentitiesResult>"
     },
     "ListIdentityPolicies" : {
       "documentation" : "<p>Returns a list of sending authorization policies that are attached to the given identity (email address or domain). This API returns only a list. If you want the actual policy content, you can use <code>GetIdentityPolicies</code>.</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -647,12 +647,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listIdentityPolicies",
       "syncReturnType" : "ListIdentityPoliciesResult",
       "asyncReturnType" : "ListIdentityPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListIdentityPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListIdentityPoliciesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIdentityPoliciesRequest, ListIdentityPoliciesResult>",
-      "methodName" : "listIdentityPolicies"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIdentityPoliciesRequest, ListIdentityPoliciesResult>"
     },
     "ListReceiptFilters" : {
       "documentation" : "<p>Lists the IP address filters associated with your account.</p> <p>For information about managing IP address filters, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -673,12 +673,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listReceiptFilters",
       "syncReturnType" : "ListReceiptFiltersResult",
       "asyncReturnType" : "ListReceiptFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListReceiptFiltersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListReceiptFiltersResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListReceiptFiltersRequest, ListReceiptFiltersResult>",
-      "methodName" : "listReceiptFilters"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListReceiptFiltersRequest, ListReceiptFiltersResult>"
     },
     "ListReceiptRuleSets" : {
       "documentation" : "<p>Lists the receipt rule sets that exist under your AWS account. If there are additional receipt rule sets to be retrieved, you will receive a <code>NextToken</code> that you can provide to the next call to <code>ListReceiptRuleSets</code> to retrieve the additional entries.</p> <p>For information about managing receipt rule sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -699,12 +699,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listReceiptRuleSets",
       "syncReturnType" : "ListReceiptRuleSetsResult",
       "asyncReturnType" : "ListReceiptRuleSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListReceiptRuleSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListReceiptRuleSetsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListReceiptRuleSetsRequest, ListReceiptRuleSetsResult>",
-      "methodName" : "listReceiptRuleSets"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListReceiptRuleSetsRequest, ListReceiptRuleSetsResult>"
     },
     "ListVerifiedEmailAddresses" : {
       "documentation" : "<p>Returns a list containing all of the email addresses that have been verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action is now preferred.</important> <p>This action is throttled at one request per second.</p>",
@@ -725,12 +725,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listVerifiedEmailAddresses",
       "syncReturnType" : "ListVerifiedEmailAddressesResult",
       "asyncReturnType" : "ListVerifiedEmailAddressesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListVerifiedEmailAddressesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListVerifiedEmailAddressesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResult>",
-      "methodName" : "listVerifiedEmailAddresses"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVerifiedEmailAddressesRequest, ListVerifiedEmailAddressesResult>"
     },
     "PutIdentityPolicy" : {
       "documentation" : "<p>Adds or updates a sending authorization policy for the specified identity (email address or domain).</p> <note>This API is for the identity owner only. If you have not verified the identity, this API will return an error.</note> <p>Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -754,12 +754,12 @@
         "documentation" : "<p>Indicates that the provided policy is invalid. Check the error stack for more information about what caused the error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "putIdentityPolicy",
       "syncReturnType" : "PutIdentityPolicyResult",
       "asyncReturnType" : "PutIdentityPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutIdentityPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutIdentityPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutIdentityPolicyRequest, PutIdentityPolicyResult>",
-      "methodName" : "putIdentityPolicy"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutIdentityPolicyRequest, PutIdentityPolicyResult>"
     },
     "ReorderReceiptRuleSet" : {
       "documentation" : "<p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the rules in the rule set must be represented in this request. That is, this API will return an error if the reorder request doesn't explicitly position all of the rules.</note> <p>For information about managing receipt rule sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -786,12 +786,12 @@
         "documentation" : "<p>Indicates that the provided receipt rule does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "reorderReceiptRuleSet",
       "syncReturnType" : "ReorderReceiptRuleSetResult",
       "asyncReturnType" : "ReorderReceiptRuleSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReorderReceiptRuleSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReorderReceiptRuleSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReorderReceiptRuleSetRequest, ReorderReceiptRuleSetResult>",
-      "methodName" : "reorderReceiptRuleSet"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReorderReceiptRuleSetRequest, ReorderReceiptRuleSetResult>"
     },
     "SendBounce" : {
       "documentation" : "<p>Generates and sends a bounce message to the sender of an email you received through Amazon SES. You can only use this API on an email up to 24 hours after you receive it.</p> <note>You cannot use this API to send generic bounces for mail that was not received by Amazon SES.</note> <p>For information about receiving email through Amazon SES, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -815,12 +815,12 @@
         "documentation" : "<p>Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "sendBounce",
       "syncReturnType" : "SendBounceResult",
       "asyncReturnType" : "SendBounceResult",
       "asyncFutureType" : "java.util.concurrent.Future<SendBounceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SendBounceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendBounceRequest, SendBounceResult>",
-      "methodName" : "sendBounce"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendBounceRequest, SendBounceResult>"
     },
     "SendEmail" : {
       "documentation" : "<p>Composes an email message based on input data, and then immediately queues the message for sending. </p> <p>There are several important points to know about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified email addresses and domains; otherwise, you will get an \"Email address not verified\" error. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html\">Amazon SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</li> <li>Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.</li> <li>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html\">Amazon SES Developer Guide</a>.</li> </ul>",
@@ -847,12 +847,12 @@
         "documentation" : "<p> Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html\">Amazon SES Developer Guide</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "sendEmail",
       "syncReturnType" : "SendEmailResult",
       "asyncReturnType" : "SendEmailResult",
       "asyncFutureType" : "java.util.concurrent.Future<SendEmailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SendEmailResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendEmailRequest, SendEmailResult>",
-      "methodName" : "sendEmail"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendEmailRequest, SendEmailResult>"
     },
     "SendRawEmail" : {
       "documentation" : "<p>Sends an email message, with header and content specified by the client. The <code>SendRawEmail</code> action is useful for sending multipart MIME emails. The raw text of the message must comply with Internet email standards; otherwise, the message cannot be sent. </p> <p>There are several important points to know about <code>SendRawEmail</code>:</p> <ul> <li>You can only send email from verified email addresses and domains; otherwise, you will get an \"Email address not verified\" error. If your account is still in the Amazon SES sandbox, you must also verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html\">Amazon SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.</li> <li>Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.</li> <li>The To:, CC:, and BCC: headers in the raw message can contain a group list. Note that each recipient in a group list counts towards the 50-recipient limit.</li> <li>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html\">Amazon SES Developer Guide</a>.</li> <li>If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code> enables you to specify the cross-account identity for the email's \"Source,\" \"From,\" and \"Return-Path\" parameters in one of two ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code> to the API, or you can include the following X-headers in the header of your raw email: <ul> <li><code>X-SES-SOURCE-ARN</code></li> <li><code>X-SES-FROM-ARN</code></li> <li><code>X-SES-RETURN-PATH-ARN</code></li> </ul> <important>Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email.</important> For the most common sending authorization use case, we recommend that you specify the <code>SourceIdentityArn</code> and do not specify either the <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same note applies to the corresponding X-headers.) If you only specify the <code>SourceIdentityArn</code>, Amazon SES will simply set the \"From\" address and the \"Return Path\" address to the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html\">Amazon SES Developer Guide</a>.</li> </ul>",
@@ -879,12 +879,12 @@
         "documentation" : "<p> Indicates that the message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings for an identity, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html\">Amazon SES Developer Guide</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "sendRawEmail",
       "syncReturnType" : "SendRawEmailResult",
       "asyncReturnType" : "SendRawEmailResult",
       "asyncFutureType" : "java.util.concurrent.Future<SendRawEmailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SendRawEmailResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendRawEmailRequest, SendRawEmailResult>",
-      "methodName" : "sendRawEmail"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendRawEmailRequest, SendRawEmailResult>"
     },
     "SetActiveReceiptRuleSet" : {
       "documentation" : "<p>Sets the specified receipt rule set as the active receipt rule set.</p> <note>To disable your email-receiving through Amazon SES completely, you can call this API with RuleSetName set to null.</note> <p>For information about managing receipt rule sets, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -908,12 +908,12 @@
         "documentation" : "<p>Indicates that the provided receipt rule set does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "setActiveReceiptRuleSet",
       "syncReturnType" : "SetActiveReceiptRuleSetResult",
       "asyncReturnType" : "SetActiveReceiptRuleSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetActiveReceiptRuleSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetActiveReceiptRuleSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetActiveReceiptRuleSetRequest, SetActiveReceiptRuleSetResult>",
-      "methodName" : "setActiveReceiptRuleSet"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetActiveReceiptRuleSetRequest, SetActiveReceiptRuleSetResult>"
     },
     "SetIdentityDkimEnabled" : {
       "documentation" : "<p>Enables or disables Easy DKIM signing of email sent from an identity:</p> <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by addresses under that domain name (e.g., <code>user@example.com</code>).</li> <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email address.</li> </ul> <p>For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has been set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one request per second.</p> <p>For more information about Easy DKIM signing, go to the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html\">Amazon SES Developer Guide</a>.</p>",
@@ -934,12 +934,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "setIdentityDkimEnabled",
       "syncReturnType" : "SetIdentityDkimEnabledResult",
       "asyncReturnType" : "SetIdentityDkimEnabledResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetIdentityDkimEnabledResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityDkimEnabledResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityDkimEnabledRequest, SetIdentityDkimEnabledResult>",
-      "methodName" : "setIdentityDkimEnabled"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityDkimEnabledRequest, SetIdentityDkimEnabledResult>"
     },
     "SetIdentityFeedbackForwardingEnabled" : {
       "documentation" : "<p>Given an identity (email address or domain), enables or disables whether Amazon SES forwards bounce and complaint notifications as email. Feedback forwarding can only be disabled when Amazon Simple Notification Service (Amazon SNS) topics are specified for both bounces and complaints.</p> <note>Feedback forwarding does not apply to delivery notifications. Delivery notifications are only available through Amazon SNS.</note> <p>This action is throttled at one request per second.</p> <p>For more information about using notifications with Amazon SES, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html\">Amazon SES Developer Guide</a>.</p>",
@@ -960,12 +960,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "setIdentityFeedbackForwardingEnabled",
       "syncReturnType" : "SetIdentityFeedbackForwardingEnabledResult",
       "asyncReturnType" : "SetIdentityFeedbackForwardingEnabledResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetIdentityFeedbackForwardingEnabledResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityFeedbackForwardingEnabledResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResult>",
-      "methodName" : "setIdentityFeedbackForwardingEnabled"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResult>"
     },
     "SetIdentityMailFromDomain" : {
       "documentation" : "<p>Enables or disables the custom MAIL FROM domain setup for a verified identity (email address or domain). </p> <important>To send emails using the specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS settings. If you want your emails to pass Sender Policy Framework (SPF) checks, you must also add or update an SPF record. For more information, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html\">Amazon SES Developer Guide</a>.</important> <p>This action is throttled at one request per second.</p>",
@@ -986,12 +986,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "setIdentityMailFromDomain",
       "syncReturnType" : "SetIdentityMailFromDomainResult",
       "asyncReturnType" : "SetIdentityMailFromDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetIdentityMailFromDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityMailFromDomainResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityMailFromDomainRequest, SetIdentityMailFromDomainResult>",
-      "methodName" : "setIdentityMailFromDomain"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityMailFromDomainRequest, SetIdentityMailFromDomainResult>"
     },
     "SetIdentityNotificationTopic" : {
       "documentation" : "<p>Given an identity (email address or domain), sets the Amazon Simple Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with that identity as the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you must specify Amazon SNS topics for bounce and complaint notifications. For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note> <p>This action is throttled at one request per second.</p> <p>For more information about feedback notification, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html\">Amazon SES Developer Guide</a>.</p>",
@@ -1012,12 +1012,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "setIdentityNotificationTopic",
       "syncReturnType" : "SetIdentityNotificationTopicResult",
       "asyncReturnType" : "SetIdentityNotificationTopicResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetIdentityNotificationTopicResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityNotificationTopicResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityNotificationTopicRequest, SetIdentityNotificationTopicResult>",
-      "methodName" : "setIdentityNotificationTopic"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityNotificationTopicRequest, SetIdentityNotificationTopicResult>"
     },
     "SetReceiptRulePosition" : {
       "documentation" : "<p>Sets the position of the specified receipt rule in the receipt rule set.</p> <p>For information about managing receipt rules, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -1044,12 +1044,12 @@
         "documentation" : "<p>Indicates that the provided receipt rule does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "setReceiptRulePosition",
       "syncReturnType" : "SetReceiptRulePositionResult",
       "asyncReturnType" : "SetReceiptRulePositionResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetReceiptRulePositionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetReceiptRulePositionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetReceiptRulePositionRequest, SetReceiptRulePositionResult>",
-      "methodName" : "setReceiptRulePosition"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetReceiptRulePositionRequest, SetReceiptRulePositionResult>"
     },
     "UpdateReceiptRule" : {
       "documentation" : "<p>Updates a receipt rule.</p> <p>For information about managing receipt rules, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html\">Amazon SES Developer Guide</a>.</p> <p>This action is throttled at one request per second.</p>",
@@ -1088,12 +1088,12 @@
         "documentation" : "<p>Indicates that a resource could not be created due to service limits. For a list of Amazon SES limits, see the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html\">Amazon SES Developer Guide</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "updateReceiptRule",
       "syncReturnType" : "UpdateReceiptRuleResult",
       "asyncReturnType" : "UpdateReceiptRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateReceiptRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateReceiptRuleResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateReceiptRuleRequest, UpdateReceiptRuleResult>",
-      "methodName" : "updateReceiptRule"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateReceiptRuleRequest, UpdateReceiptRuleResult>"
     },
     "VerifyDomainDkim" : {
       "documentation" : "<p>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these tokens, you will need to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be able to DKIM-sign email originating from that domain.</p> <p>This action is throttled at one request per second.</p> <p>To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about creating DNS records using DKIM tokens, go to the <a href=\"http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html\">Amazon SES Developer Guide</a>.</p>",
@@ -1114,12 +1114,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "verifyDomainDkim",
       "syncReturnType" : "VerifyDomainDkimResult",
       "asyncReturnType" : "VerifyDomainDkimResult",
       "asyncFutureType" : "java.util.concurrent.Future<VerifyDomainDkimResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<VerifyDomainDkimResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyDomainDkimRequest, VerifyDomainDkimResult>",
-      "methodName" : "verifyDomainDkim"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyDomainDkimRequest, VerifyDomainDkimResult>"
     },
     "VerifyDomainIdentity" : {
       "documentation" : "<p>Verifies a domain.</p> <p>This action is throttled at one request per second.</p>",
@@ -1140,12 +1140,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "verifyDomainIdentity",
       "syncReturnType" : "VerifyDomainIdentityResult",
       "asyncReturnType" : "VerifyDomainIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<VerifyDomainIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<VerifyDomainIdentityResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyDomainIdentityRequest, VerifyDomainIdentityResult>",
-      "methodName" : "verifyDomainIdentity"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyDomainIdentityRequest, VerifyDomainIdentityResult>"
     },
     "VerifyEmailAddress" : {
       "documentation" : "<p>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</p> <important>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The VerifyEmailIdentity action is now preferred.</important> <p>This action is throttled at one request per second.</p>",
@@ -1163,12 +1163,12 @@
       "returnType" : null,
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "verifyEmailAddress",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, Void>",
-      "methodName" : "verifyEmailAddress"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, Void>"
     },
     "VerifyEmailIdentity" : {
       "documentation" : "<p>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</p> <p>This action is throttled at one request per second.</p>",
@@ -1189,12 +1189,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "verifyEmailIdentity",
       "syncReturnType" : "VerifyEmailIdentityResult",
       "asyncReturnType" : "VerifyEmailIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<VerifyEmailIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<VerifyEmailIdentityResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyEmailIdentityRequest, VerifyEmailIdentityResult>",
-      "methodName" : "verifyEmailIdentity"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyEmailIdentityRequest, VerifyEmailIdentityResult>"
     }
   },
   "shapes" : {
@@ -1621,8 +1621,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ExtensionField",
           "simple" : false,
+          "simpleType" : "ExtensionField",
           "map" : false,
           "templateType" : "java.util.List<ExtensionField>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExtensionField>"
@@ -1815,8 +1815,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ExtensionField",
             "simple" : false,
+            "simpleType" : "ExtensionField",
             "map" : false,
             "templateType" : "java.util.List<ExtensionField>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExtensionField>"
@@ -2249,8 +2249,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2342,8 +2342,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2542,8 +2542,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2631,8 +2631,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -3158,8 +3158,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -3251,8 +3251,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -4021,8 +4021,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "SendDataPoint",
           "simple" : false,
+          "simpleType" : "SendDataPoint",
           "map" : false,
           "templateType" : "java.util.List<SendDataPoint>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<SendDataPoint>"
@@ -4162,8 +4162,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "SendDataPoint",
             "simple" : false,
+            "simpleType" : "SendDataPoint",
             "map" : false,
             "templateType" : "java.util.List<SendDataPoint>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<SendDataPoint>"
@@ -4397,8 +4397,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ExtensionField",
           "simple" : false,
+          "simpleType" : "ExtensionField",
           "map" : false,
           "templateType" : "java.util.List<ExtensionField>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExtensionField>"
@@ -4538,8 +4538,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ExtensionField",
             "simple" : false,
+            "simpleType" : "ExtensionField",
             "map" : false,
             "templateType" : "java.util.List<ExtensionField>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExtensionField>"
@@ -5575,8 +5575,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -5668,8 +5668,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -6454,8 +6454,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -6547,8 +6547,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -7971,8 +7971,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "BouncedRecipientInfo",
           "simple" : false,
+          "simpleType" : "BouncedRecipientInfo",
           "map" : false,
           "templateType" : "java.util.List<BouncedRecipientInfo>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<BouncedRecipientInfo>"
@@ -8168,8 +8168,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "BouncedRecipientInfo",
             "simple" : false,
+            "simpleType" : "BouncedRecipientInfo",
             "map" : false,
             "templateType" : "java.util.List<BouncedRecipientInfo>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<BouncedRecipientInfo>"
@@ -9849,8 +9849,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9938,8 +9938,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10121,8 +10121,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10316,8 +10316,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11845,8 +11845,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12200,8 +12200,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12841,8 +12841,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12907,8 +12907,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12973,8 +12973,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -13062,8 +13062,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -13129,8 +13129,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -13196,8 +13196,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -14047,8 +14047,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -14136,8 +14136,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15399,8 +15399,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ReceiptFilter",
           "simple" : false,
+          "simpleType" : "ReceiptFilter",
           "map" : false,
           "templateType" : "java.util.List<ReceiptFilter>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReceiptFilter>"
@@ -15540,8 +15540,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ReceiptFilter",
             "simple" : false,
+            "simpleType" : "ReceiptFilter",
             "map" : false,
             "templateType" : "java.util.List<ReceiptFilter>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReceiptFilter>"
@@ -15619,8 +15619,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15712,8 +15712,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -15895,8 +15895,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ReceiptRule",
           "simple" : false,
+          "simpleType" : "ReceiptRule",
           "map" : false,
           "templateType" : "java.util.List<ReceiptRule>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReceiptRule>"
@@ -16089,8 +16089,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ReceiptRule",
             "simple" : false,
+            "simpleType" : "ReceiptRule",
             "map" : false,
             "templateType" : "java.util.List<ReceiptRule>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReceiptRule>"
@@ -17487,8 +17487,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -18000,8 +18000,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -20278,8 +20278,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ReceiptRule",
           "simple" : false,
+          "simpleType" : "ReceiptRule",
           "map" : false,
           "templateType" : "java.util.List<ReceiptRule>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReceiptRule>"
@@ -20472,8 +20472,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ReceiptRule",
             "simple" : false,
+            "simpleType" : "ReceiptRule",
             "map" : false,
             "templateType" : "java.util.List<ReceiptRule>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReceiptRule>"
@@ -20877,8 +20877,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -21071,8 +21071,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -22547,8 +22547,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ReceiptRuleSetMetadata",
           "simple" : false,
+          "simpleType" : "ReceiptRuleSetMetadata",
           "map" : false,
           "templateType" : "java.util.List<ReceiptRuleSetMetadata>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReceiptRuleSetMetadata>"
@@ -22793,8 +22793,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ReceiptRuleSetMetadata",
             "simple" : false,
+            "simpleType" : "ReceiptRuleSetMetadata",
             "map" : false,
             "templateType" : "java.util.List<ReceiptRuleSetMetadata>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReceiptRuleSetMetadata>"
@@ -23016,8 +23016,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -23109,8 +23109,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -23344,8 +23344,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -23462,8 +23462,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ReceiptAction",
           "simple" : false,
+          "simpleType" : "ReceiptAction",
           "map" : false,
           "templateType" : "java.util.List<ReceiptAction>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReceiptAction>"
@@ -23603,8 +23603,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -23881,8 +23881,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ReceiptAction",
             "simple" : false,
+            "simpleType" : "ReceiptAction",
             "map" : false,
             "templateType" : "java.util.List<ReceiptAction>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReceiptAction>"

@@ -140,6 +140,9 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
             if (addPermissionRequest.getSourceAccount() != null) {
                 jsonWriter.key("SourceAccount").value(addPermissionRequest.getSourceAccount());
             }
+            if (addPermissionRequest.getEventSourceToken() != null) {
+                jsonWriter.key("EventSourceToken").value(addPermissionRequest.getEventSourceToken());
+            }
 
           jsonWriter.endObject();
 

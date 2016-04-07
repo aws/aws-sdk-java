@@ -67,6 +67,12 @@ public class DeleteTrustRequestMarshaller implements
                 jsonGenerator.writeFieldName("TrustId").writeValue(
                         deleteTrustRequest.getTrustId());
             }
+            if (deleteTrustRequest.getDeleteAssociatedConditionalForwarder() != null) {
+                jsonGenerator.writeFieldName(
+                        "DeleteAssociatedConditionalForwarder").writeValue(
+                        deleteTrustRequest
+                                .getDeleteAssociatedConditionalForwarder());
+            }
 
             jsonGenerator.writeEndObject();
 

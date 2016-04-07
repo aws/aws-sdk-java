@@ -163,6 +163,9 @@ public class UpdateFunctionConfigurationRequestMarshaller implements Marshaller<
                 }
                 jsonWriter.endObject();
             }
+            if (updateFunctionConfigurationRequest.getRuntime() != null) {
+                jsonWriter.key("Runtime").value(updateFunctionConfigurationRequest.getRuntime());
+            }
 
           jsonWriter.endObject();
 

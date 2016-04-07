@@ -21,9 +21,9 @@
     "endpointPrefix" : "logs",
     "signingName" : "logs",
     "serviceName" : "Amazon CloudWatch Logs",
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "cborProtocol" : false,
     "jsonProtocol" : true,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },

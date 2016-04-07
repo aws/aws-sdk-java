@@ -875,6 +875,7 @@ public interface AWSLambda {
      * 
      * @throws InvalidParameterValueException
      * @throws ServiceException
+     * @throws ResourceNotFoundException
      * @throws ResourceConflictException
      * @throws TooManyRequestsException
      *

@@ -92,6 +92,26 @@ public class SingleInstanceHealthStaxUnmarshaller implements
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Deployment", targetDepth)) {
+                    singleInstanceHealth
+                            .setDeployment(DeploymentStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    singleInstanceHealth
+                            .setAvailabilityZone(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("InstanceType", targetDepth)) {
+                    singleInstanceHealth.setInstanceType(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return singleInstanceHealth;

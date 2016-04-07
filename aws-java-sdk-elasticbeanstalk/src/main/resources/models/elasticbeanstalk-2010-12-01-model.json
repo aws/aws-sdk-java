@@ -1178,6 +1178,16 @@
       "documentation":"<p>Request to delete a draft environment configuration.</p>"
     },
     "DeleteSourceBundle":{"type":"boolean"},
+    "Deployment":{
+      "type":"structure",
+      "members":{
+        "VersionLabel":{"shape":"String"},
+        "DeploymentId":{"shape":"NullableLong"},
+        "Status":{"shape":"String"},
+        "DeploymentTime":{"shape":"DeploymentTimestamp"}
+      }
+    },
+    "DeploymentTimestamp":{"type":"timestamp"},
     "DescribeApplicationVersionsMessage":{
       "type":"structure",
       "members":{
@@ -1637,7 +1647,7 @@
     },
     "EnvironmentName":{
       "type":"string",
-      "max":23,
+      "max":40,
       "min":4
     },
     "EnvironmentNamesList":{
@@ -1880,6 +1890,9 @@
         "RefreshedAt",
         "LaunchedAt",
         "System",
+        "Deployment",
+        "AvailabilityZone",
+        "InstanceType",
         "All"
       ]
     },
@@ -2047,6 +2060,7 @@
     },
     "NullableDouble":{"type":"double"},
     "NullableInteger":{"type":"integer"},
+    "NullableLong":{"type":"long"},
     "OperationInProgressException":{
       "type":"structure",
       "members":{
@@ -2275,7 +2289,10 @@
           "documentation":"<p>The time at which the EC2 instance was launched.</p>"
         },
         "ApplicationMetrics":{"shape":"ApplicationMetrics"},
-        "System":{"shape":"SystemStatus"}
+        "System":{"shape":"SystemStatus"},
+        "Deployment":{"shape":"Deployment"},
+        "AvailabilityZone":{"shape":"String"},
+        "InstanceType":{"shape":"String"}
       },
       "documentation":"<p>Represents health information from the specified instance that belongs to the AWS Elastic Beanstalk environment. Use the <code>InstanceId</code> property to specify the application instance for which you'd like to return data.</p>"
     },

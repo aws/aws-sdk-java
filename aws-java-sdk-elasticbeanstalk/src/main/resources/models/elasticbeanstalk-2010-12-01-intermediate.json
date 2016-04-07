@@ -20,12 +20,12 @@
     "jsonVersion" : null,
     "endpointPrefix" : "elasticbeanstalk",
     "signingName" : "elasticbeanstalk",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
     "serviceName" : "Elastic Beanstalk",
     "cborProtocol" : false,
     "jsonProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller"
+    "unmarshallerClassSuffix" : "StaxUnmarshaller",
+    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "AbortEnvironmentUpdate" : {
@@ -2488,6 +2488,15 @@
         "name" : "System",
         "value" : "System"
       }, {
+        "name" : "Deployment",
+        "value" : "Deployment"
+      }, {
+        "name" : "AvailabilityZone",
+        "value" : "AvailabilityZone"
+      }, {
+        "name" : "InstanceType",
+        "value" : "InstanceType"
+      }, {
         "name" : "All",
         "value" : "All"
       } ],
@@ -3723,6 +3732,461 @@
           "getterDocumentation" : "/**<p> The <a>EnvironmentInfoDescription</a> of the environment. </p>\n@return The <a>EnvironmentInfoDescription</a> of the environment.*/",
           "fluentSetterDocumentation" : "/**<p> The <a>EnvironmentInfoDescription</a> of the environment. </p>\n@param environmentInfo The <a>EnvironmentInfoDescription</a> of the environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p> The <a>EnvironmentInfoDescription</a> of the environment. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEnvironmentInfo(java.util.Collection)} or {@link #withEnvironmentInfo(java.util.Collection)} if you want to override the existing values.</p>\n@param environmentInfo The <a>EnvironmentInfoDescription</a> of the environment.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "Deployment" : {
+      "c2jName" : "Deployment",
+      "documentation" : "",
+      "shapeName" : "Deployment",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "members" : [ {
+        "documentation" : "",
+        "name" : "VersionLabel",
+        "c2jName" : "VersionLabel",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "versionLabel",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "versionLabel",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "VersionLabel",
+          "marshallLocationName" : "VersionLabel",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param versionLabel */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param versionLabel \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param versionLabel \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "DeploymentId",
+        "c2jName" : "DeploymentId",
+        "c2jShape" : "NullableLong",
+        "variable" : {
+          "variableName" : "deploymentId",
+          "variableType" : "Long",
+          "variableDeclarationType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "setterModel" : {
+          "variableName" : "deploymentId",
+          "variableType" : "Long",
+          "variableDeclarationType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "DeploymentId",
+          "marshallLocationName" : "DeploymentId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param deploymentId */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param deploymentId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param deploymentId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "Status",
+        "c2jName" : "Status",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Status",
+          "marshallLocationName" : "Status",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param status */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param status \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param status \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "DeploymentTime",
+        "c2jName" : "DeploymentTime",
+        "c2jShape" : "DeploymentTimestamp",
+        "variable" : {
+          "variableName" : "deploymentTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "setterModel" : {
+          "variableName" : "deploymentTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "DeploymentTime",
+          "marshallLocationName" : "DeploymentTime",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param deploymentTime */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param deploymentTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param deploymentTime \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deployment",
+        "variableType" : "Deployment",
+        "variableDeclarationType" : "Deployment",
+        "documentation" : null,
+        "simpleType" : "Deployment",
+        "variableSetterType" : "Deployment"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Status" : {
+          "documentation" : "",
+          "name" : "Status",
+          "c2jName" : "Status",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Status",
+            "marshallLocationName" : "Status",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param status */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param status \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param status \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "DeploymentId" : {
+          "documentation" : "",
+          "name" : "DeploymentId",
+          "c2jName" : "DeploymentId",
+          "c2jShape" : "NullableLong",
+          "variable" : {
+            "variableName" : "deploymentId",
+            "variableType" : "Long",
+            "variableDeclarationType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "setterModel" : {
+            "variableName" : "deploymentId",
+            "variableType" : "Long",
+            "variableDeclarationType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "DeploymentId",
+            "marshallLocationName" : "DeploymentId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param deploymentId */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param deploymentId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param deploymentId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "DeploymentTime" : {
+          "documentation" : "",
+          "name" : "DeploymentTime",
+          "c2jName" : "DeploymentTime",
+          "c2jShape" : "DeploymentTimestamp",
+          "variable" : {
+            "variableName" : "deploymentTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "setterModel" : {
+            "variableName" : "deploymentTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "DeploymentTime",
+            "marshallLocationName" : "DeploymentTime",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param deploymentTime */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param deploymentTime \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param deploymentTime \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "VersionLabel" : {
+          "documentation" : "",
+          "name" : "VersionLabel",
+          "c2jName" : "VersionLabel",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "versionLabel",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "versionLabel",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "VersionLabel",
+            "marshallLocationName" : "VersionLabel",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param versionLabel */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param versionLabel \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param versionLabel \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -21848,6 +22312,162 @@
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param system \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**\n@param system \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "Deployment",
+        "c2jName" : "Deployment",
+        "c2jShape" : "Deployment",
+        "variable" : {
+          "variableName" : "deployment",
+          "variableType" : "Deployment",
+          "variableDeclarationType" : "Deployment",
+          "documentation" : "",
+          "simpleType" : "Deployment",
+          "variableSetterType" : "Deployment"
+        },
+        "setterModel" : {
+          "variableName" : "deployment",
+          "variableType" : "Deployment",
+          "variableDeclarationType" : "Deployment",
+          "documentation" : "",
+          "simpleType" : "Deployment",
+          "variableSetterType" : "Deployment"
+        },
+        "getterModel" : {
+          "returnType" : "Deployment",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "Deployment",
+          "marshallLocationName" : "Deployment",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : false,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param deployment */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param deployment \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param deployment \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "AvailabilityZone",
+        "c2jName" : "AvailabilityZone",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "availabilityZone",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "availabilityZone",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "AvailabilityZone",
+          "marshallLocationName" : "AvailabilityZone",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param availabilityZone */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param availabilityZone \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param availabilityZone \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "InstanceType",
+        "c2jName" : "InstanceType",
+        "c2jShape" : "String",
+        "variable" : {
+          "variableName" : "instanceType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "instanceType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "InstanceType",
+          "marshallLocationName" : "InstanceType",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "list" : false,
+        "simple" : true,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param instanceType */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param instanceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param instanceType \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -22150,6 +22770,59 @@
           "fluentSetterDocumentation" : "/**<p>The ID of the Amazon EC2 instance.</p>\n@param instanceId The ID of the Amazon EC2 instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The ID of the Amazon EC2 instance.</p>\n@param instanceId The ID of the Amazon EC2 instance.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
+        "AvailabilityZone" : {
+          "documentation" : "",
+          "name" : "AvailabilityZone",
+          "c2jName" : "AvailabilityZone",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "availabilityZone",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "availabilityZone",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "AvailabilityZone",
+            "marshallLocationName" : "AvailabilityZone",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param availabilityZone */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param availabilityZone \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param availabilityZone \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
         "System" : {
           "documentation" : "",
           "name" : "System",
@@ -22202,6 +22875,112 @@
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param system \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**\n@param system \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "InstanceType" : {
+          "documentation" : "",
+          "name" : "InstanceType",
+          "c2jName" : "InstanceType",
+          "c2jShape" : "String",
+          "variable" : {
+            "variableName" : "instanceType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "instanceType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "InstanceType",
+            "marshallLocationName" : "InstanceType",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : true,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param instanceType */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param instanceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param instanceType \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Deployment" : {
+          "documentation" : "",
+          "name" : "Deployment",
+          "c2jName" : "Deployment",
+          "c2jShape" : "Deployment",
+          "variable" : {
+            "variableName" : "deployment",
+            "variableType" : "Deployment",
+            "variableDeclarationType" : "Deployment",
+            "documentation" : "",
+            "simpleType" : "Deployment",
+            "variableSetterType" : "Deployment"
+          },
+          "setterModel" : {
+            "variableName" : "deployment",
+            "variableType" : "Deployment",
+            "variableDeclarationType" : "Deployment",
+            "documentation" : "",
+            "simpleType" : "Deployment",
+            "variableSetterType" : "Deployment"
+          },
+          "getterModel" : {
+            "returnType" : "Deployment",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "Deployment",
+            "marshallLocationName" : "Deployment",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "list" : false,
+          "simple" : false,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param deployment */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param deployment \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param deployment \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Color" : {
           "documentation" : "<p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">Health Colors and Statuses</a>.</p>",

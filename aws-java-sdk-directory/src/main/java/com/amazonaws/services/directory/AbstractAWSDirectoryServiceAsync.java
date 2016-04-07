@@ -75,6 +75,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<CreateConditionalForwarderResult> createConditionalForwarderAsync(
+            CreateConditionalForwarderRequest request) {
+
+        return createConditionalForwarderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConditionalForwarderResult> createConditionalForwarderAsync(
+            CreateConditionalForwarderRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateConditionalForwarderRequest, CreateConditionalForwarderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDirectoryResult> createDirectoryAsync(
             CreateDirectoryRequest request) {
 
@@ -135,6 +150,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConditionalForwarderResult> deleteConditionalForwarderAsync(
+            DeleteConditionalForwarderRequest request) {
+
+        return deleteConditionalForwarderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConditionalForwarderResult> deleteConditionalForwarderAsync(
+            DeleteConditionalForwarderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteConditionalForwarderRequest, DeleteConditionalForwarderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDirectoryResult> deleteDirectoryAsync(
             DeleteDirectoryRequest request) {
 
@@ -190,6 +220,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     public java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(
             DeregisterEventTopicRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterEventTopicRequest, DeregisterEventTopicResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConditionalForwardersResult> describeConditionalForwardersAsync(
+            DescribeConditionalForwardersRequest request) {
+
+        return describeConditionalForwardersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConditionalForwardersResult> describeConditionalForwardersAsync(
+            DescribeConditionalForwardersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeConditionalForwardersRequest, DescribeConditionalForwardersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -445,6 +490,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     public java.util.concurrent.Future<RestoreFromSnapshotResult> restoreFromSnapshotAsync(
             RestoreFromSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreFromSnapshotRequest, RestoreFromSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(
+            UpdateConditionalForwarderRequest request) {
+
+        return updateConditionalForwarderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(
+            UpdateConditionalForwarderRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateConditionalForwarderRequest, UpdateConditionalForwarderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -407,6 +407,48 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
 
     /**
      * <p>
+     * Gets the Content-Language HTTP header, which describes the natural language(s) of the
+     * intended audience for the enclosed entity.
+     * </p>
+     * <p>
+     * For more information on the Content-Type header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     * </p>
+     *
+     * @return The HTTP Content-Language header, which describes the natural language(s) of the
+     * intended audience for the enclosed entity. Returns <code>null</code>
+     *         if it hasn't been set.
+     *
+     * @see ObjectMetadata#setContentLanguage(String)
+     */
+    public String getContentLanguage() {
+        return (String)metadata.get(Headers.CONTENT_LANGUAGE);
+    }
+
+    /**
+     * <p>
+     * Sets the Content-Language HTTP header which describes the natural language(s) of the
+     * intended audience for the enclosed entity.
+     * </p>
+     * <p>
+     * For more information on the Content-Type header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     * </p>
+     *
+     * @param contentLanguage
+     *            The HTTP Content-Language header which describes the natural language(s) of the
+     * intended audience for the enclosed entity.
+     *
+     * @see ObjectMetadata#getContentLanguage()
+     */
+    public void setContentLanguage(String contentLanguage) {
+        metadata.put(Headers.CONTENT_LANGUAGE, contentLanguage);
+    }
+
+    /**
+     * <p>
      * Gets the optional Content-Encoding HTTP header specifying what
      * content encodings have been applied to the object and what decoding
      * mechanisms must be applied in order to obtain the media-type referenced
