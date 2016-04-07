@@ -111,6 +111,8 @@
     <aspectj.version>1.8.2</aspectj.version>
     <spring.version>3.0.7.RELEASE</spring.version>
     <jackson.version>2.5.3</jackson.version>
+    <httpcomponents.httpclient.version>4.3.6</httpcomponents.httpclient.version>
+    <httpcomponents.httpcore.version>4.3.3</httpcomponents.httpcore.version>
     <jre.version>1.6</jre.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
