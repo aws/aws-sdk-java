@@ -28,6 +28,8 @@ import java.util.Properties;
  * property.
  */
 public class PropertiesCredentials implements AWSCredentials {
+    private static final String ACCESS_KEY_LABEL = "aws_access_key_id"
+    private static final String SECRET_ACCESS_KEY_LABEL = "aws_secret_access_key"
 
     private final String accessKey;
     private final String secretAccessKey;
@@ -63,18 +65,16 @@ public class PropertiesCredentials implements AWSCredentials {
             Properties accountProperties = new Properties();
             accountProperties.load(stream);
 
-            if (accountProperties.getProperty("accessKey") == null ||
-                accountProperties.getProperty("secretKey") == null) {
+            accessKey = accountProperties.getProperty(ACCESS_KEY_LABEL);
+            secretAccessKey = accountProperties.getProperty(SECRET_ACCESS_KEY_LABEL);
+
+            if (accessKey  == null || secretAccessKey == null) {
                 throw new IllegalArgumentException(
                     "The specified file (" + file.getAbsolutePath()
                     + ") doesn't contain the expected properties 'accessKey' "
                     + "and 'secretKey'."
                 );
             }
-
-            accessKey = accountProperties.getProperty("accessKey");
-            secretAccessKey = accountProperties.getProperty("secretKey");
-
         } finally {
             try {
                 stream.close();
@@ -102,14 +102,13 @@ public class PropertiesCredentials implements AWSCredentials {
             try {inputStream.close();} catch (Exception e) {}
         }
 
-        if (accountProperties.getProperty("accessKey") == null ||
-            accountProperties.getProperty("secretKey") == null) {
+        accessKey = accountProperties.getProperty(ACCESS_KEY_LABEL);
+        secretAccessKey = accountProperties.getProperty(SECRET_ACCESS_KEY_LABEL);
+
+        if (accessKey  == null || secretAccessKey == null) {
             throw new IllegalArgumentException("The specified properties data " +
                     "doesn't contain the expected properties 'accessKey' and 'secretKey'.");
         }
-
-        accessKey = accountProperties.getProperty("accessKey");
-        secretAccessKey = accountProperties.getProperty("secretKey");
     }
 
     /* (non-Javadoc)
