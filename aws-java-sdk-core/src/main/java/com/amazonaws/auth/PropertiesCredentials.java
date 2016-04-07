@@ -28,8 +28,8 @@ import java.util.Properties;
  * property.
  */
 public class PropertiesCredentials implements AWSCredentials {
-    private static final String ACCESS_KEY_LABEL = "aws_access_key_id"
-    private static final String SECRET_ACCESS_KEY_LABEL = "aws_secret_access_key"
+    private static final String ACCESS_KEY_LABEL = "aws_access_key_id";
+    private static final String SECRET_ACCESS_KEY_LABEL = "aws_secret_access_key";
 
     private final String accessKey;
     private final String secretAccessKey;
