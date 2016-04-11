@@ -24,7 +24,8 @@ public enum CertificateStatus {
     ACTIVE("ACTIVE"),
     INACTIVE("INACTIVE"),
     REVOKED("REVOKED"),
-    PENDING_TRANSFER("PENDING_TRANSFER");
+    PENDING_TRANSFER("PENDING_TRANSFER"),
+    REGISTER_INACTIVE("REGISTER_INACTIVE");
 
     private String value;
 
@@ -55,6 +56,8 @@ public enum CertificateStatus {
             return REVOKED;
         } else if ("PENDING_TRANSFER".equals(value)) {
             return PENDING_TRANSFER;
+        } else if ("REGISTER_INACTIVE".equals(value)) {
+            return REGISTER_INACTIVE;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

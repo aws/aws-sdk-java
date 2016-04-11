@@ -550,6 +550,30 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, Void> asyncHandler);
 
     /**
+     * @param deleteCACertificateRequest
+     * @return A Java Future containing the result of the DeleteCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsync.DeleteCACertificate
+     */
+    java.util.concurrent.Future<DeleteCACertificateResult> deleteCACertificateAsync(
+            DeleteCACertificateRequest deleteCACertificateRequest);
+
+    /**
+     * @param deleteCACertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteCACertificate
+     */
+    java.util.concurrent.Future<DeleteCACertificateResult> deleteCACertificateAsync(
+            DeleteCACertificateRequest deleteCACertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCACertificateRequest, DeleteCACertificateResult> asyncHandler);
+
+    /**
      * <p>
      * Deletes the specified certificate.
      * </p>
@@ -688,6 +712,30 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, Void> asyncHandler);
 
     /**
+     * @param deleteRegistrationCodeRequest
+     * @return A Java Future containing the result of the DeleteRegistrationCode
+     *         operation returned by the service.
+     * @sample AWSIotAsync.DeleteRegistrationCode
+     */
+    java.util.concurrent.Future<DeleteRegistrationCodeResult> deleteRegistrationCodeAsync(
+            DeleteRegistrationCodeRequest deleteRegistrationCodeRequest);
+
+    /**
+     * @param deleteRegistrationCodeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRegistrationCode
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteRegistrationCode
+     */
+    java.util.concurrent.Future<DeleteRegistrationCodeResult> deleteRegistrationCodeAsync(
+            DeleteRegistrationCodeRequest deleteRegistrationCodeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegistrationCodeRequest, DeleteRegistrationCodeResult> asyncHandler);
+
+    /**
      * <p>
      * Deletes the specified thing from the Thing Registry.
      * </p>
@@ -750,6 +798,30 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<Void> deleteTopicRuleAsync(
             DeleteTopicRuleRequest deleteTopicRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, Void> asyncHandler);
+
+    /**
+     * @param describeCACertificateRequest
+     * @return A Java Future containing the result of the DescribeCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsync.DescribeCACertificate
+     */
+    java.util.concurrent.Future<DescribeCACertificateResult> describeCACertificateAsync(
+            DescribeCACertificateRequest describeCACertificateRequest);
+
+    /**
+     * @param describeCACertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeCACertificate
+     */
+    java.util.concurrent.Future<DescribeCACertificateResult> describeCACertificateAsync(
+            DescribeCACertificateRequest describeCACertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCACertificateRequest, DescribeCACertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -1086,6 +1158,30 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<GetPolicyVersionRequest, GetPolicyVersionResult> asyncHandler);
 
     /**
+     * @param getRegistrationCodeRequest
+     * @return A Java Future containing the result of the GetRegistrationCode
+     *         operation returned by the service.
+     * @sample AWSIotAsync.GetRegistrationCode
+     */
+    java.util.concurrent.Future<GetRegistrationCodeResult> getRegistrationCodeAsync(
+            GetRegistrationCodeRequest getRegistrationCodeRequest);
+
+    /**
+     * @param getRegistrationCodeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRegistrationCode
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetRegistrationCode
+     */
+    java.util.concurrent.Future<GetRegistrationCodeResult> getRegistrationCodeAsync(
+            GetRegistrationCodeRequest getRegistrationCodeRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRegistrationCodeRequest, GetRegistrationCodeResult> asyncHandler);
+
+    /**
      * <p>
      * Gets information about the specified rule.
      * </p>
@@ -1118,6 +1214,30 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<GetTopicRuleResult> getTopicRuleAsync(
             GetTopicRuleRequest getTopicRuleRequest,
             com.amazonaws.handlers.AsyncHandler<GetTopicRuleRequest, GetTopicRuleResult> asyncHandler);
+
+    /**
+     * @param listCACertificatesRequest
+     * @return A Java Future containing the result of the ListCACertificates
+     *         operation returned by the service.
+     * @sample AWSIotAsync.ListCACertificates
+     */
+    java.util.concurrent.Future<ListCACertificatesResult> listCACertificatesAsync(
+            ListCACertificatesRequest listCACertificatesRequest);
+
+    /**
+     * @param listCACertificatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCACertificates
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListCACertificates
+     */
+    java.util.concurrent.Future<ListCACertificatesResult> listCACertificatesAsync(
+            ListCACertificatesRequest listCACertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCACertificatesRequest, ListCACertificatesResult> asyncHandler);
 
     /**
      * <p>
@@ -1160,6 +1280,30 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(
             ListCertificatesRequest listCertificatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler);
+
+    /**
+     * @param listCertificatesByCARequest
+     * @return A Java Future containing the result of the ListCertificatesByCA
+     *         operation returned by the service.
+     * @sample AWSIotAsync.ListCertificatesByCA
+     */
+    java.util.concurrent.Future<ListCertificatesByCAResult> listCertificatesByCAAsync(
+            ListCertificatesByCARequest listCertificatesByCARequest);
+
+    /**
+     * @param listCertificatesByCARequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCertificatesByCA
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListCertificatesByCA
+     */
+    java.util.concurrent.Future<ListCertificatesByCAResult> listCertificatesByCAAsync(
+            ListCertificatesByCARequest listCertificatesByCARequest,
+            com.amazonaws.handlers.AsyncHandler<ListCertificatesByCARequest, ListCertificatesByCAResult> asyncHandler);
 
     /**
      * <p>
@@ -1412,6 +1556,54 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<ListTopicRulesRequest, ListTopicRulesResult> asyncHandler);
 
     /**
+     * @param registerCACertificateRequest
+     * @return A Java Future containing the result of the RegisterCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsync.RegisterCACertificate
+     */
+    java.util.concurrent.Future<RegisterCACertificateResult> registerCACertificateAsync(
+            RegisterCACertificateRequest registerCACertificateRequest);
+
+    /**
+     * @param registerCACertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.RegisterCACertificate
+     */
+    java.util.concurrent.Future<RegisterCACertificateResult> registerCACertificateAsync(
+            RegisterCACertificateRequest registerCACertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterCACertificateRequest, RegisterCACertificateResult> asyncHandler);
+
+    /**
+     * @param registerCertificateRequest
+     * @return A Java Future containing the result of the RegisterCertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsync.RegisterCertificate
+     */
+    java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(
+            RegisterCertificateRequest registerCertificateRequest);
+
+    /**
+     * @param registerCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterCertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.RegisterCertificate
+     */
+    java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(
+            RegisterCertificateRequest registerCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterCertificateRequest, RegisterCertificateResult> asyncHandler);
+
+    /**
      * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a
      * certificate transfer, the certificate status changes from
@@ -1628,6 +1820,26 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<TransferCertificateResult> transferCertificateAsync(
             TransferCertificateRequest transferCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<TransferCertificateRequest, TransferCertificateResult> asyncHandler);
+
+    /**
+     * @param updateCACertificateRequest
+     * @sample AWSIotAsync.UpdateCACertificate
+     */
+    java.util.concurrent.Future<Void> updateCACertificateAsync(
+            UpdateCACertificateRequest updateCACertificateRequest);
+
+    /**
+     * @param updateCACertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @sample AWSIotAsyncHandler.UpdateCACertificate
+     */
+    java.util.concurrent.Future<Void> updateCACertificateAsync(
+            UpdateCACertificateRequest updateCACertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCACertificateRequest, Void> asyncHandler);
 
     /**
      * <p>

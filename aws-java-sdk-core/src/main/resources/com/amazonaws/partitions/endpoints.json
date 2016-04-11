@@ -527,6 +527,11 @@
             }
           }
         },
+        "inspector": {
+          "endpoints": {
+            "us-west-2": {}
+          }
+        },
         "iot": {
           "defaults": {
             "credentialScope": {
@@ -687,6 +692,7 @@
         },
         "s3": {
           "partitionEndpoint": "us-east-1",
+          "isRegionalized": true,
           "defaults": {
             "protocols": [
               "http",

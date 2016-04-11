@@ -79,9 +79,28 @@ public class TransferCertificateRequestMarshaller
                             .getTargetAwsAccount()));
         }
 
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+        try {
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
+
+            jsonGenerator.writeStartObject();
+
+            if (transferCertificateRequest.getTransferMessage() != null) {
+                jsonGenerator.writeFieldName("transferMessage").writeValue(
+                        transferCertificateRequest.getTransferMessage());
+            }
+
+            jsonGenerator.writeEndObject();
+
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            if (!request.getHeaders().containsKey("Content-Type")) {
+                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            }
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

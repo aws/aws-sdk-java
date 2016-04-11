@@ -447,6 +447,29 @@ public interface AWSIot {
     void createTopicRule(CreateTopicRuleRequest createTopicRuleRequest);
 
     /**
+     * @param deleteCACertificateRequest
+     * @return Result of the DeleteCACertificate operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DeleteCACertificate
+     */
+    DeleteCACertificateResult deleteCACertificate(
+            DeleteCACertificateRequest deleteCACertificateRequest);
+
+    /**
      * <p>
      * Deletes the specified certificate.
      * </p>
@@ -460,13 +483,23 @@ public interface AWSIot {
      * 
      * @param deleteCertificateRequest
      *        The input for the DeleteCertificate operation.
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or
      *         more resources.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
-     * @throws CertificateStateException
-     *         The certificate operation is not allowed.
      * @sample AWSIot.DeleteCertificate
      */
     void deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
@@ -542,6 +575,23 @@ public interface AWSIot {
             DeletePolicyVersionRequest deletePolicyVersionRequest);
 
     /**
+     * @param deleteRegistrationCodeRequest
+     * @return Result of the DeleteRegistrationCode operation returned by the
+     *         service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteRegistrationCode
+     */
+    DeleteRegistrationCodeResult deleteRegistrationCode(
+            DeleteRegistrationCodeRequest deleteRegistrationCodeRequest);
+
+    /**
      * <p>
      * Deletes the specified thing from the Thing Registry.
      * </p>
@@ -583,6 +633,27 @@ public interface AWSIot {
      * @sample AWSIot.DeleteTopicRule
      */
     void deleteTopicRule(DeleteTopicRuleRequest deleteTopicRuleRequest);
+
+    /**
+     * @param describeCACertificateRequest
+     * @return Result of the DescribeCACertificate operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DescribeCACertificate
+     */
+    DescribeCACertificateResult describeCACertificate(
+            DescribeCACertificateRequest describeCACertificateRequest);
 
     /**
      * <p>
@@ -814,6 +885,23 @@ public interface AWSIot {
             GetPolicyVersionRequest getPolicyVersionRequest);
 
     /**
+     * @param getRegistrationCodeRequest
+     * @return Result of the GetRegistrationCode operation returned by the
+     *         service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.GetRegistrationCode
+     */
+    GetRegistrationCodeResult getRegistrationCode(
+            GetRegistrationCodeRequest getRegistrationCodeRequest);
+
+    /**
      * <p>
      * Gets information about the specified rule.
      * </p>
@@ -832,6 +920,25 @@ public interface AWSIot {
      * @sample AWSIot.GetTopicRule
      */
     GetTopicRuleResult getTopicRule(GetTopicRuleRequest getTopicRuleRequest);
+
+    /**
+     * @param listCACertificatesRequest
+     * @return Result of the ListCACertificates operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCACertificates
+     */
+    ListCACertificatesResult listCACertificates(
+            ListCACertificatesRequest listCACertificatesRequest);
 
     /**
      * <p>
@@ -859,6 +966,25 @@ public interface AWSIot {
      */
     ListCertificatesResult listCertificates(
             ListCertificatesRequest listCertificatesRequest);
+
+    /**
+     * @param listCertificatesByCARequest
+     * @return Result of the ListCertificatesByCA operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCertificatesByCA
+     */
+    ListCertificatesByCAResult listCertificatesByCA(
+            ListCertificatesByCARequest listCertificatesByCARequest);
 
     /**
      * <p>
@@ -1030,6 +1156,56 @@ public interface AWSIot {
             ListTopicRulesRequest listTopicRulesRequest);
 
     /**
+     * @param registerCACertificateRequest
+     * @return Result of the RegisterCACertificate operation returned by the
+     *         service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws RegistrationCodeValidationException
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateValidationException
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.RegisterCACertificate
+     */
+    RegisterCACertificateResult registerCACertificate(
+            RegisterCACertificateRequest registerCACertificateRequest);
+
+    /**
+     * @param registerCertificateRequest
+     * @return Result of the RegisterCertificate operation returned by the
+     *         service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateValidationException
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
+     * @throws CertificateConflictException
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.RegisterCertificate
+     */
+    RegisterCertificateResult registerCertificate(
+            RegisterCertificateRequest registerCertificateRequest);
+
+    /**
      * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a
      * certificate transfer, the certificate status changes from
@@ -1180,6 +1356,25 @@ public interface AWSIot {
      */
     TransferCertificateResult transferCertificate(
             TransferCertificateRequest transferCertificateRequest);
+
+    /**
+     * @param updateCACertificateRequest
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCACertificate
+     */
+    void updateCACertificate(
+            UpdateCACertificateRequest updateCACertificateRequest);
 
     /**
      * <p>

@@ -40,6 +40,8 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
      */
     private String targetAwsAccount;
 
+    private String transferMessage;
+
     /**
      * <p>
      * The ID of the certificate.
@@ -124,6 +126,33 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * @param transferMessage
+     */
+
+    public void setTransferMessage(String transferMessage) {
+        this.transferMessage = transferMessage;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getTransferMessage() {
+        return this.transferMessage;
+    }
+
+    /**
+     * @param transferMessage
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public TransferCertificateRequest withTransferMessage(String transferMessage) {
+        setTransferMessage(transferMessage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -138,7 +167,9 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
         if (getCertificateId() != null)
             sb.append("CertificateId: " + getCertificateId() + ",");
         if (getTargetAwsAccount() != null)
-            sb.append("TargetAwsAccount: " + getTargetAwsAccount());
+            sb.append("TargetAwsAccount: " + getTargetAwsAccount() + ",");
+        if (getTransferMessage() != null)
+            sb.append("TransferMessage: " + getTransferMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -165,6 +196,12 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
                 && other.getTargetAwsAccount().equals(
                         this.getTargetAwsAccount()) == false)
             return false;
+        if (other.getTransferMessage() == null
+                ^ this.getTransferMessage() == null)
+            return false;
+        if (other.getTransferMessage() != null
+                && other.getTransferMessage().equals(this.getTransferMessage()) == false)
+            return false;
         return true;
     }
 
@@ -180,6 +217,10 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
         hashCode = prime
                 * hashCode
                 + ((getTargetAwsAccount() == null) ? 0 : getTargetAwsAccount()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTransferMessage() == null) ? 0 : getTransferMessage()
                         .hashCode());
         return hashCode;
     }

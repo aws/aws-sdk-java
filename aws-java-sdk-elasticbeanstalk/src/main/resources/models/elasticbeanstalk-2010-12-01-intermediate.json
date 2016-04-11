@@ -3577,8 +3577,8 @@
           "simpleType" : "EnvironmentInfoDescription",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentInfoDescription>",
-          "templateType" : "java.util.List<EnvironmentInfoDescription>"
+          "templateType" : "java.util.List<EnvironmentInfoDescription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentInfoDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3718,8 +3718,8 @@
             "simpleType" : "EnvironmentInfoDescription",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentInfoDescription>",
-            "templateType" : "java.util.List<EnvironmentInfoDescription>"
+            "templateType" : "java.util.List<EnvironmentInfoDescription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentInfoDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4850,8 +4850,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4916,8 +4916,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5219,8 +5219,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5339,8 +5339,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5627,8 +5627,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "EnvironmentHealthAttribute",
@@ -5825,8 +5825,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "EnvironmentHealthAttribute",
@@ -6893,8 +6893,8 @@
           "simpleType" : "EnvironmentLink",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>",
-          "templateType" : "java.util.List<EnvironmentLink>"
+          "templateType" : "java.util.List<EnvironmentLink>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7882,8 +7882,8 @@
             "simpleType" : "EnvironmentLink",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>",
-            "templateType" : "java.util.List<EnvironmentLink>"
+            "templateType" : "java.util.List<EnvironmentLink>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8574,8 +8574,8 @@
           "simpleType" : "ConfigurationOptionSetting",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-          "templateType" : "java.util.List<ConfigurationOptionSetting>"
+          "templateType" : "java.util.List<ConfigurationOptionSetting>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8692,8 +8692,8 @@
           "simpleType" : "OptionSpecification",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>",
-          "templateType" : "java.util.List<OptionSpecification>"
+          "templateType" : "java.util.List<OptionSpecification>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9208,8 +9208,8 @@
             "simpleType" : "OptionSpecification",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>",
-            "templateType" : "java.util.List<OptionSpecification>"
+            "templateType" : "java.util.List<OptionSpecification>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9433,8 +9433,8 @@
             "simpleType" : "ConfigurationOptionSetting",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-            "templateType" : "java.util.List<ConfigurationOptionSetting>"
+            "templateType" : "java.util.List<ConfigurationOptionSetting>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9704,8 +9704,8 @@
           "simpleType" : "EnvironmentDescription",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentDescription>",
-          "templateType" : "java.util.List<EnvironmentDescription>"
+          "templateType" : "java.util.List<EnvironmentDescription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9845,8 +9845,8 @@
             "simpleType" : "EnvironmentDescription",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentDescription>",
-            "templateType" : "java.util.List<EnvironmentDescription>"
+            "templateType" : "java.util.List<EnvironmentDescription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10059,8 +10059,8 @@
           "simpleType" : "ConfigurationOptionDescription",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionDescription>",
-          "templateType" : "java.util.List<ConfigurationOptionDescription>"
+          "templateType" : "java.util.List<ConfigurationOptionDescription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10253,8 +10253,8 @@
             "simpleType" : "ConfigurationOptionDescription",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionDescription>",
-            "templateType" : "java.util.List<ConfigurationOptionDescription>"
+            "templateType" : "java.util.List<ConfigurationOptionDescription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13975,8 +13975,8 @@
           "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14249,8 +14249,8 @@
           "simpleType" : "ConfigurationOptionSetting",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-          "templateType" : "java.util.List<ConfigurationOptionSetting>"
+          "templateType" : "java.util.List<ConfigurationOptionSetting>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14367,8 +14367,8 @@
           "simpleType" : "OptionSpecification",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>",
-          "templateType" : "java.util.List<OptionSpecification>"
+          "templateType" : "java.util.List<OptionSpecification>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14671,8 +14671,8 @@
             "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15055,8 +15055,8 @@
             "simpleType" : "OptionSpecification",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>",
-            "templateType" : "java.util.List<OptionSpecification>"
+            "templateType" : "java.util.List<OptionSpecification>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15227,8 +15227,8 @@
             "simpleType" : "ConfigurationOptionSetting",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-            "templateType" : "java.util.List<ConfigurationOptionSetting>"
+            "templateType" : "java.util.List<ConfigurationOptionSetting>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15917,8 +15917,8 @@
           "simpleType" : "Listener",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>",
-          "templateType" : "java.util.List<Listener>"
+          "templateType" : "java.util.List<Listener>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16164,8 +16164,8 @@
             "simpleType" : "Listener",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>",
-            "templateType" : "java.util.List<Listener>"
+            "templateType" : "java.util.List<Listener>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Listener>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16295,8 +16295,8 @@
           "simpleType" : "ConfigurationSettingsDescription",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationSettingsDescription>",
-          "templateType" : "java.util.List<ConfigurationSettingsDescription>"
+          "templateType" : "java.util.List<ConfigurationSettingsDescription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationSettingsDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16436,8 +16436,8 @@
             "simpleType" : "ConfigurationSettingsDescription",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationSettingsDescription>",
-            "templateType" : "java.util.List<ConfigurationSettingsDescription>"
+            "templateType" : "java.util.List<ConfigurationSettingsDescription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationSettingsDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16921,8 +16921,8 @@
           "simpleType" : "EventDescription",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventDescription>",
-          "templateType" : "java.util.List<EventDescription>"
+          "templateType" : "java.util.List<EventDescription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17167,8 +17167,8 @@
             "simpleType" : "EventDescription",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventDescription>",
-            "templateType" : "java.util.List<EventDescription>"
+            "templateType" : "java.util.List<EventDescription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18175,8 +18175,8 @@
           "simpleType" : "OptionSpecification",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>",
-          "templateType" : "java.util.List<OptionSpecification>"
+          "templateType" : "java.util.List<OptionSpecification>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18532,8 +18532,8 @@
             "simpleType" : "OptionSpecification",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>",
-            "templateType" : "java.util.List<OptionSpecification>"
+            "templateType" : "java.util.List<OptionSpecification>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18663,8 +18663,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18809,8 +18809,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19044,8 +19044,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "InstancesHealthAttribute",
@@ -19347,8 +19347,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "InstancesHealthAttribute",
@@ -20254,8 +20254,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20347,8 +20347,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20478,8 +20478,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20620,8 +20620,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21086,8 +21086,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21285,8 +21285,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21572,8 +21572,8 @@
           "simpleType" : "ConfigurationOptionSetting",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-          "templateType" : "java.util.List<ConfigurationOptionSetting>"
+          "templateType" : "java.util.List<ConfigurationOptionSetting>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21876,8 +21876,8 @@
             "simpleType" : "ConfigurationOptionSetting",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-            "templateType" : "java.util.List<ConfigurationOptionSetting>"
+            "templateType" : "java.util.List<ConfigurationOptionSetting>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22142,8 +22142,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22596,8 +22596,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23431,8 +23431,8 @@
           "simpleType" : "ValidationMessage",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationMessage>",
-          "templateType" : "java.util.List<ValidationMessage>"
+          "templateType" : "java.util.List<ValidationMessage>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationMessage>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23572,8 +23572,8 @@
             "simpleType" : "ValidationMessage",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationMessage>",
-            "templateType" : "java.util.List<ValidationMessage>"
+            "templateType" : "java.util.List<ValidationMessage>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ValidationMessage>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25862,8 +25862,8 @@
           "simpleType" : "ConfigurationOptionSetting",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-          "templateType" : "java.util.List<ConfigurationOptionSetting>"
+          "templateType" : "java.util.List<ConfigurationOptionSetting>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26427,8 +26427,8 @@
             "simpleType" : "ConfigurationOptionSetting",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-            "templateType" : "java.util.List<ConfigurationOptionSetting>"
+            "templateType" : "java.util.List<ConfigurationOptionSetting>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26803,8 +26803,8 @@
           "simpleType" : "ApplicationDescription",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationDescription>",
-          "templateType" : "java.util.List<ApplicationDescription>"
+          "templateType" : "java.util.List<ApplicationDescription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26944,8 +26944,8 @@
             "simpleType" : "ApplicationDescription",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationDescription>",
-            "templateType" : "java.util.List<ApplicationDescription>"
+            "templateType" : "java.util.List<ApplicationDescription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28882,8 +28882,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29000,8 +29000,8 @@
           "simpleType" : "SolutionStackDescription",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SolutionStackDescription>",
-          "templateType" : "java.util.List<SolutionStackDescription>"
+          "templateType" : "java.util.List<SolutionStackDescription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SolutionStackDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29141,8 +29141,8 @@
             "simpleType" : "SolutionStackDescription",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SolutionStackDescription>",
-            "templateType" : "java.util.List<SolutionStackDescription>"
+            "templateType" : "java.util.List<SolutionStackDescription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SolutionStackDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29208,8 +29208,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29755,8 +29755,8 @@
           "simpleType" : "ConfigurationOptionSetting",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-          "templateType" : "java.util.List<ConfigurationOptionSetting>"
+          "templateType" : "java.util.List<ConfigurationOptionSetting>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30320,8 +30320,8 @@
             "simpleType" : "ConfigurationOptionSetting",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-            "templateType" : "java.util.List<ConfigurationOptionSetting>"
+            "templateType" : "java.util.List<ConfigurationOptionSetting>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31442,8 +31442,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32004,8 +32004,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32540,8 +32540,8 @@
           "simpleType" : "ApplicationVersionDescription",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationVersionDescription>",
-          "templateType" : "java.util.List<ApplicationVersionDescription>"
+          "templateType" : "java.util.List<ApplicationVersionDescription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationVersionDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32681,8 +32681,8 @@
             "simpleType" : "ApplicationVersionDescription",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationVersionDescription>",
-            "templateType" : "java.util.List<ApplicationVersionDescription>"
+            "templateType" : "java.util.List<ApplicationVersionDescription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationVersionDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33166,8 +33166,8 @@
           "simpleType" : "EnvironmentDescription",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentDescription>",
-          "templateType" : "java.util.List<EnvironmentDescription>"
+          "templateType" : "java.util.List<EnvironmentDescription>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33307,8 +33307,8 @@
             "simpleType" : "EnvironmentDescription",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentDescription>",
-            "templateType" : "java.util.List<EnvironmentDescription>"
+            "templateType" : "java.util.List<EnvironmentDescription>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33594,8 +33594,8 @@
           "simpleType" : "ConfigurationOptionSetting",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-          "templateType" : "java.util.List<ConfigurationOptionSetting>"
+          "templateType" : "java.util.List<ConfigurationOptionSetting>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33712,8 +33712,8 @@
           "simpleType" : "OptionSpecification",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>",
-          "templateType" : "java.util.List<OptionSpecification>"
+          "templateType" : "java.util.List<OptionSpecification>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -34016,8 +34016,8 @@
             "simpleType" : "OptionSpecification",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>",
-            "templateType" : "java.util.List<OptionSpecification>"
+            "templateType" : "java.util.List<OptionSpecification>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OptionSpecification>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34135,8 +34135,8 @@
             "simpleType" : "ConfigurationOptionSetting",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-            "templateType" : "java.util.List<ConfigurationOptionSetting>"
+            "templateType" : "java.util.List<ConfigurationOptionSetting>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36103,8 +36103,8 @@
           "simpleType" : "EnvironmentLink",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>",
-          "templateType" : "java.util.List<EnvironmentLink>"
+          "templateType" : "java.util.List<EnvironmentLink>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -37092,8 +37092,8 @@
             "simpleType" : "EnvironmentLink",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>",
-            "templateType" : "java.util.List<EnvironmentLink>"
+            "templateType" : "java.util.List<EnvironmentLink>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -38545,8 +38545,8 @@
           "simpleType" : "EnvironmentLink",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>",
-          "templateType" : "java.util.List<EnvironmentLink>"
+          "templateType" : "java.util.List<EnvironmentLink>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -39534,8 +39534,8 @@
             "simpleType" : "EnvironmentLink",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>",
-            "templateType" : "java.util.List<EnvironmentLink>"
+            "templateType" : "java.util.List<EnvironmentLink>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -39907,8 +39907,8 @@
           "simpleType" : "SingleInstanceHealth",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SingleInstanceHealth>",
-          "templateType" : "java.util.List<SingleInstanceHealth>"
+          "templateType" : "java.util.List<SingleInstanceHealth>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SingleInstanceHealth>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40205,8 +40205,8 @@
             "simpleType" : "SingleInstanceHealth",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SingleInstanceHealth>",
-            "templateType" : "java.util.List<SingleInstanceHealth>"
+            "templateType" : "java.util.List<SingleInstanceHealth>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SingleInstanceHealth>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -40441,8 +40441,8 @@
           "simpleType" : "AutoScalingGroup",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-          "templateType" : "java.util.List<AutoScalingGroup>"
+          "templateType" : "java.util.List<AutoScalingGroup>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40559,8 +40559,8 @@
           "simpleType" : "Instance",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
-          "templateType" : "java.util.List<Instance>"
+          "templateType" : "java.util.List<Instance>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40677,8 +40677,8 @@
           "simpleType" : "LaunchConfiguration",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LaunchConfiguration>",
-          "templateType" : "java.util.List<LaunchConfiguration>"
+          "templateType" : "java.util.List<LaunchConfiguration>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LaunchConfiguration>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40795,8 +40795,8 @@
           "simpleType" : "LoadBalancer",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>",
-          "templateType" : "java.util.List<LoadBalancer>"
+          "templateType" : "java.util.List<LoadBalancer>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40913,8 +40913,8 @@
           "simpleType" : "Trigger",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trigger>",
-          "templateType" : "java.util.List<Trigger>"
+          "templateType" : "java.util.List<Trigger>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trigger>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -41031,8 +41031,8 @@
           "simpleType" : "Queue",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Queue>",
-          "templateType" : "java.util.List<Queue>"
+          "templateType" : "java.util.List<Queue>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Queue>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -41172,8 +41172,8 @@
             "simpleType" : "Queue",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Queue>",
-            "templateType" : "java.util.List<Queue>"
+            "templateType" : "java.util.List<Queue>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Queue>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -41291,8 +41291,8 @@
             "simpleType" : "AutoScalingGroup",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-            "templateType" : "java.util.List<AutoScalingGroup>"
+            "templateType" : "java.util.List<AutoScalingGroup>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -41463,8 +41463,8 @@
             "simpleType" : "LoadBalancer",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>",
-            "templateType" : "java.util.List<LoadBalancer>"
+            "templateType" : "java.util.List<LoadBalancer>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancer>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -41582,8 +41582,8 @@
             "simpleType" : "LaunchConfiguration",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LaunchConfiguration>",
-            "templateType" : "java.util.List<LaunchConfiguration>"
+            "templateType" : "java.util.List<LaunchConfiguration>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LaunchConfiguration>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -41701,8 +41701,8 @@
             "simpleType" : "Instance",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
-            "templateType" : "java.util.List<Instance>"
+            "templateType" : "java.util.List<Instance>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -41820,8 +41820,8 @@
             "simpleType" : "Trigger",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trigger>",
-            "templateType" : "java.util.List<Trigger>"
+            "templateType" : "java.util.List<Trigger>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trigger>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -44075,8 +44075,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -44426,8 +44426,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -44880,8 +44880,8 @@
           "simpleType" : "Double",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Double>",
-          "templateType" : "java.util.List<Double>"
+          "templateType" : "java.util.List<Double>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Double>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -45022,8 +45022,8 @@
             "simpleType" : "Double",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Double>",
-            "templateType" : "java.util.List<Double>"
+            "templateType" : "java.util.List<Double>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Double>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -45465,8 +45465,8 @@
           "simpleType" : "ConfigurationOptionSetting",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-          "templateType" : "java.util.List<ConfigurationOptionSetting>"
+          "templateType" : "java.util.List<ConfigurationOptionSetting>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -45928,8 +45928,8 @@
             "simpleType" : "ConfigurationOptionSetting",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-            "templateType" : "java.util.List<ConfigurationOptionSetting>"
+            "templateType" : "java.util.List<ConfigurationOptionSetting>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -46475,8 +46475,8 @@
           "simpleType" : "ConfigurationOptionSetting",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-          "templateType" : "java.util.List<ConfigurationOptionSetting>"
+          "templateType" : "java.util.List<ConfigurationOptionSetting>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -47040,8 +47040,8 @@
             "simpleType" : "ConfigurationOptionSetting",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>",
-            "templateType" : "java.util.List<ConfigurationOptionSetting>"
+            "templateType" : "java.util.List<ConfigurationOptionSetting>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -48346,8 +48346,8 @@
           "simpleType" : "EnvironmentLink",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>",
-          "templateType" : "java.util.List<EnvironmentLink>"
+          "templateType" : "java.util.List<EnvironmentLink>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -49335,8 +49335,8 @@
             "simpleType" : "EnvironmentLink",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>",
-            "templateType" : "java.util.List<EnvironmentLink>"
+            "templateType" : "java.util.List<EnvironmentLink>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnvironmentLink>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -50122,8 +50122,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -50188,8 +50188,8 @@
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -50383,8 +50383,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -50556,8 +50556,8 @@
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,

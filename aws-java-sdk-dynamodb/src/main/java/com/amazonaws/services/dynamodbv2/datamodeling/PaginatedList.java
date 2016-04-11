@@ -14,6 +14,9 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -22,9 +25,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
-
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
 
 /**
  * Unmodifiable list supporting paginated result sets from Amazon DynamoDB.
@@ -253,7 +253,20 @@ public abstract class PaginatedList<T> implements List<T> {
         
         @Override
         public boolean hasNext() {
-            return innerIterator.hasNext() || nextResultsAvailable();
+            return innerIterator.hasNext() || shouldSyncWithAllResultsList() ||
+                   nextResultsAvailable();
+        }
+
+        /**
+         * If we aren't in ITERATION_ONLY mode then allResults is the authoriative source of
+         * results. If it's size has increased since this iterator was last synched with it then we
+         * have more results to process and need to re-sync allResultsCopy with allResults.
+         *
+         * @return True if more results are available in allResults then what we have currently
+         * snapshoted in the iterator, false otherwise.
+         */
+        private boolean shouldSyncWithAllResultsList() {
+            return !iterationOnly && allResults.size() > allResultsCopy.size();
         }
 
         @Override
@@ -286,8 +299,10 @@ public abstract class PaginatedList<T> implements List<T> {
                     /*
                      * Update our private results copy, and then update the inner iterator
                      */
-                    if ( allResults.size() > allResultsCopy.size() )
-                        allResultsCopy.addAll(allResults.subList(allResultsCopy.size(), allResults.size()));
+                    if (allResults.size() > allResultsCopy.size()) {
+                        allResultsCopy.addAll(allResults.subList(allResultsCopy.size(),
+                                                                 allResults.size()));
+                    }
                     
                     innerIterator = allResultsCopy.listIterator(pos);
                 }

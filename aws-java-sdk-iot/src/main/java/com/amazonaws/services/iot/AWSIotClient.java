@@ -255,6 +255,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                         "MalformedPolicyException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.iot.model.CertificateConflictException.class,
+                        "CertificateConflictException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.iot.model.ResourceNotFoundException.class,
                         "ResourceNotFoundException"));
         jsonErrorUnmarshallers
@@ -271,15 +275,23 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                         "ServiceUnavailableException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.iot.model.CertificateValidationException.class,
+                        "CertificateValidationException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.iot.model.RegistrationCodeValidationException.class,
+                        "RegistrationCodeValidationException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.iot.model.VersionsLimitExceededException.class,
                         "VersionsLimitExceededException"));
+        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
+                com.amazonaws.services.iot.model.DeleteConflictException.class,
+                "DeleteConflictException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.iot.model.InternalFailureException.class,
                         "InternalFailureException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.iot.model.DeleteConflictException.class,
-                "DeleteConflictException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.iot.model.TransferConflictException.class,
@@ -974,6 +986,63 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     }
 
     /**
+     * @param deleteCACertificateRequest
+     * @return Result of the DeleteCACertificate operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DeleteCACertificate
+     */
+    @Override
+    public DeleteCACertificateResult deleteCACertificate(
+            DeleteCACertificateRequest deleteCACertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCACertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCACertificateRequest> request = null;
+        Response<DeleteCACertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCACertificateRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deleteCACertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DeleteCACertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteCACertificateResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Deletes the specified certificate.
      * </p>
@@ -987,13 +1056,23 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * 
      * @param deleteCertificateRequest
      *        The input for the DeleteCertificate operation.
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or
      *         more resources.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
-     * @throws CertificateStateException
-     *         The certificate operation is not allowed.
      * @sample AWSIot.DeleteCertificate
      */
     @Override
@@ -1159,6 +1238,57 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     }
 
     /**
+     * @param deleteRegistrationCodeRequest
+     * @return Result of the DeleteRegistrationCode operation returned by the
+     *         service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteRegistrationCode
+     */
+    @Override
+    public DeleteRegistrationCodeResult deleteRegistrationCode(
+            DeleteRegistrationCodeRequest deleteRegistrationCodeRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteRegistrationCodeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRegistrationCodeRequest> request = null;
+        Response<DeleteRegistrationCodeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRegistrationCodeRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(deleteRegistrationCodeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DeleteRegistrationCodeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DeleteRegistrationCodeResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Deletes the specified thing from the Thing Registry.
      * </p>
@@ -1255,6 +1385,61 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                     .createResponseHandler(null, false);
             responseHandler.setIsPayloadJson(true);
             invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param describeCACertificateRequest
+     * @return Result of the DescribeCACertificate operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DescribeCACertificate
+     */
+    @Override
+    public DescribeCACertificateResult describeCACertificate(
+            DescribeCACertificateRequest describeCACertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCACertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCACertificateRequest> request = null;
+        Response<DescribeCACertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCACertificateRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeCACertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<DescribeCACertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new DescribeCACertificateResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1814,6 +1999,57 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     }
 
     /**
+     * @param getRegistrationCodeRequest
+     * @return Result of the GetRegistrationCode operation returned by the
+     *         service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.GetRegistrationCode
+     */
+    @Override
+    public GetRegistrationCodeResult getRegistrationCode(
+            GetRegistrationCodeRequest getRegistrationCodeRequest) {
+        ExecutionContext executionContext = createExecutionContext(getRegistrationCodeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRegistrationCodeRequest> request = null;
+        Response<GetRegistrationCodeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRegistrationCodeRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(getRegistrationCodeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<GetRegistrationCodeResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetRegistrationCodeResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Gets information about the specified rule.
      * </p>
@@ -1855,6 +2091,59 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             JsonResponseHandler<GetTopicRuleResult> responseHandler = SdkJsonProtocolFactory
                     .createResponseHandler(
                             new GetTopicRuleResultJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param listCACertificatesRequest
+     * @return Result of the ListCACertificates operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCACertificates
+     */
+    @Override
+    public ListCACertificatesResult listCACertificates(
+            ListCACertificatesRequest listCACertificatesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listCACertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCACertificatesRequest> request = null;
+        Response<ListCACertificatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCACertificatesRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listCACertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ListCACertificatesResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListCACertificatesResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -1915,6 +2204,59 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             JsonResponseHandler<ListCertificatesResult> responseHandler = SdkJsonProtocolFactory
                     .createResponseHandler(
                             new ListCertificatesResultJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param listCertificatesByCARequest
+     * @return Result of the ListCertificatesByCA operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCertificatesByCA
+     */
+    @Override
+    public ListCertificatesByCAResult listCertificatesByCA(
+            ListCertificatesByCARequest listCertificatesByCARequest) {
+        ExecutionContext executionContext = createExecutionContext(listCertificatesByCARequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCertificatesByCARequest> request = null;
+        Response<ListCertificatesByCAResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCertificatesByCARequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listCertificatesByCARequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ListCertificatesByCAResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListCertificatesByCAResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 
@@ -2329,6 +2671,124 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     }
 
     /**
+     * @param registerCACertificateRequest
+     * @return Result of the RegisterCACertificate operation returned by the
+     *         service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws RegistrationCodeValidationException
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateValidationException
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.RegisterCACertificate
+     */
+    @Override
+    public RegisterCACertificateResult registerCACertificate(
+            RegisterCACertificateRequest registerCACertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerCACertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterCACertificateRequest> request = null;
+        Response<RegisterCACertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterCACertificateRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(registerCACertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<RegisterCACertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RegisterCACertificateResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param registerCertificateRequest
+     * @return Result of the RegisterCertificate operation returned by the
+     *         service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateValidationException
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
+     * @throws CertificateConflictException
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.RegisterCertificate
+     */
+    @Override
+    public RegisterCertificateResult registerCertificate(
+            RegisterCertificateRequest registerCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterCertificateRequest> request = null;
+        Response<RegisterCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterCertificateRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(registerCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<RegisterCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new RegisterCertificateResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a
      * certificate transfer, the certificate status changes from
@@ -2628,6 +3088,55 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param updateCACertificateRequest
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCACertificate
+     */
+    @Override
+    public void updateCACertificate(
+            UpdateCACertificateRequest updateCACertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateCACertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCACertificateRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCACertificateRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(updateCACertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 

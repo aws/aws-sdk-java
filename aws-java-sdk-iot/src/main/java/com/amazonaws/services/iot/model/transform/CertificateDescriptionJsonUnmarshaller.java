@@ -63,6 +63,11 @@ public class CertificateDescriptionJsonUnmarshaller implements
                     certificateDescription.setCertificateId(context
                             .getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("caCertificateId", targetDepth)) {
+                    context.nextToken();
+                    certificateDescription.setCaCertificateId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     certificateDescription.setStatus(context.getUnmarshaller(
@@ -78,6 +83,11 @@ public class CertificateDescriptionJsonUnmarshaller implements
                     certificateDescription.setOwnedBy(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("previousOwnedBy", targetDepth)) {
+                    context.nextToken();
+                    certificateDescription.setPreviousOwnedBy(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
                     certificateDescription.setCreationDate(context
@@ -89,6 +99,12 @@ public class CertificateDescriptionJsonUnmarshaller implements
                     certificateDescription.setLastModifiedDate(context
                             .getUnmarshaller(java.util.Date.class).unmarshall(
                                     context));
+                }
+                if (context.testExpression("transferData", targetDepth)) {
+                    context.nextToken();
+                    certificateDescription
+                            .setTransferData(TransferDataJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

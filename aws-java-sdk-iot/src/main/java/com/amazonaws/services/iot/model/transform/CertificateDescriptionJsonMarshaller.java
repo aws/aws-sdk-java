@@ -55,6 +55,10 @@ public class CertificateDescriptionJsonMarshaller {
                 jsonGenerator.writeFieldName("certificateId").writeValue(
                         certificateDescription.getCertificateId());
             }
+            if (certificateDescription.getCaCertificateId() != null) {
+                jsonGenerator.writeFieldName("caCertificateId").writeValue(
+                        certificateDescription.getCaCertificateId());
+            }
             if (certificateDescription.getStatus() != null) {
                 jsonGenerator.writeFieldName("status").writeValue(
                         certificateDescription.getStatus());
@@ -67,6 +71,10 @@ public class CertificateDescriptionJsonMarshaller {
                 jsonGenerator.writeFieldName("ownedBy").writeValue(
                         certificateDescription.getOwnedBy());
             }
+            if (certificateDescription.getPreviousOwnedBy() != null) {
+                jsonGenerator.writeFieldName("previousOwnedBy").writeValue(
+                        certificateDescription.getPreviousOwnedBy());
+            }
             if (certificateDescription.getCreationDate() != null) {
                 jsonGenerator.writeFieldName("creationDate").writeValue(
                         certificateDescription.getCreationDate());
@@ -74,6 +82,12 @@ public class CertificateDescriptionJsonMarshaller {
             if (certificateDescription.getLastModifiedDate() != null) {
                 jsonGenerator.writeFieldName("lastModifiedDate").writeValue(
                         certificateDescription.getLastModifiedDate());
+            }
+            if (certificateDescription.getTransferData() != null) {
+                jsonGenerator.writeFieldName("transferData");
+                TransferDataJsonMarshaller.getInstance()
+                        .marshall(certificateDescription.getTransferData(),
+                                jsonGenerator);
             }
 
             jsonGenerator.writeEndObject();

@@ -73,9 +73,28 @@ public class RejectCertificateTransferRequestMarshaller
                                         .getCertificateId()) : "");
         request.setResourcePath(uriResourcePath);
 
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+        try {
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
+
+            jsonGenerator.writeStartObject();
+
+            if (rejectCertificateTransferRequest.getRejectReason() != null) {
+                jsonGenerator.writeFieldName("rejectReason").writeValue(
+                        rejectCertificateTransferRequest.getRejectReason());
+            }
+
+            jsonGenerator.writeEndObject();
+
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            if (!request.getHeaders().containsKey("Content-Type")) {
+                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            }
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

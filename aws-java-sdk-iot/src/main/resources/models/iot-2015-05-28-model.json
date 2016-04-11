@@ -539,7 +539,7 @@
       "errors":[
         {
           "shape":"SqlParseException",
-          "error":{"httpStatusCode":406},
+          "error":{"httpStatusCode":400},
           "exception":true,
           "documentation":"<p>The Rule-SQL expression can't be parsed correctly.</p>"
         },
@@ -572,6 +572,61 @@
       ],
       "documentation":"<p>Creates a rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.</p>"
     },
+    "DeleteCACertificate":{
+      "name":"DeleteCACertificate",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/cacertificate/{certificateId}"
+      },
+      "input":{"shape":"DeleteCACertificateRequest"},
+      "output":{"shape":"DeleteCACertificateResponse"},
+      "errors":[
+        {
+          "shape":"InvalidRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true,
+          "documentation":"<p>The request is not valid.</p>"
+        },
+        {
+          "shape":"CertificateStateException",
+          "error":{"httpStatusCode":406},
+          "exception":true,
+          "documentation":"<p>The certificate operation is not allowed.</p>"
+        },
+        {
+          "shape":"ThrottlingException",
+          "error":{"httpStatusCode":429},
+          "exception":true,
+          "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true,
+          "documentation":"<p>You are not authorized to perform this operation.</p>"
+        },
+        {
+          "shape":"ServiceUnavailableException",
+          "error":{"httpStatusCode":503},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>The service is temporarily unavailable.</p>"
+        },
+        {
+          "shape":"InternalFailureException",
+          "error":{"httpStatusCode":500},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>An unexpected error has occurred.</p>"
+        },
+        {
+          "shape":"ResourceNotFoundException",
+          "error":{"httpStatusCode":404},
+          "exception":true,
+          "documentation":"<p>The specified resource does not exist.</p>"
+        }
+      ]
+    },
     "DeleteCertificate":{
       "name":"DeleteCertificate",
       "http":{
@@ -584,22 +639,54 @@
       },
       "errors":[
         {
+          "shape":"CertificateStateException",
+          "error":{"httpStatusCode":406},
+          "exception":true,
+          "documentation":"<p>The certificate operation is not allowed.</p>"
+        },
+        {
           "shape":"DeleteConflictException",
           "error":{"httpStatusCode":409},
           "exception":true,
           "documentation":"<p>You can't delete the resource because it is attached to one or more resources.</p>"
         },
         {
+          "shape":"InvalidRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true,
+          "documentation":"<p>The request is not valid.</p>"
+        },
+        {
+          "shape":"ThrottlingException",
+          "error":{"httpStatusCode":429},
+          "exception":true,
+          "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true,
+          "documentation":"<p>You are not authorized to perform this operation.</p>"
+        },
+        {
+          "shape":"ServiceUnavailableException",
+          "error":{"httpStatusCode":503},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>The service is temporarily unavailable.</p>"
+        },
+        {
+          "shape":"InternalFailureException",
+          "error":{"httpStatusCode":500},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>An unexpected error has occurred.</p>"
+        },
+        {
           "shape":"ResourceNotFoundException",
           "error":{"httpStatusCode":404},
           "exception":true,
           "documentation":"<p>The specified resource does not exist.</p>"
-        },
-        {
-          "shape":"CertificateStateException",
-          "error":{"httpStatusCode":406},
-          "exception":true,
-          "documentation":"<p>The certificate operation is not allowed.</p>"
         }
       ],
       "documentation":"<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.</p>"
@@ -720,6 +807,43 @@
       ],
       "documentation":"<p>Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.</p>"
     },
+    "DeleteRegistrationCode":{
+      "name":"DeleteRegistrationCode",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/registrationcode"
+      },
+      "input":{"shape":"DeleteRegistrationCodeRequest"},
+      "output":{"shape":"DeleteRegistrationCodeResponse"},
+      "errors":[
+        {
+          "shape":"ThrottlingException",
+          "error":{"httpStatusCode":429},
+          "exception":true,
+          "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true,
+          "documentation":"<p>You are not authorized to perform this operation.</p>"
+        },
+        {
+          "shape":"ServiceUnavailableException",
+          "error":{"httpStatusCode":503},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>The service is temporarily unavailable.</p>"
+        },
+        {
+          "shape":"InternalFailureException",
+          "error":{"httpStatusCode":500},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>An unexpected error has occurred.</p>"
+        }
+      ]
+    },
     "DeleteThing":{
       "name":"DeleteThing",
       "http":{
@@ -815,6 +939,55 @@
         }
       ],
       "documentation":"<p>Deletes the specified rule.</p>"
+    },
+    "DescribeCACertificate":{
+      "name":"DescribeCACertificate",
+      "http":{
+        "method":"GET",
+        "requestUri":"/cacertificate/{certificateId}"
+      },
+      "input":{"shape":"DescribeCACertificateRequest"},
+      "output":{"shape":"DescribeCACertificateResponse"},
+      "errors":[
+        {
+          "shape":"InvalidRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true,
+          "documentation":"<p>The request is not valid.</p>"
+        },
+        {
+          "shape":"ThrottlingException",
+          "error":{"httpStatusCode":429},
+          "exception":true,
+          "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true,
+          "documentation":"<p>You are not authorized to perform this operation.</p>"
+        },
+        {
+          "shape":"ServiceUnavailableException",
+          "error":{"httpStatusCode":503},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>The service is temporarily unavailable.</p>"
+        },
+        {
+          "shape":"InternalFailureException",
+          "error":{"httpStatusCode":500},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>An unexpected error has occurred.</p>"
+        },
+        {
+          "shape":"ResourceNotFoundException",
+          "error":{"httpStatusCode":404},
+          "exception":true,
+          "documentation":"<p>The specified resource does not exist.</p>"
+        }
+      ]
     },
     "DescribeCertificate":{
       "name":"DescribeCertificate",
@@ -1303,6 +1476,43 @@
       ],
       "documentation":"<p>Gets information about the specified policy version.</p>"
     },
+    "GetRegistrationCode":{
+      "name":"GetRegistrationCode",
+      "http":{
+        "method":"GET",
+        "requestUri":"/registrationcode"
+      },
+      "input":{"shape":"GetRegistrationCodeRequest"},
+      "output":{"shape":"GetRegistrationCodeResponse"},
+      "errors":[
+        {
+          "shape":"ThrottlingException",
+          "error":{"httpStatusCode":429},
+          "exception":true,
+          "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true,
+          "documentation":"<p>You are not authorized to perform this operation.</p>"
+        },
+        {
+          "shape":"ServiceUnavailableException",
+          "error":{"httpStatusCode":503},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>The service is temporarily unavailable.</p>"
+        },
+        {
+          "shape":"InternalFailureException",
+          "error":{"httpStatusCode":500},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>An unexpected error has occurred.</p>"
+        }
+      ]
+    },
     "GetTopicRule":{
       "name":"GetTopicRule",
       "http":{
@@ -1346,6 +1556,49 @@
         }
       ],
       "documentation":"<p>Gets information about the specified rule.</p>"
+    },
+    "ListCACertificates":{
+      "name":"ListCACertificates",
+      "http":{
+        "method":"GET",
+        "requestUri":"/cacertificates"
+      },
+      "input":{"shape":"ListCACertificatesRequest"},
+      "output":{"shape":"ListCACertificatesResponse"},
+      "errors":[
+        {
+          "shape":"InvalidRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true,
+          "documentation":"<p>The request is not valid.</p>"
+        },
+        {
+          "shape":"ThrottlingException",
+          "error":{"httpStatusCode":429},
+          "exception":true,
+          "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true,
+          "documentation":"<p>You are not authorized to perform this operation.</p>"
+        },
+        {
+          "shape":"ServiceUnavailableException",
+          "error":{"httpStatusCode":503},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>The service is temporarily unavailable.</p>"
+        },
+        {
+          "shape":"InternalFailureException",
+          "error":{"httpStatusCode":500},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>An unexpected error has occurred.</p>"
+        }
+      ]
     },
     "ListCertificates":{
       "name":"ListCertificates",
@@ -1396,6 +1649,49 @@
         }
       ],
       "documentation":"<p>Lists your certificates.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>"
+    },
+    "ListCertificatesByCA":{
+      "name":"ListCertificatesByCA",
+      "http":{
+        "method":"GET",
+        "requestUri":"/certificates-by-ca/{caCertificateId}"
+      },
+      "input":{"shape":"ListCertificatesByCARequest"},
+      "output":{"shape":"ListCertificatesByCAResponse"},
+      "errors":[
+        {
+          "shape":"InvalidRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true,
+          "documentation":"<p>The request is not valid.</p>"
+        },
+        {
+          "shape":"ThrottlingException",
+          "error":{"httpStatusCode":429},
+          "exception":true,
+          "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true,
+          "documentation":"<p>You are not authorized to perform this operation.</p>"
+        },
+        {
+          "shape":"ServiceUnavailableException",
+          "error":{"httpStatusCode":503},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>The service is temporarily unavailable.</p>"
+        },
+        {
+          "shape":"InternalFailureException",
+          "error":{"httpStatusCode":500},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>An unexpected error has occurred.</p>"
+        }
+      ]
     },
     "ListPolicies":{
       "name":"ListPolicies",
@@ -1747,6 +2043,136 @@
       ],
       "documentation":"<p>Lists the rules for the specific topic.</p>"
     },
+    "RegisterCACertificate":{
+      "name":"RegisterCACertificate",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cacertificate"
+      },
+      "input":{"shape":"RegisterCACertificateRequest"},
+      "output":{"shape":"RegisterCACertificateResponse"},
+      "errors":[
+        {
+          "shape":"ResourceAlreadyExistsException",
+          "error":{"httpStatusCode":409},
+          "exception":true,
+          "documentation":"<p>The resource already exists.</p>"
+        },
+        {
+          "shape":"RegistrationCodeValidationException",
+          "error":{"httpStatusCode":400},
+          "exception":true
+        },
+        {
+          "shape":"InvalidRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true,
+          "documentation":"<p>The request is not valid.</p>"
+        },
+        {
+          "shape":"CertificateValidationException",
+          "error":{"httpStatusCode":400},
+          "exception":true
+        },
+        {
+          "shape":"ThrottlingException",
+          "error":{"httpStatusCode":429},
+          "exception":true,
+          "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"LimitExceededException",
+          "error":{"httpStatusCode":410},
+          "exception":true,
+          "documentation":"<p>The number of attached entities exceeds the limit.</p>"
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true,
+          "documentation":"<p>You are not authorized to perform this operation.</p>"
+        },
+        {
+          "shape":"ServiceUnavailableException",
+          "error":{"httpStatusCode":503},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>The service is temporarily unavailable.</p>"
+        },
+        {
+          "shape":"InternalFailureException",
+          "error":{"httpStatusCode":500},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>An unexpected error has occurred.</p>"
+        }
+      ]
+    },
+    "RegisterCertificate":{
+      "name":"RegisterCertificate",
+      "http":{
+        "method":"POST",
+        "requestUri":"/certificate/register"
+      },
+      "input":{"shape":"RegisterCertificateRequest"},
+      "output":{"shape":"RegisterCertificateResponse"},
+      "errors":[
+        {
+          "shape":"ResourceAlreadyExistsException",
+          "error":{"httpStatusCode":409},
+          "exception":true,
+          "documentation":"<p>The resource already exists.</p>"
+        },
+        {
+          "shape":"InvalidRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true,
+          "documentation":"<p>The request is not valid.</p>"
+        },
+        {
+          "shape":"CertificateValidationException",
+          "error":{"httpStatusCode":400},
+          "exception":true
+        },
+        {
+          "shape":"CertificateStateException",
+          "error":{"httpStatusCode":406},
+          "exception":true,
+          "documentation":"<p>The certificate operation is not allowed.</p>"
+        },
+        {
+          "shape":"CertificateConflictException",
+          "error":{"httpStatusCode":409},
+          "exception":true
+        },
+        {
+          "shape":"ThrottlingException",
+          "error":{"httpStatusCode":429},
+          "exception":true,
+          "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true,
+          "documentation":"<p>You are not authorized to perform this operation.</p>"
+        },
+        {
+          "shape":"ServiceUnavailableException",
+          "error":{"httpStatusCode":503},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>The service is temporarily unavailable.</p>"
+        },
+        {
+          "shape":"InternalFailureException",
+          "error":{"httpStatusCode":500},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>An unexpected error has occurred.</p>"
+        }
+      ]
+    },
     "RejectCertificateTransfer":{
       "name":"RejectCertificateTransfer",
       "http":{
@@ -1818,7 +2244,7 @@
       "errors":[
         {
           "shape":"SqlParseException",
-          "error":{"httpStatusCode":406},
+          "error":{"httpStatusCode":400},
           "exception":true,
           "documentation":"<p>The Rule-SQL expression can't be parsed correctly.</p>"
         },
@@ -2004,6 +2430,54 @@
         }
       ],
       "documentation":"<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account. It is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. You can use the UpdateCertificate API to deactivate it.</p> <p>The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy API to detach them.</p>"
+    },
+    "UpdateCACertificate":{
+      "name":"UpdateCACertificate",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/cacertificate/{certificateId}"
+      },
+      "input":{"shape":"UpdateCACertificateRequest"},
+      "errors":[
+        {
+          "shape":"ResourceNotFoundException",
+          "error":{"httpStatusCode":404},
+          "exception":true,
+          "documentation":"<p>The specified resource does not exist.</p>"
+        },
+        {
+          "shape":"InvalidRequestException",
+          "error":{"httpStatusCode":400},
+          "exception":true,
+          "documentation":"<p>The request is not valid.</p>"
+        },
+        {
+          "shape":"ThrottlingException",
+          "error":{"httpStatusCode":429},
+          "exception":true,
+          "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"UnauthorizedException",
+          "error":{"httpStatusCode":401},
+          "exception":true,
+          "documentation":"<p>You are not authorized to perform this operation.</p>"
+        },
+        {
+          "shape":"ServiceUnavailableException",
+          "error":{"httpStatusCode":503},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>The service is temporarily unavailable.</p>"
+        },
+        {
+          "shape":"InternalFailureException",
+          "error":{"httpStatusCode":500},
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>An unexpected error has occurred.</p>"
+        }
+      ]
     },
     "UpdateCertificate":{
       "name":"UpdateCertificate",
@@ -2279,6 +2753,37 @@
     },
     "AwsArn":{"type":"string"},
     "BucketName":{"type":"string"},
+    "CACertificate":{
+      "type":"structure",
+      "members":{
+        "certificateArn":{"shape":"CertificateArn"},
+        "certificateId":{"shape":"CertificateId"},
+        "status":{"shape":"CACertificateStatus"},
+        "creationDate":{"shape":"DateType"}
+      }
+    },
+    "CACertificateDescription":{
+      "type":"structure",
+      "members":{
+        "certificateArn":{"shape":"CertificateArn"},
+        "certificateId":{"shape":"CertificateId"},
+        "status":{"shape":"CACertificateStatus"},
+        "certificatePem":{"shape":"CertificatePem"},
+        "ownedBy":{"shape":"AwsAccountId"},
+        "creationDate":{"shape":"DateType"}
+      }
+    },
+    "CACertificateStatus":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "INACTIVE"
+      ]
+    },
+    "CACertificates":{
+      "type":"list",
+      "member":{"shape":"CACertificate"}
+    },
     "CancelCertificateTransferRequest":{
       "type":"structure",
       "required":["certificateId"],
@@ -2315,6 +2820,14 @@
       "documentation":"<p>Information about a certificate.</p>"
     },
     "CertificateArn":{"type":"string"},
+    "CertificateConflictException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"errorMessage"}
+      },
+      "error":{"httpStatusCode":409},
+      "exception":true
+    },
     "CertificateDescription":{
       "type":"structure",
       "members":{
@@ -2326,6 +2839,7 @@
           "shape":"CertificateId",
           "documentation":"<p>The ID of the certificate.</p>"
         },
+        "caCertificateId":{"shape":"CertificateId"},
         "status":{
           "shape":"CertificateStatus",
           "documentation":"<p>The status of the certificate.</p>"
@@ -2338,6 +2852,7 @@
           "shape":"AwsAccountId",
           "documentation":"<p>The ID of the AWS account that owns the certificate.</p>"
         },
+        "previousOwnedBy":{"shape":"AwsAccountId"},
         "creationDate":{
           "shape":"DateType",
           "documentation":"<p>The date and time the certificate was created.</p>"
@@ -2345,7 +2860,8 @@
         "lastModifiedDate":{
           "shape":"DateType",
           "documentation":"<p>The date and time the certificate was last modified.</p>"
-        }
+        },
+        "transferData":{"shape":"TransferData"}
       },
       "documentation":"<p>Describes a certificate.</p>"
     },
@@ -2357,7 +2873,8 @@
     },
     "CertificatePem":{
       "type":"string",
-      "min":1
+      "min":1,
+      "max":65536
     },
     "CertificateSigningRequest":{
       "type":"string",
@@ -2381,8 +2898,17 @@
         "ACTIVE",
         "INACTIVE",
         "REVOKED",
-        "PENDING_TRANSFER"
+        "PENDING_TRANSFER",
+        "REGISTER_INACTIVE"
       ]
+    },
+    "CertificateValidationException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"errorMessage"}
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
     },
     "Certificates":{
       "type":"list",
@@ -2667,6 +3193,22 @@
     },
     "CreatedAtDate":{"type":"timestamp"},
     "DateType":{"type":"timestamp"},
+    "DeleteCACertificateRequest":{
+      "type":"structure",
+      "required":["certificateId"],
+      "members":{
+        "certificateId":{
+          "shape":"CertificateId",
+          "location":"uri",
+          "locationName":"certificateId"
+        }
+      }
+    },
+    "DeleteCACertificateResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteCertificateRequest":{
       "type":"structure",
       "required":["certificateId"],
@@ -2727,6 +3269,16 @@
       },
       "documentation":"<p>The input for the DeletePolicyVersion operation.</p>"
     },
+    "DeleteRegistrationCodeRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteRegistrationCodeResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteThingRequest":{
       "type":"structure",
       "required":["thingName"],
@@ -2760,6 +3312,23 @@
       "required":["ruleName"]
     },
     "DeliveryStreamName":{"type":"string"},
+    "DescribeCACertificateRequest":{
+      "type":"structure",
+      "required":["certificateId"],
+      "members":{
+        "certificateId":{
+          "shape":"CertificateId",
+          "location":"uri",
+          "locationName":"certificateId"
+        }
+      }
+    },
+    "DescribeCACertificateResponse":{
+      "type":"structure",
+      "members":{
+        "certificateDescription":{"shape":"CACertificateDescription"}
+      }
+    },
     "DescribeCertificateRequest":{
       "type":"structure",
       "required":["certificateId"],
@@ -3112,6 +3681,17 @@
       },
       "documentation":"<p>The output from the GetPolicyVersion operation.</p>"
     },
+    "GetRegistrationCodeRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "GetRegistrationCodeResponse":{
+      "type":"structure",
+      "members":{
+        "registrationCode":{"shape":"RegistrationCode"}
+      }
+    },
     "GetTopicRuleRequest":{
       "type":"structure",
       "required":["ruleName"],
@@ -3240,6 +3820,66 @@
       "error":{"httpStatusCode":410},
       "exception":true,
       "documentation":"<p>The number of attached entities exceeds the limit.</p>"
+    },
+    "ListCACertificatesRequest":{
+      "type":"structure",
+      "members":{
+        "pageSize":{
+          "shape":"PageSize",
+          "location":"querystring",
+          "locationName":"pageSize"
+        },
+        "marker":{
+          "shape":"Marker",
+          "location":"querystring",
+          "locationName":"marker"
+        },
+        "ascendingOrder":{
+          "shape":"AscendingOrder",
+          "location":"querystring",
+          "locationName":"isAscendingOrder"
+        }
+      }
+    },
+    "ListCACertificatesResponse":{
+      "type":"structure",
+      "members":{
+        "certificates":{"shape":"CACertificates"},
+        "nextMarker":{"shape":"Marker"}
+      }
+    },
+    "ListCertificatesByCARequest":{
+      "type":"structure",
+      "required":["caCertificateId"],
+      "members":{
+        "caCertificateId":{
+          "shape":"CertificateId",
+          "location":"uri",
+          "locationName":"caCertificateId"
+        },
+        "pageSize":{
+          "shape":"PageSize",
+          "location":"querystring",
+          "locationName":"pageSize"
+        },
+        "marker":{
+          "shape":"Marker",
+          "location":"querystring",
+          "locationName":"marker"
+        },
+        "ascendingOrder":{
+          "shape":"AscendingOrder",
+          "location":"querystring",
+          "locationName":"isAscendingOrder"
+        }
+      }
+    },
+    "ListCertificatesByCAResponse":{
+      "type":"structure",
+      "members":{
+        "certificates":{"shape":"Certificates"},
+        "nextMarker":{"shape":"Marker"}
+      }
     },
     "ListCertificatesRequest":{
       "type":"structure",
@@ -3578,6 +4218,10 @@
       "min":1,
       "max":10000
     },
+    "Message":{
+      "type":"string",
+      "max":128
+    },
     "MessageFormat":{
       "type":"string",
       "enum":[
@@ -3668,6 +4312,63 @@
     "QueueUrl":{"type":"string"},
     "RangeKeyField":{"type":"string"},
     "RangeKeyValue":{"type":"string"},
+    "RegisterCACertificateRequest":{
+      "type":"structure",
+      "required":[
+        "caCertificate",
+        "verificationCertificate"
+      ],
+      "members":{
+        "caCertificate":{"shape":"CertificatePem"},
+        "verificationCertificate":{"shape":"CertificatePem"},
+        "setAsActive":{
+          "shape":"SetAsActive",
+          "location":"querystring",
+          "locationName":"setAsActive"
+        }
+      }
+    },
+    "RegisterCACertificateResponse":{
+      "type":"structure",
+      "members":{
+        "certificateArn":{"shape":"CertificateArn"},
+        "certificateId":{"shape":"CertificateId"}
+      }
+    },
+    "RegisterCertificateRequest":{
+      "type":"structure",
+      "required":["certificatePem"],
+      "members":{
+        "certificatePem":{"shape":"CertificatePem"},
+        "caCertificatePem":{"shape":"CertificatePem"},
+        "setAsActive":{
+          "shape":"SetAsActive",
+          "location":"querystring",
+          "locationName":"setAsActive"
+        }
+      }
+    },
+    "RegisterCertificateResponse":{
+      "type":"structure",
+      "members":{
+        "certificateArn":{"shape":"CertificateArn"},
+        "certificateId":{"shape":"CertificateId"}
+      }
+    },
+    "RegistrationCode":{
+      "type":"string",
+      "min":64,
+      "max":64,
+      "pattern":"(0x)?[a-fA-F0-9]+"
+    },
+    "RegistrationCodeValidationException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"errorMessage"}
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
     "RejectCertificateTransferRequest":{
       "type":"structure",
       "required":["certificateId"],
@@ -3677,7 +4378,8 @@
           "location":"uri",
           "locationName":"certificateId",
           "documentation":"<p>The ID of the certificate.</p>"
-        }
+        },
+        "rejectReason":{"shape":"Message"}
       },
       "documentation":"<p>The input for the RejectCertificateTransfer operation.</p>"
     },
@@ -3854,7 +4556,7 @@
           "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "error":{"httpStatusCode":406},
+      "error":{"httpStatusCode":400},
       "exception":true,
       "documentation":"<p>The Rule-SQL expression can't be parsed correctly.</p>"
     },
@@ -4043,7 +4745,8 @@
           "location":"querystring",
           "locationName":"targetAwsAccount",
           "documentation":"<p>The AWS account.</p>"
-        }
+        },
+        "transferMessage":{"shape":"Message"}
       },
       "documentation":"<p>The input for the TransferCertificate operation.</p>"
     },
@@ -4069,6 +4772,16 @@
       "exception":true,
       "documentation":"<p>You can't transfer the certificate because authorization policies are still attached.</p>"
     },
+    "TransferData":{
+      "type":"structure",
+      "members":{
+        "transferMessage":{"shape":"Message"},
+        "rejectReason":{"shape":"Message"},
+        "transferDate":{"shape":"DateType"},
+        "acceptDate":{"shape":"DateType"},
+        "rejectDate":{"shape":"DateType"}
+      }
+    },
     "UnauthorizedException":{
       "type":"structure",
       "members":{
@@ -4080,6 +4793,25 @@
       "error":{"httpStatusCode":401},
       "exception":true,
       "documentation":"<p>You are not authorized to perform this operation.</p>"
+    },
+    "UpdateCACertificateRequest":{
+      "type":"structure",
+      "required":[
+        "certificateId",
+        "newStatus"
+      ],
+      "members":{
+        "certificateId":{
+          "shape":"CertificateId",
+          "location":"uri",
+          "locationName":"certificateId"
+        },
+        "newStatus":{
+          "shape":"CACertificateStatus",
+          "location":"querystring",
+          "locationName":"newStatus"
+        }
+      }
     },
     "UpdateCertificateRequest":{
       "type":"structure",

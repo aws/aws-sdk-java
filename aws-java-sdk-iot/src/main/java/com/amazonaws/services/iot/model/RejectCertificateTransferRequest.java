@@ -34,6 +34,8 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
      */
     private String certificateId;
 
+    private String rejectReason;
+
     /**
      * <p>
      * The ID of the certificate.
@@ -77,6 +79,33 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * @param rejectReason
+     */
+
+    public void setRejectReason(String rejectReason) {
+        this.rejectReason = rejectReason;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getRejectReason() {
+        return this.rejectReason;
+    }
+
+    /**
+     * @param rejectReason
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RejectCertificateTransferRequest withRejectReason(String rejectReason) {
+        setRejectReason(rejectReason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -89,7 +118,9 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId());
+            sb.append("CertificateId: " + getCertificateId() + ",");
+        if (getRejectReason() != null)
+            sb.append("RejectReason: " + getRejectReason());
         sb.append("}");
         return sb.toString();
     }
@@ -109,6 +140,11 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
         if (other.getCertificateId() != null
                 && other.getCertificateId().equals(this.getCertificateId()) == false)
             return false;
+        if (other.getRejectReason() == null ^ this.getRejectReason() == null)
+            return false;
+        if (other.getRejectReason() != null
+                && other.getRejectReason().equals(this.getRejectReason()) == false)
+            return false;
         return true;
     }
 
@@ -120,6 +156,10 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
         hashCode = prime
                 * hashCode
                 + ((getCertificateId() == null) ? 0 : getCertificateId()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRejectReason() == null) ? 0 : getRejectReason()
                         .hashCode());
         return hashCode;
     }
