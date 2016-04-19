@@ -392,8 +392,6 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * 
      * @param status
      *        The current state of the deployment as a whole.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeploymentStatus
      */
 
@@ -783,8 +781,6 @@ public class DeploymentInfo implements Serializable, Cloneable {
      *        <ul>
      *        <li>user: A user created the deployment.</li>
      *        <li>autoscaling: Auto Scaling created the deployment.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeploymentCreator
      */
 

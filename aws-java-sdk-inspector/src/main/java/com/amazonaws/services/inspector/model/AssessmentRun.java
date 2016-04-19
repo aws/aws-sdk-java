@@ -299,8 +299,6 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the assessment run.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AssessmentRunState
      */
 

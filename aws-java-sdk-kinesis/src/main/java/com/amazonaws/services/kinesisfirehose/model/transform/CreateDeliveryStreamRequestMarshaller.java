@@ -88,6 +88,17 @@ public class CreateDeliveryStreamRequestMarshaller
                                         .getRedshiftDestinationConfiguration(),
                                 jsonGenerator);
             }
+            if (createDeliveryStreamRequest
+                    .getElasticsearchDestinationConfiguration() != null) {
+                jsonGenerator
+                        .writeFieldName("ElasticsearchDestinationConfiguration");
+                ElasticsearchDestinationConfigurationJsonMarshaller
+                        .getInstance()
+                        .marshall(
+                                createDeliveryStreamRequest
+                                        .getElasticsearchDestinationConfiguration(),
+                                jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
 

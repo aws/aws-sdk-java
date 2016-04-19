@@ -213,8 +213,6 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @param ruleAction
      *        Indicates whether to allow or deny the traffic that matches the
      *        rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RuleAction
      */
 

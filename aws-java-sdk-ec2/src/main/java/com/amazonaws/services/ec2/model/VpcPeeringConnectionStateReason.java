@@ -89,8 +89,6 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      * 
      * @param code
      *        The status of the VPC peering connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VpcPeeringConnectionStateReasonCode
      */
 

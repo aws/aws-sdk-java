@@ -83,8 +83,6 @@ public class AcknowledgeThirdPartyJobResult implements Serializable, Cloneable {
      * 
      * @param status
      *        The status information for the third party job, if any.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see JobStatus
      */
 

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AllocateHostsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AllocateHosts.
+ * </p>
  */
 public class AllocateHostsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<AllocateHostsRequest> {
@@ -157,8 +159,6 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *        launching instances without specifying a host ID.</p>
      *        <p>
      *        Default: Enabled
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AutoPlacement
      */
 

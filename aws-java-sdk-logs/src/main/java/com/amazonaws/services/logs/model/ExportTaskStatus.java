@@ -89,8 +89,6 @@ public class ExportTaskStatus implements Serializable, Cloneable {
      * 
      * @param code
      *        Status code of the export task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ExportTaskStatusCode
      */
 

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifySnapshotAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ModifySnapshotAttribute.
+ * </p>
  */
 public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -252,8 +254,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      *        Only volume creation permissions may be modified at the customer
      *        level.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SnapshotAttributeName
      */
 
@@ -339,8 +339,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * 
      * @param operationType
      *        The type of operation to perform to the attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OperationType
      */
 

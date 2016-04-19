@@ -358,8 +358,6 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        file(s) used in the <code>BatchPrediction</code>. The URL can
      *        identify either a file or an Amazon Simple Storage Solution
      *        (Amazon S3) bucket or directory.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BatchPredictionFilterVariable
      */
 
@@ -1053,8 +1051,6 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SortOrder
      */
 

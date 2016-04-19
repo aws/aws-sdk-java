@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -63,9 +65,9 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Listeners/member", targetDepth)) {
-                    loadBalancerDescription.getListeners().add(
-                            ListenerStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    loadBalancerDescription
+                            .withListeners(ListenerStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

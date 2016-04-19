@@ -131,8 +131,6 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the Spot instance request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CancelSpotInstanceRequestState
      */
 

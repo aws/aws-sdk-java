@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ReleaseHostsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ReleaseHosts.
+ * </p>
  */
 public class ReleaseHostsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<ReleaseHostsRequest> {

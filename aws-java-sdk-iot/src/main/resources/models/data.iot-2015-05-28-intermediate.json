@@ -25,7 +25,8 @@
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false
   },
   "operations" : {
     "DeleteThingShadow" : {
@@ -71,6 +72,7 @@
         "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
+      "authenticated" : true,
       "syncReturnType" : "DeleteThingShadowResult",
       "asyncReturnType" : "DeleteThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteThingShadowResult>",
@@ -121,6 +123,7 @@
         "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
+      "authenticated" : true,
       "syncReturnType" : "GetThingShadowResult",
       "asyncReturnType" : "GetThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetThingShadowResult>",
@@ -156,6 +159,7 @@
         "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -209,6 +213,7 @@
         "documentation" : "<p>The document encoding is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
+      "authenticated" : true,
       "syncReturnType" : "UpdateThingShadowResult",
       "asyncReturnType" : "UpdateThingShadowResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateThingShadowResult>",
@@ -1861,6 +1866,7 @@
       "actionPrefix" : null,
       "fileNamePrefix" : null
     },
+    "customServiceMetadata" : null,
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,

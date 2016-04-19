@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.PurchaseReservedInstancesOfferingRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for PurchaseReservedInstancesOffering.
+ * </p>
  */
 public class PurchaseReservedInstancesOfferingRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,

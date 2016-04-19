@@ -89,8 +89,6 @@ public class AssociationFilter implements Serializable, Cloneable {
      * 
      * @param key
      *        The name of the filter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AssociationFilterKey
      */
 

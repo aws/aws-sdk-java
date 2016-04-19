@@ -130,8 +130,6 @@ public class RecurringCharge implements Serializable, Cloneable {
      * 
      * @param frequency
      *        The frequency in which charges will recur.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RecurringChargeFrequency
      */
 

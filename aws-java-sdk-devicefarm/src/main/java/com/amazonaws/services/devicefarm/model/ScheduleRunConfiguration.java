@@ -434,8 +434,6 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      *        Specifies the billing method for a test run: <code>metered</code>
      *        or <code>unmetered</code>. If the parameter is not specified, the
      *        default value is <code>unmetered</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BillingMethod
      */
 

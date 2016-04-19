@@ -457,8 +457,6 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @param stackStatus
      *        Current status of the stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StackStatus
      */
 

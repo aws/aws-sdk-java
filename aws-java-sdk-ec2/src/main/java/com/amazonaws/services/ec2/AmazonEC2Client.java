@@ -251,6 +251,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param acceptVpcPeeringConnectionRequest
+     *        Contains the parameters for AcceptVpcPeeringConnection.
      * @return Result of the AcceptVpcPeeringConnection operation returned by
      *         the service.
      * @sample AmazonEC2.AcceptVpcPeeringConnection
@@ -307,6 +308,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param allocateAddressRequest
+     *        Contains the parameters for AllocateAddress.
      * @return Result of the AllocateAddress operation returned by the service.
      * @sample AmazonEC2.AllocateAddress
      */
@@ -356,6 +358,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param allocateHostsRequest
+     *        Contains the parameters for AllocateHosts.
      * @return Result of the AllocateHosts operation returned by the service.
      * @sample AmazonEC2.AllocateHosts
      */
@@ -412,6 +415,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param assignPrivateIpAddressesRequest
+     *        Contains the parameters for AssignPrivateIpAddresses.
      * @sample AmazonEC2.AssignPrivateIpAddresses
      */
     @Override
@@ -475,6 +479,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param associateAddressRequest
+     *        Contains the parameters for AssociateAddress.
      * @return Result of the AssociateAddress operation returned by the service.
      * @sample AmazonEC2.AssociateAddress
      */
@@ -533,6 +538,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param associateDhcpOptionsRequest
+     *        Contains the parameters for AssociateDhcpOptions.
      * @sample AmazonEC2.AssociateDhcpOptions
      */
     @Override
@@ -583,6 +589,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param associateRouteTableRequest
+     *        Contains the parameters for AssociateRouteTable.
      * @return Result of the AssociateRouteTable operation returned by the
      *         service.
      * @sample AmazonEC2.AssociateRouteTable
@@ -641,6 +648,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param attachClassicLinkVpcRequest
+     *        Contains the parameters for AttachClassicLinkVpc.
      * @return Result of the AttachClassicLinkVpc operation returned by the
      *         service.
      * @sample AmazonEC2.AttachClassicLinkVpc
@@ -689,6 +697,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param attachInternetGatewayRequest
+     *        Contains the parameters for AttachInternetGateway.
      * @sample AmazonEC2.AttachInternetGateway
      */
     @Override
@@ -729,6 +738,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param attachNetworkInterfaceRequest
+     *        Contains the parameters for AttachNetworkInterface.
      * @return Result of the AttachNetworkInterface operation returned by the
      *         service.
      * @sample AmazonEC2.AttachNetworkInterface
@@ -793,13 +803,28 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * If a volume has an AWS Marketplace product code:
      * </p>
      * <ul>
-     * <li>The volume can be attached only to a stopped instance.</li>
-     * <li>AWS Marketplace product codes are copied from the volume to the
-     * instance.</li>
-     * <li>You must be subscribed to the product.</li>
-     * <li>The instance type and operating system of the instance must support
-     * the product. For example, you can't detach a volume from a Windows
-     * instance and attach it to a Linux instance.</li>
+     * <li>
+     * <p>
+     * The volume can be attached only to a stopped instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Marketplace product codes are copied from the volume to the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must be subscribed to the product.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The instance type and operating system of the instance must support the
+     * product. For example, you can't detach a volume from a Windows instance
+     * and attach it to a Linux instance.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For an overview of the AWS Marketplace, see <a
@@ -814,6 +839,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param attachVolumeRequest
+     *        Contains the parameters for AttachVolume.
      * @return Result of the AttachVolume operation returned by the service.
      * @sample AmazonEC2.AttachVolume
      */
@@ -860,6 +886,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param attachVpnGatewayRequest
+     *        Contains the parameters for AttachVpnGateway.
      * @return Result of the AttachVpnGateway operation returned by the service.
      * @sample AmazonEC2.AttachVpnGateway
      */
@@ -928,6 +955,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param authorizeSecurityGroupEgressRequest
+     *        Contains the parameters for AuthorizeSecurityGroupEgress.
      * @sample AmazonEC2.AuthorizeSecurityGroupEgress
      */
     @Override
@@ -995,6 +1023,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param authorizeSecurityGroupIngressRequest
+     *        Contains the parameters for AuthorizeSecurityGroupIngress.
      * @sample AmazonEC2.AuthorizeSecurityGroupIngress
      */
     @Override
@@ -1050,6 +1079,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param bundleInstanceRequest
+     *        Contains the parameters for BundleInstance.
      * @return Result of the BundleInstance operation returned by the service.
      * @sample AmazonEC2.BundleInstance
      */
@@ -1093,6 +1123,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param cancelBundleTaskRequest
+     *        Contains the parameters for CancelBundleTask.
      * @return Result of the CancelBundleTask operation returned by the service.
      * @sample AmazonEC2.CancelBundleTask
      */
@@ -1146,6 +1177,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param cancelConversionTaskRequest
+     *        Contains the parameters for CancelConversionTask.
      * @sample AmazonEC2.CancelConversionTask
      */
     @Override
@@ -1189,6 +1221,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param cancelExportTaskRequest
+     *        Contains the parameters for CancelExportTask.
      * @sample AmazonEC2.CancelExportTask
      */
     @Override
@@ -1228,6 +1261,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param cancelImportTaskRequest
+     *        Contains the parameters for CancelImportTask.
      * @return Result of the CancelImportTask operation returned by the service.
      * @sample AmazonEC2.CancelImportTask
      */
@@ -1283,6 +1317,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param cancelReservedInstancesListingRequest
+     *        Contains the parameters for CancelReservedInstancesListing.
      * @return Result of the CancelReservedInstancesListing operation returned
      *         by the service.
      * @sample AmazonEC2.CancelReservedInstancesListing
@@ -1442,6 +1477,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param confirmProductInstanceRequest
+     *        Contains the parameters for ConfirmProductInstance.
      * @return Result of the ConfirmProductInstance operation returned by the
      *         service.
      * @sample AmazonEC2.ConfirmProductInstance
@@ -1493,6 +1529,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param copyImageRequest
+     *        Contains the parameters for CopyImage.
      * @return Result of the CopyImage operation returned by the service.
      * @sample AmazonEC2.CopyImage
      */
@@ -1552,6 +1589,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param copySnapshotRequest
+     *        Contains the parameters for CopySnapshot.
      * @return Result of the CopySnapshot operation returned by the service.
      * @sample AmazonEC2.CopySnapshot
      */
@@ -1629,6 +1667,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </important>
      * 
      * @param createCustomerGatewayRequest
+     *        Contains the parameters for CreateCustomerGateway.
      * @return Result of the CreateCustomerGateway operation returned by the
      *         service.
      * @sample AmazonEC2.CreateCustomerGateway
@@ -1677,30 +1716,48 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * 2132</a>.
      * </p>
      * <ul>
-     * <li><code>domain-name-servers</code> - The IP addresses of up to four
-     * domain name servers, or <code>AmazonProvidedDNS</code>. The default DHCP
-     * option set specifies <code>AmazonProvidedDNS</code>. If specifying more
-     * than one domain name server, specify the IP addresses in a single
-     * parameter, separated by commas.</li>
-     * <li><code>domain-name</code> - If you're using AmazonProvidedDNS in
-     * <code>us-east-1</code>, specify <code>ec2.internal</code>. If you're
-     * using AmazonProvidedDNS in another region, specify
-     * <code>region.compute.internal</code> (for example,
-     * <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a
-     * domain name (for example, <code>MyCompany.com</code>). <b>Important</b>:
-     * Some Linux operating systems accept multiple domain names separated by
-     * spaces. However, Windows and other Linux operating systems treat the
-     * value as a single domain, which results in unexpected behavior. If your
-     * DHCP options set is associated with a VPC that has instances with
-     * multiple operating systems, specify only one domain name.</li>
-     * <li><code>ntp-servers</code> - The IP addresses of up to four Network
-     * Time Protocol (NTP) servers.</li>
-     * <li><code>netbios-name-servers</code> - The IP addresses of up to four
-     * NetBIOS name servers.</li>
-     * <li><code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or
-     * 8). We recommend that you specify 2 (broadcast and multicast are not
+     * <li>
+     * <p>
+     * <code>domain-name-servers</code> - The IP addresses of up to four domain
+     * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
+     * AmazonProvidedDNS. If specifying more than one domain name server,
+     * specify the IP addresses in a single parameter, separated by commas.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>domain-name</code> - If you're using AmazonProvidedDNS in
+     * "us-east-1", specify "ec2.internal". If you're using AmazonProvidedDNS in
+     * another region, specify "region.compute.internal" (for example,
+     * "ap-northeast-1.compute.internal"). Otherwise, specify a domain name (for
+     * example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems
+     * accept multiple domain names separated by spaces. However, Windows and
+     * other Linux operating systems treat the value as a single domain, which
+     * results in unexpected behavior. If your DHCP options set is associated
+     * with a VPC that has instances with multiple operating systems, specify
+     * only one domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ntp-servers</code> - The IP addresses of up to four Network Time
+     * Protocol (NTP) servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>netbios-name-servers</code> - The IP addresses of up to four
+     * NetBIOS name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8).
+     * We recommend that you specify 2 (broadcast and multicast are not
      * currently supported). For more information about these node types, see <a
-     * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</li>
+     * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Your VPC automatically starts out with a set of DHCP options that
@@ -1715,6 +1772,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createDhcpOptionsRequest
+     *        Contains the parameters for CreateDhcpOptions.
      * @return Result of the CreateDhcpOptions operation returned by the
      *         service.
      * @sample AmazonEC2.CreateDhcpOptions
@@ -1769,6 +1827,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createFlowLogsRequest
+     *        Contains the parameters for CreateFlowLogs.
      * @return Result of the CreateFlowLogs operation returned by the service.
      * @sample AmazonEC2.CreateFlowLogs
      */
@@ -1825,6 +1884,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createImageRequest
+     *        Contains the parameters for CreateImage.
      * @return Result of the CreateImage operation returned by the service.
      * @sample AmazonEC2.CreateImage
      */
@@ -1873,6 +1933,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createInstanceExportTaskRequest
+     *        Contains the parameters for CreateInstanceExportTask.
      * @return Result of the CreateInstanceExportTask operation returned by the
      *         service.
      * @sample AmazonEC2.CreateInstanceExportTask
@@ -1924,6 +1985,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createInternetGatewayRequest
+     *        Contains the parameters for CreateInternetGateway.
      * @return Result of the CreateInternetGateway operation returned by the
      *         service.
      * @sample AmazonEC2.CreateInternetGateway
@@ -1990,6 +2052,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createKeyPairRequest
+     *        Contains the parameters for CreateKeyPair.
      * @return Result of the CreateKeyPair operation returned by the service.
      * @sample AmazonEC2.CreateKeyPair
      */
@@ -2038,6 +2101,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createNatGatewayRequest
+     *        Contains the parameters for CreateNatGateway.
      * @return Result of the CreateNatGateway operation returned by the service.
      * @sample AmazonEC2.CreateNatGateway
      */
@@ -2087,6 +2151,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createNetworkAclRequest
+     *        Contains the parameters for CreateNetworkAcl.
      * @return Result of the CreateNetworkAcl operation returned by the service.
      * @sample AmazonEC2.CreateNetworkAcl
      */
@@ -2151,6 +2216,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createNetworkAclEntryRequest
+     *        Contains the parameters for CreateNetworkAclEntry.
      * @sample AmazonEC2.CreateNetworkAclEntry
      */
     @Override
@@ -2197,6 +2263,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createNetworkInterfaceRequest
+     *        Contains the parameters for CreateNetworkInterface.
      * @return Result of the CreateNetworkInterface operation returned by the
      *         service.
      * @sample AmazonEC2.CreateNetworkInterface
@@ -2250,6 +2317,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createPlacementGroupRequest
+     *        Contains the parameters for CreatePlacementGroup.
      * @sample AmazonEC2.CreatePlacementGroup
      */
     @Override
@@ -2315,6 +2383,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createReservedInstancesListingRequest
+     *        Contains the parameters for CreateReservedInstancesListing.
      * @return Result of the CreateReservedInstancesListing operation returned
      *         by the service.
      * @sample AmazonEC2.CreateReservedInstancesListing
@@ -2393,6 +2462,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createRouteRequest
+     *        Contains the parameters for CreateRoute.
      * @return Result of the CreateRoute operation returned by the service.
      * @sample AmazonEC2.CreateRoute
      */
@@ -2440,6 +2510,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createRouteTableRequest
+     *        Contains the parameters for CreateRouteTable.
      * @return Result of the CreateRouteTable operation returned by the service.
      * @sample AmazonEC2.CreateRouteTable
      */
@@ -2522,6 +2593,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createSecurityGroupRequest
+     *        Contains the parameters for CreateSecurityGroup.
      * @return Result of the CreateSecurityGroup operation returned by the
      *         service.
      * @sample AmazonEC2.CreateSecurityGroup
@@ -2602,6 +2674,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createSnapshotRequest
+     *        Contains the parameters for CreateSnapshot.
      * @return Result of the CreateSnapshot operation returned by the service.
      * @sample AmazonEC2.CreateSnapshot
      */
@@ -2727,6 +2800,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createSubnetRequest
+     *        Contains the parameters for CreateSubnet.
      * @return Result of the CreateSubnet operation returned by the service.
      * @sample AmazonEC2.CreateSubnet
      */
@@ -2782,6 +2856,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createTagsRequest
+     *        Contains the parameters for CreateTags.
      * @sample AmazonEC2.CreateTags
      */
     @Override
@@ -2845,6 +2920,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createVolumeRequest
+     *        Contains the parameters for CreateVolume.
      * @return Result of the CreateVolume operation returned by the service.
      * @sample AmazonEC2.CreateVolume
      */
@@ -2904,6 +2980,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createVpcRequest
+     *        Contains the parameters for CreateVpc.
      * @return Result of the CreateVpc operation returned by the service.
      * @sample AmazonEC2.CreateVpc
      */
@@ -2952,6 +3029,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createVpcEndpointRequest
+     *        Contains the parameters for CreateVpcEndpoint.
      * @return Result of the CreateVpcEndpoint operation returned by the
      *         service.
      * @sample AmazonEC2.CreateVpcEndpoint
@@ -3009,6 +3087,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createVpcPeeringConnectionRequest
+     *        Contains the parameters for CreateVpcPeeringConnection.
      * @return Result of the CreateVpcPeeringConnection operation returned by
      *         the service.
      * @sample AmazonEC2.CreateVpcPeeringConnection
@@ -3082,6 +3161,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createVpnConnectionRequest
+     *        Contains the parameters for CreateVpnConnection.
      * @return Result of the CreateVpnConnection operation returned by the
      *         service.
      * @sample AmazonEC2.CreateVpnConnection
@@ -3135,6 +3215,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createVpnConnectionRouteRequest
+     *        Contains the parameters for CreateVpnConnectionRoute.
      * @sample AmazonEC2.CreateVpnConnectionRoute
      */
     @Override
@@ -3183,6 +3264,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createVpnGatewayRequest
+     *        Contains the parameters for CreateVpnGateway.
      * @return Result of the CreateVpnGateway operation returned by the service.
      * @sample AmazonEC2.CreateVpnGateway
      */
@@ -3227,6 +3309,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteCustomerGatewayRequest
+     *        Contains the parameters for DeleteCustomerGateway.
      * @sample AmazonEC2.DeleteCustomerGateway
      */
     @Override
@@ -3270,6 +3353,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteDhcpOptionsRequest
+     *        Contains the parameters for DeleteDhcpOptions.
      * @sample AmazonEC2.DeleteDhcpOptions
      */
     @Override
@@ -3310,6 +3394,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteFlowLogsRequest
+     *        Contains the parameters for DeleteFlowLogs.
      * @return Result of the DeleteFlowLogs operation returned by the service.
      * @sample AmazonEC2.DeleteFlowLogs
      */
@@ -3353,6 +3438,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteInternetGatewayRequest
+     *        Contains the parameters for DeleteInternetGateway.
      * @sample AmazonEC2.DeleteInternetGateway
      */
     @Override
@@ -3394,6 +3480,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteKeyPairRequest
+     *        Contains the parameters for DeleteKeyPair.
      * @sample AmazonEC2.DeleteKeyPair
      */
     @Override
@@ -3435,6 +3522,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteNatGatewayRequest
+     *        Contains the parameters for DeleteNatGateway.
      * @return Result of the DeleteNatGateway operation returned by the service.
      * @sample AmazonEC2.DeleteNatGateway
      */
@@ -3479,6 +3567,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteNetworkAclRequest
+     *        Contains the parameters for DeleteNetworkAcl.
      * @sample AmazonEC2.DeleteNetworkAcl
      */
     @Override
@@ -3519,6 +3608,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteNetworkAclEntryRequest
+     *        Contains the parameters for DeleteNetworkAclEntry.
      * @sample AmazonEC2.DeleteNetworkAclEntry
      */
     @Override
@@ -3560,6 +3650,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteNetworkInterfaceRequest
+     *        Contains the parameters for DeleteNetworkInterface.
      * @sample AmazonEC2.DeleteNetworkInterface
      */
     @Override
@@ -3606,6 +3697,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deletePlacementGroupRequest
+     *        Contains the parameters for DeletePlacementGroup.
      * @sample AmazonEC2.DeletePlacementGroup
      */
     @Override
@@ -3646,6 +3738,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteRouteRequest
+     *        Contains the parameters for DeleteRoute.
      * @sample AmazonEC2.DeleteRoute
      */
     @Override
@@ -3686,6 +3779,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteRouteTableRequest
+     *        Contains the parameters for DeleteRouteTable.
      * @sample AmazonEC2.DeleteRouteTable
      */
     @Override
@@ -3731,6 +3825,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteSecurityGroupRequest
+     *        Contains the parameters for DeleteSecurityGroup.
      * @sample AmazonEC2.DeleteSecurityGroup
      */
     @Override
@@ -3791,6 +3886,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteSnapshotRequest
+     *        Contains the parameters for DeleteSnapshot.
      * @sample AmazonEC2.DeleteSnapshot
      */
     @Override
@@ -3876,6 +3972,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteSubnetRequest
+     *        Contains the parameters for DeleteSubnet.
      * @sample AmazonEC2.DeleteSubnet
      */
     @Override
@@ -3921,6 +4018,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteTagsRequest
+     *        Contains the parameters for DeleteTags.
      * @sample AmazonEC2.DeleteTags
      */
     @Override
@@ -3972,6 +4070,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteVolumeRequest
+     *        Contains the parameters for DeleteVolume.
      * @sample AmazonEC2.DeleteVolume
      */
     @Override
@@ -4015,6 +4114,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteVpcRequest
+     *        Contains the parameters for DeleteVpc.
      * @sample AmazonEC2.DeleteVpc
      */
     @Override
@@ -4055,6 +4155,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteVpcEndpointsRequest
+     *        Contains the parameters for DeleteVpcEndpoints.
      * @return Result of the DeleteVpcEndpoints operation returned by the
      *         service.
      * @sample AmazonEC2.DeleteVpcEndpoints
@@ -4103,6 +4204,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteVpcPeeringConnectionRequest
+     *        Contains the parameters for DeleteVpcPeeringConnection.
      * @return Result of the DeleteVpcPeeringConnection operation returned by
      *         the service.
      * @sample AmazonEC2.DeleteVpcPeeringConnection
@@ -4157,6 +4259,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteVpnConnectionRequest
+     *        Contains the parameters for DeleteVpnConnection.
      * @sample AmazonEC2.DeleteVpnConnection
      */
     @Override
@@ -4200,6 +4303,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteVpnConnectionRouteRequest
+     *        Contains the parameters for DeleteVpnConnectionRoute.
      * @sample AmazonEC2.DeleteVpnConnectionRoute
      */
     @Override
@@ -4244,6 +4348,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteVpnGatewayRequest
+     *        Contains the parameters for DeleteVpnGateway.
      * @sample AmazonEC2.DeleteVpnGateway
      */
     @Override
@@ -4287,6 +4392,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deregisterImageRequest
+     *        Contains the parameters for DeregisterImage.
      * @sample AmazonEC2.DeregisterImage
      */
     @Override
@@ -4364,6 +4470,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param describeAccountAttributesRequest
+     *        Contains the parameters for DescribeAccountAttributes.
      * @return Result of the DescribeAccountAttributes operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeAccountAttributes
@@ -4420,6 +4527,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeAddressesRequest
+     *        Contains the parameters for DescribeAddresses.
      * @return Result of the DescribeAddresses operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeAddresses
@@ -4479,6 +4587,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeAvailabilityZonesRequest
+     *        Contains the parameters for DescribeAvailabilityZones.
      * @return Result of the DescribeAvailabilityZones operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeAvailabilityZones
@@ -4536,6 +4645,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param describeBundleTasksRequest
+     *        Contains the parameters for DescribeBundleTasks.
      * @return Result of the DescribeBundleTasks operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeBundleTasks
@@ -4588,6 +4698,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeClassicLinkInstancesRequest
+     *        Contains the parameters for DescribeClassicLinkInstances.
      * @return Result of the DescribeClassicLinkInstances operation returned by
      *         the service.
      * @sample AmazonEC2.DescribeClassicLinkInstances
@@ -4647,6 +4758,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeConversionTasksRequest
+     *        Contains the parameters for DescribeConversionTasks.
      * @return Result of the DescribeConversionTasks operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeConversionTasks
@@ -4702,6 +4814,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeCustomerGatewaysRequest
+     *        Contains the parameters for DescribeCustomerGateways.
      * @return Result of the DescribeCustomerGateways operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeCustomerGateways
@@ -4757,6 +4870,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeDhcpOptionsRequest
+     *        Contains the parameters for DescribeDhcpOptions.
      * @return Result of the DescribeDhcpOptions operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeDhcpOptions
@@ -4806,6 +4920,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeExportTasksRequest
+     *        Contains the parameters for DescribeExportTasks.
      * @return Result of the DescribeExportTasks operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeExportTasks
@@ -4857,6 +4972,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeFlowLogsRequest
+     *        Contains the parameters for DescribeFlowLogs.
      * @return Result of the DescribeFlowLogs operation returned by the service.
      * @sample AmazonEC2.DescribeFlowLogs
      */
@@ -4911,6 +5027,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeHostsRequest
+     *        Contains the parameters for DescribeHosts.
      * @return Result of the DescribeHosts operation returned by the service.
      * @sample AmazonEC2.DescribeHosts
      */
@@ -4975,6 +5092,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeIdFormatRequest
+     *        Contains the parameters for DescribeIdFormat.
      * @return Result of the DescribeIdFormat operation returned by the service.
      * @sample AmazonEC2.DescribeIdFormat
      */
@@ -5024,6 +5142,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeImageAttributeRequest
+     *        Contains the parameters for DescribeImageAttribute.
      * @return Result of the DescribeImageAttribute operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeImageAttribute
@@ -5077,6 +5196,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param describeImagesRequest
+     *        Contains the parameters for DescribeImages.
      * @return Result of the DescribeImages operation returned by the service.
      * @sample AmazonEC2.DescribeImages
      */
@@ -5125,6 +5245,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeImportImageTasksRequest
+     *        Contains the parameters for DescribeImportImageTasks.
      * @return Result of the DescribeImportImageTasks operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeImportImageTasks
@@ -5174,6 +5295,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeImportSnapshotTasksRequest
+     *        Contains the parameters for DescribeImportSnapshotTasks.
      * @return Result of the DescribeImportSnapshotTasks operation returned by
      *         the service.
      * @sample AmazonEC2.DescribeImportSnapshotTasks
@@ -5231,6 +5353,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeInstanceAttributeRequest
+     *        Contains the parameters for DescribeInstanceAttribute.
      * @return Result of the DescribeInstanceAttribute operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeInstanceAttribute
@@ -5312,6 +5435,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param describeInstanceStatusRequest
+     *        Contains the parameters for DescribeInstanceStatus.
      * @return Result of the DescribeInstanceStatus operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeInstanceStatus
@@ -5372,6 +5496,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeInstancesRequest
+     *        Contains the parameters for DescribeInstances.
      * @return Result of the DescribeInstances operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeInstances
@@ -5421,6 +5546,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeInternetGatewaysRequest
+     *        Contains the parameters for DescribeInternetGateways.
      * @return Result of the DescribeInternetGateways operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeInternetGateways
@@ -5475,6 +5601,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeKeyPairsRequest
+     *        Contains the parameters for DescribeKeyPairs.
      * @return Result of the DescribeKeyPairs operation returned by the service.
      * @sample AmazonEC2.DescribeKeyPairs
      */
@@ -5526,6 +5653,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeMovingAddressesRequest
+     *        Contains the parameters for DescribeMovingAddresses.
      * @return Result of the DescribeMovingAddresses operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeMovingAddresses
@@ -5575,6 +5703,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeNatGatewaysRequest
+     *        Contains the parameters for DescribeNatGateways.
      * @return Result of the DescribeNatGateways operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeNatGateways
@@ -5624,6 +5753,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeNetworkAclsRequest
+     *        Contains the parameters for DescribeNetworkAcls.
      * @return Result of the DescribeNetworkAcls operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeNetworkAcls
@@ -5674,6 +5804,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeNetworkInterfaceAttributeRequest
+     *        Contains the parameters for DescribeNetworkInterfaceAttribute.
      * @return Result of the DescribeNetworkInterfaceAttribute operation
      *         returned by the service.
      * @sample AmazonEC2.DescribeNetworkInterfaceAttribute
@@ -5718,6 +5849,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeNetworkInterfacesRequest
+     *        Contains the parameters for DescribeNetworkInterfaces.
      * @return Result of the DescribeNetworkInterfaces operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeNetworkInterfaces
@@ -5771,6 +5903,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describePlacementGroupsRequest
+     *        Contains the parameters for DescribePlacementGroups.
      * @return Result of the DescribePlacementGroups operation returned by the
      *         service.
      * @sample AmazonEC2.DescribePlacementGroups
@@ -5824,6 +5957,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describePrefixListsRequest
+     *        Contains the parameters for DescribePrefixLists.
      * @return Result of the DescribePrefixLists operation returned by the
      *         service.
      * @sample AmazonEC2.DescribePrefixLists
@@ -5878,6 +6012,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeRegionsRequest
+     *        Contains the parameters for DescribeRegions.
      * @return Result of the DescribeRegions operation returned by the service.
      * @sample AmazonEC2.DescribeRegions
      */
@@ -5931,6 +6066,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeReservedInstancesRequest
+     *        Contains the parameters for DescribeReservedInstances.
      * @return Result of the DescribeReservedInstances operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeReservedInstances
@@ -6008,6 +6144,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeReservedInstancesListingsRequest
+     *        Contains the parameters for DescribeReservedInstancesListings.
      * @return Result of the DescribeReservedInstancesListings operation
      *         returned by the service.
      * @sample AmazonEC2.DescribeReservedInstancesListings
@@ -6066,6 +6203,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeReservedInstancesModificationsRequest
+     *        Contains the parameters for
+     *        DescribeReservedInstancesModifications.
      * @return Result of the DescribeReservedInstancesModifications operation
      *         returned by the service.
      * @sample AmazonEC2.DescribeReservedInstancesModifications
@@ -6130,6 +6269,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeReservedInstancesOfferingsRequest
+     *        Contains the parameters for DescribeReservedInstancesOfferings.
      * @return Result of the DescribeReservedInstancesOfferings operation
      *         returned by the service.
      * @sample AmazonEC2.DescribeReservedInstancesOfferings
@@ -6190,6 +6330,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeRouteTablesRequest
+     *        Contains the parameters for DescribeRouteTables.
      * @return Result of the DescribeRouteTables operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeRouteTables
@@ -6351,6 +6492,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeSecurityGroupsRequest
+     *        Contains the parameters for DescribeSecurityGroups.
      * @return Result of the DescribeSecurityGroups operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeSecurityGroups
@@ -6406,6 +6548,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeSnapshotAttributeRequest
+     *        Contains the parameters for DescribeSnapshotAttribute.
      * @return Result of the DescribeSnapshotAttribute operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeSnapshotAttribute
@@ -6456,13 +6599,25 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * The create volume permissions fall into the following categories:
      * </p>
      * <ul>
-     * <li><i>public</i>: The owner of the snapshot granted create volume
+     * <li>
+     * <p>
+     * <i>public</i>: The owner of the snapshot granted create volume
      * permissions for the snapshot to the <code>all</code> group. All AWS
-     * accounts have create volume permissions for these snapshots.</li>
-     * <li><i>explicit</i>: The owner of the snapshot granted create volume
-     * permissions to a specific AWS account.</li>
-     * <li><i>implicit</i>: An AWS account has implicit create volume
-     * permissions for all snapshots it owns.</li>
+     * accounts have create volume permissions for these snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>explicit</i>: The owner of the snapshot granted create volume
+     * permissions to a specific AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>implicit</i>: An AWS account has implicit create volume permissions
+     * for all snapshots it owns.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The list of snapshots returned can be modified by specifying snapshot
@@ -6506,6 +6661,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeSnapshotsRequest
+     *        Contains the parameters for DescribeSnapshots.
      * @return Result of the DescribeSnapshots operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeSnapshots
@@ -6888,6 +7044,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeSubnetsRequest
+     *        Contains the parameters for DescribeSubnets.
      * @return Result of the DescribeSubnets operation returned by the service.
      * @sample AmazonEC2.DescribeSubnets
      */
@@ -6941,6 +7098,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeTagsRequest
+     *        Contains the parameters for DescribeTags.
      * @return Result of the DescribeTags operation returned by the service.
      * @sample AmazonEC2.DescribeTags
      */
@@ -6994,6 +7152,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVolumeAttributeRequest
+     *        Contains the parameters for DescribeVolumeAttribute.
      * @return Result of the DescribeVolumeAttribute operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeVolumeAttribute
@@ -7086,6 +7245,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param describeVolumeStatusRequest
+     *        Contains the parameters for DescribeVolumeStatus.
      * @return Result of the DescribeVolumeStatus operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeVolumeStatus
@@ -7149,6 +7309,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVolumesRequest
+     *        Contains the parameters for DescribeVolumes.
      * @return Result of the DescribeVolumes operation returned by the service.
      * @sample AmazonEC2.DescribeVolumes
      */
@@ -7197,6 +7358,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVpcAttributeRequest
+     *        Contains the parameters for DescribeVpcAttribute.
      * @return Result of the DescribeVpcAttribute operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeVpcAttribute
@@ -7241,6 +7403,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVpcClassicLinkRequest
+     *        Contains the parameters for DescribeVpcClassicLink.
      * @return Result of the DescribeVpcClassicLink operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeVpcClassicLink
@@ -7298,6 +7461,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVpcClassicLinkDnsSupportRequest
+     *        Contains the parameters for DescribeVpcClassicLinkDnsSupport.
      * @return Result of the DescribeVpcClassicLinkDnsSupport operation returned
      *         by the service.
      * @sample AmazonEC2.DescribeVpcClassicLinkDnsSupport
@@ -7343,6 +7507,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVpcEndpointServicesRequest
+     *        Contains the parameters for DescribeVpcEndpointServices.
      * @return Result of the DescribeVpcEndpointServices operation returned by
      *         the service.
      * @sample AmazonEC2.DescribeVpcEndpointServices
@@ -7392,6 +7557,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVpcEndpointsRequest
+     *        Contains the parameters for DescribeVpcEndpoints.
      * @return Result of the DescribeVpcEndpoints operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeVpcEndpoints
@@ -7441,6 +7607,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVpcPeeringConnectionsRequest
+     *        Contains the parameters for DescribeVpcPeeringConnections.
      * @return Result of the DescribeVpcPeeringConnections operation returned by
      *         the service.
      * @sample AmazonEC2.DescribeVpcPeeringConnections
@@ -7490,6 +7657,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVpcsRequest
+     *        Contains the parameters for DescribeVpcs.
      * @return Result of the DescribeVpcs operation returned by the service.
      * @sample AmazonEC2.DescribeVpcs
      */
@@ -7543,6 +7711,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVpnConnectionsRequest
+     *        Contains the parameters for DescribeVpnConnections.
      * @return Result of the DescribeVpnConnections operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeVpnConnections
@@ -7598,6 +7767,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeVpnGatewaysRequest
+     *        Contains the parameters for DescribeVpnGateways.
      * @return Result of the DescribeVpnGateways operation returned by the
      *         service.
      * @sample AmazonEC2.DescribeVpnGateways
@@ -7650,6 +7820,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param detachClassicLinkVpcRequest
+     *        Contains the parameters for DetachClassicLinkVpc.
      * @return Result of the DetachClassicLinkVpc operation returned by the
      *         service.
      * @sample AmazonEC2.DetachClassicLinkVpc
@@ -7696,6 +7867,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param detachInternetGatewayRequest
+     *        Contains the parameters for DetachInternetGateway.
      * @sample AmazonEC2.DetachInternetGateway
      */
     @Override
@@ -7736,6 +7908,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param detachNetworkInterfaceRequest
+     *        Contains the parameters for DetachNetworkInterface.
      * @sample AmazonEC2.DetachNetworkInterface
      */
     @Override
@@ -7794,6 +7967,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param detachVolumeRequest
+     *        Contains the parameters for DetachVolume.
      * @return Result of the DetachVolume operation returned by the service.
      * @sample AmazonEC2.DetachVolume
      */
@@ -7845,6 +8019,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param detachVpnGatewayRequest
+     *        Contains the parameters for DetachVpnGateway.
      * @sample AmazonEC2.DetachVpnGateway
      */
     @Override
@@ -7885,6 +8060,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param disableVgwRoutePropagationRequest
+     *        Contains the parameters for DisableVgwRoutePropagation.
      * @sample AmazonEC2.DisableVgwRoutePropagation
      */
     @Override
@@ -7926,6 +8102,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param disableVpcClassicLinkRequest
+     *        Contains the parameters for DisableVpcClassicLink.
      * @return Result of the DisableVpcClassicLink operation returned by the
      *         service.
      * @sample AmazonEC2.DisableVpcClassicLink
@@ -7975,6 +8152,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param disableVpcClassicLinkDnsSupportRequest
+     *        Contains the parameters for DisableVpcClassicLinkDnsSupport.
      * @return Result of the DisableVpcClassicLinkDnsSupport operation returned
      *         by the service.
      * @sample AmazonEC2.DisableVpcClassicLinkDnsSupport
@@ -8031,6 +8209,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param disassociateAddressRequest
+     *        Contains the parameters for DisassociateAddress.
      * @sample AmazonEC2.DisassociateAddress
      */
     @Override
@@ -8078,6 +8257,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param disassociateRouteTableRequest
+     *        Contains the parameters for DisassociateRouteTable.
      * @sample AmazonEC2.DisassociateRouteTable
      */
     @Override
@@ -8119,6 +8299,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param enableVgwRoutePropagationRequest
+     *        Contains the parameters for EnableVgwRoutePropagation.
      * @sample AmazonEC2.EnableVgwRoutePropagation
      */
     @Override
@@ -8160,6 +8341,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param enableVolumeIORequest
+     *        Contains the parameters for EnableVolumeIO.
      * @sample AmazonEC2.EnableVolumeIO
      */
     @Override
@@ -8206,6 +8388,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param enableVpcClassicLinkRequest
+     *        Contains the parameters for EnableVpcClassicLink.
      * @return Result of the EnableVpcClassicLink operation returned by the
      *         service.
      * @sample AmazonEC2.EnableVpcClassicLink
@@ -8258,6 +8441,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param enableVpcClassicLinkDnsSupportRequest
+     *        Contains the parameters for EnableVpcClassicLinkDnsSupport.
      * @return Result of the EnableVpcClassicLinkDnsSupport operation returned
      *         by the service.
      * @sample AmazonEC2.EnableVpcClassicLinkDnsSupport
@@ -8325,6 +8509,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param getConsoleOutputRequest
+     *        Contains the parameters for GetConsoleOutput.
      * @return Result of the GetConsoleOutput operation returned by the service.
      * @sample AmazonEC2.GetConsoleOutput
      */
@@ -8386,6 +8571,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param getPasswordDataRequest
+     *        Contains the parameters for GetPasswordData.
      * @return Result of the GetPasswordData operation returned by the service.
      * @sample AmazonEC2.GetPasswordData
      */
@@ -8429,6 +8615,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param importImageRequest
+     *        Contains the parameters for ImportImage.
      * @return Result of the ImportImage operation returned by the service.
      * @sample AmazonEC2.ImportImage
      */
@@ -8488,6 +8675,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param importInstanceRequest
+     *        Contains the parameters for ImportInstance.
      * @return Result of the ImportInstance operation returned by the service.
      * @sample AmazonEC2.ImportInstance
      */
@@ -8540,6 +8728,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param importKeyPairRequest
+     *        Contains the parameters for ImportKeyPair.
      * @return Result of the ImportKeyPair operation returned by the service.
      * @sample AmazonEC2.ImportKeyPair
      */
@@ -8582,6 +8771,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param importSnapshotRequest
+     *        Contains the parameters for ImportSnapshot.
      * @return Result of the ImportSnapshot operation returned by the service.
      * @sample AmazonEC2.ImportSnapshot
      */
@@ -8641,6 +8831,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param importVolumeRequest
+     *        Contains the parameters for ImportVolume.
      * @return Result of the ImportVolume operation returned by the service.
      * @sample AmazonEC2.ImportVolume
      */
@@ -8690,6 +8881,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyHostsRequest
+     *        Contains the parameters for ModifyHosts.
      * @return Result of the ModifyHosts operation returned by the service.
      * @sample AmazonEC2.ModifyHosts
      */
@@ -8751,6 +8943,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyIdFormatRequest
+     *        Contains the parameters of ModifyIdFormat.
      * @sample AmazonEC2.ModifyIdFormat
      */
     @Override
@@ -8796,6 +8989,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param modifyImageAttributeRequest
+     *        Contains the parameters for ModifyImageAttribute.
      * @sample AmazonEC2.ModifyImageAttribute
      */
     @Override
@@ -8844,6 +9038,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyInstanceAttributeRequest
+     *        Contains the parameters for ModifyInstanceAttribute.
      * @sample AmazonEC2.ModifyInstanceAttribute
      */
     @Override
@@ -8907,6 +9102,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyInstancePlacementRequest
+     *        Contains the parameters for ModifyInstancePlacement.
      * @return Result of the ModifyInstancePlacement operation returned by the
      *         service.
      * @sample AmazonEC2.ModifyInstancePlacement
@@ -8952,6 +9148,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyNetworkInterfaceAttributeRequest
+     *        Contains the parameters for ModifyNetworkInterfaceAttribute.
      * @sample AmazonEC2.ModifyNetworkInterfaceAttribute
      */
     @Override
@@ -9001,6 +9198,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyReservedInstancesRequest
+     *        Contains the parameters for ModifyReservedInstances.
      * @return Result of the ModifyReservedInstances operation returned by the
      *         service.
      * @sample AmazonEC2.ModifyReservedInstances
@@ -9060,6 +9258,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param modifySnapshotAttributeRequest
+     *        Contains the parameters for ModifySnapshotAttribute.
      * @sample AmazonEC2.ModifySnapshotAttribute
      */
     @Override
@@ -9170,6 +9369,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifySubnetAttributeRequest
+     *        Contains the parameters for ModifySubnetAttribute.
      * @sample AmazonEC2.ModifySubnetAttribute
      */
     @Override
@@ -9222,6 +9422,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyVolumeAttributeRequest
+     *        Contains the parameters for ModifyVolumeAttribute.
      * @sample AmazonEC2.ModifyVolumeAttribute
      */
     @Override
@@ -9262,6 +9463,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyVpcAttributeRequest
+     *        Contains the parameters for ModifyVpcAttribute.
      * @sample AmazonEC2.ModifyVpcAttribute
      */
     @Override
@@ -9304,6 +9506,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param modifyVpcEndpointRequest
+     *        Contains the parameters for ModifyVpcEndpoint.
      * @return Result of the ModifyVpcEndpoint operation returned by the
      *         service.
      * @sample AmazonEC2.ModifyVpcEndpoint
@@ -9352,6 +9555,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param monitorInstancesRequest
+     *        Contains the parameters for MonitorInstances.
      * @return Result of the MonitorInstances operation returned by the service.
      * @sample AmazonEC2.MonitorInstances
      */
@@ -9397,13 +9601,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * the Elastic IP address is moved, it is no longer available for use in the
      * EC2-Classic platform, unless you move it back using the
      * <a>RestoreAddressToClassic</a> request. You cannot move an Elastic IP
-     * address that's allocated for use in the EC2-VPC platform to the
-     * EC2-Classic platform. You cannot migrate an Elastic IP address that's
+     * address that was originally allocated for use in the EC2-VPC platform to
+     * the EC2-Classic platform. You cannot migrate an Elastic IP address that's
      * associated with a reverse DNS record. Contact AWS account and billing
      * support to remove the reverse DNS record.
      * </p>
      * 
      * @param moveAddressToVpcRequest
+     *        Contains the parameters for MoveAddressToVpc.
      * @return Result of the MoveAddressToVpc operation returned by the service.
      * @sample AmazonEC2.MoveAddressToVpc
      */
@@ -9464,6 +9669,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param purchaseReservedInstancesOfferingRequest
+     *        Contains the parameters for PurchaseReservedInstancesOffering.
      * @return Result of the PurchaseReservedInstancesOffering operation
      *         returned by the service.
      * @sample AmazonEC2.PurchaseReservedInstancesOffering
@@ -9572,6 +9778,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param rebootInstancesRequest
+     *        Contains the parameters for RebootInstances.
      * @sample AmazonEC2.RebootInstances
      */
     @Override
@@ -9661,6 +9868,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param registerImageRequest
+     *        Contains the parameters for RegisterImage.
      * @return Result of the RegisterImage operation returned by the service.
      * @sample AmazonEC2.RegisterImage
      */
@@ -9708,6 +9916,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param rejectVpcPeeringConnectionRequest
+     *        Contains the parameters for RejectVpcPeeringConnection.
      * @return Result of the RejectVpcPeeringConnection operation returned by
      *         the service.
      * @sample AmazonEC2.RejectVpcPeeringConnection
@@ -9771,6 +9980,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param releaseAddressRequest
+     *        Contains the parameters for ReleaseAddress.
      * @sample AmazonEC2.ReleaseAddress
      */
     @Override
@@ -9822,6 +10032,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param releaseHostsRequest
+     *        Contains the parameters for ReleaseHosts.
      * @return Result of the ReleaseHosts operation returned by the service.
      * @sample AmazonEC2.ReleaseHosts
      */
@@ -9868,6 +10079,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param replaceNetworkAclAssociationRequest
+     *        Contains the parameters for ReplaceNetworkAclAssociation.
      * @return Result of the ReplaceNetworkAclAssociation operation returned by
      *         the service.
      * @sample AmazonEC2.ReplaceNetworkAclAssociation
@@ -9915,6 +10127,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param replaceNetworkAclEntryRequest
+     *        Contains the parameters for ReplaceNetworkAclEntry.
      * @sample AmazonEC2.ReplaceNetworkAclEntry
      */
     @Override
@@ -9963,6 +10176,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param replaceRouteRequest
+     *        Contains the parameters for ReplaceRoute.
      * @sample AmazonEC2.ReplaceRoute
      */
     @Override
@@ -10011,6 +10225,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param replaceRouteTableAssociationRequest
+     *        Contains the parameters for ReplaceRouteTableAssociation.
      * @return Result of the ReplaceRouteTableAssociation operation returned by
      *         the service.
      * @sample AmazonEC2.ReplaceRouteTableAssociation
@@ -10064,6 +10279,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param reportInstanceStatusRequest
+     *        Contains the parameters for ReportInstanceStatus.
      * @sample AmazonEC2.ReportInstanceStatus
      */
     @Override
@@ -10228,6 +10444,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param resetImageAttributeRequest
+     *        Contains the parameters for ResetImageAttribute.
      * @sample AmazonEC2.ResetImageAttribute
      */
     @Override
@@ -10280,6 +10497,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param resetInstanceAttributeRequest
+     *        Contains the parameters for ResetInstanceAttribute.
      * @sample AmazonEC2.ResetInstanceAttribute
      */
     @Override
@@ -10321,6 +10539,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param resetNetworkInterfaceAttributeRequest
+     *        Contains the parameters for ResetNetworkInterfaceAttribute.
      * @sample AmazonEC2.ResetNetworkInterfaceAttribute
      */
     @Override
@@ -10367,6 +10586,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param resetSnapshotAttributeRequest
+     *        Contains the parameters for ResetSnapshotAttribute.
      * @sample AmazonEC2.ResetSnapshotAttribute
      */
     @Override
@@ -10413,6 +10633,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param restoreAddressToClassicRequest
+     *        Contains the parameters for RestoreAddressToClassic.
      * @return Result of the RestoreAddressToClassic operation returned by the
      *         service.
      * @sample AmazonEC2.RestoreAddressToClassic
@@ -10471,6 +10692,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param revokeSecurityGroupEgressRequest
+     *        Contains the parameters for RevokeSecurityGroupEgress.
      * @sample AmazonEC2.RevokeSecurityGroupEgress
      */
     @Override
@@ -10523,6 +10745,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param revokeSecurityGroupIngressRequest
+     *        Contains the parameters for RevokeSecurityGroupIngress.
      * @sample AmazonEC2.RevokeSecurityGroupIngress
      */
     @Override
@@ -10629,6 +10852,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param runInstancesRequest
+     *        Contains the parameters for RunInstances.
      * @return Result of the RunInstances operation returned by the service.
      * @sample AmazonEC2.RunInstances
      */
@@ -10750,6 +10974,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param startInstancesRequest
+     *        Contains the parameters for StartInstances.
      * @return Result of the StartInstances operation returned by the service.
      * @sample AmazonEC2.StartInstances
      */
@@ -10832,6 +11057,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param stopInstancesRequest
+     *        Contains the parameters for StopInstances.
      * @return Result of the StopInstances operation returned by the service.
      * @sample AmazonEC2.StopInstances
      */
@@ -10904,6 +11130,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param terminateInstancesRequest
+     *        Contains the parameters for TerminateInstances.
      * @return Result of the TerminateInstances operation returned by the
      *         service.
      * @sample AmazonEC2.TerminateInstances
@@ -10949,6 +11176,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param unassignPrivateIpAddressesRequest
+     *        Contains the parameters for UnassignPrivateIpAddresses.
      * @sample AmazonEC2.UnassignPrivateIpAddresses
      */
     @Override
@@ -10993,6 +11221,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param unmonitorInstancesRequest
+     *        Contains the parameters for UnmonitorInstances.
      * @return Result of the UnmonitorInstances operation returned by the
      *         service.
      * @sample AmazonEC2.UnmonitorInstances
@@ -11102,30 +11331,45 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(
                 exceptionUnmarshallers);

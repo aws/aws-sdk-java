@@ -541,8 +541,6 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
 
     /**
      * @param returnConsumedCapacity
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnConsumedCapacity
      */
 
@@ -649,8 +647,6 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *        collections, if any, that were modified during the operation are
      *        returned in the response. If set to <code>NONE</code> (the
      *        default), no statistics are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnItemCollectionMetrics
      */
 

@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -43,8 +45,10 @@ public class CreateTrafficPolicyVersionResultStaxUnmarshaller implements
             targetDepth += 1;
 
         if (context.isStartOfDocument()) {
-            createTrafficPolicyVersionResult.setLocation(context
-                    .getHeader("Location"));
+            context.setCurrentHeader("Location");
+            createTrafficPolicyVersionResult.setLocation(StringStaxUnmarshaller
+                    .getInstance().unmarshall(context));
+
         }
 
         while (true) {

@@ -156,8 +156,6 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param historyItemType
      *        The type of alarm histories to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see HistoryItemType
      */
 

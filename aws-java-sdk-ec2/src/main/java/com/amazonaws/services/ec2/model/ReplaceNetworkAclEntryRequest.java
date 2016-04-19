@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclEntryRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ReplaceNetworkAclEntry.
+ * </p>
  */
 public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -267,8 +269,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @param ruleAction
      *        Indicates whether to allow or deny the traffic that matches the
      *        rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RuleAction
      */
 

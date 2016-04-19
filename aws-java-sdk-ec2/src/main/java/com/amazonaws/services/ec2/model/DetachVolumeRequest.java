@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DetachVolumeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DetachVolume.
+ * </p>
  */
 public class DetachVolumeRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DetachVolumeRequest> {

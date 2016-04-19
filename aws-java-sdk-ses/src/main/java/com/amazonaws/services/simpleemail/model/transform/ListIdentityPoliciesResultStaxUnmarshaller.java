@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class ListIdentityPoliciesResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("PolicyNames/member", targetDepth)) {
-                    listIdentityPoliciesResult.getPolicyNames().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    listIdentityPoliciesResult
+                            .withPolicyNames(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

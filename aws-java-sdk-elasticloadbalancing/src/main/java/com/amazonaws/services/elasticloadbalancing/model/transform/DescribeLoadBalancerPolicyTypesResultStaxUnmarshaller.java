@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -53,9 +55,8 @@ public class DescribeLoadBalancerPolicyTypesResultStaxUnmarshaller
                 if (context.testExpression("PolicyTypeDescriptions/member",
                         targetDepth)) {
                     describeLoadBalancerPolicyTypesResult
-                            .getPolicyTypeDescriptions().add(
-                                    PolicyTypeDescriptionStaxUnmarshaller
-                                            .getInstance().unmarshall(context));
+                            .withPolicyTypeDescriptions(PolicyTypeDescriptionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

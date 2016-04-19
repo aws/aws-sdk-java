@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVolumesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeVolumes.
+ * </p>
  */
 public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DescribeVolumesRequest> {
@@ -134,8 +136,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
      * volumes.
      * </p>
      * </li>
@@ -370,8 +373,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
      * volumes.
      * </p>
      * </li>
@@ -479,9 +483,10 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>volume-type</code> - The Amazon EBS volume type. This can
-     *         be <code>gp2</code> for General Purpose (SSD) volumes,
-     *         <code>io1</code> for Provisioned IOPS (SSD) volumes, or
-     *         <code>standard</code> for Magnetic volumes.
+     *         be <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     *         Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
+     *         HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     *         Magnetic volumes.
      *         </p>
      *         </li>
      */
@@ -594,8 +599,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
      * volumes.
      * </p>
      * </li>
@@ -704,9 +710,10 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>volume-type</code> - The Amazon EBS volume type. This can be
-     *        <code>gp2</code> for General Purpose (SSD) volumes,
-     *        <code>io1</code> for Provisioned IOPS (SSD) volumes, or
-     *        <code>standard</code> for Magnetic volumes.
+     *        <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     *        Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
+     *        HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     *        Magnetic volumes.
      *        </p>
      *        </li>
      */
@@ -822,8 +829,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
      * volumes.
      * </p>
      * </li>
@@ -938,9 +946,10 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>volume-type</code> - The Amazon EBS volume type. This can be
-     *        <code>gp2</code> for General Purpose (SSD) volumes,
-     *        <code>io1</code> for Provisioned IOPS (SSD) volumes, or
-     *        <code>standard</code> for Magnetic volumes.
+     *        <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     *        Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
+     *        HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     *        Magnetic volumes.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -1059,8 +1068,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic
      * volumes.
      * </p>
      * </li>
@@ -1169,9 +1179,10 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>volume-type</code> - The Amazon EBS volume type. This can be
-     *        <code>gp2</code> for General Purpose (SSD) volumes,
-     *        <code>io1</code> for Provisioned IOPS (SSD) volumes, or
-     *        <code>standard</code> for Magnetic volumes.
+     *        <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     *        Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
+     *        HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     *        Magnetic volumes.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

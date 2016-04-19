@@ -257,6 +257,36 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
     }
 
     @Override
+    public java.util.concurrent.Future<DisableEnhancedMonitoringResult> disableEnhancedMonitoringAsync(
+            DisableEnhancedMonitoringRequest request) {
+
+        return disableEnhancedMonitoringAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableEnhancedMonitoringResult> disableEnhancedMonitoringAsync(
+            DisableEnhancedMonitoringRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableEnhancedMonitoringRequest, DisableEnhancedMonitoringResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableEnhancedMonitoringResult> enableEnhancedMonitoringAsync(
+            EnableEnhancedMonitoringRequest request) {
+
+        return enableEnhancedMonitoringAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableEnhancedMonitoringResult> enableEnhancedMonitoringAsync(
+            EnableEnhancedMonitoringRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableEnhancedMonitoringRequest, EnableEnhancedMonitoringResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(
             GetRecordsRequest request) {
 

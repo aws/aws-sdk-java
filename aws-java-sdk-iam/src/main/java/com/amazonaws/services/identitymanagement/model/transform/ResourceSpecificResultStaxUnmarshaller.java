@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -109,17 +111,17 @@ public class ResourceSpecificResultStaxUnmarshaller implements
 
                 if (context.testExpression("MatchedStatements/member",
                         targetDepth)) {
-                    resourceSpecificResult.getMatchedStatements().add(
-                            StatementStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    resourceSpecificResult
+                            .withMatchedStatements(StatementStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MissingContextValues/member",
                         targetDepth)) {
-                    resourceSpecificResult.getMissingContextValues().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    resourceSpecificResult
+                            .withMissingContextValues(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -127,7 +129,7 @@ public class ResourceSpecificResultStaxUnmarshaller implements
                         targetDepth)) {
                     Entry<String, String> entry = EvalDecisionDetailsMapEntryUnmarshaller
                             .getInstance().unmarshall(context);
-                    resourceSpecificResult.getEvalDecisionDetails().put(
+                    resourceSpecificResult.addEvalDecisionDetailsEntry(
                             entry.getKey(), entry.getValue());
                     continue;
                 }

@@ -89,8 +89,6 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable {
      * 
      * @param code
      *        The programmable code for the state change reason.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceGroupStateChangeReasonCode
      */
 

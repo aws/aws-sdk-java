@@ -19,7 +19,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of CreateVpnGateway.
+ * </p>
  */
 public class CreateVpnGatewayResult implements Serializable, Cloneable {
 

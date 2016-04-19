@@ -455,8 +455,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest implements
      *        are members of the corresponding layer. If your app isn't one of
      *        the standard types, or you prefer to implement your own Deploy
      *        recipes, specify <code>other</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AppType
      */
 

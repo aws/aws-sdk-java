@@ -140,8 +140,6 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      * 
      * @param currentSpotFleetRequestState
      *        The current state of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BatchState
      */
 
@@ -222,8 +220,6 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      * 
      * @param previousSpotFleetRequestState
      *        The previous state of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BatchState
      */
 

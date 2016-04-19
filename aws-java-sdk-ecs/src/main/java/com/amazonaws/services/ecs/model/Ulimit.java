@@ -95,8 +95,6 @@ public class Ulimit implements Serializable, Cloneable {
      * 
      * @param name
      *        The <code>type</code> of the <code>ulimit</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see UlimitName
      */
 

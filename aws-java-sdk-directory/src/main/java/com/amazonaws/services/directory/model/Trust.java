@@ -211,8 +211,6 @@ public class Trust implements Serializable, Cloneable {
      * 
      * @param trustType
      *        The trust relationship type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TrustType
      */
 
@@ -278,8 +276,6 @@ public class Trust implements Serializable, Cloneable {
      * 
      * @param trustDirection
      *        The trust relationship direction.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TrustDirection
      */
 
@@ -345,8 +341,6 @@ public class Trust implements Serializable, Cloneable {
      * 
      * @param trustState
      *        The trust relationship state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TrustState
      */
 

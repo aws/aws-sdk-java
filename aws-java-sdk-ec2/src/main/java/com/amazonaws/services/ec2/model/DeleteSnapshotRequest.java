@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteSnapshotRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteSnapshot.
+ * </p>
  */
 public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DeleteSnapshotRequest> {

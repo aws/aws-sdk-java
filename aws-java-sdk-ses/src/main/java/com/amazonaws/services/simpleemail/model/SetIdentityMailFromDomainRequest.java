@@ -336,8 +336,6 @@ public class SetIdentityMailFromDomainRequest extends AmazonWebServiceRequest
      *        when the custom MAIL FROM domain setup is in the
      *        <code>Pending</code>, <code>Failed</code>, and
      *        <code>TemporaryFailure</code> states.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BehaviorOnMXFailure
      */
 

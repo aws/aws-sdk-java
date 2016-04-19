@@ -97,6 +97,18 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
+    public DisableEnhancedMonitoringResult disableEnhancedMonitoring(
+            DisableEnhancedMonitoringRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableEnhancedMonitoringResult enableEnhancedMonitoring(
+            EnableEnhancedMonitoringRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRecordsResult getRecords(GetRecordsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeSnapshotAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeSnapshotAttribute.
+ * </p>
  */
 public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -172,8 +174,6 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest
      * 
      * @param attribute
      *        The snapshot attribute you would like to view.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SnapshotAttributeName
      */
 

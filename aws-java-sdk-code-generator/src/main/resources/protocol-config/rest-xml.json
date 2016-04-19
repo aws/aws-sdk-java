@@ -20,6 +20,9 @@
       }, {
         "location" : "/macros/syncclientclass/common/ClientMethodForOperationWithSimpleForm.ftl",
         "importAsNamespace" : "ClientMethodForOperationWithSimpleForm"
+      }, {
+        "location" : "/macros/syncclientclass/common/ClientInvokeMethodInvocation.ftl",
+        "importAsNamespace" : "ClientInvokeMethodInvocation"
       }
     ]
   },

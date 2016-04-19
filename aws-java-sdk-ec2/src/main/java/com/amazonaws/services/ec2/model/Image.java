@@ -318,8 +318,6 @@ public class Image implements Serializable, Cloneable {
      *        The current state of the AMI. If the state is
      *        <code>available</code>, the image is successfully registered and
      *        can be used to launch an instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ImageState
      */
 
@@ -635,8 +633,6 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param architecture
      *        The architecture of the image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ArchitectureValues
      */
 
@@ -712,8 +708,6 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param imageType
      *        The type of image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ImageTypeValues
      */
 
@@ -887,8 +881,6 @@ public class Image implements Serializable, Cloneable {
      * @param platform
      *        The value is <code>Windows</code> for Windows AMIs; otherwise
      *        blank.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PlatformValues
      */
 
@@ -1187,8 +1179,6 @@ public class Image implements Serializable, Cloneable {
      * @param rootDeviceType
      *        The type of root device used by the AMI. The AMI can use an EBS
      *        volume or an instance store volume.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeviceType
      */
 
@@ -1394,8 +1384,6 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param virtualizationType
      *        The type of virtualization of the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VirtualizationType
      */
 
@@ -1547,8 +1535,6 @@ public class Image implements Serializable, Cloneable {
      * 
      * @param hypervisor
      *        The hypervisor type of the image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see HypervisorType
      */
 

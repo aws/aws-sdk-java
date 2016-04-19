@@ -165,8 +165,6 @@ public class GameSessionDetail implements Serializable, Cloneable {
      *        <li>FullProtection: If the game session is in an ACTIVE status, it
      *        cannot be terminated during a scale-down event.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ProtectionPolicy
      */
 

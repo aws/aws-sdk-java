@@ -302,8 +302,6 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * 
      * @param resourceStatus
      *        Current status of the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceStatus
      */
 

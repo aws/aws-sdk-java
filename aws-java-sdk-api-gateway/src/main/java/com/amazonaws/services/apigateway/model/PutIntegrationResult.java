@@ -164,8 +164,6 @@ public class PutIntegrationResult implements Serializable, Cloneable {
      * @param type
      *        Specifies the integration's type. The valid value is
      *        <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see IntegrationType
      */
 

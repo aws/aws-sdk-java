@@ -85,6 +85,13 @@ public class RedshiftDestinationConfigurationJsonUnmarshaller implements
                             .setS3Configuration(S3DestinationConfigurationJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CloudWatchLoggingOptions",
+                        targetDepth)) {
+                    context.nextToken();
+                    redshiftDestinationConfiguration
+                            .setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

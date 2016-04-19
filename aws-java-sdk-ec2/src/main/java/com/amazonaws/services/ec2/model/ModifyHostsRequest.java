@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyHostsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ModifyHosts.
+ * </p>
  */
 public class ModifyHostsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<ModifyHostsRequest> {
@@ -169,8 +171,6 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      * 
      * @param autoPlacement
      *        Specify whether to enable or disable auto-placement.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AutoPlacement
      */
 

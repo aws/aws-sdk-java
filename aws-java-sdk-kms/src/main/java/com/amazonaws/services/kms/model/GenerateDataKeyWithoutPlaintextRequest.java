@@ -326,8 +326,6 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @param keySpec
      *        Value that identifies the encryption algorithm and key size.
      *        Currently this can be AES_128 or AES_256.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DataKeySpec
      */
 

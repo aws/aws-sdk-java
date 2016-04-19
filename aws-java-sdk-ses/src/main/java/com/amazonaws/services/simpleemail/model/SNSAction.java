@@ -218,8 +218,6 @@ public class SNSAction implements Serializable, Cloneable {
      *        special characters when a message was encoded with a different
      *        encoding format. Base64 preserves all special characters. The
      *        default value is UTF-8.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SNSActionEncoding
      */
 

@@ -661,8 +661,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @param priceClass
      *        A complex type that contains information about price class for
      *        this distribution.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PriceClass
      */
 

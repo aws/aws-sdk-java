@@ -95,8 +95,6 @@ public class StepStatus implements Serializable, Cloneable {
      * 
      * @param state
      *        The execution state of the cluster step.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StepState
      */
 

@@ -360,8 +360,6 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        a time to be taken offline for a new deployment, it also means
      *        that if the deployment to the last instance fails, the overall
      *        deployment still succeeds.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MinimumHealthyHostsType
      */
 

@@ -244,23 +244,18 @@ abstract class AddShapes {
 
         if (isListShape(memberC2jShape)) {
 
-            MemberModel listMemberModel = null;
+            MemberModel listMemberModel;
 
             Member listMemberDefinition = memberC2jShape.getListMember();
             String listMemberC2jShapeName = listMemberDefinition.getShape();
             Shape listMemberC2jShape = c2jShapes.get(listMemberC2jShapeName);
 
-            // Only construct the nested member model if the member of the list
-            // itself is not scalar or is Enum shape.
-
-            if (!isScalar(listMemberC2jShape) || isEnumShape(listMemberC2jShape)) {
-                listMemberModel = generateMemberModel(
-                        "member",
-                        listMemberDefinition,
-                        protocol,
-                        memberC2jShape,
-                        c2jShapes);
-            }
+            listMemberModel = generateMemberModel(
+                    "member",
+                    listMemberDefinition,
+                    protocol,
+                    memberC2jShape,
+                    c2jShapes);
             final String listImpl = customConfig.isUseAutoConstructList()
                     ? getDataTypeMapping(LIST_AUTO_CONSTRUCT_IMPL)
                     : getDataTypeMapping(LIST_DEFAULT_IMPL)
@@ -280,15 +275,13 @@ abstract class AddShapes {
         } else if (isMapShape(memberC2jShape)) {
 
             MemberModel mapKeyModel = null;
-            MemberModel mapValueModel = null;
+            MemberModel mapValueModel;
 
             Member mapKeyMemberDefinition = memberC2jShape.getMapKeyType();
             String mapKeyShapeName = mapKeyMemberDefinition.getShape();
             Shape mapKeyShape = c2jShapes.get(mapKeyShapeName);
 
             Member mapValueMemberDefinition = memberC2jShape.getMapValueType();
-            String mapValueShapeName = mapValueMemberDefinition.getShape();
-            Shape mapValueShape = c2jShapes.get(mapValueShapeName);
 
             // Only construct the nested key model if the key of the map
             // itself is Enum shape. Throw exception if the nested key type is complex
@@ -303,16 +296,12 @@ abstract class AddShapes {
             } else if (!isScalar(mapKeyShape)) {
                 throw new IllegalStateException("The key type of "+ mapKeyShapeName +" must be a scalar!");
             }
-            // Only construct the nested value model if the value of the map
-            // itself is not scalar or is Enum shape.
-            if (!isScalar(mapValueShape) || isEnumShape(mapValueShape)) {
-                mapValueModel = generateMemberModel(
-                        "value",
-                        mapValueMemberDefinition,
-                        protocol,
-                        memberC2jShape,
-                        c2jShapes);
-            }
+            mapValueModel = generateMemberModel(
+                    "value",
+                    mapValueMemberDefinition,
+                    protocol,
+                    memberC2jShape,
+                    c2jShapes);
             final String mapImpl = customConfig.isUseAutoConstructMap()
                     ? getDataTypeMapping(MAP_AUTO_CONSTRUCT_IMPL)
                     : getDataTypeMapping(MAP_DEFAULT_IMPL)

@@ -98,8 +98,6 @@ public class StepStateChangeReason implements Serializable, Cloneable {
      * @param code
      *        The programmable code for the state change reason. Note:
      *        Currently, the service provides no code for the state change.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StepStateChangeReasonCode
      */
 

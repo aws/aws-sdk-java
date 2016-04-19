@@ -278,8 +278,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @param type
      *        The layer type. A stack cannot have more than one built-in layer
      *        of the same type. It can have any number of custom layers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LayerType
      */
 

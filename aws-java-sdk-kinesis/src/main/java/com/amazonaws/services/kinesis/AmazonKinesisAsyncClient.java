@@ -24,10 +24,10 @@ import com.amazonaws.annotation.ThreadSafe;
  * overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <fullname>Amazon Kinesis Service API Reference</fullname>
+ * <fullname>Amazon Kinesis Streams Service API Reference</fullname>
  * <p>
- * Amazon Kinesis is a managed service that scales elastically for real time
- * processing of streaming big data.
+ * Amazon Kinesis Streams is a managed service that scales elastically for real
+ * time processing of streaming big data.
  * </p>
  */
 @ThreadSafe
@@ -588,6 +588,78 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
                         .withLimit(limit)
                         .withExclusiveStartShardId(exclusiveStartShardId),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableEnhancedMonitoringResult> disableEnhancedMonitoringAsync(
+            DisableEnhancedMonitoringRequest request) {
+
+        return disableEnhancedMonitoringAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableEnhancedMonitoringResult> disableEnhancedMonitoringAsync(
+            final DisableEnhancedMonitoringRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableEnhancedMonitoringRequest, DisableEnhancedMonitoringResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DisableEnhancedMonitoringResult>() {
+                    @Override
+                    public DisableEnhancedMonitoringResult call()
+                            throws Exception {
+                        DisableEnhancedMonitoringResult result;
+
+                        try {
+                            result = disableEnhancedMonitoring(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableEnhancedMonitoringResult> enableEnhancedMonitoringAsync(
+            EnableEnhancedMonitoringRequest request) {
+
+        return enableEnhancedMonitoringAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableEnhancedMonitoringResult> enableEnhancedMonitoringAsync(
+            final EnableEnhancedMonitoringRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableEnhancedMonitoringRequest, EnableEnhancedMonitoringResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<EnableEnhancedMonitoringResult>() {
+                    @Override
+                    public EnableEnhancedMonitoringResult call()
+                            throws Exception {
+                        EnableEnhancedMonitoringResult result;
+
+                        try {
+                            result = enableEnhancedMonitoring(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override

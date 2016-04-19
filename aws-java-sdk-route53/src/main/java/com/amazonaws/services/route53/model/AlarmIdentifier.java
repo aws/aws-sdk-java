@@ -99,8 +99,6 @@ public class AlarmIdentifier implements Serializable, Cloneable {
      * @param region
      *        The <code>CloudWatchRegion</code> that the CloudWatch alarm was
      *        created in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CloudWatchRegion
      */
 

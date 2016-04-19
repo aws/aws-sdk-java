@@ -346,8 +346,6 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
 
     /**
      * @param subscriptionType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SubscriptionType
      */
 

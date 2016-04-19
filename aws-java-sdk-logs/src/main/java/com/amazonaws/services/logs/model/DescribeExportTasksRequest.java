@@ -161,8 +161,6 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * @param statusCode
      *        All export tasks that matches the specified status code will be
      *        returned. This can return zero or more export tasks.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ExportTaskStatusCode
      */
 

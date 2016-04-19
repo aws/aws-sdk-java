@@ -66,6 +66,16 @@ public class DestinationDescriptionJsonMarshaller {
                                         .getRedshiftDestinationDescription(),
                                 jsonGenerator);
             }
+            if (destinationDescription.getElasticsearchDestinationDescription() != null) {
+                jsonGenerator
+                        .writeFieldName("ElasticsearchDestinationDescription");
+                ElasticsearchDestinationDescriptionJsonMarshaller
+                        .getInstance()
+                        .marshall(
+                                destinationDescription
+                                        .getElasticsearchDestinationDescription(),
+                                jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

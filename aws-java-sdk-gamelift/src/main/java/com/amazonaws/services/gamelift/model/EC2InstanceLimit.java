@@ -138,8 +138,6 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      *        listed below. See <a
      *        href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
      *        Instance Types</a> for detailed descriptions of each.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EC2InstanceType
      */
 

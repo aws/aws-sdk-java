@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateVpcEndpointRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateVpcEndpoint.
+ * </p>
  */
 public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

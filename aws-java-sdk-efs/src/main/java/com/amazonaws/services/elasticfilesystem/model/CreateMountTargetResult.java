@@ -284,8 +284,6 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
      * 
      * @param lifeCycleState
      *        The lifecycle state the mount target is in.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LifeCycleState
      */
 

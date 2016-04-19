@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteNetworkInterfaceRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteNetworkInterface.
+ * </p>
  */
 public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

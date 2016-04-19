@@ -19,7 +19,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of AllocateAddress.
+ * </p>
  */
 public class AllocateAddressResult implements Serializable, Cloneable {
 
@@ -153,8 +155,6 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      *        Indicates whether this Elastic IP address is for use with
      *        instances in EC2-Classic (<code>standard</code>) or instances in a
      *        VPC (<code>vpc</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DomainType
      */
 

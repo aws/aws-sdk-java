@@ -30,6 +30,7 @@ import com.amazonaws.services.s3.internal.S3DirectSpi;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
+import com.amazonaws.services.s3.model.BucketAccelerateConfiguration;
 import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
@@ -59,6 +60,7 @@ import com.amazonaws.services.s3.model.DeleteObjectsRequest;
 import com.amazonaws.services.s3.model.DeleteObjectsResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.s3.model.GetBucketAccelerateConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketAclRequest;
 import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
@@ -98,6 +100,7 @@ import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
@@ -4531,11 +4534,72 @@ public interface AmazonS3 extends S3DirectSpi {
      *            Name of object that has to be checked
      * @return result of the search
      * @throws AmazonServiceException
-     *             If any errors occurred in Amazon S3 while processing the request.
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
      * @throws AmazonClientException
-     *             If any errors are encountered in the client while making the request or handling
-     *             the response.
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
      */
     boolean doesObjectExist(String bucketName, String objectName)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Retrieves the accelerate configuration for the given bucket.
+     *
+     * @param bucketName
+     *            The name of the bucket whose accelerate configuration is being
+     *            fetched.
+     * @return the accelerate configuration of the bucket.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     */
+    public BucketAccelerateConfiguration getBucketAccelerateConfiguration(
+            String bucket) throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Retrieves the accelerate configuration for the given bucket.
+     *
+     * @param getBucketAccelerateConfigurationRequest
+     *            The request object for retrieving the bucket accelerate
+     *            configuration.
+     * @return the accelerate configuration of the bucket.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     */
+    public BucketAccelerateConfiguration getBucketAccelerateConfiguration(
+            GetBucketAccelerateConfigurationRequest getBucketAccelerateConfigurationRequest)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Sets the accelerate configuration for the specified bucket. *
+     *
+     * @param bucketName
+     *            The name of the bucket whose accelerate configuration is being
+     *            set.
+     * @param accelerateConfiguration
+     *            The new accelerate configuration for this bucket, which
+     *            completely replaces any existing configuration.
+     */
+    public void setBucketAccelerateConfiguration(String bucketName,
+            BucketAccelerateConfiguration accelerateConfiguration)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Sets the accelerate configuration for the specified bucket.
+     *
+     * @param setBucketAccelerateConfigurationRequest
+     *            The request object containing all options for setting the
+     *            bucket accelerate configuration.
+     */
+    public void setBucketAccelerateConfiguration(
+            SetBucketAccelerateConfigurationRequest setBucketAccelerateConfigurationRequest)
             throws AmazonServiceException, AmazonClientException;
 }

@@ -111,8 +111,6 @@ public class XssMatchSetUpdate implements Serializable, Cloneable {
      *        Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to
      *        an <a>XssMatchSet</a>. Use <code>DELETE</code> to remove a
      *        <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
 

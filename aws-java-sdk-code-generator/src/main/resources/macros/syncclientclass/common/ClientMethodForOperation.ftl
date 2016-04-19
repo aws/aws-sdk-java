@@ -29,7 +29,7 @@
 
             <#if operationModel.returnType??>
                 <@ResponseHandlerCreation.content operationModel, metadata, "new ${operationModel.syncReturnType}${metadata.unmarshallerClassSuffix}()", operationModel.returnType.returnType />
-                response = invoke(request, responseHandler, executionContext);
+                response = <@ClientInvokeMethodInvocation.content operationModel />
 
 
                 <#-- This macro is used in glacier for wrapping the response streams -->
@@ -41,7 +41,7 @@
                 return response.getAwsResponse();
             <#else>
                 <@ResponseHandlerCreation.content operationModel, metadata, "null", "Void" />
-                invoke(request, responseHandler, executionContext);
+                <@ClientInvokeMethodInvocation.content operationModel />
             </#if>
 
         } finally {

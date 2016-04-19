@@ -2976,8 +2976,6 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        parser. For more information, see <a href=
      *        "http://wiki.apache.org/solr/DisMaxQParserPlugin#Query_Syntax"
      *        >DisMax Query Parser Syntax</a>.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see QueryParser
      */
 

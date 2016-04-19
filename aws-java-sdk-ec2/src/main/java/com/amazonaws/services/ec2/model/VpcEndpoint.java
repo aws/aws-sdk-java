@@ -242,8 +242,6 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the VPC endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see State
      */
 

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.RestoreAddressToClassicRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for RestoreAddressToClassic.
+ * </p>
  */
 public class RestoreAddressToClassicRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

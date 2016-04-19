@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class ListReusableDelegationSetsResultStaxUnmarshaller implements
 
                 if (context.testExpression("DelegationSets/DelegationSet",
                         targetDepth)) {
-                    listReusableDelegationSetsResult.getDelegationSets().add(
-                            DelegationSetStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listReusableDelegationSetsResult
+                            .withDelegationSets(DelegationSetStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

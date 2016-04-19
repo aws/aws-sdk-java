@@ -43,6 +43,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param acceptVpcPeeringConnectionRequest
+     *        Contains the parameters for AcceptVpcPeeringConnection.
      * @return A Java Future containing the result of the
      *         AcceptVpcPeeringConnection operation returned by the service.
      * @sample AmazonEC2Async.AcceptVpcPeeringConnection
@@ -60,6 +61,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param acceptVpcPeeringConnectionRequest
+     *        Contains the parameters for AcceptVpcPeeringConnection.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -104,6 +106,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param allocateAddressRequest
+     *        Contains the parameters for AllocateAddress.
      * @return A Java Future containing the result of the AllocateAddress
      *         operation returned by the service.
      * @sample AmazonEC2Async.AllocateAddress
@@ -124,6 +127,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param allocateAddressRequest
+     *        Contains the parameters for AllocateAddress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -162,6 +166,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param allocateHostsRequest
+     *        Contains the parameters for AllocateHosts.
      * @return A Java Future containing the result of the AllocateHosts
      *         operation returned by the service.
      * @sample AmazonEC2Async.AllocateHosts
@@ -177,6 +182,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param allocateHostsRequest
+     *        Contains the parameters for AllocateHosts.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -210,6 +216,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param assignPrivateIpAddressesRequest
+     *        Contains the parameters for AssignPrivateIpAddresses.
      * @sample AmazonEC2Async.AssignPrivateIpAddresses
      */
     java.util.concurrent.Future<Void> assignPrivateIpAddressesAsync(
@@ -235,6 +242,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param assignPrivateIpAddressesRequest
+     *        Contains the parameters for AssignPrivateIpAddresses.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -275,6 +283,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param associateAddressRequest
+     *        Contains the parameters for AssociateAddress.
      * @return A Java Future containing the result of the AssociateAddress
      *         operation returned by the service.
      * @sample AmazonEC2Async.AssociateAddress
@@ -311,6 +320,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param associateAddressRequest
+     *        Contains the parameters for AssociateAddress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -345,6 +355,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param associateDhcpOptionsRequest
+     *        Contains the parameters for AssociateDhcpOptions.
      * @sample AmazonEC2Async.AssociateDhcpOptions
      */
     java.util.concurrent.Future<Void> associateDhcpOptionsAsync(
@@ -371,6 +382,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param associateDhcpOptionsRequest
+     *        Contains the parameters for AssociateDhcpOptions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -398,6 +410,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param associateRouteTableRequest
+     *        Contains the parameters for AssociateRouteTable.
      * @return A Java Future containing the result of the AssociateRouteTable
      *         operation returned by the service.
      * @sample AmazonEC2Async.AssociateRouteTable
@@ -421,6 +434,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param associateRouteTableRequest
+     *        Contains the parameters for AssociateRouteTable.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -454,6 +468,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachClassicLinkVpcRequest
+     *        Contains the parameters for AttachClassicLinkVpc.
      * @return A Java Future containing the result of the AttachClassicLinkVpc
      *         operation returned by the service.
      * @sample AmazonEC2Async.AttachClassicLinkVpc
@@ -481,6 +496,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachClassicLinkVpcRequest
+     *        Contains the parameters for AttachClassicLinkVpc.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -504,6 +520,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachInternetGatewayRequest
+     *        Contains the parameters for AttachInternetGateway.
      * @sample AmazonEC2Async.AttachInternetGateway
      */
     java.util.concurrent.Future<Void> attachInternetGatewayAsync(
@@ -519,6 +536,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachInternetGatewayRequest
+     *        Contains the parameters for AttachInternetGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -536,6 +554,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachNetworkInterfaceRequest
+     *        Contains the parameters for AttachNetworkInterface.
      * @return A Java Future containing the result of the AttachNetworkInterface
      *         operation returned by the service.
      * @sample AmazonEC2Async.AttachNetworkInterface
@@ -549,6 +568,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachNetworkInterfaceRequest
+     *        Contains the parameters for AttachNetworkInterface.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -588,13 +608,28 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * If a volume has an AWS Marketplace product code:
      * </p>
      * <ul>
-     * <li>The volume can be attached only to a stopped instance.</li>
-     * <li>AWS Marketplace product codes are copied from the volume to the
-     * instance.</li>
-     * <li>You must be subscribed to the product.</li>
-     * <li>The instance type and operating system of the instance must support
-     * the product. For example, you can't detach a volume from a Windows
-     * instance and attach it to a Linux instance.</li>
+     * <li>
+     * <p>
+     * The volume can be attached only to a stopped instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Marketplace product codes are copied from the volume to the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must be subscribed to the product.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The instance type and operating system of the instance must support the
+     * product. For example, you can't detach a volume from a Windows instance
+     * and attach it to a Linux instance.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For an overview of the AWS Marketplace, see <a
@@ -609,6 +644,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachVolumeRequest
+     *        Contains the parameters for AttachVolume.
      * @return A Java Future containing the result of the AttachVolume operation
      *         returned by the service.
      * @sample AmazonEC2Async.AttachVolume
@@ -642,13 +678,28 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * If a volume has an AWS Marketplace product code:
      * </p>
      * <ul>
-     * <li>The volume can be attached only to a stopped instance.</li>
-     * <li>AWS Marketplace product codes are copied from the volume to the
-     * instance.</li>
-     * <li>You must be subscribed to the product.</li>
-     * <li>The instance type and operating system of the instance must support
-     * the product. For example, you can't detach a volume from a Windows
-     * instance and attach it to a Linux instance.</li>
+     * <li>
+     * <p>
+     * The volume can be attached only to a stopped instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Marketplace product codes are copied from the volume to the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must be subscribed to the product.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The instance type and operating system of the instance must support the
+     * product. For example, you can't detach a volume from a Windows instance
+     * and attach it to a Linux instance.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For an overview of the AWS Marketplace, see <a
@@ -663,6 +714,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachVolumeRequest
+     *        Contains the parameters for AttachVolume.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -686,6 +738,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachVpnGatewayRequest
+     *        Contains the parameters for AttachVpnGateway.
      * @return A Java Future containing the result of the AttachVpnGateway
      *         operation returned by the service.
      * @sample AmazonEC2Async.AttachVpnGateway
@@ -703,6 +756,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachVpnGatewayRequest
+     *        Contains the parameters for AttachVpnGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -747,6 +801,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param authorizeSecurityGroupEgressRequest
+     *        Contains the parameters for AuthorizeSecurityGroupEgress.
      * @sample AmazonEC2Async.AuthorizeSecurityGroupEgress
      */
     java.util.concurrent.Future<Void> authorizeSecurityGroupEgressAsync(
@@ -783,6 +838,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param authorizeSecurityGroupEgressRequest
+     *        Contains the parameters for AuthorizeSecurityGroupEgress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -827,6 +883,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param authorizeSecurityGroupIngressRequest
+     *        Contains the parameters for AuthorizeSecurityGroupIngress.
      * @sample AmazonEC2Async.AuthorizeSecurityGroupIngress
      */
     java.util.concurrent.Future<Void> authorizeSecurityGroupIngressAsync(
@@ -865,6 +922,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param authorizeSecurityGroupIngressRequest
+     *        Contains the parameters for AuthorizeSecurityGroupIngress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -897,6 +955,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param bundleInstanceRequest
+     *        Contains the parameters for BundleInstance.
      * @return A Java Future containing the result of the BundleInstance
      *         operation returned by the service.
      * @sample AmazonEC2Async.BundleInstance
@@ -925,6 +984,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param bundleInstanceRequest
+     *        Contains the parameters for BundleInstance.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -945,6 +1005,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelBundleTaskRequest
+     *        Contains the parameters for CancelBundleTask.
      * @return A Java Future containing the result of the CancelBundleTask
      *         operation returned by the service.
      * @sample AmazonEC2Async.CancelBundleTask
@@ -959,6 +1020,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelBundleTaskRequest
+     *        Contains the parameters for CancelBundleTask.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -988,6 +1050,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelConversionTaskRequest
+     *        Contains the parameters for CancelConversionTask.
      * @sample AmazonEC2Async.CancelConversionTask
      */
     java.util.concurrent.Future<Void> cancelConversionTaskAsync(
@@ -1009,6 +1072,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelConversionTaskRequest
+     *        Contains the parameters for CancelConversionTask.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1029,6 +1093,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelExportTaskRequest
+     *        Contains the parameters for CancelExportTask.
      * @sample AmazonEC2Async.CancelExportTask
      */
     java.util.concurrent.Future<Void> cancelExportTaskAsync(
@@ -1043,6 +1108,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelExportTaskRequest
+     *        Contains the parameters for CancelExportTask.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1060,6 +1126,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelImportTaskRequest
+     *        Contains the parameters for CancelImportTask.
      * @return A Java Future containing the result of the CancelImportTask
      *         operation returned by the service.
      * @sample AmazonEC2Async.CancelImportTask
@@ -1073,6 +1140,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelImportTaskRequest
+     *        Contains the parameters for CancelImportTask.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1116,6 +1184,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelReservedInstancesListingRequest
+     *        Contains the parameters for CancelReservedInstancesListing.
      * @return A Java Future containing the result of the
      *         CancelReservedInstancesListing operation returned by the service.
      * @sample AmazonEC2Async.CancelReservedInstancesListing
@@ -1136,6 +1205,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param cancelReservedInstancesListingRequest
+     *        Contains the parameters for CancelReservedInstancesListing.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1270,6 +1340,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param confirmProductInstanceRequest
+     *        Contains the parameters for ConfirmProductInstance.
      * @return A Java Future containing the result of the ConfirmProductInstance
      *         operation returned by the service.
      * @sample AmazonEC2Async.ConfirmProductInstance
@@ -1286,6 +1357,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param confirmProductInstanceRequest
+     *        Contains the parameters for ConfirmProductInstance.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1312,6 +1384,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param copyImageRequest
+     *        Contains the parameters for CopyImage.
      * @return A Java Future containing the result of the CopyImage operation
      *         returned by the service.
      * @sample AmazonEC2Async.CopyImage
@@ -1332,6 +1405,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param copyImageRequest
+     *        Contains the parameters for CopyImage.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1369,6 +1443,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param copySnapshotRequest
+     *        Contains the parameters for CopySnapshot.
      * @return A Java Future containing the result of the CopySnapshot operation
      *         returned by the service.
      * @sample AmazonEC2Async.CopySnapshot
@@ -1400,6 +1475,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param copySnapshotRequest
+     *        Contains the parameters for CopySnapshot.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1454,6 +1530,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </important>
      * 
      * @param createCustomerGatewayRequest
+     *        Contains the parameters for CreateCustomerGateway.
      * @return A Java Future containing the result of the CreateCustomerGateway
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateCustomerGateway
@@ -1502,6 +1579,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </important>
      * 
      * @param createCustomerGatewayRequest
+     *        Contains the parameters for CreateCustomerGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1525,30 +1603,48 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 2132</a>.
      * </p>
      * <ul>
-     * <li><code>domain-name-servers</code> - The IP addresses of up to four
-     * domain name servers, or <code>AmazonProvidedDNS</code>. The default DHCP
-     * option set specifies <code>AmazonProvidedDNS</code>. If specifying more
-     * than one domain name server, specify the IP addresses in a single
-     * parameter, separated by commas.</li>
-     * <li><code>domain-name</code> - If you're using AmazonProvidedDNS in
-     * <code>us-east-1</code>, specify <code>ec2.internal</code>. If you're
-     * using AmazonProvidedDNS in another region, specify
-     * <code>region.compute.internal</code> (for example,
-     * <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a
-     * domain name (for example, <code>MyCompany.com</code>). <b>Important</b>:
-     * Some Linux operating systems accept multiple domain names separated by
-     * spaces. However, Windows and other Linux operating systems treat the
-     * value as a single domain, which results in unexpected behavior. If your
-     * DHCP options set is associated with a VPC that has instances with
-     * multiple operating systems, specify only one domain name.</li>
-     * <li><code>ntp-servers</code> - The IP addresses of up to four Network
-     * Time Protocol (NTP) servers.</li>
-     * <li><code>netbios-name-servers</code> - The IP addresses of up to four
-     * NetBIOS name servers.</li>
-     * <li><code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or
-     * 8). We recommend that you specify 2 (broadcast and multicast are not
+     * <li>
+     * <p>
+     * <code>domain-name-servers</code> - The IP addresses of up to four domain
+     * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
+     * AmazonProvidedDNS. If specifying more than one domain name server,
+     * specify the IP addresses in a single parameter, separated by commas.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>domain-name</code> - If you're using AmazonProvidedDNS in
+     * "us-east-1", specify "ec2.internal". If you're using AmazonProvidedDNS in
+     * another region, specify "region.compute.internal" (for example,
+     * "ap-northeast-1.compute.internal"). Otherwise, specify a domain name (for
+     * example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems
+     * accept multiple domain names separated by spaces. However, Windows and
+     * other Linux operating systems treat the value as a single domain, which
+     * results in unexpected behavior. If your DHCP options set is associated
+     * with a VPC that has instances with multiple operating systems, specify
+     * only one domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ntp-servers</code> - The IP addresses of up to four Network Time
+     * Protocol (NTP) servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>netbios-name-servers</code> - The IP addresses of up to four
+     * NetBIOS name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8).
+     * We recommend that you specify 2 (broadcast and multicast are not
      * currently supported). For more information about these node types, see <a
-     * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</li>
+     * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Your VPC automatically starts out with a set of DHCP options that
@@ -1563,6 +1659,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createDhcpOptionsRequest
+     *        Contains the parameters for CreateDhcpOptions.
      * @return A Java Future containing the result of the CreateDhcpOptions
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateDhcpOptions
@@ -1580,30 +1677,48 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * 2132</a>.
      * </p>
      * <ul>
-     * <li><code>domain-name-servers</code> - The IP addresses of up to four
-     * domain name servers, or <code>AmazonProvidedDNS</code>. The default DHCP
-     * option set specifies <code>AmazonProvidedDNS</code>. If specifying more
-     * than one domain name server, specify the IP addresses in a single
-     * parameter, separated by commas.</li>
-     * <li><code>domain-name</code> - If you're using AmazonProvidedDNS in
-     * <code>us-east-1</code>, specify <code>ec2.internal</code>. If you're
-     * using AmazonProvidedDNS in another region, specify
-     * <code>region.compute.internal</code> (for example,
-     * <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a
-     * domain name (for example, <code>MyCompany.com</code>). <b>Important</b>:
-     * Some Linux operating systems accept multiple domain names separated by
-     * spaces. However, Windows and other Linux operating systems treat the
-     * value as a single domain, which results in unexpected behavior. If your
-     * DHCP options set is associated with a VPC that has instances with
-     * multiple operating systems, specify only one domain name.</li>
-     * <li><code>ntp-servers</code> - The IP addresses of up to four Network
-     * Time Protocol (NTP) servers.</li>
-     * <li><code>netbios-name-servers</code> - The IP addresses of up to four
-     * NetBIOS name servers.</li>
-     * <li><code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or
-     * 8). We recommend that you specify 2 (broadcast and multicast are not
+     * <li>
+     * <p>
+     * <code>domain-name-servers</code> - The IP addresses of up to four domain
+     * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
+     * AmazonProvidedDNS. If specifying more than one domain name server,
+     * specify the IP addresses in a single parameter, separated by commas.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>domain-name</code> - If you're using AmazonProvidedDNS in
+     * "us-east-1", specify "ec2.internal". If you're using AmazonProvidedDNS in
+     * another region, specify "region.compute.internal" (for example,
+     * "ap-northeast-1.compute.internal"). Otherwise, specify a domain name (for
+     * example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems
+     * accept multiple domain names separated by spaces. However, Windows and
+     * other Linux operating systems treat the value as a single domain, which
+     * results in unexpected behavior. If your DHCP options set is associated
+     * with a VPC that has instances with multiple operating systems, specify
+     * only one domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ntp-servers</code> - The IP addresses of up to four Network Time
+     * Protocol (NTP) servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>netbios-name-servers</code> - The IP addresses of up to four
+     * NetBIOS name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8).
+     * We recommend that you specify 2 (broadcast and multicast are not
      * currently supported). For more information about these node types, see <a
-     * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</li>
+     * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Your VPC automatically starts out with a set of DHCP options that
@@ -1618,6 +1733,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createDhcpOptionsRequest
+     *        Contains the parameters for CreateDhcpOptions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1647,6 +1763,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createFlowLogsRequest
+     *        Contains the parameters for CreateFlowLogs.
      * @return A Java Future containing the result of the CreateFlowLogs
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateFlowLogs
@@ -1670,6 +1787,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createFlowLogsRequest
+     *        Contains the parameters for CreateFlowLogs.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1703,6 +1821,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createImageRequest
+     *        Contains the parameters for CreateImage.
      * @return A Java Future containing the result of the CreateImage operation
      *         returned by the service.
      * @sample AmazonEC2Async.CreateImage
@@ -1730,6 +1849,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createImageRequest
+     *        Contains the parameters for CreateImage.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1756,6 +1876,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createInstanceExportTaskRequest
+     *        Contains the parameters for CreateInstanceExportTask.
      * @return A Java Future containing the result of the
      *         CreateInstanceExportTask operation returned by the service.
      * @sample AmazonEC2Async.CreateInstanceExportTask
@@ -1776,6 +1897,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createInstanceExportTaskRequest
+     *        Contains the parameters for CreateInstanceExportTask.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1802,6 +1924,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createInternetGatewayRequest
+     *        Contains the parameters for CreateInternetGateway.
      * @return A Java Future containing the result of the CreateInternetGateway
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateInternetGateway
@@ -1822,6 +1945,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createInternetGatewayRequest
+     *        Contains the parameters for CreateInternetGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1875,6 +1999,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createKeyPairRequest
+     *        Contains the parameters for CreateKeyPair.
      * @return A Java Future containing the result of the CreateKeyPair
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateKeyPair
@@ -1905,6 +2030,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createKeyPairRequest
+     *        Contains the parameters for CreateKeyPair.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1930,6 +2056,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createNatGatewayRequest
+     *        Contains the parameters for CreateNatGateway.
      * @return A Java Future containing the result of the CreateNatGateway
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateNatGateway
@@ -1949,6 +2076,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createNatGatewayRequest
+     *        Contains the parameters for CreateNatGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1974,6 +2102,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createNetworkAclRequest
+     *        Contains the parameters for CreateNetworkAcl.
      * @return A Java Future containing the result of the CreateNetworkAcl
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateNetworkAcl
@@ -1993,6 +2122,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createNetworkAclRequest
+     *        Contains the parameters for CreateNetworkAcl.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2033,6 +2163,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createNetworkAclEntryRequest
+     *        Contains the parameters for CreateNetworkAclEntry.
      * @sample AmazonEC2Async.CreateNetworkAclEntry
      */
     java.util.concurrent.Future<Void> createNetworkAclEntryAsync(
@@ -2065,6 +2196,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createNetworkAclEntryRequest
+     *        Contains the parameters for CreateNetworkAclEntry.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2088,6 +2220,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createNetworkInterfaceRequest
+     *        Contains the parameters for CreateNetworkInterface.
      * @return A Java Future containing the result of the CreateNetworkInterface
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateNetworkInterface
@@ -2107,6 +2240,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createNetworkInterfaceRequest
+     *        Contains the parameters for CreateNetworkInterface.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2135,6 +2269,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createPlacementGroupRequest
+     *        Contains the parameters for CreatePlacementGroup.
      * @sample AmazonEC2Async.CreatePlacementGroup
      */
     java.util.concurrent.Future<Void> createPlacementGroupAsync(
@@ -2155,6 +2290,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createPlacementGroupRequest
+     *        Contains the parameters for CreatePlacementGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2197,6 +2333,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createReservedInstancesListingRequest
+     *        Contains the parameters for CreateReservedInstancesListing.
      * @return A Java Future containing the result of the
      *         CreateReservedInstancesListing operation returned by the service.
      * @sample AmazonEC2Async.CreateReservedInstancesListing
@@ -2235,6 +2372,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createReservedInstancesListingRequest
+     *        Contains the parameters for CreateReservedInstancesListing.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2288,6 +2426,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createRouteRequest
+     *        Contains the parameters for CreateRoute.
      * @return A Java Future containing the result of the CreateRoute operation
      *         returned by the service.
      * @sample AmazonEC2Async.CreateRoute
@@ -2335,6 +2474,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createRouteRequest
+     *        Contains the parameters for CreateRoute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2360,6 +2500,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createRouteTableRequest
+     *        Contains the parameters for CreateRouteTable.
      * @return A Java Future containing the result of the CreateRouteTable
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateRouteTable
@@ -2379,6 +2520,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createRouteTableRequest
+     *        Contains the parameters for CreateRouteTable.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2437,6 +2579,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createSecurityGroupRequest
+     *        Contains the parameters for CreateSecurityGroup.
      * @return A Java Future containing the result of the CreateSecurityGroup
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateSecurityGroup
@@ -2489,6 +2632,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createSecurityGroupRequest
+     *        Contains the parameters for CreateSecurityGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2544,6 +2688,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createSnapshotRequest
+     *        Contains the parameters for CreateSnapshot.
      * @return A Java Future containing the result of the CreateSnapshot
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateSnapshot
@@ -2593,6 +2738,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createSnapshotRequest
+     *        Contains the parameters for CreateSnapshot.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2689,6 +2835,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createSubnetRequest
+     *        Contains the parameters for CreateSubnet.
      * @return A Java Future containing the result of the CreateSubnet operation
      *         returned by the service.
      * @sample AmazonEC2Async.CreateSubnet
@@ -2735,6 +2882,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createSubnetRequest
+     *        Contains the parameters for CreateSubnet.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2767,6 +2915,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createTagsRequest
+     *        Contains the parameters for CreateTags.
      * @sample AmazonEC2Async.CreateTags
      */
     java.util.concurrent.Future<Void> createTagsAsync(
@@ -2791,6 +2940,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createTagsRequest
+     *        Contains the parameters for CreateTags.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2833,6 +2983,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVolumeRequest
+     *        Contains the parameters for CreateVolume.
      * @return A Java Future containing the result of the CreateVolume operation
      *         returned by the service.
      * @sample AmazonEC2Async.CreateVolume
@@ -2871,6 +3022,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVolumeRequest
+     *        Contains the parameters for CreateVolume.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2907,6 +3059,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpcRequest
+     *        Contains the parameters for CreateVpc.
      * @return A Java Future containing the result of the CreateVpc operation
      *         returned by the service.
      * @sample AmazonEC2Async.CreateVpc
@@ -2937,6 +3090,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpcRequest
+     *        Contains the parameters for CreateVpc.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2963,6 +3117,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpcEndpointRequest
+     *        Contains the parameters for CreateVpcEndpoint.
      * @return A Java Future containing the result of the CreateVpcEndpoint
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateVpcEndpoint
@@ -2983,6 +3138,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpcEndpointRequest
+     *        Contains the parameters for CreateVpcEndpoint.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3015,6 +3171,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpcPeeringConnectionRequest
+     *        Contains the parameters for CreateVpcPeeringConnection.
      * @return A Java Future containing the result of the
      *         CreateVpcPeeringConnection operation returned by the service.
      * @sample AmazonEC2Async.CreateVpcPeeringConnection
@@ -3041,6 +3198,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpcPeeringConnectionRequest
+     *        Contains the parameters for CreateVpcPeeringConnection.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3102,6 +3260,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpnConnectionRequest
+     *        Contains the parameters for CreateVpnConnection.
      * @return A Java Future containing the result of the CreateVpnConnection
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateVpnConnection
@@ -3139,6 +3298,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpnConnectionRequest
+     *        Contains the parameters for CreateVpnConnection.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3167,6 +3327,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpnConnectionRouteRequest
+     *        Contains the parameters for CreateVpnConnectionRoute.
      * @sample AmazonEC2Async.CreateVpnConnectionRoute
      */
     java.util.concurrent.Future<Void> createVpnConnectionRouteAsync(
@@ -3187,6 +3348,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpnConnectionRouteRequest
+     *        Contains the parameters for CreateVpnConnectionRoute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3212,6 +3374,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpnGatewayRequest
+     *        Contains the parameters for CreateVpnGateway.
      * @return A Java Future containing the result of the CreateVpnGateway
      *         operation returned by the service.
      * @sample AmazonEC2Async.CreateVpnGateway
@@ -3233,6 +3396,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVpnGatewayRequest
+     *        Contains the parameters for CreateVpnGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3253,6 +3417,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteCustomerGatewayRequest
+     *        Contains the parameters for DeleteCustomerGateway.
      * @sample AmazonEC2Async.DeleteCustomerGateway
      */
     java.util.concurrent.Future<Void> deleteCustomerGatewayAsync(
@@ -3265,6 +3430,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteCustomerGatewayRequest
+     *        Contains the parameters for DeleteCustomerGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3285,6 +3451,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteDhcpOptionsRequest
+     *        Contains the parameters for DeleteDhcpOptions.
      * @sample AmazonEC2Async.DeleteDhcpOptions
      */
     java.util.concurrent.Future<Void> deleteDhcpOptionsAsync(
@@ -3299,6 +3466,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteDhcpOptionsRequest
+     *        Contains the parameters for DeleteDhcpOptions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3316,6 +3484,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteFlowLogsRequest
+     *        Contains the parameters for DeleteFlowLogs.
      * @return A Java Future containing the result of the DeleteFlowLogs
      *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteFlowLogs
@@ -3329,6 +3498,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteFlowLogsRequest
+     *        Contains the parameters for DeleteFlowLogs.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3349,6 +3519,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteInternetGatewayRequest
+     *        Contains the parameters for DeleteInternetGateway.
      * @sample AmazonEC2Async.DeleteInternetGateway
      */
     java.util.concurrent.Future<Void> deleteInternetGatewayAsync(
@@ -3361,6 +3532,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteInternetGatewayRequest
+     *        Contains the parameters for DeleteInternetGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3379,6 +3551,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteKeyPairRequest
+     *        Contains the parameters for DeleteKeyPair.
      * @sample AmazonEC2Async.DeleteKeyPair
      */
     java.util.concurrent.Future<Void> deleteKeyPairAsync(
@@ -3391,6 +3564,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteKeyPairRequest
+     *        Contains the parameters for DeleteKeyPair.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3411,6 +3585,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteNatGatewayRequest
+     *        Contains the parameters for DeleteNatGateway.
      * @return A Java Future containing the result of the DeleteNatGateway
      *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteNatGateway
@@ -3427,6 +3602,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteNatGatewayRequest
+     *        Contains the parameters for DeleteNatGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3447,6 +3623,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteNetworkAclRequest
+     *        Contains the parameters for DeleteNetworkAcl.
      * @sample AmazonEC2Async.DeleteNetworkAcl
      */
     java.util.concurrent.Future<Void> deleteNetworkAclAsync(
@@ -3459,6 +3636,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteNetworkAclRequest
+     *        Contains the parameters for DeleteNetworkAcl.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3477,6 +3655,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteNetworkAclEntryRequest
+     *        Contains the parameters for DeleteNetworkAclEntry.
      * @sample AmazonEC2Async.DeleteNetworkAclEntry
      */
     java.util.concurrent.Future<Void> deleteNetworkAclEntryAsync(
@@ -3489,6 +3668,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteNetworkAclEntryRequest
+     *        Contains the parameters for DeleteNetworkAclEntry.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3507,6 +3687,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteNetworkInterfaceRequest
+     *        Contains the parameters for DeleteNetworkInterface.
      * @sample AmazonEC2Async.DeleteNetworkInterface
      */
     java.util.concurrent.Future<Void> deleteNetworkInterfaceAsync(
@@ -3519,6 +3700,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteNetworkInterfaceRequest
+     *        Contains the parameters for DeleteNetworkInterface.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3542,6 +3724,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deletePlacementGroupRequest
+     *        Contains the parameters for DeletePlacementGroup.
      * @sample AmazonEC2Async.DeletePlacementGroup
      */
     java.util.concurrent.Future<Void> deletePlacementGroupAsync(
@@ -3559,6 +3742,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deletePlacementGroupRequest
+     *        Contains the parameters for DeletePlacementGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3576,6 +3760,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteRouteRequest
+     *        Contains the parameters for DeleteRoute.
      * @sample AmazonEC2Async.DeleteRoute
      */
     java.util.concurrent.Future<Void> deleteRouteAsync(
@@ -3587,6 +3772,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteRouteRequest
+     *        Contains the parameters for DeleteRoute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3606,6 +3792,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteRouteTableRequest
+     *        Contains the parameters for DeleteRouteTable.
      * @sample AmazonEC2Async.DeleteRouteTable
      */
     java.util.concurrent.Future<Void> deleteRouteTableAsync(
@@ -3619,6 +3806,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteRouteTableRequest
+     *        Contains the parameters for DeleteRouteTable.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3642,6 +3830,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteSecurityGroupRequest
+     *        Contains the parameters for DeleteSecurityGroup.
      * @sample AmazonEC2Async.DeleteSecurityGroup
      */
     java.util.concurrent.Future<Void> deleteSecurityGroupAsync(
@@ -3659,6 +3848,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteSecurityGroupRequest
+     *        Contains the parameters for DeleteSecurityGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3696,6 +3886,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteSnapshotRequest
+     *        Contains the parameters for DeleteSnapshot.
      * @sample AmazonEC2Async.DeleteSnapshot
      */
     java.util.concurrent.Future<Void> deleteSnapshotAsync(
@@ -3727,6 +3918,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteSnapshotRequest
+     *        Contains the parameters for DeleteSnapshot.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3793,6 +3985,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteSubnetRequest
+     *        Contains the parameters for DeleteSubnet.
      * @sample AmazonEC2Async.DeleteSubnet
      */
     java.util.concurrent.Future<Void> deleteSubnetAsync(
@@ -3805,6 +3998,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteSubnetRequest
+     *        Contains the parameters for DeleteSubnet.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3829,6 +4023,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteTagsRequest
+     *        Contains the parameters for DeleteTags.
      * @sample AmazonEC2Async.DeleteTags
      */
     java.util.concurrent.Future<Void> deleteTagsAsync(
@@ -3847,6 +4042,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteTagsRequest
+     *        Contains the parameters for DeleteTags.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3877,6 +4073,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVolumeRequest
+     *        Contains the parameters for DeleteVolume.
      * @sample AmazonEC2Async.DeleteVolume
      */
     java.util.concurrent.Future<Void> deleteVolumeAsync(
@@ -3901,6 +4098,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVolumeRequest
+     *        Contains the parameters for DeleteVolume.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3923,6 +4121,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpcRequest
+     *        Contains the parameters for DeleteVpc.
      * @sample AmazonEC2Async.DeleteVpc
      */
     java.util.concurrent.Future<Void> deleteVpcAsync(
@@ -3939,6 +4138,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpcRequest
+     *        Contains the parameters for DeleteVpc.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3958,6 +4158,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpcEndpointsRequest
+     *        Contains the parameters for DeleteVpcEndpoints.
      * @return A Java Future containing the result of the DeleteVpcEndpoints
      *         operation returned by the service.
      * @sample AmazonEC2Async.DeleteVpcEndpoints
@@ -3973,6 +4174,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpcEndpointsRequest
+     *        Contains the parameters for DeleteVpcEndpoints.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -3996,6 +4198,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpcPeeringConnectionRequest
+     *        Contains the parameters for DeleteVpcPeeringConnection.
      * @return A Java Future containing the result of the
      *         DeleteVpcPeeringConnection operation returned by the service.
      * @sample AmazonEC2Async.DeleteVpcPeeringConnection
@@ -4013,6 +4216,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpcPeeringConnectionRequest
+     *        Contains the parameters for DeleteVpcPeeringConnection.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4042,6 +4246,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpnConnectionRequest
+     *        Contains the parameters for DeleteVpnConnection.
      * @sample AmazonEC2Async.DeleteVpnConnection
      */
     java.util.concurrent.Future<Void> deleteVpnConnectionAsync(
@@ -4063,6 +4268,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpnConnectionRequest
+     *        Contains the parameters for DeleteVpnConnection.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4083,6 +4289,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpnConnectionRouteRequest
+     *        Contains the parameters for DeleteVpnConnectionRoute.
      * @sample AmazonEC2Async.DeleteVpnConnectionRoute
      */
     java.util.concurrent.Future<Void> deleteVpnConnectionRouteAsync(
@@ -4097,6 +4304,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpnConnectionRouteRequest
+     *        Contains the parameters for DeleteVpnConnectionRoute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4118,6 +4326,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpnGatewayRequest
+     *        Contains the parameters for DeleteVpnGateway.
      * @sample AmazonEC2Async.DeleteVpnGateway
      */
     java.util.concurrent.Future<Void> deleteVpnGatewayAsync(
@@ -4133,6 +4342,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVpnGatewayRequest
+     *        Contains the parameters for DeleteVpnGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4154,6 +4364,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deregisterImageRequest
+     *        Contains the parameters for DeregisterImage.
      * @sample AmazonEC2Async.DeregisterImage
      */
     java.util.concurrent.Future<Void> deregisterImageAsync(
@@ -4169,6 +4380,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deregisterImageRequest
+     *        Contains the parameters for DeregisterImage.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4225,6 +4437,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </ul>
      * 
      * @param describeAccountAttributesRequest
+     *        Contains the parameters for DescribeAccountAttributes.
      * @return A Java Future containing the result of the
      *         DescribeAccountAttributes operation returned by the service.
      * @sample AmazonEC2Async.DescribeAccountAttributes
@@ -4277,6 +4490,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </ul>
      * 
      * @param describeAccountAttributesRequest
+     *        Contains the parameters for DescribeAccountAttributes.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4321,6 +4535,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeAddressesRequest
+     *        Contains the parameters for DescribeAddresses.
      * @return A Java Future containing the result of the DescribeAddresses
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeAddresses
@@ -4341,6 +4556,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeAddressesRequest
+     *        Contains the parameters for DescribeAddresses.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4387,6 +4603,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeAvailabilityZonesRequest
+     *        Contains the parameters for DescribeAvailabilityZones.
      * @return A Java Future containing the result of the
      *         DescribeAvailabilityZones operation returned by the service.
      * @sample AmazonEC2Async.DescribeAvailabilityZones
@@ -4410,6 +4627,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeAvailabilityZonesRequest
+     *        Contains the parameters for DescribeAvailabilityZones.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4455,6 +4673,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param describeBundleTasksRequest
+     *        Contains the parameters for DescribeBundleTasks.
      * @return A Java Future containing the result of the DescribeBundleTasks
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeBundleTasks
@@ -4476,6 +4695,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param describeBundleTasksRequest
+     *        Contains the parameters for DescribeBundleTasks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4515,6 +4735,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeClassicLinkInstancesRequest
+     *        Contains the parameters for DescribeClassicLinkInstances.
      * @return A Java Future containing the result of the
      *         DescribeClassicLinkInstances operation returned by the service.
      * @sample AmazonEC2Async.DescribeClassicLinkInstances
@@ -4531,6 +4752,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeClassicLinkInstancesRequest
+     *        Contains the parameters for DescribeClassicLinkInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4578,6 +4800,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeConversionTasksRequest
+     *        Contains the parameters for DescribeConversionTasks.
      * @return A Java Future containing the result of the
      *         DescribeConversionTasks operation returned by the service.
      * @sample AmazonEC2Async.DescribeConversionTasks
@@ -4601,6 +4824,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeConversionTasksRequest
+     *        Contains the parameters for DescribeConversionTasks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4644,6 +4868,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeCustomerGatewaysRequest
+     *        Contains the parameters for DescribeCustomerGateways.
      * @return A Java Future containing the result of the
      *         DescribeCustomerGateways operation returned by the service.
      * @sample AmazonEC2Async.DescribeCustomerGateways
@@ -4663,6 +4888,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeCustomerGatewaysRequest
+     *        Contains the parameters for DescribeCustomerGateways.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4706,6 +4932,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeDhcpOptionsRequest
+     *        Contains the parameters for DescribeDhcpOptions.
      * @return A Java Future containing the result of the DescribeDhcpOptions
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeDhcpOptions
@@ -4725,6 +4952,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeDhcpOptionsRequest
+     *        Contains the parameters for DescribeDhcpOptions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4761,6 +4989,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeExportTasksRequest
+     *        Contains the parameters for DescribeExportTasks.
      * @return A Java Future containing the result of the DescribeExportTasks
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeExportTasks
@@ -4774,6 +5003,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeExportTasksRequest
+     *        Contains the parameters for DescribeExportTasks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4812,6 +5042,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeFlowLogsRequest
+     *        Contains the parameters for DescribeFlowLogs.
      * @return A Java Future containing the result of the DescribeFlowLogs
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeFlowLogs
@@ -4827,6 +5058,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeFlowLogsRequest
+     *        Contains the parameters for DescribeFlowLogs.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4869,6 +5101,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeHostsRequest
+     *        Contains the parameters for DescribeHosts.
      * @return A Java Future containing the result of the DescribeHosts
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeHosts
@@ -4888,6 +5121,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeHostsRequest
+     *        Contains the parameters for DescribeHosts.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -4941,6 +5175,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeIdFormatRequest
+     *        Contains the parameters for DescribeIdFormat.
      * @return A Java Future containing the result of the DescribeIdFormat
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeIdFormat
@@ -4971,6 +5206,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeIdFormatRequest
+     *        Contains the parameters for DescribeIdFormat.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5008,6 +5244,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeImageAttributeRequest
+     *        Contains the parameters for DescribeImageAttribute.
      * @return A Java Future containing the result of the DescribeImageAttribute
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeImageAttribute
@@ -5022,6 +5259,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeImageAttributeRequest
+     *        Contains the parameters for DescribeImageAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5050,6 +5288,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param describeImagesRequest
+     *        Contains the parameters for DescribeImages.
      * @return A Java Future containing the result of the DescribeImages
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeImages
@@ -5072,6 +5311,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param describeImagesRequest
+     *        Contains the parameters for DescribeImages.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5109,6 +5349,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeImportImageTasksRequest
+     *        Contains the parameters for DescribeImportImageTasks.
      * @return A Java Future containing the result of the
      *         DescribeImportImageTasks operation returned by the service.
      * @sample AmazonEC2Async.DescribeImportImageTasks
@@ -5123,6 +5364,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeImportImageTasksRequest
+     *        Contains the parameters for DescribeImportImageTasks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5160,6 +5402,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeImportSnapshotTasksRequest
+     *        Contains the parameters for DescribeImportSnapshotTasks.
      * @return A Java Future containing the result of the
      *         DescribeImportSnapshotTasks operation returned by the service.
      * @sample AmazonEC2Async.DescribeImportSnapshotTasks
@@ -5173,6 +5416,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeImportSnapshotTasksRequest
+     *        Contains the parameters for DescribeImportSnapshotTasks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5218,6 +5462,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeInstanceAttributeRequest
+     *        Contains the parameters for DescribeInstanceAttribute.
      * @return A Java Future containing the result of the
      *         DescribeInstanceAttribute operation returned by the service.
      * @sample AmazonEC2Async.DescribeInstanceAttribute
@@ -5239,6 +5484,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeInstanceAttributeRequest
+     *        Contains the parameters for DescribeInstanceAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5295,6 +5541,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </ul>
      * 
      * @param describeInstanceStatusRequest
+     *        Contains the parameters for DescribeInstanceStatus.
      * @return A Java Future containing the result of the DescribeInstanceStatus
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeInstanceStatus
@@ -5345,6 +5592,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </ul>
      * 
      * @param describeInstanceStatusRequest
+     *        Contains the parameters for DescribeInstanceStatus.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5392,6 +5640,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeInstancesRequest
+     *        Contains the parameters for DescribeInstances.
      * @return A Java Future containing the result of the DescribeInstances
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeInstances
@@ -5416,6 +5665,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeInstancesRequest
+     *        Contains the parameters for DescribeInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5452,6 +5702,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeInternetGatewaysRequest
+     *        Contains the parameters for DescribeInternetGateways.
      * @return A Java Future containing the result of the
      *         DescribeInternetGateways operation returned by the service.
      * @sample AmazonEC2Async.DescribeInternetGateways
@@ -5465,6 +5716,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeInternetGatewaysRequest
+     *        Contains the parameters for DescribeInternetGateways.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5507,6 +5759,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeKeyPairsRequest
+     *        Contains the parameters for DescribeKeyPairs.
      * @return A Java Future containing the result of the DescribeKeyPairs
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeKeyPairs
@@ -5525,6 +5778,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeKeyPairsRequest
+     *        Contains the parameters for DescribeKeyPairs.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5564,6 +5818,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeMovingAddressesRequest
+     *        Contains the parameters for DescribeMovingAddresses.
      * @return A Java Future containing the result of the
      *         DescribeMovingAddresses operation returned by the service.
      * @sample AmazonEC2Async.DescribeMovingAddresses
@@ -5580,6 +5835,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeMovingAddressesRequest
+     *        Contains the parameters for DescribeMovingAddresses.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5617,6 +5873,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeNatGatewaysRequest
+     *        Contains the parameters for DescribeNatGateways.
      * @return A Java Future containing the result of the DescribeNatGateways
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeNatGateways
@@ -5630,6 +5887,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeNatGatewaysRequest
+     *        Contains the parameters for DescribeNatGateways.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5654,6 +5912,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeNetworkAclsRequest
+     *        Contains the parameters for DescribeNetworkAcls.
      * @return A Java Future containing the result of the DescribeNetworkAcls
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeNetworkAcls
@@ -5672,6 +5931,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeNetworkAclsRequest
+     *        Contains the parameters for DescribeNetworkAcls.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5709,6 +5969,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeNetworkInterfaceAttributeRequest
+     *        Contains the parameters for DescribeNetworkInterfaceAttribute.
      * @return A Java Future containing the result of the
      *         DescribeNetworkInterfaceAttribute operation returned by the
      *         service.
@@ -5724,6 +5985,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeNetworkInterfaceAttributeRequest
+     *        Contains the parameters for DescribeNetworkInterfaceAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5744,6 +6006,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeNetworkInterfacesRequest
+     *        Contains the parameters for DescribeNetworkInterfaces.
      * @return A Java Future containing the result of the
      *         DescribeNetworkInterfaces operation returned by the service.
      * @sample AmazonEC2Async.DescribeNetworkInterfaces
@@ -5757,6 +6020,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeNetworkInterfacesRequest
+     *        Contains the parameters for DescribeNetworkInterfaces.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5798,6 +6062,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describePlacementGroupsRequest
+     *        Contains the parameters for DescribePlacementGroups.
      * @return A Java Future containing the result of the
      *         DescribePlacementGroups operation returned by the service.
      * @sample AmazonEC2Async.DescribePlacementGroups
@@ -5815,6 +6080,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describePlacementGroupsRequest
+     *        Contains the parameters for DescribePlacementGroups.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5856,6 +6122,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describePrefixListsRequest
+     *        Contains the parameters for DescribePrefixLists.
      * @return A Java Future containing the result of the DescribePrefixLists
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribePrefixLists
@@ -5873,6 +6140,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describePrefixListsRequest
+     *        Contains the parameters for DescribePrefixLists.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5914,6 +6182,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeRegionsRequest
+     *        Contains the parameters for DescribeRegions.
      * @return A Java Future containing the result of the DescribeRegions
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeRegions
@@ -5932,6 +6201,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeRegionsRequest
+     *        Contains the parameters for DescribeRegions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -5974,6 +6244,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeReservedInstancesRequest
+     *        Contains the parameters for DescribeReservedInstances.
      * @return A Java Future containing the result of the
      *         DescribeReservedInstances operation returned by the service.
      * @sample AmazonEC2Async.DescribeReservedInstances
@@ -5993,6 +6264,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeReservedInstancesRequest
+     *        Contains the parameters for DescribeReservedInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -6058,6 +6330,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeReservedInstancesListingsRequest
+     *        Contains the parameters for DescribeReservedInstancesListings.
      * @return A Java Future containing the result of the
      *         DescribeReservedInstancesListings operation returned by the
      *         service.
@@ -6100,6 +6373,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeReservedInstancesListingsRequest
+     *        Contains the parameters for DescribeReservedInstancesListings.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -6147,6 +6421,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeReservedInstancesModificationsRequest
+     *        Contains the parameters for
+     *        DescribeReservedInstancesModifications.
      * @return A Java Future containing the result of the
      *         DescribeReservedInstancesModifications operation returned by the
      *         service.
@@ -6170,6 +6446,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeReservedInstancesModificationsRequest
+     *        Contains the parameters for
+     *        DescribeReservedInstancesModifications.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -6223,6 +6501,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeReservedInstancesOfferingsRequest
+     *        Contains the parameters for DescribeReservedInstancesOfferings.
      * @return A Java Future containing the result of the
      *         DescribeReservedInstancesOfferings operation returned by the
      *         service.
@@ -6252,6 +6531,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeReservedInstancesOfferingsRequest
+     *        Contains the parameters for DescribeReservedInstancesOfferings.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -6301,6 +6581,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeRouteTablesRequest
+     *        Contains the parameters for DescribeRouteTables.
      * @return A Java Future containing the result of the DescribeRouteTables
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeRouteTables
@@ -6325,6 +6606,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeRouteTablesRequest
+     *        Contains the parameters for DescribeRouteTables.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -6465,6 +6747,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSecurityGroupsRequest
+     *        Contains the parameters for DescribeSecurityGroups.
      * @return A Java Future containing the result of the DescribeSecurityGroups
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeSecurityGroups
@@ -6488,6 +6771,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSecurityGroupsRequest
+     *        Contains the parameters for DescribeSecurityGroups.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -6530,6 +6814,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSnapshotAttributeRequest
+     *        Contains the parameters for DescribeSnapshotAttribute.
      * @return A Java Future containing the result of the
      *         DescribeSnapshotAttribute operation returned by the service.
      * @sample AmazonEC2Async.DescribeSnapshotAttribute
@@ -6549,6 +6834,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSnapshotAttributeRequest
+     *        Contains the parameters for DescribeSnapshotAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -6574,13 +6860,25 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * The create volume permissions fall into the following categories:
      * </p>
      * <ul>
-     * <li><i>public</i>: The owner of the snapshot granted create volume
+     * <li>
+     * <p>
+     * <i>public</i>: The owner of the snapshot granted create volume
      * permissions for the snapshot to the <code>all</code> group. All AWS
-     * accounts have create volume permissions for these snapshots.</li>
-     * <li><i>explicit</i>: The owner of the snapshot granted create volume
-     * permissions to a specific AWS account.</li>
-     * <li><i>implicit</i>: An AWS account has implicit create volume
-     * permissions for all snapshots it owns.</li>
+     * accounts have create volume permissions for these snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>explicit</i>: The owner of the snapshot granted create volume
+     * permissions to a specific AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>implicit</i>: An AWS account has implicit create volume permissions
+     * for all snapshots it owns.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The list of snapshots returned can be modified by specifying snapshot
@@ -6624,6 +6922,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSnapshotsRequest
+     *        Contains the parameters for DescribeSnapshots.
      * @return A Java Future containing the result of the DescribeSnapshots
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeSnapshots
@@ -6643,13 +6942,25 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * The create volume permissions fall into the following categories:
      * </p>
      * <ul>
-     * <li><i>public</i>: The owner of the snapshot granted create volume
+     * <li>
+     * <p>
+     * <i>public</i>: The owner of the snapshot granted create volume
      * permissions for the snapshot to the <code>all</code> group. All AWS
-     * accounts have create volume permissions for these snapshots.</li>
-     * <li><i>explicit</i>: The owner of the snapshot granted create volume
-     * permissions to a specific AWS account.</li>
-     * <li><i>implicit</i>: An AWS account has implicit create volume
-     * permissions for all snapshots it owns.</li>
+     * accounts have create volume permissions for these snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>explicit</i>: The owner of the snapshot granted create volume
+     * permissions to a specific AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>implicit</i>: An AWS account has implicit create volume permissions
+     * for all snapshots it owns.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The list of snapshots returned can be modified by specifying snapshot
@@ -6693,6 +7004,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSnapshotsRequest
+     *        Contains the parameters for DescribeSnapshots.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7089,6 +7401,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSubnetsRequest
+     *        Contains the parameters for DescribeSubnets.
      * @return A Java Future containing the result of the DescribeSubnets
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeSubnets
@@ -7108,6 +7421,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSubnetsRequest
+     *        Contains the parameters for DescribeSubnets.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7150,6 +7464,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeTagsRequest
+     *        Contains the parameters for DescribeTags.
      * @return A Java Future containing the result of the DescribeTags operation
      *         returned by the service.
      * @sample AmazonEC2Async.DescribeTags
@@ -7169,6 +7484,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeTagsRequest
+     *        Contains the parameters for DescribeTags.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7211,6 +7527,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVolumeAttributeRequest
+     *        Contains the parameters for DescribeVolumeAttribute.
      * @return A Java Future containing the result of the
      *         DescribeVolumeAttribute operation returned by the service.
      * @sample AmazonEC2Async.DescribeVolumeAttribute
@@ -7230,6 +7547,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVolumeAttributeRequest
+     *        Contains the parameters for DescribeVolumeAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7297,6 +7615,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param describeVolumeStatusRequest
+     *        Contains the parameters for DescribeVolumeStatus.
      * @return A Java Future containing the result of the DescribeVolumeStatus
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeVolumeStatus
@@ -7358,6 +7677,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param describeVolumeStatusRequest
+     *        Contains the parameters for DescribeVolumeStatus.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7408,6 +7728,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVolumesRequest
+     *        Contains the parameters for DescribeVolumes.
      * @return A Java Future containing the result of the DescribeVolumes
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeVolumes
@@ -7435,6 +7756,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVolumesRequest
+     *        Contains the parameters for DescribeVolumes.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7472,6 +7794,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcAttributeRequest
+     *        Contains the parameters for DescribeVpcAttribute.
      * @return A Java Future containing the result of the DescribeVpcAttribute
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeVpcAttribute
@@ -7486,6 +7809,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcAttributeRequest
+     *        Contains the parameters for DescribeVpcAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7505,6 +7829,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcClassicLinkRequest
+     *        Contains the parameters for DescribeVpcClassicLink.
      * @return A Java Future containing the result of the DescribeVpcClassicLink
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeVpcClassicLink
@@ -7518,6 +7843,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcClassicLinkRequest
+     *        Contains the parameters for DescribeVpcClassicLink.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7562,6 +7888,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcClassicLinkDnsSupportRequest
+     *        Contains the parameters for DescribeVpcClassicLinkDnsSupport.
      * @return A Java Future containing the result of the
      *         DescribeVpcClassicLinkDnsSupport operation returned by the
      *         service.
@@ -7584,6 +7911,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcClassicLinkDnsSupportRequest
+     *        Contains the parameters for DescribeVpcClassicLinkDnsSupport.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7605,6 +7933,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcEndpointServicesRequest
+     *        Contains the parameters for DescribeVpcEndpointServices.
      * @return A Java Future containing the result of the
      *         DescribeVpcEndpointServices operation returned by the service.
      * @sample AmazonEC2Async.DescribeVpcEndpointServices
@@ -7619,6 +7948,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcEndpointServicesRequest
+     *        Contains the parameters for DescribeVpcEndpointServices.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7656,6 +7986,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcEndpointsRequest
+     *        Contains the parameters for DescribeVpcEndpoints.
      * @return A Java Future containing the result of the DescribeVpcEndpoints
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeVpcEndpoints
@@ -7669,6 +8000,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcEndpointsRequest
+     *        Contains the parameters for DescribeVpcEndpoints.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7705,6 +8037,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcPeeringConnectionsRequest
+     *        Contains the parameters for DescribeVpcPeeringConnections.
      * @return A Java Future containing the result of the
      *         DescribeVpcPeeringConnections operation returned by the service.
      * @sample AmazonEC2Async.DescribeVpcPeeringConnections
@@ -7718,6 +8051,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcPeeringConnectionsRequest
+     *        Contains the parameters for DescribeVpcPeeringConnections.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7755,6 +8089,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcsRequest
+     *        Contains the parameters for DescribeVpcs.
      * @return A Java Future containing the result of the DescribeVpcs operation
      *         returned by the service.
      * @sample AmazonEC2Async.DescribeVpcs
@@ -7768,6 +8103,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcsRequest
+     *        Contains the parameters for DescribeVpcs.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7810,6 +8146,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpnConnectionsRequest
+     *        Contains the parameters for DescribeVpnConnections.
      * @return A Java Future containing the result of the DescribeVpnConnections
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeVpnConnections
@@ -7829,6 +8166,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpnConnectionsRequest
+     *        Contains the parameters for DescribeVpnConnections.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7871,6 +8209,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpnGatewaysRequest
+     *        Contains the parameters for DescribeVpnGateways.
      * @return A Java Future containing the result of the DescribeVpnGateways
      *         operation returned by the service.
      * @sample AmazonEC2Async.DescribeVpnGateways
@@ -7890,6 +8229,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpnGatewaysRequest
+     *        Contains the parameters for DescribeVpnGateways.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7929,6 +8269,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachClassicLinkVpcRequest
+     *        Contains the parameters for DetachClassicLinkVpc.
      * @return A Java Future containing the result of the DetachClassicLinkVpc
      *         operation returned by the service.
      * @sample AmazonEC2Async.DetachClassicLinkVpc
@@ -7945,6 +8286,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachClassicLinkVpcRequest
+     *        Contains the parameters for DetachClassicLinkVpc.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7966,6 +8308,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachInternetGatewayRequest
+     *        Contains the parameters for DetachInternetGateway.
      * @sample AmazonEC2Async.DetachInternetGateway
      */
     java.util.concurrent.Future<Void> detachInternetGatewayAsync(
@@ -7979,6 +8322,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachInternetGatewayRequest
+     *        Contains the parameters for DetachInternetGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -7996,6 +8340,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachNetworkInterfaceRequest
+     *        Contains the parameters for DetachNetworkInterface.
      * @sample AmazonEC2Async.DetachNetworkInterface
      */
     java.util.concurrent.Future<Void> detachNetworkInterfaceAsync(
@@ -8007,6 +8352,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachNetworkInterfaceRequest
+     *        Contains the parameters for DetachNetworkInterface.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8042,6 +8388,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachVolumeRequest
+     *        Contains the parameters for DetachVolume.
      * @return A Java Future containing the result of the DetachVolume operation
      *         returned by the service.
      * @sample AmazonEC2Async.DetachVolume
@@ -8073,6 +8420,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachVolumeRequest
+     *        Contains the parameters for DetachVolume.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8101,6 +8449,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachVpnGatewayRequest
+     *        Contains the parameters for DetachVpnGateway.
      * @sample AmazonEC2Async.DetachVpnGateway
      */
     java.util.concurrent.Future<Void> detachVpnGatewayAsync(
@@ -8121,6 +8470,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachVpnGatewayRequest
+     *        Contains the parameters for DetachVpnGateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8139,6 +8489,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disableVgwRoutePropagationRequest
+     *        Contains the parameters for DisableVgwRoutePropagation.
      * @sample AmazonEC2Async.DisableVgwRoutePropagation
      */
     java.util.concurrent.Future<Void> disableVgwRoutePropagationAsync(
@@ -8151,6 +8502,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disableVgwRoutePropagationRequest
+     *        Contains the parameters for DisableVgwRoutePropagation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8169,6 +8521,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disableVpcClassicLinkRequest
+     *        Contains the parameters for DisableVpcClassicLink.
      * @return A Java Future containing the result of the DisableVpcClassicLink
      *         operation returned by the service.
      * @sample AmazonEC2Async.DisableVpcClassicLink
@@ -8183,6 +8536,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disableVpcClassicLinkRequest
+     *        Contains the parameters for DisableVpcClassicLink.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8207,6 +8561,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disableVpcClassicLinkDnsSupportRequest
+     *        Contains the parameters for DisableVpcClassicLinkDnsSupport.
      * @return A Java Future containing the result of the
      *         DisableVpcClassicLinkDnsSupport operation returned by the
      *         service.
@@ -8226,6 +8581,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disableVpcClassicLinkDnsSupportRequest
+     *        Contains the parameters for DisableVpcClassicLinkDnsSupport.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8258,6 +8614,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disassociateAddressRequest
+     *        Contains the parameters for DisassociateAddress.
      * @sample AmazonEC2Async.DisassociateAddress
      */
     java.util.concurrent.Future<Void> disassociateAddressAsync(
@@ -8281,6 +8638,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disassociateAddressRequest
+     *        Contains the parameters for DisassociateAddress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8305,6 +8663,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disassociateRouteTableRequest
+     *        Contains the parameters for DisassociateRouteTable.
      * @sample AmazonEC2Async.DisassociateRouteTable
      */
     java.util.concurrent.Future<Void> disassociateRouteTableAsync(
@@ -8323,6 +8682,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param disassociateRouteTableRequest
+     *        Contains the parameters for DisassociateRouteTable.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8341,6 +8701,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param enableVgwRoutePropagationRequest
+     *        Contains the parameters for EnableVgwRoutePropagation.
      * @sample AmazonEC2Async.EnableVgwRoutePropagation
      */
     java.util.concurrent.Future<Void> enableVgwRoutePropagationAsync(
@@ -8353,6 +8714,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param enableVgwRoutePropagationRequest
+     *        Contains the parameters for EnableVgwRoutePropagation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8371,6 +8733,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param enableVolumeIORequest
+     *        Contains the parameters for EnableVolumeIO.
      * @sample AmazonEC2Async.EnableVolumeIO
      */
     java.util.concurrent.Future<Void> enableVolumeIOAsync(
@@ -8383,6 +8746,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param enableVolumeIORequest
+     *        Contains the parameters for EnableVolumeIO.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8408,6 +8772,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param enableVpcClassicLinkRequest
+     *        Contains the parameters for EnableVpcClassicLink.
      * @return A Java Future containing the result of the EnableVpcClassicLink
      *         operation returned by the service.
      * @sample AmazonEC2Async.EnableVpcClassicLink
@@ -8429,6 +8794,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param enableVpcClassicLinkRequest
+     *        Contains the parameters for EnableVpcClassicLink.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8456,6 +8822,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param enableVpcClassicLinkDnsSupportRequest
+     *        Contains the parameters for EnableVpcClassicLinkDnsSupport.
      * @return A Java Future containing the result of the
      *         EnableVpcClassicLinkDnsSupport operation returned by the service.
      * @sample AmazonEC2Async.EnableVpcClassicLinkDnsSupport
@@ -8477,6 +8844,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param enableVpcClassicLinkDnsSupportRequest
+     *        Contains the parameters for EnableVpcClassicLinkDnsSupport.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8519,6 +8887,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param getConsoleOutputRequest
+     *        Contains the parameters for GetConsoleOutput.
      * @return A Java Future containing the result of the GetConsoleOutput
      *         operation returned by the service.
      * @sample AmazonEC2Async.GetConsoleOutput
@@ -8555,6 +8924,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param getConsoleOutputRequest
+     *        Contains the parameters for GetConsoleOutput.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8592,6 +8962,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param getPasswordDataRequest
+     *        Contains the parameters for GetPasswordData.
      * @return A Java Future containing the result of the GetPasswordData
      *         operation returned by the service.
      * @sample AmazonEC2Async.GetPasswordData
@@ -8623,6 +8994,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param getPasswordDataRequest
+     *        Contains the parameters for GetPasswordData.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8643,6 +9015,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importImageRequest
+     *        Contains the parameters for ImportImage.
      * @return A Java Future containing the result of the ImportImage operation
      *         returned by the service.
      * @sample AmazonEC2Async.ImportImage
@@ -8657,6 +9030,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importImageRequest
+     *        Contains the parameters for ImportImage.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8706,6 +9080,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importInstanceRequest
+     *        Contains the parameters for ImportInstance.
      * @return A Java Future containing the result of the ImportInstance
      *         operation returned by the service.
      * @sample AmazonEC2Async.ImportInstance
@@ -8732,6 +9107,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importInstanceRequest
+     *        Contains the parameters for ImportInstance.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8761,6 +9137,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importKeyPairRequest
+     *        Contains the parameters for ImportKeyPair.
      * @return A Java Future containing the result of the ImportKeyPair
      *         operation returned by the service.
      * @sample AmazonEC2Async.ImportKeyPair
@@ -8784,6 +9161,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importKeyPairRequest
+     *        Contains the parameters for ImportKeyPair.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8803,6 +9181,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importSnapshotRequest
+     *        Contains the parameters for ImportSnapshot.
      * @return A Java Future containing the result of the ImportSnapshot
      *         operation returned by the service.
      * @sample AmazonEC2Async.ImportSnapshot
@@ -8816,6 +9195,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importSnapshotRequest
+     *        Contains the parameters for ImportSnapshot.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8864,6 +9244,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importVolumeRequest
+     *        Contains the parameters for ImportVolume.
      * @return A Java Future containing the result of the ImportVolume operation
      *         returned by the service.
      * @sample AmazonEC2Async.ImportVolume
@@ -8889,6 +9270,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param importVolumeRequest
+     *        Contains the parameters for ImportVolume.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8915,6 +9297,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyHostsRequest
+     *        Contains the parameters for ModifyHosts.
      * @return A Java Future containing the result of the ModifyHosts operation
      *         returned by the service.
      * @sample AmazonEC2Async.ModifyHosts
@@ -8935,6 +9318,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyHostsRequest
+     *        Contains the parameters for ModifyHosts.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -8974,6 +9358,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyIdFormatRequest
+     *        Contains the parameters of ModifyIdFormat.
      * @sample AmazonEC2Async.ModifyIdFormat
      */
     java.util.concurrent.Future<Void> modifyIdFormatAsync(
@@ -9005,6 +9390,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyIdFormatRequest
+     *        Contains the parameters of ModifyIdFormat.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9029,6 +9415,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param modifyImageAttributeRequest
+     *        Contains the parameters for ModifyImageAttribute.
      * @sample AmazonEC2Async.ModifyImageAttribute
      */
     java.util.concurrent.Future<Void> modifyImageAttributeAsync(
@@ -9047,6 +9434,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param modifyImageAttributeRequest
+     *        Contains the parameters for ModifyImageAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9072,6 +9460,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyInstanceAttributeRequest
+     *        Contains the parameters for ModifyInstanceAttribute.
      * @sample AmazonEC2Async.ModifyInstanceAttribute
      */
     java.util.concurrent.Future<Void> modifyInstanceAttributeAsync(
@@ -9091,6 +9480,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyInstanceAttributeRequest
+     *        Contains the parameters for ModifyInstanceAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9131,6 +9521,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyInstancePlacementRequest
+     *        Contains the parameters for ModifyInstancePlacement.
      * @return A Java Future containing the result of the
      *         ModifyInstancePlacement operation returned by the service.
      * @sample AmazonEC2Async.ModifyInstancePlacement
@@ -9167,6 +9558,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyInstancePlacementRequest
+     *        Contains the parameters for ModifyInstancePlacement.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9187,6 +9579,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyNetworkInterfaceAttributeRequest
+     *        Contains the parameters for ModifyNetworkInterfaceAttribute.
      * @sample AmazonEC2Async.ModifyNetworkInterfaceAttribute
      */
     java.util.concurrent.Future<Void> modifyNetworkInterfaceAttributeAsync(
@@ -9199,6 +9592,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyNetworkInterfaceAttributeRequest
+     *        Contains the parameters for ModifyNetworkInterfaceAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9225,6 +9619,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyReservedInstancesRequest
+     *        Contains the parameters for ModifyReservedInstances.
      * @return A Java Future containing the result of the
      *         ModifyReservedInstances operation returned by the service.
      * @sample AmazonEC2Async.ModifyReservedInstances
@@ -9247,6 +9642,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyReservedInstancesRequest
+     *        Contains the parameters for ModifyReservedInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9281,6 +9677,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param modifySnapshotAttributeRequest
+     *        Contains the parameters for ModifySnapshotAttribute.
      * @sample AmazonEC2Async.ModifySnapshotAttribute
      */
     java.util.concurrent.Future<Void> modifySnapshotAttributeAsync(
@@ -9307,6 +9704,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param modifySnapshotAttributeRequest
+     *        Contains the parameters for ModifySnapshotAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9408,6 +9806,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifySubnetAttributeRequest
+     *        Contains the parameters for ModifySubnetAttribute.
      * @sample AmazonEC2Async.ModifySubnetAttribute
      */
     java.util.concurrent.Future<Void> modifySubnetAttributeAsync(
@@ -9419,6 +9818,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifySubnetAttributeRequest
+     *        Contains the parameters for ModifySubnetAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9448,6 +9848,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyVolumeAttributeRequest
+     *        Contains the parameters for ModifyVolumeAttribute.
      * @sample AmazonEC2Async.ModifyVolumeAttribute
      */
     java.util.concurrent.Future<Void> modifyVolumeAttributeAsync(
@@ -9471,6 +9872,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyVolumeAttributeRequest
+     *        Contains the parameters for ModifyVolumeAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9488,6 +9890,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyVpcAttributeRequest
+     *        Contains the parameters for ModifyVpcAttribute.
      * @sample AmazonEC2Async.ModifyVpcAttribute
      */
     java.util.concurrent.Future<Void> modifyVpcAttributeAsync(
@@ -9499,6 +9902,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyVpcAttributeRequest
+     *        Contains the parameters for ModifyVpcAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9518,6 +9922,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyVpcEndpointRequest
+     *        Contains the parameters for ModifyVpcEndpoint.
      * @return A Java Future containing the result of the ModifyVpcEndpoint
      *         operation returned by the service.
      * @sample AmazonEC2Async.ModifyVpcEndpoint
@@ -9533,6 +9938,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyVpcEndpointRequest
+     *        Contains the parameters for ModifyVpcEndpoint.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9556,6 +9962,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param monitorInstancesRequest
+     *        Contains the parameters for MonitorInstances.
      * @return A Java Future containing the result of the MonitorInstances
      *         operation returned by the service.
      * @sample AmazonEC2Async.MonitorInstances
@@ -9573,6 +9980,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param monitorInstancesRequest
+     *        Contains the parameters for MonitorInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9594,13 +10002,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * the Elastic IP address is moved, it is no longer available for use in the
      * EC2-Classic platform, unless you move it back using the
      * <a>RestoreAddressToClassic</a> request. You cannot move an Elastic IP
-     * address that's allocated for use in the EC2-VPC platform to the
-     * EC2-Classic platform. You cannot migrate an Elastic IP address that's
+     * address that was originally allocated for use in the EC2-VPC platform to
+     * the EC2-Classic platform. You cannot migrate an Elastic IP address that's
      * associated with a reverse DNS record. Contact AWS account and billing
      * support to remove the reverse DNS record.
      * </p>
      * 
      * @param moveAddressToVpcRequest
+     *        Contains the parameters for MoveAddressToVpc.
      * @return A Java Future containing the result of the MoveAddressToVpc
      *         operation returned by the service.
      * @sample AmazonEC2Async.MoveAddressToVpc
@@ -9616,13 +10025,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * the Elastic IP address is moved, it is no longer available for use in the
      * EC2-Classic platform, unless you move it back using the
      * <a>RestoreAddressToClassic</a> request. You cannot move an Elastic IP
-     * address that's allocated for use in the EC2-VPC platform to the
-     * EC2-Classic platform. You cannot migrate an Elastic IP address that's
+     * address that was originally allocated for use in the EC2-VPC platform to
+     * the EC2-Classic platform. You cannot migrate an Elastic IP address that's
      * associated with a reverse DNS record. Contact AWS account and billing
      * support to remove the reverse DNS record.
      * </p>
      * 
      * @param moveAddressToVpcRequest
+     *        Contains the parameters for MoveAddressToVpc.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9659,6 +10069,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param purchaseReservedInstancesOfferingRequest
+     *        Contains the parameters for PurchaseReservedInstancesOffering.
      * @return A Java Future containing the result of the
      *         PurchaseReservedInstancesOffering operation returned by the
      *         service.
@@ -9690,6 +10101,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param purchaseReservedInstancesOfferingRequest
+     *        Contains the parameters for PurchaseReservedInstancesOffering.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9769,6 +10181,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param rebootInstancesRequest
+     *        Contains the parameters for RebootInstances.
      * @sample AmazonEC2Async.RebootInstances
      */
     java.util.concurrent.Future<Void> rebootInstancesAsync(
@@ -9793,6 +10206,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param rebootInstancesRequest
+     *        Contains the parameters for RebootInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9861,6 +10275,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param registerImageRequest
+     *        Contains the parameters for RegisterImage.
      * @return A Java Future containing the result of the RegisterImage
      *         operation returned by the service.
      * @sample AmazonEC2Async.RegisterImage
@@ -9925,6 +10340,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param registerImageRequest
+     *        Contains the parameters for RegisterImage.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -9949,6 +10365,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param rejectVpcPeeringConnectionRequest
+     *        Contains the parameters for RejectVpcPeeringConnection.
      * @return A Java Future containing the result of the
      *         RejectVpcPeeringConnection operation returned by the service.
      * @sample AmazonEC2Async.RejectVpcPeeringConnection
@@ -9967,6 +10384,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param rejectVpcPeeringConnectionRequest
+     *        Contains the parameters for RejectVpcPeeringConnection.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10005,6 +10423,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param releaseAddressRequest
+     *        Contains the parameters for ReleaseAddress.
      * @sample AmazonEC2Async.ReleaseAddress
      */
     java.util.concurrent.Future<Void> releaseAddressAsync(
@@ -10035,6 +10454,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param releaseAddressRequest
+     *        Contains the parameters for ReleaseAddress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10065,6 +10485,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param releaseHostsRequest
+     *        Contains the parameters for ReleaseHosts.
      * @return A Java Future containing the result of the ReleaseHosts operation
      *         returned by the service.
      * @sample AmazonEC2Async.ReleaseHosts
@@ -10091,6 +10512,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param releaseHostsRequest
+     *        Contains the parameters for ReleaseHosts.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10114,6 +10536,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param replaceNetworkAclAssociationRequest
+     *        Contains the parameters for ReplaceNetworkAclAssociation.
      * @return A Java Future containing the result of the
      *         ReplaceNetworkAclAssociation operation returned by the service.
      * @sample AmazonEC2Async.ReplaceNetworkAclAssociation
@@ -10131,6 +10554,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param replaceNetworkAclAssociationRequest
+     *        Contains the parameters for ReplaceNetworkAclAssociation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10153,6 +10577,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param replaceNetworkAclEntryRequest
+     *        Contains the parameters for ReplaceNetworkAclEntry.
      * @sample AmazonEC2Async.ReplaceNetworkAclEntry
      */
     java.util.concurrent.Future<Void> replaceNetworkAclEntryAsync(
@@ -10167,6 +10592,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param replaceNetworkAclEntryRequest
+     *        Contains the parameters for ReplaceNetworkAclEntry.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10192,6 +10618,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param replaceRouteRequest
+     *        Contains the parameters for ReplaceRoute.
      * @sample AmazonEC2Async.ReplaceRoute
      */
     java.util.concurrent.Future<Void> replaceRouteAsync(
@@ -10211,6 +10638,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param replaceRouteRequest
+     *        Contains the parameters for ReplaceRoute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10238,6 +10666,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param replaceRouteTableAssociationRequest
+     *        Contains the parameters for ReplaceRouteTableAssociation.
      * @return A Java Future containing the result of the
      *         ReplaceRouteTableAssociation operation returned by the service.
      * @sample AmazonEC2Async.ReplaceRouteTableAssociation
@@ -10261,6 +10690,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param replaceRouteTableAssociationRequest
+     *        Contains the parameters for ReplaceRouteTableAssociation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10289,6 +10719,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param reportInstanceStatusRequest
+     *        Contains the parameters for ReportInstanceStatus.
      * @sample AmazonEC2Async.ReportInstanceStatus
      */
     java.util.concurrent.Future<Void> reportInstanceStatusAsync(
@@ -10309,6 +10740,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param reportInstanceStatusRequest
+     *        Contains the parameters for ReportInstanceStatus.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10459,6 +10891,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param resetImageAttributeRequest
+     *        Contains the parameters for ResetImageAttribute.
      * @sample AmazonEC2Async.ResetImageAttribute
      */
     java.util.concurrent.Future<Void> resetImageAttributeAsync(
@@ -10475,6 +10908,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param resetImageAttributeRequest
+     *        Contains the parameters for ResetImageAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10504,6 +10938,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param resetInstanceAttributeRequest
+     *        Contains the parameters for ResetInstanceAttribute.
      * @sample AmazonEC2Async.ResetInstanceAttribute
      */
     java.util.concurrent.Future<Void> resetInstanceAttributeAsync(
@@ -10527,6 +10962,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param resetInstanceAttributeRequest
+     *        Contains the parameters for ResetInstanceAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10545,6 +10981,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param resetNetworkInterfaceAttributeRequest
+     *        Contains the parameters for ResetNetworkInterfaceAttribute.
      * @sample AmazonEC2Async.ResetNetworkInterfaceAttribute
      */
     java.util.concurrent.Future<Void> resetNetworkInterfaceAttributeAsync(
@@ -10557,6 +10994,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param resetNetworkInterfaceAttributeRequest
+     *        Contains the parameters for ResetNetworkInterfaceAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10580,6 +11018,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param resetSnapshotAttributeRequest
+     *        Contains the parameters for ResetSnapshotAttribute.
      * @sample AmazonEC2Async.ResetSnapshotAttribute
      */
     java.util.concurrent.Future<Void> resetSnapshotAttributeAsync(
@@ -10597,6 +11036,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param resetSnapshotAttributeRequest
+     *        Contains the parameters for ResetSnapshotAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10620,6 +11060,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param restoreAddressToClassicRequest
+     *        Contains the parameters for RestoreAddressToClassic.
      * @return A Java Future containing the result of the
      *         RestoreAddressToClassic operation returned by the service.
      * @sample AmazonEC2Async.RestoreAddressToClassic
@@ -10639,6 +11080,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param restoreAddressToClassicRequest
+     *        Contains the parameters for RestoreAddressToClassic.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10672,6 +11114,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param revokeSecurityGroupEgressRequest
+     *        Contains the parameters for RevokeSecurityGroupEgress.
      * @sample AmazonEC2Async.RevokeSecurityGroupEgress
      */
     java.util.concurrent.Future<Void> revokeSecurityGroupEgressAsync(
@@ -10697,6 +11140,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param revokeSecurityGroupEgressRequest
+     *        Contains the parameters for RevokeSecurityGroupEgress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10726,6 +11170,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param revokeSecurityGroupIngressRequest
+     *        Contains the parameters for RevokeSecurityGroupIngress.
      * @sample AmazonEC2Async.RevokeSecurityGroupIngress
      */
     java.util.concurrent.Future<Void> revokeSecurityGroupIngressAsync(
@@ -10749,6 +11194,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param revokeSecurityGroupIngressRequest
+     *        Contains the parameters for RevokeSecurityGroupIngress.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -10845,6 +11291,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param runInstancesRequest
+     *        Contains the parameters for RunInstances.
      * @return A Java Future containing the result of the RunInstances operation
      *         returned by the service.
      * @sample AmazonEC2Async.RunInstances
@@ -10919,6 +11366,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param runInstancesRequest
+     *        Contains the parameters for RunInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -11016,6 +11464,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param startInstancesRequest
+     *        Contains the parameters for StartInstances.
      * @return A Java Future containing the result of the StartInstances
      *         operation returned by the service.
      * @sample AmazonEC2Async.StartInstances
@@ -11053,6 +11502,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param startInstancesRequest
+     *        Contains the parameters for StartInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -11112,6 +11562,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param stopInstancesRequest
+     *        Contains the parameters for StopInstances.
      * @return A Java Future containing the result of the StopInstances
      *         operation returned by the service.
      * @sample AmazonEC2Async.StopInstances
@@ -11165,6 +11616,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param stopInstancesRequest
+     *        Contains the parameters for StopInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -11214,6 +11666,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param terminateInstancesRequest
+     *        Contains the parameters for TerminateInstances.
      * @return A Java Future containing the result of the TerminateInstances
      *         operation returned by the service.
      * @sample AmazonEC2Async.TerminateInstances
@@ -11257,6 +11710,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param terminateInstancesRequest
+     *        Contains the parameters for TerminateInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -11277,6 +11731,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param unassignPrivateIpAddressesRequest
+     *        Contains the parameters for UnassignPrivateIpAddresses.
      * @sample AmazonEC2Async.UnassignPrivateIpAddresses
      */
     java.util.concurrent.Future<Void> unassignPrivateIpAddressesAsync(
@@ -11289,6 +11744,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param unassignPrivateIpAddressesRequest
+     *        Contains the parameters for UnassignPrivateIpAddresses.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -11310,6 +11766,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param unmonitorInstancesRequest
+     *        Contains the parameters for UnmonitorInstances.
      * @return A Java Future containing the result of the UnmonitorInstances
      *         operation returned by the service.
      * @sample AmazonEC2Async.UnmonitorInstances
@@ -11327,6 +11784,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param unmonitorInstancesRequest
+     *        Contains the parameters for UnmonitorInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

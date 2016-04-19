@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DetachVpnGatewayRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DetachVpnGateway.
+ * </p>
  */
 public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

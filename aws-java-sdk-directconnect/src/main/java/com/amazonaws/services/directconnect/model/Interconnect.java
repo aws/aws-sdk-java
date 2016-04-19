@@ -136,8 +136,6 @@ public class Interconnect implements Serializable, Cloneable {
 
     /**
      * @param interconnectState
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InterconnectState
      */
 

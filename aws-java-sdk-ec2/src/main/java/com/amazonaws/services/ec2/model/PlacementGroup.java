@@ -156,8 +156,6 @@ public class PlacementGroup implements Serializable, Cloneable {
      * 
      * @param strategy
      *        The placement strategy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PlacementStrategy
      */
 
@@ -233,8 +231,6 @@ public class PlacementGroup implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the placement group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PlacementGroupState
      */
 

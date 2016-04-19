@@ -321,8 +321,6 @@ public class Evaluation implements Serializable, Cloneable {
      *        request. For example, an AWS Lambda function for a custom Config
      *        rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS
      *        Config.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComplianceType
      */
 

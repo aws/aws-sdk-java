@@ -204,8 +204,6 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *        The current status of the requested operation in the system.</p>
      *        <p>
      *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OperationStatus
      */
 
@@ -418,8 +416,6 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *        The type of operation that was requested.</p>
      *        <p>
      *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OperationType
      */
 

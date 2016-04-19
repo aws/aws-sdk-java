@@ -510,8 +510,6 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        request with an HTTP status code of 301 (Moved Permanently) and
      *        the HTTPS URL, specify redirect-to-https. The viewer then
      *        resubmits the request using the HTTPS URL.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ViewerProtocolPolicy
      */
 

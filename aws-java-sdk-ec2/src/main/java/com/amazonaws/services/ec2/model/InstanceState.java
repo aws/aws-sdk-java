@@ -358,8 +358,6 @@ public class InstanceState implements Serializable, Cloneable {
      * 
      * @param name
      *        The current state of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceStateName
      */
 

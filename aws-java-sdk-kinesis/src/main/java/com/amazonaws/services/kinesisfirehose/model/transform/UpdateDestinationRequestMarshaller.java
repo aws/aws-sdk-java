@@ -91,6 +91,15 @@ public class UpdateDestinationRequestMarshaller implements
                                         .getRedshiftDestinationUpdate(),
                                 jsonGenerator);
             }
+            if (updateDestinationRequest.getElasticsearchDestinationUpdate() != null) {
+                jsonGenerator.writeFieldName("ElasticsearchDestinationUpdate");
+                ElasticsearchDestinationUpdateJsonMarshaller
+                        .getInstance()
+                        .marshall(
+                                updateDestinationRequest
+                                        .getElasticsearchDestinationUpdate(),
+                                jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
 

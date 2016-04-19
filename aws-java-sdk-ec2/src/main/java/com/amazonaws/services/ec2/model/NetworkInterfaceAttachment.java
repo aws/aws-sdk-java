@@ -287,8 +287,6 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * 
      * @param status
      *        The attachment state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AttachmentStatus
      */
 

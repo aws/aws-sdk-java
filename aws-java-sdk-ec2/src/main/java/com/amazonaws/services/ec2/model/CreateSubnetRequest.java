@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateSubnetRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateSubnet.
+ * </p>
  */
 public class CreateSubnetRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<CreateSubnetRequest> {

@@ -258,8 +258,6 @@ public class InstanceSummary implements Serializable, Cloneable {
      *        <li>Failed: The deployment has failed for this instance.</li>
      *        <li>Skipped: The deployment has been skipped for this instance.</li>
      *        <li>Unknown: The deployment status is unknown for this instance.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceStatus
      */
 

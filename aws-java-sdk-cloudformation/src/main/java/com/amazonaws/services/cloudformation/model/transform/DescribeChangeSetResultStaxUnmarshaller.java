@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudformation.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -83,9 +85,9 @@ public class DescribeChangeSetResultStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Parameters/member", targetDepth)) {
-                    describeChangeSetResult.getParameters().add(
-                            ParameterStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    describeChangeSetResult
+                            .withParameters(ParameterStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -111,30 +113,28 @@ public class DescribeChangeSetResultStaxUnmarshaller implements
 
                 if (context.testExpression("NotificationARNs/member",
                         targetDepth)) {
-                    describeChangeSetResult.getNotificationARNs().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    describeChangeSetResult
+                            .withNotificationARNs(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Capabilities/member", targetDepth)) {
-                    describeChangeSetResult.getCapabilities().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    describeChangeSetResult
+                            .withCapabilities(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Tags/member", targetDepth)) {
-                    describeChangeSetResult.getTags().add(
-                            TagStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    describeChangeSetResult.withTags(TagStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Changes/member", targetDepth)) {
-                    describeChangeSetResult.getChanges().add(
-                            ChangeStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    describeChangeSetResult.withChanges(ChangeStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

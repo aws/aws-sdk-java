@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ConfirmProductInstanceRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ConfirmProductInstance.
+ * </p>
  */
 public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

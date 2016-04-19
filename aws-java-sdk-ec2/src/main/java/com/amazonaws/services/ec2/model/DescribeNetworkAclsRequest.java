@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeNetworkAclsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeNetworkAcls.
+ * </p>
  */
 public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

@@ -184,8 +184,6 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *        If <code>FINISHED</code>, the task successfully completed. If
      *        <code>FAILED</code>, the task ended unsuccessfully. Preconditions
      *        use false.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TaskStatus
      */
 

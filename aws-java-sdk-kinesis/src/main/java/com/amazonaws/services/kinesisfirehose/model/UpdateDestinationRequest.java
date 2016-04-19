@@ -35,13 +35,13 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     private String deliveryStreamName;
     /**
      * <p>
-     * Obtain this value from the <code>VersionId</code> result of the
+     * Obtain this value from the <b>VersionId</b> result of the
      * <a>DeliveryStreamDescription</a> operation. This value is required, and
      * helps the service to perform conditional operations. For example, if
      * there is a interleaving update and this value is null, then the update
-     * destination fails. After the update is successful, the
-     * <code>VersionId</code> value is updated. The service then performs a
-     * merge of the old configuration with the new configuration.
+     * destination fails. After the update is successful, the <b>VersionId</b>
+     * value is updated. The service then performs a merge of the old
+     * configuration with the new configuration.
      * </p>
      */
     private String currentDeliveryStreamVersionId;
@@ -55,6 +55,12 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     private S3DestinationUpdate s3DestinationUpdate;
 
     private RedshiftDestinationUpdate redshiftDestinationUpdate;
+    /**
+     * <p>
+     * Describes an update for a destination in Amazon ES.
+     * </p>
+     */
+    private ElasticsearchDestinationUpdate elasticsearchDestinationUpdate;
 
     /**
      * <p>
@@ -100,24 +106,24 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Obtain this value from the <code>VersionId</code> result of the
+     * Obtain this value from the <b>VersionId</b> result of the
      * <a>DeliveryStreamDescription</a> operation. This value is required, and
      * helps the service to perform conditional operations. For example, if
      * there is a interleaving update and this value is null, then the update
-     * destination fails. After the update is successful, the
-     * <code>VersionId</code> value is updated. The service then performs a
-     * merge of the old configuration with the new configuration.
+     * destination fails. After the update is successful, the <b>VersionId</b>
+     * value is updated. The service then performs a merge of the old
+     * configuration with the new configuration.
      * </p>
      * 
      * @param currentDeliveryStreamVersionId
-     *        Obtain this value from the <code>VersionId</code> result of the
+     *        Obtain this value from the <b>VersionId</b> result of the
      *        <a>DeliveryStreamDescription</a> operation. This value is
      *        required, and helps the service to perform conditional operations.
      *        For example, if there is a interleaving update and this value is
      *        null, then the update destination fails. After the update is
-     *        successful, the <code>VersionId</code> value is updated. The
-     *        service then performs a merge of the old configuration with the
-     *        new configuration.
+     *        successful, the <b>VersionId</b> value is updated. The service
+     *        then performs a merge of the old configuration with the new
+     *        configuration.
      */
 
     public void setCurrentDeliveryStreamVersionId(
@@ -127,23 +133,23 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Obtain this value from the <code>VersionId</code> result of the
+     * Obtain this value from the <b>VersionId</b> result of the
      * <a>DeliveryStreamDescription</a> operation. This value is required, and
      * helps the service to perform conditional operations. For example, if
      * there is a interleaving update and this value is null, then the update
-     * destination fails. After the update is successful, the
-     * <code>VersionId</code> value is updated. The service then performs a
-     * merge of the old configuration with the new configuration.
+     * destination fails. After the update is successful, the <b>VersionId</b>
+     * value is updated. The service then performs a merge of the old
+     * configuration with the new configuration.
      * </p>
      * 
-     * @return Obtain this value from the <code>VersionId</code> result of the
+     * @return Obtain this value from the <b>VersionId</b> result of the
      *         <a>DeliveryStreamDescription</a> operation. This value is
      *         required, and helps the service to perform conditional
      *         operations. For example, if there is a interleaving update and
      *         this value is null, then the update destination fails. After the
-     *         update is successful, the <code>VersionId</code> value is
-     *         updated. The service then performs a merge of the old
-     *         configuration with the new configuration.
+     *         update is successful, the <b>VersionId</b> value is updated. The
+     *         service then performs a merge of the old configuration with the
+     *         new configuration.
      */
 
     public String getCurrentDeliveryStreamVersionId() {
@@ -152,24 +158,24 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Obtain this value from the <code>VersionId</code> result of the
+     * Obtain this value from the <b>VersionId</b> result of the
      * <a>DeliveryStreamDescription</a> operation. This value is required, and
      * helps the service to perform conditional operations. For example, if
      * there is a interleaving update and this value is null, then the update
-     * destination fails. After the update is successful, the
-     * <code>VersionId</code> value is updated. The service then performs a
-     * merge of the old configuration with the new configuration.
+     * destination fails. After the update is successful, the <b>VersionId</b>
+     * value is updated. The service then performs a merge of the old
+     * configuration with the new configuration.
      * </p>
      * 
      * @param currentDeliveryStreamVersionId
-     *        Obtain this value from the <code>VersionId</code> result of the
+     *        Obtain this value from the <b>VersionId</b> result of the
      *        <a>DeliveryStreamDescription</a> operation. This value is
      *        required, and helps the service to perform conditional operations.
      *        For example, if there is a interleaving update and this value is
      *        null, then the update destination fails. After the update is
-     *        successful, the <code>VersionId</code> value is updated. The
-     *        service then performs a merge of the old configuration with the
-     *        new configuration.
+     *        successful, the <b>VersionId</b> value is updated. The service
+     *        then performs a merge of the old configuration with the new
+     *        configuration.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -279,6 +285,49 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Describes an update for a destination in Amazon ES.
+     * </p>
+     * 
+     * @param elasticsearchDestinationUpdate
+     *        Describes an update for a destination in Amazon ES.
+     */
+
+    public void setElasticsearchDestinationUpdate(
+            ElasticsearchDestinationUpdate elasticsearchDestinationUpdate) {
+        this.elasticsearchDestinationUpdate = elasticsearchDestinationUpdate;
+    }
+
+    /**
+     * <p>
+     * Describes an update for a destination in Amazon ES.
+     * </p>
+     * 
+     * @return Describes an update for a destination in Amazon ES.
+     */
+
+    public ElasticsearchDestinationUpdate getElasticsearchDestinationUpdate() {
+        return this.elasticsearchDestinationUpdate;
+    }
+
+    /**
+     * <p>
+     * Describes an update for a destination in Amazon ES.
+     * </p>
+     * 
+     * @param elasticsearchDestinationUpdate
+     *        Describes an update for a destination in Amazon ES.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateDestinationRequest withElasticsearchDestinationUpdate(
+            ElasticsearchDestinationUpdate elasticsearchDestinationUpdate) {
+        setElasticsearchDestinationUpdate(elasticsearchDestinationUpdate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -301,7 +350,10 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
             sb.append("S3DestinationUpdate: " + getS3DestinationUpdate() + ",");
         if (getRedshiftDestinationUpdate() != null)
             sb.append("RedshiftDestinationUpdate: "
-                    + getRedshiftDestinationUpdate());
+                    + getRedshiftDestinationUpdate() + ",");
+        if (getElasticsearchDestinationUpdate() != null)
+            sb.append("ElasticsearchDestinationUpdate: "
+                    + getElasticsearchDestinationUpdate());
         sb.append("}");
         return sb.toString();
     }
@@ -349,6 +401,13 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
                 && other.getRedshiftDestinationUpdate().equals(
                         this.getRedshiftDestinationUpdate()) == false)
             return false;
+        if (other.getElasticsearchDestinationUpdate() == null
+                ^ this.getElasticsearchDestinationUpdate() == null)
+            return false;
+        if (other.getElasticsearchDestinationUpdate() != null
+                && other.getElasticsearchDestinationUpdate().equals(
+                        this.getElasticsearchDestinationUpdate()) == false)
+            return false;
         return true;
     }
 
@@ -377,6 +436,10 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getRedshiftDestinationUpdate() == null) ? 0
                         : getRedshiftDestinationUpdate().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getElasticsearchDestinationUpdate() == null) ? 0
+                        : getElasticsearchDestinationUpdate().hashCode());
         return hashCode;
     }
 

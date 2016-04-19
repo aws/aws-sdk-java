@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeDhcpOptionsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeDhcpOptions.
+ * </p>
  */
 public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,16 +52,16 @@ public class LaunchPermissionModificationsStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Add/item", targetDepth)) {
-                    launchPermissionModifications.getAdd().add(
-                            LaunchPermissionStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    launchPermissionModifications
+                            .withAdd(LaunchPermissionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Remove/item", targetDepth)) {
-                    launchPermissionModifications.getRemove().add(
-                            LaunchPermissionStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    launchPermissionModifications
+                            .withRemove(LaunchPermissionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

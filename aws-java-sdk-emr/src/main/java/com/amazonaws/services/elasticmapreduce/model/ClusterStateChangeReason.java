@@ -89,8 +89,6 @@ public class ClusterStateChangeReason implements Serializable, Cloneable {
      * 
      * @param code
      *        The programmatic code for the state change reason.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ClusterStateChangeReasonCode
      */
 

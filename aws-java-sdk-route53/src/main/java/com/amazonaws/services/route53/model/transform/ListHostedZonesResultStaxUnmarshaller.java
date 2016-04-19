@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class ListHostedZonesResultStaxUnmarshaller implements
 
                 if (context.testExpression("HostedZones/HostedZone",
                         targetDepth)) {
-                    listHostedZonesResult.getHostedZones().add(
-                            HostedZoneStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listHostedZonesResult
+                            .withHostedZones(HostedZoneStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -300,8 +300,6 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      *        Valid Values are <code>GreaterThanOrEqualToThreshold</code>,
      *        <code>GreaterThanThreshold</code>, <code>LessThanThreshold</code>
      *        and <code>LessThanOrEqualToThreshold</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComparisonOperator
      */
 
@@ -566,8 +564,6 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      *        <p>
      *        Valid Values are <code>SampleCount</code>, <code>Average</code>,
      *        <code>Sum</code>, <code>Minimum</code> and <code>Maximum</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Statistic
      */
 

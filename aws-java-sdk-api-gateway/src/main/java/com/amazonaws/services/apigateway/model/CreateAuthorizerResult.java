@@ -246,8 +246,6 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * @param type
      *        [Required] The type of the authorizer. Currently, the only valid
      *        type is TOKEN.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AuthorizerType
      */
 

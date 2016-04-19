@@ -89,8 +89,6 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the volume status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VolumeStatusName
      */
 

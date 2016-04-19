@@ -89,8 +89,6 @@ public class LookupAttribute implements Serializable, Cloneable {
      * 
      * @param attributeKey
      *        Specifies an attribute on which to filter the events returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LookupAttributeKey
      */
 

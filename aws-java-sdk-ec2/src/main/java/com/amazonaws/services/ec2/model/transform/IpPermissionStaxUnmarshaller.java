@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -68,23 +70,21 @@ public class IpPermissionStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("groups/item", targetDepth)) {
-                    ipPermission.getUserIdGroupPairs().add(
-                            UserIdGroupPairStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    ipPermission
+                            .withUserIdGroupPairs(UserIdGroupPairStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ipRanges/item/cidrIp", targetDepth)) {
-                    ipPermission.getIpRanges().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    ipPermission.withIpRanges(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("prefixListIds/item", targetDepth)) {
-                    ipPermission.getPrefixListIds().add(
-                            PrefixListIdStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    ipPermission.withPrefixListIds(PrefixListIdStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

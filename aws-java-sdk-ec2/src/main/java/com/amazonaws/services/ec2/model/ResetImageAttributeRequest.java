@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ResetImageAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ResetImageAttribute.
+ * </p>
  */
 public class ResetImageAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -183,8 +185,6 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest
      * @param attribute
      *        The attribute to reset (currently you can only reset the launch
      *        permission attribute).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResetImageAttributeName
      */
 

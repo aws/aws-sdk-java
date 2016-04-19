@@ -19,7 +19,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of AcceptVpcPeeringConnection.
+ * </p>
  */
 public class AcceptVpcPeeringConnectionResult implements Serializable,
         Cloneable {

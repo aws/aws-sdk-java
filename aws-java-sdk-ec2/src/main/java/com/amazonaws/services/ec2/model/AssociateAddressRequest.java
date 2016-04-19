@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AssociateAddressRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AssociateAddress.
+ * </p>
  */
 public class AssociateAddressRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

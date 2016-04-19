@@ -488,8 +488,6 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        <li>DELETING: Hosts are responding to a delete fleet request.</li>
      *        <li>TERMINATED: The fleet no longer exists.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see FleetStatus
      */
 
@@ -897,8 +895,6 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        <li>FullProtection: If the game session is in an ACTIVE status, it
      *        cannot be terminated during a scale-down event.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ProtectionPolicy
      */
 

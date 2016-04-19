@@ -135,8 +135,6 @@ public class DescribeEC2InstanceLimitsRequest extends AmazonWebServiceRequest
      *        href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
      *        Instance Types</a> for detailed descriptions of each. Leave this
      *        parameter blank to retrieve limits for all types.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EC2InstanceType
      */
 

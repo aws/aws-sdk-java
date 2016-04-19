@@ -350,8 +350,6 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        file(s) used in <code>Evaluation</code>. The URL can identify
      *        either a file or an Amazon Simple Storage Solution (Amazon S3)
      *        bucket or directory.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EvaluationFilterVariable
      */
 
@@ -1039,8 +1037,6 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SortOrder
      */
 

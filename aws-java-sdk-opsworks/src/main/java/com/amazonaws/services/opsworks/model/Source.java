@@ -147,8 +147,6 @@ public class Source implements Serializable, Cloneable {
      * 
      * @param type
      *        The repository type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SourceType
      */
 

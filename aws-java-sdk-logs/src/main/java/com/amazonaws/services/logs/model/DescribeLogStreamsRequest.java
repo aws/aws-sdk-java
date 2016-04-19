@@ -262,8 +262,6 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *        specify a value, results are ordered by LogStreamName. If
      *        'LastEventTime' is chosen, the request cannot also contain a
      *        logStreamNamePrefix.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OrderBy
      */
 

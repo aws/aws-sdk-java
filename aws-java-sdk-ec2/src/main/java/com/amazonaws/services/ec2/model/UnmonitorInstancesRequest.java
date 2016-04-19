@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.UnmonitorInstancesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for UnmonitorInstances.
+ * </p>
  */
 public class UnmonitorInstancesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

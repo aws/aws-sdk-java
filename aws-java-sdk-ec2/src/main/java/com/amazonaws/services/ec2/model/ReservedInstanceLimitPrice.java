@@ -150,8 +150,6 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      *        The currency in which the <code>limitPrice</code> amount is
      *        specified. At this time, the only supported currency is
      *        <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CurrencyCodeValues
      */
 

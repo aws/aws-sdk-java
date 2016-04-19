@@ -122,8 +122,6 @@ public class ActionTypeId implements Serializable, Cloneable {
      *        A category defines what kind of action can be taken in the stage,
      *        and constrains the provider type for the action. Valid categories
      *        are limited to one of the values below.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionCategory
      */
 
@@ -203,8 +201,6 @@ public class ActionTypeId implements Serializable, Cloneable {
      * 
      * @param owner
      *        The creator of the action being called.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionOwner
      */
 

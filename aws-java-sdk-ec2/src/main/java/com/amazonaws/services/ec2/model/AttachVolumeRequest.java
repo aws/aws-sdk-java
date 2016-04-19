@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AttachVolumeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AttachVolume.
+ * </p>
  */
 public class AttachVolumeRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<AttachVolumeRequest> {

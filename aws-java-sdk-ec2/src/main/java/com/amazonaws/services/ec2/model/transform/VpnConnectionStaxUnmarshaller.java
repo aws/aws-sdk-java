@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -88,16 +90,14 @@ public class VpnConnectionStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    vpnConnection.getTags().add(
-                            TagStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    vpnConnection.withTags(TagStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("vgwTelemetry/item", targetDepth)) {
-                    vpnConnection.getVgwTelemetry().add(
-                            VgwTelemetryStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    vpnConnection.withVgwTelemetry(VgwTelemetryStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -109,9 +109,8 @@ public class VpnConnectionStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("routes/item", targetDepth)) {
-                    vpnConnection.getRoutes().add(
-                            VpnStaticRouteStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    vpnConnection.withRoutes(VpnStaticRouteStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

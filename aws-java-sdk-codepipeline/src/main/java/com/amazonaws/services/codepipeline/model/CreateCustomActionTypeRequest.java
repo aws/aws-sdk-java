@@ -121,8 +121,6 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @param category
      *        The category of the custom action, such as a source action or a
      *        build action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionCategory
      */
 

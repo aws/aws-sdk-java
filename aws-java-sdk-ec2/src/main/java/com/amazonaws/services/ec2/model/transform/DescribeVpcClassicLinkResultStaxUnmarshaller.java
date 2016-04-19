@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class DescribeVpcClassicLinkResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("vpcSet/item", targetDepth)) {
-                    describeVpcClassicLinkResult.getVpcs().add(
-                            VpcClassicLinkStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeVpcClassicLinkResult
+                            .withVpcs(VpcClassicLinkStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

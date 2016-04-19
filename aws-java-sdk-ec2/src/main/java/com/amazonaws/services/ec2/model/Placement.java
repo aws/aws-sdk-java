@@ -245,8 +245,6 @@ public class Placement implements Serializable, Cloneable {
      *        An instance with a tenancy of <code>dedicated</code> runs on
      *        single-tenant hardware. The <code>host</code> tenancy is not
      *        supported for the <a>ImportInstance</a> command.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Tenancy
      */
 

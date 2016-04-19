@@ -83,8 +83,6 @@ public class Monitoring implements Serializable, Cloneable {
      * 
      * @param state
      *        Indicates whether monitoring is enabled for the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MonitoringState
      */
 

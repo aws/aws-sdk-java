@@ -247,8 +247,6 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *        service still references them. If you paginate the resulting
      *        output, be sure to keep the <code>status</code> value constant in
      *        each subsequent request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TaskDefinitionStatus
      */
 
@@ -389,8 +387,6 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *        Setting this parameter to <code>DESC</code> reverses the sort
      *        order on family name and revision so that the newest task
      *        definitions in a family are listed first.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SortOrder
      */
 

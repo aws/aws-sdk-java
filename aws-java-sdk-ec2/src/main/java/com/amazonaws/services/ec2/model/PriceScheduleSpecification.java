@@ -196,8 +196,6 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      * @param currencyCode
      *        The currency for transacting the Reserved Instance resale. At this
      *        time, the only supported currency is <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CurrencyCodeValues
      */
 

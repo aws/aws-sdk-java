@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DetachClassicLinkVpcRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DetachClassicLinkVpc.
+ * </p>
  */
 public class DetachClassicLinkVpcRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

@@ -344,8 +344,6 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *        <li>READY - Endpoint is ready to be used for real-time
      *        predictions.</li>
      *        <li>UPDATING - Updating/creating the endpoint.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RealtimeEndpointStatus
      */
 

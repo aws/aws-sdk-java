@@ -20,6 +20,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "logs",
     "signingName" : "logs",
+    "xmlProtocol" : false,
     "serviceName" : "Amazon CloudWatch Logs",
     "cborProtocol" : false,
     "jsonProtocol" : true,
@@ -56,6 +57,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -100,6 +102,7 @@
         "documentation" : "<p>Returned if the specified resource already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateExportTaskResult",
       "asyncReturnType" : "CreateExportTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateExportTaskResult>",
@@ -138,6 +141,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -173,6 +177,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -208,6 +213,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -243,6 +249,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -278,6 +285,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -313,6 +321,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -348,6 +357,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -383,6 +393,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -415,6 +426,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeDestinationsResult",
       "asyncReturnType" : "DescribeDestinationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDestinationsResult>",
@@ -447,6 +459,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeExportTasksResult",
       "asyncReturnType" : "DescribeExportTasksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeExportTasksResult>",
@@ -479,6 +492,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeLogGroupsResult",
       "asyncReturnType" : "DescribeLogGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLogGroupsResult>",
@@ -514,6 +528,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeLogStreamsResult",
       "asyncReturnType" : "DescribeLogStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLogStreamsResult>",
@@ -549,6 +564,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeMetricFiltersResult",
       "asyncReturnType" : "DescribeMetricFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMetricFiltersResult>",
@@ -584,6 +600,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeSubscriptionFiltersResult",
       "asyncReturnType" : "DescribeSubscriptionFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSubscriptionFiltersResult>",
@@ -619,6 +636,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "FilterLogEventsResult",
       "asyncReturnType" : "FilterLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<FilterLogEventsResult>",
@@ -654,6 +672,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetLogEventsResult",
       "asyncReturnType" : "GetLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetLogEventsResult>",
@@ -689,6 +708,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutDestinationResult",
       "asyncReturnType" : "PutDestinationResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutDestinationResult>",
@@ -721,6 +741,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -765,6 +786,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutLogEventsResult",
       "asyncReturnType" : "PutLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutLogEventsResult>",
@@ -803,6 +825,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -838,6 +861,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -876,6 +900,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -908,6 +933,7 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "TestMetricFilterResult",
       "asyncReturnType" : "TestMetricFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestMetricFilterResult>",
@@ -3606,8 +3632,8 @@
           "simple" : false,
           "simpleType" : "SubscriptionFilter",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SubscriptionFilter>",
-          "templateType" : "java.util.List<SubscriptionFilter>"
+          "templateType" : "java.util.List<SubscriptionFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SubscriptionFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3852,8 +3878,8 @@
             "simple" : false,
             "simpleType" : "SubscriptionFilter",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SubscriptionFilter>",
-            "templateType" : "java.util.List<SubscriptionFilter>"
+            "templateType" : "java.util.List<SubscriptionFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SubscriptionFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3983,8 +4009,8 @@
           "simple" : false,
           "simpleType" : "OutputLogEvent",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OutputLogEvent>",
-          "templateType" : "java.util.List<OutputLogEvent>"
+          "templateType" : "java.util.List<OutputLogEvent>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OutputLogEvent>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4228,8 +4254,8 @@
             "simple" : false,
             "simpleType" : "OutputLogEvent",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OutputLogEvent>",
-            "templateType" : "java.util.List<OutputLogEvent>"
+            "templateType" : "java.util.List<OutputLogEvent>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OutputLogEvent>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4803,8 +4829,8 @@
           "simple" : false,
           "simpleType" : "LogStream",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogStream>",
-          "templateType" : "java.util.List<LogStream>"
+          "templateType" : "java.util.List<LogStream>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogStream>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5049,8 +5075,8 @@
             "simple" : false,
             "simpleType" : "LogStream",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogStream>",
-            "templateType" : "java.util.List<LogStream>"
+            "templateType" : "java.util.List<LogStream>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogStream>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7590,15 +7616,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "LogStreamName",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8048,15 +8126,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "LogStreamName",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9243,8 +9373,8 @@
           "simple" : false,
           "simpleType" : "LogGroup",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogGroup>",
-          "templateType" : "java.util.List<LogGroup>"
+          "templateType" : "java.util.List<LogGroup>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9489,8 +9619,8 @@
             "simple" : false,
             "simpleType" : "LogGroup",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogGroup>",
-            "templateType" : "java.util.List<LogGroup>"
+            "templateType" : "java.util.List<LogGroup>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LogGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12551,12 +12681,65 @@
           "keyModel" : null,
           "valueType" : "String",
           "valueLocationName" : "value",
-          "valueModel" : null,
+          "valueModel" : {
+            "documentation" : "",
+            "name" : "Value",
+            "c2jName" : "value",
+            "c2jShape" : "Value",
+            "variable" : {
+              "variableName" : "value",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "value",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "value",
+              "marshallLocationName" : "value",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param value */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-          "templateType" : "java.util.Map<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12746,12 +12929,65 @@
             "keyModel" : null,
             "valueType" : "String",
             "valueLocationName" : "value",
-            "valueModel" : null,
+            "valueModel" : {
+              "documentation" : "",
+              "name" : "Value",
+              "c2jName" : "value",
+              "c2jShape" : "Value",
+              "variable" : {
+                "variableName" : "value",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "value",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "value",
+                "marshallLocationName" : "value",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param value */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-            "templateType" : "java.util.Map<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -13584,8 +13820,8 @@
           "simple" : false,
           "simpleType" : "MetricFilter",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilter>",
-          "templateType" : "java.util.List<MetricFilter>"
+          "templateType" : "java.util.List<MetricFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13830,8 +14066,8 @@
             "simple" : false,
             "simpleType" : "MetricFilter",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilter>",
-            "templateType" : "java.util.List<MetricFilter>"
+            "templateType" : "java.util.List<MetricFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14210,8 +14446,8 @@
           "simple" : false,
           "simpleType" : "MetricFilterMatchRecord",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>",
-          "templateType" : "java.util.List<MetricFilterMatchRecord>"
+          "templateType" : "java.util.List<MetricFilterMatchRecord>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14351,8 +14587,8 @@
             "simple" : false,
             "simpleType" : "MetricFilterMatchRecord",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>",
-            "templateType" : "java.util.List<MetricFilterMatchRecord>"
+            "templateType" : "java.util.List<MetricFilterMatchRecord>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14482,8 +14718,8 @@
           "simple" : false,
           "simpleType" : "Destination",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Destination>",
-          "templateType" : "java.util.List<Destination>"
+          "templateType" : "java.util.List<Destination>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Destination>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14728,8 +14964,8 @@
             "simple" : false,
             "simpleType" : "Destination",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Destination>",
-            "templateType" : "java.util.List<Destination>"
+            "templateType" : "java.util.List<Destination>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Destination>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15187,8 +15423,8 @@
           "simple" : false,
           "simpleType" : "ExportTask",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExportTask>",
-          "templateType" : "java.util.List<ExportTask>"
+          "templateType" : "java.util.List<ExportTask>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExportTask>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15433,8 +15669,8 @@
             "simple" : false,
             "simpleType" : "ExportTask",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExportTask>",
-            "templateType" : "java.util.List<ExportTask>"
+            "templateType" : "java.util.List<ExportTask>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ExportTask>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15668,8 +15904,8 @@
           "simple" : false,
           "simpleType" : "InputLogEvent",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InputLogEvent>",
-          "templateType" : "java.util.List<InputLogEvent>"
+          "templateType" : "java.util.List<InputLogEvent>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InputLogEvent>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16024,8 +16260,8 @@
             "simple" : false,
             "simpleType" : "InputLogEvent",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InputLogEvent>",
-            "templateType" : "java.util.List<InputLogEvent>"
+            "templateType" : "java.util.List<InputLogEvent>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InputLogEvent>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16259,8 +16495,8 @@
           "simple" : false,
           "simpleType" : "MetricTransformation",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>",
-          "templateType" : "java.util.List<MetricTransformation>"
+          "templateType" : "java.util.List<MetricTransformation>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16558,8 +16794,8 @@
             "simple" : false,
             "simpleType" : "MetricTransformation",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>",
-            "templateType" : "java.util.List<MetricTransformation>"
+            "templateType" : "java.util.List<MetricTransformation>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19174,8 +19410,8 @@
           "simple" : false,
           "simpleType" : "FilteredLogEvent",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FilteredLogEvent>",
-          "templateType" : "java.util.List<FilteredLogEvent>"
+          "templateType" : "java.util.List<FilteredLogEvent>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FilteredLogEvent>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19292,8 +19528,8 @@
           "simple" : false,
           "simpleType" : "SearchedLogStream",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SearchedLogStream>",
-          "templateType" : "java.util.List<SearchedLogStream>"
+          "templateType" : "java.util.List<SearchedLogStream>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SearchedLogStream>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19538,8 +19774,8 @@
             "simple" : false,
             "simpleType" : "SearchedLogStream",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SearchedLogStream>",
-            "templateType" : "java.util.List<SearchedLogStream>"
+            "templateType" : "java.util.List<SearchedLogStream>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SearchedLogStream>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19657,8 +19893,8 @@
             "simple" : false,
             "simpleType" : "FilteredLogEvent",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FilteredLogEvent>",
-            "templateType" : "java.util.List<FilteredLogEvent>"
+            "templateType" : "java.util.List<FilteredLogEvent>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FilteredLogEvent>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19944,8 +20180,8 @@
           "simple" : false,
           "simpleType" : "MetricTransformation",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>",
-          "templateType" : "java.util.List<MetricTransformation>"
+          "templateType" : "java.util.List<MetricTransformation>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20142,8 +20378,8 @@
             "simple" : false,
             "simpleType" : "MetricTransformation",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>",
-            "templateType" : "java.util.List<MetricTransformation>"
+            "templateType" : "java.util.List<MetricTransformation>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricTransformation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21780,15 +22016,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "EventMessage",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21873,15 +22161,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "EventMessage",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22926,6 +23266,7 @@
       "actionPrefix" : null,
       "fileNamePrefix" : null
     },
+    "customServiceMetadata" : null,
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,

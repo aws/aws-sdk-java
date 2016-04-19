@@ -199,8 +199,6 @@ public class IdentityMailFromDomainAttributes implements Serializable,
      *        custom MAIL FROM domain when the verified identity sends an email.
      *        All other states indicate that Amazon SES takes the action
      *        described by <code>BehaviorOnMXFailure</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CustomMailFromStatus
      */
 
@@ -381,8 +379,6 @@ public class IdentityMailFromDomainAttributes implements Serializable,
      *        The custom MAIL FROM setup states that result in this behavior are
      *        <code>Pending</code>, <code>Failed</code>, and
      *        <code>TemporaryFailure</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BehaviorOnMXFailure
      */
 

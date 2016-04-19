@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -57,16 +59,15 @@ public class ImageAttributeStaxUnmarshaller implements
 
                 if (context
                         .testExpression("launchPermission/item", targetDepth)) {
-                    imageAttribute.getLaunchPermissions().add(
-                            LaunchPermissionStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    imageAttribute
+                            .withLaunchPermissions(LaunchPermissionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("productCodes/item", targetDepth)) {
-                    imageAttribute.getProductCodes().add(
-                            ProductCodeStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    imageAttribute.withProductCodes(ProductCodeStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -97,9 +98,9 @@ public class ImageAttributeStaxUnmarshaller implements
 
                 if (context.testExpression("blockDeviceMapping/item",
                         targetDepth)) {
-                    imageAttribute.getBlockDeviceMappings().add(
-                            BlockDeviceMappingStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    imageAttribute
+                            .withBlockDeviceMappings(BlockDeviceMappingStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

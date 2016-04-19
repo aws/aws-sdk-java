@@ -49,6 +49,16 @@ public class StaxUnmarshallerContext {
     private Iterator<?> attributeIterator;
     private final Map<String, String> headers;
 
+    private String currentHeader;
+
+    public void setCurrentHeader(String currentHeader) {
+        this.currentHeader = currentHeader;
+    }
+
+    public boolean isInsideResponseHeader() {
+        return currentEvent == null;
+    }
+
     /**
      * Constructs a new unmarshaller context using the specified source of XML events.
      *
@@ -97,6 +107,9 @@ public class StaxUnmarshallerContext {
      * @throws XMLStreamException
      */
     public String readText() throws XMLStreamException {
+        if (isInsideResponseHeader()) {
+            return getHeader(currentHeader);
+        }
         if (currentEvent.isAttribute()) {
             Attribute attribute = (Attribute)currentEvent;
             return attribute.getValue();

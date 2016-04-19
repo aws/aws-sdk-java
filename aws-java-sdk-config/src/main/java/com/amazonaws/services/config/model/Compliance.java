@@ -284,8 +284,6 @@ public class Compliance implements Serializable, Cloneable {
      *        <code>INSUFFICIENT_DATA</code> values. AWS Config does not support
      *        the <code>NOT_APPLICABLE</code> value for the
      *        <code>Compliance</code> data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComplianceType
      */
 

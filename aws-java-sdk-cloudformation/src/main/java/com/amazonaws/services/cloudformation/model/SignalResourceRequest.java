@@ -283,8 +283,6 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *        The status of the signal, which is either success or failure. A
      *        failure signal causes AWS CloudFormation to immediately fail the
      *        stack creation or update.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceSignalStatus
      */
 

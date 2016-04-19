@@ -121,8 +121,6 @@ public class InstanceInformation implements Serializable, Cloneable {
      * 
      * @param pingStatus
      *        Connection status of the SSM agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PingStatus
      */
 
@@ -312,8 +310,6 @@ public class InstanceInformation implements Serializable, Cloneable {
      * 
      * @param platformType
      *        The operating system platform type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PlatformType
      */
 

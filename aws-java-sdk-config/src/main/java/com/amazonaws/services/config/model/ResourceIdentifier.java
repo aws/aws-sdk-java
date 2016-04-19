@@ -102,8 +102,6 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * 
      * @param resourceType
      *        The type of resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceType
      */
 

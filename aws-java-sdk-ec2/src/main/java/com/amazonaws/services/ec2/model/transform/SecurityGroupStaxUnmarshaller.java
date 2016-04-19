@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -74,17 +76,17 @@ public class SecurityGroupStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("ipPermissions/item", targetDepth)) {
-                    securityGroup.getIpPermissions().add(
-                            IpPermissionStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    securityGroup
+                            .withIpPermissions(IpPermissionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ipPermissionsEgress/item",
                         targetDepth)) {
-                    securityGroup.getIpPermissionsEgress().add(
-                            IpPermissionStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    securityGroup
+                            .withIpPermissionsEgress(IpPermissionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -95,9 +97,8 @@ public class SecurityGroupStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    securityGroup.getTags().add(
-                            TagStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    securityGroup.withTags(TagStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 

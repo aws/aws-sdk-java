@@ -20,6 +20,7 @@ import java.util.Map;
 
 import com.amazonaws.codegen.model.config.ConstructorFormsWrapper;
 import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
+import com.amazonaws.codegen.model.intermediate.Metadata;
 
 public class CustomizationConfig {
 
@@ -127,6 +128,11 @@ public class CustomizationConfig {
      * Configuration for generating policy action enums.
      */
     private AuthPolicyActions authPolicyActions;
+
+    /**
+     * Custom service and intermediate model metadata properties.
+     */
+    private MetadataConfig customServiceMetadata;
 
     private CodeGenTemplatesConfig customCodeTemplates;
 
@@ -301,5 +307,11 @@ public class CustomizationConfig {
     public void setRequiredParamValidationEnabled(
             boolean requiredParamValidationEnabled) {
         this.requiredParamValidationEnabled = requiredParamValidationEnabled;
+    }
+
+    public MetadataConfig getCustomServiceMetadata() { return customServiceMetadata; }
+
+    public void setCustomServiceMetadata(MetadataConfig metadataConfig) {
+        this.customServiceMetadata = metadataConfig;
     }
 }

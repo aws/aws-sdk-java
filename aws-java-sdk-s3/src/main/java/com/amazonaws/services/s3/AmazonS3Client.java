@@ -144,6 +144,7 @@ import com.amazonaws.services.s3.request.S3HandlerContextKeys;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.Base16;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.BinaryUtils;
@@ -216,10 +217,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private static final RequestPaymentConfigurationXmlFactory requestPaymentConfigurationXmlFactory = new RequestPaymentConfigurationXmlFactory();
 
     /** S3 specific client configuration options */
-    private S3ClientOptions clientOptions = new S3ClientOptions();
+    private volatile S3ClientOptions clientOptions = new S3ClientOptions();
 
-    /** Whether or not this client has an explicit region configured. */
-    private boolean hasExplicitRegion;
+    /**
+     * The S3 client region that is set by either (a) calling
+     * setRegion/configureRegion OR (b) calling setEndpoint with a
+     * region-specific S3 endpoint. This region string will be used for signing
+     * requests sent by this client.
+     */
+    private volatile String clientRegion;
 
     private static final int BUCKET_REGION_CACHE_SIZE = 100;
 
@@ -454,41 +460,44 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
-    public void setEndpoint(String endpoint) {
-        /*
-         * When signing requests using a pre-Signature-Version-4 signer, it's
-         * possible to use the endpoint "s3.amazonaws.com" to access buckets in
-         * any region - we send the request to &lt;bucket&gt;.s3.amazonaws.com,
-         * which resolves to an S3 endpoint in the appropriate region.
-         *
-         * However, when the user opts in to using Signature Version 4, we need
-         * to include the region of the bucket in the signature, and cannot
-         * take advantage of this handy feature of S3.
-         *
-         * If you want to use Signature Version 4 to access a bucket in the
-         * US Classic region (which does not have a region-specific endpoint),
-         * you'll need to call setRegion(Region.getRegion(Regions.US_EAST_1))
-         * to explicitly tell us which region to include in the signature.
-         */
-        hasExplicitRegion = !(Constants.S3_HOSTNAME.equals(endpoint));
-        super.setEndpoint(endpoint);
+    public synchronized void setEndpoint(String endpoint) {
+        if (ServiceUtils.isS3AccelerateEndpoint(endpoint)) {
+            throw new IllegalStateException("To enable accelerate mode, please use AmazonS3Client.setS3ClientOptions(S3ClientOptions.builder().setAccelerateModeEnabled(true).build());");
+        } else {
+            super.setEndpoint(endpoint);
+            /*
+             * Extract the region string from the endpoint if it's not known to be a
+             * global S3 endpoint.
+             */
+            if (!ServiceUtils.isS3USStandardEndpoint(endpoint)) {
+                clientRegion = AwsHostNameUtils.parseRegionName(endpoint, S3_SERVICE_NAME);
+            }
+        }
     }
 
     @Override
-    public void setRegion(com.amazonaws.regions.Region region) {
-        hasExplicitRegion = true;
+    public synchronized void setRegion(com.amazonaws.regions.Region region) {
         super.setRegion(region);
+        /*
+         * We need to preserve the user provided region. This is because the
+         * region might be mapped to a global s3 endpoint (e.g. when the client
+         * is in accelerate mode), in which case we won't be able to extract the
+         * region back from the endpoint during request signing phase.
+         */
+        clientRegion = region.getName();
     }
 
     /**
      * <p>
-     * Override the default S3 client options for this client.
+     * Override the default S3 client options for this client. Also set the
+     * endpoint to s3-accelerate if such is specified in the S3 client options.
      * </p>
+     *
      * @param clientOptions
      *            The S3 client options to use.
      */
     @Override
-    public void setS3ClientOptions(S3ClientOptions clientOptions) {
+    public synchronized void setS3ClientOptions(S3ClientOptions clientOptions) {
         this.clientOptions = new S3ClientOptions(clientOptions);
     }
 
@@ -720,7 +729,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * *must* specify a location constraint. Try to derive the region from
          * the endpoint.
          */
-        if (!isUSEastEndpoint() && (region == null || region.isEmpty())) {
+        if (!ServiceUtils.isS3USEastEndpiont(endpoint.getHost()) && StringUtils.isNullOrEmpty(region)) {
             try {
                 region = RegionUtils.getRegionByEndpoint(this.endpoint.getHost()).getName();
             } catch (IllegalArgumentException exception) {
@@ -1738,6 +1747,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ex.setStatusCode(200);
             ex.setRequestId(headers.get(Headers.REQUEST_ID));
             ex.setExtendedRequestId(headers.get(Headers.EXTENDED_REQUEST_ID));
+            ex.setCloudFrontId(headers.get(Headers.CLOUD_FRONT_ID));
 
             throw ex;
         }
@@ -2247,6 +2257,67 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addParameter("logging", null);
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(loggingConfiguration);
+        request.setContent(new ByteArrayInputStream(bytes));
+
+        invoke(request, voidResponseHandler, bucketName, null);
+    }
+
+    @Override
+    public BucketAccelerateConfiguration getBucketAccelerateConfiguration(
+            String bucketName) throws AmazonServiceException,
+            AmazonClientException {
+        return getBucketAccelerateConfiguration(new GetBucketAccelerateConfigurationRequest(
+                bucketName));
+    }
+
+    @Override
+    public BucketAccelerateConfiguration getBucketAccelerateConfiguration(
+            GetBucketAccelerateConfigurationRequest getBucketAccelerateConfigurationRequest)
+            throws AmazonServiceException, AmazonClientException {
+
+        rejectNull(getBucketAccelerateConfigurationRequest, "getBucketAccelerateConfigurationRequest must be specified.");
+        String bucketName = getBucketAccelerateConfigurationRequest.getBucketName();
+        rejectNull(bucketName,
+                "The bucket name parameter must be specified when querying accelerate configuration");
+
+        Request<GetBucketAccelerateConfigurationRequest> request = createRequest(bucketName, null, getBucketAccelerateConfigurationRequest, HttpMethodName.GET);
+        request.addParameter("accelerate", null);
+
+        return invoke(request, new Unmarshallers.BucketAccelerateConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public void setBucketAccelerateConfiguration(String bucketName,
+            BucketAccelerateConfiguration accelerateConfiguration)
+            throws AmazonServiceException, AmazonClientException {
+        setBucketAccelerateConfiguration(new SetBucketAccelerateConfigurationRequest(
+                bucketName, accelerateConfiguration));
+    }
+
+    @Override
+    public void setBucketAccelerateConfiguration(
+            SetBucketAccelerateConfigurationRequest setBucketAccelerateConfigurationRequest)
+            throws AmazonServiceException, AmazonClientException {
+
+        rejectNull(setBucketAccelerateConfigurationRequest,
+                "setBucketAccelerateConfigurationRequest must be specified");
+
+        String bucketName = setBucketAccelerateConfigurationRequest.getBucketName();
+        BucketAccelerateConfiguration accelerateConfiguration = setBucketAccelerateConfigurationRequest.getAccelerateConfiguration();
+
+        rejectNull(bucketName,
+            "The bucket name parameter must be specified when setting accelerate configuration.");
+        rejectNull(accelerateConfiguration,
+            "The bucket accelerate configuration parameter must be specified.");
+        rejectNull(accelerateConfiguration.getStatus(),
+            "The status parameter must be specified when updating bucket accelerate configuration.");
+
+        Request<SetBucketAccelerateConfigurationRequest> request = createRequest(
+                bucketName, null, setBucketAccelerateConfigurationRequest,
+                HttpMethodName.PUT);
+        request.addParameter("accelerate", null);
+
+        byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(accelerateConfiguration);
         request.setContent(new ByteArrayInputStream(bytes));
 
         invoke(request, voidResponseHandler, bucketName, null);
@@ -2973,32 +3044,43 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     protected Signer createSigner(final Request<?> request,
                                   final String bucketName,
                                   final String key) {
-        final Signer signer = getSignerByURI(request.getEndpoint());
+        // Instead of using request.getEndpoint() for this parameter, we use endpoint which is because
+        // in accelerate mode, the endpoint in request is regionless. We need the client-wide endpoint
+        // to fetch the region information and pick the correct signer.
+        URI uri = clientOptions.isAccelerateModeEnabled() ? endpoint : request.getEndpoint();
+        final Signer signer = getSignerByURI(uri);
         if (!isSignerOverridden()) {
             final AmazonWebServiceRequest req = request.getOriginalRequest();
 
-            if (!(signer instanceof AWSS3V4Signer) && ((upgradeToSigV4(req)))) {
+            if (!(signer instanceof AWSS3V4Signer) && (upgradeToSigV4(req))) {
                 final AWSS3V4Signer v4Signer = new AWSS3V4Signer();
                 // Always set the service name; if the user has overridden it via
-                // setEndpoint(String, String, String), this will return the right
+                // setServiceNameIntern(String), this will return the right
                 // value. Otherwise it will return "s3", which is an appropriate
                 // default.
                 v4Signer.setServiceName(getServiceNameIntern());
-                // If the user has set an authentication region override, pass it
-                // to the signer. Otherwise leave it null - the signer will parse
-                // region from the request endpoint.
-                String regionOverride = getSignerRegionOverride();
-                if (regionOverride == null) {
-                    if (!hasExplicitRegion) {
-                        throw new AmazonClientException("Signature Version 4 requires knowing the region of "
-                                + "the bucket you're trying to access. You can "
-                                + "configure a region by calling AmazonS3Client."
-                                + "setRegion(Region) or AmazonS3Client.setEndpoint("
-                                + "String) with a region-specific endpoint such as "
-                                + "\"s3-us-west-2.amazonaws.com\".");
-                    }
+
+                String signerRegion = getSignerRegion();
+                if (signerRegion == null) {
+                    throw new AmazonClientException("Signature Version 4 requires knowing the region of "
+                            + "the bucket you're trying to access. You can "
+                            + "configure a region by calling AmazonS3Client."
+                            + "setRegion(Region) or AmazonS3Client.setEndpoint("
+                            + "String) with a region-specific endpoint such as "
+                            + "\"s3-us-west-2.amazonaws.com\".");
                 } else {
-                    v4Signer.setRegionName(regionOverride);
+                    v4Signer.setRegionName(signerRegion);
+                    /*
+                     * After this point, the signer region might be
+                     * re-calculated inside S3ExecutionContext#getSignerByURI,
+                     * in order to handle 307 redirections. But it won't do so
+                     * if:
+                     *  (a) the request endpoint is a global S3 endpoint (in
+                     * which case we want to preserve the signer region
+                     * specified by the user),
+                     *  OR
+                     *  (b) signerRegionOverride is set.
+                     */
                 }
                 return v4Signer;
             }
@@ -3021,6 +3103,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         return signer;
+    }
+
+    /**
+     * Return the region string that should be used for signing requests sent by
+     * this client. This method can only return null if both of the following
+     * are true:
+     * (a) the user has never specified a region via setRegion/configureRegion/setSignerRegionOverride
+     * (b) the user has specified a client endpoint that is known to be a global S3 endpoint
+     */
+    private String getSignerRegion() {
+        String region = getSignerRegionOverride();
+        if (region == null) {
+            region = clientRegion;
+        }
+        return region;
     }
 
     /**
@@ -3060,7 +3157,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         // For all PutObjectRequests that involve KMS we upgrade to SigV4 if the
         // endpoint is a non-standard endpoint.
-        if (!isStandardEndpoint()) {
+        if (!ServiceUtils.isS3USStandardEndpoint(endpoint.getHost())) {
             return ((System.getProperty(ENABLE_S3_SIGV4_SYSTEM_PROPERTY) != null)
                     || (req instanceof GetObjectRequest) || (isKMSPutRequest(req)));
         }
@@ -3069,15 +3166,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // endpoint that requires SigV4).
 
         return false;
-    }
-
-    private boolean isStandardEndpoint() {
-        return Constants.S3_HOSTNAME.equals(endpoint.getHost());
-    }
-
-    private boolean isUSEastEndpoint() {
-        return isStandardEndpoint() || Constants.S3_EXTERNAL_1_HOSTNAME
-                .equals(endpoint.getHost()) ;
     }
 
     /**
@@ -3530,7 +3618,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return ServiceUtils.convertRequestToUrl(request);
     }
 
-    public Region getRegion() {
+    public synchronized Region getRegion() {
         String authority = super.endpoint.getAuthority();
         if (Constants.S3_HOSTNAME.equals(authority)) {
             return Region.US_Standard;
@@ -3574,6 +3662,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     protected <X extends AmazonWebServiceRequest> Request<X> createRequest(String bucketName, String key, X originalRequest, HttpMethodName httpMethod, URI endpoint) {
+        // If the underlying AmazonS3Client has enabled accelerate mode and the original
+        // request operation is accelerate mode supported, then the request will use the
+        // s3-accelerate endpoint to performe the operations.
+        if (clientOptions.isAccelerateModeEnabled() && !(originalRequest instanceof S3AccelerateUnsupported)) {
+            endpoint = HttpUtils.toUri(Constants.S3_ACCELERATE_HOSTNAME, clientConfiguration);
+        }
+
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_DISPLAY_NAME);
         request.setHttpMethod(httpMethod);
         request.addHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED,
@@ -3621,7 +3716,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         ExecutionContext executionContext = createExecutionContext(originalRequest);
         // Retry V4 auth errors
         executionContext.setAuthErrorRetryStrategy(
-                new S3V4AuthErrorRetryStrategy(buildDefaultEndpointResolver(getProtocol(request), bucket, key)));
+                clientOptions.isAccelerateModeEnabled() ? null : new S3V4AuthErrorRetryStrategy(
+                buildDefaultEndpointResolver(getProtocol(request), bucket, key)));
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         // Binds the request metrics to the current request.
         request.setAWSRequestMetrics(awsRequestMetrics);
@@ -3801,7 +3897,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /**
      * For testing
      */
-    URI getEndpoint() {
+    synchronized URI getEndpoint() {
         return endpoint;
     }
 
@@ -4017,7 +4113,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     URI resolveServiceEndpoint(String bucketName) {
 
-        if (hasExplicitRegion || isSignerOverridden()) return endpoint;
+        if (getSignerRegion() != null || isSignerOverridden()) return endpoint;
 
         final String regionStr = fetchRegionFromCache(bucketName);
         final com.amazonaws.regions.Region region = RegionUtils.getRegion(regionStr);

@@ -314,8 +314,6 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        launched or terminated.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EventType
      */
 

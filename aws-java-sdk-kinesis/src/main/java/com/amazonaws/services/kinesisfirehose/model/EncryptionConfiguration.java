@@ -99,8 +99,6 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      * @param noEncryptionConfig
      *        Specifically override existing encryption information to ensure no
      *        encryption is used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see NoEncryptionConfig
      */
 

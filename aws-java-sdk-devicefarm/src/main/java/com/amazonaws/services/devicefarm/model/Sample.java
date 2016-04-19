@@ -992,8 +992,6 @@ public class Sample implements Serializable, Cloneable {
      *        are received, by app process.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SampleType
      */
 

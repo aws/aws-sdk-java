@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -62,9 +64,9 @@ public class InstanceStatusStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("eventsSet/item", targetDepth)) {
-                    instanceStatus.getEvents().add(
-                            InstanceStatusEventStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    instanceStatus
+                            .withEvents(InstanceStatusEventStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

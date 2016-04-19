@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudformation.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -80,16 +82,15 @@ public class ResourceChangeStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Scope/member", targetDepth)) {
-                    resourceChange.getScope().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    resourceChange.withScope(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Details/member", targetDepth)) {
-                    resourceChange.getDetails().add(
-                            ResourceChangeDetailStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    resourceChange
+                            .withDetails(ResourceChangeDetailStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

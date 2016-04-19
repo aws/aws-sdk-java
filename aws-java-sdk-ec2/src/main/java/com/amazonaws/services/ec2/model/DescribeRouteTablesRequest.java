@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeRouteTablesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeRouteTables.
+ * </p>
  */
 public class DescribeRouteTablesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

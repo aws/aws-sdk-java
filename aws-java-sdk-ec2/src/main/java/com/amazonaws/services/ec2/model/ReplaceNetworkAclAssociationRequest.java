@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclAssociationRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ReplaceNetworkAclAssociation.
+ * </p>
  */
 public class ReplaceNetworkAclAssociationRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,

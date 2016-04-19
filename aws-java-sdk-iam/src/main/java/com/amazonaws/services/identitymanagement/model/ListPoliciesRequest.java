@@ -205,8 +205,6 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        This parameter is optional. If it is not included, or if it is set
      *        to <code>All</code>, all policies are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PolicyScopeType
      */
 

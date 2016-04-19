@@ -601,8 +601,6 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param directoryType
      *        The directory type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see WorkspaceDirectoryType
      */
 
@@ -724,8 +722,6 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the directory's registration with Amazon WorkSpaces
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see WorkspaceDirectoryState
      */
 

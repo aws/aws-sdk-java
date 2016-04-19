@@ -71,6 +71,27 @@ public class AccountSettingsJsonMarshaller {
                 jsonGenerator.writeEndObject();
             }
 
+            java.util.Map<String, Integer> unmeteredRemoteAccessDevicesMap = accountSettings
+                    .getUnmeteredRemoteAccessDevices();
+            if (unmeteredRemoteAccessDevicesMap != null) {
+                jsonGenerator.writeFieldName("unmeteredRemoteAccessDevices");
+                jsonGenerator.writeStartObject();
+
+                for (Map.Entry<String, Integer> unmeteredRemoteAccessDevicesMapValue : unmeteredRemoteAccessDevicesMap
+                        .entrySet()) {
+                    if (unmeteredRemoteAccessDevicesMapValue.getValue() != null) {
+                        jsonGenerator
+                                .writeFieldName(unmeteredRemoteAccessDevicesMapValue
+                                        .getKey());
+
+                        jsonGenerator
+                                .writeValue(unmeteredRemoteAccessDevicesMapValue
+                                        .getValue());
+                    }
+                }
+                jsonGenerator.writeEndObject();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

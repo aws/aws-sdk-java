@@ -109,8 +109,6 @@ public class CookiePreference implements Serializable, Cloneable {
      *        You can specify all, none or whitelist. If you choose All,
      *        CloudFront forwards all cookies regardless of how many your
      *        application uses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ItemSelection
      */
 

@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -122,9 +124,9 @@ public class HealthCheckConfigStaxUnmarshaller implements
 
                 if (context.testExpression(
                         "ChildHealthChecks/ChildHealthCheck", targetDepth)) {
-                    healthCheckConfig.getChildHealthChecks().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    healthCheckConfig
+                            .withChildHealthChecks(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -135,9 +137,8 @@ public class HealthCheckConfigStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Regions/Region", targetDepth)) {
-                    healthCheckConfig.getRegions().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    healthCheckConfig.withRegions(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

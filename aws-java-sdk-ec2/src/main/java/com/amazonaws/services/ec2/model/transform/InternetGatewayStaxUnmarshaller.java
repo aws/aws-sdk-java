@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -56,16 +58,15 @@ public class InternetGatewayStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("attachmentSet/item", targetDepth)) {
-                    internetGateway.getAttachments().add(
-                            InternetGatewayAttachmentStaxUnmarshaller
+                    internetGateway
+                            .withAttachments(InternetGatewayAttachmentStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    internetGateway.getTags().add(
-                            TagStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    internetGateway.withTags(TagStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 

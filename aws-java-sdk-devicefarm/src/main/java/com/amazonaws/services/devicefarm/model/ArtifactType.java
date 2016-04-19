@@ -43,7 +43,8 @@ public enum ArtifactType {
     EXPLORER_EVENT_LOG("EXPLORER_EVENT_LOG"),
     EXPLORER_SUMMARY_LOG("EXPLORER_SUMMARY_LOG"),
     APPLICATION_CRASH_REPORT("APPLICATION_CRASH_REPORT"),
-    XCTEST_LOG("XCTEST_LOG");
+    XCTEST_LOG("XCTEST_LOG"),
+    VIDEO("VIDEO");
 
     private String value;
 
@@ -112,6 +113,8 @@ public enum ArtifactType {
             return APPLICATION_CRASH_REPORT;
         } else if ("XCTEST_LOG".equals(value)) {
             return XCTEST_LOG;
+        } else if ("VIDEO".equals(value)) {
+            return VIDEO;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

@@ -369,8 +369,6 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see NetworkInterfaceStatus
      */
 

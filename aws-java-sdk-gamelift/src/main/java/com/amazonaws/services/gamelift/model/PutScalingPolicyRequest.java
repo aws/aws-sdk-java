@@ -397,8 +397,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        Positive values scale up while negative values scale down; for
      *        example, a value of "-10" scales the fleet down by 10%.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ScalingAdjustmentType
      */
 
@@ -550,8 +548,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @param comparisonOperator
      *        Comparison operator to use when measuring the metric against the
      *        threshold value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComparisonOperatorType
      */
 
@@ -826,8 +822,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        <li>IdleInstances: number of instances not currently running a
      *        game session.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MetricName
      */
 

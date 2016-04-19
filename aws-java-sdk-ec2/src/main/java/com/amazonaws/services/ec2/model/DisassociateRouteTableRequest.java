@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DisassociateRouteTableRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DisassociateRouteTable.
+ * </p>
  */
 public class DisassociateRouteTableRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

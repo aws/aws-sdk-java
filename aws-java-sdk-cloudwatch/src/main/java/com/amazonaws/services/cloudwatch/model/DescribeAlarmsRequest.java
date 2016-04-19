@@ -241,8 +241,6 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * 
      * @param stateValue
      *        The state value to be used in matching alarms.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StateValue
      */
 

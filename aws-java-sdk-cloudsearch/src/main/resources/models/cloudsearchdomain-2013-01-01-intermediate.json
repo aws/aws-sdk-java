@@ -25,7 +25,8 @@
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false
   },
   "operations" : {
     "Search" : {
@@ -50,12 +51,13 @@
         "documentation" : "<p>Information about any problems encountered while processing a search request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "search",
+      "authenticated" : true,
       "syncReturnType" : "SearchResult",
       "asyncReturnType" : "SearchResult",
       "asyncFutureType" : "java.util.concurrent.Future<SearchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SearchResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SearchRequest, SearchResult>",
-      "methodName" : "search"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SearchRequest, SearchResult>"
     },
     "Suggest" : {
       "documentation" : "<p>Retrieves autocomplete suggestions for a partial query string. You can use suggestions enable you to display likely matches before users finish typing. In Amazon CloudSearch, suggestions are based on the contents of a particular text field. When you request suggestions, Amazon CloudSearch finds all of the documents whose values in the suggester field start with the specified query string. The beginning of the field must match the query string to be considered a match. </p> <p>For more information about configuring suggesters and retrieving suggestions, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\">Getting Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p> <p>The endpoint for submitting <code>Suggest</code> requests is domain-specific. You submit suggest requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>",
@@ -79,12 +81,13 @@
         "documentation" : "<p>Information about any problems encountered while processing a search request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "suggest",
+      "authenticated" : true,
       "syncReturnType" : "SuggestResult",
       "asyncReturnType" : "SuggestResult",
       "asyncFutureType" : "java.util.concurrent.Future<SuggestResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SuggestResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SuggestRequest, SuggestResult>",
-      "methodName" : "suggest"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SuggestRequest, SuggestResult>"
     },
     "UploadDocuments" : {
       "documentation" : "<p>Posts a batch of documents to a search domain for indexing. A document batch is a collection of add and delete operations that represent the documents you want to add, update, or delete from your domain. Batches can be described in either JSON or XML. Each item that you want Amazon CloudSearch to return as a search result (such as a product) is represented as a document. Every document has a unique ID and one or more fields that contain the data that you want to search and return in results. Individual documents cannot contain more than 1 MB of data. The entire batch cannot exceed 5 MB. To get the best possible upload performance, group add and delete operations in batches that are close the 5 MB limit. Submitting a large volume of single-document batches can overload a domain's document service. </p> <p>The endpoint for submitting <code>UploadDocuments</code> requests is domain-specific. To get the document endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p> <p>For more information about formatting your data for Amazon CloudSearch, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/preparing-data.html\">Preparing Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. For more information about uploading data for indexing, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/uploading-data.html\">Uploading Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
@@ -108,12 +111,13 @@
         "documentation" : "<p>Information about any problems encountered while processing an upload request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "uploadDocuments",
+      "authenticated" : true,
       "syncReturnType" : "UploadDocumentsResult",
       "asyncReturnType" : "UploadDocumentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UploadDocumentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UploadDocumentsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UploadDocumentsRequest, UploadDocumentsResult>",
-      "methodName" : "uploadDocuments"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UploadDocumentsRequest, UploadDocumentsResult>"
     }
   },
   "shapes" : {
@@ -623,14 +627,66 @@
               "memberLocationName" : null,
               "implType" : "com.amazonaws.internal.SdkInternalList",
               "interfaceType" : "java.util.List",
-              "listMemberModel" : null,
+              "listMemberModel" : {
+                "documentation" : "",
+                "name" : "Member",
+                "c2jName" : "member",
+                "c2jShape" : "String",
+                "variable" : {
+                  "variableName" : "member",
+                  "variableType" : "String",
+                  "variableDeclarationType" : "String",
+                  "documentation" : "",
+                  "simpleType" : "String",
+                  "variableSetterType" : "String"
+                },
+                "setterModel" : {
+                  "variableName" : "member",
+                  "variableType" : "String",
+                  "variableDeclarationType" : "String",
+                  "documentation" : "",
+                  "simpleType" : "String",
+                  "variableSetterType" : "String"
+                },
+                "getterModel" : {
+                  "returnType" : "String",
+                  "documentation" : null
+                },
+                "http" : {
+                  "unmarshallLocationName" : "member",
+                  "marshallLocationName" : "member",
+                  "additionalUnmarshallingPath" : null,
+                  "additionalMarshallingPath" : null,
+                  "isPayload" : false,
+                  "isStreaming" : false,
+                  "location" : null,
+                  "flattened" : false,
+                  "header" : false,
+                  "uri" : false,
+                  "statusCode" : false,
+                  "queryString" : false
+                },
+                "deprecated" : false,
+                "listModel" : null,
+                "mapModel" : null,
+                "enumType" : null,
+                "xmlNameSpaceUri" : null,
+                "idempotencyToken" : false,
+                "list" : false,
+                "simple" : true,
+                "map" : false,
+                "setterDocumentation" : "/**\n@param member */",
+                "getterDocumentation" : "/**\n@return */",
+                "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+                "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+              },
               "memberAdditionalMarshallingPath" : null,
               "memberAdditionalUnmarshallingPath" : null,
               "sendEmptyQueryString" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-              "simple" : true,
               "simpleType" : "String",
+              "simple" : true,
               "map" : false
             },
             "mapModel" : null,
@@ -649,7 +705,8 @@
           "valueSimple" : false,
           "valueList" : true,
           "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,java.util.List<String>>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,java.util.List<String>>",
+          "entryType" : "Map.Entry<String, java.util.List<String>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -710,12 +767,65 @@
           "keyModel" : null,
           "valueType" : "String",
           "valueLocationName" : "value",
-          "valueModel" : null,
+          "valueModel" : {
+            "documentation" : "",
+            "name" : "Value",
+            "c2jName" : "value",
+            "c2jShape" : "String",
+            "variable" : {
+              "variableName" : "value",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "value",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "value",
+              "marshallLocationName" : "value",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param value */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -776,12 +886,65 @@
           "keyModel" : null,
           "valueType" : "String",
           "valueLocationName" : "value",
-          "valueModel" : null,
+          "valueModel" : {
+            "documentation" : "",
+            "name" : "Value",
+            "c2jName" : "value",
+            "c2jShape" : "String",
+            "variable" : {
+              "variableName" : "value",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "value",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "value",
+              "marshallLocationName" : "value",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param value */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -865,12 +1028,65 @@
             "keyModel" : null,
             "valueType" : "String",
             "valueLocationName" : "value",
-            "valueModel" : null,
+            "valueModel" : {
+              "documentation" : "",
+              "name" : "Value",
+              "c2jName" : "value",
+              "c2jShape" : "String",
+              "variable" : {
+                "variableName" : "value",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "value",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "value",
+                "marshallLocationName" : "value",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param value */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -977,14 +1193,66 @@
                 "memberLocationName" : null,
                 "implType" : "com.amazonaws.internal.SdkInternalList",
                 "interfaceType" : "java.util.List",
-                "listMemberModel" : null,
+                "listMemberModel" : {
+                  "documentation" : "",
+                  "name" : "Member",
+                  "c2jName" : "member",
+                  "c2jShape" : "String",
+                  "variable" : {
+                    "variableName" : "member",
+                    "variableType" : "String",
+                    "variableDeclarationType" : "String",
+                    "documentation" : "",
+                    "simpleType" : "String",
+                    "variableSetterType" : "String"
+                  },
+                  "setterModel" : {
+                    "variableName" : "member",
+                    "variableType" : "String",
+                    "variableDeclarationType" : "String",
+                    "documentation" : "",
+                    "simpleType" : "String",
+                    "variableSetterType" : "String"
+                  },
+                  "getterModel" : {
+                    "returnType" : "String",
+                    "documentation" : null
+                  },
+                  "http" : {
+                    "unmarshallLocationName" : "member",
+                    "marshallLocationName" : "member",
+                    "additionalUnmarshallingPath" : null,
+                    "additionalMarshallingPath" : null,
+                    "isPayload" : false,
+                    "isStreaming" : false,
+                    "location" : null,
+                    "flattened" : false,
+                    "header" : false,
+                    "uri" : false,
+                    "statusCode" : false,
+                    "queryString" : false
+                  },
+                  "deprecated" : false,
+                  "listModel" : null,
+                  "mapModel" : null,
+                  "enumType" : null,
+                  "xmlNameSpaceUri" : null,
+                  "idempotencyToken" : false,
+                  "list" : false,
+                  "simple" : true,
+                  "map" : false,
+                  "setterDocumentation" : "/**\n@param member */",
+                  "getterDocumentation" : "/**\n@return */",
+                  "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+                  "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+                },
                 "memberAdditionalMarshallingPath" : null,
                 "memberAdditionalUnmarshallingPath" : null,
                 "sendEmptyQueryString" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-                "simple" : true,
                 "simpleType" : "String",
+                "simple" : true,
                 "map" : false
               },
               "mapModel" : null,
@@ -1003,7 +1271,8 @@
             "valueSimple" : false,
             "valueList" : true,
             "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,java.util.List<String>>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,java.util.List<String>>",
+            "entryType" : "Map.Entry<String, java.util.List<String>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -1065,12 +1334,65 @@
             "keyModel" : null,
             "valueType" : "String",
             "valueLocationName" : "value",
-            "valueModel" : null,
+            "valueModel" : {
+              "documentation" : "",
+              "name" : "Value",
+              "c2jName" : "value",
+              "c2jShape" : "String",
+              "variable" : {
+                "variableName" : "value",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "value",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "value",
+                "marshallLocationName" : "value",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param value */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -1575,8 +1897,8 @@
           "sendEmptyQueryString" : false,
           "templateType" : "java.util.List<DocumentServiceWarning>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentServiceWarning>",
-          "simple" : false,
           "simpleType" : "DocumentServiceWarning",
+          "simple" : false,
           "map" : false
         },
         "mapModel" : null,
@@ -1822,8 +2144,8 @@
             "sendEmptyQueryString" : false,
             "templateType" : "java.util.List<DocumentServiceWarning>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentServiceWarning>",
-            "simple" : false,
             "simpleType" : "DocumentServiceWarning",
+            "simple" : false,
             "map" : false
           },
           "mapModel" : null,
@@ -4655,8 +4977,8 @@
           "sendEmptyQueryString" : false,
           "templateType" : "java.util.List<Hit>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Hit>",
-          "simple" : false,
           "simpleType" : "Hit",
+          "simple" : false,
           "map" : false
         },
         "mapModel" : null,
@@ -4796,8 +5118,8 @@
             "sendEmptyQueryString" : false,
             "templateType" : "java.util.List<Hit>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Hit>",
-            "simple" : false,
             "simpleType" : "Hit",
+            "simple" : false,
             "map" : false
           },
           "mapModel" : null,
@@ -5547,7 +5869,8 @@
           "valueSimple" : false,
           "valueList" : false,
           "templateType" : "java.util.Map<String,BucketInfo>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,BucketInfo>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,BucketInfo>",
+          "entryType" : "Map.Entry<String, BucketInfo>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5665,7 +5988,8 @@
           "valueSimple" : false,
           "valueList" : false,
           "templateType" : "java.util.Map<String,FieldStats>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,FieldStats>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,FieldStats>",
+          "entryType" : "Map.Entry<String, FieldStats>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5912,7 +6236,8 @@
             "valueSimple" : false,
             "valueList" : false,
             "templateType" : "java.util.Map<String,FieldStats>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,FieldStats>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,FieldStats>",
+            "entryType" : "Map.Entry<String, FieldStats>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6031,7 +6356,8 @@
             "valueSimple" : false,
             "valueList" : false,
             "templateType" : "java.util.Map<String,BucketInfo>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,BucketInfo>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,BucketInfo>",
+            "entryType" : "Map.Entry<String, BucketInfo>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6554,8 +6880,8 @@
           "sendEmptyQueryString" : false,
           "templateType" : "java.util.List<SuggestionMatch>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<SuggestionMatch>",
-          "simple" : false,
           "simpleType" : "SuggestionMatch",
+          "simple" : false,
           "map" : false
         },
         "mapModel" : null,
@@ -6695,8 +7021,8 @@
             "sendEmptyQueryString" : false,
             "templateType" : "java.util.List<SuggestionMatch>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<SuggestionMatch>",
-            "simple" : false,
             "simpleType" : "SuggestionMatch",
+            "simple" : false,
             "map" : false
           },
           "mapModel" : null,
@@ -7847,8 +8173,8 @@
           "sendEmptyQueryString" : false,
           "templateType" : "java.util.List<Bucket>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Bucket>",
-          "simple" : false,
           "simpleType" : "Bucket",
+          "simple" : false,
           "map" : false
         },
         "mapModel" : null,
@@ -7988,8 +8314,8 @@
             "sendEmptyQueryString" : false,
             "templateType" : "java.util.List<Bucket>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Bucket>",
-            "simple" : false,
             "simpleType" : "Bucket",
+            "simple" : false,
             "map" : false
           },
           "mapModel" : null,
@@ -8273,6 +8599,7 @@
       "actionPrefix" : null,
       "fileNamePrefix" : null
     },
+    "customServiceMetadata" : null,
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,

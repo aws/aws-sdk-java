@@ -189,8 +189,6 @@ public class Offering implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of offering (e.g., "RECURRING") for a device.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OfferingType
      */
 
@@ -266,8 +264,6 @@ public class Offering implements Serializable, Cloneable {
      * 
      * @param platform
      *        The platform of the device (e.g., ANDROID or IOS).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DevicePlatform
      */
 

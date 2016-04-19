@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateVpnGatewayRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateVpnGateway.
+ * </p>
  */
 public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,
@@ -124,8 +126,6 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements
      * 
      * @param type
      *        The type of VPN connection this virtual private gateway supports.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see GatewayType
      */
 

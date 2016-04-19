@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class ListSSHPublicKeysResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("SSHPublicKeys/member", targetDepth)) {
-                    listSSHPublicKeysResult.getSSHPublicKeys().add(
-                            SSHPublicKeyMetadataStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listSSHPublicKeysResult
+                            .withSSHPublicKeys(SSHPublicKeyMetadataStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

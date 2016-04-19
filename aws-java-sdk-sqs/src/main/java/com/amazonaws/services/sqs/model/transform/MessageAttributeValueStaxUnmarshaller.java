@@ -17,6 +17,8 @@
 package com.amazonaws.services.sqs.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -63,16 +65,16 @@ public class MessageAttributeValueStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("StringListValue", targetDepth)) {
-                    messageAttributeValue.getStringListValues().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    messageAttributeValue
+                            .withStringListValues(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("BinaryListValue", targetDepth)) {
-                    messageAttributeValue.getBinaryListValues().add(
-                            ByteBufferStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    messageAttributeValue
+                            .withBinaryListValues(ByteBufferStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

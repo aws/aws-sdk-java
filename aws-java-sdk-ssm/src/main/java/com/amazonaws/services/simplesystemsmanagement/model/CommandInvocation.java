@@ -273,8 +273,6 @@ public class CommandInvocation implements Serializable, Cloneable {
      * 
      * @param status
      *        Whether or not the invocation succeeded, failed, or is pending.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CommandInvocationStatus
      */
 

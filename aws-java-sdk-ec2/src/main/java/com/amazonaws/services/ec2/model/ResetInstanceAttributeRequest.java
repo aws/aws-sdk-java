@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ResetInstanceAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ResetInstanceAttribute.
+ * </p>
  */
 public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -172,8 +174,6 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest
      * 
      * @param attribute
      *        The attribute to reset.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceAttributeName
      */
 

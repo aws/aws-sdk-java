@@ -232,8 +232,6 @@ public class SnsAction implements Serializable, Cloneable {
      *        be extracted. To read more about SNS message formats, see <a href=
      *        "http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a>
      *        refer to their official documentation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MessageFormat
      */
 

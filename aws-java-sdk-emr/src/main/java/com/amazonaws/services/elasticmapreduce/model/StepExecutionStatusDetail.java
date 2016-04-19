@@ -147,8 +147,6 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the job flow step.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StepExecutionState
      */
 

@@ -146,8 +146,6 @@ public class DocumentParameter implements Serializable, Cloneable {
      * @param type
      *        The type of parameter. The type can be either “String” or
      *        “StringList”.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DocumentParameterType
      */
 

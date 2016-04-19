@@ -29,13 +29,17 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * <p>
      * The ID of an AWS account.
      * </p>
+     * <p>
+     * [EC2-Classic] Required when adding or removing rules that reference a
+     * security group in another AWS account.
+     * </p>
      */
     private String userId;
     /**
      * <p>
      * The name of the security group. In a request, use this parameter for a
      * security group in EC2-Classic or a default VPC only. For a security group
-     * in a nondefault VPC, use <code>GroupId</code>.
+     * in a nondefault VPC, use the security group ID.
      * </p>
      */
     private String groupName;
@@ -68,9 +72,16 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * <p>
      * The ID of an AWS account.
      * </p>
+     * <p>
+     * [EC2-Classic] Required when adding or removing rules that reference a
+     * security group in another AWS account.
+     * </p>
      * 
      * @param userId
-     *        The ID of an AWS account.
+     *        The ID of an AWS account.</p>
+     *        <p>
+     *        [EC2-Classic] Required when adding or removing rules that
+     *        reference a security group in another AWS account.
      */
 
     public void setUserId(String userId) {
@@ -81,8 +92,15 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * <p>
      * The ID of an AWS account.
      * </p>
+     * <p>
+     * [EC2-Classic] Required when adding or removing rules that reference a
+     * security group in another AWS account.
+     * </p>
      * 
-     * @return The ID of an AWS account.
+     * @return The ID of an AWS account.</p>
+     *         <p>
+     *         [EC2-Classic] Required when adding or removing rules that
+     *         reference a security group in another AWS account.
      */
 
     public String getUserId() {
@@ -93,9 +111,16 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * <p>
      * The ID of an AWS account.
      * </p>
+     * <p>
+     * [EC2-Classic] Required when adding or removing rules that reference a
+     * security group in another AWS account.
+     * </p>
      * 
      * @param userId
-     *        The ID of an AWS account.
+     *        The ID of an AWS account.</p>
+     *        <p>
+     *        [EC2-Classic] Required when adding or removing rules that
+     *        reference a security group in another AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -109,13 +134,13 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * <p>
      * The name of the security group. In a request, use this parameter for a
      * security group in EC2-Classic or a default VPC only. For a security group
-     * in a nondefault VPC, use <code>GroupId</code>.
+     * in a nondefault VPC, use the security group ID.
      * </p>
      * 
      * @param groupName
      *        The name of the security group. In a request, use this parameter
      *        for a security group in EC2-Classic or a default VPC only. For a
-     *        security group in a nondefault VPC, use <code>GroupId</code>.
+     *        security group in a nondefault VPC, use the security group ID.
      */
 
     public void setGroupName(String groupName) {
@@ -126,12 +151,12 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * <p>
      * The name of the security group. In a request, use this parameter for a
      * security group in EC2-Classic or a default VPC only. For a security group
-     * in a nondefault VPC, use <code>GroupId</code>.
+     * in a nondefault VPC, use the security group ID.
      * </p>
      * 
      * @return The name of the security group. In a request, use this parameter
      *         for a security group in EC2-Classic or a default VPC only. For a
-     *         security group in a nondefault VPC, use <code>GroupId</code>.
+     *         security group in a nondefault VPC, use the security group ID.
      */
 
     public String getGroupName() {
@@ -142,13 +167,13 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * <p>
      * The name of the security group. In a request, use this parameter for a
      * security group in EC2-Classic or a default VPC only. For a security group
-     * in a nondefault VPC, use <code>GroupId</code>.
+     * in a nondefault VPC, use the security group ID.
      * </p>
      * 
      * @param groupName
      *        The name of the security group. In a request, use this parameter
      *        for a security group in EC2-Classic or a default VPC only. For a
-     *        security group in a nondefault VPC, use <code>GroupId</code>.
+     *        security group in a nondefault VPC, use the security group ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

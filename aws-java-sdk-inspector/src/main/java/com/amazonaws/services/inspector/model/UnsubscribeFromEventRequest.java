@@ -143,8 +143,6 @@ public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
      * 
      * @param event
      *        The event for which you want to stop receiving SNS notifications.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InspectorEvent
      */
 

@@ -82,8 +82,6 @@ public class GetChangeTokenStatusResult implements Serializable, Cloneable {
      * 
      * @param changeTokenStatus
      *        The status of the change token.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeTokenStatus
      */
 

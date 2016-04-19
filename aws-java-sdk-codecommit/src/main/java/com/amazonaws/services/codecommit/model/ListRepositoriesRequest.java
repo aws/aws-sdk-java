@@ -163,8 +163,6 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      * @param sortBy
      *        The criteria used to sort the results of a list repositories
      *        operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SortByEnum
      */
 
@@ -245,8 +243,6 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      * @param order
      *        The order in which to sort the results of a list repositories
      *        operation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OrderEnum
      */
 

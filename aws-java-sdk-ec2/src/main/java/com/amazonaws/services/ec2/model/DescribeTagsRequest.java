@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeTagsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeTags.
+ * </p>
  */
 public class DescribeTagsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DescribeTagsRequest> {
@@ -65,11 +67,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page.
-     * The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This
-     * value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     * value larger than 1000, only 1000 results are returned.
+     * The maximum number of results to return in a single call. This value can
+     * be between 5 and 1000. To retrieve the remaining results, make another
+     * call with the returned <code>NextToken</code> value.
      * </p>
      */
     private Integer maxResults;
@@ -445,20 +445,16 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page.
-     * The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This
-     * value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     * value larger than 1000, only 1000 results are returned.
+     * The maximum number of results to return in a single call. This value can
+     * be between 5 and 1000. To retrieve the remaining results, make another
+     * call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a
-     *        single page. The remaining results of the initial request can be
-     *        seen by sending another request with the returned
-     *        <code>NextToken</code> value. This value can be between 5 and
-     *        1000; if <code>MaxResults</code> is given a value larger than
-     *        1000, only 1000 results are returned.
+     *        The maximum number of results to return in a single call. This
+     *        value can be between 5 and 1000. To retrieve the remaining
+     *        results, make another call with the returned
+     *        <code>NextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -467,19 +463,15 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page.
-     * The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This
-     * value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     * value larger than 1000, only 1000 results are returned.
+     * The maximum number of results to return in a single call. This value can
+     * be between 5 and 1000. To retrieve the remaining results, make another
+     * call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of results to return for the request in a
-     *         single page. The remaining results of the initial request can be
-     *         seen by sending another request with the returned
-     *         <code>NextToken</code> value. This value can be between 5 and
-     *         1000; if <code>MaxResults</code> is given a value larger than
-     *         1000, only 1000 results are returned.
+     * @return The maximum number of results to return in a single call. This
+     *         value can be between 5 and 1000. To retrieve the remaining
+     *         results, make another call with the returned
+     *         <code>NextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -488,20 +480,16 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page.
-     * The remaining results of the initial request can be seen by sending
-     * another request with the returned <code>NextToken</code> value. This
-     * value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     * value larger than 1000, only 1000 results are returned.
+     * The maximum number of results to return in a single call. This value can
+     * be between 5 and 1000. To retrieve the remaining results, make another
+     * call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a
-     *        single page. The remaining results of the initial request can be
-     *        seen by sending another request with the returned
-     *        <code>NextToken</code> value. This value can be between 5 and
-     *        1000; if <code>MaxResults</code> is given a value larger than
-     *        1000, only 1000 results are returned.
+     *        The maximum number of results to return in a single call. This
+     *        value can be between 5 and 1000. To retrieve the remaining
+     *        results, make another call with the returned
+     *        <code>NextToken</code> value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

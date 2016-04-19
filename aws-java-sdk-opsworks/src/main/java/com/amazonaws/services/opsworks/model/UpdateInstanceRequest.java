@@ -435,8 +435,6 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @param autoScalingType
      *        For load-based or time-based instances, the type. Windows stacks
      *        can use only time-based instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AutoScalingType
      */
 
@@ -915,8 +913,6 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        are supported by the different instance types, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
      *        >Instance Families and Types</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Architecture
      */
 

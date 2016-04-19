@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -121,9 +123,9 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements
 
                 if (context
                         .testExpression("recurringCharges/item", targetDepth)) {
-                    reservedInstancesOffering.getRecurringCharges().add(
-                            RecurringChargeStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    reservedInstancesOffering
+                            .withRecurringCharges(RecurringChargeStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -136,9 +138,9 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements
 
                 if (context.testExpression("pricingDetailsSet/item",
                         targetDepth)) {
-                    reservedInstancesOffering.getPricingDetails().add(
-                            PricingDetailStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    reservedInstancesOffering
+                            .withPricingDetails(PricingDetailStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

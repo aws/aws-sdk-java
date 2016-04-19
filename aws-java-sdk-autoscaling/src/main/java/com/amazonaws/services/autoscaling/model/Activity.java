@@ -385,8 +385,6 @@ public class Activity implements Serializable, Cloneable {
      * 
      * @param statusCode
      *        The current status of the activity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ScalingActivityStatusCode
      */
 

@@ -297,8 +297,6 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        <p>
      *        If not specified or set to null, the results will be returned in
      *        an arbitrary order.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ApplicationRevisionSortBy
      */
 
@@ -474,8 +472,6 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        If set to null, the results will be sorted in an arbitrary order.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SortOrder
      */
 
@@ -733,8 +729,6 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        <li>exclude: Do not list revisions that are target revisions of a
      *        deployment group.</li>
      *        <li>ignore: List all revisions.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ListStateFilterAction
      */
 

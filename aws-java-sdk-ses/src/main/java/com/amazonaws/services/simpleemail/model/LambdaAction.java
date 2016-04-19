@@ -372,8 +372,6 @@ public class LambdaAction implements Serializable, Cloneable {
      *        <code>RequestResponse</code> only when you want to make a mail
      *        flow decision, such as whether to stop the receipt rule or the
      *        receipt rule set.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InvocationType
      */
 

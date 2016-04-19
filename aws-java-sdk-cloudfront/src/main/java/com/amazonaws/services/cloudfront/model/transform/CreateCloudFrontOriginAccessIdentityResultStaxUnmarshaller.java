@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudfront.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -41,10 +43,16 @@ public class CreateCloudFrontOriginAccessIdentityResultStaxUnmarshaller
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument()) {
-            createCloudFrontOriginAccessIdentityResult.setLocation(context
-                    .getHeader("Location"));
-            createCloudFrontOriginAccessIdentityResult.setETag(context
-                    .getHeader("ETag"));
+            context.setCurrentHeader("Location");
+            createCloudFrontOriginAccessIdentityResult
+                    .setLocation(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+
+            context.setCurrentHeader("ETag");
+            createCloudFrontOriginAccessIdentityResult
+                    .setETag(StringStaxUnmarshaller.getInstance().unmarshall(
+                            context));
+
         }
 
         while (true) {

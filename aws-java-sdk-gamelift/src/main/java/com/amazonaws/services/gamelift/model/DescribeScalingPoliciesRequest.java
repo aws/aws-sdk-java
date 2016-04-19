@@ -271,8 +271,6 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        <li>ERROR: An error occurred in creating the policy. It should be
      *        removed and recreated.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ScalingStatusType
      */
 

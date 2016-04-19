@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -58,45 +60,45 @@ public class EnvironmentResourceDescriptionStaxUnmarshaller implements
 
                 if (context.testExpression("AutoScalingGroups/member",
                         targetDepth)) {
-                    environmentResourceDescription.getAutoScalingGroups().add(
-                            AutoScalingGroupStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    environmentResourceDescription
+                            .withAutoScalingGroups(AutoScalingGroupStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Instances/member", targetDepth)) {
-                    environmentResourceDescription.getInstances().add(
-                            InstanceStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    environmentResourceDescription
+                            .withInstances(InstanceStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LaunchConfigurations/member",
                         targetDepth)) {
-                    environmentResourceDescription.getLaunchConfigurations()
-                            .add(LaunchConfigurationStaxUnmarshaller
+                    environmentResourceDescription
+                            .withLaunchConfigurations(LaunchConfigurationStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LoadBalancers/member", targetDepth)) {
-                    environmentResourceDescription.getLoadBalancers().add(
-                            LoadBalancerStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    environmentResourceDescription
+                            .withLoadBalancers(LoadBalancerStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Triggers/member", targetDepth)) {
-                    environmentResourceDescription.getTriggers().add(
-                            TriggerStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    environmentResourceDescription
+                            .withTriggers(TriggerStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Queues/member", targetDepth)) {
-                    environmentResourceDescription.getQueues().add(
-                            QueueStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    environmentResourceDescription
+                            .withQueues(QueueStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
 

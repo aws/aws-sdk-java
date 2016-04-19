@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,16 +54,16 @@ public class ListAvailableSolutionStacksResultStaxUnmarshaller
 
                 if (context
                         .testExpression("SolutionStacks/member", targetDepth)) {
-                    listAvailableSolutionStacksResult.getSolutionStacks().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    listAvailableSolutionStacksResult
+                            .withSolutionStacks(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("SolutionStackDetails/member",
                         targetDepth)) {
-                    listAvailableSolutionStacksResult.getSolutionStackDetails()
-                            .add(SolutionStackDescriptionStaxUnmarshaller
+                    listAvailableSolutionStacksResult
+                            .withSolutionStackDetails(SolutionStackDescriptionStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

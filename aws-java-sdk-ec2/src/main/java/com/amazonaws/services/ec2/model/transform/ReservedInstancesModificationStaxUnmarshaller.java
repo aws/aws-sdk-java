@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -59,16 +61,16 @@ public class ReservedInstancesModificationStaxUnmarshaller implements
 
                 if (context.testExpression("reservedInstancesSet/item",
                         targetDepth)) {
-                    reservedInstancesModification.getReservedInstancesIds()
-                            .add(ReservedInstancesIdStaxUnmarshaller
+                    reservedInstancesModification
+                            .withReservedInstancesIds(ReservedInstancesIdStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("modificationResultSet/item",
                         targetDepth)) {
-                    reservedInstancesModification.getModificationResults().add(
-                            ReservedInstancesModificationResultStaxUnmarshaller
+                    reservedInstancesModification
+                            .withModificationResults(ReservedInstancesModificationResultStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

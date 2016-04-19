@@ -363,8 +363,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements
      * 
      * @param type
      *        The app type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AppType
      */
 

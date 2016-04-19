@@ -279,8 +279,6 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      *        The status you want to assign to the secret access key.
      *        <code>Active</code> means the key can be used for API calls to
      *        AWS, while <code>Inactive</code> means the key cannot be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusType
      */
 

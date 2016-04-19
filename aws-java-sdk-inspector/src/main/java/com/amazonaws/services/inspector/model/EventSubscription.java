@@ -98,8 +98,6 @@ public class EventSubscription implements Serializable, Cloneable {
      * @param event
      *        The event for which Amazon Simple Notification Service (SNS)
      *        notifications are sent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InspectorEvent
      */
 

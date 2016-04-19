@@ -622,8 +622,6 @@ public class StreamDescription implements Serializable, Cloneable {
      *        <code>DISABLED</code> - the stream is disabled.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamStatus
      */
 
@@ -950,8 +948,6 @@ public class StreamDescription implements Serializable, Cloneable {
      *        of the items from the table.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamViewType
      */
 

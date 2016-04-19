@@ -499,8 +499,6 @@ public class PlayerSession implements Serializable, Cloneable {
      *        player did not connect and/or was not validated within the
      *        time-out limit (60 seconds).</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PlayerSessionStatus
      */
 

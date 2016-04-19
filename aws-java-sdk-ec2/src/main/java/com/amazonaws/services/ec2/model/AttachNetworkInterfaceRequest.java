@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AttachNetworkInterfaceRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AttachNetworkInterface.
+ * </p>
  */
 public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

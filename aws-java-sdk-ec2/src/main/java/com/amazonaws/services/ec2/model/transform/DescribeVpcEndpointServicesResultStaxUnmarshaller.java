@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeVpcEndpointServicesResultStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("serviceNameSet/item", targetDepth)) {
-                    describeVpcEndpointServicesResult.getServiceNames().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    describeVpcEndpointServicesResult
+                            .withServiceNames(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

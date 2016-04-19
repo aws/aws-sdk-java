@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ReplaceRouteTableAssociationRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ReplaceRouteTableAssociation.
+ * </p>
  */
 public class ReplaceRouteTableAssociationRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,

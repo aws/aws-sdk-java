@@ -96,8 +96,6 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
      * 
      * @param action
      *        Specifies whether to insert or delete a <a>ByteMatchTuple</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
 

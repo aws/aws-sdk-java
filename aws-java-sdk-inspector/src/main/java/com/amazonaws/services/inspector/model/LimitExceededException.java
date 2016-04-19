@@ -103,8 +103,6 @@ public class LimitExceededException extends AmazonServiceException {
      * 
      * @param errorCode
      *        Code that indicates the type of error that is generated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LimitExceededErrorCode
      */
 

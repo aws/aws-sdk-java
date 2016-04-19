@@ -2347,8 +2347,6 @@ public class Condition implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
      *        >Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB
      *        Developer Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComparisonOperator
      */
 

@@ -48,9 +48,6 @@
         },
         "eu-central-1": {
           "description": "EU (Frankfurt)"
-        },
-        "s3-external-1": {
-          "description": "S3 external 1 region"
         }
       },
       "services": {
@@ -529,7 +526,10 @@
         },
         "inspector": {
           "endpoints": {
-            "us-west-2": {}
+            "us-west-2": {},
+            "us-east-1": {},
+            "eu-west-1": {},
+            "ap-northeast-1": {}
           }
         },
         "iot": {

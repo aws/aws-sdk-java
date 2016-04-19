@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribePrefixListsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribePrefixLists.
+ * </p>
  */
 public class DescribePrefixListsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

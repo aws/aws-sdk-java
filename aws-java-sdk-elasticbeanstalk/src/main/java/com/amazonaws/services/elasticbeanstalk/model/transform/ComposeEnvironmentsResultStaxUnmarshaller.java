@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,8 +52,8 @@ public class ComposeEnvironmentsResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Environments/member", targetDepth)) {
-                    composeEnvironmentsResult.getEnvironments().add(
-                            EnvironmentDescriptionStaxUnmarshaller
+                    composeEnvironmentsResult
+                            .withEnvironments(EnvironmentDescriptionStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

@@ -204,8 +204,6 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      *        Indicates whether running Spot instances should be terminated if
      *        the target capacity of the Spot fleet request is decreased below
      *        the current size of the Spot fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ExcessCapacityTerminationPolicy
      */
 

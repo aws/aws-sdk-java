@@ -23,7 +23,9 @@ public enum VolumeType {
 
     Standard("standard"),
     Io1("io1"),
-    Gp2("gp2");
+    Gp2("gp2"),
+    Sc1("sc1"),
+    St1("st1");
 
     private String value;
 
@@ -52,6 +54,10 @@ public enum VolumeType {
             return Io1;
         } else if ("gp2".equals(value)) {
             return Gp2;
+        } else if ("sc1".equals(value)) {
+            return Sc1;
+        } else if ("st1".equals(value)) {
+            return St1;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

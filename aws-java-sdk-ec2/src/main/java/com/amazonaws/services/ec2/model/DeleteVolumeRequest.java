@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteVolumeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteVolume.
+ * </p>
  */
 public class DeleteVolumeRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DeleteVolumeRequest> {

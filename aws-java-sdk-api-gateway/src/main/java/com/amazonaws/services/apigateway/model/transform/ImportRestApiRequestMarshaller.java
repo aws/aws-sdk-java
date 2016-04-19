@@ -76,10 +76,13 @@ public class ImportRestApiRequestMarshaller implements
 
         java.util.Map<String, String> parameters = importRestApiRequest
                 .getParameters();
-        for (Map.Entry<String, String> entry : parameters.entrySet()) {
-            if (entry.getValue() != null) {
-                request.addParameter(StringUtils.fromString(entry.getKey()),
-                        StringUtils.fromString(entry.getValue()));
+        if (parameters != null) {
+            for (Map.Entry<String, String> entry : parameters.entrySet()) {
+                if (entry.getValue() != null) {
+                    request.addParameter(
+                            StringUtils.fromString(entry.getKey()),
+                            StringUtils.fromString(entry.getValue()));
+                }
             }
         }
 

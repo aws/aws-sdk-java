@@ -633,8 +633,6 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *        <code>STOPPED</code> status, which can be useful for debugging
      *        tasks that are not starting properly or have died or finished. The
      *        default status filter is <code>RUNNING</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DesiredStatus
      */
 

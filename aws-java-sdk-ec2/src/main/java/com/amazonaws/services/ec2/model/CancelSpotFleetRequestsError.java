@@ -89,8 +89,6 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      * 
      * @param code
      *        The error code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CancelBatchErrorCode
      */
 

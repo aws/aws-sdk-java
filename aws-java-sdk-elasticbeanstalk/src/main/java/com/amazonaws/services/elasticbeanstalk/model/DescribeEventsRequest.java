@@ -452,8 +452,6 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements
      * @param severity
      *        If specified, limits the events returned from this call to include
      *        only those with the specified severity or higher.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EventSeverity
      */
 

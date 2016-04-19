@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -73,9 +75,9 @@ public class DescribeSpotFleetRequestHistoryResultStaxUnmarshaller
 
                 if (context
                         .testExpression("historyRecordSet/item", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.getHistoryRecords()
-                            .add(HistoryRecordStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeSpotFleetRequestHistoryResult
+                            .withHistoryRecords(HistoryRecordStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

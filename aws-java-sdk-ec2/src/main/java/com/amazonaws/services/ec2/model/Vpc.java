@@ -161,8 +161,6 @@ public class Vpc implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VpcState
      */
 
@@ -405,8 +403,6 @@ public class Vpc implements Serializable, Cloneable {
      * 
      * @param instanceTenancy
      *        The allowed tenancy of instances launched into the VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Tenancy
      */
 

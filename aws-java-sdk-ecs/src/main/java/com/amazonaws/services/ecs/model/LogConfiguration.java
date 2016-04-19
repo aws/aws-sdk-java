@@ -134,8 +134,6 @@ public class LogConfiguration implements Serializable, Cloneable {
      *        instance, log into your container instance and run the following
      *        command:
      *        <code>sudo docker version | grep "Server API version"</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LogDriver
      */
 

@@ -85,21 +85,41 @@ public class NatGateway implements Serializable, Cloneable {
      * the failure, that corresponds to the error code.
      * </p>
      * <ul>
-     * <li>For InsufficientFreeAddressesInSubnet:
-     * <code>Subnet has insufficient free addresses to create this NAT gateway</code>
+     * <li>
+     * <p>
+     * For InsufficientFreeAddressesInSubnet:
+     * "Subnet has insufficient free addresses to create this NAT gateway"
+     * </p>
      * </li>
-     * <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li>
-     * <li>For InvalidAllocationID.NotFound:
-     * <code>Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway</code>
+     * <li>
+     * <p>
+     * For Gateway.NotAttached:
+     * "Network vpc-xxxxxxxx has no Internet gateway attached"
+     * </p>
      * </li>
-     * <li>For Resource.AlreadyAssociated:
-     * <code>Elastic IP address eipalloc-xxxxxxxx is already associated</code></li>
-     * <li>For InternalError:
-     * <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     * <li>
+     * <p>
+     * For InvalidAllocationID.NotFound:
+     * "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     * </p>
      * </li>
-     * <li>For InvalidSubnetID.NotFound:
-     * <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
+     * <li>
+     * <p>
+     * For Resource.AlreadyAssociated:
+     * "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InternalError:
+     * "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InvalidSubnetID.NotFound:
+     * "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     * </p>
      * </li>
      * </ul>
      */
@@ -450,8 +470,6 @@ public class NatGateway implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the NAT gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see NatGatewayState
      */
 
@@ -556,21 +574,41 @@ public class NatGateway implements Serializable, Cloneable {
      * the failure, that corresponds to the error code.
      * </p>
      * <ul>
-     * <li>For InsufficientFreeAddressesInSubnet:
-     * <code>Subnet has insufficient free addresses to create this NAT gateway</code>
+     * <li>
+     * <p>
+     * For InsufficientFreeAddressesInSubnet:
+     * "Subnet has insufficient free addresses to create this NAT gateway"
+     * </p>
      * </li>
-     * <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li>
-     * <li>For InvalidAllocationID.NotFound:
-     * <code>Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway</code>
+     * <li>
+     * <p>
+     * For Gateway.NotAttached:
+     * "Network vpc-xxxxxxxx has no Internet gateway attached"
+     * </p>
      * </li>
-     * <li>For Resource.AlreadyAssociated:
-     * <code>Elastic IP address eipalloc-xxxxxxxx is already associated</code></li>
-     * <li>For InternalError:
-     * <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     * <li>
+     * <p>
+     * For InvalidAllocationID.NotFound:
+     * "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     * </p>
      * </li>
-     * <li>For InvalidSubnetID.NotFound:
-     * <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
+     * <li>
+     * <p>
+     * For Resource.AlreadyAssociated:
+     * "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InternalError:
+     * "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InvalidSubnetID.NotFound:
+     * "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     * </p>
      * </li>
      * </ul>
      * 
@@ -578,23 +616,41 @@ public class NatGateway implements Serializable, Cloneable {
      *        If the NAT gateway could not be created, specifies the error
      *        message for the failure, that corresponds to the error code. </p>
      *        <ul>
-     *        <li>For InsufficientFreeAddressesInSubnet:
-     *        <code>Subnet has insufficient free addresses to create this NAT gateway</code>
+     *        <li>
+     *        <p>
+     *        For InsufficientFreeAddressesInSubnet:
+     *        "Subnet has insufficient free addresses to create this NAT gateway"
+     *        </p>
      *        </li>
-     *        <li>For Gateway.NotAttached:
-     *        <code>Network vpc-xxxxxxxx has no Internet gateway attached</code>
+     *        <li>
+     *        <p>
+     *        For Gateway.NotAttached:
+     *        "Network vpc-xxxxxxxx has no Internet gateway attached"
+     *        </p>
      *        </li>
-     *        <li>For InvalidAllocationID.NotFound:
-     *        <code>Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway</code>
+     *        <li>
+     *        <p>
+     *        For InvalidAllocationID.NotFound:
+     *        "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     *        </p>
      *        </li>
-     *        <li>For Resource.AlreadyAssociated:
-     *        <code>Elastic IP address eipalloc-xxxxxxxx is already associated</code>
+     *        <li>
+     *        <p>
+     *        For Resource.AlreadyAssociated:
+     *        "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     *        </p>
      *        </li>
-     *        <li>For InternalError:
-     *        <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     *        <li>
+     *        <p>
+     *        For InternalError:
+     *        "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     *        </p>
      *        </li>
-     *        <li>For InvalidSubnetID.NotFound:
-     *        <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
+     *        <li>
+     *        <p>
+     *        For InvalidSubnetID.NotFound:
+     *        "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     *        </p>
      *        </li>
      */
 
@@ -608,44 +664,82 @@ public class NatGateway implements Serializable, Cloneable {
      * the failure, that corresponds to the error code.
      * </p>
      * <ul>
-     * <li>For InsufficientFreeAddressesInSubnet:
-     * <code>Subnet has insufficient free addresses to create this NAT gateway</code>
+     * <li>
+     * <p>
+     * For InsufficientFreeAddressesInSubnet:
+     * "Subnet has insufficient free addresses to create this NAT gateway"
+     * </p>
      * </li>
-     * <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li>
-     * <li>For InvalidAllocationID.NotFound:
-     * <code>Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway</code>
+     * <li>
+     * <p>
+     * For Gateway.NotAttached:
+     * "Network vpc-xxxxxxxx has no Internet gateway attached"
+     * </p>
      * </li>
-     * <li>For Resource.AlreadyAssociated:
-     * <code>Elastic IP address eipalloc-xxxxxxxx is already associated</code></li>
-     * <li>For InternalError:
-     * <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     * <li>
+     * <p>
+     * For InvalidAllocationID.NotFound:
+     * "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     * </p>
      * </li>
-     * <li>For InvalidSubnetID.NotFound:
-     * <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
+     * <li>
+     * <p>
+     * For Resource.AlreadyAssociated:
+     * "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InternalError:
+     * "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InvalidSubnetID.NotFound:
+     * "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     * </p>
      * </li>
      * </ul>
      * 
      * @return If the NAT gateway could not be created, specifies the error
      *         message for the failure, that corresponds to the error code. </p>
      *         <ul>
-     *         <li>For InsufficientFreeAddressesInSubnet:
-     *         <code>Subnet has insufficient free addresses to create this NAT gateway</code>
+     *         <li>
+     *         <p>
+     *         For InsufficientFreeAddressesInSubnet:
+     *         "Subnet has insufficient free addresses to create this NAT gateway"
+     *         </p>
      *         </li>
-     *         <li>For Gateway.NotAttached:
-     *         <code>Network vpc-xxxxxxxx has no Internet gateway attached</code>
+     *         <li>
+     *         <p>
+     *         For Gateway.NotAttached:
+     *         "Network vpc-xxxxxxxx has no Internet gateway attached"
+     *         </p>
      *         </li>
-     *         <li>For InvalidAllocationID.NotFound:
-     *         <code>Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway</code>
+     *         <li>
+     *         <p>
+     *         For InvalidAllocationID.NotFound:
+     *         "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     *         </p>
      *         </li>
-     *         <li>For Resource.AlreadyAssociated:
-     *         <code>Elastic IP address eipalloc-xxxxxxxx is already associated</code>
+     *         <li>
+     *         <p>
+     *         For Resource.AlreadyAssociated:
+     *         "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     *         </p>
      *         </li>
-     *         <li>For InternalError:
-     *         <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     *         <li>
+     *         <p>
+     *         For InternalError:
+     *         "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     *         </p>
      *         </li>
-     *         <li>For InvalidSubnetID.NotFound:
-     *         <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
+     *         <li>
+     *         <p>
+     *         For InvalidSubnetID.NotFound:
+     *         "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     *         </p>
      *         </li>
      */
 
@@ -659,21 +753,41 @@ public class NatGateway implements Serializable, Cloneable {
      * the failure, that corresponds to the error code.
      * </p>
      * <ul>
-     * <li>For InsufficientFreeAddressesInSubnet:
-     * <code>Subnet has insufficient free addresses to create this NAT gateway</code>
+     * <li>
+     * <p>
+     * For InsufficientFreeAddressesInSubnet:
+     * "Subnet has insufficient free addresses to create this NAT gateway"
+     * </p>
      * </li>
-     * <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li>
-     * <li>For InvalidAllocationID.NotFound:
-     * <code>Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway</code>
+     * <li>
+     * <p>
+     * For Gateway.NotAttached:
+     * "Network vpc-xxxxxxxx has no Internet gateway attached"
+     * </p>
      * </li>
-     * <li>For Resource.AlreadyAssociated:
-     * <code>Elastic IP address eipalloc-xxxxxxxx is already associated</code></li>
-     * <li>For InternalError:
-     * <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     * <li>
+     * <p>
+     * For InvalidAllocationID.NotFound:
+     * "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     * </p>
      * </li>
-     * <li>For InvalidSubnetID.NotFound:
-     * <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
+     * <li>
+     * <p>
+     * For Resource.AlreadyAssociated:
+     * "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InternalError:
+     * "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InvalidSubnetID.NotFound:
+     * "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     * </p>
      * </li>
      * </ul>
      * 
@@ -681,23 +795,41 @@ public class NatGateway implements Serializable, Cloneable {
      *        If the NAT gateway could not be created, specifies the error
      *        message for the failure, that corresponds to the error code. </p>
      *        <ul>
-     *        <li>For InsufficientFreeAddressesInSubnet:
-     *        <code>Subnet has insufficient free addresses to create this NAT gateway</code>
+     *        <li>
+     *        <p>
+     *        For InsufficientFreeAddressesInSubnet:
+     *        "Subnet has insufficient free addresses to create this NAT gateway"
+     *        </p>
      *        </li>
-     *        <li>For Gateway.NotAttached:
-     *        <code>Network vpc-xxxxxxxx has no Internet gateway attached</code>
+     *        <li>
+     *        <p>
+     *        For Gateway.NotAttached:
+     *        "Network vpc-xxxxxxxx has no Internet gateway attached"
+     *        </p>
      *        </li>
-     *        <li>For InvalidAllocationID.NotFound:
-     *        <code>Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway</code>
+     *        <li>
+     *        <p>
+     *        For InvalidAllocationID.NotFound:
+     *        "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     *        </p>
      *        </li>
-     *        <li>For Resource.AlreadyAssociated:
-     *        <code>Elastic IP address eipalloc-xxxxxxxx is already associated</code>
+     *        <li>
+     *        <p>
+     *        For Resource.AlreadyAssociated:
+     *        "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     *        </p>
      *        </li>
-     *        <li>For InternalError:
-     *        <code>Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again.</code>
+     *        <li>
+     *        <p>
+     *        For InternalError:
+     *        "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     *        </p>
      *        </li>
-     *        <li>For InvalidSubnetID.NotFound:
-     *        <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
+     *        <li>
+     *        <p>
+     *        For InvalidSubnetID.NotFound:
+     *        "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

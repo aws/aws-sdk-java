@@ -41,7 +41,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * URL.
      * </p>
      * <p>
-     * Constraint: Must be from 4 to 23 characters in length. The name can
+     * Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name
      * already exists, AWS Elastic Beanstalk returns an
@@ -177,7 +177,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        application URL.
      *        </p>
      *        <p>
-     *        Constraint: Must be from 4 to 23 characters in length. The name
+     *        Constraint: Must be from 4 to 40 characters in length. The name
      *        can contain only letters, numbers, and hyphens. It cannot start or
      *        end with a hyphen. This name must be unique in your account. If
      *        the specified name already exists, AWS Elastic Beanstalk returns
@@ -268,7 +268,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * URL.
      * </p>
      * <p>
-     * Constraint: Must be from 4 to 23 characters in length. The name can
+     * Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name
      * already exists, AWS Elastic Beanstalk returns an
@@ -284,7 +284,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        A unique name for the deployment environment. Used in the
      *        application URL. </p>
      *        <p>
-     *        Constraint: Must be from 4 to 23 characters in length. The name
+     *        Constraint: Must be from 4 to 40 characters in length. The name
      *        can contain only letters, numbers, and hyphens. It cannot start or
      *        end with a hyphen. This name must be unique in your account. If
      *        the specified name already exists, AWS Elastic Beanstalk returns
@@ -306,7 +306,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * URL.
      * </p>
      * <p>
-     * Constraint: Must be from 4 to 23 characters in length. The name can
+     * Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name
      * already exists, AWS Elastic Beanstalk returns an
@@ -321,7 +321,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return A unique name for the deployment environment. Used in the
      *         application URL. </p>
      *         <p>
-     *         Constraint: Must be from 4 to 23 characters in length. The name
+     *         Constraint: Must be from 4 to 40 characters in length. The name
      *         can contain only letters, numbers, and hyphens. It cannot start
      *         or end with a hyphen. This name must be unique in your account.
      *         If the specified name already exists, AWS Elastic Beanstalk
@@ -343,7 +343,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * URL.
      * </p>
      * <p>
-     * Constraint: Must be from 4 to 23 characters in length. The name can
+     * Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name
      * already exists, AWS Elastic Beanstalk returns an
@@ -359,7 +359,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        A unique name for the deployment environment. Used in the
      *        application URL. </p>
      *        <p>
-     *        Constraint: Must be from 4 to 23 characters in length. The name
+     *        Constraint: Must be from 4 to 40 characters in length. The name
      *        can contain only letters, numbers, and hyphens. It cannot start or
      *        end with a hyphen. This name must be unique in your account. If
      *        the specified name already exists, AWS Elastic Beanstalk returns

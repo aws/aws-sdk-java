@@ -19,7 +19,10 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes information used to set up an EBS volume specified in a block
+ * device mapping.
+ * </p>
  */
 public class EbsInstanceBlockDeviceSpecification implements Serializable,
         Cloneable {

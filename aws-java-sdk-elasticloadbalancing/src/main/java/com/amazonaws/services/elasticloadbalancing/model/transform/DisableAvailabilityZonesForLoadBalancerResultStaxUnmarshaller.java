@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -53,9 +55,8 @@ public class DisableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller
                 if (context.testExpression("AvailabilityZones/member",
                         targetDepth)) {
                     disableAvailabilityZonesForLoadBalancerResult
-                            .getAvailabilityZones().add(
-                                    StringStaxUnmarshaller.getInstance()
-                                            .unmarshall(context));
+                            .withAvailabilityZones(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesOfferingsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeReservedInstancesOfferings.
+ * </p>
  */
 public class DescribeReservedInstancesOfferingsRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -366,8 +368,6 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
      *        >Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
      *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceType
      */
 
@@ -511,8 +511,6 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        The Reserved Instance product platform description. Instances that
      *        include <code>(Amazon VPC)</code> in the description are for use
      *        with Amazon VPC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RIProductDescription
      */
 
@@ -1242,8 +1240,6 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        (i.e., Dedicated Instances).</p>
      *        <p>
      *        Default: <code>default</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Tenancy
      */
 
@@ -1347,8 +1343,6 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        The Reserved Instance offering type. If you are using tools that
      *        predate the 2011-11-01 API version, you only have access to the
      *        <code>Medium Utilization</code> Reserved Instance offering type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OfferingTypeValues
      */
 

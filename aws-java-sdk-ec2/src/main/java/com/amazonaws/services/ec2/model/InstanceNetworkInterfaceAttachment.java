@@ -200,8 +200,6 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * 
      * @param status
      *        The attachment state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AttachmentStatus
      */
 

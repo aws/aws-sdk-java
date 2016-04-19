@@ -19,7 +19,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes properties of a Dedicated host.
+ * </p>
  */
 public class HostProperties implements Serializable, Cloneable {
 
@@ -43,7 +45,7 @@ public class HostProperties implements Serializable, Cloneable {
     private Integer totalVCpus;
     /**
      * <p>
-     * The instance type size that the Dedicated host supports (e.g.,
+     * The instance type size that the Dedicated host supports (for example,
      * m3.medium).
      * </p>
      */
@@ -174,13 +176,13 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated host supports (e.g.,
+     * The instance type size that the Dedicated host supports (for example,
      * m3.medium).
      * </p>
      * 
      * @param instanceType
-     *        The instance type size that the Dedicated host supports (e.g.,
-     *        m3.medium).
+     *        The instance type size that the Dedicated host supports (for
+     *        example, m3.medium).
      */
 
     public void setInstanceType(String instanceType) {
@@ -189,12 +191,12 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated host supports (e.g.,
+     * The instance type size that the Dedicated host supports (for example,
      * m3.medium).
      * </p>
      * 
-     * @return The instance type size that the Dedicated host supports (e.g.,
-     *         m3.medium).
+     * @return The instance type size that the Dedicated host supports (for
+     *         example, m3.medium).
      */
 
     public String getInstanceType() {
@@ -203,13 +205,13 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated host supports (e.g.,
+     * The instance type size that the Dedicated host supports (for example,
      * m3.medium).
      * </p>
      * 
      * @param instanceType
-     *        The instance type size that the Dedicated host supports (e.g.,
-     *        m3.medium).
+     *        The instance type size that the Dedicated host supports (for
+     *        example, m3.medium).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ImportKeyPairRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ImportKeyPair.
+ * </p>
  */
 public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<ImportKeyPairRequest> {
@@ -35,8 +37,8 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
     private String keyName;
     /**
      * <p>
-     * The public key. You must base64 encode the public key material before
-     * sending it to AWS.
+     * The public key. For API calls, the text must be base64-encoded. For
+     * command line tools, base64 encoding is performed for you.
      * </p>
      */
     private String publicKeyMaterial;
@@ -57,8 +59,8 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
      * @param keyName
      *        A unique name for the key pair.
      * @param publicKeyMaterial
-     *        The public key. You must base64 encode the public key material
-     *        before sending it to AWS.
+     *        The public key. For API calls, the text must be base64-encoded.
+     *        For command line tools, base64 encoding is performed for you.
      */
     public ImportKeyPairRequest(String keyName, String publicKeyMaterial) {
         setKeyName(keyName);
@@ -108,13 +110,13 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The public key. You must base64 encode the public key material before
-     * sending it to AWS.
+     * The public key. For API calls, the text must be base64-encoded. For
+     * command line tools, base64 encoding is performed for you.
      * </p>
      * 
      * @param publicKeyMaterial
-     *        The public key. You must base64 encode the public key material
-     *        before sending it to AWS.
+     *        The public key. For API calls, the text must be base64-encoded.
+     *        For command line tools, base64 encoding is performed for you.
      */
 
     public void setPublicKeyMaterial(String publicKeyMaterial) {
@@ -123,12 +125,12 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The public key. You must base64 encode the public key material before
-     * sending it to AWS.
+     * The public key. For API calls, the text must be base64-encoded. For
+     * command line tools, base64 encoding is performed for you.
      * </p>
      * 
-     * @return The public key. You must base64 encode the public key material
-     *         before sending it to AWS.
+     * @return The public key. For API calls, the text must be base64-encoded.
+     *         For command line tools, base64 encoding is performed for you.
      */
 
     public String getPublicKeyMaterial() {
@@ -137,13 +139,13 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The public key. You must base64 encode the public key material before
-     * sending it to AWS.
+     * The public key. For API calls, the text must be base64-encoded. For
+     * command line tools, base64 encoding is performed for you.
      * </p>
      * 
      * @param publicKeyMaterial
-     *        The public key. You must base64 encode the public key material
-     *        before sending it to AWS.
+     *        The public key. For API calls, the text must be base64-encoded.
+     *        For command line tools, base64 encoding is performed for you.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

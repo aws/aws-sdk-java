@@ -266,8 +266,6 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * @param playerSessionCreationPolicy
      *        Policy determining whether or not the game session accepts new
      *        players.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PlayerSessionCreationPolicy
      */
 
@@ -396,8 +394,6 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      *        <li>FullProtection: If the game session is in an ACTIVE status, it
      *        cannot be terminated during a scale-down event.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ProtectionPolicy
      */
 

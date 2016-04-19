@@ -351,8 +351,6 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeviceAttribute
      */
 

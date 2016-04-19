@@ -162,8 +162,6 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * @param eventType
      *        The type of events to describe. By default, all events are
      *        described.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EventType
      */
 

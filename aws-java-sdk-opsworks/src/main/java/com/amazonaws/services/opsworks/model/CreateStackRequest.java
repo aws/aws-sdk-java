@@ -2101,8 +2101,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RootDeviceType
      */
 

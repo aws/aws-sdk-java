@@ -136,12 +136,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -151,12 +156,27 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -172,7 +192,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -187,22 +217,12 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -984,8 +1004,6 @@ public class Test implements Serializable, Cloneable {
      *        XCTEST_UI: The XCode UI test type.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TestType
      */
 
@@ -1214,12 +1232,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -1229,12 +1252,27 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -1247,12 +1285,17 @@ public class Test implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        PENDING: A pending status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_DEVICE: A pending device status.
      *        </p>
      *        </li>
      *        <li>
@@ -1262,12 +1305,27 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        SCHEDULING: A scheduling status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PREPARING: A preparing status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        RUNNING: A running status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        COMPLETED: A completed status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOPPING: A stopping status.
      *        </p>
      *        </li>
      * @see ExecutionStatus
@@ -1287,12 +1345,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -1302,12 +1365,27 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -1319,12 +1397,17 @@ public class Test implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         COMPLETED: A completed status.
+     *         PENDING: A pending status.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PENDING: A pending status.
+     *         PENDING_CONCURRENCY: A pending concurrency status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PENDING_DEVICE: A pending device status.
      *         </p>
      *         </li>
      *         <li>
@@ -1334,12 +1417,27 @@ public class Test implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         SCHEDULING: A scheduling status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PREPARING: A preparing status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         RUNNING: A running status.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SCHEDULING: A scheduling status.
+     *         COMPLETED: A completed status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         STOPPING: A stopping status.
      *         </p>
      *         </li>
      * @see ExecutionStatus
@@ -1359,12 +1457,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -1374,12 +1477,27 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -1392,12 +1510,17 @@ public class Test implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        PENDING: A pending status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_DEVICE: A pending device status.
      *        </p>
      *        </li>
      *        <li>
@@ -1407,12 +1530,27 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        SCHEDULING: A scheduling status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PREPARING: A preparing status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        RUNNING: A running status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        COMPLETED: A completed status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOPPING: A stopping status.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -1435,12 +1573,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -1450,12 +1593,27 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -1468,12 +1626,17 @@ public class Test implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        PENDING: A pending status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_DEVICE: A pending device status.
      *        </p>
      *        </li>
      *        <li>
@@ -1483,16 +1646,29 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        SCHEDULING: A scheduling status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PREPARING: A preparing status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        RUNNING: A running status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        COMPLETED: A completed status.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        STOPPING: A stopping status.
+     *        </p>
+     *        </li>
      * @see ExecutionStatus
      */
 
@@ -1510,12 +1686,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -1525,12 +1706,27 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -1543,12 +1739,17 @@ public class Test implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        PENDING: A pending status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_DEVICE: A pending device status.
      *        </p>
      *        </li>
      *        <li>
@@ -1558,12 +1759,27 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        SCHEDULING: A scheduling status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PREPARING: A preparing status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        RUNNING: A running status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        COMPLETED: A completed status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOPPING: A stopping status.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -1586,7 +1802,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -1601,22 +1827,12 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -1629,7 +1845,17 @@ public class Test implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        PENDING: A pending condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PASSED: A passing condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      *        <li>
@@ -1644,22 +1870,12 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        ERRORED: An error condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        STOPPED: A stopped condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PASSED: A passing condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PENDING: A pending condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      * @see ExecutionResult
@@ -1679,7 +1895,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -1694,22 +1920,12 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -1721,7 +1937,17 @@ public class Test implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         ERRORED: An error condition.
+     *         PENDING: A pending condition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PASSED: A passing condition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         WARNED: A warning condition.
      *         </p>
      *         </li>
      *         <li>
@@ -1736,22 +1962,12 @@ public class Test implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         ERRORED: An error condition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         STOPPED: A stopped condition.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         PASSED: A passing condition.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         PENDING: A pending condition.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         WARNED: A warning condition.
      *         </p>
      *         </li>
      * @see ExecutionResult
@@ -1771,7 +1987,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -1786,22 +2012,12 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -1814,7 +2030,17 @@ public class Test implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        PENDING: A pending condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PASSED: A passing condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      *        <li>
@@ -1829,22 +2055,12 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        ERRORED: An error condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        STOPPED: A stopped condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PASSED: A passing condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PENDING: A pending condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
@@ -1867,7 +2083,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -1882,22 +2108,12 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -1910,7 +2126,17 @@ public class Test implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        PENDING: A pending condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PASSED: A passing condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      *        <li>
@@ -1925,26 +2151,14 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        ERRORED: An error condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        STOPPED: A stopped condition.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        PASSED: A passing condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PENDING: A pending condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        WARNED: A warning condition.
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ExecutionResult
      */
 
@@ -1962,7 +2176,17 @@ public class Test implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -1977,22 +2201,12 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -2005,7 +2219,17 @@ public class Test implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        PENDING: A pending condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PASSED: A passing condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      *        <li>
@@ -2020,22 +2244,12 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        ERRORED: An error condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        STOPPED: A stopped condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PASSED: A passing condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PENDING: A pending condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

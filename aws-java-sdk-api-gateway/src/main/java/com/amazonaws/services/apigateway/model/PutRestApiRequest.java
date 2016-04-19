@@ -172,8 +172,6 @@ public class PutRestApiRequest extends AmazonWebServiceRequest implements
      *        The <code>mode</code> query parameter to specify the update mode.
      *        Valid values are "merge" and "overwrite". By default, the update
      *        mode is "merge".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PutMode
      */
 

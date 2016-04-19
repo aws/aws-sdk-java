@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class ListUserPoliciesResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("PolicyNames/member", targetDepth)) {
-                    listUserPoliciesResult.getPolicyNames().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    listUserPoliciesResult
+                            .withPolicyNames(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

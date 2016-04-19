@@ -806,8 +806,6 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        <p>
      *        Specify <code>NONE</code> if you don't want to perform any text
      *        transformations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TextTransformation
      */
 

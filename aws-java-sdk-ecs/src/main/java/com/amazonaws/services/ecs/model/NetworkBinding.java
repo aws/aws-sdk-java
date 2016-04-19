@@ -238,8 +238,6 @@ public class NetworkBinding implements Serializable, Cloneable {
      * 
      * @param protocol
      *        The protocol used for the network binding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TransportProtocol
      */
 

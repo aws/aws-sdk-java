@@ -97,8 +97,6 @@ public class WAFInvalidParameterException extends AmazonServiceException {
 
     /**
      * @param field
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ParameterExceptionField
      */
 
@@ -177,8 +175,6 @@ public class WAFInvalidParameterException extends AmazonServiceException {
 
     /**
      * @param reason
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ParameterExceptionReason
      */
 

@@ -31,6 +31,7 @@ public final class ServiceAbbreviations {
     public static final String CodeCommit = "codecommit";
     public static final String CodePipeline = "codepipeline";
     public static final String CognitoIdentity = "cognito-identity";
+    public static final String CognitoIdentityProvider = "cognito-idp";
     public static final String CognitoSync = "cognito-sync";
     public static final String Config = "config";
     public static final String DeviceFarm = "devicefarm";

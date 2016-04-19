@@ -616,8 +616,6 @@ public class MLModel implements Serializable, Cloneable {
      *        <li>COMPLETED - The creation process completed successfully.</li>
      *        <li>DELETED - The <code>MLModel</code> is marked as deleted. It is
      *        not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EntityStatus
      */
 
@@ -1246,8 +1244,6 @@ public class MLModel implements Serializable, Cloneable {
      *        <ul>
      *        <li>SGD -- Stochastic gradient descent. The goal of SGD is to
      *        minimize the gradient of the loss function.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Algorithm
      */
 
@@ -1400,8 +1396,6 @@ public class MLModel implements Serializable, Cloneable {
      *        "Is this a child-friendly web site?".</li>
      *        <li>MULTICLASS - Produces more than two possible results. For
      *        example, "Is this a HIGH, LOW or MEDIUM risk trade?".</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MLModelType
      */
 

@@ -295,8 +295,6 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * 
      * @param type
      *        The Spot instance request type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SpotInstanceType
      */
 
@@ -412,8 +410,6 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html"
      *        >Spot Bid Status</a> in the <i>Amazon Elastic Compute Cloud User
      *        Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SpotInstanceState
      */
 
@@ -951,8 +947,6 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * 
      * @param productDescription
      *        The product description associated with the Spot instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RIProductDescription
      */
 

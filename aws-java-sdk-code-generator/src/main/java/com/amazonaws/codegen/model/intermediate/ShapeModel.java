@@ -216,6 +216,15 @@ public class ShapeModel extends DocumentationModel {
         return null;
     }
 
+    public MemberModel getMemberByC2jName(String memberName) {
+        for (MemberModel memberModel : members) {
+            if (memberModel.getC2jName().equals(memberName)) {
+                return memberModel;
+            }
+        }
+        return null;
+    }
+
     public List<MemberModel> getMembers() {
         return members;
     }

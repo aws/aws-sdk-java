@@ -21,10 +21,10 @@ import java.io.Serializable;
 /**
  * <p>
  * Represents the result of an individual record from a <code>PutRecords</code>
- * request. A record that is successfully added to your Amazon Kinesis stream
- * includes SequenceNumber and ShardId in the result. A record that fails to be
- * added to your Amazon Kinesis stream includes ErrorCode and ErrorMessage in
- * the result.
+ * request. A record that is successfully added to a stream includes
+ * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
+ * that fails to be added to the stream includes <code>ErrorCode</code> and
+ * <code>ErrorMessage</code> in the result.
  * </p>
  */
 public class PutRecordsResultEntry implements Serializable, Cloneable {

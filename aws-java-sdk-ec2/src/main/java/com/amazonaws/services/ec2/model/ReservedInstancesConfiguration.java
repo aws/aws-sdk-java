@@ -233,8 +233,6 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type for the modified Reserved Instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceType
      */
 

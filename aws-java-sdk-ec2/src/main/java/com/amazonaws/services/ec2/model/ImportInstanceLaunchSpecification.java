@@ -152,8 +152,6 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @param architecture
      *        The architecture of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ArchitectureValues
      */
 
@@ -508,8 +506,6 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
      *        >Before You Get Started</a> in the Amazon Elastic Compute Cloud
      *        User Guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceType
      */
 
@@ -747,8 +743,6 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *        Indicates whether an instance stops or terminates when you
      *        initiate shutdown from the instance (using the operating system
      *        command for system shutdown).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ShutdownBehavior
      */
 

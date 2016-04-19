@@ -71,8 +71,6 @@ public class CommandFilter implements Serializable, Cloneable {
      * 
      * @param key
      *        The name of the filter. For example, requested date and time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CommandFilterKey
      */
 

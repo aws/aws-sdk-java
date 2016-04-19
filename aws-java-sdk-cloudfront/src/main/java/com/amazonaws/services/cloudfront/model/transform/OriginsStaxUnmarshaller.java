@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudfront.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -55,9 +57,8 @@ public class OriginsStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Items/Origin", targetDepth)) {
-                    origins.getItems().add(
-                            OriginStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    origins.withItems(OriginStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 

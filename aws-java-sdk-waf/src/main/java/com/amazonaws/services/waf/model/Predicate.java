@@ -293,8 +293,6 @@ public class Predicate implements Serializable, Cloneable {
      * @param type
      *        The type of predicate in a <code>Rule</code>, such as
      *        <code>ByteMatchSet</code> or <code>IPSet</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PredicateType
      */
 

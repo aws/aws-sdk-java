@@ -125,8 +125,6 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      * @param resourceType
      *        The type of resources that you want AWS Config to list in the
      *        response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceType
      */
 

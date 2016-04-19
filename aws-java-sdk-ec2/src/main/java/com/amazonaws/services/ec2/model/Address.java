@@ -320,8 +320,6 @@ public class Address implements Serializable, Cloneable {
      *        Indicates whether this Elastic IP address is for use with
      *        instances in EC2-Classic (<code>standard</code>) or instances in a
      *        VPC (<code>vpc</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DomainType
      */
 

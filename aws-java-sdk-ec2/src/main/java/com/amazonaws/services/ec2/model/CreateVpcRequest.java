@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateVpcRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateVpc.
+ * </p>
  */
 public class CreateVpcRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<CreateVpcRequest> {
@@ -277,8 +279,6 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        <p>
      *        Default: <code>default</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Tenancy
      */
 

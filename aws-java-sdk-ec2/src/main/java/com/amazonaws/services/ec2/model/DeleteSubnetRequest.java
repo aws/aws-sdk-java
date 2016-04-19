@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteSubnetRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteSubnet.
+ * </p>
  */
 public class DeleteSubnetRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DeleteSubnetRequest> {

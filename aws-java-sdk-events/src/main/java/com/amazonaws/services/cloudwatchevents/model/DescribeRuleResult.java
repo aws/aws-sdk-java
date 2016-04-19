@@ -290,8 +290,6 @@ public class DescribeRuleResult implements Serializable, Cloneable {
      * 
      * @param state
      *        Specifies whether the rule is enabled or disabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RuleState
      */
 

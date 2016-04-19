@@ -142,8 +142,6 @@ public class AssociationStatus implements Serializable, Cloneable {
      * 
      * @param name
      *        The status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AssociationStatusName
      */
 

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CopySnapshot.
+ * </p>
  */
 public class CopySnapshotRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<CopySnapshotRequest> {

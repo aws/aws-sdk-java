@@ -310,8 +310,6 @@ public class ReceiptRule implements Serializable, Cloneable {
      *        Security (TLS). If this parameter is set to <code>Require</code>,
      *        Amazon SES will bounce emails that are not received over TLS. The
      *        default is <code>Optional</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TlsPolicy
      */
 

@@ -333,8 +333,6 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        The type of health check to be performed. Currently supported
      *        types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH,
      *        CALCULATED and CLOUDWATCH_METRIC.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see HealthCheckType
      */
 
@@ -1332,8 +1330,6 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        data about the state of associated alarm. Valid values are
      *        <code>Healthy</code>, <code>Unhealthy</code> and
      *        <code>LastKnownStatus</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InsufficientDataHealthStatus
      */
 

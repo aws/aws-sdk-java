@@ -251,8 +251,6 @@ public class InstanceGroup implements Serializable, Cloneable {
      * @param market
      *        The marketplace to provision instances for this group. Valid
      *        values are ON_DEMAND or SPOT.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MarketType
      */
 
@@ -334,8 +332,6 @@ public class InstanceGroup implements Serializable, Cloneable {
      * @param instanceGroupType
      *        The type of the instance group. Valid values are MASTER, CORE or
      *        TASK.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceGroupType
      */
 

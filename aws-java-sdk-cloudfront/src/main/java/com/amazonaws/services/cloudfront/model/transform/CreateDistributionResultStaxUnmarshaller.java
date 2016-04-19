@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudfront.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -40,8 +42,14 @@ public class CreateDistributionResultStaxUnmarshaller implements
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument()) {
-            createDistributionResult.setLocation(context.getHeader("Location"));
-            createDistributionResult.setETag(context.getHeader("ETag"));
+            context.setCurrentHeader("Location");
+            createDistributionResult.setLocation(StringStaxUnmarshaller
+                    .getInstance().unmarshall(context));
+
+            context.setCurrentHeader("ETag");
+            createDistributionResult.setETag(StringStaxUnmarshaller
+                    .getInstance().unmarshall(context));
+
         }
 
         while (true) {

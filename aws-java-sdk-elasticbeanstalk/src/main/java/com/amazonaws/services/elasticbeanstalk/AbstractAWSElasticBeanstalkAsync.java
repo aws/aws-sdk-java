@@ -70,6 +70,21 @@ public class AbstractAWSElasticBeanstalkAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ApplyEnvironmentManagedActionResult> applyEnvironmentManagedActionAsync(
+            ApplyEnvironmentManagedActionRequest request) {
+
+        return applyEnvironmentManagedActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyEnvironmentManagedActionResult> applyEnvironmentManagedActionAsync(
+            ApplyEnvironmentManagedActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ApplyEnvironmentManagedActionRequest, ApplyEnvironmentManagedActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(
             CheckDNSAvailabilityRequest request) {
 
@@ -381,6 +396,36 @@ public class AbstractAWSElasticBeanstalkAsync extends
     public java.util.concurrent.Future<DescribeEnvironmentHealthResult> describeEnvironmentHealthAsync(
             DescribeEnvironmentHealthRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentHealthRequest, DescribeEnvironmentHealthResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEnvironmentManagedActionHistoryResult> describeEnvironmentManagedActionHistoryAsync(
+            DescribeEnvironmentManagedActionHistoryRequest request) {
+
+        return describeEnvironmentManagedActionHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEnvironmentManagedActionHistoryResult> describeEnvironmentManagedActionHistoryAsync(
+            DescribeEnvironmentManagedActionHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionHistoryRequest, DescribeEnvironmentManagedActionHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEnvironmentManagedActionsResult> describeEnvironmentManagedActionsAsync(
+            DescribeEnvironmentManagedActionsRequest request) {
+
+        return describeEnvironmentManagedActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEnvironmentManagedActionsResult> describeEnvironmentManagedActionsAsync(
+            DescribeEnvironmentManagedActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionsRequest, DescribeEnvironmentManagedActionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

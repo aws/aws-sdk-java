@@ -524,8 +524,6 @@ public class StreamSpecification implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamViewType
      */
 

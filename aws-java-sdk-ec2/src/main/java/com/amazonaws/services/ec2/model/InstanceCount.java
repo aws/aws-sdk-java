@@ -90,8 +90,6 @@ public class InstanceCount implements Serializable, Cloneable {
      * 
      * @param state
      *        The states of the listed Reserved Instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ListingState
      */
 

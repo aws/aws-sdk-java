@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ImportImageRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ImportImage.
+ * </p>
  */
 public class ImportImageRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<ImportImageRequest> {

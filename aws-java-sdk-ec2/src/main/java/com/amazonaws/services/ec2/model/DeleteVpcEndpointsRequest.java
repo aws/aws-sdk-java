@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteVpcEndpointsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteVpcEndpoints.
+ * </p>
  */
 public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

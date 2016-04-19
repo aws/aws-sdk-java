@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AuthorizeSecurityGroupIngressRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AuthorizeSecurityGroupIngress.
+ * </p>
  */
 public class AuthorizeSecurityGroupIngressRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -45,20 +47,22 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * [EC2-Classic, default VPC] The name of the source security group. You
      * can't specify this parameter in combination with the following
      * parameters: the CIDR IP address range, the start of the port range, the
-     * IP protocol, and the end of the port range. For EC2-VPC, the source
-     * security group must be in the same VPC.
+     * IP protocol, and the end of the port range. Creates rules that grant full
+     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol
+     * and port range, use a set of IP permissions instead. For EC2-VPC, the
+     * source security group must be in the same VPC.
      * </p>
      */
     private String sourceSecurityGroupName;
     /**
      * <p>
-     * [EC2-Classic, default VPC] The AWS account number for the source security
-     * group. For EC2-VPC, the source security group must be in the same VPC.
-     * You can't specify this parameter in combination with the following
-     * parameters: the CIDR IP address range, the IP protocol, the start of the
-     * port range, and the end of the port range. Creates rules that grant full
-     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol
-     * and port range, use a set of IP permissions instead.
+     * [EC2-Classic] The AWS account number for the source security group, if
+     * the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP
+     * address range, the IP protocol, the start of the port range, and the end
+     * of the port range. Creates rules that grant full ICMP, UDP, and TCP
+     * access. To create a rule with a specific IP protocol and port range, use
+     * a set of IP permissions instead.
      * </p>
      */
     private String sourceSecurityGroupOwnerId;
@@ -214,16 +218,21 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * [EC2-Classic, default VPC] The name of the source security group. You
      * can't specify this parameter in combination with the following
      * parameters: the CIDR IP address range, the start of the port range, the
-     * IP protocol, and the end of the port range. For EC2-VPC, the source
-     * security group must be in the same VPC.
+     * IP protocol, and the end of the port range. Creates rules that grant full
+     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol
+     * and port range, use a set of IP permissions instead. For EC2-VPC, the
+     * source security group must be in the same VPC.
      * </p>
      * 
      * @param sourceSecurityGroupName
      *        [EC2-Classic, default VPC] The name of the source security group.
      *        You can't specify this parameter in combination with the following
      *        parameters: the CIDR IP address range, the start of the port
-     *        range, the IP protocol, and the end of the port range. For
-     *        EC2-VPC, the source security group must be in the same VPC.
+     *        range, the IP protocol, and the end of the port range. Creates
+     *        rules that grant full ICMP, UDP, and TCP access. To create a rule
+     *        with a specific IP protocol and port range, use a set of IP
+     *        permissions instead. For EC2-VPC, the source security group must
+     *        be in the same VPC.
      */
 
     public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
@@ -235,15 +244,20 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * [EC2-Classic, default VPC] The name of the source security group. You
      * can't specify this parameter in combination with the following
      * parameters: the CIDR IP address range, the start of the port range, the
-     * IP protocol, and the end of the port range. For EC2-VPC, the source
-     * security group must be in the same VPC.
+     * IP protocol, and the end of the port range. Creates rules that grant full
+     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol
+     * and port range, use a set of IP permissions instead. For EC2-VPC, the
+     * source security group must be in the same VPC.
      * </p>
      * 
      * @return [EC2-Classic, default VPC] The name of the source security group.
      *         You can't specify this parameter in combination with the
      *         following parameters: the CIDR IP address range, the start of the
-     *         port range, the IP protocol, and the end of the port range. For
-     *         EC2-VPC, the source security group must be in the same VPC.
+     *         port range, the IP protocol, and the end of the port range.
+     *         Creates rules that grant full ICMP, UDP, and TCP access. To
+     *         create a rule with a specific IP protocol and port range, use a
+     *         set of IP permissions instead. For EC2-VPC, the source security
+     *         group must be in the same VPC.
      */
 
     public String getSourceSecurityGroupName() {
@@ -255,16 +269,21 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * [EC2-Classic, default VPC] The name of the source security group. You
      * can't specify this parameter in combination with the following
      * parameters: the CIDR IP address range, the start of the port range, the
-     * IP protocol, and the end of the port range. For EC2-VPC, the source
-     * security group must be in the same VPC.
+     * IP protocol, and the end of the port range. Creates rules that grant full
+     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol
+     * and port range, use a set of IP permissions instead. For EC2-VPC, the
+     * source security group must be in the same VPC.
      * </p>
      * 
      * @param sourceSecurityGroupName
      *        [EC2-Classic, default VPC] The name of the source security group.
      *        You can't specify this parameter in combination with the following
      *        parameters: the CIDR IP address range, the start of the port
-     *        range, the IP protocol, and the end of the port range. For
-     *        EC2-VPC, the source security group must be in the same VPC.
+     *        range, the IP protocol, and the end of the port range. Creates
+     *        rules that grant full ICMP, UDP, and TCP access. To create a rule
+     *        with a specific IP protocol and port range, use a set of IP
+     *        permissions instead. For EC2-VPC, the source security group must
+     *        be in the same VPC.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -277,24 +296,24 @@ public class AuthorizeSecurityGroupIngressRequest extends
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The AWS account number for the source security
-     * group. For EC2-VPC, the source security group must be in the same VPC.
-     * You can't specify this parameter in combination with the following
-     * parameters: the CIDR IP address range, the IP protocol, the start of the
-     * port range, and the end of the port range. Creates rules that grant full
-     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol
-     * and port range, use a set of IP permissions instead.
+     * [EC2-Classic] The AWS account number for the source security group, if
+     * the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP
+     * address range, the IP protocol, the start of the port range, and the end
+     * of the port range. Creates rules that grant full ICMP, UDP, and TCP
+     * access. To create a rule with a specific IP protocol and port range, use
+     * a set of IP permissions instead.
      * </p>
      * 
      * @param sourceSecurityGroupOwnerId
-     *        [EC2-Classic, default VPC] The AWS account number for the source
-     *        security group. For EC2-VPC, the source security group must be in
-     *        the same VPC. You can't specify this parameter in combination with
-     *        the following parameters: the CIDR IP address range, the IP
-     *        protocol, the start of the port range, and the end of the port
-     *        range. Creates rules that grant full ICMP, UDP, and TCP access. To
-     *        create a rule with a specific IP protocol and port range, use a
-     *        set of IP permissions instead.
+     *        [EC2-Classic] The AWS account number for the source security
+     *        group, if the source security group is in a different account. You
+     *        can't specify this parameter in combination with the following
+     *        parameters: the CIDR IP address range, the IP protocol, the start
+     *        of the port range, and the end of the port range. Creates rules
+     *        that grant full ICMP, UDP, and TCP access. To create a rule with a
+     *        specific IP protocol and port range, use a set of IP permissions
+     *        instead.
      */
 
     public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
@@ -303,23 +322,23 @@ public class AuthorizeSecurityGroupIngressRequest extends
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The AWS account number for the source security
-     * group. For EC2-VPC, the source security group must be in the same VPC.
-     * You can't specify this parameter in combination with the following
-     * parameters: the CIDR IP address range, the IP protocol, the start of the
-     * port range, and the end of the port range. Creates rules that grant full
-     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol
-     * and port range, use a set of IP permissions instead.
+     * [EC2-Classic] The AWS account number for the source security group, if
+     * the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP
+     * address range, the IP protocol, the start of the port range, and the end
+     * of the port range. Creates rules that grant full ICMP, UDP, and TCP
+     * access. To create a rule with a specific IP protocol and port range, use
+     * a set of IP permissions instead.
      * </p>
      * 
-     * @return [EC2-Classic, default VPC] The AWS account number for the source
-     *         security group. For EC2-VPC, the source security group must be in
-     *         the same VPC. You can't specify this parameter in combination
-     *         with the following parameters: the CIDR IP address range, the IP
-     *         protocol, the start of the port range, and the end of the port
-     *         range. Creates rules that grant full ICMP, UDP, and TCP access.
-     *         To create a rule with a specific IP protocol and port range, use
-     *         a set of IP permissions instead.
+     * @return [EC2-Classic] The AWS account number for the source security
+     *         group, if the source security group is in a different account.
+     *         You can't specify this parameter in combination with the
+     *         following parameters: the CIDR IP address range, the IP protocol,
+     *         the start of the port range, and the end of the port range.
+     *         Creates rules that grant full ICMP, UDP, and TCP access. To
+     *         create a rule with a specific IP protocol and port range, use a
+     *         set of IP permissions instead.
      */
 
     public String getSourceSecurityGroupOwnerId() {
@@ -328,24 +347,24 @@ public class AuthorizeSecurityGroupIngressRequest extends
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The AWS account number for the source security
-     * group. For EC2-VPC, the source security group must be in the same VPC.
-     * You can't specify this parameter in combination with the following
-     * parameters: the CIDR IP address range, the IP protocol, the start of the
-     * port range, and the end of the port range. Creates rules that grant full
-     * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol
-     * and port range, use a set of IP permissions instead.
+     * [EC2-Classic] The AWS account number for the source security group, if
+     * the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP
+     * address range, the IP protocol, the start of the port range, and the end
+     * of the port range. Creates rules that grant full ICMP, UDP, and TCP
+     * access. To create a rule with a specific IP protocol and port range, use
+     * a set of IP permissions instead.
      * </p>
      * 
      * @param sourceSecurityGroupOwnerId
-     *        [EC2-Classic, default VPC] The AWS account number for the source
-     *        security group. For EC2-VPC, the source security group must be in
-     *        the same VPC. You can't specify this parameter in combination with
-     *        the following parameters: the CIDR IP address range, the IP
-     *        protocol, the start of the port range, and the end of the port
-     *        range. Creates rules that grant full ICMP, UDP, and TCP access. To
-     *        create a rule with a specific IP protocol and port range, use a
-     *        set of IP permissions instead.
+     *        [EC2-Classic] The AWS account number for the source security
+     *        group, if the source security group is in a different account. You
+     *        can't specify this parameter in combination with the following
+     *        parameters: the CIDR IP address range, the IP protocol, the start
+     *        of the port range, and the end of the port range. Creates rules
+     *        that grant full ICMP, UDP, and TCP access. To create a rule with a
+     *        specific IP protocol and port range, use a set of IP permissions
+     *        instead.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

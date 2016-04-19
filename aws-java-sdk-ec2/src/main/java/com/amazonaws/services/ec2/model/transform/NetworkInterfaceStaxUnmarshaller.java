@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -130,9 +132,8 @@ public class NetworkInterfaceStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("groupSet/item", targetDepth)) {
-                    networkInterface.getGroups().add(
-                            GroupIdentifierStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    networkInterface.withGroups(GroupIdentifierStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -151,16 +152,15 @@ public class NetworkInterfaceStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    networkInterface.getTagSet().add(
-                            TagStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    networkInterface.withTagSet(TagStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("privateIpAddressesSet/item",
                         targetDepth)) {
-                    networkInterface.getPrivateIpAddresses().add(
-                            NetworkInterfacePrivateIpAddressStaxUnmarshaller
+                    networkInterface
+                            .withPrivateIpAddresses(NetworkInterfacePrivateIpAddressStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

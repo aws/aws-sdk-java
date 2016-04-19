@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyInstancePlacementRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ModifyInstancePlacement.
+ * </p>
  */
 public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -145,8 +147,6 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * 
      * @param tenancy
      *        The tenancy of the instance that you are modifying.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see HostTenancy
      */
 
@@ -222,8 +222,6 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * 
      * @param affinity
      *        The new affinity setting for the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Affinity
      */
 

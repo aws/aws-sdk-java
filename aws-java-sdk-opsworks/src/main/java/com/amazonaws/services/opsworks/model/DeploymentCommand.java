@@ -434,8 +434,6 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *        <li><code>restart</code>: Restart the app's web or application
      *        server.</li>
      *        <li><code>undeploy</code>: Undeploy the app.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeploymentCommandName
      */
 

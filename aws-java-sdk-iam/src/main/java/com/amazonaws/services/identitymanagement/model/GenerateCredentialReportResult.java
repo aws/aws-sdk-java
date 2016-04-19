@@ -90,8 +90,6 @@ public class GenerateCredentialReportResult implements Serializable, Cloneable {
      * 
      * @param state
      *        Information about the state of the credential report.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReportStateType
      */
 

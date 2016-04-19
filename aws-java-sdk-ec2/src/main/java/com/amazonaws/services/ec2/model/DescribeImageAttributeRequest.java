@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeImageAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeImageAttribute.
+ * </p>
  */
 public class DescribeImageAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -243,8 +245,6 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest
      *        <code>Client.AuthFailure</code> error. If this happens, use
      *        <a>DescribeImages</a> to get information about the block device
      *        mapping for the AMI.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ImageAttributeName
      */
 

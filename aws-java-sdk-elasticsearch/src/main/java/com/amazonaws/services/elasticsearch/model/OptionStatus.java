@@ -234,8 +234,6 @@ public class OptionStatus implements Serializable, Cloneable {
      * @param state
      *        Provides the <code>OptionState</code> for the Elasticsearch
      *        domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OptionState
      */
 

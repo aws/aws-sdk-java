@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DisassociateAddressRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DisassociateAddress.
+ * </p>
  */
 public class DisassociateAddressRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

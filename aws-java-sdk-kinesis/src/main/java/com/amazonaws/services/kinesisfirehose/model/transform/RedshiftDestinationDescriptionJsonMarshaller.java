@@ -75,6 +75,15 @@ public class RedshiftDestinationDescriptionJsonMarshaller {
                                         .getS3DestinationDescription(),
                                 jsonGenerator);
             }
+            if (redshiftDestinationDescription.getCloudWatchLoggingOptions() != null) {
+                jsonGenerator.writeFieldName("CloudWatchLoggingOptions");
+                CloudWatchLoggingOptionsJsonMarshaller
+                        .getInstance()
+                        .marshall(
+                                redshiftDestinationDescription
+                                        .getCloudWatchLoggingOptions(),
+                                jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

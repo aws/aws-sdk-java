@@ -55,6 +55,12 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * </p>
      */
     private S3DestinationDescription s3DestinationDescription;
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     */
+    private CloudWatchLoggingOptions cloudWatchLoggingOptions;
 
     /**
      * <p>
@@ -266,6 +272,49 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Describes CloudWatch logging options for your delivery stream.
+     */
+
+    public void setCloudWatchLoggingOptions(
+            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+        this.cloudWatchLoggingOptions = cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @return Describes CloudWatch logging options for your delivery stream.
+     */
+
+    public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
+        return this.cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Describes CloudWatch logging options for your delivery stream.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RedshiftDestinationDescription withCloudWatchLoggingOptions(
+            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+        setCloudWatchLoggingOptions(cloudWatchLoggingOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -287,7 +336,10 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
             sb.append("Username: " + getUsername() + ",");
         if (getS3DestinationDescription() != null)
             sb.append("S3DestinationDescription: "
-                    + getS3DestinationDescription());
+                    + getS3DestinationDescription() + ",");
+        if (getCloudWatchLoggingOptions() != null)
+            sb.append("CloudWatchLoggingOptions: "
+                    + getCloudWatchLoggingOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -330,6 +382,13 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
                 && other.getS3DestinationDescription().equals(
                         this.getS3DestinationDescription()) == false)
             return false;
+        if (other.getCloudWatchLoggingOptions() == null
+                ^ this.getCloudWatchLoggingOptions() == null)
+            return false;
+        if (other.getCloudWatchLoggingOptions() != null
+                && other.getCloudWatchLoggingOptions().equals(
+                        this.getCloudWatchLoggingOptions()) == false)
+            return false;
         return true;
     }
 
@@ -353,6 +412,10 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
                 * hashCode
                 + ((getS3DestinationDescription() == null) ? 0
                         : getS3DestinationDescription().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudWatchLoggingOptions() == null) ? 0
+                        : getCloudWatchLoggingOptions().hashCode());
         return hashCode;
     }
 

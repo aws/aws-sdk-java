@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -101,9 +103,9 @@ public class LaunchSpecificationStaxUnmarshaller implements
 
                 if (context.testExpression("blockDeviceMapping/item",
                         targetDepth)) {
-                    launchSpecification.getBlockDeviceMappings().add(
-                            BlockDeviceMappingStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    launchSpecification
+                            .withBlockDeviceMappings(BlockDeviceMappingStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -115,8 +117,8 @@ public class LaunchSpecificationStaxUnmarshaller implements
 
                 if (context.testExpression("networkInterfaceSet/item",
                         targetDepth)) {
-                    launchSpecification.getNetworkInterfaces().add(
-                            InstanceNetworkInterfaceSpecificationStaxUnmarshaller
+                    launchSpecification
+                            .withNetworkInterfaces(InstanceNetworkInterfaceSpecificationStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }
@@ -135,9 +137,9 @@ public class LaunchSpecificationStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("groupSet/item", targetDepth)) {
-                    launchSpecification.getAllSecurityGroups().add(
-                            GroupIdentifierStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    launchSpecification
+                            .withAllSecurityGroups(GroupIdentifierStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -150,9 +152,9 @@ public class LaunchSpecificationStaxUnmarshaller implements
 
                 if (context.testExpression("securityGroup/GroupName",
                         targetDepth)) {
-                    launchSpecification.getSecurityGroups().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    launchSpecification
+                            .withSecurityGroups(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

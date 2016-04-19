@@ -131,8 +131,6 @@ public class UnprocessedIdentityId implements Serializable, Cloneable {
      * 
      * @param errorCode
      *        The error code indicating the type of error that occurred.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ErrorCode
      */
 

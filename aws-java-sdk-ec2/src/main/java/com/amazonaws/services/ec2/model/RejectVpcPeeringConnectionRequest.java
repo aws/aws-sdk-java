@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.RejectVpcPeeringConnectionRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for RejectVpcPeeringConnection.
+ * </p>
  */
 public class RejectVpcPeeringConnectionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

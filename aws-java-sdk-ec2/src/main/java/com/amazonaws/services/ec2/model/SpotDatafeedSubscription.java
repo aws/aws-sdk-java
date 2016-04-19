@@ -231,8 +231,6 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the Spot instance data feed subscription.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DatafeedSubscriptionState
      */
 

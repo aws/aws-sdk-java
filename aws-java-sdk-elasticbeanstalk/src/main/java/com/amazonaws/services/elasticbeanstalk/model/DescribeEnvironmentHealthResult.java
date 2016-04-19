@@ -237,8 +237,6 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
      *        >Health Colors and Statuses</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EnvironmentHealth
      */
 

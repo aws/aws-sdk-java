@@ -130,8 +130,6 @@ public class ProductCode implements Serializable, Cloneable {
      * 
      * @param productCodeType
      *        The type of product code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ProductCodeValues
      */
 

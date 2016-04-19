@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DisableVpcClassicLinkDnsSupportRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DisableVpcClassicLinkDnsSupport.
+ * </p>
  */
 public class DisableVpcClassicLinkDnsSupportRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.RebootInstancesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for RebootInstances.
+ * </p>
  */
 public class RebootInstancesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<RebootInstancesRequest> {

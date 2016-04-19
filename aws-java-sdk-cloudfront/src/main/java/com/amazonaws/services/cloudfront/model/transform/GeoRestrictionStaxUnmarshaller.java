@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudfront.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -62,9 +64,8 @@ public class GeoRestrictionStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Items/Location", targetDepth)) {
-                    geoRestriction.getItems().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    geoRestriction.withItems(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

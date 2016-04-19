@@ -77,8 +77,6 @@ public class RecordPatch implements Serializable, Cloneable {
      * 
      * @param op
      *        An operation, either replace or remove.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Operation
      */
 

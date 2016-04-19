@@ -227,8 +227,6 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      *        be processed by the actions in that stage (inbound) or whether
      *        already-processed artifacts will be allowed to transition to the
      *        next stage (outbound).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StageTransitionType
      */
 

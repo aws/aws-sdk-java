@@ -83,8 +83,6 @@ public class ComputeType implements Serializable, Cloneable {
      * 
      * @param name
      *        The name of the compute type for the bundle.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Compute
      */
 

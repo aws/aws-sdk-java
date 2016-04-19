@@ -196,8 +196,6 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * @param status
      *        The status of the access key. <code>Active</code> means the key is
      *        valid for API calls; <code>Inactive</code> means it is not.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusType
      */
 

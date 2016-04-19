@@ -143,8 +143,6 @@ public class Layer implements Serializable, Cloneable {
      * @param layerAvailability
      *        The availability status of the image layer. Valid values are
      *        <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LayerAvailability
      */
 

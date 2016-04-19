@@ -188,8 +188,6 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *        Describes whether Amazon SES has successfully verified the DKIM
      *        DNS records (tokens) published in the domain name's DNS. (This
      *        only applies to domain identities, not email address identities.)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VerificationStatus
      */
 

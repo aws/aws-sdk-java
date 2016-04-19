@@ -522,8 +522,6 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *        <li><i>customer_profile_by_geography</i> - Available daily by 5:00
      *        PM Pacific Time since 2015-10-01.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DataSetType
      */
 

@@ -194,8 +194,6 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *        only the roles that are attached to the specified policy are
      *        returned. This parameter is optional. If it is not included, all
      *        attached entities (users, groups, and roles) are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EntityType
      */
 

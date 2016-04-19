@@ -72,4 +72,10 @@ public class PartitionsRegionsTest {
         final String regionName = "ap-new-region-1";
         Assert.assertNull(RegionUtils.getRegion(regionName));
     }
+
+    @Test
+    public void s3_external_endpoint_resolution() {
+        final String regionName = "s3-external-1";
+        Assert.assertNotNull(RegionUtils.getRegion(regionName));
+    }
 }

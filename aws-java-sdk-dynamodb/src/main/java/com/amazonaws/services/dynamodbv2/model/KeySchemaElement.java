@@ -468,8 +468,6 @@ public class KeySchemaElement implements Serializable, Cloneable {
      *        DynamoDB stores items with the same partition key physically close
      *        together, in sorted order by the sort key value.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see KeyType
      */
 

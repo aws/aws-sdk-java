@@ -290,8 +290,6 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @param size
      *        The size of the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DirectorySize
      */
 

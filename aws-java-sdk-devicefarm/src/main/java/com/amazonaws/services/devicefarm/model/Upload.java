@@ -1078,8 +1078,6 @@ public class Upload implements Serializable, Cloneable {
      *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see UploadType
      */
 
@@ -1528,8 +1526,6 @@ public class Upload implements Serializable, Cloneable {
      *        SUCCEEDED: A succeeded status.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see UploadStatus
      */
 

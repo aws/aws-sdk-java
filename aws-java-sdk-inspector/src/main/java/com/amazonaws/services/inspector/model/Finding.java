@@ -338,8 +338,6 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @param assetType
      *        The type of the host from which the finding is generated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AssetType
      */
 
@@ -634,8 +632,6 @@ public class Finding implements Serializable, Cloneable {
      * @param severity
      *        The finding severity. Values can be set to High, Medium, Low, and
      *        Informational.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Severity
      */
 

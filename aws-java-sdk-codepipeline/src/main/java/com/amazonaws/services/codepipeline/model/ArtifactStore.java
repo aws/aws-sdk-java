@@ -96,8 +96,6 @@ public class ArtifactStore implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of the artifact store, such as S3.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ArtifactStoreType
      */
 

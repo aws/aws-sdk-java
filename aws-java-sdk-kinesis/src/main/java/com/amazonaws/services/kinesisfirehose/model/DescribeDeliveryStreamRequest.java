@@ -43,8 +43,8 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the destination ID to start returning the destination
-     * information. Currently Amazon Kinesis Firehose supports one destination
-     * per delivery stream.
+     * information. Currently Firehose supports one destination per delivery
+     * stream.
      * </p>
      */
     private String exclusiveStartDestinationId;
@@ -141,14 +141,14 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the destination ID to start returning the destination
-     * information. Currently Amazon Kinesis Firehose supports one destination
-     * per delivery stream.
+     * information. Currently Firehose supports one destination per delivery
+     * stream.
      * </p>
      * 
      * @param exclusiveStartDestinationId
      *        Specifies the destination ID to start returning the destination
-     *        information. Currently Amazon Kinesis Firehose supports one
-     *        destination per delivery stream.
+     *        information. Currently Firehose supports one destination per
+     *        delivery stream.
      */
 
     public void setExclusiveStartDestinationId(
@@ -159,13 +159,13 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the destination ID to start returning the destination
-     * information. Currently Amazon Kinesis Firehose supports one destination
-     * per delivery stream.
+     * information. Currently Firehose supports one destination per delivery
+     * stream.
      * </p>
      * 
      * @return Specifies the destination ID to start returning the destination
-     *         information. Currently Amazon Kinesis Firehose supports one
-     *         destination per delivery stream.
+     *         information. Currently Firehose supports one destination per
+     *         delivery stream.
      */
 
     public String getExclusiveStartDestinationId() {
@@ -175,14 +175,14 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the destination ID to start returning the destination
-     * information. Currently Amazon Kinesis Firehose supports one destination
-     * per delivery stream.
+     * information. Currently Firehose supports one destination per delivery
+     * stream.
      * </p>
      * 
      * @param exclusiveStartDestinationId
      *        Specifies the destination ID to start returning the destination
-     *        information. Currently Amazon Kinesis Firehose supports one
-     *        destination per delivery stream.
+     *        information. Currently Firehose supports one destination per
+     *        delivery stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

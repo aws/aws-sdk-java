@@ -379,8 +379,6 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @param stackStatus
      *        The current status of the stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StackStatus
      */
 

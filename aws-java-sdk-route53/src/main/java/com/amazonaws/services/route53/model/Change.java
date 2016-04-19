@@ -314,8 +314,6 @@ public class Change implements Serializable, Cloneable {
      *        when all of the following values match: <code>Name</code>,
      *        <code>Type</code>, and <code>SetIdentifier</code> (for weighted,
      *        latency, geolocation, and failover resource record sets).</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
 

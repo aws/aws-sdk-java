@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeAvailabilityZonesResultStaxUnmarshaller implements
 
                 if (context.testExpression("availabilityZoneInfo/item",
                         targetDepth)) {
-                    describeAvailabilityZonesResult.getAvailabilityZones().add(
-                            AvailabilityZoneStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeAvailabilityZonesResult
+                            .withAvailabilityZones(AvailabilityZoneStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

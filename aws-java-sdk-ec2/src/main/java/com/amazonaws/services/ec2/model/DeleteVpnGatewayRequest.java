@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteVpnGatewayRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteVpnGateway.
+ * </p>
  */
 public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

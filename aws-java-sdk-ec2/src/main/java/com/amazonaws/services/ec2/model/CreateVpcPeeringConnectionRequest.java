@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateVpcPeeringConnectionRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateVpcPeeringConnection.
+ * </p>
  */
 public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

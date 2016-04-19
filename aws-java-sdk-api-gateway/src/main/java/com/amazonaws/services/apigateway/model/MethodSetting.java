@@ -848,8 +848,6 @@ public class MethodSetting implements Serializable, Cloneable {
      *        , and the available values are <code>FAIL_WITH_403</code>,
      *        <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
      *        <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see UnauthorizedCacheControlHeaderStrategy
      */
 

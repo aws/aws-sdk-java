@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateKeyPairRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateKeyPair.
+ * </p>
  */
 public class CreateKeyPairRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<CreateKeyPairRequest> {

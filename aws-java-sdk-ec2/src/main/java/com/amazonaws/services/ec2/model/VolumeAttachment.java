@@ -236,8 +236,6 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * 
      * @param state
      *        The attachment state of the volume.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VolumeAttachmentState
      */
 

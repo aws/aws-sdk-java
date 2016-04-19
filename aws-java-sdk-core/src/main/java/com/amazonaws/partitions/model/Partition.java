@@ -152,7 +152,8 @@ public class Partition {
      * or if the region matches the {@link #regionRegex} of the partition.
      */
     public boolean hasRegion(String region) {
-        return regions.containsKey(region) || matchesRegionRegex(region);
+        return regions.containsKey(region) || matchesRegionRegex(region) || hasServiceEndpoint
+                (region);
     }
 
     private boolean matchesRegionRegex(String region) {
@@ -160,4 +161,20 @@ public class Partition {
         return p.matcher(region).matches();
     }
 
+    /**
+     * returns true if any of the services in the partition has a custom endpoint
+     * like s3 having s3-external-1.
+     * TODO Remove this support as part of next major version.
+     * @Deprecated use the {@link com.amazonaws.AmazonWebServiceClient#setEndpoint(String)} method
+     * for custom endpoints.
+     */
+    @Deprecated
+    private boolean hasServiceEndpoint(String endpoint) {
+        for(Service s : services.values()) {
+            if (s.getEndpoints().containsKey(endpoint)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

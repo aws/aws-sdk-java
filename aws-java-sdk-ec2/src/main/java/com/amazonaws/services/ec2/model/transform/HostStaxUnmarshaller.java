@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -91,9 +93,8 @@ public class HostStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("instances/item", targetDepth)) {
-                    host.getInstances().add(
-                            HostInstanceStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    host.withInstances(HostInstanceStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

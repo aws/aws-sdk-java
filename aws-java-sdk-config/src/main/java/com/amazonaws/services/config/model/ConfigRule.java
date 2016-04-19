@@ -597,8 +597,6 @@ public class ConfigRule implements Serializable, Cloneable {
      *        which is part of <code>ConfigSnapshotDeliveryProperties</code>. To
      *        update the frequency with which AWS Config delivers your
      *        snapshots, use the <code>PutDeliveryChannel</code> action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MaximumExecutionFrequency
      */
 
@@ -793,8 +791,6 @@ public class ConfigRule implements Serializable, Cloneable {
      *        You cannot add a rule to AWS Config that has the state set to
      *        <code>DELETING</code>. If you want to delete a rule, you must use
      *        the <code>DeleteConfigRule</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConfigRuleState
      */
 

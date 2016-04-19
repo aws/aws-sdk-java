@@ -156,8 +156,6 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      *        >DeliveryChannel</a> for AWS Config is optional. If the SNS
      *        delivery is turned off, the last status will be
      *        <b>Not_Applicable</b>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeliveryStatus
      */
 

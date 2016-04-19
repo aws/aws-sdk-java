@@ -29,9 +29,10 @@ public class Constants {
 
     /** Default hostname for the S3 service endpoint */
     public static final String S3_HOSTNAME = "s3.amazonaws.com";
-
     /** Hostname for the s3-external-1 service endpoint */
     public static final String S3_EXTERNAL_1_HOSTNAME = "s3-external-1.amazonaws.com";
+    /** Service hostname for accessing accelerated S3 buckets */
+    public static final String S3_ACCELERATE_HOSTNAME = "s3-accelerate.amazonaws.com";
 
     /** Service display name for Amazon S3 (not to be used in SigV4 signing) */
     public static final String S3_SERVICE_DISPLAY_NAME = "Amazon S3";

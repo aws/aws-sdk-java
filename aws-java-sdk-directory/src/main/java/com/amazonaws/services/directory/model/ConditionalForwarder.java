@@ -264,8 +264,6 @@ public class ConditionalForwarder implements Serializable, Cloneable {
      *        allowed value is <code>Domain</code>, which will replicate the
      *        conditional forwarder to all of the domain controllers for your
      *        AWS directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReplicationScope
      */
 

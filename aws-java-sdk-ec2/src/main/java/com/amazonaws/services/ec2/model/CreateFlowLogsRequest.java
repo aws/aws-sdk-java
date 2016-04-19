@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateFlowLogsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateFlowLogs.
+ * </p>
  */
 public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<CreateFlowLogsRequest> {
@@ -198,8 +200,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * 
      * @param resourceType
      *        The type of resource on which to create the flow log.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see FlowLogsResourceType
      */
 
@@ -276,8 +276,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * 
      * @param trafficType
      *        The type of traffic to log.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TrafficType
      */
 

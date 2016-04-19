@@ -28,7 +28,11 @@ public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.
         <#if memberModel.http.isHeader() >
             if (context.getHeader("${memberModel.http.unmarshallLocationName}") != null) {
                 context.setCurrentHeader("${memberModel.http.unmarshallLocationName}");
-                ${shape.variable.variableName}.set${memberModel.name}(<@MemberUnmarshallerDeclarationMacro.content memberModel />.unmarshall(context));
+                <#if memberModel.variable.simpleType == "Date">
+                    ${shape.variable.variableName}.set${memberModel.name}(com.amazonaws.util.DateUtils.parseRFC822Date(context.readText()));
+                <#else>
+                    ${shape.variable.variableName}.set${memberModel.name}(<@MemberUnmarshallerDeclarationMacro.content memberModel />.unmarshall(context));
+                </#if>
             }
         </#if>
     </#list>

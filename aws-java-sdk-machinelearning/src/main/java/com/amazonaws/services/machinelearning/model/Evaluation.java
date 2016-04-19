@@ -660,8 +660,6 @@ public class Evaluation implements Serializable, Cloneable {
      *        successfully.</li>
      *        <li> <code>DELETED</code> - The <code>Evaluation</code> is marked
      *        as deleted. It is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EntityStatus
      */
 

@@ -283,8 +283,6 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @param type
      *        Specifies a put integration input's type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see IntegrationType
      */
 

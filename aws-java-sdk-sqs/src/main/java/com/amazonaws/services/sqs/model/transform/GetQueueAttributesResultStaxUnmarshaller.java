@@ -17,6 +17,8 @@
 package com.amazonaws.services.sqs.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -96,8 +98,8 @@ public class GetQueueAttributesResultStaxUnmarshaller implements
                 if (context.testExpression("Attribute", targetDepth)) {
                     Entry<String, String> entry = AttributesMapEntryUnmarshaller
                             .getInstance().unmarshall(context);
-                    getQueueAttributesResult.getAttributes().put(
-                            entry.getKey(), entry.getValue());
+                    getQueueAttributesResult.addAttributesEntry(entry.getKey(),
+                            entry.getValue());
                     continue;
                 }
 

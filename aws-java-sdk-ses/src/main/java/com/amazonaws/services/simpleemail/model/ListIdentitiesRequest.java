@@ -114,8 +114,6 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      *        The type of the identities to list. Possible values are
      *        "EmailAddress" and "Domain". If this parameter is omitted, then
      *        all identities will be listed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see IdentityType
      */
 

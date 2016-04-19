@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeSecurityGroupsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeSecurityGroups.
+ * </p>
  */
 public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

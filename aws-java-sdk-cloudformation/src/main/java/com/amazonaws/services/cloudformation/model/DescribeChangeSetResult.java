@@ -546,8 +546,6 @@ public class DescribeChangeSetResult implements Serializable, Cloneable {
      *        The current status of the change set, such as
      *        <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or
      *        <code>FAILED</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeSetStatus
      */
 

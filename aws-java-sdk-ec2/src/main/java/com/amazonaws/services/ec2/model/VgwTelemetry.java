@@ -155,8 +155,6 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the VPN tunnel.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TelemetryStatus
      */
 

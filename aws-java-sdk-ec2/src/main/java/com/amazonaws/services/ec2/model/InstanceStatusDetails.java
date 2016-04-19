@@ -96,8 +96,6 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * 
      * @param name
      *        The type of instance status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusName
      */
 
@@ -173,8 +171,6 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * 
      * @param status
      *        The status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusType
      */
 

@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,8 @@ public class DescribeSubnetsResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("subnetSet/item", targetDepth)) {
-                    describeSubnetsResult.getSubnets().add(
-                            SubnetStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    describeSubnetsResult.withSubnets(SubnetStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

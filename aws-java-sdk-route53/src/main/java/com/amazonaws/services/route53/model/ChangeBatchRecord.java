@@ -268,8 +268,6 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *        DNS servers.</p>
      *        <p>
      *        Valid Values: <code>PENDING</code> | <code>INSYNC</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeStatus
      */
 

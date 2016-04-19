@@ -872,8 +872,6 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        XCTEST_UI: The XCode UI test type.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TestType
      */
 

@@ -104,8 +104,6 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * 
      * @param diskImageFormat
      *        The format for the exported image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DiskImageFormat
      */
 
@@ -189,8 +187,6 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @param containerFormat
      *        The container format used to combine disk images with metadata
      *        (such as OVF). If absent, only the disk image is exported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ContainerFormat
      */
 

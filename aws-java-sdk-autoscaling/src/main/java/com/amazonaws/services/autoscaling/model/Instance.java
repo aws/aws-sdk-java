@@ -205,8 +205,6 @@ public class Instance implements Serializable, Cloneable {
      * @param lifecycleState
      *        A description of the current lifecycle state. Note that the
      *        <code>Quarantined</code> state is not used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LifecycleState
      */
 

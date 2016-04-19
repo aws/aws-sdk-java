@@ -19,7 +19,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of MoveAddressToVpc.
+ * </p>
  */
 public class MoveAddressToVpcResult implements Serializable, Cloneable {
 
@@ -128,8 +130,6 @@ public class MoveAddressToVpcResult implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the move of the IP address.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Status
      */
 

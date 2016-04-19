@@ -197,8 +197,6 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        throws a TerminalRoutingStrategyException with the
      *        <a>RoutingStrategy</a> message embedded.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RoutingStrategyType
      */
 

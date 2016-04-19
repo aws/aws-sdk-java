@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,8 @@ public class DescribeVolumesResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("volumeSet/item", targetDepth)) {
-                    describeVolumesResult.getVolumes().add(
-                            VolumeStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    describeVolumesResult.withVolumes(VolumeStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

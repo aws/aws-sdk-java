@@ -51,7 +51,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * specific shard. Specifically, an MD5 hash function is used to map
      * partition keys to 128-bit integer values and to map associated data
      * records to shards. As a result of this hashing mechanism, all data
-     * records with the same partition key will map to the same shard within the
+     * records with the same partition key map to the same shard within the
      * stream.
      * </p>
      */
@@ -199,7 +199,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * specific shard. Specifically, an MD5 hash function is used to map
      * partition keys to 128-bit integer values and to map associated data
      * records to shards. As a result of this hashing mechanism, all data
-     * records with the same partition key will map to the same shard within the
+     * records with the same partition key map to the same shard within the
      * stream.
      * </p>
      * 
@@ -212,7 +212,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      *        function is used to map partition keys to 128-bit integer values
      *        and to map associated data records to shards. As a result of this
      *        hashing mechanism, all data records with the same partition key
-     *        will map to the same shard within the stream.
+     *        map to the same shard within the stream.
      */
 
     public void setPartitionKey(String partitionKey) {
@@ -228,7 +228,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * specific shard. Specifically, an MD5 hash function is used to map
      * partition keys to 128-bit integer values and to map associated data
      * records to shards. As a result of this hashing mechanism, all data
-     * records with the same partition key will map to the same shard within the
+     * records with the same partition key map to the same shard within the
      * stream.
      * </p>
      * 
@@ -240,7 +240,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      *         hash function is used to map partition keys to 128-bit integer
      *         values and to map associated data records to shards. As a result
      *         of this hashing mechanism, all data records with the same
-     *         partition key will map to the same shard within the stream.
+     *         partition key map to the same shard within the stream.
      */
 
     public String getPartitionKey() {
@@ -256,7 +256,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * specific shard. Specifically, an MD5 hash function is used to map
      * partition keys to 128-bit integer values and to map associated data
      * records to shards. As a result of this hashing mechanism, all data
-     * records with the same partition key will map to the same shard within the
+     * records with the same partition key map to the same shard within the
      * stream.
      * </p>
      * 
@@ -269,7 +269,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      *        function is used to map partition keys to 128-bit integer values
      *        and to map associated data records to shards. As a result of this
      *        hashing mechanism, all data records with the same partition key
-     *        will map to the same shard within the stream.
+     *        map to the same shard within the stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

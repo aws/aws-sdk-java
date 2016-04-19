@@ -383,8 +383,6 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *        For more information, see the <a
      *        href="http://docs.aws.amazon.com/machine-learning/latest/dg"
      *        >Amazon Machine Learning Developer Guide</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MLModelType
      */
 

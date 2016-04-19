@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CopyImageRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CopyImage.
+ * </p>
  */
 public class CopyImageRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<CopyImageRequest> {

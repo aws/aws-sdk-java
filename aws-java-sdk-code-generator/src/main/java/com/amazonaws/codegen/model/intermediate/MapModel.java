@@ -108,4 +108,8 @@ public class MapModel {
     public String getTemplateImplType() {
         return implType + "<" + keyType + "," + valueType + ">";
     }
+
+    public String getEntryType() {
+        return String.format("Map.Entry<%s, %s>", keyType, valueType);
+    }
 }

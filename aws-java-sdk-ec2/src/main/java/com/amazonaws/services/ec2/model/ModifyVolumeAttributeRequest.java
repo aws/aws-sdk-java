@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyVolumeAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ModifyVolumeAttribute.
+ * </p>
  */
 public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

@@ -223,8 +223,6 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * 
      * @param trustDirection
      *        The direction of the trust relationship.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TrustDirection
      */
 
@@ -290,8 +288,6 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * 
      * @param trustType
      *        The trust relationship type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TrustType
      */
 

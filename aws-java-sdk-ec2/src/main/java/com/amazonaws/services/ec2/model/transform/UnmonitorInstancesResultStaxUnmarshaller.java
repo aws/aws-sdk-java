@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class UnmonitorInstancesResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("instancesSet/item", targetDepth)) {
-                    unmonitorInstancesResult.getInstanceMonitorings().add(
-                            InstanceMonitoringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    unmonitorInstancesResult
+                            .withInstanceMonitorings(InstanceMonitoringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

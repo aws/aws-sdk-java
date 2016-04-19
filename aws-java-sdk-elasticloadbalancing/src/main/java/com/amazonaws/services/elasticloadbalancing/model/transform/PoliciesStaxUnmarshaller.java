@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,24 +53,21 @@ public class PoliciesStaxUnmarshaller implements
 
                 if (context.testExpression(
                         "AppCookieStickinessPolicies/member", targetDepth)) {
-                    policies.getAppCookieStickinessPolicies().add(
-                            AppCookieStickinessPolicyStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    policies.withAppCookieStickinessPolicies(AppCookieStickinessPolicyStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LBCookieStickinessPolicies/member",
                         targetDepth)) {
-                    policies.getLBCookieStickinessPolicies().add(
-                            LBCookieStickinessPolicyStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    policies.withLBCookieStickinessPolicies(LBCookieStickinessPolicyStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("OtherPolicies/member", targetDepth)) {
-                    policies.getOtherPolicies().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    policies.withOtherPolicies(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

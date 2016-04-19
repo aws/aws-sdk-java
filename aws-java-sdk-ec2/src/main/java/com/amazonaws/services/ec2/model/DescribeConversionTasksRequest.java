@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeConversionTasksRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeConversionTasks.
+ * </p>
  */
 public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

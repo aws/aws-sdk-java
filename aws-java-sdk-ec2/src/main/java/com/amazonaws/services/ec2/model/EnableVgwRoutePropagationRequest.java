@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.EnableVgwRoutePropagationRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for EnableVgwRoutePropagation.
+ * </p>
  */
 public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

@@ -283,8 +283,6 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      *        pool developer.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DevicePoolType
      */
 

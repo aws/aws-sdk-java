@@ -17,6 +17,8 @@
 package com.amazonaws.services.sqs.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,17 +53,17 @@ public class DeleteMessageBatchResultStaxUnmarshaller implements
 
                 if (context.testExpression("DeleteMessageBatchResultEntry",
                         targetDepth)) {
-                    deleteMessageBatchResult.getSuccessful().add(
-                            DeleteMessageBatchResultEntryStaxUnmarshaller
+                    deleteMessageBatchResult
+                            .withSuccessful(DeleteMessageBatchResultEntryStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context
                         .testExpression("BatchResultErrorEntry", targetDepth)) {
-                    deleteMessageBatchResult.getFailed().add(
-                            BatchResultErrorEntryStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    deleteMessageBatchResult
+                            .withFailed(BatchResultErrorEntryStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

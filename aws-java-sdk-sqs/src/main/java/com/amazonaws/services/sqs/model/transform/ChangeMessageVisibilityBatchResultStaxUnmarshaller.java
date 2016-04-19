@@ -17,6 +17,8 @@
 package com.amazonaws.services.sqs.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,17 +54,17 @@ public class ChangeMessageVisibilityBatchResultStaxUnmarshaller
 
                 if (context.testExpression(
                         "ChangeMessageVisibilityBatchResultEntry", targetDepth)) {
-                    changeMessageVisibilityBatchResult.getSuccessful().add(
-                            ChangeMessageVisibilityBatchResultEntryStaxUnmarshaller
+                    changeMessageVisibilityBatchResult
+                            .withSuccessful(ChangeMessageVisibilityBatchResultEntryStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context
                         .testExpression("BatchResultErrorEntry", targetDepth)) {
-                    changeMessageVisibilityBatchResult.getFailed().add(
-                            BatchResultErrorEntryStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    changeMessageVisibilityBatchResult
+                            .withFailed(BatchResultErrorEntryStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

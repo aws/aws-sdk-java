@@ -420,8 +420,6 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Constraint: Specifying <code>type</code> without specifying
      *        <code>name</code> returns an <a>InvalidInput</a> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
 

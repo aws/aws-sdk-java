@@ -199,8 +199,6 @@ public class UpdateSSHPublicKeyRequest extends AmazonWebServiceRequest
      *        means the key can be used for authentication with an AWS
      *        CodeCommit repository. <code>Inactive</code> means the key cannot
      *        be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusType
      */
 

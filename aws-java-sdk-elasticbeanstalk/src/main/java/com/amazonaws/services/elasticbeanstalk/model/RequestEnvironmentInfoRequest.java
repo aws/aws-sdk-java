@@ -339,8 +339,6 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * 
      * @param infoType
      *        The type of information to request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EnvironmentInfoType
      */
 

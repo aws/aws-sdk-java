@@ -307,8 +307,6 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the Reserved Instance listing.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ListingStatus
      */
 

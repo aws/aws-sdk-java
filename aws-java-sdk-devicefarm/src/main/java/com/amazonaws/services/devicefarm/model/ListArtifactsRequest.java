@@ -207,8 +207,6 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      *        <li>FILE: The artifacts are files.</li>
      *        <li>LOG: The artifacts are logs.</li>
      *        <li>SCREENSHOT: The artifacts are screenshots.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ArtifactCategory
      */
 

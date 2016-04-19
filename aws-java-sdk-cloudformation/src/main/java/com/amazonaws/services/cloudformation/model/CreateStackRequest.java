@@ -1494,8 +1494,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        not both.</p>
      *        <p>
      *        Default: <code>ROLLBACK</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OnFailure
      */
 

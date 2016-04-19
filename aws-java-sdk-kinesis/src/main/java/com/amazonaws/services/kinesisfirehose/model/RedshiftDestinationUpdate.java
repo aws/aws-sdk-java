@@ -61,12 +61,18 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-     * specified in <code>RedshiftDestinationUpdate.S3Update</code> because the
-     * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
+     * specified in <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon
+     * Redshift <code>COPY</code> operation that reads from the S3 bucket
      * doesn't support these compression formats.
      * </p>
      */
     private S3DestinationUpdate s3Update;
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     */
+    private CloudWatchLoggingOptions cloudWatchLoggingOptions;
 
     /**
      * <p>
@@ -279,8 +285,8 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-     * specified in <code>RedshiftDestinationUpdate.S3Update</code> because the
-     * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
+     * specified in <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon
+     * Redshift <code>COPY</code> operation that reads from the S3 bucket
      * doesn't support these compression formats.
      * </p>
      * 
@@ -288,10 +294,9 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      *        The Amazon S3 destination.</p>
      *        <p>
      *        The compression formats <code>SNAPPY</code> or <code>ZIP</code>
-     *        cannot be specified in
-     *        <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon
-     *        Redshift <code>COPY</code> operation that reads from the S3 bucket
-     *        doesn't support these compression formats.
+     *        cannot be specified in <b>RedshiftDestinationUpdate.S3Update</b>
+     *        because the Amazon Redshift <code>COPY</code> operation that reads
+     *        from the S3 bucket doesn't support these compression formats.
      */
 
     public void setS3Update(S3DestinationUpdate s3Update) {
@@ -304,18 +309,18 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-     * specified in <code>RedshiftDestinationUpdate.S3Update</code> because the
-     * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
+     * specified in <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon
+     * Redshift <code>COPY</code> operation that reads from the S3 bucket
      * doesn't support these compression formats.
      * </p>
      * 
      * @return The Amazon S3 destination.</p>
      *         <p>
      *         The compression formats <code>SNAPPY</code> or <code>ZIP</code>
-     *         cannot be specified in
-     *         <code>RedshiftDestinationUpdate.S3Update</code> because the
-     *         Amazon Redshift <code>COPY</code> operation that reads from the
-     *         S3 bucket doesn't support these compression formats.
+     *         cannot be specified in <b>RedshiftDestinationUpdate.S3Update</b>
+     *         because the Amazon Redshift <code>COPY</code> operation that
+     *         reads from the S3 bucket doesn't support these compression
+     *         formats.
      */
 
     public S3DestinationUpdate getS3Update() {
@@ -328,8 +333,8 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-     * specified in <code>RedshiftDestinationUpdate.S3Update</code> because the
-     * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
+     * specified in <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon
+     * Redshift <code>COPY</code> operation that reads from the S3 bucket
      * doesn't support these compression formats.
      * </p>
      * 
@@ -337,16 +342,58 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      *        The Amazon S3 destination.</p>
      *        <p>
      *        The compression formats <code>SNAPPY</code> or <code>ZIP</code>
-     *        cannot be specified in
-     *        <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon
-     *        Redshift <code>COPY</code> operation that reads from the S3 bucket
-     *        doesn't support these compression formats.
+     *        cannot be specified in <b>RedshiftDestinationUpdate.S3Update</b>
+     *        because the Amazon Redshift <code>COPY</code> operation that reads
+     *        from the S3 bucket doesn't support these compression formats.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
     public RedshiftDestinationUpdate withS3Update(S3DestinationUpdate s3Update) {
         setS3Update(s3Update);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Describes CloudWatch logging options for your delivery stream.
+     */
+
+    public void setCloudWatchLoggingOptions(
+            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+        this.cloudWatchLoggingOptions = cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @return Describes CloudWatch logging options for your delivery stream.
+     */
+
+    public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
+        return this.cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Describes CloudWatch logging options for your delivery stream.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RedshiftDestinationUpdate withCloudWatchLoggingOptions(
+            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+        setCloudWatchLoggingOptions(cloudWatchLoggingOptions);
         return this;
     }
 
@@ -373,7 +420,10 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
         if (getPassword() != null)
             sb.append("Password: " + getPassword() + ",");
         if (getS3Update() != null)
-            sb.append("S3Update: " + getS3Update());
+            sb.append("S3Update: " + getS3Update() + ",");
+        if (getCloudWatchLoggingOptions() != null)
+            sb.append("CloudWatchLoggingOptions: "
+                    + getCloudWatchLoggingOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +469,13 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
         if (other.getS3Update() != null
                 && other.getS3Update().equals(this.getS3Update()) == false)
             return false;
+        if (other.getCloudWatchLoggingOptions() == null
+                ^ this.getCloudWatchLoggingOptions() == null)
+            return false;
+        if (other.getCloudWatchLoggingOptions() != null
+                && other.getCloudWatchLoggingOptions().equals(
+                        this.getCloudWatchLoggingOptions()) == false)
+            return false;
         return true;
     }
 
@@ -442,6 +499,10 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
                 + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode
                 + ((getS3Update() == null) ? 0 : getS3Update().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudWatchLoggingOptions() == null) ? 0
+                        : getCloudWatchLoggingOptions().hashCode());
         return hashCode;
     }
 

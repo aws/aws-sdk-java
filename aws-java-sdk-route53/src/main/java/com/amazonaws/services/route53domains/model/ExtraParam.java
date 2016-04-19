@@ -326,8 +326,6 @@ public class ExtraParam implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ExtraParamName
      */
 

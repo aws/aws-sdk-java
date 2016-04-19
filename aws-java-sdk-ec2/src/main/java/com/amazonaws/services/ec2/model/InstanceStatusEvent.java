@@ -106,8 +106,6 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * 
      * @param code
      *        The event code.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EventCode
      */
 

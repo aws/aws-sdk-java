@@ -108,8 +108,6 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      * @param category
      *        The category of the custom action that you want to delete, such as
      *        source or deploy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionCategory
      */
 

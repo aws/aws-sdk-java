@@ -132,8 +132,6 @@ public class AssessmentRunStateChange implements Serializable, Cloneable {
      * 
      * @param state
      *        The assessment run state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AssessmentRunState
      */
 

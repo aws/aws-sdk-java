@@ -20,6 +20,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "route53domains",
     "signingName" : "route53domains",
+    "xmlProtocol" : false,
     "serviceName" : "Amazon Route 53 Domains",
     "cborProtocol" : false,
     "jsonProtocol" : true,
@@ -53,6 +54,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CheckDomainAvailabilityResult",
       "asyncReturnType" : "CheckDomainAvailabilityResult",
       "asyncFutureType" : "java.util.concurrent.Future<CheckDomainAvailabilityResult>",
@@ -88,6 +90,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteTagsForDomainResult",
       "asyncReturnType" : "DeleteTagsForDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTagsForDomainResult>",
@@ -120,6 +123,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DisableDomainAutoRenewResult",
       "asyncReturnType" : "DisableDomainAutoRenewResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableDomainAutoRenewResult>",
@@ -161,6 +165,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DisableDomainTransferLockResult",
       "asyncReturnType" : "DisableDomainTransferLockResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableDomainTransferLockResult>",
@@ -193,6 +198,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "EnableDomainAutoRenewResult",
       "asyncReturnType" : "EnableDomainAutoRenewResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableDomainAutoRenewResult>",
@@ -234,6 +240,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "EnableDomainTransferLockResult",
       "asyncReturnType" : "EnableDomainTransferLockResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableDomainTransferLockResult>",
@@ -266,6 +273,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetDomainDetailResult",
       "asyncReturnType" : "GetDomainDetailResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDomainDetailResult>",
@@ -295,6 +303,7 @@
         "documentation" : "<p>The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an operation that is already completed. For a domain name, it may not be a valid domain name or belong to the requester account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetOperationDetailResult",
       "asyncReturnType" : "GetOperationDetailResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetOperationDetailResult>",
@@ -324,6 +333,7 @@
         "documentation" : "<p>The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an operation that is already completed. For a domain name, it may not be a valid domain name or belong to the requester account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListDomainsResult",
       "asyncReturnType" : "ListDomainsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDomainsResult>",
@@ -353,6 +363,7 @@
         "documentation" : "<p>The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an operation that is already completed. For a domain name, it may not be a valid domain name or belong to the requester account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListOperationsResult",
       "asyncReturnType" : "ListOperationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListOperationsResult>",
@@ -388,6 +399,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTagsForDomainResult",
       "asyncReturnType" : "ListTagsForDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForDomainResult>",
@@ -432,6 +444,7 @@
         "documentation" : "<p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RegisterDomainResult",
       "asyncReturnType" : "RegisterDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterDomainResult>",
@@ -464,6 +477,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RetrieveDomainAuthCodeResult",
       "asyncReturnType" : "RetrieveDomainAuthCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<RetrieveDomainAuthCodeResult>",
@@ -508,6 +522,7 @@
         "documentation" : "<p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "TransferDomainResult",
       "asyncReturnType" : "TransferDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<TransferDomainResult>",
@@ -549,6 +564,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateDomainContactResult",
       "asyncReturnType" : "UpdateDomainContactResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDomainContactResult>",
@@ -590,6 +606,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateDomainContactPrivacyResult",
       "asyncReturnType" : "UpdateDomainContactPrivacyResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDomainContactPrivacyResult>",
@@ -631,6 +648,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateDomainNameserversResult",
       "asyncReturnType" : "UpdateDomainNameserversResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDomainNameserversResult>",
@@ -666,6 +684,7 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateTagsForDomainResult",
       "asyncReturnType" : "UpdateTagsForDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateTagsForDomainResult>",
@@ -3335,7 +3354,59 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "GlueIp",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
@@ -3477,7 +3548,59 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "GlueIp",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
@@ -9329,7 +9452,59 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "DomainStatus",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
@@ -9590,7 +9765,59 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "DomainStatus",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
@@ -11309,7 +11536,59 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "TagKey",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
@@ -11402,7 +11681,59 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "TagKey",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
@@ -17194,6 +17525,7 @@
       "actionPrefix" : null,
       "fileNamePrefix" : null
     },
+    "customServiceMetadata" : null,
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,

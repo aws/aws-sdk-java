@@ -15,6 +15,9 @@
 
 package com.amazonaws.codegen.model.service;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import java.util.List;
 
 public class Operation {
@@ -32,6 +35,10 @@ public class Operation {
     private String documentation;
 
     private List<ErrorMap> errors;
+
+    @JsonProperty("authtype")
+    @JsonDeserialize(using = AuthTypeDeserializer.class)
+    private AuthType authType;
 
     public String getName() {
         return name;
@@ -102,5 +109,13 @@ public class Operation {
 
     public void setErrors(List<ErrorMap> errors) {
         this.errors = errors;
+    }
+
+    public AuthType getAuthType() {
+        return authType;
+    }
+
+    public void setAuthType(AuthType authType) {
+        this.authType = authType;
     }
 }

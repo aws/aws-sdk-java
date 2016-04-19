@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ImportInstanceRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ImportInstance.
+ * </p>
  */
 public class ImportInstanceRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<ImportInstanceRequest> {
@@ -266,8 +268,6 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @param platform
      *        The instance operating system.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PlatformValues
      */
 

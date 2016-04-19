@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateInternetGatewayRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateInternetGateway.
+ * </p>
  */
 public class CreateInternetGatewayRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

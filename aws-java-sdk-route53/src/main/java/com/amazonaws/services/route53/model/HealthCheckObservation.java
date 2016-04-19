@@ -107,8 +107,6 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      * @param region
      *        The <code>HealthCheckRegion</code> of the Amazon Route 53 health
      *        checker that performed this health check.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see HealthCheckRegion
      */
 

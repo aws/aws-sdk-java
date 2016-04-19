@@ -334,8 +334,6 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *        Amazon Route 53 can return this response for a variety of reasons,
      *        for example, the registry is performing maintenance. Try again
      *        later.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DomainAvailability
      */
 

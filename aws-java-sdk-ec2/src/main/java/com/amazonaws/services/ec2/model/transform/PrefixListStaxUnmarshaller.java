@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -62,9 +64,8 @@ public class PrefixListStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("cidrSet/item", targetDepth)) {
-                    prefixList.getCidrs().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    prefixList.withCidrs(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 

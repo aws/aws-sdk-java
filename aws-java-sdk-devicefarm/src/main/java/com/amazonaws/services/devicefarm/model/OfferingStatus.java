@@ -101,8 +101,6 @@ public class OfferingStatus implements Serializable, Cloneable {
      * 
      * @param type
      *        The type specified for the offering status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OfferingTransactionType
      */
 

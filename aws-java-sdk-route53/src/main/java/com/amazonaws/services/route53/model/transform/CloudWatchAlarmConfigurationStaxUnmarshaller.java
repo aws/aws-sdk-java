@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -99,9 +101,9 @@ public class CloudWatchAlarmConfigurationStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Dimensions/Dimension", targetDepth)) {
-                    cloudWatchAlarmConfiguration.getDimensions().add(
-                            DimensionStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    cloudWatchAlarmConfiguration
+                            .withDimensions(DimensionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -125,8 +125,6 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
      *        <a>SqlInjectionMatchSet</a>. Use <code>DELETE</code> to remove a
      *        <code>SqlInjectionMatchSetUpdate</code> from a
      *        <code>SqlInjectionMatchSet</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
 

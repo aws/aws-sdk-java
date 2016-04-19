@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AttachVpnGatewayRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AttachVpnGateway.
+ * </p>
  */
 public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

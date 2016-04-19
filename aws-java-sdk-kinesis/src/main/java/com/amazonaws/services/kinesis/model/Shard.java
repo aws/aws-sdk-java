@@ -27,19 +27,19 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the shard within the Amazon Kinesis stream.
+     * The unique identifier of the shard within the stream.
      * </p>
      */
     private String shardId;
     /**
      * <p>
-     * The shard Id of the shard's parent.
+     * The shard ID of the shard's parent.
      * </p>
      */
     private String parentShardId;
     /**
      * <p>
-     * The shard Id of the shard adjacent to the shard's parent.
+     * The shard ID of the shard adjacent to the shard's parent.
      * </p>
      */
     private String adjacentParentShardId;
@@ -59,12 +59,11 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the shard within the Amazon Kinesis stream.
+     * The unique identifier of the shard within the stream.
      * </p>
      * 
      * @param shardId
-     *        The unique identifier of the shard within the Amazon Kinesis
-     *        stream.
+     *        The unique identifier of the shard within the stream.
      */
 
     public void setShardId(String shardId) {
@@ -73,11 +72,10 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the shard within the Amazon Kinesis stream.
+     * The unique identifier of the shard within the stream.
      * </p>
      * 
-     * @return The unique identifier of the shard within the Amazon Kinesis
-     *         stream.
+     * @return The unique identifier of the shard within the stream.
      */
 
     public String getShardId() {
@@ -86,12 +84,11 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the shard within the Amazon Kinesis stream.
+     * The unique identifier of the shard within the stream.
      * </p>
      * 
      * @param shardId
-     *        The unique identifier of the shard within the Amazon Kinesis
-     *        stream.
+     *        The unique identifier of the shard within the stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -103,11 +100,11 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shard Id of the shard's parent.
+     * The shard ID of the shard's parent.
      * </p>
      * 
      * @param parentShardId
-     *        The shard Id of the shard's parent.
+     *        The shard ID of the shard's parent.
      */
 
     public void setParentShardId(String parentShardId) {
@@ -116,10 +113,10 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shard Id of the shard's parent.
+     * The shard ID of the shard's parent.
      * </p>
      * 
-     * @return The shard Id of the shard's parent.
+     * @return The shard ID of the shard's parent.
      */
 
     public String getParentShardId() {
@@ -128,11 +125,11 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shard Id of the shard's parent.
+     * The shard ID of the shard's parent.
      * </p>
      * 
      * @param parentShardId
-     *        The shard Id of the shard's parent.
+     *        The shard ID of the shard's parent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -144,11 +141,11 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shard Id of the shard adjacent to the shard's parent.
+     * The shard ID of the shard adjacent to the shard's parent.
      * </p>
      * 
      * @param adjacentParentShardId
-     *        The shard Id of the shard adjacent to the shard's parent.
+     *        The shard ID of the shard adjacent to the shard's parent.
      */
 
     public void setAdjacentParentShardId(String adjacentParentShardId) {
@@ -157,10 +154,10 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shard Id of the shard adjacent to the shard's parent.
+     * The shard ID of the shard adjacent to the shard's parent.
      * </p>
      * 
-     * @return The shard Id of the shard adjacent to the shard's parent.
+     * @return The shard ID of the shard adjacent to the shard's parent.
      */
 
     public String getAdjacentParentShardId() {
@@ -169,11 +166,11 @@ public class Shard implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shard Id of the shard adjacent to the shard's parent.
+     * The shard ID of the shard adjacent to the shard's parent.
      * </p>
      * 
      * @param adjacentParentShardId
-     *        The shard Id of the shard adjacent to the shard's parent.
+     *        The shard ID of the shard adjacent to the shard's parent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

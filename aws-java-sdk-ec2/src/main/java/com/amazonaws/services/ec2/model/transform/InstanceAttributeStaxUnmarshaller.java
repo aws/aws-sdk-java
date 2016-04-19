@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -103,16 +105,16 @@ public class InstanceAttributeStaxUnmarshaller implements
 
                 if (context.testExpression("blockDeviceMapping/item",
                         targetDepth)) {
-                    instanceAttribute.getBlockDeviceMappings().add(
-                            InstanceBlockDeviceMappingStaxUnmarshaller
+                    instanceAttribute
+                            .withBlockDeviceMappings(InstanceBlockDeviceMappingStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("productCodes/item", targetDepth)) {
-                    instanceAttribute.getProductCodes().add(
-                            ProductCodeStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    instanceAttribute
+                            .withProductCodes(ProductCodeStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -138,9 +140,9 @@ public class InstanceAttributeStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("groupSet/item", targetDepth)) {
-                    instanceAttribute.getGroups().add(
-                            GroupIdentifierStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    instanceAttribute
+                            .withGroups(GroupIdentifierStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

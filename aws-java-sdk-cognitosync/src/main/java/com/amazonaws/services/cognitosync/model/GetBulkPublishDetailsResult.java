@@ -346,8 +346,6 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      *        FAILED - Some portion of the data has failed to publish, check
      *        FailureMessage for the cause.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BulkPublishStatus
      */
 

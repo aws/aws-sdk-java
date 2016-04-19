@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,8 +53,8 @@ public class RetrieveEnvironmentInfoResultStaxUnmarshaller implements
 
                 if (context.testExpression("EnvironmentInfo/member",
                         targetDepth)) {
-                    retrieveEnvironmentInfoResult.getEnvironmentInfo().add(
-                            EnvironmentInfoDescriptionStaxUnmarshaller
+                    retrieveEnvironmentInfoResult
+                            .withEnvironmentInfo(EnvironmentInfoDescriptionStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

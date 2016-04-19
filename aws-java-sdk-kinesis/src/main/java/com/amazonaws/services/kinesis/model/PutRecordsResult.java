@@ -36,10 +36,10 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * <p>
      * An array of successfully and unsuccessfully processed record results,
      * correlated with the request by natural ordering. A record that is
-     * successfully added to your Amazon Kinesis stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A
-     * record that fails to be added to your Amazon Kinesis stream includes
-     * <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.
+     * successfully added to a stream includes <code>SequenceNumber</code> and
+     * <code>ShardId</code> in the result. A record that fails to be added to a
+     * stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in
+     * the result.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry> records;
@@ -95,19 +95,19 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * <p>
      * An array of successfully and unsuccessfully processed record results,
      * correlated with the request by natural ordering. A record that is
-     * successfully added to your Amazon Kinesis stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A
-     * record that fails to be added to your Amazon Kinesis stream includes
-     * <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.
+     * successfully added to a stream includes <code>SequenceNumber</code> and
+     * <code>ShardId</code> in the result. A record that fails to be added to a
+     * stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in
+     * the result.
      * </p>
      * 
      * @return An array of successfully and unsuccessfully processed record
      *         results, correlated with the request by natural ordering. A
-     *         record that is successfully added to your Amazon Kinesis stream
-     *         includes <code>SequenceNumber</code> and <code>ShardId</code> in
-     *         the result. A record that fails to be added to your Amazon
-     *         Kinesis stream includes <code>ErrorCode</code> and
-     *         <code>ErrorMessage</code> in the result.
+     *         record that is successfully added to a stream includes
+     *         <code>SequenceNumber</code> and <code>ShardId</code> in the
+     *         result. A record that fails to be added to a stream includes
+     *         <code>ErrorCode</code> and <code>ErrorMessage</code> in the
+     *         result.
      */
 
     public java.util.List<PutRecordsResultEntry> getRecords() {
@@ -121,20 +121,20 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * <p>
      * An array of successfully and unsuccessfully processed record results,
      * correlated with the request by natural ordering. A record that is
-     * successfully added to your Amazon Kinesis stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A
-     * record that fails to be added to your Amazon Kinesis stream includes
-     * <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.
+     * successfully added to a stream includes <code>SequenceNumber</code> and
+     * <code>ShardId</code> in the result. A record that fails to be added to a
+     * stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in
+     * the result.
      * </p>
      * 
      * @param records
      *        An array of successfully and unsuccessfully processed record
      *        results, correlated with the request by natural ordering. A record
-     *        that is successfully added to your Amazon Kinesis stream includes
+     *        that is successfully added to a stream includes
      *        <code>SequenceNumber</code> and <code>ShardId</code> in the
-     *        result. A record that fails to be added to your Amazon Kinesis
-     *        stream includes <code>ErrorCode</code> and
-     *        <code>ErrorMessage</code> in the result.
+     *        result. A record that fails to be added to a stream includes
+     *        <code>ErrorCode</code> and <code>ErrorMessage</code> in the
+     *        result.
      */
 
     public void setRecords(java.util.Collection<PutRecordsResultEntry> records) {
@@ -151,10 +151,10 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * <p>
      * An array of successfully and unsuccessfully processed record results,
      * correlated with the request by natural ordering. A record that is
-     * successfully added to your Amazon Kinesis stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A
-     * record that fails to be added to your Amazon Kinesis stream includes
-     * <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.
+     * successfully added to a stream includes <code>SequenceNumber</code> and
+     * <code>ShardId</code> in the result. A record that fails to be added to a
+     * stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in
+     * the result.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -166,11 +166,11 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * @param records
      *        An array of successfully and unsuccessfully processed record
      *        results, correlated with the request by natural ordering. A record
-     *        that is successfully added to your Amazon Kinesis stream includes
+     *        that is successfully added to a stream includes
      *        <code>SequenceNumber</code> and <code>ShardId</code> in the
-     *        result. A record that fails to be added to your Amazon Kinesis
-     *        stream includes <code>ErrorCode</code> and
-     *        <code>ErrorMessage</code> in the result.
+     *        result. A record that fails to be added to a stream includes
+     *        <code>ErrorCode</code> and <code>ErrorMessage</code> in the
+     *        result.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -190,20 +190,20 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * <p>
      * An array of successfully and unsuccessfully processed record results,
      * correlated with the request by natural ordering. A record that is
-     * successfully added to your Amazon Kinesis stream includes
-     * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A
-     * record that fails to be added to your Amazon Kinesis stream includes
-     * <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.
+     * successfully added to a stream includes <code>SequenceNumber</code> and
+     * <code>ShardId</code> in the result. A record that fails to be added to a
+     * stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in
+     * the result.
      * </p>
      * 
      * @param records
      *        An array of successfully and unsuccessfully processed record
      *        results, correlated with the request by natural ordering. A record
-     *        that is successfully added to your Amazon Kinesis stream includes
+     *        that is successfully added to a stream includes
      *        <code>SequenceNumber</code> and <code>ShardId</code> in the
-     *        result. A record that fails to be added to your Amazon Kinesis
-     *        stream includes <code>ErrorCode</code> and
-     *        <code>ErrorMessage</code> in the result.
+     *        result. A record that fails to be added to a stream includes
+     *        <code>ErrorCode</code> and <code>ErrorMessage</code> in the
+     *        result.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

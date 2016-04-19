@@ -95,8 +95,6 @@ public class FailureDetails implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of the failure.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see FailureType
      */
 

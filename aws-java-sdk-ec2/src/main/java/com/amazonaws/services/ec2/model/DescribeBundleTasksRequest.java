@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeBundleTasksRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeBundleTasks.
+ * </p>
  */
 public class DescribeBundleTasksRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

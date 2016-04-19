@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CancelBundleTaskRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CancelBundleTask.
+ * </p>
  */
 public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

@@ -14,17 +14,17 @@
  */
 package com.amazonaws.transform;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.nio.ByteBuffer;
-import java.util.Date;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.util.Base64;
+import com.amazonaws.util.DateUtils;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.util.Base64;
-import com.amazonaws.util.DateUtils;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.util.Date;
 
 /**
  * Collection of StAX unmarshallers for simple data types.

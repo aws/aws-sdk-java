@@ -469,8 +469,6 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceType
      */
 

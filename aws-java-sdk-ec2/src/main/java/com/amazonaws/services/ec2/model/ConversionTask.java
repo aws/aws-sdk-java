@@ -305,8 +305,6 @@ public class ConversionTask implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the conversion task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConversionTaskState
      */
 

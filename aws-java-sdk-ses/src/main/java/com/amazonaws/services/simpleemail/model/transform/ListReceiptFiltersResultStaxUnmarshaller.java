@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class ListReceiptFiltersResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Filters/member", targetDepth)) {
-                    listReceiptFiltersResult.getFilters().add(
-                            ReceiptFilterStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listReceiptFiltersResult
+                            .withFilters(ReceiptFilterStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

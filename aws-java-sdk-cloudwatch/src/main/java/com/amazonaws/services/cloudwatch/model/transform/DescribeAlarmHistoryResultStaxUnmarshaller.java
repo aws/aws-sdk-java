@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudwatch.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeAlarmHistoryResultStaxUnmarshaller implements
 
                 if (context.testExpression("AlarmHistoryItems/member",
                         targetDepth)) {
-                    describeAlarmHistoryResult.getAlarmHistoryItems().add(
-                            AlarmHistoryItemStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeAlarmHistoryResult
+                            .withAlarmHistoryItems(AlarmHistoryItemStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

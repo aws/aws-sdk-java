@@ -415,8 +415,6 @@ public class EventDescription implements Serializable, Cloneable {
      * 
      * @param severity
      *        The severity level of this event.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EventSeverity
      */
 

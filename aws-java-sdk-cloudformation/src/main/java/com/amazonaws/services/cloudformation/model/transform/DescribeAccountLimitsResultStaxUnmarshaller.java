@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudformation.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class DescribeAccountLimitsResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("AccountLimits/member", targetDepth)) {
-                    describeAccountLimitsResult.getAccountLimits().add(
-                            AccountLimitStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeAccountLimitsResult
+                            .withAccountLimits(AccountLimitStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

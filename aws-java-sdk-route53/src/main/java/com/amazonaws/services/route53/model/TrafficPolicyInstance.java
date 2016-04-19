@@ -290,8 +290,6 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
 
     /**
      * @param trafficPolicyType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
 

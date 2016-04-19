@@ -1026,8 +1026,6 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        <b>Note</b> If you call <code>CreateUpload</code> with
      *        <code>WEB_APP</code> specified, AWS Device Farm throws an
      *        <code>ArgumentException</code> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see UploadType
      */
 

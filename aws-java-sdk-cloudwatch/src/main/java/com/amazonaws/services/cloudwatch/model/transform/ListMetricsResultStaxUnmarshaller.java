@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudwatch.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,8 @@ public class ListMetricsResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Metrics/member", targetDepth)) {
-                    listMetricsResult.getMetrics().add(
-                            MetricStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    listMetricsResult.withMetrics(MetricStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

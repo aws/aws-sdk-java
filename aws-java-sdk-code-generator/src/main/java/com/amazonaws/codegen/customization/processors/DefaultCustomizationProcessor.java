@@ -25,6 +25,7 @@ public final class DefaultCustomizationProcessor {
             CustomizationConfig config) {
 
         return new CodegenCustomizationProcessorChain(
+                new MetadataModifiersProcessor(config.getCustomServiceMetadata()),
                 new ShapeModifiersProcessor(config.getShapeModifiers()),
                 new ShapeSubstitutionsProcessor(config.getShapeSubstitutions()),
                 new OperationModifiersProcessor(config.getOperationModifiers()),

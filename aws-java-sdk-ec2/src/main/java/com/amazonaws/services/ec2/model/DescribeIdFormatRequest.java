@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeIdFormatRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeIdFormat.
+ * </p>
  */
 public class DescribeIdFormatRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

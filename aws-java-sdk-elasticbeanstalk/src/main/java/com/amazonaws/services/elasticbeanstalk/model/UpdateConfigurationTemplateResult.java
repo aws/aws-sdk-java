@@ -473,8 +473,6 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *        currently deployed to the associated running environment.</li>
      *        <li> <code>failed</code>: This is a draft configuration that failed
      *        to successfully deploy.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConfigurationDeploymentStatus
      */
 

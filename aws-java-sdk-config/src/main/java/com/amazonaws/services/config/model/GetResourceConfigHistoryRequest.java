@@ -128,8 +128,6 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param resourceType
      *        The resource type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceType
      */
 
@@ -361,8 +359,6 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * @param chronologicalOrder
      *        The chronological order for configuration items listed. By default
      *        the results are listed in reverse chronological order.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChronologicalOrder
      */
 

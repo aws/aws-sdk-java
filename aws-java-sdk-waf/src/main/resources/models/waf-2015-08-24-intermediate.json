@@ -23,6 +23,7 @@
     "serviceName" : "WAF",
     "cborProtocol" : false,
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -65,6 +66,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateByteMatchSetResult",
       "asyncReturnType" : "CreateByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateByteMatchSetResult>",
@@ -109,6 +111,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateIPSetResult",
       "asyncReturnType" : "CreateIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateIPSetResult>",
@@ -150,6 +153,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateRuleResult",
       "asyncReturnType" : "CreateRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateRuleResult>",
@@ -194,6 +198,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateSizeConstraintSetResult",
       "asyncReturnType" : "CreateSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSizeConstraintSetResult>",
@@ -238,6 +243,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateSqlInjectionMatchSetResult",
       "asyncReturnType" : "CreateSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSqlInjectionMatchSetResult>",
@@ -282,6 +288,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateWebACLResult",
       "asyncReturnType" : "CreateWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateWebACLResult>",
@@ -326,6 +333,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateXssMatchSetResult",
       "asyncReturnType" : "CreateXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateXssMatchSetResult>",
@@ -370,6 +378,7 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteByteMatchSetResult",
       "asyncReturnType" : "DeleteByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteByteMatchSetResult>",
@@ -414,6 +423,7 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteIPSetResult",
       "asyncReturnType" : "DeleteIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteIPSetResult>",
@@ -458,6 +468,7 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteRuleResult",
       "asyncReturnType" : "DeleteRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRuleResult>",
@@ -502,6 +513,7 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteSizeConstraintSetResult",
       "asyncReturnType" : "DeleteSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSizeConstraintSetResult>",
@@ -546,6 +558,7 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteSqlInjectionMatchSetResult",
       "asyncReturnType" : "DeleteSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSqlInjectionMatchSetResult>",
@@ -590,6 +603,7 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteWebACLResult",
       "asyncReturnType" : "DeleteWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteWebACLResult>",
@@ -634,6 +648,7 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteXssMatchSetResult",
       "asyncReturnType" : "DeleteXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteXssMatchSetResult>",
@@ -669,6 +684,7 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetByteMatchSetResult",
       "asyncReturnType" : "GetByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetByteMatchSetResult>",
@@ -698,6 +714,7 @@
         "documentation" : "<p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetChangeTokenResult",
       "asyncReturnType" : "GetChangeTokenResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetChangeTokenResult>",
@@ -730,6 +747,7 @@
         "documentation" : "<p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetChangeTokenStatusResult",
       "asyncReturnType" : "GetChangeTokenStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetChangeTokenStatusResult>",
@@ -765,6 +783,7 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetIPSetResult",
       "asyncReturnType" : "GetIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIPSetResult>",
@@ -800,6 +819,7 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetRuleResult",
       "asyncReturnType" : "GetRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRuleResult>",
@@ -832,6 +852,7 @@
         "documentation" : "<p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetSampledRequestsResult",
       "asyncReturnType" : "GetSampledRequestsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSampledRequestsResult>",
@@ -867,6 +888,7 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetSizeConstraintSetResult",
       "asyncReturnType" : "GetSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSizeConstraintSetResult>",
@@ -902,6 +924,7 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetSqlInjectionMatchSetResult",
       "asyncReturnType" : "GetSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSqlInjectionMatchSetResult>",
@@ -937,6 +960,7 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetWebACLResult",
       "asyncReturnType" : "GetWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetWebACLResult>",
@@ -972,6 +996,7 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetXssMatchSetResult",
       "asyncReturnType" : "GetXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetXssMatchSetResult>",
@@ -1004,6 +1029,7 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListByteMatchSetsResult",
       "asyncReturnType" : "ListByteMatchSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListByteMatchSetsResult>",
@@ -1036,6 +1062,7 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListIPSetsResult",
       "asyncReturnType" : "ListIPSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListIPSetsResult>",
@@ -1068,6 +1095,7 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListRulesResult",
       "asyncReturnType" : "ListRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRulesResult>",
@@ -1100,6 +1128,7 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListSizeConstraintSetsResult",
       "asyncReturnType" : "ListSizeConstraintSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSizeConstraintSetsResult>",
@@ -1132,6 +1161,7 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListSqlInjectionMatchSetsResult",
       "asyncReturnType" : "ListSqlInjectionMatchSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSqlInjectionMatchSetsResult>",
@@ -1164,6 +1194,7 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListWebACLsResult",
       "asyncReturnType" : "ListWebACLsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListWebACLsResult>",
@@ -1196,6 +1227,7 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListXssMatchSetsResult",
       "asyncReturnType" : "ListXssMatchSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListXssMatchSetsResult>",
@@ -1246,6 +1278,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateByteMatchSetResult",
       "asyncReturnType" : "UpdateByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateByteMatchSetResult>",
@@ -1299,6 +1332,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateIPSetResult",
       "asyncReturnType" : "UpdateIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateIPSetResult>",
@@ -1352,6 +1386,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateRuleResult",
       "asyncReturnType" : "UpdateRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateRuleResult>",
@@ -1405,6 +1440,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateSizeConstraintSetResult",
       "asyncReturnType" : "UpdateSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateSizeConstraintSetResult>",
@@ -1455,6 +1491,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateSqlInjectionMatchSetResult",
       "asyncReturnType" : "UpdateSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateSqlInjectionMatchSetResult>",
@@ -1508,6 +1545,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateWebACLResult",
       "asyncReturnType" : "UpdateWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateWebACLResult>",
@@ -1558,6 +1596,7 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateXssMatchSetResult",
       "asyncReturnType" : "UpdateXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateXssMatchSetResult>",
@@ -2909,8 +2948,8 @@
           "simpleType" : "IPSetDescriptor",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<IPSetDescriptor>",
-          "templateType" : "java.util.List<IPSetDescriptor>"
+          "templateType" : "java.util.List<IPSetDescriptor>",
+          "templateImplType" : "java.util.ArrayList<IPSetDescriptor>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3103,8 +3142,8 @@
             "simpleType" : "IPSetDescriptor",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<IPSetDescriptor>",
-            "templateType" : "java.util.List<IPSetDescriptor>"
+            "templateType" : "java.util.List<IPSetDescriptor>",
+            "templateImplType" : "java.util.ArrayList<IPSetDescriptor>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3453,8 +3492,8 @@
           "simpleType" : "ByteMatchSetUpdate",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<ByteMatchSetUpdate>",
-          "templateType" : "java.util.List<ByteMatchSetUpdate>"
+          "templateType" : "java.util.List<ByteMatchSetUpdate>",
+          "templateImplType" : "java.util.ArrayList<ByteMatchSetUpdate>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3598,8 +3637,8 @@
             "simpleType" : "ByteMatchSetUpdate",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<ByteMatchSetUpdate>",
-            "templateType" : "java.util.List<ByteMatchSetUpdate>"
+            "templateType" : "java.util.List<ByteMatchSetUpdate>",
+            "templateImplType" : "java.util.ArrayList<ByteMatchSetUpdate>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4521,8 +4560,8 @@
           "simpleType" : "ByteMatchSetSummary",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<ByteMatchSetSummary>",
-          "templateType" : "java.util.List<ByteMatchSetSummary>"
+          "templateType" : "java.util.List<ByteMatchSetSummary>",
+          "templateImplType" : "java.util.ArrayList<ByteMatchSetSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4662,8 +4701,8 @@
             "simpleType" : "ByteMatchSetSummary",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<ByteMatchSetSummary>",
-            "templateType" : "java.util.List<ByteMatchSetSummary>"
+            "templateType" : "java.util.List<ByteMatchSetSummary>",
+            "templateImplType" : "java.util.ArrayList<ByteMatchSetSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5414,8 +5453,8 @@
           "simpleType" : "XssMatchSetSummary",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<XssMatchSetSummary>",
-          "templateType" : "java.util.List<XssMatchSetSummary>"
+          "templateType" : "java.util.List<XssMatchSetSummary>",
+          "templateImplType" : "java.util.ArrayList<XssMatchSetSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5555,8 +5594,8 @@
             "simpleType" : "XssMatchSetSummary",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<XssMatchSetSummary>",
-            "templateType" : "java.util.List<XssMatchSetSummary>"
+            "templateType" : "java.util.List<XssMatchSetSummary>",
+            "templateImplType" : "java.util.ArrayList<XssMatchSetSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6775,8 +6814,8 @@
           "simpleType" : "WebACLSummary",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<WebACLSummary>",
-          "templateType" : "java.util.List<WebACLSummary>"
+          "templateType" : "java.util.List<WebACLSummary>",
+          "templateImplType" : "java.util.ArrayList<WebACLSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6916,8 +6955,8 @@
             "simpleType" : "WebACLSummary",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<WebACLSummary>",
-            "templateType" : "java.util.List<WebACLSummary>"
+            "templateType" : "java.util.List<WebACLSummary>",
+            "templateImplType" : "java.util.ArrayList<WebACLSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8235,8 +8274,8 @@
           "simpleType" : "SizeConstraintSetUpdate",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<SizeConstraintSetUpdate>",
-          "templateType" : "java.util.List<SizeConstraintSetUpdate>"
+          "templateType" : "java.util.List<SizeConstraintSetUpdate>",
+          "templateImplType" : "java.util.ArrayList<SizeConstraintSetUpdate>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8380,8 +8419,8 @@
             "simpleType" : "SizeConstraintSetUpdate",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<SizeConstraintSetUpdate>",
-            "templateType" : "java.util.List<SizeConstraintSetUpdate>"
+            "templateType" : "java.util.List<SizeConstraintSetUpdate>",
+            "templateImplType" : "java.util.ArrayList<SizeConstraintSetUpdate>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10656,8 +10695,8 @@
           "simpleType" : "ByteMatchTuple",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<ByteMatchTuple>",
-          "templateType" : "java.util.List<ByteMatchTuple>"
+          "templateType" : "java.util.List<ByteMatchTuple>",
+          "templateImplType" : "java.util.ArrayList<ByteMatchTuple>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10797,8 +10836,8 @@
             "simpleType" : "ByteMatchTuple",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<ByteMatchTuple>",
-            "templateType" : "java.util.List<ByteMatchTuple>"
+            "templateType" : "java.util.List<ByteMatchTuple>",
+            "templateImplType" : "java.util.ArrayList<ByteMatchTuple>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12721,8 +12760,8 @@
           "simpleType" : "RuleSummary",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<RuleSummary>",
-          "templateType" : "java.util.List<RuleSummary>"
+          "templateType" : "java.util.List<RuleSummary>",
+          "templateImplType" : "java.util.ArrayList<RuleSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12862,8 +12901,8 @@
             "simpleType" : "RuleSummary",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<RuleSummary>",
-            "templateType" : "java.util.List<RuleSummary>"
+            "templateType" : "java.util.List<RuleSummary>",
+            "templateImplType" : "java.util.ArrayList<RuleSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13150,8 +13189,8 @@
           "simpleType" : "RuleUpdate",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<RuleUpdate>",
-          "templateType" : "java.util.List<RuleUpdate>"
+          "templateType" : "java.util.List<RuleUpdate>",
+          "templateImplType" : "java.util.ArrayList<RuleUpdate>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13295,8 +13334,8 @@
             "simpleType" : "RuleUpdate",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<RuleUpdate>",
-            "templateType" : "java.util.List<RuleUpdate>"
+            "templateType" : "java.util.List<RuleUpdate>",
+            "templateImplType" : "java.util.ArrayList<RuleUpdate>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15606,8 +15645,8 @@
           "simpleType" : "WebACLUpdate",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<WebACLUpdate>",
-          "templateType" : "java.util.List<WebACLUpdate>"
+          "templateType" : "java.util.List<WebACLUpdate>",
+          "templateImplType" : "java.util.ArrayList<WebACLUpdate>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15803,8 +15842,8 @@
             "simpleType" : "WebACLUpdate",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<WebACLUpdate>",
-            "templateType" : "java.util.List<WebACLUpdate>"
+            "templateType" : "java.util.List<WebACLUpdate>",
+            "templateImplType" : "java.util.ArrayList<WebACLUpdate>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19445,8 +19484,8 @@
           "simpleType" : "XssMatchTuple",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<XssMatchTuple>",
-          "templateType" : "java.util.List<XssMatchTuple>"
+          "templateType" : "java.util.List<XssMatchTuple>",
+          "templateImplType" : "java.util.ArrayList<XssMatchTuple>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19692,8 +19731,8 @@
             "simpleType" : "XssMatchTuple",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<XssMatchTuple>",
-            "templateType" : "java.util.List<XssMatchTuple>"
+            "templateType" : "java.util.List<XssMatchTuple>",
+            "templateImplType" : "java.util.ArrayList<XssMatchTuple>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19958,8 +19997,8 @@
           "simpleType" : "SqlInjectionMatchTuple",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<SqlInjectionMatchTuple>",
-          "templateType" : "java.util.List<SqlInjectionMatchTuple>"
+          "templateType" : "java.util.List<SqlInjectionMatchTuple>",
+          "templateImplType" : "java.util.ArrayList<SqlInjectionMatchTuple>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20152,8 +20191,8 @@
             "simpleType" : "SqlInjectionMatchTuple",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<SqlInjectionMatchTuple>",
-            "templateType" : "java.util.List<SqlInjectionMatchTuple>"
+            "templateType" : "java.util.List<SqlInjectionMatchTuple>",
+            "templateImplType" : "java.util.ArrayList<SqlInjectionMatchTuple>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21035,8 +21074,8 @@
           "simpleType" : "IPSetUpdate",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<IPSetUpdate>",
-          "templateType" : "java.util.List<IPSetUpdate>"
+          "templateType" : "java.util.List<IPSetUpdate>",
+          "templateImplType" : "java.util.ArrayList<IPSetUpdate>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21180,8 +21219,8 @@
             "simpleType" : "IPSetUpdate",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<IPSetUpdate>",
-            "templateType" : "java.util.List<IPSetUpdate>"
+            "templateType" : "java.util.List<IPSetUpdate>",
+            "templateImplType" : "java.util.ArrayList<IPSetUpdate>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21469,8 +21508,8 @@
           "simpleType" : "SqlInjectionMatchSetSummary",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetSummary>",
-          "templateType" : "java.util.List<SqlInjectionMatchSetSummary>"
+          "templateType" : "java.util.List<SqlInjectionMatchSetSummary>",
+          "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21610,8 +21649,8 @@
             "simpleType" : "SqlInjectionMatchSetSummary",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetSummary>",
-            "templateType" : "java.util.List<SqlInjectionMatchSetSummary>"
+            "templateType" : "java.util.List<SqlInjectionMatchSetSummary>",
+            "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23804,8 +23843,8 @@
           "simpleType" : "XssMatchSetUpdate",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<XssMatchSetUpdate>",
-          "templateType" : "java.util.List<XssMatchSetUpdate>"
+          "templateType" : "java.util.List<XssMatchSetUpdate>",
+          "templateImplType" : "java.util.ArrayList<XssMatchSetUpdate>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24002,8 +24041,8 @@
             "simpleType" : "XssMatchSetUpdate",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<XssMatchSetUpdate>",
-            "templateType" : "java.util.List<XssMatchSetUpdate>"
+            "templateType" : "java.util.List<XssMatchSetUpdate>",
+            "templateImplType" : "java.util.ArrayList<XssMatchSetUpdate>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24339,8 +24378,8 @@
           "simpleType" : "SizeConstraintSetSummary",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<SizeConstraintSetSummary>",
-          "templateType" : "java.util.List<SizeConstraintSetSummary>"
+          "templateType" : "java.util.List<SizeConstraintSetSummary>",
+          "templateImplType" : "java.util.ArrayList<SizeConstraintSetSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24480,8 +24519,8 @@
             "simpleType" : "SizeConstraintSetSummary",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<SizeConstraintSetSummary>",
-            "templateType" : "java.util.List<SizeConstraintSetSummary>"
+            "templateType" : "java.util.List<SizeConstraintSetSummary>",
+            "templateImplType" : "java.util.ArrayList<SizeConstraintSetSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26192,8 +26231,8 @@
           "simpleType" : "HTTPHeader",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<HTTPHeader>",
-          "templateType" : "java.util.List<HTTPHeader>"
+          "templateType" : "java.util.List<HTTPHeader>",
+          "templateImplType" : "java.util.ArrayList<HTTPHeader>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26333,8 +26372,8 @@
             "simpleType" : "HTTPHeader",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<HTTPHeader>",
-            "templateType" : "java.util.List<HTTPHeader>"
+            "templateType" : "java.util.List<HTTPHeader>",
+            "templateImplType" : "java.util.ArrayList<HTTPHeader>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26833,8 +26872,8 @@
           "simpleType" : "SizeConstraint",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<SizeConstraint>",
-          "templateType" : "java.util.List<SizeConstraint>"
+          "templateType" : "java.util.List<SizeConstraint>",
+          "templateImplType" : "java.util.ArrayList<SizeConstraint>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27027,8 +27066,8 @@
             "simpleType" : "SizeConstraint",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<SizeConstraint>",
-            "templateType" : "java.util.List<SizeConstraint>"
+            "templateType" : "java.util.List<SizeConstraint>",
+            "templateImplType" : "java.util.ArrayList<SizeConstraint>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28098,8 +28137,8 @@
           "simpleType" : "ActivatedRule",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<ActivatedRule>",
-          "templateType" : "java.util.List<ActivatedRule>"
+          "templateType" : "java.util.List<ActivatedRule>",
+          "templateImplType" : "java.util.ArrayList<ActivatedRule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28398,8 +28437,8 @@
             "simpleType" : "ActivatedRule",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<ActivatedRule>",
-            "templateType" : "java.util.List<ActivatedRule>"
+            "templateType" : "java.util.List<ActivatedRule>",
+            "templateImplType" : "java.util.ArrayList<ActivatedRule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28686,8 +28725,8 @@
           "simpleType" : "SqlInjectionMatchSetUpdate",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetUpdate>",
-          "templateType" : "java.util.List<SqlInjectionMatchSetUpdate>"
+          "templateType" : "java.util.List<SqlInjectionMatchSetUpdate>",
+          "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetUpdate>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28831,8 +28870,8 @@
             "simpleType" : "SqlInjectionMatchSetUpdate",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetUpdate>",
-            "templateType" : "java.util.List<SqlInjectionMatchSetUpdate>"
+            "templateType" : "java.util.List<SqlInjectionMatchSetUpdate>",
+            "templateImplType" : "java.util.ArrayList<SqlInjectionMatchSetUpdate>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29518,8 +29557,8 @@
           "simpleType" : "Predicate",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Predicate>",
-          "templateType" : "java.util.List<Predicate>"
+          "templateType" : "java.util.List<Predicate>",
+          "templateImplType" : "java.util.ArrayList<Predicate>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29818,8 +29857,8 @@
             "simpleType" : "Predicate",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Predicate>",
-            "templateType" : "java.util.List<Predicate>"
+            "templateType" : "java.util.List<Predicate>",
+            "templateImplType" : "java.util.ArrayList<Predicate>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30688,8 +30727,8 @@
           "simpleType" : "SampledHTTPRequest",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<SampledHTTPRequest>",
-          "templateType" : "java.util.List<SampledHTTPRequest>"
+          "templateType" : "java.util.List<SampledHTTPRequest>",
+          "templateImplType" : "java.util.ArrayList<SampledHTTPRequest>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31039,8 +31078,8 @@
             "simpleType" : "SampledHTTPRequest",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<SampledHTTPRequest>",
-            "templateType" : "java.util.List<SampledHTTPRequest>"
+            "templateType" : "java.util.List<SampledHTTPRequest>",
+            "templateImplType" : "java.util.ArrayList<SampledHTTPRequest>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32875,8 +32914,8 @@
           "simpleType" : "IPSetSummary",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<IPSetSummary>",
-          "templateType" : "java.util.List<IPSetSummary>"
+          "templateType" : "java.util.List<IPSetSummary>",
+          "templateImplType" : "java.util.ArrayList<IPSetSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33016,8 +33055,8 @@
             "simpleType" : "IPSetSummary",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<IPSetSummary>",
-            "templateType" : "java.util.List<IPSetSummary>"
+            "templateType" : "java.util.List<IPSetSummary>",
+            "templateImplType" : "java.util.ArrayList<IPSetSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33108,6 +33147,7 @@
       "actionPrefix" : null,
       "fileNamePrefix" : null
     },
+    "customServiceMetadata" : null,
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,

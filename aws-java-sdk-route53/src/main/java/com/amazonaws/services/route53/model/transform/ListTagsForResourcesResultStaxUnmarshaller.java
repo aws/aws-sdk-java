@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class ListTagsForResourcesResultStaxUnmarshaller implements
 
                 if (context.testExpression("ResourceTagSets/ResourceTagSet",
                         targetDepth)) {
-                    listTagsForResourcesResult.getResourceTagSets().add(
-                            ResourceTagSetStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listTagsForResourcesResult
+                            .withResourceTagSets(ResourceTagSetStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.RegisterImageRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for RegisterImage.
+ * </p>
  */
 public class RegisterImageRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<RegisterImageRequest> {
@@ -362,8 +364,6 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *        Default: For Amazon EBS-backed AMIs, <code>i386</code>. For
      *        instance store-backed AMIs, the architecture specified in the
      *        manifest file.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ArchitectureValues
      */
 

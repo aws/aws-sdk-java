@@ -719,8 +719,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        <code>true</code> or <code>false</code> .</li>
      *        <li> <code>Json</code> : Values for this option are a JSON
      *        representation of a <code>ConfigDocument</code>.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConfigurationOptionValueType
      */
 

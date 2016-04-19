@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -58,9 +60,9 @@ public class SolutionStackDescriptionStaxUnmarshaller implements
 
                 if (context.testExpression("PermittedFileTypes/member",
                         targetDepth)) {
-                    solutionStackDescription.getPermittedFileTypes().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    solutionStackDescription
+                            .withPermittedFileTypes(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

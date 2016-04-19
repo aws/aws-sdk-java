@@ -100,8 +100,6 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      * @param verificationStatus
      *        The verification status of the identity: "Pending", "Success",
      *        "Failed", or "TemporaryFailure".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VerificationStatus
      */
 

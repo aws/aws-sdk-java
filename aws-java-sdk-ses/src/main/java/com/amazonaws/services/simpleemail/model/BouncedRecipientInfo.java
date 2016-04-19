@@ -238,8 +238,6 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      * @param bounceType
      *        The reason for the bounce. You must provide either this parameter
      *        or <code>RecipientDsnFields</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BounceType
      */
 

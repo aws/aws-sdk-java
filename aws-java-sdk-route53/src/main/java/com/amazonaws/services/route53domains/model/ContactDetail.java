@@ -840,8 +840,6 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ContactType
      */
 
@@ -1754,8 +1752,6 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CountryCode
      */
 

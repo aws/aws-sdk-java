@@ -1280,8 +1280,6 @@ public class Artifact implements Serializable, Cloneable {
      *        XCTEST_LOG: The XCode test output type.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ArtifactType
      */
 

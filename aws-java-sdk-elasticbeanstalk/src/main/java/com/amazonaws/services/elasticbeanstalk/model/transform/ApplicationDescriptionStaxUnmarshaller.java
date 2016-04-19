@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -76,17 +78,16 @@ public class ApplicationDescriptionStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Versions/member", targetDepth)) {
-                    applicationDescription.getVersions().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    applicationDescription.withVersions(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("ConfigurationTemplates/member",
                         targetDepth)) {
-                    applicationDescription.getConfigurationTemplates().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    applicationDescription
+                            .withConfigurationTemplates(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

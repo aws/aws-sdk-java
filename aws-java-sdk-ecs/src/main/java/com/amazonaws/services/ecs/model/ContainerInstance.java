@@ -745,8 +745,6 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @param agentUpdateStatus
      *        The status of the most recent agent update. If an update has never
      *        been requested, this value is <code>NULL</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AgentUpdateStatus
      */
 

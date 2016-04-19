@@ -100,8 +100,6 @@ public class Change implements Serializable, Cloneable {
      * @param type
      *        The type of entity that AWS CloudFormation changes. Currently, the
      *        only entity type is <code>Resource</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeType
      */
 

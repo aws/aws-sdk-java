@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ReportInstanceStatusRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ReportInstanceStatus.
+ * </p>
  */
 public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -249,8 +251,6 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @param status
      *        The status of all instances listed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReportStatusType
      */
 

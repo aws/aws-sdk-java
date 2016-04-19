@@ -329,8 +329,6 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @param state
      *        The operational state of the WorkSpace.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see WorkspaceState
      */
 

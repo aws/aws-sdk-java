@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeSubnetsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeSubnets.
+ * </p>
  */
 public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DescribeSubnetsRequest> {

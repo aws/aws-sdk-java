@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -73,8 +75,8 @@ public class ListChangeBatchesByHostedZoneResultStaxUnmarshaller
 
                 if (context.testExpression(
                         "ChangeBatchRecords/ChangeBatchRecord", targetDepth)) {
-                    listChangeBatchesByHostedZoneResult.getChangeBatchRecords()
-                            .add(ChangeBatchRecordStaxUnmarshaller
+                    listChangeBatchesByHostedZoneResult
+                            .withChangeBatchRecords(ChangeBatchRecordStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

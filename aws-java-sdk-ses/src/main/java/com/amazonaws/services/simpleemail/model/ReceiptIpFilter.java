@@ -108,8 +108,6 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      * @param policy
      *        Indicates whether to block or allow incoming mail from the
      *        specified IP addresses.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReceiptFilterPolicy
      */
 

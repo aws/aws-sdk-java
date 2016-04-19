@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.GetPasswordDataRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for GetPasswordData.
+ * </p>
  */
 public class GetPasswordDataRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<GetPasswordDataRequest> {

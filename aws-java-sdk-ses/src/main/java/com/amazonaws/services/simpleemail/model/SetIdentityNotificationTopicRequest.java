@@ -175,8 +175,6 @@ public class SetIdentityNotificationTopicRequest extends
      * @param notificationType
      *        The type of notifications that will be published to the specified
      *        Amazon SNS topic.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see NotificationType
      */
 

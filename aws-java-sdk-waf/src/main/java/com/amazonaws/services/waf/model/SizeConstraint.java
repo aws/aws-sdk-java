@@ -917,8 +917,6 @@ public class SizeConstraint implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Use this option to decode a URL-encoded value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TextTransformation
      */
 
@@ -1389,8 +1387,6 @@ public class SizeConstraint implements Serializable, Cloneable {
      *        <p>
      *        <b>GT</b>: Used to test if the <code>Size</code> is strictly
      *        greater than the size of the <code>FieldToMatch</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComparisonOperator
      */
 

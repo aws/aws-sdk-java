@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -56,9 +58,8 @@ public class GetGroupResultStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Users/member", targetDepth)) {
-                    getGroupResult.getUsers().add(
-                            UserStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    getGroupResult.withUsers(UserStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 

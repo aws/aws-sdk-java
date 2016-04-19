@@ -51,8 +51,8 @@ public class S3DestinationConfiguration implements Serializable, Cloneable {
     private String prefix;
     /**
      * <p>
-     * The buffering option. If no value is specified,
-     * <code>BufferingHints</code> object default values are used.
+     * The buffering option. If no value is specified, <b>BufferingHints</b>
+     * object default values are used.
      * </p>
      */
     private BufferingHints bufferingHints;
@@ -76,6 +76,12 @@ public class S3DestinationConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private EncryptionConfiguration encryptionConfiguration;
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     */
+    private CloudWatchLoggingOptions cloudWatchLoggingOptions;
 
     /**
      * <p>
@@ -244,13 +250,13 @@ public class S3DestinationConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The buffering option. If no value is specified,
-     * <code>BufferingHints</code> object default values are used.
+     * The buffering option. If no value is specified, <b>BufferingHints</b>
+     * object default values are used.
      * </p>
      * 
      * @param bufferingHints
      *        The buffering option. If no value is specified,
-     *        <code>BufferingHints</code> object default values are used.
+     *        <b>BufferingHints</b> object default values are used.
      */
 
     public void setBufferingHints(BufferingHints bufferingHints) {
@@ -259,12 +265,12 @@ public class S3DestinationConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The buffering option. If no value is specified,
-     * <code>BufferingHints</code> object default values are used.
+     * The buffering option. If no value is specified, <b>BufferingHints</b>
+     * object default values are used.
      * </p>
      * 
      * @return The buffering option. If no value is specified,
-     *         <code>BufferingHints</code> object default values are used.
+     *         <b>BufferingHints</b> object default values are used.
      */
 
     public BufferingHints getBufferingHints() {
@@ -273,13 +279,13 @@ public class S3DestinationConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The buffering option. If no value is specified,
-     * <code>BufferingHints</code> object default values are used.
+     * The buffering option. If no value is specified, <b>BufferingHints</b>
+     * object default values are used.
      * </p>
      * 
      * @param bufferingHints
      *        The buffering option. If no value is specified,
-     *        <code>BufferingHints</code> object default values are used.
+     *        <b>BufferingHints</b> object default values are used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -394,8 +400,6 @@ public class S3DestinationConfiguration implements Serializable, Cloneable {
      *        cannot be specified for Amazon Redshift destinations because they
      *        are not supported by the Amazon Redshift <code>COPY</code>
      *        operation that reads from the S3 bucket.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CompressionFormat
      */
 
@@ -484,6 +488,49 @@ public class S3DestinationConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Describes CloudWatch logging options for your delivery stream.
+     */
+
+    public void setCloudWatchLoggingOptions(
+            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+        this.cloudWatchLoggingOptions = cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @return Describes CloudWatch logging options for your delivery stream.
+     */
+
+    public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
+        return this.cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Describes CloudWatch logging options for your delivery stream.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public S3DestinationConfiguration withCloudWatchLoggingOptions(
+            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+        setCloudWatchLoggingOptions(cloudWatchLoggingOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -507,7 +554,10 @@ public class S3DestinationConfiguration implements Serializable, Cloneable {
             sb.append("CompressionFormat: " + getCompressionFormat() + ",");
         if (getEncryptionConfiguration() != null)
             sb.append("EncryptionConfiguration: "
-                    + getEncryptionConfiguration());
+                    + getEncryptionConfiguration() + ",");
+        if (getCloudWatchLoggingOptions() != null)
+            sb.append("CloudWatchLoggingOptions: "
+                    + getCloudWatchLoggingOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -557,6 +607,13 @@ public class S3DestinationConfiguration implements Serializable, Cloneable {
                 && other.getEncryptionConfiguration().equals(
                         this.getEncryptionConfiguration()) == false)
             return false;
+        if (other.getCloudWatchLoggingOptions() == null
+                ^ this.getCloudWatchLoggingOptions() == null)
+            return false;
+        if (other.getCloudWatchLoggingOptions() != null
+                && other.getCloudWatchLoggingOptions().equals(
+                        this.getCloudWatchLoggingOptions()) == false)
+            return false;
         return true;
     }
 
@@ -583,6 +640,10 @@ public class S3DestinationConfiguration implements Serializable, Cloneable {
                 * hashCode
                 + ((getEncryptionConfiguration() == null) ? 0
                         : getEncryptionConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudWatchLoggingOptions() == null) ? 0
+                        : getCloudWatchLoggingOptions().hashCode());
         return hashCode;
     }
 

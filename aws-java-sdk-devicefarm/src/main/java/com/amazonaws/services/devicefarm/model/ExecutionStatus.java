@@ -22,8 +22,11 @@ package com.amazonaws.services.devicefarm.model;
 public enum ExecutionStatus {
 
     PENDING("PENDING"),
+    PENDING_CONCURRENCY("PENDING_CONCURRENCY"),
+    PENDING_DEVICE("PENDING_DEVICE"),
     PROCESSING("PROCESSING"),
     SCHEDULING("SCHEDULING"),
+    PREPARING("PREPARING"),
     RUNNING("RUNNING"),
     COMPLETED("COMPLETED"),
     STOPPING("STOPPING");
@@ -51,10 +54,16 @@ public enum ExecutionStatus {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         } else if ("PENDING".equals(value)) {
             return PENDING;
+        } else if ("PENDING_CONCURRENCY".equals(value)) {
+            return PENDING_CONCURRENCY;
+        } else if ("PENDING_DEVICE".equals(value)) {
+            return PENDING_DEVICE;
         } else if ("PROCESSING".equals(value)) {
             return PROCESSING;
         } else if ("SCHEDULING".equals(value)) {
             return SCHEDULING;
+        } else if ("PREPARING".equals(value)) {
+            return PREPARING;
         } else if ("RUNNING".equals(value)) {
             return RUNNING;
         } else if ("COMPLETED".equals(value)) {

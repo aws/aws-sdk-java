@@ -17,6 +17,8 @@
 package com.amazonaws.services.autoscaling.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeAdjustmentTypesResultStaxUnmarshaller implements
 
                 if (context.testExpression("AdjustmentTypes/member",
                         targetDepth)) {
-                    describeAdjustmentTypesResult.getAdjustmentTypes().add(
-                            AdjustmentTypeStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeAdjustmentTypesResult
+                            .withAdjustmentTypes(AdjustmentTypeStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

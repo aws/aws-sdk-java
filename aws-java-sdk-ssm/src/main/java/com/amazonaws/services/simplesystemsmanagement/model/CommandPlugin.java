@@ -158,8 +158,6 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @param status
      *        The status of this plugin. You can execute a document with
      *        multiple plugins.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CommandPluginStatus
      */
 

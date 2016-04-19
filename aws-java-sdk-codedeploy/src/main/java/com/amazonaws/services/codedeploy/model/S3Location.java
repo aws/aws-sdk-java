@@ -258,8 +258,6 @@ public class S3Location implements Serializable, Cloneable {
      *        <li>tar: A tar archive file.</li>
      *        <li>tgz: A compressed tar archive file.</li>
      *        <li>zip: A zip archive file.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BundleType
      */
 

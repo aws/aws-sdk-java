@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVpcAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeVpcAttribute.
+ * </p>
  */
 public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -133,8 +135,6 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest
      * 
      * @param attribute
      *        The VPC attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VpcAttributeName
      */
 

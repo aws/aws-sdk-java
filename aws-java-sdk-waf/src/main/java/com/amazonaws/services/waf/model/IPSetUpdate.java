@@ -100,8 +100,6 @@ public class IPSetUpdate implements Serializable, Cloneable {
      * @param action
      *        Specifies whether to insert or delete an IP address with
      *        <a>UpdateIPSet</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
 

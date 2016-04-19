@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -59,16 +61,15 @@ public class DescribeSnapshotAttributeResultStaxUnmarshaller implements
                 if (context.testExpression("createVolumePermission/item",
                         targetDepth)) {
                     describeSnapshotAttributeResult
-                            .getCreateVolumePermissions().add(
-                                    CreateVolumePermissionStaxUnmarshaller
-                                            .getInstance().unmarshall(context));
+                            .withCreateVolumePermissions(CreateVolumePermissionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("productCodes/item", targetDepth)) {
-                    describeSnapshotAttributeResult.getProductCodes().add(
-                            ProductCodeStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeSnapshotAttributeResult
+                            .withProductCodes(ProductCodeStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

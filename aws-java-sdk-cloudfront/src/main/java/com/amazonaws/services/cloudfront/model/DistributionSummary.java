@@ -520,8 +520,6 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * @param priceClass
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PriceClass
      */
 

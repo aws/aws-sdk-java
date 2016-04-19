@@ -14,6 +14,14 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.event.ProgressInputStream;
+import com.amazonaws.handlers.HandlerContextKey;
+import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.util.AWSRequestMetrics;
+import com.amazonaws.util.json.Jackson;
+
+import org.apache.http.annotation.NotThreadSafe;
+
 import java.io.InputStream;
 import java.net.URI;
 import java.util.ArrayList;
@@ -21,15 +29,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
-
-import com.amazonaws.handlers.HandlerContextKey;
-import org.apache.http.annotation.NotThreadSafe;
-
-import com.amazonaws.event.ProgressInputStream;
-import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.util.AWSRequestMetrics;
-import com.amazonaws.util.json.Jackson;
 
 /**
  * Default implementation of the {@linkplain com.amazonaws.Request} interface.

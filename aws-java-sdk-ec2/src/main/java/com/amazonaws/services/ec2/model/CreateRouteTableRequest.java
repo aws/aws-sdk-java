@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateRouteTableRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateRouteTable.
+ * </p>
  */
 public class CreateRouteTableRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

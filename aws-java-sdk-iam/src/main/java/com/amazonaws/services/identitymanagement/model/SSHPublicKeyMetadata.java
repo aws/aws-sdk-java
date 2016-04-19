@@ -207,8 +207,6 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      *        The status of the SSH public key. <code>Active</code> means the
      *        key can be used for authentication with an AWS CodeCommit
      *        repository. <code>Inactive</code> means the key cannot be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusType
      */
 

@@ -1379,8 +1379,6 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        other data types can be specified.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AttributeAction
      */
 

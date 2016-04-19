@@ -1257,8 +1257,6 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *        specifying <i>AttributesToGet</i> without any value for
      *        <i>Select</i>.)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Select
      */
 
@@ -2188,8 +2186,6 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        This parameter does not support attributes of type List or Map.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConditionalOperator
      */
 
@@ -2449,8 +2445,6 @@ public class ScanRequest extends AmazonWebServiceRequest implements
 
     /**
      * @param returnConsumedCapacity
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnConsumedCapacity
      */
 

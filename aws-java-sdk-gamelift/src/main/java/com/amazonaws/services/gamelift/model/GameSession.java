@@ -472,8 +472,6 @@ public class GameSession implements Serializable, Cloneable {
      * @param status
      *        Current status of the game session. A game session must be in an
      *        ACTIVE state to have player sessions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see GameSessionStatus
      */
 
@@ -675,8 +673,6 @@ public class GameSession implements Serializable, Cloneable {
      * @param playerSessionCreationPolicy
      *        Indicates whether or not the game session is accepting new
      *        players.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PlayerSessionCreationPolicy
      */
 

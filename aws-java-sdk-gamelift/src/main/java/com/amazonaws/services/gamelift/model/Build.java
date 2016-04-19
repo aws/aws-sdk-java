@@ -352,8 +352,6 @@ public class Build implements Serializable, Cloneable {
      *        <li>FAILED: The game build upload failed. You cannot create new
      *        fleets for this build.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BuildStatus
      */
 

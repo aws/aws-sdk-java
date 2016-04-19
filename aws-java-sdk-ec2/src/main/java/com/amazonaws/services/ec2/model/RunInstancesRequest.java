@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.RunInstancesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for RunInstances.
+ * </p>
  */
 public class RunInstancesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<RunInstancesRequest> {
@@ -1039,8 +1041,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        Guide</i>.</p>
      *        <p>
      *        Default: <code>m1.small</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceType
      */
 
@@ -1697,8 +1697,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        command for system shutdown).</p>
      *        <p>
      *        Default: <code>stop</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ShutdownBehavior
      */
 

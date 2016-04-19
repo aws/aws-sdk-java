@@ -661,8 +661,6 @@ public class GetBatchPredictionResult implements Serializable, Cloneable {
      *        completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>BatchPrediction</code> is
      *        marked as deleted. It is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EntityStatus
      */
 

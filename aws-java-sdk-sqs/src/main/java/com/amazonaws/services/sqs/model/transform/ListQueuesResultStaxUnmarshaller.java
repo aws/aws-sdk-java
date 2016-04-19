@@ -17,6 +17,8 @@
 package com.amazonaws.services.sqs.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,8 @@ public class ListQueuesResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("QueueUrl", targetDepth)) {
-                    listQueuesResult.getQueueUrls().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    listQueuesResult.withQueueUrls(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

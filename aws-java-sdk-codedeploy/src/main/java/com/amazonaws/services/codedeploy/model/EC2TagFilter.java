@@ -218,8 +218,6 @@ public class EC2TagFilter implements Serializable, Cloneable {
      *        <li>KEY_ONLY: Key only.</li>
      *        <li>VALUE_ONLY: Value only.</li>
      *        <li>KEY_AND_VALUE: Key and value.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EC2TagFilterType
      */
 

@@ -130,8 +130,6 @@ public class LoggingOptionsPayload implements Serializable, Cloneable {
      * 
      * @param logLevel
      *        The logging level.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LogLevel
      */
 

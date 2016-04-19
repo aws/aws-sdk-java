@@ -17,6 +17,8 @@
 package com.amazonaws.services.importexport.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,8 @@ public class ListJobsResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Jobs/member", targetDepth)) {
-                    listJobsResult.getJobs().add(
-                            JobStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    listJobsResult.withJobs(JobStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 

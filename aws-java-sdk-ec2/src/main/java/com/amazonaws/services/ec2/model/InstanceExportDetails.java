@@ -130,8 +130,6 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      * 
      * @param targetEnvironment
      *        The target virtualization environment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ExportEnvironment
      */
 

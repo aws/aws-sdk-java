@@ -178,8 +178,6 @@ public class WafAction implements Serializable, Cloneable {
      *        then continues to inspect the web request based on the remaining
      *        rules in the web ACL. You can't specify <code>COUNT</code> for the
      *        default action for a <code>WebACL</code>.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see WafActionType
      */
 

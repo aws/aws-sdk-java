@@ -114,7 +114,7 @@
                 }
                 <#if mapModel.valueSimple>
                 if (entry.getValue() != null) {
-                    request.addParameter("${parameterPath}." + ${listIndex} + ".${mapModel.valueLocationName}", StringUtils.from${mapModel.valueType}(entry.getValue()));
+                    request.addParameter("${parameterPath}." + ${listIndex} + ".${mapModel.valueLocationName}", StringUtils.from${mapModel.valueModel.variable.simpleType}(entry.getValue()));
                 }
                 <#else>
                 if (entry.getValue() != null) {

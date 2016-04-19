@@ -68,11 +68,23 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     private ApplicationMetrics applicationMetrics;
 
     private SystemStatus system;
-
+    /**
+     * <p>
+     * Information about the most recent deployment to an instance.
+     * </p>
+     */
     private Deployment deployment;
-
+    /**
+     * <p>
+     * The availability zone in which the instance runs.
+     * </p>
+     */
     private String availabilityZone;
-
+    /**
+     * <p>
+     * The instance's type.
+     * </p>
+     */
     private String instanceType;
 
     /**
@@ -417,7 +429,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the most recent deployment to an instance.
+     * </p>
+     * 
      * @param deployment
+     *        Information about the most recent deployment to an instance.
      */
 
     public void setDeployment(Deployment deployment) {
@@ -425,7 +442,11 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the most recent deployment to an instance.
+     * </p>
+     * 
+     * @return Information about the most recent deployment to an instance.
      */
 
     public Deployment getDeployment() {
@@ -433,7 +454,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the most recent deployment to an instance.
+     * </p>
+     * 
      * @param deployment
+     *        Information about the most recent deployment to an instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -444,7 +470,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The availability zone in which the instance runs.
+     * </p>
+     * 
      * @param availabilityZone
+     *        The availability zone in which the instance runs.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -452,7 +483,11 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The availability zone in which the instance runs.
+     * </p>
+     * 
+     * @return The availability zone in which the instance runs.
      */
 
     public String getAvailabilityZone() {
@@ -460,7 +495,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The availability zone in which the instance runs.
+     * </p>
+     * 
      * @param availabilityZone
+     *        The availability zone in which the instance runs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -471,7 +511,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The instance's type.
+     * </p>
+     * 
      * @param instanceType
+     *        The instance's type.
      */
 
     public void setInstanceType(String instanceType) {
@@ -479,7 +524,11 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The instance's type.
+     * </p>
+     * 
+     * @return The instance's type.
      */
 
     public String getInstanceType() {
@@ -487,7 +536,12 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The instance's type.
+     * </p>
+     * 
      * @param instanceType
+     *        The instance's type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

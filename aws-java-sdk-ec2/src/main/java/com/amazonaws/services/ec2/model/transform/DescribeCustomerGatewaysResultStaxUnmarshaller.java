@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeCustomerGatewaysResultStaxUnmarshaller implements
 
                 if (context.testExpression("customerGatewaySet/item",
                         targetDepth)) {
-                    describeCustomerGatewaysResult.getCustomerGateways().add(
-                            CustomerGatewayStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeCustomerGatewaysResult
+                            .withCustomerGateways(CustomerGatewayStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

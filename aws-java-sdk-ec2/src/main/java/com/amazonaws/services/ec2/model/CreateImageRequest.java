@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateImageRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateImage.
+ * </p>
  */
 public class CreateImageRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<CreateImageRequest> {

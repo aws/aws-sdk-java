@@ -245,8 +245,6 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @param state
      *        The rule's state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RuleState
      */
 

@@ -167,8 +167,6 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *        throws a TerminalRoutingStrategyException with the
      *        <a>RoutingStrategy</a> message embedded.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RoutingStrategyType
      */
 

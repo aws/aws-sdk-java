@@ -85,6 +85,13 @@ public class StreamDescriptionJsonUnmarshaller implements
                             .setRetentionPeriodHours(context.getUnmarshaller(
                                     Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("EnhancedMonitoring", targetDepth)) {
+                    context.nextToken();
+                    streamDescription
+                            .setEnhancedMonitoring(new ListUnmarshaller<EnhancedMetrics>(
+                                    EnhancedMetricsJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

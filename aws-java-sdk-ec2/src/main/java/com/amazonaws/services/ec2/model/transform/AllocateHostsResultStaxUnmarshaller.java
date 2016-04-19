@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,8 @@ public class AllocateHostsResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("hostIdSet/item", targetDepth)) {
-                    allocateHostsResult.getHostIds().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    allocateHostsResult.withHostIds(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -53,9 +55,8 @@ public class DescribeSpotInstanceRequestsResultStaxUnmarshaller
                 if (context.testExpression("spotInstanceRequestSet/item",
                         targetDepth)) {
                     describeSpotInstanceRequestsResult
-                            .getSpotInstanceRequests().add(
-                                    SpotInstanceRequestStaxUnmarshaller
-                                            .getInstance().unmarshall(context));
+                            .withSpotInstanceRequests(SpotInstanceRequestStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

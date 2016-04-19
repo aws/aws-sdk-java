@@ -84,6 +84,22 @@ public class StreamDescriptionJsonMarshaller {
                         .writeValue(streamDescription.getRetentionPeriodHours());
             }
 
+            com.amazonaws.internal.SdkInternalList<EnhancedMetrics> enhancedMonitoringList = (com.amazonaws.internal.SdkInternalList<EnhancedMetrics>) streamDescription
+                    .getEnhancedMonitoring();
+            if (!enhancedMonitoringList.isEmpty()
+                    || !enhancedMonitoringList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("EnhancedMonitoring");
+                jsonGenerator.writeStartArray();
+                for (EnhancedMetrics enhancedMonitoringListValue : enhancedMonitoringList) {
+                    if (enhancedMonitoringListValue != null) {
+
+                        EnhancedMetricsJsonMarshaller.getInstance().marshall(
+                                enhancedMonitoringListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

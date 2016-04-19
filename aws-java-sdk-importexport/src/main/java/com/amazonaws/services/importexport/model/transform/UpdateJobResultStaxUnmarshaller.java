@@ -17,6 +17,8 @@
 package com.amazonaws.services.importexport.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -62,9 +64,8 @@ public class UpdateJobResultStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("ArtifactList/member", targetDepth)) {
-                    updateJobResult.getArtifactList().add(
-                            ArtifactStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    updateJobResult.withArtifactList(ArtifactStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

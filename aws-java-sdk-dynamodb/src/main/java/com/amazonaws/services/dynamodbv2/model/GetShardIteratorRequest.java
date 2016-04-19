@@ -464,8 +464,6 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      *        recent data in the shard.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ShardIteratorType
      */
 

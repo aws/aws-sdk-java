@@ -371,8 +371,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <li>ERROR: An error occurred in creating the policy. It should be
      *        removed and recreated.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ScalingStatusType
      */
 
@@ -606,8 +604,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        instance count by the scaling adjustment, read as a percentage.
      *        Positive values scale up while negative values scale down.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ScalingAdjustmentType
      */
 
@@ -715,8 +711,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @param comparisonOperator
      *        Comparison operator to use when measuring a metric against the
      *        threshold value.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComparisonOperatorType
      */
 
@@ -1035,8 +1029,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <li>IdleInstances: number of instances not currently running a
      *        game session.</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MetricName
      */
 

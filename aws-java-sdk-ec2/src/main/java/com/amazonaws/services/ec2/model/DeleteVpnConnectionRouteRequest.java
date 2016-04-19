@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteVpnConnectionRouteRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteVpnConnectionRoute.
+ * </p>
  */
 public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

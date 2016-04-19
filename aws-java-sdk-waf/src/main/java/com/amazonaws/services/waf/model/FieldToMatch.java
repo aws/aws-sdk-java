@@ -320,8 +320,6 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        WAF for inspection. To allow or block requests based on the length
      *        of the body, you can create a size constraint set. For more
      *        information, see <a>CreateSizeConstraintSet</a>.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MatchFieldType
      */
 

@@ -303,8 +303,6 @@ public class SigningCertificate implements Serializable, Cloneable {
      *        The status of the signing certificate. <code>Active</code> means
      *        the key is valid for API calls, while <code>Inactive</code> means
      *        it is not.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusType
      */
 

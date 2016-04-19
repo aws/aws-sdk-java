@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeInstanceHealthResultStaxUnmarshaller implements
 
                 if (context
                         .testExpression("InstanceStates/member", targetDepth)) {
-                    describeInstanceHealthResult.getInstanceStates().add(
-                            InstanceStateStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeInstanceHealthResult
+                            .withInstanceStates(InstanceStateStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -316,8 +316,6 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *        the resource record sets that are associated with the first
      *        traffic policy instance in the next group of <code>MaxItems</code>
      *        traffic policy instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
 

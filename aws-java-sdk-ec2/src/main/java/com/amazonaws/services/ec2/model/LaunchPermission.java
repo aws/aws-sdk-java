@@ -130,8 +130,6 @@ public class LaunchPermission implements Serializable, Cloneable {
      * 
      * @param group
      *        The name of the group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PermissionGroup
      */
 

@@ -469,8 +469,6 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param architecture
      *        The instance architecture: "i386" or "x86_64".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Architecture
      */
 
@@ -546,8 +544,6 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param autoScalingType
      *        For load-based or time-based instances, the type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AutoScalingType
      */
 
@@ -1917,8 +1913,6 @@ public class Instance implements Serializable, Cloneable {
      *        href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RootDeviceType
      */
 
@@ -2473,8 +2467,6 @@ public class Instance implements Serializable, Cloneable {
      * @param virtualizationType
      *        The instance's virtualization type: <code>paravirtual</code> or
      *        <code>hvm</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VirtualizationType
      */
 

@@ -684,8 +684,6 @@ public class DataSource implements Serializable, Cloneable {
      *        <li>COMPLETED - The creation process completed successfully.</li>
      *        <li>DELETED - The <code>DataSource</code> is marked as deleted. It
      *        is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EntityStatus
      */
 

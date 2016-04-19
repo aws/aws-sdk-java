@@ -324,8 +324,6 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @param size
      *        The directory size.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DirectorySize
      */
 
@@ -675,8 +673,6 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @param stage
      *        The current stage of the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DirectoryStage
      */
 
@@ -836,8 +832,6 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @param type
      *        The directory size.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DirectoryType
      */
 
@@ -1072,8 +1066,6 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @param radiusStatus
      *        The status of the RADIUS MFA server connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RadiusStatus
      */
 

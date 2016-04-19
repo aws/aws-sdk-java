@@ -96,8 +96,6 @@ public class ListActionTypesRequest extends AmazonWebServiceRequest implements
      * @param actionOwnerFilter
      *        Filters the list of action types to those created by a specified
      *        entity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionOwner
      */
 

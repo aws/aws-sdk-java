@@ -17,6 +17,8 @@
 package com.amazonaws.services.autoscaling.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,16 +53,16 @@ public class DescribeMetricCollectionTypesResultStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Metrics/member", targetDepth)) {
-                    describeMetricCollectionTypesResult.getMetrics().add(
-                            MetricCollectionTypeStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeMetricCollectionTypesResult
+                            .withMetrics(MetricCollectionTypeStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Granularities/member", targetDepth)) {
-                    describeMetricCollectionTypesResult.getGranularities().add(
-                            MetricGranularityTypeStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeMetricCollectionTypesResult
+                            .withGranularities(MetricGranularityTypeStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

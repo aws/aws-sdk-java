@@ -373,8 +373,6 @@ public class Datapoint implements Serializable, Cloneable {
      * 
      * @param unit
      *        The standard unit used for the datapoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StandardUnit
      */
 

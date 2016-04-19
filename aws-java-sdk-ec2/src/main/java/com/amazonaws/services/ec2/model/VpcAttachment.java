@@ -130,8 +130,6 @@ public class VpcAttachment implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the attachment.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AttachmentStatus
      */
 

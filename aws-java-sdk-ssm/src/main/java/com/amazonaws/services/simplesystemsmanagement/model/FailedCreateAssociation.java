@@ -178,8 +178,6 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      * 
      * @param fault
      *        The source of the failure.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Fault
      */
 

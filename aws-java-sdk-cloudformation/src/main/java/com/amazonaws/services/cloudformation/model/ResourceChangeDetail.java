@@ -360,8 +360,6 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
      *        resource) might change, depending on if the resource is recreated.
      *        If the resource is recreated, it will have a new physical ID, so
      *        all references to that resource will also be updated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EvaluationType
      */
 
@@ -663,8 +661,6 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
      *        have changed. Changes to a nested stack's template aren't visible
      *        to AWS CloudFormation until you run an update on the parent stack.
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeSource
      */
 

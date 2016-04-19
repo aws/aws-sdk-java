@@ -154,8 +154,6 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      * 
      * @param stateValue
      *        The value of the state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StateValue
      */
 

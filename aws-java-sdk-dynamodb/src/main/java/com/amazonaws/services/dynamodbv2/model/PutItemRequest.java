@@ -3284,8 +3284,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        name-value pair, then the content of the old item is returned.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnValue
      */
 
@@ -3376,8 +3374,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
 
     /**
      * @param returnConsumedCapacity
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnConsumedCapacity
      */
 
@@ -3484,8 +3480,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        collections, if any, that were modified during the operation are
      *        returned in the response. If set to <code>NONE</code> (the
      *        default), no statistics are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnItemCollectionMetrics
      */
 
@@ -3856,8 +3850,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        This parameter does not support attributes of type List or Map.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConditionalOperator
      */
 

@@ -155,8 +155,6 @@ public class VpnGateway implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VpnState
      */
 
@@ -232,8 +230,6 @@ public class VpnGateway implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of VPN connection the virtual private gateway supports.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see GatewayType
      */
 

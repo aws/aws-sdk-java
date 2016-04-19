@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -80,9 +82,9 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements
 
                 if (context.testExpression("ListenerDescriptions/member",
                         targetDepth)) {
-                    loadBalancerDescription.getListenerDescriptions().add(
-                            ListenerDescriptionStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    loadBalancerDescription
+                            .withListenerDescriptions(ListenerDescriptionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -95,24 +97,23 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements
 
                 if (context.testExpression("BackendServerDescriptions/member",
                         targetDepth)) {
-                    loadBalancerDescription.getBackendServerDescriptions().add(
-                            BackendServerDescriptionStaxUnmarshaller
+                    loadBalancerDescription
+                            .withBackendServerDescriptions(BackendServerDescriptionStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("AvailabilityZones/member",
                         targetDepth)) {
-                    loadBalancerDescription.getAvailabilityZones().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    loadBalancerDescription
+                            .withAvailabilityZones(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Subnets/member", targetDepth)) {
-                    loadBalancerDescription.getSubnets().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    loadBalancerDescription.withSubnets(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -123,9 +124,9 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Instances/member", targetDepth)) {
-                    loadBalancerDescription.getInstances().add(
-                            InstanceStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    loadBalancerDescription
+                            .withInstances(InstanceStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -145,9 +146,9 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements
 
                 if (context
                         .testExpression("SecurityGroups/member", targetDepth)) {
-                    loadBalancerDescription.getSecurityGroups().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    loadBalancerDescription
+                            .withSecurityGroups(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

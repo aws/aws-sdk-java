@@ -241,8 +241,6 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the HSM.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see HsmStatus
      */
 
@@ -469,8 +467,6 @@ public class DescribeHsmResult implements Serializable, Cloneable {
 
     /**
      * @param subscriptionType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SubscriptionType
      */
 

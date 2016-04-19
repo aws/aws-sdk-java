@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -57,9 +59,9 @@ public class BackendServerDescriptionStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("PolicyNames/member", targetDepth)) {
-                    backendServerDescription.getPolicyNames().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    backendServerDescription
+                            .withPolicyNames(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

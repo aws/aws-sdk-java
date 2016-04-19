@@ -199,8 +199,6 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @param platform
      *        The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Platform
      */
 

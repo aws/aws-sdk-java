@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class ListSAMLProvidersResultStaxUnmarshaller implements
 
                 if (context.testExpression("SAMLProviderList/member",
                         targetDepth)) {
-                    listSAMLProvidersResult.getSAMLProviderList().add(
-                            SAMLProviderListEntryStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listSAMLProvidersResult
+                            .withSAMLProviderList(SAMLProviderListEntryStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

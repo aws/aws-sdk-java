@@ -113,8 +113,6 @@ public class DiskImageDescription implements Serializable, Cloneable {
      * 
      * @param format
      *        The disk image format.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DiskImageFormat
      */
 

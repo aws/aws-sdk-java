@@ -110,8 +110,6 @@ public class RuleUpdate implements Serializable, Cloneable {
      *        Specify <code>INSERT</code> to add a <code>Predicate</code> to a
      *        <code>Rule</code>. Use <code>DELETE</code> to remove a
      *        <code>Predicate</code> from a <code>Rule</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
 

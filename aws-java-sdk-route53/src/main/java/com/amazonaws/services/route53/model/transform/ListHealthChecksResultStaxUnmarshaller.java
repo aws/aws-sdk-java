@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class ListHealthChecksResultStaxUnmarshaller implements
 
                 if (context.testExpression("HealthChecks/HealthCheck",
                         targetDepth)) {
-                    listHealthChecksResult.getHealthChecks().add(
-                            HealthCheckStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listHealthChecksResult
+                            .withHealthChecks(HealthCheckStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

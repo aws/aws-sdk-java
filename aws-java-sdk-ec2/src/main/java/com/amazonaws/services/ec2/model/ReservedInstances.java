@@ -216,8 +216,6 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type on which the Reserved Instance can be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceType
      */
 
@@ -580,8 +578,6 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param productDescription
      *        The Reserved Instance product platform description.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RIProductDescription
      */
 
@@ -658,8 +654,6 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the Reserved Instance purchase.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReservedInstanceState
      */
 
@@ -811,8 +805,6 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param instanceTenancy
      *        The tenancy of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Tenancy
      */
 
@@ -904,8 +896,6 @@ public class ReservedInstances implements Serializable, Cloneable {
      *        The currency of the Reserved Instance. It's specified using ISO
      *        4217 standard currency codes. At this time, the only supported
      *        currency is <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CurrencyCodeValues
      */
 
@@ -985,8 +975,6 @@ public class ReservedInstances implements Serializable, Cloneable {
      * 
      * @param offeringType
      *        The Reserved Instance offering type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OfferingTypeValues
      */
 

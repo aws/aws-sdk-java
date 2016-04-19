@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeRegionsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeRegions.
+ * </p>
  */
 public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DescribeRegionsRequest> {

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesListingsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeReservedInstancesListings.
+ * </p>
  */
 public class DescribeReservedInstancesListingsRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,

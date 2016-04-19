@@ -9,9 +9,18 @@
             <#local mapModel = member.mapModel />
 
             ${mapModel.templateType} ${variable.variableName} = ${getMember}();
-            for (Map.Entry<${mapModel.keyType},${mapModel.valueType}> entry : ${variable.variableName}.entrySet()) {
-                if (entry.getValue() != null) {
-                    request.addParameter(StringUtils.from${mapModel.keyType}(entry.getKey()), StringUtils.from${mapModel.valueType}(entry.getValue()));
+            if(${variable.variableName} != null) {
+                for (Map.Entry<${mapModel.keyType},${mapModel.valueType}> entry : ${variable.variableName}.entrySet()) {
+                    if (entry.getValue() != null) {
+                        <#if mapModel.valueModel.list>
+                            for(String member : entry.getValue()) {
+                                request.addParameter(StringUtils.from${mapModel.keyType}(entry.getKey()),
+                                  StringUtils.from${mapModel.valueModel.listModel.memberType}(member));
+                            }
+                        <#else>
+                            request.addParameter(StringUtils.from${mapModel.keyType}(entry.getKey()), StringUtils.from${mapModel.valueType}(entry.getValue()));
+                        </#if>
+                    }
                 }
             }
         <#elseif member.list>

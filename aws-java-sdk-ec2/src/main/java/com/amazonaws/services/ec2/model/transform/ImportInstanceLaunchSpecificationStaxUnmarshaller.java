@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -59,17 +61,17 @@ public class ImportInstanceLaunchSpecificationStaxUnmarshaller
 
                 if (context.testExpression("GroupName/SecurityGroup",
                         targetDepth)) {
-                    importInstanceLaunchSpecification.getGroupNames().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    importInstanceLaunchSpecification
+                            .withGroupNames(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("GroupId/SecurityGroupId",
                         targetDepth)) {
-                    importInstanceLaunchSpecification.getGroupIds().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    importInstanceLaunchSpecification
+                            .withGroupIds(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
 

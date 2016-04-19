@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("vpcs/item", targetDepth)) {
-                    describeVpcClassicLinkDnsSupportResult.getVpcs().add(
-                            ClassicLinkDnsSupportStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeVpcClassicLinkDnsSupportResult
+                            .withVpcs(ClassicLinkDnsSupportStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

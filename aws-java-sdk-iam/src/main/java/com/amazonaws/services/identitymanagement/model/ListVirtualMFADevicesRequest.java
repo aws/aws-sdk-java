@@ -137,8 +137,6 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest
      *        do not specify an <code>AssignmentStatus</code>, the action
      *        defaults to <code>Any</code> which lists both assigned and
      *        unassigned virtual MFA devices.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AssignmentStatusType
      */
 

@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -96,7 +98,7 @@ public class GetIdentityPoliciesResultStaxUnmarshaller implements
                 if (context.testExpression("Policies/entry", targetDepth)) {
                     Entry<String, String> entry = PoliciesMapEntryUnmarshaller
                             .getInstance().unmarshall(context);
-                    getIdentityPoliciesResult.getPolicies().put(entry.getKey(),
+                    getIdentityPoliciesResult.addPoliciesEntry(entry.getKey(),
                             entry.getValue());
                     continue;
                 }

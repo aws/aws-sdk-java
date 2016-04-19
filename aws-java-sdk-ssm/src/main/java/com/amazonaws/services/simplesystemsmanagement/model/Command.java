@@ -431,8 +431,6 @@ public class Command implements Serializable, Cloneable {
      * 
      * @param status
      *        The status of the command.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CommandStatus
      */
 

@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudwatch.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -82,24 +84,22 @@ public class MetricAlarmStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("OKActions/member", targetDepth)) {
-                    metricAlarm.getOKActions().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    metricAlarm.withOKActions(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("AlarmActions/member", targetDepth)) {
-                    metricAlarm.getAlarmActions().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    metricAlarm.withAlarmActions(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("InsufficientDataActions/member",
                         targetDepth)) {
-                    metricAlarm.getInsufficientDataActions().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    metricAlarm
+                            .withInsufficientDataActions(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -147,9 +147,8 @@ public class MetricAlarmStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Dimensions/member", targetDepth)) {
-                    metricAlarm.getDimensions().add(
-                            DimensionStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    metricAlarm.withDimensions(DimensionStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

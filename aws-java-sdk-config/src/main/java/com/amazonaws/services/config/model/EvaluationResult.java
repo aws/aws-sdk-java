@@ -233,8 +233,6 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        values. AWS Config does not support the
      *        <code>INSUFFICIENT_DATA</code> value for the
      *        <code>EvaluationResult</code> data type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComplianceType
      */
 

@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DeregisterInstancesFromLoadBalancerResultStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Instances/member", targetDepth)) {
-                    deregisterInstancesFromLoadBalancerResult.getInstances()
-                            .add(InstanceStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    deregisterInstancesFromLoadBalancerResult
+                            .withInstances(InstanceStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

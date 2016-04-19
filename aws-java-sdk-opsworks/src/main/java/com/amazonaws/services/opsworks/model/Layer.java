@@ -318,8 +318,6 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @param type
      *        The layer type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LayerType
      */
 

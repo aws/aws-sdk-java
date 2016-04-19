@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,17 +54,15 @@ public class CancelSpotFleetRequestsResultStaxUnmarshaller implements
                 if (context.testExpression("unsuccessfulFleetRequestSet/item",
                         targetDepth)) {
                     cancelSpotFleetRequestsResult
-                            .getUnsuccessfulFleetRequests().add(
-                                    CancelSpotFleetRequestsErrorItemStaxUnmarshaller
-                                            .getInstance().unmarshall(context));
+                            .withUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItemStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("successfulFleetRequestSet/item",
                         targetDepth)) {
                     cancelSpotFleetRequestsResult
-                            .getSuccessfulFleetRequests()
-                            .add(CancelSpotFleetRequestsSuccessItemStaxUnmarshaller
+                            .withSuccessfulFleetRequests(CancelSpotFleetRequestsSuccessItemStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

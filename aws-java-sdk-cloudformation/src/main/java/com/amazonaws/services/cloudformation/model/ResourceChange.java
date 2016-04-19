@@ -163,8 +163,6 @@ public class ResourceChange implements Serializable, Cloneable {
      *        The action that AWS CloudFormation takes on the resource, such as
      *        <code>Add</code> (adds a new resource), <code>Modify</code>
      *        (changes a resource), or <code>Remove</code> (deletes a resource).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
 
@@ -519,8 +517,6 @@ public class ResourceChange implements Serializable, Cloneable {
      *        impact. A <code>RequiresRecreation</code> value of
      *        <code>Always</code> has the most impact, followed by
      *        <code>Conditionally</code>, and then <code>Never</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Replacement
      */
 

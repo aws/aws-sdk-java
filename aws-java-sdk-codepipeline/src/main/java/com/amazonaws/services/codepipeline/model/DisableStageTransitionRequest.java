@@ -229,8 +229,6 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      *        into the stage and being processed by the actions in that stage
      *        (inbound), or prevented from transitioning from the stage after
      *        they have been processed by the actions in that stage (outbound).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StageTransitionType
      */
 

@@ -196,8 +196,6 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      *        Specifies the public key encoding format to use in the response.
      *        To retrieve the public key in ssh-rsa format, use <code>SSH</code>
      *        . To retrieve the public key in PEM format, use <code>PEM</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EncodingType
      */
 

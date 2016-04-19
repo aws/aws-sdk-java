@@ -20,7 +20,7 @@
                         continue;
                     }
                     if (context.testExpression("${memberModel.mapModel.valueLocationName}", targetDepth)) {
-                        entry.setValue(${memberModel.mapModel.valueType}StaxUnmarshaller.getInstance().unmarshall(context));
+                        entry.setValue(${memberModel.mapModel.valueModel.variable.simpleType}StaxUnmarshaller.getInstance().unmarshall(context));
                         continue;
                     }
                 } else if (xmlEvent.isEndElement()) {

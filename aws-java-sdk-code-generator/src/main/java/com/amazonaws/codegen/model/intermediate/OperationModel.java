@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.amazonaws.codegen.internal.DocumentationUtils;
 import com.amazonaws.codegen.internal.Utils;
+import com.amazonaws.codegen.model.service.AuthType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class OperationModel extends DocumentationModel {
@@ -42,6 +43,8 @@ public class OperationModel extends DocumentationModel {
     private List<SimpleMethodFormModel> simpleMethods;
 
     private boolean hasBlobMemberAsPayload;
+
+    private boolean isAuthenticated = true;
 
     public String getOperationName() {
         return operationName;
@@ -73,6 +76,14 @@ public class OperationModel extends DocumentationModel {
 
     public String getAsyncDocumentationWithHandler(final Metadata md) {
         return getDocumentation(MethodType.ASYNC_WITH_HANDLER, md);
+    }
+
+    public boolean isAuthenticated() {
+        return isAuthenticated;
+    }
+
+    public void setIsAuthenticated(boolean isAuthenticated) {
+        this.isAuthenticated = isAuthenticated;
     }
 
     private static enum MethodType {

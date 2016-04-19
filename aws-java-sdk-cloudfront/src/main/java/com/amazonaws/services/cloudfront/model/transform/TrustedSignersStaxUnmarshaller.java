@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudfront.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -63,9 +65,8 @@ public class TrustedSignersStaxUnmarshaller implements
 
                 if (context.testExpression("Items/AwsAccountNumber",
                         targetDepth)) {
-                    trustedSigners.getItems().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    trustedSigners.withItems(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

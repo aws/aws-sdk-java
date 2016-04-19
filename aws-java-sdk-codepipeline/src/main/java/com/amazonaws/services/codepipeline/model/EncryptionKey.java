@@ -86,8 +86,6 @@ public class EncryptionKey implements Serializable, Cloneable {
 
     /**
      * @param type
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EncryptionKeyType
      */
 

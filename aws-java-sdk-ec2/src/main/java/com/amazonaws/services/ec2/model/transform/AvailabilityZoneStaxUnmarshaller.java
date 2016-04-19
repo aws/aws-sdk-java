@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -68,8 +70,8 @@ public class AvailabilityZoneStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("messageSet/item", targetDepth)) {
-                    availabilityZone.getMessages().add(
-                            AvailabilityZoneMessageStaxUnmarshaller
+                    availabilityZone
+                            .withMessages(AvailabilityZoneMessageStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

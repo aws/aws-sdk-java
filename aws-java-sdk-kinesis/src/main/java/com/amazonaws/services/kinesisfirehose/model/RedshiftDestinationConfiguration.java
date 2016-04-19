@@ -64,13 +64,18 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-     * specified in
-     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the
-     * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
-     * doesn't support these compression formats.
+     * specified in <b>RedshiftDestinationConfiguration.S3Configuration</b>
+     * because the Amazon Redshift <code>COPY</code> operation that reads from
+     * the S3 bucket doesn't support these compression formats.
      * </p>
      */
     private S3DestinationConfiguration s3Configuration;
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     */
+    private CloudWatchLoggingOptions cloudWatchLoggingOptions;
 
     /**
      * <p>
@@ -287,10 +292,9 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-     * specified in
-     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the
-     * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
-     * doesn't support these compression formats.
+     * specified in <b>RedshiftDestinationConfiguration.S3Configuration</b>
+     * because the Amazon Redshift <code>COPY</code> operation that reads from
+     * the S3 bucket doesn't support these compression formats.
      * </p>
      * 
      * @param s3Configuration
@@ -300,9 +304,9 @@ public class RedshiftDestinationConfiguration implements Serializable,
      *        <p>
      *        The compression formats <code>SNAPPY</code> or <code>ZIP</code>
      *        cannot be specified in
-     *        <code>RedshiftDestinationConfiguration.S3Configuration</code>
-     *        because the Amazon Redshift <code>COPY</code> operation that reads
-     *        from the S3 bucket doesn't support these compression formats.
+     *        <b>RedshiftDestinationConfiguration.S3Configuration</b> because
+     *        the Amazon Redshift <code>COPY</code> operation that reads from
+     *        the S3 bucket doesn't support these compression formats.
      */
 
     public void setS3Configuration(S3DestinationConfiguration s3Configuration) {
@@ -317,10 +321,9 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-     * specified in
-     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the
-     * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
-     * doesn't support these compression formats.
+     * specified in <b>RedshiftDestinationConfiguration.S3Configuration</b>
+     * because the Amazon Redshift <code>COPY</code> operation that reads from
+     * the S3 bucket doesn't support these compression formats.
      * </p>
      * 
      * @return The S3 configuration for the intermediate location from which
@@ -329,10 +332,9 @@ public class RedshiftDestinationConfiguration implements Serializable,
      *         <p>
      *         The compression formats <code>SNAPPY</code> or <code>ZIP</code>
      *         cannot be specified in
-     *         <code>RedshiftDestinationConfiguration.S3Configuration</code>
-     *         because the Amazon Redshift <code>COPY</code> operation that
-     *         reads from the S3 bucket doesn't support these compression
-     *         formats.
+     *         <b>RedshiftDestinationConfiguration.S3Configuration</b> because
+     *         the Amazon Redshift <code>COPY</code> operation that reads from
+     *         the S3 bucket doesn't support these compression formats.
      */
 
     public S3DestinationConfiguration getS3Configuration() {
@@ -347,10 +349,9 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-     * specified in
-     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the
-     * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
-     * doesn't support these compression formats.
+     * specified in <b>RedshiftDestinationConfiguration.S3Configuration</b>
+     * because the Amazon Redshift <code>COPY</code> operation that reads from
+     * the S3 bucket doesn't support these compression formats.
      * </p>
      * 
      * @param s3Configuration
@@ -360,9 +361,9 @@ public class RedshiftDestinationConfiguration implements Serializable,
      *        <p>
      *        The compression formats <code>SNAPPY</code> or <code>ZIP</code>
      *        cannot be specified in
-     *        <code>RedshiftDestinationConfiguration.S3Configuration</code>
-     *        because the Amazon Redshift <code>COPY</code> operation that reads
-     *        from the S3 bucket doesn't support these compression formats.
+     *        <b>RedshiftDestinationConfiguration.S3Configuration</b> because
+     *        the Amazon Redshift <code>COPY</code> operation that reads from
+     *        the S3 bucket doesn't support these compression formats.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -370,6 +371,49 @@ public class RedshiftDestinationConfiguration implements Serializable,
     public RedshiftDestinationConfiguration withS3Configuration(
             S3DestinationConfiguration s3Configuration) {
         setS3Configuration(s3Configuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Describes CloudWatch logging options for your delivery stream.
+     */
+
+    public void setCloudWatchLoggingOptions(
+            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+        this.cloudWatchLoggingOptions = cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @return Describes CloudWatch logging options for your delivery stream.
+     */
+
+    public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
+        return this.cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Describes CloudWatch logging options for your delivery stream.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RedshiftDestinationConfiguration withCloudWatchLoggingOptions(
+            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+        setCloudWatchLoggingOptions(cloudWatchLoggingOptions);
         return this;
     }
 
@@ -396,7 +440,10 @@ public class RedshiftDestinationConfiguration implements Serializable,
         if (getPassword() != null)
             sb.append("Password: " + getPassword() + ",");
         if (getS3Configuration() != null)
-            sb.append("S3Configuration: " + getS3Configuration());
+            sb.append("S3Configuration: " + getS3Configuration() + ",");
+        if (getCloudWatchLoggingOptions() != null)
+            sb.append("CloudWatchLoggingOptions: "
+                    + getCloudWatchLoggingOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -443,6 +490,13 @@ public class RedshiftDestinationConfiguration implements Serializable,
         if (other.getS3Configuration() != null
                 && other.getS3Configuration().equals(this.getS3Configuration()) == false)
             return false;
+        if (other.getCloudWatchLoggingOptions() == null
+                ^ this.getCloudWatchLoggingOptions() == null)
+            return false;
+        if (other.getCloudWatchLoggingOptions() != null
+                && other.getCloudWatchLoggingOptions().equals(
+                        this.getCloudWatchLoggingOptions()) == false)
+            return false;
         return true;
     }
 
@@ -468,6 +522,10 @@ public class RedshiftDestinationConfiguration implements Serializable,
                 * hashCode
                 + ((getS3Configuration() == null) ? 0 : getS3Configuration()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudWatchLoggingOptions() == null) ? 0
+                        : getCloudWatchLoggingOptions().hashCode());
         return hashCode;
     }
 

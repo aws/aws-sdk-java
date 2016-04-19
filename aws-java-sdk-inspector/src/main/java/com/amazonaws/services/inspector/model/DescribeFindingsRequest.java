@@ -181,8 +181,6 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
      *        The locale that you want to translate a finding description(s),
      *        recommendation(s), and the short description(s) that identify the
      *        finding(s) into.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Locale
      */
 

@@ -409,8 +409,6 @@ public class PortMapping implements Serializable, Cloneable {
      *        The protocol used for the port mapping. Valid values are
      *        <code>tcp</code> and <code>udp</code>. The default is
      *        <code>tcp</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TransportProtocol
      */
 

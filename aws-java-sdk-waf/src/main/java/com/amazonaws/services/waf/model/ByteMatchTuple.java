@@ -1367,8 +1367,6 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *        <p>
      *        Specify <code>NONE</code> if you don't want to perform any text
      *        transformations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TextTransformation
      */
 
@@ -2040,8 +2038,6 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *        <p>
      *        The value of <code>TargetString</code> must appear at the end of
      *        the specified part of the web request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PositionalConstraint
      */
 

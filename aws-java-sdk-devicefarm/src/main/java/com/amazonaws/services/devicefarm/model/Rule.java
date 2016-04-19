@@ -352,8 +352,6 @@ public class Rule implements Serializable, Cloneable {
      *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeviceAttribute
      */
 
@@ -692,8 +690,6 @@ public class Rule implements Serializable, Cloneable {
      *        NOT_IN: The not-in operator.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RuleOperator
      */
 

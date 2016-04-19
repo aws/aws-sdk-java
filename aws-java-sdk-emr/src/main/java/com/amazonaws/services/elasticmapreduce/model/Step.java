@@ -243,8 +243,6 @@ public class Step implements Serializable, Cloneable {
      *        This specifies what action to take when the cluster step fails.
      *        Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and
      *        CONTINUE.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionOnFailure
      */
 

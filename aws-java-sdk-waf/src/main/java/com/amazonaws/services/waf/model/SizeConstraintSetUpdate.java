@@ -127,8 +127,6 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable {
      *        <code>DELETE</code> to remove a
      *        <code>SizeConstraintSetUpdate</code> from a
      *        <code>SizeConstraintSet</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
 

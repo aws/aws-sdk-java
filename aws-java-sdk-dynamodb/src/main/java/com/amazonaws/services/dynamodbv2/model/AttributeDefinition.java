@@ -219,8 +219,6 @@ public class AttributeDefinition implements Serializable, Cloneable {
      *        <li><code>S</code> - the attribute is of type String</li>
      *        <li><code>N</code> - the attribute is of type Number</li>
      *        <li><code>B</code> - the attribute is of type Binary</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ScalarAttributeType
      */
 

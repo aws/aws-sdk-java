@@ -232,8 +232,6 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @param evalDecision
      *        The result of the simulation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PolicyEvaluationDecisionType
      */
 

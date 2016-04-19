@@ -5,7 +5,7 @@ package ${metadata.packageName}.model;
 import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
-import com.amazonaws.services.ec2.model.transform.${shape.shapeName}Marshaller;
+import ${metadata.packageName}.model.transform.${shape.shapeName}Marshaller;
 
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>

@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -68,23 +70,21 @@ public class NetworkAclStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("entrySet/item", targetDepth)) {
-                    networkAcl.getEntries().add(
-                            NetworkAclEntryStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    networkAcl.withEntries(NetworkAclEntryStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("associationSet/item", targetDepth)) {
-                    networkAcl.getAssociations().add(
-                            NetworkAclAssociationStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    networkAcl
+                            .withAssociations(NetworkAclAssociationStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    networkAcl.getTags().add(
-                            TagStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    networkAcl.withTags(TagStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 

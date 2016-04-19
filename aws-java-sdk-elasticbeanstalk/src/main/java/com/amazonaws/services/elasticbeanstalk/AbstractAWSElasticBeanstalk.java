@@ -49,6 +49,12 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
+    public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(
+            ApplyEnvironmentManagedActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CheckDNSAvailabilityResult checkDNSAvailability(
             CheckDNSAvailabilityRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -154,6 +160,18 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     @Override
     public DescribeEnvironmentHealthResult describeEnvironmentHealth(
             DescribeEnvironmentHealthRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
+            DescribeEnvironmentManagedActionHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(
+            DescribeEnvironmentManagedActionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

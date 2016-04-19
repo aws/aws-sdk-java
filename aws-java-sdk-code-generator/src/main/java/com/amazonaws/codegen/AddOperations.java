@@ -27,6 +27,7 @@ import com.amazonaws.codegen.model.intermediate.ExceptionModel;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
 import com.amazonaws.codegen.model.intermediate.ReturnTypeModel;
 import com.amazonaws.codegen.model.intermediate.VariableModel;
+import com.amazonaws.codegen.model.service.AuthType;
 import com.amazonaws.codegen.model.service.ErrorMap;
 import com.amazonaws.codegen.model.service.Input;
 import com.amazonaws.codegen.model.service.Member;
@@ -57,6 +58,7 @@ final class AddOperations {
             operationModel.setOperationName(operationName);
             operationModel.setDeprecated(op.isDeprecated());
             operationModel.setDocumentation(op.getDocumentation());
+            operationModel.setIsAuthenticated(isAuthenticated(op));
 
             final Input input = op.getInput();
             if (input != null) {
@@ -105,6 +107,10 @@ final class AddOperations {
         }
 
         return javaOperationModels;
+    }
+
+    private static boolean isAuthenticated(Operation op) {
+        return op.getAuthType() == null || op.getAuthType() != AuthType.NONE;
     }
 
     private static String getOperationDocumentation(final Output output, final Shape outputShape) {

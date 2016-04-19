@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -119,9 +121,8 @@ public class ReservedInstancesStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    reservedInstances.getTags().add(
-                            TagStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    reservedInstances.withTags(TagStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -145,9 +146,9 @@ public class ReservedInstancesStaxUnmarshaller implements
 
                 if (context
                         .testExpression("recurringCharges/item", targetDepth)) {
-                    reservedInstances.getRecurringCharges().add(
-                            RecurringChargeStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    reservedInstances
+                            .withRecurringCharges(RecurringChargeStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

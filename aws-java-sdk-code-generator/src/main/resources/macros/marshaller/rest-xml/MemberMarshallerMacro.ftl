@@ -28,19 +28,64 @@
       ${listModel.templateType} ${listVariable} = ${getMember}();
       if (${listVariable} != null) {
   </#if>
-          xmlWriter.startElement("${http.marshallLocationName}");
-
-          for (${listModel.memberType} ${loopVariable} : ${listVariable}) {
-              xmlWriter.startElement("${listModel.memberLocationName}");
-            <#if listModel.simple>
+  <#if member.http.flattened>
+      for (${listModel.memberType} ${loopVariable} : ${listVariable}) {
+          <#local memberLocationName = listModel.memberLocationName!member.name />
+          xmlWriter.startElement("${memberLocationName}");
+          <#if listModel.simple>
               xmlWriter.value(${loopVariable});
-            <#else>
+          <#else>
               <@MemberMarshallerMacro.content customConfig listModel.memberType loopVariable shapes/>
-            </#if>
-              xmlWriter.endElement();
-          }
+          </#if>
           xmlWriter.endElement();
       }
+     }
+  <#else>
+      xmlWriter.startElement("${http.marshallLocationName}");
+
+      for (${listModel.memberType} ${loopVariable} : ${listVariable}) {
+          <#local memberLocationName = listModel.memberLocationName!"member" />
+          xmlWriter.startElement("${memberLocationName}");
+          <#if listModel.simple>
+              xmlWriter.value(${loopVariable});
+          <#else>
+              <@MemberMarshallerMacro.content customConfig listModel.memberType loopVariable shapes/>
+          </#if>
+          xmlWriter.endElement();
+      }
+      xmlWriter.endElement();
+    }
+  </#if>
+<#elseif member.map>
+    <#local mapModel = member.mapModel />
+    <#-- More explicit name in order to avoid variable name collision -->
+    <#local mapVariable = shapeName?uncap_first + member.name + "Map"/>
+    <#local loopVariable = mapVariable + "Value"/>
+
+    ${mapModel.templateImplType} ${mapVariable} = (${mapModel.templateImplType})${getMember}();
+    <#if customConfig.useAutoConstructMap>
+        if (!${mapVariable}.isEmpty() || !${mapVariable}.isAutoConstruct()) {
+    <#else>
+        if (${mapVariable} != null) {
+    </#if>
+    xmlWriter.startElement("${http.marshallLocationName}");
+
+    for (${mapModel.entryType} ${loopVariable} : ${mapVariable}.entrySet()) {
+        xmlWriter.startElement("entry");
+        xmlWriter.startElement("${mapModel.keyLocationName}");
+        xmlWriter.value(${loopVariable}.getKey());
+        xmlWriter.endElement();
+        xmlWriter.startElement("${mapModel.valueLocationName}");
+        <#if mapModel.valueSimple>
+            xmlWriter.value(${loopVariable}.getValue());
+        <#else>
+            <@MemberMarshallerMacro.content customConfig mapModel.valueType loopVariable shapes/>
+        </#if>
+        xmlWriter.endElement();
+        xmlWriter.endElement();
+    }
+    xmlWriter.endElement();
+ }
 <#else>
     <#local variable = member.variable />
     ${variable.variableType} ${variable.variableName} = ${getMember}();

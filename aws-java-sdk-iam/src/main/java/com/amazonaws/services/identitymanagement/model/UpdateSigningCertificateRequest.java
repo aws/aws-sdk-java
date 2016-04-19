@@ -245,8 +245,6 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *        <code>Active</code> means the certificate can be used for API
      *        calls to AWS, while <code>Inactive</code> means the certificate
      *        cannot be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusType
      */
 

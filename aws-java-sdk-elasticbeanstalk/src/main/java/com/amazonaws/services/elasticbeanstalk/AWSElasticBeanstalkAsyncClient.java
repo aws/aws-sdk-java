@@ -26,14 +26,9 @@ import com.amazonaws.annotation.ThreadSafe;
  * <p>
  * <fullname>AWS Elastic Beanstalk</fullname>
  * <p>
- * This is the AWS Elastic Beanstalk API Reference. This guide provides detailed
- * information about AWS Elastic Beanstalk actions, data types, parameters, and
- * errors.
- * </p>
- * <p>
- * AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy,
- * and manage scalable, fault-tolerant applications running on Amazon Web
- * Services cloud resources.
+ * AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage
+ * scalable, fault-tolerant applications running on the Amazon Web Services
+ * cloud.
  * </p>
  * <p>
  * For more information about this product, go to the <a
@@ -346,6 +341,42 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
 
         return abortEnvironmentUpdateAsync(new AbortEnvironmentUpdateRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyEnvironmentManagedActionResult> applyEnvironmentManagedActionAsync(
+            ApplyEnvironmentManagedActionRequest request) {
+
+        return applyEnvironmentManagedActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyEnvironmentManagedActionResult> applyEnvironmentManagedActionAsync(
+            final ApplyEnvironmentManagedActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ApplyEnvironmentManagedActionRequest, ApplyEnvironmentManagedActionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ApplyEnvironmentManagedActionResult>() {
+                    @Override
+                    public ApplyEnvironmentManagedActionResult call()
+                            throws Exception {
+                        ApplyEnvironmentManagedActionResult result;
+
+                        try {
+                            result = applyEnvironmentManagedAction(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override
@@ -979,6 +1010,78 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
 
                         try {
                             result = describeEnvironmentHealth(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEnvironmentManagedActionHistoryResult> describeEnvironmentManagedActionHistoryAsync(
+            DescribeEnvironmentManagedActionHistoryRequest request) {
+
+        return describeEnvironmentManagedActionHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEnvironmentManagedActionHistoryResult> describeEnvironmentManagedActionHistoryAsync(
+            final DescribeEnvironmentManagedActionHistoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionHistoryRequest, DescribeEnvironmentManagedActionHistoryResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeEnvironmentManagedActionHistoryResult>() {
+                    @Override
+                    public DescribeEnvironmentManagedActionHistoryResult call()
+                            throws Exception {
+                        DescribeEnvironmentManagedActionHistoryResult result;
+
+                        try {
+                            result = describeEnvironmentManagedActionHistory(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEnvironmentManagedActionsResult> describeEnvironmentManagedActionsAsync(
+            DescribeEnvironmentManagedActionsRequest request) {
+
+        return describeEnvironmentManagedActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEnvironmentManagedActionsResult> describeEnvironmentManagedActionsAsync(
+            final DescribeEnvironmentManagedActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionsRequest, DescribeEnvironmentManagedActionsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeEnvironmentManagedActionsResult>() {
+                    @Override
+                    public DescribeEnvironmentManagedActionsResult call()
+                            throws Exception {
+                        DescribeEnvironmentManagedActionsResult result;
+
+                        try {
+                            result = describeEnvironmentManagedActions(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

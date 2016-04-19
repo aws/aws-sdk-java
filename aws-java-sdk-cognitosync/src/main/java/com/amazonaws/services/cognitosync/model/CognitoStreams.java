@@ -236,8 +236,6 @@ public class CognitoStreams implements Serializable, Cloneable {
      *        DISABLED - Streaming of updates to identity pool is disabled. Bulk
      *        publish will also fail if StreamingStatus is DISABLED.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamingStatus
      */
 

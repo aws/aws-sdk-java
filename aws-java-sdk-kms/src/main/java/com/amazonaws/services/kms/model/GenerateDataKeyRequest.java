@@ -395,8 +395,6 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * @param keySpec
      *        Value that identifies the encryption algorithm and key size to
      *        generate a data key for. Currently this can be AES_128 or AES_256.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DataKeySpec
      */
 

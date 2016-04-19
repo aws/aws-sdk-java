@@ -782,8 +782,6 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceType
      */
 
@@ -1027,8 +1025,6 @@ public class Instance implements Serializable, Cloneable {
      * @param platform
      *        The value is <code>Windows</code> for Windows instances; otherwise
      *        blank.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PlatformValues
      */
 
@@ -1351,8 +1347,6 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param architecture
      *        The architecture of the image.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ArchitectureValues
      */
 
@@ -1436,8 +1430,6 @@ public class Instance implements Serializable, Cloneable {
      * @param rootDeviceType
      *        The root device type used by the AMI. The AMI can use an EBS
      *        volume or an instance store volume.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeviceType
      */
 
@@ -1643,8 +1635,6 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param virtualizationType
      *        The virtualization type of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VirtualizationType
      */
 
@@ -1721,8 +1711,6 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param instanceLifecycle
      *        Indicates whether this is a Spot instance or a Scheduled Instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceLifecycleType
      */
 
@@ -2156,8 +2144,6 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @param hypervisor
      *        The hypervisor type of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see HypervisorType
      */
 

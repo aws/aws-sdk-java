@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateCustomerGatewayRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateCustomerGateway.
+ * </p>
  */
 public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -165,8 +167,6 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      * @param type
      *        The type of VPN connection that this customer gateway supports (
      *        <code>ipsec.1</code>).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see GatewayType
      */
 

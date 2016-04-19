@@ -627,8 +627,6 @@ public class StreamRecord implements Serializable, Cloneable {
      *        images of the item.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamViewType
      */
 

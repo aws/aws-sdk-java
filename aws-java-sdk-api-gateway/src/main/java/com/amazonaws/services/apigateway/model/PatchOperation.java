@@ -124,8 +124,6 @@ public class PatchOperation implements Serializable, Cloneable {
      *        A patch operation whose value indicates the operation to perform.
      *        Its value MUST be one of "add", "remove", "replace", "move",
      *        "copy", or "test"; other values are errors.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Op
      */
 

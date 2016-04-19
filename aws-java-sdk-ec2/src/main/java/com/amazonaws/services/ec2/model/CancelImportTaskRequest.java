@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CancelImportTaskRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CancelImportTask.
+ * </p>
  */
 public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

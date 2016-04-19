@@ -327,8 +327,6 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @param configurationItemStatus
      *        The configuration item status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConfigurationItemStatus
      */
 
@@ -561,8 +559,6 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @param resourceType
      *        The type of AWS resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceType
      */
 

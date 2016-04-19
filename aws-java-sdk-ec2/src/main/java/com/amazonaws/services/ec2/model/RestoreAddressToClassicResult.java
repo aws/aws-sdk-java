@@ -19,7 +19,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of RestoreAddressToClassic.
+ * </p>
  */
 public class RestoreAddressToClassicResult implements Serializable, Cloneable {
 
@@ -87,8 +89,6 @@ public class RestoreAddressToClassicResult implements Serializable, Cloneable {
      * 
      * @param status
      *        The move status for the IP address.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Status
      */
 

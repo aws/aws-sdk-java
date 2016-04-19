@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -60,9 +62,8 @@ public class DescribeScheduledInstanceAvailabilityResultStaxUnmarshaller
                 if (context.testExpression(
                         "scheduledInstanceAvailabilitySet/item", targetDepth)) {
                     describeScheduledInstanceAvailabilityResult
-                            .getScheduledInstanceAvailabilitySet().add(
-                                    ScheduledInstanceAvailabilityStaxUnmarshaller
-                                            .getInstance().unmarshall(context));
+                            .withScheduledInstanceAvailabilitySet(ScheduledInstanceAvailabilityStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

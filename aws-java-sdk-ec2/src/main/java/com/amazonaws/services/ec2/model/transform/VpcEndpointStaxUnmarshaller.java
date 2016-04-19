@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -80,9 +82,8 @@ public class VpcEndpointStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("routeTableIdSet/item", targetDepth)) {
-                    vpcEndpoint.getRouteTableIds().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    vpcEndpoint.withRouteTableIds(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

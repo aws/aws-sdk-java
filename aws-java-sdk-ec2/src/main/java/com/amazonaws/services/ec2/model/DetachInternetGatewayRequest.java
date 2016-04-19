@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DetachInternetGatewayRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DetachInternetGateway.
+ * </p>
  */
 public class DetachInternetGatewayRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

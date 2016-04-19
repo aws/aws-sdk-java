@@ -644,8 +644,6 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        <li> <code>COMPLETED</code> - The request completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>MLModel</code> is marked as
      *        deleted. It is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EntityStatus
      */
 
@@ -1309,8 +1307,6 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        "Is this an e-commerce website?"</li>
      *        <li>MULTICLASS -- Produces more than two possible results. For
      *        example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MLModelType
      */
 

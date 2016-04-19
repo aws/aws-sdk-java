@@ -95,8 +95,6 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the instance group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceGroupState
      */
 

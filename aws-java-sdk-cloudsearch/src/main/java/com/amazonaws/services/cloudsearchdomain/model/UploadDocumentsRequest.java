@@ -175,8 +175,6 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>application/json</li>
      *        <li>application/xml</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ContentType
      */
 

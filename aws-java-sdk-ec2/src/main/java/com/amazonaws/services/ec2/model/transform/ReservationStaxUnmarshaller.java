@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -68,23 +70,20 @@ public class ReservationStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("groupSet/item", targetDepth)) {
-                    reservation.getGroups().add(
-                            GroupIdentifierStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    reservation.withGroups(GroupIdentifierStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("instancesSet/item", targetDepth)) {
-                    reservation.getInstances().add(
-                            InstanceStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    reservation.withInstances(InstanceStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("groupName/GroupName", targetDepth)) {
-                    reservation.getGroupNames().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    reservation.withGroupNames(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

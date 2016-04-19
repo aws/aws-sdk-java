@@ -2646,8 +2646,6 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>{"NS":["6", "2", "1"]}</code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComparisonOperator
      */
 

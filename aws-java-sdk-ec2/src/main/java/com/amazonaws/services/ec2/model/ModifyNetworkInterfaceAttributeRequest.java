@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyNetworkInterfaceAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ModifyNetworkInterfaceAttribute.
+ * </p>
  */
 public class ModifyNetworkInterfaceAttributeRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,

@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -68,9 +70,8 @@ public class SingleInstanceHealthStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Causes/member", targetDepth)) {
-                    singleInstanceHealth.getCauses().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    singleInstanceHealth.withCauses(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

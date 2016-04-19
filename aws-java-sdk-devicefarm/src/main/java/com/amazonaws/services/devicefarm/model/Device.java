@@ -467,8 +467,6 @@ public class Device implements Serializable, Cloneable {
      *        TABLET: The tablet form factor.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeviceFormFactor
      */
 
@@ -689,8 +687,6 @@ public class Device implements Serializable, Cloneable {
      *        IOS: The iOS platform.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DevicePlatform
      */
 

@@ -337,9 +337,16 @@ public class Metadata {
 
     public boolean isJsonProtocol() {
         return protocol == Protocol.REST_JSON ||
-                protocol == Protocol.JSON ||
-                protocol == Protocol.CBOR ||
-                protocol == Protocol.REST_CBOR;
+               protocol == Protocol.JSON ||
+               protocol == Protocol.CBOR ||
+               protocol == Protocol.REST_CBOR;
+    }
+
+    public boolean isXmlProtocol() {
+        return protocol == Protocol.QUERY ||
+               protocol == Protocol.REST_XML ||
+               protocol == Protocol.EC2;
+
     }
 
     public String getEndpointPrefix() {

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.UnassignPrivateIpAddressesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for UnassignPrivateIpAddresses.
+ * </p>
  */
 public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

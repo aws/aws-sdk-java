@@ -25,14 +25,9 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * <p>
  * <fullname>AWS Elastic Beanstalk</fullname>
  * <p>
- * This is the AWS Elastic Beanstalk API Reference. This guide provides detailed
- * information about AWS Elastic Beanstalk actions, data types, parameters, and
- * errors.
- * </p>
- * <p>
- * AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy,
- * and manage scalable, fault-tolerant applications running on Amazon Web
- * Services cloud resources.
+ * AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage
+ * scalable, fault-tolerant applications running on the Amazon Web Services
+ * cloud.
  * </p>
  * <p>
  * For more information about this product, go to the <a
@@ -104,6 +99,46 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      */
     java.util.concurrent.Future<Void> abortEnvironmentUpdateAsync(
             com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Applies a scheduled managed action immediately. A managed action can be
+     * applied only if its status is <code>Scheduled</code>. Get the status and
+     * action ID of a managed action with
+     * <a>DescribeEnvironmentManagedActions</a>.
+     * </p>
+     * 
+     * @param applyEnvironmentManagedActionRequest
+     *        Request to execute a scheduled managed action immediately.
+     * @return A Java Future containing the result of the
+     *         ApplyEnvironmentManagedAction operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.ApplyEnvironmentManagedAction
+     */
+    java.util.concurrent.Future<ApplyEnvironmentManagedActionResult> applyEnvironmentManagedActionAsync(
+            ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest);
+
+    /**
+     * <p>
+     * Applies a scheduled managed action immediately. A managed action can be
+     * applied only if its status is <code>Scheduled</code>. Get the status and
+     * action ID of a managed action with
+     * <a>DescribeEnvironmentManagedActions</a>.
+     * </p>
+     * 
+     * @param applyEnvironmentManagedActionRequest
+     *        Request to execute a scheduled managed action immediately.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ApplyEnvironmentManagedAction operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.ApplyEnvironmentManagedAction
+     */
+    java.util.concurrent.Future<ApplyEnvironmentManagedActionResult> applyEnvironmentManagedActionAsync(
+            ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest,
+            com.amazonaws.handlers.AsyncHandler<ApplyEnvironmentManagedActionRequest, ApplyEnvironmentManagedActionResult> asyncHandler);
 
     /**
      * <p>
@@ -816,6 +851,81 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
     java.util.concurrent.Future<DescribeEnvironmentHealthResult> describeEnvironmentHealthAsync(
             DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentHealthRequest, DescribeEnvironmentHealthResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists an environment's completed and failed managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionHistoryRequest
+     *        Request to list completed and failed managed actions.
+     * @return A Java Future containing the result of the
+     *         DescribeEnvironmentManagedActionHistory operation returned by the
+     *         service.
+     * @sample AWSElasticBeanstalkAsync.DescribeEnvironmentManagedActionHistory
+     */
+    java.util.concurrent.Future<DescribeEnvironmentManagedActionHistoryResult> describeEnvironmentManagedActionHistoryAsync(
+            DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest);
+
+    /**
+     * <p>
+     * Lists an environment's completed and failed managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionHistoryRequest
+     *        Request to list completed and failed managed actions.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeEnvironmentManagedActionHistory operation returned by the
+     *         service.
+     * @sample 
+     *         AWSElasticBeanstalkAsyncHandler.DescribeEnvironmentManagedActionHistory
+     */
+    java.util.concurrent.Future<DescribeEnvironmentManagedActionHistoryResult> describeEnvironmentManagedActionHistoryAsync(
+            DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionHistoryRequest, DescribeEnvironmentManagedActionHistoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists an environment's upcoming and in-progress managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionsRequest
+     *        Request to list an environment's upcoming and in-progress managed
+     *        actions.
+     * @return A Java Future containing the result of the
+     *         DescribeEnvironmentManagedActions operation returned by the
+     *         service.
+     * @sample AWSElasticBeanstalkAsync.DescribeEnvironmentManagedActions
+     */
+    java.util.concurrent.Future<DescribeEnvironmentManagedActionsResult> describeEnvironmentManagedActionsAsync(
+            DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest);
+
+    /**
+     * <p>
+     * Lists an environment's upcoming and in-progress managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionsRequest
+     *        Request to list an environment's upcoming and in-progress managed
+     *        actions.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeEnvironmentManagedActions operation returned by the
+     *         service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeEnvironmentManagedActions
+     */
+    java.util.concurrent.Future<DescribeEnvironmentManagedActionsResult> describeEnvironmentManagedActionsAsync(
+            DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionsRequest, DescribeEnvironmentManagedActionsResult> asyncHandler);
 
     /**
      * <p>

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVpcEndpointsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeVpcEndpoints.
+ * </p>
  */
 public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

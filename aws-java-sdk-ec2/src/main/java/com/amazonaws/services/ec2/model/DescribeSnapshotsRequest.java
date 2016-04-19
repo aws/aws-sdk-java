@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeSnapshotsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeSnapshots.
+ * </p>
  */
 public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

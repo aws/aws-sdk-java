@@ -149,8 +149,6 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * 
      * @param originProtocolPolicy
      *        The origin protocol policy to apply to your origin.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OriginProtocolPolicy
      */
 

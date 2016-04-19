@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeNetworkInterfacesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeNetworkInterfaces.
+ * </p>
  */
 public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

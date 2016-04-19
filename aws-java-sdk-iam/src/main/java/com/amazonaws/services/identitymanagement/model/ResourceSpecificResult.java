@@ -177,8 +177,6 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @param evalResourceDecision
      *        The result of the simulation of the simulated API action on the
      *        resource specified in <code>EvalResourceName</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PolicyEvaluationDecisionType
      */
 

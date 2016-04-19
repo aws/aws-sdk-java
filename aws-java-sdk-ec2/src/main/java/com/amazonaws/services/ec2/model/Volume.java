@@ -75,8 +75,9 @@ public class Volume implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for
+     * Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      * <code>standard</code> for Magnetic volumes.
      * </p>
      */
@@ -84,24 +85,25 @@ public class Volume implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports.
-     * For Provisioned IOPS (SSD) volumes, this represents the number of IOPS
-     * that are provisioned for the volume. For General Purpose (SSD) volumes,
-     * this represents the baseline performance of the volume and the rate at
-     * which the volume accumulates I/O credits for bursting. For more
-     * information on General Purpose (SSD) baseline performance, I/O credits,
-     * and bursting, see <a href=
+     * For Provisioned IOPS SSD volumes, this represents the number of IOPS that
+     * are provisioned for the volume. For General Purpose SSD volumes, this
+     * represents the baseline performance of the volume and the rate at which
+     * the volume accumulates I/O credits for bursting. For more information on
+     * General Purpose SSD baseline performance, I/O credits, and bursting, see
+     * <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes and
-     * 3 to 10000 for General Purpose (SSD) volumes.
+     * Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS
+     * for <code>gp2</code> volumes.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
-     * <code>standard</code> or <code>gp2</code> volumes.
+     * <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.
      * </p>
      */
     private Integer iops;
@@ -335,8 +337,6 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @param state
      *        The volume state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VolumeState
      */
 
@@ -560,15 +560,17 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for
+     * Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * 
      * @param volumeType
      *        The volume type. This can be <code>gp2</code> for General Purpose
-     *        (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     *        volumes, or <code>standard</code> for Magnetic volumes.
+     *        SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code>
+     *        for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     *        <code>standard</code> for Magnetic volumes.
      * @see VolumeType
      */
 
@@ -578,14 +580,16 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for
+     * Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * 
      * @return The volume type. This can be <code>gp2</code> for General Purpose
-     *         (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     *         volumes, or <code>standard</code> for Magnetic volumes.
+     *         SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code>
+     *         for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     *         <code>standard</code> for Magnetic volumes.
      * @see VolumeType
      */
 
@@ -595,15 +599,17 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for
+     * Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * 
      * @param volumeType
      *        The volume type. This can be <code>gp2</code> for General Purpose
-     *        (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     *        volumes, or <code>standard</code> for Magnetic volumes.
+     *        SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code>
+     *        for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     *        <code>standard</code> for Magnetic volumes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see VolumeType
@@ -616,17 +622,17 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for
+     * Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * 
      * @param volumeType
      *        The volume type. This can be <code>gp2</code> for General Purpose
-     *        (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     *        volumes, or <code>standard</code> for Magnetic volumes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code>
+     *        for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     *        <code>standard</code> for Magnetic volumes.
      * @see VolumeType
      */
 
@@ -636,15 +642,17 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
+     * The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for
+     * Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * 
      * @param volumeType
      *        The volume type. This can be <code>gp2</code> for General Purpose
-     *        (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     *        volumes, or <code>standard</code> for Magnetic volumes.
+     *        SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code>
+     *        for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
+     *        <code>standard</code> for Magnetic volumes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see VolumeType
@@ -658,46 +666,47 @@ public class Volume implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports.
-     * For Provisioned IOPS (SSD) volumes, this represents the number of IOPS
-     * that are provisioned for the volume. For General Purpose (SSD) volumes,
-     * this represents the baseline performance of the volume and the rate at
-     * which the volume accumulates I/O credits for bursting. For more
-     * information on General Purpose (SSD) baseline performance, I/O credits,
-     * and bursting, see <a href=
+     * For Provisioned IOPS SSD volumes, this represents the number of IOPS that
+     * are provisioned for the volume. For General Purpose SSD volumes, this
+     * represents the baseline performance of the volume and the rate at which
+     * the volume accumulates I/O credits for bursting. For more information on
+     * General Purpose SSD baseline performance, I/O credits, and bursting, see
+     * <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes and
-     * 3 to 10000 for General Purpose (SSD) volumes.
+     * Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS
+     * for <code>gp2</code> volumes.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
-     * <code>standard</code> or <code>gp2</code> volumes.
+     * <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.
      * </p>
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) that the volume
-     *        supports. For Provisioned IOPS (SSD) volumes, this represents the
+     *        supports. For Provisioned IOPS SSD volumes, this represents the
      *        number of IOPS that are provisioned for the volume. For General
-     *        Purpose (SSD) volumes, this represents the baseline performance of
+     *        Purpose SSD volumes, this represents the baseline performance of
      *        the volume and the rate at which the volume accumulates I/O
-     *        credits for bursting. For more information on General Purpose
-     *        (SSD) baseline performance, I/O credits, and bursting, see <a
-     *        href=
+     *        credits for bursting. For more information on General Purpose SSD
+     *        baseline performance, I/O credits, and bursting, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      *        >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute
      *        Cloud User Guide</i>.</p>
      *        <p>
-     *        Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD)
-     *        volumes and 3 to 10000 for General Purpose (SSD) volumes.
+     *        Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000
+     *        IOPS for <code>gp2</code> volumes.
      *        </p>
      *        <p>
      *        Condition: This parameter is required for requests to create
      *        <code>io1</code> volumes; it is not used in requests to create
-     *        <code>standard</code> or <code>gp2</code> volumes.
+     *        <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     *        <code>standard</code> volumes.
      */
 
     public void setIops(Integer iops) {
@@ -707,45 +716,46 @@ public class Volume implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports.
-     * For Provisioned IOPS (SSD) volumes, this represents the number of IOPS
-     * that are provisioned for the volume. For General Purpose (SSD) volumes,
-     * this represents the baseline performance of the volume and the rate at
-     * which the volume accumulates I/O credits for bursting. For more
-     * information on General Purpose (SSD) baseline performance, I/O credits,
-     * and bursting, see <a href=
+     * For Provisioned IOPS SSD volumes, this represents the number of IOPS that
+     * are provisioned for the volume. For General Purpose SSD volumes, this
+     * represents the baseline performance of the volume and the rate at which
+     * the volume accumulates I/O credits for bursting. For more information on
+     * General Purpose SSD baseline performance, I/O credits, and bursting, see
+     * <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes and
-     * 3 to 10000 for General Purpose (SSD) volumes.
+     * Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS
+     * for <code>gp2</code> volumes.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
-     * <code>standard</code> or <code>gp2</code> volumes.
+     * <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.
      * </p>
      * 
      * @return The number of I/O operations per second (IOPS) that the volume
-     *         supports. For Provisioned IOPS (SSD) volumes, this represents the
+     *         supports. For Provisioned IOPS SSD volumes, this represents the
      *         number of IOPS that are provisioned for the volume. For General
-     *         Purpose (SSD) volumes, this represents the baseline performance
-     *         of the volume and the rate at which the volume accumulates I/O
-     *         credits for bursting. For more information on General Purpose
-     *         (SSD) baseline performance, I/O credits, and bursting, see <a
-     *         href=
+     *         Purpose SSD volumes, this represents the baseline performance of
+     *         the volume and the rate at which the volume accumulates I/O
+     *         credits for bursting. For more information on General Purpose SSD
+     *         baseline performance, I/O credits, and bursting, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      *         >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute
      *         Cloud User Guide</i>.</p>
      *         <p>
-     *         Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD)
-     *         volumes and 3 to 10000 for General Purpose (SSD) volumes.
+     *         Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000
+     *         IOPS for <code>gp2</code> volumes.
      *         </p>
      *         <p>
      *         Condition: This parameter is required for requests to create
      *         <code>io1</code> volumes; it is not used in requests to create
-     *         <code>standard</code> or <code>gp2</code> volumes.
+     *         <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     *         <code>standard</code> volumes.
      */
 
     public Integer getIops() {
@@ -755,46 +765,47 @@ public class Volume implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports.
-     * For Provisioned IOPS (SSD) volumes, this represents the number of IOPS
-     * that are provisioned for the volume. For General Purpose (SSD) volumes,
-     * this represents the baseline performance of the volume and the rate at
-     * which the volume accumulates I/O credits for bursting. For more
-     * information on General Purpose (SSD) baseline performance, I/O credits,
-     * and bursting, see <a href=
+     * For Provisioned IOPS SSD volumes, this represents the number of IOPS that
+     * are provisioned for the volume. For General Purpose SSD volumes, this
+     * represents the baseline performance of the volume and the rate at which
+     * the volume accumulates I/O credits for bursting. For more information on
+     * General Purpose SSD baseline performance, I/O credits, and bursting, see
+     * <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes and
-     * 3 to 10000 for General Purpose (SSD) volumes.
+     * Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS
+     * for <code>gp2</code> volumes.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create
      * <code>io1</code> volumes; it is not used in requests to create
-     * <code>standard</code> or <code>gp2</code> volumes.
+     * <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.
      * </p>
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) that the volume
-     *        supports. For Provisioned IOPS (SSD) volumes, this represents the
+     *        supports. For Provisioned IOPS SSD volumes, this represents the
      *        number of IOPS that are provisioned for the volume. For General
-     *        Purpose (SSD) volumes, this represents the baseline performance of
+     *        Purpose SSD volumes, this represents the baseline performance of
      *        the volume and the rate at which the volume accumulates I/O
-     *        credits for bursting. For more information on General Purpose
-     *        (SSD) baseline performance, I/O credits, and bursting, see <a
-     *        href=
+     *        credits for bursting. For more information on General Purpose SSD
+     *        baseline performance, I/O credits, and bursting, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      *        >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute
      *        Cloud User Guide</i>.</p>
      *        <p>
-     *        Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD)
-     *        volumes and 3 to 10000 for General Purpose (SSD) volumes.
+     *        Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000
+     *        IOPS for <code>gp2</code> volumes.
      *        </p>
      *        <p>
      *        Condition: This parameter is required for requests to create
      *        <code>io1</code> volumes; it is not used in requests to create
-     *        <code>standard</code> or <code>gp2</code> volumes.
+     *        <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     *        <code>standard</code> volumes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -21,6 +21,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.internal.XmlWriter;
+import com.amazonaws.services.s3.model.BucketAccelerateConfiguration;
 import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.NoncurrentVersionTransition;
@@ -79,6 +80,22 @@ public class BucketConfigurationXmlFactory {
 
         xml.end();
 
+        return xml.getBytes();
+    }
+
+    /**
+     * Converts the specified accelerate configuration into an XML byte array.
+     *
+     * @param accelerateConfiguration
+     *            The configuration to convert.
+     *
+     * @return The XML byte array representation.
+     */
+    public byte[] convertToXmlByteArray(BucketAccelerateConfiguration accelerateConfiguration) {
+        XmlWriter xml = new XmlWriter();
+        xml.start("AccelerateConfiguration", "xmlns", Constants.XML_NAMESPACE);
+        xml.start("Status").value(accelerateConfiguration.getStatus()).end();
+        xml.end();
         return xml.getBytes();
     }
 

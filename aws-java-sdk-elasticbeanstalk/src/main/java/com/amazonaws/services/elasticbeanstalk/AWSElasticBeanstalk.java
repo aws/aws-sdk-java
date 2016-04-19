@@ -25,14 +25,9 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * <p>
  * <fullname>AWS Elastic Beanstalk</fullname>
  * <p>
- * This is the AWS Elastic Beanstalk API Reference. This guide provides detailed
- * information about AWS Elastic Beanstalk actions, data types, parameters, and
- * errors.
- * </p>
- * <p>
- * AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy,
- * and manage scalable, fault-tolerant applications running on Amazon Web
- * Services cloud resources.
+ * AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage
+ * scalable, fault-tolerant applications running on the Amazon Web Services
+ * cloud.
  * </p>
  * <p>
  * For more information about this product, go to the <a
@@ -137,6 +132,27 @@ public interface AWSElasticBeanstalk {
      * @see #abortEnvironmentUpdate(AbortEnvironmentUpdateRequest)
      */
     void abortEnvironmentUpdate();
+
+    /**
+     * <p>
+     * Applies a scheduled managed action immediately. A managed action can be
+     * applied only if its status is <code>Scheduled</code>. Get the status and
+     * action ID of a managed action with
+     * <a>DescribeEnvironmentManagedActions</a>.
+     * </p>
+     * 
+     * @param applyEnvironmentManagedActionRequest
+     *        Request to execute a scheduled managed action immediately.
+     * @return Result of the ApplyEnvironmentManagedAction operation returned by
+     *         the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @throws ManagedActionInvalidStateException
+     *         Cannot modify the managed action in its current state.
+     * @sample AWSElasticBeanstalk.ApplyEnvironmentManagedAction
+     */
+    ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(
+            ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest);
 
     /**
      * <p>
@@ -503,6 +519,39 @@ public interface AWSElasticBeanstalk {
      */
     DescribeEnvironmentHealthResult describeEnvironmentHealth(
             DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest);
+
+    /**
+     * <p>
+     * Lists an environment's completed and failed managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionHistoryRequest
+     *        Request to list completed and failed managed actions.
+     * @return Result of the DescribeEnvironmentManagedActionHistory operation
+     *         returned by the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActionHistory
+     */
+    DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
+            DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest);
+
+    /**
+     * <p>
+     * Lists an environment's upcoming and in-progress managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionsRequest
+     *        Request to list an environment's upcoming and in-progress managed
+     *        actions.
+     * @return Result of the DescribeEnvironmentManagedActions operation
+     *         returned by the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActions
+     */
+    DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(
+            DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest);
 
     /**
      * <p>

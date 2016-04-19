@@ -90,8 +90,6 @@ public class FailedItemDetails implements Serializable, Cloneable {
      * 
      * @param failureCode
      *        The status code of a failed item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see FailedItemErrorCode
      */
 

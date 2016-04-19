@@ -95,8 +95,6 @@ public class WebACLUpdate implements Serializable, Cloneable {
      * @param action
      *        Specifies whether to insert a <code>Rule</code> into or delete a
      *        <code>Rule</code> from a <code>WebACL</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
 

@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudfront.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -81,9 +83,9 @@ public class DistributionListStaxUnmarshaller implements
 
                 if (context.testExpression("Items/DistributionSummary",
                         targetDepth)) {
-                    distributionList.getItems().add(
-                            DistributionSummaryStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    distributionList
+                            .withItems(DistributionSummaryStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

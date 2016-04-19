@@ -17,6 +17,8 @@
 package com.amazonaws.services.sns.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,8 +53,8 @@ public class ListPlatformApplicationsResultStaxUnmarshaller implements
 
                 if (context.testExpression("PlatformApplications/member",
                         targetDepth)) {
-                    listPlatformApplicationsResult.getPlatformApplications()
-                            .add(PlatformApplicationStaxUnmarshaller
+                    listPlatformApplicationsResult
+                            .withPlatformApplications(PlatformApplicationStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

@@ -415,8 +415,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        browsers support SNI, but some browsers still in use don't support
      *        SNI. Do not specify a value for SSLSupportMethod if you specified
      *        true for CloudFrontDefaultCertificate.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SSLSupportMethod
      */
 
@@ -599,8 +597,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        IAMCertificateId) and if you're using SNI (if you specify sni-only
      *        for SSLSupportMethod), you must specify TLSv1 for
      *        MinimumProtocolVersion.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MinimumProtocolVersion
      */
 
@@ -748,8 +744,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        Note: this field is deprecated. Please use one of
      *        [ACMCertificateArn, IAMCertificateId,
      *        CloudFrontDefaultCertificate].
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CertificateSource
      */
     @Deprecated

@@ -74,6 +74,12 @@ public class S3DestinationUpdateJsonMarshaller {
                         s3DestinationUpdate.getEncryptionConfiguration(),
                         jsonGenerator);
             }
+            if (s3DestinationUpdate.getCloudWatchLoggingOptions() != null) {
+                jsonGenerator.writeFieldName("CloudWatchLoggingOptions");
+                CloudWatchLoggingOptionsJsonMarshaller.getInstance().marshall(
+                        s3DestinationUpdate.getCloudWatchLoggingOptions(),
+                        jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

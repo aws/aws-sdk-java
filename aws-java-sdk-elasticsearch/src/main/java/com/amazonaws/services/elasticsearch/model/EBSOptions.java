@@ -157,8 +157,6 @@ public class EBSOptions implements Serializable, Cloneable {
      * 
      * @param volumeType
      *        Specifies the volume type for EBS-based storage.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VolumeType
      */
 

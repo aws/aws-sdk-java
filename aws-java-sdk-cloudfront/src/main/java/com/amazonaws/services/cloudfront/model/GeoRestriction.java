@@ -193,8 +193,6 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        you do not want CloudFront to distribute your content. -
      *        whitelist: The Location elements specify the countries in which
      *        you want CloudFront to distribute your content.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see GeoRestrictionType
      */
 

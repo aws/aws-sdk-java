@@ -456,8 +456,6 @@ public class App implements Serializable, Cloneable {
      * 
      * @param type
      *        The app type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AppType
      */
 

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeNetworkInterfaceAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeNetworkInterfaceAttribute.
+ * </p>
  */
 public class DescribeNetworkInterfaceAttributeRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -135,8 +137,6 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      * 
      * @param attribute
      *        The attribute of the network interface.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see NetworkInterfaceAttribute
      */
 

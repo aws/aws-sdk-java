@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -64,9 +66,9 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("groupSet/item", targetDepth)) {
-                    spotFleetLaunchSpecification.getSecurityGroups().add(
-                            GroupIdentifierStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    spotFleetLaunchSpecification
+                            .withSecurityGroups(GroupIdentifierStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -114,9 +116,9 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements
 
                 if (context.testExpression("blockDeviceMapping/item",
                         targetDepth)) {
-                    spotFleetLaunchSpecification.getBlockDeviceMappings().add(
-                            BlockDeviceMappingStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    spotFleetLaunchSpecification
+                            .withBlockDeviceMappings(BlockDeviceMappingStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -136,8 +138,8 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements
 
                 if (context.testExpression("networkInterfaceSet/item",
                         targetDepth)) {
-                    spotFleetLaunchSpecification.getNetworkInterfaces().add(
-                            InstanceNetworkInterfaceSpecificationStaxUnmarshaller
+                    spotFleetLaunchSpecification
+                            .withNetworkInterfaces(InstanceNetworkInterfaceSpecificationStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

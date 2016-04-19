@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeKeyPairsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeKeyPairs.
+ * </p>
  */
 public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

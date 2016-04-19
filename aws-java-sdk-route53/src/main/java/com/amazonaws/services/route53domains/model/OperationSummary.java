@@ -192,8 +192,6 @@ public class OperationSummary implements Serializable, Cloneable {
      *        The current status of the requested operation in the system.</p>
      *        <p>
      *        Type: String
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OperationStatus
      */
 
@@ -346,8 +344,6 @@ public class OperationSummary implements Serializable, Cloneable {
      *        <code>UPDATE_DOMAIN_CONTACT</code> |
      *        <code>UPDATE_NAMESERVER</code> |
      *        <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OperationType
      */
 

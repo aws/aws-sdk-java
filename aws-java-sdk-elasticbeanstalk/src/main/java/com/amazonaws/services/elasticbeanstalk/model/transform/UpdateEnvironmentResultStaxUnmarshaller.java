@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -166,9 +168,9 @@ public class UpdateEnvironmentResultStaxUnmarshaller implements
 
                 if (context.testExpression("EnvironmentLinks/member",
                         targetDepth)) {
-                    updateEnvironmentResult.getEnvironmentLinks().add(
-                            EnvironmentLinkStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    updateEnvironmentResult
+                            .withEnvironmentLinks(EnvironmentLinkStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

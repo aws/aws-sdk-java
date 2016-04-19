@@ -1300,8 +1300,6 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * 
      * @param statistic
      *        The statistic to apply to the alarm's associated metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Statistic
      */
 
@@ -1580,8 +1578,6 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        <b>Note:</b> If you specify a unit, you must use a unit that is
      *        appropriate for the metric. Otherwise, this can cause an Amazon
      *        CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StandardUnit
      */
 
@@ -1782,8 +1778,6 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        The arithmetic operation to use when comparing the specified
      *        <code>Statistic</code> and <code>Threshold</code>. The specified
      *        <code>Statistic</code> value is used as the first operand.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComparisonOperator
      */
 

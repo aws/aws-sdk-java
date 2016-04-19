@@ -34,10 +34,17 @@ public class AccountSettings implements Serializable, Cloneable {
     private String awsAccountNumber;
     /**
      * <p>
-     * Returns the unmetered devices you have purchased.
+     * Returns the unmetered devices you have purchased or want to purchase.
      * </p>
      */
     private java.util.Map<String, Integer> unmeteredDevices;
+    /**
+     * <p>
+     * Returns the unmetered remote access devices you have purchased or want to
+     * purchase.
+     * </p>
+     */
+    private java.util.Map<String, Integer> unmeteredRemoteAccessDevices;
 
     /**
      * <p>
@@ -88,10 +95,11 @@ public class AccountSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the unmetered devices you have purchased.
+     * Returns the unmetered devices you have purchased or want to purchase.
      * </p>
      * 
-     * @return Returns the unmetered devices you have purchased.
+     * @return Returns the unmetered devices you have purchased or want to
+     *         purchase.
      */
 
     public java.util.Map<String, Integer> getUnmeteredDevices() {
@@ -100,11 +108,12 @@ public class AccountSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the unmetered devices you have purchased.
+     * Returns the unmetered devices you have purchased or want to purchase.
      * </p>
      * 
      * @param unmeteredDevices
-     *        Returns the unmetered devices you have purchased.
+     *        Returns the unmetered devices you have purchased or want to
+     *        purchase.
      */
 
     public void setUnmeteredDevices(
@@ -114,11 +123,12 @@ public class AccountSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the unmetered devices you have purchased.
+     * Returns the unmetered devices you have purchased or want to purchase.
      * </p>
      * 
      * @param unmeteredDevices
-     *        Returns the unmetered devices you have purchased.
+     *        Returns the unmetered devices you have purchased or want to
+     *        purchase.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -151,6 +161,78 @@ public class AccountSettings implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Returns the unmetered remote access devices you have purchased or want to
+     * purchase.
+     * </p>
+     * 
+     * @return Returns the unmetered remote access devices you have purchased or
+     *         want to purchase.
+     */
+
+    public java.util.Map<String, Integer> getUnmeteredRemoteAccessDevices() {
+        return unmeteredRemoteAccessDevices;
+    }
+
+    /**
+     * <p>
+     * Returns the unmetered remote access devices you have purchased or want to
+     * purchase.
+     * </p>
+     * 
+     * @param unmeteredRemoteAccessDevices
+     *        Returns the unmetered remote access devices you have purchased or
+     *        want to purchase.
+     */
+
+    public void setUnmeteredRemoteAccessDevices(
+            java.util.Map<String, Integer> unmeteredRemoteAccessDevices) {
+        this.unmeteredRemoteAccessDevices = unmeteredRemoteAccessDevices;
+    }
+
+    /**
+     * <p>
+     * Returns the unmetered remote access devices you have purchased or want to
+     * purchase.
+     * </p>
+     * 
+     * @param unmeteredRemoteAccessDevices
+     *        Returns the unmetered remote access devices you have purchased or
+     *        want to purchase.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public AccountSettings withUnmeteredRemoteAccessDevices(
+            java.util.Map<String, Integer> unmeteredRemoteAccessDevices) {
+        setUnmeteredRemoteAccessDevices(unmeteredRemoteAccessDevices);
+        return this;
+    }
+
+    public AccountSettings addUnmeteredRemoteAccessDevicesEntry(String key,
+            Integer value) {
+        if (null == this.unmeteredRemoteAccessDevices) {
+            this.unmeteredRemoteAccessDevices = new java.util.HashMap<String, Integer>();
+        }
+        if (this.unmeteredRemoteAccessDevices.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.unmeteredRemoteAccessDevices.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into UnmeteredRemoteAccessDevices. &lt;p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     */
+
+    public AccountSettings clearUnmeteredRemoteAccessDevicesEntries() {
+        this.unmeteredRemoteAccessDevices = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -165,7 +247,10 @@ public class AccountSettings implements Serializable, Cloneable {
         if (getAwsAccountNumber() != null)
             sb.append("AwsAccountNumber: " + getAwsAccountNumber() + ",");
         if (getUnmeteredDevices() != null)
-            sb.append("UnmeteredDevices: " + getUnmeteredDevices());
+            sb.append("UnmeteredDevices: " + getUnmeteredDevices() + ",");
+        if (getUnmeteredRemoteAccessDevices() != null)
+            sb.append("UnmeteredRemoteAccessDevices: "
+                    + getUnmeteredRemoteAccessDevices());
         sb.append("}");
         return sb.toString();
     }
@@ -194,6 +279,13 @@ public class AccountSettings implements Serializable, Cloneable {
                 && other.getUnmeteredDevices().equals(
                         this.getUnmeteredDevices()) == false)
             return false;
+        if (other.getUnmeteredRemoteAccessDevices() == null
+                ^ this.getUnmeteredRemoteAccessDevices() == null)
+            return false;
+        if (other.getUnmeteredRemoteAccessDevices() != null
+                && other.getUnmeteredRemoteAccessDevices().equals(
+                        this.getUnmeteredRemoteAccessDevices()) == false)
+            return false;
         return true;
     }
 
@@ -210,6 +302,10 @@ public class AccountSettings implements Serializable, Cloneable {
                 * hashCode
                 + ((getUnmeteredDevices() == null) ? 0 : getUnmeteredDevices()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getUnmeteredRemoteAccessDevices() == null) ? 0
+                        : getUnmeteredRemoteAccessDevices().hashCode());
         return hashCode;
     }
 

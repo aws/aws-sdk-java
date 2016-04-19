@@ -414,8 +414,6 @@ public class RadiusSettings implements Serializable, Cloneable {
      * 
      * @param authenticationProtocol
      *        The protocol specified for your RADIUS endpoints.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RadiusAuthenticationProtocol
      */
 

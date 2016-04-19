@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVolumeAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeVolumeAttribute.
+ * </p>
  */
 public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -133,8 +135,6 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest
      * 
      * @param attribute
      *        The instance attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VolumeAttributeName
      */
 

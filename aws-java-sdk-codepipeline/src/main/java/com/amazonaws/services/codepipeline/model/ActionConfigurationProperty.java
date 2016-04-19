@@ -564,8 +564,6 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of the configuration property.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionConfigurationPropertyType
      */
 

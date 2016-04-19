@@ -152,8 +152,6 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      * 
      * @param reportFormat
      *        The format (MIME type) of the credential report.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReportFormatType
      */
 

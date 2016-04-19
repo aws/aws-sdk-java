@@ -14,12 +14,12 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.http.HttpMethodName;
+
 import java.io.InputStream;
 import java.net.URI;
 import java.util.List;
 import java.util.Map;
-
-import com.amazonaws.http.HttpMethodName;
 
 /**
  * Represents a sign-able request being sent to an Amazon Web Service, including the
@@ -43,14 +43,14 @@ public interface SignableRequest<T> {
      * @param value
      *            The header's value.
      */
-    public void addHeader(String name, String value);
+    void addHeader(String name, String value);
 
     /**
      * Returns a map of all the headers included in this request.
      *
      * @return A map of all the headers included in this request.
      */
-    public Map<String, String> getHeaders();
+    Map<String, String> getHeaders();
 
 
     /**
@@ -58,7 +58,7 @@ public interface SignableRequest<T> {
      *
      * @return The path to the resource being requested.
      */
-    public String getResourcePath();
+    String getResourcePath();
 
     /**
      * Adds the specified request parameter to this request.
@@ -68,14 +68,14 @@ public interface SignableRequest<T> {
      * @param value
      *            The value of the request parameter.
      */
-    public void addParameter(String name, String value);
+    void addParameter(String name, String value);
 
     /**
      * Returns a map of all parameters in this request.
      *
      * @return A map of all parameters in this request.
      */
-    public Map<String, List<String>> getParameters();
+    Map<String, List<String>> getParameters();
 
     /**
      * Returns the service endpoint (ex: "https://ec2.amazonaws.com") to which
@@ -83,7 +83,7 @@ public interface SignableRequest<T> {
      *
      * @return The service endpoint to which this request should be sent.
      */
-    public URI getEndpoint();
+    URI getEndpoint();
 
     /**
      * Returns the HTTP method (GET, POST, etc) to use when sending this
@@ -91,7 +91,7 @@ public interface SignableRequest<T> {
      *
      * @return The HTTP method to use when sending this request.
      */
-    public HttpMethodName getHttpMethod();
+    HttpMethodName getHttpMethod();
 
     /**
      * Returns the optional value for time offset for this request.  This
@@ -101,7 +101,7 @@ public interface SignableRequest<T> {
      *
      * @return The optional value for time offset (in seconds) for this request.
      */
-    public int getTimeOffset();
+    int getTimeOffset();
 
     /**
      * Returns the optional stream containing the payload data to include for
@@ -110,7 +110,7 @@ public interface SignableRequest<T> {
      * @return The optional stream containing the payload data to include for
      *         this request.
      */
-    public InputStream getContent();
+    InputStream getContent();
 
     /**
      * Returns the optional raw stream containing the payload data to include
@@ -120,12 +120,12 @@ public interface SignableRequest<T> {
      * @return The optional raw stream containing the payload data to include
      *         for this request, with all progress stream wrappers removed.
      */
-    public InputStream getContentUnwrapped();
+    InputStream getContentUnwrapped();
 
     /**
      * Returns the read limit info about the original request.
      */
-    public ReadLimitInfo getReadLimitInfo();
+    ReadLimitInfo getReadLimitInfo();
 
     /**
      * Returns the original, user facing request object which this internal
@@ -133,7 +133,7 @@ public interface SignableRequest<T> {
      *
      * @return an instance of request as an <code>Object</code>.
      */
-    public Object getOriginalRequestObject();
+    Object getOriginalRequestObject();
 
     /**
      * Sets the optional stream containing the payload data to include for this
@@ -143,5 +143,5 @@ public interface SignableRequest<T> {
      *            The optional stream containing the payload data to include for
      *            this request.
      */
-    public void setContent(InputStream content);
+    void setContent(InputStream content);
 }

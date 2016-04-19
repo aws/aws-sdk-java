@@ -124,8 +124,20 @@ public enum AwsSdkMetrics {
      * Example:
      *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
      * </pre>
+     * @deprecated in favor of {@link AWS_CREDENTIAL_PROPERTIES_FILE}
      */
     public static final String AWS_CREDENTAIL_PROPERTIES_FILE= "credentialFile";
+
+    /**
+     * Used to specify an AWS credential property file.
+     * By default, the {@link DefaultAWSCredentialsProviderChain} is used.
+     *
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
+     * </pre>
+     */
+    public static final String AWS_CREDENTIAL_PROPERTIES_FILE= "credentialFile";
 
     /**
      * Used to specify the Amazon CloudWatch region for metrics uploading purposes.
@@ -210,7 +222,7 @@ public enum AwsSdkMetrics {
      */
     private static final String ENABLE_HTTP_SOCKET_READ_METRIC = "enableHttpSocketReadMetric";
     /**
-     * True iff the system property {@link #DEFAULT_METRICS_SYSTEM_PROPERTY} has
+     * True if the system property {@link #DEFAULT_METRICS_SYSTEM_PROPERTY} has
      * been set; false otherwise.
      */
     private static final boolean defaultMetricsEnabled;
@@ -290,7 +302,8 @@ public enum AwsSdkMetrics {
                         String key = pair[0].trim();
                         String value  = pair[1].trim();
                         try {
-                            if (AWS_CREDENTAIL_PROPERTIES_FILE.equals(key)) {
+                            if (AWS_CREDENTAIL_PROPERTIES_FILE.equals(key)
+                                    || AWS_CREDENTIAL_PROPERTIES_FILE.equals(key)) {
                                 setCredentialFile0(value);
                             } else if (CLOUDWATCH_REGION.equals(key)) {
                                 region = Regions.fromName(value);

@@ -23,7 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * @see DeleteBucketRequest
  * @see CopyObjectRequest
  */
-public class CreateBucketRequest extends AmazonWebServiceRequest implements Serializable {
+public class CreateBucketRequest extends AmazonWebServiceRequest implements
+        Serializable, S3AccelerateUnsupported {
 
     /** The name of the Amazon S3 bucket to create. */
     private String bucketName;
@@ -42,8 +43,8 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements Seri
      * cannedAcl will be ignored.
      */
     private AccessControlList accessControlList;
-    
-	/**
+
+    /**
      * Constructs a new {@link CreateBucketRequest},
      * ready to be executed to create the
      * specified bucket in the <code>US_Standard</code> region.
@@ -58,22 +59,22 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements Seri
         this(bucketName, Region.US_Standard);
     }
 
-	/**
-	 * Constructs a new {@link CreateBucketRequest},
-	 * ready to be executed to create the
-	 * specified bucket in the specified region.
-	 *
-	 * @param bucketName
-	 *            The name of the Amazon S3 bucket to create.
-	 * @param region
-	 *            The region in which to create this bucket. This must match the
-	 *            region of the endpoint the client is configured against unless
-	 *            the client is configured against the US Standard endpoint
-	 *            (s3.amazonaws.com).
-	 *
-	 * @see CreateBucketRequest#CreateBucketRequest(String)
-	 * @see CreateBucketRequest#CreateBucketRequest(String, String)
-	 */
+    /**
+     * Constructs a new {@link CreateBucketRequest},
+     * ready to be executed to create the
+     * specified bucket in the specified region.
+     *
+     * @param bucketName
+     *            The name of the Amazon S3 bucket to create.
+     * @param region
+     *            The region in which to create this bucket. This must match the
+     *            region of the endpoint the client is configured against unless
+     *            the client is configured against the US Standard endpoint
+     *            (s3.amazonaws.com).
+     *
+     * @see CreateBucketRequest#CreateBucketRequest(String)
+     * @see CreateBucketRequest#CreateBucketRequest(String, String)
+     */
     public CreateBucketRequest(String bucketName, Region region) {
         this(bucketName, region.toString());
     }
@@ -85,11 +86,11 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements Seri
      *
      * @param bucketName
      *            The name of the Amazon S3 bucket to create.
-	 * @param region
-	 *            The region in which to create this bucket. This must match the
-	 *            region of the endpoint the client is configured against unless
-	 *            the client is configured against the US Standard endpoint
-	 *            (s3.amazonaws.com).
+     * @param region
+     *            The region in which to create this bucket. This must match the
+     *            region of the endpoint the client is configured against unless
+     *            the client is configured against the US Standard endpoint
+     *            (s3.amazonaws.com).
      *
      * @see CreateBucketRequest#CreateBucketRequest(String)
      * @see CreateBucketRequest#CreateBucketRequest(String, Region)
@@ -125,11 +126,11 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Sets the name of the Amazon S3 region in which this bucket will be created.
      *
-	 * @param region
-	 *            The region in which to create this bucket. This must match the
-	 *            region of the endpoint the client is configured against unless
-	 *            the client is configured against the US Standard endpoint
-	 *            (s3.amazonaws.com).
+     * @param region
+     *            The region in which to create this bucket. This must match the
+     *            region of the endpoint the client is configured against unless
+     *            the client is configured against the US Standard endpoint
+     *            (s3.amazonaws.com).
      *
      * @see CreateBucketRequest#getRegion()
      */
@@ -148,40 +149,40 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements Seri
         return region;
     }
 
-	/**
-	 * Returns the optional Canned ACL to set for the new bucket.
-	 *
-	 * @return The optional Canned ACL to set for the new bucket.
-	 */
+    /**
+     * Returns the optional Canned ACL to set for the new bucket.
+     *
+     * @return The optional Canned ACL to set for the new bucket.
+     */
     public CannedAccessControlList getCannedAcl() {
-		return cannedAcl;
-	}
+        return cannedAcl;
+    }
 
-	/**
-	 * Sets the optional Canned ACL to set for the new bucket.
-	 *
-	 * @param cannedAcl
-	 *            The optional Canned ACL to set for the new bucket.
-	 */
-	public void setCannedAcl(CannedAccessControlList cannedAcl) {
-		this.cannedAcl = cannedAcl;
-	}
+    /**
+     * Sets the optional Canned ACL to set for the new bucket.
+     *
+     * @param cannedAcl
+     *            The optional Canned ACL to set for the new bucket.
+     */
+    public void setCannedAcl(CannedAccessControlList cannedAcl) {
+        this.cannedAcl = cannedAcl;
+    }
 
-	/**
-	 * Sets the optional Canned ACL to set for the new bucket, and returns this
-	 * updated object so that additional method calls can be chained together.
-	 *
-	 * @param cannedAcl
-	 *            The optional Canned ACL to set for the new bucket.
-	 *
-	 * @return This updated object, so that additional method calls can be
-	 *         chained together.
-	 */
-	public CreateBucketRequest withCannedAcl(CannedAccessControlList cannedAcl) {
-		setCannedAcl(cannedAcl);
-		return this;
-	}
-	
+    /**
+     * Sets the optional Canned ACL to set for the new bucket, and returns this
+     * updated object so that additional method calls can be chained together.
+     *
+     * @param cannedAcl
+     *            The optional Canned ACL to set for the new bucket.
+     *
+     * @return This updated object, so that additional method calls can be
+     *         chained together.
+     */
+    public CreateBucketRequest withCannedAcl(CannedAccessControlList cannedAcl) {
+        setCannedAcl(cannedAcl);
+        return this;
+    }
+
     /**
      * Returns the optional access control list for the new bucket. If
      * specified, cannedAcl will be ignored.
@@ -189,23 +190,23 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements Seri
     public AccessControlList getAccessControlList() {
         return accessControlList;
     }
-    
+
     /**
      * Sets the optional access control list for the new bucket. If specified,
      * cannedAcl will be ignored.
-     * 
+     *
      * @param accessControlList
      *            The access control list for the new bucket.
      */
     public void setAccessControlList(AccessControlList accessControlList) {
         this.accessControlList = accessControlList;
     }
-    
+
     /**
      * Sets the optional access control list for the new bucket. If specified,
      * cannedAcl will be ignored. Returns this {@link CreateBucketRequest},
      * enabling additional method calls to be chained together.
-     * 
+     *
      * @param accessControlList
      *            The access control list for the new bucket.
      */

@@ -305,8 +305,6 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      *        The state of the change set, such as
      *        <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or
      *        <code>FAILED</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeSetStatus
      */
 

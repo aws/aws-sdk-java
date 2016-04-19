@@ -144,8 +144,6 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        - The resource type for hosted zones is <code>hostedzone</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TagResourceType
      */
 

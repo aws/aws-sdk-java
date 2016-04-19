@@ -264,8 +264,6 @@ public class ContextEntry implements Serializable, Cloneable {
      * @param contextKeyType
      *        The data type of the value (or values) specified in the
      *        <code>ContextKeyValues</code> parameter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ContextKeyTypeEnum
      */
 

@@ -263,8 +263,6 @@ public class IpPermission implements Serializable, Cloneable {
      * 
      * @param protocol
      *        Network communication protocol used by the fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see IpProtocol
      */
 

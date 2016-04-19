@@ -303,8 +303,6 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @param lastStatus
      *        The last (previous) status of the recorder.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RecorderStatus
      */
 

@@ -318,8 +318,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param market
      *        Market type of the Amazon EC2 instances used to create a cluster
      *        node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MarketType
      */
 
@@ -396,8 +394,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @param instanceRole
      *        Instance group role in the cluster
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceRoleType
      */
 
@@ -653,8 +649,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param state
      *        State of instance group. The following values are deprecated:
      *        STARTING, TERMINATED, and FAILED.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceGroupState
      */
 

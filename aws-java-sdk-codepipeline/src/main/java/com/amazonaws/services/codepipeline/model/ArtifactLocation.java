@@ -89,8 +89,6 @@ public class ArtifactLocation implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of artifact in the location.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ArtifactLocationType
      */
 

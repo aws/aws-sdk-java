@@ -123,8 +123,6 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      *        Indicates which resource attribute is triggering this update, such
      *        as a change in the resource attribute's <code>Metadata</code>,
      *        <code>Properties</code>, or <code>Tags</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceAttribute
      */
 
@@ -311,8 +309,6 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      *        the update behavior for that <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
      *        >property</a> in the AWS CloudFormation User Guide.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RequiresRecreation
      */
 

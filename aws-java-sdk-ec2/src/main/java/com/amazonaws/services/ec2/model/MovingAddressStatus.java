@@ -139,8 +139,6 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      * @param moveStatus
      *        The status of the Elastic IP address that's being moved to the
      *        EC2-VPC platform, or restored to the EC2-Classic platform.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MoveStatus
      */
 

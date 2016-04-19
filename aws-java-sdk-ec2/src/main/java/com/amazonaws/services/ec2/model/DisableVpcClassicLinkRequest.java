@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DisableVpcClassicLinkRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DisableVpcClassicLink.
+ * </p>
  */
 public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

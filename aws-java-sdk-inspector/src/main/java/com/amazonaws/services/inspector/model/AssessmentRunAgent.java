@@ -202,8 +202,6 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
      * 
      * @param agentHealth
      *        The current health state of the agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AgentHealth
      */
 
@@ -279,8 +277,6 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
      * 
      * @param agentHealthCode
      *        The detailed health state of the agent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AgentHealthCode
      */
 

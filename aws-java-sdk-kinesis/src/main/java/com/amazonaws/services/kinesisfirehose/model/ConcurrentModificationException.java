@@ -20,8 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Another modification has already happened. Fetch <code>VersionId</code> again
- * and use it to update the destination.
+ * Another modification has already happened. Fetch <b>VersionId</b> again and
+ * use it to update the destination.
  * </p>
  */
 public class ConcurrentModificationException extends AmazonServiceException {

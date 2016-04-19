@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -56,9 +58,8 @@ public class DhcpConfigurationStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("valueSet/item/value", targetDepth)) {
-                    dhcpConfiguration.getValues().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    dhcpConfiguration.withValues(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

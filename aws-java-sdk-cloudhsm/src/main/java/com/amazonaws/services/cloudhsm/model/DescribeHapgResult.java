@@ -570,8 +570,6 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the high-availability partition group.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CloudHsmObjectState
      */
 

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ImportVolumeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ImportVolume.
+ * </p>
  */
 public class ImportVolumeRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<ImportVolumeRequest> {

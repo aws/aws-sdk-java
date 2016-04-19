@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreatePlacementGroupRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreatePlacementGroup.
+ * </p>
  */
 public class CreatePlacementGroupRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -194,8 +196,6 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest
      * 
      * @param strategy
      *        The placement strategy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PlacementStrategy
      */
 

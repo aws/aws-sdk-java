@@ -209,8 +209,6 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * 
      * @param type
      *        The type of the RRSet that you want to see changes for.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
 

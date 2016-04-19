@@ -409,8 +409,6 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *        The Spot instance request type.</p>
      *        <p>
      *        Default: <code>one-time</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SpotInstanceType
      */
 

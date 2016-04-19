@@ -17,6 +17,8 @@
 package com.amazonaws.services.sns.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -104,7 +106,7 @@ public class PlatformApplicationStaxUnmarshaller implements
                 if (context.testExpression("Attributes/entry", targetDepth)) {
                     Entry<String, String> entry = AttributesMapEntryUnmarshaller
                             .getInstance().unmarshall(context);
-                    platformApplication.getAttributes().put(entry.getKey(),
+                    platformApplication.addAttributesEntry(entry.getKey(),
                             entry.getValue());
                     continue;
                 }

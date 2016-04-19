@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifySubnetAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ModifySubnetAttribute.
+ * </p>
  */
 public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

@@ -319,8 +319,6 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        S3) bucket or directory.</li>
      *        <li> <code>IAMUser</code> - Sets the search criteria to the user
      *        account that invoked the <code>DataSource</code> creation.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DataSourceFilterVariable
      */
 
@@ -1001,8 +999,6 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SortOrder
      */
 

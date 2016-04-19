@@ -776,8 +776,6 @@ public class EnvironmentDescription implements Serializable, Cloneable {
      *        <li> <code>Terminating</code>: Environment is in the shut-down
      *        process.</li>
      *        <li> <code>Terminated</code>: Environment is not running.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EnvironmentStatus
      */
 
@@ -1116,8 +1114,6 @@ public class EnvironmentDescription implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        Default: <code>Grey</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EnvironmentHealth
      */
 
@@ -1251,8 +1247,6 @@ public class EnvironmentDescription implements Serializable, Cloneable {
      *        environment. For more information, see <a href=
      *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
      *        >Health Colors and Statuses</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EnvironmentHealthStatus
      */
 

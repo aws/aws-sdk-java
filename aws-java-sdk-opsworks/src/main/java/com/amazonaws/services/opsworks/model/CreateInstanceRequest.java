@@ -476,8 +476,6 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @param autoScalingType
      *        For load-based or time-based instances, the type. Windows stacks
      *        can use only time-based instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AutoScalingType
      */
 
@@ -1112,8 +1110,6 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        supported by the different instance types, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
      *        >Instance Families and Types</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Architecture
      */
 
@@ -1215,8 +1211,6 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        The instance root device type. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RootDeviceType
      */
 

@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,9 +54,9 @@ public class ListTrafficPoliciesResultStaxUnmarshaller implements
                 if (context.testExpression(
                         "TrafficPolicySummaries/TrafficPolicySummary",
                         targetDepth)) {
-                    listTrafficPoliciesResult.getTrafficPolicySummaries().add(
-                            TrafficPolicySummaryStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listTrafficPoliciesResult
+                            .withTrafficPolicySummaries(TrafficPolicySummaryStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

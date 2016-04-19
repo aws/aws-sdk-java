@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeBundleTasksResultStaxUnmarshaller implements
 
                 if (context.testExpression("bundleInstanceTasksSet/item",
                         targetDepth)) {
-                    describeBundleTasksResult.getBundleTasks().add(
-                            BundleTaskStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeBundleTasksResult
+                            .withBundleTasks(BundleTaskStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -129,8 +129,6 @@ public class ActionExecution implements Serializable, Cloneable {
      * @param status
      *        The status of the action, or for a completed action, the last
      *        status of the action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionExecutionStatus
      */
 

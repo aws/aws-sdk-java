@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVolumeStatusRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeVolumeStatus.
+ * </p>
  */
 public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

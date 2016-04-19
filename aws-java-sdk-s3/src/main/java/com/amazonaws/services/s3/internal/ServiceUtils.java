@@ -17,21 +17,9 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.Request;
-import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.ObjectMetadata;
-import com.amazonaws.services.s3.model.S3Object;
-import com.amazonaws.services.s3.transfer.exception.FileLockException;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.DateUtils;
-import com.amazonaws.util.HttpUtils;
-import com.amazonaws.util.Md5Utils;
-import com.amazonaws.util.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import static com.amazonaws.util.IOUtils.closeQuietly;
+import static com.amazonaws.util.StringUtils.UTF8;
 
-import javax.net.ssl.SSLProtocolException;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,8 +34,22 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import static com.amazonaws.util.IOUtils.closeQuietly;
-import static com.amazonaws.util.StringUtils.UTF8;
+import javax.net.ssl.SSLProtocolException;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.Request;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.transfer.exception.FileLockException;
+import com.amazonaws.util.BinaryUtils;
+import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.Md5Utils;
+import com.amazonaws.util.StringUtils;
 
 /**
  * General utility methods used throughout the AWS S3 Java client.
@@ -391,4 +393,20 @@ public class ServiceUtils {
         return s3Object;
     }
 
+    public static boolean isS3USStandardEndpoint(String endpoint) {
+        return endpoint.endsWith(Constants.S3_HOSTNAME);
+    }
+
+    /**
+     * @return true if the given endpoint is known to be at the region us-east-1.
+     *         (currently this includes S3 standard, S3 external-1 endpoints).
+     */
+    public static boolean isS3USEastEndpiont(String endpoint) {
+        return isS3USStandardEndpoint(endpoint) ||
+                endpoint.endsWith(Constants.S3_EXTERNAL_1_HOSTNAME);
+    }
+
+    public static boolean isS3AccelerateEndpoint(String endpoint) {
+        return endpoint.endsWith(Constants.S3_ACCELERATE_HOSTNAME);
+    }
 }

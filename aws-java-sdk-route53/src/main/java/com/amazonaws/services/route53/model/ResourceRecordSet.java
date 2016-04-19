@@ -1097,8 +1097,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Specify the type of the resource record set for which you're
      *        creating the alias. Specify any value except <code>NS</code> or
      *        <code>SOA</code>.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
 
@@ -1817,8 +1815,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>You cannot create non-latency resource record sets that have
      *        the same values for the <code>Name</code> and <code>Type</code>
      *        elements as latency resource record sets.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceRecordSetRegion
      */
 
@@ -2650,8 +2646,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Valid values: <code>PRIMARY</code> | <code>SECONDARY
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceRecordSetFailover
      */
 

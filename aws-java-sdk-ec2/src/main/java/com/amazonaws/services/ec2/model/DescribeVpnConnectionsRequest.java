@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVpnConnectionsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeVpnConnections.
+ * </p>
  */
 public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

@@ -184,8 +184,6 @@ public class ValidationMessage implements Serializable, Cloneable {
      *        valid setting for an option.</li>
      *        <li> <code>warning</code>: This message is providing information
      *        you should take into account.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ValidationSeverity
      */
 

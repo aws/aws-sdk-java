@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeReservedInstances.
+ * </p>
  */
 public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -1215,8 +1217,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      *        The Reserved Instance offering type. If you are using tools that
      *        predate the 2011-11-01 API version, you only have access to the
      *        <code>Medium Utilization</code> Reserved Instance offering type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OfferingTypeValues
      */
 

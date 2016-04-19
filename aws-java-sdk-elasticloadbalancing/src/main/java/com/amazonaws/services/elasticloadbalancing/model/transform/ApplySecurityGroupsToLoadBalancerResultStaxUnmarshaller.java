@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,9 +54,9 @@ public class ApplySecurityGroupsToLoadBalancerResultStaxUnmarshaller
 
                 if (context
                         .testExpression("SecurityGroups/member", targetDepth)) {
-                    applySecurityGroupsToLoadBalancerResult.getSecurityGroups()
-                            .add(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    applySecurityGroupsToLoadBalancerResult
+                            .withSecurityGroups(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

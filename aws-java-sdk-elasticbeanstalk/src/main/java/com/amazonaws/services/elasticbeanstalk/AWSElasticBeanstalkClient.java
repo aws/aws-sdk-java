@@ -45,14 +45,9 @@ import com.amazonaws.services.elasticbeanstalk.model.transform.*;
  * <p>
  * <fullname>AWS Elastic Beanstalk</fullname>
  * <p>
- * This is the AWS Elastic Beanstalk API Reference. This guide provides detailed
- * information about AWS Elastic Beanstalk actions, data types, parameters, and
- * errors.
- * </p>
- * <p>
- * AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy,
- * and manage scalable, fault-tolerant applications running on Amazon Web
- * Services cloud resources.
+ * AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage
+ * scalable, fault-tolerant applications running on the Amazon Web Services
+ * cloud.
  * </p>
  * <p>
  * For more information about this product, go to the <a
@@ -266,6 +261,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers
                 .add(new ElasticBeanstalkServiceExceptionUnmarshaller());
         exceptionUnmarshallers
+                .add(new ManagedActionInvalidStateExceptionUnmarshaller());
+        exceptionUnmarshallers
                 .add(new S3LocationNotInServiceRegionExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new TooManyApplicationsExceptionUnmarshaller());
@@ -343,6 +340,58 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     @Override
     public void abortEnvironmentUpdate() {
         abortEnvironmentUpdate(new AbortEnvironmentUpdateRequest());
+    }
+
+    /**
+     * <p>
+     * Applies a scheduled managed action immediately. A managed action can be
+     * applied only if its status is <code>Scheduled</code>. Get the status and
+     * action ID of a managed action with
+     * <a>DescribeEnvironmentManagedActions</a>.
+     * </p>
+     * 
+     * @param applyEnvironmentManagedActionRequest
+     *        Request to execute a scheduled managed action immediately.
+     * @return Result of the ApplyEnvironmentManagedAction operation returned by
+     *         the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @throws ManagedActionInvalidStateException
+     *         Cannot modify the managed action in its current state.
+     * @sample AWSElasticBeanstalk.ApplyEnvironmentManagedAction
+     */
+    @Override
+    public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(
+            ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest) {
+        ExecutionContext executionContext = createExecutionContext(applyEnvironmentManagedActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ApplyEnvironmentManagedActionRequest> request = null;
+        Response<ApplyEnvironmentManagedActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ApplyEnvironmentManagedActionRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(applyEnvironmentManagedActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ApplyEnvironmentManagedActionResult> responseHandler = new StaxResponseHandler<ApplyEnvironmentManagedActionResult>(
+                    new ApplyEnvironmentManagedActionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1195,6 +1244,101 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Lists an environment's completed and failed managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionHistoryRequest
+     *        Request to list completed and failed managed actions.
+     * @return Result of the DescribeEnvironmentManagedActionHistory operation
+     *         returned by the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActionHistory
+     */
+    @Override
+    public DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
+            DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEnvironmentManagedActionHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEnvironmentManagedActionHistoryRequest> request = null;
+        Response<DescribeEnvironmentManagedActionHistoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEnvironmentManagedActionHistoryRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeEnvironmentManagedActionHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeEnvironmentManagedActionHistoryResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentManagedActionHistoryResult>(
+                    new DescribeEnvironmentManagedActionHistoryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists an environment's upcoming and in-progress managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionsRequest
+     *        Request to list an environment's upcoming and in-progress managed
+     *        actions.
+     * @return Result of the DescribeEnvironmentManagedActions operation
+     *         returned by the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActions
+     */
+    @Override
+    public DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(
+            DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEnvironmentManagedActionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEnvironmentManagedActionsRequest> request = null;
+        Response<DescribeEnvironmentManagedActionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEnvironmentManagedActionsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeEnvironmentManagedActionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeEnvironmentManagedActionsResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentManagedActionsResult>(
+                    new DescribeEnvironmentManagedActionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns AWS resources for this environment.
      * </p>
      * 
@@ -2033,30 +2177,45 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(
                 exceptionUnmarshallers);

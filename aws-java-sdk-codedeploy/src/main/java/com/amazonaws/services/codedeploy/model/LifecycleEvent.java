@@ -350,8 +350,6 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *        <li>Failed: The deployment lifecycle event has failed.</li>
      *        <li>Skipped: The deployment lifecycle event has been skipped.</li>
      *        <li>Unknown: The deployment lifecycle event is unknown.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LifecycleEventStatus
      */
 

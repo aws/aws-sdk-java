@@ -20,10 +20,11 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "gamelift",
     "signingName" : "gamelift",
+    "xmlProtocol" : false,
     "serviceName" : "Amazon GameLift",
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
@@ -62,6 +63,7 @@
         "documentation" : "<p>The requested operation would cause the resource to exceed the allowed service limit. Please resolve the issue before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateAliasResult",
       "asyncReturnType" : "CreateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAliasResult>",
@@ -100,6 +102,7 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateBuildResult",
       "asyncReturnType" : "CreateBuildResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateBuildResult>",
@@ -144,6 +147,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateFleetResult",
       "asyncReturnType" : "CreateFleetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateFleetResult>",
@@ -194,6 +198,7 @@
         "documentation" : "<p>The specified fleet has no available instances to fulfill a request to create a new game session. Such requests should only be retried once the fleet capacity has been increased. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateGameSessionResult",
       "asyncReturnType" : "CreateGameSessionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateGameSessionResult>",
@@ -241,6 +246,7 @@
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreatePlayerSessionResult",
       "asyncReturnType" : "CreatePlayerSessionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePlayerSessionResult>",
@@ -288,6 +294,7 @@
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreatePlayerSessionsResult",
       "asyncReturnType" : "CreatePlayerSessionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePlayerSessionsResult>",
@@ -323,6 +330,7 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -358,6 +366,7 @@
         "documentation" : "<p>One or more parameters specified as part of the request are invalid. Please correct the invalid parameters before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -399,6 +408,7 @@
         "documentation" : "<p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Please resolve the conflict before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -434,6 +444,7 @@
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -472,6 +483,7 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeAliasResult",
       "asyncReturnType" : "DescribeAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAliasResult>",
@@ -510,6 +522,7 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeBuildResult",
       "asyncReturnType" : "DescribeBuildResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeBuildResult>",
@@ -545,6 +558,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeEC2InstanceLimitsResult",
       "asyncReturnType" : "DescribeEC2InstanceLimitsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEC2InstanceLimitsResult>",
@@ -583,6 +597,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFleetAttributesResult",
       "asyncReturnType" : "DescribeFleetAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFleetAttributesResult>",
@@ -621,6 +636,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFleetCapacityResult",
       "asyncReturnType" : "DescribeFleetCapacityResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFleetCapacityResult>",
@@ -659,6 +675,7 @@
         "documentation" : "<p>One or more parameters specified as part of the request are invalid. Please correct the invalid parameters before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFleetEventsResult",
       "asyncReturnType" : "DescribeFleetEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFleetEventsResult>",
@@ -697,6 +714,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFleetPortSettingsResult",
       "asyncReturnType" : "DescribeFleetPortSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFleetPortSettingsResult>",
@@ -735,6 +753,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFleetUtilizationResult",
       "asyncReturnType" : "DescribeFleetUtilizationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFleetUtilizationResult>",
@@ -776,6 +795,7 @@
         "documentation" : "<p>The service is unable to resolve the routing for a particular alias because it has a terminal <a>RoutingStrategy</a> associated with it. The message returned in this exception is the message defined in the TerminalRoutingStrategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeGameSessionDetailsResult",
       "asyncReturnType" : "DescribeGameSessionDetailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeGameSessionDetailsResult>",
@@ -817,6 +837,7 @@
         "documentation" : "<p>The service is unable to resolve the routing for a particular alias because it has a terminal <a>RoutingStrategy</a> associated with it. The message returned in this exception is the message defined in the TerminalRoutingStrategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeGameSessionsResult",
       "asyncReturnType" : "DescribeGameSessionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeGameSessionsResult>",
@@ -855,6 +876,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribePlayerSessionsResult",
       "asyncReturnType" : "DescribePlayerSessionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribePlayerSessionsResult>",
@@ -893,6 +915,7 @@
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeScalingPoliciesResult",
       "asyncReturnType" : "DescribeScalingPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeScalingPoliciesResult>",
@@ -931,6 +954,7 @@
         "documentation" : "<p>One or more parameters specified as part of the request are invalid. Please correct the invalid parameters before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetGameSessionLogUrlResult",
       "asyncReturnType" : "GetGameSessionLogUrlResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetGameSessionLogUrlResult>",
@@ -966,6 +990,7 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListAliasesResult",
       "asyncReturnType" : "ListAliasesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAliasesResult>",
@@ -1001,6 +1026,7 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListBuildsResult",
       "asyncReturnType" : "ListBuildsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListBuildsResult>",
@@ -1039,6 +1065,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListFleetsResult",
       "asyncReturnType" : "ListFleetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListFleetsResult>",
@@ -1077,6 +1104,7 @@
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutScalingPolicyResult",
       "asyncReturnType" : "PutScalingPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutScalingPolicyResult>",
@@ -1115,6 +1143,7 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RequestUploadCredentialsResult",
       "asyncReturnType" : "RequestUploadCredentialsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RequestUploadCredentialsResult>",
@@ -1156,6 +1185,7 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ResolveAliasResult",
       "asyncReturnType" : "ResolveAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResolveAliasResult>",
@@ -1194,6 +1224,7 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateAliasResult",
       "asyncReturnType" : "UpdateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateAliasResult>",
@@ -1232,6 +1263,7 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateBuildResult",
       "asyncReturnType" : "UpdateBuildResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateBuildResult>",
@@ -1279,6 +1311,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateFleetAttributesResult",
       "asyncReturnType" : "UpdateFleetAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateFleetAttributesResult>",
@@ -1326,6 +1359,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateFleetCapacityResult",
       "asyncReturnType" : "UpdateFleetCapacityResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateFleetCapacityResult>",
@@ -1373,6 +1407,7 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateFleetPortSettingsResult",
       "asyncReturnType" : "UpdateFleetPortSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateFleetPortSettingsResult>",
@@ -1417,6 +1452,7 @@
         "documentation" : "<p>One or more parameters specified as part of the request are invalid. Please correct the invalid parameters before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateGameSessionResult",
       "asyncReturnType" : "UpdateGameSessionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateGameSessionResult>",
@@ -3430,8 +3466,8 @@
           "simpleType" : "PlayerSession",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<PlayerSession>",
-          "templateType" : "java.util.List<PlayerSession>"
+          "templateType" : "java.util.List<PlayerSession>",
+          "templateImplType" : "java.util.ArrayList<PlayerSession>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3623,8 +3659,8 @@
             "simpleType" : "PlayerSession",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<PlayerSession>",
-            "templateType" : "java.util.List<PlayerSession>"
+            "templateType" : "java.util.List<PlayerSession>",
+            "templateImplType" : "java.util.ArrayList<PlayerSession>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3807,8 +3843,8 @@
           "simpleType" : "PlayerSession",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<PlayerSession>",
-          "templateType" : "java.util.List<PlayerSession>"
+          "templateType" : "java.util.List<PlayerSession>",
+          "templateImplType" : "java.util.ArrayList<PlayerSession>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3948,8 +3984,8 @@
             "simpleType" : "PlayerSession",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<PlayerSession>",
-            "templateType" : "java.util.List<PlayerSession>"
+            "templateType" : "java.util.List<PlayerSession>",
+            "templateImplType" : "java.util.ArrayList<PlayerSession>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4810,8 +4846,8 @@
           "simpleType" : "GameSessionDetail",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<GameSessionDetail>",
-          "templateType" : "java.util.List<GameSessionDetail>"
+          "templateType" : "java.util.List<GameSessionDetail>",
+          "templateImplType" : "java.util.ArrayList<GameSessionDetail>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5056,8 +5092,8 @@
             "simpleType" : "GameSessionDetail",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<GameSessionDetail>",
-            "templateType" : "java.util.List<GameSessionDetail>"
+            "templateType" : "java.util.List<GameSessionDetail>",
+            "templateImplType" : "java.util.ArrayList<GameSessionDetail>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5239,8 +5275,8 @@
           "simpleType" : "IpPermission",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<IpPermission>",
-          "templateType" : "java.util.List<IpPermission>"
+          "templateType" : "java.util.List<IpPermission>",
+          "templateImplType" : "java.util.ArrayList<IpPermission>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5357,8 +5393,8 @@
           "simpleType" : "IpPermission",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<IpPermission>",
-          "templateType" : "java.util.List<IpPermission>"
+          "templateType" : "java.util.List<IpPermission>",
+          "templateImplType" : "java.util.ArrayList<IpPermission>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5502,8 +5538,8 @@
             "simpleType" : "IpPermission",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<IpPermission>",
-            "templateType" : "java.util.List<IpPermission>"
+            "templateType" : "java.util.List<IpPermission>",
+            "templateImplType" : "java.util.ArrayList<IpPermission>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5674,8 +5710,8 @@
             "simpleType" : "IpPermission",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<IpPermission>",
-            "templateType" : "java.util.List<IpPermission>"
+            "templateType" : "java.util.List<IpPermission>",
+            "templateImplType" : "java.util.ArrayList<IpPermission>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5807,15 +5843,67 @@
           "memberLocationName" : null,
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "FleetId",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : true,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6057,15 +6145,67 @@
             "memberLocationName" : null,
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "FleetId",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : true,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6838,15 +6978,67 @@
           "memberLocationName" : null,
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "NonZeroAndMaxString",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : true,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7015,8 +7207,8 @@
           "simpleType" : "IpPermission",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<IpPermission>",
-          "templateType" : "java.util.List<IpPermission>"
+          "templateType" : "java.util.List<IpPermission>",
+          "templateImplType" : "java.util.ArrayList<IpPermission>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7312,15 +7504,67 @@
             "memberLocationName" : null,
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "NonZeroAndMaxString",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : true,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7650,8 +7894,8 @@
             "simpleType" : "IpPermission",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<IpPermission>",
-            "templateType" : "java.util.List<IpPermission>"
+            "templateType" : "java.util.List<IpPermission>",
+            "templateImplType" : "java.util.ArrayList<IpPermission>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8419,8 +8663,8 @@
           "simpleType" : "Build",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Build>",
-          "templateType" : "java.util.List<Build>"
+          "templateType" : "java.util.List<Build>",
+          "templateImplType" : "java.util.ArrayList<Build>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8665,8 +8909,8 @@
             "simpleType" : "Build",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Build>",
-            "templateType" : "java.util.List<Build>"
+            "templateType" : "java.util.List<Build>",
+            "templateImplType" : "java.util.ArrayList<Build>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8936,8 +9180,8 @@
           "simpleType" : "IpPermission",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<IpPermission>",
-          "templateType" : "java.util.List<IpPermission>"
+          "templateType" : "java.util.List<IpPermission>",
+          "templateImplType" : "java.util.ArrayList<IpPermission>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9077,8 +9321,8 @@
             "simpleType" : "IpPermission",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<IpPermission>",
-            "templateType" : "java.util.List<IpPermission>"
+            "templateType" : "java.util.List<IpPermission>",
+            "templateImplType" : "java.util.ArrayList<IpPermission>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10279,8 +10523,8 @@
           "simpleType" : "EC2InstanceLimit",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<EC2InstanceLimit>",
-          "templateType" : "java.util.List<EC2InstanceLimit>"
+          "templateType" : "java.util.List<EC2InstanceLimit>",
+          "templateImplType" : "java.util.ArrayList<EC2InstanceLimit>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10420,8 +10664,8 @@
             "simpleType" : "EC2InstanceLimit",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<EC2InstanceLimit>",
-            "templateType" : "java.util.List<EC2InstanceLimit>"
+            "templateType" : "java.util.List<EC2InstanceLimit>",
+            "templateImplType" : "java.util.ArrayList<EC2InstanceLimit>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14901,8 +15145,8 @@
           "simpleType" : "GameProperty",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<GameProperty>",
-          "templateType" : "java.util.List<GameProperty>"
+          "templateType" : "java.util.List<GameProperty>",
+          "templateImplType" : "java.util.ArrayList<GameProperty>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15676,8 +15920,8 @@
             "simpleType" : "GameProperty",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<GameProperty>",
-            "templateType" : "java.util.List<GameProperty>"
+            "templateType" : "java.util.List<GameProperty>",
+            "templateImplType" : "java.util.ArrayList<GameProperty>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17001,8 +17245,8 @@
           "simpleType" : "GameSession",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<GameSession>",
-          "templateType" : "java.util.List<GameSession>"
+          "templateType" : "java.util.List<GameSession>",
+          "templateImplType" : "java.util.ArrayList<GameSession>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17247,8 +17491,8 @@
             "simpleType" : "GameSession",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<GameSession>",
-            "templateType" : "java.util.List<GameSession>"
+            "templateType" : "java.util.List<GameSession>",
+            "templateImplType" : "java.util.ArrayList<GameSession>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17496,8 +17740,8 @@
           "simpleType" : "FleetAttributes",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<FleetAttributes>",
-          "templateType" : "java.util.List<FleetAttributes>"
+          "templateType" : "java.util.List<FleetAttributes>",
+          "templateImplType" : "java.util.ArrayList<FleetAttributes>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17742,8 +17986,8 @@
             "simpleType" : "FleetAttributes",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<FleetAttributes>",
-            "templateType" : "java.util.List<FleetAttributes>"
+            "templateType" : "java.util.List<FleetAttributes>",
+            "templateImplType" : "java.util.ArrayList<FleetAttributes>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19098,15 +19342,67 @@
           "memberLocationName" : null,
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "NonZeroAndMaxString",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : true,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19504,15 +19800,67 @@
             "memberLocationName" : null,
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "NonZeroAndMaxString",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : true,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21101,15 +21449,67 @@
           "memberLocationName" : null,
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "FleetId",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : true,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21351,15 +21751,67 @@
             "memberLocationName" : null,
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "FleetId",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : true,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23055,8 +23507,8 @@
           "simpleType" : "ScalingPolicy",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<ScalingPolicy>",
-          "templateType" : "java.util.List<ScalingPolicy>"
+          "templateType" : "java.util.List<ScalingPolicy>",
+          "templateImplType" : "java.util.ArrayList<ScalingPolicy>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23301,8 +23753,8 @@
             "simpleType" : "ScalingPolicy",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<ScalingPolicy>",
-            "templateType" : "java.util.List<ScalingPolicy>"
+            "templateType" : "java.util.List<ScalingPolicy>",
+            "templateImplType" : "java.util.ArrayList<ScalingPolicy>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24649,8 +25101,8 @@
           "simpleType" : "Event",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Event>",
-          "templateType" : "java.util.List<Event>"
+          "templateType" : "java.util.List<Event>",
+          "templateImplType" : "java.util.ArrayList<Event>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24895,8 +25347,8 @@
             "simpleType" : "Event",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Event>",
-            "templateType" : "java.util.List<Event>"
+            "templateType" : "java.util.List<Event>",
+            "templateImplType" : "java.util.ArrayList<Event>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25026,8 +25478,8 @@
           "simpleType" : "Alias",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<Alias>",
-          "templateType" : "java.util.List<Alias>"
+          "templateType" : "java.util.List<Alias>",
+          "templateImplType" : "java.util.ArrayList<Alias>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25219,8 +25671,8 @@
             "simpleType" : "Alias",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<Alias>",
-            "templateType" : "java.util.List<Alias>"
+            "templateType" : "java.util.List<Alias>",
+            "templateImplType" : "java.util.ArrayList<Alias>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25855,15 +26307,67 @@
           "memberLocationName" : null,
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "NonZeroAndMaxString",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : true,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25948,15 +26452,67 @@
             "memberLocationName" : null,
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "NonZeroAndMaxString",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : true,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26345,8 +26901,8 @@
           "simpleType" : "FleetCapacity",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<FleetCapacity>",
-          "templateType" : "java.util.List<FleetCapacity>"
+          "templateType" : "java.util.List<FleetCapacity>",
+          "templateImplType" : "java.util.ArrayList<FleetCapacity>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26591,8 +27147,8 @@
             "simpleType" : "FleetCapacity",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<FleetCapacity>",
-            "templateType" : "java.util.List<FleetCapacity>"
+            "templateType" : "java.util.List<FleetCapacity>",
+            "templateImplType" : "java.util.ArrayList<FleetCapacity>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28538,15 +29094,67 @@
           "memberLocationName" : null,
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "FleetId",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : true,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28732,15 +29340,67 @@
             "memberLocationName" : null,
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "FleetId",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : true,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28943,15 +29603,67 @@
           "memberLocationName" : null,
           "implType" : "java.util.ArrayList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "FleetId",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "simple" : true,
+            "list" : false,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29193,15 +29905,67 @@
             "memberLocationName" : null,
             "implType" : "java.util.ArrayList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "FleetId",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "simple" : true,
+              "list" : false,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31574,8 +32338,8 @@
           "simpleType" : "FleetUtilization",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<FleetUtilization>",
-          "templateType" : "java.util.List<FleetUtilization>"
+          "templateType" : "java.util.List<FleetUtilization>",
+          "templateImplType" : "java.util.ArrayList<FleetUtilization>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31820,8 +32584,8 @@
             "simpleType" : "FleetUtilization",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<FleetUtilization>",
-            "templateType" : "java.util.List<FleetUtilization>"
+            "templateType" : "java.util.List<FleetUtilization>",
+            "templateImplType" : "java.util.ArrayList<FleetUtilization>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32159,8 +32923,8 @@
           "simpleType" : "GameProperty",
           "simple" : false,
           "map" : false,
-          "templateImplType" : "java.util.ArrayList<GameProperty>",
-          "templateType" : "java.util.List<GameProperty>"
+          "templateType" : "java.util.List<GameProperty>",
+          "templateImplType" : "java.util.ArrayList<GameProperty>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32516,8 +33280,8 @@
             "simpleType" : "GameProperty",
             "simple" : false,
             "map" : false,
-            "templateImplType" : "java.util.ArrayList<GameProperty>",
-            "templateType" : "java.util.List<GameProperty>"
+            "templateType" : "java.util.List<GameProperty>",
+            "templateImplType" : "java.util.ArrayList<GameProperty>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34202,6 +34966,7 @@
     },
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "authPolicyActions" : null,
+    "customServiceMetadata" : null,
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,

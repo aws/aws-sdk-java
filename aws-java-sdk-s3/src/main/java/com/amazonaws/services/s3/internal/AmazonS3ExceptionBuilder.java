@@ -52,6 +52,11 @@ public class AmazonS3ExceptionBuilder {
     private String extendedRequestId;
 
     /**
+     * An accelerate mode specific ID sent from CloudFront that provides additional debugging information.
+     */
+    private String cloudFrontId;
+
+    /**
      * Additional information on the exception.
      */
     private Map<String, String> additionalDetails;
@@ -166,6 +171,25 @@ public class AmazonS3ExceptionBuilder {
     }
 
     /**
+     * Gets Amazon S3's CloudFront ID when the request is performed in the accelerate mode.
+     *
+     * @return Amazon S3's CloudFront ID when in accelerate mode.
+     */
+    public String getCloudFrontId() {
+        return cloudFrontId;
+    }
+
+    /**
+     * Sets Amazon S3's CloudFront ID when the request is performed in the accelerate mode.
+     *
+     * @param cloudFrontId
+     *         Amazon S3's CloudFront ID.
+     */
+    public void setCloudFrontId(String cloudFrontId) {
+        this.cloudFrontId = cloudFrontId;
+    }
+
+    /**
      * Returns any additional information retrieved in the error response.
      */
     public Map<String, String> getAdditionalDetails() {
@@ -222,6 +246,7 @@ public class AmazonS3ExceptionBuilder {
         s3Exception.setExtendedRequestId(extendedRequestId);
         s3Exception.setStatusCode(statusCode);
         s3Exception.setRequestId(requestId);
+        s3Exception.setCloudFrontId(cloudFrontId);
         s3Exception.setAdditionalDetails(additionalDetails);
         s3Exception.setErrorType(errorTypeOf(statusCode));
         return s3Exception;

@@ -1328,8 +1328,6 @@ public class TableDescription implements Serializable, Cloneable {
      *        <i>ACTIVE</i> - The table is ready for use.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TableStatus
      */
 

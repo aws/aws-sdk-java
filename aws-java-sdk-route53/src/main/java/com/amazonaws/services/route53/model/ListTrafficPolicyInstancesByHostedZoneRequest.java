@@ -433,8 +433,6 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *        If the value of <code>IsTruncated</code> in the previous response
      *        was <code>false</code>, there are no more traffic policy instances
      *        to get for this hosted zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
 

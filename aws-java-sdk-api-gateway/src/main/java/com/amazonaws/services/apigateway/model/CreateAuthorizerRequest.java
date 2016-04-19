@@ -224,8 +224,6 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * 
      * @param type
      *        [Required] The type of the authorizer.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AuthorizerType
      */
 

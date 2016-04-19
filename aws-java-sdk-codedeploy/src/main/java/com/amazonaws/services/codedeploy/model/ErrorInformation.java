@@ -348,8 +348,6 @@ public class ErrorInformation implements Serializable, Cloneable {
      *        <li>REVISION_MISSING: The revision ID was missing. This error code
      *        will most likely be raised if the revision is deleted after the
      *        deployment is created but before it is started.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ErrorCode
      */
 

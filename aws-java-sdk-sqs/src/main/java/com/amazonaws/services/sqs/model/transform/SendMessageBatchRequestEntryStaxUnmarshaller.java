@@ -17,6 +17,8 @@
 package com.amazonaws.services.sqs.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -117,7 +119,7 @@ public class SendMessageBatchRequestEntryStaxUnmarshaller implements
                 if (context.testExpression("MessageAttribute", targetDepth)) {
                     Entry<String, MessageAttributeValue> entry = MessageAttributesMapEntryUnmarshaller
                             .getInstance().unmarshall(context);
-                    sendMessageBatchRequestEntry.getMessageAttributes().put(
+                    sendMessageBatchRequestEntry.addMessageAttributesEntry(
                             entry.getKey(), entry.getValue());
                     continue;
                 }

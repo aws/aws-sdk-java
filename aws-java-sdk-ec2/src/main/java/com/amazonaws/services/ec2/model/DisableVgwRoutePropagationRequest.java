@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DisableVgwRoutePropagationRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DisableVgwRoutePropagation.
+ * </p>
  */
 public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

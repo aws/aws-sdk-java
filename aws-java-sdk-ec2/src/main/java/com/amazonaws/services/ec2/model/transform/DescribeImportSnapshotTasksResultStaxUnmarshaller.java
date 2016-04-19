@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,8 +54,8 @@ public class DescribeImportSnapshotTasksResultStaxUnmarshaller
 
                 if (context.testExpression("importSnapshotTaskSet/item",
                         targetDepth)) {
-                    describeImportSnapshotTasksResult.getImportSnapshotTasks()
-                            .add(ImportSnapshotTaskStaxUnmarshaller
+                    describeImportSnapshotTasksResult
+                            .withImportSnapshotTasks(ImportSnapshotTaskStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

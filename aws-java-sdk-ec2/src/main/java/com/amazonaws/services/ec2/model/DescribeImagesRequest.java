@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeImagesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeImages.
+ * </p>
  */
 public class DescribeImagesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DescribeImagesRequest> {
@@ -93,7 +95,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).
+     * EBS volume (gp2 | io1 | st1 | sc1 | standard).
      * </p>
      * </li>
      * <li>
@@ -580,7 +582,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).
+     * EBS volume (gp2 | io1 | st1 | sc1 | standard).
      * </p>
      * </li>
      * <li>
@@ -755,8 +757,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>block-device-mapping.volume-type</code> - The volume type
-     *         of the EBS volume (<code>gp2</code> | <code>standard</code> |
-     *         <code>io1</code>).
+     *         of the EBS volume (gp2 | io1 | st1 | sc1 | standard).
      *         </p>
      *         </li>
      *         <li>
@@ -948,7 +949,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).
+     * EBS volume (gp2 | io1 | st1 | sc1 | standard).
      * </p>
      * </li>
      * <li>
@@ -1124,8 +1125,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>block-device-mapping.volume-type</code> - The volume type of
-     *        the EBS volume (<code>gp2</code> | <code>standard</code> |
-     *        <code>io1</code>).
+     *        the EBS volume (gp2 | io1 | st1 | sc1 | standard).
      *        </p>
      *        </li>
      *        <li>
@@ -1320,7 +1320,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).
+     * EBS volume (gp2 | io1 | st1 | sc1 | standard).
      * </p>
      * </li>
      * <li>
@@ -1502,8 +1502,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>block-device-mapping.volume-type</code> - The volume type of
-     *        the EBS volume (<code>gp2</code> | <code>standard</code> |
-     *        <code>io1</code>).
+     *        the EBS volume (gp2 | io1 | st1 | sc1 | standard).
      *        </p>
      *        </li>
      *        <li>
@@ -1701,7 +1700,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).
+     * EBS volume (gp2 | io1 | st1 | sc1 | standard).
      * </p>
      * </li>
      * <li>
@@ -1877,8 +1876,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>block-device-mapping.volume-type</code> - The volume type of
-     *        the EBS volume (<code>gp2</code> | <code>standard</code> |
-     *        <code>io1</code>).
+     *        the EBS volume (gp2 | io1 | st1 | sc1 | standard).
      *        </p>
      *        </li>
      *        <li>

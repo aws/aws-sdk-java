@@ -143,8 +143,6 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * 
      * @param source
      *        Indicates how the routes were provided.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VpnStaticRouteSource
      */
 
@@ -220,8 +218,6 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the static route.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VpnState
      */
 

@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -56,9 +58,9 @@ public class VolumeStatusInfoStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("details/item", targetDepth)) {
-                    volumeStatusInfo.getDetails().add(
-                            VolumeStatusDetailsStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    volumeStatusInfo
+                            .withDetails(VolumeStatusDetailsStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

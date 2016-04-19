@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeInstanceAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeInstanceAttribute.
+ * </p>
  */
 public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -172,8 +174,6 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * 
      * @param attribute
      *        The instance attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceAttributeName
      */
 

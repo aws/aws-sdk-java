@@ -152,8 +152,6 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      *        the resulting list.</li>
      *        <li>Registered: Include registered on-premises instances in the
      *        resulting list.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RegistrationStatus
      */
 

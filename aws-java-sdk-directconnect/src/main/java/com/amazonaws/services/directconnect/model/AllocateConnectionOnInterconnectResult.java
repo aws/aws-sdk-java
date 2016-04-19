@@ -173,8 +173,6 @@ public class AllocateConnectionOnInterconnectResult implements Serializable,
 
     /**
      * @param connectionState
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConnectionState
      */
 

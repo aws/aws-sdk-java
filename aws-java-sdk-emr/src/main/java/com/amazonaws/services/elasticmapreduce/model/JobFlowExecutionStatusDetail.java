@@ -154,8 +154,6 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the job flow.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see JobFlowExecutionState
      */
 

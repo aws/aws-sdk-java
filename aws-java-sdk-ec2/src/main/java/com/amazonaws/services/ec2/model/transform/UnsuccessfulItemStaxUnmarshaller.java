@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -49,16 +51,16 @@ public class UnsuccessfulItemStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("resourceId", targetDepth)) {
-                    unsuccessfulItem.setResourceId(StringStaxUnmarshaller
-                            .getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("error", targetDepth)) {
                     unsuccessfulItem
                             .setError(UnsuccessfulItemErrorStaxUnmarshaller
                                     .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("resourceId", targetDepth)) {
+                    unsuccessfulItem.setResourceId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

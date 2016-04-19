@@ -111,8 +111,6 @@ public class StopAction implements Serializable, Cloneable {
      * @param scope
      *        The scope to which the Stop action applies. That is, what is being
      *        stopped.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StopScope
      */
 

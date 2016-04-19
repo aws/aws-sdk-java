@@ -179,8 +179,6 @@ public class Host implements Serializable, Cloneable {
      * 
      * @param autoPlacement
      *        Whether auto-placement is on or off.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AutoPlacement
      */
 
@@ -415,8 +413,6 @@ public class Host implements Serializable, Cloneable {
      * 
      * @param state
      *        The Dedicated host's state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AllocationState
      */
 

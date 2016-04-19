@@ -17,6 +17,8 @@
 package com.amazonaws.services.autoscaling.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,8 @@ public class ExitStandbyResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Activities/member", targetDepth)) {
-                    exitStandbyResult.getActivities().add(
-                            ActivityStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    exitStandbyResult.withActivities(ActivityStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

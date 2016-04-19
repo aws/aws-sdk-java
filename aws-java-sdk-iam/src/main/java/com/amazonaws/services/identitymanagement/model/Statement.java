@@ -149,8 +149,6 @@ public class Statement implements Serializable, Cloneable {
      * 
      * @param sourcePolicyType
      *        The type of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PolicySourceType
      */
 

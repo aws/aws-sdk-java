@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.MoveAddressToVpcRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for MoveAddressToVpc.
+ * </p>
  */
 public class MoveAddressToVpcRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

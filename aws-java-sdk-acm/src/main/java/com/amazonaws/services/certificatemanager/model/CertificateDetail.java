@@ -871,8 +871,6 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        <li>FAILED</li>
      *        <li>VALIDATION_TIMED_OUT</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CertificateStatus
      */
 
@@ -1131,8 +1129,6 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        <li>PRIVILEGE_WITHDRAWN</li>
      *        <li>A_A_COMPROMISE</li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RevocationReason
      */
 
@@ -1329,8 +1325,6 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @param keyAlgorithm
      *        Asymmetric algorithm used to generate the public and private key
      *        pair. Currently the only supported value is <code>RSA_2048</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see KeyAlgorithm
      */
 

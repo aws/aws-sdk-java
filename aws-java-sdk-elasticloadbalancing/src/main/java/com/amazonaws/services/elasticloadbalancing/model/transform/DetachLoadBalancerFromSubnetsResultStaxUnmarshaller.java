@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticloadbalancing.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DetachLoadBalancerFromSubnetsResultStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Subnets/member", targetDepth)) {
-                    detachLoadBalancerFromSubnetsResult.getSubnets().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    detachLoadBalancerFromSubnetsResult
+                            .withSubnets(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
 

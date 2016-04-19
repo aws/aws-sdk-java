@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,8 @@ public class ListGroupsForUserResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Groups/member", targetDepth)) {
-                    listGroupsForUserResult.getGroups().add(
-                            GroupStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    listGroupsForUserResult.withGroups(GroupStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

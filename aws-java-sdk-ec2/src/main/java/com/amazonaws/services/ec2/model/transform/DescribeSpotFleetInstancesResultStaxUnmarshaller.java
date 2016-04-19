@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -58,9 +60,9 @@ public class DescribeSpotFleetInstancesResultStaxUnmarshaller implements
 
                 if (context.testExpression("activeInstanceSet/item",
                         targetDepth)) {
-                    describeSpotFleetInstancesResult.getActiveInstances().add(
-                            ActiveInstanceStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeSpotFleetInstancesResult
+                            .withActiveInstances(ActiveInstanceStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

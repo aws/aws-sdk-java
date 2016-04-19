@@ -159,8 +159,6 @@ public class StepConfig implements Serializable, Cloneable {
      * 
      * @param actionOnFailure
      *        The action to take if the job flow step fails.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionOnFailure
      */
 

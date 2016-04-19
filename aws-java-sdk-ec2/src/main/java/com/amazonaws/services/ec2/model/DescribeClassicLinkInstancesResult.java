@@ -19,7 +19,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeClassicLinkInstances.
+ * </p>
  */
 public class DescribeClassicLinkInstancesResult implements Serializable,
         Cloneable {

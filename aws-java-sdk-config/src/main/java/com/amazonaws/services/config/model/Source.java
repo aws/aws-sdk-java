@@ -113,8 +113,6 @@ public class Source implements Serializable, Cloneable {
      * @param owner
      *        Indicates whether AWS or the customer owns and manages the AWS
      *        Config rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Owner
      */
 

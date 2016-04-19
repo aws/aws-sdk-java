@@ -19,7 +19,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes an instance running on a Dedicated host.
+ * </p>
  */
 public class HostInstance implements Serializable, Cloneable {
 
@@ -31,7 +33,7 @@ public class HostInstance implements Serializable, Cloneable {
     private String instanceId;
     /**
      * <p>
-     * The instance type size (e.g., m3.medium) of the running instance.
+     * The instance type size (for example, m3.medium) of the running instance.
      * </p>
      */
     private String instanceType;
@@ -79,11 +81,12 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size (e.g., m3.medium) of the running instance.
+     * The instance type size (for example, m3.medium) of the running instance.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size (e.g., m3.medium) of the running instance.
+     *        The instance type size (for example, m3.medium) of the running
+     *        instance.
      */
 
     public void setInstanceType(String instanceType) {
@@ -92,10 +95,11 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size (e.g., m3.medium) of the running instance.
+     * The instance type size (for example, m3.medium) of the running instance.
      * </p>
      * 
-     * @return The instance type size (e.g., m3.medium) of the running instance.
+     * @return The instance type size (for example, m3.medium) of the running
+     *         instance.
      */
 
     public String getInstanceType() {
@@ -104,11 +108,12 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size (e.g., m3.medium) of the running instance.
+     * The instance type size (for example, m3.medium) of the running instance.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size (e.g., m3.medium) of the running instance.
+     *        The instance type size (for example, m3.medium) of the running
+     *        instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

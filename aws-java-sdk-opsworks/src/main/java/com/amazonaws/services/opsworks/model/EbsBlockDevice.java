@@ -286,8 +286,6 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        The volume type. <code>gp2</code> for General Purpose (SSD)
      *        volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, and
      *        <code>standard</code> for Magnetic volumes.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VolumeType
      */
 

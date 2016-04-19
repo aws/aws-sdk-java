@@ -137,8 +137,6 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      * 
      * @param clientVersion
      *        The client version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ClientVersion
      */
 

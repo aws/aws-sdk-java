@@ -104,8 +104,6 @@ public class SourceDetail implements Serializable, Cloneable {
      * @param eventSource
      *        The source of the event, such as an AWS service, that triggers AWS
      *        Config to evaluate your AWS resources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EventSource
      */
 
@@ -227,8 +225,6 @@ public class SourceDetail implements Serializable, Cloneable {
      *        that are initiated when AWS Config delivers a configuration
      *        snapshot, you must use
      *        <code>ConfigurationSnapshotDeliveryCompleted</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MessageType
      */
 

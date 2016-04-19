@@ -68,7 +68,7 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
             String destinationRegion = originalCopySnapshotRequest
                     .getDestinationRegion() != null ? originalCopySnapshotRequest
                     .getDestinationRegion() : AwsHostNameUtils
-                    .parseRegionName(endPointDestination.getHost(), null);
+                    .parseRegionName(endPointDestination.getHost(), serviceName);
 
             URI endPointSource = createEndpoint(sourceRegion, serviceName);
 

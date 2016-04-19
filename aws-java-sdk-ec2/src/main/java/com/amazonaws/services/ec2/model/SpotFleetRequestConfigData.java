@@ -659,8 +659,6 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        Indicates whether running Spot instances should be terminated if
      *        the target capacity of the Spot fleet request is decreased below
      *        the current size of the Spot fleet.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ExcessCapacityTerminationPolicy
      */
 
@@ -760,8 +758,6 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        Indicates how to allocate the target capacity across the Spot
      *        pools specified by the Spot fleet request. The default is
      *        <code>lowestPrice</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AllocationStrategy
      */
 

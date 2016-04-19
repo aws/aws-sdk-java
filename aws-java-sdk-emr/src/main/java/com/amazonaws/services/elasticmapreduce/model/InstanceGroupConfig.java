@@ -227,8 +227,6 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * @param market
      *        Market type of the Amazon EC2 instances used to create a cluster
      *        node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MarketType
      */
 
@@ -305,8 +303,6 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
      * 
      * @param instanceRole
      *        The role of the instance group in the cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceRoleType
      */
 

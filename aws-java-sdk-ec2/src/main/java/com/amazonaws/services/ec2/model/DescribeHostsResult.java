@@ -19,7 +19,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeHosts.
+ * </p>
  */
 public class DescribeHostsResult implements Serializable, Cloneable {
 

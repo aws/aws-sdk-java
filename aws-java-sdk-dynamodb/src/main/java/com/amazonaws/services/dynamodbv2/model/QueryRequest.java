@@ -1526,8 +1526,6 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <code>SPECIFIC_ATTRIBUTES</code>. Any other value for
      *        <i>Select</i> will return an error.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Select
      */
 
@@ -4328,8 +4326,6 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        This parameter does not support attributes of type List or Map.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConditionalOperator
      */
 
@@ -4740,8 +4736,6 @@ public class QueryRequest extends AmazonWebServiceRequest implements
 
     /**
      * @param returnConsumedCapacity
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnConsumedCapacity
      */
 

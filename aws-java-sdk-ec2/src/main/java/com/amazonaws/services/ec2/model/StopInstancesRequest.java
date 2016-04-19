@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.StopInstancesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for StopInstances.
+ * </p>
  */
 public class StopInstancesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<StopInstancesRequest> {

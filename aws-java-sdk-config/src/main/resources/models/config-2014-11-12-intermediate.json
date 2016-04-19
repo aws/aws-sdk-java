@@ -20,6 +20,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "config",
     "signingName" : "config",
+    "xmlProtocol" : false,
     "serviceName" : "Config Service",
     "cborProtocol" : false,
     "jsonProtocol" : true,
@@ -50,6 +51,7 @@
         "documentation" : "<p>The rule is currently being deleted. Wait for a while and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -79,6 +81,7 @@
         "documentation" : "<p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -114,6 +117,7 @@
         "documentation" : "<p>There is no configuration recorder running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeliverConfigSnapshotResult",
       "asyncReturnType" : "DeliverConfigSnapshotResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeliverConfigSnapshotResult>",
@@ -146,6 +150,7 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeComplianceByConfigRuleResult",
       "asyncReturnType" : "DescribeComplianceByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeComplianceByConfigRuleResult>",
@@ -178,6 +183,7 @@
         "documentation" : "<p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeComplianceByResourceResult",
       "asyncReturnType" : "DescribeComplianceByResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeComplianceByResourceResult>",
@@ -207,6 +213,7 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeConfigRuleEvaluationStatusResult",
       "asyncReturnType" : "DescribeConfigRuleEvaluationStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult>",
@@ -236,6 +243,7 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeConfigRulesResult",
       "asyncReturnType" : "DescribeConfigRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigRulesResult>",
@@ -265,6 +273,7 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationRecorderStatusResult",
       "asyncReturnType" : "DescribeConfigurationRecorderStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult>",
@@ -294,6 +303,7 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationRecordersResult",
       "asyncReturnType" : "DescribeConfigurationRecordersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationRecordersResult>",
@@ -323,6 +333,7 @@
         "documentation" : "<p>You have specified a delivery channel that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeDeliveryChannelStatusResult",
       "asyncReturnType" : "DescribeDeliveryChannelStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryChannelStatusResult>",
@@ -352,6 +363,7 @@
         "documentation" : "<p>You have specified a delivery channel that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeDeliveryChannelsResult",
       "asyncReturnType" : "DescribeDeliveryChannelsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryChannelsResult>",
@@ -387,6 +399,7 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetComplianceDetailsByConfigRuleResult",
       "asyncReturnType" : "GetComplianceDetailsByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult>",
@@ -416,6 +429,7 @@
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetComplianceDetailsByResourceResult",
       "asyncReturnType" : "GetComplianceDetailsByResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceDetailsByResourceResult>",
@@ -442,6 +456,7 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetComplianceSummaryByConfigRuleResult",
       "asyncReturnType" : "GetComplianceSummaryByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult>",
@@ -471,6 +486,7 @@
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetComplianceSummaryByResourceTypeResult",
       "asyncReturnType" : "GetComplianceSummaryByResourceTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult>",
@@ -515,6 +531,7 @@
         "documentation" : "<p>You have specified a resource that is either unknown or has not been discovered.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetResourceConfigHistoryResult",
       "asyncReturnType" : "GetResourceConfigHistoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetResourceConfigHistoryResult>",
@@ -553,6 +570,7 @@
         "documentation" : "<p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListDiscoveredResourcesResult",
       "asyncReturnType" : "ListDiscoveredResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDiscoveredResourcesResult>",
@@ -588,6 +606,7 @@
         "documentation" : "<p>Indicates one of the following errors:</p> <ul> <li>The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the config:Put* action.</li> <li>The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -623,6 +642,7 @@
         "documentation" : "<p>AWS Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values could also be incorrectly formatted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -667,6 +687,7 @@
         "documentation" : "<p>Your Amazon S3 bucket policy does not permit AWS Config to write to it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -702,6 +723,7 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutEvaluationsResult",
       "asyncReturnType" : "PutEvaluationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutEvaluationsResult>",
@@ -731,6 +753,7 @@
         "documentation" : "<p>There is no delivery channel available to record configurations.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -757,6 +780,7 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
@@ -1105,15 +1129,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "ChannelName",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1198,15 +1274,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "ChannelName",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1367,8 +1495,8 @@
           "simple" : false,
           "simpleType" : "DeliveryChannelStatus",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannelStatus>",
-          "templateType" : "java.util.List<DeliveryChannelStatus>"
+          "templateType" : "java.util.List<DeliveryChannelStatus>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannelStatus>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1508,8 +1636,8 @@
             "simple" : false,
             "simpleType" : "DeliveryChannelStatus",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannelStatus>",
-            "templateType" : "java.util.List<DeliveryChannelStatus>"
+            "templateType" : "java.util.List<DeliveryChannelStatus>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannelStatus>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1676,8 +1804,8 @@
           "simple" : false,
           "simpleType" : "ComplianceByResource",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByResource>",
-          "templateType" : "java.util.List<ComplianceByResource>"
+          "templateType" : "java.util.List<ComplianceByResource>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByResource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1922,8 +2050,8 @@
             "simple" : false,
             "simpleType" : "ComplianceByResource",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByResource>",
-            "templateType" : "java.util.List<ComplianceByResource>"
+            "templateType" : "java.util.List<ComplianceByResource>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByResource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1994,15 +2122,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "StringWithCharLimit256",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2087,15 +2267,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "StringWithCharLimit256",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2256,8 +2488,8 @@
           "simple" : false,
           "simpleType" : "EvaluationResult",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>",
-          "templateType" : "java.util.List<EvaluationResult>"
+          "templateType" : "java.util.List<EvaluationResult>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2502,8 +2734,8 @@
             "simple" : false,
             "simpleType" : "EvaluationResult",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>",
-            "templateType" : "java.util.List<EvaluationResult>"
+            "templateType" : "java.util.List<EvaluationResult>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4930,12 +5162,65 @@
           "keyModel" : null,
           "valueType" : "String",
           "valueLocationName" : "value",
-          "valueModel" : null,
-          "valueSimple" : true,
-          "valueList" : false,
+          "valueModel" : {
+            "documentation" : "",
+            "name" : "Value",
+            "c2jName" : "value",
+            "c2jShape" : "Value",
+            "variable" : {
+              "variableName" : "value",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "value",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "value",
+              "marshallLocationName" : "value",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param value */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
+          "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
-          "templateType" : "java.util.Map<String,String>"
+          "valueSimple" : true,
+          "valueList" : false,
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4992,15 +5277,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "RelatedEvent",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5117,8 +5454,8 @@
           "simple" : false,
           "simpleType" : "Relationship",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Relationship>",
-          "templateType" : "java.util.List<Relationship>"
+          "templateType" : "java.util.List<Relationship>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Relationship>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5569,15 +5906,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "RelatedEvent",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5799,12 +6188,65 @@
             "keyModel" : null,
             "valueType" : "String",
             "valueLocationName" : "value",
-            "valueModel" : null,
-            "valueSimple" : true,
-            "valueList" : false,
+            "valueModel" : {
+              "documentation" : "",
+              "name" : "Value",
+              "c2jName" : "value",
+              "c2jShape" : "Value",
+              "variable" : {
+                "variableName" : "value",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "value",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "value",
+                "marshallLocationName" : "value",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param value */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
+            "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
-            "templateType" : "java.util.Map<String,String>"
+            "valueSimple" : true,
+            "valueList" : false,
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6133,8 +6575,8 @@
             "simple" : false,
             "simpleType" : "Relationship",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Relationship>",
-            "templateType" : "java.util.List<Relationship>"
+            "templateType" : "java.util.List<Relationship>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Relationship>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6964,8 +7406,8 @@
           "simple" : false,
           "simpleType" : "ConfigRuleEvaluationStatus",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>",
-          "templateType" : "java.util.List<ConfigRuleEvaluationStatus>"
+          "templateType" : "java.util.List<ConfigRuleEvaluationStatus>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7105,8 +7547,8 @@
             "simple" : false,
             "simpleType" : "ConfigRuleEvaluationStatus",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>",
-            "templateType" : "java.util.List<ConfigRuleEvaluationStatus>"
+            "templateType" : "java.util.List<ConfigRuleEvaluationStatus>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7236,8 +7678,8 @@
           "simple" : false,
           "simpleType" : "Evaluation",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>",
-          "templateType" : "java.util.List<Evaluation>"
+          "templateType" : "java.util.List<Evaluation>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7433,8 +7875,8 @@
             "simple" : false,
             "simpleType" : "Evaluation",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>",
-            "templateType" : "java.util.List<Evaluation>"
+            "templateType" : "java.util.List<Evaluation>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8126,15 +8568,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "StringWithCharLimit64",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8251,8 +8745,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "ComplianceType",
@@ -8442,15 +8936,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "StringWithCharLimit64",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8568,8 +9114,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "ComplianceType",
@@ -8680,15 +9226,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "StringWithCharLimit64",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8878,15 +9476,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "StringWithCharLimit64",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11286,8 +11936,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "ComplianceType",
@@ -11536,8 +12186,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "ComplianceType",
@@ -11825,8 +12475,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "ComplianceType",
@@ -12127,8 +12777,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "ComplianceType",
@@ -12364,8 +13014,8 @@
           "simple" : false,
           "simpleType" : "ConfigurationRecorderStatus",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorderStatus>",
-          "templateType" : "java.util.List<ConfigurationRecorderStatus>"
+          "templateType" : "java.util.List<ConfigurationRecorderStatus>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorderStatus>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12505,8 +13155,8 @@
             "simple" : false,
             "simpleType" : "ConfigurationRecorderStatus",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorderStatus>",
-            "templateType" : "java.util.List<ConfigurationRecorderStatus>"
+            "templateType" : "java.util.List<ConfigurationRecorderStatus>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorderStatus>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12740,8 +13390,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "ComplianceType",
@@ -13042,8 +13692,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "ComplianceType",
@@ -14242,8 +14892,8 @@
           "simple" : false,
           "simpleType" : "DeliveryChannel",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannel>",
-          "templateType" : "java.util.List<DeliveryChannel>"
+          "templateType" : "java.util.List<DeliveryChannel>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannel>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14383,8 +15033,8 @@
             "simple" : false,
             "simpleType" : "DeliveryChannel",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannel>",
-            "templateType" : "java.util.List<DeliveryChannel>"
+            "templateType" : "java.util.List<DeliveryChannel>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeliveryChannel>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14636,8 +15286,8 @@
           "simple" : false,
           "simpleType" : "ComplianceSummaryByResourceType",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceSummaryByResourceType>",
-          "templateType" : "java.util.List<ComplianceSummaryByResourceType>"
+          "templateType" : "java.util.List<ComplianceSummaryByResourceType>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceSummaryByResourceType>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14777,8 +15427,8 @@
             "simple" : false,
             "simpleType" : "ComplianceSummaryByResourceType",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceSummaryByResourceType>",
-            "templateType" : "java.util.List<ComplianceSummaryByResourceType>"
+            "templateType" : "java.util.List<ComplianceSummaryByResourceType>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceSummaryByResourceType>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15272,15 +15922,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "StringWithCharLimit256",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15676,15 +16378,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "StringWithCharLimit256",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16269,8 +17023,8 @@
           "simple" : false,
           "simpleType" : "ResourceIdentifier",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceIdentifier>",
-          "templateType" : "java.util.List<ResourceIdentifier>"
+          "templateType" : "java.util.List<ResourceIdentifier>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceIdentifier>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16515,8 +17269,8 @@
             "simple" : false,
             "simpleType" : "ResourceIdentifier",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceIdentifier>",
-            "templateType" : "java.util.List<ResourceIdentifier>"
+            "templateType" : "java.util.List<ResourceIdentifier>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceIdentifier>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17132,8 +17886,8 @@
           "simple" : false,
           "simpleType" : "ConfigurationRecorder",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>",
-          "templateType" : "java.util.List<ConfigurationRecorder>"
+          "templateType" : "java.util.List<ConfigurationRecorder>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17273,8 +18027,8 @@
             "simple" : false,
             "simpleType" : "ConfigurationRecorder",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>",
-            "templateType" : "java.util.List<ConfigurationRecorder>"
+            "templateType" : "java.util.List<ConfigurationRecorder>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17345,15 +18099,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "ChannelName",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17438,15 +18244,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "ChannelName",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17576,8 +18434,8 @@
           "simple" : false,
           "simpleType" : "Evaluation",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>",
-          "templateType" : "java.util.List<Evaluation>"
+          "templateType" : "java.util.List<Evaluation>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17717,8 +18575,8 @@
             "simple" : false,
             "simpleType" : "Evaluation",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>",
-            "templateType" : "java.util.List<Evaluation>"
+            "templateType" : "java.util.List<Evaluation>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17789,15 +18647,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "StringWithCharLimit64",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17882,15 +18792,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "StringWithCharLimit64",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18020,8 +18982,8 @@
           "simple" : false,
           "simpleType" : "ComplianceByConfigRule",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>",
-          "templateType" : "java.util.List<ComplianceByConfigRule>"
+          "templateType" : "java.util.List<ComplianceByConfigRule>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18266,8 +19228,8 @@
             "simple" : false,
             "simpleType" : "ComplianceByConfigRule",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>",
-            "templateType" : "java.util.List<ComplianceByConfigRule>"
+            "templateType" : "java.util.List<ComplianceByConfigRule>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ComplianceByConfigRule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20713,8 +21675,8 @@
           "simple" : false,
           "simpleType" : "ConfigRule",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRule>",
-          "templateType" : "java.util.List<ConfigRule>"
+          "templateType" : "java.util.List<ConfigRule>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20959,8 +21921,8 @@
             "simple" : false,
             "simpleType" : "ConfigRule",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRule>",
-            "templateType" : "java.util.List<ConfigRule>"
+            "templateType" : "java.util.List<ConfigRule>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigRule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21225,8 +22187,8 @@
           "simple" : false,
           "simpleType" : "SourceDetail",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SourceDetail>",
-          "templateType" : "java.util.List<SourceDetail>"
+          "templateType" : "java.util.List<SourceDetail>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SourceDetail>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21472,8 +22434,8 @@
             "simple" : false,
             "simpleType" : "SourceDetail",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SourceDetail>",
-            "templateType" : "java.util.List<SourceDetail>"
+            "templateType" : "java.util.List<SourceDetail>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SourceDetail>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21953,8 +22915,8 @@
           "simple" : false,
           "simpleType" : "ConfigurationItem",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationItem>",
-          "templateType" : "java.util.List<ConfigurationItem>"
+          "templateType" : "java.util.List<ConfigurationItem>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationItem>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22199,8 +23161,8 @@
             "simple" : false,
             "simpleType" : "ConfigurationItem",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationItem>",
-            "templateType" : "java.util.List<ConfigurationItem>"
+            "templateType" : "java.util.List<ConfigurationItem>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ConfigurationItem>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23519,8 +24481,8 @@
           "simple" : false,
           "simpleType" : "EvaluationResult",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>",
-          "templateType" : "java.util.List<EvaluationResult>"
+          "templateType" : "java.util.List<EvaluationResult>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23765,8 +24727,8 @@
             "simple" : false,
             "simpleType" : "EvaluationResult",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>",
-            "templateType" : "java.util.List<EvaluationResult>"
+            "templateType" : "java.util.List<EvaluationResult>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EvaluationResult>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23868,15 +24830,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "RecorderName",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23961,15 +24975,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "RecorderName",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24550,8 +25616,8 @@
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "ResourceType",
@@ -24744,8 +25810,8 @@
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "ResourceType",
@@ -25596,15 +26662,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "RecorderName",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25689,15 +26807,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "RecorderName",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26874,15 +28044,67 @@
           "memberLocationName" : null,
           "implType" : "com.amazonaws.internal.SdkInternalList",
           "interfaceType" : "java.util.List",
-          "listMemberModel" : null,
+          "listMemberModel" : {
+            "documentation" : "",
+            "name" : "Member",
+            "c2jName" : "member",
+            "c2jShape" : "ResourceId",
+            "variable" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "setterModel" : {
+              "variableName" : "member",
+              "variableType" : "String",
+              "variableDeclarationType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "unmarshallLocationName" : "member",
+              "marshallLocationName" : "member",
+              "additionalUnmarshallingPath" : null,
+              "additionalMarshallingPath" : null,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "flattened" : false,
+              "header" : false,
+              "uri" : false,
+              "statusCode" : false,
+              "queryString" : false
+            },
+            "deprecated" : false,
+            "listModel" : null,
+            "mapModel" : null,
+            "enumType" : null,
+            "xmlNameSpaceUri" : null,
+            "idempotencyToken" : false,
+            "list" : false,
+            "simple" : true,
+            "map" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "getterDocumentation" : "/**\n@return */",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
           "map" : false,
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27334,15 +28556,67 @@
             "memberLocationName" : null,
             "implType" : "com.amazonaws.internal.SdkInternalList",
             "interfaceType" : "java.util.List",
-            "listMemberModel" : null,
+            "listMemberModel" : {
+              "documentation" : "",
+              "name" : "Member",
+              "c2jName" : "member",
+              "c2jShape" : "ResourceId",
+              "variable" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "setterModel" : {
+                "variableName" : "member",
+                "variableType" : "String",
+                "variableDeclarationType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "unmarshallLocationName" : "member",
+                "marshallLocationName" : "member",
+                "additionalUnmarshallingPath" : null,
+                "additionalMarshallingPath" : null,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "flattened" : false,
+                "header" : false,
+                "uri" : false,
+                "statusCode" : false,
+                "queryString" : false
+              },
+              "deprecated" : false,
+              "listModel" : null,
+              "mapModel" : null,
+              "enumType" : null,
+              "xmlNameSpaceUri" : null,
+              "idempotencyToken" : false,
+              "list" : false,
+              "simple" : true,
+              "map" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "getterDocumentation" : "/**\n@return */",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
             "map" : false,
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27517,6 +28791,7 @@
       "actionPrefix" : null,
       "fileNamePrefix" : null
     },
+    "customServiceMetadata" : null,
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,

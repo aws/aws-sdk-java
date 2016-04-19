@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteRouteRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteRoute.
+ * </p>
  */
 public class DeleteRouteRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DeleteRouteRequest> {

@@ -3,6 +3,8 @@
 package ${metadata.packageName}.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -47,7 +49,14 @@ public class ${shape.shapeName}StaxUnmarshaller implements Unmarshaller<${shape.
         if (context.isStartOfDocument()) {
     <#list shape.members as memberModel>
         <#if memberModel.http.isHeader() >
-            ${shape.variable.variableName}.set${memberModel.name}(context.getHeader("${memberModel.http.unmarshallLocationName}"));
+            context.setCurrentHeader("${memberModel.http.unmarshallLocationName}");
+            ${shape.variable.variableName}.set${memberModel.name}(
+            <#if memberModel.variable.simpleType == "Date">
+                com.amazonaws.util.DateUtils.parseRFC822Date(context.readText()));
+            <#else>
+                ${memberModel.variable.simpleType}StaxUnmarshaller.getInstance().unmarshall(context));
+            </#if>
+
         </#if>
     </#list>
         }

@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -96,7 +98,7 @@ public class GetAccountSummaryResultStaxUnmarshaller implements
                 if (context.testExpression("SummaryMap/entry", targetDepth)) {
                     Entry<String, Integer> entry = SummaryMapMapEntryUnmarshaller
                             .getInstance().unmarshall(context);
-                    getAccountSummaryResult.getSummaryMap().put(entry.getKey(),
+                    getAccountSummaryResult.addSummaryMapEntry(entry.getKey(),
                             entry.getValue());
                     continue;
                 }

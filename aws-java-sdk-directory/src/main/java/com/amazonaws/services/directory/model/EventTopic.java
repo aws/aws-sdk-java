@@ -292,8 +292,6 @@ public class EventTopic implements Serializable, Cloneable {
      * 
      * @param status
      *        The topic registration status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TopicStatus
      */
 

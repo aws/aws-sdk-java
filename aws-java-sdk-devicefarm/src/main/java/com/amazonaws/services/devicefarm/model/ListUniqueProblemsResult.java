@@ -35,7 +35,17 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -50,22 +60,12 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -90,7 +90,17 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -105,22 +115,12 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -132,7 +132,17 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         ERRORED: An error condition.
+     *         PENDING: A pending condition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PASSED: A passing condition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         WARNED: A warning condition.
      *         </p>
      *         </li>
      *         <li>
@@ -147,22 +157,12 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         ERRORED: An error condition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         STOPPED: A stopped condition.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         PASSED: A passing condition.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         PENDING: A pending condition.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         WARNED: A warning condition.
      *         </p>
      *         </li>
      */
@@ -181,7 +181,17 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -196,22 +206,12 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -224,7 +224,17 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        PENDING: A pending condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PASSED: A passing condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      *        <li>
@@ -239,22 +249,12 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        ERRORED: An error condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        STOPPED: A stopped condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PASSED: A passing condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PENDING: A pending condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      */
@@ -274,7 +274,17 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -289,22 +299,12 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -317,7 +317,17 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        PENDING: A pending condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PASSED: A passing condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      *        <li>
@@ -332,22 +342,12 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        ERRORED: An error condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        STOPPED: A stopped condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PASSED: A passing condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PENDING: A pending condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

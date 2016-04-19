@@ -77,6 +77,10 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * <p>
      * One or more block device mapping entries.
      * </p>
+     * <p>
+     * Although you can specify encrypted EBS volumes in this block device
+     * mapping for your Spot Instances, these volumes are not encrypted.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
@@ -345,8 +349,6 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceType
      */
 
@@ -498,8 +500,16 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * <p>
      * One or more block device mapping entries.
      * </p>
+     * <p>
+     * Although you can specify encrypted EBS volumes in this block device
+     * mapping for your Spot Instances, these volumes are not encrypted.
+     * </p>
      * 
-     * @return One or more block device mapping entries.
+     * @return One or more block device mapping entries.</p>
+     *         <p>
+     *         Although you can specify encrypted EBS volumes in this block
+     *         device mapping for your Spot Instances, these volumes are not
+     *         encrypted.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -513,9 +523,17 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * <p>
      * One or more block device mapping entries.
      * </p>
+     * <p>
+     * Although you can specify encrypted EBS volumes in this block device
+     * mapping for your Spot Instances, these volumes are not encrypted.
+     * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        One or more block device mapping entries.</p>
+     *        <p>
+     *        Although you can specify encrypted EBS volumes in this block
+     *        device mapping for your Spot Instances, these volumes are not
+     *        encrypted.
      */
 
     public void setBlockDeviceMappings(
@@ -534,6 +552,10 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * One or more block device mapping entries.
      * </p>
      * <p>
+     * Although you can specify encrypted EBS volumes in this block device
+     * mapping for your Spot Instances, these volumes are not encrypted.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
      * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
@@ -541,7 +563,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        One or more block device mapping entries.</p>
+     *        <p>
+     *        Although you can specify encrypted EBS volumes in this block
+     *        device mapping for your Spot Instances, these volumes are not
+     *        encrypted.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -562,9 +588,17 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * <p>
      * One or more block device mapping entries.
      * </p>
+     * <p>
+     * Although you can specify encrypted EBS volumes in this block device
+     * mapping for your Spot Instances, these volumes are not encrypted.
+     * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        One or more block device mapping entries.</p>
+     *        <p>
+     *        Although you can specify encrypted EBS volumes in this block
+     *        device mapping for your Spot Instances, these volumes are not
+     *        encrypted.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

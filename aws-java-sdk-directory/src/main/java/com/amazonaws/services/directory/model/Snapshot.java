@@ -195,8 +195,6 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @param type
      *        The snapshot type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SnapshotType
      */
 
@@ -313,8 +311,6 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @param status
      *        The snapshot status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SnapshotStatus
      */
 

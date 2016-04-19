@@ -211,8 +211,6 @@ public class Diagnostics implements Serializable, Cloneable {
      *        <li>ScriptFailed: The specified script failed to run as expected.</li>
      *        <li>UnknownError: The specified script did not run for an unknown
      *        reason.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LifecycleErrorCode
      */
 

@@ -219,8 +219,6 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      *        Specifies the intended use of the key. Currently this defaults to
      *        ENCRYPT/DECRYPT, and only symmetric encryption and decryption are
      *        supported.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see KeyUsageType
      */
 

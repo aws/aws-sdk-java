@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ResetSnapshotAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ResetSnapshotAttribute.
+ * </p>
  */
 public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,
@@ -183,8 +185,6 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest
      * @param attribute
      *        The attribute to reset. Currently, only the attribute for
      *        permission to create volumes can be reset.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SnapshotAttributeName
      */
 

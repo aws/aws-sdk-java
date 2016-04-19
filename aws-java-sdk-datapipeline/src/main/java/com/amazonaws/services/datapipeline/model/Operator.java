@@ -436,8 +436,6 @@ public class Operator implements Serializable, Cloneable {
      *        names containing only alpha-numeric values, as symbols may be
      *        reserved by AWS Data Pipeline. User-defined fields that you add to
      *        a pipeline should prefix their name with the string "my".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OperatorType
      */
 

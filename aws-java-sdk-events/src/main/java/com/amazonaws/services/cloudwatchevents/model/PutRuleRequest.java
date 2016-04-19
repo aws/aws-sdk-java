@@ -245,8 +245,6 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @param state
      *        Indicates whether the rule is enabled or disabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RuleState
      */
 

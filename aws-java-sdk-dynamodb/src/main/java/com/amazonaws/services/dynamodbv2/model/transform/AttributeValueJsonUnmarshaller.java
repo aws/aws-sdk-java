@@ -86,7 +86,7 @@ public class AttributeValueJsonUnmarshaller implements
                     context.nextToken();
                     attributeValue
                             .setBS(new ListUnmarshaller<java.nio.ByteBuffer>(
-                                    context.getUnmarshaller(ByteBuffer.class))
+                                    context.getUnmarshaller(java.nio.ByteBuffer.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("M", targetDepth)) {

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeAvailabilityZonesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeAvailabilityZones.
+ * </p>
  */
 public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

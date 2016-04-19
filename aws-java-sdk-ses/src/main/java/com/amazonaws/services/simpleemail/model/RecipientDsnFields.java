@@ -267,8 +267,6 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *        a result of its attempt to deliver the message to the recipient
      *        address. This is required by <a
      *        href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DsnAction
      */
 

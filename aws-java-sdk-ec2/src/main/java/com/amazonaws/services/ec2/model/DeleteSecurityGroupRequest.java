@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteSecurityGroupRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteSecurityGroup.
+ * </p>
  */
 public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

@@ -134,8 +134,6 @@ public class ImageFailure implements Serializable, Cloneable {
      * 
      * @param failureCode
      *        The code associated with the failure.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ImageFailureCode
      */
 

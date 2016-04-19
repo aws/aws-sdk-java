@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.BundleInstanceRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for BundleInstance.
+ * </p>
  */
 public class BundleInstanceRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<BundleInstanceRequest> {

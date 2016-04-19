@@ -204,8 +204,6 @@ public class CreateEndpointRequest extends AmazonWebServiceRequest implements
      * 
      * @param endpointType
      *        The type of endpoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReplicationEndpointTypeValue
      */
 

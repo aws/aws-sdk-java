@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DetachNetworkInterfaceRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DetachNetworkInterface.
+ * </p>
  */
 public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -107,8 +109,8 @@ public class ConfigurationSettingsDescriptionStaxUnmarshaller implements
 
                 if (context
                         .testExpression("OptionSettings/member", targetDepth)) {
-                    configurationSettingsDescription.getOptionSettings().add(
-                            ConfigurationOptionSettingStaxUnmarshaller
+                    configurationSettingsDescription
+                            .withOptionSettings(ConfigurationOptionSettingStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

@@ -89,8 +89,6 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * 
      * @param status
      *        The status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SummaryStatus
      */
 

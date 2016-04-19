@@ -48,7 +48,11 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * </p>
      */
     private String url;
-
+    /**
+     * <p>
+     * The S3 bucket for the disk image.
+     * </p>
+     */
     private UserBucket userBucket;
 
     /**
@@ -202,7 +206,12 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The S3 bucket for the disk image.
+     * </p>
+     * 
      * @param userBucket
+     *        The S3 bucket for the disk image.
      */
 
     public void setUserBucket(UserBucket userBucket) {
@@ -210,7 +219,11 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The S3 bucket for the disk image.
+     * </p>
+     * 
+     * @return The S3 bucket for the disk image.
      */
 
     public UserBucket getUserBucket() {
@@ -218,7 +231,12 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The S3 bucket for the disk image.
+     * </p>
+     * 
      * @param userBucket
+     *        The S3 bucket for the disk image.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

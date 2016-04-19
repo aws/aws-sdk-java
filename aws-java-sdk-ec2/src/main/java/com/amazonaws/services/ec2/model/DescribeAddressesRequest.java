@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeAddressesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeAddresses.
+ * </p>
  */
 public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -98,9 +100,8 @@ public class InstanceStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("productCodes/item", targetDepth)) {
-                    instance.getProductCodes().add(
-                            ProductCodeStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    instance.withProductCodes(ProductCodeStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -196,9 +197,8 @@ public class InstanceStaxUnmarshaller implements
 
                 if (context.testExpression("blockDeviceMapping/item",
                         targetDepth)) {
-                    instance.getBlockDeviceMappings().add(
-                            InstanceBlockDeviceMappingStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    instance.withBlockDeviceMappings(InstanceBlockDeviceMappingStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -228,16 +228,14 @@ public class InstanceStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    instance.getTags().add(
-                            TagStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    instance.withTags(TagStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("groupSet/item", targetDepth)) {
-                    instance.getSecurityGroups().add(
-                            GroupIdentifierStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    instance.withSecurityGroups(GroupIdentifierStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -255,9 +253,8 @@ public class InstanceStaxUnmarshaller implements
 
                 if (context.testExpression("networkInterfaceSet/item",
                         targetDepth)) {
-                    instance.getNetworkInterfaces().add(
-                            InstanceNetworkInterfaceStaxUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    instance.withNetworkInterfaces(InstanceNetworkInterfaceStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

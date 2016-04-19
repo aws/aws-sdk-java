@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyReservedInstancesRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ModifyReservedInstances.
+ * </p>
  */
 public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,16 +52,15 @@ public class ReleaseHostsResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("successful/item", targetDepth)) {
-                    releaseHostsResult.getSuccessful().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    releaseHostsResult.withSuccessful(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("unsuccessful/item", targetDepth)) {
-                    releaseHostsResult.getUnsuccessful().add(
-                            UnsuccessfulItemStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    releaseHostsResult
+                            .withUnsuccessful(UnsuccessfulItemStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

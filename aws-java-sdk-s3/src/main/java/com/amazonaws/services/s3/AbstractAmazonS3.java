@@ -28,6 +28,7 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
+import com.amazonaws.services.s3.model.BucketAccelerateConfiguration;
 import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
@@ -57,6 +58,7 @@ import com.amazonaws.services.s3.model.DeleteObjectsRequest;
 import com.amazonaws.services.s3.model.DeleteObjectsResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.s3.model.GetBucketAccelerateConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketAclRequest;
 import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
@@ -92,6 +94,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
@@ -930,6 +933,38 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     public boolean doesObjectExist(String bucketName, String objectName)
             throws AmazonServiceException, AmazonClientException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public BucketAccelerateConfiguration getBucketAccelerateConfiguration(
+            String bucketName) throws AmazonServiceException,
+            AmazonClientException {
+        return getBucketAccelerateConfiguration(new GetBucketAccelerateConfigurationRequest(
+                bucketName));
+    }
+
+    @Override
+    public BucketAccelerateConfiguration getBucketAccelerateConfiguration(
+            GetBucketAccelerateConfigurationRequest getBucketAccelerateConfigurationRequest)
+            throws AmazonServiceException, AmazonClientException {
+        throw new UnsupportedOperationException(
+                "Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public void setBucketAccelerateConfiguration(String bucketName,
+            BucketAccelerateConfiguration accelerateConfiguration)
+            throws AmazonServiceException, AmazonClientException {
+        setBucketAccelerateConfiguration(new SetBucketAccelerateConfigurationRequest(
+                bucketName, accelerateConfiguration));
+    }
+
+    @Override
+    public void setBucketAccelerateConfiguration(
+            SetBucketAccelerateConfigurationRequest setBucketAccelerateConfigurationRequest)
+            throws AmazonServiceException, AmazonClientException {
+        throw new UnsupportedOperationException(
+                "Extend AbstractAmazonS3 to provide an implementation");
     }
 
 }

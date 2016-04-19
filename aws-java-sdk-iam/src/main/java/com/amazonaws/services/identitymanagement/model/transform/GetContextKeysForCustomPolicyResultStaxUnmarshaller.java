@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,9 +54,9 @@ public class GetContextKeysForCustomPolicyResultStaxUnmarshaller
 
                 if (context.testExpression("ContextKeyNames/member",
                         targetDepth)) {
-                    getContextKeysForCustomPolicyResult.getContextKeyNames()
-                            .add(StringStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getContextKeysForCustomPolicyResult
+                            .withContextKeyNames(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

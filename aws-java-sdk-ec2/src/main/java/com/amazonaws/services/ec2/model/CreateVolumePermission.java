@@ -147,8 +147,6 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      * @param group
      *        The specific group that is to be added or removed from a volume's
      *        list of create volume permissions.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PermissionGroup
      */
 

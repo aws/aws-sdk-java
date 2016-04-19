@@ -459,8 +459,6 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        Currently the only allowed value is <code>ENCRYPT_DECRYPT</code>,
      *        which means you can use the key for the <a>Encrypt</a> and
      *        <a>Decrypt</a> operations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see KeyUsageType
      */
 
@@ -593,8 +591,6 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *        >How Key State Affects the Use of a Customer Master Key</a> in the
      *        <i>AWS Key Management Service Developer Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see KeyState
      */
 

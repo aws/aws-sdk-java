@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyVpcAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ModifyVpcAttribute.
+ * </p>
  */
 public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

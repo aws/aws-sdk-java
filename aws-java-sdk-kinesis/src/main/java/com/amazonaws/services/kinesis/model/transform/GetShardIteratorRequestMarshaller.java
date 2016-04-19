@@ -80,6 +80,10 @@ public class GetShardIteratorRequestMarshaller implements
                                 getShardIteratorRequest
                                         .getStartingSequenceNumber());
             }
+            if (getShardIteratorRequest.getTimestamp() != null) {
+                jsonGenerator.writeFieldName("Timestamp").writeValue(
+                        getShardIteratorRequest.getTimestamp());
+            }
 
             jsonGenerator.writeEndObject();
 

@@ -139,8 +139,6 @@ public class MonetaryAmount implements Serializable, Cloneable {
      * @param currencyCode
      *        The currency code of a monetary amount. For example,
      *        <code>USD</code> means "U.S. dollars."
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CurrencyCode
      */
 

@@ -745,8 +745,6 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @param stateValue
      *        The state value for the alarm.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StateValue
      */
 
@@ -1031,8 +1029,6 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @param statistic
      *        The statistic to apply to the alarm's associated metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Statistic
      */
 
@@ -1231,8 +1227,6 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @param unit
      *        The unit of the alarm's associated metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StandardUnit
      */
 
@@ -1412,8 +1406,6 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        The arithmetic operation to use when comparing the specified
      *        <code>Statistic</code> and <code>Threshold</code>. The specified
      *        <code>Statistic</code> value is used as the first operand.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComparisonOperator
      */
 

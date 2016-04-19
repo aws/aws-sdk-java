@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AllocateAddressRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AllocateAddress.
+ * </p>
  */
 public class AllocateAddressRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<AllocateAddressRequest> {
@@ -117,8 +119,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements
      *        instances in a VPC.</p>
      *        <p>
      *        Default: The address is for use with instances in EC2-Classic.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DomainType
      */
 

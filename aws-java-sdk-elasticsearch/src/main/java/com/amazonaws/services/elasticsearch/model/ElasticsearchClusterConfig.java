@@ -121,8 +121,6 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * 
      * @param instanceType
      *        The instance type for an Elasticsearch cluster.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ESPartitionInstanceType
      */
 
@@ -401,8 +399,6 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * 
      * @param dedicatedMasterType
      *        The instance type for a dedicated master node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ESPartitionInstanceType
      */
 

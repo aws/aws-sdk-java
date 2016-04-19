@@ -388,8 +388,6 @@ public class ReplicationTask implements Serializable, Cloneable {
      * 
      * @param migrationType
      *        The type of migration.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MigrationTypeValue
      */
 

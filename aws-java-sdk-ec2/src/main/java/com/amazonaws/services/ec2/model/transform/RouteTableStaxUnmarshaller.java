@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -62,31 +64,29 @@ public class RouteTableStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("routeSet/item", targetDepth)) {
-                    routeTable.getRoutes().add(
-                            RouteStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    routeTable.withRoutes(RouteStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("associationSet/item", targetDepth)) {
-                    routeTable.getAssociations().add(
-                            RouteTableAssociationStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    routeTable
+                            .withAssociations(RouteTableAssociationStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    routeTable.getTags().add(
-                            TagStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    routeTable.withTags(TagStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("propagatingVgwSet/item",
                         targetDepth)) {
-                    routeTable.getPropagatingVgws().add(
-                            PropagatingVgwStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    routeTable
+                            .withPropagatingVgws(PropagatingVgwStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

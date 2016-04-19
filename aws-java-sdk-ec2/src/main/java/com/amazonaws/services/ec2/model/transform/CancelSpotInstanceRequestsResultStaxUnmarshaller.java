@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,9 +54,8 @@ public class CancelSpotInstanceRequestsResultStaxUnmarshaller implements
                 if (context.testExpression("spotInstanceRequestSet/item",
                         targetDepth)) {
                     cancelSpotInstanceRequestsResult
-                            .getCancelledSpotInstanceRequests().add(
-                                    CancelledSpotInstanceRequestStaxUnmarshaller
-                                            .getInstance().unmarshall(context));
+                            .withCancelledSpotInstanceRequests(CancelledSpotInstanceRequestStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

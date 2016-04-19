@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeInstancesHealthResultStaxUnmarshaller implements
 
                 if (context.testExpression("InstanceHealthList/member",
                         targetDepth)) {
-                    describeInstancesHealthResult.getInstanceHealthList().add(
-                            SingleInstanceHealthStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeInstancesHealthResult
+                            .withInstanceHealthList(SingleInstanceHealthStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

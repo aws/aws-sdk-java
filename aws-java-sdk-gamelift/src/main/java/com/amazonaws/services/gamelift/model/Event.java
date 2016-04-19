@@ -191,8 +191,6 @@ public class Event implements Serializable, Cloneable {
      * 
      * @param eventCode
      *        Type of event being logged.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EventCode
      */
 

@@ -331,8 +331,6 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @param lifeCycleState
      *        A predefined string value that indicates the lifecycle phase of
      *        the file system.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LifeCycleState
      */
 

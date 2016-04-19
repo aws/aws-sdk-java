@@ -321,8 +321,6 @@ public class Record implements Serializable, Cloneable {
      *        <code>REMOVE</code> - the item was deleted from the table
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OperationType
      */
 

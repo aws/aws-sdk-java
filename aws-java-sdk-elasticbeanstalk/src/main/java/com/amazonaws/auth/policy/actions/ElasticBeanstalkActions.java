@@ -29,6 +29,9 @@ public enum ElasticBeanstalkActions implements Action {
 
     /** Action for the AbortEnvironmentUpdate operation. */
     AbortEnvironmentUpdate("elasticbeanstalk:AbortEnvironmentUpdate"),
+    /** Action for the ApplyEnvironmentManagedAction operation. */
+    ApplyEnvironmentManagedAction(
+            "elasticbeanstalk:ApplyEnvironmentManagedAction"),
     /** Action for the CheckDNSAvailability operation. */
     CheckDNSAvailability("elasticbeanstalk:CheckDNSAvailability"),
     /** Action for the ComposeEnvironments operation. */
@@ -64,6 +67,12 @@ public enum ElasticBeanstalkActions implements Action {
             "elasticbeanstalk:DescribeConfigurationSettings"),
     /** Action for the DescribeEnvironmentHealth operation. */
     DescribeEnvironmentHealth("elasticbeanstalk:DescribeEnvironmentHealth"),
+    /** Action for the DescribeEnvironmentManagedActionHistory operation. */
+    DescribeEnvironmentManagedActionHistory(
+            "elasticbeanstalk:DescribeEnvironmentManagedActionHistory"),
+    /** Action for the DescribeEnvironmentManagedActions operation. */
+    DescribeEnvironmentManagedActions(
+            "elasticbeanstalk:DescribeEnvironmentManagedActions"),
     /** Action for the DescribeEnvironmentResources operation. */
     DescribeEnvironmentResources(
             "elasticbeanstalk:DescribeEnvironmentResources"),

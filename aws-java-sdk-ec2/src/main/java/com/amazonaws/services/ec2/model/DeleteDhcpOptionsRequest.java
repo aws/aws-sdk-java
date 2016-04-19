@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteDhcpOptionsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteDhcpOptions.
+ * </p>
  */
 public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

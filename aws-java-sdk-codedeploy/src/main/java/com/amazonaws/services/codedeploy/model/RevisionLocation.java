@@ -119,8 +119,6 @@ public class RevisionLocation implements Serializable, Cloneable {
      *        <ul>
      *        <li>S3: An application revision stored in Amazon S3.</li>
      *        <li>GitHub: An application revision stored in GitHub.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RevisionLocationType
      */
 

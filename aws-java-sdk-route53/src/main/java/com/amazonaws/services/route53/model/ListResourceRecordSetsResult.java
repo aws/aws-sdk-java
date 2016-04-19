@@ -383,8 +383,6 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *        If the results were truncated, the type of the next record in the
      *        list. This element is present only if
      *        <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
 

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AuthorizeSecurityGroupEgressRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AuthorizeSecurityGroupEgress.
+ * </p>
  */
 public class AuthorizeSecurityGroupEgressRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,

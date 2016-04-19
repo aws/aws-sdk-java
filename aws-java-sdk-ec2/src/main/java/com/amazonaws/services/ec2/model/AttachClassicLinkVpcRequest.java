@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AttachClassicLinkVpcRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AttachClassicLinkVpc.
+ * </p>
  */
 public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

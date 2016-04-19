@@ -7,7 +7,7 @@
 
 <#if memberModel.list>
     <#if memberModel.http.flattened>
-        <#local listMemberPath = memberModel.listModel.memberLocationName!"member" />
+        <#local listMemberPath = memberModel.listModel.memberLocationName!memberModel.name />
     <#else>
         <#local listMemberPath = unmarshallerLocationName + "/" + memberModel.listModel.memberLocationName!"member" />
     </#if>
@@ -16,7 +16,7 @@
         <#local listMemberPath = listMemberPath + "/" + memberModel.listModel.memberAdditionalUnmarshallingPath />
     </#if>
                 if (context.testExpression("${listMemberPath}", targetDepth)) {
-                    ${shapeVarName}.get${memberModel.name}().add(${memberModel.listModel.simpleType}StaxUnmarshaller.getInstance().unmarshall(context));
+                    ${shapeVarName}.with${memberModel.name}(${memberModel.listModel.simpleType}StaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -28,7 +28,7 @@
     </#if>
                 if (context.testExpression("${mapEntryPath}", targetDepth)) {
                     Entry<${memberModel.mapModel.keyType}, ${memberModel.mapModel.valueType}> entry = ${memberModel.name}MapEntryUnmarshaller.getInstance().unmarshall(context);
-                    ${shapeVarName}.get${memberModel.name}().put(entry.getKey(), entry.getValue());
+                    ${shapeVarName}.add${memberModel.name}Entry(entry.getKey(), entry.getValue());
                     continue;
                 }
 

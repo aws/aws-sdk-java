@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CancelReservedInstancesListingRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CancelReservedInstancesListing.
+ * </p>
  */
 public class CancelReservedInstancesListingRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,

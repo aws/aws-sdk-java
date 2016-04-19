@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AssociateRouteTableRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AssociateRouteTable.
+ * </p>
  */
 public class AssociateRouteTableRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

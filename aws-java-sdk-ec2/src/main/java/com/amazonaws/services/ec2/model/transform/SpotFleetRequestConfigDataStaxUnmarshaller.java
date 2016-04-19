@@ -17,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -101,8 +103,8 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements
 
                 if (context.testExpression("launchSpecifications/item",
                         targetDepth)) {
-                    spotFleetRequestConfigData.getLaunchSpecifications().add(
-                            SpotFleetLaunchSpecificationStaxUnmarshaller
+                    spotFleetRequestConfigData
+                            .withLaunchSpecifications(SpotFleetLaunchSpecificationStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

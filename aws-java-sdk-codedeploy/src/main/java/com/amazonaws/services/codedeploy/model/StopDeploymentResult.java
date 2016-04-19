@@ -121,8 +121,6 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      *        <ul>
      *        <li>Pending: The stop operation is pending.</li>
      *        <li>Succeeded: The stop operation was successful.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StopStatus
      */
 

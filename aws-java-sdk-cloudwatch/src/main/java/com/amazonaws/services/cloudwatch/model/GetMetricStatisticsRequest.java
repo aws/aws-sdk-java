@@ -677,8 +677,6 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * 
      * @param unit
      *        The unit for the metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StandardUnit
      */
 

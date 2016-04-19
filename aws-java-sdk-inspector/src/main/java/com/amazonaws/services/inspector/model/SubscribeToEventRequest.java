@@ -143,8 +143,6 @@ public class SubscribeToEventRequest extends AmazonWebServiceRequest implements
      * 
      * @param event
      *        The event for which you want to receive SNS notifications.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InspectorEvent
      */
 

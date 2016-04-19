@@ -86,6 +86,13 @@ public class S3DestinationConfigurationJsonUnmarshaller implements
                             .setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CloudWatchLoggingOptions",
+                        targetDepth)) {
+                    context.nextToken();
+                    s3DestinationConfiguration
+                            .setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

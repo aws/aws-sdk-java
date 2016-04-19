@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeInternetGatewaysRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeInternetGateways.
+ * </p>
  */
 public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

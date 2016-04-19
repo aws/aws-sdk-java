@@ -163,7 +163,7 @@
     }
 
     <#if member.enumType?has_content>
-    ${fluentDoc}
+    ${setterDoc}
     ${deprecated}
     public void ${setterFunctionName}(${member.enumType} ${setter.variableName}) {
         this.${variableName} = ${setter.variableName}.toString();

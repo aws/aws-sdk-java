@@ -72,6 +72,13 @@ public class DestinationDescriptionJsonUnmarshaller implements
                             .setRedshiftDestinationDescription(RedshiftDestinationDescriptionJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression(
+                        "ElasticsearchDestinationDescription", targetDepth)) {
+                    context.nextToken();
+                    destinationDescription
+                            .setElasticsearchDestinationDescription(ElasticsearchDestinationDescriptionJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

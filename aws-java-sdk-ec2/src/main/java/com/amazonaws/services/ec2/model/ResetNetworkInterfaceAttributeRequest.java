@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ResetNetworkInterfaceAttributeRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ResetNetworkInterfaceAttribute.
+ * </p>
  */
 public class ResetNetworkInterfaceAttributeRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable,

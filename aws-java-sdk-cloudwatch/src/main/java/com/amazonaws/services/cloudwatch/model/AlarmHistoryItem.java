@@ -192,8 +192,6 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @param historyItemType
      *        The type of alarm history item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see HistoryItemType
      */
 

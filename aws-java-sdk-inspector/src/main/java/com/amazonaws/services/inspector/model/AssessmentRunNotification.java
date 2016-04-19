@@ -152,8 +152,6 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * 
      * @param event
      *        The event for which a notification is sent.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InspectorEvent
      */
 
@@ -359,8 +357,6 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
      * 
      * @param snsPublishStatusCode
      *        The status code of the SNS notification.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AssessmentRunNotificationSnsStatusCode
      */
 

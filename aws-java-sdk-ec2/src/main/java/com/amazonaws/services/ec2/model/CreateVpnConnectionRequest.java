@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateVpnConnectionRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateVpnConnection.
+ * </p>
  */
 public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

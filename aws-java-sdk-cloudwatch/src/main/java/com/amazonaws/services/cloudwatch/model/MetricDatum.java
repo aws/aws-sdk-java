@@ -431,8 +431,6 @@ public class MetricDatum implements Serializable, Cloneable {
      * 
      * @param unit
      *        The unit of the metric.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StandardUnit
      */
 

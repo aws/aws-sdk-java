@@ -53,6 +53,7 @@ import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.Bucket;
+import com.amazonaws.services.s3.model.BucketAccelerateConfiguration;
 import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.NoncurrentVersionTransition;
@@ -422,6 +423,13 @@ public class XmlResponsesSaxParser {
     public BucketTaggingConfigurationHandler parseTaggingConfigurationResponse(InputStream inputStream)
             throws IOException {
         BucketTaggingConfigurationHandler handler = new BucketTaggingConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public BucketAccelerateConfigurationHandler parseAccelerateConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        BucketAccelerateConfigurationHandler handler = new BucketAccelerateConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -1363,6 +1371,31 @@ public class XmlResponsesSaxParser {
                     } else {
                         configuration.setMfaDeleteEnabled(null);
                     }
+                }
+            }
+        }
+    }
+
+    public static class BucketAccelerateConfigurationHandler extends AbstractHandler {
+
+        private final BucketAccelerateConfiguration configuration = new BucketAccelerateConfiguration((String) null);
+
+        public BucketAccelerateConfiguration getConfiguration() { return configuration; }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("AccelerateConfiguration")) {
+                if (name.equals("Status")) {
+                    configuration.setStatus(getText());
                 }
             }
         }

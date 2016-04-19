@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeFlowLogsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeFlowLogs.
+ * </p>
  */
 public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable,

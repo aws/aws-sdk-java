@@ -17,6 +17,8 @@
 package com.amazonaws.services.sqs.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -164,8 +166,7 @@ public class MessageStaxUnmarshaller implements
                 if (context.testExpression("Attribute", targetDepth)) {
                     Entry<String, String> entry = AttributesMapEntryUnmarshaller
                             .getInstance().unmarshall(context);
-                    message.getAttributes().put(entry.getKey(),
-                            entry.getValue());
+                    message.addAttributesEntry(entry.getKey(), entry.getValue());
                     continue;
                 }
 
@@ -179,7 +180,7 @@ public class MessageStaxUnmarshaller implements
                 if (context.testExpression("MessageAttribute", targetDepth)) {
                     Entry<String, MessageAttributeValue> entry = MessageAttributesMapEntryUnmarshaller
                             .getInstance().unmarshall(context);
-                    message.getMessageAttributes().put(entry.getKey(),
+                    message.addMessageAttributesEntry(entry.getKey(),
                             entry.getValue());
                     continue;
                 }

@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribePlacementGroupsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribePlacementGroups.
+ * </p>
  */
 public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable,

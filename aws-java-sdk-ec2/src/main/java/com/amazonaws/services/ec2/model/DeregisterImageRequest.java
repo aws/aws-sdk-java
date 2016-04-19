@@ -22,7 +22,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeregisterImageRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeregisterImage.
+ * </p>
  */
 public class DeregisterImageRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable, DryRunSupportedRequest<DeregisterImageRequest> {
