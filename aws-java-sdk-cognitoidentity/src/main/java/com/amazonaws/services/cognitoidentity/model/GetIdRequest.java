@@ -38,6 +38,8 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * The available provider names for <code>Logins</code> are as follows:
      * <ul>
      * <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Amazon Cognito Identity Provider:
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
      * <li>Twitter: <code>api.twitter.com</code></li>
@@ -126,6 +128,8 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * The available provider names for <code>Logins</code> are as follows:
      * <ul>
      * <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Amazon Cognito Identity Provider:
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
      * <li>Twitter: <code>api.twitter.com</code></li>
@@ -140,6 +144,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      *         follows:
      *         <ul>
      *         <li>Facebook: <code>graph.facebook.com</code></li>
+     *         <li>Amazon Cognito Identity Provider:
+     *         <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *         </li>
      *         <li>Google: <code>accounts.google.com</code></li>
      *         <li>Amazon: <code>www.amazon.com</code></li>
      *         <li>Twitter: <code>api.twitter.com</code></li>
@@ -160,6 +167,8 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * The available provider names for <code>Logins</code> are as follows:
      * <ul>
      * <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Amazon Cognito Identity Provider:
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
      * <li>Twitter: <code>api.twitter.com</code></li>
@@ -175,6 +184,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      *        follows:
      *        <ul>
      *        <li>Facebook: <code>graph.facebook.com</code></li>
+     *        <li>Amazon Cognito Identity Provider:
+     *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *        </li>
      *        <li>Google: <code>accounts.google.com</code></li>
      *        <li>Amazon: <code>www.amazon.com</code></li>
      *        <li>Twitter: <code>api.twitter.com</code></li>
@@ -195,6 +207,8 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * The available provider names for <code>Logins</code> are as follows:
      * <ul>
      * <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Amazon Cognito Identity Provider:
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
      * <li>Twitter: <code>api.twitter.com</code></li>
@@ -210,6 +224,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      *        follows:
      *        <ul>
      *        <li>Facebook: <code>graph.facebook.com</code></li>
+     *        <li>Amazon Cognito Identity Provider:
+     *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *        </li>
      *        <li>Google: <code>accounts.google.com</code></li>
      *        <li>Amazon: <code>www.amazon.com</code></li>
      *        <li>Twitter: <code>api.twitter.com</code></li>

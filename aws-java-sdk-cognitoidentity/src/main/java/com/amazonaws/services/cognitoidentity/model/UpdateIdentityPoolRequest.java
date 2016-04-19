@@ -53,6 +53,12 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<String> openIdConnectProviderARNs;
+    /**
+     * <p>
+     * A list representing a Cognito User Identity Pool and its client ID.
+     * </p>
+     */
+    private java.util.List<CognitoIdentityProvider> cognitoIdentityProviders;
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -368,6 +374,88 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A list representing a Cognito User Identity Pool and its client ID.
+     * </p>
+     * 
+     * @return A list representing a Cognito User Identity Pool and its client
+     *         ID.
+     */
+
+    public java.util.List<CognitoIdentityProvider> getCognitoIdentityProviders() {
+        return cognitoIdentityProviders;
+    }
+
+    /**
+     * <p>
+     * A list representing a Cognito User Identity Pool and its client ID.
+     * </p>
+     * 
+     * @param cognitoIdentityProviders
+     *        A list representing a Cognito User Identity Pool and its client
+     *        ID.
+     */
+
+    public void setCognitoIdentityProviders(
+            java.util.Collection<CognitoIdentityProvider> cognitoIdentityProviders) {
+        if (cognitoIdentityProviders == null) {
+            this.cognitoIdentityProviders = null;
+            return;
+        }
+
+        this.cognitoIdentityProviders = new java.util.ArrayList<CognitoIdentityProvider>(
+                cognitoIdentityProviders);
+    }
+
+    /**
+     * <p>
+     * A list representing a Cognito User Identity Pool and its client ID.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or
+     * {@link #withCognitoIdentityProviders(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param cognitoIdentityProviders
+     *        A list representing a Cognito User Identity Pool and its client
+     *        ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateIdentityPoolRequest withCognitoIdentityProviders(
+            CognitoIdentityProvider... cognitoIdentityProviders) {
+        if (this.cognitoIdentityProviders == null) {
+            setCognitoIdentityProviders(new java.util.ArrayList<CognitoIdentityProvider>(
+                    cognitoIdentityProviders.length));
+        }
+        for (CognitoIdentityProvider ele : cognitoIdentityProviders) {
+            this.cognitoIdentityProviders.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list representing a Cognito User Identity Pool and its client ID.
+     * </p>
+     * 
+     * @param cognitoIdentityProviders
+     *        A list representing a Cognito User Identity Pool and its client
+     *        ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateIdentityPoolRequest withCognitoIdentityProviders(
+            java.util.Collection<CognitoIdentityProvider> cognitoIdentityProviders) {
+        setCognitoIdentityProviders(cognitoIdentityProviders);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -394,7 +482,10 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
                     + ",");
         if (getOpenIdConnectProviderARNs() != null)
             sb.append("OpenIdConnectProviderARNs: "
-                    + getOpenIdConnectProviderARNs());
+                    + getOpenIdConnectProviderARNs() + ",");
+        if (getCognitoIdentityProviders() != null)
+            sb.append("CognitoIdentityProviders: "
+                    + getCognitoIdentityProviders());
         sb.append("}");
         return sb.toString();
     }
@@ -450,6 +541,13 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
                 && other.getOpenIdConnectProviderARNs().equals(
                         this.getOpenIdConnectProviderARNs()) == false)
             return false;
+        if (other.getCognitoIdentityProviders() == null
+                ^ this.getCognitoIdentityProviders() == null)
+            return false;
+        if (other.getCognitoIdentityProviders() != null
+                && other.getCognitoIdentityProviders().equals(
+                        this.getCognitoIdentityProviders()) == false)
+            return false;
         return true;
     }
 
@@ -482,6 +580,10 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getOpenIdConnectProviderARNs() == null) ? 0
                         : getOpenIdConnectProviderARNs().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCognitoIdentityProviders() == null) ? 0
+                        : getCognitoIdentityProviders().hashCode());
         return hashCode;
     }
 

@@ -94,6 +94,14 @@ public class DescribeIdentityPoolResultJsonUnmarshaller implements
                                     context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
+                if (context.testExpression("CognitoIdentityProviders",
+                        targetDepth)) {
+                    context.nextToken();
+                    describeIdentityPoolResult
+                            .setCognitoIdentityProviders(new ListUnmarshaller<CognitoIdentityProvider>(
+                                    CognitoIdentityProviderJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

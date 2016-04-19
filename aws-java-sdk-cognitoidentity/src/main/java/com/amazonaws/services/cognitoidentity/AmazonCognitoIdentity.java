@@ -762,6 +762,9 @@ public interface AmazonCognitoIdentity {
      *         request.
      * @throws ConcurrentModificationException
      *         Thrown if there are parallel requests to modify a resource.
+     * @throws LimitExceededException
+     *         Thrown when the total number of user pools has exceeded a preset
+     *         limit.
      * @sample AmazonCognitoIdentity.UpdateIdentityPool
      */
     UpdateIdentityPoolResult updateIdentityPool(

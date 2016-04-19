@@ -326,7 +326,8 @@
         {"shape":"ResourceConflictException"},
         {"shape":"TooManyRequestsException"},
         {"shape":"InternalErrorException"},
-        {"shape":"ConcurrentModificationException"}
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"LimitExceededException"}
       ],
       "documentation":"<p>Updates a user pool.</p><p>You must use AWS Developer credentials to call this API.</p>"
     }
@@ -343,6 +344,36 @@
       "max":15,
       "min":1,
       "pattern":"\\d+"
+    },
+    "CognitoIdentityProvider":{
+      "type":"structure",
+      "members":{
+        "ProviderName":{
+          "shape":"CognitoIdentityProviderName",
+          "documentation":"<p>The provider name for a Cognito User Identity Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>"
+        },
+        "ClientId":{
+          "shape":"CognitoIdentityProviderClientId",
+          "documentation":"<p>The client ID for the Cognito User Identity Pool.</p>"
+        }
+      },
+      "documentation":"<p>A provider representing a Cognito User Identity Pool and its client ID.</p>"
+    },
+    "CognitoIdentityProviderClientId":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[\\w_]+"
+    },
+    "CognitoIdentityProviderList":{
+      "type":"list",
+      "member":{"shape":"CognitoIdentityProvider"}
+    },
+    "CognitoIdentityProviderName":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[\\w._:/-]+"
     },
     "ConcurrentModificationException":{
       "type":"structure",
@@ -381,6 +412,10 @@
         "OpenIdConnectProviderARNs":{
           "shape":"OIDCProviderList",
           "documentation":"<p>A list of OpendID Connect provider ARNs.</p>"
+        },
+        "CognitoIdentityProviders":{
+          "shape":"CognitoIdentityProviderList",
+          "documentation":"<p>A list representing a Cognito User Identity Pool and its client ID.</p>"
         }
       },
       "documentation":"<p>Input to the CreateIdentityPool action.</p>"
@@ -550,7 +585,7 @@
         },
         "Logins":{
           "shape":"LoginsMap",
-          "documentation":"<p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li> <li>Google: <code>accounts.google.com</code></li> <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li> <li>Digits: <code>www.digits.com</code></li> </ul> </p>"
+          "documentation":"<p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li> <li>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li> <li>Google: <code>accounts.google.com</code></li> <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li> <li>Digits: <code>www.digits.com</code></li> </ul> </p>"
         }
       },
       "documentation":"Input to the GetId action."
@@ -640,7 +675,7 @@
         },
         "Logins":{
           "shape":"LoginsMap",
-          "documentation":"A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com or any other OpenId Connect provider, always include the id_token."
+          "documentation":"<p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.</p>"
         }
       },
       "documentation":"Input to the GetOpenIdToken action."
@@ -729,6 +764,10 @@
         "OpenIdConnectProviderARNs":{
           "shape":"OIDCProviderList",
           "documentation":"<p>A list of OpendID Connect provider ARNs.</p>"
+        },
+        "CognitoIdentityProviders":{
+          "shape":"CognitoIdentityProviderList",
+          "documentation":"<p>A list representing a Cognito User Identity Pool and its client ID.</p>"
         }
       },
       "documentation":"An object representing a Cognito identity pool."
@@ -768,13 +807,13 @@
       "type":"string",
       "max":128,
       "min":1,
-      "pattern":"[\\w.;_-]+"
+      "pattern":"[\\w.;_/-]+"
     },
     "IdentityProviderName":{
       "type":"string",
       "max":128,
       "min":1,
-      "pattern":"[\\w._/-]+"
+      "pattern":"[\\w._/:-]+"
     },
     "IdentityProviderToken":{
       "type":"string",

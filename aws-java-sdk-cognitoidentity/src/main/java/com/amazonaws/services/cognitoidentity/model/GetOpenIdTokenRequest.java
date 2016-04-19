@@ -28,11 +28,13 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
     /** A unique identifier in the format REGION:GUID. */
     private String identityId;
     /**
+     * <p>
      * A set of optional name-value pairs that map provider names to provider
      * tokens. When using graph.facebook.com and www.amazon.com, supply the
      * access_token returned from the provider's authflow. For
-     * accounts.google.com or any other OpenId Connect provider, always include
-     * the id_token.
+     * accounts.google.com, an Amazon Cognito Identity Provider, or any other
+     * OpenId Connect provider, always include the <code>id_token</code>.
+     * </p>
      */
     private java.util.Map<String, String> logins;
 
@@ -72,17 +74,20 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * A set of optional name-value pairs that map provider names to provider
      * tokens. When using graph.facebook.com and www.amazon.com, supply the
      * access_token returned from the provider's authflow. For
-     * accounts.google.com or any other OpenId Connect provider, always include
-     * the id_token.
+     * accounts.google.com, an Amazon Cognito Identity Provider, or any other
+     * OpenId Connect provider, always include the <code>id_token</code>.
+     * </p>
      * 
      * @return A set of optional name-value pairs that map provider names to
      *         provider tokens. When using graph.facebook.com and
      *         www.amazon.com, supply the access_token returned from the
-     *         provider's authflow. For accounts.google.com or any other OpenId
-     *         Connect provider, always include the id_token.
+     *         provider's authflow. For accounts.google.com, an Amazon Cognito
+     *         Identity Provider, or any other OpenId Connect provider, always
+     *         include the <code>id_token</code>.
      */
 
     public java.util.Map<String, String> getLogins() {
@@ -90,18 +95,21 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * A set of optional name-value pairs that map provider names to provider
      * tokens. When using graph.facebook.com and www.amazon.com, supply the
      * access_token returned from the provider's authflow. For
-     * accounts.google.com or any other OpenId Connect provider, always include
-     * the id_token.
+     * accounts.google.com, an Amazon Cognito Identity Provider, or any other
+     * OpenId Connect provider, always include the <code>id_token</code>.
+     * </p>
      * 
      * @param logins
      *        A set of optional name-value pairs that map provider names to
      *        provider tokens. When using graph.facebook.com and www.amazon.com,
      *        supply the access_token returned from the provider's authflow. For
-     *        accounts.google.com or any other OpenId Connect provider, always
-     *        include the id_token.
+     *        accounts.google.com, an Amazon Cognito Identity Provider, or any
+     *        other OpenId Connect provider, always include the
+     *        <code>id_token</code>.
      */
 
     public void setLogins(java.util.Map<String, String> logins) {
@@ -109,18 +117,21 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * A set of optional name-value pairs that map provider names to provider
      * tokens. When using graph.facebook.com and www.amazon.com, supply the
      * access_token returned from the provider's authflow. For
-     * accounts.google.com or any other OpenId Connect provider, always include
-     * the id_token.
+     * accounts.google.com, an Amazon Cognito Identity Provider, or any other
+     * OpenId Connect provider, always include the <code>id_token</code>.
+     * </p>
      * 
      * @param logins
      *        A set of optional name-value pairs that map provider names to
      *        provider tokens. When using graph.facebook.com and www.amazon.com,
      *        supply the access_token returned from the provider's authflow. For
-     *        accounts.google.com or any other OpenId Connect provider, always
-     *        include the id_token.
+     *        accounts.google.com, an Amazon Cognito Identity Provider, or any
+     *        other OpenId Connect provider, always include the
+     *        <code>id_token</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

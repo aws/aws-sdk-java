@@ -276,16 +276,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
     private void init() {
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidentity.model.ConcurrentModificationException.class,
-                        "ConcurrentModificationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.cognitoidentity.model.NotAuthorizedException.class,
                         "NotAuthorizedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cognitoidentity.model.InvalidIdentityPoolConfigurationException.class,
-                        "InvalidIdentityPoolConfigurationException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.cognitoidentity.model.LimitExceededException.class,
@@ -302,6 +294,14 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.cognitoidentity.model.InvalidParameterException.class,
                         "InvalidParameterException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.cognitoidentity.model.ConcurrentModificationException.class,
+                        "ConcurrentModificationException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.cognitoidentity.model.InvalidIdentityPoolConfigurationException.class,
+                        "InvalidIdentityPoolConfigurationException"));
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.cognitoidentity.model.DeveloperUserAlreadyRegisteredException.class,
@@ -1522,6 +1522,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      *         request.
      * @throws ConcurrentModificationException
      *         Thrown if there are parallel requests to modify a resource.
+     * @throws LimitExceededException
+     *         Thrown when the total number of user pools has exceeded a preset
+     *         limit.
      * @sample AmazonCognitoIdentity.UpdateIdentityPool
      */
     @Override

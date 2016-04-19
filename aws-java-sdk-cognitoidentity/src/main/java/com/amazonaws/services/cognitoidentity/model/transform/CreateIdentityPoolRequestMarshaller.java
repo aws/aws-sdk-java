@@ -116,6 +116,22 @@ public class CreateIdentityPoolRequestMarshaller
                 jsonGenerator.writeEndArray();
             }
 
+            java.util.List<CognitoIdentityProvider> cognitoIdentityProvidersList = createIdentityPoolRequest
+                    .getCognitoIdentityProviders();
+            if (cognitoIdentityProvidersList != null) {
+                jsonGenerator.writeFieldName("CognitoIdentityProviders");
+                jsonGenerator.writeStartArray();
+                for (CognitoIdentityProvider cognitoIdentityProvidersListValue : cognitoIdentityProvidersList) {
+                    if (cognitoIdentityProvidersListValue != null) {
+
+                        CognitoIdentityProviderJsonMarshaller.getInstance()
+                                .marshall(cognitoIdentityProvidersListValue,
+                                        jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
