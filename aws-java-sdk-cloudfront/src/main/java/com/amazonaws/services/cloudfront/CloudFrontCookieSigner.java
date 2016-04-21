@@ -51,24 +51,30 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  * Date expiresOn = DateUtils.parseISO8601Date("2011-11-14T22:20:00.000Z");
  * String ipRange = "192.168.0.1/24";
  *
- * CookiesForCannedPolicy cookies = CloudFrontCookieSigner.getCookiesForCannedPolicy(
+ * CookiesForCannedPolicy cookies1 = CloudFrontCookieSigner.getCookiesForCannedPolicy(
  *              protocol, distributionDomain, privateKeyFile,
  *              s3ObjectKey, keyPairId, activeFrom);
  *
- * CookiesForCustomPolicy url2 = CloudFrontCookieSigner.getCookiesForCannedPolicy(
+ * CookiesForCustomPolicy cookies2 = CloudFrontCookieSigner.getCookiesForCustomPolicy(
  *              protocol, distributionDomain, privateKeyFile,
  *              s3ObjectKey, keyPairId, activeFrom,
  *              expiresOn, ipRange);
+ *
+ * // Converting to javax.servlet.http.Cookie example
+ * List<Cookie> cookies = new ArrayList<>();
+ * for (Map.Entry<String, String> cookie : cookies1.entrySet()) {
+ *  cookies.add(new Cookie(cookie.getKey(), cookie.getValue()));
+ * }
  * </pre>
  *
  * @see DateUtils
  */
 public enum CloudFrontCookieSigner {
     ;
-    private static final String expiresKey = "CloudFront-Expires";
-    private static final String signatureKey = "CloudFront-Signature";
-    private static final String policyKey = "CloudFront-Policy";
-    private static final String keyPairIdKey = "CloudFront-Key-Pair-Id";
+    private static final String EXPIRES_KEY = "CloudFront-Expires";
+    private static final String SIGNATURE_KEY = "CloudFront-Signature";
+    private static final String POLICY_KEY = "CloudFront-Policy";
+    private static final String KEY_PAIR_ID_KEY = "CloudFront-Key-Pair-Id";
 
     private static final SecureRandom srand = new SecureRandom();
 
@@ -294,6 +300,9 @@ public enum CloudFrontCookieSigner {
 
     /**
      * Returns a custom policy for the given parameters.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-setting-signed-cookie-custom-policy.html"
+     * >Setting Signed Cookies Using a Custom Policy</a>.
      */
     static String buildCustomPolicy(String resourcePath,
             Date activeFrom, Date expiresOn, String ipAddress) {
@@ -305,9 +314,11 @@ public enum CloudFrontCookieSigner {
                 + "\"DateLessThan\":{\"AWS:EpochTime\":"
                 + MILLISECONDS.toSeconds(activeFrom.getTime())
                 + "}"
-                + ",\"IpAddress\":{\"AWS:SourceIp\":\""
-                + ipAddress
-                + "\"}"
+                + (ipAddress == null
+                   ? ""
+                   : ",\"IpAddress\":{\"AWS:SourceIp\":\""
+                     + ipAddress + "\"}"
+                  )
                 + (expiresOn == null
                    ? ""
                    : ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
@@ -319,8 +330,8 @@ public enum CloudFrontCookieSigner {
     /**
      * Returns a "canned" policy for the given parameters.
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls-overview.html"
-     * >Overview of Signed URLs</a>.
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-setting-signed-cookie-canned-policy.html"
+     * >Setting Signed Cookies Using a Canned Policy</a>.
      */
     static String buildCannedPolicy(String resourceUrlOrPath,
             Date activeFrom) {
@@ -332,7 +343,7 @@ public enum CloudFrontCookieSigner {
     }
 
     /**
-     * Converts the given data to be safe for use in signed URLs for a private
+     * Converts the given data to be safe for use in signed cookies for a private
      * distribution by using specialized Base64 encoding.
      */
     static String makeBytesUrlSafe(byte[] bytes) {
@@ -354,7 +365,7 @@ public enum CloudFrontCookieSigner {
     }
 
     /**
-     * Converts the given string to be safe for use in signed URLs for a private
+     * Converts the given string to be safe for use in signed cookies for a private
      * distribution.
      */
     private static String makeStringUrlSafe(String str) {
@@ -414,45 +425,20 @@ public enum CloudFrontCookieSigner {
     /**
      * Contains common cookies used by Amazon CloudFront.
      */
-    public static class SignedCookies {
+    public static class SignedCookies extends HashMap<String, String> {
         /**
          * The active CloudFront key pair Id for the key pair (Trusted Signer) that you are using to generate the signature.
          * For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html">
          * Specifying the AWS Accounts That Can Create Signed URLs and Signed Cookies (Trusted Signers)</a>
          * in the <i>Amazon CloudFront User Guide</i>.
          */
-        protected Map<String, String> keyPairId;
-
-        /**
-         * The hashed and signed version of the policy.
-         */
-        protected Map<String, String> signature;
-
-        public Map<String, String> getKeyPairId() {
-            return keyPairId;
-        }
-
-        public void setKeyPairId(Map<String, String> keyPairId) {
-            this.keyPairId = keyPairId;
-        }
-
-        public Map<String, String> getSignature() {
-            return signature;
-        }
-
-        public void setSignature(Map<String, String> signature) {
-            this.signature = signature;
-        }
 
         /**
          * Convenience method to put keyPairId into a Map
          * @param keyPairIdValue keyPairId value
          */
         public void putKeyPairId(String keyPairIdValue) {
-            if (this.keyPairId == null) {
-                this.keyPairId = new HashMap<String, String>();
-            }
-            this.keyPairId.put(keyPairIdKey, keyPairIdValue);
+            this.put(KEY_PAIR_ID_KEY, keyPairIdValue);
         }
 
         /**
@@ -460,10 +446,7 @@ public enum CloudFrontCookieSigner {
          * @param signatureValue signature value
          */
         public void putSignature(String signatureValue) {
-            if (this.signature == null) {
-                this.signature = new HashMap<String, String>();
-            }
-            this.signature.put(signatureKey, signatureValue);
+            this.put(SIGNATURE_KEY, signatureValue);
         }
     }
 
@@ -472,26 +455,12 @@ public enum CloudFrontCookieSigner {
      * CloudFront using a canned policy
      */
     public static class CookiesForCannedPolicy extends SignedCookies {
-        // Date and time in Unix time format (in seconds) and Coordinated Universal Time (UTC).
-        public Map<String, String> expires;
-
-        public Map<String, String> getExpires() {
-            return expires;
-        }
-
-        public void setExpires(Map<String, String> expires) {
-            this.expires = expires;
-        }
-
         /**
          * Convenience method to put expires into a Map
-         * @param expiresValue expires value
+         * @param expiresValue expires value in Unix time format (in seconds) and Coordinated Universal Time (UTC).
          */
         public void putExpires(String expiresValue) {
-            if (this.expires == null) {
-                this.expires = new HashMap<String, String>();
-            }
-            this.expires.put(expiresKey, expiresValue);
+            this.put(EXPIRES_KEY, expiresValue);
         }
     }
 
@@ -500,26 +469,12 @@ public enum CloudFrontCookieSigner {
      * CloudFront using a custom policy.
      */
     public static class CookiesForCustomPolicy extends SignedCookies {
-        // Base64 encoded version of the custom policy.
-        public Map<String, String> policy;
-
-        public Map<String, String> getPolicy() {
-            return policy;
-        }
-
-        public void setPolicy(Map<String, String> policy) {
-            this.policy = policy;
-        }
-
         /**
          * Convenience method to put policy into a Map
-         * @param policyValue policy value
+         * @param policyValue Base64 encoded version of the custom policy.
          */
         public void putPolicy(String policyValue) {
-            if (this.policy == null) {
-                this.policy = new HashMap<String, String>();
-            }
-            this.policy.put(policyKey, policyValue);
+            this.put(POLICY_KEY, policyValue);
         }
     }
 }
