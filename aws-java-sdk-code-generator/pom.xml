@@ -5,61 +5,52 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.10.72</version>
+    <version>1.10.73-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-code-generator</artifactId>
   <name>AWS SDK for Java - Code Generator</name>
   <description>The AWS SDK for Java - Code Generator module holds the classes and templates required to generate the AWS Java SDK clients for AWS services.</description>
   <url>https://aws.amazon.com/sdkforjava</url>
-
   <properties>
     <jre.version>1.7</jre.version>
   </properties>
-  <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
     <dependency>
-        <artifactId>aws-java-sdk-core</artifactId>
-        <groupId>com.amazonaws</groupId>
-        <optional>false</optional>
-        <version>1.10.72</version>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-core</artifactId>
+      <version>1.10.72</version>
+      <optional>false</optional>
     </dependency>
     <dependency>
-        <artifactId>org.eclipse.jdt.core</artifactId>
-        <groupId>org.eclipse.jdt</groupId>
-        <optional>false</optional>
-        <version>3.10.0</version>
+      <groupId>org.eclipse.jdt</groupId>
+      <artifactId>org.eclipse.jdt.core</artifactId>
+      <version>3.10.0</version>
+      <optional>false</optional>
     </dependency>
     <dependency>
-        <artifactId>text</artifactId>
-        <groupId>org.eclipse</groupId>
-        <optional>false</optional>
-        <version>3.3.0-v20070606-0010</version>
+      <groupId>org.eclipse</groupId>
+      <artifactId>text</artifactId>
+      <version>3.3.0-v20070606-0010</version>
+      <optional>false</optional>
     </dependency>
     <dependency>
-        <artifactId>freemarker</artifactId>
-        <groupId>org.freemarker</groupId>
-        <optional>false</optional>
-        <version>2.3.21</version>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.21</version>
+      <optional>false</optional>
     </dependency>
-</dependencies>
-
+  </dependencies>
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
-
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
-
-  <!-- This profile uses the JAPICMP plugin to generate a report of changes between the release version and the latest version -->
-  <!-- For more information on the plugin, see https://github.com/siom79/japicmp -->
   <profiles>
     <profile>
       <id>versiondiff</id>
