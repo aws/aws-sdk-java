@@ -40,7 +40,14 @@ public class PolicyGroup implements Serializable, Cloneable {
      * </p>
      */
     private String groupName;
-
+    /**
+     * <p>
+     * The stable and unique string identifying the group. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     */
     private String groupId;
 
     /**
@@ -85,7 +92,18 @@ public class PolicyGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The stable and unique string identifying the group. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
      * @param groupId
+     *        The stable and unique string identifying the group. For more
+     *        information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      */
 
     public void setGroupId(String groupId) {
@@ -93,7 +111,17 @@ public class PolicyGroup implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The stable and unique string identifying the group. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The stable and unique string identifying the group. For more
+     *         information about IDs, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *         >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      */
 
     public String getGroupId() {
@@ -101,7 +129,18 @@ public class PolicyGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The stable and unique string identifying the group. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
      * @param groupId
+     *        The stable and unique string identifying the group. For more
+     *        information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

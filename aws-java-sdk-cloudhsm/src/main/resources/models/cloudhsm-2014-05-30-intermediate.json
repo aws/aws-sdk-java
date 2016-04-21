@@ -20,17 +20,17 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cloudhsm",
     "signingName" : "cloudhsm",
+    "xmlProtocol" : false,
     "serviceName" : "CloudHSM",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "AddTagsToResource" : {
-      "documentation" : "<p>Adds or overwrites one or more tags for the specified resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique per resource.</p>",
+      "documentation" : "<p>Adds or overwrites one or more tags for the specified AWS CloudHSM resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique to each resource.</p>",
       "operationName" : "AddTagsToResource",
       "deprecated" : false,
       "input" : {
@@ -570,7 +570,7 @@
       "methodName" : "listLunaClients"
     },
     "ListTagsForResource" : {
-      "documentation" : "<p>Returns a list of all tags for the specified resource.</p>",
+      "documentation" : "<p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>",
       "operationName" : "ListTagsForResource",
       "deprecated" : false,
       "input" : {
@@ -708,7 +708,7 @@
       "methodName" : "modifyLunaClient"
     },
     "RemoveTagsFromResource" : {
-      "documentation" : "<p>Removes one or more tags from the specified resource.</p> <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
+      "documentation" : "<p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
       "operationName" : "RemoveTagsFromResource",
       "deprecated" : false,
       "input" : {
@@ -2395,7 +2395,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>",
         "name" : "ResourceArn",
         "c2jName" : "ResourceArn",
         "c2jShape" : "String",
@@ -2403,7 +2403,7 @@
           "variableName" : "resourceArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2442,10 +2442,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
-        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@return The Amazon Resource Name (ARN) of the resource.*/",
-        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@return The Amazon Resource Name (ARN) of the AWS CloudHSM resource.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
         "name" : "TagKeyList",
@@ -2711,7 +2711,7 @@
           "varargSetterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ResourceArn" : {
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>",
           "name" : "ResourceArn",
           "c2jName" : "ResourceArn",
           "c2jShape" : "String",
@@ -2719,7 +2719,7 @@
             "variableName" : "resourceArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2758,10 +2758,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
-          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@return The Amazon Resource Name (ARN) of the resource.*/",
-          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@return The Amazon Resource Name (ARN) of the AWS CloudHSM resource.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -3556,7 +3556,7 @@
     },
     "Tag" : {
       "c2jName" : "Tag",
-      "documentation" : "<p>A key-value pair that identifies or specifies metadata about a resource.</p>",
+      "documentation" : "<p>A key-value pair that identifies or specifies metadata about an AWS CloudHSM resource.</p>",
       "shapeName" : "Tag",
       "deprecated" : false,
       "required" : [ "Key", "Value" ],
@@ -6557,7 +6557,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>",
         "name" : "ResourceArn",
         "c2jName" : "ResourceArn",
         "c2jShape" : "String",
@@ -6565,7 +6565,7 @@
           "variableName" : "resourceArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6604,10 +6604,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
-        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@return The Amazon Resource Name (ARN) of the resource.*/",
-        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@return The Amazon Resource Name (ARN) of the AWS CloudHSM resource.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -6636,7 +6636,7 @@
       },
       "membersAsMap" : {
         "ResourceArn" : {
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>",
           "name" : "ResourceArn",
           "c2jName" : "ResourceArn",
           "c2jShape" : "String",
@@ -6644,7 +6644,7 @@
             "variableName" : "resourceArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -6683,10 +6683,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.*/",
-          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@return The Amazon Resource Name (ARN) of the resource.*/",
-          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@return The Amazon Resource Name (ARN) of the AWS CloudHSM resource.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -6950,7 +6950,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "<p>The Amazon Resource Name (ARN) of the resource to tag.</p>",
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>",
         "name" : "ResourceArn",
         "c2jName" : "ResourceArn",
         "c2jShape" : "String",
@@ -6958,7 +6958,7 @@
           "variableName" : "resourceArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource to tag.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6997,10 +6997,10 @@
         "list" : false,
         "simple" : true,
         "map" : false,
-        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.*/",
-        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@return The Amazon Resource Name (ARN) of the resource to tag.*/",
-        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@return The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>One or more tags.</p>",
         "name" : "TagList",
@@ -7266,7 +7266,7 @@
           "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ResourceArn" : {
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource to tag.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>",
           "name" : "ResourceArn",
           "c2jName" : "ResourceArn",
           "c2jShape" : "String",
@@ -7274,7 +7274,7 @@
             "variableName" : "resourceArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The Amazon Resource Name (ARN) of the resource to tag.</p>",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7313,10 +7313,10 @@
           "list" : false,
           "simple" : true,
           "map" : false,
-          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.*/",
-          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@return The Amazon Resource Name (ARN) of the resource to tag.*/",
-          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@return The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },

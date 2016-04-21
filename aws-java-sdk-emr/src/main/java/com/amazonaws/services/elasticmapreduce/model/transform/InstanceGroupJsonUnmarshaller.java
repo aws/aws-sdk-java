@@ -120,6 +120,11 @@ public class InstanceGroupJsonUnmarshaller implements
                     instanceGroup.setEbsOptimized(context.getUnmarshaller(
                             Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("ShrinkPolicy", targetDepth)) {
+                    context.nextToken();
+                    instanceGroup.setShrinkPolicy(ShrinkPolicyJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

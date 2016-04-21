@@ -81,6 +81,10 @@ public class TopicRuleJsonMarshaller {
                 jsonGenerator.writeFieldName("ruleDisabled").writeValue(
                         topicRule.getRuleDisabled());
             }
+            if (topicRule.getAwsIotSqlVersion() != null) {
+                jsonGenerator.writeFieldName("awsIotSqlVersion").writeValue(
+                        topicRule.getAwsIotSqlVersion());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

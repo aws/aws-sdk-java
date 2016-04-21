@@ -106,6 +106,10 @@ public class ReplaceTopicRuleRequestMarshaller implements
                     jsonGenerator.writeFieldName("ruleDisabled").writeValue(
                             topicRulePayload.getRuleDisabled());
                 }
+                if (topicRulePayload.getAwsIotSqlVersion() != null) {
+                    jsonGenerator.writeFieldName("awsIotSqlVersion")
+                            .writeValue(topicRulePayload.getAwsIotSqlVersion());
+                }
                 jsonGenerator.writeEndObject();
             }
 

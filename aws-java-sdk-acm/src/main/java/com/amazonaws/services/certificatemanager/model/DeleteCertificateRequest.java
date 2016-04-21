@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DeleteCertificateRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

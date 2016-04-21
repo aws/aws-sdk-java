@@ -20,21 +20,50 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input to the ListCertificatesByCA operation.
+ * </p>
  */
 public class ListCertificatesByCARequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the CA certificate. This operation will list all registered
+     * device certificate that were signed by this CA certificate.
+     * </p>
+     */
     private String caCertificateId;
-
+    /**
+     * <p>
+     * The result page size.
+     * </p>
+     */
     private Integer pageSize;
-
+    /**
+     * <p>
+     * The marker for the next set of results.
+     * </p>
+     */
     private String marker;
-
+    /**
+     * <p>
+     * Specifies the order for results. If True, the results are returned in
+     * ascending order, based on the creation date.
+     * </p>
+     */
     private Boolean ascendingOrder;
 
     /**
+     * <p>
+     * The ID of the CA certificate. This operation will list all registered
+     * device certificate that were signed by this CA certificate.
+     * </p>
+     * 
      * @param caCertificateId
+     *        The ID of the CA certificate. This operation will list all
+     *        registered device certificate that were signed by this CA
+     *        certificate.
      */
 
     public void setCaCertificateId(String caCertificateId) {
@@ -42,7 +71,14 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the CA certificate. This operation will list all registered
+     * device certificate that were signed by this CA certificate.
+     * </p>
+     * 
+     * @return The ID of the CA certificate. This operation will list all
+     *         registered device certificate that were signed by this CA
+     *         certificate.
      */
 
     public String getCaCertificateId() {
@@ -50,7 +86,15 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The ID of the CA certificate. This operation will list all registered
+     * device certificate that were signed by this CA certificate.
+     * </p>
+     * 
      * @param caCertificateId
+     *        The ID of the CA certificate. This operation will list all
+     *        registered device certificate that were signed by this CA
+     *        certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -62,7 +106,12 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The result page size.
+     * </p>
+     * 
      * @param pageSize
+     *        The result page size.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -70,7 +119,11 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The result page size.
+     * </p>
+     * 
+     * @return The result page size.
      */
 
     public Integer getPageSize() {
@@ -78,7 +131,12 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The result page size.
+     * </p>
+     * 
      * @param pageSize
+     *        The result page size.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -89,7 +147,12 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The marker for the next set of results.
+     * </p>
+     * 
      * @param marker
+     *        The marker for the next set of results.
      */
 
     public void setMarker(String marker) {
@@ -97,7 +160,11 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The marker for the next set of results.
+     * </p>
+     * 
+     * @return The marker for the next set of results.
      */
 
     public String getMarker() {
@@ -105,7 +172,12 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The marker for the next set of results.
+     * </p>
+     * 
      * @param marker
+     *        The marker for the next set of results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -116,7 +188,14 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifies the order for results. If True, the results are returned in
+     * ascending order, based on the creation date.
+     * </p>
+     * 
      * @param ascendingOrder
+     *        Specifies the order for results. If True, the results are returned
+     *        in ascending order, based on the creation date.
      */
 
     public void setAscendingOrder(Boolean ascendingOrder) {
@@ -124,7 +203,13 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the order for results. If True, the results are returned in
+     * ascending order, based on the creation date.
+     * </p>
+     * 
+     * @return Specifies the order for results. If True, the results are
+     *         returned in ascending order, based on the creation date.
      */
 
     public Boolean getAscendingOrder() {
@@ -132,7 +217,14 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifies the order for results. If True, the results are returned in
+     * ascending order, based on the creation date.
+     * </p>
+     * 
      * @param ascendingOrder
+     *        Specifies the order for results. If True, the results are returned
+     *        in ascending order, based on the creation date.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -143,7 +235,13 @@ public class ListCertificatesByCARequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the order for results. If True, the results are returned in
+     * ascending order, based on the creation date.
+     * </p>
+     * 
+     * @return Specifies the order for results. If True, the results are
+     *         returned in ascending order, based on the creation date.
      */
 
     public Boolean isAscendingOrder() {

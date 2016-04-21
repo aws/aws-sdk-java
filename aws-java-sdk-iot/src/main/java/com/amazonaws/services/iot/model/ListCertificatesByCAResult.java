@@ -19,16 +19,32 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The output of the ListCertificatesByCA operation.
+ * </p>
  */
 public class ListCertificatesByCAResult implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The device certificates signed by the specified CA certificate.
+     * </p>
+     */
     private java.util.List<Certificate> certificates;
-
+    /**
+     * <p>
+     * The marker for the next set of results, or null if there are no
+     * additional results.
+     * </p>
+     */
     private String nextMarker;
 
     /**
-     * @return
+     * <p>
+     * The device certificates signed by the specified CA certificate.
+     * </p>
+     * 
+     * @return The device certificates signed by the specified CA certificate.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -36,7 +52,12 @@ public class ListCertificatesByCAResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The device certificates signed by the specified CA certificate.
+     * </p>
+     * 
      * @param certificates
+     *        The device certificates signed by the specified CA certificate.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -50,6 +71,9 @@ public class ListCertificatesByCAResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The device certificates signed by the specified CA certificate.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setCertificates(java.util.Collection)} or
      * {@link #withCertificates(java.util.Collection)} if you want to override
@@ -57,6 +81,7 @@ public class ListCertificatesByCAResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param certificates
+     *        The device certificates signed by the specified CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -74,7 +99,12 @@ public class ListCertificatesByCAResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The device certificates signed by the specified CA certificate.
+     * </p>
+     * 
      * @param certificates
+     *        The device certificates signed by the specified CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -86,7 +116,14 @@ public class ListCertificatesByCAResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The marker for the next set of results, or null if there are no
+     * additional results.
+     * </p>
+     * 
      * @param nextMarker
+     *        The marker for the next set of results, or null if there are no
+     *        additional results.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -94,7 +131,13 @@ public class ListCertificatesByCAResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The marker for the next set of results, or null if there are no
+     * additional results.
+     * </p>
+     * 
+     * @return The marker for the next set of results, or null if there are no
+     *         additional results.
      */
 
     public String getNextMarker() {
@@ -102,7 +145,14 @@ public class ListCertificatesByCAResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The marker for the next set of results, or null if there are no
+     * additional results.
+     * </p>
+     * 
      * @param nextMarker
+     *        The marker for the next set of results, or null if there are no
+     *        additional results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

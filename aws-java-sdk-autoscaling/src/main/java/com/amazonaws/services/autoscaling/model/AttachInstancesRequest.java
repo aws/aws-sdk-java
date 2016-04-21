@@ -27,7 +27,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more EC2 instance IDs.
+     * One or more instance IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -40,10 +40,10 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more EC2 instance IDs.
+     * One or more instance IDs.
      * </p>
      * 
-     * @return One or more EC2 instance IDs.
+     * @return One or more instance IDs.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -55,11 +55,11 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more EC2 instance IDs.
+     * One or more instance IDs.
      * </p>
      * 
      * @param instanceIds
-     *        One or more EC2 instance IDs.
+     *        One or more instance IDs.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -74,7 +74,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more EC2 instance IDs.
+     * One or more instance IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -84,7 +84,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param instanceIds
-     *        One or more EC2 instance IDs.
+     *        One or more instance IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -102,11 +102,11 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more EC2 instance IDs.
+     * One or more instance IDs.
      * </p>
      * 
      * @param instanceIds
-     *        One or more EC2 instance IDs.
+     *        One or more instance IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

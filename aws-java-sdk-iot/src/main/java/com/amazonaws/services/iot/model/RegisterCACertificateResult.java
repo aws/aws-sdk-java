@@ -19,16 +19,32 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The output from the RegisterCACertificateResponse operation.
+ * </p>
  */
 public class RegisterCACertificateResult implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The CA certificate ARN.
+     * </p>
+     */
     private String certificateArn;
-
+    /**
+     * <p>
+     * The CA certificate identifier.
+     * </p>
+     */
     private String certificateId;
 
     /**
+     * <p>
+     * The CA certificate ARN.
+     * </p>
+     * 
      * @param certificateArn
+     *        The CA certificate ARN.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -36,7 +52,11 @@ public class RegisterCACertificateResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The CA certificate ARN.
+     * </p>
+     * 
+     * @return The CA certificate ARN.
      */
 
     public String getCertificateArn() {
@@ -44,7 +64,12 @@ public class RegisterCACertificateResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificate ARN.
+     * </p>
+     * 
      * @param certificateArn
+     *        The CA certificate ARN.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -55,7 +80,12 @@ public class RegisterCACertificateResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificate identifier.
+     * </p>
+     * 
      * @param certificateId
+     *        The CA certificate identifier.
      */
 
     public void setCertificateId(String certificateId) {
@@ -63,7 +93,11 @@ public class RegisterCACertificateResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The CA certificate identifier.
+     * </p>
+     * 
+     * @return The CA certificate identifier.
      */
 
     public String getCertificateId() {
@@ -71,7 +105,12 @@ public class RegisterCACertificateResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificate identifier.
+     * </p>
+     * 
      * @param certificateId
+     *        The CA certificate identifier.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

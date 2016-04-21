@@ -86,7 +86,10 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * You can call <a>GetPipelineState</a>, which displays the status of a
  * pipeline, including the status of stages in the pipeline, or
  * <a>GetPipeline</a>, which returns the entire structure of the pipeline,
- * including the stages of that pipeline.
+ * including the stages of that pipeline. For more information about the
+ * structure of stages and actions, also refer to the <ulink url=
+ * "http://docs.aws.amazon.com/codepipeline/latest/UserGuide/pipeline-structure.html"
+ * >AWS CodePipeline Pipeline Structure Reference</ulink>.
  * </p>
  * </p>
  * <p>
@@ -130,6 +133,7 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * <ul>
  * <li><a>AcknowledgeJob</a>, which confirms whether a job worker has received
  * the specified job,</li>
+ * <li><a>GetJobDetails</a>, which returns the details of a job,</li>
  * <li><a>PollForJobs</a>, which determines whether there are any jobs to act
  * upon,</li>
  * <li><a>PutJobFailureResult</a>, which provides details of a job failure, and</li>
@@ -145,6 +149,8 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * <ul>
  * <li><a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has
  * received the specified job,</li>
+ * <li><a>GetThirdPartyJobDetails</a>, which requests the details of a job for a
+ * partner action,</li>
  * <li><a>PollForThirdPartyJobs</a>, which determines whether there are any jobs
  * to act upon,</li>
  * <li><a>PutThirdPartyJobFailureResult</a>, which provides details of a job

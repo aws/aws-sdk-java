@@ -160,10 +160,10 @@ public interface AmazonSQS {
      * <code>n</code> are integers starting from 1. For example, a parameter
      * list with two elements looks like this: </note>
      * <p>
-     * <code><![CDATA[&amp;Attribute.1=this]]></code>
+     * <code>&amp;Attribute.1=this</code>
      * </p>
      * <p>
-     * <code><![CDATA[&amp;Attribute.2=that]]></code>
+     * <code>&amp;Attribute.2=that</code>
      * </p>
      * 
      * @param addPermissionRequest
@@ -262,10 +262,10 @@ public interface AmazonSQS {
      * <code>n</code> are integers starting from 1. For example, a parameter
      * list with two elements looks like this: </note>
      * <p>
-     * <code><![CDATA[&amp;Attribute.1=this]]></code>
+     * <code>&amp;Attribute.1=this</code>
      * </p>
      * <p>
-     * <code><![CDATA[&amp;Attribute.2=that]]></code>
+     * <code>&amp;Attribute.2=that</code>
      * </p>
      * 
      * @param changeMessageVisibilityBatchRequest
@@ -333,10 +333,10 @@ public interface AmazonSQS {
      * <code>n</code> are integers starting from 1. For example, a parameter
      * list with two elements looks like this: </note>
      * <p>
-     * <code><![CDATA[&amp;Attribute.1=this]]></code>
+     * <code>&amp;Attribute.1=this</code>
      * </p>
      * <p>
-     * <code><![CDATA[&amp;Attribute.2=that]]></code>
+     * <code>&amp;Attribute.2=that</code>
      * </p>
      * 
      * @param createQueueRequest
@@ -423,10 +423,10 @@ public interface AmazonSQS {
      * <code>n</code> are integers starting from 1. For example, a parameter
      * list with two elements looks like this: </note>
      * <p>
-     * <code><![CDATA[&amp;Attribute.1=this]]></code>
+     * <code>&amp;Attribute.1=this</code>
      * </p>
      * <p>
-     * <code><![CDATA[&amp;Attribute.2=that]]></code>
+     * <code>&amp;Attribute.2=that</code>
      * </p>
      * 
      * @param deleteMessageBatchRequest
@@ -499,41 +499,41 @@ public interface AmazonSQS {
      * Gets attributes for the specified queue. The following attributes are
      * supported:
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateNumberOfMessages</code> - returns the approximate
+     * <li> <code>All</code> - returns all values.</li>
+     * <li> <code>ApproximateNumberOfMessages</code> - returns the approximate
      * number of visible messages in a queue. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
      * >Resources Required to Process Messages</a> in the <i>Amazon SQS
      * Developer Guide</i>.</li>
-     * <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
+     * <li> <code>ApproximateNumberOfMessagesNotVisible</code> - returns the
      * approximate number of messages that are not timed-out and not deleted.
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
      * >Resources Required to Process Messages</a> in the <i>Amazon SQS
      * Developer Guide</i>.</li>
-     * <li><code>VisibilityTimeout</code> - returns the visibility timeout for
+     * <li> <code>VisibilityTimeout</code> - returns the visibility timeout for
      * the queue. For more information about visibility timeout, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"
      * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</li>
-     * <li><code>CreatedTimestamp</code> - returns the time when the queue was
+     * <li> <code>CreatedTimestamp</code> - returns the time when the queue was
      * created (epoch time in seconds).</li>
-     * <li><code>LastModifiedTimestamp</code> - returns the time when the queue
+     * <li> <code>LastModifiedTimestamp</code> - returns the time when the queue
      * was last changed (epoch time in seconds).</li>
-     * <li><code>Policy</code> - returns the queue's policy.</li>
-     * <li><code>MaximumMessageSize</code> - returns the limit of how many bytes
+     * <li> <code>Policy</code> - returns the queue's policy.</li>
+     * <li> <code>MaximumMessageSize</code> - returns the limit of how many bytes
      * a message can contain before Amazon SQS rejects it.</li>
-     * <li><code>MessageRetentionPeriod</code> - returns the number of seconds
+     * <li> <code>MessageRetentionPeriod</code> - returns the number of seconds
      * Amazon SQS retains a message.</li>
-     * <li><code>QueueArn</code> - returns the queue's Amazon resource name
+     * <li> <code>QueueArn</code> - returns the queue's Amazon resource name
      * (ARN).</li>
-     * <li><code>ApproximateNumberOfMessagesDelayed</code> - returns the
+     * <li> <code>ApproximateNumberOfMessagesDelayed</code> - returns the
      * approximate number of messages that are pending to be added to the queue.
      * </li>
-     * <li><code>DelaySeconds</code> - returns the default delay on the queue in
+     * <li> <code>DelaySeconds</code> - returns the default delay on the queue in
      * seconds.</li>
-     * <li><code>ReceiveMessageWaitTimeSeconds</code> - returns the time for
+     * <li> <code>ReceiveMessageWaitTimeSeconds</code> - returns the time for
      * which a ReceiveMessage call will wait for a message to arrive.</li>
-     * <li><code>RedrivePolicy</code> - returns the parameters for dead letter
+     * <li> <code>RedrivePolicy</code> - returns the parameters for dead letter
      * queue functionality of the source queue. For more information about
      * RedrivePolicy and dead letter queues, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
@@ -549,10 +549,10 @@ public interface AmazonSQS {
      * starting from 1. For example, a parameter list with two elements looks
      * like this: </note>
      * <p>
-     * <code><![CDATA[&amp;Attribute.1=this]]></code>
+     * <code>&amp;Attribute.1=this</code>
      * </p>
      * <p>
-     * <code><![CDATA[&amp;Attribute.2=that]]></code>
+     * <code>&amp;Attribute.2=that</code>
      * </p>
      * 
      * @param getQueueAttributesRequest
@@ -871,10 +871,10 @@ public interface AmazonSQS {
      * <code>n</code> are integers starting from 1. For example, a parameter
      * list with two elements looks like this: </note>
      * <p>
-     * <code><![CDATA[&amp;Attribute.1=this]]></code>
+     * <code>&amp;Attribute.1=this</code>
      * </p>
      * <p>
-     * <code><![CDATA[&amp;Attribute.2=that]]></code>
+     * <code>&amp;Attribute.2=that</code>
      * </p>
      * 
      * @param sendMessageBatchRequest

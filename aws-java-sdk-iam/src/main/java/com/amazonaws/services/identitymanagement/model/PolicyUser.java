@@ -40,7 +40,14 @@ public class PolicyUser implements Serializable, Cloneable {
      * </p>
      */
     private String userName;
-
+    /**
+     * <p>
+     * The stable and unique string identifying the user. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     */
     private String userId;
 
     /**
@@ -85,7 +92,18 @@ public class PolicyUser implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The stable and unique string identifying the user. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
      * @param userId
+     *        The stable and unique string identifying the user. For more
+     *        information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      */
 
     public void setUserId(String userId) {
@@ -93,7 +111,17 @@ public class PolicyUser implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The stable and unique string identifying the user. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The stable and unique string identifying the user. For more
+     *         information about IDs, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *         >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      */
 
     public String getUserId() {
@@ -101,7 +129,18 @@ public class PolicyUser implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The stable and unique string identifying the user. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
      * @param userId
+     *        The stable and unique string identifying the user. For more
+     *        information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

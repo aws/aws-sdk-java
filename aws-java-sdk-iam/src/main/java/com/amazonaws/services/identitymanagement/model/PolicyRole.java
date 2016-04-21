@@ -40,7 +40,14 @@ public class PolicyRole implements Serializable, Cloneable {
      * </p>
      */
     private String roleName;
-
+    /**
+     * <p>
+     * The stable and unique string identifying the role. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     */
     private String roleId;
 
     /**
@@ -85,7 +92,18 @@ public class PolicyRole implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The stable and unique string identifying the role. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
      * @param roleId
+     *        The stable and unique string identifying the role. For more
+     *        information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      */
 
     public void setRoleId(String roleId) {
@@ -93,7 +111,17 @@ public class PolicyRole implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The stable and unique string identifying the role. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The stable and unique string identifying the role. For more
+     *         information about IDs, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *         >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      */
 
     public String getRoleId() {
@@ -101,7 +129,18 @@ public class PolicyRole implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The stable and unique string identifying the role. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
      * @param roleId
+     *        The stable and unique string identifying the role. For more
+     *        information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

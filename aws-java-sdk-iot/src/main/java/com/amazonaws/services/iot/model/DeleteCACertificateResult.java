@@ -19,7 +19,9 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The output for the DeleteCACertificate operation.
+ * </p>
  */
 public class DeleteCACertificateResult implements Serializable, Cloneable {
 

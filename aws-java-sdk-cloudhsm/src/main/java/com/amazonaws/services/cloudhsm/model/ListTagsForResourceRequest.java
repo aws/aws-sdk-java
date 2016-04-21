@@ -27,18 +27,18 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +47,10 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource.
+     * @return The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
      */
 
     public String getResourceArn() {
@@ -59,11 +59,11 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the AWS CloudHSM resource.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

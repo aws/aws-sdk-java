@@ -19,14 +19,26 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The output from the GetRegistrationCode operation.
+ * </p>
  */
 public class GetRegistrationCodeResult implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The CA certificate registration code.
+     * </p>
+     */
     private String registrationCode;
 
     /**
+     * <p>
+     * The CA certificate registration code.
+     * </p>
+     * 
      * @param registrationCode
+     *        The CA certificate registration code.
      */
 
     public void setRegistrationCode(String registrationCode) {
@@ -34,7 +46,11 @@ public class GetRegistrationCodeResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The CA certificate registration code.
+     * </p>
+     * 
+     * @return The CA certificate registration code.
      */
 
     public String getRegistrationCode() {
@@ -42,7 +58,12 @@ public class GetRegistrationCodeResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificate registration code.
+     * </p>
+     * 
      * @param registrationCode
+     *        The CA certificate registration code.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

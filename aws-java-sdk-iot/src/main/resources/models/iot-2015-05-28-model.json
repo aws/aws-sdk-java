@@ -578,8 +578,14 @@
         "method":"DELETE",
         "requestUri":"/cacertificate/{certificateId}"
       },
-      "input":{"shape":"DeleteCACertificateRequest"},
-      "output":{"shape":"DeleteCACertificateResponse"},
+      "input":{
+        "shape":"DeleteCACertificateRequest",
+        "documentation":"<p>Input for the DeleteCACertificate operation.</p>"
+      },
+      "output":{
+        "shape":"DeleteCACertificateResponse",
+        "documentation":"<p>The output for the DeleteCACertificate operation.</p>"
+      },
       "errors":[
         {
           "shape":"InvalidRequestException",
@@ -625,7 +631,8 @@
           "exception":true,
           "documentation":"<p>The specified resource does not exist.</p>"
         }
-      ]
+      ],
+      "documentation":"<p>Deletes a registered CA certificate.</p>"
     },
     "DeleteCertificate":{
       "name":"DeleteCertificate",
@@ -813,14 +820,26 @@
         "method":"DELETE",
         "requestUri":"/registrationcode"
       },
-      "input":{"shape":"DeleteRegistrationCodeRequest"},
-      "output":{"shape":"DeleteRegistrationCodeResponse"},
+      "input":{
+        "shape":"DeleteRegistrationCodeRequest",
+        "documentation":"<p>The input for the DeleteRegistrationCode operation.</p>"
+      },
+      "output":{
+        "shape":"DeleteRegistrationCodeResponse",
+        "documentation":"<p>The output for the DeleteRegistrationCode operation. </p>"
+      },
       "errors":[
         {
           "shape":"ThrottlingException",
           "error":{"httpStatusCode":429},
           "exception":true,
           "documentation":"<p>The rate exceeds the limit.</p>"
+        },
+        {
+          "shape":"ResourceNotFoundException",
+          "error":{"httpStatusCode":404},
+          "exception":true,
+          "documentation":"<p>The specified resource does not exist.</p>"
         },
         {
           "shape":"UnauthorizedException",
@@ -842,7 +861,8 @@
           "fault":true,
           "documentation":"<p>An unexpected error has occurred.</p>"
         }
-      ]
+      ],
+      "documentation":"<p>Deletes a CA certificate registration code.</p>"
     },
     "DeleteThing":{
       "name":"DeleteThing",
@@ -946,8 +966,14 @@
         "method":"GET",
         "requestUri":"/cacertificate/{certificateId}"
       },
-      "input":{"shape":"DescribeCACertificateRequest"},
-      "output":{"shape":"DescribeCACertificateResponse"},
+      "input":{
+        "shape":"DescribeCACertificateRequest",
+        "documentation":"<p>The input for the DescribeCACertificate operation.</p>"
+      },
+      "output":{
+        "shape":"DescribeCACertificateResponse",
+        "documentation":"<p>The output from the DescribeCACertificate operation.</p>"
+      },
       "errors":[
         {
           "shape":"InvalidRequestException",
@@ -987,7 +1013,8 @@
           "exception":true,
           "documentation":"<p>The specified resource does not exist.</p>"
         }
-      ]
+      ],
+      "documentation":"<p>Describes a registered CA certificate.</p>"
     },
     "DescribeCertificate":{
       "name":"DescribeCertificate",
@@ -1482,8 +1509,14 @@
         "method":"GET",
         "requestUri":"/registrationcode"
       },
-      "input":{"shape":"GetRegistrationCodeRequest"},
-      "output":{"shape":"GetRegistrationCodeResponse"},
+      "input":{
+        "shape":"GetRegistrationCodeRequest",
+        "documentation":"<p>The input to the GetRegistrationCode operation.</p>"
+      },
+      "output":{
+        "shape":"GetRegistrationCodeResponse",
+        "documentation":"<p>The output from the GetRegistrationCode operation.</p>"
+      },
       "errors":[
         {
           "shape":"ThrottlingException",
@@ -1511,7 +1544,8 @@
           "fault":true,
           "documentation":"<p>An unexpected error has occurred.</p>"
         }
-      ]
+      ],
+      "documentation":"<p>Gets a registration code used to register a CA certificate with AWS IoT.</p>"
     },
     "GetTopicRule":{
       "name":"GetTopicRule",
@@ -1563,8 +1597,14 @@
         "method":"GET",
         "requestUri":"/cacertificates"
       },
-      "input":{"shape":"ListCACertificatesRequest"},
-      "output":{"shape":"ListCACertificatesResponse"},
+      "input":{
+        "shape":"ListCACertificatesRequest",
+        "documentation":"<p>Input for the ListCACertificates operation.</p>"
+      },
+      "output":{
+        "shape":"ListCACertificatesResponse",
+        "documentation":"<p>The output from the ListCACertificates operation.</p>"
+      },
       "errors":[
         {
           "shape":"InvalidRequestException",
@@ -1598,7 +1638,8 @@
           "fault":true,
           "documentation":"<p>An unexpected error has occurred.</p>"
         }
-      ]
+      ],
+      "documentation":"<p>Lists the CA certificates registered for your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>"
     },
     "ListCertificates":{
       "name":"ListCertificates",
@@ -1648,7 +1689,7 @@
           "documentation":"<p>An unexpected error has occurred.</p>"
         }
       ],
-      "documentation":"<p>Lists your certificates.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>"
+      "documentation":"<p>Lists the certificates registered in your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>"
     },
     "ListCertificatesByCA":{
       "name":"ListCertificatesByCA",
@@ -1656,8 +1697,14 @@
         "method":"GET",
         "requestUri":"/certificates-by-ca/{caCertificateId}"
       },
-      "input":{"shape":"ListCertificatesByCARequest"},
-      "output":{"shape":"ListCertificatesByCAResponse"},
+      "input":{
+        "shape":"ListCertificatesByCARequest",
+        "documentation":"<p>The input to the ListCertificatesByCA operation.</p>"
+      },
+      "output":{
+        "shape":"ListCertificatesByCAResponse",
+        "documentation":"<p>The output of the ListCertificatesByCA operation.</p>"
+      },
       "errors":[
         {
           "shape":"InvalidRequestException",
@@ -1691,7 +1738,8 @@
           "fault":true,
           "documentation":"<p>An unexpected error has occurred.</p>"
         }
-      ]
+      ],
+      "documentation":"<p>List the device certificates signed by the specified CA certificate.</p>"
     },
     "ListPolicies":{
       "name":"ListPolicies",
@@ -2049,8 +2097,14 @@
         "method":"POST",
         "requestUri":"/cacertificate"
       },
-      "input":{"shape":"RegisterCACertificateRequest"},
-      "output":{"shape":"RegisterCACertificateResponse"},
+      "input":{
+        "shape":"RegisterCACertificateRequest",
+        "documentation":"<p>The input to the RegisterCACertificate operation.</p>"
+      },
+      "output":{
+        "shape":"RegisterCACertificateResponse",
+        "documentation":"<p>The output from the RegisterCACertificateResponse operation.</p>"
+      },
       "errors":[
         {
           "shape":"ResourceAlreadyExistsException",
@@ -2061,7 +2115,8 @@
         {
           "shape":"RegistrationCodeValidationException",
           "error":{"httpStatusCode":400},
-          "exception":true
+          "exception":true,
+          "documentation":"<p>The registration code is invalid.</p>"
         },
         {
           "shape":"InvalidRequestException",
@@ -2072,7 +2127,8 @@
         {
           "shape":"CertificateValidationException",
           "error":{"httpStatusCode":400},
-          "exception":true
+          "exception":true,
+          "documentation":"<p>The certificate is invalid.</p>"
         },
         {
           "shape":"ThrottlingException",
@@ -2106,7 +2162,8 @@
           "fault":true,
           "documentation":"<p>An unexpected error has occurred.</p>"
         }
-      ]
+      ],
+      "documentation":"<p>Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign device certificates, which can be then registered with AWS IoT. You can register up to 10 CA certificates per AWS account that have the same subject field and public key. This enables you to have up to 10 certificate authorities sign your device certificates. If you have more than one CA certificate registered, make sure you pass the CA certificate when you register your device certificates with the RegisterCertificate API.</p>"
     },
     "RegisterCertificate":{
       "name":"RegisterCertificate",
@@ -2114,8 +2171,14 @@
         "method":"POST",
         "requestUri":"/certificate/register"
       },
-      "input":{"shape":"RegisterCertificateRequest"},
-      "output":{"shape":"RegisterCertificateResponse"},
+      "input":{
+        "shape":"RegisterCertificateRequest",
+        "documentation":"<p>The input to the RegisterCertificate operation.</p>"
+      },
+      "output":{
+        "shape":"RegisterCertificateResponse",
+        "documentation":"<p>The output from the RegisterCertificate operation.</p>"
+      },
       "errors":[
         {
           "shape":"ResourceAlreadyExistsException",
@@ -2132,7 +2195,8 @@
         {
           "shape":"CertificateValidationException",
           "error":{"httpStatusCode":400},
-          "exception":true
+          "exception":true,
+          "documentation":"<p>The certificate is invalid.</p>"
         },
         {
           "shape":"CertificateStateException",
@@ -2143,7 +2207,8 @@
         {
           "shape":"CertificateConflictException",
           "error":{"httpStatusCode":409},
-          "exception":true
+          "exception":true,
+          "documentation":"<p>Unable to verify the CA certificate used to sign the device certificate you are attempting to register. This is happens when you have registered more than one CA certificate that has the same subject field and public key.</p>"
         },
         {
           "shape":"ThrottlingException",
@@ -2171,7 +2236,8 @@
           "fault":true,
           "documentation":"<p>An unexpected error has occurred.</p>"
         }
-      ]
+      ],
+      "documentation":"<p>Registers a device certificate with AWS IoT. If you have more than one CA certificate that has the same subject field, you must specify the CA certificate that was used to sign the device certificate being registered.</p>"
     },
     "RejectCertificateTransfer":{
       "name":"RejectCertificateTransfer",
@@ -2229,7 +2295,7 @@
           "documentation":"<p>An unexpected error has occurred.</p>"
         }
       ],
-      "documentation":"<p>Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer, the certificate status changes from <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation can only be called by the transfer destination. After it is called, the certificate will be returned to the source's account in the INACTIVE state.</p>"
+      "documentation":"<p>Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation can only be called by the transfer destination. After it is called, the certificate will be returned to the source's account in the INACTIVE state.</p>"
     },
     "ReplaceTopicRule":{
       "name":"ReplaceTopicRule",
@@ -2437,7 +2503,10 @@
         "method":"PUT",
         "requestUri":"/cacertificate/{certificateId}"
       },
-      "input":{"shape":"UpdateCACertificateRequest"},
+      "input":{
+        "shape":"UpdateCACertificateRequest",
+        "documentation":"<p>The input to the UpdateCACertificate operation.</p>"
+      },
       "errors":[
         {
           "shape":"ResourceNotFoundException",
@@ -2477,7 +2546,8 @@
           "fault":true,
           "documentation":"<p>An unexpected error has occurred.</p>"
         }
-      ]
+      ],
+      "documentation":"<p>Updates a registered CA certificate.</p>"
     },
     "UpdateCertificate":{
       "name":"UpdateCertificate",
@@ -2752,26 +2822,59 @@
       "pattern":"[0-9]{12}"
     },
     "AwsArn":{"type":"string"},
+    "AwsIotSqlVersion":{"type":"string"},
     "BucketName":{"type":"string"},
     "CACertificate":{
       "type":"structure",
       "members":{
-        "certificateArn":{"shape":"CertificateArn"},
-        "certificateId":{"shape":"CertificateId"},
-        "status":{"shape":"CACertificateStatus"},
-        "creationDate":{"shape":"DateType"}
-      }
+        "certificateArn":{
+          "shape":"CertificateArn",
+          "documentation":"<p>The ARN of the CA certificate.</p>"
+        },
+        "certificateId":{
+          "shape":"CertificateId",
+          "documentation":"<p>The ID of the CA certificate.</p>"
+        },
+        "status":{
+          "shape":"CACertificateStatus",
+          "documentation":"<p>The status of the CA certificate.</p>"
+        },
+        "creationDate":{
+          "shape":"DateType",
+          "documentation":"<p>The date the CA certificate was created.</p>"
+        }
+      },
+      "documentation":"<p>A CA certificate.</p>"
     },
     "CACertificateDescription":{
       "type":"structure",
       "members":{
-        "certificateArn":{"shape":"CertificateArn"},
-        "certificateId":{"shape":"CertificateId"},
-        "status":{"shape":"CACertificateStatus"},
-        "certificatePem":{"shape":"CertificatePem"},
-        "ownedBy":{"shape":"AwsAccountId"},
-        "creationDate":{"shape":"DateType"}
-      }
+        "certificateArn":{
+          "shape":"CertificateArn",
+          "documentation":"<p>The CA certificate ARN.</p>"
+        },
+        "certificateId":{
+          "shape":"CertificateId",
+          "documentation":"<p>The CA certificate ID.</p>"
+        },
+        "status":{
+          "shape":"CACertificateStatus",
+          "documentation":"<p>The status of a CA certificate.</p>"
+        },
+        "certificatePem":{
+          "shape":"CertificatePem",
+          "documentation":"<p>The CA certificate data, in PEM format.</p>"
+        },
+        "ownedBy":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The owner of the CA certificate.</p>"
+        },
+        "creationDate":{
+          "shape":"DateType",
+          "documentation":"<p>The date the CA certificate was created.</p>"
+        }
+      },
+      "documentation":"<p>Describes a CA certificate.</p>"
     },
     "CACertificateStatus":{
       "type":"string",
@@ -2823,10 +2926,14 @@
     "CertificateConflictException":{
       "type":"structure",
       "members":{
-        "message":{"shape":"errorMessage"}
+        "message":{
+          "shape":"errorMessage",
+          "documentation":"<p>The message for the exception.</p>"
+        }
       },
       "error":{"httpStatusCode":409},
-      "exception":true
+      "exception":true,
+      "documentation":"<p>Unable to verify the CA certificate used to sign the device certificate you are attempting to register. This is happens when you have registered more than one CA certificate that has the same subject field and public key.</p>"
     },
     "CertificateDescription":{
       "type":"structure",
@@ -2839,7 +2946,10 @@
           "shape":"CertificateId",
           "documentation":"<p>The ID of the certificate.</p>"
         },
-        "caCertificateId":{"shape":"CertificateId"},
+        "caCertificateId":{
+          "shape":"CertificateId",
+          "documentation":"<p>The certificate ID of the CA certificate used to sign this certificate.</p>"
+        },
         "status":{
           "shape":"CertificateStatus",
           "documentation":"<p>The status of the certificate.</p>"
@@ -2852,7 +2962,10 @@
           "shape":"AwsAccountId",
           "documentation":"<p>The ID of the AWS account that owns the certificate.</p>"
         },
-        "previousOwnedBy":{"shape":"AwsAccountId"},
+        "previousOwnedBy":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The ID of the AWS account of the previous owner of the certificate.</p>"
+        },
         "creationDate":{
           "shape":"DateType",
           "documentation":"<p>The date and time the certificate was created.</p>"
@@ -2861,7 +2974,10 @@
           "shape":"DateType",
           "documentation":"<p>The date and time the certificate was last modified.</p>"
         },
-        "transferData":{"shape":"TransferData"}
+        "transferData":{
+          "shape":"TransferData",
+          "documentation":"<p>The transfer data.</p>"
+        }
       },
       "documentation":"<p>Describes a certificate.</p>"
     },
@@ -2905,10 +3021,14 @@
     "CertificateValidationException":{
       "type":"structure",
       "members":{
-        "message":{"shape":"errorMessage"}
+        "message":{
+          "shape":"errorMessage",
+          "documentation":"<p>Additional information about the exception.</p>"
+        }
       },
       "error":{"httpStatusCode":400},
-      "exception":true
+      "exception":true,
+      "documentation":"<p>The certificate is invalid.</p>"
     },
     "Certificates":{
       "type":"list",
@@ -3200,14 +3320,17 @@
         "certificateId":{
           "shape":"CertificateId",
           "location":"uri",
-          "locationName":"certificateId"
+          "locationName":"certificateId",
+          "documentation":"<p>The ID of the certificate to delete.</p>"
         }
-      }
+      },
+      "documentation":"<p>Input for the DeleteCACertificate operation.</p>"
     },
     "DeleteCACertificateResponse":{
       "type":"structure",
       "members":{
-      }
+      },
+      "documentation":"<p>The output for the DeleteCACertificate operation.</p>"
     },
     "DeleteCertificateRequest":{
       "type":"structure",
@@ -3272,12 +3395,14 @@
     "DeleteRegistrationCodeRequest":{
       "type":"structure",
       "members":{
-      }
+      },
+      "documentation":"<p>The input for the DeleteRegistrationCode operation.</p>"
     },
     "DeleteRegistrationCodeResponse":{
       "type":"structure",
       "members":{
-      }
+      },
+      "documentation":"<p>The output for the DeleteRegistrationCode operation. </p>"
     },
     "DeleteThingRequest":{
       "type":"structure",
@@ -3319,15 +3444,21 @@
         "certificateId":{
           "shape":"CertificateId",
           "location":"uri",
-          "locationName":"certificateId"
+          "locationName":"certificateId",
+          "documentation":"<p>The CA certificate identifier.</p>"
         }
-      }
+      },
+      "documentation":"<p>The input for the DescribeCACertificate operation.</p>"
     },
     "DescribeCACertificateResponse":{
       "type":"structure",
       "members":{
-        "certificateDescription":{"shape":"CACertificateDescription"}
-      }
+        "certificateDescription":{
+          "shape":"CACertificateDescription",
+          "documentation":"<p>The CA certificate description.</p>"
+        }
+      },
+      "documentation":"<p>The output from the DescribeCACertificate operation.</p>"
     },
     "DescribeCertificateRequest":{
       "type":"structure",
@@ -3684,13 +3815,18 @@
     "GetRegistrationCodeRequest":{
       "type":"structure",
       "members":{
-      }
+      },
+      "documentation":"<p>The input to the GetRegistrationCode operation.</p>"
     },
     "GetRegistrationCodeResponse":{
       "type":"structure",
       "members":{
-        "registrationCode":{"shape":"RegistrationCode"}
-      }
+        "registrationCode":{
+          "shape":"RegistrationCode",
+          "documentation":"<p>The CA certificate registration code.</p>"
+        }
+      },
+      "documentation":"<p>The output from the GetRegistrationCode operation.</p>"
     },
     "GetTopicRuleRequest":{
       "type":"structure",
@@ -3827,26 +3963,37 @@
         "pageSize":{
           "shape":"PageSize",
           "location":"querystring",
-          "locationName":"pageSize"
+          "locationName":"pageSize",
+          "documentation":"<p>The result page size.</p>"
         },
         "marker":{
           "shape":"Marker",
           "location":"querystring",
-          "locationName":"marker"
+          "locationName":"marker",
+          "documentation":"<p>The marker for the next set of results.</p>"
         },
         "ascendingOrder":{
           "shape":"AscendingOrder",
           "location":"querystring",
-          "locationName":"isAscendingOrder"
+          "locationName":"isAscendingOrder",
+          "documentation":"<p>Determines the order of the results.</p>"
         }
-      }
+      },
+      "documentation":"<p>Input for the ListCACertificates operation.</p>"
     },
     "ListCACertificatesResponse":{
       "type":"structure",
       "members":{
-        "certificates":{"shape":"CACertificates"},
-        "nextMarker":{"shape":"Marker"}
-      }
+        "certificates":{
+          "shape":"CACertificates",
+          "documentation":"<p>The CA certificates registered in your AWS account.</p>"
+        },
+        "nextMarker":{
+          "shape":"Marker",
+          "documentation":"<p>The current position within the list of CA certificates.</p>"
+        }
+      },
+      "documentation":"<p>The output from the ListCACertificates operation.</p>"
     },
     "ListCertificatesByCARequest":{
       "type":"structure",
@@ -3855,31 +4002,43 @@
         "caCertificateId":{
           "shape":"CertificateId",
           "location":"uri",
-          "locationName":"caCertificateId"
+          "locationName":"caCertificateId",
+          "documentation":"<p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate. </p>"
         },
         "pageSize":{
           "shape":"PageSize",
           "location":"querystring",
-          "locationName":"pageSize"
+          "locationName":"pageSize",
+          "documentation":"<p>The result page size.</p>"
         },
         "marker":{
           "shape":"Marker",
           "location":"querystring",
-          "locationName":"marker"
+          "locationName":"marker",
+          "documentation":"<p>The marker for the next set of results.</p>"
         },
         "ascendingOrder":{
           "shape":"AscendingOrder",
           "location":"querystring",
-          "locationName":"isAscendingOrder"
+          "locationName":"isAscendingOrder",
+          "documentation":"<p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>"
         }
-      }
+      },
+      "documentation":"<p>The input to the ListCertificatesByCA operation.</p>"
     },
     "ListCertificatesByCAResponse":{
       "type":"structure",
       "members":{
-        "certificates":{"shape":"Certificates"},
-        "nextMarker":{"shape":"Marker"}
-      }
+        "certificates":{
+          "shape":"Certificates",
+          "documentation":"<p>The device certificates signed by the specified CA certificate.</p>"
+        },
+        "nextMarker":{
+          "shape":"Marker",
+          "documentation":"<p>The marker for the next set of results, or null if there are no additional results.</p>"
+        }
+      },
+      "documentation":"<p>The output of the ListCertificatesByCA operation.</p>"
     },
     "ListCertificatesRequest":{
       "type":"structure",
@@ -4319,41 +4478,71 @@
         "verificationCertificate"
       ],
       "members":{
-        "caCertificate":{"shape":"CertificatePem"},
-        "verificationCertificate":{"shape":"CertificatePem"},
+        "caCertificate":{
+          "shape":"CertificatePem",
+          "documentation":"<p>The CA certificate.</p>"
+        },
+        "verificationCertificate":{
+          "shape":"CertificatePem",
+          "documentation":"<p>The private key verification certificate.</p>"
+        },
         "setAsActive":{
           "shape":"SetAsActive",
           "location":"querystring",
-          "locationName":"setAsActive"
+          "locationName":"setAsActive",
+          "documentation":"<p>A boolean value that specifies if the CA certificate is set to active.</p>"
         }
-      }
+      },
+      "documentation":"<p>The input to the RegisterCACertificate operation.</p>"
     },
     "RegisterCACertificateResponse":{
       "type":"structure",
       "members":{
-        "certificateArn":{"shape":"CertificateArn"},
-        "certificateId":{"shape":"CertificateId"}
-      }
+        "certificateArn":{
+          "shape":"CertificateArn",
+          "documentation":"<p>The CA certificate ARN.</p>"
+        },
+        "certificateId":{
+          "shape":"CertificateId",
+          "documentation":"<p>The CA certificate identifier.</p>"
+        }
+      },
+      "documentation":"<p>The output from the RegisterCACertificateResponse operation.</p>"
     },
     "RegisterCertificateRequest":{
       "type":"structure",
       "required":["certificatePem"],
       "members":{
-        "certificatePem":{"shape":"CertificatePem"},
-        "caCertificatePem":{"shape":"CertificatePem"},
+        "certificatePem":{
+          "shape":"CertificatePem",
+          "documentation":"<p>The certificate data, in PEM format.</p>"
+        },
+        "caCertificatePem":{
+          "shape":"CertificatePem",
+          "documentation":"<p>The CA certificate used to sign the device certificate being registered.</p>"
+        },
         "setAsActive":{
           "shape":"SetAsActive",
           "location":"querystring",
-          "locationName":"setAsActive"
+          "locationName":"setAsActive",
+          "documentation":"<p>A boolean value that specifies if the CA certificate is set to active.</p>"
         }
-      }
+      },
+      "documentation":"<p>The input to the RegisterCertificate operation.</p>"
     },
     "RegisterCertificateResponse":{
       "type":"structure",
       "members":{
-        "certificateArn":{"shape":"CertificateArn"},
-        "certificateId":{"shape":"CertificateId"}
-      }
+        "certificateArn":{
+          "shape":"CertificateArn",
+          "documentation":"<p>The certificate ARN.</p>"
+        },
+        "certificateId":{
+          "shape":"CertificateId",
+          "documentation":"<p>The certificate identifier.</p>"
+        }
+      },
+      "documentation":"<p>The output from the RegisterCertificate operation.</p>"
     },
     "RegistrationCode":{
       "type":"string",
@@ -4364,10 +4553,14 @@
     "RegistrationCodeValidationException":{
       "type":"structure",
       "members":{
-        "message":{"shape":"errorMessage"}
+        "message":{
+          "shape":"errorMessage",
+          "documentation":"<p>Additional information about the exception.</p>"
+        }
       },
       "error":{"httpStatusCode":400},
-      "exception":true
+      "exception":true,
+      "documentation":"<p>The registration code is invalid.</p>"
     },
     "RejectCertificateTransferRequest":{
       "type":"structure",
@@ -4379,7 +4572,10 @@
           "locationName":"certificateId",
           "documentation":"<p>The ID of the certificate.</p>"
         },
-        "rejectReason":{"shape":"Message"}
+        "rejectReason":{
+          "shape":"Message",
+          "documentation":"<p>The reason the certificate transfer was rejected.</p>"
+        }
       },
       "documentation":"<p>The input for the RejectCertificateTransfer operation.</p>"
     },
@@ -4655,6 +4851,10 @@
         "ruleDisabled":{
           "shape":"IsDisabled",
           "documentation":"<p>Specifies whether the rule is disabled.</p>"
+        },
+        "awsIotSqlVersion":{
+          "shape":"AwsIotSqlVersion",
+          "documentation":"<p>The version of the SQL rules engine to use when evaluating the rule.</p>"
         }
       },
       "documentation":"<p>Describes a rule.</p>"
@@ -4711,6 +4911,10 @@
         "ruleDisabled":{
           "shape":"IsDisabled",
           "documentation":"<p>Specifies whether the rule is disabled.</p>"
+        },
+        "awsIotSqlVersion":{
+          "shape":"AwsIotSqlVersion",
+          "documentation":"<p>The version of the SQL rules engine to use when evaluating the rule.</p>"
         }
       },
       "documentation":"<p>Describes a rule.</p>"
@@ -4746,7 +4950,10 @@
           "locationName":"targetAwsAccount",
           "documentation":"<p>The AWS account.</p>"
         },
-        "transferMessage":{"shape":"Message"}
+        "transferMessage":{
+          "shape":"Message",
+          "documentation":"<p>The transfer message.</p>"
+        }
       },
       "documentation":"<p>The input for the TransferCertificate operation.</p>"
     },
@@ -4775,12 +4982,28 @@
     "TransferData":{
       "type":"structure",
       "members":{
-        "transferMessage":{"shape":"Message"},
-        "rejectReason":{"shape":"Message"},
-        "transferDate":{"shape":"DateType"},
-        "acceptDate":{"shape":"DateType"},
-        "rejectDate":{"shape":"DateType"}
-      }
+        "transferMessage":{
+          "shape":"Message",
+          "documentation":"<p>The transfer message.</p>"
+        },
+        "rejectReason":{
+          "shape":"Message",
+          "documentation":"<p>The reason why the transfer was rejected.</p>"
+        },
+        "transferDate":{
+          "shape":"DateType",
+          "documentation":"<p>The date the transfer took place.</p>"
+        },
+        "acceptDate":{
+          "shape":"DateType",
+          "documentation":"<p>The date the transfer was accepted.</p>"
+        },
+        "rejectDate":{
+          "shape":"DateType",
+          "documentation":"<p>The date the transfer was rejected.</p>"
+        }
+      },
+      "documentation":"<p>Data used to transfer a certificate to an AWS account.</p>"
     },
     "UnauthorizedException":{
       "type":"structure",
@@ -4804,14 +5027,17 @@
         "certificateId":{
           "shape":"CertificateId",
           "location":"uri",
-          "locationName":"certificateId"
+          "locationName":"certificateId",
+          "documentation":"<p>The CA certificate identifier.</p>"
         },
         "newStatus":{
           "shape":"CACertificateStatus",
           "location":"querystring",
-          "locationName":"newStatus"
+          "locationName":"newStatus",
+          "documentation":"<p>The updated status of the CA certificate.</p>"
         }
-      }
+      },
+      "documentation":"<p>The input to the UpdateCACertificate operation.</p>"
     },
     "UpdateCertificateRequest":{
       "type":"structure",

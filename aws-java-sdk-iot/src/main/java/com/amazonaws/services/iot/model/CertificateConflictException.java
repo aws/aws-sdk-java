@@ -19,7 +19,11 @@ package com.amazonaws.services.iot.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * Unable to verify the CA certificate used to sign the device certificate you
+ * are attempting to register. This is happens when you have registered more
+ * than one CA certificate that has the same subject field and public key.
+ * </p>
  */
 public class CertificateConflictException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

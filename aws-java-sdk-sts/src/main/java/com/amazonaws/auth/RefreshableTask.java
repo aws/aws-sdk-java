@@ -15,6 +15,7 @@
 package com.amazonaws.auth;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.ThreadSafe;
@@ -249,6 +250,12 @@ class RefreshableTask<T> {
         try {
             refreshableValueHolder
                     .compareAndSet(refreshableValueHolder.get(), refreshCallable.call());
+        } catch (AmazonServiceException ase) {
+            // Preserve the original ASE
+            throw ase;
+        } catch (AmazonClientException ace) {
+            // Preserve the original ACE
+            throw ace;
         } catch (Exception e) {
             throw new AmazonClientException(e);
         }

@@ -20,13 +20,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "cloudfront",
     "signingName" : "cloudfront",
+    "xmlProtocol" : true,
+    "serviceName" : "CloudFront",
+    "cborProtocol" : false,
     "jsonProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
-    "xmlProtocol" : true,
-    "serviceName" : "CloudFront",
-    "cborProtocol" : false
+    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "CreateCloudFrontOriginAccessIdentity" : {

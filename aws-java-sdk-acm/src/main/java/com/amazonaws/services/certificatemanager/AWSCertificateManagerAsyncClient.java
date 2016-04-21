@@ -268,6 +268,42 @@ public class AWSCertificateManagerAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<Void> addTagsToCertificateAsync(
+            AddTagsToCertificateRequest request) {
+
+        return addTagsToCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> addTagsToCertificateAsync(
+            final AddTagsToCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            addTagsToCertificate(request);
+                            result = null;
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<Void> deleteCertificateAsync(
             DeleteCertificateRequest request) {
 
@@ -393,6 +429,77 @@ public class AWSCertificateManagerAsyncClient extends
 
                         try {
                             result = listCertificates(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(
+            ListTagsForCertificateRequest request) {
+
+        return listTagsForCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(
+            final ListTagsForCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListTagsForCertificateResult>() {
+                    @Override
+                    public ListTagsForCertificateResult call() throws Exception {
+                        ListTagsForCertificateResult result;
+
+                        try {
+                            result = listTagsForCertificate(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> removeTagsFromCertificateAsync(
+            RemoveTagsFromCertificateRequest request) {
+
+        return removeTagsFromCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> removeTagsFromCertificateAsync(
+            final RemoveTagsFromCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, Void> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<Void>() {
+                    @Override
+                    public Void call() throws Exception {
+                        Void result;
+
+                        try {
+                            removeTagsFromCertificate(request);
+                            result = null;
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

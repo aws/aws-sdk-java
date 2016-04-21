@@ -19,16 +19,33 @@ package com.amazonaws.services.codepipeline.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents information about the AWS Key Management Service (AWS KMS) key
+ * used to encrypt data in the artifact store.
+ * </p>
  */
 public class EncryptionKey implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the AWS KMS key.
+     * </p>
+     */
     private String id;
-
+    /**
+     * <p>
+     * The type of AWS KMS key, such as a customer master key.
+     * </p>
+     */
     private String type;
 
     /**
+     * <p>
+     * The ID of the AWS KMS key.
+     * </p>
+     * 
      * @param id
+     *        The ID of the AWS KMS key.
      */
 
     public void setId(String id) {
@@ -36,7 +53,11 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the AWS KMS key.
+     * </p>
+     * 
+     * @return The ID of the AWS KMS key.
      */
 
     public String getId() {
@@ -44,7 +65,12 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the AWS KMS key.
+     * </p>
+     * 
      * @param id
+     *        The ID of the AWS KMS key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -55,7 +81,12 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of AWS KMS key, such as a customer master key.
+     * </p>
+     * 
      * @param type
+     *        The type of AWS KMS key, such as a customer master key.
      * @see EncryptionKeyType
      */
 
@@ -64,7 +95,11 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of AWS KMS key, such as a customer master key.
+     * </p>
+     * 
+     * @return The type of AWS KMS key, such as a customer master key.
      * @see EncryptionKeyType
      */
 
@@ -73,7 +108,12 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of AWS KMS key, such as a customer master key.
+     * </p>
+     * 
      * @param type
+     *        The type of AWS KMS key, such as a customer master key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EncryptionKeyType
@@ -85,7 +125,12 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of AWS KMS key, such as a customer master key.
+     * </p>
+     * 
      * @param type
+     *        The type of AWS KMS key, such as a customer master key.
      * @see EncryptionKeyType
      */
 
@@ -94,7 +139,12 @@ public class EncryptionKey implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of AWS KMS key, such as a customer master key.
+     * </p>
+     * 
      * @param type
+     *        The type of AWS KMS key, such as a customer master key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EncryptionKeyType

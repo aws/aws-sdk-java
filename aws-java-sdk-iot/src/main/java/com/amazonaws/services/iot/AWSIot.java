@@ -447,7 +447,12 @@ public interface AWSIot {
     void createTopicRule(CreateTopicRuleRequest createTopicRuleRequest);
 
     /**
+     * <p>
+     * Deletes a registered CA certificate.
+     * </p>
+     * 
      * @param deleteCACertificateRequest
+     *        Input for the DeleteCACertificate operation.
      * @return Result of the DeleteCACertificate operation returned by the
      *         service.
      * @throws InvalidRequestException
@@ -575,11 +580,18 @@ public interface AWSIot {
             DeletePolicyVersionRequest deletePolicyVersionRequest);
 
     /**
+     * <p>
+     * Deletes a CA certificate registration code.
+     * </p>
+     * 
      * @param deleteRegistrationCodeRequest
+     *        The input for the DeleteRegistrationCode operation.
      * @return Result of the DeleteRegistrationCode operation returned by the
      *         service.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws ServiceUnavailableException
@@ -635,7 +647,12 @@ public interface AWSIot {
     void deleteTopicRule(DeleteTopicRuleRequest deleteTopicRuleRequest);
 
     /**
+     * <p>
+     * Describes a registered CA certificate.
+     * </p>
+     * 
      * @param describeCACertificateRequest
+     *        The input for the DescribeCACertificate operation.
      * @return Result of the DescribeCACertificate operation returned by the
      *         service.
      * @throws InvalidRequestException
@@ -885,7 +902,12 @@ public interface AWSIot {
             GetPolicyVersionRequest getPolicyVersionRequest);
 
     /**
+     * <p>
+     * Gets a registration code used to register a CA certificate with AWS IoT.
+     * </p>
+     * 
      * @param getRegistrationCodeRequest
+     *        The input to the GetRegistrationCode operation.
      * @return Result of the GetRegistrationCode operation returned by the
      *         service.
      * @throws ThrottlingException
@@ -922,7 +944,16 @@ public interface AWSIot {
     GetTopicRuleResult getTopicRule(GetTopicRuleRequest getTopicRuleRequest);
 
     /**
+     * <p>
+     * Lists the CA certificates registered for your AWS account.
+     * </p>
+     * <p>
+     * The results are paginated with a default page size of 25. You can use the
+     * returned marker to retrieve additional results.
+     * </p>
+     * 
      * @param listCACertificatesRequest
+     *        Input for the ListCACertificates operation.
      * @return Result of the ListCACertificates operation returned by the
      *         service.
      * @throws InvalidRequestException
@@ -942,7 +973,7 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Lists your certificates.
+     * Lists the certificates registered in your AWS account.
      * </p>
      * <p>
      * The results are paginated with a default page size of 25. You can use the
@@ -968,7 +999,12 @@ public interface AWSIot {
             ListCertificatesRequest listCertificatesRequest);
 
     /**
+     * <p>
+     * List the device certificates signed by the specified CA certificate.
+     * </p>
+     * 
      * @param listCertificatesByCARequest
+     *        The input to the ListCertificatesByCA operation.
      * @return Result of the ListCertificatesByCA operation returned by the
      *         service.
      * @throws InvalidRequestException
@@ -1156,15 +1192,29 @@ public interface AWSIot {
             ListTopicRulesRequest listTopicRulesRequest);
 
     /**
+     * <p>
+     * Registers a CA certificate with AWS IoT. This CA certificate can then be
+     * used to sign device certificates, which can be then registered with AWS
+     * IoT. You can register up to 10 CA certificates per AWS account that have
+     * the same subject field and public key. This enables you to have up to 10
+     * certificate authorities sign your device certificates. If you have more
+     * than one CA certificate registered, make sure you pass the CA certificate
+     * when you register your device certificates with the RegisterCertificate
+     * API.
+     * </p>
+     * 
      * @param registerCACertificateRequest
+     *        The input to the RegisterCACertificate operation.
      * @return Result of the RegisterCACertificate operation returned by the
      *         service.
      * @throws ResourceAlreadyExistsException
      *         The resource already exists.
      * @throws RegistrationCodeValidationException
+     *         The registration code is invalid.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws CertificateValidationException
+     *         The certificate is invalid.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws LimitExceededException
@@ -1181,7 +1231,15 @@ public interface AWSIot {
             RegisterCACertificateRequest registerCACertificateRequest);
 
     /**
+     * <p>
+     * Registers a device certificate with AWS IoT. If you have more than one CA
+     * certificate that has the same subject field, you must specify the CA
+     * certificate that was used to sign the device certificate being
+     * registered.
+     * </p>
+     * 
      * @param registerCertificateRequest
+     *        The input to the RegisterCertificate operation.
      * @return Result of the RegisterCertificate operation returned by the
      *         service.
      * @throws ResourceAlreadyExistsException
@@ -1189,9 +1247,14 @@ public interface AWSIot {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws CertificateValidationException
+     *         The certificate is invalid.
      * @throws CertificateStateException
      *         The certificate operation is not allowed.
      * @throws CertificateConflictException
+     *         Unable to verify the CA certificate used to sign the device
+     *         certificate you are attempting to register. This is happens when
+     *         you have registered more than one CA certificate that has the
+     *         same subject field and public key.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException
@@ -1209,7 +1272,7 @@ public interface AWSIot {
      * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a
      * certificate transfer, the certificate status changes from
-     * <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+     * <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
      * </p>
      * <p>
      * To check for pending certificate transfers, call <a>ListCertificates</a>
@@ -1358,7 +1421,12 @@ public interface AWSIot {
             TransferCertificateRequest transferCertificateRequest);
 
     /**
+     * <p>
+     * Updates a registered CA certificate.
+     * </p>
+     * 
      * @param updateCACertificateRequest
+     *        The input to the UpdateCACertificate operation.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException

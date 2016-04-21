@@ -3255,22 +3255,11 @@
     },
     "NullableBoolean":{"type":"boolean"},
     "NullableInteger":{"type":"integer"},
-    "Op":{
-      "type":"string",
-      "enum":[
-        "add",
-        "remove",
-        "replace",
-        "move",
-        "copy",
-        "test"
-      ]
-    },
     "PatchOperation":{
       "type":"structure",
       "members":{
         "op":{
-          "shape":"Op",
+          "shape":"op",
           "documentation":"<p>A patch operation whose value indicates the operation to perform. Its value MUST be one of \"add\", \"remove\", \"replace\", \"move\", \"copy\", or \"test\"; other values are errors. </p>"
         },
         "path":{
@@ -4307,6 +4296,17 @@
         }
       },
       "documentation":"<p>Requests Amazon API Gateway to change information about a <a>Stage</a> resource.</p>"
+    },
+    "op":{
+      "type":"string",
+      "enum":[
+        "add",
+        "remove",
+        "replace",
+        "move",
+        "copy",
+        "test"
+      ]
     }
   },
   "documentation":"<fullname>Amazon API Gateway</fullname> <p>Amazon API Gateway helps developers deliver robust, secure and scalable mobile and web application backends. Amazon API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.</p>"

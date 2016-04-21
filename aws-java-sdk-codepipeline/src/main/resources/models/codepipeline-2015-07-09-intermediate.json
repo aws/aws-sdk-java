@@ -4,7 +4,7 @@
     "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
-    "documentation" : "<fullname>AWS CodePipeline</fullname> <b>Overview</b> <p>This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information, see the <a href=\"http://docs.aws.amazon.com/pipelines/latest/userguide/welcome.html\">AWS CodePipeline User Guide</a>.</p> <p>You can use the AWS CodePipeline API to work with pipelines, stages, actions, gates, and transitions, as described below.</p> <p><i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of actions, gates, and stages. </p> <p>You can work with pipelines by calling: <ul><li><a>CreatePipeline</a>, which creates a uniquely-named pipeline.</li> <li><a>DeletePipeline</a>, which deletes the specified pipeline.</li> <li><a>GetPipeline</a>, which returns information about a pipeline structure.</li> <li><a>GetPipelineState</a>, which returns information about the current state of the stages and actions of a pipeline.</li> <li> <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with your account.</li> <li><a>StartPipelineExecution</a>, which runs the the most recent revision of an artifact through the pipeline.</li> <li><a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure of the pipeline.</li> </ul> <p>Pipelines include <i>stages</i>, which are which are logical groupings of gates and actions. Each stage contains one or more actions that must complete before the next stage begins. A stage will result in success or failure. If a stage fails, then the pipeline stops at that stage and will remain stopped until either a new version of an artifact appears in the source location, or a user takes action to re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including the stages of that pipeline.</p> </p> <p>Pipeline stages include <i>actions</i>, which are categorized into categories such as source or build actions performed within a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define and interact with actions when working with pipeline operations such as <a>CreatePipeline</a> and <a>GetPipelineState</a>. </p> <p>Pipelines also include <i>transitions</i>, which allow the transition of artifacts from one stage to the next in a pipeline after the actions in one stage complete.</p> <p>You can work with transitions by calling:</p> <ul> <li><a>DisableStageTransition</a>, which prevents artifacts from transitioning to the next stage in a pipeline.</li> <li><a>EnableStageTransition</a>, which enables transition of artifacts between stages in a pipeline. </li> </ul> <p><b>Using the API to integrate with AWS CodePipeline</b></p> <p>For third-party integrators or developers who want to create their own integrations with AWS CodePipeline, the expected sequence varies from the standard API user. In order to integrate with AWS CodePipeline, developers will need to work with the following items:</p> <ul> <li>Jobs, which are instances of an action. For example, a job for a source action might import a revision of an artifact from a source. <p>You can work with jobs by calling:</p> <ul> <li><a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified job,</li> <li><a>PollForJobs</a>, which determines whether there are any jobs to act upon, </li> <li><a>PutJobFailureResult</a>, which provides details of a job failure, and</li> <li><a>PutJobSuccessResult</a>, which provides details of a job success.</li> </ul></li> <li>Third party jobs, which are instances of an action created by a partner action and integrated into AWS CodePipeline. Partner actions are created by members of the AWS Partner Network. <p>You can work with third party jobs by calling:</p> <ul><li><a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received the specified job,</li> <li><a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act upon, </li> <li><a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure, and</li> <li><a>PutThirdPartyJobSuccessResult</a>, which provides details of a job success.</li> </ul></li> </ul>",
+    "documentation" : "<fullname>AWS CodePipeline</fullname> <b>Overview</b> <p>This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information, see the <a href=\"http://docs.aws.amazon.com/pipelines/latest/userguide/welcome.html\">AWS CodePipeline User Guide</a>.</p> <p>You can use the AWS CodePipeline API to work with pipelines, stages, actions, gates, and transitions, as described below.</p> <p><i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of actions, gates, and stages. </p> <p>You can work with pipelines by calling: <ul> <li> <a>CreatePipeline</a>, which creates a uniquely-named pipeline.</li> <li> <a>DeletePipeline</a>, which deletes the specified pipeline.</li> <li> <a>GetPipeline</a>, which returns information about a pipeline structure.</li> <li> <a>GetPipelineState</a>, which returns information about the current state of the stages and actions of a pipeline.</li> <li> <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with your account.</li> <li> <a>StartPipelineExecution</a>, which runs the the most recent revision of an artifact through the pipeline.</li> <li> <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure of the pipeline.</li> </ul> <p>Pipelines include <i>stages</i>, which are which are logical groupings of gates and actions. Each stage contains one or more actions that must complete before the next stage begins. A stage will result in success or failure. If a stage fails, then the pipeline stops at that stage and will remain stopped until either a new version of an artifact appears in the source location, or a user takes action to re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages and actions, also refer to the <ulink url=\"http://docs.aws.amazon.com/codepipeline/latest/UserGuide/pipeline-structure.html\">AWS CodePipeline Pipeline Structure Reference</ulink>.</p> </p> <p>Pipeline stages include <i>actions</i>, which are categorized into categories such as source or build actions performed within a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define and interact with actions when working with pipeline operations such as <a>CreatePipeline</a> and <a>GetPipelineState</a>. </p> <p>Pipelines also include <i>transitions</i>, which allow the transition of artifacts from one stage to the next in a pipeline after the actions in one stage complete.</p> <p>You can work with transitions by calling:</p> <ul> <li> <a>DisableStageTransition</a>, which prevents artifacts from transitioning to the next stage in a pipeline.</li> <li> <a>EnableStageTransition</a>, which enables transition of artifacts between stages in a pipeline. </li> </ul> <p><b>Using the API to integrate with AWS CodePipeline</b></p> <p>For third-party integrators or developers who want to create their own integrations with AWS CodePipeline, the expected sequence varies from the standard API user. In order to integrate with AWS CodePipeline, developers will need to work with the following items:</p> <ul> <li>Jobs, which are instances of an action. For example, a job for a source action might import a revision of an artifact from a source. <p>You can work with jobs by calling:</p> <ul> <li> <a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified job,</li> <li> <a>GetJobDetails</a>, which returns the details of a job,</li> <li> <a>PollForJobs</a>, which determines whether there are any jobs to act upon, </li> <li> <a>PutJobFailureResult</a>, which provides details of a job failure, and</li> <li> <a>PutJobSuccessResult</a>, which provides details of a job success.</li> </ul> </li> <li>Third party jobs, which are instances of an action created by a partner action and integrated into AWS CodePipeline. Partner actions are created by members of the AWS Partner Network. <p>You can work with third party jobs by calling:</p> <ul> <li> <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received the specified job,</li> <li> <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a partner action,</li> <li> <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act upon, </li> <li> <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure, and</li> <li> <a>PutThirdPartyJobSuccessResult</a>, which provides details of a job success.</li> </ul> </li> </ul>",
     "defaultEndpoint" : "https://codepipeline.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "codepipeline.us-east-1.amazonaws.com",
     "syncInterface" : "AWSCodePipeline",
@@ -4039,7 +4039,7 @@
         "fluentSetterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>\n@param location The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "",
+        "documentation" : "<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>",
         "name" : "EncryptionKey",
         "c2jName" : "encryptionKey",
         "c2jShape" : "EncryptionKey",
@@ -4047,7 +4047,7 @@
           "variableName" : "encryptionKey",
           "variableType" : "EncryptionKey",
           "variableDeclarationType" : "EncryptionKey",
-          "documentation" : "",
+          "documentation" : "<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>",
           "simpleType" : "EncryptionKey",
           "variableSetterType" : "EncryptionKey"
         },
@@ -4086,10 +4086,10 @@
         "simple" : false,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**\n@param encryptionKey */",
-        "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param encryptionKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param encryptionKey \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.*/",
+        "getterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>\n@return The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.*/",
+        "fluentSetterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -4114,7 +4114,7 @@
       },
       "membersAsMap" : {
         "EncryptionKey" : {
-          "documentation" : "",
+          "documentation" : "<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>",
           "name" : "EncryptionKey",
           "c2jName" : "encryptionKey",
           "c2jShape" : "EncryptionKey",
@@ -4122,7 +4122,7 @@
             "variableName" : "encryptionKey",
             "variableType" : "EncryptionKey",
             "variableDeclarationType" : "EncryptionKey",
-            "documentation" : "",
+            "documentation" : "<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>",
             "simpleType" : "EncryptionKey",
             "variableSetterType" : "EncryptionKey"
           },
@@ -4161,10 +4161,10 @@
           "simple" : false,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**\n@param encryptionKey */",
-          "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param encryptionKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param encryptionKey \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.*/",
+          "getterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>\n@return The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.*/",
+          "fluentSetterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt the data in the artifact store. If this is undefined, the default key for Amazon S3 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Type" : {
           "documentation" : "<p>The type of the artifact store, such as S3.</p>",
@@ -4416,7 +4416,7 @@
     },
     "EncryptionKey" : {
       "c2jName" : "EncryptionKey",
-      "documentation" : "",
+      "documentation" : "<p>Represents information about the AWS Key Management Service (AWS KMS) key used to encrypt data in the artifact store.</p>",
       "shapeName" : "EncryptionKey",
       "deprecated" : false,
       "required" : [ "id", "type" ],
@@ -4425,7 +4425,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "members" : [ {
-        "documentation" : "",
+        "documentation" : "<p>The ID of the AWS KMS key.</p>",
         "name" : "Id",
         "c2jName" : "id",
         "c2jShape" : "EncryptionKeyId",
@@ -4433,7 +4433,7 @@
           "variableName" : "id",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The ID of the AWS KMS key.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4472,12 +4472,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**\n@param id */",
-        "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param id \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param id \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The ID of the AWS KMS key.</p>\n@param id The ID of the AWS KMS key.*/",
+        "getterDocumentation" : "/**<p>The ID of the AWS KMS key.</p>\n@return The ID of the AWS KMS key.*/",
+        "fluentSetterDocumentation" : "/**<p>The ID of the AWS KMS key.</p>\n@param id The ID of the AWS KMS key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The ID of the AWS KMS key.</p>\n@param id The ID of the AWS KMS key.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "",
+        "documentation" : "<p>The type of AWS KMS key, such as a customer master key.</p>",
         "name" : "Type",
         "c2jName" : "type",
         "c2jShape" : "EncryptionKeyType",
@@ -4485,7 +4485,7 @@
           "variableName" : "type",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The type of AWS KMS key, such as a customer master key.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4524,10 +4524,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**\n@param type \n@see EncryptionKeyType*/",
-        "getterDocumentation" : "/**\n@return \n@see EncryptionKeyType*/",
-        "fluentSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/",
-        "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/"
+        "setterDocumentation" : "/**<p>The type of AWS KMS key, such as a customer master key.</p>\n@param type The type of AWS KMS key, such as a customer master key.\n@see EncryptionKeyType*/",
+        "getterDocumentation" : "/**<p>The type of AWS KMS key, such as a customer master key.</p>\n@return The type of AWS KMS key, such as a customer master key.\n@see EncryptionKeyType*/",
+        "fluentSetterDocumentation" : "/**<p>The type of AWS KMS key, such as a customer master key.</p>\n@param type The type of AWS KMS key, such as a customer master key.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/",
+        "varargSetterDocumentation" : "/**<p>The type of AWS KMS key, such as a customer master key.</p>\n@param type The type of AWS KMS key, such as a customer master key.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -4552,7 +4552,7 @@
       },
       "membersAsMap" : {
         "Type" : {
-          "documentation" : "",
+          "documentation" : "<p>The type of AWS KMS key, such as a customer master key.</p>",
           "name" : "Type",
           "c2jName" : "type",
           "c2jShape" : "EncryptionKeyType",
@@ -4560,7 +4560,7 @@
             "variableName" : "type",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The type of AWS KMS key, such as a customer master key.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4599,13 +4599,13 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**\n@param type \n@see EncryptionKeyType*/",
-          "getterDocumentation" : "/**\n@return \n@see EncryptionKeyType*/",
-          "fluentSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/",
-          "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/"
+          "setterDocumentation" : "/**<p>The type of AWS KMS key, such as a customer master key.</p>\n@param type The type of AWS KMS key, such as a customer master key.\n@see EncryptionKeyType*/",
+          "getterDocumentation" : "/**<p>The type of AWS KMS key, such as a customer master key.</p>\n@return The type of AWS KMS key, such as a customer master key.\n@see EncryptionKeyType*/",
+          "fluentSetterDocumentation" : "/**<p>The type of AWS KMS key, such as a customer master key.</p>\n@param type The type of AWS KMS key, such as a customer master key.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/",
+          "varargSetterDocumentation" : "/**<p>The type of AWS KMS key, such as a customer master key.</p>\n@param type The type of AWS KMS key, such as a customer master key.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionKeyType*/"
         },
         "Id" : {
-          "documentation" : "",
+          "documentation" : "<p>The ID of the AWS KMS key.</p>",
           "name" : "Id",
           "c2jName" : "id",
           "c2jShape" : "EncryptionKeyId",
@@ -4613,7 +4613,7 @@
             "variableName" : "id",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The ID of the AWS KMS key.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4652,10 +4652,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**\n@param id */",
-          "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param id \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param id \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The ID of the AWS KMS key.</p>\n@param id The ID of the AWS KMS key.*/",
+          "getterDocumentation" : "/**<p>The ID of the AWS KMS key.</p>\n@return The ID of the AWS KMS key.*/",
+          "fluentSetterDocumentation" : "/**<p>The ID of the AWS KMS key.</p>\n@param id The ID of the AWS KMS key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The ID of the AWS KMS key.</p>\n@param id The ID of the AWS KMS key.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -16700,7 +16700,7 @@
         "fluentSetterDocumentation" : "/**<p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</p>\n@param continuationToken A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</p>\n@param continuationToken A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "",
+        "documentation" : "<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>",
         "name" : "EncryptionKey",
         "c2jName" : "encryptionKey",
         "c2jShape" : "EncryptionKey",
@@ -16708,7 +16708,7 @@
           "variableName" : "encryptionKey",
           "variableType" : "EncryptionKey",
           "variableDeclarationType" : "EncryptionKey",
-          "documentation" : "",
+          "documentation" : "<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>",
           "simpleType" : "EncryptionKey",
           "variableSetterType" : "EncryptionKey"
         },
@@ -16747,10 +16747,10 @@
         "simple" : false,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**\n@param encryptionKey */",
-        "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param encryptionKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param encryptionKey \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.*/",
+        "getterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>\n@return The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.*/",
+        "fluentSetterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -16775,7 +16775,7 @@
       },
       "membersAsMap" : {
         "EncryptionKey" : {
-          "documentation" : "",
+          "documentation" : "<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>",
           "name" : "EncryptionKey",
           "c2jName" : "encryptionKey",
           "c2jShape" : "EncryptionKey",
@@ -16783,7 +16783,7 @@
             "variableName" : "encryptionKey",
             "variableType" : "EncryptionKey",
             "variableDeclarationType" : "EncryptionKey",
-            "documentation" : "",
+            "documentation" : "<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>",
             "simpleType" : "EncryptionKey",
             "variableSetterType" : "EncryptionKey"
           },
@@ -16822,10 +16822,10 @@
           "simple" : false,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**\n@param encryptionKey */",
-          "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param encryptionKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param encryptionKey \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.*/",
+          "getterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>\n@return The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.*/",
+          "fluentSetterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.</p>\n@param encryptionKey The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data in the artifact store for the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ArtifactCredentials" : {
           "documentation" : "",

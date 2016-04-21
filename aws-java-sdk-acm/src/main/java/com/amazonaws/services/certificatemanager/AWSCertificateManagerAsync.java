@@ -41,6 +41,76 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
 
     /**
      * <p>
+     * Adds one or more tags to an ACM Certificate. Tags are labels that you can
+     * use to identify and organize your AWS resources. Each tag consists of a
+     * <code>key</code> and an optional <code>value</code>. You specify the
+     * certificate on input by its Amazon Resource Name (ARN). You specify the
+     * tag by using a key-value pair.
+     * </p>
+     * <p>
+     * You can apply a tag to just one certificate if you want to identify a
+     * specific characteristic of that certificate, or you can apply the same
+     * tag to multiple certificates if you want to filter for a common
+     * relationship among those certificates. Similarly, you can apply the same
+     * tag to multiple resources if you want to specify a relationship among
+     * those resources. For example, you can add the same tag to an ACM
+     * Certificate and an Elastic Load Balancing load balancer to indicate that
+     * they are both used by the same website. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
+     * ACM Certificates</a>.
+     * </p>
+     * <p>
+     * To remove one or more tags, use the <a>RemoveTagsFromCertificate</a>
+     * action. To view all of the tags that have been applied to the
+     * certificate, use the <a>ListTagsForCertificate</a> action.
+     * </p>
+     * 
+     * @param addTagsToCertificateRequest
+     * @sample AWSCertificateManagerAsync.AddTagsToCertificate
+     */
+    java.util.concurrent.Future<Void> addTagsToCertificateAsync(
+            AddTagsToCertificateRequest addTagsToCertificateRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to an ACM Certificate. Tags are labels that you can
+     * use to identify and organize your AWS resources. Each tag consists of a
+     * <code>key</code> and an optional <code>value</code>. You specify the
+     * certificate on input by its Amazon Resource Name (ARN). You specify the
+     * tag by using a key-value pair.
+     * </p>
+     * <p>
+     * You can apply a tag to just one certificate if you want to identify a
+     * specific characteristic of that certificate, or you can apply the same
+     * tag to multiple certificates if you want to filter for a common
+     * relationship among those certificates. Similarly, you can apply the same
+     * tag to multiple resources if you want to specify a relationship among
+     * those resources. For example, you can add the same tag to an ACM
+     * Certificate and an Elastic Load Balancing load balancer to indicate that
+     * they are both used by the same website. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
+     * ACM Certificates</a>.
+     * </p>
+     * <p>
+     * To remove one or more tags, use the <a>RemoveTagsFromCertificate</a>
+     * action. To view all of the tags that have been applied to the
+     * certificate, use the <a>ListTagsForCertificate</a> action.
+     * </p>
+     * 
+     * @param addTagsToCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @sample AWSCertificateManagerAsyncHandler.AddTagsToCertificate
+     */
+    java.util.concurrent.Future<Void> addTagsToCertificateAsync(
+            AddTagsToCertificateRequest addTagsToCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, Void> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an ACM Certificate and its associated private key. If this action
      * succeeds, the certificate no longer appears in the list of ACM
      * Certificates that can be displayed by calling the <a>ListCertificates</a>
@@ -86,8 +156,8 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * Returns a list of the fields contained in the specified ACM Certificate.
      * For example, this action returns the certificate status, a flag that
      * indicates whether the certificate is associated with any other AWS
-     * service, and the date at which the certificate request was created. The
-     * ACM Certificate is specified on input by its Amazon Resource Name (ARN).
+     * service, and the date at which the certificate request was created. You
+     * specify the ACM Certificate on input by its Amazon Resource Name (ARN).
      * </p>
      * 
      * @param describeCertificateRequest
@@ -103,8 +173,8 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * Returns a list of the fields contained in the specified ACM Certificate.
      * For example, this action returns the certificate status, a flag that
      * indicates whether the certificate is associated with any other AWS
-     * service, and the date at which the certificate request was created. The
-     * ACM Certificate is specified on input by its Amazon Resource Name (ARN).
+     * service, and the date at which the certificate request was created. You
+     * specify the ACM Certificate on input by its Amazon Resource Name (ARN).
      * </p>
      * 
      * @param describeCertificateRequest
@@ -212,6 +282,90 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
     java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(
             ListCertificatesRequest listCertificatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the tags that have been applied to the ACM Certificate. Use the
+     * certificate ARN to specify the certificate. To add a tag to an ACM
+     * Certificate, use the <a>AddTagsToCertificate</a> action. To delete a tag,
+     * use the <a>RemoveTagsFromCertificate</a> action.
+     * </p>
+     * 
+     * @param listTagsForCertificateRequest
+     * @return A Java Future containing the result of the ListTagsForCertificate
+     *         operation returned by the service.
+     * @sample AWSCertificateManagerAsync.ListTagsForCertificate
+     */
+    java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(
+            ListTagsForCertificateRequest listTagsForCertificateRequest);
+
+    /**
+     * <p>
+     * Lists the tags that have been applied to the ACM Certificate. Use the
+     * certificate ARN to specify the certificate. To add a tag to an ACM
+     * Certificate, use the <a>AddTagsToCertificate</a> action. To delete a tag,
+     * use the <a>RemoveTagsFromCertificate</a> action.
+     * </p>
+     * 
+     * @param listTagsForCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForCertificate
+     *         operation returned by the service.
+     * @sample AWSCertificateManagerAsyncHandler.ListTagsForCertificate
+     */
+    java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(
+            ListTagsForCertificateRequest listTagsForCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove one or more tags from an ACM Certificate. A tag consists of a
+     * key-value pair. If you do not specify the value portion of the tag when
+     * calling this function, the tag will be removed regardless of value. If
+     * you specify a value, the tag is removed only if it is associated with the
+     * specified value.
+     * </p>
+     * <p>
+     * To add tags to a certificate, use the <a>AddTagsToCertificate</a> action.
+     * To view all of the tags that have been applied to a specific ACM
+     * Certificate, use the <a>ListTagsForCertificate</a> action.
+     * </p>
+     * 
+     * @param removeTagsFromCertificateRequest
+     * @sample AWSCertificateManagerAsync.RemoveTagsFromCertificate
+     */
+    java.util.concurrent.Future<Void> removeTagsFromCertificateAsync(
+            RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest);
+
+    /**
+     * <p>
+     * Remove one or more tags from an ACM Certificate. A tag consists of a
+     * key-value pair. If you do not specify the value portion of the tag when
+     * calling this function, the tag will be removed regardless of value. If
+     * you specify a value, the tag is removed only if it is associated with the
+     * specified value.
+     * </p>
+     * <p>
+     * To add tags to a certificate, use the <a>AddTagsToCertificate</a> action.
+     * To view all of the tags that have been applied to a specific ACM
+     * Certificate, use the <a>ListTagsForCertificate</a> action.
+     * </p>
+     * 
+     * @param removeTagsFromCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @sample AWSCertificateManagerAsyncHandler.RemoveTagsFromCertificate
+     */
+    java.util.concurrent.Future<Void> removeTagsFromCertificateAsync(
+            RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, Void> asyncHandler);
 
     /**
      * <p>

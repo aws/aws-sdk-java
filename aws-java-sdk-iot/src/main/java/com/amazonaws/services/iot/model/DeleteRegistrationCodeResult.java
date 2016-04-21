@@ -19,7 +19,9 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The output for the DeleteRegistrationCode operation.
+ * </p>
  */
 public class DeleteRegistrationCodeResult implements Serializable, Cloneable {
 

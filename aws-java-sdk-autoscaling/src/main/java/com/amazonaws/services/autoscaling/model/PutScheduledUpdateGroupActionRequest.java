@@ -39,11 +39,7 @@ public class PutScheduledUpdateGroupActionRequest extends
     private String scheduledActionName;
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
-     * </p>
-     * <p>
-     * The time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.
+     * This parameter is deprecated.
      * </p>
      */
     private java.util.Date time;
@@ -188,20 +184,11 @@ public class PutScheduledUpdateGroupActionRequest extends
 
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
-     * </p>
-     * <p>
-     * The time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.
+     * This parameter is deprecated.
      * </p>
      * 
      * @param time
-     *        This parameter is deprecated; use <code>StartTime</code>
-     *        instead.</p>
-     *        <p>
-     *        The time for this action to start. If both <code>Time</code> and
-     *        <code>StartTime</code> are specified, their values must be
-     *        identical.
+     *        This parameter is deprecated.
      */
 
     public void setTime(java.util.Date time) {
@@ -210,19 +197,10 @@ public class PutScheduledUpdateGroupActionRequest extends
 
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
-     * </p>
-     * <p>
-     * The time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.
+     * This parameter is deprecated.
      * </p>
      * 
-     * @return This parameter is deprecated; use <code>StartTime</code>
-     *         instead.</p>
-     *         <p>
-     *         The time for this action to start. If both <code>Time</code> and
-     *         <code>StartTime</code> are specified, their values must be
-     *         identical.
+     * @return This parameter is deprecated.
      */
 
     public java.util.Date getTime() {
@@ -231,20 +209,11 @@ public class PutScheduledUpdateGroupActionRequest extends
 
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
-     * </p>
-     * <p>
-     * The time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.
+     * This parameter is deprecated.
      * </p>
      * 
      * @param time
-     *        This parameter is deprecated; use <code>StartTime</code>
-     *        instead.</p>
-     *        <p>
-     *        The time for this action to start. If both <code>Time</code> and
-     *        <code>StartTime</code> are specified, their values must be
-     *        identical.
+     *        This parameter is deprecated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

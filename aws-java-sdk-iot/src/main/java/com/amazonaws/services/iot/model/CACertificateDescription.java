@@ -19,24 +19,56 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes a CA certificate.
+ * </p>
  */
 public class CACertificateDescription implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The CA certificate ARN.
+     * </p>
+     */
     private String certificateArn;
-
+    /**
+     * <p>
+     * The CA certificate ID.
+     * </p>
+     */
     private String certificateId;
-
+    /**
+     * <p>
+     * The status of a CA certificate.
+     * </p>
+     */
     private String status;
-
+    /**
+     * <p>
+     * The CA certificate data, in PEM format.
+     * </p>
+     */
     private String certificatePem;
-
+    /**
+     * <p>
+     * The owner of the CA certificate.
+     * </p>
+     */
     private String ownedBy;
-
+    /**
+     * <p>
+     * The date the CA certificate was created.
+     * </p>
+     */
     private java.util.Date creationDate;
 
     /**
+     * <p>
+     * The CA certificate ARN.
+     * </p>
+     * 
      * @param certificateArn
+     *        The CA certificate ARN.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -44,7 +76,11 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The CA certificate ARN.
+     * </p>
+     * 
+     * @return The CA certificate ARN.
      */
 
     public String getCertificateArn() {
@@ -52,7 +88,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificate ARN.
+     * </p>
+     * 
      * @param certificateArn
+     *        The CA certificate ARN.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -63,7 +104,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificate ID.
+     * </p>
+     * 
      * @param certificateId
+     *        The CA certificate ID.
      */
 
     public void setCertificateId(String certificateId) {
@@ -71,7 +117,11 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The CA certificate ID.
+     * </p>
+     * 
+     * @return The CA certificate ID.
      */
 
     public String getCertificateId() {
@@ -79,7 +129,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificate ID.
+     * </p>
+     * 
      * @param certificateId
+     *        The CA certificate ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -90,7 +145,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of a CA certificate.
+     * </p>
+     * 
      * @param status
+     *        The status of a CA certificate.
      * @see CACertificateStatus
      */
 
@@ -99,7 +159,11 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The status of a CA certificate.
+     * </p>
+     * 
+     * @return The status of a CA certificate.
      * @see CACertificateStatus
      */
 
@@ -108,7 +172,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of a CA certificate.
+     * </p>
+     * 
      * @param status
+     *        The status of a CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CACertificateStatus
@@ -120,7 +189,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of a CA certificate.
+     * </p>
+     * 
      * @param status
+     *        The status of a CA certificate.
      * @see CACertificateStatus
      */
 
@@ -129,7 +203,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of a CA certificate.
+     * </p>
+     * 
      * @param status
+     *        The status of a CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CACertificateStatus
@@ -141,7 +220,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificate data, in PEM format.
+     * </p>
+     * 
      * @param certificatePem
+     *        The CA certificate data, in PEM format.
      */
 
     public void setCertificatePem(String certificatePem) {
@@ -149,7 +233,11 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The CA certificate data, in PEM format.
+     * </p>
+     * 
+     * @return The CA certificate data, in PEM format.
      */
 
     public String getCertificatePem() {
@@ -157,7 +245,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificate data, in PEM format.
+     * </p>
+     * 
      * @param certificatePem
+     *        The CA certificate data, in PEM format.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -168,7 +261,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The owner of the CA certificate.
+     * </p>
+     * 
      * @param ownedBy
+     *        The owner of the CA certificate.
      */
 
     public void setOwnedBy(String ownedBy) {
@@ -176,7 +274,11 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The owner of the CA certificate.
+     * </p>
+     * 
+     * @return The owner of the CA certificate.
      */
 
     public String getOwnedBy() {
@@ -184,7 +286,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The owner of the CA certificate.
+     * </p>
+     * 
      * @param ownedBy
+     *        The owner of the CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -195,7 +302,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the CA certificate was created.
+     * </p>
+     * 
      * @param creationDate
+     *        The date the CA certificate was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -203,7 +315,11 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The date the CA certificate was created.
+     * </p>
+     * 
+     * @return The date the CA certificate was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -211,7 +327,12 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the CA certificate was created.
+     * </p>
+     * 
      * @param creationDate
+     *        The date the CA certificate was created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

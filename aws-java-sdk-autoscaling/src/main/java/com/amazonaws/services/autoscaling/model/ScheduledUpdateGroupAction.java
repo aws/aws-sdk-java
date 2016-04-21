@@ -45,7 +45,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     private String scheduledActionARN;
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated.
      * </p>
      */
     private java.util.Date time;
@@ -221,11 +221,11 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated.
      * </p>
      * 
      * @param time
-     *        This parameter is deprecated; use <code>StartTime</code> instead.
+     *        This parameter is deprecated.
      */
 
     public void setTime(java.util.Date time) {
@@ -234,10 +234,10 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated.
      * </p>
      * 
-     * @return This parameter is deprecated; use <code>StartTime</code> instead.
+     * @return This parameter is deprecated.
      */
 
     public java.util.Date getTime() {
@@ -246,11 +246,11 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
+     * This parameter is deprecated.
      * </p>
      * 
      * @param time
-     *        This parameter is deprecated; use <code>StartTime</code> instead.
+     *        This parameter is deprecated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

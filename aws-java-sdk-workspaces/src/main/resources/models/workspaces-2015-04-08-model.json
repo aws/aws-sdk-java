@@ -4,11 +4,12 @@
     "apiVersion":"2015-04-08",
     "endpointPrefix":"workspaces",
     "jsonVersion":"1.1",
-    "protocol":"json",
     "serviceFullName":"Amazon WorkSpaces",
     "signatureVersion":"v4",
-    "targetPrefix":"WorkspacesService"
+    "targetPrefix":"WorkspacesService",
+    "protocol":"json"
   },
+  "documentation":"<fullname>Amazon WorkSpaces Service</fullname> <p>This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides detailed information about Amazon WorkSpaces operations, data types, parameters, and errors.</p>",
   "operations":{
     "CreateWorkspaces":{
       "name":"CreateWorkspaces",
@@ -16,10 +17,20 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"CreateWorkspacesRequest"},
-      "output":{"shape":"CreateWorkspacesResult"},
+      "input":{
+        "shape":"CreateWorkspacesRequest",
+        "documentation":"<p>Contains the inputs for the <a>CreateWorkspaces</a> operation.</p>"
+      },
+      "output":{
+        "shape":"CreateWorkspacesResult",
+        "documentation":"<p>Contains the result of the <a>CreateWorkspaces</a> operation.</p>"
+      },
       "errors":[
-        {"shape":"ResourceLimitExceededException"}
+        {
+          "shape":"ResourceLimitExceededException",
+          "exception":true,
+          "documentation":"<p>Your resource limits have been exceeded.</p>"
+        }
       ],
       "documentation":"<p>Creates one or more WorkSpaces.</p> <note> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p> </note>"
     },
@@ -29,10 +40,20 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"DescribeWorkspaceBundlesRequest"},
-      "output":{"shape":"DescribeWorkspaceBundlesResult"},
+      "input":{
+        "shape":"DescribeWorkspaceBundlesRequest",
+        "documentation":"<p>Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.</p>"
+      },
+      "output":{
+        "shape":"DescribeWorkspaceBundlesResult",
+        "documentation":"<p>Contains the results of the <a>DescribeWorkspaceBundles</a> operation.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterValuesException"}
+        {
+          "shape":"InvalidParameterValuesException",
+          "exception":true,
+          "documentation":"<p>One or more parameter values are not valid.</p>"
+        }
       ],
       "documentation":"<p>Obtains information about the WorkSpace bundles that are available to your account in the specified region.</p> <p>You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter, but not both.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>"
     },
@@ -42,10 +63,20 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"DescribeWorkspaceDirectoriesRequest"},
-      "output":{"shape":"DescribeWorkspaceDirectoriesResult"},
+      "input":{
+        "shape":"DescribeWorkspaceDirectoriesRequest",
+        "documentation":"<p>Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.</p>"
+      },
+      "output":{
+        "shape":"DescribeWorkspaceDirectoriesResult",
+        "documentation":"<p>Contains the results of the <a>DescribeWorkspaceDirectories</a> operation.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterValuesException"}
+        {
+          "shape":"InvalidParameterValuesException",
+          "exception":true,
+          "documentation":"<p>One or more parameter values are not valid.</p>"
+        }
       ],
       "documentation":"<p>Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon WorkSpaces and are available to your account.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>"
     },
@@ -55,11 +86,25 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"DescribeWorkspacesRequest"},
-      "output":{"shape":"DescribeWorkspacesResult"},
+      "input":{
+        "shape":"DescribeWorkspacesRequest",
+        "documentation":"<p>Contains the inputs for the <a>DescribeWorkspaces</a> operation.</p>"
+      },
+      "output":{
+        "shape":"DescribeWorkspacesResult",
+        "documentation":"<p>Contains the results for the <a>DescribeWorkspaces</a> operation.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterValuesException"},
-        {"shape":"ResourceUnavailableException"}
+        {
+          "shape":"InvalidParameterValuesException",
+          "exception":true,
+          "documentation":"<p>One or more parameter values are not valid.</p>"
+        },
+        {
+          "shape":"ResourceUnavailableException",
+          "exception":true,
+          "documentation":"<p>The specified resource is not available.</p>"
+        }
       ],
       "documentation":"<p>Obtains information about the specified WorkSpaces. </p> <p>Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If more results are available, the <code>NextToken</code> response member contains a token that you pass in the next call to this operation to retrieve the next set of items.</p>"
     },
@@ -69,8 +114,14 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"RebootWorkspacesRequest"},
-      "output":{"shape":"RebootWorkspacesResult"},
+      "input":{
+        "shape":"RebootWorkspacesRequest",
+        "documentation":"<p>Contains the inputs for the <a>RebootWorkspaces</a> operation.</p>"
+      },
+      "output":{
+        "shape":"RebootWorkspacesResult",
+        "documentation":"<p>Contains the results of the <a>RebootWorkspaces</a> operation.</p>"
+      },
       "documentation":"<p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>, <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have rebooted.</p> </note>"
     },
     "RebuildWorkspaces":{
@@ -79,8 +130,14 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"RebuildWorkspacesRequest"},
-      "output":{"shape":"RebuildWorkspacesResult"},
+      "input":{
+        "shape":"RebuildWorkspacesRequest",
+        "documentation":"<p>Contains the inputs for the <a>RebuildWorkspaces</a> operation.</p>"
+      },
+      "output":{
+        "shape":"RebuildWorkspacesResult",
+        "documentation":"<p>Contains the results of the <a>RebuildWorkspaces</a> operation.</p>"
+      },
       "documentation":"<p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a WorkSpace causes the following to occur:</p> <ul> <li>The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have been installed, or system settings that have been made since the WorkSpace was created will be lost.</li> <li>The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so the snapshot can be as much as 12 hours old.</li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely rebuilt.</p> </note>"
     },
     "TerminateWorkspaces":{
@@ -89,8 +146,14 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"TerminateWorkspacesRequest"},
-      "output":{"shape":"TerminateWorkspacesResult"},
+      "input":{
+        "shape":"TerminateWorkspacesRequest",
+        "documentation":"<p>Contains the inputs for the <a>TerminateWorkspaces</a> operation.</p>"
+      },
+      "output":{
+        "shape":"TerminateWorkspacesResult",
+        "documentation":"<p>Contains the results of the <a>TerminateWorkspaces</a> operation.</p>"
+      },
       "documentation":"<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation is asynchronous and will return before the WorkSpaces have been completely terminated.</p> </note>"
     }
   },
@@ -108,8 +171,8 @@
     "BundleIdList":{
       "type":"list",
       "member":{"shape":"BundleId"},
-      "max":25,
-      "min":1
+      "min":1,
+      "max":25
     },
     "BundleList":{
       "type":"list",
@@ -196,7 +259,7 @@
         },
         "Owner":{
           "shape":"BundleOwner",
-          "documentation":"<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li><code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>"
+          "documentation":"<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li>null - Retrieves the bundles that belong to the account making the call.</li> <li> <code>AMAZON</code> - Retrieves the bundles that are provided by AWS.</li> </ul>"
         },
         "NextToken":{
           "shape":"PaginationToken",
@@ -299,8 +362,8 @@
     "DirectoryIdList":{
       "type":"list",
       "member":{"shape":"DirectoryId"},
-      "max":25,
-      "min":1
+      "min":1,
+      "max":25
     },
     "DirectoryList":{
       "type":"list",
@@ -373,14 +436,14 @@
           "documentation":"<p>The exception error message.</p>"
         }
       },
-      "documentation":"<p>One or more parameter values are not valid.</p>",
-      "exception":true
+      "exception":true,
+      "documentation":"<p>One or more parameter values are not valid.</p>"
     },
     "IpAddress":{"type":"string"},
     "Limit":{
       "type":"integer",
-      "max":25,
-      "min":1
+      "min":1,
+      "max":25
     },
     "NonEmptyString":{
       "type":"string",
@@ -388,8 +451,8 @@
     },
     "PaginationToken":{
       "type":"string",
-      "max":63,
-      "min":1
+      "min":1,
+      "max":63
     },
     "RebootRequest":{
       "type":"structure",
@@ -405,8 +468,8 @@
     "RebootWorkspaceRequests":{
       "type":"list",
       "member":{"shape":"RebootRequest"},
-      "max":25,
-      "min":1
+      "min":1,
+      "max":25
     },
     "RebootWorkspacesRequest":{
       "type":"structure",
@@ -443,8 +506,8 @@
     "RebuildWorkspaceRequests":{
       "type":"list",
       "member":{"shape":"RebuildRequest"},
-      "max":1,
-      "min":1
+      "min":1,
+      "max":1
     },
     "RebuildWorkspacesRequest":{
       "type":"structure",
@@ -469,8 +532,8 @@
     },
     "RegistrationCode":{
       "type":"string",
-      "max":20,
-      "min":1
+      "min":1,
+      "max":20
     },
     "ResourceLimitExceededException":{
       "type":"structure",
@@ -480,8 +543,8 @@
           "documentation":"<p>The exception error message.</p>"
         }
       },
-      "documentation":"<p>Your resource limits have been exceeded.</p>",
-      "exception":true
+      "exception":true,
+      "documentation":"<p>Your resource limits have been exceeded.</p>"
     },
     "ResourceUnavailableException":{
       "type":"structure",
@@ -495,8 +558,8 @@
           "documentation":"<p>The identifier of the resource that is not available.</p>"
         }
       },
-      "documentation":"<p>The specified resource is not available.</p>",
-      "exception":true
+      "exception":true,
+      "documentation":"<p>The specified resource is not available.</p>"
     },
     "SecurityGroupId":{
       "type":"string",
@@ -524,8 +587,8 @@
     "TerminateWorkspaceRequests":{
       "type":"list",
       "member":{"shape":"TerminateRequest"},
-      "max":25,
-      "min":1
+      "min":1,
+      "max":25
     },
     "TerminateWorkspacesRequest":{
       "type":"structure",
@@ -550,8 +613,8 @@
     },
     "UserName":{
       "type":"string",
-      "max":63,
-      "min":1
+      "min":1,
+      "max":63
     },
     "UserStorage":{
       "type":"structure",
@@ -731,8 +794,8 @@
     "WorkspaceIdList":{
       "type":"list",
       "member":{"shape":"WorkspaceId"},
-      "max":25,
-      "min":1
+      "min":1,
+      "max":25
     },
     "WorkspaceList":{
       "type":"list",
@@ -776,8 +839,8 @@
     "WorkspaceRequestList":{
       "type":"list",
       "member":{"shape":"WorkspaceRequest"},
-      "max":25,
-      "min":1
+      "min":1,
+      "max":25
     },
     "WorkspaceState":{
       "type":"string",
@@ -795,5 +858,6 @@
       ]
     }
   },
-  "documentation":"<fullname>Amazon WorkSpaces Service</fullname> <p>This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides detailed information about Amazon WorkSpaces operations, data types, parameters, and errors.</p>"
+  "examples":{
+  }
 }

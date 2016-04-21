@@ -39,7 +39,11 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String targetAwsAccount;
-
+    /**
+     * <p>
+     * The transfer message.
+     * </p>
+     */
     private String transferMessage;
 
     /**
@@ -126,7 +130,12 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The transfer message.
+     * </p>
+     * 
      * @param transferMessage
+     *        The transfer message.
      */
 
     public void setTransferMessage(String transferMessage) {
@@ -134,7 +143,11 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The transfer message.
+     * </p>
+     * 
+     * @return The transfer message.
      */
 
     public String getTransferMessage() {
@@ -142,7 +155,12 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The transfer message.
+     * </p>
+     * 
      * @param transferMessage
+     *        The transfer message.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

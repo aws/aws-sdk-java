@@ -45,11 +45,11 @@ public class VideoParameters implements Serializable, Cloneable {
      * Transcoder supports the following profiles:
      * </p>
      * <ul>
-     * <li><code>baseline</code>: The profile most commonly used for
+     * <li> <code>baseline</code>: The profile most commonly used for
      * videoconferencing and for mobile applications.</li>
-     * <li><code>main</code>: The profile used for standard-definition digital
+     * <li> <code>main</code>: The profile used for standard-definition digital
      * TV broadcasts.</li>
-     * <li><code>high</code>: The profile used for high-definition digital TV
+     * <li> <code>high</code>: The profile used for high-definition digital TV
      * broadcasts and for Blu-ray discs.</li>
      * </ul>
      * <p>
@@ -253,10 +253,10 @@ public class VideoParameters implements Serializable, Cloneable {
      * <code>true</code> and <code>false</code>:
      * </p>
      * <ul>
-     * <li><code>true</code>: Elastic Transcoder uses the value of
+     * <li> <code>true</code>: Elastic Transcoder uses the value of
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
-     * <li><code>false</code>: The distance between key frames can vary.</li>
+     * <li> <code>false</code>: The distance between key frames can vary.</li>
      * </ul>
      * <important>
      * <p>
@@ -372,9 +372,9 @@ public class VideoParameters implements Serializable, Cloneable {
      * values are <code>auto</code> and <i>width</i> x <i>height</i>:
      * </p>
      * <ul>
-     * <li><code>auto</code>: Elastic Transcoder attempts to preserve the width
+     * <li> <code>auto</code>: Elastic Transcoder attempts to preserve the width
      * and height of the input file, subject to the following rules.</li>
-     * <li><code><i>width</i> x <i>height</i></code>: The width and height of
+     * <li> <code><i>width</i> x <i>height</i></code>: The width and height of
      * the output video in pixels.</li>
      * </ul>
      * <p>
@@ -473,28 +473,28 @@ public class VideoParameters implements Serializable, Cloneable {
      * </p>
      * <p>
      * <ul>
-     * <li><code>Fit</code>: Elastic Transcoder scales the output video so it
+     * <li> <code>Fit</code>: Elastic Transcoder scales the output video so it
      * matches the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it
+     * <li> <code>Fill</code>: Elastic Transcoder scales the output video so it
      * matches the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension
      * (if any) that exceeds the maximum value.</li>
-     * <li><code>Stretch</code>: Elastic Transcoder stretches the output video
+     * <li> <code>Stretch</code>: Elastic Transcoder stretches the output video
      * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the input video
      * and the output video are different, the output video will be distorted.</li>
-     * <li><code>Keep</code>: Elastic Transcoder does not scale the output
+     * <li> <code>Keep</code>: Elastic Transcoder does not scale the output
      * video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
      * Transcoder crops the output video.</li>
-     * <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video
+     * <li> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video
      * down so that its dimensions match the values that you specified for at
      * least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
      * exceeding either value. If you specify this option, Elastic Transcoder
      * does not scale the video up.</li>
-     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video
+     * <li> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video
      * down so that its dimensions match the values that you specified for at
      * least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
      * dropping below either value. If you specify this option, Elastic
@@ -616,11 +616,11 @@ public class VideoParameters implements Serializable, Cloneable {
      * Transcoder supports the following profiles:
      * </p>
      * <ul>
-     * <li><code>baseline</code>: The profile most commonly used for
+     * <li> <code>baseline</code>: The profile most commonly used for
      * videoconferencing and for mobile applications.</li>
-     * <li><code>main</code>: The profile used for standard-definition digital
+     * <li> <code>main</code>: The profile used for standard-definition digital
      * TV broadcasts.</li>
-     * <li><code>high</code>: The profile used for high-definition digital TV
+     * <li> <code>high</code>: The profile used for high-definition digital TV
      * broadcasts and for Blu-ray discs.</li>
      * </ul>
      * <p>
@@ -786,11 +786,11 @@ public class VideoParameters implements Serializable, Cloneable {
      *         Elastic Transcoder supports the following profiles:
      *         </p>
      *         <ul>
-     *         <li><code>baseline</code>: The profile most commonly used for
+     *         <li> <code>baseline</code>: The profile most commonly used for
      *         videoconferencing and for mobile applications.</li>
-     *         <li><code>main</code>: The profile used for standard-definition
+     *         <li> <code>main</code>: The profile used for standard-definition
      *         digital TV broadcasts.</li>
-     *         <li><code>high</code>: The profile used for high-definition
+     *         <li> <code>high</code>: The profile used for high-definition
      *         digital TV broadcasts and for Blu-ray discs.</li>
      *         </ul>
      *         <p>
@@ -977,11 +977,11 @@ public class VideoParameters implements Serializable, Cloneable {
      * Transcoder supports the following profiles:
      * </p>
      * <ul>
-     * <li><code>baseline</code>: The profile most commonly used for
+     * <li> <code>baseline</code>: The profile most commonly used for
      * videoconferencing and for mobile applications.</li>
-     * <li><code>main</code>: The profile used for standard-definition digital
+     * <li> <code>main</code>: The profile used for standard-definition digital
      * TV broadcasts.</li>
-     * <li><code>high</code>: The profile used for high-definition digital TV
+     * <li> <code>high</code>: The profile used for high-definition digital TV
      * broadcasts and for Blu-ray discs.</li>
      * </ul>
      * <p>
@@ -1148,11 +1148,11 @@ public class VideoParameters implements Serializable, Cloneable {
      *        Elastic Transcoder supports the following profiles:
      *        </p>
      *        <ul>
-     *        <li><code>baseline</code>: The profile most commonly used for
+     *        <li> <code>baseline</code>: The profile most commonly used for
      *        videoconferencing and for mobile applications.</li>
-     *        <li><code>main</code>: The profile used for standard-definition
+     *        <li> <code>main</code>: The profile used for standard-definition
      *        digital TV broadcasts.</li>
-     *        <li><code>high</code>: The profile used for high-definition
+     *        <li> <code>high</code>: The profile used for high-definition
      *        digital TV broadcasts and for Blu-ray discs.</li>
      *        </ul>
      *        <p>
@@ -1338,11 +1338,11 @@ public class VideoParameters implements Serializable, Cloneable {
      * Transcoder supports the following profiles:
      * </p>
      * <ul>
-     * <li><code>baseline</code>: The profile most commonly used for
+     * <li> <code>baseline</code>: The profile most commonly used for
      * videoconferencing and for mobile applications.</li>
-     * <li><code>main</code>: The profile used for standard-definition digital
+     * <li> <code>main</code>: The profile used for standard-definition digital
      * TV broadcasts.</li>
-     * <li><code>high</code>: The profile used for high-definition digital TV
+     * <li> <code>high</code>: The profile used for high-definition digital TV
      * broadcasts and for Blu-ray discs.</li>
      * </ul>
      * <p>
@@ -1509,11 +1509,11 @@ public class VideoParameters implements Serializable, Cloneable {
      *        Elastic Transcoder supports the following profiles:
      *        </p>
      *        <ul>
-     *        <li><code>baseline</code>: The profile most commonly used for
+     *        <li> <code>baseline</code>: The profile most commonly used for
      *        videoconferencing and for mobile applications.</li>
-     *        <li><code>main</code>: The profile used for standard-definition
+     *        <li> <code>main</code>: The profile used for standard-definition
      *        digital TV broadcasts.</li>
-     *        <li><code>high</code>: The profile used for high-definition
+     *        <li> <code>high</code>: The profile used for high-definition
      *        digital TV broadcasts and for Blu-ray discs.</li>
      *        </ul>
      *        <p>
@@ -1926,10 +1926,10 @@ public class VideoParameters implements Serializable, Cloneable {
      * <code>true</code> and <code>false</code>:
      * </p>
      * <ul>
-     * <li><code>true</code>: Elastic Transcoder uses the value of
+     * <li> <code>true</code>: Elastic Transcoder uses the value of
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
-     * <li><code>false</code>: The distance between key frames can vary.</li>
+     * <li> <code>false</code>: The distance between key frames can vary.</li>
      * </ul>
      * <important>
      * <p>
@@ -1946,10 +1946,10 @@ public class VideoParameters implements Serializable, Cloneable {
      *        values are <code>true</code> and <code>false</code>:
      *        </p>
      *        <ul>
-     *        <li><code>true</code>: Elastic Transcoder uses the value of
+     *        <li> <code>true</code>: Elastic Transcoder uses the value of
      *        <code>KeyframesMaxDist</code> for the distance between key frames
      *        (the number of frames in a group of pictures, or GOP).</li>
-     *        <li><code>false</code>: The distance between key frames can vary.</li>
+     *        <li> <code>false</code>: The distance between key frames can vary.</li>
      *        </ul>
      *        <important>
      *        <p>
@@ -1972,10 +1972,10 @@ public class VideoParameters implements Serializable, Cloneable {
      * <code>true</code> and <code>false</code>:
      * </p>
      * <ul>
-     * <li><code>true</code>: Elastic Transcoder uses the value of
+     * <li> <code>true</code>: Elastic Transcoder uses the value of
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
-     * <li><code>false</code>: The distance between key frames can vary.</li>
+     * <li> <code>false</code>: The distance between key frames can vary.</li>
      * </ul>
      * <important>
      * <p>
@@ -1991,10 +1991,10 @@ public class VideoParameters implements Serializable, Cloneable {
      *         values are <code>true</code> and <code>false</code>:
      *         </p>
      *         <ul>
-     *         <li><code>true</code>: Elastic Transcoder uses the value of
+     *         <li> <code>true</code>: Elastic Transcoder uses the value of
      *         <code>KeyframesMaxDist</code> for the distance between key frames
      *         (the number of frames in a group of pictures, or GOP).</li>
-     *         <li><code>false</code>: The distance between key frames can vary.
+     *         <li> <code>false</code>: The distance between key frames can vary.
      *         </li>
      *         </ul>
      *         <important>
@@ -2018,10 +2018,10 @@ public class VideoParameters implements Serializable, Cloneable {
      * <code>true</code> and <code>false</code>:
      * </p>
      * <ul>
-     * <li><code>true</code>: Elastic Transcoder uses the value of
+     * <li> <code>true</code>: Elastic Transcoder uses the value of
      * <code>KeyframesMaxDist</code> for the distance between key frames (the
      * number of frames in a group of pictures, or GOP).</li>
-     * <li><code>false</code>: The distance between key frames can vary.</li>
+     * <li> <code>false</code>: The distance between key frames can vary.</li>
      * </ul>
      * <important>
      * <p>
@@ -2038,10 +2038,10 @@ public class VideoParameters implements Serializable, Cloneable {
      *        values are <code>true</code> and <code>false</code>:
      *        </p>
      *        <ul>
-     *        <li><code>true</code>: Elastic Transcoder uses the value of
+     *        <li> <code>true</code>: Elastic Transcoder uses the value of
      *        <code>KeyframesMaxDist</code> for the distance between key frames
      *        (the number of frames in a group of pictures, or GOP).</li>
-     *        <li><code>false</code>: The distance between key frames can vary.</li>
+     *        <li> <code>false</code>: The distance between key frames can vary.</li>
      *        </ul>
      *        <important>
      *        <p>
@@ -2640,9 +2640,9 @@ public class VideoParameters implements Serializable, Cloneable {
      * values are <code>auto</code> and <i>width</i> x <i>height</i>:
      * </p>
      * <ul>
-     * <li><code>auto</code>: Elastic Transcoder attempts to preserve the width
+     * <li> <code>auto</code>: Elastic Transcoder attempts to preserve the width
      * and height of the input file, subject to the following rules.</li>
-     * <li><code><i>width</i> x <i>height</i></code>: The width and height of
+     * <li> <code><i>width</i> x <i>height</i></code>: The width and height of
      * the output video in pixels.</li>
      * </ul>
      * <p>
@@ -2694,10 +2694,10 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <i>height</i>:
      *        </p>
      *        <ul>
-     *        <li><code>auto</code>: Elastic Transcoder attempts to preserve the
+     *        <li> <code>auto</code>: Elastic Transcoder attempts to preserve the
      *        width and height of the input file, subject to the following
      *        rules.</li>
-     *        <li><code><i>width</i> x <i>height</i></code>: The width and
+     *        <li> <code><i>width</i> x <i>height</i></code>: The width and
      *        height of the output video in pixels.</li>
      *        </ul>
      *        <p>
@@ -2755,9 +2755,9 @@ public class VideoParameters implements Serializable, Cloneable {
      * values are <code>auto</code> and <i>width</i> x <i>height</i>:
      * </p>
      * <ul>
-     * <li><code>auto</code>: Elastic Transcoder attempts to preserve the width
+     * <li> <code>auto</code>: Elastic Transcoder attempts to preserve the width
      * and height of the input file, subject to the following rules.</li>
-     * <li><code><i>width</i> x <i>height</i></code>: The width and height of
+     * <li> <code><i>width</i> x <i>height</i></code>: The width and height of
      * the output video in pixels.</li>
      * </ul>
      * <p>
@@ -2808,10 +2808,10 @@ public class VideoParameters implements Serializable, Cloneable {
      *         <i>height</i>:
      *         </p>
      *         <ul>
-     *         <li><code>auto</code>: Elastic Transcoder attempts to preserve
+     *         <li> <code>auto</code>: Elastic Transcoder attempts to preserve
      *         the width and height of the input file, subject to the following
      *         rules.</li>
-     *         <li><code><i>width</i> x <i>height</i></code>: The width and
+     *         <li> <code><i>width</i> x <i>height</i></code>: The width and
      *         height of the output video in pixels.</li>
      *         </ul>
      *         <p>
@@ -2869,9 +2869,9 @@ public class VideoParameters implements Serializable, Cloneable {
      * values are <code>auto</code> and <i>width</i> x <i>height</i>:
      * </p>
      * <ul>
-     * <li><code>auto</code>: Elastic Transcoder attempts to preserve the width
+     * <li> <code>auto</code>: Elastic Transcoder attempts to preserve the width
      * and height of the input file, subject to the following rules.</li>
-     * <li><code><i>width</i> x <i>height</i></code>: The width and height of
+     * <li> <code><i>width</i> x <i>height</i></code>: The width and height of
      * the output video in pixels.</li>
      * </ul>
      * <p>
@@ -2923,10 +2923,10 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <i>height</i>:
      *        </p>
      *        <ul>
-     *        <li><code>auto</code>: Elastic Transcoder attempts to preserve the
+     *        <li> <code>auto</code>: Elastic Transcoder attempts to preserve the
      *        width and height of the input file, subject to the following
      *        rules.</li>
-     *        <li><code><i>width</i> x <i>height</i></code>: The width and
+     *        <li> <code><i>width</i> x <i>height</i></code>: The width and
      *        height of the output video in pixels.</li>
      *        </ul>
      *        <p>
@@ -3340,28 +3340,28 @@ public class VideoParameters implements Serializable, Cloneable {
      * </p>
      * <p>
      * <ul>
-     * <li><code>Fit</code>: Elastic Transcoder scales the output video so it
+     * <li> <code>Fit</code>: Elastic Transcoder scales the output video so it
      * matches the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it
+     * <li> <code>Fill</code>: Elastic Transcoder scales the output video so it
      * matches the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension
      * (if any) that exceeds the maximum value.</li>
-     * <li><code>Stretch</code>: Elastic Transcoder stretches the output video
+     * <li> <code>Stretch</code>: Elastic Transcoder stretches the output video
      * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the input video
      * and the output video are different, the output video will be distorted.</li>
-     * <li><code>Keep</code>: Elastic Transcoder does not scale the output
+     * <li> <code>Keep</code>: Elastic Transcoder does not scale the output
      * video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
      * Transcoder crops the output video.</li>
-     * <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video
+     * <li> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video
      * down so that its dimensions match the values that you specified for at
      * least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
      * exceeding either value. If you specify this option, Elastic Transcoder
      * does not scale the video up.</li>
-     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video
+     * <li> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video
      * down so that its dimensions match the values that you specified for at
      * least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
      * dropping below either value. If you specify this option, Elastic
@@ -3374,33 +3374,33 @@ public class VideoParameters implements Serializable, Cloneable {
      *        output video:</p>
      *        <p>
      *        <ul>
-     *        <li><code>Fit</code>: Elastic Transcoder scales the output video
+     *        <li> <code>Fit</code>: Elastic Transcoder scales the output video
      *        so it matches the value that you specified in either
      *        <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding
      *        the other value.</li>
-     *        <li><code>Fill</code>: Elastic Transcoder scales the output video
+     *        <li> <code>Fill</code>: Elastic Transcoder scales the output video
      *        so it matches the value that you specified in either
      *        <code>MaxWidth</code> or <code>MaxHeight</code> and matches or
      *        exceeds the other value. Elastic Transcoder centers the output
      *        video and then crops it in the dimension (if any) that exceeds the
      *        maximum value.</li>
-     *        <li><code>Stretch</code>: Elastic Transcoder stretches the output
+     *        <li> <code>Stretch</code>: Elastic Transcoder stretches the output
      *        video to match the values that you specified for
      *        <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative
      *        proportions of the input video and the output video are different,
      *        the output video will be distorted.</li>
-     *        <li><code>Keep</code>: Elastic Transcoder does not scale the
+     *        <li> <code>Keep</code>: Elastic Transcoder does not scale the
      *        output video. If either dimension of the input video exceeds the
      *        values that you specified for <code>MaxWidth</code> and
      *        <code>MaxHeight</code>, Elastic Transcoder crops the output video.
      *        </li>
-     *        <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output
+     *        <li> <code>ShrinkToFit</code>: Elastic Transcoder scales the output
      *        video down so that its dimensions match the values that you
      *        specified for at least one of <code>MaxWidth</code> and
      *        <code>MaxHeight</code> without exceeding either value. If you
      *        specify this option, Elastic Transcoder does not scale the video
      *        up.</li>
-     *        <li><code>ShrinkToFill</code>: Elastic Transcoder scales the
+     *        <li> <code>ShrinkToFill</code>: Elastic Transcoder scales the
      *        output video down so that its dimensions match the values that you
      *        specified for at least one of <code>MaxWidth</code> and
      *        <code>MaxHeight</code> without dropping below either value. If you
@@ -3420,28 +3420,28 @@ public class VideoParameters implements Serializable, Cloneable {
      * </p>
      * <p>
      * <ul>
-     * <li><code>Fit</code>: Elastic Transcoder scales the output video so it
+     * <li> <code>Fit</code>: Elastic Transcoder scales the output video so it
      * matches the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it
+     * <li> <code>Fill</code>: Elastic Transcoder scales the output video so it
      * matches the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension
      * (if any) that exceeds the maximum value.</li>
-     * <li><code>Stretch</code>: Elastic Transcoder stretches the output video
+     * <li> <code>Stretch</code>: Elastic Transcoder stretches the output video
      * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the input video
      * and the output video are different, the output video will be distorted.</li>
-     * <li><code>Keep</code>: Elastic Transcoder does not scale the output
+     * <li> <code>Keep</code>: Elastic Transcoder does not scale the output
      * video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
      * Transcoder crops the output video.</li>
-     * <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video
+     * <li> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video
      * down so that its dimensions match the values that you specified for at
      * least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
      * exceeding either value. If you specify this option, Elastic Transcoder
      * does not scale the video up.</li>
-     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video
+     * <li> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video
      * down so that its dimensions match the values that you specified for at
      * least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
      * dropping below either value. If you specify this option, Elastic
@@ -3453,33 +3453,33 @@ public class VideoParameters implements Serializable, Cloneable {
      *         output video:</p>
      *         <p>
      *         <ul>
-     *         <li><code>Fit</code>: Elastic Transcoder scales the output video
+     *         <li> <code>Fit</code>: Elastic Transcoder scales the output video
      *         so it matches the value that you specified in either
      *         <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding
      *         the other value.</li>
-     *         <li><code>Fill</code>: Elastic Transcoder scales the output video
+     *         <li> <code>Fill</code>: Elastic Transcoder scales the output video
      *         so it matches the value that you specified in either
      *         <code>MaxWidth</code> or <code>MaxHeight</code> and matches or
      *         exceeds the other value. Elastic Transcoder centers the output
      *         video and then crops it in the dimension (if any) that exceeds
      *         the maximum value.</li>
-     *         <li><code>Stretch</code>: Elastic Transcoder stretches the output
+     *         <li> <code>Stretch</code>: Elastic Transcoder stretches the output
      *         video to match the values that you specified for
      *         <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative
      *         proportions of the input video and the output video are
      *         different, the output video will be distorted.</li>
-     *         <li><code>Keep</code>: Elastic Transcoder does not scale the
+     *         <li> <code>Keep</code>: Elastic Transcoder does not scale the
      *         output video. If either dimension of the input video exceeds the
      *         values that you specified for <code>MaxWidth</code> and
      *         <code>MaxHeight</code>, Elastic Transcoder crops the output
      *         video.</li>
-     *         <li><code>ShrinkToFit</code>: Elastic Transcoder scales the
+     *         <li> <code>ShrinkToFit</code>: Elastic Transcoder scales the
      *         output video down so that its dimensions match the values that
      *         you specified for at least one of <code>MaxWidth</code> and
      *         <code>MaxHeight</code> without exceeding either value. If you
      *         specify this option, Elastic Transcoder does not scale the video
      *         up.</li>
-     *         <li><code>ShrinkToFill</code>: Elastic Transcoder scales the
+     *         <li> <code>ShrinkToFill</code>: Elastic Transcoder scales the
      *         output video down so that its dimensions match the values that
      *         you specified for at least one of <code>MaxWidth</code> and
      *         <code>MaxHeight</code> without dropping below either value. If
@@ -3499,28 +3499,28 @@ public class VideoParameters implements Serializable, Cloneable {
      * </p>
      * <p>
      * <ul>
-     * <li><code>Fit</code>: Elastic Transcoder scales the output video so it
+     * <li> <code>Fit</code>: Elastic Transcoder scales the output video so it
      * matches the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> without exceeding the other value.</li>
-     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it
+     * <li> <code>Fill</code>: Elastic Transcoder scales the output video so it
      * matches the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension
      * (if any) that exceeds the maximum value.</li>
-     * <li><code>Stretch</code>: Elastic Transcoder stretches the output video
+     * <li> <code>Stretch</code>: Elastic Transcoder stretches the output video
      * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the input video
      * and the output video are different, the output video will be distorted.</li>
-     * <li><code>Keep</code>: Elastic Transcoder does not scale the output
+     * <li> <code>Keep</code>: Elastic Transcoder does not scale the output
      * video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
      * Transcoder crops the output video.</li>
-     * <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output video
+     * <li> <code>ShrinkToFit</code>: Elastic Transcoder scales the output video
      * down so that its dimensions match the values that you specified for at
      * least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
      * exceeding either value. If you specify this option, Elastic Transcoder
      * does not scale the video up.</li>
-     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video
+     * <li> <code>ShrinkToFill</code>: Elastic Transcoder scales the output video
      * down so that its dimensions match the values that you specified for at
      * least one of <code>MaxWidth</code> and <code>MaxHeight</code> without
      * dropping below either value. If you specify this option, Elastic
@@ -3533,33 +3533,33 @@ public class VideoParameters implements Serializable, Cloneable {
      *        output video:</p>
      *        <p>
      *        <ul>
-     *        <li><code>Fit</code>: Elastic Transcoder scales the output video
+     *        <li> <code>Fit</code>: Elastic Transcoder scales the output video
      *        so it matches the value that you specified in either
      *        <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding
      *        the other value.</li>
-     *        <li><code>Fill</code>: Elastic Transcoder scales the output video
+     *        <li> <code>Fill</code>: Elastic Transcoder scales the output video
      *        so it matches the value that you specified in either
      *        <code>MaxWidth</code> or <code>MaxHeight</code> and matches or
      *        exceeds the other value. Elastic Transcoder centers the output
      *        video and then crops it in the dimension (if any) that exceeds the
      *        maximum value.</li>
-     *        <li><code>Stretch</code>: Elastic Transcoder stretches the output
+     *        <li> <code>Stretch</code>: Elastic Transcoder stretches the output
      *        video to match the values that you specified for
      *        <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative
      *        proportions of the input video and the output video are different,
      *        the output video will be distorted.</li>
-     *        <li><code>Keep</code>: Elastic Transcoder does not scale the
+     *        <li> <code>Keep</code>: Elastic Transcoder does not scale the
      *        output video. If either dimension of the input video exceeds the
      *        values that you specified for <code>MaxWidth</code> and
      *        <code>MaxHeight</code>, Elastic Transcoder crops the output video.
      *        </li>
-     *        <li><code>ShrinkToFit</code>: Elastic Transcoder scales the output
+     *        <li> <code>ShrinkToFit</code>: Elastic Transcoder scales the output
      *        video down so that its dimensions match the values that you
      *        specified for at least one of <code>MaxWidth</code> and
      *        <code>MaxHeight</code> without exceeding either value. If you
      *        specify this option, Elastic Transcoder does not scale the video
      *        up.</li>
-     *        <li><code>ShrinkToFill</code>: Elastic Transcoder scales the
+     *        <li> <code>ShrinkToFill</code>: Elastic Transcoder scales the
      *        output video down so that its dimensions match the values that you
      *        specified for at least one of <code>MaxWidth</code> and
      *        <code>MaxHeight</code> without dropping below either value. If you

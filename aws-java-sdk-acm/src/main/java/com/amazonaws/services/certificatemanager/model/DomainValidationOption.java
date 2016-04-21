@@ -43,11 +43,31 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      */
@@ -108,11 +128,31 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -128,11 +168,31 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        administrative contact in WHOIS for the base domain and the
      *        following five addresses:
      *        <ul>
-     *        <li>admin@subdomain.example.com</li>
-     *        <li>administrator@subdomain.example.com</li>
-     *        <li>hostmaster@subdomain.example.com</li>
-     *        <li>postmaster@subdomain.example.com</li>
-     *        <li>webmaster@subdomain.example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@subdomain.example.com
+     *        </p>
+     *        </li>
      *        </ul>
      */
 
@@ -151,11 +211,31 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -170,11 +250,31 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *         administrative contact in WHOIS for the base domain and the
      *         following five addresses:
      *         <ul>
-     *         <li>admin@subdomain.example.com</li>
-     *         <li>administrator@subdomain.example.com</li>
-     *         <li>hostmaster@subdomain.example.com</li>
-     *         <li>postmaster@subdomain.example.com</li>
-     *         <li>webmaster@subdomain.example.com</li>
+     *         <li>
+     *         <p>
+     *         admin@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         administrator@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         hostmaster@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         postmaster@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         webmaster@subdomain.example.com
+     *         </p>
+     *         </li>
      *         </ul>
      */
 
@@ -193,11 +293,31 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -213,11 +333,31 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        administrative contact in WHOIS for the base domain and the
      *        following five addresses:
      *        <ul>
-     *        <li>admin@subdomain.example.com</li>
-     *        <li>administrator@subdomain.example.com</li>
-     *        <li>hostmaster@subdomain.example.com</li>
-     *        <li>postmaster@subdomain.example.com</li>
-     *        <li>webmaster@subdomain.example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@subdomain.example.com
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

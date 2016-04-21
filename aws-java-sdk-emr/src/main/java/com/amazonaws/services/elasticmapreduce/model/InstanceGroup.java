@@ -109,6 +109,12 @@ public class InstanceGroup implements Serializable, Cloneable {
      * </p>
      */
     private Boolean ebsOptimized;
+    /**
+     * <p>
+     * Policy for customizing shrink operations.
+     * </p>
+     */
+    private ShrinkPolicy shrinkPolicy;
 
     /**
      * <p>
@@ -828,6 +834,47 @@ public class InstanceGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Policy for customizing shrink operations.
+     * </p>
+     * 
+     * @param shrinkPolicy
+     *        Policy for customizing shrink operations.
+     */
+
+    public void setShrinkPolicy(ShrinkPolicy shrinkPolicy) {
+        this.shrinkPolicy = shrinkPolicy;
+    }
+
+    /**
+     * <p>
+     * Policy for customizing shrink operations.
+     * </p>
+     * 
+     * @return Policy for customizing shrink operations.
+     */
+
+    public ShrinkPolicy getShrinkPolicy() {
+        return this.shrinkPolicy;
+    }
+
+    /**
+     * <p>
+     * Policy for customizing shrink operations.
+     * </p>
+     * 
+     * @param shrinkPolicy
+     *        Policy for customizing shrink operations.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public InstanceGroup withShrinkPolicy(ShrinkPolicy shrinkPolicy) {
+        setShrinkPolicy(shrinkPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -864,7 +911,9 @@ public class InstanceGroup implements Serializable, Cloneable {
         if (getEbsBlockDevices() != null)
             sb.append("EbsBlockDevices: " + getEbsBlockDevices() + ",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized());
+            sb.append("EbsOptimized: " + getEbsOptimized() + ",");
+        if (getShrinkPolicy() != null)
+            sb.append("ShrinkPolicy: " + getShrinkPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -947,6 +996,11 @@ public class InstanceGroup implements Serializable, Cloneable {
         if (other.getEbsOptimized() != null
                 && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
+        if (other.getShrinkPolicy() == null ^ this.getShrinkPolicy() == null)
+            return false;
+        if (other.getShrinkPolicy() != null
+                && other.getShrinkPolicy().equals(this.getShrinkPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -992,6 +1046,10 @@ public class InstanceGroup implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getShrinkPolicy() == null) ? 0 : getShrinkPolicy()
                         .hashCode());
         return hashCode;
     }

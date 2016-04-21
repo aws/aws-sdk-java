@@ -20,10 +20,10 @@
     "jsonVersion" : null,
     "endpointPrefix" : "route53",
     "signingName" : "route53",
+    "xmlProtocol" : true,
     "serviceName" : "Route 53",
     "cborProtocol" : false,
     "jsonProtocol" : false,
-    "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"

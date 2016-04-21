@@ -103,13 +103,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      */
@@ -127,16 +155,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      */
@@ -745,13 +813,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -759,13 +855,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        A <code>CertificateStatus</code> enumeration value that can
      *        contain one of the following:
      *        <ul>
-     *        <li>PENDING_VALIDATION</li>
-     *        <li>ISSUED</li>
-     *        <li>INACTIVE</li>
-     *        <li>EXPIRED</li>
-     *        <li>REVOKED</li>
-     *        <li>FAILED</li>
-     *        <li>VALIDATION_TIMED_OUT</li>
+     *        <li>
+     *        <p>
+     *        PENDING_VALIDATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISSUED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INACTIVE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXPIRED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REVOKED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALIDATION_TIMED_OUT
+     *        </p>
+     *        </li>
      *        </ul>
      * @see CertificateStatus
      */
@@ -779,26 +903,82 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
      * @return A <code>CertificateStatus</code> enumeration value that can
      *         contain one of the following:
      *         <ul>
-     *         <li>PENDING_VALIDATION</li>
-     *         <li>ISSUED</li>
-     *         <li>INACTIVE</li>
-     *         <li>EXPIRED</li>
-     *         <li>REVOKED</li>
-     *         <li>FAILED</li>
-     *         <li>VALIDATION_TIMED_OUT</li>
+     *         <li>
+     *         <p>
+     *         PENDING_VALIDATION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ISSUED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INACTIVE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EXPIRED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REVOKED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         FAILED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         VALIDATION_TIMED_OUT
+     *         </p>
+     *         </li>
      *         </ul>
      * @see CertificateStatus
      */
@@ -812,13 +992,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -826,13 +1034,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        A <code>CertificateStatus</code> enumeration value that can
      *        contain one of the following:
      *        <ul>
-     *        <li>PENDING_VALIDATION</li>
-     *        <li>ISSUED</li>
-     *        <li>INACTIVE</li>
-     *        <li>EXPIRED</li>
-     *        <li>REVOKED</li>
-     *        <li>FAILED</li>
-     *        <li>VALIDATION_TIMED_OUT</li>
+     *        <li>
+     *        <p>
+     *        PENDING_VALIDATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISSUED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INACTIVE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXPIRED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REVOKED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALIDATION_TIMED_OUT
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -849,13 +1085,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -863,13 +1127,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        A <code>CertificateStatus</code> enumeration value that can
      *        contain one of the following:
      *        <ul>
-     *        <li>PENDING_VALIDATION</li>
-     *        <li>ISSUED</li>
-     *        <li>INACTIVE</li>
-     *        <li>EXPIRED</li>
-     *        <li>REVOKED</li>
-     *        <li>FAILED</li>
-     *        <li>VALIDATION_TIMED_OUT</li>
+     *        <li>
+     *        <p>
+     *        PENDING_VALIDATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISSUED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INACTIVE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXPIRED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REVOKED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALIDATION_TIMED_OUT
+     *        </p>
+     *        </li>
      *        </ul>
      * @see CertificateStatus
      */
@@ -883,13 +1175,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -897,13 +1217,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        A <code>CertificateStatus</code> enumeration value that can
      *        contain one of the following:
      *        <ul>
-     *        <li>PENDING_VALIDATION</li>
-     *        <li>ISSUED</li>
-     *        <li>INACTIVE</li>
-     *        <li>EXPIRED</li>
-     *        <li>REVOKED</li>
-     *        <li>FAILED</li>
-     *        <li>VALIDATION_TIMED_OUT</li>
+     *        <li>
+     *        <p>
+     *        PENDING_VALIDATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISSUED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INACTIVE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXPIRED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REVOKED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALIDATION_TIMED_OUT
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -968,16 +1316,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -987,16 +1375,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        certificate has been revoked. This can be one of the following
      *        vales:
      *        <ul>
-     *        <li>UNSPECIFIED</li>
-     *        <li>KEY_COMPROMISE</li>
-     *        <li>CA_COMPROMISE</li>
-     *        <li>AFFILIATION_CHANGED</li>
-     *        <li>SUPERCEDED</li>
-     *        <li>CESSATION_OF_OPERATION</li>
-     *        <li>CERTIFICATE_HOLD</li>
-     *        <li>REMOVE_FROM_CRL</li>
-     *        <li>PRIVILEGE_WITHDRAWN</li>
-     *        <li>A_A_COMPROMISE</li>
+     *        <li>
+     *        <p>
+     *        UNSPECIFIED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CA_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFFILIATION_CHANGED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SUPERCEDED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CESSATION_OF_OPERATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CERTIFICATE_HOLD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOVE_FROM_CRL
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PRIVILEGE_WITHDRAWN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A_A_COMPROMISE
+     *        </p>
+     *        </li>
      *        </ul>
      * @see RevocationReason
      */
@@ -1011,16 +1439,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -1029,16 +1497,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      *         certificate has been revoked. This can be one of the following
      *         vales:
      *         <ul>
-     *         <li>UNSPECIFIED</li>
-     *         <li>KEY_COMPROMISE</li>
-     *         <li>CA_COMPROMISE</li>
-     *         <li>AFFILIATION_CHANGED</li>
-     *         <li>SUPERCEDED</li>
-     *         <li>CESSATION_OF_OPERATION</li>
-     *         <li>CERTIFICATE_HOLD</li>
-     *         <li>REMOVE_FROM_CRL</li>
-     *         <li>PRIVILEGE_WITHDRAWN</li>
-     *         <li>A_A_COMPROMISE</li>
+     *         <li>
+     *         <p>
+     *         UNSPECIFIED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         KEY_COMPROMISE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CA_COMPROMISE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AFFILIATION_CHANGED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SUPERCEDED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CESSATION_OF_OPERATION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CERTIFICATE_HOLD
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REMOVE_FROM_CRL
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PRIVILEGE_WITHDRAWN
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A_A_COMPROMISE
+     *         </p>
+     *         </li>
      *         </ul>
      * @see RevocationReason
      */
@@ -1053,16 +1561,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -1072,16 +1620,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        certificate has been revoked. This can be one of the following
      *        vales:
      *        <ul>
-     *        <li>UNSPECIFIED</li>
-     *        <li>KEY_COMPROMISE</li>
-     *        <li>CA_COMPROMISE</li>
-     *        <li>AFFILIATION_CHANGED</li>
-     *        <li>SUPERCEDED</li>
-     *        <li>CESSATION_OF_OPERATION</li>
-     *        <li>CERTIFICATE_HOLD</li>
-     *        <li>REMOVE_FROM_CRL</li>
-     *        <li>PRIVILEGE_WITHDRAWN</li>
-     *        <li>A_A_COMPROMISE</li>
+     *        <li>
+     *        <p>
+     *        UNSPECIFIED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CA_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFFILIATION_CHANGED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SUPERCEDED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CESSATION_OF_OPERATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CERTIFICATE_HOLD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOVE_FROM_CRL
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PRIVILEGE_WITHDRAWN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A_A_COMPROMISE
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -1099,16 +1687,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -1118,16 +1746,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        certificate has been revoked. This can be one of the following
      *        vales:
      *        <ul>
-     *        <li>UNSPECIFIED</li>
-     *        <li>KEY_COMPROMISE</li>
-     *        <li>CA_COMPROMISE</li>
-     *        <li>AFFILIATION_CHANGED</li>
-     *        <li>SUPERCEDED</li>
-     *        <li>CESSATION_OF_OPERATION</li>
-     *        <li>CERTIFICATE_HOLD</li>
-     *        <li>REMOVE_FROM_CRL</li>
-     *        <li>PRIVILEGE_WITHDRAWN</li>
-     *        <li>A_A_COMPROMISE</li>
+     *        <li>
+     *        <p>
+     *        UNSPECIFIED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CA_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFFILIATION_CHANGED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SUPERCEDED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CESSATION_OF_OPERATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CERTIFICATE_HOLD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOVE_FROM_CRL
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PRIVILEGE_WITHDRAWN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A_A_COMPROMISE
+     *        </p>
+     *        </li>
      *        </ul>
      * @see RevocationReason
      */
@@ -1142,16 +1810,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -1161,16 +1869,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        certificate has been revoked. This can be one of the following
      *        vales:
      *        <ul>
-     *        <li>UNSPECIFIED</li>
-     *        <li>KEY_COMPROMISE</li>
-     *        <li>CA_COMPROMISE</li>
-     *        <li>AFFILIATION_CHANGED</li>
-     *        <li>SUPERCEDED</li>
-     *        <li>CESSATION_OF_OPERATION</li>
-     *        <li>CERTIFICATE_HOLD</li>
-     *        <li>REMOVE_FROM_CRL</li>
-     *        <li>PRIVILEGE_WITHDRAWN</li>
-     *        <li>A_A_COMPROMISE</li>
+     *        <li>
+     *        <p>
+     *        UNSPECIFIED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CA_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFFILIATION_CHANGED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SUPERCEDED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CESSATION_OF_OPERATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CERTIFICATE_HOLD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOVE_FROM_CRL
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PRIVILEGE_WITHDRAWN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A_A_COMPROMISE
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

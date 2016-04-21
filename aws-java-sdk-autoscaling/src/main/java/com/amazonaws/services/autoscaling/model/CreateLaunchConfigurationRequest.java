@@ -84,10 +84,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
     private String classicLinkVPCId;
     /**
      * <p>
-     * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported
-     * otherwise. For more information, see <a href=
+     * The IDs of one or more security groups for the specified
+     * ClassicLink-enabled VPC. This parameter is required if you specify a
+     * ClassicLink-enabled VPC, and is not supported otherwise. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -101,15 +101,11 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * >Instance Metadata and User Data</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.
      * </p>
-     * <p>
-     * At this time, launch configurations don't support compressed (zipped)
-     * user data files.
-     * </p>
      */
     private String userData;
     /**
      * <p>
-     * The ID of the EC2 instance to use to create the launch configuration.
+     * The ID of the instance to use to create the launch configuration.
      * </p>
      * <p>
      * The new launch configuration derives attributes from the instance, with
@@ -170,8 +166,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * monitoring, by specifying <code>False</code>, CloudWatch generates
      * metrics every 5 minutes. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     * >Monitor Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
+     * Scaling Developer Guide</i>.
      * </p>
      */
     private InstanceMonitoring instanceMonitoring;
@@ -182,7 +178,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * specify exceeds the current Spot market price. For more information, see
      * <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
-     * >Launch Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
+     * >Launching Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
      * Scaling Developer Guide</i>.
      * </p>
      */
@@ -222,14 +218,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     * >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * </p>
      * <p>
-     * If you specify a value for this parameter, be sure to specify at least
-     * one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group.
+     * If you specify this parameter, be sure to specify at least one subnet
+     * when you create your group.
      * </p>
      * <p>
      * Default: If the instance is launched into a default subnet, the default
@@ -254,14 +249,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * instance placement tenancy attribute set to <code>default</code>).
      * </p>
      * <p>
-     * If you specify a value for this parameter, be sure to specify at least
-     * one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group.
+     * If you specify this parameter, be sure to specify at least one subnet
+     * when you create your group.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     * >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * </p>
      * <p>
@@ -716,17 +710,17 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported
-     * otherwise. For more information, see <a href=
+     * The IDs of one or more security groups for the specified
+     * ClassicLink-enabled VPC. This parameter is required if you specify a
+     * ClassicLink-enabled VPC, and is not supported otherwise. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The IDs of one or more security groups for the VPC specified in
-     *         <code>ClassicLinkVPCId</code>. This parameter is required if
-     *         <code>ClassicLinkVPCId</code> is specified, and is not supported
+     * @return The IDs of one or more security groups for the specified
+     *         ClassicLink-enabled VPC. This parameter is required if you
+     *         specify a ClassicLink-enabled VPC, and is not supported
      *         otherwise. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      *         >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
@@ -742,19 +736,19 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported
-     * otherwise. For more information, see <a href=
+     * The IDs of one or more security groups for the specified
+     * ClassicLink-enabled VPC. This parameter is required if you specify a
+     * ClassicLink-enabled VPC, and is not supported otherwise. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the VPC specified in
-     *        <code>ClassicLinkVPCId</code>. This parameter is required if
-     *        <code>ClassicLinkVPCId</code> is specified, and is not supported
-     *        otherwise. For more information, see <a href=
+     *        The IDs of one or more security groups for the specified
+     *        ClassicLink-enabled VPC. This parameter is required if you specify
+     *        a ClassicLink-enabled VPC, and is not supported otherwise. For
+     *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
      *        Guide</i>.
@@ -773,10 +767,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported
-     * otherwise. For more information, see <a href=
+     * The IDs of one or more security groups for the specified
+     * ClassicLink-enabled VPC. This parameter is required if you specify a
+     * ClassicLink-enabled VPC, and is not supported otherwise. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -788,10 +782,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the VPC specified in
-     *        <code>ClassicLinkVPCId</code>. This parameter is required if
-     *        <code>ClassicLinkVPCId</code> is specified, and is not supported
-     *        otherwise. For more information, see <a href=
+     *        The IDs of one or more security groups for the specified
+     *        ClassicLink-enabled VPC. This parameter is required if you specify
+     *        a ClassicLink-enabled VPC, and is not supported otherwise. For
+     *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
      *        Guide</i>.
@@ -813,19 +807,19 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported
-     * otherwise. For more information, see <a href=
+     * The IDs of one or more security groups for the specified
+     * ClassicLink-enabled VPC. This parameter is required if you specify a
+     * ClassicLink-enabled VPC, and is not supported otherwise. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the VPC specified in
-     *        <code>ClassicLinkVPCId</code>. This parameter is required if
-     *        <code>ClassicLinkVPCId</code> is specified, and is not supported
-     *        otherwise. For more information, see <a href=
+     *        The IDs of one or more security groups for the specified
+     *        ClassicLink-enabled VPC. This parameter is required if you specify
+     *        a ClassicLink-enabled VPC, and is not supported otherwise. For
+     *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
      *        Guide</i>.
@@ -847,20 +841,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * >Instance Metadata and User Data</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.
      * </p>
-     * <p>
-     * At this time, launch configurations don't support compressed (zipped)
-     * user data files.
-     * </p>
      * 
      * @param userData
      *        The user data to make available to the launched EC2 instances. For
      *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html"
      *        >Instance Metadata and User Data</a> in the <i>Amazon Elastic
-     *        Compute Cloud User Guide</i>.</p>
-     *        <p>
-     *        At this time, launch configurations don't support compressed
-     *        (zipped) user data files.
+     *        Compute Cloud User Guide</i>.
      */
 
     public void setUserData(String userData) {
@@ -875,19 +862,12 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * >Instance Metadata and User Data</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.
      * </p>
-     * <p>
-     * At this time, launch configurations don't support compressed (zipped)
-     * user data files.
-     * </p>
      * 
      * @return The user data to make available to the launched EC2 instances.
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html"
      *         >Instance Metadata and User Data</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide</i>.</p>
-     *         <p>
-     *         At this time, launch configurations don't support compressed
-     *         (zipped) user data files.
+     *         Compute Cloud User Guide</i>.
      */
 
     public String getUserData() {
@@ -902,20 +882,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * >Instance Metadata and User Data</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.
      * </p>
-     * <p>
-     * At this time, launch configurations don't support compressed (zipped)
-     * user data files.
-     * </p>
      * 
      * @param userData
      *        The user data to make available to the launched EC2 instances. For
      *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html"
      *        >Instance Metadata and User Data</a> in the <i>Amazon Elastic
-     *        Compute Cloud User Guide</i>.</p>
-     *        <p>
-     *        At this time, launch configurations don't support compressed
-     *        (zipped) user data files.
+     *        Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -927,7 +900,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the EC2 instance to use to create the launch configuration.
+     * The ID of the instance to use to create the launch configuration.
      * </p>
      * <p>
      * The new launch configuration derives attributes from the instance, with
@@ -945,7 +918,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceId
-     *        The ID of the EC2 instance to use to create the launch
+     *        The ID of the instance to use to create the launch
      *        configuration.</p>
      *        <p>
      *        The new launch configuration derives attributes from the instance,
@@ -969,7 +942,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the EC2 instance to use to create the launch configuration.
+     * The ID of the instance to use to create the launch configuration.
      * </p>
      * <p>
      * The new launch configuration derives attributes from the instance, with
@@ -986,7 +959,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * Scaling Developer Guide</i>.
      * </p>
      * 
-     * @return The ID of the EC2 instance to use to create the launch
+     * @return The ID of the instance to use to create the launch
      *         configuration.</p>
      *         <p>
      *         The new launch configuration derives attributes from the
@@ -1010,7 +983,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the EC2 instance to use to create the launch configuration.
+     * The ID of the instance to use to create the launch configuration.
      * </p>
      * <p>
      * The new launch configuration derives attributes from the instance, with
@@ -1028,7 +1001,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceId
-     *        The ID of the EC2 instance to use to create the launch
+     *        The ID of the instance to use to create the launch
      *        configuration.</p>
      *        <p>
      *        The new launch configuration derives attributes from the instance,
@@ -1324,8 +1297,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * monitoring, by specifying <code>False</code>, CloudWatch generates
      * metrics every 5 minutes. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     * >Monitor Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
+     * Scaling Developer Guide</i>.
      * </p>
      * 
      * @param instanceMonitoring
@@ -1338,8 +1311,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        CloudWatch generates metrics every 5 minutes. For more
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     *        >Monitor Your Auto Scaling Instances</a> in the <i>Auto Scaling
-     *        Developer Guide</i>.
+     *        >Monitoring Your Auto Scaling Instances and Groups</a> in the
+     *        <i>Auto Scaling Developer Guide</i>.
      */
 
     public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
@@ -1357,8 +1330,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * monitoring, by specifying <code>False</code>, CloudWatch generates
      * metrics every 5 minutes. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     * >Monitor Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
+     * Scaling Developer Guide</i>.
      * </p>
      * 
      * @return Enables detailed monitoring if it is disabled. Detailed
@@ -1370,8 +1343,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *         CloudWatch generates metrics every 5 minutes. For more
      *         information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     *         >Monitor Your Auto Scaling Instances</a> in the <i>Auto Scaling
-     *         Developer Guide</i>.
+     *         >Monitoring Your Auto Scaling Instances and Groups</a> in the
+     *         <i>Auto Scaling Developer Guide</i>.
      */
 
     public InstanceMonitoring getInstanceMonitoring() {
@@ -1389,8 +1362,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * monitoring, by specifying <code>False</code>, CloudWatch generates
      * metrics every 5 minutes. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     * >Monitor Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
+     * Scaling Developer Guide</i>.
      * </p>
      * 
      * @param instanceMonitoring
@@ -1403,8 +1376,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        CloudWatch generates metrics every 5 minutes. For more
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
-     *        >Monitor Your Auto Scaling Instances</a> in the <i>Auto Scaling
-     *        Developer Guide</i>.
+     *        >Monitoring Your Auto Scaling Instances and Groups</a> in the
+     *        <i>Auto Scaling Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1422,7 +1395,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * specify exceeds the current Spot market price. For more information, see
      * <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
-     * >Launch Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
+     * >Launching Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
      * Scaling Developer Guide</i>.
      * </p>
      * 
@@ -1432,7 +1405,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        you specify exceeds the current Spot market price. For more
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
-     *        >Launch Spot Instances in Your Auto Scaling Group</a> in the
+     *        >Launching Spot Instances in Your Auto Scaling Group</a> in the
      *        <i>Auto Scaling Developer Guide</i>.
      */
 
@@ -1447,7 +1420,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * specify exceeds the current Spot market price. For more information, see
      * <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
-     * >Launch Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
+     * >Launching Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
      * Scaling Developer Guide</i>.
      * </p>
      * 
@@ -1456,7 +1429,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *         the price you specify exceeds the current Spot market price. For
      *         more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
-     *         >Launch Spot Instances in Your Auto Scaling Group</a> in the
+     *         >Launching Spot Instances in Your Auto Scaling Group</a> in the
      *         <i>Auto Scaling Developer Guide</i>.
      */
 
@@ -1471,7 +1444,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * specify exceeds the current Spot market price. For more information, see
      * <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
-     * >Launch Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
+     * >Launching Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
      * Scaling Developer Guide</i>.
      * </p>
      * 
@@ -1481,7 +1454,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        you specify exceeds the current Spot market price. For more
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
-     *        >Launch Spot Instances in Your Auto Scaling Group</a> in the
+     *        >Launching Spot Instances in Your Auto Scaling Group</a> in the
      *        <i>Auto Scaling Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -1719,14 +1692,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     * >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * </p>
      * <p>
-     * If you specify a value for this parameter, be sure to specify at least
-     * one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group.
+     * If you specify this parameter, be sure to specify at least one subnet
+     * when you create your group.
      * </p>
      * <p>
      * Default: If the instance is launched into a default subnet, the default
@@ -1742,13 +1714,12 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        Used for groups that launch instances into a virtual private cloud
      *        (VPC). Specifies whether to assign a public IP address to each
      *        instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     *        >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto
+     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     *        >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
      *        Scaling Developer Guide</i>.</p>
      *        <p>
-     *        If you specify a value for this parameter, be sure to specify at
-     *        least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     *        you create your group.
+     *        If you specify this parameter, be sure to specify at least one
+     *        subnet when you create your group.
      *        </p>
      *        <p>
      *        Default: If the instance is launched into a default subnet, the
@@ -1769,14 +1740,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     * >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * </p>
      * <p>
-     * If you specify a value for this parameter, be sure to specify at least
-     * one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group.
+     * If you specify this parameter, be sure to specify at least one subnet
+     * when you create your group.
      * </p>
      * <p>
      * Default: If the instance is launched into a default subnet, the default
@@ -1791,13 +1761,12 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * @return Used for groups that launch instances into a virtual private
      *         cloud (VPC). Specifies whether to assign a public IP address to
      *         each instance. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     *         >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto
+     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     *         >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
      *         Scaling Developer Guide</i>.</p>
      *         <p>
-     *         If you specify a value for this parameter, be sure to specify at
-     *         least one subnet using the <i>VPCZoneIdentifier</i> parameter
-     *         when you create your group.
+     *         If you specify this parameter, be sure to specify at least one
+     *         subnet when you create your group.
      *         </p>
      *         <p>
      *         Default: If the instance is launched into a default subnet, the
@@ -1818,14 +1787,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     * >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * </p>
      * <p>
-     * If you specify a value for this parameter, be sure to specify at least
-     * one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group.
+     * If you specify this parameter, be sure to specify at least one subnet
+     * when you create your group.
      * </p>
      * <p>
      * Default: If the instance is launched into a default subnet, the default
@@ -1841,13 +1809,12 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        Used for groups that launch instances into a virtual private cloud
      *        (VPC). Specifies whether to assign a public IP address to each
      *        instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     *        >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto
+     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     *        >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
      *        Scaling Developer Guide</i>.</p>
      *        <p>
-     *        If you specify a value for this parameter, be sure to specify at
-     *        least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     *        you create your group.
+     *        If you specify this parameter, be sure to specify at least one
+     *        subnet when you create your group.
      *        </p>
      *        <p>
      *        Default: If the instance is launched into a default subnet, the
@@ -1872,14 +1839,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     * >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * </p>
      * <p>
-     * If you specify a value for this parameter, be sure to specify at least
-     * one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group.
+     * If you specify this parameter, be sure to specify at least one subnet
+     * when you create your group.
      * </p>
      * <p>
      * Default: If the instance is launched into a default subnet, the default
@@ -1894,13 +1860,12 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * @return Used for groups that launch instances into a virtual private
      *         cloud (VPC). Specifies whether to assign a public IP address to
      *         each instance. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     *         >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto
+     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     *         >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
      *         Scaling Developer Guide</i>.</p>
      *         <p>
-     *         If you specify a value for this parameter, be sure to specify at
-     *         least one subnet using the <i>VPCZoneIdentifier</i> parameter
-     *         when you create your group.
+     *         If you specify this parameter, be sure to specify at least one
+     *         subnet when you create your group.
      *         </p>
      *         <p>
      *         Default: If the instance is launched into a default subnet, the
@@ -1928,14 +1893,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * instance placement tenancy attribute set to <code>default</code>).
      * </p>
      * <p>
-     * If you specify a value for this parameter, be sure to specify at least
-     * one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group.
+     * If you specify this parameter, be sure to specify at least one subnet
+     * when you create your group.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     * >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * </p>
      * <p>
@@ -1953,14 +1917,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        <code>default</code>).
      *        </p>
      *        <p>
-     *        If you specify a value for this parameter, be sure to specify at
-     *        least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     *        you create your group.
+     *        If you specify this parameter, be sure to specify at least one
+     *        subnet when you create your group.
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     *        >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto
+     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     *        >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
      *        Scaling Developer Guide</i>.
      *        </p>
      *        <p>
@@ -1983,14 +1946,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * instance placement tenancy attribute set to <code>default</code>).
      * </p>
      * <p>
-     * If you specify a value for this parameter, be sure to specify at least
-     * one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group.
+     * If you specify this parameter, be sure to specify at least one subnet
+     * when you create your group.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     * >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * </p>
      * <p>
@@ -2007,14 +1969,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *         attribute set to <code>default</code>).
      *         </p>
      *         <p>
-     *         If you specify a value for this parameter, be sure to specify at
-     *         least one subnet using the <i>VPCZoneIdentifier</i> parameter
-     *         when you create your group.
+     *         If you specify this parameter, be sure to specify at least one
+     *         subnet when you create your group.
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     *         >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto
+     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     *         >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
      *         Scaling Developer Guide</i>.
      *         </p>
      *         <p>
@@ -2037,14 +1998,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * instance placement tenancy attribute set to <code>default</code>).
      * </p>
      * <p>
-     * If you specify a value for this parameter, be sure to specify at least
-     * one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group.
+     * If you specify this parameter, be sure to specify at least one subnet
+     * when you create your group.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     * >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * </p>
      * <p>
@@ -2062,14 +2022,13 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        <code>default</code>).
      *        </p>
      *        <p>
-     *        If you specify a value for this parameter, be sure to specify at
-     *        least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     *        you create your group.
+     *        If you specify this parameter, be sure to specify at least one
+     *        subnet when you create your group.
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html"
-     *        >Auto Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto
+     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
+     *        >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
      *        Scaling Developer Guide</i>.
      *        </p>
      *        <p>

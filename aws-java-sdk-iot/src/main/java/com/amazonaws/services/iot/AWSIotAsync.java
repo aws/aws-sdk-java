@@ -550,7 +550,12 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, Void> asyncHandler);
 
     /**
+     * <p>
+     * Deletes a registered CA certificate.
+     * </p>
+     * 
      * @param deleteCACertificateRequest
+     *        Input for the DeleteCACertificate operation.
      * @return A Java Future containing the result of the DeleteCACertificate
      *         operation returned by the service.
      * @sample AWSIotAsync.DeleteCACertificate
@@ -559,7 +564,12 @@ public interface AWSIotAsync extends AWSIot {
             DeleteCACertificateRequest deleteCACertificateRequest);
 
     /**
+     * <p>
+     * Deletes a registered CA certificate.
+     * </p>
+     * 
      * @param deleteCACertificateRequest
+     *        Input for the DeleteCACertificate operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -712,7 +722,12 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, Void> asyncHandler);
 
     /**
+     * <p>
+     * Deletes a CA certificate registration code.
+     * </p>
+     * 
      * @param deleteRegistrationCodeRequest
+     *        The input for the DeleteRegistrationCode operation.
      * @return A Java Future containing the result of the DeleteRegistrationCode
      *         operation returned by the service.
      * @sample AWSIotAsync.DeleteRegistrationCode
@@ -721,7 +736,12 @@ public interface AWSIotAsync extends AWSIot {
             DeleteRegistrationCodeRequest deleteRegistrationCodeRequest);
 
     /**
+     * <p>
+     * Deletes a CA certificate registration code.
+     * </p>
+     * 
      * @param deleteRegistrationCodeRequest
+     *        The input for the DeleteRegistrationCode operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -800,7 +820,12 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, Void> asyncHandler);
 
     /**
+     * <p>
+     * Describes a registered CA certificate.
+     * </p>
+     * 
      * @param describeCACertificateRequest
+     *        The input for the DescribeCACertificate operation.
      * @return A Java Future containing the result of the DescribeCACertificate
      *         operation returned by the service.
      * @sample AWSIotAsync.DescribeCACertificate
@@ -809,7 +834,12 @@ public interface AWSIotAsync extends AWSIot {
             DescribeCACertificateRequest describeCACertificateRequest);
 
     /**
+     * <p>
+     * Describes a registered CA certificate.
+     * </p>
+     * 
      * @param describeCACertificateRequest
+     *        The input for the DescribeCACertificate operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1158,7 +1188,12 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<GetPolicyVersionRequest, GetPolicyVersionResult> asyncHandler);
 
     /**
+     * <p>
+     * Gets a registration code used to register a CA certificate with AWS IoT.
+     * </p>
+     * 
      * @param getRegistrationCodeRequest
+     *        The input to the GetRegistrationCode operation.
      * @return A Java Future containing the result of the GetRegistrationCode
      *         operation returned by the service.
      * @sample AWSIotAsync.GetRegistrationCode
@@ -1167,7 +1202,12 @@ public interface AWSIotAsync extends AWSIot {
             GetRegistrationCodeRequest getRegistrationCodeRequest);
 
     /**
+     * <p>
+     * Gets a registration code used to register a CA certificate with AWS IoT.
+     * </p>
+     * 
      * @param getRegistrationCodeRequest
+     *        The input to the GetRegistrationCode operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1216,7 +1256,16 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<GetTopicRuleRequest, GetTopicRuleResult> asyncHandler);
 
     /**
+     * <p>
+     * Lists the CA certificates registered for your AWS account.
+     * </p>
+     * <p>
+     * The results are paginated with a default page size of 25. You can use the
+     * returned marker to retrieve additional results.
+     * </p>
+     * 
      * @param listCACertificatesRequest
+     *        Input for the ListCACertificates operation.
      * @return A Java Future containing the result of the ListCACertificates
      *         operation returned by the service.
      * @sample AWSIotAsync.ListCACertificates
@@ -1225,7 +1274,16 @@ public interface AWSIotAsync extends AWSIot {
             ListCACertificatesRequest listCACertificatesRequest);
 
     /**
+     * <p>
+     * Lists the CA certificates registered for your AWS account.
+     * </p>
+     * <p>
+     * The results are paginated with a default page size of 25. You can use the
+     * returned marker to retrieve additional results.
+     * </p>
+     * 
      * @param listCACertificatesRequest
+     *        Input for the ListCACertificates operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1241,7 +1299,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists your certificates.
+     * Lists the certificates registered in your AWS account.
      * </p>
      * <p>
      * The results are paginated with a default page size of 25. You can use the
@@ -1259,7 +1317,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists your certificates.
+     * Lists the certificates registered in your AWS account.
      * </p>
      * <p>
      * The results are paginated with a default page size of 25. You can use the
@@ -1282,7 +1340,12 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler);
 
     /**
+     * <p>
+     * List the device certificates signed by the specified CA certificate.
+     * </p>
+     * 
      * @param listCertificatesByCARequest
+     *        The input to the ListCertificatesByCA operation.
      * @return A Java Future containing the result of the ListCertificatesByCA
      *         operation returned by the service.
      * @sample AWSIotAsync.ListCertificatesByCA
@@ -1291,7 +1354,12 @@ public interface AWSIotAsync extends AWSIot {
             ListCertificatesByCARequest listCertificatesByCARequest);
 
     /**
+     * <p>
+     * List the device certificates signed by the specified CA certificate.
+     * </p>
+     * 
      * @param listCertificatesByCARequest
+     *        The input to the ListCertificatesByCA operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1556,7 +1624,19 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<ListTopicRulesRequest, ListTopicRulesResult> asyncHandler);
 
     /**
+     * <p>
+     * Registers a CA certificate with AWS IoT. This CA certificate can then be
+     * used to sign device certificates, which can be then registered with AWS
+     * IoT. You can register up to 10 CA certificates per AWS account that have
+     * the same subject field and public key. This enables you to have up to 10
+     * certificate authorities sign your device certificates. If you have more
+     * than one CA certificate registered, make sure you pass the CA certificate
+     * when you register your device certificates with the RegisterCertificate
+     * API.
+     * </p>
+     * 
      * @param registerCACertificateRequest
+     *        The input to the RegisterCACertificate operation.
      * @return A Java Future containing the result of the RegisterCACertificate
      *         operation returned by the service.
      * @sample AWSIotAsync.RegisterCACertificate
@@ -1565,7 +1645,19 @@ public interface AWSIotAsync extends AWSIot {
             RegisterCACertificateRequest registerCACertificateRequest);
 
     /**
+     * <p>
+     * Registers a CA certificate with AWS IoT. This CA certificate can then be
+     * used to sign device certificates, which can be then registered with AWS
+     * IoT. You can register up to 10 CA certificates per AWS account that have
+     * the same subject field and public key. This enables you to have up to 10
+     * certificate authorities sign your device certificates. If you have more
+     * than one CA certificate registered, make sure you pass the CA certificate
+     * when you register your device certificates with the RegisterCertificate
+     * API.
+     * </p>
+     * 
      * @param registerCACertificateRequest
+     *        The input to the RegisterCACertificate operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1580,7 +1672,15 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<RegisterCACertificateRequest, RegisterCACertificateResult> asyncHandler);
 
     /**
+     * <p>
+     * Registers a device certificate with AWS IoT. If you have more than one CA
+     * certificate that has the same subject field, you must specify the CA
+     * certificate that was used to sign the device certificate being
+     * registered.
+     * </p>
+     * 
      * @param registerCertificateRequest
+     *        The input to the RegisterCertificate operation.
      * @return A Java Future containing the result of the RegisterCertificate
      *         operation returned by the service.
      * @sample AWSIotAsync.RegisterCertificate
@@ -1589,7 +1689,15 @@ public interface AWSIotAsync extends AWSIot {
             RegisterCertificateRequest registerCertificateRequest);
 
     /**
+     * <p>
+     * Registers a device certificate with AWS IoT. If you have more than one CA
+     * certificate that has the same subject field, you must specify the CA
+     * certificate that was used to sign the device certificate being
+     * registered.
+     * </p>
+     * 
      * @param registerCertificateRequest
+     *        The input to the RegisterCertificate operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1607,7 +1715,7 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a
      * certificate transfer, the certificate status changes from
-     * <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+     * <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
      * </p>
      * <p>
      * To check for pending certificate transfers, call <a>ListCertificates</a>
@@ -1630,7 +1738,7 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a
      * certificate transfer, the certificate status changes from
-     * <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+     * <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
      * </p>
      * <p>
      * To check for pending certificate transfers, call <a>ListCertificates</a>
@@ -1822,14 +1930,24 @@ public interface AWSIotAsync extends AWSIot {
             com.amazonaws.handlers.AsyncHandler<TransferCertificateRequest, TransferCertificateResult> asyncHandler);
 
     /**
+     * <p>
+     * Updates a registered CA certificate.
+     * </p>
+     * 
      * @param updateCACertificateRequest
+     *        The input to the UpdateCACertificate operation.
      * @sample AWSIotAsync.UpdateCACertificate
      */
     java.util.concurrent.Future<Void> updateCACertificateAsync(
             UpdateCACertificateRequest updateCACertificateRequest);
 
     /**
+     * <p>
+     * Updates a registered CA certificate.
+     * </p>
+     * 
      * @param updateCACertificateRequest
+     *        The input to the UpdateCACertificate operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

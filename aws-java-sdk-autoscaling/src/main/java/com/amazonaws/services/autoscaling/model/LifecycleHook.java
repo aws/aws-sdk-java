@@ -30,11 +30,8 @@ import java.io.Serializable;
  * </ul>
  * <p>
  * For more information, see <a href=
- * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"
- * >Auto Scaling Pending State</a> and <a href=
- * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"
- * >Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer
- * Guide</i>.
+ * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+ * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
  * </p>
  */
 public class LifecycleHook implements Serializable, Cloneable {
@@ -95,9 +92,9 @@ public class LifecycleHook implements Serializable, Cloneable {
      * <p>
      * The maximum time, in seconds, that can elapse before the lifecycle hook
      * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook
-     * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * times out, Auto Scaling performs the default action. You can prevent the
+     * lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      */
     private Integer heartbeatTimeout;
@@ -465,18 +462,17 @@ public class LifecycleHook implements Serializable, Cloneable {
      * <p>
      * The maximum time, in seconds, that can elapse before the lifecycle hook
      * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook
-     * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * times out, Auto Scaling performs the default action. You can prevent the
+     * lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
      * @param heartbeatTimeout
      *        The maximum time, in seconds, that can elapse before the lifecycle
      *        hook times out. The default is 3600 seconds (1 hour). When the
-     *        lifecycle hook times out, Auto Scaling performs the action defined
-     *        in the <code>DefaultResult</code> parameter. You can prevent the
-     *        lifecycle hook from timing out by calling
-     *        <a>RecordLifecycleActionHeartbeat</a>.
+     *        lifecycle hook times out, Auto Scaling performs the default
+     *        action. You can prevent the lifecycle hook from timing out by
+     *        calling <a>RecordLifecycleActionHeartbeat</a>.
      */
 
     public void setHeartbeatTimeout(Integer heartbeatTimeout) {
@@ -487,17 +483,16 @@ public class LifecycleHook implements Serializable, Cloneable {
      * <p>
      * The maximum time, in seconds, that can elapse before the lifecycle hook
      * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook
-     * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * times out, Auto Scaling performs the default action. You can prevent the
+     * lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
      * @return The maximum time, in seconds, that can elapse before the
      *         lifecycle hook times out. The default is 3600 seconds (1 hour).
      *         When the lifecycle hook times out, Auto Scaling performs the
-     *         action defined in the <code>DefaultResult</code> parameter. You
-     *         can prevent the lifecycle hook from timing out by calling
-     *         <a>RecordLifecycleActionHeartbeat</a>.
+     *         default action. You can prevent the lifecycle hook from timing
+     *         out by calling <a>RecordLifecycleActionHeartbeat</a>.
      */
 
     public Integer getHeartbeatTimeout() {
@@ -508,18 +503,17 @@ public class LifecycleHook implements Serializable, Cloneable {
      * <p>
      * The maximum time, in seconds, that can elapse before the lifecycle hook
      * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook
-     * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * times out, Auto Scaling performs the default action. You can prevent the
+     * lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
      * @param heartbeatTimeout
      *        The maximum time, in seconds, that can elapse before the lifecycle
      *        hook times out. The default is 3600 seconds (1 hour). When the
-     *        lifecycle hook times out, Auto Scaling performs the action defined
-     *        in the <code>DefaultResult</code> parameter. You can prevent the
-     *        lifecycle hook from timing out by calling
-     *        <a>RecordLifecycleActionHeartbeat</a>.
+     *        lifecycle hook times out, Auto Scaling performs the default
+     *        action. You can prevent the lifecycle hook from timing out by
+     *        calling <a>RecordLifecycleActionHeartbeat</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

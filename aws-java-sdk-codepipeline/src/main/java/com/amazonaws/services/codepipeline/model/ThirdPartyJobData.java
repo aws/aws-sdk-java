@@ -57,7 +57,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
      * </p>
      */
     private String continuationToken;
-
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt
+     * data in the artifact store for the pipeline.
+     * </p>
+     */
     private EncryptionKey encryptionKey;
 
     /**
@@ -420,7 +425,14 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt
+     * data in the artifact store for the pipeline.
+     * </p>
+     * 
      * @param encryptionKey
+     *        The AWS Key Management Service (AWS KMS) key used to encrypt and
+     *        decrypt data in the artifact store for the pipeline.
      */
 
     public void setEncryptionKey(EncryptionKey encryptionKey) {
@@ -428,7 +440,13 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt
+     * data in the artifact store for the pipeline.
+     * </p>
+     * 
+     * @return The AWS Key Management Service (AWS KMS) key used to encrypt and
+     *         decrypt data in the artifact store for the pipeline.
      */
 
     public EncryptionKey getEncryptionKey() {
@@ -436,7 +454,14 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt
+     * data in the artifact store for the pipeline.
+     * </p>
+     * 
      * @param encryptionKey
+     *        The AWS Key Management Service (AWS KMS) key used to encrypt and
+     *        decrypt data in the artifact store for the pipeline.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

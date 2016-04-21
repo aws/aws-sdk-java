@@ -37,7 +37,11 @@ public class CertificateDescription implements Serializable, Cloneable {
      * </p>
      */
     private String certificateId;
-
+    /**
+     * <p>
+     * The certificate ID of the CA certificate used to sign this certificate.
+     * </p>
+     */
     private String caCertificateId;
     /**
      * <p>
@@ -57,7 +61,11 @@ public class CertificateDescription implements Serializable, Cloneable {
      * </p>
      */
     private String ownedBy;
-
+    /**
+     * <p>
+     * The ID of the AWS account of the previous owner of the certificate.
+     * </p>
+     */
     private String previousOwnedBy;
     /**
      * <p>
@@ -71,7 +79,11 @@ public class CertificateDescription implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date lastModifiedDate;
-
+    /**
+     * <p>
+     * The transfer data.
+     * </p>
+     */
     private TransferData transferData;
 
     /**
@@ -157,7 +169,13 @@ public class CertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The certificate ID of the CA certificate used to sign this certificate.
+     * </p>
+     * 
      * @param caCertificateId
+     *        The certificate ID of the CA certificate used to sign this
+     *        certificate.
      */
 
     public void setCaCertificateId(String caCertificateId) {
@@ -165,7 +183,12 @@ public class CertificateDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The certificate ID of the CA certificate used to sign this certificate.
+     * </p>
+     * 
+     * @return The certificate ID of the CA certificate used to sign this
+     *         certificate.
      */
 
     public String getCaCertificateId() {
@@ -173,7 +196,13 @@ public class CertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The certificate ID of the CA certificate used to sign this certificate.
+     * </p>
+     * 
      * @param caCertificateId
+     *        The certificate ID of the CA certificate used to sign this
+     *        certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -341,7 +370,13 @@ public class CertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the AWS account of the previous owner of the certificate.
+     * </p>
+     * 
      * @param previousOwnedBy
+     *        The ID of the AWS account of the previous owner of the
+     *        certificate.
      */
 
     public void setPreviousOwnedBy(String previousOwnedBy) {
@@ -349,7 +384,12 @@ public class CertificateDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the AWS account of the previous owner of the certificate.
+     * </p>
+     * 
+     * @return The ID of the AWS account of the previous owner of the
+     *         certificate.
      */
 
     public String getPreviousOwnedBy() {
@@ -357,7 +397,13 @@ public class CertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the AWS account of the previous owner of the certificate.
+     * </p>
+     * 
      * @param previousOwnedBy
+     *        The ID of the AWS account of the previous owner of the
+     *        certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -451,7 +497,12 @@ public class CertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The transfer data.
+     * </p>
+     * 
      * @param transferData
+     *        The transfer data.
      */
 
     public void setTransferData(TransferData transferData) {
@@ -459,7 +510,11 @@ public class CertificateDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The transfer data.
+     * </p>
+     * 
+     * @return The transfer data.
      */
 
     public TransferData getTransferData() {
@@ -467,7 +522,12 @@ public class CertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The transfer data.
+     * </p>
+     * 
      * @param transferData
+     *        The transfer data.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

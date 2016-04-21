@@ -25,7 +25,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags.
+     * One or more tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagDescription> tags;
@@ -39,10 +39,10 @@ public class DescribeTagsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags.
+     * One or more tags.
      * </p>
      * 
-     * @return The tags.
+     * @return One or more tags.
      */
 
     public java.util.List<TagDescription> getTags() {
@@ -54,11 +54,11 @@ public class DescribeTagsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags.
+     * One or more tags.
      * </p>
      * 
      * @param tags
-     *        The tags.
+     *        One or more tags.
      */
 
     public void setTags(java.util.Collection<TagDescription> tags) {
@@ -73,7 +73,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags.
+     * One or more tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -83,7 +83,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        The tags.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -101,11 +101,11 @@ public class DescribeTagsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags.
+     * One or more tags.
      * </p>
      * 
      * @param tags
-     *        The tags.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

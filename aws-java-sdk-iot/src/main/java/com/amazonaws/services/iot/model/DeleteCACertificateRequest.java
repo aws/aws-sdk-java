@@ -20,15 +20,27 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Input for the DeleteCACertificate operation.
+ * </p>
  */
 public class DeleteCACertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the certificate to delete.
+     * </p>
+     */
     private String certificateId;
 
     /**
+     * <p>
+     * The ID of the certificate to delete.
+     * </p>
+     * 
      * @param certificateId
+     *        The ID of the certificate to delete.
      */
 
     public void setCertificateId(String certificateId) {
@@ -36,7 +48,11 @@ public class DeleteCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the certificate to delete.
+     * </p>
+     * 
+     * @return The ID of the certificate to delete.
      */
 
     public String getCertificateId() {
@@ -44,7 +60,12 @@ public class DeleteCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The ID of the certificate to delete.
+     * </p>
+     * 
      * @param certificateId
+     *        The ID of the certificate to delete.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

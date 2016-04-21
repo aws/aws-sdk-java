@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class ListCertificatesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -30,13 +30,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      * Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values:
      * <ul>
-     * <li><code>PENDING_VALIDATION</code></li>
-     * <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li>
-     * <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li>
-     * <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ISSUED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXPIRED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VALIDATION_TIMED_OUT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REVOKED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
      * </ul>
      * </p>
      */
@@ -68,13 +96,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      * Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values:
      * <ul>
-     * <li><code>PENDING_VALIDATION</code></li>
-     * <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li>
-     * <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li>
-     * <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ISSUED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXPIRED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VALIDATION_TIMED_OUT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REVOKED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -82,13 +138,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *         want to retrieve the ARNs. This can be one or more of the
      *         following values:
      *         <ul>
-     *         <li><code>PENDING_VALIDATION</code></li>
-     *         <li><code>ISSUED</code></li>
-     *         <li><code>INACTIVE</code></li>
-     *         <li><code>EXPIRED</code></li>
-     *         <li><code>VALIDATION_TIMED_OUT</code></li>
-     *         <li><code>REVOKED</code></li>
-     *         <li><code>FAILED</code></li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_VALIDATION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ISSUED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACTIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EXPIRED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>VALIDATION_TIMED_OUT</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>REVOKED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code>
+     *         </p>
+     *         </li>
      *         </ul>
      * @see CertificateStatus
      */
@@ -102,13 +186,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      * Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values:
      * <ul>
-     * <li><code>PENDING_VALIDATION</code></li>
-     * <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li>
-     * <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li>
-     * <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ISSUED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXPIRED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VALIDATION_TIMED_OUT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REVOKED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -117,13 +229,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *        to retrieve the ARNs. This can be one or more of the following
      *        values:
      *        <ul>
-     *        <li><code>PENDING_VALIDATION</code></li>
-     *        <li><code>ISSUED</code></li>
-     *        <li><code>INACTIVE</code></li>
-     *        <li><code>EXPIRED</code></li>
-     *        <li><code>VALIDATION_TIMED_OUT</code></li>
-     *        <li><code>REVOKED</code></li>
-     *        <li><code>FAILED</code></li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_VALIDATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ISSUED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXPIRED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VALIDATION_TIMED_OUT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REVOKED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code>
+     *        </p>
+     *        </li>
      *        </ul>
      * @see CertificateStatus
      */
@@ -144,13 +284,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      * Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values:
      * <ul>
-     * <li><code>PENDING_VALIDATION</code></li>
-     * <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li>
-     * <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li>
-     * <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ISSUED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXPIRED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VALIDATION_TIMED_OUT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REVOKED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * <p>
@@ -165,13 +333,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *        to retrieve the ARNs. This can be one or more of the following
      *        values:
      *        <ul>
-     *        <li><code>PENDING_VALIDATION</code></li>
-     *        <li><code>ISSUED</code></li>
-     *        <li><code>INACTIVE</code></li>
-     *        <li><code>EXPIRED</code></li>
-     *        <li><code>VALIDATION_TIMED_OUT</code></li>
-     *        <li><code>REVOKED</code></li>
-     *        <li><code>FAILED</code></li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_VALIDATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ISSUED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXPIRED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VALIDATION_TIMED_OUT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REVOKED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code>
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -195,13 +391,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      * Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values:
      * <ul>
-     * <li><code>PENDING_VALIDATION</code></li>
-     * <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li>
-     * <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li>
-     * <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ISSUED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXPIRED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VALIDATION_TIMED_OUT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REVOKED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -210,13 +434,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *        to retrieve the ARNs. This can be one or more of the following
      *        values:
      *        <ul>
-     *        <li><code>PENDING_VALIDATION</code></li>
-     *        <li><code>ISSUED</code></li>
-     *        <li><code>INACTIVE</code></li>
-     *        <li><code>EXPIRED</code></li>
-     *        <li><code>VALIDATION_TIMED_OUT</code></li>
-     *        <li><code>REVOKED</code></li>
-     *        <li><code>FAILED</code></li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_VALIDATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ISSUED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXPIRED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VALIDATION_TIMED_OUT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REVOKED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code>
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -234,13 +486,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      * Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values:
      * <ul>
-     * <li><code>PENDING_VALIDATION</code></li>
-     * <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li>
-     * <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li>
-     * <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ISSUED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXPIRED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VALIDATION_TIMED_OUT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REVOKED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -249,13 +529,41 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *        to retrieve the ARNs. This can be one or more of the following
      *        values:
      *        <ul>
-     *        <li><code>PENDING_VALIDATION</code></li>
-     *        <li><code>ISSUED</code></li>
-     *        <li><code>INACTIVE</code></li>
-     *        <li><code>EXPIRED</code></li>
-     *        <li><code>VALIDATION_TIMED_OUT</code></li>
-     *        <li><code>REVOKED</code></li>
-     *        <li><code>FAILED</code></li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_VALIDATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ISSUED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXPIRED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VALIDATION_TIMED_OUT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REVOKED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code>
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

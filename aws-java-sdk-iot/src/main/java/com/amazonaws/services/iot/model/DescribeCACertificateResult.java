@@ -19,14 +19,26 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The output from the DescribeCACertificate operation.
+ * </p>
  */
 public class DescribeCACertificateResult implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The CA certificate description.
+     * </p>
+     */
     private CACertificateDescription certificateDescription;
 
     /**
+     * <p>
+     * The CA certificate description.
+     * </p>
+     * 
      * @param certificateDescription
+     *        The CA certificate description.
      */
 
     public void setCertificateDescription(
@@ -35,7 +47,11 @@ public class DescribeCACertificateResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The CA certificate description.
+     * </p>
+     * 
+     * @return The CA certificate description.
      */
 
     public CACertificateDescription getCertificateDescription() {
@@ -43,7 +59,12 @@ public class DescribeCACertificateResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificate description.
+     * </p>
+     * 
      * @param certificateDescription
+     *        The CA certificate description.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

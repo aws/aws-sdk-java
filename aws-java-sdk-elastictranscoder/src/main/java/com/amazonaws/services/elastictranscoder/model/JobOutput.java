@@ -167,7 +167,7 @@ public class JobOutput implements Serializable, Cloneable {
      * the job, <code>Outputs:Status</code> is always the same as
      * <code>Job:Status</code>. If you specified more than one output:
      * <ul>
-     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     * <li> <code>Job:Status</code> and <code>Outputs:Status</code> for all of
      * the outputs is Submitted until Elastic Transcoder starts to process the
      * first output.</li>
      * <li>When Elastic Transcoder starts to process the first output,
@@ -241,12 +241,12 @@ public class JobOutput implements Serializable, Cloneable {
      * </p>
      * <p>
      * Watermarks are added to the output video in the sequence in which you
-     * list them in the job output—the first watermark in the list is added to
-     * the output video first, the second watermark in the list is added next,
-     * and so on. As a result, if the settings in a preset cause Elastic
-     * Transcoder to place all watermarks in the same location, the second
-     * watermark that you add will cover the first one, the third one will cover
-     * the second, and the fourth one will cover the third.
+     * list them in the job output&#x2014;the first watermark in the list is
+     * added to the output video first, the second watermark in the list is
+     * added next, and so on. As a result, if the settings in a preset cause
+     * Elastic Transcoder to place all watermarks in the same location, the
+     * second watermark that you add will cover the first one, the third one
+     * will cover the second, and the fourth one will cover the third.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<JobWatermark> watermarks;
@@ -1196,7 +1196,7 @@ public class JobOutput implements Serializable, Cloneable {
      * the job, <code>Outputs:Status</code> is always the same as
      * <code>Job:Status</code>. If you specified more than one output:
      * <ul>
-     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     * <li> <code>Job:Status</code> and <code>Outputs:Status</code> for all of
      * the outputs is Submitted until Elastic Transcoder starts to process the
      * first output.</li>
      * <li>When Elastic Transcoder starts to process the first output,
@@ -1223,7 +1223,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        output for the job, <code>Outputs:Status</code> is always the same
      *        as <code>Job:Status</code>. If you specified more than one output:
      *        <ul>
-     *        <li><code>Job:Status</code> and <code>Outputs:Status</code> for
+     *        <li> <code>Job:Status</code> and <code>Outputs:Status</code> for
      *        all of the outputs is Submitted until Elastic Transcoder starts to
      *        process the first output.</li>
      *        <li>When Elastic Transcoder starts to process the first output,
@@ -1256,7 +1256,7 @@ public class JobOutput implements Serializable, Cloneable {
      * the job, <code>Outputs:Status</code> is always the same as
      * <code>Job:Status</code>. If you specified more than one output:
      * <ul>
-     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     * <li> <code>Job:Status</code> and <code>Outputs:Status</code> for all of
      * the outputs is Submitted until Elastic Transcoder starts to process the
      * first output.</li>
      * <li>When Elastic Transcoder starts to process the first output,
@@ -1283,7 +1283,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         same as <code>Job:Status</code>. If you specified more than one
      *         output:
      *         <ul>
-     *         <li><code>Job:Status</code> and <code>Outputs:Status</code> for
+     *         <li> <code>Job:Status</code> and <code>Outputs:Status</code> for
      *         all of the outputs is Submitted until Elastic Transcoder starts
      *         to process the first output.</li>
      *         <li>When Elastic Transcoder starts to process the first output,
@@ -1316,7 +1316,7 @@ public class JobOutput implements Serializable, Cloneable {
      * the job, <code>Outputs:Status</code> is always the same as
      * <code>Job:Status</code>. If you specified more than one output:
      * <ul>
-     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     * <li> <code>Job:Status</code> and <code>Outputs:Status</code> for all of
      * the outputs is Submitted until Elastic Transcoder starts to process the
      * first output.</li>
      * <li>When Elastic Transcoder starts to process the first output,
@@ -1343,7 +1343,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        output for the job, <code>Outputs:Status</code> is always the same
      *        as <code>Job:Status</code>. If you specified more than one output:
      *        <ul>
-     *        <li><code>Job:Status</code> and <code>Outputs:Status</code> for
+     *        <li> <code>Job:Status</code> and <code>Outputs:Status</code> for
      *        all of the outputs is Submitted until Elastic Transcoder starts to
      *        process the first output.</li>
      *        <li>When Elastic Transcoder starts to process the first output,
@@ -1669,12 +1669,12 @@ public class JobOutput implements Serializable, Cloneable {
      * </p>
      * <p>
      * Watermarks are added to the output video in the sequence in which you
-     * list them in the job output—the first watermark in the list is added to
-     * the output video first, the second watermark in the list is added next,
-     * and so on. As a result, if the settings in a preset cause Elastic
-     * Transcoder to place all watermarks in the same location, the second
-     * watermark that you add will cover the first one, the third one will cover
-     * the second, and the fourth one will cover the third.
+     * list them in the job output&#x2014;the first watermark in the list is
+     * added to the output video first, the second watermark in the list is
+     * added next, and so on. As a result, if the settings in a preset cause
+     * Elastic Transcoder to place all watermarks in the same location, the
+     * second watermark that you add will cover the first one, the third one
+     * will cover the second, and the fourth one will cover the third.
      * </p>
      * 
      * @return Information about the watermarks that you want Elastic Transcoder
@@ -1684,13 +1684,13 @@ public class JobOutput implements Serializable, Cloneable {
      *         for the current output.</p>
      *         <p>
      *         Watermarks are added to the output video in the sequence in which
-     *         you list them in the job output—the first watermark in the list
-     *         is added to the output video first, the second watermark in the
-     *         list is added next, and so on. As a result, if the settings in a
-     *         preset cause Elastic Transcoder to place all watermarks in the
-     *         same location, the second watermark that you add will cover the
-     *         first one, the third one will cover the second, and the fourth
-     *         one will cover the third.
+     *         you list them in the job output&#x2014;the first watermark in the
+     *         list is added to the output video first, the second watermark in
+     *         the list is added next, and so on. As a result, if the settings
+     *         in a preset cause Elastic Transcoder to place all watermarks in
+     *         the same location, the second watermark that you add will cover
+     *         the first one, the third one will cover the second, and the
+     *         fourth one will cover the third.
      */
 
     public java.util.List<JobWatermark> getWatermarks() {
@@ -1709,12 +1709,12 @@ public class JobOutput implements Serializable, Cloneable {
      * </p>
      * <p>
      * Watermarks are added to the output video in the sequence in which you
-     * list them in the job output—the first watermark in the list is added to
-     * the output video first, the second watermark in the list is added next,
-     * and so on. As a result, if the settings in a preset cause Elastic
-     * Transcoder to place all watermarks in the same location, the second
-     * watermark that you add will cover the first one, the third one will cover
-     * the second, and the fourth one will cover the third.
+     * list them in the job output&#x2014;the first watermark in the list is
+     * added to the output video first, the second watermark in the list is
+     * added next, and so on. As a result, if the settings in a preset cause
+     * Elastic Transcoder to place all watermarks in the same location, the
+     * second watermark that you add will cover the first one, the third one
+     * will cover the second, and the fourth one will cover the third.
      * </p>
      * 
      * @param watermarks
@@ -1725,13 +1725,13 @@ public class JobOutput implements Serializable, Cloneable {
      *        the current output.</p>
      *        <p>
      *        Watermarks are added to the output video in the sequence in which
-     *        you list them in the job output—the first watermark in the list is
-     *        added to the output video first, the second watermark in the list
-     *        is added next, and so on. As a result, if the settings in a preset
-     *        cause Elastic Transcoder to place all watermarks in the same
-     *        location, the second watermark that you add will cover the first
-     *        one, the third one will cover the second, and the fourth one will
-     *        cover the third.
+     *        you list them in the job output&#x2014;the first watermark in the
+     *        list is added to the output video first, the second watermark in
+     *        the list is added next, and so on. As a result, if the settings in
+     *        a preset cause Elastic Transcoder to place all watermarks in the
+     *        same location, the second watermark that you add will cover the
+     *        first one, the third one will cover the second, and the fourth one
+     *        will cover the third.
      */
 
     public void setWatermarks(java.util.Collection<JobWatermark> watermarks) {
@@ -1753,12 +1753,12 @@ public class JobOutput implements Serializable, Cloneable {
      * </p>
      * <p>
      * Watermarks are added to the output video in the sequence in which you
-     * list them in the job output—the first watermark in the list is added to
-     * the output video first, the second watermark in the list is added next,
-     * and so on. As a result, if the settings in a preset cause Elastic
-     * Transcoder to place all watermarks in the same location, the second
-     * watermark that you add will cover the first one, the third one will cover
-     * the second, and the fourth one will cover the third.
+     * list them in the job output&#x2014;the first watermark in the list is
+     * added to the output video first, the second watermark in the list is
+     * added next, and so on. As a result, if the settings in a preset cause
+     * Elastic Transcoder to place all watermarks in the same location, the
+     * second watermark that you add will cover the first one, the third one
+     * will cover the second, and the fourth one will cover the third.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1775,13 +1775,13 @@ public class JobOutput implements Serializable, Cloneable {
      *        the current output.</p>
      *        <p>
      *        Watermarks are added to the output video in the sequence in which
-     *        you list them in the job output—the first watermark in the list is
-     *        added to the output video first, the second watermark in the list
-     *        is added next, and so on. As a result, if the settings in a preset
-     *        cause Elastic Transcoder to place all watermarks in the same
-     *        location, the second watermark that you add will cover the first
-     *        one, the third one will cover the second, and the fourth one will
-     *        cover the third.
+     *        you list them in the job output&#x2014;the first watermark in the
+     *        list is added to the output video first, the second watermark in
+     *        the list is added next, and so on. As a result, if the settings in
+     *        a preset cause Elastic Transcoder to place all watermarks in the
+     *        same location, the second watermark that you add will cover the
+     *        first one, the third one will cover the second, and the fourth one
+     *        will cover the third.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1806,12 +1806,12 @@ public class JobOutput implements Serializable, Cloneable {
      * </p>
      * <p>
      * Watermarks are added to the output video in the sequence in which you
-     * list them in the job output—the first watermark in the list is added to
-     * the output video first, the second watermark in the list is added next,
-     * and so on. As a result, if the settings in a preset cause Elastic
-     * Transcoder to place all watermarks in the same location, the second
-     * watermark that you add will cover the first one, the third one will cover
-     * the second, and the fourth one will cover the third.
+     * list them in the job output&#x2014;the first watermark in the list is
+     * added to the output video first, the second watermark in the list is
+     * added next, and so on. As a result, if the settings in a preset cause
+     * Elastic Transcoder to place all watermarks in the same location, the
+     * second watermark that you add will cover the first one, the third one
+     * will cover the second, and the fourth one will cover the third.
      * </p>
      * 
      * @param watermarks
@@ -1822,13 +1822,13 @@ public class JobOutput implements Serializable, Cloneable {
      *        the current output.</p>
      *        <p>
      *        Watermarks are added to the output video in the sequence in which
-     *        you list them in the job output—the first watermark in the list is
-     *        added to the output video first, the second watermark in the list
-     *        is added next, and so on. As a result, if the settings in a preset
-     *        cause Elastic Transcoder to place all watermarks in the same
-     *        location, the second watermark that you add will cover the first
-     *        one, the third one will cover the second, and the fourth one will
-     *        cover the third.
+     *        you list them in the job output&#x2014;the first watermark in the
+     *        list is added to the output video first, the second watermark in
+     *        the list is added next, and so on. As a result, if the settings in
+     *        a preset cause Elastic Transcoder to place all watermarks in the
+     *        same location, the second watermark that you add will cover the
+     *        first one, the third one will cover the second, and the fourth one
+     *        will cover the third.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -87,10 +87,11 @@ public interface AWSCloudHSM {
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified resource.
+     * Adds or overwrites one or more tags for the specified AWS CloudHSM
+     * resource.
      * </p>
      * <p>
-     * Each tag consists of a key and a value. Tag keys must be unique per
+     * Each tag consists of a key and a value. Tag keys must be unique to each
      * resource.
      * </p>
      * 
@@ -461,7 +462,7 @@ public interface AWSCloudHSM {
 
     /**
      * <p>
-     * Returns a list of all tags for the specified resource.
+     * Returns a list of all tags for the specified AWS CloudHSM resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -545,7 +546,7 @@ public interface AWSCloudHSM {
 
     /**
      * <p>
-     * Removes one or more tags from the specified resource.
+     * Removes one or more tags from the specified AWS CloudHSM resource.
      * </p>
      * <p>
      * To remove a tag, specify only the tag key to remove (not the value). To

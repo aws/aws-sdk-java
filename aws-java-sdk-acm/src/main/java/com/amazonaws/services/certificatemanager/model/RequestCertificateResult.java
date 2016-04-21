@@ -19,7 +19,7 @@ package com.amazonaws.services.certificatemanager.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class RequestCertificateResult implements Serializable, Cloneable {
 

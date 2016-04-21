@@ -84,6 +84,11 @@ public class TopicRuleJsonUnmarshaller implements
                     topicRule.setRuleDisabled(context.getUnmarshaller(
                             Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("awsIotSqlVersion", targetDepth)) {
+                    context.nextToken();
+                    topicRule.setAwsIotSqlVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

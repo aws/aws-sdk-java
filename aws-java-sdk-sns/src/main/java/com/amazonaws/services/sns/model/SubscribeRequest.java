@@ -36,15 +36,15 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      * The protocol you want to use. Supported protocols include:
      * </p>
      * <ul>
-     * <li><code>http</code> -- delivery of JSON-encoded message via HTTP POST</li>
-     * <li><code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     * <li> <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li>
+     * <li> <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
      * </li>
-     * <li><code>email</code> -- delivery of message via SMTP</li>
-     * <li><code>email-json</code> -- delivery of JSON-encoded message via SMTP</li>
-     * <li><code>sms</code> -- delivery of message via SMS</li>
-     * <li><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * <li> <code>email</code> -- delivery of message via SMTP</li>
+     * <li> <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li>
+     * <li> <code>sms</code> -- delivery of message via SMS</li>
+     * <li> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
      * queue</li>
-     * <li><code>application</code> -- delivery of JSON-encoded message to an
+     * <li> <code>application</code> -- delivery of JSON-encoded message to an
      * EndpointArn for a mobile app and device.</li>
      * </ul>
      */
@@ -91,17 +91,17 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      * @param protocol
      *        The protocol you want to use. Supported protocols include:</p>
      *        <ul>
-     *        <li><code>http</code> -- delivery of JSON-encoded message via HTTP
+     *        <li> <code>http</code> -- delivery of JSON-encoded message via HTTP
      *        POST</li>
-     *        <li><code>https</code> -- delivery of JSON-encoded message via
+     *        <li> <code>https</code> -- delivery of JSON-encoded message via
      *        HTTPS POST</li>
-     *        <li><code>email</code> -- delivery of message via SMTP</li>
-     *        <li><code>email-json</code> -- delivery of JSON-encoded message
+     *        <li> <code>email</code> -- delivery of message via SMTP</li>
+     *        <li> <code>email-json</code> -- delivery of JSON-encoded message
      *        via SMTP</li>
-     *        <li><code>sms</code> -- delivery of message via SMS</li>
-     *        <li><code>sqs</code> -- delivery of JSON-encoded message to an
+     *        <li> <code>sms</code> -- delivery of message via SMS</li>
+     *        <li> <code>sqs</code> -- delivery of JSON-encoded message to an
      *        Amazon SQS queue</li>
-     *        <li><code>application</code> -- delivery of JSON-encoded message
+     *        <li> <code>application</code> -- delivery of JSON-encoded message
      *        to an EndpointArn for a mobile app and device.</li>
      * @param endpoint
      *        The endpoint that you want to receive notifications. Endpoints
@@ -174,32 +174,32 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      * The protocol you want to use. Supported protocols include:
      * </p>
      * <ul>
-     * <li><code>http</code> -- delivery of JSON-encoded message via HTTP POST</li>
-     * <li><code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     * <li> <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li>
+     * <li> <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
      * </li>
-     * <li><code>email</code> -- delivery of message via SMTP</li>
-     * <li><code>email-json</code> -- delivery of JSON-encoded message via SMTP</li>
-     * <li><code>sms</code> -- delivery of message via SMS</li>
-     * <li><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * <li> <code>email</code> -- delivery of message via SMTP</li>
+     * <li> <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li>
+     * <li> <code>sms</code> -- delivery of message via SMS</li>
+     * <li> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
      * queue</li>
-     * <li><code>application</code> -- delivery of JSON-encoded message to an
+     * <li> <code>application</code> -- delivery of JSON-encoded message to an
      * EndpointArn for a mobile app and device.</li>
      * </ul>
      * 
      * @param protocol
      *        The protocol you want to use. Supported protocols include:</p>
      *        <ul>
-     *        <li><code>http</code> -- delivery of JSON-encoded message via HTTP
+     *        <li> <code>http</code> -- delivery of JSON-encoded message via HTTP
      *        POST</li>
-     *        <li><code>https</code> -- delivery of JSON-encoded message via
+     *        <li> <code>https</code> -- delivery of JSON-encoded message via
      *        HTTPS POST</li>
-     *        <li><code>email</code> -- delivery of message via SMTP</li>
-     *        <li><code>email-json</code> -- delivery of JSON-encoded message
+     *        <li> <code>email</code> -- delivery of message via SMTP</li>
+     *        <li> <code>email-json</code> -- delivery of JSON-encoded message
      *        via SMTP</li>
-     *        <li><code>sms</code> -- delivery of message via SMS</li>
-     *        <li><code>sqs</code> -- delivery of JSON-encoded message to an
+     *        <li> <code>sms</code> -- delivery of message via SMS</li>
+     *        <li> <code>sqs</code> -- delivery of JSON-encoded message to an
      *        Amazon SQS queue</li>
-     *        <li><code>application</code> -- delivery of JSON-encoded message
+     *        <li> <code>application</code> -- delivery of JSON-encoded message
      *        to an EndpointArn for a mobile app and device.</li>
      */
 
@@ -212,31 +212,31 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      * The protocol you want to use. Supported protocols include:
      * </p>
      * <ul>
-     * <li><code>http</code> -- delivery of JSON-encoded message via HTTP POST</li>
-     * <li><code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     * <li> <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li>
+     * <li> <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
      * </li>
-     * <li><code>email</code> -- delivery of message via SMTP</li>
-     * <li><code>email-json</code> -- delivery of JSON-encoded message via SMTP</li>
-     * <li><code>sms</code> -- delivery of message via SMS</li>
-     * <li><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * <li> <code>email</code> -- delivery of message via SMTP</li>
+     * <li> <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li>
+     * <li> <code>sms</code> -- delivery of message via SMS</li>
+     * <li> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
      * queue</li>
-     * <li><code>application</code> -- delivery of JSON-encoded message to an
+     * <li> <code>application</code> -- delivery of JSON-encoded message to an
      * EndpointArn for a mobile app and device.</li>
      * </ul>
      * 
      * @return The protocol you want to use. Supported protocols include:</p>
      *         <ul>
-     *         <li><code>http</code> -- delivery of JSON-encoded message via
+     *         <li> <code>http</code> -- delivery of JSON-encoded message via
      *         HTTP POST</li>
-     *         <li><code>https</code> -- delivery of JSON-encoded message via
+     *         <li> <code>https</code> -- delivery of JSON-encoded message via
      *         HTTPS POST</li>
-     *         <li><code>email</code> -- delivery of message via SMTP</li>
-     *         <li><code>email-json</code> -- delivery of JSON-encoded message
+     *         <li> <code>email</code> -- delivery of message via SMTP</li>
+     *         <li> <code>email-json</code> -- delivery of JSON-encoded message
      *         via SMTP</li>
-     *         <li><code>sms</code> -- delivery of message via SMS</li>
-     *         <li><code>sqs</code> -- delivery of JSON-encoded message to an
+     *         <li> <code>sms</code> -- delivery of message via SMS</li>
+     *         <li> <code>sqs</code> -- delivery of JSON-encoded message to an
      *         Amazon SQS queue</li>
-     *         <li><code>application</code> -- delivery of JSON-encoded message
+     *         <li> <code>application</code> -- delivery of JSON-encoded message
      *         to an EndpointArn for a mobile app and device.</li>
      */
 
@@ -249,32 +249,32 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      * The protocol you want to use. Supported protocols include:
      * </p>
      * <ul>
-     * <li><code>http</code> -- delivery of JSON-encoded message via HTTP POST</li>
-     * <li><code>https</code> -- delivery of JSON-encoded message via HTTPS POST
+     * <li> <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li>
+     * <li> <code>https</code> -- delivery of JSON-encoded message via HTTPS POST
      * </li>
-     * <li><code>email</code> -- delivery of message via SMTP</li>
-     * <li><code>email-json</code> -- delivery of JSON-encoded message via SMTP</li>
-     * <li><code>sms</code> -- delivery of message via SMS</li>
-     * <li><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * <li> <code>email</code> -- delivery of message via SMTP</li>
+     * <li> <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li>
+     * <li> <code>sms</code> -- delivery of message via SMS</li>
+     * <li> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
      * queue</li>
-     * <li><code>application</code> -- delivery of JSON-encoded message to an
+     * <li> <code>application</code> -- delivery of JSON-encoded message to an
      * EndpointArn for a mobile app and device.</li>
      * </ul>
      * 
      * @param protocol
      *        The protocol you want to use. Supported protocols include:</p>
      *        <ul>
-     *        <li><code>http</code> -- delivery of JSON-encoded message via HTTP
+     *        <li> <code>http</code> -- delivery of JSON-encoded message via HTTP
      *        POST</li>
-     *        <li><code>https</code> -- delivery of JSON-encoded message via
+     *        <li> <code>https</code> -- delivery of JSON-encoded message via
      *        HTTPS POST</li>
-     *        <li><code>email</code> -- delivery of message via SMTP</li>
-     *        <li><code>email-json</code> -- delivery of JSON-encoded message
+     *        <li> <code>email</code> -- delivery of message via SMTP</li>
+     *        <li> <code>email-json</code> -- delivery of JSON-encoded message
      *        via SMTP</li>
-     *        <li><code>sms</code> -- delivery of message via SMS</li>
-     *        <li><code>sqs</code> -- delivery of JSON-encoded message to an
+     *        <li> <code>sms</code> -- delivery of message via SMS</li>
+     *        <li> <code>sqs</code> -- delivery of JSON-encoded message to an
      *        Amazon SQS queue</li>
-     *        <li><code>application</code> -- delivery of JSON-encoded message
+     *        <li> <code>application</code> -- delivery of JSON-encoded message
      *        to an EndpointArn for a mobile app and device.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

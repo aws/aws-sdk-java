@@ -20,7 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A key-value pair that identifies or specifies metadata about a resource.
+ * A key-value pair that identifies or specifies metadata about an AWS CloudHSM
+ * resource.
  * </p>
  */
 public class Tag implements Serializable, Cloneable {

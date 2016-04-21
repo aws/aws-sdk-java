@@ -42,7 +42,13 @@ public class ArtifactStore implements Serializable, Cloneable {
      * </p>
      */
     private String location;
-
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key used to encrypt the data in
+     * the artifact store. If this is undefined, the default key for Amazon S3
+     * is used.
+     * </p>
+     */
     private EncryptionKey encryptionKey;
 
     /**
@@ -168,7 +174,16 @@ public class ArtifactStore implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key used to encrypt the data in
+     * the artifact store. If this is undefined, the default key for Amazon S3
+     * is used.
+     * </p>
+     * 
      * @param encryptionKey
+     *        The AWS Key Management Service (AWS KMS) key used to encrypt the
+     *        data in the artifact store. If this is undefined, the default key
+     *        for Amazon S3 is used.
      */
 
     public void setEncryptionKey(EncryptionKey encryptionKey) {
@@ -176,7 +191,15 @@ public class ArtifactStore implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key used to encrypt the data in
+     * the artifact store. If this is undefined, the default key for Amazon S3
+     * is used.
+     * </p>
+     * 
+     * @return The AWS Key Management Service (AWS KMS) key used to encrypt the
+     *         data in the artifact store. If this is undefined, the default key
+     *         for Amazon S3 is used.
      */
 
     public EncryptionKey getEncryptionKey() {
@@ -184,7 +207,16 @@ public class ArtifactStore implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) key used to encrypt the data in
+     * the artifact store. If this is undefined, the default key for Amazon S3
+     * is used.
+     * </p>
+     * 
      * @param encryptionKey
+     *        The AWS Key Management Service (AWS KMS) key used to encrypt the
+     *        data in the artifact store. If this is undefined, the default key
+     *        for Amazon S3 is used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input for the DeleteRegistrationCode operation.
+ * </p>
  */
 public class DeleteRegistrationCodeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

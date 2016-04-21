@@ -19,20 +19,44 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A CA certificate.
+ * </p>
  */
 public class CACertificate implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ARN of the CA certificate.
+     * </p>
+     */
     private String certificateArn;
-
+    /**
+     * <p>
+     * The ID of the CA certificate.
+     * </p>
+     */
     private String certificateId;
-
+    /**
+     * <p>
+     * The status of the CA certificate.
+     * </p>
+     */
     private String status;
-
+    /**
+     * <p>
+     * The date the CA certificate was created.
+     * </p>
+     */
     private java.util.Date creationDate;
 
     /**
+     * <p>
+     * The ARN of the CA certificate.
+     * </p>
+     * 
      * @param certificateArn
+     *        The ARN of the CA certificate.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -40,7 +64,11 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN of the CA certificate.
+     * </p>
+     * 
+     * @return The ARN of the CA certificate.
      */
 
     public String getCertificateArn() {
@@ -48,7 +76,12 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN of the CA certificate.
+     * </p>
+     * 
      * @param certificateArn
+     *        The ARN of the CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -59,7 +92,12 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the CA certificate.
+     * </p>
+     * 
      * @param certificateId
+     *        The ID of the CA certificate.
      */
 
     public void setCertificateId(String certificateId) {
@@ -67,7 +105,11 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the CA certificate.
+     * </p>
+     * 
+     * @return The ID of the CA certificate.
      */
 
     public String getCertificateId() {
@@ -75,7 +117,12 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the CA certificate.
+     * </p>
+     * 
      * @param certificateId
+     *        The ID of the CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -86,7 +133,12 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the CA certificate.
+     * </p>
+     * 
      * @param status
+     *        The status of the CA certificate.
      * @see CACertificateStatus
      */
 
@@ -95,7 +147,11 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the CA certificate.
+     * </p>
+     * 
+     * @return The status of the CA certificate.
      * @see CACertificateStatus
      */
 
@@ -104,7 +160,12 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the CA certificate.
+     * </p>
+     * 
      * @param status
+     *        The status of the CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CACertificateStatus
@@ -116,7 +177,12 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the CA certificate.
+     * </p>
+     * 
      * @param status
+     *        The status of the CA certificate.
      * @see CACertificateStatus
      */
 
@@ -125,7 +191,12 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the CA certificate.
+     * </p>
+     * 
      * @param status
+     *        The status of the CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CACertificateStatus
@@ -137,7 +208,12 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the CA certificate was created.
+     * </p>
+     * 
      * @param creationDate
+     *        The date the CA certificate was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -145,7 +221,11 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The date the CA certificate was created.
+     * </p>
+     * 
+     * @return The date the CA certificate was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -153,7 +233,12 @@ public class CACertificate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the CA certificate was created.
+     * </p>
+     * 
      * @param creationDate
+     *        The date the CA certificate was created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

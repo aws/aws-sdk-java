@@ -46,9 +46,8 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     * >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      */
     private String lifecycleState;
@@ -202,16 +201,15 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     * >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @param lifecycleState
      *        The lifecycle state for the instance. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     *        >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
+     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     *        >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer
      *        Guide</i>.
      */
 
@@ -222,16 +220,15 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     * >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @return The lifecycle state for the instance. For more information, see
      *         <a href=
-     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     *         >Auto Scaling Instance States</a> in the <i>Auto Scaling
-     *         Developer Guide</i>.
+     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     *         >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer
+     *         Guide</i>.
      */
 
     public String getLifecycleState() {
@@ -241,16 +238,15 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     * >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @param lifecycleState
      *        The lifecycle state for the instance. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     *        >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
+     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     *        >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

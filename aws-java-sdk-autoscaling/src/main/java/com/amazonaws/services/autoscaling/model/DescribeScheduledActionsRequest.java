@@ -40,8 +40,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * <p>
      * You can describe up to a maximum of 50 instances with a single call. If
      * there are more items to return, the call returns a token. To get the next
-     * set of items, repeat the call with the returned token in the
-     * <code>NextToken</code> parameter.
+     * set of items, repeat the call with the returned token.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> scheduledActionNames;
@@ -124,8 +123,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * <p>
      * You can describe up to a maximum of 50 instances with a single call. If
      * there are more items to return, the call returns a token. To get the next
-     * set of items, repeat the call with the returned token in the
-     * <code>NextToken</code> parameter.
+     * set of items, repeat the call with the returned token.
      * </p>
      * 
      * @return Describes one or more scheduled actions. If you omit this list,
@@ -135,7 +133,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      *         You can describe up to a maximum of 50 instances with a single
      *         call. If there are more items to return, the call returns a
      *         token. To get the next set of items, repeat the call with the
-     *         returned token in the <code>NextToken</code> parameter.
+     *         returned token.
      */
 
     public java.util.List<String> getScheduledActionNames() {
@@ -154,8 +152,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * <p>
      * You can describe up to a maximum of 50 instances with a single call. If
      * there are more items to return, the call returns a token. To get the next
-     * set of items, repeat the call with the returned token in the
-     * <code>NextToken</code> parameter.
+     * set of items, repeat the call with the returned token.
      * </p>
      * 
      * @param scheduledActionNames
@@ -166,7 +163,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      *        You can describe up to a maximum of 50 instances with a single
      *        call. If there are more items to return, the call returns a token.
      *        To get the next set of items, repeat the call with the returned
-     *        token in the <code>NextToken</code> parameter.
+     *        token.
      */
 
     public void setScheduledActionNames(
@@ -189,8 +186,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * <p>
      * You can describe up to a maximum of 50 instances with a single call. If
      * there are more items to return, the call returns a token. To get the next
-     * set of items, repeat the call with the returned token in the
-     * <code>NextToken</code> parameter.
+     * set of items, repeat the call with the returned token.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -207,7 +203,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      *        You can describe up to a maximum of 50 instances with a single
      *        call. If there are more items to return, the call returns a token.
      *        To get the next set of items, repeat the call with the returned
-     *        token in the <code>NextToken</code> parameter.
+     *        token.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -233,8 +229,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * <p>
      * You can describe up to a maximum of 50 instances with a single call. If
      * there are more items to return, the call returns a token. To get the next
-     * set of items, repeat the call with the returned token in the
-     * <code>NextToken</code> parameter.
+     * set of items, repeat the call with the returned token.
      * </p>
      * 
      * @param scheduledActionNames
@@ -245,7 +240,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      *        You can describe up to a maximum of 50 instances with a single
      *        call. If there are more items to return, the call returns a token.
      *        To get the next set of items, repeat the call with the returned
-     *        token in the <code>NextToken</code> parameter.
+     *        token.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -53,7 +53,11 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String lifecycleActionResult;
-
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     */
     private String instanceId;
 
     /**
@@ -249,7 +253,12 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
      * @param instanceId
+     *        The ID of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -257,7 +266,11 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @return The ID of the instance.
      */
 
     public String getInstanceId() {
@@ -265,7 +278,12 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
      * @param instanceId
+     *        The ID of the instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

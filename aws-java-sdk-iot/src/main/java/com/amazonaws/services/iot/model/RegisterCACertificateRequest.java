@@ -20,19 +20,39 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input to the RegisterCACertificate operation.
+ * </p>
  */
 public class RegisterCACertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The CA certificate.
+     * </p>
+     */
     private String caCertificate;
-
+    /**
+     * <p>
+     * The private key verification certificate.
+     * </p>
+     */
     private String verificationCertificate;
-
+    /**
+     * <p>
+     * A boolean value that specifies if the CA certificate is set to active.
+     * </p>
+     */
     private Boolean setAsActive;
 
     /**
+     * <p>
+     * The CA certificate.
+     * </p>
+     * 
      * @param caCertificate
+     *        The CA certificate.
      */
 
     public void setCaCertificate(String caCertificate) {
@@ -40,7 +60,11 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The CA certificate.
+     * </p>
+     * 
+     * @return The CA certificate.
      */
 
     public String getCaCertificate() {
@@ -48,7 +72,12 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The CA certificate.
+     * </p>
+     * 
      * @param caCertificate
+     *        The CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -59,7 +88,12 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The private key verification certificate.
+     * </p>
+     * 
      * @param verificationCertificate
+     *        The private key verification certificate.
      */
 
     public void setVerificationCertificate(String verificationCertificate) {
@@ -67,7 +101,11 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The private key verification certificate.
+     * </p>
+     * 
+     * @return The private key verification certificate.
      */
 
     public String getVerificationCertificate() {
@@ -75,7 +113,12 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The private key verification certificate.
+     * </p>
+     * 
      * @param verificationCertificate
+     *        The private key verification certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -87,7 +130,13 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A boolean value that specifies if the CA certificate is set to active.
+     * </p>
+     * 
      * @param setAsActive
+     *        A boolean value that specifies if the CA certificate is set to
+     *        active.
      */
 
     public void setSetAsActive(Boolean setAsActive) {
@@ -95,7 +144,12 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * A boolean value that specifies if the CA certificate is set to active.
+     * </p>
+     * 
+     * @return A boolean value that specifies if the CA certificate is set to
+     *         active.
      */
 
     public Boolean getSetAsActive() {
@@ -103,7 +157,13 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A boolean value that specifies if the CA certificate is set to active.
+     * </p>
+     * 
      * @param setAsActive
+     *        A boolean value that specifies if the CA certificate is set to
+     *        active.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -114,7 +174,12 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * A boolean value that specifies if the CA certificate is set to active.
+     * </p>
+     * 
+     * @return A boolean value that specifies if the CA certificate is set to
+     *         active.
      */
 
     public Boolean isSetAsActive() {

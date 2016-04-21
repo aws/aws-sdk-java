@@ -20,7 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This output contains the list of steps.
+ * This output contains the list of steps returned in reverse order. This means
+ * that the last step is the first element in the list.
  * </p>
  */
 public class ListStepsResult implements Serializable, Cloneable {

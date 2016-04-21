@@ -20,19 +20,39 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input to the RegisterCertificate operation.
+ * </p>
  */
 public class RegisterCertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The certificate data, in PEM format.
+     * </p>
+     */
     private String certificatePem;
-
+    /**
+     * <p>
+     * The CA certificate used to sign the device certificate being registered.
+     * </p>
+     */
     private String caCertificatePem;
-
+    /**
+     * <p>
+     * A boolean value that specifies if the CA certificate is set to active.
+     * </p>
+     */
     private Boolean setAsActive;
 
     /**
+     * <p>
+     * The certificate data, in PEM format.
+     * </p>
+     * 
      * @param certificatePem
+     *        The certificate data, in PEM format.
      */
 
     public void setCertificatePem(String certificatePem) {
@@ -40,7 +60,11 @@ public class RegisterCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The certificate data, in PEM format.
+     * </p>
+     * 
+     * @return The certificate data, in PEM format.
      */
 
     public String getCertificatePem() {
@@ -48,7 +72,12 @@ public class RegisterCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The certificate data, in PEM format.
+     * </p>
+     * 
      * @param certificatePem
+     *        The certificate data, in PEM format.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -59,7 +88,13 @@ public class RegisterCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The CA certificate used to sign the device certificate being registered.
+     * </p>
+     * 
      * @param caCertificatePem
+     *        The CA certificate used to sign the device certificate being
+     *        registered.
      */
 
     public void setCaCertificatePem(String caCertificatePem) {
@@ -67,7 +102,12 @@ public class RegisterCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The CA certificate used to sign the device certificate being registered.
+     * </p>
+     * 
+     * @return The CA certificate used to sign the device certificate being
+     *         registered.
      */
 
     public String getCaCertificatePem() {
@@ -75,7 +115,13 @@ public class RegisterCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The CA certificate used to sign the device certificate being registered.
+     * </p>
+     * 
      * @param caCertificatePem
+     *        The CA certificate used to sign the device certificate being
+     *        registered.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -87,7 +133,13 @@ public class RegisterCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A boolean value that specifies if the CA certificate is set to active.
+     * </p>
+     * 
      * @param setAsActive
+     *        A boolean value that specifies if the CA certificate is set to
+     *        active.
      */
 
     public void setSetAsActive(Boolean setAsActive) {
@@ -95,7 +147,12 @@ public class RegisterCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * A boolean value that specifies if the CA certificate is set to active.
+     * </p>
+     * 
+     * @return A boolean value that specifies if the CA certificate is set to
+     *         active.
      */
 
     public Boolean getSetAsActive() {
@@ -103,7 +160,13 @@ public class RegisterCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A boolean value that specifies if the CA certificate is set to active.
+     * </p>
+     * 
      * @param setAsActive
+     *        A boolean value that specifies if the CA certificate is set to
+     *        active.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -114,7 +177,12 @@ public class RegisterCertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * A boolean value that specifies if the CA certificate is set to active.
+     * </p>
+     * 
+     * @return A boolean value that specifies if the CA certificate is set to
+     *         active.
      */
 
     public Boolean isSetAsActive() {

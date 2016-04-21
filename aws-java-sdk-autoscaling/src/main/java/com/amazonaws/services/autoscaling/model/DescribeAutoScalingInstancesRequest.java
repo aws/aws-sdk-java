@@ -27,9 +27,9 @@ public class DescribeAutoScalingInstancesRequest extends
 
     /**
      * <p>
-     * One or more Auto Scaling instances to describe, up to 50 instances. If
-     * you omit this parameter, all Auto Scaling instances are described. If you
-     * specify an ID that does not exist, it is ignored with no error.
+     * The instances to describe; up to 50 instance IDs. If you omit this
+     * parameter, all Auto Scaling instances are described. If you specify an ID
+     * that does not exist, it is ignored with no error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -49,15 +49,14 @@ public class DescribeAutoScalingInstancesRequest extends
 
     /**
      * <p>
-     * One or more Auto Scaling instances to describe, up to 50 instances. If
-     * you omit this parameter, all Auto Scaling instances are described. If you
-     * specify an ID that does not exist, it is ignored with no error.
+     * The instances to describe; up to 50 instance IDs. If you omit this
+     * parameter, all Auto Scaling instances are described. If you specify an ID
+     * that does not exist, it is ignored with no error.
      * </p>
      * 
-     * @return One or more Auto Scaling instances to describe, up to 50
-     *         instances. If you omit this parameter, all Auto Scaling instances
-     *         are described. If you specify an ID that does not exist, it is
-     *         ignored with no error.
+     * @return The instances to describe; up to 50 instance IDs. If you omit
+     *         this parameter, all Auto Scaling instances are described. If you
+     *         specify an ID that does not exist, it is ignored with no error.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -69,16 +68,15 @@ public class DescribeAutoScalingInstancesRequest extends
 
     /**
      * <p>
-     * One or more Auto Scaling instances to describe, up to 50 instances. If
-     * you omit this parameter, all Auto Scaling instances are described. If you
-     * specify an ID that does not exist, it is ignored with no error.
+     * The instances to describe; up to 50 instance IDs. If you omit this
+     * parameter, all Auto Scaling instances are described. If you specify an ID
+     * that does not exist, it is ignored with no error.
      * </p>
      * 
      * @param instanceIds
-     *        One or more Auto Scaling instances to describe, up to 50
-     *        instances. If you omit this parameter, all Auto Scaling instances
-     *        are described. If you specify an ID that does not exist, it is
-     *        ignored with no error.
+     *        The instances to describe; up to 50 instance IDs. If you omit this
+     *        parameter, all Auto Scaling instances are described. If you
+     *        specify an ID that does not exist, it is ignored with no error.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -93,9 +91,9 @@ public class DescribeAutoScalingInstancesRequest extends
 
     /**
      * <p>
-     * One or more Auto Scaling instances to describe, up to 50 instances. If
-     * you omit this parameter, all Auto Scaling instances are described. If you
-     * specify an ID that does not exist, it is ignored with no error.
+     * The instances to describe; up to 50 instance IDs. If you omit this
+     * parameter, all Auto Scaling instances are described. If you specify an ID
+     * that does not exist, it is ignored with no error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -105,10 +103,9 @@ public class DescribeAutoScalingInstancesRequest extends
      * </p>
      * 
      * @param instanceIds
-     *        One or more Auto Scaling instances to describe, up to 50
-     *        instances. If you omit this parameter, all Auto Scaling instances
-     *        are described. If you specify an ID that does not exist, it is
-     *        ignored with no error.
+     *        The instances to describe; up to 50 instance IDs. If you omit this
+     *        parameter, all Auto Scaling instances are described. If you
+     *        specify an ID that does not exist, it is ignored with no error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -127,16 +124,15 @@ public class DescribeAutoScalingInstancesRequest extends
 
     /**
      * <p>
-     * One or more Auto Scaling instances to describe, up to 50 instances. If
-     * you omit this parameter, all Auto Scaling instances are described. If you
-     * specify an ID that does not exist, it is ignored with no error.
+     * The instances to describe; up to 50 instance IDs. If you omit this
+     * parameter, all Auto Scaling instances are described. If you specify an ID
+     * that does not exist, it is ignored with no error.
      * </p>
      * 
      * @param instanceIds
-     *        One or more Auto Scaling instances to describe, up to 50
-     *        instances. If you omit this parameter, all Auto Scaling instances
-     *        are described. If you specify an ID that does not exist, it is
-     *        ignored with no error.
+     *        The instances to describe; up to 50 instance IDs. If you omit this
+     *        parameter, all Auto Scaling instances are described. If you
+     *        specify an ID that does not exist, it is ignored with no error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -27,7 +27,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to tag.
+     * The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.
      * </p>
      */
     private String resourceArn;
@@ -40,11 +40,12 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to tag.
+     * The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to tag.
+     *        The Amazon Resource Name (ARN) of the AWS CloudHSM resource to
+     *        tag.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +54,11 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to tag.
+     * The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource to tag.
+     * @return The Amazon Resource Name (ARN) of the AWS CloudHSM resource to
+     *         tag.
      */
 
     public String getResourceArn() {
@@ -65,11 +67,12 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to tag.
+     * The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to tag.
+     *        The Amazon Resource Name (ARN) of the AWS CloudHSM resource to
+     *        tag.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

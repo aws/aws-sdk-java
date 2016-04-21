@@ -55,8 +55,13 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when a list of ARNs is included in the <code>ResourceArns</code>
+     * parameter instead of "*". If you do not specify individual resources, by
+     * setting <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are
+     * instead included under the <code>EvaluationResults</code> section. To
+     * discover the context keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -325,16 +330,28 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when a list of ARNs is included in the <code>ResourceArns</code>
+     * parameter instead of "*". If you do not specify individual resources, by
+     * setting <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are
+     * instead included under the <code>EvaluationResults</code> section. To
+     * discover the context keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
      * 
      * @return A list of context keys that are required by the included input
      *         policies but that were not provided by one of the input
-     *         parameters. To discover the context keys used by a set of
-     *         policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *         parameters. This list is used when a list of ARNs is included in
+     *         the <code>ResourceArns</code> parameter instead of "*". If you do
+     *         not specify individual resources, by setting
+     *         <code>ResourceArns</code> to "*" or by not including the
+     *         <code>ResourceArns</code> parameter, then any missing context
+     *         values are instead included under the
+     *         <code>EvaluationResults</code> section. To discover the context
+     *         keys used by a set of policies, you can call
+     *         <a>GetContextKeysForCustomPolicy</a> or
      *         <a>GetContextKeysForPrincipalPolicy</a>.
      */
 
@@ -348,8 +365,13 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when a list of ARNs is included in the <code>ResourceArns</code>
+     * parameter instead of "*". If you do not specify individual resources, by
+     * setting <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are
+     * instead included under the <code>EvaluationResults</code> section. To
+     * discover the context keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -357,8 +379,15 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *        parameters. This list is used when a list of ARNs is included in
+     *        the <code>ResourceArns</code> parameter instead of "*". If you do
+     *        not specify individual resources, by setting
+     *        <code>ResourceArns</code> to "*" or by not including the
+     *        <code>ResourceArns</code> parameter, then any missing context
+     *        values are instead included under the
+     *        <code>EvaluationResults</code> section. To discover the context
+     *        keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.
      */
 
@@ -376,8 +405,13 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when a list of ARNs is included in the <code>ResourceArns</code>
+     * parameter instead of "*". If you do not specify individual resources, by
+     * setting <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are
+     * instead included under the <code>EvaluationResults</code> section. To
+     * discover the context keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -391,8 +425,15 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *        parameters. This list is used when a list of ARNs is included in
+     *        the <code>ResourceArns</code> parameter instead of "*". If you do
+     *        not specify individual resources, by setting
+     *        <code>ResourceArns</code> to "*" or by not including the
+     *        <code>ResourceArns</code> parameter, then any missing context
+     *        values are instead included under the
+     *        <code>EvaluationResults</code> section. To discover the context
+     *        keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -413,8 +454,13 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when a list of ARNs is included in the <code>ResourceArns</code>
+     * parameter instead of "*". If you do not specify individual resources, by
+     * setting <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are
+     * instead included under the <code>EvaluationResults</code> section. To
+     * discover the context keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -422,8 +468,15 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *        parameters. This list is used when a list of ARNs is included in
+     *        the <code>ResourceArns</code> parameter instead of "*". If you do
+     *        not specify individual resources, by setting
+     *        <code>ResourceArns</code> to "*" or by not including the
+     *        <code>ResourceArns</code> parameter, then any missing context
+     *        values are instead included under the
+     *        <code>EvaluationResults</code> section. To discover the context
+     *        keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

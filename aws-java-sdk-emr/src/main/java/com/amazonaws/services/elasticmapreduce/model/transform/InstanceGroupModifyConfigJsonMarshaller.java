@@ -70,6 +70,12 @@ public class InstanceGroupModifyConfigJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (instanceGroupModifyConfig.getShrinkPolicy() != null) {
+                jsonGenerator.writeFieldName("ShrinkPolicy");
+                ShrinkPolicyJsonMarshaller.getInstance().marshall(
+                        instanceGroupModifyConfig.getShrinkPolicy(),
+                        jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

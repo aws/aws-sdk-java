@@ -33,7 +33,11 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String certificateId;
-
+    /**
+     * <p>
+     * The reason the certificate transfer was rejected.
+     * </p>
+     */
     private String rejectReason;
 
     /**
@@ -79,7 +83,12 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The reason the certificate transfer was rejected.
+     * </p>
+     * 
      * @param rejectReason
+     *        The reason the certificate transfer was rejected.
      */
 
     public void setRejectReason(String rejectReason) {
@@ -87,7 +96,11 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The reason the certificate transfer was rejected.
+     * </p>
+     * 
+     * @return The reason the certificate transfer was rejected.
      */
 
     public String getRejectReason() {
@@ -95,7 +108,12 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The reason the certificate transfer was rejected.
+     * </p>
+     * 
      * @param rejectReason
+     *        The reason the certificate transfer was rejected.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

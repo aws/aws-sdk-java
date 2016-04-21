@@ -20,19 +20,39 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Input for the ListCACertificates operation.
+ * </p>
  */
 public class ListCACertificatesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The result page size.
+     * </p>
+     */
     private Integer pageSize;
-
+    /**
+     * <p>
+     * The marker for the next set of results.
+     * </p>
+     */
     private String marker;
-
+    /**
+     * <p>
+     * Determines the order of the results.
+     * </p>
+     */
     private Boolean ascendingOrder;
 
     /**
+     * <p>
+     * The result page size.
+     * </p>
+     * 
      * @param pageSize
+     *        The result page size.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -40,7 +60,11 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The result page size.
+     * </p>
+     * 
+     * @return The result page size.
      */
 
     public Integer getPageSize() {
@@ -48,7 +72,12 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The result page size.
+     * </p>
+     * 
      * @param pageSize
+     *        The result page size.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -59,7 +88,12 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The marker for the next set of results.
+     * </p>
+     * 
      * @param marker
+     *        The marker for the next set of results.
      */
 
     public void setMarker(String marker) {
@@ -67,7 +101,11 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The marker for the next set of results.
+     * </p>
+     * 
+     * @return The marker for the next set of results.
      */
 
     public String getMarker() {
@@ -75,7 +113,12 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The marker for the next set of results.
+     * </p>
+     * 
      * @param marker
+     *        The marker for the next set of results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -86,7 +129,12 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Determines the order of the results.
+     * </p>
+     * 
      * @param ascendingOrder
+     *        Determines the order of the results.
      */
 
     public void setAscendingOrder(Boolean ascendingOrder) {
@@ -94,7 +142,11 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * Determines the order of the results.
+     * </p>
+     * 
+     * @return Determines the order of the results.
      */
 
     public Boolean getAscendingOrder() {
@@ -102,7 +154,12 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Determines the order of the results.
+     * </p>
+     * 
      * @param ascendingOrder
+     *        Determines the order of the results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -113,7 +170,11 @@ public class ListCACertificatesRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * Determines the order of the results.
+     * </p>
+     * 
+     * @return Determines the order of the results.
      */
 
     public Boolean isAscendingOrder() {

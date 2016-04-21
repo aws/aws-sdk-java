@@ -19,22 +19,50 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Data used to transfer a certificate to an AWS account.
+ * </p>
  */
 public class TransferData implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The transfer message.
+     * </p>
+     */
     private String transferMessage;
-
+    /**
+     * <p>
+     * The reason why the transfer was rejected.
+     * </p>
+     */
     private String rejectReason;
-
+    /**
+     * <p>
+     * The date the transfer took place.
+     * </p>
+     */
     private java.util.Date transferDate;
-
+    /**
+     * <p>
+     * The date the transfer was accepted.
+     * </p>
+     */
     private java.util.Date acceptDate;
-
+    /**
+     * <p>
+     * The date the transfer was rejected.
+     * </p>
+     */
     private java.util.Date rejectDate;
 
     /**
+     * <p>
+     * The transfer message.
+     * </p>
+     * 
      * @param transferMessage
+     *        The transfer message.
      */
 
     public void setTransferMessage(String transferMessage) {
@@ -42,7 +70,11 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The transfer message.
+     * </p>
+     * 
+     * @return The transfer message.
      */
 
     public String getTransferMessage() {
@@ -50,7 +82,12 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The transfer message.
+     * </p>
+     * 
      * @param transferMessage
+     *        The transfer message.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -61,7 +98,12 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The reason why the transfer was rejected.
+     * </p>
+     * 
      * @param rejectReason
+     *        The reason why the transfer was rejected.
      */
 
     public void setRejectReason(String rejectReason) {
@@ -69,7 +111,11 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The reason why the transfer was rejected.
+     * </p>
+     * 
+     * @return The reason why the transfer was rejected.
      */
 
     public String getRejectReason() {
@@ -77,7 +123,12 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The reason why the transfer was rejected.
+     * </p>
+     * 
      * @param rejectReason
+     *        The reason why the transfer was rejected.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -88,7 +139,12 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the transfer took place.
+     * </p>
+     * 
      * @param transferDate
+     *        The date the transfer took place.
      */
 
     public void setTransferDate(java.util.Date transferDate) {
@@ -96,7 +152,11 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The date the transfer took place.
+     * </p>
+     * 
+     * @return The date the transfer took place.
      */
 
     public java.util.Date getTransferDate() {
@@ -104,7 +164,12 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the transfer took place.
+     * </p>
+     * 
      * @param transferDate
+     *        The date the transfer took place.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -115,7 +180,12 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the transfer was accepted.
+     * </p>
+     * 
      * @param acceptDate
+     *        The date the transfer was accepted.
      */
 
     public void setAcceptDate(java.util.Date acceptDate) {
@@ -123,7 +193,11 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The date the transfer was accepted.
+     * </p>
+     * 
+     * @return The date the transfer was accepted.
      */
 
     public java.util.Date getAcceptDate() {
@@ -131,7 +205,12 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the transfer was accepted.
+     * </p>
+     * 
      * @param acceptDate
+     *        The date the transfer was accepted.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -142,7 +221,12 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the transfer was rejected.
+     * </p>
+     * 
      * @param rejectDate
+     *        The date the transfer was rejected.
      */
 
     public void setRejectDate(java.util.Date rejectDate) {
@@ -150,7 +234,11 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The date the transfer was rejected.
+     * </p>
+     * 
+     * @return The date the transfer was rejected.
      */
 
     public java.util.Date getRejectDate() {
@@ -158,7 +246,12 @@ public class TransferData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the transfer was rejected.
+     * </p>
+     * 
      * @param rejectDate
+     *        The date the transfer was rejected.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

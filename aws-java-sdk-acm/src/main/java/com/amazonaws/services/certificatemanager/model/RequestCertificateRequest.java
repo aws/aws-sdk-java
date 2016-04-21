@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class RequestCertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -67,11 +67,31 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
      * <ul>
-     * <li>admin@example.com</li>
-     * <li>administrator@example.com</li>
-     * <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li>
-     * <li>webmaster@example.com</li>
+     * <li>
+     * <p>
+     * admin@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      */
@@ -343,11 +363,31 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
      * <ul>
-     * <li>admin@example.com</li>
-     * <li>administrator@example.com</li>
-     * <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li>
-     * <li>webmaster@example.com</li>
+     * <li>
+     * <p>
+     * admin@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -360,11 +400,31 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         sends email to the domain registrant, technical contact, and
      *         administrative contact in WHOIS and the following five addresses:
      *         <ul>
-     *         <li>admin@example.com</li>
-     *         <li>administrator@example.com</li>
-     *         <li>hostmaster@example.com</li>
-     *         <li>postmaster@example.com</li>
-     *         <li>webmaster@example.com</li>
+     *         <li>
+     *         <p>
+     *         admin@example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         administrator@example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         hostmaster@example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         postmaster@example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         webmaster@example.com
+     *         </p>
+     *         </li>
      *         </ul>
      */
 
@@ -383,11 +443,31 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
      * <ul>
-     * <li>admin@example.com</li>
-     * <li>administrator@example.com</li>
-     * <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li>
-     * <li>webmaster@example.com</li>
+     * <li>
+     * <p>
+     * admin@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -401,11 +481,31 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS and the following five addresses:
      *        <ul>
-     *        <li>admin@example.com</li>
-     *        <li>administrator@example.com</li>
-     *        <li>hostmaster@example.com</li>
-     *        <li>postmaster@example.com</li>
-     *        <li>webmaster@example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@example.com
+     *        </p>
+     *        </li>
      *        </ul>
      */
 
@@ -431,11 +531,31 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
      * <ul>
-     * <li>admin@example.com</li>
-     * <li>administrator@example.com</li>
-     * <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li>
-     * <li>webmaster@example.com</li>
+     * <li>
+     * <p>
+     * admin@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * <p>
@@ -455,11 +575,31 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS and the following five addresses:
      *        <ul>
-     *        <li>admin@example.com</li>
-     *        <li>administrator@example.com</li>
-     *        <li>hostmaster@example.com</li>
-     *        <li>postmaster@example.com</li>
-     *        <li>webmaster@example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@example.com
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -488,11 +628,31 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
      * <ul>
-     * <li>admin@example.com</li>
-     * <li>administrator@example.com</li>
-     * <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li>
-     * <li>webmaster@example.com</li>
+     * <li>
+     * <p>
+     * admin@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -506,11 +666,31 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS and the following five addresses:
      *        <ul>
-     *        <li>admin@example.com</li>
-     *        <li>administrator@example.com</li>
-     *        <li>hostmaster@example.com</li>
-     *        <li>postmaster@example.com</li>
-     *        <li>webmaster@example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@example.com
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input to the GetRegistrationCode operation.
+ * </p>
  */
 public class GetRegistrationCodeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

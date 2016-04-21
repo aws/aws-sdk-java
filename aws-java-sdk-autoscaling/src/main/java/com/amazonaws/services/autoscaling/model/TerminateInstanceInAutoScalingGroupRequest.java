@@ -27,7 +27,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
 
     /**
      * <p>
-     * The ID of the EC2 instance.
+     * The ID of the instance.
      * </p>
      */
     private String instanceId;
@@ -41,11 +41,11 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
 
     /**
      * <p>
-     * The ID of the EC2 instance.
+     * The ID of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the EC2 instance.
+     *        The ID of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -54,10 +54,10 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
 
     /**
      * <p>
-     * The ID of the EC2 instance.
+     * The ID of the instance.
      * </p>
      * 
-     * @return The ID of the EC2 instance.
+     * @return The ID of the instance.
      */
 
     public String getInstanceId() {
@@ -66,11 +66,11 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
 
     /**
      * <p>
-     * The ID of the EC2 instance.
+     * The ID of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the EC2 instance.
+     *        The ID of the instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

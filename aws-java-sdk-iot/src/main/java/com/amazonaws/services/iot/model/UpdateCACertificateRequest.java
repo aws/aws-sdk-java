@@ -20,17 +20,33 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input to the UpdateCACertificate operation.
+ * </p>
  */
 public class UpdateCACertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The CA certificate identifier.
+     * </p>
+     */
     private String certificateId;
-
+    /**
+     * <p>
+     * The updated status of the CA certificate.
+     * </p>
+     */
     private String newStatus;
 
     /**
+     * <p>
+     * The CA certificate identifier.
+     * </p>
+     * 
      * @param certificateId
+     *        The CA certificate identifier.
      */
 
     public void setCertificateId(String certificateId) {
@@ -38,7 +54,11 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The CA certificate identifier.
+     * </p>
+     * 
+     * @return The CA certificate identifier.
      */
 
     public String getCertificateId() {
@@ -46,7 +66,12 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The CA certificate identifier.
+     * </p>
+     * 
      * @param certificateId
+     *        The CA certificate identifier.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -57,7 +82,12 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The updated status of the CA certificate.
+     * </p>
+     * 
      * @param newStatus
+     *        The updated status of the CA certificate.
      * @see CACertificateStatus
      */
 
@@ -66,7 +96,11 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The updated status of the CA certificate.
+     * </p>
+     * 
+     * @return The updated status of the CA certificate.
      * @see CACertificateStatus
      */
 
@@ -75,7 +109,12 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The updated status of the CA certificate.
+     * </p>
+     * 
      * @param newStatus
+     *        The updated status of the CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CACertificateStatus
@@ -87,7 +126,12 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The updated status of the CA certificate.
+     * </p>
+     * 
      * @param newStatus
+     *        The updated status of the CA certificate.
      * @see CACertificateStatus
      */
 
@@ -96,7 +140,12 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The updated status of the CA certificate.
+     * </p>
+     * 
      * @param newStatus
+     *        The updated status of the CA certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CACertificateStatus

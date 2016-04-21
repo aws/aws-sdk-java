@@ -33,29 +33,27 @@ public class Ebs implements Serializable, Cloneable {
     private String snapshotId;
     /**
      * <p>
-     * The volume size, in gigabytes.
-     * </p>
-     * <p>
-     * Valid values: If the volume type is <code>io1</code>, the minimum size of
-     * the volume is 10 GiB. If you specify <code>SnapshotId</code> and
-     * <code>VolumeSize</code>, <code>VolumeSize</code> must be equal to or
-     * larger than the size of the snapshot.
+     * The volume size, in GiB. For <code>standard</code> volumes, specify a
+     * value from 1 to 1,024. For <code>io1</code> volumes, specify a value from
+     * 4 to 16,384. For <code>gp2</code> volumes, specify a value from 1 to
+     * 16,384. If you specify a snapshot, the volume size must be equal to or
+     * larger than the snapshot size.
      * </p>
      * <p>
      * Default: If you create a volume from a snapshot and you don't specify a
-     * volume size, the default is the size of the snapshot.
-     * </p>
-     * <p>
-     * Required: Required when the volume type is <code>io1</code>.
+     * volume size, the default is the snapshot size.
      * </p>
      */
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type.
+     * The volume type. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
+     * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard | io1 | gp2</code>
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
      * </p>
      * <p>
      * Default: <code>standard</code>
@@ -64,7 +62,7 @@ public class Ebs implements Serializable, Cloneable {
     private String volumeType;
     /**
      * <p>
-     * Indicates whether to delete the volume on instance termination.
+     * Indicates whether the volume is deleted on instance termination.
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -73,11 +71,11 @@ public class Ebs implements Serializable, Cloneable {
     private Boolean deleteOnTermination;
     /**
      * <p>
-     * For Provisioned IOPS (SSD) volumes only. The number of I/O operations per
-     * second (IOPS) to provision for the volume.
+     * The number of I/O operations per second (IOPS) to provision for the
+     * volume.
      * </p>
      * <p>
-     * Default: None
+     * Constraint: Required when the volume type is <code>io1</code>.
      * </p>
      */
     private Integer iops;
@@ -139,37 +137,26 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in gigabytes.
-     * </p>
-     * <p>
-     * Valid values: If the volume type is <code>io1</code>, the minimum size of
-     * the volume is 10 GiB. If you specify <code>SnapshotId</code> and
-     * <code>VolumeSize</code>, <code>VolumeSize</code> must be equal to or
-     * larger than the size of the snapshot.
+     * The volume size, in GiB. For <code>standard</code> volumes, specify a
+     * value from 1 to 1,024. For <code>io1</code> volumes, specify a value from
+     * 4 to 16,384. For <code>gp2</code> volumes, specify a value from 1 to
+     * 16,384. If you specify a snapshot, the volume size must be equal to or
+     * larger than the snapshot size.
      * </p>
      * <p>
      * Default: If you create a volume from a snapshot and you don't specify a
-     * volume size, the default is the size of the snapshot.
-     * </p>
-     * <p>
-     * Required: Required when the volume type is <code>io1</code>.
+     * volume size, the default is the snapshot size.
      * </p>
      * 
      * @param volumeSize
-     *        The volume size, in gigabytes.</p>
-     *        <p>
-     *        Valid values: If the volume type is <code>io1</code>, the minimum
-     *        size of the volume is 10 GiB. If you specify
-     *        <code>SnapshotId</code> and <code>VolumeSize</code>,
-     *        <code>VolumeSize</code> must be equal to or larger than the size
-     *        of the snapshot.
-     *        </p>
+     *        The volume size, in GiB. For <code>standard</code> volumes,
+     *        specify a value from 1 to 1,024. For <code>io1</code> volumes,
+     *        specify a value from 4 to 16,384. For <code>gp2</code> volumes,
+     *        specify a value from 1 to 16,384. If you specify a snapshot, the
+     *        volume size must be equal to or larger than the snapshot size.</p>
      *        <p>
      *        Default: If you create a volume from a snapshot and you don't
-     *        specify a volume size, the default is the size of the snapshot.
-     *        </p>
-     *        <p>
-     *        Required: Required when the volume type is <code>io1</code>.
+     *        specify a volume size, the default is the snapshot size.
      */
 
     public void setVolumeSize(Integer volumeSize) {
@@ -178,36 +165,26 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in gigabytes.
-     * </p>
-     * <p>
-     * Valid values: If the volume type is <code>io1</code>, the minimum size of
-     * the volume is 10 GiB. If you specify <code>SnapshotId</code> and
-     * <code>VolumeSize</code>, <code>VolumeSize</code> must be equal to or
-     * larger than the size of the snapshot.
+     * The volume size, in GiB. For <code>standard</code> volumes, specify a
+     * value from 1 to 1,024. For <code>io1</code> volumes, specify a value from
+     * 4 to 16,384. For <code>gp2</code> volumes, specify a value from 1 to
+     * 16,384. If you specify a snapshot, the volume size must be equal to or
+     * larger than the snapshot size.
      * </p>
      * <p>
      * Default: If you create a volume from a snapshot and you don't specify a
-     * volume size, the default is the size of the snapshot.
-     * </p>
-     * <p>
-     * Required: Required when the volume type is <code>io1</code>.
+     * volume size, the default is the snapshot size.
      * </p>
      * 
-     * @return The volume size, in gigabytes.</p>
-     *         <p>
-     *         Valid values: If the volume type is <code>io1</code>, the minimum
-     *         size of the volume is 10 GiB. If you specify
-     *         <code>SnapshotId</code> and <code>VolumeSize</code>,
-     *         <code>VolumeSize</code> must be equal to or larger than the size
-     *         of the snapshot.
-     *         </p>
+     * @return The volume size, in GiB. For <code>standard</code> volumes,
+     *         specify a value from 1 to 1,024. For <code>io1</code> volumes,
+     *         specify a value from 4 to 16,384. For <code>gp2</code> volumes,
+     *         specify a value from 1 to 16,384. If you specify a snapshot, the
+     *         volume size must be equal to or larger than the snapshot
+     *         size.</p>
      *         <p>
      *         Default: If you create a volume from a snapshot and you don't
-     *         specify a volume size, the default is the size of the snapshot.
-     *         </p>
-     *         <p>
-     *         Required: Required when the volume type is <code>io1</code>.
+     *         specify a volume size, the default is the snapshot size.
      */
 
     public Integer getVolumeSize() {
@@ -216,37 +193,26 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in gigabytes.
-     * </p>
-     * <p>
-     * Valid values: If the volume type is <code>io1</code>, the minimum size of
-     * the volume is 10 GiB. If you specify <code>SnapshotId</code> and
-     * <code>VolumeSize</code>, <code>VolumeSize</code> must be equal to or
-     * larger than the size of the snapshot.
+     * The volume size, in GiB. For <code>standard</code> volumes, specify a
+     * value from 1 to 1,024. For <code>io1</code> volumes, specify a value from
+     * 4 to 16,384. For <code>gp2</code> volumes, specify a value from 1 to
+     * 16,384. If you specify a snapshot, the volume size must be equal to or
+     * larger than the snapshot size.
      * </p>
      * <p>
      * Default: If you create a volume from a snapshot and you don't specify a
-     * volume size, the default is the size of the snapshot.
-     * </p>
-     * <p>
-     * Required: Required when the volume type is <code>io1</code>.
+     * volume size, the default is the snapshot size.
      * </p>
      * 
      * @param volumeSize
-     *        The volume size, in gigabytes.</p>
-     *        <p>
-     *        Valid values: If the volume type is <code>io1</code>, the minimum
-     *        size of the volume is 10 GiB. If you specify
-     *        <code>SnapshotId</code> and <code>VolumeSize</code>,
-     *        <code>VolumeSize</code> must be equal to or larger than the size
-     *        of the snapshot.
-     *        </p>
+     *        The volume size, in GiB. For <code>standard</code> volumes,
+     *        specify a value from 1 to 1,024. For <code>io1</code> volumes,
+     *        specify a value from 4 to 16,384. For <code>gp2</code> volumes,
+     *        specify a value from 1 to 16,384. If you specify a snapshot, the
+     *        volume size must be equal to or larger than the snapshot size.</p>
      *        <p>
      *        Default: If you create a volume from a snapshot and you don't
-     *        specify a volume size, the default is the size of the snapshot.
-     *        </p>
-     *        <p>
-     *        Required: Required when the volume type is <code>io1</code>.
+     *        specify a volume size, the default is the snapshot size.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -258,19 +224,26 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type.
+     * The volume type. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
+     * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard | io1 | gp2</code>
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type.</p>
+     *        The volume type. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
+     *        >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute
+     *        Cloud User Guide</i>.</p>
      *        <p>
-     *        Valid values: <code>standard | io1 | gp2</code>
+     *        Valid values: <code>standard</code> | <code>io1</code> |
+     *        <code>gp2</code>
      *        </p>
      *        <p>
      *        Default: <code>standard</code>
@@ -282,18 +255,25 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type.
+     * The volume type. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
+     * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard | io1 | gp2</code>
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
-     * @return The volume type.</p>
+     * @return The volume type. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
+     *         >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute
+     *         Cloud User Guide</i>.</p>
      *         <p>
-     *         Valid values: <code>standard | io1 | gp2</code>
+     *         Valid values: <code>standard</code> | <code>io1</code> |
+     *         <code>gp2</code>
      *         </p>
      *         <p>
      *         Default: <code>standard</code>
@@ -305,19 +285,26 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type.
+     * The volume type. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
+     * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard | io1 | gp2</code>
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type.</p>
+     *        The volume type. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
+     *        >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute
+     *        Cloud User Guide</i>.</p>
      *        <p>
-     *        Valid values: <code>standard | io1 | gp2</code>
+     *        Valid values: <code>standard</code> | <code>io1</code> |
+     *        <code>gp2</code>
      *        </p>
      *        <p>
      *        Default: <code>standard</code>
@@ -332,14 +319,14 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to delete the volume on instance termination.
+     * Indicates whether the volume is deleted on instance termination.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param deleteOnTermination
-     *        Indicates whether to delete the volume on instance
+     *        Indicates whether the volume is deleted on instance
      *        termination.</p>
      *        <p>
      *        Default: <code>true</code>
@@ -351,13 +338,13 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to delete the volume on instance termination.
+     * Indicates whether the volume is deleted on instance termination.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates whether to delete the volume on instance
+     * @return Indicates whether the volume is deleted on instance
      *         termination.</p>
      *         <p>
      *         Default: <code>true</code>
@@ -369,14 +356,14 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to delete the volume on instance termination.
+     * Indicates whether the volume is deleted on instance termination.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param deleteOnTermination
-     *        Indicates whether to delete the volume on instance
+     *        Indicates whether the volume is deleted on instance
      *        termination.</p>
      *        <p>
      *        Default: <code>true</code>
@@ -391,13 +378,13 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to delete the volume on instance termination.
+     * Indicates whether the volume is deleted on instance termination.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates whether to delete the volume on instance
+     * @return Indicates whether the volume is deleted on instance
      *         termination.</p>
      *         <p>
      *         Default: <code>true</code>
@@ -409,18 +396,18 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Provisioned IOPS (SSD) volumes only. The number of I/O operations per
-     * second (IOPS) to provision for the volume.
+     * The number of I/O operations per second (IOPS) to provision for the
+     * volume.
      * </p>
      * <p>
-     * Default: None
+     * Constraint: Required when the volume type is <code>io1</code>.
      * </p>
      * 
      * @param iops
-     *        For Provisioned IOPS (SSD) volumes only. The number of I/O
-     *        operations per second (IOPS) to provision for the volume.</p>
+     *        The number of I/O operations per second (IOPS) to provision for
+     *        the volume.</p>
      *        <p>
-     *        Default: None
+     *        Constraint: Required when the volume type is <code>io1</code>.
      */
 
     public void setIops(Integer iops) {
@@ -429,17 +416,17 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Provisioned IOPS (SSD) volumes only. The number of I/O operations per
-     * second (IOPS) to provision for the volume.
+     * The number of I/O operations per second (IOPS) to provision for the
+     * volume.
      * </p>
      * <p>
-     * Default: None
+     * Constraint: Required when the volume type is <code>io1</code>.
      * </p>
      * 
-     * @return For Provisioned IOPS (SSD) volumes only. The number of I/O
-     *         operations per second (IOPS) to provision for the volume.</p>
+     * @return The number of I/O operations per second (IOPS) to provision for
+     *         the volume.</p>
      *         <p>
-     *         Default: None
+     *         Constraint: Required when the volume type is <code>io1</code>.
      */
 
     public Integer getIops() {
@@ -448,18 +435,18 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Provisioned IOPS (SSD) volumes only. The number of I/O operations per
-     * second (IOPS) to provision for the volume.
+     * The number of I/O operations per second (IOPS) to provision for the
+     * volume.
      * </p>
      * <p>
-     * Default: None
+     * Constraint: Required when the volume type is <code>io1</code>.
      * </p>
      * 
      * @param iops
-     *        For Provisioned IOPS (SSD) volumes only. The number of I/O
-     *        operations per second (IOPS) to provision for the volume.</p>
+     *        The number of I/O operations per second (IOPS) to provision for
+     *        the volume.</p>
      *        <p>
-     *        Default: None
+     *        Constraint: Required when the volume type is <code>io1</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

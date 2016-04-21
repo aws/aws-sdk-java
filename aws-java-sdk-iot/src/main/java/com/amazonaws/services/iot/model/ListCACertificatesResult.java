@@ -19,16 +19,31 @@ package com.amazonaws.services.iot.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The output from the ListCACertificates operation.
+ * </p>
  */
 public class ListCACertificatesResult implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The CA certificates registered in your AWS account.
+     * </p>
+     */
     private java.util.List<CACertificate> certificates;
-
+    /**
+     * <p>
+     * The current position within the list of CA certificates.
+     * </p>
+     */
     private String nextMarker;
 
     /**
-     * @return
+     * <p>
+     * The CA certificates registered in your AWS account.
+     * </p>
+     * 
+     * @return The CA certificates registered in your AWS account.
      */
 
     public java.util.List<CACertificate> getCertificates() {
@@ -36,7 +51,12 @@ public class ListCACertificatesResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificates registered in your AWS account.
+     * </p>
+     * 
      * @param certificates
+     *        The CA certificates registered in your AWS account.
      */
 
     public void setCertificates(java.util.Collection<CACertificate> certificates) {
@@ -50,6 +70,9 @@ public class ListCACertificatesResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The CA certificates registered in your AWS account.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setCertificates(java.util.Collection)} or
      * {@link #withCertificates(java.util.Collection)} if you want to override
@@ -57,6 +80,7 @@ public class ListCACertificatesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param certificates
+     *        The CA certificates registered in your AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -74,7 +98,12 @@ public class ListCACertificatesResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CA certificates registered in your AWS account.
+     * </p>
+     * 
      * @param certificates
+     *        The CA certificates registered in your AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -86,7 +115,12 @@ public class ListCACertificatesResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The current position within the list of CA certificates.
+     * </p>
+     * 
      * @param nextMarker
+     *        The current position within the list of CA certificates.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -94,7 +128,11 @@ public class ListCACertificatesResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The current position within the list of CA certificates.
+     * </p>
+     * 
+     * @return The current position within the list of CA certificates.
      */
 
     public String getNextMarker() {
@@ -102,7 +140,12 @@ public class ListCACertificatesResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The current position within the list of CA certificates.
+     * </p>
+     * 
      * @param nextMarker
+     *        The current position within the list of CA certificates.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

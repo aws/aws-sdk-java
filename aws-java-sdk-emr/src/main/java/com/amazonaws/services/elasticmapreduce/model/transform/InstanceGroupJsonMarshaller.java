@@ -120,6 +120,11 @@ public class InstanceGroupJsonMarshaller {
                 jsonGenerator.writeFieldName("EbsOptimized").writeValue(
                         instanceGroup.getEbsOptimized());
             }
+            if (instanceGroup.getShrinkPolicy() != null) {
+                jsonGenerator.writeFieldName("ShrinkPolicy");
+                ShrinkPolicyJsonMarshaller.getInstance().marshall(
+                        instanceGroup.getShrinkPolicy(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

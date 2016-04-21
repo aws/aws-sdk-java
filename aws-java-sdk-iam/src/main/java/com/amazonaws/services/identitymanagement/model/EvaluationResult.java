@@ -60,8 +60,12 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when the resource in a simulation is "*", either explicitly, or when
+     * the <code>ResourceArns</code> parameter blank. If you include a list of
+     * resources, then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context
+     * keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -374,8 +378,12 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when the resource in a simulation is "*", either explicitly, or when
+     * the <code>ResourceArns</code> parameter blank. If you include a list of
+     * resources, then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context
+     * keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -390,8 +398,13 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @return A list of context keys that are required by the included input
      *         policies but that were not provided by one of the input
-     *         parameters. To discover the context keys used by a set of
-     *         policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *         parameters. This list is used when the resource in a simulation
+     *         is "*", either explicitly, or when the <code>ResourceArns</code>
+     *         parameter blank. If you include a list of resources, then any
+     *         missing context values are instead included under the
+     *         <code>ResourceSpecificResults</code> section. To discover the
+     *         context keys used by a set of policies, you can call
+     *         <a>GetContextKeysForCustomPolicy</a> or
      *         <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
      *         <p>
      *         If the response includes any keys in this list, then the reported
@@ -411,8 +424,12 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when the resource in a simulation is "*", either explicitly, or when
+     * the <code>ResourceArns</code> parameter blank. If you include a list of
+     * resources, then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context
+     * keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -428,8 +445,13 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *        parameters. This list is used when the resource in a simulation is
+     *        "*", either explicitly, or when the <code>ResourceArns</code>
+     *        parameter blank. If you include a list of resources, then any
+     *        missing context values are instead included under the
+     *        <code>ResourceSpecificResults</code> section. To discover the
+     *        context keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
      *        <p>
      *        If the response includes any keys in this list, then the reported
@@ -453,8 +475,12 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when the resource in a simulation is "*", either explicitly, or when
+     * the <code>ResourceArns</code> parameter blank. If you include a list of
+     * resources, then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context
+     * keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -476,8 +502,13 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *        parameters. This list is used when the resource in a simulation is
+     *        "*", either explicitly, or when the <code>ResourceArns</code>
+     *        parameter blank. If you include a list of resources, then any
+     *        missing context values are instead included under the
+     *        <code>ResourceSpecificResults</code> section. To discover the
+     *        context keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
      *        <p>
      *        If the response includes any keys in this list, then the reported
@@ -504,8 +535,12 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when the resource in a simulation is "*", either explicitly, or when
+     * the <code>ResourceArns</code> parameter blank. If you include a list of
+     * resources, then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context
+     * keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -521,8 +556,13 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *        parameters. This list is used when the resource in a simulation is
+     *        "*", either explicitly, or when the <code>ResourceArns</code>
+     *        parameter blank. If you include a list of resources, then any
+     *        missing context values are instead included under the
+     *        <code>ResourceSpecificResults</code> section. To discover the
+     *        context keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
      *        <p>
      *        If the response includes any keys in this list, then the reported

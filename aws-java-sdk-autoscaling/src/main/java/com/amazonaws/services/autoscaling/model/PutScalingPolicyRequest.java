@@ -99,8 +99,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      */
     private Integer cooldown;
@@ -559,8 +558,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @param cooldown
@@ -575,8 +573,8 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *        >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
-     *        Developer Guide</i>.
+     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer
+     *        Guide</i>.
      */
 
     public void setCooldown(Integer cooldown) {
@@ -596,8 +594,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @return The amount of time, in seconds, after a scaling activity
@@ -611,8 +608,8 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *         >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
-     *         Developer Guide</i>.
+     *         >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer
+     *         Guide</i>.
      */
 
     public Integer getCooldown() {
@@ -632,8 +629,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @param cooldown
@@ -648,8 +644,8 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *        >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
-     *        Developer Guide</i>.
+     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

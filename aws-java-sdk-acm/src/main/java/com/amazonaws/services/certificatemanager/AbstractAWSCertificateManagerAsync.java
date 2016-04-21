@@ -30,6 +30,21 @@ public class AbstractAWSCertificateManagerAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<Void> addTagsToCertificateAsync(
+            AddTagsToCertificateRequest request) {
+
+        return addTagsToCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> addTagsToCertificateAsync(
+            AddTagsToCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Void> deleteCertificateAsync(
             DeleteCertificateRequest request) {
 
@@ -85,6 +100,36 @@ public class AbstractAWSCertificateManagerAsync extends
     public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(
             ListCertificatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(
+            ListTagsForCertificateRequest request) {
+
+        return listTagsForCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(
+            ListTagsForCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> removeTagsFromCertificateAsync(
+            RemoveTagsFromCertificateRequest request) {
+
+        return removeTagsFromCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> removeTagsFromCertificateAsync(
+            RemoveTagsFromCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, Void> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

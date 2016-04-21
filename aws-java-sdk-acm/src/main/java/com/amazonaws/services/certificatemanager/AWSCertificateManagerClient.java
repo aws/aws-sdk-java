@@ -236,6 +236,14 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
     private void init() {
         jsonErrorUnmarshallers
                 .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.certificatemanager.model.InvalidTagException.class,
+                        "InvalidTagException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
+                        com.amazonaws.services.certificatemanager.model.TooManyTagsException.class,
+                        "TooManyTagsException"));
+        jsonErrorUnmarshallers
+                .add(new JsonErrorUnmarshallerV2(
                         com.amazonaws.services.certificatemanager.model.ResourceInUseException.class,
                         "ResourceInUseException"));
         jsonErrorUnmarshallers
@@ -276,6 +284,81 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
         requestHandler2s
                 .addAll(chainFactory
                         .newRequestHandler2Chain("/com/amazonaws/services/certificatemanager/request.handler2s"));
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags to an ACM Certificate. Tags are labels that you can
+     * use to identify and organize your AWS resources. Each tag consists of a
+     * <code>key</code> and an optional <code>value</code>. You specify the
+     * certificate on input by its Amazon Resource Name (ARN). You specify the
+     * tag by using a key-value pair.
+     * </p>
+     * <p>
+     * You can apply a tag to just one certificate if you want to identify a
+     * specific characteristic of that certificate, or you can apply the same
+     * tag to multiple certificates if you want to filter for a common
+     * relationship among those certificates. Similarly, you can apply the same
+     * tag to multiple resources if you want to specify a relationship among
+     * those resources. For example, you can add the same tag to an ACM
+     * Certificate and an Elastic Load Balancing load balancer to indicate that
+     * they are both used by the same website. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
+     * ACM Certificates</a>.
+     * </p>
+     * <p>
+     * To remove one or more tags, use the <a>RemoveTagsFromCertificate</a>
+     * action. To view all of the tags that have been applied to the
+     * certificate, use the <a>ListTagsForCertificate</a> action.
+     * </p>
+     * 
+     * @param addTagsToCertificateRequest
+     * @throws ResourceNotFoundException
+     *         The specified certificate cannot be found in the caller's
+     *         account, or the caller's account cannot be found.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an
+     *         existing resource.
+     * @throws InvalidTagException
+     *         One or both of the values that make up the key-value pair is not
+     *         valid. For example, you cannot specify a tag value that begins
+     *         with <code>aws:</code>.
+     * @throws TooManyTagsException
+     *         The request contains too many tags. Try the request again with
+     *         fewer tags.
+     * @sample AWSCertificateManager.AddTagsToCertificate
+     */
+    @Override
+    public void addTagsToCertificate(
+            AddTagsToCertificateRequest addTagsToCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(addTagsToCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddTagsToCertificateRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddTagsToCertificateRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(addTagsToCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -340,8 +423,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      * Returns a list of the fields contained in the specified ACM Certificate.
      * For example, this action returns the certificate status, a flag that
      * indicates whether the certificate is associated with any other AWS
-     * service, and the date at which the certificate request was created. The
-     * ACM Certificate is specified on input by its Amazon Resource Name (ARN).
+     * service, and the date at which the certificate request was created. You
+     * specify the ACM Certificate on input by its Amazon Resource Name (ARN).
      * </p>
      * 
      * @param describeCertificateRequest
@@ -497,6 +580,122 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the tags that have been applied to the ACM Certificate. Use the
+     * certificate ARN to specify the certificate. To add a tag to an ACM
+     * Certificate, use the <a>AddTagsToCertificate</a> action. To delete a tag,
+     * use the <a>RemoveTagsFromCertificate</a> action.
+     * </p>
+     * 
+     * @param listTagsForCertificateRequest
+     * @return Result of the ListTagsForCertificate operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The specified certificate cannot be found in the caller's
+     *         account, or the caller's account cannot be found.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an
+     *         existing resource.
+     * @sample AWSCertificateManager.ListTagsForCertificate
+     */
+    @Override
+    public ListTagsForCertificateResult listTagsForCertificate(
+            ListTagsForCertificateRequest listTagsForCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTagsForCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForCertificateRequest> request = null;
+        Response<ListTagsForCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForCertificateRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listTagsForCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ListTagsForCertificateResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ListTagsForCertificateResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove one or more tags from an ACM Certificate. A tag consists of a
+     * key-value pair. If you do not specify the value portion of the tag when
+     * calling this function, the tag will be removed regardless of value. If
+     * you specify a value, the tag is removed only if it is associated with the
+     * specified value.
+     * </p>
+     * <p>
+     * To add tags to a certificate, use the <a>AddTagsToCertificate</a> action.
+     * To view all of the tags that have been applied to a specific ACM
+     * Certificate, use the <a>ListTagsForCertificate</a> action.
+     * </p>
+     * 
+     * @param removeTagsFromCertificateRequest
+     * @throws ResourceNotFoundException
+     *         The specified certificate cannot be found in the caller's
+     *         account, or the caller's account cannot be found.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an
+     *         existing resource.
+     * @throws InvalidTagException
+     *         One or both of the values that make up the key-value pair is not
+     *         valid. For example, you cannot specify a tag value that begins
+     *         with <code>aws:</code>.
+     * @sample AWSCertificateManager.RemoveTagsFromCertificate
+     */
+    @Override
+    public void removeTagsFromCertificate(
+            RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeTagsFromCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveTagsFromCertificateRequest> request = null;
+        Response<Void> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveTagsFromCertificateRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(removeTagsFromCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<Void> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(null, false);
+            responseHandler.setIsPayloadJson(true);
+            invoke(request, responseHandler, executionContext);
 
         } finally {
 

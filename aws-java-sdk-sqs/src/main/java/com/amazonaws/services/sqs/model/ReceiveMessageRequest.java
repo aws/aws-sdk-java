@@ -40,15 +40,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * be returned:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
+     * <li> <code>All</code> - returns all values.</li>
+     * <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the time when
      * the message was first received from the queue (epoch time in
      * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
+     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
      * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
+     * <li> <code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
+     * <li> <code>SentTimestamp</code> - returns the time when the message was
      * sent to the queue (epoch time in milliseconds).</li>
      * </ul>
      */
@@ -170,15 +170,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * be returned:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
+     * <li> <code>All</code> - returns all values.</li>
+     * <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the time when
      * the message was first received from the queue (epoch time in
      * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
+     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
      * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
+     * <li> <code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
+     * <li> <code>SentTimestamp</code> - returns the time when the message was
      * sent to the queue (epoch time in milliseconds).</li>
      * </ul>
      * 
@@ -189,16 +189,16 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         that can be returned:
      *         </p>
      *         <ul>
-     *         <li><code>All</code> - returns all values.</li>
-     *         <li><code>ApproximateFirstReceiveTimestamp</code> - returns the
+     *         <li> <code>All</code> - returns all values.</li>
+     *         <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the
      *         time when the message was first received from the queue (epoch
      *         time in milliseconds).</li>
-     *         <li><code>ApproximateReceiveCount</code> - returns the number of
+     *         <li> <code>ApproximateReceiveCount</code> - returns the number of
      *         times a message has been received from the queue but not deleted.
      *         </li>
-     *         <li><code>SenderId</code> - returns the AWS account number (or
+     *         <li> <code>SenderId</code> - returns the AWS account number (or
      *         the IP address, if anonymous access is allowed) of the sender.</li>
-     *         <li><code>SentTimestamp</code> - returns the time when the
+     *         <li> <code>SentTimestamp</code> - returns the time when the
      *         message was sent to the queue (epoch time in milliseconds).</li>
      * @see QueueAttributeName
      */
@@ -219,15 +219,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * be returned:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
+     * <li> <code>All</code> - returns all values.</li>
+     * <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the time when
      * the message was first received from the queue (epoch time in
      * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
+     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
      * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
+     * <li> <code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
+     * <li> <code>SentTimestamp</code> - returns the time when the message was
      * sent to the queue (epoch time in milliseconds).</li>
      * </ul>
      * 
@@ -239,15 +239,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        that can be returned:
      *        </p>
      *        <ul>
-     *        <li><code>All</code> - returns all values.</li>
-     *        <li><code>ApproximateFirstReceiveTimestamp</code> - returns the
+     *        <li> <code>All</code> - returns all values.</li>
+     *        <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the
      *        time when the message was first received from the queue (epoch
      *        time in milliseconds).</li>
-     *        <li><code>ApproximateReceiveCount</code> - returns the number of
+     *        <li> <code>ApproximateReceiveCount</code> - returns the number of
      *        times a message has been received from the queue but not deleted.</li>
-     *        <li><code>SenderId</code> - returns the AWS account number (or the
+     *        <li> <code>SenderId</code> - returns the AWS account number (or the
      *        IP address, if anonymous access is allowed) of the sender.</li>
-     *        <li><code>SentTimestamp</code> - returns the time when the message
+     *        <li> <code>SentTimestamp</code> - returns the time when the message
      *        was sent to the queue (epoch time in milliseconds).</li>
      * @see QueueAttributeName
      */
@@ -271,15 +271,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * be returned:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
+     * <li> <code>All</code> - returns all values.</li>
+     * <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the time when
      * the message was first received from the queue (epoch time in
      * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
+     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
      * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
+     * <li> <code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
+     * <li> <code>SentTimestamp</code> - returns the time when the message was
      * sent to the queue (epoch time in milliseconds).</li>
      * </ul>
      * <p>
@@ -297,15 +297,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        that can be returned:
      *        </p>
      *        <ul>
-     *        <li><code>All</code> - returns all values.</li>
-     *        <li><code>ApproximateFirstReceiveTimestamp</code> - returns the
+     *        <li> <code>All</code> - returns all values.</li>
+     *        <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the
      *        time when the message was first received from the queue (epoch
      *        time in milliseconds).</li>
-     *        <li><code>ApproximateReceiveCount</code> - returns the number of
+     *        <li> <code>ApproximateReceiveCount</code> - returns the number of
      *        times a message has been received from the queue but not deleted.</li>
-     *        <li><code>SenderId</code> - returns the AWS account number (or the
+     *        <li> <code>SenderId</code> - returns the AWS account number (or the
      *        IP address, if anonymous access is allowed) of the sender.</li>
-     *        <li><code>SentTimestamp</code> - returns the time when the message
+     *        <li> <code>SentTimestamp</code> - returns the time when the message
      *        was sent to the queue (epoch time in milliseconds).</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -332,15 +332,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * be returned:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
+     * <li> <code>All</code> - returns all values.</li>
+     * <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the time when
      * the message was first received from the queue (epoch time in
      * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
+     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
      * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
+     * <li> <code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
+     * <li> <code>SentTimestamp</code> - returns the time when the message was
      * sent to the queue (epoch time in milliseconds).</li>
      * </ul>
      * 
@@ -352,15 +352,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        that can be returned:
      *        </p>
      *        <ul>
-     *        <li><code>All</code> - returns all values.</li>
-     *        <li><code>ApproximateFirstReceiveTimestamp</code> - returns the
+     *        <li> <code>All</code> - returns all values.</li>
+     *        <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the
      *        time when the message was first received from the queue (epoch
      *        time in milliseconds).</li>
-     *        <li><code>ApproximateReceiveCount</code> - returns the number of
+     *        <li> <code>ApproximateReceiveCount</code> - returns the number of
      *        times a message has been received from the queue but not deleted.</li>
-     *        <li><code>SenderId</code> - returns the AWS account number (or the
+     *        <li> <code>SenderId</code> - returns the AWS account number (or the
      *        IP address, if anonymous access is allowed) of the sender.</li>
-     *        <li><code>SentTimestamp</code> - returns the time when the message
+     *        <li> <code>SentTimestamp</code> - returns the time when the message
      *        was sent to the queue (epoch time in milliseconds).</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -382,15 +382,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * be returned:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
+     * <li> <code>All</code> - returns all values.</li>
+     * <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the time when
      * the message was first received from the queue (epoch time in
      * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
+     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
      * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
+     * <li> <code>SenderId</code> - returns the AWS account number (or the IP
      * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
+     * <li> <code>SentTimestamp</code> - returns the time when the message was
      * sent to the queue (epoch time in milliseconds).</li>
      * </ul>
      * 
@@ -402,15 +402,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        that can be returned:
      *        </p>
      *        <ul>
-     *        <li><code>All</code> - returns all values.</li>
-     *        <li><code>ApproximateFirstReceiveTimestamp</code> - returns the
+     *        <li> <code>All</code> - returns all values.</li>
+     *        <li> <code>ApproximateFirstReceiveTimestamp</code> - returns the
      *        time when the message was first received from the queue (epoch
      *        time in milliseconds).</li>
-     *        <li><code>ApproximateReceiveCount</code> - returns the number of
+     *        <li> <code>ApproximateReceiveCount</code> - returns the number of
      *        times a message has been received from the queue but not deleted.</li>
-     *        <li><code>SenderId</code> - returns the AWS account number (or the
+     *        <li> <code>SenderId</code> - returns the AWS account number (or the
      *        IP address, if anonymous access is allowed) of the sender.</li>
-     *        <li><code>SentTimestamp</code> - returns the time when the message
+     *        <li> <code>SentTimestamp</code> - returns the time when the message
      *        was sent to the queue (epoch time in milliseconds).</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
