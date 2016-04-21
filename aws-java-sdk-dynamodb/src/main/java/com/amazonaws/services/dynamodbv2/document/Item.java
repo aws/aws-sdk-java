@@ -908,7 +908,7 @@ public class Item {
     public Item withJSON(String attrName, String json) {
         checkInvalidAttribute(attrName, json);
         attributes.put(attrName,
-            valueConformer.transform(Jackson.fromJsonString(json, Map.class)));
+            valueConformer.transform(Jackson.fromJsonString(json, Object.class)));
         return this;
     }
 
