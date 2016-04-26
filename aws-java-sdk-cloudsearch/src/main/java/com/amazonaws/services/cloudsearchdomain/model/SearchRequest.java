@@ -18,6 +18,7 @@ package com.amazonaws.services.cloudsearchdomain.model;
 
 import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.http.HttpMethodName;
 
 /**
  * <p>
@@ -467,7 +468,26 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * There are currently no options supported for statistics.
      * </p>
      */
-    private String stats;
+    private String  stats;
+    /**
+     * <p>
+     * Specifies the HTTP method you want to use to send requests directly to your domain's search endpoint.
+     * </p>
+     * <p>
+     * Take into account that the maximum size of a search request submitted via GET is 8190 bytes,
+     * including the HTTP method, URI, and protocol version. You can submit larger requests using HTTP POST; however,
+     * keep in mind that large, complex requests take longer to process and are more likely to time out.
+     * </p>
+     * <p>
+     * Defaults to {@link HttpMethodName#GET}
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/cloudsearch/latest/developerguide/submitting-search-requests.html"
+     * >Submitting Search Requests to an Amazon CloudSearch Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     */
+    private HttpMethodName httpMethod = HttpMethodName.GET;
 
     /**
      * <p>
@@ -484,7 +504,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html"
      * >Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.
      * </p>
-     * 
+     *
      * @param cursor
      *        Retrieves a cursor value you can use to page through large result
      *        sets. Use the <code>size</code> parameter to control the number of
@@ -1640,6 +1660,70 @@ public class SearchRequest extends AmazonWebServiceRequest implements
 
     public SearchRequest withHighlight(String highlight) {
         setHighlight(highlight);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the HTTP method you want to use to send requests directly to your domain's search endpoint.
+     * </p>
+     * <p>
+     * Take into account that the maximum size of a search request submitted via GET is 8190 bytes,
+     * including the HTTP method, URI, and protocol version. You can submit larger requests using HTTP POST; however,
+     * keep in mind that large, complex requests take longer to process and are more likely to time out.
+     * </p>
+     * <p>
+     * Default values is {@link HttpMethodName#GET}
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/cloudsearch/latest/developerguide/submitting-search-requests.html"
+     * >Submitting Search Requests to an Amazon CloudSearch Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     */
+    public void setHttpMethod(HttpMethodName httpMethod) {
+        this.httpMethod = httpMethod;
+    }
+
+    /**
+     * <p>
+     * Gets the HTTP method that will be used to send requests directly to your domain's search endpoint.
+     * </p>
+     * <p>
+     * Take into account that the maximum size of a search request submitted via GET is 8190 bytes,
+     * including the HTTP method, URI, and protocol version. You can submit larger requests using HTTP POST; however,
+     * keep in mind that large, complex requests take longer to process and are more likely to time out.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/cloudsearch/latest/developerguide/submitting-search-requests.html"
+     * >Submitting Search Requests to an Amazon CloudSearch Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     */
+    public HttpMethodName getHttpMethod() {
+        return this.httpMethod;
+    }
+
+    /**
+     * <p>
+     * Sets the HTTP method you want to use to send requests directly to your domain's search endpoint.
+     * </p>
+     * <p>
+     * Take into account that the maximum size of a search request submitted via GET is 8190 bytes,
+     * including the HTTP method, URI, and protocol version. You can submit larger requests using HTTP POST; however,
+     * keep in mind that large, complex requests take longer to process and are more likely to time out.
+     * </p>
+     * <p>
+     * Default values is {@link HttpMethodName#GET}
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/cloudsearch/latest/developerguide/submitting-search-requests.html"
+     * >Submitting Search Requests to an Amazon CloudSearch Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     */
+    public SearchRequest withHttpMethod(HttpMethodName httpMethod) {
+        setHttpMethod(httpMethod);
         return this;
     }
 
@@ -3524,6 +3608,8 @@ public class SearchRequest extends AmazonWebServiceRequest implements
             sb.append("FilterQuery: " + getFilterQuery() + ",");
         if (getHighlight() != null)
             sb.append("Highlight: " + getHighlight() + ",");
+        if (getHttpMethod() != null)
+            sb.append(("HTTP method: " + getHttpMethod() + ","));
         if (getPartial() != null)
             sb.append("Partial: " + getPartial() + ",");
         if (getQuery() != null)
@@ -3580,6 +3666,11 @@ public class SearchRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getHighlight() != null
                 && other.getHighlight().equals(this.getHighlight()) == false)
+            return false;
+        if (other.getHttpMethod() == null ^ this.getHttpMethod() == null)
+            return false;
+        if (other.getHttpMethod() != null
+            && other.getHttpMethod().equals(this.getHttpMethod()) == false)
             return false;
         if (other.getPartial() == null ^ this.getPartial() == null)
             return false;
@@ -3645,6 +3736,8 @@ public class SearchRequest extends AmazonWebServiceRequest implements
                 + ((getFilterQuery() == null) ? 0 : getFilterQuery().hashCode());
         hashCode = prime * hashCode
                 + ((getHighlight() == null) ? 0 : getHighlight().hashCode());
+        hashCode = prime * hashCode
+                   + ((getHttpMethod() == null) ? 0 : getHttpMethod().hashCode());
         hashCode = prime * hashCode
                 + ((getPartial() == null) ? 0 : getPartial().hashCode());
         hashCode = prime * hashCode
