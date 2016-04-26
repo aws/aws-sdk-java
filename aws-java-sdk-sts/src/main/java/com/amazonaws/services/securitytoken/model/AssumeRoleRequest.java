@@ -45,6 +45,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * expose the role session name to the external account in their CloudTrail
      * logs.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      */
     private String roleSessionName;
     /**
@@ -64,11 +70,22 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
      * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size.</note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      */
     private String policy;
     /**
@@ -93,6 +110,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * >How to Use an External ID When Granting Access to Your AWS Resources to
      * a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@:\/-
+     * </p>
      */
     private String externalId;
     /**
@@ -105,6 +128,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>).
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      */
     private String serialNumber;
     /**
@@ -114,6 +143,10 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * that tests for MFA). If the role being assumed requires MFA and if the
      * <code>TokenCode</code> value is missing or expired, the
      * <code>AssumeRole</code> call returns an "access denied" error.
+     * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.
      * </p>
      */
     private String tokenCode;
@@ -173,9 +206,15 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * expose the role session name to the external account in their CloudTrail
      * logs.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @param roleSessionName
-     *        An identifier for the assumed role session. </p>
+     *        An identifier for the assumed role session.</p>
      *        <p>
      *        Use the role session name to uniquely identify a session when the
      *        same role is assumed by different principals or for different
@@ -185,6 +224,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        principal. This means that subsequent cross-account API requests
      *        using the temporary security credentials will expose the role
      *        session name to the external account in their CloudTrail logs.
+     *        </p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      */
 
     public void setRoleSessionName(String roleSessionName) {
@@ -205,8 +250,14 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * expose the role session name to the external account in their CloudTrail
      * logs.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
-     * @return An identifier for the assumed role session. </p>
+     * @return An identifier for the assumed role session.</p>
      *         <p>
      *         Use the role session name to uniquely identify a session when the
      *         same role is assumed by different principals or for different
@@ -216,6 +267,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         principal. This means that subsequent cross-account API requests
      *         using the temporary security credentials will expose the role
      *         session name to the external account in their CloudTrail logs.
+     *         </p>
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include any
+     *         of the following characters: =,.@-
      */
 
     public String getRoleSessionName() {
@@ -236,9 +293,15 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * expose the role session name to the external account in their CloudTrail
      * logs.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @param roleSessionName
-     *        An identifier for the assumed role session. </p>
+     *        An identifier for the assumed role session.</p>
      *        <p>
      *        Use the role session name to uniquely identify a session when the
      *        same role is assumed by different principals or for different
@@ -248,6 +311,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        principal. This means that subsequent cross-account API requests
      *        using the temporary security credentials will expose the role
      *        session name to the external account in their CloudTrail logs.
+     *        </p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -274,11 +343,22 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
      * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size.</note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * 
      * @param policy
      *        An IAM policy in JSON format.</p>
@@ -296,11 +376,22 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        >Permissions for AssumeRole, AssumeRoleWithSAML, and
      *        AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *        </p>
-     *        <note>The policy plain text must be 2048 bytes or shorter.
-     *        However, an internal conversion compresses it into a packed binary
-     *        format with a separate limit. The PackedPolicySize response
-     *        element indicates by percentage how close to the upper size limit
-     *        the policy is, with 100% equaling the maximum allowed size.
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters up to 2048 characters in length. The
+     *        characters can be any ASCII character from the space character to
+     *        the end of the valid character list ( -\u00FF). It can also
+     *        include the tab ( ), linefeed ( ), and carriage return ( )
+     *        characters.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The policy plain text must be 2048 bytes or shorter. However, an
+     *        internal conversion compresses it into a packed binary format with
+     *        a separate limit. The PackedPolicySize response element indicates
+     *        by percentage how close to the upper size limit the policy is,
+     *        with 100% equaling the maximum allowed size.
+     *        </p>
      */
 
     public void setPolicy(String policy) {
@@ -324,11 +415,22 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
      * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size.</note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * 
      * @return An IAM policy in JSON format.</p>
      *         <p>
@@ -345,12 +447,22 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         >Permissions for AssumeRole, AssumeRoleWithSAML, and
      *         AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *         </p>
-     *         <note>The policy plain text must be 2048 bytes or shorter.
-     *         However, an internal conversion compresses it into a packed
-     *         binary format with a separate limit. The PackedPolicySize
-     *         response element indicates by percentage how close to the upper
-     *         size limit the policy is, with 100% equaling the maximum allowed
-     *         size.
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a string of characters up to 2048 characters in length. The
+     *         characters can be any ASCII character from the space character to
+     *         the end of the valid character list ( -\u00FF). It can also
+     *         include the tab ( ), linefeed ( ), and carriage return ( )
+     *         characters.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The policy plain text must be 2048 bytes or shorter. However, an
+     *         internal conversion compresses it into a packed binary format
+     *         with a separate limit. The PackedPolicySize response element
+     *         indicates by percentage how close to the upper size limit the
+     *         policy is, with 100% equaling the maximum allowed size.
+     *         </p>
      */
 
     public String getPolicy() {
@@ -374,11 +486,22 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
      * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size.</note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * 
      * @param policy
      *        An IAM policy in JSON format.</p>
@@ -396,11 +519,22 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        >Permissions for AssumeRole, AssumeRoleWithSAML, and
      *        AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *        </p>
-     *        <note>The policy plain text must be 2048 bytes or shorter.
-     *        However, an internal conversion compresses it into a packed binary
-     *        format with a separate limit. The PackedPolicySize response
-     *        element indicates by percentage how close to the upper size limit
-     *        the policy is, with 100% equaling the maximum allowed size.
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters up to 2048 characters in length. The
+     *        characters can be any ASCII character from the space character to
+     *        the end of the valid character list ( -\u00FF). It can also
+     *        include the tab ( ), linefeed ( ), and carriage return ( )
+     *        characters.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The policy plain text must be 2048 bytes or shorter. However, an
+     *        internal conversion compresses it into a packed binary format with
+     *        a separate limit. The PackedPolicySize response element indicates
+     *        by percentage how close to the upper size limit the policy is,
+     *        with 100% equaling the maximum allowed size.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -477,6 +611,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * >How to Use an External ID When Granting Access to Your AWS Resources to
      * a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@:\/-
+     * </p>
      * 
      * @param externalId
      *        A unique identifier that is used by third parties when assuming
@@ -490,7 +630,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
      *        >How to Use an External ID When Granting Access to Your AWS
-     *        Resources to a Third Party</a> in the <i>IAM User Guide</i>.
+     *        Resources to a Third Party</a> in the <i>IAM User Guide</i>.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@:\/-
      */
 
     public void setExternalId(String externalId) {
@@ -511,6 +656,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * >How to Use an External ID When Granting Access to Your AWS Resources to
      * a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@:\/-
+     * </p>
      * 
      * @return A unique identifier that is used by third parties when assuming
      *         roles in their customers' accounts. For each role that the third
@@ -523,7 +674,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
      *         >How to Use an External ID When Granting Access to Your AWS
-     *         Resources to a Third Party</a> in the <i>IAM User Guide</i>.
+     *         Resources to a Third Party</a> in the <i>IAM User Guide</i>.</p>
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include any
+     *         of the following characters: =,.@:\/-
      */
 
     public String getExternalId() {
@@ -544,6 +700,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * >How to Use an External ID When Granting Access to Your AWS Resources to
      * a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@:\/-
+     * </p>
      * 
      * @param externalId
      *        A unique identifier that is used by third parties when assuming
@@ -557,7 +719,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html"
      *        >How to Use an External ID When Granting Access to Your AWS
-     *        Resources to a Third Party</a> in the <i>IAM User Guide</i>.
+     *        Resources to a Third Party</a> in the <i>IAM User Guide</i>.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@:\/-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -577,6 +744,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>).
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @param serialNumber
      *        The identification number of the MFA device that is associated
@@ -586,7 +759,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        is either the serial number for a hardware device (such as
      *        <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
      *        virtual device (such as
-     *        <code>arn:aws:iam::123456789012:mfa/user</code>).
+     *        <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -603,6 +781,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>).
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @return The identification number of the MFA device that is associated
      *         with the user who is making the <code>AssumeRole</code> call.
@@ -611,7 +795,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         is either the serial number for a hardware device (such as
      *         <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
      *         virtual device (such as
-     *         <code>arn:aws:iam::123456789012:mfa/user</code>).
+     *         <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include any
+     *         of the following characters: =,.@-
      */
 
     public String getSerialNumber() {
@@ -628,6 +817,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>).
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @param serialNumber
      *        The identification number of the MFA device that is associated
@@ -637,7 +832,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        is either the serial number for a hardware device (such as
      *        <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
      *        virtual device (such as
-     *        <code>arn:aws:iam::123456789012:mfa/user</code>).
+     *        <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -655,13 +855,21 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <code>TokenCode</code> value is missing or expired, the
      * <code>AssumeRole</code> call returns an "access denied" error.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.
+     * </p>
      * 
      * @param tokenCode
      *        The value provided by the MFA device, if the trust policy of the
      *        role being assumed requires MFA (that is, if the policy includes a
      *        condition that tests for MFA). If the role being assumed requires
      *        MFA and if the <code>TokenCode</code> value is missing or expired,
-     *        the <code>AssumeRole</code> call returns an "access denied" error.
+     *        the <code>AssumeRole</code> call returns an "access denied"
+     *        error.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a sequence of six numeric digits.
      */
 
     public void setTokenCode(String tokenCode) {
@@ -676,13 +884,20 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <code>TokenCode</code> value is missing or expired, the
      * <code>AssumeRole</code> call returns an "access denied" error.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.
+     * </p>
      * 
      * @return The value provided by the MFA device, if the trust policy of the
      *         role being assumed requires MFA (that is, if the policy includes
      *         a condition that tests for MFA). If the role being assumed
      *         requires MFA and if the <code>TokenCode</code> value is missing
      *         or expired, the <code>AssumeRole</code> call returns an
-     *         "access denied" error.
+     *         "access denied" error.</p>
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a sequence of six numeric digits.
      */
 
     public String getTokenCode() {
@@ -697,13 +912,21 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <code>TokenCode</code> value is missing or expired, the
      * <code>AssumeRole</code> call returns an "access denied" error.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.
+     * </p>
      * 
      * @param tokenCode
      *        The value provided by the MFA device, if the trust policy of the
      *        role being assumed requires MFA (that is, if the policy includes a
      *        condition that tests for MFA). If the role being assumed requires
      *        MFA and if the <code>TokenCode</code> value is missing or expired,
-     *        the <code>AssumeRole</code> call returns an "access denied" error.
+     *        the <code>AssumeRole</code> call returns an "access denied"
+     *        error.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a sequence of six numeric digits.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

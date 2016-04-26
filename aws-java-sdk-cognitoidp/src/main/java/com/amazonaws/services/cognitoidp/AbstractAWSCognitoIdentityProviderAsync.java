@@ -361,36 +361,6 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<GetJWKSResult> getJWKSAsync(
-            GetJWKSRequest request) {
-
-        return getJWKSAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetJWKSResult> getJWKSAsync(
-            GetJWKSRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetJWKSRequest, GetJWKSResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetOpenIdConfigurationResult> getOpenIdConfigurationAsync(
-            GetOpenIdConfigurationRequest request) {
-
-        return getOpenIdConfigurationAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetOpenIdConfigurationResult> getOpenIdConfigurationAsync(
-            GetOpenIdConfigurationRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetOpenIdConfigurationRequest, GetOpenIdConfigurationResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<GetUserResult> getUserAsync(
             GetUserRequest request) {
 

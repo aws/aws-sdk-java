@@ -68,6 +68,11 @@ public class RepositoryJsonUnmarshaller implements
                     repository.setRepositoryName(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("repositoryUri", targetDepth)) {
+                    context.nextToken();
+                    repository.setRepositoryUri(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

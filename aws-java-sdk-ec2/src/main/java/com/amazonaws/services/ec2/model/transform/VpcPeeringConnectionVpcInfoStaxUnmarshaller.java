@@ -70,6 +70,13 @@ public class VpcPeeringConnectionVpcInfoStaxUnmarshaller implements
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("peeringOptions", targetDepth)) {
+                    vpcPeeringConnectionVpcInfo
+                            .setPeeringOptions(VpcPeeringConnectionOptionsDescriptionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpcPeeringConnectionVpcInfo;

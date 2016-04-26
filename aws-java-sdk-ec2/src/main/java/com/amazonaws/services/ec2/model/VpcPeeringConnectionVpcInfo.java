@@ -43,6 +43,13 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * Information about the VPC peering connection options for the accepter or
+     * requester VPC.
+     * </p>
+     */
+    private VpcPeeringConnectionOptionsDescription peeringOptions;
 
     /**
      * <p>
@@ -168,6 +175,55 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the VPC peering connection options for the accepter or
+     * requester VPC.
+     * </p>
+     * 
+     * @param peeringOptions
+     *        Information about the VPC peering connection options for the
+     *        accepter or requester VPC.
+     */
+
+    public void setPeeringOptions(
+            VpcPeeringConnectionOptionsDescription peeringOptions) {
+        this.peeringOptions = peeringOptions;
+    }
+
+    /**
+     * <p>
+     * Information about the VPC peering connection options for the accepter or
+     * requester VPC.
+     * </p>
+     * 
+     * @return Information about the VPC peering connection options for the
+     *         accepter or requester VPC.
+     */
+
+    public VpcPeeringConnectionOptionsDescription getPeeringOptions() {
+        return this.peeringOptions;
+    }
+
+    /**
+     * <p>
+     * Information about the VPC peering connection options for the accepter or
+     * requester VPC.
+     * </p>
+     * 
+     * @param peeringOptions
+     *        Information about the VPC peering connection options for the
+     *        accepter or requester VPC.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public VpcPeeringConnectionVpcInfo withPeeringOptions(
+            VpcPeeringConnectionOptionsDescription peeringOptions) {
+        setPeeringOptions(peeringOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -184,7 +240,9 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
         if (getOwnerId() != null)
             sb.append("OwnerId: " + getOwnerId() + ",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId());
+            sb.append("VpcId: " + getVpcId() + ",");
+        if (getPeeringOptions() != null)
+            sb.append("PeeringOptions: " + getPeeringOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -214,6 +272,12 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
         if (other.getVpcId() != null
                 && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getPeeringOptions() == null
+                ^ this.getPeeringOptions() == null)
+            return false;
+        if (other.getPeeringOptions() != null
+                && other.getPeeringOptions().equals(this.getPeeringOptions()) == false)
+            return false;
         return true;
     }
 
@@ -228,6 +292,10 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
                 + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode
                 + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPeeringOptions() == null) ? 0 : getPeeringOptions()
+                        .hashCode());
         return hashCode;
     }
 

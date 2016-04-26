@@ -38,12 +38,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
     private String cidrBlock;
     /**
      * <p>
-     * The supported tenancy options for instances launched into the VPC. A
-     * value of <code>default</code> means that instances can be launched with
-     * any tenancy; a value of <code>dedicated</code> means all instances
-     * launched into the VPC are launched as dedicated tenancy instances
-     * regardless of the tenancy assigned to the instance at launch. Dedicated
-     * tenancy instances run on single-tenant hardware.
+     * The tenancy options for instances launched into the VPC. For
+     * <code>default</code>, instances are launched with shared tenancy by
+     * default. You can launch instances with any tenancy into a shared tenancy
+     * VPC. For <code>dedicated</code>, instances are launched as dedicated
+     * tenancy instances by default. You can only launch instances with a
+     * tenancy of <code>dedicated</code> or <code>host</code> into a dedicated
+     * tenancy VPC.
      * </p>
      * <p>
      * <b>Important:</b> The <code>host</code> value cannot be used with this
@@ -126,12 +127,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The supported tenancy options for instances launched into the VPC. A
-     * value of <code>default</code> means that instances can be launched with
-     * any tenancy; a value of <code>dedicated</code> means all instances
-     * launched into the VPC are launched as dedicated tenancy instances
-     * regardless of the tenancy assigned to the instance at launch. Dedicated
-     * tenancy instances run on single-tenant hardware.
+     * The tenancy options for instances launched into the VPC. For
+     * <code>default</code>, instances are launched with shared tenancy by
+     * default. You can launch instances with any tenancy into a shared tenancy
+     * VPC. For <code>dedicated</code>, instances are launched as dedicated
+     * tenancy instances by default. You can only launch instances with a
+     * tenancy of <code>dedicated</code> or <code>host</code> into a dedicated
+     * tenancy VPC.
      * </p>
      * <p>
      * <b>Important:</b> The <code>host</code> value cannot be used with this
@@ -143,13 +145,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param instanceTenancy
-     *        The supported tenancy options for instances launched into the VPC.
-     *        A value of <code>default</code> means that instances can be
-     *        launched with any tenancy; a value of <code>dedicated</code> means
-     *        all instances launched into the VPC are launched as dedicated
-     *        tenancy instances regardless of the tenancy assigned to the
-     *        instance at launch. Dedicated tenancy instances run on
-     *        single-tenant hardware.</p>
+     *        The tenancy options for instances launched into the VPC. For
+     *        <code>default</code>, instances are launched with shared tenancy
+     *        by default. You can launch instances with any tenancy into a
+     *        shared tenancy VPC. For <code>dedicated</code>, instances are
+     *        launched as dedicated tenancy instances by default. You can only
+     *        launch instances with a tenancy of <code>dedicated</code> or
+     *        <code>host</code> into a dedicated tenancy VPC. </p>
      *        <p>
      *        <b>Important:</b> The <code>host</code> value cannot be used with
      *        this parameter. Use the <code>default</code> or
@@ -166,12 +168,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The supported tenancy options for instances launched into the VPC. A
-     * value of <code>default</code> means that instances can be launched with
-     * any tenancy; a value of <code>dedicated</code> means all instances
-     * launched into the VPC are launched as dedicated tenancy instances
-     * regardless of the tenancy assigned to the instance at launch. Dedicated
-     * tenancy instances run on single-tenant hardware.
+     * The tenancy options for instances launched into the VPC. For
+     * <code>default</code>, instances are launched with shared tenancy by
+     * default. You can launch instances with any tenancy into a shared tenancy
+     * VPC. For <code>dedicated</code>, instances are launched as dedicated
+     * tenancy instances by default. You can only launch instances with a
+     * tenancy of <code>dedicated</code> or <code>host</code> into a dedicated
+     * tenancy VPC.
      * </p>
      * <p>
      * <b>Important:</b> The <code>host</code> value cannot be used with this
@@ -182,13 +185,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      * Default: <code>default</code>
      * </p>
      * 
-     * @return The supported tenancy options for instances launched into the
-     *         VPC. A value of <code>default</code> means that instances can be
-     *         launched with any tenancy; a value of <code>dedicated</code>
-     *         means all instances launched into the VPC are launched as
-     *         dedicated tenancy instances regardless of the tenancy assigned to
-     *         the instance at launch. Dedicated tenancy instances run on
-     *         single-tenant hardware.</p>
+     * @return The tenancy options for instances launched into the VPC. For
+     *         <code>default</code>, instances are launched with shared tenancy
+     *         by default. You can launch instances with any tenancy into a
+     *         shared tenancy VPC. For <code>dedicated</code>, instances are
+     *         launched as dedicated tenancy instances by default. You can only
+     *         launch instances with a tenancy of <code>dedicated</code> or
+     *         <code>host</code> into a dedicated tenancy VPC. </p>
      *         <p>
      *         <b>Important:</b> The <code>host</code> value cannot be used with
      *         this parameter. Use the <code>default</code> or
@@ -205,12 +208,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The supported tenancy options for instances launched into the VPC. A
-     * value of <code>default</code> means that instances can be launched with
-     * any tenancy; a value of <code>dedicated</code> means all instances
-     * launched into the VPC are launched as dedicated tenancy instances
-     * regardless of the tenancy assigned to the instance at launch. Dedicated
-     * tenancy instances run on single-tenant hardware.
+     * The tenancy options for instances launched into the VPC. For
+     * <code>default</code>, instances are launched with shared tenancy by
+     * default. You can launch instances with any tenancy into a shared tenancy
+     * VPC. For <code>dedicated</code>, instances are launched as dedicated
+     * tenancy instances by default. You can only launch instances with a
+     * tenancy of <code>dedicated</code> or <code>host</code> into a dedicated
+     * tenancy VPC.
      * </p>
      * <p>
      * <b>Important:</b> The <code>host</code> value cannot be used with this
@@ -222,13 +226,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param instanceTenancy
-     *        The supported tenancy options for instances launched into the VPC.
-     *        A value of <code>default</code> means that instances can be
-     *        launched with any tenancy; a value of <code>dedicated</code> means
-     *        all instances launched into the VPC are launched as dedicated
-     *        tenancy instances regardless of the tenancy assigned to the
-     *        instance at launch. Dedicated tenancy instances run on
-     *        single-tenant hardware.</p>
+     *        The tenancy options for instances launched into the VPC. For
+     *        <code>default</code>, instances are launched with shared tenancy
+     *        by default. You can launch instances with any tenancy into a
+     *        shared tenancy VPC. For <code>dedicated</code>, instances are
+     *        launched as dedicated tenancy instances by default. You can only
+     *        launch instances with a tenancy of <code>dedicated</code> or
+     *        <code>host</code> into a dedicated tenancy VPC. </p>
      *        <p>
      *        <b>Important:</b> The <code>host</code> value cannot be used with
      *        this parameter. Use the <code>default</code> or
@@ -248,12 +252,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The supported tenancy options for instances launched into the VPC. A
-     * value of <code>default</code> means that instances can be launched with
-     * any tenancy; a value of <code>dedicated</code> means all instances
-     * launched into the VPC are launched as dedicated tenancy instances
-     * regardless of the tenancy assigned to the instance at launch. Dedicated
-     * tenancy instances run on single-tenant hardware.
+     * The tenancy options for instances launched into the VPC. For
+     * <code>default</code>, instances are launched with shared tenancy by
+     * default. You can launch instances with any tenancy into a shared tenancy
+     * VPC. For <code>dedicated</code>, instances are launched as dedicated
+     * tenancy instances by default. You can only launch instances with a
+     * tenancy of <code>dedicated</code> or <code>host</code> into a dedicated
+     * tenancy VPC.
      * </p>
      * <p>
      * <b>Important:</b> The <code>host</code> value cannot be used with this
@@ -265,13 +270,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param instanceTenancy
-     *        The supported tenancy options for instances launched into the VPC.
-     *        A value of <code>default</code> means that instances can be
-     *        launched with any tenancy; a value of <code>dedicated</code> means
-     *        all instances launched into the VPC are launched as dedicated
-     *        tenancy instances regardless of the tenancy assigned to the
-     *        instance at launch. Dedicated tenancy instances run on
-     *        single-tenant hardware.</p>
+     *        The tenancy options for instances launched into the VPC. For
+     *        <code>default</code>, instances are launched with shared tenancy
+     *        by default. You can launch instances with any tenancy into a
+     *        shared tenancy VPC. For <code>dedicated</code>, instances are
+     *        launched as dedicated tenancy instances by default. You can only
+     *        launch instances with a tenancy of <code>dedicated</code> or
+     *        <code>host</code> into a dedicated tenancy VPC. </p>
      *        <p>
      *        <b>Important:</b> The <code>host</code> value cannot be used with
      *        this parameter. Use the <code>default</code> or
@@ -288,12 +293,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The supported tenancy options for instances launched into the VPC. A
-     * value of <code>default</code> means that instances can be launched with
-     * any tenancy; a value of <code>dedicated</code> means all instances
-     * launched into the VPC are launched as dedicated tenancy instances
-     * regardless of the tenancy assigned to the instance at launch. Dedicated
-     * tenancy instances run on single-tenant hardware.
+     * The tenancy options for instances launched into the VPC. For
+     * <code>default</code>, instances are launched with shared tenancy by
+     * default. You can launch instances with any tenancy into a shared tenancy
+     * VPC. For <code>dedicated</code>, instances are launched as dedicated
+     * tenancy instances by default. You can only launch instances with a
+     * tenancy of <code>dedicated</code> or <code>host</code> into a dedicated
+     * tenancy VPC.
      * </p>
      * <p>
      * <b>Important:</b> The <code>host</code> value cannot be used with this
@@ -305,13 +311,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param instanceTenancy
-     *        The supported tenancy options for instances launched into the VPC.
-     *        A value of <code>default</code> means that instances can be
-     *        launched with any tenancy; a value of <code>dedicated</code> means
-     *        all instances launched into the VPC are launched as dedicated
-     *        tenancy instances regardless of the tenancy assigned to the
-     *        instance at launch. Dedicated tenancy instances run on
-     *        single-tenant hardware.</p>
+     *        The tenancy options for instances launched into the VPC. For
+     *        <code>default</code>, instances are launched with shared tenancy
+     *        by default. You can launch instances with any tenancy into a
+     *        shared tenancy VPC. For <code>dedicated</code>, instances are
+     *        launched as dedicated tenancy instances by default. You can only
+     *        launch instances with a tenancy of <code>dedicated</code> or
+     *        <code>host</code> into a dedicated tenancy VPC. </p>
      *        <p>
      *        <b>Important:</b> The <code>host</code> value cannot be used with
      *        this parameter. Use the <code>default</code> or

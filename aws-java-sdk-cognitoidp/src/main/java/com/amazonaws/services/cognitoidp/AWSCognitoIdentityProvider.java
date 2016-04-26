@@ -785,50 +785,6 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Gets the JSON Web keys for the specified user pool.
-     * </p>
-     * 
-     * @param getJWKSRequest
-     *        Represents the request to get JSON Web keys.
-     * @return Result of the GetJWKS operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         This exception is thrown when the Amazon Cognito service cannot
-     *         find the requested resource.
-     * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many
-     *         requests for a given operation.
-     * @throws InternalErrorException
-     *         This exception is thrown when Amazon Cognito encounters an
-     *         internal error.
-     * @sample AWSCognitoIdentityProvider.GetJWKS
-     */
-    GetJWKSResult getJWKS(GetJWKSRequest getJWKSRequest);
-
-    /**
-     * <p>
-     * Gets the OpenId configuration information for the specified user pool.
-     * </p>
-     * 
-     * @param getOpenIdConfigurationRequest
-     *        Represents the request to get the Open ID configuration.
-     * @return Result of the GetOpenIdConfiguration operation returned by the
-     *         service.
-     * @throws ResourceNotFoundException
-     *         This exception is thrown when the Amazon Cognito service cannot
-     *         find the requested resource.
-     * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many
-     *         requests for a given operation.
-     * @throws InternalErrorException
-     *         This exception is thrown when Amazon Cognito encounters an
-     *         internal error.
-     * @sample AWSCognitoIdentityProvider.GetOpenIdConfiguration
-     */
-    GetOpenIdConfigurationResult getOpenIdConfiguration(
-            GetOpenIdConfigurationRequest getOpenIdConfigurationRequest);
-
-    /**
-     * <p>
      * Gets the user attributes and metadata for a user.
      * </p>
      * 

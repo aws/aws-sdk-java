@@ -67,7 +67,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * <p>
-     * Default: standard
+     * Default: <code>standard</code>
      * </p>
      */
     private String volumeType;
@@ -369,7 +369,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * <p>
-     * Default: standard
+     * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
@@ -378,7 +378,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *        for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Default: standard
+     *        Default: <code>standard</code>
      * @see VolumeType
      */
 
@@ -394,7 +394,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * <p>
-     * Default: standard
+     * Default: <code>standard</code>
      * </p>
      * 
      * @return The volume type. This can be <code>gp2</code> for General Purpose
@@ -402,7 +402,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *         <code>standard</code> for Magnetic volumes.</p>
      *         <p>
-     *         Default: standard
+     *         Default: <code>standard</code>
      * @see VolumeType
      */
 
@@ -418,7 +418,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * <p>
-     * Default: standard
+     * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
@@ -427,7 +427,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *        for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Default: standard
+     *        Default: <code>standard</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see VolumeType
@@ -446,7 +446,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * <p>
-     * Default: standard
+     * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
@@ -455,7 +455,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *        for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Default: standard
+     *        Default: <code>standard</code>
      * @see VolumeType
      */
 
@@ -471,7 +471,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * <code>standard</code> for Magnetic volumes.
      * </p>
      * <p>
-     * Default: standard
+     * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
@@ -480,7 +480,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *        for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Default: standard
+     *        Default: <code>standard</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see VolumeType

@@ -47,7 +47,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      * <code>docker login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For
      * example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
      * </p>
      */
     private String proxyEndpoint;
@@ -164,7 +164,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      * <code>docker login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For
      * example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
      * </p>
      * 
      * @param proxyEndpoint
@@ -173,7 +173,8 @@ public class AuthorizationData implements Serializable, Cloneable {
      *        format is
      *        <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>.
      *        For example,
-     *        <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.
+     *        <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>
+     *        ..
      */
 
     public void setProxyEndpoint(String proxyEndpoint) {
@@ -186,7 +187,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      * <code>docker login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For
      * example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
      * </p>
      * 
      * @return The registry URL to use for this authorization token in a
@@ -195,7 +196,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      *         <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>.
      *         For example,
      *         <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>
-     *         .
+     *         ..
      */
 
     public String getProxyEndpoint() {
@@ -208,7 +209,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      * <code>docker login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For
      * example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>..
      * </p>
      * 
      * @param proxyEndpoint
@@ -217,7 +218,8 @@ public class AuthorizationData implements Serializable, Cloneable {
      *        format is
      *        <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>.
      *        For example,
-     *        <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.
+     *        <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>
+     *        ..
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -1001,78 +1001,6 @@
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ForgotPasswordRequest, ForgotPasswordResult>",
       "methodName" : "forgotPassword"
     },
-    "GetJWKS" : {
-      "documentation" : "<p>Gets the JSON Web keys for the specified user pool.</p>",
-      "operationName" : "GetJWKS",
-      "deprecated" : false,
-      "input" : {
-        "variableName" : "getJWKSRequest",
-        "variableType" : "GetJWKSRequest",
-        "variableDeclarationType" : "GetJWKSRequest",
-        "documentation" : "<p>Represents the request to get JSON Web keys.</p>",
-        "simpleType" : "GetJWKSRequest",
-        "variableSetterType" : "GetJWKSRequest"
-      },
-      "inputStreamPropertyName" : null,
-      "returnType" : {
-        "returnType" : "GetJWKSResult",
-        "documentation" : "<p>Represents the response from the server to get JSON Web keys.</p>"
-      },
-      "exceptions" : [ {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>"
-      }, {
-        "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>This exception gets thrown when the user has made too many requests for a given operation.</p>"
-      }, {
-        "exceptionName" : "InternalErrorException",
-        "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
-      } ],
-      "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
-      "syncReturnType" : "GetJWKSResult",
-      "asyncReturnType" : "GetJWKSResult",
-      "asyncFutureType" : "java.util.concurrent.Future<GetJWKSResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<GetJWKSResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetJWKSRequest, GetJWKSResult>",
-      "methodName" : "getJWKS"
-    },
-    "GetOpenIdConfiguration" : {
-      "documentation" : "<p>Gets the OpenId configuration information for the specified user pool.</p>",
-      "operationName" : "GetOpenIdConfiguration",
-      "deprecated" : false,
-      "input" : {
-        "variableName" : "getOpenIdConfigurationRequest",
-        "variableType" : "GetOpenIdConfigurationRequest",
-        "variableDeclarationType" : "GetOpenIdConfigurationRequest",
-        "documentation" : "<p>Represents the request to get the Open ID configuration.</p>",
-        "simpleType" : "GetOpenIdConfigurationRequest",
-        "variableSetterType" : "GetOpenIdConfigurationRequest"
-      },
-      "inputStreamPropertyName" : null,
-      "returnType" : {
-        "returnType" : "GetOpenIdConfigurationResult",
-        "documentation" : "<p>Represents the response from the server to get the Open ID configuration information.</p>"
-      },
-      "exceptions" : [ {
-        "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>"
-      }, {
-        "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>This exception gets thrown when the user has made too many requests for a given operation.</p>"
-      }, {
-        "exceptionName" : "InternalErrorException",
-        "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
-      } ],
-      "hasBlobMemberAsPayload" : false,
-      "authenticated" : false,
-      "syncReturnType" : "GetOpenIdConfigurationResult",
-      "asyncReturnType" : "GetOpenIdConfigurationResult",
-      "asyncFutureType" : "java.util.concurrent.Future<GetOpenIdConfigurationResult>",
-      "asyncCallableType" : "java.util.concurrent.Callable<GetOpenIdConfigurationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetOpenIdConfigurationRequest, GetOpenIdConfigurationResult>",
-      "methodName" : "getOpenIdConfiguration"
-    },
     "GetUser" : {
       "documentation" : "<p>Gets the user attributes and metadata for a user.</p>",
       "operationName" : "GetUser",
@@ -2458,8 +2386,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "UserPoolClientDescription",
           "simple" : false,
+          "simpleType" : "UserPoolClientDescription",
           "map" : false,
           "templateType" : "java.util.List<UserPoolClientDescription>",
           "templateImplType" : "java.util.ArrayList<UserPoolClientDescription>"
@@ -2704,8 +2632,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "UserPoolClientDescription",
             "simple" : false,
+            "simpleType" : "UserPoolClientDescription",
             "map" : false,
             "templateType" : "java.util.List<UserPoolClientDescription>",
             "templateImplType" : "java.util.ArrayList<UserPoolClientDescription>"
@@ -2975,8 +2903,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "AttributeType",
           "simple" : false,
+          "simpleType" : "AttributeType",
           "map" : false,
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -3172,8 +3100,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "AttributeType",
             "simple" : false,
+            "simpleType" : "AttributeType",
             "map" : false,
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -3513,8 +3441,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "MFAOptionType",
           "simple" : false,
+          "simpleType" : "MFAOptionType",
           "map" : false,
           "templateType" : "java.util.List<MFAOptionType>",
           "templateImplType" : "java.util.ArrayList<MFAOptionType>"
@@ -3658,8 +3586,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "MFAOptionType",
             "simple" : false,
+            "simpleType" : "MFAOptionType",
             "map" : false,
             "templateType" : "java.util.List<MFAOptionType>",
             "templateImplType" : "java.util.ArrayList<MFAOptionType>"
@@ -3986,8 +3914,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "MFAOptionType",
           "simple" : false,
+          "simpleType" : "MFAOptionType",
           "map" : false,
           "templateType" : "java.util.List<MFAOptionType>",
           "templateImplType" : "java.util.ArrayList<MFAOptionType>"
@@ -4131,8 +4059,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "MFAOptionType",
             "simple" : false,
+            "simpleType" : "MFAOptionType",
             "map" : false,
             "templateType" : "java.util.List<MFAOptionType>",
             "templateImplType" : "java.util.ArrayList<MFAOptionType>"
@@ -4646,8 +4574,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "AttributeType",
           "simple" : false,
+          "simpleType" : "AttributeType",
           "map" : false,
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -4791,8 +4719,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "AttributeType",
             "simple" : false,
+            "simpleType" : "AttributeType",
             "map" : false,
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -5335,8 +5263,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -5585,8 +5513,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -5999,278 +5927,6 @@
           "getterDocumentation" : "/**<p>The verification code in the request to verify user attributes.</p>\n@return The verification code in the request to verify user attributes.*/",
           "fluentSetterDocumentation" : "/**<p>The verification code in the request to verify user attributes.</p>\n@param code The verification code in the request to verify user attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The verification code in the request to verify user attributes.</p>\n@param code The verification code in the request to verify user attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
-    "GetJWKSResult" : {
-      "c2jName" : "GetJWKSResponse",
-      "documentation" : "<p>Represents the response from the server to get JSON Web keys.</p>",
-      "shapeName" : "GetJWKSResult",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "members" : [ {
-        "documentation" : "<p>The keys in a get JSON Web keys response.</p>",
-        "name" : "Keys",
-        "c2jName" : "keys",
-        "c2jShape" : "KeyListType",
-        "variable" : {
-          "variableName" : "keys",
-          "variableType" : "java.util.List<KeyType>",
-          "variableDeclarationType" : "java.util.List<KeyType>",
-          "documentation" : "<p>The keys in a get JSON Web keys response.</p>",
-          "simpleType" : "List<KeyType>",
-          "variableSetterType" : "java.util.Collection<KeyType>"
-        },
-        "setterModel" : {
-          "variableName" : "keys",
-          "variableType" : "java.util.List<KeyType>",
-          "variableDeclarationType" : "java.util.List<KeyType>",
-          "documentation" : "",
-          "simpleType" : "List<KeyType>",
-          "variableSetterType" : "java.util.Collection<KeyType>"
-        },
-        "getterModel" : {
-          "returnType" : "java.util.List<KeyType>",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "keys",
-          "marshallLocationName" : "keys",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : {
-          "memberType" : "KeyType",
-          "memberLocationName" : null,
-          "implType" : "java.util.ArrayList",
-          "interfaceType" : "java.util.List",
-          "listMemberModel" : {
-            "documentation" : "",
-            "name" : "Member",
-            "c2jName" : "member",
-            "c2jShape" : "KeyType",
-            "variable" : {
-              "variableName" : "member",
-              "variableType" : "KeyType",
-              "variableDeclarationType" : "KeyType",
-              "documentation" : "",
-              "simpleType" : "KeyType",
-              "variableSetterType" : "KeyType"
-            },
-            "setterModel" : {
-              "variableName" : "member",
-              "variableType" : "KeyType",
-              "variableDeclarationType" : "KeyType",
-              "documentation" : "",
-              "simpleType" : "KeyType",
-              "variableSetterType" : "KeyType"
-            },
-            "getterModel" : {
-              "returnType" : "KeyType",
-              "documentation" : null
-            },
-            "http" : {
-              "unmarshallLocationName" : "member",
-              "marshallLocationName" : "member",
-              "additionalUnmarshallingPath" : null,
-              "additionalMarshallingPath" : null,
-              "isPayload" : false,
-              "isStreaming" : false,
-              "location" : null,
-              "flattened" : false,
-              "header" : false,
-              "uri" : false,
-              "statusCode" : false,
-              "queryString" : false
-            },
-            "deprecated" : false,
-            "listModel" : null,
-            "mapModel" : null,
-            "enumType" : null,
-            "xmlNameSpaceUri" : null,
-            "idempotencyToken" : false,
-            "list" : false,
-            "simple" : false,
-            "map" : false,
-            "setterDocumentation" : "/**\n@param member */",
-            "getterDocumentation" : "/**\n@return */",
-            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
-          },
-          "memberAdditionalMarshallingPath" : null,
-          "memberAdditionalUnmarshallingPath" : null,
-          "sendEmptyQueryString" : false,
-          "simpleType" : "KeyType",
-          "simple" : false,
-          "map" : false,
-          "templateType" : "java.util.List<KeyType>",
-          "templateImplType" : "java.util.ArrayList<KeyType>"
-        },
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : true,
-        "simple" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The keys in a get JSON Web keys response.</p>\n@param keys The keys in a get JSON Web keys response.*/",
-        "getterDocumentation" : "/**<p>The keys in a get JSON Web keys response.</p>\n@return The keys in a get JSON Web keys response.*/",
-        "fluentSetterDocumentation" : "/**<p>The keys in a get JSON Web keys response.</p>\n@param keys The keys in a get JSON Web keys response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The keys in a get JSON Web keys response.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setKeys(java.util.Collection)} or {@link #withKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param keys The keys in a get JSON Web keys response.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "getJWKSResult",
-        "variableType" : "GetJWKSResult",
-        "variableDeclarationType" : "GetJWKSResult",
-        "documentation" : null,
-        "simpleType" : "GetJWKSResult",
-        "variableSetterType" : "GetJWKSResult"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "Keys" : {
-          "documentation" : "<p>The keys in a get JSON Web keys response.</p>",
-          "name" : "Keys",
-          "c2jName" : "keys",
-          "c2jShape" : "KeyListType",
-          "variable" : {
-            "variableName" : "keys",
-            "variableType" : "java.util.List<KeyType>",
-            "variableDeclarationType" : "java.util.List<KeyType>",
-            "documentation" : "<p>The keys in a get JSON Web keys response.</p>",
-            "simpleType" : "List<KeyType>",
-            "variableSetterType" : "java.util.Collection<KeyType>"
-          },
-          "setterModel" : {
-            "variableName" : "keys",
-            "variableType" : "java.util.List<KeyType>",
-            "variableDeclarationType" : "java.util.List<KeyType>",
-            "documentation" : "",
-            "simpleType" : "List<KeyType>",
-            "variableSetterType" : "java.util.Collection<KeyType>"
-          },
-          "getterModel" : {
-            "returnType" : "java.util.List<KeyType>",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "keys",
-            "marshallLocationName" : "keys",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : {
-            "memberType" : "KeyType",
-            "memberLocationName" : null,
-            "implType" : "java.util.ArrayList",
-            "interfaceType" : "java.util.List",
-            "listMemberModel" : {
-              "documentation" : "",
-              "name" : "Member",
-              "c2jName" : "member",
-              "c2jShape" : "KeyType",
-              "variable" : {
-                "variableName" : "member",
-                "variableType" : "KeyType",
-                "variableDeclarationType" : "KeyType",
-                "documentation" : "",
-                "simpleType" : "KeyType",
-                "variableSetterType" : "KeyType"
-              },
-              "setterModel" : {
-                "variableName" : "member",
-                "variableType" : "KeyType",
-                "variableDeclarationType" : "KeyType",
-                "documentation" : "",
-                "simpleType" : "KeyType",
-                "variableSetterType" : "KeyType"
-              },
-              "getterModel" : {
-                "returnType" : "KeyType",
-                "documentation" : null
-              },
-              "http" : {
-                "unmarshallLocationName" : "member",
-                "marshallLocationName" : "member",
-                "additionalUnmarshallingPath" : null,
-                "additionalMarshallingPath" : null,
-                "isPayload" : false,
-                "isStreaming" : false,
-                "location" : null,
-                "flattened" : false,
-                "header" : false,
-                "uri" : false,
-                "statusCode" : false,
-                "queryString" : false
-              },
-              "deprecated" : false,
-              "listModel" : null,
-              "mapModel" : null,
-              "enumType" : null,
-              "xmlNameSpaceUri" : null,
-              "idempotencyToken" : false,
-              "list" : false,
-              "simple" : false,
-              "map" : false,
-              "setterDocumentation" : "/**\n@param member */",
-              "getterDocumentation" : "/**\n@return */",
-              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
-            },
-            "memberAdditionalMarshallingPath" : null,
-            "memberAdditionalUnmarshallingPath" : null,
-            "sendEmptyQueryString" : false,
-            "simpleType" : "KeyType",
-            "simple" : false,
-            "map" : false,
-            "templateType" : "java.util.List<KeyType>",
-            "templateImplType" : "java.util.ArrayList<KeyType>"
-          },
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : true,
-          "simple" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The keys in a get JSON Web keys response.</p>\n@param keys The keys in a get JSON Web keys response.*/",
-          "getterDocumentation" : "/**<p>The keys in a get JSON Web keys response.</p>\n@return The keys in a get JSON Web keys response.*/",
-          "fluentSetterDocumentation" : "/**<p>The keys in a get JSON Web keys response.</p>\n@param keys The keys in a get JSON Web keys response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The keys in a get JSON Web keys response.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setKeys(java.util.Collection)} or {@link #withKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param keys The keys in a get JSON Web keys response.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -7050,8 +6706,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "UserType",
           "simple" : false,
+          "simpleType" : "UserType",
           "map" : false,
           "templateType" : "java.util.List<UserType>",
           "templateImplType" : "java.util.ArrayList<UserType>"
@@ -7243,8 +6899,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "UserType",
             "simple" : false,
+            "simpleType" : "UserType",
             "map" : false,
             "templateType" : "java.util.List<UserType>",
             "templateImplType" : "java.util.ArrayList<UserType>"
@@ -7877,1067 +7533,6 @@
           "getterDocumentation" : "/**<p>The ID of the client associated with the user pool.</p>\n@return The ID of the client associated with the user pool.*/",
           "fluentSetterDocumentation" : "/**<p>The ID of the client associated with the user pool.</p>\n@param clientId The ID of the client associated with the user pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The ID of the client associated with the user pool.</p>\n@param clientId The ID of the client associated with the user pool.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
-    "GetOpenIdConfigurationResult" : {
-      "c2jName" : "GetOpenIdConfigurationResponse",
-      "documentation" : "<p>Represents the response from the server to get the Open ID configuration information.</p>",
-      "shapeName" : "GetOpenIdConfigurationResult",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "members" : [ {
-        "documentation" : "<p>The issuer of the Open ID configuration response.</p>",
-        "name" : "Issuer",
-        "c2jName" : "issuer",
-        "c2jShape" : "openIdUrlType",
-        "variable" : {
-          "variableName" : "issuer",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The issuer of the Open ID configuration response.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "issuer",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "issuer",
-          "marshallLocationName" : "issuer",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The issuer of the Open ID configuration response.</p>\n@param issuer The issuer of the Open ID configuration response.*/",
-        "getterDocumentation" : "/**<p>The issuer of the Open ID configuration response.</p>\n@return The issuer of the Open ID configuration response.*/",
-        "fluentSetterDocumentation" : "/**<p>The issuer of the Open ID configuration response.</p>\n@param issuer The issuer of the Open ID configuration response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The issuer of the Open ID configuration response.</p>\n@param issuer The issuer of the Open ID configuration response.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>",
-        "name" : "Jwks_uri",
-        "c2jName" : "jwks_uri",
-        "c2jShape" : "openIdUrlType",
-        "variable" : {
-          "variableName" : "jwks_uri",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "jwks_uri",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "jwks_uri",
-          "marshallLocationName" : "jwks_uri",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>\n@param jwks_uri The URI of the JSON Web keys in the server response to get Open ID configuration information.*/",
-        "getterDocumentation" : "/**<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>\n@return The URI of the JSON Web keys in the server response to get Open ID configuration information.*/",
-        "fluentSetterDocumentation" : "/**<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>\n@param jwks_uri The URI of the JSON Web keys in the server response to get Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>\n@param jwks_uri The URI of the JSON Web keys in the server response to get Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>",
-        "name" : "Authorization_endpoint",
-        "c2jName" : "authorization_endpoint",
-        "c2jShape" : "openIdUrlType",
-        "variable" : {
-          "variableName" : "authorization_endpoint",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "authorization_endpoint",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "authorization_endpoint",
-          "marshallLocationName" : "authorization_endpoint",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>\n@param authorization_endpoint The authorization endpoint returned by the server response to get the Open ID configuration information.*/",
-        "getterDocumentation" : "/**<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>\n@return The authorization endpoint returned by the server response to get the Open ID configuration information.*/",
-        "fluentSetterDocumentation" : "/**<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>\n@param authorization_endpoint The authorization endpoint returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>\n@param authorization_endpoint The authorization endpoint returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>",
-        "name" : "Subject_types_supported",
-        "c2jName" : "subject_types_supported",
-        "c2jShape" : "openIdListType",
-        "variable" : {
-          "variableName" : "subject_types_supported",
-          "variableType" : "java.util.List<String>",
-          "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : "<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
-        },
-        "setterModel" : {
-          "variableName" : "subject_types_supported",
-          "variableType" : "java.util.List<String>",
-          "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : "",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
-        },
-        "getterModel" : {
-          "returnType" : "java.util.List<String>",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "subject_types_supported",
-          "marshallLocationName" : "subject_types_supported",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : {
-          "memberType" : "String",
-          "memberLocationName" : null,
-          "implType" : "java.util.ArrayList",
-          "interfaceType" : "java.util.List",
-          "listMemberModel" : {
-            "documentation" : "",
-            "name" : "Member",
-            "c2jName" : "member",
-            "c2jShape" : "StringType",
-            "variable" : {
-              "variableName" : "member",
-              "variableType" : "String",
-              "variableDeclarationType" : "String",
-              "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
-            },
-            "setterModel" : {
-              "variableName" : "member",
-              "variableType" : "String",
-              "variableDeclarationType" : "String",
-              "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
-            },
-            "getterModel" : {
-              "returnType" : "String",
-              "documentation" : null
-            },
-            "http" : {
-              "unmarshallLocationName" : "member",
-              "marshallLocationName" : "member",
-              "additionalUnmarshallingPath" : null,
-              "additionalMarshallingPath" : null,
-              "isPayload" : false,
-              "isStreaming" : false,
-              "location" : null,
-              "flattened" : false,
-              "header" : false,
-              "uri" : false,
-              "statusCode" : false,
-              "queryString" : false
-            },
-            "deprecated" : false,
-            "listModel" : null,
-            "mapModel" : null,
-            "enumType" : null,
-            "xmlNameSpaceUri" : null,
-            "idempotencyToken" : false,
-            "list" : false,
-            "simple" : true,
-            "map" : false,
-            "setterDocumentation" : "/**\n@param member */",
-            "getterDocumentation" : "/**\n@return */",
-            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
-          },
-          "memberAdditionalMarshallingPath" : null,
-          "memberAdditionalUnmarshallingPath" : null,
-          "sendEmptyQueryString" : false,
-          "simpleType" : "String",
-          "simple" : true,
-          "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
-        },
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : true,
-        "simple" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>\n@param subject_types_supported The subject types supported returned by the server response to get the Open ID configuration information.*/",
-        "getterDocumentation" : "/**<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>\n@return The subject types supported returned by the server response to get the Open ID configuration information.*/",
-        "fluentSetterDocumentation" : "/**<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>\n@param subject_types_supported The subject types supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubject_types_supported(java.util.Collection)} or {@link #withSubject_types_supported(java.util.Collection)} if you want to override the existing values.</p>\n@param subject_types_supported The subject types supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>The response types supported returned by the server response to get the Open ID configuration information.</p>",
-        "name" : "Response_types_supported",
-        "c2jName" : "response_types_supported",
-        "c2jShape" : "openIdListType",
-        "variable" : {
-          "variableName" : "response_types_supported",
-          "variableType" : "java.util.List<String>",
-          "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : "<p>The response types supported returned by the server response to get the Open ID configuration information.</p>",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
-        },
-        "setterModel" : {
-          "variableName" : "response_types_supported",
-          "variableType" : "java.util.List<String>",
-          "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : "",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
-        },
-        "getterModel" : {
-          "returnType" : "java.util.List<String>",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "response_types_supported",
-          "marshallLocationName" : "response_types_supported",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : {
-          "memberType" : "String",
-          "memberLocationName" : null,
-          "implType" : "java.util.ArrayList",
-          "interfaceType" : "java.util.List",
-          "listMemberModel" : {
-            "documentation" : "",
-            "name" : "Member",
-            "c2jName" : "member",
-            "c2jShape" : "StringType",
-            "variable" : {
-              "variableName" : "member",
-              "variableType" : "String",
-              "variableDeclarationType" : "String",
-              "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
-            },
-            "setterModel" : {
-              "variableName" : "member",
-              "variableType" : "String",
-              "variableDeclarationType" : "String",
-              "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
-            },
-            "getterModel" : {
-              "returnType" : "String",
-              "documentation" : null
-            },
-            "http" : {
-              "unmarshallLocationName" : "member",
-              "marshallLocationName" : "member",
-              "additionalUnmarshallingPath" : null,
-              "additionalMarshallingPath" : null,
-              "isPayload" : false,
-              "isStreaming" : false,
-              "location" : null,
-              "flattened" : false,
-              "header" : false,
-              "uri" : false,
-              "statusCode" : false,
-              "queryString" : false
-            },
-            "deprecated" : false,
-            "listModel" : null,
-            "mapModel" : null,
-            "enumType" : null,
-            "xmlNameSpaceUri" : null,
-            "idempotencyToken" : false,
-            "list" : false,
-            "simple" : true,
-            "map" : false,
-            "setterDocumentation" : "/**\n@param member */",
-            "getterDocumentation" : "/**\n@return */",
-            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
-          },
-          "memberAdditionalMarshallingPath" : null,
-          "memberAdditionalUnmarshallingPath" : null,
-          "sendEmptyQueryString" : false,
-          "simpleType" : "String",
-          "simple" : true,
-          "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
-        },
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : true,
-        "simple" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The response types supported returned by the server response to get the Open ID configuration information.</p>\n@param response_types_supported The response types supported returned by the server response to get the Open ID configuration information.*/",
-        "getterDocumentation" : "/**<p>The response types supported returned by the server response to get the Open ID configuration information.</p>\n@return The response types supported returned by the server response to get the Open ID configuration information.*/",
-        "fluentSetterDocumentation" : "/**<p>The response types supported returned by the server response to get the Open ID configuration information.</p>\n@param response_types_supported The response types supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The response types supported returned by the server response to get the Open ID configuration information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResponse_types_supported(java.util.Collection)} or {@link #withResponse_types_supported(java.util.Collection)} if you want to override the existing values.</p>\n@param response_types_supported The response types supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>",
-        "name" : "Id_token_signing_alg_values_supported",
-        "c2jName" : "id_token_signing_alg_values_supported",
-        "c2jShape" : "openIdListType",
-        "variable" : {
-          "variableName" : "id_token_signing_alg_values_supported",
-          "variableType" : "java.util.List<String>",
-          "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : "<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
-        },
-        "setterModel" : {
-          "variableName" : "id_token_signing_alg_values_supported",
-          "variableType" : "java.util.List<String>",
-          "variableDeclarationType" : "java.util.List<String>",
-          "documentation" : "",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
-        },
-        "getterModel" : {
-          "returnType" : "java.util.List<String>",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "id_token_signing_alg_values_supported",
-          "marshallLocationName" : "id_token_signing_alg_values_supported",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : {
-          "memberType" : "String",
-          "memberLocationName" : null,
-          "implType" : "java.util.ArrayList",
-          "interfaceType" : "java.util.List",
-          "listMemberModel" : {
-            "documentation" : "",
-            "name" : "Member",
-            "c2jName" : "member",
-            "c2jShape" : "StringType",
-            "variable" : {
-              "variableName" : "member",
-              "variableType" : "String",
-              "variableDeclarationType" : "String",
-              "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
-            },
-            "setterModel" : {
-              "variableName" : "member",
-              "variableType" : "String",
-              "variableDeclarationType" : "String",
-              "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
-            },
-            "getterModel" : {
-              "returnType" : "String",
-              "documentation" : null
-            },
-            "http" : {
-              "unmarshallLocationName" : "member",
-              "marshallLocationName" : "member",
-              "additionalUnmarshallingPath" : null,
-              "additionalMarshallingPath" : null,
-              "isPayload" : false,
-              "isStreaming" : false,
-              "location" : null,
-              "flattened" : false,
-              "header" : false,
-              "uri" : false,
-              "statusCode" : false,
-              "queryString" : false
-            },
-            "deprecated" : false,
-            "listModel" : null,
-            "mapModel" : null,
-            "enumType" : null,
-            "xmlNameSpaceUri" : null,
-            "idempotencyToken" : false,
-            "list" : false,
-            "simple" : true,
-            "map" : false,
-            "setterDocumentation" : "/**\n@param member */",
-            "getterDocumentation" : "/**\n@return */",
-            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
-          },
-          "memberAdditionalMarshallingPath" : null,
-          "memberAdditionalUnmarshallingPath" : null,
-          "sendEmptyQueryString" : false,
-          "simpleType" : "String",
-          "simple" : true,
-          "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
-        },
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : true,
-        "simple" : false,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>\n@param id_token_signing_alg_values_supported The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.*/",
-        "getterDocumentation" : "/**<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>\n@return The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.*/",
-        "fluentSetterDocumentation" : "/**<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>\n@param id_token_signing_alg_values_supported The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setId_token_signing_alg_values_supported(java.util.Collection)} or {@link #withId_token_signing_alg_values_supported(java.util.Collection)} if you want to override the existing values.</p>\n@param id_token_signing_alg_values_supported The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "getOpenIdConfigurationResult",
-        "variableType" : "GetOpenIdConfigurationResult",
-        "variableDeclarationType" : "GetOpenIdConfigurationResult",
-        "documentation" : null,
-        "simpleType" : "GetOpenIdConfigurationResult",
-        "variableSetterType" : "GetOpenIdConfigurationResult"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "Response_types_supported" : {
-          "documentation" : "<p>The response types supported returned by the server response to get the Open ID configuration information.</p>",
-          "name" : "Response_types_supported",
-          "c2jName" : "response_types_supported",
-          "c2jShape" : "openIdListType",
-          "variable" : {
-            "variableName" : "response_types_supported",
-            "variableType" : "java.util.List<String>",
-            "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : "<p>The response types supported returned by the server response to get the Open ID configuration information.</p>",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
-          },
-          "setterModel" : {
-            "variableName" : "response_types_supported",
-            "variableType" : "java.util.List<String>",
-            "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : "",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
-          },
-          "getterModel" : {
-            "returnType" : "java.util.List<String>",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "response_types_supported",
-            "marshallLocationName" : "response_types_supported",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : {
-            "memberType" : "String",
-            "memberLocationName" : null,
-            "implType" : "java.util.ArrayList",
-            "interfaceType" : "java.util.List",
-            "listMemberModel" : {
-              "documentation" : "",
-              "name" : "Member",
-              "c2jName" : "member",
-              "c2jShape" : "StringType",
-              "variable" : {
-                "variableName" : "member",
-                "variableType" : "String",
-                "variableDeclarationType" : "String",
-                "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
-              },
-              "setterModel" : {
-                "variableName" : "member",
-                "variableType" : "String",
-                "variableDeclarationType" : "String",
-                "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
-              },
-              "getterModel" : {
-                "returnType" : "String",
-                "documentation" : null
-              },
-              "http" : {
-                "unmarshallLocationName" : "member",
-                "marshallLocationName" : "member",
-                "additionalUnmarshallingPath" : null,
-                "additionalMarshallingPath" : null,
-                "isPayload" : false,
-                "isStreaming" : false,
-                "location" : null,
-                "flattened" : false,
-                "header" : false,
-                "uri" : false,
-                "statusCode" : false,
-                "queryString" : false
-              },
-              "deprecated" : false,
-              "listModel" : null,
-              "mapModel" : null,
-              "enumType" : null,
-              "xmlNameSpaceUri" : null,
-              "idempotencyToken" : false,
-              "list" : false,
-              "simple" : true,
-              "map" : false,
-              "setterDocumentation" : "/**\n@param member */",
-              "getterDocumentation" : "/**\n@return */",
-              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
-            },
-            "memberAdditionalMarshallingPath" : null,
-            "memberAdditionalUnmarshallingPath" : null,
-            "sendEmptyQueryString" : false,
-            "simpleType" : "String",
-            "simple" : true,
-            "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
-          },
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : true,
-          "simple" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The response types supported returned by the server response to get the Open ID configuration information.</p>\n@param response_types_supported The response types supported returned by the server response to get the Open ID configuration information.*/",
-          "getterDocumentation" : "/**<p>The response types supported returned by the server response to get the Open ID configuration information.</p>\n@return The response types supported returned by the server response to get the Open ID configuration information.*/",
-          "fluentSetterDocumentation" : "/**<p>The response types supported returned by the server response to get the Open ID configuration information.</p>\n@param response_types_supported The response types supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The response types supported returned by the server response to get the Open ID configuration information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResponse_types_supported(java.util.Collection)} or {@link #withResponse_types_supported(java.util.Collection)} if you want to override the existing values.</p>\n@param response_types_supported The response types supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Issuer" : {
-          "documentation" : "<p>The issuer of the Open ID configuration response.</p>",
-          "name" : "Issuer",
-          "c2jName" : "issuer",
-          "c2jShape" : "openIdUrlType",
-          "variable" : {
-            "variableName" : "issuer",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The issuer of the Open ID configuration response.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "issuer",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "issuer",
-            "marshallLocationName" : "issuer",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The issuer of the Open ID configuration response.</p>\n@param issuer The issuer of the Open ID configuration response.*/",
-          "getterDocumentation" : "/**<p>The issuer of the Open ID configuration response.</p>\n@return The issuer of the Open ID configuration response.*/",
-          "fluentSetterDocumentation" : "/**<p>The issuer of the Open ID configuration response.</p>\n@param issuer The issuer of the Open ID configuration response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The issuer of the Open ID configuration response.</p>\n@param issuer The issuer of the Open ID configuration response.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Subject_types_supported" : {
-          "documentation" : "<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>",
-          "name" : "Subject_types_supported",
-          "c2jName" : "subject_types_supported",
-          "c2jShape" : "openIdListType",
-          "variable" : {
-            "variableName" : "subject_types_supported",
-            "variableType" : "java.util.List<String>",
-            "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : "<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
-          },
-          "setterModel" : {
-            "variableName" : "subject_types_supported",
-            "variableType" : "java.util.List<String>",
-            "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : "",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
-          },
-          "getterModel" : {
-            "returnType" : "java.util.List<String>",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "subject_types_supported",
-            "marshallLocationName" : "subject_types_supported",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : {
-            "memberType" : "String",
-            "memberLocationName" : null,
-            "implType" : "java.util.ArrayList",
-            "interfaceType" : "java.util.List",
-            "listMemberModel" : {
-              "documentation" : "",
-              "name" : "Member",
-              "c2jName" : "member",
-              "c2jShape" : "StringType",
-              "variable" : {
-                "variableName" : "member",
-                "variableType" : "String",
-                "variableDeclarationType" : "String",
-                "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
-              },
-              "setterModel" : {
-                "variableName" : "member",
-                "variableType" : "String",
-                "variableDeclarationType" : "String",
-                "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
-              },
-              "getterModel" : {
-                "returnType" : "String",
-                "documentation" : null
-              },
-              "http" : {
-                "unmarshallLocationName" : "member",
-                "marshallLocationName" : "member",
-                "additionalUnmarshallingPath" : null,
-                "additionalMarshallingPath" : null,
-                "isPayload" : false,
-                "isStreaming" : false,
-                "location" : null,
-                "flattened" : false,
-                "header" : false,
-                "uri" : false,
-                "statusCode" : false,
-                "queryString" : false
-              },
-              "deprecated" : false,
-              "listModel" : null,
-              "mapModel" : null,
-              "enumType" : null,
-              "xmlNameSpaceUri" : null,
-              "idempotencyToken" : false,
-              "list" : false,
-              "simple" : true,
-              "map" : false,
-              "setterDocumentation" : "/**\n@param member */",
-              "getterDocumentation" : "/**\n@return */",
-              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
-            },
-            "memberAdditionalMarshallingPath" : null,
-            "memberAdditionalUnmarshallingPath" : null,
-            "sendEmptyQueryString" : false,
-            "simpleType" : "String",
-            "simple" : true,
-            "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
-          },
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : true,
-          "simple" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>\n@param subject_types_supported The subject types supported returned by the server response to get the Open ID configuration information.*/",
-          "getterDocumentation" : "/**<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>\n@return The subject types supported returned by the server response to get the Open ID configuration information.*/",
-          "fluentSetterDocumentation" : "/**<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>\n@param subject_types_supported The subject types supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The subject types supported returned by the server response to get the Open ID configuration information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubject_types_supported(java.util.Collection)} or {@link #withSubject_types_supported(java.util.Collection)} if you want to override the existing values.</p>\n@param subject_types_supported The subject types supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Jwks_uri" : {
-          "documentation" : "<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>",
-          "name" : "Jwks_uri",
-          "c2jName" : "jwks_uri",
-          "c2jShape" : "openIdUrlType",
-          "variable" : {
-            "variableName" : "jwks_uri",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "jwks_uri",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "jwks_uri",
-            "marshallLocationName" : "jwks_uri",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>\n@param jwks_uri The URI of the JSON Web keys in the server response to get Open ID configuration information.*/",
-          "getterDocumentation" : "/**<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>\n@return The URI of the JSON Web keys in the server response to get Open ID configuration information.*/",
-          "fluentSetterDocumentation" : "/**<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>\n@param jwks_uri The URI of the JSON Web keys in the server response to get Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The URI of the JSON Web keys in the server response to get Open ID configuration information.</p>\n@param jwks_uri The URI of the JSON Web keys in the server response to get Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Authorization_endpoint" : {
-          "documentation" : "<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>",
-          "name" : "Authorization_endpoint",
-          "c2jName" : "authorization_endpoint",
-          "c2jShape" : "openIdUrlType",
-          "variable" : {
-            "variableName" : "authorization_endpoint",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "authorization_endpoint",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "authorization_endpoint",
-            "marshallLocationName" : "authorization_endpoint",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>\n@param authorization_endpoint The authorization endpoint returned by the server response to get the Open ID configuration information.*/",
-          "getterDocumentation" : "/**<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>\n@return The authorization endpoint returned by the server response to get the Open ID configuration information.*/",
-          "fluentSetterDocumentation" : "/**<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>\n@param authorization_endpoint The authorization endpoint returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The authorization endpoint returned by the server response to get the Open ID configuration information.</p>\n@param authorization_endpoint The authorization endpoint returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Id_token_signing_alg_values_supported" : {
-          "documentation" : "<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>",
-          "name" : "Id_token_signing_alg_values_supported",
-          "c2jName" : "id_token_signing_alg_values_supported",
-          "c2jShape" : "openIdListType",
-          "variable" : {
-            "variableName" : "id_token_signing_alg_values_supported",
-            "variableType" : "java.util.List<String>",
-            "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : "<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
-          },
-          "setterModel" : {
-            "variableName" : "id_token_signing_alg_values_supported",
-            "variableType" : "java.util.List<String>",
-            "variableDeclarationType" : "java.util.List<String>",
-            "documentation" : "",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
-          },
-          "getterModel" : {
-            "returnType" : "java.util.List<String>",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "id_token_signing_alg_values_supported",
-            "marshallLocationName" : "id_token_signing_alg_values_supported",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : {
-            "memberType" : "String",
-            "memberLocationName" : null,
-            "implType" : "java.util.ArrayList",
-            "interfaceType" : "java.util.List",
-            "listMemberModel" : {
-              "documentation" : "",
-              "name" : "Member",
-              "c2jName" : "member",
-              "c2jShape" : "StringType",
-              "variable" : {
-                "variableName" : "member",
-                "variableType" : "String",
-                "variableDeclarationType" : "String",
-                "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
-              },
-              "setterModel" : {
-                "variableName" : "member",
-                "variableType" : "String",
-                "variableDeclarationType" : "String",
-                "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
-              },
-              "getterModel" : {
-                "returnType" : "String",
-                "documentation" : null
-              },
-              "http" : {
-                "unmarshallLocationName" : "member",
-                "marshallLocationName" : "member",
-                "additionalUnmarshallingPath" : null,
-                "additionalMarshallingPath" : null,
-                "isPayload" : false,
-                "isStreaming" : false,
-                "location" : null,
-                "flattened" : false,
-                "header" : false,
-                "uri" : false,
-                "statusCode" : false,
-                "queryString" : false
-              },
-              "deprecated" : false,
-              "listModel" : null,
-              "mapModel" : null,
-              "enumType" : null,
-              "xmlNameSpaceUri" : null,
-              "idempotencyToken" : false,
-              "list" : false,
-              "simple" : true,
-              "map" : false,
-              "setterDocumentation" : "/**\n@param member */",
-              "getterDocumentation" : "/**\n@return */",
-              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
-            },
-            "memberAdditionalMarshallingPath" : null,
-            "memberAdditionalUnmarshallingPath" : null,
-            "sendEmptyQueryString" : false,
-            "simpleType" : "String",
-            "simple" : true,
-            "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
-          },
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : true,
-          "simple" : false,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>\n@param id_token_signing_alg_values_supported The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.*/",
-          "getterDocumentation" : "/**<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>\n@return The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.*/",
-          "fluentSetterDocumentation" : "/**<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>\n@param id_token_signing_alg_values_supported The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setId_token_signing_alg_values_supported(java.util.Collection)} or {@link #withId_token_signing_alg_values_supported(java.util.Collection)} if you want to override the existing values.</p>\n@param id_token_signing_alg_values_supported The token-signing algorithm values supported returned by the server response to get the Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -10098,150 +8693,6 @@
         }
       }
     },
-    "GetOpenIdConfigurationRequest" : {
-      "c2jName" : "GetOpenIdConfigurationRequest",
-      "documentation" : "<p>Represents the request to get the Open ID configuration.</p>",
-      "shapeName" : "GetOpenIdConfigurationRequest",
-      "deprecated" : false,
-      "required" : [ "UserPoolId" ],
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "members" : [ {
-        "documentation" : "<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>",
-        "name" : "UserPoolId",
-        "c2jName" : "UserPoolId",
-        "c2jShape" : "UserPoolIdType",
-        "variable" : {
-          "variableName" : "userPoolId",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "userPoolId",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "userPoolId",
-          "marshallLocationName" : "userPoolId",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : "uri",
-          "flattened" : false,
-          "header" : false,
-          "uri" : true,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>\n@param userPoolId The user pool ID for the user pool where you want to get Open ID configuration information.*/",
-        "getterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>\n@return The user pool ID for the user pool where you want to get Open ID configuration information.*/",
-        "fluentSetterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>\n@param userPoolId The user pool ID for the user pool where you want to get Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>\n@param userPoolId The user pool ID for the user pool where you want to get Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "getOpenIdConfigurationRequest",
-        "variableType" : "GetOpenIdConfigurationRequest",
-        "variableDeclarationType" : "GetOpenIdConfigurationRequest",
-        "documentation" : null,
-        "simpleType" : "GetOpenIdConfigurationRequest",
-        "variableSetterType" : "GetOpenIdConfigurationRequest"
-      },
-      "marshaller" : {
-        "action" : "GetOpenIdConfiguration",
-        "verb" : "GET",
-        "target" : "AWSCognitoIdentityProviderService.GetOpenIdConfiguration",
-        "requestUri" : "/{userPoolId}/.well-known/openid-configuration",
-        "locationName" : null,
-        "xmlNameSpaceUri" : null
-      },
-      "unmarshaller" : null,
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "UserPoolId" : {
-          "documentation" : "<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>",
-          "name" : "UserPoolId",
-          "c2jName" : "UserPoolId",
-          "c2jShape" : "UserPoolIdType",
-          "variable" : {
-            "variableName" : "userPoolId",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "userPoolId",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "userPoolId",
-            "marshallLocationName" : "userPoolId",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : "uri",
-            "flattened" : false,
-            "header" : false,
-            "uri" : true,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>\n@param userPoolId The user pool ID for the user pool where you want to get Open ID configuration information.*/",
-          "getterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>\n@return The user pool ID for the user pool where you want to get Open ID configuration information.*/",
-          "fluentSetterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>\n@param userPoolId The user pool ID for the user pool where you want to get Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get Open ID configuration information.</p>\n@param userPoolId The user pool ID for the user pool where you want to get Open ID configuration information.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
     "CodeMismatchException" : {
       "c2jName" : "CodeMismatchException",
       "documentation" : "<p>This exception is thrown if the provided code does not match what the server was expecting.</p>",
@@ -10436,8 +8887,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "AttributeType",
           "simple" : false,
+          "simpleType" : "AttributeType",
           "map" : false,
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -10554,8 +9005,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "MFAOptionType",
           "simple" : false,
+          "simpleType" : "MFAOptionType",
           "map" : false,
           "templateType" : "java.util.List<MFAOptionType>",
           "templateImplType" : "java.util.ArrayList<MFAOptionType>"
@@ -10695,8 +9146,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "MFAOptionType",
             "simple" : false,
+            "simpleType" : "MFAOptionType",
             "map" : false,
             "templateType" : "java.util.List<MFAOptionType>",
             "templateImplType" : "java.util.ArrayList<MFAOptionType>"
@@ -10814,8 +9265,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "AttributeType",
             "simple" : false,
+            "simpleType" : "AttributeType",
             "map" : false,
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -11190,8 +9641,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "AttributeType",
           "simple" : false,
+          "simpleType" : "AttributeType",
           "map" : false,
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -11516,8 +9967,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "MFAOptionType",
           "simple" : false,
+          "simpleType" : "MFAOptionType",
           "map" : false,
           "templateType" : "java.util.List<MFAOptionType>",
           "templateImplType" : "java.util.ArrayList<MFAOptionType>"
@@ -11710,8 +10161,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "MFAOptionType",
             "simple" : false,
+            "simpleType" : "MFAOptionType",
             "map" : false,
             "templateType" : "java.util.List<MFAOptionType>",
             "templateImplType" : "java.util.ArrayList<MFAOptionType>"
@@ -11829,8 +10280,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "AttributeType",
             "simple" : false,
+            "simpleType" : "AttributeType",
             "map" : false,
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -12965,8 +11416,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "SchemaAttributeType",
           "simple" : false,
+          "simpleType" : "SchemaAttributeType",
           "map" : false,
           "templateType" : "java.util.List<SchemaAttributeType>",
           "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
@@ -13163,8 +11614,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "SchemaAttributeType",
             "simple" : false,
+            "simpleType" : "SchemaAttributeType",
             "map" : false,
             "templateType" : "java.util.List<SchemaAttributeType>",
             "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
@@ -15066,8 +13517,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "SchemaAttributeType",
           "simple" : false,
+          "simpleType" : "SchemaAttributeType",
           "map" : false,
           "templateType" : "java.util.List<SchemaAttributeType>",
           "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
@@ -15184,8 +13635,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -15302,8 +13753,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -16126,8 +14577,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -16351,8 +14802,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "SchemaAttributeType",
             "simple" : false,
+            "simpleType" : "SchemaAttributeType",
             "map" : false,
             "templateType" : "java.util.List<SchemaAttributeType>",
             "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
@@ -16629,8 +15080,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -17685,8 +16136,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "AttributeType",
           "simple" : false,
+          "simpleType" : "AttributeType",
           "map" : false,
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -17803,8 +16254,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "AttributeType",
           "simple" : false,
+          "simpleType" : "AttributeType",
           "map" : false,
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -17948,8 +16399,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "AttributeType",
             "simple" : false,
+            "simpleType" : "AttributeType",
             "map" : false,
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -18279,8 +16730,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "AttributeType",
             "simple" : false,
+            "simpleType" : "AttributeType",
             "map" : false,
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -19519,8 +17970,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -19637,8 +18088,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -20042,8 +18493,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -20532,8 +18983,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -20802,8 +19253,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "AttributeType",
           "simple" : false,
+          "simpleType" : "AttributeType",
           "map" : false,
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -21204,8 +19655,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "AttributeType",
             "simple" : false,
+            "simpleType" : "AttributeType",
             "map" : false,
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
@@ -22958,8 +21409,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "UserPoolDescriptionType",
           "simple" : false,
+          "simpleType" : "UserPoolDescriptionType",
           "map" : false,
           "templateType" : "java.util.List<UserPoolDescriptionType>",
           "templateImplType" : "java.util.ArrayList<UserPoolDescriptionType>"
@@ -23204,8 +21655,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "UserPoolDescriptionType",
             "simple" : false,
+            "simpleType" : "UserPoolDescriptionType",
             "map" : false,
             "templateType" : "java.util.List<UserPoolDescriptionType>",
             "templateImplType" : "java.util.ArrayList<UserPoolDescriptionType>"
@@ -23829,8 +22280,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "CodeDeliveryDetailsType",
           "simple" : false,
+          "simpleType" : "CodeDeliveryDetailsType",
           "map" : false,
           "templateType" : "java.util.List<CodeDeliveryDetailsType>",
           "templateImplType" : "java.util.ArrayList<CodeDeliveryDetailsType>"
@@ -23970,8 +22421,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "CodeDeliveryDetailsType",
             "simple" : false,
+            "simpleType" : "CodeDeliveryDetailsType",
             "map" : false,
             "templateType" : "java.util.List<CodeDeliveryDetailsType>",
             "templateImplType" : "java.util.ArrayList<CodeDeliveryDetailsType>"
@@ -25099,8 +23550,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -25875,8 +24326,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -26367,815 +24818,6 @@
         "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
-    },
-    "KeyType" : {
-      "c2jName" : "KeyType",
-      "documentation" : "<p>A JSON Web Key key type in <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#rfc.section.4\">JSON Web Key (JWK) Format</a>.</p>",
-      "shapeName" : "KeyType",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "members" : [ {
-        "documentation" : "<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>",
-        "name" : "Kty",
-        "c2jName" : "kty",
-        "c2jShape" : "StringType",
-        "variable" : {
-          "variableName" : "kty",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "kty",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "kty",
-          "marshallLocationName" : "kty",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>\n@param kty A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.*/",
-        "getterDocumentation" : "/**<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>\n@return A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.*/",
-        "fluentSetterDocumentation" : "/**<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>\n@param kty A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>\n@param kty A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>",
-        "name" : "Alg",
-        "c2jName" : "alg",
-        "c2jShape" : "StringType",
-        "variable" : {
-          "variableName" : "alg",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "alg",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "alg",
-          "marshallLocationName" : "alg",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>\n@param alg A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.*/",
-        "getterDocumentation" : "/**<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>\n@return A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.*/",
-        "fluentSetterDocumentation" : "/**<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>\n@param alg A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>\n@param alg A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>",
-        "name" : "Use",
-        "c2jName" : "use",
-        "c2jShape" : "StringType",
-        "variable" : {
-          "variableName" : "use",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "use",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "use",
-          "marshallLocationName" : "use",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>\n@param use A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.*/",
-        "getterDocumentation" : "/**<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>\n@return A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.*/",
-        "fluentSetterDocumentation" : "/**<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>\n@param use A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>\n@param use A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>",
-        "name" : "Kid",
-        "c2jName" : "kid",
-        "c2jShape" : "StringType",
-        "variable" : {
-          "variableName" : "kid",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "kid",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "kid",
-          "marshallLocationName" : "kid",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>\n@param kid A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.*/",
-        "getterDocumentation" : "/**<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>\n@return A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.*/",
-        "fluentSetterDocumentation" : "/**<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>\n@param kid A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>\n@param kid A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>An \"n\" parameter.</p>",
-        "name" : "N",
-        "c2jName" : "n",
-        "c2jShape" : "StringType",
-        "variable" : {
-          "variableName" : "n",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>An \"n\" parameter.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "n",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "n",
-          "marshallLocationName" : "n",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>An \"n\" parameter.</p>\n@param n An \"n\" parameter.*/",
-        "getterDocumentation" : "/**<p>An \"n\" parameter.</p>\n@return An \"n\" parameter.*/",
-        "fluentSetterDocumentation" : "/**<p>An \"n\" parameter.</p>\n@param n An \"n\" parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>An \"n\" parameter.</p>\n@param n An \"n\" parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      }, {
-        "documentation" : "<p>An \"e\" parameter.</p>",
-        "name" : "E",
-        "c2jName" : "e",
-        "c2jShape" : "StringType",
-        "variable" : {
-          "variableName" : "e",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>An \"e\" parameter.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "e",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "e",
-          "marshallLocationName" : "e",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : null,
-          "flattened" : false,
-          "header" : false,
-          "uri" : false,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>An \"e\" parameter.</p>\n@param e An \"e\" parameter.*/",
-        "getterDocumentation" : "/**<p>An \"e\" parameter.</p>\n@return An \"e\" parameter.*/",
-        "fluentSetterDocumentation" : "/**<p>An \"e\" parameter.</p>\n@param e An \"e\" parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>An \"e\" parameter.</p>\n@param e An \"e\" parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "keyType",
-        "variableType" : "KeyType",
-        "variableDeclarationType" : "KeyType",
-        "documentation" : null,
-        "simpleType" : "KeyType",
-        "variableSetterType" : "KeyType"
-      },
-      "marshaller" : null,
-      "unmarshaller" : {
-        "resultWrapper" : null,
-        "flattened" : false
-      },
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "E" : {
-          "documentation" : "<p>An \"e\" parameter.</p>",
-          "name" : "E",
-          "c2jName" : "e",
-          "c2jShape" : "StringType",
-          "variable" : {
-            "variableName" : "e",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>An \"e\" parameter.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "e",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "e",
-            "marshallLocationName" : "e",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>An \"e\" parameter.</p>\n@param e An \"e\" parameter.*/",
-          "getterDocumentation" : "/**<p>An \"e\" parameter.</p>\n@return An \"e\" parameter.*/",
-          "fluentSetterDocumentation" : "/**<p>An \"e\" parameter.</p>\n@param e An \"e\" parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>An \"e\" parameter.</p>\n@param e An \"e\" parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Kid" : {
-          "documentation" : "<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>",
-          "name" : "Kid",
-          "c2jName" : "kid",
-          "c2jShape" : "StringType",
-          "variable" : {
-            "variableName" : "kid",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "kid",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "kid",
-            "marshallLocationName" : "kid",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>\n@param kid A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.*/",
-          "getterDocumentation" : "/**<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>\n@return A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.*/",
-          "fluentSetterDocumentation" : "/**<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>\n@param kid A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.</p>\n@param kid A \"kid\" (Key ID) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#kidDef\">\"kid\" (Key ID) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Kty" : {
-          "documentation" : "<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>",
-          "name" : "Kty",
-          "c2jName" : "kty",
-          "c2jShape" : "StringType",
-          "variable" : {
-            "variableName" : "kty",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "kty",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "kty",
-            "marshallLocationName" : "kty",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>\n@param kty A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.*/",
-          "getterDocumentation" : "/**<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>\n@return A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.*/",
-          "fluentSetterDocumentation" : "/**<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>\n@param kty A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.</p>\n@param kty A \"kty\" key type parameter. For more information, see <a href=\"\">JSON Web Key (JWK) Format</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Alg" : {
-          "documentation" : "<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>",
-          "name" : "Alg",
-          "c2jName" : "alg",
-          "c2jShape" : "StringType",
-          "variable" : {
-            "variableName" : "alg",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "alg",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "alg",
-            "marshallLocationName" : "alg",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>\n@param alg A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.*/",
-          "getterDocumentation" : "/**<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>\n@return A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.*/",
-          "fluentSetterDocumentation" : "/**<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>\n@param alg A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.</p>\n@param alg A \"kty\" (Key Type) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#ktyDef\">\"kty\" (Key Type) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "N" : {
-          "documentation" : "<p>An \"n\" parameter.</p>",
-          "name" : "N",
-          "c2jName" : "n",
-          "c2jShape" : "StringType",
-          "variable" : {
-            "variableName" : "n",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>An \"n\" parameter.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "n",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "n",
-            "marshallLocationName" : "n",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>An \"n\" parameter.</p>\n@param n An \"n\" parameter.*/",
-          "getterDocumentation" : "/**<p>An \"n\" parameter.</p>\n@return An \"n\" parameter.*/",
-          "fluentSetterDocumentation" : "/**<p>An \"n\" parameter.</p>\n@param n An \"n\" parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>An \"n\" parameter.</p>\n@param n An \"n\" parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        },
-        "Use" : {
-          "documentation" : "<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>",
-          "name" : "Use",
-          "c2jName" : "use",
-          "c2jShape" : "StringType",
-          "variable" : {
-            "variableName" : "use",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "use",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "use",
-            "marshallLocationName" : "use",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : null,
-            "flattened" : false,
-            "header" : false,
-            "uri" : false,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>\n@param use A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.*/",
-          "getterDocumentation" : "/**<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>\n@return A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.*/",
-          "fluentSetterDocumentation" : "/**<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>\n@param use A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.</p>\n@param use A \"use\" (Public Key Use) parameter. For more information, see <a href=\"http://self-issued.info/docs/draft-ietf-jose-json-web-key.html#useDef\">\"use\" (Public Key Use) Parameter</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
-    },
-    "GetJWKSRequest" : {
-      "c2jName" : "GetJWKSRequest",
-      "documentation" : "<p>Represents the request to get JSON Web keys.</p>",
-      "shapeName" : "GetJWKSRequest",
-      "deprecated" : false,
-      "required" : [ "UserPoolId" ],
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "members" : [ {
-        "documentation" : "<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>",
-        "name" : "UserPoolId",
-        "c2jName" : "UserPoolId",
-        "c2jShape" : "UserPoolIdType",
-        "variable" : {
-          "variableName" : "userPoolId",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "setterModel" : {
-          "variableName" : "userPoolId",
-          "variableType" : "String",
-          "variableDeclarationType" : "String",
-          "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
-        },
-        "getterModel" : {
-          "returnType" : "String",
-          "documentation" : null
-        },
-        "http" : {
-          "unmarshallLocationName" : "userPoolId",
-          "marshallLocationName" : "userPoolId",
-          "additionalUnmarshallingPath" : null,
-          "additionalMarshallingPath" : null,
-          "isPayload" : false,
-          "isStreaming" : false,
-          "location" : "uri",
-          "flattened" : false,
-          "header" : false,
-          "uri" : true,
-          "statusCode" : false,
-          "queryString" : false
-        },
-        "deprecated" : false,
-        "listModel" : null,
-        "mapModel" : null,
-        "enumType" : null,
-        "xmlNameSpaceUri" : null,
-        "idempotencyToken" : false,
-        "list" : false,
-        "simple" : true,
-        "map" : false,
-        "setterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>\n@param userPoolId The user pool ID for the user pool where you want to get JSON Web keys.*/",
-        "getterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>\n@return The user pool ID for the user pool where you want to get JSON Web keys.*/",
-        "fluentSetterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>\n@param userPoolId The user pool ID for the user pool where you want to get JSON Web keys.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>\n@param userPoolId The user pool ID for the user pool where you want to get JSON Web keys.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-      } ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "getJWKSRequest",
-        "variableType" : "GetJWKSRequest",
-        "variableDeclarationType" : "GetJWKSRequest",
-        "documentation" : null,
-        "simpleType" : "GetJWKSRequest",
-        "variableSetterType" : "GetJWKSRequest"
-      },
-      "marshaller" : {
-        "action" : "GetJWKS",
-        "verb" : "GET",
-        "target" : "AWSCognitoIdentityProviderService.GetJWKS",
-        "requestUri" : "/{userPoolId}/.well-known/jwks.json",
-        "locationName" : null,
-        "xmlNameSpaceUri" : null
-      },
-      "unmarshaller" : null,
-      "errorCode" : null,
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : {
-        "UserPoolId" : {
-          "documentation" : "<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>",
-          "name" : "UserPoolId",
-          "c2jName" : "UserPoolId",
-          "c2jShape" : "UserPoolIdType",
-          "variable" : {
-            "variableName" : "userPoolId",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "setterModel" : {
-            "variableName" : "userPoolId",
-            "variableType" : "String",
-            "variableDeclarationType" : "String",
-            "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
-          },
-          "getterModel" : {
-            "returnType" : "String",
-            "documentation" : null
-          },
-          "http" : {
-            "unmarshallLocationName" : "userPoolId",
-            "marshallLocationName" : "userPoolId",
-            "additionalUnmarshallingPath" : null,
-            "additionalMarshallingPath" : null,
-            "isPayload" : false,
-            "isStreaming" : false,
-            "location" : "uri",
-            "flattened" : false,
-            "header" : false,
-            "uri" : true,
-            "statusCode" : false,
-            "queryString" : false
-          },
-          "deprecated" : false,
-          "listModel" : null,
-          "mapModel" : null,
-          "enumType" : null,
-          "xmlNameSpaceUri" : null,
-          "idempotencyToken" : false,
-          "list" : false,
-          "simple" : true,
-          "map" : false,
-          "setterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>\n@param userPoolId The user pool ID for the user pool where you want to get JSON Web keys.*/",
-          "getterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>\n@return The user pool ID for the user pool where you want to get JSON Web keys.*/",
-          "fluentSetterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>\n@param userPoolId The user pool ID for the user pool where you want to get JSON Web keys.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The user pool ID for the user pool where you want to get JSON Web keys.</p>\n@param userPoolId The user pool ID for the user pool where you want to get JSON Web keys.\n@return Returns a reference to this object so that method calls can be chained together.*/"
-        }
-      }
     },
     "ExpiredCodeException" : {
       "c2jName" : "ExpiredCodeException",
@@ -27725,8 +25367,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -28185,8 +25827,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -28971,8 +26613,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -29116,8 +26758,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"

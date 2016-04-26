@@ -1422,7 +1422,6 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                         Thread.sleep(1000 * 2);
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
-                        throw new AmazonClientException(e.getMessage(), e);
                     }
                 }
             }

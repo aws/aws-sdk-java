@@ -66,13 +66,13 @@
         "documentation" : "<p>The limits specified for a resource have been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "associateVPCWithHostedZone",
       "authenticated" : true,
       "syncReturnType" : "AssociateVPCWithHostedZoneResult",
       "asyncReturnType" : "AssociateVPCWithHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<AssociateVPCWithHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AssociateVPCWithHostedZoneResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AssociateVPCWithHostedZoneRequest, AssociateVPCWithHostedZoneResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AssociateVPCWithHostedZoneRequest, AssociateVPCWithHostedZoneResult>",
+      "methodName" : "associateVPCWithHostedZone"
     },
     "ChangeResourceRecordSets" : {
       "documentation" : "<p>Use this action to create or change your authoritative DNS information. To use this action, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted Zone ID</i>/rrset</code> resource. The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code> element.</p> <p>Changes are a list of change items and are considered transactional. For more information on transactional changes, also known as change batches, see <a href=\"http://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html\">POST ChangeResourceRecordSets</a> in the <i>Amazon Route 53 API Reference</i>.</p> <important>Due to the nature of transactional changes, you cannot delete the same resource record set more than once in a single change batch. If you attempt to delete the same change batch more than once, Amazon Route 53 returns an <code>InvalidChangeBatch</code> error.</important> <p>In response to a <code>ChangeResourceRecordSets</code> request, your DNS data is changed on all Amazon Route 53 DNS servers. Initially, the status of a change is <code>PENDING</code>. This means the change has not yet propagated to all the authoritative Amazon Route 53 DNS servers. When the change is propagated to all hosts, the change returns a status of <code>INSYNC</code>.</p> <p>Note the following limitations on a <code>ChangeResourceRecordSets</code> request:</p> <ul> <li>A request cannot contain more than 100 Change elements.</li> <li> A request cannot contain more than 1000 ResourceRecord elements.</li> <li>The sum of the number of characters (including spaces) in all <code>Value</code> elements in a request cannot exceed 32,000 characters.</li> </ul>",
@@ -108,13 +108,13 @@
         "documentation" : "<p>The request was rejected because Amazon Route 53 was still processing a prior request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "changeResourceRecordSets",
       "authenticated" : true,
       "syncReturnType" : "ChangeResourceRecordSetsResult",
       "asyncReturnType" : "ChangeResourceRecordSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ChangeResourceRecordSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ChangeResourceRecordSetsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResult>",
+      "methodName" : "changeResourceRecordSets"
     },
     "ChangeTagsForResource" : {
       "documentation" : "",
@@ -150,13 +150,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "changeTagsForResource",
       "authenticated" : true,
       "syncReturnType" : "ChangeTagsForResourceResult",
       "asyncReturnType" : "ChangeTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ChangeTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ChangeTagsForResourceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ChangeTagsForResourceRequest, ChangeTagsForResourceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ChangeTagsForResourceRequest, ChangeTagsForResourceResult>",
+      "methodName" : "changeTagsForResource"
     },
     "CreateHealthCheck" : {
       "documentation" : "<p>This action creates a new health check.</p> <p>To create a new health check, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/healthcheck</code> resource. The request body must include a document with a <code>CreateHealthCheckRequest</code> element. The response returns the <code>CreateHealthCheckResponse</code> element that contains metadata about the health check.</p>",
@@ -186,13 +186,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createHealthCheck",
       "authenticated" : true,
       "syncReturnType" : "CreateHealthCheckResult",
       "asyncReturnType" : "CreateHealthCheckResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateHealthCheckResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateHealthCheckResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateHealthCheckRequest, CreateHealthCheckResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateHealthCheckRequest, CreateHealthCheckResult>",
+      "methodName" : "createHealthCheck"
     },
     "CreateHostedZone" : {
       "documentation" : "<p>This action creates a new hosted zone.</p> <p>To create a new hosted zone, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/hostedzone</code> resource. The request body must include a document with a <code>CreateHostedZoneRequest</code> element. The response returns the <code>CreateHostedZoneResponse</code> element that contains metadata about the hosted zone.</p> <p>Amazon Route 53 automatically creates a default SOA record and four NS records for the zone. The NS records in the hosted zone are the name servers you give your registrar to delegate your domain to. For more information about SOA and NS records, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html\">NS and SOA Records that Amazon Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <p>When you create a zone, its initial status is <code>PENDING</code>. This means that it is not yet available on all DNS servers. The status of the zone changes to <code>INSYNC</code> when the NS and SOA records are available on all Amazon Route 53 DNS servers. </p> <p>When trying to create a hosted zone using a reusable delegation set, you could specify an optional DelegationSetId, and Route53 would assign those 4 NS records for the zone, instead of alloting a new one.</p>",
@@ -240,13 +240,13 @@
         "documentation" : "<p>The specified delegation set has not been marked as reusable.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createHostedZone",
       "authenticated" : true,
       "syncReturnType" : "CreateHostedZoneResult",
       "asyncReturnType" : "CreateHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateHostedZoneResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateHostedZoneRequest, CreateHostedZoneResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateHostedZoneRequest, CreateHostedZoneResult>",
+      "methodName" : "createHostedZone"
     },
     "CreateReusableDelegationSet" : {
       "documentation" : "<p>This action creates a reusable delegationSet.</p> <p>To create a new reusable delegationSet, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/delegationset</code> resource. The request body must include a document with a <code>CreateReusableDelegationSetRequest</code> element. The response returns the <code>CreateReusableDelegationSetResponse</code> element that contains metadata about the delegationSet. </p> <p>If the optional parameter HostedZoneId is specified, it marks the delegationSet associated with that particular hosted zone as reusable. </p>",
@@ -288,13 +288,13 @@
         "documentation" : "<p>The specified delegation set has already been marked as reusable.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createReusableDelegationSet",
       "authenticated" : true,
       "syncReturnType" : "CreateReusableDelegationSetResult",
       "asyncReturnType" : "CreateReusableDelegationSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReusableDelegationSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReusableDelegationSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReusableDelegationSetRequest, CreateReusableDelegationSetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReusableDelegationSetRequest, CreateReusableDelegationSetResult>",
+      "methodName" : "createReusableDelegationSet"
     },
     "CreateTrafficPolicy" : {
       "documentation" : "<p>Creates a traffic policy, which you use to create multiple DNS resource record sets for one domain name (such as example.com) or one subdomain name (such as www.example.com).</p> <p>To create a traffic policy, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource. The request body must include a document with a <code>CreateTrafficPolicyRequest</code> element. The response includes the <code>CreateTrafficPolicyResponse</code> element, which contains information about the new traffic policy.</p>",
@@ -327,13 +327,13 @@
         "documentation" : "<p>The format of the traffic policy document that you specified in the <code>Document</code> element is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createTrafficPolicy",
       "authenticated" : true,
       "syncReturnType" : "CreateTrafficPolicyResult",
       "asyncReturnType" : "CreateTrafficPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrafficPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrafficPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyRequest, CreateTrafficPolicyResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyRequest, CreateTrafficPolicyResult>",
+      "methodName" : "createTrafficPolicy"
     },
     "CreateTrafficPolicyInstance" : {
       "documentation" : "<p>Creates resource record sets in a specified hosted zone based on the settings in a specified traffic policy version. In addition, <code>CreateTrafficPolicyInstance</code> associates the resource record sets with a specified domain name (such as example.com) or subdomain name (such as www.example.com). Amazon Route 53 responds to DNS queries for the domain or subdomain name by using the resource record sets that <code>CreateTrafficPolicyInstance</code> created.</p> <p>To create a traffic policy instance, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource. The request body must include a document with a <code>CreateTrafficPolicyRequest</code> element. The response returns the <code>CreateTrafficPolicyInstanceResponse</code> element, which contains information about the traffic policy instance.</p>",
@@ -369,13 +369,13 @@
         "documentation" : "<p>Traffic policy instance with given Id already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createTrafficPolicyInstance",
       "authenticated" : true,
       "syncReturnType" : "CreateTrafficPolicyInstanceResult",
       "asyncReturnType" : "CreateTrafficPolicyInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrafficPolicyInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrafficPolicyInstanceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyInstanceRequest, CreateTrafficPolicyInstanceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyInstanceRequest, CreateTrafficPolicyInstanceResult>",
+      "methodName" : "createTrafficPolicyInstance"
     },
     "CreateTrafficPolicyVersion" : {
       "documentation" : "<p>Creates a new version of an existing traffic policy. When you create a new version of a traffic policy, you specify the ID of the traffic policy that you want to update and a JSON-formatted document that describes the new version.</p> <p>You use traffic policies to create multiple DNS resource record sets for one domain name (such as example.com) or one subdomain name (such as www.example.com).</p> <p>To create a new version, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicy/</code> resource. The request body includes a document with a <code>CreateTrafficPolicyVersionRequest</code> element. The response returns the <code>CreateTrafficPolicyVersionResponse</code> element, which contains information about the new version of the traffic policy.</p>",
@@ -408,13 +408,13 @@
         "documentation" : "<p>The format of the traffic policy document that you specified in the <code>Document</code> element is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createTrafficPolicyVersion",
       "authenticated" : true,
       "syncReturnType" : "CreateTrafficPolicyVersionResult",
       "asyncReturnType" : "CreateTrafficPolicyVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrafficPolicyVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrafficPolicyVersionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyVersionRequest, CreateTrafficPolicyVersionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyVersionRequest, CreateTrafficPolicyVersionResult>",
+      "methodName" : "createTrafficPolicyVersion"
     },
     "DeleteHealthCheck" : {
       "documentation" : "<p>This action deletes a health check. To delete a health check, send a <code>DELETE</code> request to the <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code> resource.</p> <important> You can delete a health check only if there are no resource record sets associated with this health check. If resource record sets are associated with this health check, you must disassociate them before you can delete your health check. If you try to delete a health check that is associated with resource record sets, Amazon Route 53 will deny your request with a <code>HealthCheckInUse</code> error. For information about disassociating the records from your health check, see <a>ChangeResourceRecordSets</a>.</important>",
@@ -444,13 +444,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteHealthCheck",
       "authenticated" : true,
       "syncReturnType" : "DeleteHealthCheckResult",
       "asyncReturnType" : "DeleteHealthCheckResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteHealthCheckResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteHealthCheckResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteHealthCheckRequest, DeleteHealthCheckResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteHealthCheckRequest, DeleteHealthCheckResult>",
+      "methodName" : "deleteHealthCheck"
     },
     "DeleteHostedZone" : {
       "documentation" : "<p>This action deletes a hosted zone. To delete a hosted zone, send a <code>DELETE</code> request to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code> resource.</p> <p>For more information about deleting a hosted zone, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html\">Deleting a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <important> You can delete a hosted zone only if there are no resource record sets other than the default SOA record and NS resource record sets. If your hosted zone contains other resource record sets, you must delete them before you can delete your hosted zone. If you try to delete a hosted zone that contains other resource record sets, Amazon Route 53 will deny your request with a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see <a>ChangeResourceRecordSets</a>.</important>",
@@ -483,13 +483,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteHostedZone",
       "authenticated" : true,
       "syncReturnType" : "DeleteHostedZoneResult",
       "asyncReturnType" : "DeleteHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteHostedZoneResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteHostedZoneRequest, DeleteHostedZoneResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteHostedZoneRequest, DeleteHostedZoneResult>",
+      "methodName" : "deleteHostedZone"
     },
     "DeleteReusableDelegationSet" : {
       "documentation" : "<p>This action deletes a reusable delegation set. To delete a reusable delegation set, send a <code>DELETE</code> request to the <code>/<i>Route 53 API version</i>/delegationset/<i>delegation set ID</i></code> resource.</p> <important> You can delete a reusable delegation set only if there are no associated hosted zones. If your reusable delegation set contains associated hosted zones, you must delete them before you can delete your reusable delegation set. If you try to delete a reusable delegation set that contains associated hosted zones, Amazon Route 53 will deny your request with a <code>DelegationSetInUse</code> error.</important>",
@@ -522,13 +522,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteReusableDelegationSet",
       "authenticated" : true,
       "syncReturnType" : "DeleteReusableDelegationSetResult",
       "asyncReturnType" : "DeleteReusableDelegationSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReusableDelegationSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReusableDelegationSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReusableDelegationSetRequest, DeleteReusableDelegationSetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReusableDelegationSetRequest, DeleteReusableDelegationSetResult>",
+      "methodName" : "deleteReusableDelegationSet"
     },
     "DeleteTrafficPolicy" : {
       "documentation" : "<p>Deletes a traffic policy. To delete a traffic policy, send a <code>DELETE</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.</p>",
@@ -561,13 +561,13 @@
         "documentation" : "<p>Another user submitted a request to update the object at the same time that you did. Retry the request. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteTrafficPolicy",
       "authenticated" : true,
       "syncReturnType" : "DeleteTrafficPolicyResult",
       "asyncReturnType" : "DeleteTrafficPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTrafficPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTrafficPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrafficPolicyRequest, DeleteTrafficPolicyResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrafficPolicyRequest, DeleteTrafficPolicyResult>",
+      "methodName" : "deleteTrafficPolicy"
     },
     "DeleteTrafficPolicyInstance" : {
       "documentation" : "<p>Deletes a traffic policy instance and all of the resource record sets that Amazon Route 53 created when you created the instance.</p> <p>To delete a traffic policy instance, send a <code>DELETE</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicy/<i>traffic policy instance ID</i></code> resource.</p> <important>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</important>",
@@ -597,13 +597,13 @@
         "documentation" : "<p>The request was rejected because Amazon Route 53 was still processing a prior request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteTrafficPolicyInstance",
       "authenticated" : true,
       "syncReturnType" : "DeleteTrafficPolicyInstanceResult",
       "asyncReturnType" : "DeleteTrafficPolicyInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTrafficPolicyInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTrafficPolicyInstanceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrafficPolicyInstanceRequest, DeleteTrafficPolicyInstanceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrafficPolicyInstanceRequest, DeleteTrafficPolicyInstanceResult>",
+      "methodName" : "deleteTrafficPolicyInstance"
     },
     "DisassociateVPCFromHostedZone" : {
       "documentation" : "<p>This action disassociates a VPC from an hosted zone. </p> <p>To disassociate a VPC to a hosted zone, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code> resource. The request body must include a document with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response returns the <code>DisassociateVPCFromHostedZoneResponse</code> element that contains <code>ChangeInfo</code> for you to track the progress of the <code>DisassociateVPCFromHostedZoneRequest</code> you made. See <code>GetChange</code> operation for how to track the progress of your change.</p>",
@@ -639,13 +639,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "disassociateVPCFromHostedZone",
       "authenticated" : true,
       "syncReturnType" : "DisassociateVPCFromHostedZoneResult",
       "asyncReturnType" : "DisassociateVPCFromHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisassociateVPCFromHostedZoneResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisassociateVPCFromHostedZoneRequest, DisassociateVPCFromHostedZoneResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisassociateVPCFromHostedZoneRequest, DisassociateVPCFromHostedZoneResult>",
+      "methodName" : "disassociateVPCFromHostedZone"
     },
     "GetChange" : {
       "documentation" : "<p>This action returns the current status of a change batch request. The status is one of the following values:</p> <p>- <code>PENDING</code> indicates that the changes in this request have not replicated to all Amazon Route 53 DNS servers. This is the initial status of all change batch requests.</p> <p>- <code>INSYNC</code> indicates that the changes have replicated to all Amazon Route 53 DNS servers. </p>",
@@ -672,13 +672,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getChange",
       "authenticated" : true,
       "syncReturnType" : "GetChangeResult",
       "asyncReturnType" : "GetChangeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetChangeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetChangeResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetChangeRequest, GetChangeResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetChangeRequest, GetChangeResult>",
+      "methodName" : "getChange"
     },
     "GetChangeDetails" : {
       "documentation" : "<p>This action returns the status and changes of a change batch request.</p>",
@@ -705,13 +705,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getChangeDetails",
       "authenticated" : true,
       "syncReturnType" : "GetChangeDetailsResult",
       "asyncReturnType" : "GetChangeDetailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetChangeDetailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetChangeDetailsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetChangeDetailsRequest, GetChangeDetailsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetChangeDetailsRequest, GetChangeDetailsResult>",
+      "methodName" : "getChangeDetails"
     },
     "GetCheckerIpRanges" : {
       "documentation" : "<p>To retrieve a list of the IP ranges used by Amazon Route 53 health checkers to check the health of your resources, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/checkeripranges</code> resource. You can use these IP addresses to configure router and firewall rules to allow health checkers to check the health of your resources.</p>",
@@ -732,13 +732,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getCheckerIpRanges",
       "authenticated" : true,
       "syncReturnType" : "GetCheckerIpRangesResult",
       "asyncReturnType" : "GetCheckerIpRangesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCheckerIpRangesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCheckerIpRangesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult>",
+      "methodName" : "getCheckerIpRanges"
     },
     "GetGeoLocation" : {
       "documentation" : "<p>To retrieve a single geo location, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/geolocation</code> resource with one of these options: continentcode | countrycode | countrycode and subdivisioncode.</p>",
@@ -765,13 +765,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getGeoLocation",
       "authenticated" : true,
       "syncReturnType" : "GetGeoLocationResult",
       "asyncReturnType" : "GetGeoLocationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetGeoLocationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetGeoLocationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetGeoLocationRequest, GetGeoLocationResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetGeoLocationRequest, GetGeoLocationResult>",
+      "methodName" : "getGeoLocation"
     },
     "GetHealthCheck" : {
       "documentation" : "<p>To retrieve the health check, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code> resource. </p>",
@@ -801,13 +801,13 @@
         "documentation" : "<p>The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider using a newer endpoint or a tool that does so.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getHealthCheck",
       "authenticated" : true,
       "syncReturnType" : "GetHealthCheckResult",
       "asyncReturnType" : "GetHealthCheckResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHealthCheckResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHealthCheckResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckRequest, GetHealthCheckResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckRequest, GetHealthCheckResult>",
+      "methodName" : "getHealthCheck"
     },
     "GetHealthCheckCount" : {
       "documentation" : "<p>To retrieve a count of all your health checks, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/healthcheckcount</code> resource.</p>",
@@ -828,13 +828,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getHealthCheckCount",
       "authenticated" : true,
       "syncReturnType" : "GetHealthCheckCountResult",
       "asyncReturnType" : "GetHealthCheckCountResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHealthCheckCountResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHealthCheckCountResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckCountRequest, GetHealthCheckCountResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckCountRequest, GetHealthCheckCountResult>",
+      "methodName" : "getHealthCheckCount"
     },
     "GetHealthCheckLastFailureReason" : {
       "documentation" : "<p>If you want to learn why a health check is currently failing or why it failed most recently (if at all), you can get the failure reason for the most recent failure. Send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i>/lastfailurereason</code> resource.</p>",
@@ -861,13 +861,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getHealthCheckLastFailureReason",
       "authenticated" : true,
       "syncReturnType" : "GetHealthCheckLastFailureReasonResult",
       "asyncReturnType" : "GetHealthCheckLastFailureReasonResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHealthCheckLastFailureReasonResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHealthCheckLastFailureReasonResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckLastFailureReasonRequest, GetHealthCheckLastFailureReasonResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckLastFailureReasonRequest, GetHealthCheckLastFailureReasonResult>",
+      "methodName" : "getHealthCheckLastFailureReason"
     },
     "GetHealthCheckStatus" : {
       "documentation" : "<p>To retrieve the health check status, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i>/status</code> resource. You can use this call to get a health check's current status. </p>",
@@ -894,13 +894,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getHealthCheckStatus",
       "authenticated" : true,
       "syncReturnType" : "GetHealthCheckStatusResult",
       "asyncReturnType" : "GetHealthCheckStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHealthCheckStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHealthCheckStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckStatusRequest, GetHealthCheckStatusResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckStatusRequest, GetHealthCheckStatusResult>",
+      "methodName" : "getHealthCheckStatus"
     },
     "GetHostedZone" : {
       "documentation" : "<p>To retrieve the delegation set for a hosted zone, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code> resource. The delegation set is the four Amazon Route 53 name servers that were assigned to the hosted zone when you created it.</p>",
@@ -927,13 +927,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getHostedZone",
       "authenticated" : true,
       "syncReturnType" : "GetHostedZoneResult",
       "asyncReturnType" : "GetHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHostedZoneResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHostedZoneRequest, GetHostedZoneResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHostedZoneRequest, GetHostedZoneResult>",
+      "methodName" : "getHostedZone"
     },
     "GetHostedZoneCount" : {
       "documentation" : "<p>To retrieve a count of all your hosted zones, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/hostedzonecount</code> resource.</p>",
@@ -957,13 +957,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getHostedZoneCount",
       "authenticated" : true,
       "syncReturnType" : "GetHostedZoneCountResult",
       "asyncReturnType" : "GetHostedZoneCountResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHostedZoneCountResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHostedZoneCountResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHostedZoneCountRequest, GetHostedZoneCountResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHostedZoneCountRequest, GetHostedZoneCountResult>",
+      "methodName" : "getHostedZoneCount"
     },
     "GetReusableDelegationSet" : {
       "documentation" : "<p>To retrieve the reusable delegation set, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/delegationset/<i>delegation set ID</i></code> resource.</p>",
@@ -993,13 +993,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getReusableDelegationSet",
       "authenticated" : true,
       "syncReturnType" : "GetReusableDelegationSetResult",
       "asyncReturnType" : "GetReusableDelegationSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetReusableDelegationSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetReusableDelegationSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetRequest, GetReusableDelegationSetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetRequest, GetReusableDelegationSetResult>",
+      "methodName" : "getReusableDelegationSet"
     },
     "GetTrafficPolicy" : {
       "documentation" : "<p>Gets information about a specific traffic policy version. To get the information, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.</p>",
@@ -1026,13 +1026,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getTrafficPolicy",
       "authenticated" : true,
       "syncReturnType" : "GetTrafficPolicyResult",
       "asyncReturnType" : "GetTrafficPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTrafficPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTrafficPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyRequest, GetTrafficPolicyResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyRequest, GetTrafficPolicyResult>",
+      "methodName" : "getTrafficPolicy"
     },
     "GetTrafficPolicyInstance" : {
       "documentation" : "<p>Gets information about a specified traffic policy instance.</p> <p>To get information about the traffic policy instance, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource.</p> <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <a>State</a> response element. </note>",
@@ -1059,13 +1059,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getTrafficPolicyInstance",
       "authenticated" : true,
       "syncReturnType" : "GetTrafficPolicyInstanceResult",
       "asyncReturnType" : "GetTrafficPolicyInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTrafficPolicyInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTrafficPolicyInstanceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceRequest, GetTrafficPolicyInstanceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceRequest, GetTrafficPolicyInstanceResult>",
+      "methodName" : "getTrafficPolicyInstance"
     },
     "GetTrafficPolicyInstanceCount" : {
       "documentation" : "<p>Gets the number of traffic policy instances that are associated with the current AWS account.</p> <p>To get the number of traffic policy instances, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstancecount</code> resource.</p>",
@@ -1086,13 +1086,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getTrafficPolicyInstanceCount",
       "authenticated" : true,
       "syncReturnType" : "GetTrafficPolicyInstanceCountResult",
       "asyncReturnType" : "GetTrafficPolicyInstanceCountResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTrafficPolicyInstanceCountResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTrafficPolicyInstanceCountResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceCountRequest, GetTrafficPolicyInstanceCountResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceCountRequest, GetTrafficPolicyInstanceCountResult>",
+      "methodName" : "getTrafficPolicyInstanceCount"
     },
     "ListChangeBatchesByHostedZone" : {
       "documentation" : "<p>This action gets the list of ChangeBatches in a given time period for a given hosted zone.</p>",
@@ -1119,13 +1119,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listChangeBatchesByHostedZone",
       "authenticated" : true,
       "syncReturnType" : "ListChangeBatchesByHostedZoneResult",
       "asyncReturnType" : "ListChangeBatchesByHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListChangeBatchesByHostedZoneResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByHostedZoneRequest, ListChangeBatchesByHostedZoneResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByHostedZoneRequest, ListChangeBatchesByHostedZoneResult>",
+      "methodName" : "listChangeBatchesByHostedZone"
     },
     "ListChangeBatchesByRRSet" : {
       "documentation" : "<p>This action gets the list of ChangeBatches in a given time period for a given hosted zone and RRSet.</p>",
@@ -1152,13 +1152,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listChangeBatchesByRRSet",
       "authenticated" : true,
       "syncReturnType" : "ListChangeBatchesByRRSetResult",
       "asyncReturnType" : "ListChangeBatchesByRRSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListChangeBatchesByRRSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListChangeBatchesByRRSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByRRSetRequest, ListChangeBatchesByRRSetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByRRSetRequest, ListChangeBatchesByRRSetResult>",
+      "methodName" : "listChangeBatchesByRRSet"
     },
     "ListGeoLocations" : {
       "documentation" : "<p>To retrieve a list of supported geo locations, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/geolocations</code> resource. The response to this request includes a <code>GeoLocationDetailsList</code> element with zero, one, or multiple <code>GeoLocationDetails</code> child elements. The list is sorted by country code, and then subdivision code, followed by continents at the end of the list. </p> <p>By default, the list of geo locations is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code> will be populated. You can pass these as parameters to <code>StartContinentCode, StartCountryCode, StartSubdivisionCode</code> to control the geo location that the list begins with. </p>",
@@ -1182,13 +1182,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listGeoLocations",
       "authenticated" : true,
       "syncReturnType" : "ListGeoLocationsResult",
       "asyncReturnType" : "ListGeoLocationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListGeoLocationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListGeoLocationsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListGeoLocationsRequest, ListGeoLocationsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListGeoLocationsRequest, ListGeoLocationsResult>",
+      "methodName" : "listGeoLocations"
     },
     "ListHealthChecks" : {
       "documentation" : "<p>To retrieve a list of your health checks, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/healthcheck</code> resource. The response to this request includes a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code> child elements. By default, the list of health checks is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to control the health check that the list begins with. </p> <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</note>",
@@ -1215,13 +1215,13 @@
         "documentation" : "<p>The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider using a newer endpoint or a tool that does so.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listHealthChecks",
       "authenticated" : true,
       "syncReturnType" : "ListHealthChecksResult",
       "asyncReturnType" : "ListHealthChecksResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListHealthChecksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListHealthChecksResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHealthChecksRequest, ListHealthChecksResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHealthChecksRequest, ListHealthChecksResult>",
+      "methodName" : "listHealthChecks"
     },
     "ListHostedZones" : {
       "documentation" : "<p>To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/hostedzone</code> resource. The response to this request includes a <code>HostedZones</code> element with zero, one, or multiple <code>HostedZone</code> child elements. By default, the list of hosted zones is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to control the hosted zone that the list begins with. </p> <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</note>",
@@ -1251,13 +1251,13 @@
         "documentation" : "<p>The specified delegation set has not been marked as reusable.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listHostedZones",
       "authenticated" : true,
       "syncReturnType" : "ListHostedZonesResult",
       "asyncReturnType" : "ListHostedZonesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListHostedZonesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListHostedZonesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHostedZonesRequest, ListHostedZonesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHostedZonesRequest, ListHostedZonesResult>",
+      "methodName" : "listHostedZones"
     },
     "ListHostedZonesByName" : {
       "documentation" : "<p>To retrieve a list of your hosted zones in lexicographic order, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/hostedzonesbyname</code> resource. The response to this request includes a <code>HostedZones</code> element with zero or more <code>HostedZone</code> child elements lexicographically ordered by DNS name. By default, the list of hosted zones is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>DNSName</code> and <code>HostedZoneId</code> parameters to control the hosted zone that the list begins with.</p> <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</note>",
@@ -1284,13 +1284,13 @@
         "documentation" : "<p>This error indicates that the specified domain name is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listHostedZonesByName",
       "authenticated" : true,
       "syncReturnType" : "ListHostedZonesByNameResult",
       "asyncReturnType" : "ListHostedZonesByNameResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListHostedZonesByNameResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListHostedZonesByNameResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHostedZonesByNameRequest, ListHostedZonesByNameResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHostedZonesByNameRequest, ListHostedZonesByNameResult>",
+      "methodName" : "listHostedZonesByName"
     },
     "ListResourceRecordSets" : {
       "documentation" : "<p>Imagine all the resource record sets in a zone listed out in front of you. Imagine them sorted lexicographically first by DNS name (with the labels reversed, like \"com.amazon.www\" for example), and secondarily, lexicographically by record type. This operation retrieves at most MaxItems resource record sets from this list, in order, starting at a position specified by the Name and Type arguments:</p> <ul> <li>If both Name and Type are omitted, this means start the results at the first RRSET in the HostedZone.</li> <li>If Name is specified but Type is omitted, this means start the results at the first RRSET in the list whose name is greater than or equal to Name. </li> <li>If both Name and Type are specified, this means start the results at the first RRSET in the list whose name is greater than or equal to Name and whose type is greater than or equal to Type.</li> <li>It is an error to specify the Type but not the Name.</li> </ul> <p>Use ListResourceRecordSets to retrieve a single known record set by specifying the record set's name and type, and setting MaxItems = 1</p> <p>To retrieve all the records in a HostedZone, first pause any processes making calls to ChangeResourceRecordSets. Initially call ListResourceRecordSets without a Name and Type to get the first page of record sets. For subsequent calls, set Name and Type to the NextName and NextType values returned by the previous response. </p> <p>In the presence of concurrent ChangeResourceRecordSets calls, there is no consistency of results across calls to ListResourceRecordSets. The only way to get a consistent multi-page snapshot of all RRSETs in a zone is to stop making changes while pagination is in progress.</p> <p>However, the results from ListResourceRecordSets are consistent within a page. If MakeChange calls are taking place concurrently, the result of each one will either be completely visible in your results or not at all. You will not see partial changes, or changes that do not ultimately succeed. (This follows from the fact that MakeChange is atomic) </p> <p>The results from ListResourceRecordSets are strongly consistent with ChangeResourceRecordSets. To be precise, if a single process makes a call to ChangeResourceRecordSets and receives a successful response, the effects of that change will be visible in a subsequent call to ListResourceRecordSets by that process.</p>",
@@ -1317,13 +1317,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listResourceRecordSets",
       "authenticated" : true,
       "syncReturnType" : "ListResourceRecordSetsResult",
       "asyncReturnType" : "ListResourceRecordSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListResourceRecordSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListResourceRecordSetsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListResourceRecordSetsRequest, ListResourceRecordSetsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListResourceRecordSetsRequest, ListResourceRecordSetsResult>",
+      "methodName" : "listResourceRecordSets"
     },
     "ListReusableDelegationSets" : {
       "documentation" : "<p>To retrieve a list of your reusable delegation sets, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/delegationset</code> resource. The response to this request includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code> child elements. By default, the list of delegation sets is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to control the delegation set that the list begins with. </p> <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</note>",
@@ -1347,13 +1347,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listReusableDelegationSets",
       "authenticated" : true,
       "syncReturnType" : "ListReusableDelegationSetsResult",
       "asyncReturnType" : "ListReusableDelegationSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListReusableDelegationSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListReusableDelegationSetsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListReusableDelegationSetsRequest, ListReusableDelegationSetsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListReusableDelegationSetsRequest, ListReusableDelegationSetsResult>",
+      "methodName" : "listReusableDelegationSets"
     },
     "ListTagsForResource" : {
       "documentation" : "",
@@ -1389,13 +1389,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listTagsForResource",
       "authenticated" : true,
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
+      "methodName" : "listTagsForResource"
     },
     "ListTagsForResources" : {
       "documentation" : "",
@@ -1431,13 +1431,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listTagsForResources",
       "authenticated" : true,
       "syncReturnType" : "ListTagsForResourcesResult",
       "asyncReturnType" : "ListTagsForResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourcesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourcesRequest, ListTagsForResourcesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourcesRequest, ListTagsForResourcesResult>",
+      "methodName" : "listTagsForResources"
     },
     "ListTrafficPolicies" : {
       "documentation" : "<p>Gets information about the latest version for every traffic policy that is associated with the current AWS account. To get the information, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policies, you can use the <code>maxitems</code> parameter to list them in groups of up to 100.</p> <p>The response includes three values that help you navigate from one group of <code>maxitems</code> traffic policies to the next:</p> <ul> <li><b>IsTruncated</b></li> <p>If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policies associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy that is associated with the current account.</p> <li><b>TrafficPolicyIdMarker</b></li> <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies. If you want to list more traffic policies, make another call to <code>ListTrafficPolicies</code>, and specify the value of the <code>TrafficPolicyIdMarker</code> element from the response in the <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>If <code>IsTruncated</code> is <code>false</code>, the <code>TrafficPolicyIdMarker</code> element is omitted from the response.</p> <li><b>MaxItems</b></li> <p>The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current response.</p> </ul>",
@@ -1461,13 +1461,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listTrafficPolicies",
       "authenticated" : true,
       "syncReturnType" : "ListTrafficPoliciesResult",
       "asyncReturnType" : "ListTrafficPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTrafficPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTrafficPoliciesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPoliciesRequest, ListTrafficPoliciesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPoliciesRequest, ListTrafficPoliciesResult>",
+      "methodName" : "listTrafficPolicies"
     },
     "ListTrafficPolicyInstances" : {
       "documentation" : "<p>Gets information about the traffic policy instances that you created by using the current AWS account.</p> <note>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <a>State</a> response element.</note> <p>To get information about the traffic policy instances that are associated with the current AWS account, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The response includes five values that help you navigate from one group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul> <li><b>IsTruncated</b></li> <p>If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policy instances associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy instance that is associated with the current account.</p> <li><b>MaxItems</b></li> <p>The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current response.</p> <li><b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b></li> <p>If <code>IsTruncated</code> is <code>true</code>, these three values in the response represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances. To list more traffic policy instances, make another call to <code>ListTrafficPolicyInstances</code>, and specify these values in the corresponding request parameters.</p> <p>If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted from the response.</p> </ul>",
@@ -1494,13 +1494,13 @@
         "documentation" : "<p>No traffic policy instance exists with the specified ID.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listTrafficPolicyInstances",
       "authenticated" : true,
       "syncReturnType" : "ListTrafficPolicyInstancesResult",
       "asyncReturnType" : "ListTrafficPolicyInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTrafficPolicyInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTrafficPolicyInstancesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesRequest, ListTrafficPolicyInstancesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesRequest, ListTrafficPolicyInstancesResult>",
+      "methodName" : "listTrafficPolicyInstances"
     },
     "ListTrafficPolicyInstancesByHostedZone" : {
       "documentation" : "<p>Gets information about the traffic policy instances that you created in a specified hosted zone.</p> <note>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <a>State</a> response element.</note> <p>To get information about the traffic policy instances that you created in a specified hosted zone, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource and include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The response includes four values that help you navigate from one group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul> <li><b>IsTruncated</b></li> <p>If the value of <code/>IsTruncated in the response is <code>true</code>, there are more traffic policy instances associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy instance that is associated with the current account.</p> <li><b>MaxItems</b></li> <p>The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current response.</p> <li><b>TrafficPolicyInstanceNameMarker</b> and <b>TrafficPolicyInstanceTypeMarker</b></li> <p>If <code>IsTruncated</code> is <code>true</code>, these two values in the response represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances. To list more traffic policy instances, make another call to <code>ListTrafficPolicyInstancesByHostedZone</code>, and specify these values in the corresponding request parameters.</p> <p>If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted from the response.</p> </ul>",
@@ -1530,13 +1530,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listTrafficPolicyInstancesByHostedZone",
       "authenticated" : true,
       "syncReturnType" : "ListTrafficPolicyInstancesByHostedZoneResult",
       "asyncReturnType" : "ListTrafficPolicyInstancesByHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTrafficPolicyInstancesByHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTrafficPolicyInstancesByHostedZoneResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesByHostedZoneRequest, ListTrafficPolicyInstancesByHostedZoneResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesByHostedZoneRequest, ListTrafficPolicyInstancesByHostedZoneResult>",
+      "methodName" : "listTrafficPolicyInstancesByHostedZone"
     },
     "ListTrafficPolicyInstancesByPolicy" : {
       "documentation" : "<p>Gets information about the traffic policy instances that you created by using a specify traffic policy version.</p> <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <a>State</a> response element.</note> <p>To get information about the traffic policy instances that you created by using a specify traffic policy version, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource and include the ID and version of the traffic policy.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The response includes five values that help you navigate from one group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul> <li><b>IsTruncated</b> <p>If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policy instances associated with the specified traffic policy.</p> <p>If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy instance that is associated with the specified traffic policy.</p> </li> <li><b>MaxItems</b> <p>The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current response.</p> </li> <li><b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b> <p>If <code>IsTruncated</code> is <code>true</code>, these values in the response represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances. To list more traffic policy instances, make another call to <code>ListTrafficPolicyInstancesByPolicy</code>, and specify these values in the corresponding request parameters.</p> <p>If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted from the response.</p> </li> </ul>",
@@ -1566,13 +1566,13 @@
         "documentation" : "<p>No traffic policy exists with the specified ID.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listTrafficPolicyInstancesByPolicy",
       "authenticated" : true,
       "syncReturnType" : "ListTrafficPolicyInstancesByPolicyResult",
       "asyncReturnType" : "ListTrafficPolicyInstancesByPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTrafficPolicyInstancesByPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTrafficPolicyInstancesByPolicyResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesByPolicyRequest, ListTrafficPolicyInstancesByPolicyResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesByPolicyRequest, ListTrafficPolicyInstancesByPolicyResult>",
+      "methodName" : "listTrafficPolicyInstancesByPolicy"
     },
     "ListTrafficPolicyVersions" : {
       "documentation" : "<p>Gets information about all of the versions for a specified traffic policy. <code>ListTrafficPolicyVersions</code> lists only versions that have not been deleted.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policies, you can use the <code>maxitems</code> parameter to list them in groups of up to 100.</p> <p>The response includes three values that help you navigate from one group of <code>maxitems</code>maxitems traffic policies to the next:</p> <ul> <li><b>IsTruncated</b></li> <p>If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policy versions associated with the specified traffic policy.</p> <p>If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy version that is associated with the specified traffic policy.</p> <li><b>TrafficPolicyVersionMarker</b></li> <p>The ID of the next traffic policy version that is associated with the current AWS account. If you want to list more traffic policies, make another call to <code>ListTrafficPolicyVersions</code>, and specify the value of the <code>TrafficPolicyVersionMarker</code> element in the <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>If <code>IsTruncated</code> is <code>false</code>, Amazon Route 53 omits the <code>TrafficPolicyVersionMarker</code> element from the response.</p> <li><b>MaxItems</b></li> <p>The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current response.</p> </ul>",
@@ -1599,13 +1599,13 @@
         "documentation" : "<p>No traffic policy exists with the specified ID.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listTrafficPolicyVersions",
       "authenticated" : true,
       "syncReturnType" : "ListTrafficPolicyVersionsResult",
       "asyncReturnType" : "ListTrafficPolicyVersionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTrafficPolicyVersionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTrafficPolicyVersionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyVersionsRequest, ListTrafficPolicyVersionsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyVersionsRequest, ListTrafficPolicyVersionsResult>",
+      "methodName" : "listTrafficPolicyVersions"
     },
     "UpdateHealthCheck" : {
       "documentation" : "<p>This action updates an existing health check.</p> <p>To update a health check, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code> resource. The request body must include a document with an <code>UpdateHealthCheckRequest</code> element. The response returns an <code>UpdateHealthCheckResponse</code> element, which contains metadata about the health check.</p>",
@@ -1635,13 +1635,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateHealthCheck",
       "authenticated" : true,
       "syncReturnType" : "UpdateHealthCheckResult",
       "asyncReturnType" : "UpdateHealthCheckResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateHealthCheckResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateHealthCheckResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateHealthCheckRequest, UpdateHealthCheckResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateHealthCheckRequest, UpdateHealthCheckResult>",
+      "methodName" : "updateHealthCheck"
     },
     "UpdateHostedZoneComment" : {
       "documentation" : "<p>To update the hosted zone comment, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code> resource. The request body must include a document with a <code>UpdateHostedZoneCommentRequest</code> element. The response to this request includes the modified <code>HostedZone</code> element.</p> <note> The comment can have a maximum length of 256 characters.</note>",
@@ -1668,13 +1668,13 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateHostedZoneComment",
       "authenticated" : true,
       "syncReturnType" : "UpdateHostedZoneCommentResult",
       "asyncReturnType" : "UpdateHostedZoneCommentResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateHostedZoneCommentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateHostedZoneCommentResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateHostedZoneCommentRequest, UpdateHostedZoneCommentResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateHostedZoneCommentRequest, UpdateHostedZoneCommentResult>",
+      "methodName" : "updateHostedZoneComment"
     },
     "UpdateTrafficPolicyComment" : {
       "documentation" : "<p>Updates the comment for a specified traffic policy version.</p> <p>To update the comment, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicy/</code> resource.</p> <p>The request body must include a document with an <code>UpdateTrafficPolicyCommentRequest</code> element.</p>",
@@ -1704,13 +1704,13 @@
         "documentation" : "<p>Another user submitted a request to update the object at the same time that you did. Retry the request. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateTrafficPolicyComment",
       "authenticated" : true,
       "syncReturnType" : "UpdateTrafficPolicyCommentResult",
       "asyncReturnType" : "UpdateTrafficPolicyCommentResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateTrafficPolicyCommentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateTrafficPolicyCommentResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrafficPolicyCommentRequest, UpdateTrafficPolicyCommentResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrafficPolicyCommentRequest, UpdateTrafficPolicyCommentResult>",
+      "methodName" : "updateTrafficPolicyComment"
     },
     "UpdateTrafficPolicyInstance" : {
       "documentation" : "<p>Updates the resource record sets in a specified hosted zone that were created based on the settings in a specified traffic policy version.</p> <important>The DNS type of the resource record sets that you're updating must match the DNS type in the JSON document that is associated with the traffic policy version that you're using to update the traffic policy instance.</important> <p>When you update a traffic policy instance, Amazon Route 53 continues to respond to DNS queries for the root resource record set name (such as example.com) while it replaces one group of resource record sets with another. Amazon Route 53 performs the following operations:</p> <ol> <li>Amazon Route 53 creates a new group of resource record sets based on the specified traffic policy. This is true regardless of how substantial the differences are between the existing resource record sets and the new resource record sets. </li> <li>When all of the new resource record sets have been created, Amazon Route 53 starts to respond to DNS queries for the root resource record set name (such as example.com) by using the new resource record sets.</li> <li>Amazon Route 53 deletes the old group of resource record sets that are associated with the root resource record set name.</li> </ol> <p>To update a traffic policy instance, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance/<i>traffic policy ID</i></code> resource. The request body must include a document with an <code>UpdateTrafficPolicyInstanceRequest</code> element.</p>",
@@ -1746,13 +1746,13 @@
         "documentation" : "<p>You tried to update a traffic policy instance by using a traffic policy version that has a different DNS type than the current type for the instance. You specified the type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateTrafficPolicyInstance",
       "authenticated" : true,
       "syncReturnType" : "UpdateTrafficPolicyInstanceResult",
       "asyncReturnType" : "UpdateTrafficPolicyInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateTrafficPolicyInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateTrafficPolicyInstanceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrafficPolicyInstanceRequest, UpdateTrafficPolicyInstanceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrafficPolicyInstanceRequest, UpdateTrafficPolicyInstanceResult>",
+      "methodName" : "updateTrafficPolicyInstance"
     }
   },
   "shapes" : {

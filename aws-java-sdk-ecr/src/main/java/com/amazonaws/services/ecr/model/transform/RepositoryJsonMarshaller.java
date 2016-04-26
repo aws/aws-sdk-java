@@ -59,6 +59,10 @@ public class RepositoryJsonMarshaller {
                 jsonGenerator.writeFieldName("repositoryName").writeValue(
                         repository.getRepositoryName());
             }
+            if (repository.getRepositoryUri() != null) {
+                jsonGenerator.writeFieldName("repositoryUri").writeValue(
+                        repository.getRepositoryUri());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

@@ -47,6 +47,12 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * find the device for an IAM user by going to the AWS Management Console
      * and viewing the user's security credentials.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      */
     private String serialNumber;
     /**
@@ -57,6 +63,10 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * requesting a set of temporary security credentials, the user will receive
      * an "access denied" response when requesting resources that require MFA
      * authentication.
+     * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.
      * </p>
      */
     private String tokenCode;
@@ -146,6 +156,12 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * find the device for an IAM user by going to the AWS Management Console
      * and viewing the user's security credentials.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @param serialNumber
      *        The identification number of the MFA device that is associated
@@ -156,7 +172,12 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *        Amazon Resource Name (ARN) for a virtual device (such as
      *        <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the
      *        device for an IAM user by going to the AWS Management Console and
-     *        viewing the user's security credentials.
+     *        viewing the user's security credentials. </p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -174,6 +195,12 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * find the device for an IAM user by going to the AWS Management Console
      * and viewing the user's security credentials.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @return The identification number of the MFA device that is associated
      *         with the IAM user who is making the <code>GetSessionToken</code>
@@ -183,7 +210,12 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *         or an Amazon Resource Name (ARN) for a virtual device (such as
      *         <code>arn:aws:iam::123456789012:mfa/user</code>). You can find
      *         the device for an IAM user by going to the AWS Management Console
-     *         and viewing the user's security credentials.
+     *         and viewing the user's security credentials. </p>
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include any
+     *         of the following characters: =,.@-
      */
 
     public String getSerialNumber() {
@@ -201,6 +233,12 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * find the device for an IAM user by going to the AWS Management Console
      * and viewing the user's security credentials.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @param serialNumber
      *        The identification number of the MFA device that is associated
@@ -211,7 +249,12 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *        Amazon Resource Name (ARN) for a virtual device (such as
      *        <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the
      *        device for an IAM user by going to the AWS Management Console and
-     *        viewing the user's security credentials.
+     *        viewing the user's security credentials. </p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -230,6 +273,10 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * an "access denied" response when requesting resources that require MFA
      * authentication.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.
+     * </p>
      * 
      * @param tokenCode
      *        The value provided by the MFA device, if MFA is required. If any
@@ -237,7 +284,10 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *        value. If MFA authentication is required, and the user does not
      *        provide a code when requesting a set of temporary security
      *        credentials, the user will receive an "access denied" response
-     *        when requesting resources that require MFA authentication.
+     *        when requesting resources that require MFA authentication.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a sequence of six numeric digits.
      */
 
     public void setTokenCode(String tokenCode) {
@@ -253,13 +303,20 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * an "access denied" response when requesting resources that require MFA
      * authentication.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.
+     * </p>
      * 
      * @return The value provided by the MFA device, if MFA is required. If any
      *         policy requires the IAM user to submit an MFA code, specify this
      *         value. If MFA authentication is required, and the user does not
      *         provide a code when requesting a set of temporary security
      *         credentials, the user will receive an "access denied" response
-     *         when requesting resources that require MFA authentication.
+     *         when requesting resources that require MFA authentication.</p>
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a sequence of six numeric digits.
      */
 
     public String getTokenCode() {
@@ -275,6 +332,10 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * an "access denied" response when requesting resources that require MFA
      * authentication.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.
+     * </p>
      * 
      * @param tokenCode
      *        The value provided by the MFA device, if MFA is required. If any
@@ -282,7 +343,10 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *        value. If MFA authentication is required, and the user does not
      *        provide a code when requesting a set of temporary security
      *        credentials, the user will receive an "access denied" response
-     *        when requesting resources that require MFA authentication.
+     *        when requesting resources that require MFA authentication.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a sequence of six numeric digits.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -40,7 +40,12 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * </p>
      */
     private Credentials credentials;
-
+    /**
+     * <p>
+     * The identifiers for the temporary security credentials that the operation
+     * returns.
+     * </p>
+     */
     private AssumedRoleUser assumedRoleUser;
     /**
      * <p>
@@ -191,7 +196,14 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifiers for the temporary security credentials that the operation
+     * returns.
+     * </p>
+     * 
      * @param assumedRoleUser
+     *        The identifiers for the temporary security credentials that the
+     *        operation returns.
      */
 
     public void setAssumedRoleUser(AssumedRoleUser assumedRoleUser) {
@@ -199,7 +211,13 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifiers for the temporary security credentials that the operation
+     * returns.
+     * </p>
+     * 
+     * @return The identifiers for the temporary security credentials that the
+     *         operation returns.
      */
 
     public AssumedRoleUser getAssumedRoleUser() {
@@ -207,7 +225,14 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifiers for the temporary security credentials that the operation
+     * returns.
+     * </p>
+     * 
      * @param assumedRoleUser
+     *        The identifiers for the temporary security credentials that the
+     *        operation returns.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

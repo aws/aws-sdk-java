@@ -27,7 +27,10 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The information of the peer VPC.
+     * Information about the peer VPC. CIDR block information is not returned
+     * when creating a VPC peering connection, or when describing a VPC peering
+     * connection that's in the <code>initiating-request</code> or
+     * <code>pending-acceptance</code> state.
      * </p>
      */
     private VpcPeeringConnectionVpcInfo accepterVpcInfo;
@@ -39,7 +42,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
     private java.util.Date expirationTime;
     /**
      * <p>
-     * The information of the requester VPC.
+     * Information about the requester VPC.
      * </p>
      */
     private VpcPeeringConnectionVpcInfo requesterVpcInfo;
@@ -64,11 +67,18 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The information of the peer VPC.
+     * Information about the peer VPC. CIDR block information is not returned
+     * when creating a VPC peering connection, or when describing a VPC peering
+     * connection that's in the <code>initiating-request</code> or
+     * <code>pending-acceptance</code> state.
      * </p>
      * 
      * @param accepterVpcInfo
-     *        The information of the peer VPC.
+     *        Information about the peer VPC. CIDR block information is not
+     *        returned when creating a VPC peering connection, or when
+     *        describing a VPC peering connection that's in the
+     *        <code>initiating-request</code> or <code>pending-acceptance</code>
+     *        state.
      */
 
     public void setAccepterVpcInfo(VpcPeeringConnectionVpcInfo accepterVpcInfo) {
@@ -77,10 +87,17 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The information of the peer VPC.
+     * Information about the peer VPC. CIDR block information is not returned
+     * when creating a VPC peering connection, or when describing a VPC peering
+     * connection that's in the <code>initiating-request</code> or
+     * <code>pending-acceptance</code> state.
      * </p>
      * 
-     * @return The information of the peer VPC.
+     * @return Information about the peer VPC. CIDR block information is not
+     *         returned when creating a VPC peering connection, or when
+     *         describing a VPC peering connection that's in the
+     *         <code>initiating-request</code> or
+     *         <code>pending-acceptance</code> state.
      */
 
     public VpcPeeringConnectionVpcInfo getAccepterVpcInfo() {
@@ -89,11 +106,18 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The information of the peer VPC.
+     * Information about the peer VPC. CIDR block information is not returned
+     * when creating a VPC peering connection, or when describing a VPC peering
+     * connection that's in the <code>initiating-request</code> or
+     * <code>pending-acceptance</code> state.
      * </p>
      * 
      * @param accepterVpcInfo
-     *        The information of the peer VPC.
+     *        Information about the peer VPC. CIDR block information is not
+     *        returned when creating a VPC peering connection, or when
+     *        describing a VPC peering connection that's in the
+     *        <code>initiating-request</code> or <code>pending-acceptance</code>
+     *        state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -147,11 +171,11 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The information of the requester VPC.
+     * Information about the requester VPC.
      * </p>
      * 
      * @param requesterVpcInfo
-     *        The information of the requester VPC.
+     *        Information about the requester VPC.
      */
 
     public void setRequesterVpcInfo(VpcPeeringConnectionVpcInfo requesterVpcInfo) {
@@ -160,10 +184,10 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The information of the requester VPC.
+     * Information about the requester VPC.
      * </p>
      * 
-     * @return The information of the requester VPC.
+     * @return Information about the requester VPC.
      */
 
     public VpcPeeringConnectionVpcInfo getRequesterVpcInfo() {
@@ -172,11 +196,11 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The information of the requester VPC.
+     * Information about the requester VPC.
      * </p>
      * 
      * @param requesterVpcInfo
-     *        The information of the requester VPC.
+     *        Information about the requester VPC.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

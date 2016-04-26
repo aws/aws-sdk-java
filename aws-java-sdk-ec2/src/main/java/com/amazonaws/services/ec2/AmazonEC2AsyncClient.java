@@ -7692,6 +7692,42 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyVpcPeeringConnectionOptionsResult> modifyVpcPeeringConnectionOptionsAsync(
+            ModifyVpcPeeringConnectionOptionsRequest request) {
+
+        return modifyVpcPeeringConnectionOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyVpcPeeringConnectionOptionsResult> modifyVpcPeeringConnectionOptionsAsync(
+            final ModifyVpcPeeringConnectionOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyVpcPeeringConnectionOptionsRequest, ModifyVpcPeeringConnectionOptionsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ModifyVpcPeeringConnectionOptionsResult>() {
+                    @Override
+                    public ModifyVpcPeeringConnectionOptionsResult call()
+                            throws Exception {
+                        ModifyVpcPeeringConnectionOptionsResult result;
+
+                        try {
+                            result = modifyVpcPeeringConnectionOptions(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<MonitorInstancesResult> monitorInstancesAsync(
             MonitorInstancesRequest request) {
 

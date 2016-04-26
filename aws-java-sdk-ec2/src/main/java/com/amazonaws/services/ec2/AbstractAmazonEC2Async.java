@@ -3969,6 +3969,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyVpcPeeringConnectionOptionsResult> modifyVpcPeeringConnectionOptionsAsync(
+            ModifyVpcPeeringConnectionOptionsRequest request) {
+
+        return modifyVpcPeeringConnectionOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyVpcPeeringConnectionOptionsResult> modifyVpcPeeringConnectionOptionsAsync(
+            ModifyVpcPeeringConnectionOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyVpcPeeringConnectionOptionsRequest, ModifyVpcPeeringConnectionOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<MonitorInstancesResult> monitorInstancesAsync(
             MonitorInstancesRequest request) {
 

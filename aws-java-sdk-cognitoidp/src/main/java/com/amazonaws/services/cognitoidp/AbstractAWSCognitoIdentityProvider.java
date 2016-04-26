@@ -162,17 +162,6 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
-    public GetJWKSResult getJWKS(GetJWKSRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public GetOpenIdConfigurationResult getOpenIdConfiguration(
-            GetOpenIdConfigurationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public GetUserResult getUser(GetUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

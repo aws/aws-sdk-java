@@ -33,33 +33,35 @@ import com.amazonaws.services.securitytoken.model.*;
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html"
  * >Temporary Security Credentials</a>.
  * </p>
- * <note> As an alternative to using the API, you can use one of the AWS SDKs,
- * which consist of libraries and sample code for various programming languages
- * and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
+ * <note>
+ * <p>
+ * As an alternative to using the API, you can use one of the AWS SDKs, which
+ * consist of libraries and sample code for various programming languages and
+ * platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
  * convenient way to create programmatic access to STS. For example, the SDKs
  * take care of cryptographically signing requests, managing errors, and
  * retrying requests automatically. For information about the AWS SDKs,
  * including how to download and install them, see the <a
  * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
+ * </p>
  * </note>
  * <p>
  * For information about setting up signatures and authorization through the
  * API, go to <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
- * target="_blank">Signing AWS API Requests</a> in the <i>AWS General
- * Reference</i>. For general information about the Query API, go to <a href=
+ * >Signing AWS API Requests</a> in the <i>AWS General Reference</i>. For
+ * general information about the Query API, go to <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
- * target="_blank">Making Query Requests</a> in <i>Using IAM</i>. For
- * information about using security tokens with other AWS products, go to <a
- * href=
+ * >Making Query Requests</a> in <i>Using IAM</i>. For information about using
+ * security tokens with other AWS products, go to <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"
  * >AWS Services That Work with IAM</a> in the <i>IAM User Guide</i>.
  * </p>
  * <p>
  * If you're new to AWS and need additional technical information about a
  * specific AWS product, you can find the product's technical documentation at
- * <a href="http://aws.amazon.com/documentation/"
- * target="_blank">http://aws.amazon.com/documentation/</a>.
+ * <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/
+ * documentation/</a>.
  * </p>
  * <p>
  * <b>Endpoints</b>
@@ -214,7 +216,7 @@ public interface AWSSecurityTokenService {
      * access policy of the role that is being assumed. If you pass a policy to
      * this operation, the temporary security credentials that are returned by
      * the operation have the permissions that are allowed by both the access
-     * policy of the role that is being assumed, <i><b>and</b></i> the policy
+     * policy of the role that is being assumed, <i> <b>and</b> </i> the policy
      * that you pass. This gives you a way to further restrict the permissions
      * for the resulting temporary security credentials. You cannot use the
      * passed policy to grant permissions that are in excess of those allowed by
@@ -270,11 +272,6 @@ public interface AWSSecurityTokenService {
      * MFA device. The <code>TokenCode</code> is the time-based one-time
      * password (TOTP) that the MFA devices produces.
      * </p>
-     * <member name="RoleArn" target="arnType"/> <member name="RoleSessionName"
-     * target="userNameType"/> <member name="Policy"
-     * target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
-     * target="roleDurationSecondsType"/> <member name="ExternalId"
-     * target="externalIdType"/>
      * 
      * @param assumeRoleRequest
      * @return Result of the AssumeRole operation returned by the service.
@@ -337,7 +334,7 @@ public interface AWSSecurityTokenService {
      * access policy of the role that is being assumed. If you pass a policy to
      * this operation, the temporary security credentials that are returned by
      * the operation have the permissions that are allowed by both the access
-     * policy of the role that is being assumed, <i><b>and</b></i> the policy
+     * policy of the role that is being assumed, <i> <b>and</b> </i> the policy
      * that you pass. This gives you a way to further restrict the permissions
      * for the resulting temporary security credentials. You cannot use the
      * passed policy to grant permissions that are in excess of those allowed by
@@ -361,29 +358,51 @@ public interface AWSSecurityTokenService {
      * keys in the metadata document that is uploaded for the SAML provider
      * entity for your identity provider.
      * </p>
+     * <important>
+     * <p>
+     * Calling <code>AssumeRoleWithSAML</code> can result in an entry in your
+     * AWS CloudTrail logs. The entry includes the value in the
+     * <code>NameID</code> element of the SAML assertion. We recommend that you
+     * use a NameIDType that is not associated with any personally identifiable
+     * information (PII). For example, you could instead use the Persistent
+     * Identifier (
+     * <code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</code>).
+     * </p>
+     * </important>
      * <p>
      * For more information, see the following resources:
      * </p>
      * <ul>
-     * <li><a href=
+     * <li>
+     * <p>
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"
-     * >About SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>.</li>
-     * <li><a href=
+     * >About SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html"
-     * >Creating SAML Identity Providers</a> in the <i>IAM User Guide</i>.</li>
-     * <li><a href=
+     * >Creating SAML Identity Providers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html"
      * >Configuring a Relying Party and Claims</a> in the <i>IAM User Guide</i>.
+     * </p>
      * </li>
-     * <li><a href=
+     * <li>
+     * <p>
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html"
      * >Creating a Role for SAML 2.0 Federation</a> in the <i>IAM User
-     * Guide</i>.</li>
+     * Guide</i>.
+     * </p>
+     * </li>
      * </ul>
-     * <member name="RoleArn" target="arnType"/> <member name="SAMLAssertion"
-     * target="SAMLAssertionType"/> <member name="Policy"
-     * target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
-     * target="roleDurationSecondsType"/>
      * 
      * @param assumeRoleWithSAMLRequest
      * @return Result of the AssumeRoleWithSAML operation returned by the
@@ -490,7 +509,7 @@ public interface AWSSecurityTokenService {
      * access policy of the role that is being assumed. If you pass a policy to
      * this operation, the temporary security credentials that are returned by
      * the operation have the permissions that are allowed by both the access
-     * policy of the role that is being assumed, <i><b>and</b></i> the policy
+     * policy of the role that is being assumed, <i> <b>and</b> </i> the policy
      * that you pass. This gives you a way to further restrict the permissions
      * for the resulting temporary security credentials. You cannot use the
      * passed policy to grant permissions that are in excess of those allowed by
@@ -508,31 +527,60 @@ public interface AWSSecurityTokenService {
      * with the identity token. In other words, the identity provider must be
      * specified in the role's trust policy.
      * </p>
+     * <important>
+     * <p>
+     * Calling <code>AssumeRoleWithWebIdentity</code> can result in an entry in
+     * your AWS CloudTrail logs. The entry includes the <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#Claims"
+     * >Subject</a> of the provided Web Identity Token. We recommend that you
+     * avoid using any personally identifiable information (PII) in this field.
+     * For example, you could instead use a GUID or a pairwise identifier, as <a
+     * href
+     * ="http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes"
+     * >suggested in the OIDC specification</a>.
+     * </p>
+     * </important>
      * <p>
      * For more information about how to use web identity federation and the
      * <code>AssumeRoleWithWebIdentity</code> API, see the following resources:
      * </p>
      * <ul>
-     * <li><a href=
+     * <li>
+     * <p>
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual"
      * >Using Web Identity Federation APIs for Mobile Apps</a> and <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity"
-     * >Federation Through a Web-based Identity Provider</a>.</li>
-     * <li><a href=
+     * >Federation Through a Web-based Identity Provider</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
      * "https://web-identity-federation-playground.s3.amazonaws.com/index.html">
      * Web Identity Federation Playground</a>. This interactive website lets you
      * walk through the process of authenticating via Login with Amazon,
      * Facebook, or Google, getting temporary security credentials, and then
-     * using those credentials to make a request to AWS.</li>
-     * <li><a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a
+     * using those credentials to make a request to AWS.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a
      * href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>.
      * These toolkits contain sample apps that show how to invoke the identity
      * providers, and then how to use the information from these providers to
-     * get and use temporary security credentials.</li>
-     * <li><a href="http://aws.amazon.com/articles/4617974389850313">Web
-     * Identity Federation with Mobile Applications</a>. This article discusses
-     * web identity federation and shows an example of how to use web identity
-     * federation to get access to content in Amazon S3.</li>
+     * get and use temporary security credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/articles/4617974389850313">Web Identity
+     * Federation with Mobile Applications</a>. This article discusses web
+     * identity federation and shows an example of how to use web identity
+     * federation to get access to content in Amazon S3.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param assumeRoleWithWebIdentityRequest
@@ -593,9 +641,13 @@ public interface AWSSecurityTokenService {
      * response). Some AWS actions additionally return an encoded message that
      * can provide details about this authorization failure.
      * </p>
-     * <note> Only certain AWS actions return an encoded authorization message.
-     * The documentation for an individual action indicates whether that action
-     * returns an encoded message in addition to returning an HTTP code. </note>
+     * <note>
+     * <p>
+     * Only certain AWS actions return an encoded authorization message. The
+     * documentation for an individual action indicates whether that action
+     * returns an encoded message in addition to returning an HTTP code.
+     * </p>
+     * </note>
      * <p>
      * The message is encoded because the details of the authorization status
      * can constitute privileged information that the user who requested the
@@ -608,15 +660,35 @@ public interface AWSSecurityTokenService {
      * The decoded message includes the following type of information:
      * </p>
      * <ul>
-     * <li>Whether the request was denied due to an explicit deny or due to the
+     * <li>
+     * <p>
+     * Whether the request was denied due to an explicit deny or due to the
      * absence of an explicit allow. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow"
      * >Determining Whether a Request is Allowed or Denied</a> in the <i>IAM
-     * User Guide</i>.</li>
-     * <li>The principal who made the request.</li>
-     * <li>The requested action.</li>
-     * <li>The requested resource.</li>
-     * <li>The values of condition keys in the context of the user's request.</li>
+     * User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The principal who made the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The requested action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The requested resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The values of condition keys in the context of the user's request.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param decodeAuthorizationMessageRequest
@@ -721,9 +793,17 @@ public interface AWSSecurityTokenService {
      * following:
      * </p>
      * <ul>
-     * <li>The policy or policies that are attached to the IAM user whose
-     * credentials are used to call <code>GetFederationToken</code>.</li>
-     * <li>The policy that is passed as a parameter in the call.</li>
+     * <li>
+     * <p>
+     * The policy or policies that are attached to the IAM user whose
+     * credentials are used to call <code>GetFederationToken</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy that is passed as a parameter in the call.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The passed policy is attached to the temporary security credentials that
@@ -732,7 +812,7 @@ public interface AWSSecurityTokenService {
      * evaluates the policy attached to the federated user in combination with
      * the policy or policies attached to the IAM user whose credentials were
      * used to call <code>GetFederationToken</code>. AWS allows the federated
-     * user's request only when both the federated user <i><b>and</b></i> the
+     * user's request only when both the federated user <i> <b>and</b> </i> the
      * IAM user are explicitly allowed to perform the requested action. The
      * passed policy cannot grant more permissions than those that are defined
      * in the IAM user policy.

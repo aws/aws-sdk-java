@@ -54,12 +54,11 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
     private String description;
     /**
      * <p>
-     * By default, this parameter is set to <code>false</code>, which means
-     * Amazon EC2 attempts to shut down the instance cleanly before image
-     * creation and then reboots the instance. When the parameter is set to
-     * <code>true</code>, Amazon EC2 doesn't shut down the instance before
-     * creating the image. When this option is used, file system integrity on
-     * the created image can't be guaranteed.
+     * By default, Amazon EC2 attempts to shut down and reboot the instance
+     * before creating the image. If the 'No Reboot' option is set, Amazon EC2
+     * doesn't shut down the instance before creating the image. When this
+     * option is used, file system integrity on the created image can't be
+     * guaranteed.
      * </p>
      */
     private Boolean noReboot;
@@ -249,21 +248,19 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * By default, this parameter is set to <code>false</code>, which means
-     * Amazon EC2 attempts to shut down the instance cleanly before image
-     * creation and then reboots the instance. When the parameter is set to
-     * <code>true</code>, Amazon EC2 doesn't shut down the instance before
-     * creating the image. When this option is used, file system integrity on
-     * the created image can't be guaranteed.
+     * By default, Amazon EC2 attempts to shut down and reboot the instance
+     * before creating the image. If the 'No Reboot' option is set, Amazon EC2
+     * doesn't shut down the instance before creating the image. When this
+     * option is used, file system integrity on the created image can't be
+     * guaranteed.
      * </p>
      * 
      * @param noReboot
-     *        By default, this parameter is set to <code>false</code>, which
-     *        means Amazon EC2 attempts to shut down the instance cleanly before
-     *        image creation and then reboots the instance. When the parameter
-     *        is set to <code>true</code>, Amazon EC2 doesn't shut down the
-     *        instance before creating the image. When this option is used, file
-     *        system integrity on the created image can't be guaranteed.
+     *        By default, Amazon EC2 attempts to shut down and reboot the
+     *        instance before creating the image. If the 'No Reboot' option is
+     *        set, Amazon EC2 doesn't shut down the instance before creating the
+     *        image. When this option is used, file system integrity on the
+     *        created image can't be guaranteed.
      */
 
     public void setNoReboot(Boolean noReboot) {
@@ -272,21 +269,18 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * By default, this parameter is set to <code>false</code>, which means
-     * Amazon EC2 attempts to shut down the instance cleanly before image
-     * creation and then reboots the instance. When the parameter is set to
-     * <code>true</code>, Amazon EC2 doesn't shut down the instance before
-     * creating the image. When this option is used, file system integrity on
-     * the created image can't be guaranteed.
+     * By default, Amazon EC2 attempts to shut down and reboot the instance
+     * before creating the image. If the 'No Reboot' option is set, Amazon EC2
+     * doesn't shut down the instance before creating the image. When this
+     * option is used, file system integrity on the created image can't be
+     * guaranteed.
      * </p>
      * 
-     * @return By default, this parameter is set to <code>false</code>, which
-     *         means Amazon EC2 attempts to shut down the instance cleanly
-     *         before image creation and then reboots the instance. When the
-     *         parameter is set to <code>true</code>, Amazon EC2 doesn't shut
-     *         down the instance before creating the image. When this option is
-     *         used, file system integrity on the created image can't be
-     *         guaranteed.
+     * @return By default, Amazon EC2 attempts to shut down and reboot the
+     *         instance before creating the image. If the 'No Reboot' option is
+     *         set, Amazon EC2 doesn't shut down the instance before creating
+     *         the image. When this option is used, file system integrity on the
+     *         created image can't be guaranteed.
      */
 
     public Boolean getNoReboot() {
@@ -295,21 +289,19 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * By default, this parameter is set to <code>false</code>, which means
-     * Amazon EC2 attempts to shut down the instance cleanly before image
-     * creation and then reboots the instance. When the parameter is set to
-     * <code>true</code>, Amazon EC2 doesn't shut down the instance before
-     * creating the image. When this option is used, file system integrity on
-     * the created image can't be guaranteed.
+     * By default, Amazon EC2 attempts to shut down and reboot the instance
+     * before creating the image. If the 'No Reboot' option is set, Amazon EC2
+     * doesn't shut down the instance before creating the image. When this
+     * option is used, file system integrity on the created image can't be
+     * guaranteed.
      * </p>
      * 
      * @param noReboot
-     *        By default, this parameter is set to <code>false</code>, which
-     *        means Amazon EC2 attempts to shut down the instance cleanly before
-     *        image creation and then reboots the instance. When the parameter
-     *        is set to <code>true</code>, Amazon EC2 doesn't shut down the
-     *        instance before creating the image. When this option is used, file
-     *        system integrity on the created image can't be guaranteed.
+     *        By default, Amazon EC2 attempts to shut down and reboot the
+     *        instance before creating the image. If the 'No Reboot' option is
+     *        set, Amazon EC2 doesn't shut down the instance before creating the
+     *        image. When this option is used, file system integrity on the
+     *        created image can't be guaranteed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -321,21 +313,18 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * By default, this parameter is set to <code>false</code>, which means
-     * Amazon EC2 attempts to shut down the instance cleanly before image
-     * creation and then reboots the instance. When the parameter is set to
-     * <code>true</code>, Amazon EC2 doesn't shut down the instance before
-     * creating the image. When this option is used, file system integrity on
-     * the created image can't be guaranteed.
+     * By default, Amazon EC2 attempts to shut down and reboot the instance
+     * before creating the image. If the 'No Reboot' option is set, Amazon EC2
+     * doesn't shut down the instance before creating the image. When this
+     * option is used, file system integrity on the created image can't be
+     * guaranteed.
      * </p>
      * 
-     * @return By default, this parameter is set to <code>false</code>, which
-     *         means Amazon EC2 attempts to shut down the instance cleanly
-     *         before image creation and then reboots the instance. When the
-     *         parameter is set to <code>true</code>, Amazon EC2 doesn't shut
-     *         down the instance before creating the image. When this option is
-     *         used, file system integrity on the created image can't be
-     *         guaranteed.
+     * @return By default, Amazon EC2 attempts to shut down and reboot the
+     *         instance before creating the image. If the 'No Reboot' option is
+     *         set, Amazon EC2 doesn't shut down the instance before creating
+     *         the image. When this option is used, file system integrity on the
+     *         created image can't be guaranteed.
      */
 
     public Boolean isNoReboot() {

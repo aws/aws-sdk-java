@@ -52,7 +52,8 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest
     private Integer maxResults;
     /**
      * <p>
-     * One or more filters.
+     * Filter tasks using the <code>task-state</code> filter and one of the
+     * following values: active, completed, deleting, deleted.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
@@ -233,10 +234,12 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * Filter tasks using the <code>task-state</code> filter and one of the
+     * following values: active, completed, deleting, deleted.
      * </p>
      * 
-     * @return One or more filters.
+     * @return Filter tasks using the <code>task-state</code> filter and one of
+     *         the following values: active, completed, deleting, deleted.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -248,11 +251,13 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * Filter tasks using the <code>task-state</code> filter and one of the
+     * following values: active, completed, deleting, deleted.
      * </p>
      * 
      * @param filters
-     *        One or more filters.
+     *        Filter tasks using the <code>task-state</code> filter and one of
+     *        the following values: active, completed, deleting, deleted.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -267,7 +272,8 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * Filter tasks using the <code>task-state</code> filter and one of the
+     * following values: active, completed, deleting, deleted.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -277,7 +283,8 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param filters
-     *        One or more filters.
+     *        Filter tasks using the <code>task-state</code> filter and one of
+     *        the following values: active, completed, deleting, deleted.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -295,11 +302,13 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * Filter tasks using the <code>task-state</code> filter and one of the
+     * following values: active, completed, deleting, deleted.
      * </p>
      * 
      * @param filters
-     *        One or more filters.
+     *        Filter tasks using the <code>task-state</code> filter and one of
+     *        the following values: active, completed, deleting, deleted.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

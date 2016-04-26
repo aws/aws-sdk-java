@@ -1048,12 +1048,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -1300,12 +1300,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -1760,12 +1760,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -1959,12 +1959,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -2121,8 +2121,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -2266,8 +2266,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -2481,12 +2481,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -2676,12 +2676,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -2859,8 +2859,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -3263,8 +3263,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -4115,12 +4115,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4285,8 +4285,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -4403,8 +4403,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "CognitoIdentityProvider",
           "simple" : false,
+          "simpleType" : "CognitoIdentityProvider",
           "map" : false,
           "templateType" : "java.util.List<CognitoIdentityProvider>",
           "templateImplType" : "java.util.ArrayList<CognitoIdentityProvider>"
@@ -4760,8 +4760,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "CognitoIdentityProvider",
             "simple" : false,
+            "simpleType" : "CognitoIdentityProvider",
             "map" : false,
             "templateType" : "java.util.List<CognitoIdentityProvider>",
             "templateImplType" : "java.util.ArrayList<CognitoIdentityProvider>"
@@ -4879,8 +4879,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -4999,12 +4999,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -5462,12 +5462,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5632,8 +5632,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -5750,8 +5750,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "CognitoIdentityProvider",
           "simple" : false,
+          "simpleType" : "CognitoIdentityProvider",
           "map" : false,
           "templateType" : "java.util.List<CognitoIdentityProvider>",
           "templateImplType" : "java.util.ArrayList<CognitoIdentityProvider>"
@@ -6103,8 +6103,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "CognitoIdentityProvider",
             "simple" : false,
+            "simpleType" : "CognitoIdentityProvider",
             "map" : false,
             "templateType" : "java.util.List<CognitoIdentityProvider>",
             "templateImplType" : "java.util.ArrayList<CognitoIdentityProvider>"
@@ -6222,8 +6222,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -6342,12 +6342,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7282,12 +7282,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7452,8 +7452,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -7570,8 +7570,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "CognitoIdentityProvider",
           "simple" : false,
+          "simpleType" : "CognitoIdentityProvider",
           "map" : false,
           "templateType" : "java.util.List<CognitoIdentityProvider>",
           "templateImplType" : "java.util.ArrayList<CognitoIdentityProvider>"
@@ -7874,8 +7874,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "CognitoIdentityProvider",
             "simple" : false,
+            "simpleType" : "CognitoIdentityProvider",
             "map" : false,
             "templateType" : "java.util.List<CognitoIdentityProvider>",
             "templateImplType" : "java.util.ArrayList<CognitoIdentityProvider>"
@@ -7993,8 +7993,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -8113,12 +8113,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8296,8 +8296,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "IdentityDescription",
           "simple" : false,
+          "simpleType" : "IdentityDescription",
           "map" : false,
           "templateType" : "java.util.List<IdentityDescription>",
           "templateImplType" : "java.util.ArrayList<IdentityDescription>"
@@ -8595,8 +8595,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "IdentityDescription",
             "simple" : false,
+            "simpleType" : "IdentityDescription",
             "map" : false,
             "templateType" : "java.util.List<IdentityDescription>",
             "templateImplType" : "java.util.ArrayList<IdentityDescription>"
@@ -8779,12 +8779,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -8897,8 +8897,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -9095,8 +9095,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -9215,12 +9215,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -10261,8 +10261,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "UnprocessedIdentityId",
           "simple" : false,
+          "simpleType" : "UnprocessedIdentityId",
           "map" : false,
           "templateType" : "java.util.List<UnprocessedIdentityId>",
           "templateImplType" : "java.util.ArrayList<UnprocessedIdentityId>"
@@ -10402,8 +10402,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "UnprocessedIdentityId",
             "simple" : false,
+            "simpleType" : "UnprocessedIdentityId",
             "map" : false,
             "templateType" : "java.util.List<UnprocessedIdentityId>",
             "templateImplType" : "java.util.ArrayList<UnprocessedIdentityId>"
@@ -10586,12 +10586,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10785,12 +10785,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -11528,12 +11528,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -11698,8 +11698,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -11816,8 +11816,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "CognitoIdentityProvider",
           "simple" : false,
+          "simpleType" : "CognitoIdentityProvider",
           "map" : false,
           "templateType" : "java.util.List<CognitoIdentityProvider>",
           "templateImplType" : "java.util.ArrayList<CognitoIdentityProvider>"
@@ -12169,8 +12169,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "CognitoIdentityProvider",
             "simple" : false,
+            "simpleType" : "CognitoIdentityProvider",
             "map" : false,
             "templateType" : "java.util.List<CognitoIdentityProvider>",
             "templateImplType" : "java.util.ArrayList<CognitoIdentityProvider>"
@@ -12288,8 +12288,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -12408,12 +12408,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -12727,12 +12727,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -12897,8 +12897,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -13015,8 +13015,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "CognitoIdentityProvider",
           "simple" : false,
+          "simpleType" : "CognitoIdentityProvider",
           "map" : false,
           "templateType" : "java.util.List<CognitoIdentityProvider>",
           "templateImplType" : "java.util.ArrayList<CognitoIdentityProvider>"
@@ -13368,8 +13368,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "CognitoIdentityProvider",
             "simple" : false,
+            "simpleType" : "CognitoIdentityProvider",
             "map" : false,
             "templateType" : "java.util.List<CognitoIdentityProvider>",
             "templateImplType" : "java.util.ArrayList<CognitoIdentityProvider>"
@@ -13487,8 +13487,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -13607,12 +13607,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -13790,8 +13790,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -14089,8 +14089,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -14272,8 +14272,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -14676,8 +14676,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -14838,8 +14838,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "IdentityPoolShortDescription",
           "simple" : false,
+          "simpleType" : "IdentityPoolShortDescription",
           "map" : false,
           "templateType" : "java.util.List<IdentityPoolShortDescription>",
           "templateImplType" : "java.util.ArrayList<IdentityPoolShortDescription>"
@@ -15084,8 +15084,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "IdentityPoolShortDescription",
             "simple" : false,
+            "simpleType" : "IdentityPoolShortDescription",
             "map" : false,
             "templateType" : "java.util.List<IdentityPoolShortDescription>",
             "templateImplType" : "java.util.ArrayList<IdentityPoolShortDescription>"
@@ -15464,12 +15464,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -15821,12 +15821,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -16814,12 +16814,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "java.util.HashMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -17013,12 +17013,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "java.util.HashMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

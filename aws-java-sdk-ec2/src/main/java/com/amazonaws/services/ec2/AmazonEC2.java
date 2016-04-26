@@ -1439,6 +1439,14 @@ public interface AmazonEC2 {
      * >DHCP Options Sets</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.
      * </p>
+     * <p>
+     * You can specify the instance tenancy value for the VPC when you create
+     * it. You can't change this value for the VPC after you create it. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html"
+     * >Dedicated Instances</a> in the <i>Amazon Virtual Private Cloud User
+     * Guide</i>.
+     * </p>
      * 
      * @param createVpcRequest
      *        Contains the parameters for CreateVpc.
@@ -1524,6 +1532,10 @@ public interface AmazonEC2 {
      * If you decide to shut down your VPN connection for any reason and later
      * create a new VPN connection, you must reconfigure your customer gateway
      * with the new information returned from this call.
+     * </p>
+     * <p>
+     * This is an idempotent operation. If you perform the operation more than
+     * once, Amazon EC2 doesn't return an error.
      * </p>
      * <p>
      * For more information about VPN connections, see <a href=
@@ -2324,7 +2336,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * The following resource types support longer IDs: <code>instance</code> |
-     * <code>reservation</code>.
+     * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>.
      * </p>
      * <p>
      * These settings apply to the IAM user who makes the request; they do not
@@ -2464,7 +2476,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the status of one or more instances.
+     * Describes the status of one or more instances. By default, only running
+     * instances are described, unless specified otherwise.
      * </p>
      * <p>
      * Instance status includes the following components:
@@ -4115,7 +4128,8 @@ public interface AmazonEC2 {
      * Modifies the ID format for the specified resource on a per-region basis.
      * You can specify that resources should receive longer IDs (17-character
      * IDs) when they are created. The following resource types support longer
-     * IDs: <code>instance</code> | <code>reservation</code>.
+     * IDs: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code>.
      * </p>
      * <p>
      * This setting applies to the IAM user who makes the request; it does not
@@ -4384,6 +4398,45 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Modifies the VPC peering connection options on one side of a VPC peering
+     * connection. You can do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enable/disable communication over the peering connection between an
+     * EC2-Classic instance that's linked to your VPC (using ClassicLink) and
+     * instances in the peer VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enable/disable communication over the peering connection between
+     * instances in your VPC and an EC2-Classic instance that's linked to the
+     * peer VPC.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the peered VPCs are in different accounts, each owner must initiate a
+     * separate request to enable or disable communication in either direction,
+     * depending on whether their VPC was the requester or accepter for the VPC
+     * peering connection. If the peered VPCs are in the same account, you can
+     * modify the requester and accepter options in the same request. To confirm
+     * which VPC is the accepter and requester for a VPC peering connection, use
+     * the <a>DescribeVpcPeeringConnections</a> command.
+     * </p>
+     * 
+     * @param modifyVpcPeeringConnectionOptionsRequest
+     * @return Result of the ModifyVpcPeeringConnectionOptions operation
+     *         returned by the service.
+     * @sample AmazonEC2.ModifyVpcPeeringConnectionOptions
+     */
+    ModifyVpcPeeringConnectionOptionsResult modifyVpcPeeringConnectionOptions(
+            ModifyVpcPeeringConnectionOptionsRequest modifyVpcPeeringConnectionOptionsRequest);
+
+    /**
+     * <p>
      * Enables monitoring for a running instance. For more information about
      * monitoring instances, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html"
@@ -4460,7 +4513,13 @@ public interface AmazonEC2 {
      * Scheduled Instances enable you to purchase Amazon EC2 compute capacity by
      * the hour for a one-year term. Before you can purchase a Scheduled
      * Instance, you must call <a>DescribeScheduledInstanceAvailability</a> to
-     * check for available schedules and obtain a purchase token.
+     * check for available schedules and obtain a purchase token. After you
+     * purchase a Scheduled Instance, you must call <a>RunScheduledInstances</a>
+     * during each scheduled time period.
+     * </p>
+     * <p>
+     * After you purchase a Scheduled Instance, you can't cancel, modify, or
+     * resell your purchase.
      * </p>
      * 
      * @param purchaseScheduledInstancesRequest
@@ -4480,8 +4539,8 @@ public interface AmazonEC2 {
      * Requests to reboot terminated instances are ignored.
      * </p>
      * <p>
-     * If a Linux/Unix instance does not cleanly shut down within four minutes,
-     * Amazon EC2 performs a hard reboot.
+     * If an instance does not cleanly shut down within four minutes, Amazon EC2
+     * performs a hard reboot.
      * </p>
      * <p>
      * For more information about troubleshooting, see <a href=
@@ -5023,6 +5082,10 @@ public interface AmazonEC2 {
      * You can't stop or reboot a Scheduled Instance, but you can terminate it
      * as needed. If you terminate a Scheduled Instance before the current
      * scheduled time period ends, you can launch it again after a few minutes.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html"
+     * >Scheduled Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
      * </p>
      * 
      * @param runScheduledInstancesRequest
@@ -5073,38 +5136,33 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Stops an Amazon EBS-backed instance. Each time you transition an instance
-     * from stopped to started, Amazon EC2 charges a full instance hour, even if
-     * transitions happen multiple times within a single hour.
+     * Stops an Amazon EBS-backed instance.
      * </p>
      * <p>
-     * You can't start or stop Spot instances.
+     * We don't charge hourly usage for a stopped instance, or data transfer
+     * fees; however, your root partition Amazon EBS volume remains, continues
+     * to persist your data, and you are charged for Amazon EBS volume usage.
+     * Each time you transition an instance from stopped to started, Amazon EC2
+     * charges a full instance hour, even if transitions happen multiple times
+     * within a single hour.
      * </p>
      * <p>
-     * Instances that use Amazon EBS volumes as their root devices can be
-     * quickly stopped and started. When an instance is stopped, the compute
-     * resources are released and you are not billed for hourly instance usage.
-     * However, your root partition Amazon EBS volume remains, continues to
-     * persist your data, and you are charged for Amazon EBS volume usage. You
-     * can restart your instance at any time.
+     * You can't start or stop Spot instances, and you can't stop instance
+     * store-backed instances.
      * </p>
      * <p>
-     * Before stopping an instance, make sure it is in a state from which it can
-     * be restarted. Stopping an instance does not preserve data stored in RAM.
+     * When you stop an instance, we shut it down. You can restart your instance
+     * at any time. Before stopping an instance, make sure it is in a state from
+     * which it can be restarted. Stopping an instance does not preserve data
+     * stored in RAM.
      * </p>
      * <p>
-     * Performing this operation on an instance that uses an instance store as
-     * its root device returns an error.
-     * </p>
-     * <p>
-     * You can stop, start, and terminate EBS-backed instances. You can only
-     * terminate instance store-backed instances. What happens to an instance
-     * differs if you stop it or terminate it. For example, when you stop an
-     * instance, the root device and any other devices attached to the instance
-     * persist. When you terminate an instance, the root device and any other
-     * devices attached during the instance launch are automatically deleted.
-     * For more information about the differences between stopping and
-     * terminating instances, see <a href=
+     * Stopping an instance is different to rebooting or terminating it. For
+     * example, when you stop an instance, the root device and any other devices
+     * attached to the instance persist. When you terminate an instance, the
+     * root device and any other devices attached during the instance launch are
+     * automatically deleted. For more information about the differences between
+     * rebooting, stopping, and terminating instances, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"
      * >Instance Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
