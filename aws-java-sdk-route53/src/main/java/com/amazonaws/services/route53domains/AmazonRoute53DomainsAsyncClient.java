@@ -468,6 +468,42 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
     }
 
     @Override
+    public java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(
+            GetContactReachabilityStatusRequest request) {
+
+        return getContactReachabilityStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(
+            final GetContactReachabilityStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContactReachabilityStatusRequest, GetContactReachabilityStatusResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetContactReachabilityStatusResult>() {
+                    @Override
+                    public GetContactReachabilityStatusResult call()
+                            throws Exception {
+                        GetContactReachabilityStatusResult result;
+
+                        try {
+                            result = getContactReachabilityStatus(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDomainDetailResult> getDomainDetailAsync(
             GetDomainDetailRequest request) {
 
@@ -710,6 +746,42 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
 
                         try {
                             result = registerDomain(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
+            ResendContactReachabilityEmailRequest request) {
+
+        return resendContactReachabilityEmailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
+            final ResendContactReachabilityEmailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResendContactReachabilityEmailRequest, ResendContactReachabilityEmailResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ResendContactReachabilityEmailResult>() {
+                    @Override
+                    public ResendContactReachabilityEmailResult call()
+                            throws Exception {
+                        ResendContactReachabilityEmailResult result;
+
+                        try {
+                            result = resendContactReachabilityEmail(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

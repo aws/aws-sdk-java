@@ -75,6 +75,12 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
     }
 
     @Override
+    public GetContactReachabilityStatusResult getContactReachabilityStatus(
+            GetContactReachabilityStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDomainDetailResult getDomainDetail(GetDomainDetailRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -113,6 +119,12 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
 
     @Override
     public RegisterDomainResult registerDomain(RegisterDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResendContactReachabilityEmailResult resendContactReachabilityEmail(
+            ResendContactReachabilityEmailRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

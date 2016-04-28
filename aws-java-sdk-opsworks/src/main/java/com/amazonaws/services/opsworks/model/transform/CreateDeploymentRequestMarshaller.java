@@ -84,6 +84,19 @@ public class CreateDeploymentRequestMarshaller implements
                 }
                 jsonGenerator.writeEndArray();
             }
+
+            com.amazonaws.internal.SdkInternalList<String> layerIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDeploymentRequest
+                    .getLayerIds();
+            if (!layerIdsList.isEmpty() || !layerIdsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("LayerIds");
+                jsonGenerator.writeStartArray();
+                for (String layerIdsListValue : layerIdsList) {
+                    if (layerIdsListValue != null) {
+                        jsonGenerator.writeValue(layerIdsListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (createDeploymentRequest.getCommand() != null) {
                 jsonGenerator.writeFieldName("Command");
                 DeploymentCommandJsonMarshaller.getInstance().marshall(

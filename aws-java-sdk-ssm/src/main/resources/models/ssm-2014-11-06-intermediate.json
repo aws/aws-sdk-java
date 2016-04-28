@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "ssm",
     "signingName" : "ssm",
-    "xmlProtocol" : false,
-    "serviceName" : "Amazon SSM",
-    "cborProtocol" : false,
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false,
+    "serviceName" : "Amazon SSM",
+    "cborProtocol" : false
   },
   "operations" : {
     "CancelCommand" : {

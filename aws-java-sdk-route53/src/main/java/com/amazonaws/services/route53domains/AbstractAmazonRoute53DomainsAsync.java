@@ -120,6 +120,21 @@ public class AbstractAmazonRoute53DomainsAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(
+            GetContactReachabilityStatusRequest request) {
+
+        return getContactReachabilityStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(
+            GetContactReachabilityStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetContactReachabilityStatusRequest, GetContactReachabilityStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDomainDetailResult> getDomainDetailAsync(
             GetDomainDetailRequest request) {
 
@@ -253,6 +268,21 @@ public class AbstractAmazonRoute53DomainsAsync extends
     public java.util.concurrent.Future<RegisterDomainResult> registerDomainAsync(
             RegisterDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterDomainRequest, RegisterDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
+            ResendContactReachabilityEmailRequest request) {
+
+        return resendContactReachabilityEmailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
+            ResendContactReachabilityEmailRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResendContactReachabilityEmailRequest, ResendContactReachabilityEmailResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

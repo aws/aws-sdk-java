@@ -66,13 +66,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "cancelJob",
+      "authenticated" : true,
       "syncReturnType" : "CancelJobResult",
       "asyncReturnType" : "CancelJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult>",
-      "authenticated" : true,
-      "methodName" : "cancelJob"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult>"
     },
     "CreateJob" : {
       "documentation" : "<p> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created. </p> <p>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</p>",
@@ -111,13 +111,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createJob",
+      "authenticated" : true,
       "syncReturnType" : "CreateJobResult",
       "asyncReturnType" : "CreateJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult>",
-      "authenticated" : true,
-      "methodName" : "createJob"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult>"
     },
     "CreatePipeline" : {
       "documentation" : "<p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>",
@@ -156,13 +156,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createPipeline",
+      "authenticated" : true,
       "syncReturnType" : "CreatePipelineResult",
       "asyncReturnType" : "CreatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>",
-      "authenticated" : true,
-      "methodName" : "createPipeline"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>"
     },
     "CreatePreset" : {
       "documentation" : "<p>The CreatePreset operation creates a preset with settings that you specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i>.</p>",
@@ -198,13 +198,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createPreset",
+      "authenticated" : true,
       "syncReturnType" : "CreatePresetResult",
       "asyncReturnType" : "CreatePresetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePresetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePresetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePresetRequest, CreatePresetResult>",
-      "authenticated" : true,
-      "methodName" : "createPreset"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePresetRequest, CreatePresetResult>"
     },
     "DeletePipeline" : {
       "documentation" : "<p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error. </p>",
@@ -243,13 +243,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deletePipeline",
+      "authenticated" : true,
       "syncReturnType" : "DeletePipelineResult",
       "asyncReturnType" : "DeletePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult>",
-      "authenticated" : true,
-      "methodName" : "deletePipeline"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult>"
     },
     "DeletePreset" : {
       "documentation" : "<p>The DeletePreset operation removes a preset that you've added in an AWS region.</p> <note> <p>You can't delete the default presets that are included with Elastic Transcoder.</p> </note>",
@@ -285,13 +285,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deletePreset",
+      "authenticated" : true,
       "syncReturnType" : "DeletePresetResult",
       "asyncReturnType" : "DeletePresetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePresetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePresetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePresetRequest, DeletePresetResult>",
-      "authenticated" : true,
-      "methodName" : "deletePreset"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePresetRequest, DeletePresetResult>"
     },
     "ListJobsByPipeline" : {
       "documentation" : "<p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</p>",
@@ -327,13 +327,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listJobsByPipeline",
+      "authenticated" : true,
       "syncReturnType" : "ListJobsByPipelineResult",
       "asyncReturnType" : "ListJobsByPipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListJobsByPipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListJobsByPipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult>",
-      "authenticated" : true,
-      "methodName" : "listJobsByPipeline"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult>"
     },
     "ListJobsByStatus" : {
       "documentation" : "<p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.</p>",
@@ -369,13 +369,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listJobsByStatus",
+      "authenticated" : true,
       "syncReturnType" : "ListJobsByStatusResult",
       "asyncReturnType" : "ListJobsByStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListJobsByStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListJobsByStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByStatusRequest, ListJobsByStatusResult>",
-      "authenticated" : true,
-      "methodName" : "listJobsByStatus"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByStatusRequest, ListJobsByStatusResult>"
     },
     "ListPipelines" : {
       "documentation" : "<p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>",
@@ -408,13 +408,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listPipelines",
+      "authenticated" : true,
       "syncReturnType" : "ListPipelinesResult",
       "asyncReturnType" : "ListPipelinesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPipelinesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPipelinesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>",
-      "authenticated" : true,
-      "methodName" : "listPipelines"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>"
     },
     "ListPresets" : {
       "documentation" : "<p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.</p>",
@@ -447,13 +447,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listPresets",
+      "authenticated" : true,
       "syncReturnType" : "ListPresetsResult",
       "asyncReturnType" : "ListPresetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPresetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPresetsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPresetsRequest, ListPresetsResult>",
-      "authenticated" : true,
-      "methodName" : "listPresets"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPresetsRequest, ListPresetsResult>"
     },
     "ReadJob" : {
       "documentation" : "<p>The ReadJob operation returns detailed information about a job.</p>",
@@ -489,13 +489,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "readJob",
+      "authenticated" : true,
       "syncReturnType" : "ReadJobResult",
       "asyncReturnType" : "ReadJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReadJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReadJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadJobRequest, ReadJobResult>",
-      "authenticated" : true,
-      "methodName" : "readJob"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadJobRequest, ReadJobResult>"
     },
     "ReadPipeline" : {
       "documentation" : "<p>The ReadPipeline operation gets detailed information about a pipeline.</p>",
@@ -531,13 +531,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "readPipeline",
+      "authenticated" : true,
       "syncReturnType" : "ReadPipelineResult",
       "asyncReturnType" : "ReadPipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReadPipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReadPipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPipelineRequest, ReadPipelineResult>",
-      "authenticated" : true,
-      "methodName" : "readPipeline"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPipelineRequest, ReadPipelineResult>"
     },
     "ReadPreset" : {
       "documentation" : "<p>The ReadPreset operation gets detailed information about a preset.</p>",
@@ -573,13 +573,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "readPreset",
+      "authenticated" : true,
       "syncReturnType" : "ReadPresetResult",
       "asyncReturnType" : "ReadPresetResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReadPresetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReadPresetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPresetRequest, ReadPresetResult>",
-      "authenticated" : true,
-      "methodName" : "readPreset"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPresetRequest, ReadPresetResult>"
     },
     "TestRole" : {
       "documentation" : "<p>The TestRole operation tests the IAM role used to create the pipeline.</p> <p>The <code>TestRole</code> action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify.</p>",
@@ -615,13 +615,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "testRole",
+      "authenticated" : true,
       "syncReturnType" : "TestRoleResult",
       "asyncReturnType" : "TestRoleResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestRoleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestRoleResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestRoleRequest, TestRoleResult>",
-      "authenticated" : true,
-      "methodName" : "testRole"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestRoleRequest, TestRoleResult>"
     },
     "UpdatePipeline" : {
       "documentation" : "<p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline. <important>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings. </important> </p>",
@@ -660,13 +660,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "updatePipeline",
+      "authenticated" : true,
       "syncReturnType" : "UpdatePipelineResult",
       "asyncReturnType" : "UpdatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult>",
-      "authenticated" : true,
-      "methodName" : "updatePipeline"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult>"
     },
     "UpdatePipelineNotifications" : {
       "documentation" : "<p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>",
@@ -705,13 +705,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "updatePipelineNotifications",
+      "authenticated" : true,
       "syncReturnType" : "UpdatePipelineNotificationsResult",
       "asyncReturnType" : "UpdatePipelineNotificationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineNotificationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineNotificationsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResult>",
-      "authenticated" : true,
-      "methodName" : "updatePipelineNotifications"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResult>"
     },
     "UpdatePipelineStatus" : {
       "documentation" : "<p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p> <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a> request. </p>",
@@ -750,13 +750,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "updatePipelineStatus",
+      "authenticated" : true,
       "syncReturnType" : "UpdatePipelineStatusResult",
       "asyncReturnType" : "UpdatePipelineStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineStatusRequest, UpdatePipelineStatusResult>",
-      "authenticated" : true,
-      "methodName" : "updatePipelineStatus"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineStatusRequest, UpdatePipelineStatusResult>"
     }
   },
   "shapes" : {
@@ -4904,8 +4904,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Preset",
           "simple" : false,
+          "simpleType" : "Preset",
           "map" : false,
           "templateType" : "java.util.List<Preset>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Preset>"
@@ -5150,8 +5150,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Preset",
             "simple" : false,
+            "simpleType" : "Preset",
             "map" : false,
             "templateType" : "java.util.List<Preset>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Preset>"
@@ -5998,8 +5998,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artwork",
           "simple" : false,
+          "simpleType" : "Artwork",
           "map" : false,
           "templateType" : "java.util.List<Artwork>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artwork>"
@@ -6139,8 +6139,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artwork",
             "simple" : false,
+            "simpleType" : "Artwork",
             "map" : false,
             "templateType" : "java.util.List<Artwork>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artwork>"
@@ -7328,8 +7328,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Warning",
           "simple" : false,
+          "simpleType" : "Warning",
           "map" : false,
           "templateType" : "java.util.List<Warning>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
@@ -7522,8 +7522,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Warning",
             "simple" : false,
+            "simpleType" : "Warning",
             "map" : false,
             "templateType" : "java.util.List<Warning>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
@@ -9166,8 +9166,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Job",
           "simple" : false,
+          "simpleType" : "Job",
           "map" : false,
           "templateType" : "java.util.List<Job>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
@@ -9412,8 +9412,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Job",
             "simple" : false,
+            "simpleType" : "Job",
             "map" : false,
             "templateType" : "java.util.List<Job>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
@@ -10050,8 +10050,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Warning",
           "simple" : false,
+          "simpleType" : "Warning",
           "map" : false,
           "templateType" : "java.util.List<Warning>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
@@ -10244,8 +10244,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Warning",
             "simple" : false,
+            "simpleType" : "Warning",
             "map" : false,
             "templateType" : "java.util.List<Warning>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
@@ -10762,8 +10762,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Permission",
           "simple" : false,
+          "simpleType" : "Permission",
           "map" : false,
           "templateType" : "java.util.List<Permission>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Permission>"
@@ -11009,8 +11009,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Permission",
             "simple" : false,
+            "simpleType" : "Permission",
             "map" : false,
             "templateType" : "java.util.List<Permission>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Permission>"
@@ -11384,8 +11384,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11998,8 +11998,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -12494,8 +12494,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "JobWatermark",
           "simple" : false,
+          "simpleType" : "JobWatermark",
           "map" : false,
           "templateType" : "java.util.List<JobWatermark>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
@@ -12664,8 +12664,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Clip",
           "simple" : false,
+          "simpleType" : "Clip",
           "map" : false,
           "templateType" : "java.util.List<Clip>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
@@ -12962,8 +12962,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "JobWatermark",
             "simple" : false,
+            "simpleType" : "JobWatermark",
             "map" : false,
             "templateType" : "java.util.List<JobWatermark>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
@@ -13505,8 +13505,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Clip",
             "simple" : false,
+            "simpleType" : "Clip",
             "map" : false,
             "templateType" : "java.util.List<Clip>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
@@ -13688,8 +13688,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "CaptionSource",
           "simple" : false,
+          "simpleType" : "CaptionSource",
           "map" : false,
           "templateType" : "java.util.List<CaptionSource>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionSource>"
@@ -13806,8 +13806,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "CaptionFormat",
           "simple" : false,
+          "simpleType" : "CaptionFormat",
           "map" : false,
           "templateType" : "java.util.List<CaptionFormat>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionFormat>"
@@ -13947,8 +13947,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "CaptionFormat",
             "simple" : false,
+            "simpleType" : "CaptionFormat",
             "map" : false,
             "templateType" : "java.util.List<CaptionFormat>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionFormat>"
@@ -14066,8 +14066,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "CaptionSource",
             "simple" : false,
+            "simpleType" : "CaptionSource",
             "map" : false,
             "templateType" : "java.util.List<CaptionSource>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionSource>"
@@ -15030,8 +15030,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "JobWatermark",
           "simple" : false,
+          "simpleType" : "JobWatermark",
           "map" : false,
           "templateType" : "java.util.List<JobWatermark>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
@@ -15200,8 +15200,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Clip",
           "simple" : false,
+          "simpleType" : "Clip",
           "map" : false,
           "templateType" : "java.util.List<Clip>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
@@ -16027,8 +16027,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "JobWatermark",
             "simple" : false,
+            "simpleType" : "JobWatermark",
             "map" : false,
             "templateType" : "java.util.List<JobWatermark>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
@@ -16570,8 +16570,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Clip",
             "simple" : false,
+            "simpleType" : "Clip",
             "map" : false,
             "templateType" : "java.util.List<Clip>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
@@ -16754,8 +16754,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Pipeline",
           "simple" : false,
+          "simpleType" : "Pipeline",
           "map" : false,
           "templateType" : "java.util.List<Pipeline>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Pipeline>"
@@ -17000,8 +17000,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Pipeline",
             "simple" : false,
+            "simpleType" : "Pipeline",
             "map" : false,
             "templateType" : "java.util.List<Pipeline>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Pipeline>"
@@ -17536,8 +17536,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -17787,8 +17787,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -19300,8 +19300,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -19704,8 +19704,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -22153,8 +22153,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Warning",
           "simple" : false,
+          "simpleType" : "Warning",
           "map" : false,
           "templateType" : "java.util.List<Warning>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
@@ -22347,8 +22347,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Warning",
             "simple" : false,
+            "simpleType" : "Warning",
             "map" : false,
             "templateType" : "java.util.List<Warning>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
@@ -24187,8 +24187,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -24381,8 +24381,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -27344,8 +27344,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "JobOutput",
           "simple" : false,
+          "simpleType" : "JobOutput",
           "map" : false,
           "templateType" : "java.util.List<JobOutput>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobOutput>"
@@ -27514,8 +27514,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Playlist",
           "simple" : false,
+          "simpleType" : "Playlist",
           "map" : false,
           "templateType" : "java.util.List<Playlist>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Playlist>"
@@ -27931,8 +27931,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "JobOutput",
             "simple" : false,
+            "simpleType" : "JobOutput",
             "map" : false,
             "templateType" : "java.util.List<JobOutput>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobOutput>"
@@ -28156,8 +28156,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Playlist",
             "simple" : false,
+            "simpleType" : "Playlist",
             "map" : false,
             "templateType" : "java.util.List<Playlist>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Playlist>"
@@ -29232,8 +29232,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Job",
           "simple" : false,
+          "simpleType" : "Job",
           "map" : false,
           "templateType" : "java.util.List<Job>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
@@ -29478,8 +29478,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Job",
             "simple" : false,
+            "simpleType" : "Job",
             "map" : false,
             "templateType" : "java.util.List<Job>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
@@ -30435,8 +30435,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PresetWatermark",
           "simple" : false,
+          "simpleType" : "PresetWatermark",
           "map" : false,
           "templateType" : "java.util.List<PresetWatermark>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PresetWatermark>"
@@ -31053,8 +31053,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PresetWatermark",
             "simple" : false,
+            "simpleType" : "PresetWatermark",
             "map" : false,
             "templateType" : "java.util.List<PresetWatermark>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PresetWatermark>"
@@ -31672,8 +31672,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "CreateJobOutput",
           "simple" : false,
+          "simpleType" : "CreateJobOutput",
           "map" : false,
           "templateType" : "java.util.List<CreateJobOutput>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobOutput>"
@@ -31842,8 +31842,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "CreateJobPlaylist",
           "simple" : false,
+          "simpleType" : "CreateJobPlaylist",
           "map" : false,
           "templateType" : "java.util.List<CreateJobPlaylist>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>"
@@ -32106,8 +32106,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "CreateJobOutput",
             "simple" : false,
+            "simpleType" : "CreateJobOutput",
             "map" : false,
             "templateType" : "java.util.List<CreateJobOutput>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobOutput>"
@@ -32278,8 +32278,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "CreateJobPlaylist",
             "simple" : false,
+            "simpleType" : "CreateJobPlaylist",
             "map" : false,
             "templateType" : "java.util.List<CreateJobPlaylist>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>"
@@ -32740,8 +32740,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -32881,8 +32881,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"

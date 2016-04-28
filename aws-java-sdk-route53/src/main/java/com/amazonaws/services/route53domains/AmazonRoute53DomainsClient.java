@@ -273,10 +273,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * This operation checks the availability of one domain name. You can access
-     * this API without authenticating. Note that if the availability status of
-     * a domain is pending, you must submit another request to determine the
-     * availability of the domain name.
+     * This operation checks the availability of one domain name. Note that if
+     * the availability status of a domain is pending, you must submit another
+     * request to determine the availability of the domain name.
      * </p>
      * 
      * @param checkDomainAvailabilityRequest
@@ -546,6 +545,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
      *         domain name or belong to the requester account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
      * @sample AmazonRoute53Domains.EnableDomainAutoRenew
      */
     @Override
@@ -640,6 +641,70 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
             JsonResponseHandler<EnableDomainTransferLockResult> responseHandler = SdkJsonProtocolFactory
                     .createResponseHandler(
                             new EnableDomainTransferLockResultJsonUnmarshaller(),
+                            false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For operations that require confirmation that the email address for the
+     * registrant contact is valid, such as registering a new domain, this
+     * operation returns information about whether the registrant contact has
+     * responded.
+     * </p>
+     * <p>
+     * If you want us to resend the email, use the
+     * <code>ResendContactReachabilityEmail</code> operation.
+     * </p>
+     * 
+     * @param getContactReachabilityStatusRequest
+     * @return Result of the GetContactReachabilityStatus operation returned by
+     *         the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.GetContactReachabilityStatus
+     */
+    @Override
+    public GetContactReachabilityStatusResult getContactReachabilityStatus(
+            GetContactReachabilityStatusRequest getContactReachabilityStatusRequest) {
+        ExecutionContext executionContext = createExecutionContext(getContactReachabilityStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContactReachabilityStatusRequest> request = null;
+        Response<GetContactReachabilityStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContactReachabilityStatusRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(getContactReachabilityStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<GetContactReachabilityStatusResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new GetContactReachabilityStatusResultJsonUnmarshaller(),
                             false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
@@ -1008,6 +1073,66 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
             JsonResponseHandler<RegisterDomainResult> responseHandler = SdkJsonProtocolFactory
                     .createResponseHandler(
                             new RegisterDomainResultJsonUnmarshaller(), false);
+            responseHandler.setIsPayloadJson(true);
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For operations that require confirmation that the email address for the
+     * registrant contact is valid, such as registering a new domain, this
+     * operation resends the confirmation email to the current email address for
+     * the registrant contact.
+     * </p>
+     * 
+     * @param resendContactReachabilityEmailRequest
+     * @return Result of the ResendContactReachabilityEmail operation returned
+     *         by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.ResendContactReachabilityEmail
+     */
+    @Override
+    public ResendContactReachabilityEmailResult resendContactReachabilityEmail(
+            ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest) {
+        ExecutionContext executionContext = createExecutionContext(resendContactReachabilityEmailRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResendContactReachabilityEmailRequest> request = null;
+        Response<ResendContactReachabilityEmailResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResendContactReachabilityEmailRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(resendContactReachabilityEmailRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            JsonResponseHandler<ResendContactReachabilityEmailResult> responseHandler = SdkJsonProtocolFactory
+                    .createResponseHandler(
+                            new ResendContactReachabilityEmailResultJsonUnmarshaller(),
+                            false);
             responseHandler.setIsPayloadJson(true);
             response = invoke(request, responseHandler, executionContext);
 

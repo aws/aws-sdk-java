@@ -144,7 +144,7 @@ public class TransferManager {
     /** Configuration for how TransferManager processes requests. */
     private TransferManagerConfiguration configuration;
     /** The thread pool in which transfers are uploaded or downloaded. */
-    private final ExecutorService threadPool;
+    private final ExecutorService executorService;
 
     /**
      * Thread used for periodically checking transfers and updating their state, as well as enforcing
@@ -242,14 +242,19 @@ public class TransferManager {
      *
      * @param s3
      *            The client to use when making requests to Amazon S3.
-     * @param threadPool
-     *            The thread pool in which to execute requests.
+     * @param executorService
+     *            The ExecutorService to use for the TransferManager. It is not recommended to
+     *            use a single threaded executor or a thread pool with a bounded work queue as
+     *            control tasks may submit subtasks that can't complete until all sub tasks
+     *            complete. Using an incorrectly configured thread pool may cause a deadlock (I.E.
+     *            the work queue is filled with control tasks that can't finish until subtasks
+     *            complete but subtasks can't execute because the queue is filled).
      *
      * @see TransferManager#TransferManager(AmazonS3 s3, ExecutorService
-     *      threadPool, boolean shutDownThreadPools)
+     *      executorService, boolean shutDownThreadPools)
      */
-    public TransferManager(AmazonS3 s3, ExecutorService threadPool) {
-        this(s3,threadPool,true);
+    public TransferManager(AmazonS3 s3, ExecutorService executorService) {
+        this(s3, executorService, true);
     }
 
     /**
@@ -264,15 +269,20 @@ public class TransferManager {
      *
      * @param s3
      *            The client to use when making requests to Amazon S3.
-     * @param threadPool
-     *            The thread pool in which to execute requests.
+     * @param executorService
+     *            The ExecutorService to use for the TransferManager. It is not recommended to
+     *            use a single threaded executor or a thread pool with a bounded work queue as
+     *            control tasks may submit subtasks that can't complete until all sub tasks
+     *            complete. Using an incorrectly configured thread pool may cause a deadlock (I.E.
+     *            the work queue is filled with control tasks that can't finish until subtasks
+     *            complete but subtasks can't execute because the queue is filled).
      * @param shutDownThreadPools
      *            If set to true, the thread pool will be shutdown when transfer
      *            manager instance is garbage collected.
      */
-    public TransferManager(AmazonS3 s3, ExecutorService threadPool, boolean shutDownThreadPools) {
+    public TransferManager(AmazonS3 s3, ExecutorService executorService, boolean shutDownThreadPools) {
         this.s3 = s3;
-        this.threadPool = threadPool;
+        this.executorService = executorService;
         this.configuration = new TransferManagerConfiguration();
         this.shutDownThreadPools = shutDownThreadPools;
     }
@@ -608,11 +618,11 @@ public class TransferManager {
          * multiple parallel uploads submitted. This may result in a delay for
          * processing the complete multi part upload request.
          */
-        UploadCallable uploadCallable = new UploadCallable(this, threadPool,
-                upload, putObjectRequest, listenerChain, multipartUploadId,
-                transferProgress);
-        UploadMonitor watcher = UploadMonitor.create(this, upload, threadPool,
-                uploadCallable, putObjectRequest, listenerChain);
+        UploadCallable uploadCallable = new UploadCallable(this, executorService,
+                                                           upload, putObjectRequest, listenerChain, multipartUploadId,
+                                                           transferProgress);
+        UploadMonitor watcher = UploadMonitor.create(this, upload, executorService,
+                                                     uploadCallable, putObjectRequest, listenerChain);
         upload.setMonitor(watcher);
 
         return upload;
@@ -972,7 +982,7 @@ public class TransferManager {
         }
 
         final CountDownLatch latch = new CountDownLatch(1);
-        Future<?> future = threadPool.submit(
+        Future<?> future = executorService.submit(
             new DownloadCallable(s3, latch,
                 getObjectRequest, resumeExistingDownload, download, file,
                 origStartingByte, fileLength, timeoutMillis, timedThreadPool));
@@ -1413,7 +1423,7 @@ public class TransferManager {
      */
     public void shutdownNow(boolean shutDownS3Client) {
         if (shutDownThreadPools) {
-            threadPool.shutdownNow();
+            executorService.shutdownNow();
             timedThreadPool.shutdownNow();
         }
 
@@ -1431,7 +1441,7 @@ public class TransferManager {
      */
     private void shutdownThreadPools() {
         if (shutDownThreadPools) {
-            threadPool.shutdown();
+            executorService.shutdown();
             timedThreadPool.shutdown();
         }
     }
@@ -1624,10 +1634,10 @@ public class TransferManager {
                 new TransferProgressUpdatingListener(transferProgress));
         CopyImpl copy = new CopyImpl(description, transferProgress,
                 listenerChain, stateChangeListener);
-        CopyCallable copyCallable = new CopyCallable(this, threadPool, copy,
-                copyObjectRequest, metadata, listenerChain);
-        CopyMonitor watcher = CopyMonitor.create(this, copy, threadPool,
-                copyCallable, copyObjectRequest, listenerChain);
+        CopyCallable copyCallable = new CopyCallable(this, executorService, copy,
+                                                     copyObjectRequest, metadata, listenerChain);
+        CopyMonitor watcher = CopyMonitor.create(this, copy, executorService,
+                                                 copyCallable, copyObjectRequest, listenerChain);
         watcher.setTimedThreadPool(timedThreadPool);
         copy.setMonitor(watcher);
         return copy;

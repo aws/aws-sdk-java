@@ -300,6 +300,13 @@ public class Instance implements Serializable, Cloneable {
     private String subnetId;
     /**
      * <p>
+     * The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.
+     * </p>
+     */
+    private String tenancy;
+    /**
+     * <p>
      * The instance's virtualization type: <code>paravirtual</code> or
      * <code>hvm</code>.
      * </p>
@@ -2410,6 +2417,53 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.
+     * </p>
+     * 
+     * @param tenancy
+     *        The instance's tenancy option, such as <code>dedicated</code> or
+     *        <code>host</code>.
+     */
+
+    public void setTenancy(String tenancy) {
+        this.tenancy = tenancy;
+    }
+
+    /**
+     * <p>
+     * The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.
+     * </p>
+     * 
+     * @return The instance's tenancy option, such as <code>dedicated</code> or
+     *         <code>host</code>.
+     */
+
+    public String getTenancy() {
+        return this.tenancy;
+    }
+
+    /**
+     * <p>
+     * The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.
+     * </p>
+     * 
+     * @param tenancy
+     *        The instance's tenancy option, such as <code>dedicated</code> or
+     *        <code>host</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Instance withTenancy(String tenancy) {
+        setTenancy(tenancy);
+        return this;
+    }
+
+    /**
+     * <p>
      * The instance's virtualization type: <code>paravirtual</code> or
      * <code>hvm</code>.
      * </p>
@@ -2586,6 +2640,8 @@ public class Instance implements Serializable, Cloneable {
             sb.append("Status: " + getStatus() + ",");
         if (getSubnetId() != null)
             sb.append("SubnetId: " + getSubnetId() + ",");
+        if (getTenancy() != null)
+            sb.append("Tenancy: " + getTenancy() + ",");
         if (getVirtualizationType() != null)
             sb.append("VirtualizationType: " + getVirtualizationType());
         sb.append("}");
@@ -2818,6 +2874,11 @@ public class Instance implements Serializable, Cloneable {
         if (other.getSubnetId() != null
                 && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getTenancy() == null ^ this.getTenancy() == null)
+            return false;
+        if (other.getTenancy() != null
+                && other.getTenancy().equals(this.getTenancy()) == false)
+            return false;
         if (other.getVirtualizationType() == null
                 ^ this.getVirtualizationType() == null)
             return false;
@@ -2951,6 +3012,8 @@ public class Instance implements Serializable, Cloneable {
                 + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode
                 + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode
+                + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getVirtualizationType() == null) ? 0

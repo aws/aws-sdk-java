@@ -210,6 +210,25 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String agentVersion;
+    /**
+     * <p>
+     * The instance's tenancy option. The default option is no tenancy, or if
+     * the instance is running in a VPC, inherit tenancy settings from the VPC.
+     * The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs
+     * associated with changes in tenancy options, we recommend that you
+     * research tenancy options before choosing them for your instances. For
+     * more information about dedicated hosts, see <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated
+     * Hosts</a>. For more information about dedicated instances, see <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     * >Dedicated Instances</a> and <a href=
+     * "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     * >Amazon EC2 Dedicated Instances</a>.
+     * </p>
+     */
+    private String tenancy;
 
     /**
      * <p>
@@ -1683,6 +1702,134 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The instance's tenancy option. The default option is no tenancy, or if
+     * the instance is running in a VPC, inherit tenancy settings from the VPC.
+     * The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs
+     * associated with changes in tenancy options, we recommend that you
+     * research tenancy options before choosing them for your instances. For
+     * more information about dedicated hosts, see <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated
+     * Hosts</a>. For more information about dedicated instances, see <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     * >Dedicated Instances</a> and <a href=
+     * "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     * >Amazon EC2 Dedicated Instances</a>.
+     * </p>
+     * 
+     * @param tenancy
+     *        The instance's tenancy option. The default option is no tenancy,
+     *        or if the instance is running in a VPC, inherit tenancy settings
+     *        from the VPC. The following are valid values for this parameter:
+     *        <code>dedicated</code>, <code>default</code>, or <code>host</code>
+     *        . Because there are costs associated with changes in tenancy
+     *        options, we recommend that you research tenancy options before
+     *        choosing them for your instances. For more information about
+     *        dedicated hosts, see <a
+     *        href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     *        Overview</a> and <a
+     *        href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2
+     *        Dedicated Hosts</a>. For more information about dedicated
+     *        instances, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     *        >Dedicated Instances</a> and <a href=
+     *        "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     *        >Amazon EC2 Dedicated Instances</a>.
+     */
+
+    public void setTenancy(String tenancy) {
+        this.tenancy = tenancy;
+    }
+
+    /**
+     * <p>
+     * The instance's tenancy option. The default option is no tenancy, or if
+     * the instance is running in a VPC, inherit tenancy settings from the VPC.
+     * The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs
+     * associated with changes in tenancy options, we recommend that you
+     * research tenancy options before choosing them for your instances. For
+     * more information about dedicated hosts, see <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated
+     * Hosts</a>. For more information about dedicated instances, see <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     * >Dedicated Instances</a> and <a href=
+     * "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     * >Amazon EC2 Dedicated Instances</a>.
+     * </p>
+     * 
+     * @return The instance's tenancy option. The default option is no tenancy,
+     *         or if the instance is running in a VPC, inherit tenancy settings
+     *         from the VPC. The following are valid values for this parameter:
+     *         <code>dedicated</code>, <code>default</code>, or
+     *         <code>host</code>. Because there are costs associated with
+     *         changes in tenancy options, we recommend that you research
+     *         tenancy options before choosing them for your instances. For more
+     *         information about dedicated hosts, see <a
+     *         href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated
+     *         Hosts Overview</a> and <a
+     *         href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2
+     *         Dedicated Hosts</a>. For more information about dedicated
+     *         instances, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     *         >Dedicated Instances</a> and <a href=
+     *         "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     *         >Amazon EC2 Dedicated Instances</a>.
+     */
+
+    public String getTenancy() {
+        return this.tenancy;
+    }
+
+    /**
+     * <p>
+     * The instance's tenancy option. The default option is no tenancy, or if
+     * the instance is running in a VPC, inherit tenancy settings from the VPC.
+     * The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs
+     * associated with changes in tenancy options, we recommend that you
+     * research tenancy options before choosing them for your instances. For
+     * more information about dedicated hosts, see <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated
+     * Hosts</a>. For more information about dedicated instances, see <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     * >Dedicated Instances</a> and <a href=
+     * "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     * >Amazon EC2 Dedicated Instances</a>.
+     * </p>
+     * 
+     * @param tenancy
+     *        The instance's tenancy option. The default option is no tenancy,
+     *        or if the instance is running in a VPC, inherit tenancy settings
+     *        from the VPC. The following are valid values for this parameter:
+     *        <code>dedicated</code>, <code>default</code>, or <code>host</code>
+     *        . Because there are costs associated with changes in tenancy
+     *        options, we recommend that you research tenancy options before
+     *        choosing them for your instances. For more information about
+     *        dedicated hosts, see <a
+     *        href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     *        Overview</a> and <a
+     *        href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2
+     *        Dedicated Hosts</a>. For more information about dedicated
+     *        instances, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     *        >Dedicated Instances</a> and <a href=
+     *        "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     *        >Amazon EC2 Dedicated Instances</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateInstanceRequest withTenancy(String tenancy) {
+        setTenancy(tenancy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1728,7 +1875,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
         if (getEbsOptimized() != null)
             sb.append("EbsOptimized: " + getEbsOptimized() + ",");
         if (getAgentVersion() != null)
-            sb.append("AgentVersion: " + getAgentVersion());
+            sb.append("AgentVersion: " + getAgentVersion() + ",");
+        if (getTenancy() != null)
+            sb.append("Tenancy: " + getTenancy());
         sb.append("}");
         return sb.toString();
     }
@@ -1838,6 +1987,11 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
         if (other.getAgentVersion() != null
                 && other.getAgentVersion().equals(this.getAgentVersion()) == false)
             return false;
+        if (other.getTenancy() == null ^ this.getTenancy() == null)
+            return false;
+        if (other.getTenancy() != null
+                && other.getTenancy().equals(this.getTenancy()) == false)
+            return false;
         return true;
     }
 
@@ -1900,6 +2054,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getAgentVersion() == null) ? 0 : getAgentVersion()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         return hashCode;
     }
 

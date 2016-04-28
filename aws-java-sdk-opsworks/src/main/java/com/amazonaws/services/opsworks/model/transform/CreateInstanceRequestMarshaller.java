@@ -154,6 +154,10 @@ public class CreateInstanceRequestMarshaller implements
                 jsonGenerator.writeFieldName("AgentVersion").writeValue(
                         createInstanceRequest.getAgentVersion());
             }
+            if (createInstanceRequest.getTenancy() != null) {
+                jsonGenerator.writeFieldName("Tenancy").writeValue(
+                        createInstanceRequest.getTenancy());
+            }
 
             jsonGenerator.writeEndObject();
 

@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "workspaces",
     "signingName" : "workspaces",
+    "xmlProtocol" : false,
     "serviceName" : "Amazon WorkSpaces",
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -1011,8 +1011,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "FailedWorkspaceChangeRequest",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
@@ -1152,8 +1152,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "FailedWorkspaceChangeRequest",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
@@ -1283,8 +1283,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "FailedWorkspaceChangeRequest",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
@@ -1424,8 +1424,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "FailedWorkspaceChangeRequest",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
@@ -3095,8 +3095,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "TerminateRequest",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<TerminateRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>"
@@ -3240,8 +3240,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "TerminateRequest",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<TerminateRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<TerminateRequest>"
@@ -3371,8 +3371,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "RebootRequest",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RebootRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>"
@@ -3516,8 +3516,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "RebootRequest",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RebootRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebootRequest>"
@@ -3647,8 +3647,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "RebuildRequest",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<RebuildRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>"
@@ -3792,8 +3792,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "RebuildRequest",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<RebuildRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<RebuildRequest>"
@@ -4483,8 +4483,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "FailedWorkspaceChangeRequest",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
@@ -4624,8 +4624,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "FailedWorkspaceChangeRequest",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<FailedWorkspaceChangeRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>"
@@ -4755,8 +4755,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "WorkspaceBundle",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<WorkspaceBundle>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>"
@@ -5001,8 +5001,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "WorkspaceBundle",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<WorkspaceBundle>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceBundle>"
@@ -5181,8 +5181,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "WorkspaceDirectory",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<WorkspaceDirectory>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>"
@@ -5427,8 +5427,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "WorkspaceDirectory",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<WorkspaceDirectory>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>"
@@ -5558,8 +5558,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "FailedCreateWorkspaceRequest",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<FailedCreateWorkspaceRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>"
@@ -5676,8 +5676,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "Workspace",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Workspace>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
@@ -5817,8 +5817,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "Workspace",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Workspace>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
@@ -5936,8 +5936,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "FailedCreateWorkspaceRequest",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<FailedCreateWorkspaceRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>"
@@ -6907,8 +6907,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -7262,8 +7262,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -7457,8 +7457,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "Workspace",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Workspace>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
@@ -7703,8 +7703,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "Workspace",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Workspace>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Workspace>"
@@ -8002,8 +8002,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "WorkspaceRequest",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<WorkspaceRequest>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>"
@@ -8147,8 +8147,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "WorkspaceRequest",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<WorkspaceRequest>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<WorkspaceRequest>"
@@ -8629,8 +8629,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -8879,8 +8879,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -9883,8 +9883,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10001,8 +10001,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10719,8 +10719,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -10838,8 +10838,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11234,8 +11234,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -11692,8 +11692,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"

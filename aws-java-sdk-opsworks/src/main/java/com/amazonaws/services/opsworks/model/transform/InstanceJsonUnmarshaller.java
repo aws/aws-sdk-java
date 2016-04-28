@@ -248,6 +248,11 @@ public class InstanceJsonUnmarshaller implements
                     instance.setSubnetId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
+                if (context.testExpression("Tenancy", targetDepth)) {
+                    context.nextToken();
+                    instance.setTenancy(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
+                }
                 if (context.testExpression("VirtualizationType", targetDepth)) {
                     context.nextToken();
                     instance.setVirtualizationType(context.getUnmarshaller(

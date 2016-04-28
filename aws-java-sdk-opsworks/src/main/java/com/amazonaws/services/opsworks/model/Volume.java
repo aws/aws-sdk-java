@@ -77,7 +77,7 @@ public class Volume implements Serializable, Cloneable {
     private String device;
     /**
      * <p>
-     * The volume mount point. For example "/dev/sdh".
+     * The volume mount point. For example, "/mnt/disk1".
      * </p>
      */
     private String mountPoint;
@@ -452,11 +452,11 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume mount point. For example "/dev/sdh".
+     * The volume mount point. For example, "/mnt/disk1".
      * </p>
      * 
      * @param mountPoint
-     *        The volume mount point. For example "/dev/sdh".
+     *        The volume mount point. For example, "/mnt/disk1".
      */
 
     public void setMountPoint(String mountPoint) {
@@ -465,10 +465,10 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume mount point. For example "/dev/sdh".
+     * The volume mount point. For example, "/mnt/disk1".
      * </p>
      * 
-     * @return The volume mount point. For example "/dev/sdh".
+     * @return The volume mount point. For example, "/mnt/disk1".
      */
 
     public String getMountPoint() {
@@ -477,11 +477,11 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume mount point. For example "/dev/sdh".
+     * The volume mount point. For example, "/mnt/disk1".
      * </p>
      * 
      * @param mountPoint
-     *        The volume mount point. For example "/dev/sdh".
+     *        The volume mount point. For example, "/mnt/disk1".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

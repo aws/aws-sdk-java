@@ -1514,8 +1514,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -1632,8 +1632,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -1750,8 +1750,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "ByteBuffer",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<java.nio.ByteBuffer>",
           "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>"
@@ -1987,8 +1987,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "AttributeValue",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<AttributeValue>",
           "templateImplType" : "java.util.ArrayList<AttributeValue>"
@@ -2232,8 +2232,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -2351,8 +2351,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "ByteBuffer",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<java.nio.ByteBuffer>",
             "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>"
@@ -2576,8 +2576,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "AttributeValue",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<AttributeValue>",
             "templateImplType" : "java.util.ArrayList<AttributeValue>"
@@ -2815,8 +2815,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -3457,8 +3457,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "KeySchemaElement",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<KeySchemaElement>",
           "templateImplType" : "java.util.ArrayList<KeySchemaElement>"
@@ -3575,8 +3575,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "Shard",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Shard>",
           "templateImplType" : "java.util.ArrayList<Shard>"
@@ -3821,8 +3821,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "Shard",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Shard>",
             "templateImplType" : "java.util.ArrayList<Shard>"
@@ -3993,8 +3993,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "KeySchemaElement",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<KeySchemaElement>",
             "templateImplType" : "java.util.ArrayList<KeySchemaElement>"
@@ -4669,8 +4669,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "Record",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Record>",
           "templateImplType" : "java.util.ArrayList<Record>"
@@ -4915,8 +4915,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "Record",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Record>",
             "templateImplType" : "java.util.ArrayList<Record>"
@@ -5540,8 +5540,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "Stream",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Stream>",
           "templateImplType" : "java.util.ArrayList<Stream>"
@@ -5786,8 +5786,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "Stream",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Stream>",
             "templateImplType" : "java.util.ArrayList<Stream>"

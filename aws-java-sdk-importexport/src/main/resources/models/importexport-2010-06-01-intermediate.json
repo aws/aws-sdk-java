@@ -20,10 +20,10 @@
     "jsonVersion" : null,
     "endpointPrefix" : "importexport",
     "signingName" : "importexport",
+    "xmlProtocol" : true,
     "serviceName" : "AWS Import/Export",
     "cborProtocol" : false,
     "jsonProtocol" : false,
-    "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
@@ -916,8 +916,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
+          "simpleType" : "String",
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -2110,8 +2110,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
+            "simpleType" : "String",
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
@@ -3189,8 +3189,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -3330,8 +3330,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -4473,8 +4473,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Job",
           "simple" : false,
+          "simpleType" : "Job",
           "map" : false,
           "templateType" : "java.util.List<Job>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
@@ -4666,8 +4666,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Job",
             "simple" : false,
+            "simpleType" : "Job",
             "map" : false,
             "templateType" : "java.util.List<Job>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
@@ -5549,8 +5549,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -5690,8 +5690,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -6852,8 +6852,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
@@ -7046,8 +7046,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"

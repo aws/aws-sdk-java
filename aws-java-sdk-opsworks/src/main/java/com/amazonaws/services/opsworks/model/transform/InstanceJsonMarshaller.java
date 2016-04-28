@@ -231,6 +231,10 @@ public class InstanceJsonMarshaller {
                 jsonGenerator.writeFieldName("SubnetId").writeValue(
                         instance.getSubnetId());
             }
+            if (instance.getTenancy() != null) {
+                jsonGenerator.writeFieldName("Tenancy").writeValue(
+                        instance.getTenancy());
+            }
             if (instance.getVirtualizationType() != null) {
                 jsonGenerator.writeFieldName("VirtualizationType").writeValue(
                         instance.getVirtualizationType());
