@@ -63,9 +63,11 @@ public class SignerUtils {
                 + "\"DateLessThan\":{\"AWS:EpochTime\":"
                 + MILLISECONDS.toSeconds(activeFrom.getTime())
                 + "}"
-                + ",\"IpAddress\":{\"AWS:SourceIp\":\""
-                + ipAddress
-                + "\"}"
+                + (ipAddress == null
+                   ? ""
+                   : ",\"IpAddress\":{\"AWS:SourceIp\":\""
+                     + ipAddress + "\"}"
+                  )
                 + (expiresOn == null
                    ? ""
                    : ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
