@@ -20,8 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The metadata about the Inspector application data metrics collected by the
- * agent. This data type is used as the response element in the
+ * The metadata about the Amazon Inspector application data metrics collected by
+ * the agent. This data type is used as the response element in the
  * <a>GetTelemetryMetadata</a> action.
  * </p>
  */
@@ -35,13 +35,15 @@ public class TelemetryMetadata implements Serializable, Cloneable {
     private String messageType;
     /**
      * <p>
-     * The count of messages that the agent sends to the Inspector service.
+     * The count of messages that the agent sends to the Amazon Inspector
+     * service.
      * </p>
      */
     private Long count;
     /**
      * <p>
-     * The data size of messages that the agent sends to the Inspector service.
+     * The data size of messages that the agent sends to the Amazon Inspector
+     * service.
      * </p>
      */
     private Long dataSize;
@@ -90,11 +92,12 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of messages that the agent sends to the Inspector service.
+     * The count of messages that the agent sends to the Amazon Inspector
+     * service.
      * </p>
      * 
      * @param count
-     *        The count of messages that the agent sends to the Inspector
+     *        The count of messages that the agent sends to the Amazon Inspector
      *        service.
      */
 
@@ -104,11 +107,12 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of messages that the agent sends to the Inspector service.
+     * The count of messages that the agent sends to the Amazon Inspector
+     * service.
      * </p>
      * 
-     * @return The count of messages that the agent sends to the Inspector
-     *         service.
+     * @return The count of messages that the agent sends to the Amazon
+     *         Inspector service.
      */
 
     public Long getCount() {
@@ -117,11 +121,12 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of messages that the agent sends to the Inspector service.
+     * The count of messages that the agent sends to the Amazon Inspector
+     * service.
      * </p>
      * 
      * @param count
-     *        The count of messages that the agent sends to the Inspector
+     *        The count of messages that the agent sends to the Amazon Inspector
      *        service.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -134,12 +139,13 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data size of messages that the agent sends to the Inspector service.
+     * The data size of messages that the agent sends to the Amazon Inspector
+     * service.
      * </p>
      * 
      * @param dataSize
-     *        The data size of messages that the agent sends to the Inspector
-     *        service.
+     *        The data size of messages that the agent sends to the Amazon
+     *        Inspector service.
      */
 
     public void setDataSize(Long dataSize) {
@@ -148,11 +154,12 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data size of messages that the agent sends to the Inspector service.
+     * The data size of messages that the agent sends to the Amazon Inspector
+     * service.
      * </p>
      * 
-     * @return The data size of messages that the agent sends to the Inspector
-     *         service.
+     * @return The data size of messages that the agent sends to the Amazon
+     *         Inspector service.
      */
 
     public Long getDataSize() {
@@ -161,12 +168,13 @@ public class TelemetryMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data size of messages that the agent sends to the Inspector service.
+     * The data size of messages that the agent sends to the Amazon Inspector
+     * service.
      * </p>
      * 
      * @param dataSize
-     *        The data size of messages that the agent sends to the Inspector
-     *        service.
+     *        The data size of messages that the agent sends to the Amazon
+     *        Inspector service.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -25,7 +25,7 @@ public class DescribeAssessmentRunsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the assessment run(s).
+     * Information about the assessment run.
      * </p>
      */
     private java.util.List<AssessmentRun> assessmentRuns;
@@ -39,10 +39,10 @@ public class DescribeAssessmentRunsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the assessment run(s).
+     * Information about the assessment run.
      * </p>
      * 
-     * @return Information about the assessment run(s).
+     * @return Information about the assessment run.
      */
 
     public java.util.List<AssessmentRun> getAssessmentRuns() {
@@ -51,11 +51,11 @@ public class DescribeAssessmentRunsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the assessment run(s).
+     * Information about the assessment run.
      * </p>
      * 
      * @param assessmentRuns
-     *        Information about the assessment run(s).
+     *        Information about the assessment run.
      */
 
     public void setAssessmentRuns(
@@ -71,7 +71,7 @@ public class DescribeAssessmentRunsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the assessment run(s).
+     * Information about the assessment run.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -81,7 +81,7 @@ public class DescribeAssessmentRunsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param assessmentRuns
-     *        Information about the assessment run(s).
+     *        Information about the assessment run.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -100,11 +100,11 @@ public class DescribeAssessmentRunsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the assessment run(s).
+     * Information about the assessment run.
      * </p>
      * 
      * @param assessmentRuns
-     *        Information about the assessment run(s).
+     *        Information about the assessment run.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

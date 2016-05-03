@@ -20,13 +20,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "autoscaling",
     "signingName" : "autoscaling",
+    "unmarshallerClassSuffix" : "StaxUnmarshaller",
+    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
+    "xmlProtocol" : true,
     "serviceName" : "Auto Scaling",
     "cborProtocol" : false,
     "jsonProtocol" : false,
-    "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
-    "xmlProtocol" : true
+    "unmarshallerContextClassName" : "StaxUnmarshallerContext"
   },
   "operations" : {
     "AttachInstances" : {
@@ -48,12 +48,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AttachInstancesRequest, Void>",
+      "authenticated" : true,
       "methodName" : "attachInstances"
     },
     "AttachLoadBalancers" : {
@@ -78,12 +78,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AttachLoadBalancersResult",
       "asyncReturnType" : "AttachLoadBalancersResult",
       "asyncFutureType" : "java.util.concurrent.Future<AttachLoadBalancersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AttachLoadBalancersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AttachLoadBalancersRequest, AttachLoadBalancersResult>",
+      "authenticated" : true,
       "methodName" : "attachLoadBalancers"
     },
     "CompleteLifecycleAction" : {
@@ -108,12 +108,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CompleteLifecycleActionResult",
       "asyncReturnType" : "CompleteLifecycleActionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CompleteLifecycleActionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CompleteLifecycleActionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CompleteLifecycleActionRequest, CompleteLifecycleActionResult>",
+      "authenticated" : true,
       "methodName" : "completeLifecycleAction"
     },
     "CreateAutoScalingGroup" : {
@@ -141,12 +141,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAutoScalingGroupRequest, Void>",
+      "authenticated" : true,
       "methodName" : "createAutoScalingGroup"
     },
     "CreateLaunchConfiguration" : {
@@ -174,12 +174,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLaunchConfigurationRequest, Void>",
+      "authenticated" : true,
       "methodName" : "createLaunchConfiguration"
     },
     "CreateOrUpdateTags" : {
@@ -207,12 +207,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateOrUpdateTagsRequest, Void>",
+      "authenticated" : true,
       "methodName" : "createOrUpdateTags"
     },
     "DeleteAutoScalingGroup" : {
@@ -240,12 +240,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAutoScalingGroupRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteAutoScalingGroup"
     },
     "DeleteLaunchConfiguration" : {
@@ -270,12 +270,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLaunchConfigurationRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteLaunchConfiguration"
     },
     "DeleteLifecycleHook" : {
@@ -300,12 +300,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteLifecycleHookResult",
       "asyncReturnType" : "DeleteLifecycleHookResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteLifecycleHookResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteLifecycleHookResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLifecycleHookRequest, DeleteLifecycleHookResult>",
+      "authenticated" : true,
       "methodName" : "deleteLifecycleHook"
     },
     "DeleteNotificationConfiguration" : {
@@ -327,12 +327,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteNotificationConfigurationRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteNotificationConfiguration"
     },
     "DeletePolicy" : {
@@ -354,12 +354,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deletePolicy"
     },
     "DeleteScheduledAction" : {
@@ -381,12 +381,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteScheduledAction"
     },
     "DeleteTags" : {
@@ -408,12 +408,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteTags"
     },
     "DescribeAccountLimits" : {
@@ -438,12 +438,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeAccountLimitsResult",
       "asyncReturnType" : "DescribeAccountLimitsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAccountLimitsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAccountLimitsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult>",
+      "authenticated" : true,
       "methodName" : "describeAccountLimits"
     },
     "DescribeAdjustmentTypes" : {
@@ -468,12 +468,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeAdjustmentTypesResult",
       "asyncReturnType" : "DescribeAdjustmentTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAdjustmentTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAdjustmentTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAdjustmentTypesRequest, DescribeAdjustmentTypesResult>",
+      "authenticated" : true,
       "methodName" : "describeAdjustmentTypes"
     },
     "DescribeAutoScalingGroups" : {
@@ -501,12 +501,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeAutoScalingGroupsResult",
       "asyncReturnType" : "DescribeAutoScalingGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAutoScalingGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAutoScalingGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResult>",
+      "authenticated" : true,
       "methodName" : "describeAutoScalingGroups"
     },
     "DescribeAutoScalingInstances" : {
@@ -534,12 +534,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeAutoScalingInstancesResult",
       "asyncReturnType" : "DescribeAutoScalingInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAutoScalingInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAutoScalingInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAutoScalingInstancesRequest, DescribeAutoScalingInstancesResult>",
+      "authenticated" : true,
       "methodName" : "describeAutoScalingInstances"
     },
     "DescribeAutoScalingNotificationTypes" : {
@@ -564,12 +564,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeAutoScalingNotificationTypesResult",
       "asyncReturnType" : "DescribeAutoScalingNotificationTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAutoScalingNotificationTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAutoScalingNotificationTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAutoScalingNotificationTypesRequest, DescribeAutoScalingNotificationTypesResult>",
+      "authenticated" : true,
       "methodName" : "describeAutoScalingNotificationTypes"
     },
     "DescribeLaunchConfigurations" : {
@@ -597,12 +597,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeLaunchConfigurationsResult",
       "asyncReturnType" : "DescribeLaunchConfigurationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLaunchConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLaunchConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLaunchConfigurationsRequest, DescribeLaunchConfigurationsResult>",
+      "authenticated" : true,
       "methodName" : "describeLaunchConfigurations"
     },
     "DescribeLifecycleHookTypes" : {
@@ -627,12 +627,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeLifecycleHookTypesResult",
       "asyncReturnType" : "DescribeLifecycleHookTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLifecycleHookTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLifecycleHookTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLifecycleHookTypesRequest, DescribeLifecycleHookTypesResult>",
+      "authenticated" : true,
       "methodName" : "describeLifecycleHookTypes"
     },
     "DescribeLifecycleHooks" : {
@@ -657,12 +657,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeLifecycleHooksResult",
       "asyncReturnType" : "DescribeLifecycleHooksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLifecycleHooksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLifecycleHooksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLifecycleHooksRequest, DescribeLifecycleHooksResult>",
+      "authenticated" : true,
       "methodName" : "describeLifecycleHooks"
     },
     "DescribeLoadBalancers" : {
@@ -687,12 +687,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeLoadBalancersResult",
       "asyncReturnType" : "DescribeLoadBalancersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLoadBalancersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLoadBalancersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancersRequest, DescribeLoadBalancersResult>",
+      "authenticated" : true,
       "methodName" : "describeLoadBalancers"
     },
     "DescribeMetricCollectionTypes" : {
@@ -717,12 +717,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeMetricCollectionTypesResult",
       "asyncReturnType" : "DescribeMetricCollectionTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMetricCollectionTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMetricCollectionTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMetricCollectionTypesRequest, DescribeMetricCollectionTypesResult>",
+      "authenticated" : true,
       "methodName" : "describeMetricCollectionTypes"
     },
     "DescribeNotificationConfigurations" : {
@@ -750,12 +750,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeNotificationConfigurationsResult",
       "asyncReturnType" : "DescribeNotificationConfigurationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeNotificationConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeNotificationConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeNotificationConfigurationsRequest, DescribeNotificationConfigurationsResult>",
+      "authenticated" : true,
       "methodName" : "describeNotificationConfigurations"
     },
     "DescribePolicies" : {
@@ -783,12 +783,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribePoliciesResult",
       "asyncReturnType" : "DescribePoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribePoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribePoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribePoliciesRequest, DescribePoliciesResult>",
+      "authenticated" : true,
       "methodName" : "describePolicies"
     },
     "DescribeScalingActivities" : {
@@ -816,12 +816,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeScalingActivitiesResult",
       "asyncReturnType" : "DescribeScalingActivitiesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeScalingActivitiesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeScalingActivitiesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeScalingActivitiesRequest, DescribeScalingActivitiesResult>",
+      "authenticated" : true,
       "methodName" : "describeScalingActivities"
     },
     "DescribeScalingProcessTypes" : {
@@ -846,12 +846,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeScalingProcessTypesResult",
       "asyncReturnType" : "DescribeScalingProcessTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeScalingProcessTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeScalingProcessTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeScalingProcessTypesRequest, DescribeScalingProcessTypesResult>",
+      "authenticated" : true,
       "methodName" : "describeScalingProcessTypes"
     },
     "DescribeScheduledActions" : {
@@ -879,12 +879,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeScheduledActionsResult",
       "asyncReturnType" : "DescribeScheduledActionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeScheduledActionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeScheduledActionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeScheduledActionsRequest, DescribeScheduledActionsResult>",
+      "authenticated" : true,
       "methodName" : "describeScheduledActions"
     },
     "DescribeTags" : {
@@ -912,12 +912,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeTagsResult",
       "asyncReturnType" : "DescribeTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>",
+      "authenticated" : true,
       "methodName" : "describeTags"
     },
     "DescribeTerminationPolicyTypes" : {
@@ -942,12 +942,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeTerminationPolicyTypesResult",
       "asyncReturnType" : "DescribeTerminationPolicyTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTerminationPolicyTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTerminationPolicyTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTerminationPolicyTypesRequest, DescribeTerminationPolicyTypesResult>",
+      "authenticated" : true,
       "methodName" : "describeTerminationPolicyTypes"
     },
     "DetachInstances" : {
@@ -972,12 +972,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DetachInstancesResult",
       "asyncReturnType" : "DetachInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DetachInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DetachInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DetachInstancesRequest, DetachInstancesResult>",
+      "authenticated" : true,
       "methodName" : "detachInstances"
     },
     "DetachLoadBalancers" : {
@@ -1002,12 +1002,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DetachLoadBalancersResult",
       "asyncReturnType" : "DetachLoadBalancersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DetachLoadBalancersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DetachLoadBalancersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DetachLoadBalancersRequest, DetachLoadBalancersResult>",
+      "authenticated" : true,
       "methodName" : "detachLoadBalancers"
     },
     "DisableMetricsCollection" : {
@@ -1029,12 +1029,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableMetricsCollectionRequest, Void>",
+      "authenticated" : true,
       "methodName" : "disableMetricsCollection"
     },
     "EnableMetricsCollection" : {
@@ -1056,12 +1056,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableMetricsCollectionRequest, Void>",
+      "authenticated" : true,
       "methodName" : "enableMetricsCollection"
     },
     "EnterStandby" : {
@@ -1086,12 +1086,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "EnterStandbyResult",
       "asyncReturnType" : "EnterStandbyResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnterStandbyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnterStandbyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnterStandbyRequest, EnterStandbyResult>",
+      "authenticated" : true,
       "methodName" : "enterStandby"
     },
     "ExecutePolicy" : {
@@ -1116,12 +1116,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ExecutePolicyRequest, Void>",
+      "authenticated" : true,
       "methodName" : "executePolicy"
     },
     "ExitStandby" : {
@@ -1146,12 +1146,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ExitStandbyResult",
       "asyncReturnType" : "ExitStandbyResult",
       "asyncFutureType" : "java.util.concurrent.Future<ExitStandbyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ExitStandbyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ExitStandbyRequest, ExitStandbyResult>",
+      "authenticated" : true,
       "methodName" : "exitStandby"
     },
     "PutLifecycleHook" : {
@@ -1179,12 +1179,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutLifecycleHookResult",
       "asyncReturnType" : "PutLifecycleHookResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutLifecycleHookResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutLifecycleHookResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutLifecycleHookRequest, PutLifecycleHookResult>",
+      "authenticated" : true,
       "methodName" : "putLifecycleHook"
     },
     "PutNotificationConfiguration" : {
@@ -1209,12 +1209,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutNotificationConfigurationRequest, Void>",
+      "authenticated" : true,
       "methodName" : "putNotificationConfiguration"
     },
     "PutScalingPolicy" : {
@@ -1242,12 +1242,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutScalingPolicyResult",
       "asyncReturnType" : "PutScalingPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutScalingPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutScalingPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutScalingPolicyRequest, PutScalingPolicyResult>",
+      "authenticated" : true,
       "methodName" : "putScalingPolicy"
     },
     "PutScheduledUpdateGroupAction" : {
@@ -1275,12 +1275,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutScheduledUpdateGroupActionRequest, Void>",
+      "authenticated" : true,
       "methodName" : "putScheduledUpdateGroupAction"
     },
     "RecordLifecycleActionHeartbeat" : {
@@ -1305,12 +1305,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RecordLifecycleActionHeartbeatResult",
       "asyncReturnType" : "RecordLifecycleActionHeartbeatResult",
       "asyncFutureType" : "java.util.concurrent.Future<RecordLifecycleActionHeartbeatResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RecordLifecycleActionHeartbeatResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RecordLifecycleActionHeartbeatRequest, RecordLifecycleActionHeartbeatResult>",
+      "authenticated" : true,
       "methodName" : "recordLifecycleActionHeartbeat"
     },
     "ResumeProcesses" : {
@@ -1335,12 +1335,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResumeProcessesRequest, Void>",
+      "authenticated" : true,
       "methodName" : "resumeProcesses"
     },
     "SetDesiredCapacity" : {
@@ -1365,12 +1365,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetDesiredCapacityRequest, Void>",
+      "authenticated" : true,
       "methodName" : "setDesiredCapacity"
     },
     "SetInstanceHealth" : {
@@ -1392,12 +1392,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetInstanceHealthRequest, Void>",
+      "authenticated" : true,
       "methodName" : "setInstanceHealth"
     },
     "SetInstanceProtection" : {
@@ -1425,12 +1425,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "SetInstanceProtectionResult",
       "asyncReturnType" : "SetInstanceProtectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetInstanceProtectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetInstanceProtectionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetInstanceProtectionRequest, SetInstanceProtectionResult>",
+      "authenticated" : true,
       "methodName" : "setInstanceProtection"
     },
     "SuspendProcesses" : {
@@ -1455,12 +1455,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SuspendProcessesRequest, Void>",
+      "authenticated" : true,
       "methodName" : "suspendProcesses"
     },
     "TerminateInstanceInAutoScalingGroup" : {
@@ -1488,12 +1488,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "TerminateInstanceInAutoScalingGroupResult",
       "asyncReturnType" : "TerminateInstanceInAutoScalingGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateInstanceInAutoScalingGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TerminateInstanceInAutoScalingGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateInstanceInAutoScalingGroupRequest, TerminateInstanceInAutoScalingGroupResult>",
+      "authenticated" : true,
       "methodName" : "terminateInstanceInAutoScalingGroup"
     },
     "UpdateAutoScalingGroup" : {
@@ -1518,12 +1518,12 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAutoScalingGroupRequest, Void>",
+      "authenticated" : true,
       "methodName" : "updateAutoScalingGroup"
     }
   },
@@ -50756,7 +50756,8 @@
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
-    "shapeModifiers" : null
+    "shapeModifiers" : null,
+    "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",

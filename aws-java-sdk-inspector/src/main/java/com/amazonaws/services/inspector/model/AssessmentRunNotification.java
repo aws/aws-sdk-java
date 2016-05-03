@@ -20,8 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as one of the elements of the <a>AssessmentRun</a>
- * data type.
+ * Used as one of the elements of the <a>AssessmentRun</a> data type.
  * </p>
  */
 public class AssessmentRunNotification implements Serializable, Cloneable {

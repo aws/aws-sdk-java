@@ -25,7 +25,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARN(s) specifying the finding(s) returned by the action.
+     * A list of ARNs that specifies the findings returned by the action.
      * </p>
      */
     private java.util.List<String> findingArns;
@@ -34,17 +34,17 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of ARN(s) specifying the finding(s) returned by the action.
+     * A list of ARNs that specifies the findings returned by the action.
      * </p>
      * 
-     * @return A list of ARN(s) specifying the finding(s) returned by the
+     * @return A list of ARNs that specifies the findings returned by the
      *         action.
      */
 
@@ -54,11 +54,11 @@ public class ListFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARN(s) specifying the finding(s) returned by the action.
+     * A list of ARNs that specifies the findings returned by the action.
      * </p>
      * 
      * @param findingArns
-     *        A list of ARN(s) specifying the finding(s) returned by the action.
+     *        A list of ARNs that specifies the findings returned by the action.
      */
 
     public void setFindingArns(java.util.Collection<String> findingArns) {
@@ -72,7 +72,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARN(s) specifying the finding(s) returned by the action.
+     * A list of ARNs that specifies the findings returned by the action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -82,7 +82,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param findingArns
-     *        A list of ARN(s) specifying the finding(s) returned by the action.
+     *        A list of ARNs that specifies the findings returned by the action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,11 +99,11 @@ public class ListFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARN(s) specifying the finding(s) returned by the action.
+     * A list of ARNs that specifies the findings returned by the action.
      * </p>
      * 
      * @param findingArns
-     *        A list of ARN(s) specifying the finding(s) returned by the action.
+     *        A list of ARNs that specifies the findings returned by the action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -119,7 +119,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
@@ -127,7 +127,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      *        this parameter is present in the response and contains the value
      *        to use for the <b>nextToken</b> parameter in a subsequent
      *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to 'null'.
+     *        parameter is set to null.
      */
 
     public void setNextToken(String nextToken) {
@@ -139,14 +139,14 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @return When a response is generated, if there is more data to be listed,
      *         this parameter is present in the response and contains the value
      *         to use for the <b>nextToken</b> parameter in a subsequent
      *         pagination request. If there is no more data to be listed, this
-     *         parameter is set to 'null'.
+     *         parameter is set to null.
      */
 
     public String getNextToken() {
@@ -158,7 +158,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
@@ -166,7 +166,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      *        this parameter is present in the response and contains the value
      *        to use for the <b>nextToken</b> parameter in a subsequent
      *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to 'null'.
+     *        parameter is set to null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

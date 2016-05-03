@@ -20,15 +20,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an Inspector agent. This data type is used as a
- * response element in the <a>ListAssessmentRunAgents</a> action.
+ * Contains information about an Amazon Inspector agent. This data type is used
+ * as a response element in the <a>ListAssessmentRunAgents</a> action.
  * </p>
  */
 public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * AWS account of the EC2 instance where the agent is installed.
+     * The AWS account of the EC2 instance where the agent is installed.
      * </p>
      */
     private String agentId;
@@ -58,24 +58,26 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
     private String agentHealthDetails;
     /**
      * <p>
-     * The auto-scaling group of the EC2 instance specified by the agent ID.
+     * The Auto Scaling group of the EC2 instance that is specified by the agent
+     * ID.
      * </p>
      */
     private String autoScalingGroup;
     /**
      * <p>
-     * The Inspector application data metrics collected by the agent.
+     * The Amazon Inspector application data metrics that are collected by the
+     * agent.
      * </p>
      */
     private java.util.List<TelemetryMetadata> telemetryMetadata;
 
     /**
      * <p>
-     * AWS account of the EC2 instance where the agent is installed.
+     * The AWS account of the EC2 instance where the agent is installed.
      * </p>
      * 
      * @param agentId
-     *        AWS account of the EC2 instance where the agent is installed.
+     *        The AWS account of the EC2 instance where the agent is installed.
      */
 
     public void setAgentId(String agentId) {
@@ -84,10 +86,10 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * AWS account of the EC2 instance where the agent is installed.
+     * The AWS account of the EC2 instance where the agent is installed.
      * </p>
      * 
-     * @return AWS account of the EC2 instance where the agent is installed.
+     * @return The AWS account of the EC2 instance where the agent is installed.
      */
 
     public String getAgentId() {
@@ -96,11 +98,11 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * AWS account of the EC2 instance where the agent is installed.
+     * The AWS account of the EC2 instance where the agent is installed.
      * </p>
      * 
      * @param agentId
-     *        AWS account of the EC2 instance where the agent is installed.
+     *        The AWS account of the EC2 instance where the agent is installed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -345,12 +347,13 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The auto-scaling group of the EC2 instance specified by the agent ID.
+     * The Auto Scaling group of the EC2 instance that is specified by the agent
+     * ID.
      * </p>
      * 
      * @param autoScalingGroup
-     *        The auto-scaling group of the EC2 instance specified by the agent
-     *        ID.
+     *        The Auto Scaling group of the EC2 instance that is specified by
+     *        the agent ID.
      */
 
     public void setAutoScalingGroup(String autoScalingGroup) {
@@ -359,11 +362,12 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The auto-scaling group of the EC2 instance specified by the agent ID.
+     * The Auto Scaling group of the EC2 instance that is specified by the agent
+     * ID.
      * </p>
      * 
-     * @return The auto-scaling group of the EC2 instance specified by the agent
-     *         ID.
+     * @return The Auto Scaling group of the EC2 instance that is specified by
+     *         the agent ID.
      */
 
     public String getAutoScalingGroup() {
@@ -372,12 +376,13 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The auto-scaling group of the EC2 instance specified by the agent ID.
+     * The Auto Scaling group of the EC2 instance that is specified by the agent
+     * ID.
      * </p>
      * 
      * @param autoScalingGroup
-     *        The auto-scaling group of the EC2 instance specified by the agent
-     *        ID.
+     *        The Auto Scaling group of the EC2 instance that is specified by
+     *        the agent ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -389,10 +394,12 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Inspector application data metrics collected by the agent.
+     * The Amazon Inspector application data metrics that are collected by the
+     * agent.
      * </p>
      * 
-     * @return The Inspector application data metrics collected by the agent.
+     * @return The Amazon Inspector application data metrics that are collected
+     *         by the agent.
      */
 
     public java.util.List<TelemetryMetadata> getTelemetryMetadata() {
@@ -401,11 +408,13 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Inspector application data metrics collected by the agent.
+     * The Amazon Inspector application data metrics that are collected by the
+     * agent.
      * </p>
      * 
      * @param telemetryMetadata
-     *        The Inspector application data metrics collected by the agent.
+     *        The Amazon Inspector application data metrics that are collected
+     *        by the agent.
      */
 
     public void setTelemetryMetadata(
@@ -421,7 +430,8 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Inspector application data metrics collected by the agent.
+     * The Amazon Inspector application data metrics that are collected by the
+     * agent.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -431,7 +441,8 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
      * </p>
      * 
      * @param telemetryMetadata
-     *        The Inspector application data metrics collected by the agent.
+     *        The Amazon Inspector application data metrics that are collected
+     *        by the agent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -450,11 +461,13 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Inspector application data metrics collected by the agent.
+     * The Amazon Inspector application data metrics that are collected by the
+     * agent.
      * </p>
      * 
      * @param telemetryMetadata
-     *        The Inspector application data metrics collected by the agent.
+     *        The Amazon Inspector application data metrics that are collected
+     *        by the agent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

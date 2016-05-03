@@ -33,22 +33,22 @@ public class AssetAttributes implements Serializable, Cloneable {
     private Integer schemaVersion;
     /**
      * <p>
-     * The id of the agent that is installed on the EC2 instance where the
+     * The ID of the agent that is installed on the EC2 instance where the
      * finding is generated.
      * </p>
      */
     private String agentId;
     /**
      * <p>
-     * The auto-scaling group of the EC2 instance where the finding is
+     * The Auto Scaling group of the EC2 instance where the finding is
      * generated.
      * </p>
      */
     private String autoScalingGroup;
     /**
      * <p>
-     * Amazon Machine Image(AMI) ID installed on the EC2 instance where the
-     * finding is generated.
+     * The ID of the Amazon Machine Image (AMI) that is installed on the EC2
+     * instance where the finding is generated.
      * </p>
      */
     private String amiId;
@@ -109,12 +109,12 @@ public class AssetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The id of the agent that is installed on the EC2 instance where the
+     * The ID of the agent that is installed on the EC2 instance where the
      * finding is generated.
      * </p>
      * 
      * @param agentId
-     *        The id of the agent that is installed on the EC2 instance where
+     *        The ID of the agent that is installed on the EC2 instance where
      *        the finding is generated.
      */
 
@@ -124,11 +124,11 @@ public class AssetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The id of the agent that is installed on the EC2 instance where the
+     * The ID of the agent that is installed on the EC2 instance where the
      * finding is generated.
      * </p>
      * 
-     * @return The id of the agent that is installed on the EC2 instance where
+     * @return The ID of the agent that is installed on the EC2 instance where
      *         the finding is generated.
      */
 
@@ -138,12 +138,12 @@ public class AssetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The id of the agent that is installed on the EC2 instance where the
+     * The ID of the agent that is installed on the EC2 instance where the
      * finding is generated.
      * </p>
      * 
      * @param agentId
-     *        The id of the agent that is installed on the EC2 instance where
+     *        The ID of the agent that is installed on the EC2 instance where
      *        the finding is generated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -156,12 +156,12 @@ public class AssetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The auto-scaling group of the EC2 instance where the finding is
+     * The Auto Scaling group of the EC2 instance where the finding is
      * generated.
      * </p>
      * 
      * @param autoScalingGroup
-     *        The auto-scaling group of the EC2 instance where the finding is
+     *        The Auto Scaling group of the EC2 instance where the finding is
      *        generated.
      */
 
@@ -171,11 +171,11 @@ public class AssetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The auto-scaling group of the EC2 instance where the finding is
+     * The Auto Scaling group of the EC2 instance where the finding is
      * generated.
      * </p>
      * 
-     * @return The auto-scaling group of the EC2 instance where the finding is
+     * @return The Auto Scaling group of the EC2 instance where the finding is
      *         generated.
      */
 
@@ -185,12 +185,12 @@ public class AssetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The auto-scaling group of the EC2 instance where the finding is
+     * The Auto Scaling group of the EC2 instance where the finding is
      * generated.
      * </p>
      * 
      * @param autoScalingGroup
-     *        The auto-scaling group of the EC2 instance where the finding is
+     *        The Auto Scaling group of the EC2 instance where the finding is
      *        generated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -203,13 +203,13 @@ public class AssetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon Machine Image(AMI) ID installed on the EC2 instance where the
-     * finding is generated.
+     * The ID of the Amazon Machine Image (AMI) that is installed on the EC2
+     * instance where the finding is generated.
      * </p>
      * 
      * @param amiId
-     *        Amazon Machine Image(AMI) ID installed on the EC2 instance where
-     *        the finding is generated.
+     *        The ID of the Amazon Machine Image (AMI) that is installed on the
+     *        EC2 instance where the finding is generated.
      */
 
     public void setAmiId(String amiId) {
@@ -218,12 +218,12 @@ public class AssetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon Machine Image(AMI) ID installed on the EC2 instance where the
-     * finding is generated.
+     * The ID of the Amazon Machine Image (AMI) that is installed on the EC2
+     * instance where the finding is generated.
      * </p>
      * 
-     * @return Amazon Machine Image(AMI) ID installed on the EC2 instance where
-     *         the finding is generated.
+     * @return The ID of the Amazon Machine Image (AMI) that is installed on the
+     *         EC2 instance where the finding is generated.
      */
 
     public String getAmiId() {
@@ -232,13 +232,13 @@ public class AssetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon Machine Image(AMI) ID installed on the EC2 instance where the
-     * finding is generated.
+     * The ID of the Amazon Machine Image (AMI) that is installed on the EC2
+     * instance where the finding is generated.
      * </p>
      * 
      * @param amiId
-     *        Amazon Machine Image(AMI) ID installed on the EC2 instance where
-     *        the finding is generated.
+     *        The ID of the Amazon Machine Image (AMI) that is installed on the
+     *        EC2 instance where the finding is generated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

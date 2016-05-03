@@ -20,8 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as the request parameter in the
- * <a>ListAssessmentRuns</a> action.
+ * Used as the request parameter in the <a>ListAssessmentRuns</a> action.
  * </p>
  */
 public class AssessmentRunFilter implements Serializable, Cloneable {
@@ -29,9 +28,9 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
     /**
      * <p>
      * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentRunName</b> property of the <a>AssessmentRun</a> data
-     * type.
+     * a wildcard that is specified for this data type property must match the
+     * value of the <b>assessmentRunName</b> property of the
+     * <a>AssessmentRun</a> data type.
      * </p>
      */
     private String namePattern;
@@ -45,43 +44,43 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
     private java.util.List<String> states;
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>durationInSeconds</b> property of the
-     * <a>AssessmentRun</a> data type.
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>durationInSeconds</b> property of
+     * the <a>AssessmentRun</a> data type.
      * </p>
      */
     private DurationRange durationRange;
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
      * <b>rulesPackages</b> property of the <a>AssessmentRun</a> data type.
      * </p>
      */
     private java.util.List<String> rulesPackageArns;
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>startTime</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>startTime</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      */
     private TimestampRange startTimeRange;
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>completedAt</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>completedAt</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      */
     private TimestampRange completionTimeRange;
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must match the <b>stateChangedAt</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must match the <b>stateChangedAt</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      */
@@ -90,16 +89,16 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
     /**
      * <p>
      * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentRunName</b> property of the <a>AssessmentRun</a> data
-     * type.
+     * a wildcard that is specified for this data type property must match the
+     * value of the <b>assessmentRunName</b> property of the
+     * <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param namePattern
      *        For a record to match a filter, an explicit value or a string
-     *        containing a wildcard specified for this data type property must
-     *        match the value of the <b>assessmentRunName</b> property of the
-     *        <a>AssessmentRun</a> data type.
+     *        containing a wildcard that is specified for this data type
+     *        property must match the value of the <b>assessmentRunName</b>
+     *        property of the <a>AssessmentRun</a> data type.
      */
 
     public void setNamePattern(String namePattern) {
@@ -109,15 +108,15 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
     /**
      * <p>
      * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentRunName</b> property of the <a>AssessmentRun</a> data
-     * type.
+     * a wildcard that is specified for this data type property must match the
+     * value of the <b>assessmentRunName</b> property of the
+     * <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @return For a record to match a filter, an explicit value or a string
-     *         containing a wildcard specified for this data type property must
-     *         match the value of the <b>assessmentRunName</b> property of the
-     *         <a>AssessmentRun</a> data type.
+     *         containing a wildcard that is specified for this data type
+     *         property must match the value of the <b>assessmentRunName</b>
+     *         property of the <a>AssessmentRun</a> data type.
      */
 
     public String getNamePattern() {
@@ -127,16 +126,16 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
     /**
      * <p>
      * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentRunName</b> property of the <a>AssessmentRun</a> data
-     * type.
+     * a wildcard that is specified for this data type property must match the
+     * value of the <b>assessmentRunName</b> property of the
+     * <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param namePattern
      *        For a record to match a filter, an explicit value or a string
-     *        containing a wildcard specified for this data type property must
-     *        match the value of the <b>assessmentRunName</b> property of the
-     *        <a>AssessmentRun</a> data type.
+     *        containing a wildcard that is specified for this data type
+     *        property must match the value of the <b>assessmentRunName</b>
+     *        property of the <a>AssessmentRun</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -276,16 +275,16 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>durationInSeconds</b> property of the
-     * <a>AssessmentRun</a> data type.
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>durationInSeconds</b> property of
+     * the <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param durationRange
-     *        For a record to match a filter, the value specified for this data
-     *        type property must inclusively match any value between the
-     *        specified minimum and maximum values of the
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must inclusively match any value between
+     *        the specified minimum and maximum values of the
      *        <b>durationInSeconds</b> property of the <a>AssessmentRun</a> data
      *        type.
      */
@@ -296,15 +295,15 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>durationInSeconds</b> property of the
-     * <a>AssessmentRun</a> data type.
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>durationInSeconds</b> property of
+     * the <a>AssessmentRun</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, the value specified for this data
-     *         type property must inclusively match any value between the
-     *         specified minimum and maximum values of the
+     * @return For a record to match a filter, the value that is specified for
+     *         this data type property must inclusively match any value between
+     *         the specified minimum and maximum values of the
      *         <b>durationInSeconds</b> property of the <a>AssessmentRun</a>
      *         data type.
      */
@@ -315,16 +314,16 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>durationInSeconds</b> property of the
-     * <a>AssessmentRun</a> data type.
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>durationInSeconds</b> property of
+     * the <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param durationRange
-     *        For a record to match a filter, the value specified for this data
-     *        type property must inclusively match any value between the
-     *        specified minimum and maximum values of the
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must inclusively match any value between
+     *        the specified minimum and maximum values of the
      *        <b>durationInSeconds</b> property of the <a>AssessmentRun</a> data
      *        type.
      * @return Returns a reference to this object so that method calls can be
@@ -338,15 +337,15 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
      * <b>rulesPackages</b> property of the <a>AssessmentRun</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, the value specified for this data
-     *         type property must be contained in the list of values of the
-     *         <b>rulesPackages</b> property of the <a>AssessmentRun</a> data
-     *         type.
+     * @return For a record to match a filter, the value that is specified for
+     *         this data type property must be contained in the list of values
+     *         of the <b>rulesPackages</b> property of the <a>AssessmentRun</a>
+     *         data type.
      */
 
     public java.util.List<String> getRulesPackageArns() {
@@ -355,15 +354,15 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
      * <b>rulesPackages</b> property of the <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param rulesPackageArns
-     *        For a record to match a filter, the value specified for this data
-     *        type property must be contained in the list of values of the
-     *        <b>rulesPackages</b> property of the <a>AssessmentRun</a> data
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must be contained in the list of values of
+     *        the <b>rulesPackages</b> property of the <a>AssessmentRun</a> data
      *        type.
      */
 
@@ -380,8 +379,8 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
      * <b>rulesPackages</b> property of the <a>AssessmentRun</a> data type.
      * </p>
      * <p>
@@ -392,9 +391,9 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
      * </p>
      * 
      * @param rulesPackageArns
-     *        For a record to match a filter, the value specified for this data
-     *        type property must be contained in the list of values of the
-     *        <b>rulesPackages</b> property of the <a>AssessmentRun</a> data
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must be contained in the list of values of
+     *        the <b>rulesPackages</b> property of the <a>AssessmentRun</a> data
      *        type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -413,15 +412,15 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
      * <b>rulesPackages</b> property of the <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param rulesPackageArns
-     *        For a record to match a filter, the value specified for this data
-     *        type property must be contained in the list of values of the
-     *        <b>rulesPackages</b> property of the <a>AssessmentRun</a> data
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must be contained in the list of values of
+     *        the <b>rulesPackages</b> property of the <a>AssessmentRun</a> data
      *        type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -435,16 +434,16 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>startTime</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>startTime</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param startTimeRange
-     *        For a record to match a filter, the value specified for this data
-     *        type property must inclusively match any value between the
-     *        specified minimum and maximum values of the <b>startTime</b>
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must inclusively match any value between
+     *        the specified minimum and maximum values of the <b>startTime</b>
      *        property of the <a>AssessmentRun</a> data type.
      */
 
@@ -454,15 +453,15 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>startTime</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>startTime</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, the value specified for this data
-     *         type property must inclusively match any value between the
-     *         specified minimum and maximum values of the <b>startTime</b>
+     * @return For a record to match a filter, the value that is specified for
+     *         this data type property must inclusively match any value between
+     *         the specified minimum and maximum values of the <b>startTime</b>
      *         property of the <a>AssessmentRun</a> data type.
      */
 
@@ -472,16 +471,16 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>startTime</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>startTime</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param startTimeRange
-     *        For a record to match a filter, the value specified for this data
-     *        type property must inclusively match any value between the
-     *        specified minimum and maximum values of the <b>startTime</b>
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must inclusively match any value between
+     *        the specified minimum and maximum values of the <b>startTime</b>
      *        property of the <a>AssessmentRun</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -494,16 +493,16 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>completedAt</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>completedAt</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param completionTimeRange
-     *        For a record to match a filter, the value specified for this data
-     *        type property must inclusively match any value between the
-     *        specified minimum and maximum values of the <b>completedAt</b>
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must inclusively match any value between
+     *        the specified minimum and maximum values of the <b>completedAt</b>
      *        property of the <a>AssessmentRun</a> data type.
      */
 
@@ -513,16 +512,17 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>completedAt</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>completedAt</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, the value specified for this data
-     *         type property must inclusively match any value between the
-     *         specified minimum and maximum values of the <b>completedAt</b>
-     *         property of the <a>AssessmentRun</a> data type.
+     * @return For a record to match a filter, the value that is specified for
+     *         this data type property must inclusively match any value between
+     *         the specified minimum and maximum values of the
+     *         <b>completedAt</b> property of the <a>AssessmentRun</a> data
+     *         type.
      */
 
     public TimestampRange getCompletionTimeRange() {
@@ -531,16 +531,16 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must inclusively match any value between the specified minimum
-     * and maximum values of the <b>completedAt</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified
+     * minimum and maximum values of the <b>completedAt</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param completionTimeRange
-     *        For a record to match a filter, the value specified for this data
-     *        type property must inclusively match any value between the
-     *        specified minimum and maximum values of the <b>completedAt</b>
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must inclusively match any value between
+     *        the specified minimum and maximum values of the <b>completedAt</b>
      *        property of the <a>AssessmentRun</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -554,15 +554,15 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must match the <b>stateChangedAt</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must match the <b>stateChangedAt</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param stateChangeTimeRange
-     *        For a record to match a filter, the value specified for this data
-     *        type property must match the <b>stateChangedAt</b> property of the
-     *        <a>AssessmentRun</a> data type.
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must match the <b>stateChangedAt</b>
+     *        property of the <a>AssessmentRun</a> data type.
      */
 
     public void setStateChangeTimeRange(TimestampRange stateChangeTimeRange) {
@@ -571,14 +571,14 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must match the <b>stateChangedAt</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must match the <b>stateChangedAt</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, the value specified for this data
-     *         type property must match the <b>stateChangedAt</b> property of
-     *         the <a>AssessmentRun</a> data type.
+     * @return For a record to match a filter, the value that is specified for
+     *         this data type property must match the <b>stateChangedAt</b>
+     *         property of the <a>AssessmentRun</a> data type.
      */
 
     public TimestampRange getStateChangeTimeRange() {
@@ -587,15 +587,15 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must match the <b>stateChangedAt</b> property of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must match the <b>stateChangedAt</b> property of the
      * <a>AssessmentRun</a> data type.
      * </p>
      * 
      * @param stateChangeTimeRange
-     *        For a record to match a filter, the value specified for this data
-     *        type property must match the <b>stateChangedAt</b> property of the
-     *        <a>AssessmentRun</a> data type.
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must match the <b>stateChangedAt</b>
+     *        property of the <a>AssessmentRun</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

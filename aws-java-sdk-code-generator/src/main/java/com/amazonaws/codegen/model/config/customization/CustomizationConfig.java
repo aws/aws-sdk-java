@@ -15,12 +15,12 @@
 
 package com.amazonaws.codegen.model.config.customization;
 
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.codegen.model.config.ConstructorFormsWrapper;
 import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
-import com.amazonaws.codegen.model.intermediate.Metadata;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class CustomizationConfig {
 
@@ -42,15 +42,15 @@ public class CustomizationConfig {
     private boolean useAutoConstructMap;
 
     /**
-     * True if we want to apply the ServiceClientHolderInputStream wrapper to
-     * all the stream response returned by the client; the purpose is to prevent the
-     * client being GCed before the response data is fully consumed.
+     * True if we want to apply the ServiceClientHolderInputStream wrapper to all the stream
+     * response returned by the client; the purpose is to prevent the client being GCed before the
+     * response data is fully consumed.
      */
     private boolean serviceClientHoldInputStream;
 
     /**
-     * The name of the operations where the LengthCheckInputStream wrapper
-     * should be applied to the response stream.
+     * The name of the operations where the LengthCheckInputStream wrapper should be applied to the
+     * response stream.
      */
     private List<String> operationsWithResponseStreamContentLengthValidation;
 
@@ -63,12 +63,10 @@ public class CustomizationConfig {
     private String customExceptionUnmarshallerImpl;
 
     /**
-     * Fully qualified class name of the client configuration factory to use when producing
-     * client configurations for this client.  This factory is called when an explicit
-     * ClientConfiguration is not provided in the service client's constructor.
-     * <p>
-     * Example: "com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientConfigurationFactory"
-     * </p>
+     * Fully qualified class name of the client configuration factory to use when producing client
+     * configurations for this client.  This factory is called when an explicit ClientConfiguration
+     * is not provided in the service client's constructor. <p> Example:
+     * "com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientConfigurationFactory" </p>
      */
     private String customClientConfigFactory;
 
@@ -79,33 +77,31 @@ public class CustomizationConfig {
     private String customResponseMetadataClassName;
 
     /**
-     * True if the generated interface should NOT include shutdown() and getCachedResponseData methods.
-     * Currently it's only set true for SimpleDB.
+     * True if the generated interface should NOT include shutdown() and getCachedResponseData
+     * methods. Currently it's only set true for SimpleDB.
      */
     private boolean skipInterfaceAdditions;
 
     /**
-     * Overrides the request-level service name that will be used for request
-     * metrics and service exceptions. If not specified, the client will use the
-     * service interface name by default.
+     * Overrides the request-level service name that will be used for request metrics and service
+     * exceptions. If not specified, the client will use the service interface name by default.
      *
-     * Example: for backwards compatibility, this is set to "AmazonDynamoDBv2"
-     * for DynamoDB client.
+     * Example: for backwards compatibility, this is set to "AmazonDynamoDBv2" for DynamoDB client.
      *
-     * @see {@link Request#getServiceName()}
+     * @see {@link com.amazonaws.Request#getServiceName()}
      */
     private String customServiceNameForRequest;
 
     /**
-     * True if the generated code should enable client-side validation on
-     * required input parameters.
+     * True if the generated code should enable client-side validation on required input
+     * parameters.
      */
     private boolean requiredParamValidationEnabled;
 
     /**
      * Specify additional constructor forms for a given model class.
      */
-    private Map<String,ConstructorFormsWrapper> additionalShapeConstructors;
+    private Map<String, ConstructorFormsWrapper> additionalShapeConstructors;
 
     /**
      * Specify simplified method forms for a given operation API.
@@ -118,8 +114,8 @@ public class CustomizationConfig {
     private Map<String, String> renameShapes;
 
     /**
-     * Specify List member shapes to send empty String when the List is auto-constructed in query protocol.
-     * This customization will only affect marshaling when autoConstructList is true.
+     * Specify List member shapes to send empty String when the List is auto-constructed in query
+     * protocol. This customization will only affect marshaling when autoConstructList is true.
      * Currently, it's only set in ElasticLoadBalancing service.
      */
     private Map<String, List<String>> sendEmptyAutoConstructedListAsEmptyList;
@@ -142,6 +138,12 @@ public class CustomizationConfig {
     private Map<String, OperationModifier> operationModifiers;
     private Map<String, ShapeSubstitution> shapeSubstitutions;
     private Map<String, ShapeModifier> shapeModifiers;
+
+    /**
+     * List of 'convenience' overloads to generate for model classes. Convenience overloads expose a
+     * different type that is adapted to the real type
+     */
+    private final List<ConvenienceTypeOverload> convenienceTypeOverloads = new ArrayList<ConvenienceTypeOverload>();
 
     public String getRequestMetrics() {
         return requestMetrics;
@@ -176,7 +178,9 @@ public class CustomizationConfig {
         this.customExceptionUnmarshallerImpl = customExceptionUnmarshallerImpl;
     }
 
-    public String getCustomClientConfigFactory() { return customClientConfigFactory; }
+    public String getCustomClientConfigFactory() {
+        return customClientConfigFactory;
+    }
 
     public void setCustomClientConfigFactory(String customClientConfigFactory) {
         this.customClientConfigFactory = customClientConfigFactory;
@@ -186,8 +190,7 @@ public class CustomizationConfig {
         return customResponseMetadataClassName;
     }
 
-    public void setCustomResponseMetadataClassName(
-            String customResponseMetadataClassName) {
+    public void setCustomResponseMetadataClassName(String customResponseMetadataClassName) {
         this.customResponseMetadataClassName = customResponseMetadataClassName;
     }
 
@@ -203,8 +206,7 @@ public class CustomizationConfig {
         return customServiceNameForRequest;
     }
 
-    public void setCustomServiceNameForRequest(
-            String customServiceNameForRequest) {
+    public void setCustomServiceNameForRequest(String customServiceNameForRequest) {
         this.customServiceNameForRequest = customServiceNameForRequest;
     }
 
@@ -246,8 +248,7 @@ public class CustomizationConfig {
         this.sendEmptyAutoConstructedListAsEmptyList = sendEmptyAutoConstructedListAsEmptyList;
     }
 
-    public void setOperationModifiers(
-            Map<String, OperationModifier> operationModifiers) {
+    public void setOperationModifiers(Map<String, OperationModifier> operationModifiers) {
         this.operationModifiers = operationModifiers;
     }
 
@@ -255,8 +256,7 @@ public class CustomizationConfig {
         return shapeSubstitutions;
     }
 
-    public void setShapeSubstitutions(
-            Map<String, ShapeSubstitution> shapeSubstitutions) {
+    public void setShapeSubstitutions(Map<String, ShapeSubstitution> shapeSubstitutions) {
         this.shapeSubstitutions = shapeSubstitutions;
     }
 
@@ -304,12 +304,38 @@ public class CustomizationConfig {
         return requiredParamValidationEnabled;
     }
 
-    public void setRequiredParamValidationEnabled(
-            boolean requiredParamValidationEnabled) {
+    public void setRequiredParamValidationEnabled(boolean requiredParamValidationEnabled) {
         this.requiredParamValidationEnabled = requiredParamValidationEnabled;
     }
 
-    public MetadataConfig getCustomServiceMetadata() { return customServiceMetadata; }
+    /**
+     * Customization to generate a method overload for a member setter that takes a string rather
+     * than an InputStream. Currently only used by Lambda
+     */
+    public void setStringOverloadForInputStreamMember(StringOverloadForInputStreamMember stringOverloadForInputStreamMember) {
+        this.convenienceTypeOverloads.add(stringOverloadForInputStreamMember.getConvenienceTypeOverload());
+    }
+
+    /**
+     * Customization to generate a method overload for a member setter that takes a string rather
+     * than an ByteBuffer. Currently only used by Lambda
+     */
+    public void setStringOverloadForByteBufferMember(StringOverloadForByteBufferMember stringOverloadForByteBufferMember) {
+        this.convenienceTypeOverloads.add(stringOverloadForByteBufferMember.getConvenienceTypeOverload());
+    }
+
+    /**
+     * Only meant to be used by templates/macros. When customizing a service use one of the
+     * pre-canned options like {@link #setStringOverloadForInputStreamMember(StringOverloadForInputStreamMember)}
+     * or {@link #setStringOverloadForByteBufferMember(StringOverloadForByteBufferMember)}
+     */
+    public List<ConvenienceTypeOverload> getConvenienceTypeOverloads() {
+        return this.convenienceTypeOverloads;
+    }
+
+    public MetadataConfig getCustomServiceMetadata() {
+        return customServiceMetadata;
+    }
 
     public void setCustomServiceMetadata(MetadataConfig metadataConfig) {
         this.customServiceMetadata = metadataConfig;

@@ -27,8 +27,8 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARNs of the assessment run(s) that generate the findings that you
-     * want to list.
+     * The ARNs of the assessment runs that generate the findings that you want
+     * to list.
      * </p>
      */
     private java.util.List<String> assessmentRunArns;
@@ -47,10 +47,10 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with
-     * the value of <b>NextToken</b> from previous response to continue listing
-     * data.
+     * the value of <b>NextToken</b> from the previous response to continue
+     * listing data.
      * </p>
      */
     private String nextToken;
@@ -64,11 +64,11 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARNs of the assessment run(s) that generate the findings that you
-     * want to list.
+     * The ARNs of the assessment runs that generate the findings that you want
+     * to list.
      * </p>
      * 
-     * @return The ARNs of the assessment run(s) that generate the findings that
+     * @return The ARNs of the assessment runs that generate the findings that
      *         you want to list.
      */
 
@@ -78,12 +78,12 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARNs of the assessment run(s) that generate the findings that you
-     * want to list.
+     * The ARNs of the assessment runs that generate the findings that you want
+     * to list.
      * </p>
      * 
      * @param assessmentRunArns
-     *        The ARNs of the assessment run(s) that generate the findings that
+     *        The ARNs of the assessment runs that generate the findings that
      *        you want to list.
      */
 
@@ -100,8 +100,8 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARNs of the assessment run(s) that generate the findings that you
-     * want to list.
+     * The ARNs of the assessment runs that generate the findings that you want
+     * to list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -111,7 +111,7 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param assessmentRunArns
-     *        The ARNs of the assessment run(s) that generate the findings that
+     *        The ARNs of the assessment runs that generate the findings that
      *        you want to list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -131,12 +131,12 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARNs of the assessment run(s) that generate the findings that you
-     * want to list.
+     * The ARNs of the assessment runs that generate the findings that you want
+     * to list.
      * </p>
      * 
      * @param assessmentRunArns
-     *        The ARNs of the assessment run(s) that generate the findings that
+     *        The ARNs of the assessment runs that generate the findings that
      *        you want to list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -225,18 +225,18 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with
-     * the value of <b>NextToken</b> from previous response to continue listing
-     * data.
+     * the value of <b>NextToken</b> from the previous response to continue
+     * listing data.
      * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value
-     *        of this parameter to 'null' on your first call to the
+     *        of this parameter to null on your first call to the
      *        <b>ListFindings</b> action. Subsequent calls to the action fill
      *        <b>nextToken</b> in the request with the value of <b>NextToken</b>
-     *        from previous response to continue listing data.
+     *        from the previous response to continue listing data.
      */
 
     public void setNextToken(String nextToken) {
@@ -246,17 +246,18 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with
-     * the value of <b>NextToken</b> from previous response to continue listing
-     * data.
+     * the value of <b>NextToken</b> from the previous response to continue
+     * listing data.
      * </p>
      * 
      * @return You can use this parameter when paginating results. Set the value
-     *         of this parameter to 'null' on your first call to the
+     *         of this parameter to null on your first call to the
      *         <b>ListFindings</b> action. Subsequent calls to the action fill
      *         <b>nextToken</b> in the request with the value of
-     *         <b>NextToken</b> from previous response to continue listing data.
+     *         <b>NextToken</b> from the previous response to continue listing
+     *         data.
      */
 
     public String getNextToken() {
@@ -266,18 +267,18 @@ public class ListFindingsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListFindings</b> action.
+     * parameter to null on your first call to the <b>ListFindings</b> action.
      * Subsequent calls to the action fill <b>nextToken</b> in the request with
-     * the value of <b>NextToken</b> from previous response to continue listing
-     * data.
+     * the value of <b>NextToken</b> from the previous response to continue
+     * listing data.
      * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value
-     *        of this parameter to 'null' on your first call to the
+     *        of this parameter to null on your first call to the
      *        <b>ListFindings</b> action. Subsequent calls to the action fill
      *        <b>nextToken</b> in the request with the value of <b>NextToken</b>
-     *        from previous response to continue listing data.
+     *        from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

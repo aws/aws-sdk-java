@@ -27,14 +27,14 @@ public class CreateAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user-defined name identifying the assessment target that you want to
-     * create. The name must be unique within the AWS account.
+     * The user-defined name that identifies the assessment target that you want
+     * to create. The name must be unique within the AWS account.
      * </p>
      */
     private String assessmentTargetName;
     /**
      * <p>
-     * The ARN specifying the resource group that is used to create the
+     * The ARN that specifies the resource group that is used to create the
      * assessment target.
      * </p>
      */
@@ -42,13 +42,14 @@ public class CreateAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user-defined name identifying the assessment target that you want to
-     * create. The name must be unique within the AWS account.
+     * The user-defined name that identifies the assessment target that you want
+     * to create. The name must be unique within the AWS account.
      * </p>
      * 
      * @param assessmentTargetName
-     *        The user-defined name identifying the assessment target that you
-     *        want to create. The name must be unique within the AWS account.
+     *        The user-defined name that identifies the assessment target that
+     *        you want to create. The name must be unique within the AWS
+     *        account.
      */
 
     public void setAssessmentTargetName(String assessmentTargetName) {
@@ -57,12 +58,13 @@ public class CreateAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user-defined name identifying the assessment target that you want to
-     * create. The name must be unique within the AWS account.
+     * The user-defined name that identifies the assessment target that you want
+     * to create. The name must be unique within the AWS account.
      * </p>
      * 
-     * @return The user-defined name identifying the assessment target that you
-     *         want to create. The name must be unique within the AWS account.
+     * @return The user-defined name that identifies the assessment target that
+     *         you want to create. The name must be unique within the AWS
+     *         account.
      */
 
     public String getAssessmentTargetName() {
@@ -71,13 +73,14 @@ public class CreateAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user-defined name identifying the assessment target that you want to
-     * create. The name must be unique within the AWS account.
+     * The user-defined name that identifies the assessment target that you want
+     * to create. The name must be unique within the AWS account.
      * </p>
      * 
      * @param assessmentTargetName
-     *        The user-defined name identifying the assessment target that you
-     *        want to create. The name must be unique within the AWS account.
+     *        The user-defined name that identifies the assessment target that
+     *        you want to create. The name must be unique within the AWS
+     *        account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -90,13 +93,13 @@ public class CreateAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the resource group that is used to create the
+     * The ARN that specifies the resource group that is used to create the
      * assessment target.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The ARN specifying the resource group that is used to create the
-     *        assessment target.
+     *        The ARN that specifies the resource group that is used to create
+     *        the assessment target.
      */
 
     public void setResourceGroupArn(String resourceGroupArn) {
@@ -105,12 +108,12 @@ public class CreateAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the resource group that is used to create the
+     * The ARN that specifies the resource group that is used to create the
      * assessment target.
      * </p>
      * 
-     * @return The ARN specifying the resource group that is used to create the
-     *         assessment target.
+     * @return The ARN that specifies the resource group that is used to create
+     *         the assessment target.
      */
 
     public String getResourceGroupArn() {
@@ -119,13 +122,13 @@ public class CreateAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the resource group that is used to create the
+     * The ARN that specifies the resource group that is used to create the
      * assessment target.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The ARN specifying the resource group that is used to create the
-     *        assessment target.
+     *        The ARN that specifies the resource group that is used to create
+     *        the assessment target.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

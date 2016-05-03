@@ -1,539 +1,570 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.lambda.AWSLambda#createEventSourceMapping(CreateEventSourceMappingRequest) CreateEventSourceMapping operation}.
- * <p>
- * Identifies a stream as an event source for a Lambda function. It can
- * be either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS
- * Lambda invokes the specified function when records are posted to the
- * stream.
- * </p>
- * <p>
- * This association between a stream source and a Lambda function is
- * called the event source mapping.
- * </p>
- * <p>
- * <b>IMPORTANT:</b>This event source mapping is relevant only in the AWS
- * Lambda pull model, where AWS Lambda invokes the function. For more
- * information, go to AWS Lambda: How it Works in the AWS Lambda
- * Developer Guide.
- * </p>
- * <p>
- * You provide mapping information (for example, which stream to read
- * from and which Lambda function to invoke) in the request body.
- * </p>
- * <p>
- * Each event source, such as an Amazon Kinesis or a DynamoDB stream,
- * can be associated with multiple AWS Lambda function. A given Lambda
- * function can be associated with multiple AWS event sources.
- * </p>
- * <p>
- * <p>
- * If you are using versioning, you can specify a specific function
- * version or an alias via the function name parameter. For more
- * information about versioning, see
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"> AWS Lambda Function Versioning and Aliases </a>
- * .
- * </p>
  * 
- * </p>
- * <p>
- * This operation requires permission for the
- * <code>lambda:CreateEventSourceMapping</code> action.
- * </p>
- *
- * @see com.amazonaws.services.lambda.AWSLambda#createEventSourceMapping(CreateEventSourceMappingRequest)
  */
-public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
-     * DynamoDB stream that is the event source. Any record added to this
-     * stream could cause AWS Lambda to invoke your Lambda function, it
-     * depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
-     * Kinesis event, containing records, to your Lambda function as JSON.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:([a-zA-Z0-9\-])+:([a-z]{2}-[a-z]+-\d{1})?:(\d{12})?:(.*)<br/>
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     * DynamoDB stream that is the event source. Any record added to this stream
+     * could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
+     * containing records, to your Lambda function as JSON.
+     * </p>
      */
     private String eventSourceArn;
-
     /**
-     * The Lambda function to invoke when AWS Lambda detects an event on the
-     * stream. <p> You can specify the function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-     * <p> If you are using versioning, you can also provide a qualified
-     * function ARN (ARN that is qualified with function version or alias
-     * name as suffix). For more information about versioning, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a> <p>AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier
-     * (for example, <code>account-id:Thumbnail</code>). <p> Note that the
-     * length constraint applies only to the ARN. If you specify only the
-     * function name, it is limited to 64 character in length.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 140<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
+     * The Lambda function to invoke when AWS Lambda detects an event on the
+     * stream.
+     * </p>
+     * <p>
+     * You can specify the function name (for example, <code>Thumbnail</code>)
+     * or you can specify Amazon Resource Name (ARN) of the function (for
+     * example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * </p>
+     * <p>
+     * If you are using versioning, you can also provide a qualified function
+     * ARN (ARN that is qualified with function version or alias name as
+     * suffix). For more information about versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>
+     * </p>
+     * <p>
+     * AWS Lambda also allows you to specify only the function name with the
+     * account ID qualifier (for example, <code>account-id:Thumbnail</code>).
+     * </p>
+     * <p>
+     * Note that the length constraint applies only to the ARN. If you specify
+     * only the function name, it is limited to 64 character in length.
+     * </p>
      */
     private String functionName;
-
     /**
+     * <p>
      * Indicates whether AWS Lambda should begin polling the event source. By
      * default, <code>Enabled</code> is true.
+     * </p>
      */
     private Boolean enabled;
-
     /**
+     * <p>
      * The largest number of records that AWS Lambda will retrieve from your
      * event source at the time of invoking your function. Your function
      * receives an event with all the retrieved records. The default is 100
      * records.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
+     * </p>
      */
     private Integer batchSize;
-
     /**
-     * The position in the stream where AWS Lambda should start reading. For
-     * more information, go to <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TRIM_HORIZON, LATEST
+     * The position in the stream where AWS Lambda should start reading. For
+     * more information, go to <a href=
+     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
+     * </p>
      */
     private String startingPosition;
 
     /**
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
-     * DynamoDB stream that is the event source. Any record added to this
-     * stream could cause AWS Lambda to invoke your Lambda function, it
-     * depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
-     * Kinesis event, containing records, to your Lambda function as JSON.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:([a-zA-Z0-9\-])+:([a-z]{2}-[a-z]+-\d{1})?:(\d{12})?:(.*)<br/>
-     *
-     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
-     *         DynamoDB stream that is the event source. Any record added to this
-     *         stream could cause AWS Lambda to invoke your Lambda function, it
-     *         depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
-     *         Kinesis event, containing records, to your Lambda function as JSON.
-     */
-    public String getEventSourceArn() {
-        return eventSourceArn;
-    }
-    
-    /**
      * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
-     * DynamoDB stream that is the event source. Any record added to this
-     * stream could cause AWS Lambda to invoke your Lambda function, it
-     * depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
-     * Kinesis event, containing records, to your Lambda function as JSON.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:([a-zA-Z0-9\-])+:([a-z]{2}-[a-z]+-\d{1})?:(\d{12})?:(.*)<br/>
-     *
-     * @param eventSourceArn The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
-     *         DynamoDB stream that is the event source. Any record added to this
-     *         stream could cause AWS Lambda to invoke your Lambda function, it
-     *         depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
-     *         Kinesis event, containing records, to your Lambda function as JSON.
+     * DynamoDB stream that is the event source. Any record added to this stream
+     * could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
+     * containing records, to your Lambda function as JSON.
+     * </p>
+     * 
+     * @param eventSourceArn
+     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     *        DynamoDB stream that is the event source. Any record added to this
+     *        stream could cause AWS Lambda to invoke your Lambda function, it
+     *        depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
+     *        Kinesis event, containing records, to your Lambda function as
+     *        JSON.
      */
+
     public void setEventSourceArn(String eventSourceArn) {
         this.eventSourceArn = eventSourceArn;
     }
-    
+
     /**
+     * <p>
      * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
-     * DynamoDB stream that is the event source. Any record added to this
-     * stream could cause AWS Lambda to invoke your Lambda function, it
-     * depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
-     * Kinesis event, containing records, to your Lambda function as JSON.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>arn:aws:([a-zA-Z0-9\-])+:([a-z]{2}-[a-z]+-\d{1})?:(\d{12})?:(.*)<br/>
-     *
-     * @param eventSourceArn The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
-     *         DynamoDB stream that is the event source. Any record added to this
-     *         stream could cause AWS Lambda to invoke your Lambda function, it
-     *         depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
-     *         Kinesis event, containing records, to your Lambda function as JSON.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * DynamoDB stream that is the event source. Any record added to this stream
+     * could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
+     * containing records, to your Lambda function as JSON.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis or the
+     *         Amazon DynamoDB stream that is the event source. Any record added
+     *         to this stream could cause AWS Lambda to invoke your Lambda
+     *         function, it depends on the <code>BatchSize</code>. AWS Lambda
+     *         POSTs the Amazon Kinesis event, containing records, to your
+     *         Lambda function as JSON.
      */
-    public CreateEventSourceMappingRequest withEventSourceArn(String eventSourceArn) {
-        this.eventSourceArn = eventSourceArn;
+
+    public String getEventSourceArn() {
+        return this.eventSourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     * DynamoDB stream that is the event source. Any record added to this stream
+     * could cause AWS Lambda to invoke your Lambda function, it depends on the
+     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event,
+     * containing records, to your Lambda function as JSON.
+     * </p>
+     * 
+     * @param eventSourceArn
+     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon
+     *        DynamoDB stream that is the event source. Any record added to this
+     *        stream could cause AWS Lambda to invoke your Lambda function, it
+     *        depends on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon
+     *        Kinesis event, containing records, to your Lambda function as
+     *        JSON.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateEventSourceMappingRequest withEventSourceArn(
+            String eventSourceArn) {
+        setEventSourceArn(eventSourceArn);
         return this;
     }
 
     /**
-     * The Lambda function to invoke when AWS Lambda detects an event on the
-     * stream. <p> You can specify the function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-     * <p> If you are using versioning, you can also provide a qualified
-     * function ARN (ARN that is qualified with function version or alias
-     * name as suffix). For more information about versioning, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a> <p>AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier
-     * (for example, <code>account-id:Thumbnail</code>). <p> Note that the
-     * length constraint applies only to the ARN. If you specify only the
-     * function name, it is limited to 64 character in length.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 140<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
-     *
-     * @return The Lambda function to invoke when AWS Lambda detects an event on the
-     *         stream. <p> You can specify the function name (for example,
-     *         <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     *         of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-     *         <p> If you are using versioning, you can also provide a qualified
-     *         function ARN (ARN that is qualified with function version or alias
-     *         name as suffix). For more information about versioning, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     *         Lambda Function Versioning and Aliases</a> <p>AWS Lambda also allows
-     *         you to specify only the function name with the account ID qualifier
-     *         (for example, <code>account-id:Thumbnail</code>). <p> Note that the
-     *         length constraint applies only to the ARN. If you specify only the
-     *         function name, it is limited to 64 character in length.
-     */
-    public String getFunctionName() {
-        return functionName;
-    }
-    
-    /**
      * The Lambda function to invoke when AWS Lambda detects an event on the
-     * stream. <p> You can specify the function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-     * <p> If you are using versioning, you can also provide a qualified
-     * function ARN (ARN that is qualified with function version or alias
-     * name as suffix). For more information about versioning, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a> <p>AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier
-     * (for example, <code>account-id:Thumbnail</code>). <p> Note that the
-     * length constraint applies only to the ARN. If you specify only the
-     * function name, it is limited to 64 character in length.
+     * stream.
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 140<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
-     *
-     * @param functionName The Lambda function to invoke when AWS Lambda detects an event on the
-     *         stream. <p> You can specify the function name (for example,
-     *         <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     *         of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-     *         <p> If you are using versioning, you can also provide a qualified
-     *         function ARN (ARN that is qualified with function version or alias
-     *         name as suffix). For more information about versioning, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     *         Lambda Function Versioning and Aliases</a> <p>AWS Lambda also allows
-     *         you to specify only the function name with the account ID qualifier
-     *         (for example, <code>account-id:Thumbnail</code>). <p> Note that the
-     *         length constraint applies only to the ARN. If you specify only the
-     *         function name, it is limited to 64 character in length.
+     * You can specify the function name (for example, <code>Thumbnail</code>)
+     * or you can specify Amazon Resource Name (ARN) of the function (for
+     * example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * </p>
+     * <p>
+     * If you are using versioning, you can also provide a qualified function
+     * ARN (ARN that is qualified with function version or alias name as
+     * suffix). For more information about versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>
+     * </p>
+     * <p>
+     * AWS Lambda also allows you to specify only the function name with the
+     * account ID qualifier (for example, <code>account-id:Thumbnail</code>).
+     * </p>
+     * <p>
+     * Note that the length constraint applies only to the ARN. If you specify
+     * only the function name, it is limited to 64 character in length.
+     * </p>
+     * 
+     * @param functionName
+     *        The Lambda function to invoke when AWS Lambda detects an event on
+     *        the stream.</p>
+     *        <p>
+     *        You can specify the function name (for example,
+     *        <code>Thumbnail</code>) or you can specify Amazon Resource Name
+     *        (ARN) of the function (for example,
+     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>
+     *        ).
+     *        </p>
+     *        <p>
+     *        If you are using versioning, you can also provide a qualified
+     *        function ARN (ARN that is qualified with function version or alias
+     *        name as suffix). For more information about versioning, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"
+     *        >AWS Lambda Function Versioning and Aliases</a>
+     *        </p>
+     *        <p>
+     *        AWS Lambda also allows you to specify only the function name with
+     *        the account ID qualifier (for example,
+     *        <code>account-id:Thumbnail</code>).
+     *        </p>
+     *        <p>
+     *        Note that the length constraint applies only to the ARN. If you
+     *        specify only the function name, it is limited to 64 character in
+     *        length.
      */
+
     public void setFunctionName(String functionName) {
         this.functionName = functionName;
     }
-    
+
     /**
+     * <p>
      * The Lambda function to invoke when AWS Lambda detects an event on the
-     * stream. <p> You can specify the function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
+     * stream.
+     * </p>
+     * <p>
+     * You can specify the function name (for example, <code>Thumbnail</code>)
+     * or you can specify Amazon Resource Name (ARN) of the function (for
+     * example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-     * <p> If you are using versioning, you can also provide a qualified
-     * function ARN (ARN that is qualified with function version or alias
-     * name as suffix). For more information about versioning, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a> <p>AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier
-     * (for example, <code>account-id:Thumbnail</code>). <p> Note that the
-     * length constraint applies only to the ARN. If you specify only the
-     * function name, it is limited to 64 character in length.
+     * </p>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
+     * If you are using versioning, you can also provide a qualified function
+     * ARN (ARN that is qualified with function version or alias name as
+     * suffix). For more information about versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>
+     * </p>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 140<br/>
-     * <b>Pattern: </b>(arn:aws:lambda:)?([a-z]{2}-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?<br/>
-     *
-     * @param functionName The Lambda function to invoke when AWS Lambda detects an event on the
-     *         stream. <p> You can specify the function name (for example,
-     *         <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     *         of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-     *         <p> If you are using versioning, you can also provide a qualified
-     *         function ARN (ARN that is qualified with function version or alias
-     *         name as suffix). For more information about versioning, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     *         Lambda Function Versioning and Aliases</a> <p>AWS Lambda also allows
-     *         you to specify only the function name with the account ID qualifier
-     *         (for example, <code>account-id:Thumbnail</code>). <p> Note that the
-     *         length constraint applies only to the ARN. If you specify only the
-     *         function name, it is limited to 64 character in length.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * AWS Lambda also allows you to specify only the function name with the
+     * account ID qualifier (for example, <code>account-id:Thumbnail</code>).
+     * </p>
+     * <p>
+     * Note that the length constraint applies only to the ARN. If you specify
+     * only the function name, it is limited to 64 character in length.
+     * </p>
+     * 
+     * @return The Lambda function to invoke when AWS Lambda detects an event on
+     *         the stream.</p>
+     *         <p>
+     *         You can specify the function name (for example,
+     *         <code>Thumbnail</code>) or you can specify Amazon Resource Name
+     *         (ARN) of the function (for example,
+     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>
+     *         ).
+     *         </p>
+     *         <p>
+     *         If you are using versioning, you can also provide a qualified
+     *         function ARN (ARN that is qualified with function version or
+     *         alias name as suffix). For more information about versioning, see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"
+     *         >AWS Lambda Function Versioning and Aliases</a>
+     *         </p>
+     *         <p>
+     *         AWS Lambda also allows you to specify only the function name with
+     *         the account ID qualifier (for example,
+     *         <code>account-id:Thumbnail</code>).
+     *         </p>
+     *         <p>
+     *         Note that the length constraint applies only to the ARN. If you
+     *         specify only the function name, it is limited to 64 character in
+     *         length.
      */
+
+    public String getFunctionName() {
+        return this.functionName;
+    }
+
+    /**
+     * <p>
+     * The Lambda function to invoke when AWS Lambda detects an event on the
+     * stream.
+     * </p>
+     * <p>
+     * You can specify the function name (for example, <code>Thumbnail</code>)
+     * or you can specify Amazon Resource Name (ARN) of the function (for
+     * example,
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
+     * </p>
+     * <p>
+     * If you are using versioning, you can also provide a qualified function
+     * ARN (ARN that is qualified with function version or alias name as
+     * suffix). For more information about versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>
+     * </p>
+     * <p>
+     * AWS Lambda also allows you to specify only the function name with the
+     * account ID qualifier (for example, <code>account-id:Thumbnail</code>).
+     * </p>
+     * <p>
+     * Note that the length constraint applies only to the ARN. If you specify
+     * only the function name, it is limited to 64 character in length.
+     * </p>
+     * 
+     * @param functionName
+     *        The Lambda function to invoke when AWS Lambda detects an event on
+     *        the stream.</p>
+     *        <p>
+     *        You can specify the function name (for example,
+     *        <code>Thumbnail</code>) or you can specify Amazon Resource Name
+     *        (ARN) of the function (for example,
+     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>
+     *        ).
+     *        </p>
+     *        <p>
+     *        If you are using versioning, you can also provide a qualified
+     *        function ARN (ARN that is qualified with function version or alias
+     *        name as suffix). For more information about versioning, see <a
+     *        href=
+     *        "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html"
+     *        >AWS Lambda Function Versioning and Aliases</a>
+     *        </p>
+     *        <p>
+     *        AWS Lambda also allows you to specify only the function name with
+     *        the account ID qualifier (for example,
+     *        <code>account-id:Thumbnail</code>).
+     *        </p>
+     *        <p>
+     *        Note that the length constraint applies only to the ARN. If you
+     *        specify only the function name, it is limited to 64 character in
+     *        length.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public CreateEventSourceMappingRequest withFunctionName(String functionName) {
-        this.functionName = functionName;
+        setFunctionName(functionName);
         return this;
     }
 
     /**
+     * <p>
      * Indicates whether AWS Lambda should begin polling the event source. By
      * default, <code>Enabled</code> is true.
-     *
-     * @return Indicates whether AWS Lambda should begin polling the event source. By
-     *         default, <code>Enabled</code> is true.
+     * </p>
+     * 
+     * @param enabled
+     *        Indicates whether AWS Lambda should begin polling the event
+     *        source. By default, <code>Enabled</code> is true.
      */
-    public Boolean isEnabled() {
-        return enabled;
-    }
-    
-    /**
-     * Indicates whether AWS Lambda should begin polling the event source. By
-     * default, <code>Enabled</code> is true.
-     *
-     * @param enabled Indicates whether AWS Lambda should begin polling the event source. By
-     *         default, <code>Enabled</code> is true.
-     */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
-    
+
     /**
+     * <p>
      * Indicates whether AWS Lambda should begin polling the event source. By
      * default, <code>Enabled</code> is true.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param enabled Indicates whether AWS Lambda should begin polling the event source. By
-     *         default, <code>Enabled</code> is true.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return Indicates whether AWS Lambda should begin polling the event
+     *         source. By default, <code>Enabled</code> is true.
      */
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether AWS Lambda should begin polling the event source. By
+     * default, <code>Enabled</code> is true.
+     * </p>
+     * 
+     * @param enabled
+     *        Indicates whether AWS Lambda should begin polling the event
+     *        source. By default, <code>Enabled</code> is true.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public CreateEventSourceMappingRequest withEnabled(Boolean enabled) {
-        this.enabled = enabled;
+        setEnabled(enabled);
         return this;
     }
 
     /**
+     * <p>
      * Indicates whether AWS Lambda should begin polling the event source. By
      * default, <code>Enabled</code> is true.
-     *
-     * @return Indicates whether AWS Lambda should begin polling the event source. By
-     *         default, <code>Enabled</code> is true.
+     * </p>
+     * 
+     * @return Indicates whether AWS Lambda should begin polling the event
+     *         source. By default, <code>Enabled</code> is true.
      */
-    public Boolean getEnabled() {
-        return enabled;
+
+    public Boolean isEnabled() {
+        return this.enabled;
     }
 
     /**
+     * <p>
      * The largest number of records that AWS Lambda will retrieve from your
      * event source at the time of invoking your function. Your function
      * receives an event with all the retrieved records. The default is 100
      * records.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
-     *
-     * @return The largest number of records that AWS Lambda will retrieve from your
-     *         event source at the time of invoking your function. Your function
-     *         receives an event with all the retrieved records. The default is 100
-     *         records.
+     * </p>
+     * 
+     * @param batchSize
+     *        The largest number of records that AWS Lambda will retrieve from
+     *        your event source at the time of invoking your function. Your
+     *        function receives an event with all the retrieved records. The
+     *        default is 100 records.
      */
-    public Integer getBatchSize() {
-        return batchSize;
-    }
-    
-    /**
-     * The largest number of records that AWS Lambda will retrieve from your
-     * event source at the time of invoking your function. Your function
-     * receives an event with all the retrieved records. The default is 100
-     * records.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
-     *
-     * @param batchSize The largest number of records that AWS Lambda will retrieve from your
-     *         event source at the time of invoking your function. Your function
-     *         receives an event with all the retrieved records. The default is 100
-     *         records.
-     */
+
     public void setBatchSize(Integer batchSize) {
         this.batchSize = batchSize;
     }
-    
+
     /**
+     * <p>
      * The largest number of records that AWS Lambda will retrieve from your
      * event source at the time of invoking your function. Your function
      * receives an event with all the retrieved records. The default is 100
      * records.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 10000<br/>
-     *
-     * @param batchSize The largest number of records that AWS Lambda will retrieve from your
-     *         event source at the time of invoking your function. Your function
-     *         receives an event with all the retrieved records. The default is 100
-     *         records.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The largest number of records that AWS Lambda will retrieve from
+     *         your event source at the time of invoking your function. Your
+     *         function receives an event with all the retrieved records. The
+     *         default is 100 records.
      */
+
+    public Integer getBatchSize() {
+        return this.batchSize;
+    }
+
+    /**
+     * <p>
+     * The largest number of records that AWS Lambda will retrieve from your
+     * event source at the time of invoking your function. Your function
+     * receives an event with all the retrieved records. The default is 100
+     * records.
+     * </p>
+     * 
+     * @param batchSize
+     *        The largest number of records that AWS Lambda will retrieve from
+     *        your event source at the time of invoking your function. Your
+     *        function receives an event with all the retrieved records. The
+     *        default is 100 records.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public CreateEventSourceMappingRequest withBatchSize(Integer batchSize) {
-        this.batchSize = batchSize;
+        setBatchSize(batchSize);
         return this;
     }
 
     /**
-     * The position in the stream where AWS Lambda should start reading. For
-     * more information, go to <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TRIM_HORIZON, LATEST
-     *
-     * @return The position in the stream where AWS Lambda should start reading. For
-     *         more information, go to <a
-     *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     *         in the <i>Amazon Kinesis API Reference</i>.
-     *
+     * The position in the stream where AWS Lambda should start reading. For
+     * more information, go to <a href=
+     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
+     * </p>
+     * 
+     * @param startingPosition
+     *        The position in the stream where AWS Lambda should start reading.
+     *        For more information, go to <a href=
+     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @see EventSourcePosition
      */
-    public String getStartingPosition() {
-        return startingPosition;
-    }
-    
-    /**
-     * The position in the stream where AWS Lambda should start reading. For
-     * more information, go to <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TRIM_HORIZON, LATEST
-     *
-     * @param startingPosition The position in the stream where AWS Lambda should start reading. For
-     *         more information, go to <a
-     *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     *         in the <i>Amazon Kinesis API Reference</i>.
-     *
-     * @see EventSourcePosition
-     */
+
     public void setStartingPosition(String startingPosition) {
         this.startingPosition = startingPosition;
     }
-    
+
     /**
+     * <p>
      * The position in the stream where AWS Lambda should start reading. For
-     * more information, go to <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TRIM_HORIZON, LATEST
-     *
-     * @param startingPosition The position in the stream where AWS Lambda should start reading. For
-     *         more information, go to <a
-     *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     *         in the <i>Amazon Kinesis API Reference</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * more information, go to <a href=
+     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
+     * </p>
+     * 
+     * @return The position in the stream where AWS Lambda should start reading.
+     *         For more information, go to <a href=
+     *         "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     *         >ShardIteratorType</a> in the <i>Amazon Kinesis API
+     *         Reference</i>.
      * @see EventSourcePosition
      */
-    public CreateEventSourceMappingRequest withStartingPosition(String startingPosition) {
-        this.startingPosition = startingPosition;
+
+    public String getStartingPosition() {
+        return this.startingPosition;
+    }
+
+    /**
+     * <p>
+     * The position in the stream where AWS Lambda should start reading. For
+     * more information, go to <a href=
+     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
+     * </p>
+     * 
+     * @param startingPosition
+     *        The position in the stream where AWS Lambda should start reading.
+     *        For more information, go to <a href=
+     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see EventSourcePosition
+     */
+
+    public CreateEventSourceMappingRequest withStartingPosition(
+            String startingPosition) {
+        setStartingPosition(startingPosition);
         return this;
     }
 
     /**
-     * The position in the stream where AWS Lambda should start reading. For
-     * more information, go to <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TRIM_HORIZON, LATEST
-     *
-     * @param startingPosition The position in the stream where AWS Lambda should start reading. For
-     *         more information, go to <a
-     *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     *         in the <i>Amazon Kinesis API Reference</i>.
-     *
+     * The position in the stream where AWS Lambda should start reading. For
+     * more information, go to <a href=
+     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
+     * </p>
+     * 
+     * @param startingPosition
+     *        The position in the stream where AWS Lambda should start reading.
+     *        For more information, go to <a href=
+     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
      * @see EventSourcePosition
      */
+
     public void setStartingPosition(EventSourcePosition startingPosition) {
         this.startingPosition = startingPosition.toString();
     }
-    
+
     /**
+     * <p>
      * The position in the stream where AWS Lambda should start reading. For
-     * more information, go to <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     * in the <i>Amazon Kinesis API Reference</i>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>TRIM_HORIZON, LATEST
-     *
-     * @param startingPosition The position in the stream where AWS Lambda should start reading. For
-     *         more information, go to <a
-     *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-     *         in the <i>Amazon Kinesis API Reference</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * more information, go to <a href=
+     * "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     * >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
+     * </p>
+     * 
+     * @param startingPosition
+     *        The position in the stream where AWS Lambda should start reading.
+     *        For more information, go to <a href=
+     *        "http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType"
+     *        >ShardIteratorType</a> in the <i>Amazon Kinesis API Reference</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see EventSourcePosition
      */
-    public CreateEventSourceMappingRequest withStartingPosition(EventSourcePosition startingPosition) {
-        this.startingPosition = startingPosition.toString();
+
+    public CreateEventSourceMappingRequest withStartingPosition(
+            EventSourcePosition startingPosition) {
+        setStartingPosition(startingPosition);
         return this;
     }
 
@@ -549,54 +580,87 @@ public class CreateEventSourceMappingRequest extends AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEventSourceArn() != null) sb.append("EventSourceArn: " + getEventSourceArn() + ",");
-        if (getFunctionName() != null) sb.append("FunctionName: " + getFunctionName() + ",");
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
-        if (getBatchSize() != null) sb.append("BatchSize: " + getBatchSize() + ",");
-        if (getStartingPosition() != null) sb.append("StartingPosition: " + getStartingPosition() );
+        if (getEventSourceArn() != null)
+            sb.append("EventSourceArn: " + getEventSourceArn() + ",");
+        if (getFunctionName() != null)
+            sb.append("FunctionName: " + getFunctionName() + ",");
+        if (getEnabled() != null)
+            sb.append("Enabled: " + getEnabled() + ",");
+        if (getBatchSize() != null)
+            sb.append("BatchSize: " + getBatchSize() + ",");
+        if (getStartingPosition() != null)
+            sb.append("StartingPosition: " + getStartingPosition());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateEventSourceMappingRequest == false)
+            return false;
+        CreateEventSourceMappingRequest other = (CreateEventSourceMappingRequest) obj;
+        if (other.getEventSourceArn() == null
+                ^ this.getEventSourceArn() == null)
+            return false;
+        if (other.getEventSourceArn() != null
+                && other.getEventSourceArn().equals(this.getEventSourceArn()) == false)
+            return false;
+        if (other.getFunctionName() == null ^ this.getFunctionName() == null)
+            return false;
+        if (other.getFunctionName() != null
+                && other.getFunctionName().equals(this.getFunctionName()) == false)
+            return false;
+        if (other.getEnabled() == null ^ this.getEnabled() == null)
+            return false;
+        if (other.getEnabled() != null
+                && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
+        if (other.getBatchSize() == null ^ this.getBatchSize() == null)
+            return false;
+        if (other.getBatchSize() != null
+                && other.getBatchSize().equals(this.getBatchSize()) == false)
+            return false;
+        if (other.getStartingPosition() == null
+                ^ this.getStartingPosition() == null)
+            return false;
+        if (other.getStartingPosition() != null
+                && other.getStartingPosition().equals(
+                        this.getStartingPosition()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getEventSourceArn() == null) ? 0 : getEventSourceArn().hashCode()); 
-        hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode()); 
-        hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
-        hashCode = prime * hashCode + ((getBatchSize() == null) ? 0 : getBatchSize().hashCode()); 
-        hashCode = prime * hashCode + ((getStartingPosition() == null) ? 0 : getStartingPosition().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getEventSourceArn() == null) ? 0 : getEventSourceArn()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getFunctionName() == null) ? 0 : getFunctionName()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode
+                + ((getBatchSize() == null) ? 0 : getBatchSize().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStartingPosition() == null) ? 0 : getStartingPosition()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateEventSourceMappingRequest == false) return false;
-        CreateEventSourceMappingRequest other = (CreateEventSourceMappingRequest)obj;
-        
-        if (other.getEventSourceArn() == null ^ this.getEventSourceArn() == null) return false;
-        if (other.getEventSourceArn() != null && other.getEventSourceArn().equals(this.getEventSourceArn()) == false) return false; 
-        if (other.getFunctionName() == null ^ this.getFunctionName() == null) return false;
-        if (other.getFunctionName() != null && other.getFunctionName().equals(this.getFunctionName()) == false) return false; 
-        if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
-        if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
-        if (other.getBatchSize() == null ^ this.getBatchSize() == null) return false;
-        if (other.getBatchSize() != null && other.getBatchSize().equals(this.getBatchSize()) == false) return false; 
-        if (other.getStartingPosition() == null ^ this.getStartingPosition() == null) return false;
-        if (other.getStartingPosition() != null && other.getStartingPosition().equals(this.getStartingPosition()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateEventSourceMappingRequest clone() {
-        
-            return (CreateEventSourceMappingRequest) super.clone();
+        return (CreateEventSourceMappingRequest) super.clone();
     }
-
 }
-    

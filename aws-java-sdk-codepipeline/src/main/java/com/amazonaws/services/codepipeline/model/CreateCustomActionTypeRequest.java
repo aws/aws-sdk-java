@@ -32,6 +32,8 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      */
     private String category;
     /**
@@ -45,8 +47,6 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The version number of the custom action.
      * </p>
-     * <note>A newly-created custom action is always assigned a version number
-     * of <code>1</code>. This is required.</note>
      */
     private String version;
 
@@ -55,6 +55,12 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <note>You can refer to a name in the configuration properties of the
+     * custom action within the URL templates by following the format of
+     * {Config:<i>name</i>}, as long as the configuration property is both
+     * required and not secret. For more information, see <a href=
+     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     * >Create a Custom Action for a Pipeline</a>.</note>
      */
     private java.util.List<ActionConfigurationProperty> configurationProperties;
 
@@ -67,10 +73,14 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      * 
      * @param category
      *        The category of the custom action, such as a source action or a
-     *        build action.
+     *        build action.</p> <note>Although Source is listed as a valid
+     *        value, it is not currently functional. This value is reserved for
+     *        future use.
      * @see ActionCategory
      */
 
@@ -83,9 +93,13 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      * 
      * @return The category of the custom action, such as a source action or a
-     *         build action.
+     *         build action.</p> <note>Although Source is listed as a valid
+     *         value, it is not currently functional. This value is reserved for
+     *         future use.
      * @see ActionCategory
      */
 
@@ -98,10 +112,14 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      * 
      * @param category
      *        The category of the custom action, such as a source action or a
-     *        build action.
+     *        build action.</p> <note>Although Source is listed as a valid
+     *        value, it is not currently functional. This value is reserved for
+     *        future use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ActionCategory
@@ -117,10 +135,14 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      * 
      * @param category
      *        The category of the custom action, such as a source action or a
-     *        build action.
+     *        build action.</p> <note>Although Source is listed as a valid
+     *        value, it is not currently functional. This value is reserved for
+     *        future use.
      * @see ActionCategory
      */
 
@@ -133,10 +155,14 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      * 
      * @param category
      *        The category of the custom action, such as a source action or a
-     *        build action.
+     *        build action.</p> <note>Although Source is listed as a valid
+     *        value, it is not currently functional. This value is reserved for
+     *        future use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ActionCategory
@@ -198,13 +224,9 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The version number of the custom action.
      * </p>
-     * <note>A newly-created custom action is always assigned a version number
-     * of <code>1</code>. This is required.</note>
      * 
      * @param version
-     *        The version number of the custom action. </p> <note>A
-     *        newly-created custom action is always assigned a version number of
-     *        <code>1</code>. This is required.
+     *        The version number of the custom action.
      */
 
     public void setVersion(String version) {
@@ -215,12 +237,8 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The version number of the custom action.
      * </p>
-     * <note>A newly-created custom action is always assigned a version number
-     * of <code>1</code>. This is required.</note>
      * 
-     * @return The version number of the custom action. </p> <note>A
-     *         newly-created custom action is always assigned a version number
-     *         of <code>1</code>. This is required.
+     * @return The version number of the custom action.
      */
 
     public String getVersion() {
@@ -231,13 +249,9 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The version number of the custom action.
      * </p>
-     * <note>A newly-created custom action is always assigned a version number
-     * of <code>1</code>. This is required.</note>
      * 
      * @param version
-     *        The version number of the custom action. </p> <note>A
-     *        newly-created custom action is always assigned a version number of
-     *        <code>1</code>. This is required.
+     *        The version number of the custom action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -279,8 +293,20 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <note>You can refer to a name in the configuration properties of the
+     * custom action within the URL templates by following the format of
+     * {Config:<i>name</i>}, as long as the configuration property is both
+     * required and not secret. For more information, see <a href=
+     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     * >Create a Custom Action for a Pipeline</a>.</note>
      * 
-     * @return The configuration properties for the custom action.
+     * @return The configuration properties for the custom action.</p> <note>You
+     *         can refer to a name in the configuration properties of the custom
+     *         action within the URL templates by following the format of
+     *         {Config:<i>name</i>}, as long as the configuration property is
+     *         both required and not secret. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     *         >Create a Custom Action for a Pipeline</a>.
      */
 
     public java.util.List<ActionConfigurationProperty> getConfigurationProperties() {
@@ -291,9 +317,21 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <note>You can refer to a name in the configuration properties of the
+     * custom action within the URL templates by following the format of
+     * {Config:<i>name</i>}, as long as the configuration property is both
+     * required and not secret. For more information, see <a href=
+     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     * >Create a Custom Action for a Pipeline</a>.</note>
      * 
      * @param configurationProperties
-     *        The configuration properties for the custom action.
+     *        The configuration properties for the custom action.</p> <note>You
+     *        can refer to a name in the configuration properties of the custom
+     *        action within the URL templates by following the format of
+     *        {Config:<i>name</i>}, as long as the configuration property is
+     *        both required and not secret. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     *        >Create a Custom Action for a Pipeline</a>.
      */
 
     public void setConfigurationProperties(
@@ -311,6 +349,12 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <note>You can refer to a name in the configuration properties of the
+     * custom action within the URL templates by following the format of
+     * {Config:<i>name</i>}, as long as the configuration property is both
+     * required and not secret. For more information, see <a href=
+     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     * >Create a Custom Action for a Pipeline</a>.</note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setConfigurationProperties(java.util.Collection)} or
@@ -319,7 +363,13 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param configurationProperties
-     *        The configuration properties for the custom action.
+     *        The configuration properties for the custom action.</p> <note>You
+     *        can refer to a name in the configuration properties of the custom
+     *        action within the URL templates by following the format of
+     *        {Config:<i>name</i>}, as long as the configuration property is
+     *        both required and not secret. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     *        >Create a Custom Action for a Pipeline</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -340,9 +390,21 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <note>You can refer to a name in the configuration properties of the
+     * custom action within the URL templates by following the format of
+     * {Config:<i>name</i>}, as long as the configuration property is both
+     * required and not secret. For more information, see <a href=
+     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     * >Create a Custom Action for a Pipeline</a>.</note>
      * 
      * @param configurationProperties
-     *        The configuration properties for the custom action.
+     *        The configuration properties for the custom action.</p> <note>You
+     *        can refer to a name in the configuration properties of the custom
+     *        action within the URL templates by following the format of
+     *        {Config:<i>name</i>}, as long as the configuration property is
+     *        both required and not secret. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     *        >Create a Custom Action for a Pipeline</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

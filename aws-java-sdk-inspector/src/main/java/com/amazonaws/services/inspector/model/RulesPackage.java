@@ -20,8 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an Inspector rules package. This data type is used
- * as the response element in the <a>DescribeRulesPackages</a> action.
+ * Contains information about an Amazon Inspector rules package. This data type
+ * is used as the response element in the <a>DescribeRulesPackages</a> action.
  * </p>
  */
 public class RulesPackage implements Serializable, Cloneable {
@@ -40,7 +40,7 @@ public class RulesPackage implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The version id of the rules package.
+     * The version ID of the rules package.
      * </p>
      */
     private String version;
@@ -141,11 +141,11 @@ public class RulesPackage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version id of the rules package.
+     * The version ID of the rules package.
      * </p>
      * 
      * @param version
-     *        The version id of the rules package.
+     *        The version ID of the rules package.
      */
 
     public void setVersion(String version) {
@@ -154,10 +154,10 @@ public class RulesPackage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version id of the rules package.
+     * The version ID of the rules package.
      * </p>
      * 
-     * @return The version id of the rules package.
+     * @return The version ID of the rules package.
      */
 
     public String getVersion() {
@@ -166,11 +166,11 @@ public class RulesPackage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version id of the rules package.
+     * The version ID of the rules package.
      * </p>
      * 
      * @param version
-     *        The version id of the rules package.
+     *        The version ID of the rules package.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

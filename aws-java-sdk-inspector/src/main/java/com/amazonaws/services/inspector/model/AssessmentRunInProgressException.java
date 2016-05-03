@@ -29,15 +29,15 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
 
     /**
      * <p>
-     * The ARN(s) of the assessment run(s) that are currently in progress.
+     * The ARNs of the assessment runs that are currently in progress.
      * </p>
      */
     @com.fasterxml.jackson.annotation.JsonProperty("assessmentRunArns")
     private java.util.List<String> assessmentRunArns;
     /**
      * <p>
-     * Boolean value indicating whether the assessment runs ARN list is
-     * truncated.
+     * Boolean value that indicates whether the ARN list of the assessment runs
+     * is truncated.
      * </p>
      */
     @com.fasterxml.jackson.annotation.JsonProperty("assessmentRunArnsTruncated")
@@ -63,11 +63,10 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
 
     /**
      * <p>
-     * The ARN(s) of the assessment run(s) that are currently in progress.
+     * The ARNs of the assessment runs that are currently in progress.
      * </p>
      * 
-     * @return The ARN(s) of the assessment run(s) that are currently in
-     *         progress.
+     * @return The ARNs of the assessment runs that are currently in progress.
      */
 
     public java.util.List<String> getAssessmentRunArns() {
@@ -76,12 +75,11 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
 
     /**
      * <p>
-     * The ARN(s) of the assessment run(s) that are currently in progress.
+     * The ARNs of the assessment runs that are currently in progress.
      * </p>
      * 
      * @param assessmentRunArns
-     *        The ARN(s) of the assessment run(s) that are currently in
-     *        progress.
+     *        The ARNs of the assessment runs that are currently in progress.
      */
 
     public void setAssessmentRunArns(
@@ -97,7 +95,7 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
 
     /**
      * <p>
-     * The ARN(s) of the assessment run(s) that are currently in progress.
+     * The ARNs of the assessment runs that are currently in progress.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -107,8 +105,7 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
      * </p>
      * 
      * @param assessmentRunArns
-     *        The ARN(s) of the assessment run(s) that are currently in
-     *        progress.
+     *        The ARNs of the assessment runs that are currently in progress.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -127,12 +124,11 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
 
     /**
      * <p>
-     * The ARN(s) of the assessment run(s) that are currently in progress.
+     * The ARNs of the assessment runs that are currently in progress.
      * </p>
      * 
      * @param assessmentRunArns
-     *        The ARN(s) of the assessment run(s) that are currently in
-     *        progress.
+     *        The ARNs of the assessment runs that are currently in progress.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -145,13 +141,13 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
 
     /**
      * <p>
-     * Boolean value indicating whether the assessment runs ARN list is
-     * truncated.
+     * Boolean value that indicates whether the ARN list of the assessment runs
+     * is truncated.
      * </p>
      * 
      * @param assessmentRunArnsTruncated
-     *        Boolean value indicating whether the assessment runs ARN list is
-     *        truncated.
+     *        Boolean value that indicates whether the ARN list of the
+     *        assessment runs is truncated.
      */
 
     public void setAssessmentRunArnsTruncated(Boolean assessmentRunArnsTruncated) {
@@ -160,12 +156,12 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
 
     /**
      * <p>
-     * Boolean value indicating whether the assessment runs ARN list is
-     * truncated.
+     * Boolean value that indicates whether the ARN list of the assessment runs
+     * is truncated.
      * </p>
      * 
-     * @return Boolean value indicating whether the assessment runs ARN list is
-     *         truncated.
+     * @return Boolean value that indicates whether the ARN list of the
+     *         assessment runs is truncated.
      */
 
     public Boolean getAssessmentRunArnsTruncated() {
@@ -174,13 +170,13 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
 
     /**
      * <p>
-     * Boolean value indicating whether the assessment runs ARN list is
-     * truncated.
+     * Boolean value that indicates whether the ARN list of the assessment runs
+     * is truncated.
      * </p>
      * 
      * @param assessmentRunArnsTruncated
-     *        Boolean value indicating whether the assessment runs ARN list is
-     *        truncated.
+     *        Boolean value that indicates whether the ARN list of the
+     *        assessment runs is truncated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -193,12 +189,12 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
 
     /**
      * <p>
-     * Boolean value indicating whether the assessment runs ARN list is
-     * truncated.
+     * Boolean value that indicates whether the ARN list of the assessment runs
+     * is truncated.
      * </p>
      * 
-     * @return Boolean value indicating whether the assessment runs ARN list is
-     *         truncated.
+     * @return Boolean value that indicates whether the ARN list of the
+     *         assessment runs is truncated.
      */
 
     public Boolean isAssessmentRunArnsTruncated() {

@@ -25,7 +25,7 @@ public class DescribeRulesPackagesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the rules package(s).
+     * Information about the rules package.
      * </p>
      */
     private java.util.List<RulesPackage> rulesPackages;
@@ -39,10 +39,10 @@ public class DescribeRulesPackagesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the rules package(s).
+     * Information about the rules package.
      * </p>
      * 
-     * @return Information about the rules package(s).
+     * @return Information about the rules package.
      */
 
     public java.util.List<RulesPackage> getRulesPackages() {
@@ -51,11 +51,11 @@ public class DescribeRulesPackagesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the rules package(s).
+     * Information about the rules package.
      * </p>
      * 
      * @param rulesPackages
-     *        Information about the rules package(s).
+     *        Information about the rules package.
      */
 
     public void setRulesPackages(
@@ -71,7 +71,7 @@ public class DescribeRulesPackagesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the rules package(s).
+     * Information about the rules package.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -81,7 +81,7 @@ public class DescribeRulesPackagesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param rulesPackages
-     *        Information about the rules package(s).
+     *        Information about the rules package.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -100,11 +100,11 @@ public class DescribeRulesPackagesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the rules package(s).
+     * Information about the rules package.
      * </p>
      * 
      * @param rulesPackages
-     *        Information about the rules package(s).
+     *        Information about the rules package.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

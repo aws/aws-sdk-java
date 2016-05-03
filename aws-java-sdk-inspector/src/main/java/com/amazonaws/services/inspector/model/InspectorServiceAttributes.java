@@ -33,13 +33,13 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
     private Integer schemaVersion;
     /**
      * <p>
-     * The ARN of the assessment run during which the fidning is generated.
+     * The ARN of the assessment run during which the finding is generated.
      * </p>
      */
     private String assessmentRunArn;
     /**
      * <p>
-     * The ARN of the rules package used to generate the finding.
+     * The ARN of the rules package that is used to generate the finding.
      * </p>
      */
     private String rulesPackageArn;
@@ -87,11 +87,11 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the assessment run during which the fidning is generated.
+     * The ARN of the assessment run during which the finding is generated.
      * </p>
      * 
      * @param assessmentRunArn
-     *        The ARN of the assessment run during which the fidning is
+     *        The ARN of the assessment run during which the finding is
      *        generated.
      */
 
@@ -101,10 +101,10 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the assessment run during which the fidning is generated.
+     * The ARN of the assessment run during which the finding is generated.
      * </p>
      * 
-     * @return The ARN of the assessment run during which the fidning is
+     * @return The ARN of the assessment run during which the finding is
      *         generated.
      */
 
@@ -114,11 +114,11 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the assessment run during which the fidning is generated.
+     * The ARN of the assessment run during which the finding is generated.
      * </p>
      * 
      * @param assessmentRunArn
-     *        The ARN of the assessment run during which the fidning is
+     *        The ARN of the assessment run during which the finding is
      *        generated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -132,11 +132,11 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the rules package used to generate the finding.
+     * The ARN of the rules package that is used to generate the finding.
      * </p>
      * 
      * @param rulesPackageArn
-     *        The ARN of the rules package used to generate the finding.
+     *        The ARN of the rules package that is used to generate the finding.
      */
 
     public void setRulesPackageArn(String rulesPackageArn) {
@@ -145,10 +145,11 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the rules package used to generate the finding.
+     * The ARN of the rules package that is used to generate the finding.
      * </p>
      * 
-     * @return The ARN of the rules package used to generate the finding.
+     * @return The ARN of the rules package that is used to generate the
+     *         finding.
      */
 
     public String getRulesPackageArn() {
@@ -157,11 +158,11 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the rules package used to generate the finding.
+     * The ARN of the rules package that is used to generate the finding.
      * </p>
      * 
      * @param rulesPackageArn
-     *        The ARN of the rules package used to generate the finding.
+     *        The ARN of the rules package that is used to generate the finding.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

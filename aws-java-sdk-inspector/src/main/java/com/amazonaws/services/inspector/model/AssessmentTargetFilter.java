@@ -20,35 +20,34 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as the request parameter in the
- * <a>ListAssessmentTargets</a> action.
+ * Used as the request parameter in the <a>ListAssessmentTargets</a> action.
  * </p>
  */
 public class AssessmentTargetFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a>
-     * data type.
+     * For a record to match a filter, an explicit value or a string that
+     * contains a wildcard that is specified for this data type property must
+     * match the value of the <b>assessmentTargetName</b> property of the
+     * <a>AssessmentTarget</a> data type.
      * </p>
      */
     private String assessmentTargetNamePattern;
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a>
-     * data type.
+     * For a record to match a filter, an explicit value or a string that
+     * contains a wildcard that is specified for this data type property must
+     * match the value of the <b>assessmentTargetName</b> property of the
+     * <a>AssessmentTarget</a> data type.
      * </p>
      * 
      * @param assessmentTargetNamePattern
-     *        For a record to match a filter, an explicit value or a string
-     *        containing a wildcard specified for this data type property must
-     *        match the value of the <b>assessmentTargetName</b> property of the
-     *        <a>AssessmentTarget</a> data type.
+     *        For a record to match a filter, an explicit value or a string that
+     *        contains a wildcard that is specified for this data type property
+     *        must match the value of the <b>assessmentTargetName</b> property
+     *        of the <a>AssessmentTarget</a> data type.
      */
 
     public void setAssessmentTargetNamePattern(
@@ -58,16 +57,16 @@ public class AssessmentTargetFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a>
-     * data type.
+     * For a record to match a filter, an explicit value or a string that
+     * contains a wildcard that is specified for this data type property must
+     * match the value of the <b>assessmentTargetName</b> property of the
+     * <a>AssessmentTarget</a> data type.
      * </p>
      * 
      * @return For a record to match a filter, an explicit value or a string
-     *         containing a wildcard specified for this data type property must
-     *         match the value of the <b>assessmentTargetName</b> property of
-     *         the <a>AssessmentTarget</a> data type.
+     *         that contains a wildcard that is specified for this data type
+     *         property must match the value of the <b>assessmentTargetName</b>
+     *         property of the <a>AssessmentTarget</a> data type.
      */
 
     public String getAssessmentTargetNamePattern() {
@@ -76,17 +75,17 @@ public class AssessmentTargetFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a>
-     * data type.
+     * For a record to match a filter, an explicit value or a string that
+     * contains a wildcard that is specified for this data type property must
+     * match the value of the <b>assessmentTargetName</b> property of the
+     * <a>AssessmentTarget</a> data type.
      * </p>
      * 
      * @param assessmentTargetNamePattern
-     *        For a record to match a filter, an explicit value or a string
-     *        containing a wildcard specified for this data type property must
-     *        match the value of the <b>assessmentTargetName</b> property of the
-     *        <a>AssessmentTarget</a> data type.
+     *        For a record to match a filter, an explicit value or a string that
+     *        contains a wildcard that is specified for this data type property
+     *        must match the value of the <b>assessmentTargetName</b> property
+     *        of the <a>AssessmentTarget</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

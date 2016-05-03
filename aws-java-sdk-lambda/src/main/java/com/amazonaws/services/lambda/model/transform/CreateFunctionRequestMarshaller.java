@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.lambda.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;
@@ -35,162 +37,98 @@ import com.amazonaws.services.lambda.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
 /**
- * Create Function Request Marshaller
+ * CreateFunctionRequest Marshaller
  */
-public class CreateFunctionRequestMarshaller implements Marshaller<Request<CreateFunctionRequest>, CreateFunctionRequest> {
+public class CreateFunctionRequestMarshaller implements
+        Marshaller<Request<CreateFunctionRequest>, CreateFunctionRequest> {
 
-    private static final String RESOURCE_PATH_TEMPLATE;
-    private static final Map<String, String> STATIC_QUERY_PARAMS;
-    private static final Map<String, String> DYNAMIC_QUERY_PARAMS;
-    static {
-        String path = "/2015-03-31/functions";
-        Map<String, String> staticMap = new HashMap<String, String>();
-        Map<String, String> dynamicMap = new HashMap<String, String>();
+    private static final String DEFAULT_CONTENT_TYPE = "";
 
-        int index = path.indexOf("?");
-        if (index != -1) {
-            String queryString = path.substring(index + 1);
-            path = path.substring(0, index);
+    public Request<CreateFunctionRequest> marshall(
+            CreateFunctionRequest createFunctionRequest) {
 
-            for (String s : queryString.split("[;&]")) {
-                index = s.indexOf("=");
-                if (index != -1) {
-                    String name = s.substring(0, index);
-                    String value = s.substring(index + 1);
-
-                    if (value.startsWith("{") && value.endsWith("}")) {
-                        dynamicMap.put(value.substring(1, value.length() - 1), name);
-                    } else {
-                        staticMap.put(name, value);
-                    }
-                }
-            }
-        }
-
-        RESOURCE_PATH_TEMPLATE = path;
-        STATIC_QUERY_PARAMS = Collections.unmodifiableMap(staticMap);
-        DYNAMIC_QUERY_PARAMS = Collections.unmodifiableMap(dynamicMap);
-    }
-
-    public Request<CreateFunctionRequest> marshall(CreateFunctionRequest createFunctionRequest) {
         if (createFunctionRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateFunctionRequest> request = new DefaultRequest<CreateFunctionRequest>(createFunctionRequest, "AWSLambda");
-        String target = "AWSLambda.CreateFunction";
-        request.addHeader("X-Amz-Target", target);
+        Request<CreateFunctionRequest> request = new DefaultRequest<CreateFunctionRequest>(
+                createFunctionRequest, "AWSLambda");
 
         request.setHttpMethod(HttpMethodName.POST);
-        String uriResourcePath = RESOURCE_PATH_TEMPLATE;
 
-        request.setResourcePath(uriResourcePath.replaceAll("//", "/"));
+        String uriResourcePath = "/2015-03-31/functions";
 
-        for (Map.Entry<String, String> entry : STATIC_QUERY_PARAMS.entrySet()) {
-            request.addParameter(entry.getKey(), entry.getValue());
-        }
+        request.setResourcePath(uriResourcePath);
 
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final SdkJsonGenerator jsonGenerator = new SdkJsonGenerator();
 
-          jsonWriter.object();
-          
+            jsonGenerator.writeStartObject();
+
             if (createFunctionRequest.getFunctionName() != null) {
-                jsonWriter.key("FunctionName").value(createFunctionRequest.getFunctionName());
+                jsonGenerator.writeFieldName("FunctionName").writeValue(
+                        createFunctionRequest.getFunctionName());
             }
             if (createFunctionRequest.getRuntime() != null) {
-                jsonWriter.key("Runtime").value(createFunctionRequest.getRuntime());
+                jsonGenerator.writeFieldName("Runtime").writeValue(
+                        createFunctionRequest.getRuntime());
             }
             if (createFunctionRequest.getRole() != null) {
-                jsonWriter.key("Role").value(createFunctionRequest.getRole());
+                jsonGenerator.writeFieldName("Role").writeValue(
+                        createFunctionRequest.getRole());
             }
             if (createFunctionRequest.getHandler() != null) {
-                jsonWriter.key("Handler").value(createFunctionRequest.getHandler());
+                jsonGenerator.writeFieldName("Handler").writeValue(
+                        createFunctionRequest.getHandler());
             }
-            FunctionCode code = createFunctionRequest.getCode();
-            if (code != null) {
-
-                jsonWriter.key("Code");
-                jsonWriter.object();
-
-                if (code.getZipFile() != null) {
-                    jsonWriter.key("ZipFile").value(code.getZipFile());
-                }
-                if (code.getS3Bucket() != null) {
-                    jsonWriter.key("S3Bucket").value(code.getS3Bucket());
-                }
-                if (code.getS3Key() != null) {
-                    jsonWriter.key("S3Key").value(code.getS3Key());
-                }
-                if (code.getS3ObjectVersion() != null) {
-                    jsonWriter.key("S3ObjectVersion").value(code.getS3ObjectVersion());
-                }
-                jsonWriter.endObject();
+            if (createFunctionRequest.getCode() != null) {
+                jsonGenerator.writeFieldName("Code");
+                FunctionCodeJsonMarshaller.getInstance().marshall(
+                        createFunctionRequest.getCode(), jsonGenerator);
             }
             if (createFunctionRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(createFunctionRequest.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(
+                        createFunctionRequest.getDescription());
             }
             if (createFunctionRequest.getTimeout() != null) {
-                jsonWriter.key("Timeout").value(createFunctionRequest.getTimeout());
+                jsonGenerator.writeFieldName("Timeout").writeValue(
+                        createFunctionRequest.getTimeout());
             }
             if (createFunctionRequest.getMemorySize() != null) {
-                jsonWriter.key("MemorySize").value(createFunctionRequest.getMemorySize());
+                jsonGenerator.writeFieldName("MemorySize").writeValue(
+                        createFunctionRequest.getMemorySize());
             }
-            if (createFunctionRequest.isPublish() != null) {
-                jsonWriter.key("Publish").value(createFunctionRequest.isPublish());
+            if (createFunctionRequest.getPublish() != null) {
+                jsonGenerator.writeFieldName("Publish").writeValue(
+                        createFunctionRequest.getPublish());
             }
-            VpcConfig vpcConfig = createFunctionRequest.getVpcConfig();
-            if (vpcConfig != null) {
-
-                jsonWriter.key("VpcConfig");
-                jsonWriter.object();
-
-                com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(vpcConfig.getSubnetIds());
-                if (subnetIdsList != null && !(subnetIdsList.isAutoConstruct() && subnetIdsList.isEmpty())) {
-
-                    jsonWriter.key("SubnetIds");
-                    jsonWriter.array();
-
-                    for (String subnetIdsListValue : subnetIdsList) {
-                        if (subnetIdsListValue != null) {
-                            jsonWriter.value(subnetIdsListValue);
-                        }
-                    }
-                    jsonWriter.endArray();
-                }
-
-                com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(vpcConfig.getSecurityGroupIds());
-                if (securityGroupIdsList != null && !(securityGroupIdsList.isAutoConstruct() && securityGroupIdsList.isEmpty())) {
-
-                    jsonWriter.key("SecurityGroupIds");
-                    jsonWriter.array();
-
-                    for (String securityGroupIdsListValue : securityGroupIdsList) {
-                        if (securityGroupIdsListValue != null) {
-                            jsonWriter.value(securityGroupIdsListValue);
-                        }
-                    }
-                    jsonWriter.endArray();
-                }
-                jsonWriter.endObject();
+            if (createFunctionRequest.getVpcConfig() != null) {
+                jsonGenerator.writeFieldName("VpcConfig");
+                VpcConfigJsonMarshaller.getInstance().marshall(
+                        createFunctionRequest.getVpcConfig(), jsonGenerator);
             }
 
-          jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.1");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            if (!request.getHeaders().containsKey("Content-Type")) {
+                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            }
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

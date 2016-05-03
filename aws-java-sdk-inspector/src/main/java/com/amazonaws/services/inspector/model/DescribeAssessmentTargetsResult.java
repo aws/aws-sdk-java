@@ -25,7 +25,7 @@ public class DescribeAssessmentTargetsResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Information about the assessment target(s).
+     * Information about the assessment targets.
      * </p>
      */
     private java.util.List<AssessmentTarget> assessmentTargets;
@@ -39,10 +39,10 @@ public class DescribeAssessmentTargetsResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Information about the assessment target(s).
+     * Information about the assessment targets.
      * </p>
      * 
-     * @return Information about the assessment target(s).
+     * @return Information about the assessment targets.
      */
 
     public java.util.List<AssessmentTarget> getAssessmentTargets() {
@@ -51,11 +51,11 @@ public class DescribeAssessmentTargetsResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Information about the assessment target(s).
+     * Information about the assessment targets.
      * </p>
      * 
      * @param assessmentTargets
-     *        Information about the assessment target(s).
+     *        Information about the assessment targets.
      */
 
     public void setAssessmentTargets(
@@ -71,7 +71,7 @@ public class DescribeAssessmentTargetsResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Information about the assessment target(s).
+     * Information about the assessment targets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -81,7 +81,7 @@ public class DescribeAssessmentTargetsResult implements Serializable, Cloneable 
      * </p>
      * 
      * @param assessmentTargets
-     *        Information about the assessment target(s).
+     *        Information about the assessment targets.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -100,11 +100,11 @@ public class DescribeAssessmentTargetsResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Information about the assessment target(s).
+     * Information about the assessment targets.
      * </p>
      * 
      * @param assessmentTargets
-     *        Information about the assessment target(s).
+     *        Information about the assessment targets.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

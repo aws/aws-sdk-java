@@ -20,15 +20,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an Inspector finding. This data type is used as
- * the response element in the <a>DescribeFindings</a> action.
+ * Contains information about an Amazon Inspector finding. This data type is
+ * used as the response element in the <a>DescribeFindings</a> action.
  * </p>
  */
 public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the finding.
+     * The ARN that specifies the finding.
      * </p>
      */
     private String arn;
@@ -92,9 +92,7 @@ public class Finding implements Serializable, Cloneable {
     private String severity;
     /**
      * <p>
-     * <p>
      * The numeric value of the finding severity.
-     * </p>
      * </p>
      */
     private Double numericSeverity;
@@ -130,18 +128,18 @@ public class Finding implements Serializable, Cloneable {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The time when <a>AddAttributesToFindings</a> API is called.
+     * The time when <a>AddAttributesToFindings</a> is called.
      * </p>
      */
     private java.util.Date updatedAt;
 
     /**
      * <p>
-     * The ARN specifying the finding.
+     * The ARN that specifies the finding.
      * </p>
      * 
      * @param arn
-     *        The ARN specifying the finding.
+     *        The ARN that specifies the finding.
      */
 
     public void setArn(String arn) {
@@ -150,10 +148,10 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the finding.
+     * The ARN that specifies the finding.
      * </p>
      * 
-     * @return The ARN specifying the finding.
+     * @return The ARN that specifies the finding.
      */
 
     public String getArn() {
@@ -162,11 +160,11 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the finding.
+     * The ARN that specifies the finding.
      * </p>
      * 
      * @param arn
-     *        The ARN specifying the finding.
+     *        The ARN that specifies the finding.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -660,15 +658,11 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <p>
      * The numeric value of the finding severity.
-     * </p>
      * </p>
      * 
      * @param numericSeverity
-     *        <p>
      *        The numeric value of the finding severity.
-     *        </p>
      */
 
     public void setNumericSeverity(Double numericSeverity) {
@@ -677,14 +671,10 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <p>
      * The numeric value of the finding severity.
      * </p>
-     * </p>
      * 
-     * @return <p>
-     *         The numeric value of the finding severity.
-     *         </p>
+     * @return The numeric value of the finding severity.
      */
 
     public Double getNumericSeverity() {
@@ -693,15 +683,11 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <p>
      * The numeric value of the finding severity.
-     * </p>
      * </p>
      * 
      * @param numericSeverity
-     *        <p>
      *        The numeric value of the finding severity.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -996,11 +982,11 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when <a>AddAttributesToFindings</a> API is called.
+     * The time when <a>AddAttributesToFindings</a> is called.
      * </p>
      * 
      * @param updatedAt
-     *        The time when <a>AddAttributesToFindings</a> API is called.
+     *        The time when <a>AddAttributesToFindings</a> is called.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -1009,10 +995,10 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when <a>AddAttributesToFindings</a> API is called.
+     * The time when <a>AddAttributesToFindings</a> is called.
      * </p>
      * 
-     * @return The time when <a>AddAttributesToFindings</a> API is called.
+     * @return The time when <a>AddAttributesToFindings</a> is called.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -1021,11 +1007,11 @@ public class Finding implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when <a>AddAttributesToFindings</a> API is called.
+     * The time when <a>AddAttributesToFindings</a> is called.
      * </p>
      * 
      * @param updatedAt
-     *        The time when <a>AddAttributesToFindings</a> API is called.
+     *        The time when <a>AddAttributesToFindings</a> is called.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

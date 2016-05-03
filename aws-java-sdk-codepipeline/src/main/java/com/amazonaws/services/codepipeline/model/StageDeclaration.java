@@ -33,7 +33,7 @@ public class StageDeclaration implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The gates included in a stage.
+     * Reserved for future use.
      * </p>
      */
     private java.util.List<BlockerDeclaration> blockers;
@@ -87,10 +87,10 @@ public class StageDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The gates included in a stage.
+     * Reserved for future use.
      * </p>
      * 
-     * @return The gates included in a stage.
+     * @return Reserved for future use.
      */
 
     public java.util.List<BlockerDeclaration> getBlockers() {
@@ -99,11 +99,11 @@ public class StageDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The gates included in a stage.
+     * Reserved for future use.
      * </p>
      * 
      * @param blockers
-     *        The gates included in a stage.
+     *        Reserved for future use.
      */
 
     public void setBlockers(java.util.Collection<BlockerDeclaration> blockers) {
@@ -117,7 +117,7 @@ public class StageDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The gates included in a stage.
+     * Reserved for future use.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -127,7 +127,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * </p>
      * 
      * @param blockers
-     *        The gates included in a stage.
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -145,11 +145,11 @@ public class StageDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The gates included in a stage.
+     * Reserved for future use.
      * </p>
      * 
      * @param blockers
-     *        The gates included in a stage.
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

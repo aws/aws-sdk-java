@@ -625,6 +625,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @throws TooManyConfigurationTemplatesException
      *         The specified account has reached its limit of configuration
      *         templates.
@@ -1093,6 +1095,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        descriptions.
      * @return Result of the DescribeConfigurationOptions operation returned by
      *         the service.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.DescribeConfigurationOptions
      */
     @Override
@@ -1154,6 +1158,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        specified solution stack or configuration template.
      * @return Result of the DescribeConfigurationSettings operation returned by
      *         the service.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.DescribeConfigurationSettings
      */
     @Override
@@ -2002,6 +2008,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateConfigurationTemplate
      */
     @Override
@@ -2064,6 +2072,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateEnvironment
      */
     @Override
@@ -2118,6 +2128,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.ValidateConfigurationSettings
      */
     @Override

@@ -227,6 +227,18 @@ public class MemberModel extends DocumentationModel {
                     .append(LINE_SEPARATOR)
                     .append("</p>")
                     .append(LINE_SEPARATOR);
+
+            docBuilder.append("<p>")
+                    .append(LINE_SEPARATOR)
+                    .append("Warning: ByteBuffers returned by the SDK are mutable. " +
+                            "Changes to the content or position of the byte buffer will be " +
+                            "seen by all objects that have a reference to this object. " +
+                            "It is recommended to call ByteBuffer.duplicate() or " +
+                            "ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. " +
+                            "This behavior will be changed in a future major version of the SDK.")
+                    .append(LINE_SEPARATOR)
+                    .append("</p>")
+                    .append(LINE_SEPARATOR);
         }
 
         docBuilder.append(getParamDoc())

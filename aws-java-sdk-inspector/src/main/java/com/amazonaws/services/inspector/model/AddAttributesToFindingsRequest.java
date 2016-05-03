@@ -27,7 +27,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARNs specifying the findings that you want to assign attributes to.
+     * The ARNs that specify the findings that you want to assign attributes to.
      * </p>
      */
     private java.util.List<String> findingArns;
@@ -40,10 +40,10 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARNs specifying the findings that you want to assign attributes to.
+     * The ARNs that specify the findings that you want to assign attributes to.
      * </p>
      * 
-     * @return The ARNs specifying the findings that you want to assign
+     * @return The ARNs that specify the findings that you want to assign
      *         attributes to.
      */
 
@@ -53,11 +53,11 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARNs specifying the findings that you want to assign attributes to.
+     * The ARNs that specify the findings that you want to assign attributes to.
      * </p>
      * 
      * @param findingArns
-     *        The ARNs specifying the findings that you want to assign
+     *        The ARNs that specify the findings that you want to assign
      *        attributes to.
      */
 
@@ -72,7 +72,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARNs specifying the findings that you want to assign attributes to.
+     * The ARNs that specify the findings that you want to assign attributes to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -82,7 +82,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param findingArns
-     *        The ARNs specifying the findings that you want to assign
+     *        The ARNs that specify the findings that you want to assign
      *        attributes to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -100,11 +100,11 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARNs specifying the findings that you want to assign attributes to.
+     * The ARNs that specify the findings that you want to assign attributes to.
      * </p>
      * 
      * @param findingArns
-     *        The ARNs specifying the findings that you want to assign
+     *        The ARNs that specify the findings that you want to assign
      *        attributes to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

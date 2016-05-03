@@ -25,7 +25,7 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs specifying the agents returned by the action.
+     * A list of ARNs that specifies the agents returned by the action.
      * </p>
      */
     private java.util.List<AssessmentRunAgent> assessmentRunAgents;
@@ -34,17 +34,17 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of ARNs specifying the agents returned by the action.
+     * A list of ARNs that specifies the agents returned by the action.
      * </p>
      * 
-     * @return A list of ARNs specifying the agents returned by the action.
+     * @return A list of ARNs that specifies the agents returned by the action.
      */
 
     public java.util.List<AssessmentRunAgent> getAssessmentRunAgents() {
@@ -53,11 +53,11 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs specifying the agents returned by the action.
+     * A list of ARNs that specifies the agents returned by the action.
      * </p>
      * 
      * @param assessmentRunAgents
-     *        A list of ARNs specifying the agents returned by the action.
+     *        A list of ARNs that specifies the agents returned by the action.
      */
 
     public void setAssessmentRunAgents(
@@ -73,7 +73,7 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs specifying the agents returned by the action.
+     * A list of ARNs that specifies the agents returned by the action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -83,7 +83,7 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param assessmentRunAgents
-     *        A list of ARNs specifying the agents returned by the action.
+     *        A list of ARNs that specifies the agents returned by the action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -102,11 +102,11 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs specifying the agents returned by the action.
+     * A list of ARNs that specifies the agents returned by the action.
      * </p>
      * 
      * @param assessmentRunAgents
-     *        A list of ARNs specifying the agents returned by the action.
+     *        A list of ARNs that specifies the agents returned by the action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -122,7 +122,7 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
@@ -130,7 +130,7 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
      *        this parameter is present in the response and contains the value
      *        to use for the <b>nextToken</b> parameter in a subsequent
      *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to 'null'.
+     *        parameter is set to null.
      */
 
     public void setNextToken(String nextToken) {
@@ -142,14 +142,14 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @return When a response is generated, if there is more data to be listed,
      *         this parameter is present in the response and contains the value
      *         to use for the <b>nextToken</b> parameter in a subsequent
      *         pagination request. If there is no more data to be listed, this
-     *         parameter is set to 'null'.
+     *         parameter is set to null.
      */
 
     public String getNextToken() {
@@ -161,7 +161,7 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
@@ -169,7 +169,7 @@ public class ListAssessmentRunAgentsResult implements Serializable, Cloneable {
      *        this parameter is present in the response and contains the value
      *        to use for the <b>nextToken</b> parameter in a subsequent
      *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to 'null'.
+     *        parameter is set to null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

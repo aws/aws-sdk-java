@@ -27,19 +27,17 @@ public class DescribeAssessmentTemplatesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the assessment template(s) that you want to
-     * describe.
+     * The ARN that specifiesthe assessment templates that you want to describe.
      * </p>
      */
     private java.util.List<String> assessmentTemplateArns;
 
     /**
      * <p>
-     * The ARN(s) specifying the assessment template(s) that you want to
-     * describe.
+     * The ARN that specifiesthe assessment templates that you want to describe.
      * </p>
      * 
-     * @return The ARN(s) specifying the assessment template(s) that you want to
+     * @return The ARN that specifiesthe assessment templates that you want to
      *         describe.
      */
 
@@ -49,12 +47,11 @@ public class DescribeAssessmentTemplatesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the assessment template(s) that you want to
-     * describe.
+     * The ARN that specifiesthe assessment templates that you want to describe.
      * </p>
      * 
      * @param assessmentTemplateArns
-     *        The ARN(s) specifying the assessment template(s) that you want to
+     *        The ARN that specifiesthe assessment templates that you want to
      *        describe.
      */
 
@@ -71,8 +68,7 @@ public class DescribeAssessmentTemplatesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the assessment template(s) that you want to
-     * describe.
+     * The ARN that specifiesthe assessment templates that you want to describe.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -82,7 +78,7 @@ public class DescribeAssessmentTemplatesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param assessmentTemplateArns
-     *        The ARN(s) specifying the assessment template(s) that you want to
+     *        The ARN that specifiesthe assessment templates that you want to
      *        describe.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -102,12 +98,11 @@ public class DescribeAssessmentTemplatesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the assessment template(s) that you want to
-     * describe.
+     * The ARN that specifiesthe assessment templates that you want to describe.
      * </p>
      * 
      * @param assessmentTemplateArns
-     *        The ARN(s) specifying the assessment template(s) that you want to
+     *        The ARN that specifiesthe assessment templates that you want to
      *        describe.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

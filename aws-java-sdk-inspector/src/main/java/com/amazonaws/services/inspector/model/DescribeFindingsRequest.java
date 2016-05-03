@@ -27,25 +27,24 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARN(s) specifying the finding(s) that you want to describe.
+     * The ARN that specifies the finding that you want to describe.
      * </p>
      */
     private java.util.List<String> findingArns;
     /**
      * <p>
-     * The locale that you want to translate a finding description(s),
-     * recommendation(s), and the short description(s) that identify the
-     * finding(s) into.
+     * The locale into which you want to translate a finding description,
+     * recommendation, and the short description that identifies the finding.
      * </p>
      */
     private String locale;
 
     /**
      * <p>
-     * The ARN(s) specifying the finding(s) that you want to describe.
+     * The ARN that specifies the finding that you want to describe.
      * </p>
      * 
-     * @return The ARN(s) specifying the finding(s) that you want to describe.
+     * @return The ARN that specifies the finding that you want to describe.
      */
 
     public java.util.List<String> getFindingArns() {
@@ -54,11 +53,11 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARN(s) specifying the finding(s) that you want to describe.
+     * The ARN that specifies the finding that you want to describe.
      * </p>
      * 
      * @param findingArns
-     *        The ARN(s) specifying the finding(s) that you want to describe.
+     *        The ARN that specifies the finding that you want to describe.
      */
 
     public void setFindingArns(java.util.Collection<String> findingArns) {
@@ -72,7 +71,7 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARN(s) specifying the finding(s) that you want to describe.
+     * The ARN that specifies the finding that you want to describe.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -82,7 +81,7 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param findingArns
-     *        The ARN(s) specifying the finding(s) that you want to describe.
+     *        The ARN that specifies the finding that you want to describe.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,11 +98,11 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARN(s) specifying the finding(s) that you want to describe.
+     * The ARN that specifies the finding that you want to describe.
      * </p>
      * 
      * @param findingArns
-     *        The ARN(s) specifying the finding(s) that you want to describe.
+     *        The ARN that specifies the finding that you want to describe.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -116,15 +115,14 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The locale that you want to translate a finding description(s),
-     * recommendation(s), and the short description(s) that identify the
-     * finding(s) into.
+     * The locale into which you want to translate a finding description,
+     * recommendation, and the short description that identifies the finding.
      * </p>
      * 
      * @param locale
-     *        The locale that you want to translate a finding description(s),
-     *        recommendation(s), and the short description(s) that identify the
-     *        finding(s) into.
+     *        The locale into which you want to translate a finding description,
+     *        recommendation, and the short description that identifies the
+     *        finding.
      * @see Locale
      */
 
@@ -134,14 +132,13 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The locale that you want to translate a finding description(s),
-     * recommendation(s), and the short description(s) that identify the
-     * finding(s) into.
+     * The locale into which you want to translate a finding description,
+     * recommendation, and the short description that identifies the finding.
      * </p>
      * 
-     * @return The locale that you want to translate a finding description(s),
-     *         recommendation(s), and the short description(s) that identify the
-     *         finding(s) into.
+     * @return The locale into which you want to translate a finding
+     *         description, recommendation, and the short description that
+     *         identifies the finding.
      * @see Locale
      */
 
@@ -151,15 +148,14 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The locale that you want to translate a finding description(s),
-     * recommendation(s), and the short description(s) that identify the
-     * finding(s) into.
+     * The locale into which you want to translate a finding description,
+     * recommendation, and the short description that identifies the finding.
      * </p>
      * 
      * @param locale
-     *        The locale that you want to translate a finding description(s),
-     *        recommendation(s), and the short description(s) that identify the
-     *        finding(s) into.
+     *        The locale into which you want to translate a finding description,
+     *        recommendation, and the short description that identifies the
+     *        finding.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Locale
@@ -172,15 +168,14 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The locale that you want to translate a finding description(s),
-     * recommendation(s), and the short description(s) that identify the
-     * finding(s) into.
+     * The locale into which you want to translate a finding description,
+     * recommendation, and the short description that identifies the finding.
      * </p>
      * 
      * @param locale
-     *        The locale that you want to translate a finding description(s),
-     *        recommendation(s), and the short description(s) that identify the
-     *        finding(s) into.
+     *        The locale into which you want to translate a finding description,
+     *        recommendation, and the short description that identifies the
+     *        finding.
      * @see Locale
      */
 
@@ -190,15 +185,14 @@ public class DescribeFindingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The locale that you want to translate a finding description(s),
-     * recommendation(s), and the short description(s) that identify the
-     * finding(s) into.
+     * The locale into which you want to translate a finding description,
+     * recommendation, and the short description that identifies the finding.
      * </p>
      * 
      * @param locale
-     *        The locale that you want to translate a finding description(s),
-     *        recommendation(s), and the short description(s) that identify the
-     *        finding(s) into.
+     *        The locale into which you want to translate a finding description,
+     *        recommendation, and the short description that identifies the
+     *        finding.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Locale

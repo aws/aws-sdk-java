@@ -27,8 +27,8 @@ public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the assessment template used during the event for which you
-     * want to stop recieving SNS notifications.
+     * The ARN of the assessment template that is used during the event for
+     * which you want to stop receiving SNS notifications.
      * </p>
      */
     private String resourceArn;
@@ -47,13 +47,13 @@ public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the assessment template used during the event for which you
-     * want to stop recieving SNS notifications.
+     * The ARN of the assessment template that is used during the event for
+     * which you want to stop receiving SNS notifications.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the assessment template used during the event for which
-     *        you want to stop recieving SNS notifications.
+     *        The ARN of the assessment template that is used during the event
+     *        for which you want to stop receiving SNS notifications.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -62,12 +62,12 @@ public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the assessment template used during the event for which you
-     * want to stop recieving SNS notifications.
+     * The ARN of the assessment template that is used during the event for
+     * which you want to stop receiving SNS notifications.
      * </p>
      * 
-     * @return The ARN of the assessment template used during the event for
-     *         which you want to stop recieving SNS notifications.
+     * @return The ARN of the assessment template that is used during the event
+     *         for which you want to stop receiving SNS notifications.
      */
 
     public String getResourceArn() {
@@ -76,13 +76,13 @@ public class UnsubscribeFromEventRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the assessment template used during the event for which you
-     * want to stop recieving SNS notifications.
+     * The ARN of the assessment template that is used during the event for
+     * which you want to stop receiving SNS notifications.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the assessment template used during the event for which
-     *        you want to stop recieving SNS notifications.
+     *        The ARN of the assessment template that is used during the event
+     *        for which you want to stop receiving SNS notifications.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -29,8 +29,8 @@ import com.amazonaws.annotation.ThreadSafe;
  * This is the AWS CodePipeline API Reference. This guide provides descriptions
  * of the actions and data types for AWS CodePipeline. Some functionality for
  * your pipeline is only configurable through the API. For additional
- * information, see the <a
- * href="http://docs.aws.amazon.com/pipelines/latest/userguide/welcome.html">AWS
+ * information, see the <a href=
+ * "http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
  * CodePipeline User Guide</a>.
  * </p>
  * <p>
@@ -57,6 +57,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * <li><a>UpdatePipeline</a>, which updates a pipeline with edits or changes to
  * the structure of the pipeline.</li>
  * </ul>
+ * </p>
  * <p>
  * Pipelines include <i>stages</i>, which are which are logical groupings of
  * gates and actions. Each stage contains one or more actions that must complete
@@ -68,10 +69,9 @@ import com.amazonaws.annotation.ThreadSafe;
  * pipeline, including the status of stages in the pipeline, or
  * <a>GetPipeline</a>, which returns the entire structure of the pipeline,
  * including the stages of that pipeline. For more information about the
- * structure of stages and actions, also refer to the <ulink url=
- * "http://docs.aws.amazon.com/codepipeline/latest/UserGuide/pipeline-structure.html"
- * >AWS CodePipeline Pipeline Structure Reference</ulink>.
- * </p>
+ * structure of stages and actions, also refer to the <a href=
+ * "http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html"
+ * >AWS CodePipeline Pipeline Structure Reference</a>.
  * </p>
  * <p>
  * Pipeline stages include <i>actions</i>, which are categorized into categories

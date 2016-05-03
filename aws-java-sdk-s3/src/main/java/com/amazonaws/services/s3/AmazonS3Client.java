@@ -565,10 +565,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<ListVersionsRequest> request = createRequest(listVersionsRequest.getBucketName(), null, listVersionsRequest, HttpMethodName.GET);
         request.addParameter("versions", null);
 
-        if (listVersionsRequest.getPrefix() != null) request.addParameter("prefix", listVersionsRequest.getPrefix());
-        if (listVersionsRequest.getKeyMarker() != null) request.addParameter("key-marker", listVersionsRequest.getKeyMarker());
-        if (listVersionsRequest.getVersionIdMarker() != null) request.addParameter("version-id-marker", listVersionsRequest.getVersionIdMarker());
-        if (listVersionsRequest.getDelimiter() != null) request.addParameter("delimiter", listVersionsRequest.getDelimiter());
+        addParameterIfNotNull(request, "prefix", listVersionsRequest.getPrefix());
+        addParameterIfNotNull(request, "key-marker", listVersionsRequest.getKeyMarker());
+        addParameterIfNotNull(request, "version-id-marker", listVersionsRequest.getVersionIdMarker());
+        addParameterIfNotNull(request, "delimiter", listVersionsRequest.getDelimiter());
+
         if (listVersionsRequest.getMaxResults() != null && listVersionsRequest.getMaxResults().intValue() >= 0) request.addParameter("max-keys", listVersionsRequest.getMaxResults().toString());
         request.addParameter("encoding-type", shouldSDKDecodeResponse ? Constants.URL_ENCODING : listVersionsRequest.getEncodingType());
 
@@ -600,14 +601,55 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         final boolean shouldSDKDecodeResponse = listObjectsRequest.getEncodingType() == null;
 
         Request<ListObjectsRequest> request = createRequest(listObjectsRequest.getBucketName(), null, listObjectsRequest, HttpMethodName.GET);
-        if (listObjectsRequest.getPrefix() != null) request.addParameter("prefix", listObjectsRequest.getPrefix());
-        if (listObjectsRequest.getMarker() != null) request.addParameter("marker", listObjectsRequest.getMarker());
-        if (listObjectsRequest.getDelimiter() != null) request.addParameter("delimiter", listObjectsRequest.getDelimiter());
+        addParameterIfNotNull(request, "prefix", listObjectsRequest.getPrefix());
+        addParameterIfNotNull(request, "marker", listObjectsRequest.getMarker());
+        addParameterIfNotNull(request, "delimiter", listObjectsRequest.getDelimiter());
         if (listObjectsRequest.getMaxKeys() != null && listObjectsRequest.getMaxKeys().intValue() >= 0) request.addParameter("max-keys", listObjectsRequest.getMaxKeys().toString());
         request.addParameter("encoding-type", shouldSDKDecodeResponse ? Constants.URL_ENCODING : listObjectsRequest.getEncodingType());
 
         return invoke(request, new Unmarshallers.ListObjectsUnmarshaller(shouldSDKDecodeResponse), listObjectsRequest.getBucketName(), null);
     }
+
+    @Override
+    public ListObjectsV2Result listObjectsV2(String bucketName)
+            throws AmazonClientException, AmazonServiceException {
+        return listObjectsV2(new ListObjectsV2Request().withBucketName(bucketName));
+    }
+
+    @Override
+    public ListObjectsV2Result listObjectsV2(String bucketName, String prefix)
+            throws AmazonClientException, AmazonServiceException {
+        return listObjectsV2(new ListObjectsV2Request().withBucketName(bucketName).withPrefix(prefix));
+    }
+
+    @Override
+    public ListObjectsV2Result listObjectsV2(ListObjectsV2Request listObjectsV2Request)
+            throws AmazonClientException, AmazonServiceException {
+        rejectNull(listObjectsV2Request.getBucketName(), "The bucket name parameter must be specified when listing objects in a bucket");
+        Request<ListObjectsV2Request> request = createRequest(listObjectsV2Request.getBucketName(), null, listObjectsV2Request, HttpMethodName.GET);
+
+        /**
+         * List type '2' is required to opt-in to listObjectsV2.
+         */
+        request.addParameter("list-type", "2");
+
+        addParameterIfNotNull(request, "start-after", listObjectsV2Request.getStartAfter());
+        addParameterIfNotNull(request, "continuation-token", listObjectsV2Request.getContinuationToken());
+        addParameterIfNotNull(request, "delimiter", listObjectsV2Request.getDelimiter());
+        addParameterIfNotNull(request, "max-keys", listObjectsV2Request.getMaxKeys());
+        addParameterIfNotNull(request, "prefix", listObjectsV2Request.getPrefix());
+        addParameterIfNotNull(request, "encoding-type", listObjectsV2Request.getEncodingType());
+        request.addParameter("fetch-owner", Boolean.toString(listObjectsV2Request.isFetchOwner()));
+
+        /**
+         * If URL encoding has been requested from S3 we'll automatically decode the response.
+         */
+        final boolean shouldSDKDecodeResponse = listObjectsV2Request.getEncodingType() == Constants.URL_ENCODING;
+
+        return invoke(request, new Unmarshallers.ListObjectsV2Unmarshaller(shouldSDKDecodeResponse), listObjectsV2Request.getBucketName(), null);
+    }
+
+
 
     @Override
     public ObjectListing listNextBatchOfObjects(ObjectListing previousObjectListing)
@@ -3501,6 +3543,40 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private static void addHeaderIfNotNull(Request<?> request, String header, String value) {
         if (value != null) {
             request.addHeader(header, value);
+        }
+    }
+
+    /**
+     * Adds the specified parameter to the specified request, if the parameter
+     * value is not null.
+     *
+     * @param request
+     *            The request to add the parameter to.
+     * @param paramName
+     *            The parameter name.
+     * @param paramValue
+     *            The parameter value.
+     */
+    private static void addParameterIfNotNull(Request<?> request, String paramName, Integer paramValue) {
+        if (paramValue != null) {
+            addParameterIfNotNull(request, paramName, paramValue.toString());
+        }
+    }
+
+    /**
+     * Adds the specified parameter to the specified request, if the parameter
+     * value is not null.
+     *
+     * @param request
+     *            The request to add the parameter to.
+     * @param paramName
+     *            The parameter name.
+     * @param paramValue
+     *            The parameter value.
+     */
+    private static void addParameterIfNotNull(Request<?> request, String paramName, String paramValue) {
+        if (paramValue != null) {
+            request.addParameter(paramName, paramValue);
         }
     }
 

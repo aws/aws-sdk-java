@@ -26,34 +26,34 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
 
     /**
      * <p>
-     * The ARN specifying the IAM role that Inspector uses to access your AWS
-     * account.
+     * The ARN that specifies the IAM role that Amazon Inspector uses to access
+     * your AWS account.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
      * A Boolean value that specifies whether the IAM role has the necessary
-     * policies attached to enable Inspector to access your AWS account.
+     * policies attached to enable Amazon Inspector to access your AWS account.
      * </p>
      */
     private Boolean valid;
     /**
      * <p>
-     * The date when the cross account access role was registered.
+     * The date when the cross-account access role was registered.
      * </p>
      */
     private java.util.Date registeredAt;
 
     /**
      * <p>
-     * The ARN specifying the IAM role that Inspector uses to access your AWS
-     * account.
+     * The ARN that specifies the IAM role that Amazon Inspector uses to access
+     * your AWS account.
      * </p>
      * 
      * @param roleArn
-     *        The ARN specifying the IAM role that Inspector uses to access your
-     *        AWS account.
+     *        The ARN that specifies the IAM role that Amazon Inspector uses to
+     *        access your AWS account.
      */
 
     public void setRoleArn(String roleArn) {
@@ -62,12 +62,12 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
 
     /**
      * <p>
-     * The ARN specifying the IAM role that Inspector uses to access your AWS
-     * account.
+     * The ARN that specifies the IAM role that Amazon Inspector uses to access
+     * your AWS account.
      * </p>
      * 
-     * @return The ARN specifying the IAM role that Inspector uses to access
-     *         your AWS account.
+     * @return The ARN that specifies the IAM role that Amazon Inspector uses to
+     *         access your AWS account.
      */
 
     public String getRoleArn() {
@@ -76,13 +76,13 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
 
     /**
      * <p>
-     * The ARN specifying the IAM role that Inspector uses to access your AWS
-     * account.
+     * The ARN that specifies the IAM role that Amazon Inspector uses to access
+     * your AWS account.
      * </p>
      * 
      * @param roleArn
-     *        The ARN specifying the IAM role that Inspector uses to access your
-     *        AWS account.
+     *        The ARN that specifies the IAM role that Amazon Inspector uses to
+     *        access your AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -95,13 +95,13 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
     /**
      * <p>
      * A Boolean value that specifies whether the IAM role has the necessary
-     * policies attached to enable Inspector to access your AWS account.
+     * policies attached to enable Amazon Inspector to access your AWS account.
      * </p>
      * 
      * @param valid
      *        A Boolean value that specifies whether the IAM role has the
-     *        necessary policies attached to enable Inspector to access your AWS
-     *        account.
+     *        necessary policies attached to enable Amazon Inspector to access
+     *        your AWS account.
      */
 
     public void setValid(Boolean valid) {
@@ -111,12 +111,12 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
     /**
      * <p>
      * A Boolean value that specifies whether the IAM role has the necessary
-     * policies attached to enable Inspector to access your AWS account.
+     * policies attached to enable Amazon Inspector to access your AWS account.
      * </p>
      * 
      * @return A Boolean value that specifies whether the IAM role has the
-     *         necessary policies attached to enable Inspector to access your
-     *         AWS account.
+     *         necessary policies attached to enable Amazon Inspector to access
+     *         your AWS account.
      */
 
     public Boolean getValid() {
@@ -126,13 +126,13 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
     /**
      * <p>
      * A Boolean value that specifies whether the IAM role has the necessary
-     * policies attached to enable Inspector to access your AWS account.
+     * policies attached to enable Amazon Inspector to access your AWS account.
      * </p>
      * 
      * @param valid
      *        A Boolean value that specifies whether the IAM role has the
-     *        necessary policies attached to enable Inspector to access your AWS
-     *        account.
+     *        necessary policies attached to enable Amazon Inspector to access
+     *        your AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -145,12 +145,12 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
     /**
      * <p>
      * A Boolean value that specifies whether the IAM role has the necessary
-     * policies attached to enable Inspector to access your AWS account.
+     * policies attached to enable Amazon Inspector to access your AWS account.
      * </p>
      * 
      * @return A Boolean value that specifies whether the IAM role has the
-     *         necessary policies attached to enable Inspector to access your
-     *         AWS account.
+     *         necessary policies attached to enable Amazon Inspector to access
+     *         your AWS account.
      */
 
     public Boolean isValid() {
@@ -159,11 +159,11 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
 
     /**
      * <p>
-     * The date when the cross account access role was registered.
+     * The date when the cross-account access role was registered.
      * </p>
      * 
      * @param registeredAt
-     *        The date when the cross account access role was registered.
+     *        The date when the cross-account access role was registered.
      */
 
     public void setRegisteredAt(java.util.Date registeredAt) {
@@ -172,10 +172,10 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
 
     /**
      * <p>
-     * The date when the cross account access role was registered.
+     * The date when the cross-account access role was registered.
      * </p>
      * 
-     * @return The date when the cross account access role was registered.
+     * @return The date when the cross-account access role was registered.
      */
 
     public java.util.Date getRegisteredAt() {
@@ -184,11 +184,11 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
 
     /**
      * <p>
-     * The date when the cross account access role was registered.
+     * The date when the cross-account access role was registered.
      * </p>
      * 
      * @param registeredAt
-     *        The date when the cross account access role was registered.
+     *        The date when the cross-account access role was registered.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -28,9 +28,9 @@ public class ListRulesPackagesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b>
+     * parameter to null on your first call to the <b>ListRulesPackages</b>
      * action. Subsequent calls to the action fill <b>nextToken</b> in the
-     * request with the value of <b>NextToken</b> from previous response to
+     * request with the value of <b>NextToken</b> from the previous response to
      * continue listing data.
      * </p>
      */
@@ -46,18 +46,19 @@ public class ListRulesPackagesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b>
+     * parameter to null on your first call to the <b>ListRulesPackages</b>
      * action. Subsequent calls to the action fill <b>nextToken</b> in the
-     * request with the value of <b>NextToken</b> from previous response to
+     * request with the value of <b>NextToken</b> from the previous response to
      * continue listing data.
      * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value
-     *        of this parameter to 'null' on your first call to the
+     *        of this parameter to null on your first call to the
      *        <b>ListRulesPackages</b> action. Subsequent calls to the action
      *        fill <b>nextToken</b> in the request with the value of
-     *        <b>NextToken</b> from previous response to continue listing data.
+     *        <b>NextToken</b> from the previous response to continue listing
+     *        data.
      */
 
     public void setNextToken(String nextToken) {
@@ -67,17 +68,18 @@ public class ListRulesPackagesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b>
+     * parameter to null on your first call to the <b>ListRulesPackages</b>
      * action. Subsequent calls to the action fill <b>nextToken</b> in the
-     * request with the value of <b>NextToken</b> from previous response to
+     * request with the value of <b>NextToken</b> from the previous response to
      * continue listing data.
      * </p>
      * 
      * @return You can use this parameter when paginating results. Set the value
-     *         of this parameter to 'null' on your first call to the
+     *         of this parameter to null on your first call to the
      *         <b>ListRulesPackages</b> action. Subsequent calls to the action
      *         fill <b>nextToken</b> in the request with the value of
-     *         <b>NextToken</b> from previous response to continue listing data.
+     *         <b>NextToken</b> from the previous response to continue listing
+     *         data.
      */
 
     public String getNextToken() {
@@ -87,18 +89,19 @@ public class ListRulesPackagesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this
-     * parameter to 'null' on your first call to the <b>ListRulesPackages</b>
+     * parameter to null on your first call to the <b>ListRulesPackages</b>
      * action. Subsequent calls to the action fill <b>nextToken</b> in the
-     * request with the value of <b>NextToken</b> from previous response to
+     * request with the value of <b>NextToken</b> from the previous response to
      * continue listing data.
      * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value
-     *        of this parameter to 'null' on your first call to the
+     *        of this parameter to null on your first call to the
      *        <b>ListRulesPackages</b> action. Subsequent calls to the action
      *        fill <b>nextToken</b> in the request with the value of
-     *        <b>NextToken</b> from previous response to continue listing data.
+     *        <b>NextToken</b> from the previous response to continue listing
+     *        data.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

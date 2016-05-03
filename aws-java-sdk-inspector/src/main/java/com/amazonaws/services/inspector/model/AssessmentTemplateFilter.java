@@ -20,17 +20,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as the request parameter in the
- * <a>ListAssessmentTemplates</a> action.
+ * Used as the request parameter in the <a>ListAssessmentTemplates</a> action.
  * </p>
  */
 public class AssessmentTemplateFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentTemplateName</b> property of the
+     * For a record to match a filter, an explicit value or a string that
+     * contains a wildcard that is specified for this data type property must
+     * match the value of the <b>assessmentTemplateName</b> property of the
      * <a>AssessmentTemplate</a> data type.
      * </p>
      */
@@ -46,8 +45,8 @@ public class AssessmentTemplateFilter implements Serializable, Cloneable {
     private DurationRange durationRange;
     /**
      * <p>
-     * For a record to match a filter, the value(s) specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the values that are specified for this
+     * data type property must be contained in the list of values of the
      * <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a> data
      * type.
      * </p>
@@ -56,17 +55,17 @@ public class AssessmentTemplateFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentTemplateName</b> property of the
+     * For a record to match a filter, an explicit value or a string that
+     * contains a wildcard that is specified for this data type property must
+     * match the value of the <b>assessmentTemplateName</b> property of the
      * <a>AssessmentTemplate</a> data type.
      * </p>
      * 
      * @param namePattern
-     *        For a record to match a filter, an explicit value or a string
-     *        containing a wildcard specified for this data type property must
-     *        match the value of the <b>assessmentTemplateName</b> property of
-     *        the <a>AssessmentTemplate</a> data type.
+     *        For a record to match a filter, an explicit value or a string that
+     *        contains a wildcard that is specified for this data type property
+     *        must match the value of the <b>assessmentTemplateName</b> property
+     *        of the <a>AssessmentTemplate</a> data type.
      */
 
     public void setNamePattern(String namePattern) {
@@ -75,16 +74,17 @@ public class AssessmentTemplateFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentTemplateName</b> property of the
+     * For a record to match a filter, an explicit value or a string that
+     * contains a wildcard that is specified for this data type property must
+     * match the value of the <b>assessmentTemplateName</b> property of the
      * <a>AssessmentTemplate</a> data type.
      * </p>
      * 
      * @return For a record to match a filter, an explicit value or a string
-     *         containing a wildcard specified for this data type property must
-     *         match the value of the <b>assessmentTemplateName</b> property of
-     *         the <a>AssessmentTemplate</a> data type.
+     *         that contains a wildcard that is specified for this data type
+     *         property must match the value of the
+     *         <b>assessmentTemplateName</b> property of the
+     *         <a>AssessmentTemplate</a> data type.
      */
 
     public String getNamePattern() {
@@ -93,17 +93,17 @@ public class AssessmentTemplateFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, an explicit value or a string containing
-     * a wildcard specified for this data type property must match the value of
-     * the <b>assessmentTemplateName</b> property of the
+     * For a record to match a filter, an explicit value or a string that
+     * contains a wildcard that is specified for this data type property must
+     * match the value of the <b>assessmentTemplateName</b> property of the
      * <a>AssessmentTemplate</a> data type.
      * </p>
      * 
      * @param namePattern
-     *        For a record to match a filter, an explicit value or a string
-     *        containing a wildcard specified for this data type property must
-     *        match the value of the <b>assessmentTemplateName</b> property of
-     *        the <a>AssessmentTemplate</a> data type.
+     *        For a record to match a filter, an explicit value or a string that
+     *        contains a wildcard that is specified for this data type property
+     *        must match the value of the <b>assessmentTemplateName</b> property
+     *        of the <a>AssessmentTemplate</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -178,16 +178,16 @@ public class AssessmentTemplateFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value(s) specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the values that are specified for this
+     * data type property must be contained in the list of values of the
      * <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a> data
      * type.
      * </p>
      * 
-     * @return For a record to match a filter, the value(s) specified for this
-     *         data type property must be contained in the list of values of the
-     *         <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a>
-     *         data type.
+     * @return For a record to match a filter, the values that are specified for
+     *         this data type property must be contained in the list of values
+     *         of the <b>rulesPackageArns</b> property of the
+     *         <a>AssessmentTemplate</a> data type.
      */
 
     public java.util.List<String> getRulesPackageArns() {
@@ -196,17 +196,17 @@ public class AssessmentTemplateFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value(s) specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the values that are specified for this
+     * data type property must be contained in the list of values of the
      * <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a> data
      * type.
      * </p>
      * 
      * @param rulesPackageArns
-     *        For a record to match a filter, the value(s) specified for this
-     *        data type property must be contained in the list of values of the
-     *        <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a>
-     *        data type.
+     *        For a record to match a filter, the values that are specified for
+     *        this data type property must be contained in the list of values of
+     *        the <b>rulesPackageArns</b> property of the
+     *        <a>AssessmentTemplate</a> data type.
      */
 
     public void setRulesPackageArns(
@@ -222,8 +222,8 @@ public class AssessmentTemplateFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value(s) specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the values that are specified for this
+     * data type property must be contained in the list of values of the
      * <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a> data
      * type.
      * </p>
@@ -235,10 +235,10 @@ public class AssessmentTemplateFilter implements Serializable, Cloneable {
      * </p>
      * 
      * @param rulesPackageArns
-     *        For a record to match a filter, the value(s) specified for this
-     *        data type property must be contained in the list of values of the
-     *        <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a>
-     *        data type.
+     *        For a record to match a filter, the values that are specified for
+     *        this data type property must be contained in the list of values of
+     *        the <b>rulesPackageArns</b> property of the
+     *        <a>AssessmentTemplate</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -257,17 +257,17 @@ public class AssessmentTemplateFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value(s) specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the values that are specified for this
+     * data type property must be contained in the list of values of the
      * <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a> data
      * type.
      * </p>
      * 
      * @param rulesPackageArns
-     *        For a record to match a filter, the value(s) specified for this
-     *        data type property must be contained in the list of values of the
-     *        <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a>
-     *        data type.
+     *        For a record to match a filter, the values that are specified for
+     *        this data type property must be contained in the list of values of
+     *        the <b>rulesPackageArns</b> property of the
+     *        <a>AssessmentTemplate</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

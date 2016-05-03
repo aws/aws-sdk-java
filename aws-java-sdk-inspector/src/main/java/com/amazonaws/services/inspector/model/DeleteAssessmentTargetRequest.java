@@ -27,18 +27,19 @@ public class DeleteAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the assessment target that you want to delete.
+     * The ARN that specifies the assessment target that you want to delete.
      * </p>
      */
     private String assessmentTargetArn;
 
     /**
      * <p>
-     * The ARN specifying the assessment target that you want to delete.
+     * The ARN that specifies the assessment target that you want to delete.
      * </p>
      * 
      * @param assessmentTargetArn
-     *        The ARN specifying the assessment target that you want to delete.
+     *        The ARN that specifies the assessment target that you want to
+     *        delete.
      */
 
     public void setAssessmentTargetArn(String assessmentTargetArn) {
@@ -47,10 +48,11 @@ public class DeleteAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the assessment target that you want to delete.
+     * The ARN that specifies the assessment target that you want to delete.
      * </p>
      * 
-     * @return The ARN specifying the assessment target that you want to delete.
+     * @return The ARN that specifies the assessment target that you want to
+     *         delete.
      */
 
     public String getAssessmentTargetArn() {
@@ -59,11 +61,12 @@ public class DeleteAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the assessment target that you want to delete.
+     * The ARN that specifies the assessment target that you want to delete.
      * </p>
      * 
      * @param assessmentTargetArn
-     *        The ARN specifying the assessment target that you want to delete.
+     *        The ARN that specifies the assessment target that you want to
+     *        delete.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -20,9 +20,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an Inspector assessment template. This data type
- * is used as the response element in the <a>DescribeAssessmentTemplates</a>
- * action.
+ * Contains information about an Amazon Inspector assessment template. This data
+ * type is used as the response element in the
+ * <a>DescribeAssessmentTemplates</a> action.
  * </p>
  */
 public class AssessmentTemplate implements Serializable, Cloneable {
@@ -56,7 +56,7 @@ public class AssessmentTemplate implements Serializable, Cloneable {
     private Integer durationInSeconds;
     /**
      * <p>
-     * Rules packages specified for this assessment template.
+     * The rules packages that are specified for this assessment template.
      * </p>
      */
     private java.util.List<String> rulesPackageArns;
@@ -258,10 +258,11 @@ public class AssessmentTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Rules packages specified for this assessment template.
+     * The rules packages that are specified for this assessment template.
      * </p>
      * 
-     * @return Rules packages specified for this assessment template.
+     * @return The rules packages that are specified for this assessment
+     *         template.
      */
 
     public java.util.List<String> getRulesPackageArns() {
@@ -270,11 +271,12 @@ public class AssessmentTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Rules packages specified for this assessment template.
+     * The rules packages that are specified for this assessment template.
      * </p>
      * 
      * @param rulesPackageArns
-     *        Rules packages specified for this assessment template.
+     *        The rules packages that are specified for this assessment
+     *        template.
      */
 
     public void setRulesPackageArns(
@@ -290,7 +292,7 @@ public class AssessmentTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Rules packages specified for this assessment template.
+     * The rules packages that are specified for this assessment template.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -300,7 +302,8 @@ public class AssessmentTemplate implements Serializable, Cloneable {
      * </p>
      * 
      * @param rulesPackageArns
-     *        Rules packages specified for this assessment template.
+     *        The rules packages that are specified for this assessment
+     *        template.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -318,11 +321,12 @@ public class AssessmentTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Rules packages specified for this assessment template.
+     * The rules packages that are specified for this assessment template.
      * </p>
      * 
      * @param rulesPackageArns
-     *        Rules packages specified for this assessment template.
+     *        The rules packages that are specified for this assessment
+     *        template.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

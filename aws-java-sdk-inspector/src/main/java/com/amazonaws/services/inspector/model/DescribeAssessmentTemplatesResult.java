@@ -26,7 +26,7 @@ public class DescribeAssessmentTemplatesResult implements Serializable,
 
     /**
      * <p>
-     * Information about the assessment template(s).
+     * Information about the assessment templates.
      * </p>
      */
     private java.util.List<AssessmentTemplate> assessmentTemplates;
@@ -40,10 +40,10 @@ public class DescribeAssessmentTemplatesResult implements Serializable,
 
     /**
      * <p>
-     * Information about the assessment template(s).
+     * Information about the assessment templates.
      * </p>
      * 
-     * @return Information about the assessment template(s).
+     * @return Information about the assessment templates.
      */
 
     public java.util.List<AssessmentTemplate> getAssessmentTemplates() {
@@ -52,11 +52,11 @@ public class DescribeAssessmentTemplatesResult implements Serializable,
 
     /**
      * <p>
-     * Information about the assessment template(s).
+     * Information about the assessment templates.
      * </p>
      * 
      * @param assessmentTemplates
-     *        Information about the assessment template(s).
+     *        Information about the assessment templates.
      */
 
     public void setAssessmentTemplates(
@@ -72,7 +72,7 @@ public class DescribeAssessmentTemplatesResult implements Serializable,
 
     /**
      * <p>
-     * Information about the assessment template(s).
+     * Information about the assessment templates.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -82,7 +82,7 @@ public class DescribeAssessmentTemplatesResult implements Serializable,
      * </p>
      * 
      * @param assessmentTemplates
-     *        Information about the assessment template(s).
+     *        Information about the assessment templates.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -101,11 +101,11 @@ public class DescribeAssessmentTemplatesResult implements Serializable,
 
     /**
      * <p>
-     * Information about the assessment template(s).
+     * Information about the assessment templates.
      * </p>
      * 
      * @param assessmentTemplates
-     *        Information about the assessment template(s).
+     *        Information about the assessment templates.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

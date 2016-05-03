@@ -25,7 +25,7 @@ public class DescribeResourceGroupsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the resource group(s).
+     * Information about a resource group.
      * </p>
      */
     private java.util.List<ResourceGroup> resourceGroups;
@@ -39,10 +39,10 @@ public class DescribeResourceGroupsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the resource group(s).
+     * Information about a resource group.
      * </p>
      * 
-     * @return Information about the resource group(s).
+     * @return Information about a resource group.
      */
 
     public java.util.List<ResourceGroup> getResourceGroups() {
@@ -51,11 +51,11 @@ public class DescribeResourceGroupsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the resource group(s).
+     * Information about a resource group.
      * </p>
      * 
      * @param resourceGroups
-     *        Information about the resource group(s).
+     *        Information about a resource group.
      */
 
     public void setResourceGroups(
@@ -71,7 +71,7 @@ public class DescribeResourceGroupsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the resource group(s).
+     * Information about a resource group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -81,7 +81,7 @@ public class DescribeResourceGroupsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param resourceGroups
-     *        Information about the resource group(s).
+     *        Information about a resource group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -100,11 +100,11 @@ public class DescribeResourceGroupsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the resource group(s).
+     * Information about a resource group.
      * </p>
      * 
      * @param resourceGroups
-     *        Information about the resource group(s).
+     *        Information about a resource group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

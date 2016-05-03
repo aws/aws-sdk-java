@@ -20,36 +20,36 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used in the exception error that is thrown if you start an
- * assessment run for an assessment target that includes an EC2 instance that is
- * already participating in another started assessment run.
+ * Used in the exception error that is thrown if you start an assessment run for
+ * an assessment target that includes an EC2 instance that is already
+ * participating in another started assessment run.
  * </p>
  */
 public class AgentAlreadyRunningAssessment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the agent that is running on an EC2 isntance that is already
-     * particiapting in another started assessment run.
+     * ID of the agent that is running on an EC2 instance that is already
+     * participating in another started assessment run.
      * </p>
      */
     private String agentId;
     /**
      * <p>
-     * The ARN of the assessment that has already been started.
+     * The ARN of the assessment run that has already been started.
      * </p>
      */
     private String assessmentRunArn;
 
     /**
      * <p>
-     * ID of the agent that is running on an EC2 isntance that is already
-     * particiapting in another started assessment run.
+     * ID of the agent that is running on an EC2 instance that is already
+     * participating in another started assessment run.
      * </p>
      * 
      * @param agentId
-     *        ID of the agent that is running on an EC2 isntance that is already
-     *        particiapting in another started assessment run.
+     *        ID of the agent that is running on an EC2 instance that is already
+     *        participating in another started assessment run.
      */
 
     public void setAgentId(String agentId) {
@@ -58,12 +58,12 @@ public class AgentAlreadyRunningAssessment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the agent that is running on an EC2 isntance that is already
-     * particiapting in another started assessment run.
+     * ID of the agent that is running on an EC2 instance that is already
+     * participating in another started assessment run.
      * </p>
      * 
-     * @return ID of the agent that is running on an EC2 isntance that is
-     *         already particiapting in another started assessment run.
+     * @return ID of the agent that is running on an EC2 instance that is
+     *         already participating in another started assessment run.
      */
 
     public String getAgentId() {
@@ -72,13 +72,13 @@ public class AgentAlreadyRunningAssessment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the agent that is running on an EC2 isntance that is already
-     * particiapting in another started assessment run.
+     * ID of the agent that is running on an EC2 instance that is already
+     * participating in another started assessment run.
      * </p>
      * 
      * @param agentId
-     *        ID of the agent that is running on an EC2 isntance that is already
-     *        particiapting in another started assessment run.
+     *        ID of the agent that is running on an EC2 instance that is already
+     *        participating in another started assessment run.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -90,11 +90,11 @@ public class AgentAlreadyRunningAssessment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the assessment that has already been started.
+     * The ARN of the assessment run that has already been started.
      * </p>
      * 
      * @param assessmentRunArn
-     *        The ARN of the assessment that has already been started.
+     *        The ARN of the assessment run that has already been started.
      */
 
     public void setAssessmentRunArn(String assessmentRunArn) {
@@ -103,10 +103,10 @@ public class AgentAlreadyRunningAssessment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the assessment that has already been started.
+     * The ARN of the assessment run that has already been started.
      * </p>
      * 
-     * @return The ARN of the assessment that has already been started.
+     * @return The ARN of the assessment run that has already been started.
      */
 
     public String getAssessmentRunArn() {
@@ -115,11 +115,11 @@ public class AgentAlreadyRunningAssessment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the assessment that has already been started.
+     * The ARN of the assessment run that has already been started.
      * </p>
      * 
      * @param assessmentRunArn
-     *        The ARN of the assessment that has already been started.
+     *        The ARN of the assessment run that has already been started.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

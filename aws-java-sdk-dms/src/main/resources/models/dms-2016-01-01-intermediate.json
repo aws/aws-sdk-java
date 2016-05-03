@@ -52,12 +52,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "addTagsToResource",
-      "authenticated" : true,
       "syncReturnType" : "AddTagsToResourceResult",
       "asyncReturnType" : "AddTagsToResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToResourceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>",
+      "authenticated" : true
     },
     "CreateEndpoint" : {
       "documentation" : "<p>Creates an endpoint using the provided settings.</p> <note/><p/>",
@@ -88,12 +88,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createEndpoint",
-      "authenticated" : true,
       "syncReturnType" : "CreateEndpointResult",
       "asyncReturnType" : "CreateEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateEndpointResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEndpointRequest, CreateEndpointResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEndpointRequest, CreateEndpointResult>",
+      "authenticated" : true
     },
     "CreateReplicationInstance" : {
       "documentation" : "<p>Creates the replication instance using the specified parameters.</p> <note/><p/>",
@@ -145,12 +145,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createReplicationInstance",
-      "authenticated" : true,
       "syncReturnType" : "CreateReplicationInstanceResult",
       "asyncReturnType" : "CreateReplicationInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReplicationInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReplicationInstanceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationInstanceRequest, CreateReplicationInstanceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationInstanceRequest, CreateReplicationInstanceResult>",
+      "authenticated" : true
     },
     "CreateReplicationSubnetGroup" : {
       "documentation" : "<p>Creates a replication subnet group given a list of the subnet IDs in a VPC.</p> <note/><p/>",
@@ -190,12 +190,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createReplicationSubnetGroup",
-      "authenticated" : true,
       "syncReturnType" : "CreateReplicationSubnetGroupResult",
       "asyncReturnType" : "CreateReplicationSubnetGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReplicationSubnetGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReplicationSubnetGroupResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationSubnetGroupRequest, CreateReplicationSubnetGroupResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationSubnetGroupRequest, CreateReplicationSubnetGroupResult>",
+      "authenticated" : true
     },
     "CreateReplicationTask" : {
       "documentation" : "<p>Creates a replication task using the specified parameters.</p> <note/><p/>",
@@ -232,12 +232,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createReplicationTask",
-      "authenticated" : true,
       "syncReturnType" : "CreateReplicationTaskResult",
       "asyncReturnType" : "CreateReplicationTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReplicationTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReplicationTaskResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationTaskRequest, CreateReplicationTaskResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationTaskRequest, CreateReplicationTaskResult>",
+      "authenticated" : true
     },
     "DeleteEndpoint" : {
       "documentation" : "<p>Deletes the specified endpoint. </p> <note>All tasks associated with the endpoint must be deleted before you can delete the endpoint.</note><p/>",
@@ -265,12 +265,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteEndpoint",
-      "authenticated" : true,
       "syncReturnType" : "DeleteEndpointResult",
       "asyncReturnType" : "DeleteEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteEndpointResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult>",
+      "authenticated" : true
     },
     "DeleteReplicationInstance" : {
       "documentation" : "<p>Deletes the specified replication instance. </p> <note>You must delete any migration tasks that are associated with the replication instance before you can delete it.</note><p/>",
@@ -298,12 +298,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteReplicationInstance",
-      "authenticated" : true,
       "syncReturnType" : "DeleteReplicationInstanceResult",
       "asyncReturnType" : "DeleteReplicationInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReplicationInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReplicationInstanceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationInstanceRequest, DeleteReplicationInstanceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationInstanceRequest, DeleteReplicationInstanceResult>",
+      "authenticated" : true
     },
     "DeleteReplicationSubnetGroup" : {
       "documentation" : "<p>Deletes a subnet group.</p> <note/><p/>",
@@ -331,12 +331,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteReplicationSubnetGroup",
-      "authenticated" : true,
       "syncReturnType" : "DeleteReplicationSubnetGroupResult",
       "asyncReturnType" : "DeleteReplicationSubnetGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReplicationSubnetGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReplicationSubnetGroupResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationSubnetGroupRequest, DeleteReplicationSubnetGroupResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationSubnetGroupRequest, DeleteReplicationSubnetGroupResult>",
+      "authenticated" : true
     },
     "DeleteReplicationTask" : {
       "documentation" : "<p>Deletes the specified replication task.</p> <note/><p/>",
@@ -364,12 +364,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteReplicationTask",
-      "authenticated" : true,
       "syncReturnType" : "DeleteReplicationTaskResult",
       "asyncReturnType" : "DeleteReplicationTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReplicationTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReplicationTaskResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationTaskRequest, DeleteReplicationTaskResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationTaskRequest, DeleteReplicationTaskResult>",
+      "authenticated" : true
     },
     "DescribeAccountAttributes" : {
       "documentation" : "<p>Lists all of the AWS DMS attributes for a customer account. The attributes include AWS DMS quotas for the account, such as the number of replication instances allowed. The description for a quota includes the quota name, current usage toward that quota, and the quota's maximum value. </p> <p>This command does not take any parameters.</p> <note/><p/>",
@@ -391,12 +391,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeAccountAttributes",
-      "authenticated" : true,
       "syncReturnType" : "DescribeAccountAttributesResult",
       "asyncReturnType" : "DescribeAccountAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAccountAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAccountAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult>",
+      "authenticated" : true
     },
     "DescribeConnections" : {
       "documentation" : "<p>Describes the status of the connections that have been made between the replication instance and an endpoint. Connections are created when you test an endpoint.</p> <note/><p/>",
@@ -421,12 +421,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeConnections",
-      "authenticated" : true,
       "syncReturnType" : "DescribeConnectionsResult",
       "asyncReturnType" : "DescribeConnectionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConnectionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConnectionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult>",
+      "authenticated" : true
     },
     "DescribeEndpointTypes" : {
       "documentation" : "<p>Returns information about the type of endpoints available.</p> <note/> <p/>",
@@ -448,12 +448,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeEndpointTypes",
-      "authenticated" : true,
       "syncReturnType" : "DescribeEndpointTypesResult",
       "asyncReturnType" : "DescribeEndpointTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEndpointTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEndpointTypesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEndpointTypesRequest, DescribeEndpointTypesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEndpointTypesRequest, DescribeEndpointTypesResult>",
+      "authenticated" : true
     },
     "DescribeEndpoints" : {
       "documentation" : "<p>Returns information about the endpoints for your account in the current region.</p> <note/><p/>",
@@ -478,12 +478,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeEndpoints",
-      "authenticated" : true,
       "syncReturnType" : "DescribeEndpointsResult",
       "asyncReturnType" : "DescribeEndpointsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEndpointsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEndpointsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult>",
+      "authenticated" : true
     },
     "DescribeOrderableReplicationInstances" : {
       "documentation" : "<p>Returns information about the replication instance types that can be created in the specified region.</p> <note/><p/>",
@@ -505,12 +505,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeOrderableReplicationInstances",
-      "authenticated" : true,
       "syncReturnType" : "DescribeOrderableReplicationInstancesResult",
       "asyncReturnType" : "DescribeOrderableReplicationInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeOrderableReplicationInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeOrderableReplicationInstancesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeOrderableReplicationInstancesRequest, DescribeOrderableReplicationInstancesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeOrderableReplicationInstancesRequest, DescribeOrderableReplicationInstancesResult>",
+      "authenticated" : true
     },
     "DescribeRefreshSchemasStatus" : {
       "documentation" : "<p>Returns the status of the RefreshSchemas operation.</p> <note/><p/>",
@@ -538,12 +538,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeRefreshSchemasStatus",
-      "authenticated" : true,
       "syncReturnType" : "DescribeRefreshSchemasStatusResult",
       "asyncReturnType" : "DescribeRefreshSchemasStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeRefreshSchemasStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeRefreshSchemasStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeRefreshSchemasStatusRequest, DescribeRefreshSchemasStatusResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeRefreshSchemasStatusRequest, DescribeRefreshSchemasStatusResult>",
+      "authenticated" : true
     },
     "DescribeReplicationInstances" : {
       "documentation" : "<p>Returns information about replication instances for your account in the current region.</p> <note/><p/>",
@@ -568,12 +568,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeReplicationInstances",
-      "authenticated" : true,
       "syncReturnType" : "DescribeReplicationInstancesResult",
       "asyncReturnType" : "DescribeReplicationInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReplicationInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReplicationInstancesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationInstancesRequest, DescribeReplicationInstancesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationInstancesRequest, DescribeReplicationInstancesResult>",
+      "authenticated" : true
     },
     "DescribeReplicationSubnetGroups" : {
       "documentation" : "<p>Returns information about the replication subnet groups.</p> <note/><p/>",
@@ -598,12 +598,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeReplicationSubnetGroups",
-      "authenticated" : true,
       "syncReturnType" : "DescribeReplicationSubnetGroupsResult",
       "asyncReturnType" : "DescribeReplicationSubnetGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReplicationSubnetGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReplicationSubnetGroupsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationSubnetGroupsRequest, DescribeReplicationSubnetGroupsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationSubnetGroupsRequest, DescribeReplicationSubnetGroupsResult>",
+      "authenticated" : true
     },
     "DescribeReplicationTasks" : {
       "documentation" : "<p>Returns information about replication tasks for your account in the current region.</p> <note/><p/>",
@@ -628,12 +628,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeReplicationTasks",
-      "authenticated" : true,
       "syncReturnType" : "DescribeReplicationTasksResult",
       "asyncReturnType" : "DescribeReplicationTasksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReplicationTasksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReplicationTasksResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationTasksRequest, DescribeReplicationTasksResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationTasksRequest, DescribeReplicationTasksResult>",
+      "authenticated" : true
     },
     "DescribeSchemas" : {
       "documentation" : "<p>Returns information about the schema for the specified endpoint.</p> <note/><p/>",
@@ -661,12 +661,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeSchemas",
-      "authenticated" : true,
       "syncReturnType" : "DescribeSchemasResult",
       "asyncReturnType" : "DescribeSchemasResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSchemasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSchemasResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSchemasRequest, DescribeSchemasResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSchemasRequest, DescribeSchemasResult>",
+      "authenticated" : true
     },
     "DescribeTableStatistics" : {
       "documentation" : "<p>Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted.</p> <note/><p/>",
@@ -694,12 +694,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeTableStatistics",
-      "authenticated" : true,
       "syncReturnType" : "DescribeTableStatisticsResult",
       "asyncReturnType" : "DescribeTableStatisticsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTableStatisticsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTableStatisticsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTableStatisticsRequest, DescribeTableStatisticsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTableStatisticsRequest, DescribeTableStatisticsResult>",
+      "authenticated" : true
     },
     "ListTagsForResource" : {
       "documentation" : "<p> Lists all tags for an AWS DMS resource.</p> <note/><p/>",
@@ -724,12 +724,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listTagsForResource",
-      "authenticated" : true,
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
+      "authenticated" : true
     },
     "ModifyEndpoint" : {
       "documentation" : "<p>Modifies the specified endpoint.</p> <note/><p/>",
@@ -763,12 +763,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "modifyEndpoint",
-      "authenticated" : true,
       "syncReturnType" : "ModifyEndpointResult",
       "asyncReturnType" : "ModifyEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyEndpointResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyEndpointRequest, ModifyEndpointResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyEndpointRequest, ModifyEndpointResult>",
+      "authenticated" : true
     },
     "ModifyReplicationInstance" : {
       "documentation" : "<p>Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request.</p> <note>Some settings are applied during the maintenance window.</note><p/> <p/>",
@@ -808,12 +808,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "modifyReplicationInstance",
-      "authenticated" : true,
       "syncReturnType" : "ModifyReplicationInstanceResult",
       "asyncReturnType" : "ModifyReplicationInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyReplicationInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyReplicationInstanceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyReplicationInstanceRequest, ModifyReplicationInstanceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyReplicationInstanceRequest, ModifyReplicationInstanceResult>",
+      "authenticated" : true
     },
     "ModifyReplicationSubnetGroup" : {
       "documentation" : "<p>Modifies the settings for the specified replication subnet group.</p> <note/><p/>",
@@ -850,12 +850,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "modifyReplicationSubnetGroup",
-      "authenticated" : true,
       "syncReturnType" : "ModifyReplicationSubnetGroupResult",
       "asyncReturnType" : "ModifyReplicationSubnetGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyReplicationSubnetGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyReplicationSubnetGroupResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyReplicationSubnetGroupRequest, ModifyReplicationSubnetGroupResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyReplicationSubnetGroupRequest, ModifyReplicationSubnetGroupResult>",
+      "authenticated" : true
     },
     "RefreshSchemas" : {
       "documentation" : "<p>Populates the schema for the specified endpoint. This is an asynchronous operation and can take several minutes. You can check the status of this operation by calling the DescribeRefreshSchemasStatus operation.</p> <note/><p/>",
@@ -889,12 +889,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "refreshSchemas",
-      "authenticated" : true,
       "syncReturnType" : "RefreshSchemasResult",
       "asyncReturnType" : "RefreshSchemasResult",
       "asyncFutureType" : "java.util.concurrent.Future<RefreshSchemasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RefreshSchemasResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RefreshSchemasRequest, RefreshSchemasResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RefreshSchemasRequest, RefreshSchemasResult>",
+      "authenticated" : true
     },
     "RemoveTagsFromResource" : {
       "documentation" : "<p> Removes metadata tags from a DMS resource.</p> <note/><p/>",
@@ -919,12 +919,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "removeTagsFromResource",
-      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromResourceResult",
       "asyncReturnType" : "RemoveTagsFromResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromResourceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>",
+      "authenticated" : true
     },
     "StartReplicationTask" : {
       "documentation" : "<p>Starts the replication task.</p> <note/><p/>",
@@ -952,12 +952,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "startReplicationTask",
-      "authenticated" : true,
       "syncReturnType" : "StartReplicationTaskResult",
       "asyncReturnType" : "StartReplicationTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartReplicationTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartReplicationTaskResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartReplicationTaskRequest, StartReplicationTaskResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartReplicationTaskRequest, StartReplicationTaskResult>",
+      "authenticated" : true
     },
     "StopReplicationTask" : {
       "documentation" : "<p>Stops the replication task.</p> <note/><p/>",
@@ -985,12 +985,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "stopReplicationTask",
-      "authenticated" : true,
       "syncReturnType" : "StopReplicationTaskResult",
       "asyncReturnType" : "StopReplicationTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopReplicationTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopReplicationTaskResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopReplicationTaskRequest, StopReplicationTaskResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopReplicationTaskRequest, StopReplicationTaskResult>",
+      "authenticated" : true
     },
     "TestConnection" : {
       "documentation" : "<p>Tests the connection between the replication instance and the endpoint. </p> <note/><p/>",
@@ -1024,12 +1024,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "testConnection",
-      "authenticated" : true,
       "syncReturnType" : "TestConnectionResult",
       "asyncReturnType" : "TestConnectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestConnectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestConnectionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestConnectionRequest, TestConnectionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestConnectionRequest, TestConnectionResult>",
+      "authenticated" : true
     }
   },
   "shapes" : {
@@ -3842,9 +3842,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateImplType" : "java.util.ArrayList<String>",
           "templateType" : "java.util.List<String>"
         },
@@ -4093,9 +4093,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateImplType" : "java.util.ArrayList<String>",
             "templateType" : "java.util.List<String>"
           },
@@ -4276,9 +4276,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateImplType" : "java.util.ArrayList<String>",
           "templateType" : "java.util.List<String>"
         },
@@ -4470,9 +4470,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateImplType" : "java.util.ArrayList<String>",
             "templateType" : "java.util.List<String>"
           },
@@ -4705,9 +4705,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateImplType" : "java.util.ArrayList<String>",
           "templateType" : "java.util.List<String>"
         },
@@ -4823,9 +4823,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateImplType" : "java.util.ArrayList<Tag>",
           "templateType" : "java.util.List<Tag>"
         },
@@ -5074,9 +5074,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateImplType" : "java.util.ArrayList<String>",
             "templateType" : "java.util.List<String>"
           },
@@ -5193,9 +5193,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateImplType" : "java.util.ArrayList<Tag>",
             "templateType" : "java.util.List<Tag>"
           },
@@ -5740,9 +5740,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateImplType" : "java.util.ArrayList<Tag>",
           "templateType" : "java.util.List<Tag>"
         },
@@ -6256,9 +6256,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateImplType" : "java.util.ArrayList<Tag>",
             "templateType" : "java.util.List<Tag>"
           },
@@ -6492,9 +6492,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "SupportedEndpointType",
           "simple" : false,
           "map" : false,
+          "simpleType" : "SupportedEndpointType",
           "templateImplType" : "java.util.ArrayList<SupportedEndpointType>",
           "templateType" : "java.util.List<SupportedEndpointType>"
         },
@@ -6686,9 +6686,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "SupportedEndpointType",
             "simple" : false,
             "map" : false,
+            "simpleType" : "SupportedEndpointType",
             "templateImplType" : "java.util.ArrayList<SupportedEndpointType>",
             "templateType" : "java.util.List<SupportedEndpointType>"
           },
@@ -6817,9 +6817,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateImplType" : "java.util.ArrayList<Tag>",
           "templateType" : "java.util.List<Tag>"
         },
@@ -6958,9 +6958,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateImplType" : "java.util.ArrayList<Tag>",
             "templateType" : "java.util.List<Tag>"
           },
@@ -7089,9 +7089,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Filter",
           "templateImplType" : "java.util.ArrayList<Filter>",
           "templateType" : "java.util.List<Filter>"
         },
@@ -7338,9 +7338,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Filter",
             "templateImplType" : "java.util.ArrayList<Filter>",
             "templateType" : "java.util.List<Filter>"
           },
@@ -8195,9 +8195,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateImplType" : "java.util.ArrayList<String>",
           "templateType" : "java.util.List<String>"
         },
@@ -8393,9 +8393,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateImplType" : "java.util.ArrayList<String>",
             "templateType" : "java.util.List<String>"
           },
@@ -9922,9 +9922,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Subnet",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Subnet",
           "templateImplType" : "java.util.ArrayList<Subnet>",
           "templateType" : "java.util.List<Subnet>"
         },
@@ -10063,9 +10063,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Subnet",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Subnet",
             "templateImplType" : "java.util.ArrayList<Subnet>",
             "templateType" : "java.util.List<Subnet>"
           },
@@ -11806,9 +11806,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Filter",
           "templateImplType" : "java.util.ArrayList<Filter>",
           "templateType" : "java.util.List<Filter>"
         },
@@ -12055,9 +12055,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Filter",
             "templateImplType" : "java.util.ArrayList<Filter>",
             "templateType" : "java.util.List<Filter>"
           },
@@ -12708,9 +12708,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateImplType" : "java.util.ArrayList<Tag>",
           "templateType" : "java.util.List<Tag>"
         },
@@ -13434,9 +13434,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateImplType" : "java.util.ArrayList<Tag>",
             "templateType" : "java.util.List<Tag>"
           },
@@ -13701,9 +13701,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Connection",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Connection",
           "templateImplType" : "java.util.ArrayList<Connection>",
           "templateType" : "java.util.List<Connection>"
         },
@@ -13842,9 +13842,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Connection",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Connection",
             "templateImplType" : "java.util.ArrayList<Connection>",
             "templateType" : "java.util.List<Connection>"
           },
@@ -14520,9 +14520,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Filter",
           "templateImplType" : "java.util.ArrayList<Filter>",
           "templateType" : "java.util.List<Filter>"
         },
@@ -14769,9 +14769,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Filter",
             "templateImplType" : "java.util.ArrayList<Filter>",
             "templateType" : "java.util.List<Filter>"
           },
@@ -16349,9 +16349,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ReplicationInstance",
           "simple" : false,
           "map" : false,
+          "simpleType" : "ReplicationInstance",
           "templateImplType" : "java.util.ArrayList<ReplicationInstance>",
           "templateType" : "java.util.List<ReplicationInstance>"
         },
@@ -16490,9 +16490,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ReplicationInstance",
             "simple" : false,
             "map" : false,
+            "simpleType" : "ReplicationInstance",
             "templateImplType" : "java.util.ArrayList<ReplicationInstance>",
             "templateType" : "java.util.List<ReplicationInstance>"
           },
@@ -17315,9 +17315,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Filter",
           "templateImplType" : "java.util.ArrayList<Filter>",
           "templateType" : "java.util.List<Filter>"
         },
@@ -17564,9 +17564,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Filter",
             "templateImplType" : "java.util.ArrayList<Filter>",
             "templateType" : "java.util.List<Filter>"
           },
@@ -19835,9 +19835,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Filter",
           "templateImplType" : "java.util.ArrayList<Filter>",
           "templateType" : "java.util.List<Filter>"
         },
@@ -20084,9 +20084,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Filter",
             "templateImplType" : "java.util.ArrayList<Filter>",
             "templateType" : "java.util.List<Filter>"
           },
@@ -20373,9 +20373,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ReplicationTask",
           "simple" : false,
           "map" : false,
+          "simpleType" : "ReplicationTask",
           "templateImplType" : "java.util.ArrayList<ReplicationTask>",
           "templateType" : "java.util.List<ReplicationTask>"
         },
@@ -20567,9 +20567,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ReplicationTask",
             "simple" : false,
             "map" : false,
+            "simpleType" : "ReplicationTask",
             "templateImplType" : "java.util.ArrayList<ReplicationTask>",
             "templateType" : "java.util.List<ReplicationTask>"
           },
@@ -22727,9 +22727,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateImplType" : "java.util.ArrayList<Tag>",
           "templateType" : "java.util.List<Tag>"
         },
@@ -23296,9 +23296,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateImplType" : "java.util.ArrayList<Tag>",
             "templateType" : "java.util.List<Tag>"
           },
@@ -24727,9 +24727,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "AccountQuota",
           "simple" : false,
           "map" : false,
+          "simpleType" : "AccountQuota",
           "templateImplType" : "java.util.ArrayList<AccountQuota>",
           "templateType" : "java.util.List<AccountQuota>"
         },
@@ -24868,9 +24868,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "AccountQuota",
             "simple" : false,
             "map" : false,
+            "simpleType" : "AccountQuota",
             "templateImplType" : "java.util.ArrayList<AccountQuota>",
             "templateType" : "java.util.List<AccountQuota>"
           },
@@ -25051,9 +25051,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Tag",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateImplType" : "java.util.ArrayList<Tag>",
           "templateType" : "java.util.List<Tag>"
         },
@@ -25249,9 +25249,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Tag",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateImplType" : "java.util.ArrayList<Tag>",
             "templateType" : "java.util.List<Tag>"
           },
@@ -25466,9 +25466,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Endpoint",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Endpoint",
           "templateImplType" : "java.util.ArrayList<Endpoint>",
           "templateType" : "java.util.List<Endpoint>"
         },
@@ -25607,9 +25607,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Endpoint",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Endpoint",
             "templateImplType" : "java.util.ArrayList<Endpoint>",
             "templateType" : "java.util.List<Endpoint>"
           },
@@ -26911,9 +26911,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Filter",
           "simple" : false,
           "map" : false,
+          "simpleType" : "Filter",
           "templateImplType" : "java.util.ArrayList<Filter>",
           "templateType" : "java.util.List<Filter>"
         },
@@ -27160,9 +27160,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Filter",
             "simple" : false,
             "map" : false,
+            "simpleType" : "Filter",
             "templateImplType" : "java.util.ArrayList<Filter>",
             "templateType" : "java.util.List<Filter>"
           },
@@ -27991,9 +27991,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "OrderableReplicationInstance",
           "simple" : false,
           "map" : false,
+          "simpleType" : "OrderableReplicationInstance",
           "templateImplType" : "java.util.ArrayList<OrderableReplicationInstance>",
           "templateType" : "java.util.List<OrderableReplicationInstance>"
         },
@@ -28237,9 +28237,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "OrderableReplicationInstance",
             "simple" : false,
             "map" : false,
+            "simpleType" : "OrderableReplicationInstance",
             "templateImplType" : "java.util.ArrayList<OrderableReplicationInstance>",
             "templateType" : "java.util.List<OrderableReplicationInstance>"
           },
@@ -28591,9 +28591,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateImplType" : "java.util.ArrayList<String>",
           "templateType" : "java.util.List<String>"
         },
@@ -28732,9 +28732,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateImplType" : "java.util.ArrayList<String>",
             "templateType" : "java.util.List<String>"
           },
@@ -31154,9 +31154,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ReplicationSubnetGroup",
           "simple" : false,
           "map" : false,
+          "simpleType" : "ReplicationSubnetGroup",
           "templateImplType" : "java.util.ArrayList<ReplicationSubnetGroup>",
           "templateType" : "java.util.List<ReplicationSubnetGroup>"
         },
@@ -31295,9 +31295,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ReplicationSubnetGroup",
             "simple" : false,
             "map" : false,
+            "simpleType" : "ReplicationSubnetGroup",
             "templateImplType" : "java.util.ArrayList<ReplicationSubnetGroup>",
             "templateType" : "java.util.List<ReplicationSubnetGroup>"
           },
@@ -31881,9 +31881,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "TableStatistics",
           "simple" : false,
           "map" : false,
+          "simpleType" : "TableStatistics",
           "templateImplType" : "java.util.ArrayList<TableStatistics>",
           "templateType" : "java.util.List<TableStatistics>"
         },
@@ -32127,9 +32127,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "TableStatistics",
             "simple" : false,
             "map" : false,
+            "simpleType" : "TableStatistics",
             "templateImplType" : "java.util.ArrayList<TableStatistics>",
             "templateType" : "java.util.List<TableStatistics>"
           },
@@ -32226,7 +32226,8 @@
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
-    "shapeModifiers" : null
+    "shapeModifiers" : null,
+    "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",

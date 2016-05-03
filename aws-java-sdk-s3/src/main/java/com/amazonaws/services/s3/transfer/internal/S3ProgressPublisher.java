@@ -14,14 +14,14 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
-import java.util.concurrent.Future;
-
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.event.DeliveryMode;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.SDKProgressPublisher;
 import com.amazonaws.services.s3.transfer.PersistableTransfer;
+
+import org.apache.commons.logging.LogFactory;
+
+import java.util.concurrent.Future;
 
 /**
  * Used to publish transfer events.
@@ -49,16 +49,11 @@ public class S3ProgressPublisher extends SDKProgressPublisher {
 
     private static Future<?> deliverEvent(final S3ProgressListener listener,
             final PersistableTransfer persistableTransfer) {
-        if (SYNC) { // forces all callbacks to be made synchronously
-            return quietlyCallListener(listener, persistableTransfer);
-        }
-        if (!ASYNC) { // forces all callbacks to be made asynchronously
-            if (listener instanceof DeliveryMode) {
-                DeliveryMode mode = (DeliveryMode) listener;
-                if (mode.isSyncCallSafe()) {
-                    // Safe to call the listener directly
-                    return quietlyCallListener(listener, persistableTransfer);
-                }
+        if (listener instanceof DeliveryMode) {
+            DeliveryMode mode = (DeliveryMode) listener;
+            if (mode.isSyncCallSafe()) {
+                // Safe to call the listener directly
+                return quietlyCallListener(listener, persistableTransfer);
             }
         }
         // Not safe to call the listener directly; so submit an async task.

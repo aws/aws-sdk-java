@@ -25,7 +25,7 @@ public class DescribeFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the finding(s).
+     * Information about the finding.
      * </p>
      */
     private java.util.List<Finding> findings;
@@ -39,10 +39,10 @@ public class DescribeFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the finding(s).
+     * Information about the finding.
      * </p>
      * 
-     * @return Information about the finding(s).
+     * @return Information about the finding.
      */
 
     public java.util.List<Finding> getFindings() {
@@ -51,11 +51,11 @@ public class DescribeFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the finding(s).
+     * Information about the finding.
      * </p>
      * 
      * @param findings
-     *        Information about the finding(s).
+     *        Information about the finding.
      */
 
     public void setFindings(java.util.Collection<Finding> findings) {
@@ -69,7 +69,7 @@ public class DescribeFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the finding(s).
+     * Information about the finding.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -79,7 +79,7 @@ public class DescribeFindingsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param findings
-     *        Information about the finding(s).
+     *        Information about the finding.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -96,11 +96,11 @@ public class DescribeFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the finding(s).
+     * Information about the finding.
      * </p>
      * 
      * @param findings
-     *        Information about the finding(s).
+     *        Information about the finding.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

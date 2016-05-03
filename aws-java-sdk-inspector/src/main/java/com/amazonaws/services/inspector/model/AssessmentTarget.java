@@ -20,27 +20,27 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an Inspector application. This data type is used
- * as the response element in the <a>DescribeAssessmentTargets</a> action.
+ * Contains information about an Amazon Inspector application. This data type is
+ * used as the response element in the <a>DescribeAssessmentTargets</a> action.
  * </p>
  */
 public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the Inspector assessment target.
+     * The ARN that specifies the Amazon Inspector assessment target.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The name of the Inspector assessment target.
+     * The name of the Amazon Inspector assessment target.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The ARN specifying the resource group that is associated with the
+     * The ARN that specifies the resource group that is associated with the
      * assessment target.
      * </p>
      */
@@ -53,18 +53,18 @@ public class AssessmentTarget implements Serializable, Cloneable {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The time at which <a>UpdateAssessmentTarget</a> API is called.
+     * The time at which <a>UpdateAssessmentTarget</a> is called.
      * </p>
      */
     private java.util.Date updatedAt;
 
     /**
      * <p>
-     * The ARN specifying the Inspector assessment target.
+     * The ARN that specifies the Amazon Inspector assessment target.
      * </p>
      * 
      * @param arn
-     *        The ARN specifying the Inspector assessment target.
+     *        The ARN that specifies the Amazon Inspector assessment target.
      */
 
     public void setArn(String arn) {
@@ -73,10 +73,10 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the Inspector assessment target.
+     * The ARN that specifies the Amazon Inspector assessment target.
      * </p>
      * 
-     * @return The ARN specifying the Inspector assessment target.
+     * @return The ARN that specifies the Amazon Inspector assessment target.
      */
 
     public String getArn() {
@@ -85,11 +85,11 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the Inspector assessment target.
+     * The ARN that specifies the Amazon Inspector assessment target.
      * </p>
      * 
      * @param arn
-     *        The ARN specifying the Inspector assessment target.
+     *        The ARN that specifies the Amazon Inspector assessment target.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -101,11 +101,11 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Inspector assessment target.
+     * The name of the Amazon Inspector assessment target.
      * </p>
      * 
      * @param name
-     *        The name of the Inspector assessment target.
+     *        The name of the Amazon Inspector assessment target.
      */
 
     public void setName(String name) {
@@ -114,10 +114,10 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Inspector assessment target.
+     * The name of the Amazon Inspector assessment target.
      * </p>
      * 
-     * @return The name of the Inspector assessment target.
+     * @return The name of the Amazon Inspector assessment target.
      */
 
     public String getName() {
@@ -126,11 +126,11 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Inspector assessment target.
+     * The name of the Amazon Inspector assessment target.
      * </p>
      * 
      * @param name
-     *        The name of the Inspector assessment target.
+     *        The name of the Amazon Inspector assessment target.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -142,13 +142,13 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the resource group that is associated with the
+     * The ARN that specifies the resource group that is associated with the
      * assessment target.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The ARN specifying the resource group that is associated with the
-     *        assessment target.
+     *        The ARN that specifies the resource group that is associated with
+     *        the assessment target.
      */
 
     public void setResourceGroupArn(String resourceGroupArn) {
@@ -157,12 +157,12 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the resource group that is associated with the
+     * The ARN that specifies the resource group that is associated with the
      * assessment target.
      * </p>
      * 
-     * @return The ARN specifying the resource group that is associated with the
-     *         assessment target.
+     * @return The ARN that specifies the resource group that is associated with
+     *         the assessment target.
      */
 
     public String getResourceGroupArn() {
@@ -171,13 +171,13 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the resource group that is associated with the
+     * The ARN that specifies the resource group that is associated with the
      * assessment target.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The ARN specifying the resource group that is associated with the
-     *        assessment target.
+     *        The ARN that specifies the resource group that is associated with
+     *        the assessment target.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -230,11 +230,11 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which <a>UpdateAssessmentTarget</a> API is called.
+     * The time at which <a>UpdateAssessmentTarget</a> is called.
      * </p>
      * 
      * @param updatedAt
-     *        The time at which <a>UpdateAssessmentTarget</a> API is called.
+     *        The time at which <a>UpdateAssessmentTarget</a> is called.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -243,10 +243,10 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which <a>UpdateAssessmentTarget</a> API is called.
+     * The time at which <a>UpdateAssessmentTarget</a> is called.
      * </p>
      * 
-     * @return The time at which <a>UpdateAssessmentTarget</a> API is called.
+     * @return The time at which <a>UpdateAssessmentTarget</a> is called.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -255,11 +255,11 @@ public class AssessmentTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which <a>UpdateAssessmentTarget</a> API is called.
+     * The time at which <a>UpdateAssessmentTarget</a> is called.
      * </p>
      * 
      * @param updatedAt
-     *        The time at which <a>UpdateAssessmentTarget</a> API is called.
+     *        The time at which <a>UpdateAssessmentTarget</a> is called.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

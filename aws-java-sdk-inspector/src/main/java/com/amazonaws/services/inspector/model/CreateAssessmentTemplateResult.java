@@ -25,18 +25,18 @@ public class CreateAssessmentTemplateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the assessment template that is created.
+     * The ARN that specifies the assessment template that is created.
      * </p>
      */
     private String assessmentTemplateArn;
 
     /**
      * <p>
-     * The ARN specifying the assessment template that is created.
+     * The ARN that specifies the assessment template that is created.
      * </p>
      * 
      * @param assessmentTemplateArn
-     *        The ARN specifying the assessment template that is created.
+     *        The ARN that specifies the assessment template that is created.
      */
 
     public void setAssessmentTemplateArn(String assessmentTemplateArn) {
@@ -45,10 +45,10 @@ public class CreateAssessmentTemplateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the assessment template that is created.
+     * The ARN that specifies the assessment template that is created.
      * </p>
      * 
-     * @return The ARN specifying the assessment template that is created.
+     * @return The ARN that specifies the assessment template that is created.
      */
 
     public String getAssessmentTemplateArn() {
@@ -57,11 +57,11 @@ public class CreateAssessmentTemplateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the assessment template that is created.
+     * The ARN that specifies the assessment template that is created.
      * </p>
      * 
      * @param assessmentTemplateArn
-     *        The ARN specifying the assessment template that is created.
+     *        The ARN that specifies the assessment template that is created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

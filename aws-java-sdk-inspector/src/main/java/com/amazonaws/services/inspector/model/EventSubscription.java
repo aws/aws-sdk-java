@@ -34,7 +34,7 @@ public class EventSubscription implements Serializable, Cloneable {
     private String event;
     /**
      * <p>
-     * The time at which the <a>SubscribeToEvent</a> API is called.
+     * The time at which <a>SubscribeToEvent</a> is called.
      * </p>
      */
     private java.util.Date subscribedAt;
@@ -126,11 +126,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the <a>SubscribeToEvent</a> API is called.
+     * The time at which <a>SubscribeToEvent</a> is called.
      * </p>
      * 
      * @param subscribedAt
-     *        The time at which the <a>SubscribeToEvent</a> API is called.
+     *        The time at which <a>SubscribeToEvent</a> is called.
      */
 
     public void setSubscribedAt(java.util.Date subscribedAt) {
@@ -139,10 +139,10 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the <a>SubscribeToEvent</a> API is called.
+     * The time at which <a>SubscribeToEvent</a> is called.
      * </p>
      * 
-     * @return The time at which the <a>SubscribeToEvent</a> API is called.
+     * @return The time at which <a>SubscribeToEvent</a> is called.
      */
 
     public java.util.Date getSubscribedAt() {
@@ -151,11 +151,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the <a>SubscribeToEvent</a> API is called.
+     * The time at which <a>SubscribeToEvent</a> is called.
      * </p>
      * 
      * @param subscribedAt
-     *        The time at which the <a>SubscribeToEvent</a> API is called.
+     *        The time at which <a>SubscribeToEvent</a> is called.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

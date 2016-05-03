@@ -20,8 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * You start an assessment run and one of the instances is already participating
- * in another assessment run.
+ * You started an assessment run, but one of the instances is already
+ * participating in another assessment run.
  * </p>
  */
 public class AgentsAlreadyRunningAssessmentException extends

@@ -34,7 +34,7 @@ public class PreviewAgentsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      */
     private String nextToken;
@@ -121,7 +121,7 @@ public class PreviewAgentsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
@@ -129,7 +129,7 @@ public class PreviewAgentsResult implements Serializable, Cloneable {
      *        this parameter is present in the response and contains the value
      *        to use for the <b>nextToken</b> parameter in a subsequent
      *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to 'null'.
+     *        parameter is set to null.
      */
 
     public void setNextToken(String nextToken) {
@@ -141,14 +141,14 @@ public class PreviewAgentsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @return When a response is generated, if there is more data to be listed,
      *         this parameter is present in the response and contains the value
      *         to use for the <b>nextToken</b> parameter in a subsequent
      *         pagination request. If there is no more data to be listed, this
-     *         parameter is set to 'null'.
+     *         parameter is set to null.
      */
 
     public String getNextToken() {
@@ -160,7 +160,7 @@ public class PreviewAgentsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
@@ -168,7 +168,7 @@ public class PreviewAgentsResult implements Serializable, Cloneable {
      *        this parameter is present in the response and contains the value
      *        to use for the <b>nextToken</b> parameter in a subsequent
      *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to 'null'.
+     *        parameter is set to null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

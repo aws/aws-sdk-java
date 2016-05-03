@@ -25,19 +25,19 @@ public class AddAttributesToFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Attributes details that cannot be described. An error code is provided
-     * for each failed item.
+     * Attribute details that cannot be described. An error code is provided for
+     * each failed item.
      * </p>
      */
     private java.util.Map<String, FailedItemDetails> failedItems;
 
     /**
      * <p>
-     * Attributes details that cannot be described. An error code is provided
-     * for each failed item.
+     * Attribute details that cannot be described. An error code is provided for
+     * each failed item.
      * </p>
      * 
-     * @return Attributes details that cannot be described. An error code is
+     * @return Attribute details that cannot be described. An error code is
      *         provided for each failed item.
      */
 
@@ -47,12 +47,12 @@ public class AddAttributesToFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Attributes details that cannot be described. An error code is provided
-     * for each failed item.
+     * Attribute details that cannot be described. An error code is provided for
+     * each failed item.
      * </p>
      * 
      * @param failedItems
-     *        Attributes details that cannot be described. An error code is
+     *        Attribute details that cannot be described. An error code is
      *        provided for each failed item.
      */
 
@@ -63,12 +63,12 @@ public class AddAttributesToFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Attributes details that cannot be described. An error code is provided
-     * for each failed item.
+     * Attribute details that cannot be described. An error code is provided for
+     * each failed item.
      * </p>
      * 
      * @param failedItems
-     *        Attributes details that cannot be described. An error code is
+     *        Attribute details that cannot be described. An error code is
      *        provided for each failed item.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

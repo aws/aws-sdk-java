@@ -20,8 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Inspector cannot assume the cross account role it needs to list your EC2
- * instances during the assessment run.
+ * Amazon Inspector cannot assume the cross-account role that it needs to list
+ * your EC2 instances during the assessment run.
  * </p>
  */
 public class InvalidCrossAccountRoleException extends AmazonServiceException {

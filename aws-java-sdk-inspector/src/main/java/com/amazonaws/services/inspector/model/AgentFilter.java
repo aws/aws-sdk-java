@@ -20,8 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an Inspector agent. This data type is used as a
- * request parameter in the <a>ListAssessmentRunAgents</a> action.
+ * Contains information about an Amazon Inspector agent. This data type is used
+ * as a request parameter in the <a>ListAssessmentRunAgents</a> action.
  * </p>
  */
 public class AgentFilter implements Serializable, Cloneable {

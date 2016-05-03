@@ -25,7 +25,8 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs specifying the assessment run(s) returned by the action.
+     * A list of ARNs that specifies the assessment runs that are returned by
+     * the action.
      * </p>
      */
     private java.util.List<String> assessmentRunArns;
@@ -34,18 +35,19 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of ARNs specifying the assessment run(s) returned by the action.
+     * A list of ARNs that specifies the assessment runs that are returned by
+     * the action.
      * </p>
      * 
-     * @return A list of ARNs specifying the assessment run(s) returned by the
-     *         action.
+     * @return A list of ARNs that specifies the assessment runs that are
+     *         returned by the action.
      */
 
     public java.util.List<String> getAssessmentRunArns() {
@@ -54,12 +56,13 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs specifying the assessment run(s) returned by the action.
+     * A list of ARNs that specifies the assessment runs that are returned by
+     * the action.
      * </p>
      * 
      * @param assessmentRunArns
-     *        A list of ARNs specifying the assessment run(s) returned by the
-     *        action.
+     *        A list of ARNs that specifies the assessment runs that are
+     *        returned by the action.
      */
 
     public void setAssessmentRunArns(
@@ -75,7 +78,8 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs specifying the assessment run(s) returned by the action.
+     * A list of ARNs that specifies the assessment runs that are returned by
+     * the action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -85,8 +89,8 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param assessmentRunArns
-     *        A list of ARNs specifying the assessment run(s) returned by the
-     *        action.
+     *        A list of ARNs that specifies the assessment runs that are
+     *        returned by the action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -105,12 +109,13 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs specifying the assessment run(s) returned by the action.
+     * A list of ARNs that specifies the assessment runs that are returned by
+     * the action.
      * </p>
      * 
      * @param assessmentRunArns
-     *        A list of ARNs specifying the assessment run(s) returned by the
-     *        action.
+     *        A list of ARNs that specifies the assessment runs that are
+     *        returned by the action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -126,7 +131,7 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
@@ -134,7 +139,7 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
      *        this parameter is present in the response and contains the value
      *        to use for the <b>nextToken</b> parameter in a subsequent
      *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to 'null'.
+     *        parameter is set to null.
      */
 
     public void setNextToken(String nextToken) {
@@ -146,14 +151,14 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @return When a response is generated, if there is more data to be listed,
      *         this parameter is present in the response and contains the value
      *         to use for the <b>nextToken</b> parameter in a subsequent
      *         pagination request. If there is no more data to be listed, this
-     *         parameter is set to 'null'.
+     *         parameter is set to null.
      */
 
     public String getNextToken() {
@@ -165,7 +170,7 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
@@ -173,7 +178,7 @@ public class ListAssessmentRunsResult implements Serializable, Cloneable {
      *        this parameter is present in the response and contains the value
      *        to use for the <b>nextToken</b> parameter in a subsequent
      *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to 'null'.
+     *        parameter is set to null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

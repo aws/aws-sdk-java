@@ -22,9 +22,9 @@ import java.io.Serializable;
  * <p>
  * The Amazon S3 location where artifacts are stored for the pipeline. If this
  * Amazon S3 bucket is created manually, it must meet the requirements for AWS
- * CodePipeline. For more information, see the <ulink url=
- * "http://docs.aws.amazon.com/codepipeline/latest/UserGuide/concepts.html"
- * >Concepts</ulink>.
+ * CodePipeline. For more information, see the <a href=
+ * "http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket"
+ * >Concepts</a>.
  * </p>
  */
 public class ArtifactStore implements Serializable, Cloneable {
@@ -44,9 +44,9 @@ public class ArtifactStore implements Serializable, Cloneable {
     private String location;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key used to encrypt the data in
-     * the artifact store. If this is undefined, the default key for Amazon S3
-     * is used.
+     * The encryption key used to encrypt the data in the artifact store, such
+     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
+     * default key for Amazon S3 is used.
      * </p>
      */
     private EncryptionKey encryptionKey;
@@ -175,15 +175,15 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key used to encrypt the data in
-     * the artifact store. If this is undefined, the default key for Amazon S3
-     * is used.
+     * The encryption key used to encrypt the data in the artifact store, such
+     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
+     * default key for Amazon S3 is used.
      * </p>
      * 
      * @param encryptionKey
-     *        The AWS Key Management Service (AWS KMS) key used to encrypt the
-     *        data in the artifact store. If this is undefined, the default key
-     *        for Amazon S3 is used.
+     *        The encryption key used to encrypt the data in the artifact store,
+     *        such as an AWS Key Management Service (AWS KMS) key. If this is
+     *        undefined, the default key for Amazon S3 is used.
      */
 
     public void setEncryptionKey(EncryptionKey encryptionKey) {
@@ -192,14 +192,14 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key used to encrypt the data in
-     * the artifact store. If this is undefined, the default key for Amazon S3
-     * is used.
+     * The encryption key used to encrypt the data in the artifact store, such
+     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
+     * default key for Amazon S3 is used.
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key used to encrypt the
-     *         data in the artifact store. If this is undefined, the default key
-     *         for Amazon S3 is used.
+     * @return The encryption key used to encrypt the data in the artifact
+     *         store, such as an AWS Key Management Service (AWS KMS) key. If
+     *         this is undefined, the default key for Amazon S3 is used.
      */
 
     public EncryptionKey getEncryptionKey() {
@@ -208,15 +208,15 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key used to encrypt the data in
-     * the artifact store. If this is undefined, the default key for Amazon S3
-     * is used.
+     * The encryption key used to encrypt the data in the artifact store, such
+     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
+     * default key for Amazon S3 is used.
      * </p>
      * 
      * @param encryptionKey
-     *        The AWS Key Management Service (AWS KMS) key used to encrypt the
-     *        data in the artifact store. If this is undefined, the default key
-     *        for Amazon S3 is used.
+     *        The encryption key used to encrypt the data in the artifact store,
+     *        such as an AWS Key Management Service (AWS KMS) key. If this is
+     *        undefined, the default key for Amazon S3 is used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

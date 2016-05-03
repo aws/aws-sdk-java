@@ -27,7 +27,8 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The ARNs specifying the findings that you want to remove attributes from.
+     * The ARNs that specify the findings that you want to remove attributes
+     * from.
      * </p>
      */
     private java.util.List<String> findingArns;
@@ -41,10 +42,11 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The ARNs specifying the findings that you want to remove attributes from.
+     * The ARNs that specify the findings that you want to remove attributes
+     * from.
      * </p>
      * 
-     * @return The ARNs specifying the findings that you want to remove
+     * @return The ARNs that specify the findings that you want to remove
      *         attributes from.
      */
 
@@ -54,11 +56,12 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The ARNs specifying the findings that you want to remove attributes from.
+     * The ARNs that specify the findings that you want to remove attributes
+     * from.
      * </p>
      * 
      * @param findingArns
-     *        The ARNs specifying the findings that you want to remove
+     *        The ARNs that specify the findings that you want to remove
      *        attributes from.
      */
 
@@ -73,7 +76,8 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The ARNs specifying the findings that you want to remove attributes from.
+     * The ARNs that specify the findings that you want to remove attributes
+     * from.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -83,7 +87,7 @@ public class RemoveAttributesFromFindingsRequest extends
      * </p>
      * 
      * @param findingArns
-     *        The ARNs specifying the findings that you want to remove
+     *        The ARNs that specify the findings that you want to remove
      *        attributes from.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -102,11 +106,12 @@ public class RemoveAttributesFromFindingsRequest extends
 
     /**
      * <p>
-     * The ARNs specifying the findings that you want to remove attributes from.
+     * The ARNs that specify the findings that you want to remove attributes
+     * from.
      * </p>
      * 
      * @param findingArns
-     *        The ARNs specifying the findings that you want to remove
+     *        The ARNs that specify the findings that you want to remove
      *        attributes from.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

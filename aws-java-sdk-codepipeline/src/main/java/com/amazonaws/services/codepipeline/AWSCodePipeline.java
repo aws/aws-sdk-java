@@ -28,8 +28,8 @@ import com.amazonaws.services.codepipeline.model.*;
  * This is the AWS CodePipeline API Reference. This guide provides descriptions
  * of the actions and data types for AWS CodePipeline. Some functionality for
  * your pipeline is only configurable through the API. For additional
- * information, see the <a
- * href="http://docs.aws.amazon.com/pipelines/latest/userguide/welcome.html">AWS
+ * information, see the <a href=
+ * "http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
  * CodePipeline User Guide</a>.
  * </p>
  * <p>
@@ -56,6 +56,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * <li><a>UpdatePipeline</a>, which updates a pipeline with edits or changes to
  * the structure of the pipeline.</li>
  * </ul>
+ * </p>
  * <p>
  * Pipelines include <i>stages</i>, which are which are logical groupings of
  * gates and actions. Each stage contains one or more actions that must complete
@@ -67,10 +68,9 @@ import com.amazonaws.services.codepipeline.model.*;
  * pipeline, including the status of stages in the pipeline, or
  * <a>GetPipeline</a>, which returns the entire structure of the pipeline,
  * including the stages of that pipeline. For more information about the
- * structure of stages and actions, also refer to the <ulink url=
- * "http://docs.aws.amazon.com/codepipeline/latest/UserGuide/pipeline-structure.html"
- * >AWS CodePipeline Pipeline Structure Reference</ulink>.
- * </p>
+ * structure of stages and actions, also refer to the <a href=
+ * "http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html"
+ * >AWS CodePipeline Pipeline Structure Reference</a>.
  * </p>
  * <p>
  * Pipeline stages include <i>actions</i>, which are categorized into categories
@@ -206,6 +206,7 @@ public interface AWSCodePipeline {
      * Returns information about a specified job and whether that job has been
      * received by the job worker. Only used for custom actions.
      * </p>
+     * <examples></examples>
      * 
      * @param acknowledgeJobRequest
      *        Represents the input of an acknowledge job action.
@@ -251,6 +252,7 @@ public interface AWSCodePipeline {
      * Creates a new custom action that can be used in all pipelines associated
      * with the AWS account. Only used for custom actions.
      * </p>
+     * <examples></examples>
      * 
      * @param createCustomActionTypeRequest
      *        Represents the input of a create custom action operation.
@@ -270,6 +272,7 @@ public interface AWSCodePipeline {
      * <p>
      * Creates a pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param createPipelineRequest
      *        Represents the input of a create pipeline action.
@@ -285,8 +288,7 @@ public interface AWSCodePipeline {
      *         The specified action declaration was specified in an invalid
      *         format.
      * @throws InvalidBlockerDeclarationException
-     *         The specified gate declaration was specified in an invalid
-     *         format.
+     *         Reserved for future use.
      * @throws InvalidStructureException
      *         The specified structure was specified in an invalid format.
      * @throws LimitExceededException
@@ -308,7 +310,7 @@ public interface AWSCodePipeline {
      * You cannot recreate a custom action after it has been deleted unless you
      * increase the version number of the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param deleteCustomActionTypeRequest
      *        Represents the input of a delete custom action operation. The
@@ -324,6 +326,7 @@ public interface AWSCodePipeline {
      * <p>
      * Deletes the specified pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param deletePipelineRequest
      *        Represents the input of a delete pipeline action.
@@ -338,6 +341,7 @@ public interface AWSCodePipeline {
      * Prevents artifacts in a pipeline from transitioning to the next stage in
      * the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param disableStageTransitionRequest
      *        Represents the input of a disable stage transition input action.
@@ -358,6 +362,7 @@ public interface AWSCodePipeline {
      * <p>
      * Enables artifacts in a pipeline to transition to a stage in a pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param enableStageTransitionRequest
      *        Represents the input of an enable stage transition action.
@@ -386,7 +391,7 @@ public interface AWSCodePipeline {
      * artifacts. Additionally, this API returns any secret values defined for
      * the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param getJobDetailsRequest
      *        Represents the input of a get job details action.
@@ -407,6 +412,7 @@ public interface AWSCodePipeline {
      * which can then be modified and used to update the pipeline structure with
      * <a>UpdatePipeline</a>.
      * </p>
+     * <examples></examples>
      * 
      * @param getPipelineRequest
      *        Represents the input of a get pipeline action.
@@ -428,6 +434,7 @@ public interface AWSCodePipeline {
      * Returns information about the state of a pipeline, including the stages,
      * actions, and details about the last run of the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param getPipelineStateRequest
      *        Represents the input of a get pipeline state action.
@@ -500,6 +507,7 @@ public interface AWSCodePipeline {
      * <p>
      * Gets a summary of all of the pipelines associated with your account.
      * </p>
+     * <examples></examples>
      * 
      * @param listPipelinesRequest
      *        Represents the input of a list pipelines action.
@@ -524,7 +532,7 @@ public interface AWSCodePipeline {
      * artifacts. Additionally, this API returns any secret values defined for
      * the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param pollForJobsRequest
      *        Represents the input of a poll for jobs action.
@@ -678,6 +686,7 @@ public interface AWSCodePipeline {
      * Starts the specified pipeline. Specifically, it begins processing the
      * latest commit to the source location specified as part of the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param startPipelineExecutionRequest
      *        Represents the input of a start pipeline execution action.
@@ -700,6 +709,7 @@ public interface AWSCodePipeline {
      * UpdatePipeline to provide the full structure of the pipeline. Updating
      * the pipeline increases the version number of the pipeline by 1.
      * </p>
+     * <examples></examples>
      * 
      * @param updatePipelineRequest
      *        Represents the input of an update pipeline action.
@@ -713,8 +723,7 @@ public interface AWSCodePipeline {
      *         The specified action declaration was specified in an invalid
      *         format.
      * @throws InvalidBlockerDeclarationException
-     *         The specified gate declaration was specified in an invalid
-     *         format.
+     *         Reserved for future use.
      * @throws InvalidStructureException
      *         The specified structure was specified in an invalid format.
      * @sample AWSCodePipeline.UpdatePipeline

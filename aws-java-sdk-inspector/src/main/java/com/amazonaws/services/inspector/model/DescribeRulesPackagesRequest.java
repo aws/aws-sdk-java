@@ -27,24 +27,23 @@ public class DescribeRulesPackagesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the rules package(s) that you want to describe.
+     * The ARN that specifies the rules package that you want to describe.
      * </p>
      */
     private java.util.List<String> rulesPackageArns;
     /**
      * <p>
-     * The locale that you want to translate a rules package description(s)
-     * into.
+     * The locale that you want to translate a rules package description into.
      * </p>
      */
     private String locale;
 
     /**
      * <p>
-     * The ARN(s) specifying the rules package(s) that you want to describe.
+     * The ARN that specifies the rules package that you want to describe.
      * </p>
      * 
-     * @return The ARN(s) specifying the rules package(s) that you want to
+     * @return The ARN that specifies the rules package that you want to
      *         describe.
      */
 
@@ -54,11 +53,11 @@ public class DescribeRulesPackagesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the rules package(s) that you want to describe.
+     * The ARN that specifies the rules package that you want to describe.
      * </p>
      * 
      * @param rulesPackageArns
-     *        The ARN(s) specifying the rules package(s) that you want to
+     *        The ARN that specifies the rules package that you want to
      *        describe.
      */
 
@@ -75,7 +74,7 @@ public class DescribeRulesPackagesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the rules package(s) that you want to describe.
+     * The ARN that specifies the rules package that you want to describe.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -85,7 +84,7 @@ public class DescribeRulesPackagesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param rulesPackageArns
-     *        The ARN(s) specifying the rules package(s) that you want to
+     *        The ARN that specifies the rules package that you want to
      *        describe.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -105,11 +104,11 @@ public class DescribeRulesPackagesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the rules package(s) that you want to describe.
+     * The ARN that specifies the rules package that you want to describe.
      * </p>
      * 
      * @param rulesPackageArns
-     *        The ARN(s) specifying the rules package(s) that you want to
+     *        The ARN that specifies the rules package that you want to
      *        describe.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -123,13 +122,12 @@ public class DescribeRulesPackagesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The locale that you want to translate a rules package description(s)
-     * into.
+     * The locale that you want to translate a rules package description into.
      * </p>
      * 
      * @param locale
-     *        The locale that you want to translate a rules package
-     *        description(s) into.
+     *        The locale that you want to translate a rules package description
+     *        into.
      * @see Locale
      */
 
@@ -139,12 +137,11 @@ public class DescribeRulesPackagesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The locale that you want to translate a rules package description(s)
-     * into.
+     * The locale that you want to translate a rules package description into.
      * </p>
      * 
-     * @return The locale that you want to translate a rules package
-     *         description(s) into.
+     * @return The locale that you want to translate a rules package description
+     *         into.
      * @see Locale
      */
 
@@ -154,13 +151,12 @@ public class DescribeRulesPackagesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The locale that you want to translate a rules package description(s)
-     * into.
+     * The locale that you want to translate a rules package description into.
      * </p>
      * 
      * @param locale
-     *        The locale that you want to translate a rules package
-     *        description(s) into.
+     *        The locale that you want to translate a rules package description
+     *        into.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Locale
@@ -173,13 +169,12 @@ public class DescribeRulesPackagesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The locale that you want to translate a rules package description(s)
-     * into.
+     * The locale that you want to translate a rules package description into.
      * </p>
      * 
      * @param locale
-     *        The locale that you want to translate a rules package
-     *        description(s) into.
+     *        The locale that you want to translate a rules package description
+     *        into.
      * @see Locale
      */
 
@@ -189,13 +184,12 @@ public class DescribeRulesPackagesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The locale that you want to translate a rules package description(s)
-     * into.
+     * The locale that you want to translate a rules package description into.
      * </p>
      * 
      * @param locale
-     *        The locale that you want to translate a rules package
-     *        description(s) into.
+     *        The locale that you want to translate a rules package description
+     *        into.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Locale

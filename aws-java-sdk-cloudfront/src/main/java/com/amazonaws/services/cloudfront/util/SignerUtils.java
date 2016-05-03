@@ -54,22 +54,22 @@ public class SignerUtils {
      * Returns a custom policy for the given parameters.
      */
     public static String buildCustomPolicy(String resourcePath,
-            Date expiresOn, Date activeFrom, String ipAddress) {
+            Date activeFrom, Date expiresOn, String ipAddress) {
         return "{\"Statement\": [{"
                 + "\"Resource\":\""
                 + resourcePath
                 + "\""
                 + ",\"Condition\":{"
                 + "\"DateLessThan\":{\"AWS:EpochTime\":"
-                + MILLISECONDS.toSeconds(expiresOn.getTime())
+                + MILLISECONDS.toSeconds(activeFrom.getTime())
                 + "}"
                 + ",\"IpAddress\":{\"AWS:SourceIp\":\""
                 + ipAddress
                 + "\"}"
-                + (activeFrom == null
+                + (expiresOn == null
                    ? ""
                    : ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
-                     + MILLISECONDS.toSeconds(activeFrom.getTime()) + "}"
+                     + MILLISECONDS.toSeconds(expiresOn.getTime()) + "}"
                   )
                 + "}}]}";
     }

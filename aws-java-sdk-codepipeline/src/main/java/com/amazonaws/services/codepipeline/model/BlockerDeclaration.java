@@ -20,31 +20,31 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents information about a gate declaration.
+ * Reserved for future use.
  * </p>
  */
 public class BlockerDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the gate declaration.
+     * Reserved for future use.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The type of the gate declaration.
+     * Reserved for future use.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The name of the gate declaration.
+     * Reserved for future use.
      * </p>
      * 
      * @param name
-     *        The name of the gate declaration.
+     *        Reserved for future use.
      */
 
     public void setName(String name) {
@@ -53,10 +53,10 @@ public class BlockerDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the gate declaration.
+     * Reserved for future use.
      * </p>
      * 
-     * @return The name of the gate declaration.
+     * @return Reserved for future use.
      */
 
     public String getName() {
@@ -65,11 +65,11 @@ public class BlockerDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the gate declaration.
+     * Reserved for future use.
      * </p>
      * 
      * @param name
-     *        The name of the gate declaration.
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -81,11 +81,11 @@ public class BlockerDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the gate declaration.
+     * Reserved for future use.
      * </p>
      * 
      * @param type
-     *        The type of the gate declaration.
+     *        Reserved for future use.
      * @see BlockerType
      */
 
@@ -95,10 +95,10 @@ public class BlockerDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the gate declaration.
+     * Reserved for future use.
      * </p>
      * 
-     * @return The type of the gate declaration.
+     * @return Reserved for future use.
      * @see BlockerType
      */
 
@@ -108,11 +108,11 @@ public class BlockerDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the gate declaration.
+     * Reserved for future use.
      * </p>
      * 
      * @param type
-     *        The type of the gate declaration.
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see BlockerType
@@ -125,11 +125,11 @@ public class BlockerDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the gate declaration.
+     * Reserved for future use.
      * </p>
      * 
      * @param type
-     *        The type of the gate declaration.
+     *        Reserved for future use.
      * @see BlockerType
      */
 
@@ -139,11 +139,11 @@ public class BlockerDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the gate declaration.
+     * Reserved for future use.
      * </p>
      * 
      * @param type
-     *        The type of the gate declaration.
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see BlockerType

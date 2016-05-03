@@ -39,8 +39,8 @@ public class UpdateAssessmentTargetRequest extends AmazonWebServiceRequest
     private String assessmentTargetName;
     /**
      * <p>
-     * The resource group ARN that is used to specify the new resource group to
-     * associate with the assessment target.
+     * The ARN of the resource group that is used to specify the new resource
+     * group to associate with the assessment target.
      * </p>
      */
     private String resourceGroupArn;
@@ -131,13 +131,13 @@ public class UpdateAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The resource group ARN that is used to specify the new resource group to
-     * associate with the assessment target.
+     * The ARN of the resource group that is used to specify the new resource
+     * group to associate with the assessment target.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The resource group ARN that is used to specify the new resource
-     *        group to associate with the assessment target.
+     *        The ARN of the resource group that is used to specify the new
+     *        resource group to associate with the assessment target.
      */
 
     public void setResourceGroupArn(String resourceGroupArn) {
@@ -146,12 +146,12 @@ public class UpdateAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The resource group ARN that is used to specify the new resource group to
-     * associate with the assessment target.
+     * The ARN of the resource group that is used to specify the new resource
+     * group to associate with the assessment target.
      * </p>
      * 
-     * @return The resource group ARN that is used to specify the new resource
-     *         group to associate with the assessment target.
+     * @return The ARN of the resource group that is used to specify the new
+     *         resource group to associate with the assessment target.
      */
 
     public String getResourceGroupArn() {
@@ -160,13 +160,13 @@ public class UpdateAssessmentTargetRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The resource group ARN that is used to specify the new resource group to
-     * associate with the assessment target.
+     * The ARN of the resource group that is used to specify the new resource
+     * group to associate with the assessment target.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The resource group ARN that is used to specify the new resource
-     *        group to associate with the assessment target.
+     *        The ARN of the resource group that is used to specify the new
+     *        resource group to associate with the assessment target.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

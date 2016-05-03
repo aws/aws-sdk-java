@@ -27,17 +27,17 @@ public class DescribeResourceGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the resource group(s) that you want to describe.
+     * The ARN that specifies the resource group that you want to describe.
      * </p>
      */
     private java.util.List<String> resourceGroupArns;
 
     /**
      * <p>
-     * The ARN(s) specifying the resource group(s) that you want to describe.
+     * The ARN that specifies the resource group that you want to describe.
      * </p>
      * 
-     * @return The ARN(s) specifying the resource group(s) that you want to
+     * @return The ARN that specifies the resource group that you want to
      *         describe.
      */
 
@@ -47,11 +47,11 @@ public class DescribeResourceGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the resource group(s) that you want to describe.
+     * The ARN that specifies the resource group that you want to describe.
      * </p>
      * 
      * @param resourceGroupArns
-     *        The ARN(s) specifying the resource group(s) that you want to
+     *        The ARN that specifies the resource group that you want to
      *        describe.
      */
 
@@ -68,7 +68,7 @@ public class DescribeResourceGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the resource group(s) that you want to describe.
+     * The ARN that specifies the resource group that you want to describe.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -78,7 +78,7 @@ public class DescribeResourceGroupsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param resourceGroupArns
-     *        The ARN(s) specifying the resource group(s) that you want to
+     *        The ARN that specifies the resource group that you want to
      *        describe.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -98,11 +98,11 @@ public class DescribeResourceGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN(s) specifying the resource group(s) that you want to describe.
+     * The ARN that specifies the resource group that you want to describe.
      * </p>
      * 
      * @param resourceGroupArns
-     *        The ARN(s) specifying the resource group(s) that you want to
+     *        The ARN that specifies the resource group that you want to
      *        describe.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

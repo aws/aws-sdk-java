@@ -27,21 +27,21 @@ public class GetTelemetryMetadataRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the assessment run the telemetry of which you want to
-     * obtain.
+     * The ARN that specifies the assessment run that has the telemetry data
+     * that you want to obtain.
      * </p>
      */
     private String assessmentRunArn;
 
     /**
      * <p>
-     * The ARN specifying the assessment run the telemetry of which you want to
-     * obtain.
+     * The ARN that specifies the assessment run that has the telemetry data
+     * that you want to obtain.
      * </p>
      * 
      * @param assessmentRunArn
-     *        The ARN specifying the assessment run the telemetry of which you
-     *        want to obtain.
+     *        The ARN that specifies the assessment run that has the telemetry
+     *        data that you want to obtain.
      */
 
     public void setAssessmentRunArn(String assessmentRunArn) {
@@ -50,12 +50,12 @@ public class GetTelemetryMetadataRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the assessment run the telemetry of which you want to
-     * obtain.
+     * The ARN that specifies the assessment run that has the telemetry data
+     * that you want to obtain.
      * </p>
      * 
-     * @return The ARN specifying the assessment run the telemetry of which you
-     *         want to obtain.
+     * @return The ARN that specifies the assessment run that has the telemetry
+     *         data that you want to obtain.
      */
 
     public String getAssessmentRunArn() {
@@ -64,13 +64,13 @@ public class GetTelemetryMetadataRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the assessment run the telemetry of which you want to
-     * obtain.
+     * The ARN that specifies the assessment run that has the telemetry data
+     * that you want to obtain.
      * </p>
      * 
      * @param assessmentRunArn
-     *        The ARN specifying the assessment run the telemetry of which you
-     *        want to obtain.
+     *        The ARN that specifies the assessment run that has the telemetry
+     *        data that you want to obtain.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -162,6 +162,23 @@
         return this;
     }
 
+    <#list customConfig.convenienceTypeOverloads as convenienceTypeOverload>
+        <#if convenienceTypeOverload.accepts(shape, member)>
+            ${deprecated}
+            ${setterDoc}
+            public void ${setterFunctionName}(${convenienceTypeOverload.convenienceType} ${setter.variableName}) {
+                ${setterFunctionName}(new ${convenienceTypeOverload.typeAdapterFqcn}().adapt(${setter.variableName}));
+            }
+
+            ${deprecated}
+            ${fluentDoc}
+            public ${shapeName} ${fluentFunctionName}(${convenienceTypeOverload.convenienceType} ${setter.variableName}) {
+                ${setterFunctionName}(new ${convenienceTypeOverload.typeAdapterFqcn}().adapt(${setter.variableName}));
+                return this;
+            }
+        </#if>
+    </#list>
+
     <#if member.enumType?has_content>
     ${setterDoc}
     ${deprecated}

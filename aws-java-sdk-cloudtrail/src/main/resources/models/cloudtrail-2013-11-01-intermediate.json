@@ -72,13 +72,13 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "addTags",
       "authenticated" : true,
-      "asyncReturnType" : "AddTagsResult",
       "syncReturnType" : "AddTagsResult",
+      "asyncReturnType" : "AddTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>",
+      "methodName" : "addTags"
     },
     "CreateTrail" : {
       "documentation" : "<p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.</p>",
@@ -159,13 +159,13 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createTrail",
       "authenticated" : true,
-      "asyncReturnType" : "CreateTrailResult",
       "syncReturnType" : "CreateTrailResult",
+      "asyncReturnType" : "CreateTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrailResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrailRequest, CreateTrailResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrailRequest, CreateTrailResult>",
+      "methodName" : "createTrail"
     },
     "DeleteTrail" : {
       "documentation" : "<p>Deletes a trail. This operation must be called from the region in which the trail was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>",
@@ -195,13 +195,13 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteTrail",
       "authenticated" : true,
-      "asyncReturnType" : "DeleteTrailResult",
       "syncReturnType" : "DeleteTrailResult",
+      "asyncReturnType" : "DeleteTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTrailResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult>",
+      "methodName" : "deleteTrail"
     },
     "DescribeTrails" : {
       "documentation" : "<p>Retrieves settings for the trail associated with the current region for your account.</p>",
@@ -228,13 +228,13 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeTrails",
       "authenticated" : true,
-      "asyncReturnType" : "DescribeTrailsResult",
       "syncReturnType" : "DescribeTrailsResult",
+      "asyncReturnType" : "DescribeTrailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTrailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTrailsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult>",
+      "methodName" : "describeTrails"
     },
     "GetTrailStatus" : {
       "documentation" : "<p>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns trail status from a single region. To return trail status from all regions, you must call the operation on each region.</p>",
@@ -261,13 +261,13 @@
         "documentation" : "<p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p> <ul> <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</li> <li>Start with a letter or number, and end with a letter or number</li> <li>Be between 3 and 128 characters</li> <li>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li> <li>Not be in IP address format (for example, 192.168.5.4)</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getTrailStatus",
       "authenticated" : true,
-      "asyncReturnType" : "GetTrailStatusResult",
       "syncReturnType" : "GetTrailStatusResult",
+      "asyncReturnType" : "GetTrailStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTrailStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTrailStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrailStatusRequest, GetTrailStatusResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrailStatusRequest, GetTrailStatusResult>",
+      "methodName" : "getTrailStatus"
     },
     "ListPublicKeys" : {
       "documentation" : "<p>Returns all public keys whose private keys were used to sign the digest files within the specified time range. The public key is needed to validate digest files that were signed with its corresponding private key.</p> <note>CloudTrail uses different private/public key pairs per region. Each digest file is signed with a private key unique to its region. Therefore, when you validate a digest file from a particular region, you must look in the same region for its corresponding public key.</note>",
@@ -300,13 +300,13 @@
         "documentation" : "<p>Reserved for future use.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listPublicKeys",
       "authenticated" : true,
-      "asyncReturnType" : "ListPublicKeysResult",
       "syncReturnType" : "ListPublicKeysResult",
+      "asyncReturnType" : "ListPublicKeysResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPublicKeysResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPublicKeysResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult>",
+      "methodName" : "listPublicKeys"
     },
     "ListTags" : {
       "documentation" : "<p>Lists the tags for the specified trail or trails in the current region.</p> <p>Lists the tags for the trail in the current region.</p>",
@@ -348,13 +348,13 @@
         "documentation" : "<p>Reserved for future use.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listTags",
       "authenticated" : true,
-      "asyncReturnType" : "ListTagsResult",
       "syncReturnType" : "ListTagsResult",
+      "asyncReturnType" : "ListTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult>",
+      "methodName" : "listTags"
     },
     "LookupEvents" : {
       "documentation" : "<p>Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account. Events for a region can be looked up for the times in which you had CloudTrail turned on in that region during the last seven days. Lookup supports five different attributes: time range (defined by a start time and end time), user name, event name, resource type, and resource name. All attributes are optional. The maximum number of attributes that can be specified in any one lookup request are time range and one other attribute. The default number of results returned is 10, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results. </p> <important>The rate of lookup requests is limited to one per second per account. If this limit is exceeded, a throttling error occurs. </important> <important>Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was not enabled when the events occurred.</important>",
@@ -387,13 +387,13 @@
         "documentation" : "<p>Invalid token or token that was previously used in a request with different parameters. This exception is thrown if the token is invalid. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "lookupEvents",
       "authenticated" : true,
-      "asyncReturnType" : "LookupEventsResult",
       "syncReturnType" : "LookupEventsResult",
+      "asyncReturnType" : "LookupEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<LookupEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<LookupEventsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult>",
+      "methodName" : "lookupEvents"
     },
     "RemoveTags" : {
       "documentation" : "<p>Removes the specified tags from a trail.</p>",
@@ -435,13 +435,13 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "removeTags",
       "authenticated" : true,
-      "asyncReturnType" : "RemoveTagsResult",
       "syncReturnType" : "RemoveTagsResult",
+      "asyncReturnType" : "RemoveTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>",
+      "methodName" : "removeTags"
     },
     "StartLogging" : {
       "documentation" : "<p>Starts the recording of AWS API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>",
@@ -471,13 +471,13 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "startLogging",
       "authenticated" : true,
-      "asyncReturnType" : "StartLoggingResult",
       "syncReturnType" : "StartLoggingResult",
+      "asyncReturnType" : "StartLoggingResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartLoggingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartLoggingResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartLoggingRequest, StartLoggingResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartLoggingRequest, StartLoggingResult>",
+      "methodName" : "startLogging"
     },
     "StopLogging" : {
       "documentation" : "<p>Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to use this action. You can update a trail without stopping it first. This action is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.</p>",
@@ -507,13 +507,13 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "stopLogging",
       "authenticated" : true,
-      "asyncReturnType" : "StopLoggingResult",
       "syncReturnType" : "StopLoggingResult",
+      "asyncReturnType" : "StopLoggingResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopLoggingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopLoggingResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopLoggingRequest, StopLoggingResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopLoggingRequest, StopLoggingResult>",
+      "methodName" : "stopLogging"
     },
     "UpdateTrail" : {
       "documentation" : "<p>Updates the settings that specify delivery of log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>",
@@ -594,13 +594,13 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateTrail",
       "authenticated" : true,
-      "asyncReturnType" : "UpdateTrailResult",
       "syncReturnType" : "UpdateTrailResult",
+      "asyncReturnType" : "UpdateTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateTrailResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrailRequest, UpdateTrailResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrailRequest, UpdateTrailResult>",
+      "methodName" : "updateTrail"
     }
   },
   "shapes" : {
@@ -1773,10 +1773,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "simpleType" : "Resource",
           "map" : false,
-          "templateType" : "java.util.List<Resource>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
+          "simpleType" : "Resource",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
+          "templateType" : "java.util.List<Resource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2231,10 +2231,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "simpleType" : "Resource",
             "map" : false,
-            "templateType" : "java.util.List<Resource>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
+            "simpleType" : "Resource",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
+            "templateType" : "java.util.List<Resource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2362,10 +2362,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "simpleType" : "LookupAttribute",
           "map" : false,
-          "templateType" : "java.util.List<LookupAttribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>"
+          "simpleType" : "LookupAttribute",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>",
+          "templateType" : "java.util.List<LookupAttribute>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2715,10 +2715,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "simpleType" : "LookupAttribute",
             "map" : false,
-            "templateType" : "java.util.List<LookupAttribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>"
+            "simpleType" : "LookupAttribute",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>",
+            "templateType" : "java.util.List<LookupAttribute>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4511,10 +4511,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "simpleType" : "String",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4761,10 +4761,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "simpleType" : "String",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9084,10 +9084,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : true,
-          "simpleType" : "String",
           "map" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "simpleType" : "String",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9334,10 +9334,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : true,
-            "simpleType" : "String",
             "map" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "simpleType" : "String",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11019,10 +11019,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "simpleType" : "PublicKey",
           "map" : false,
-          "templateType" : "java.util.List<PublicKey>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>"
+          "simpleType" : "PublicKey",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>",
+          "templateType" : "java.util.List<PublicKey>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11212,10 +11212,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "simpleType" : "PublicKey",
             "map" : false,
-            "templateType" : "java.util.List<PublicKey>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>"
+            "simpleType" : "PublicKey",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>",
+            "templateType" : "java.util.List<PublicKey>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11489,10 +11489,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "simpleType" : "Event",
           "map" : false,
-          "templateType" : "java.util.List<Event>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>"
+          "simpleType" : "Event",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
+          "templateType" : "java.util.List<Event>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11735,10 +11735,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "simpleType" : "Event",
             "map" : false,
-            "templateType" : "java.util.List<Event>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>"
+            "simpleType" : "Event",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
+            "templateType" : "java.util.List<Event>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13440,10 +13440,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "simpleType" : "Trail",
           "map" : false,
-          "templateType" : "java.util.List<Trail>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>"
+          "simpleType" : "Trail",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>",
+          "templateType" : "java.util.List<Trail>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13581,10 +13581,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "simpleType" : "Trail",
             "map" : false,
-            "templateType" : "java.util.List<Trail>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>"
+            "simpleType" : "Trail",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>",
+            "templateType" : "java.util.List<Trail>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14128,10 +14128,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "simpleType" : "ResourceTag",
           "map" : false,
-          "templateType" : "java.util.List<ResourceTag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>"
+          "simpleType" : "ResourceTag",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
+          "templateType" : "java.util.List<ResourceTag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14374,10 +14374,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "simpleType" : "ResourceTag",
             "map" : false,
-            "templateType" : "java.util.List<ResourceTag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>"
+            "simpleType" : "ResourceTag",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
+            "templateType" : "java.util.List<ResourceTag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14606,10 +14606,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "simpleType" : "Tag",
           "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "simpleType" : "Tag",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14804,10 +14804,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "simpleType" : "Tag",
             "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "simpleType" : "Tag",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14881,7 +14881,7 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The DER encoded public key value in PKCS#1 format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param value The DER encoded public key value in PKCS#1 format.*/",
+        "setterDocumentation" : "/**<p>The DER encoded public key value in PKCS#1 format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param value The DER encoded public key value in PKCS#1 format.*/",
         "getterDocumentation" : "/**<p>The DER encoded public key value in PKCS#1 format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The DER encoded public key value in PKCS#1 format.*/",
         "fluentSetterDocumentation" : "/**<p>The DER encoded public key value in PKCS#1 format.</p>\n@param value The DER encoded public key value in PKCS#1 format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The DER encoded public key value in PKCS#1 format.</p>\n@param value The DER encoded public key value in PKCS#1 format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -15218,7 +15218,7 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The DER encoded public key value in PKCS#1 format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param value The DER encoded public key value in PKCS#1 format.*/",
+          "setterDocumentation" : "/**<p>The DER encoded public key value in PKCS#1 format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param value The DER encoded public key value in PKCS#1 format.*/",
           "getterDocumentation" : "/**<p>The DER encoded public key value in PKCS#1 format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The DER encoded public key value in PKCS#1 format.*/",
           "fluentSetterDocumentation" : "/**<p>The DER encoded public key value in PKCS#1 format.</p>\n@param value The DER encoded public key value in PKCS#1 format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The DER encoded public key value in PKCS#1 format.</p>\n@param value The DER encoded public key value in PKCS#1 format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -15473,10 +15473,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "simpleType" : "Tag",
           "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "simpleType" : "Tag",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15671,10 +15671,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "simpleType" : "Tag",
             "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "simpleType" : "Tag",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15854,10 +15854,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simple" : false,
-          "simpleType" : "Tag",
           "map" : false,
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "simpleType" : "Tag",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16048,10 +16048,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simple" : false,
-            "simpleType" : "Tag",
             "map" : false,
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "simpleType" : "Tag",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16441,7 +16441,8 @@
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
-    "shapeModifiers" : null
+    "shapeModifiers" : null,
+    "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",

@@ -27,18 +27,18 @@ public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the assessment template that you want to delete.
+     * The ARN that specifies the assessment template that you want to delete.
      * </p>
      */
     private String assessmentTemplateArn;
 
     /**
      * <p>
-     * The ARN specifying the assessment template that you want to delete.
+     * The ARN that specifies the assessment template that you want to delete.
      * </p>
      * 
      * @param assessmentTemplateArn
-     *        The ARN specifying the assessment template that you want to
+     *        The ARN that specifies the assessment template that you want to
      *        delete.
      */
 
@@ -48,10 +48,10 @@ public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the assessment template that you want to delete.
+     * The ARN that specifies the assessment template that you want to delete.
      * </p>
      * 
-     * @return The ARN specifying the assessment template that you want to
+     * @return The ARN that specifies the assessment template that you want to
      *         delete.
      */
 
@@ -61,11 +61,11 @@ public class DeleteAssessmentTemplateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN specifying the assessment template that you want to delete.
+     * The ARN that specifies the assessment template that you want to delete.
      * </p>
      * 
      * @param assessmentTemplateArn
-     *        The ARN specifying the assessment template that you want to
+     *        The ARN that specifies the assessment template that you want to
      *        delete.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

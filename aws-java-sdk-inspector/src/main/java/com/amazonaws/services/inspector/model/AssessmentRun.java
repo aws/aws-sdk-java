@@ -20,12 +20,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A snapshot of an Inspector assessment run that contains the assessment run's
- * findings.
+ * A snapshot of an Amazon Inspector assessment run that contains the findings
+ * of the assessment run .
  * </p>
  * <p>
- * This data type is used as the response element in the
- * <a>DescribeAssessmentRuns</a> action.
+ * Used as the response element in the <a>DescribeAssessmentRuns</a> action.
  * </p>
  */
 public class AssessmentRun implements Serializable, Cloneable {
@@ -63,7 +62,7 @@ public class AssessmentRun implements Serializable, Cloneable {
     private Integer durationInSeconds;
     /**
      * <p>
-     * Rules packages selected for the assessment run.
+     * The rules packages selected for the assessment run.
      * </p>
      */
     private java.util.List<String> rulesPackageArns;
@@ -75,19 +74,19 @@ public class AssessmentRun implements Serializable, Cloneable {
     private java.util.List<Attribute> userAttributesForFindings;
     /**
      * <p>
-     * The time when <a>StartAssessmentRun</a> API was called.
+     * The time when <a>StartAssessmentRun</a> was called.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The time when <a>StartAssessmentRun</a> API was called.
+     * The time when <a>StartAssessmentRun</a> was called.
      * </p>
      */
     private java.util.Date startedAt;
     /**
      * <p>
-     * Assessment run completion time that corresponds to the rules packages
+     * The assessment run completion time that corresponds to the rules packages
      * evaluation completion time or failure.
      * </p>
      */
@@ -100,7 +99,7 @@ public class AssessmentRun implements Serializable, Cloneable {
     private java.util.Date stateChangedAt;
     /**
      * <p>
-     * Boolean value (true or false) specifying whether the process of
+     * A Boolean value (true or false) that specifies whether the process of
      * collecting data from the agents is completed.
      * </p>
      */
@@ -114,7 +113,7 @@ public class AssessmentRun implements Serializable, Cloneable {
     /**
      * <p>
      * A list of notifications for the event subscriptions. A notification about
-     * a particular generated finding is only added to this list once.
+     * a particular generated finding is added to this list only once.
      * </p>
      */
     private java.util.List<AssessmentRunNotification> notifications;
@@ -366,10 +365,10 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Rules packages selected for the assessment run.
+     * The rules packages selected for the assessment run.
      * </p>
      * 
-     * @return Rules packages selected for the assessment run.
+     * @return The rules packages selected for the assessment run.
      */
 
     public java.util.List<String> getRulesPackageArns() {
@@ -378,11 +377,11 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Rules packages selected for the assessment run.
+     * The rules packages selected for the assessment run.
      * </p>
      * 
      * @param rulesPackageArns
-     *        Rules packages selected for the assessment run.
+     *        The rules packages selected for the assessment run.
      */
 
     public void setRulesPackageArns(
@@ -398,7 +397,7 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Rules packages selected for the assessment run.
+     * The rules packages selected for the assessment run.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -408,7 +407,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      * </p>
      * 
      * @param rulesPackageArns
-     *        Rules packages selected for the assessment run.
+     *        The rules packages selected for the assessment run.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -426,11 +425,11 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Rules packages selected for the assessment run.
+     * The rules packages selected for the assessment run.
      * </p>
      * 
      * @param rulesPackageArns
-     *        Rules packages selected for the assessment run.
+     *        The rules packages selected for the assessment run.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -525,11 +524,11 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when <a>StartAssessmentRun</a> API was called.
+     * The time when <a>StartAssessmentRun</a> was called.
      * </p>
      * 
      * @param createdAt
-     *        The time when <a>StartAssessmentRun</a> API was called.
+     *        The time when <a>StartAssessmentRun</a> was called.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -538,10 +537,10 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when <a>StartAssessmentRun</a> API was called.
+     * The time when <a>StartAssessmentRun</a> was called.
      * </p>
      * 
-     * @return The time when <a>StartAssessmentRun</a> API was called.
+     * @return The time when <a>StartAssessmentRun</a> was called.
      */
 
     public java.util.Date getCreatedAt() {
@@ -550,11 +549,11 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when <a>StartAssessmentRun</a> API was called.
+     * The time when <a>StartAssessmentRun</a> was called.
      * </p>
      * 
      * @param createdAt
-     *        The time when <a>StartAssessmentRun</a> API was called.
+     *        The time when <a>StartAssessmentRun</a> was called.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -566,11 +565,11 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when <a>StartAssessmentRun</a> API was called.
+     * The time when <a>StartAssessmentRun</a> was called.
      * </p>
      * 
      * @param startedAt
-     *        The time when <a>StartAssessmentRun</a> API was called.
+     *        The time when <a>StartAssessmentRun</a> was called.
      */
 
     public void setStartedAt(java.util.Date startedAt) {
@@ -579,10 +578,10 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when <a>StartAssessmentRun</a> API was called.
+     * The time when <a>StartAssessmentRun</a> was called.
      * </p>
      * 
-     * @return The time when <a>StartAssessmentRun</a> API was called.
+     * @return The time when <a>StartAssessmentRun</a> was called.
      */
 
     public java.util.Date getStartedAt() {
@@ -591,11 +590,11 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time when <a>StartAssessmentRun</a> API was called.
+     * The time when <a>StartAssessmentRun</a> was called.
      * </p>
      * 
      * @param startedAt
-     *        The time when <a>StartAssessmentRun</a> API was called.
+     *        The time when <a>StartAssessmentRun</a> was called.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -607,12 +606,12 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Assessment run completion time that corresponds to the rules packages
+     * The assessment run completion time that corresponds to the rules packages
      * evaluation completion time or failure.
      * </p>
      * 
      * @param completedAt
-     *        Assessment run completion time that corresponds to the rules
+     *        The assessment run completion time that corresponds to the rules
      *        packages evaluation completion time or failure.
      */
 
@@ -622,11 +621,11 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Assessment run completion time that corresponds to the rules packages
+     * The assessment run completion time that corresponds to the rules packages
      * evaluation completion time or failure.
      * </p>
      * 
-     * @return Assessment run completion time that corresponds to the rules
+     * @return The assessment run completion time that corresponds to the rules
      *         packages evaluation completion time or failure.
      */
 
@@ -636,12 +635,12 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Assessment run completion time that corresponds to the rules packages
+     * The assessment run completion time that corresponds to the rules packages
      * evaluation completion time or failure.
      * </p>
      * 
      * @param completedAt
-     *        Assessment run completion time that corresponds to the rules
+     *        The assessment run completion time that corresponds to the rules
      *        packages evaluation completion time or failure.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -695,13 +694,13 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value (true or false) specifying whether the process of
+     * A Boolean value (true or false) that specifies whether the process of
      * collecting data from the agents is completed.
      * </p>
      * 
      * @param dataCollected
-     *        Boolean value (true or false) specifying whether the process of
-     *        collecting data from the agents is completed.
+     *        A Boolean value (true or false) that specifies whether the process
+     *        of collecting data from the agents is completed.
      */
 
     public void setDataCollected(Boolean dataCollected) {
@@ -710,12 +709,12 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value (true or false) specifying whether the process of
+     * A Boolean value (true or false) that specifies whether the process of
      * collecting data from the agents is completed.
      * </p>
      * 
-     * @return Boolean value (true or false) specifying whether the process of
-     *         collecting data from the agents is completed.
+     * @return A Boolean value (true or false) that specifies whether the
+     *         process of collecting data from the agents is completed.
      */
 
     public Boolean getDataCollected() {
@@ -724,13 +723,13 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value (true or false) specifying whether the process of
+     * A Boolean value (true or false) that specifies whether the process of
      * collecting data from the agents is completed.
      * </p>
      * 
      * @param dataCollected
-     *        Boolean value (true or false) specifying whether the process of
-     *        collecting data from the agents is completed.
+     *        A Boolean value (true or false) that specifies whether the process
+     *        of collecting data from the agents is completed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -742,12 +741,12 @@ public class AssessmentRun implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value (true or false) specifying whether the process of
+     * A Boolean value (true or false) that specifies whether the process of
      * collecting data from the agents is completed.
      * </p>
      * 
-     * @return Boolean value (true or false) specifying whether the process of
-     *         collecting data from the agents is completed.
+     * @return A Boolean value (true or false) that specifies whether the
+     *         process of collecting data from the agents is completed.
      */
 
     public Boolean isDataCollected() {
@@ -835,12 +834,12 @@ public class AssessmentRun implements Serializable, Cloneable {
     /**
      * <p>
      * A list of notifications for the event subscriptions. A notification about
-     * a particular generated finding is only added to this list once.
+     * a particular generated finding is added to this list only once.
      * </p>
      * 
      * @return A list of notifications for the event subscriptions. A
-     *         notification about a particular generated finding is only added
-     *         to this list once.
+     *         notification about a particular generated finding is added to
+     *         this list only once.
      */
 
     public java.util.List<AssessmentRunNotification> getNotifications() {
@@ -850,13 +849,13 @@ public class AssessmentRun implements Serializable, Cloneable {
     /**
      * <p>
      * A list of notifications for the event subscriptions. A notification about
-     * a particular generated finding is only added to this list once.
+     * a particular generated finding is added to this list only once.
      * </p>
      * 
      * @param notifications
      *        A list of notifications for the event subscriptions. A
-     *        notification about a particular generated finding is only added to
-     *        this list once.
+     *        notification about a particular generated finding is added to this
+     *        list only once.
      */
 
     public void setNotifications(
@@ -873,7 +872,7 @@ public class AssessmentRun implements Serializable, Cloneable {
     /**
      * <p>
      * A list of notifications for the event subscriptions. A notification about
-     * a particular generated finding is only added to this list once.
+     * a particular generated finding is added to this list only once.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -884,8 +883,8 @@ public class AssessmentRun implements Serializable, Cloneable {
      * 
      * @param notifications
      *        A list of notifications for the event subscriptions. A
-     *        notification about a particular generated finding is only added to
-     *        this list once.
+     *        notification about a particular generated finding is added to this
+     *        list only once.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -905,13 +904,13 @@ public class AssessmentRun implements Serializable, Cloneable {
     /**
      * <p>
      * A list of notifications for the event subscriptions. A notification about
-     * a particular generated finding is only added to this list once.
+     * a particular generated finding is added to this list only once.
      * </p>
      * 
      * @param notifications
      *        A list of notifications for the event subscriptions. A
-     *        notification about a particular generated finding is only added to
-     *        this list once.
+     *        notification about a particular generated finding is added to this
+     *        list only once.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -20,32 +20,37 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents information about the AWS Key Management Service (AWS KMS) key
- * used to encrypt data in the artifact store.
+ * Represents information about the key used to encrypt data in the artifact
+ * store, such as an AWS Key Management Service (AWS KMS) key.
  * </p>
  */
 public class EncryptionKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS KMS key.
+     * The ID used to identify the key. For an AWS KMS key, this is the key ID
+     * or key ARN.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The type of AWS KMS key, such as a customer master key.
+     * The type of encryption key, such as an AWS Key Management Service (AWS
+     * KMS) key. When creating or updating a pipeline, the value must be set to
+     * 'KMS'.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The ID of the AWS KMS key.
+     * The ID used to identify the key. For an AWS KMS key, this is the key ID
+     * or key ARN.
      * </p>
      * 
      * @param id
-     *        The ID of the AWS KMS key.
+     *        The ID used to identify the key. For an AWS KMS key, this is the
+     *        key ID or key ARN.
      */
 
     public void setId(String id) {
@@ -54,10 +59,12 @@ public class EncryptionKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS KMS key.
+     * The ID used to identify the key. For an AWS KMS key, this is the key ID
+     * or key ARN.
      * </p>
      * 
-     * @return The ID of the AWS KMS key.
+     * @return The ID used to identify the key. For an AWS KMS key, this is the
+     *         key ID or key ARN.
      */
 
     public String getId() {
@@ -66,11 +73,13 @@ public class EncryptionKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS KMS key.
+     * The ID used to identify the key. For an AWS KMS key, this is the key ID
+     * or key ARN.
      * </p>
      * 
      * @param id
-     *        The ID of the AWS KMS key.
+     *        The ID used to identify the key. For an AWS KMS key, this is the
+     *        key ID or key ARN.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -82,11 +91,15 @@ public class EncryptionKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS KMS key, such as a customer master key.
+     * The type of encryption key, such as an AWS Key Management Service (AWS
+     * KMS) key. When creating or updating a pipeline, the value must be set to
+     * 'KMS'.
      * </p>
      * 
      * @param type
-     *        The type of AWS KMS key, such as a customer master key.
+     *        The type of encryption key, such as an AWS Key Management Service
+     *        (AWS KMS) key. When creating or updating a pipeline, the value
+     *        must be set to 'KMS'.
      * @see EncryptionKeyType
      */
 
@@ -96,10 +109,14 @@ public class EncryptionKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS KMS key, such as a customer master key.
+     * The type of encryption key, such as an AWS Key Management Service (AWS
+     * KMS) key. When creating or updating a pipeline, the value must be set to
+     * 'KMS'.
      * </p>
      * 
-     * @return The type of AWS KMS key, such as a customer master key.
+     * @return The type of encryption key, such as an AWS Key Management Service
+     *         (AWS KMS) key. When creating or updating a pipeline, the value
+     *         must be set to 'KMS'.
      * @see EncryptionKeyType
      */
 
@@ -109,11 +126,15 @@ public class EncryptionKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS KMS key, such as a customer master key.
+     * The type of encryption key, such as an AWS Key Management Service (AWS
+     * KMS) key. When creating or updating a pipeline, the value must be set to
+     * 'KMS'.
      * </p>
      * 
      * @param type
-     *        The type of AWS KMS key, such as a customer master key.
+     *        The type of encryption key, such as an AWS Key Management Service
+     *        (AWS KMS) key. When creating or updating a pipeline, the value
+     *        must be set to 'KMS'.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EncryptionKeyType
@@ -126,11 +147,15 @@ public class EncryptionKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS KMS key, such as a customer master key.
+     * The type of encryption key, such as an AWS Key Management Service (AWS
+     * KMS) key. When creating or updating a pipeline, the value must be set to
+     * 'KMS'.
      * </p>
      * 
      * @param type
-     *        The type of AWS KMS key, such as a customer master key.
+     *        The type of encryption key, such as an AWS Key Management Service
+     *        (AWS KMS) key. When creating or updating a pipeline, the value
+     *        must be set to 'KMS'.
      * @see EncryptionKeyType
      */
 
@@ -140,11 +165,15 @@ public class EncryptionKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS KMS key, such as a customer master key.
+     * The type of encryption key, such as an AWS Key Management Service (AWS
+     * KMS) key. When creating or updating a pipeline, the value must be set to
+     * 'KMS'.
      * </p>
      * 
      * @param type
-     *        The type of AWS KMS key, such as a customer master key.
+     *        The type of encryption key, such as an AWS Key Management Service
+     *        (AWS KMS) key. When creating or updating a pipeline, the value
+     *        must be set to 'KMS'.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EncryptionKeyType

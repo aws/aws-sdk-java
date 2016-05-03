@@ -25,18 +25,18 @@ public class CreateAssessmentTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the assessment target that is created.
+     * The ARN that specifies the assessment target that is created.
      * </p>
      */
     private String assessmentTargetArn;
 
     /**
      * <p>
-     * The ARN specifying the assessment target that is created.
+     * The ARN that specifies the assessment target that is created.
      * </p>
      * 
      * @param assessmentTargetArn
-     *        The ARN specifying the assessment target that is created.
+     *        The ARN that specifies the assessment target that is created.
      */
 
     public void setAssessmentTargetArn(String assessmentTargetArn) {
@@ -45,10 +45,10 @@ public class CreateAssessmentTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the assessment target that is created.
+     * The ARN that specifies the assessment target that is created.
      * </p>
      * 
-     * @return The ARN specifying the assessment target that is created.
+     * @return The ARN that specifies the assessment target that is created.
      */
 
     public String getAssessmentTargetArn() {
@@ -57,11 +57,11 @@ public class CreateAssessmentTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the assessment target that is created.
+     * The ARN that specifies the assessment target that is created.
      * </p>
      * 
      * @param assessmentTargetArn
-     *        The ARN specifying the assessment target that is created.
+     *        The ARN that specifies the assessment target that is created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

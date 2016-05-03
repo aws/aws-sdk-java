@@ -28,56 +28,56 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>agentId</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>agentId</b> property of the <a>Finding</a> data type.
      * </p>
      */
     private java.util.List<String> agentIds;
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
      * <b>autoScalingGroup</b> property of the <a>Finding</a> data type.
      * </p>
      */
     private java.util.List<String> autoScalingGroups;
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>ruleName</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>ruleName</b> property of the <a>Finding</a> data type.
      * </p>
      */
     private java.util.List<String> ruleNames;
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>severity</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>severity</b> property of the <a>Finding</a> data type.
      * </p>
      */
     private java.util.List<String> severities;
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
      * <b>rulesPackageArn</b> property of the <a>Finding</a> data type.
      * </p>
      */
     private java.util.List<String> rulesPackageArns;
     /**
      * <p>
-     * For a record to match a filter, the list of values specified for this
-     * data type property must be contained in the list of values of the
+     * For a record to match a filter, the list of values that are specified for
+     * this data type property must be contained in the list of values of the
      * <b>attributes</b> property of the <a>Finding</a> data type.
      * </p>
      */
     private java.util.List<Attribute> attributes;
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
      * <b>userAttributes</b> property of the <a>Finding</a> data type.
      * </p>
      */
@@ -91,14 +91,15 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>agentId</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>agentId</b> property of the <a>Finding</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, one of the values specified for
-     *         this data type property must be the exact match of the value of
-     *         the <b>agentId</b> property of the <a>Finding</a> data type.
+     * @return For a record to match a filter, one of the values that is
+     *         specified for this data type property must be the exact match of
+     *         the value of the <b>agentId</b> property of the <a>Finding</a>
+     *         data type.
      */
 
     public java.util.List<String> getAgentIds() {
@@ -107,15 +108,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>agentId</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>agentId</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param agentIds
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>agentId</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>agentId</b> property of the <a>Finding</a>
+     *        data type.
      */
 
     public void setAgentIds(java.util.Collection<String> agentIds) {
@@ -129,9 +131,9 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>agentId</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>agentId</b> property of the <a>Finding</a> data type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -141,9 +143,10 @@ public class FindingFilter implements Serializable, Cloneable {
      * </p>
      * 
      * @param agentIds
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>agentId</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>agentId</b> property of the <a>Finding</a>
+     *        data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -160,15 +163,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>agentId</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>agentId</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param agentIds
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>agentId</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>agentId</b> property of the <a>Finding</a>
+     *        data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -180,15 +184,15 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
      * <b>autoScalingGroup</b> property of the <a>Finding</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, one of the values specified for
-     *         this data type property must be the exact match of the value of
-     *         the <b>autoScalingGroup</b> property of the <a>Finding</a> data
-     *         type.
+     * @return For a record to match a filter, one of the values that is
+     *         specified for this data type property must be the exact match of
+     *         the value of the <b>autoScalingGroup</b> property of the
+     *         <a>Finding</a> data type.
      */
 
     public java.util.List<String> getAutoScalingGroups() {
@@ -197,16 +201,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
      * <b>autoScalingGroup</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param autoScalingGroups
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>autoScalingGroup</b> property of the <a>Finding</a> data
-     *        type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>autoScalingGroup</b> property of the
+     *        <a>Finding</a> data type.
      */
 
     public void setAutoScalingGroups(
@@ -222,8 +226,8 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
      * <b>autoScalingGroup</b> property of the <a>Finding</a> data type.
      * </p>
      * <p>
@@ -234,10 +238,10 @@ public class FindingFilter implements Serializable, Cloneable {
      * </p>
      * 
      * @param autoScalingGroups
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>autoScalingGroup</b> property of the <a>Finding</a> data
-     *        type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>autoScalingGroup</b> property of the
+     *        <a>Finding</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -255,16 +259,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
      * <b>autoScalingGroup</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param autoScalingGroups
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>autoScalingGroup</b> property of the <a>Finding</a> data
-     *        type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>autoScalingGroup</b> property of the
+     *        <a>Finding</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -277,14 +281,15 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>ruleName</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>ruleName</b> property of the <a>Finding</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, one of the values specified for
-     *         this data type property must be the exact match of the value of
-     *         the <b>ruleName</b> property of the <a>Finding</a> data type.
+     * @return For a record to match a filter, one of the values that is
+     *         specified for this data type property must be the exact match of
+     *         the value of the <b>ruleName</b> property of the <a>Finding</a>
+     *         data type.
      */
 
     public java.util.List<String> getRuleNames() {
@@ -293,15 +298,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>ruleName</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>ruleName</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param ruleNames
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>ruleName</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>ruleName</b> property of the <a>Finding</a>
+     *        data type.
      */
 
     public void setRuleNames(java.util.Collection<String> ruleNames) {
@@ -315,9 +321,9 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>ruleName</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>ruleName</b> property of the <a>Finding</a> data type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -327,9 +333,10 @@ public class FindingFilter implements Serializable, Cloneable {
      * </p>
      * 
      * @param ruleNames
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>ruleName</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>ruleName</b> property of the <a>Finding</a>
+     *        data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -346,15 +353,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>ruleName</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>ruleName</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param ruleNames
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>ruleName</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>ruleName</b> property of the <a>Finding</a>
+     *        data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -366,14 +374,15 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>severity</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>severity</b> property of the <a>Finding</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, one of the values specified for
-     *         this data type property must be the exact match of the value of
-     *         the <b>severity</b> property of the <a>Finding</a> data type.
+     * @return For a record to match a filter, one of the values that is
+     *         specified for this data type property must be the exact match of
+     *         the value of the <b>severity</b> property of the <a>Finding</a>
+     *         data type.
      * @see Severity
      */
 
@@ -383,15 +392,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>severity</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>severity</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param severities
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>severity</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>severity</b> property of the <a>Finding</a>
+     *        data type.
      * @see Severity
      */
 
@@ -406,9 +416,9 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>severity</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>severity</b> property of the <a>Finding</a> data type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -418,9 +428,10 @@ public class FindingFilter implements Serializable, Cloneable {
      * </p>
      * 
      * @param severities
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>severity</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>severity</b> property of the <a>Finding</a>
+     *        data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Severity
@@ -438,15 +449,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>severity</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>severity</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param severities
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>severity</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>severity</b> property of the <a>Finding</a>
+     *        data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Severity
@@ -459,15 +471,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the <b>severity</b>
-     * property of the <a>Finding</a> data type.
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
+     * <b>severity</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param severities
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>severity</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>severity</b> property of the <a>Finding</a>
+     *        data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Severity
@@ -489,15 +502,15 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
      * <b>rulesPackageArn</b> property of the <a>Finding</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, one of the values specified for
-     *         this data type property must be the exact match of the value of
-     *         the <b>rulesPackageArn</b> property of the <a>Finding</a> data
-     *         type.
+     * @return For a record to match a filter, one of the values that is
+     *         specified for this data type property must be the exact match of
+     *         the value of the <b>rulesPackageArn</b> property of the
+     *         <a>Finding</a> data type.
      */
 
     public java.util.List<String> getRulesPackageArns() {
@@ -506,16 +519,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
      * <b>rulesPackageArn</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param rulesPackageArns
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>rulesPackageArn</b> property of the <a>Finding</a> data
-     *        type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>rulesPackageArn</b> property of the
+     *        <a>Finding</a> data type.
      */
 
     public void setRulesPackageArns(
@@ -531,8 +544,8 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
      * <b>rulesPackageArn</b> property of the <a>Finding</a> data type.
      * </p>
      * <p>
@@ -543,10 +556,10 @@ public class FindingFilter implements Serializable, Cloneable {
      * </p>
      * 
      * @param rulesPackageArns
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>rulesPackageArn</b> property of the <a>Finding</a> data
-     *        type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>rulesPackageArn</b> property of the
+     *        <a>Finding</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -564,16 +577,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, one of the values specified for this data
-     * type property must be the exact match of the value of the
+     * For a record to match a filter, one of the values that is specified for
+     * this data type property must be the exact match of the value of the
      * <b>rulesPackageArn</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param rulesPackageArns
-     *        For a record to match a filter, one of the values specified for
-     *        this data type property must be the exact match of the value of
-     *        the <b>rulesPackageArn</b> property of the <a>Finding</a> data
-     *        type.
+     *        For a record to match a filter, one of the values that is
+     *        specified for this data type property must be the exact match of
+     *        the value of the <b>rulesPackageArn</b> property of the
+     *        <a>Finding</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -586,15 +599,15 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the list of values specified for this
-     * data type property must be contained in the list of values of the
+     * For a record to match a filter, the list of values that are specified for
+     * this data type property must be contained in the list of values of the
      * <b>attributes</b> property of the <a>Finding</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, the list of values specified for
-     *         this data type property must be contained in the list of values
-     *         of the <b>attributes</b> property of the <a>Finding</a> data
-     *         type.
+     * @return For a record to match a filter, the list of values that are
+     *         specified for this data type property must be contained in the
+     *         list of values of the <b>attributes</b> property of the
+     *         <a>Finding</a> data type.
      */
 
     public java.util.List<Attribute> getAttributes() {
@@ -603,15 +616,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the list of values specified for this
-     * data type property must be contained in the list of values of the
+     * For a record to match a filter, the list of values that are specified for
+     * this data type property must be contained in the list of values of the
      * <b>attributes</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param attributes
-     *        For a record to match a filter, the list of values specified for
-     *        this data type property must be contained in the list of values of
-     *        the <b>attributes</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, the list of values that are
+     *        specified for this data type property must be contained in the
+     *        list of values of the <b>attributes</b> property of the
+     *        <a>Finding</a> data type.
      */
 
     public void setAttributes(java.util.Collection<Attribute> attributes) {
@@ -625,8 +639,8 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the list of values specified for this
-     * data type property must be contained in the list of values of the
+     * For a record to match a filter, the list of values that are specified for
+     * this data type property must be contained in the list of values of the
      * <b>attributes</b> property of the <a>Finding</a> data type.
      * </p>
      * <p>
@@ -637,9 +651,10 @@ public class FindingFilter implements Serializable, Cloneable {
      * </p>
      * 
      * @param attributes
-     *        For a record to match a filter, the list of values specified for
-     *        this data type property must be contained in the list of values of
-     *        the <b>attributes</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, the list of values that are
+     *        specified for this data type property must be contained in the
+     *        list of values of the <b>attributes</b> property of the
+     *        <a>Finding</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -656,15 +671,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the list of values specified for this
-     * data type property must be contained in the list of values of the
+     * For a record to match a filter, the list of values that are specified for
+     * this data type property must be contained in the list of values of the
      * <b>attributes</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param attributes
-     *        For a record to match a filter, the list of values specified for
-     *        this data type property must be contained in the list of values of
-     *        the <b>attributes</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, the list of values that are
+     *        specified for this data type property must be contained in the
+     *        list of values of the <b>attributes</b> property of the
+     *        <a>Finding</a> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -677,14 +693,15 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
      * <b>userAttributes</b> property of the <a>Finding</a> data type.
      * </p>
      * 
-     * @return For a record to match a filter, the value specified for this data
-     *         type property must be contained in the list of values of the
-     *         <b>userAttributes</b> property of the <a>Finding</a> data type.
+     * @return For a record to match a filter, the value that is specified for
+     *         this data type property must be contained in the list of values
+     *         of the <b>userAttributes</b> property of the <a>Finding</a> data
+     *         type.
      */
 
     public java.util.List<Attribute> getUserAttributes() {
@@ -693,15 +710,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
      * <b>userAttributes</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param userAttributes
-     *        For a record to match a filter, the value specified for this data
-     *        type property must be contained in the list of values of the
-     *        <b>userAttributes</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must be contained in the list of values of
+     *        the <b>userAttributes</b> property of the <a>Finding</a> data
+     *        type.
      */
 
     public void setUserAttributes(java.util.Collection<Attribute> userAttributes) {
@@ -715,8 +733,8 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
      * <b>userAttributes</b> property of the <a>Finding</a> data type.
      * </p>
      * <p>
@@ -727,9 +745,10 @@ public class FindingFilter implements Serializable, Cloneable {
      * </p>
      * 
      * @param userAttributes
-     *        For a record to match a filter, the value specified for this data
-     *        type property must be contained in the list of values of the
-     *        <b>userAttributes</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must be contained in the list of values of
+     *        the <b>userAttributes</b> property of the <a>Finding</a> data
+     *        type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -747,15 +766,16 @@ public class FindingFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For a record to match a filter, the value specified for this data type
-     * property must be contained in the list of values of the
+     * For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
      * <b>userAttributes</b> property of the <a>Finding</a> data type.
      * </p>
      * 
      * @param userAttributes
-     *        For a record to match a filter, the value specified for this data
-     *        type property must be contained in the list of values of the
-     *        <b>userAttributes</b> property of the <a>Finding</a> data type.
+     *        For a record to match a filter, the value that is specified for
+     *        this data type property must be contained in the list of values of
+     *        the <b>userAttributes</b> property of the <a>Finding</a> data
+     *        type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

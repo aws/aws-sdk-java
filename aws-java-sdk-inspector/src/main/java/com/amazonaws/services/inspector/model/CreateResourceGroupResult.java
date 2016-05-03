@@ -25,18 +25,18 @@ public class CreateResourceGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the resource group that is created.
+     * The ARN that specifies the resource group that is created.
      * </p>
      */
     private String resourceGroupArn;
 
     /**
      * <p>
-     * The ARN specifying the resource group that is created.
+     * The ARN that specifies the resource group that is created.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The ARN specifying the resource group that is created.
+     *        The ARN that specifies the resource group that is created.
      */
 
     public void setResourceGroupArn(String resourceGroupArn) {
@@ -45,10 +45,10 @@ public class CreateResourceGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the resource group that is created.
+     * The ARN that specifies the resource group that is created.
      * </p>
      * 
-     * @return The ARN specifying the resource group that is created.
+     * @return The ARN that specifies the resource group that is created.
      */
 
     public String getResourceGroupArn() {
@@ -57,11 +57,11 @@ public class CreateResourceGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN specifying the resource group that is created.
+     * The ARN that specifies the resource group that is created.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The ARN specifying the resource group that is created.
+     *        The ARN that specifies the resource group that is created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
