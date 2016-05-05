@@ -28,7 +28,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      * The grant token.
      * </p>
      * <p>
-     * For more information about using grant tokens, see <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -51,7 +51,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      * The grant token.
      * </p>
      * <p>
-     * For more information about using grant tokens, see <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -60,7 +60,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      * @param grantToken
      *        The grant token.</p>
      *        <p>
-     *        For more information about using grant tokens, see <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
@@ -75,7 +75,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      * The grant token.
      * </p>
      * <p>
-     * For more information about using grant tokens, see <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -83,7 +83,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      * 
      * @return The grant token.</p>
      *         <p>
-     *         For more information about using grant tokens, see <a href=
+     *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
@@ -98,7 +98,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      * The grant token.
      * </p>
      * <p>
-     * For more information about using grant tokens, see <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -107,7 +107,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      * @param grantToken
      *        The grant token.</p>
      *        <p>
-     *        For more information about using grant tokens, see <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.

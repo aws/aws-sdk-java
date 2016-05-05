@@ -49,8 +49,14 @@ public class RetryUtils {
      * @return True if the exception resulted from a retryable service error, otherwise false.
      */
     public static boolean isRetryableServiceException(AmazonServiceException ase) {
-        return ((ase != null) && (ase.getStatusCode() == HttpStatus.SC_INTERNAL_SERVER_ERROR ||
-                                  ase.getStatusCode() == HttpStatus.SC_SERVICE_UNAVAILABLE));
+        if (ase == null) {
+            return false;
+        }
+        final int statusCode = ase.getStatusCode();
+        return statusCode == HttpStatus.SC_INTERNAL_SERVER_ERROR ||
+               statusCode == HttpStatus.SC_BAD_GATEWAY ||
+               statusCode == HttpStatus.SC_SERVICE_UNAVAILABLE ||
+               statusCode == HttpStatus.SC_GATEWAY_TIMEOUT;
     }
 
     /**

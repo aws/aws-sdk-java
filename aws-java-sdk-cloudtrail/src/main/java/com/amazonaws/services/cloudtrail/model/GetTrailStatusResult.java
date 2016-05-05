@@ -40,11 +40,15 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
      * >Error Responses</a> in the Amazon S3 API Reference.
      * </p>
-     * <note>This error occurs only when there is a problem with the destination
-     * S3 bucket and will not occur for timeouts. To resolve the issue, create a
+     * <note>
+     * <p>
+     * This error occurs only when there is a problem with the destination S3
+     * bucket and will not occur for timeouts. To resolve the issue, create a
      * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
      * or fix the existing objects so that CloudTrail can again write to the
-     * bucket. </note>
+     * bucket.
+     * </p>
+     * </note>
      */
     private String latestDeliveryError;
     /**
@@ -115,11 +119,15 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
      * >Error Responses</a> in the Amazon S3 API Reference.
      * </p>
-     * <note>This error occurs only when there is a problem with the destination
-     * S3 bucket and will not occur for timeouts. To resolve the issue, create a
+     * <note>
+     * <p>
+     * This error occurs only when there is a problem with the destination S3
+     * bucket and will not occur for timeouts. To resolve the issue, create a
      * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
      * or fix the existing objects so that CloudTrail can again write to the
-     * bucket. </note>
+     * bucket.
+     * </p>
+     * </note>
      */
     private String latestDigestDeliveryError;
     /**
@@ -220,23 +228,29 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
      * >Error Responses</a> in the Amazon S3 API Reference.
      * </p>
-     * <note>This error occurs only when there is a problem with the destination
-     * S3 bucket and will not occur for timeouts. To resolve the issue, create a
+     * <note>
+     * <p>
+     * This error occurs only when there is a problem with the destination S3
+     * bucket and will not occur for timeouts. To resolve the issue, create a
      * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
      * or fix the existing objects so that CloudTrail can again write to the
-     * bucket. </note>
+     * bucket.
+     * </p>
+     * </note>
      * 
      * @param latestDeliveryError
      *        Displays any Amazon S3 error that CloudTrail encountered when
      *        attempting to deliver log files to the designated bucket. For more
      *        information see the topic <a href=
      *        "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *        >Error Responses</a> in the Amazon S3 API Reference. </p>
-     *        <note>This error occurs only when there is a problem with the
+     *        >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     *        <p>
+     *        This error occurs only when there is a problem with the
      *        destination S3 bucket and will not occur for timeouts. To resolve
      *        the issue, create a new bucket and call <code>UpdateTrail</code>
      *        to specify the new bucket, or fix the existing objects so that
      *        CloudTrail can again write to the bucket.
+     *        </p>
      */
 
     public void setLatestDeliveryError(String latestDeliveryError) {
@@ -251,22 +265,28 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
      * >Error Responses</a> in the Amazon S3 API Reference.
      * </p>
-     * <note>This error occurs only when there is a problem with the destination
-     * S3 bucket and will not occur for timeouts. To resolve the issue, create a
+     * <note>
+     * <p>
+     * This error occurs only when there is a problem with the destination S3
+     * bucket and will not occur for timeouts. To resolve the issue, create a
      * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
      * or fix the existing objects so that CloudTrail can again write to the
-     * bucket. </note>
+     * bucket.
+     * </p>
+     * </note>
      * 
      * @return Displays any Amazon S3 error that CloudTrail encountered when
      *         attempting to deliver log files to the designated bucket. For
      *         more information see the topic <a href=
      *         "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *         >Error Responses</a> in the Amazon S3 API Reference. </p>
-     *         <note>This error occurs only when there is a problem with the
+     *         >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     *         <p>
+     *         This error occurs only when there is a problem with the
      *         destination S3 bucket and will not occur for timeouts. To resolve
      *         the issue, create a new bucket and call <code>UpdateTrail</code>
      *         to specify the new bucket, or fix the existing objects so that
      *         CloudTrail can again write to the bucket.
+     *         </p>
      */
 
     public String getLatestDeliveryError() {
@@ -281,23 +301,29 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
      * >Error Responses</a> in the Amazon S3 API Reference.
      * </p>
-     * <note>This error occurs only when there is a problem with the destination
-     * S3 bucket and will not occur for timeouts. To resolve the issue, create a
+     * <note>
+     * <p>
+     * This error occurs only when there is a problem with the destination S3
+     * bucket and will not occur for timeouts. To resolve the issue, create a
      * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
      * or fix the existing objects so that CloudTrail can again write to the
-     * bucket. </note>
+     * bucket.
+     * </p>
+     * </note>
      * 
      * @param latestDeliveryError
      *        Displays any Amazon S3 error that CloudTrail encountered when
      *        attempting to deliver log files to the designated bucket. For more
      *        information see the topic <a href=
      *        "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *        >Error Responses</a> in the Amazon S3 API Reference. </p>
-     *        <note>This error occurs only when there is a problem with the
+     *        >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     *        <p>
+     *        This error occurs only when there is a problem with the
      *        destination S3 bucket and will not occur for timeouts. To resolve
      *        the issue, create a new bucket and call <code>UpdateTrail</code>
      *        to specify the new bucket, or fix the existing objects so that
      *        CloudTrail can again write to the bucket.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -727,23 +753,29 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
      * >Error Responses</a> in the Amazon S3 API Reference.
      * </p>
-     * <note>This error occurs only when there is a problem with the destination
-     * S3 bucket and will not occur for timeouts. To resolve the issue, create a
+     * <note>
+     * <p>
+     * This error occurs only when there is a problem with the destination S3
+     * bucket and will not occur for timeouts. To resolve the issue, create a
      * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
      * or fix the existing objects so that CloudTrail can again write to the
-     * bucket. </note>
+     * bucket.
+     * </p>
+     * </note>
      * 
      * @param latestDigestDeliveryError
      *        Displays any Amazon S3 error that CloudTrail encountered when
      *        attempting to deliver a digest file to the designated bucket. For
      *        more information see the topic <a href=
      *        "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *        >Error Responses</a> in the Amazon S3 API Reference. </p>
-     *        <note>This error occurs only when there is a problem with the
+     *        >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     *        <p>
+     *        This error occurs only when there is a problem with the
      *        destination S3 bucket and will not occur for timeouts. To resolve
      *        the issue, create a new bucket and call <code>UpdateTrail</code>
      *        to specify the new bucket, or fix the existing objects so that
      *        CloudTrail can again write to the bucket.
+     *        </p>
      */
 
     public void setLatestDigestDeliveryError(String latestDigestDeliveryError) {
@@ -758,22 +790,28 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
      * >Error Responses</a> in the Amazon S3 API Reference.
      * </p>
-     * <note>This error occurs only when there is a problem with the destination
-     * S3 bucket and will not occur for timeouts. To resolve the issue, create a
+     * <note>
+     * <p>
+     * This error occurs only when there is a problem with the destination S3
+     * bucket and will not occur for timeouts. To resolve the issue, create a
      * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
      * or fix the existing objects so that CloudTrail can again write to the
-     * bucket. </note>
+     * bucket.
+     * </p>
+     * </note>
      * 
      * @return Displays any Amazon S3 error that CloudTrail encountered when
      *         attempting to deliver a digest file to the designated bucket. For
      *         more information see the topic <a href=
      *         "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *         >Error Responses</a> in the Amazon S3 API Reference. </p>
-     *         <note>This error occurs only when there is a problem with the
+     *         >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     *         <p>
+     *         This error occurs only when there is a problem with the
      *         destination S3 bucket and will not occur for timeouts. To resolve
      *         the issue, create a new bucket and call <code>UpdateTrail</code>
      *         to specify the new bucket, or fix the existing objects so that
      *         CloudTrail can again write to the bucket.
+     *         </p>
      */
 
     public String getLatestDigestDeliveryError() {
@@ -788,23 +826,29 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
      * >Error Responses</a> in the Amazon S3 API Reference.
      * </p>
-     * <note>This error occurs only when there is a problem with the destination
-     * S3 bucket and will not occur for timeouts. To resolve the issue, create a
+     * <note>
+     * <p>
+     * This error occurs only when there is a problem with the destination S3
+     * bucket and will not occur for timeouts. To resolve the issue, create a
      * new bucket and call <code>UpdateTrail</code> to specify the new bucket,
      * or fix the existing objects so that CloudTrail can again write to the
-     * bucket. </note>
+     * bucket.
+     * </p>
+     * </note>
      * 
      * @param latestDigestDeliveryError
      *        Displays any Amazon S3 error that CloudTrail encountered when
      *        attempting to deliver a digest file to the designated bucket. For
      *        more information see the topic <a href=
      *        "http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html"
-     *        >Error Responses</a> in the Amazon S3 API Reference. </p>
-     *        <note>This error occurs only when there is a problem with the
+     *        >Error Responses</a> in the Amazon S3 API Reference. </p> <note>
+     *        <p>
+     *        This error occurs only when there is a problem with the
      *        destination S3 bucket and will not occur for timeouts. To resolve
      *        the issue, create a new bucket and call <code>UpdateTrail</code>
      *        to specify the new bucket, or fix the existing objects so that
      *        CloudTrail can again write to the bucket.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

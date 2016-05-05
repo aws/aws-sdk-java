@@ -19,8 +19,10 @@ package com.amazonaws.services.cloudtrail.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
+ * <p>
  * This exception is thrown when the KMS key does not exist, or when the S3
  * bucket and the KMS key are not in the same region.
+ * </p>
  */
 public class KmsKeyNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

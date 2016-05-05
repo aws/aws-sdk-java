@@ -35,14 +35,17 @@ import com.amazonaws.services.cloudtrail.model.*;
  * source IP address, the request parameters, and the response elements returned
  * by the service.
  * </p>
- * <note> As an alternative to using the API, you can use one of the AWS SDKs,
- * which consist of libraries and sample code for various programming languages
- * and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
- * convenient way to create programmatic access to AWSCloudTrail. For example,
- * the SDKs take care of cryptographically signing requests, managing errors,
- * and retrying requests automatically. For information about the AWS SDKs,
- * including how to download and install them, see the <a
- * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
+ * <note>
+ * <p>
+ * As an alternative to the API, you can use one of the AWS SDKs, which consist
+ * of libraries and sample code for various programming languages and platforms
+ * (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to
+ * create programmatic access to AWSCloudTrail. For example, the SDKs take care
+ * of cryptographically signing requests, managing errors, and retrying requests
+ * automatically. For information about the AWS SDKs, including how to download
+ * and install them, see the <a href="http://aws.amazon.com/tools/">Tools for
+ * Amazon Web Services page</a>.
+ * </p>
  * </note>
  * <p>
  * See the CloudTrail User Guide for information about the data that is included
@@ -127,9 +130,9 @@ public interface AWSCloudTrail {
      *         found.
      * @throws CloudTrailARNInvalidException
      *         This exception is thrown when an operation is called with an
-     *         invalid trail ARN. The format of a trail ARN is
+     *         invalid trail ARN. The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not
      *         supported by CloudTrail.
@@ -138,17 +141,37 @@ public interface AWSCloudTrail {
      *         Currently, the limit is 10.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not
-     *         valid. Trail names must meet the following requirements:</p>
+     *         valid. Trail names must meet the following requirements:
+     *         </p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws InvalidTagParameterException
      *         This exception is thrown when the key or value specified for the
      *         tag does not match the regular expression
@@ -205,15 +228,34 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws TrailNotProvidedException
      *         This exception is deprecated.
      * @throws InvalidParameterCombinationException
@@ -259,15 +301,34 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
@@ -322,15 +383,34 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @sample AWSCloudTrail.GetTrailStatus
      */
     GetTrailStatusResult getTrailStatus(
@@ -343,10 +423,14 @@ public interface AWSCloudTrail {
      * validate digest files that were signed with its corresponding private
      * key.
      * </p>
-     * <note>CloudTrail uses different private/public key pairs per region. Each
+     * <note>
+     * <p>
+     * CloudTrail uses different private/public key pairs per region. Each
      * digest file is signed with a private key unique to its region. Therefore,
      * when you validate a digest file from a particular region, you must look
-     * in the same region for its corresponding public key.</note>
+     * in the same region for its corresponding public key.
+     * </p>
+     * </note>
      * 
      * @param listPublicKeysRequest
      *        Requests the public keys for a specified time range.
@@ -377,9 +461,6 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the tags for the specified trail or trails in the current region.
-     * </p>
-     * <p>
      * Lists the tags for the trail in the current region.
      * </p>
      * 
@@ -391,25 +472,45 @@ public interface AWSCloudTrail {
      *         found.
      * @throws CloudTrailARNInvalidException
      *         This exception is thrown when an operation is called with an
-     *         invalid trail ARN. The format of a trail ARN is
+     *         invalid trail ARN. The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not
      *         supported by CloudTrail.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not
-     *         valid. Trail names must meet the following requirements:</p>
+     *         valid. Trail names must meet the following requirements:
+     *         </p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not
      *         supported.
@@ -435,11 +536,18 @@ public interface AWSCloudTrail {
      * results returned is 10, with a maximum of 50 possible. The response
      * includes a token that you can use to get the next page of results.
      * </p>
-     * <important>The rate of lookup requests is limited to one per second per
-     * account. If this limit is exceeded, a throttling error occurs.
-     * </important> <important>Events that occurred during the selected time
-     * range will not be available for lookup if CloudTrail logging was not
-     * enabled when the events occurred.</important>
+     * <important>
+     * <p>
+     * The rate of lookup requests is limited to one per second per account. If
+     * this limit is exceeded, a throttling error occurs.
+     * </p>
+     * </important> <important>
+     * <p>
+     * Events that occurred during the selected time range will not be available
+     * for lookup if CloudTrail logging was not enabled when the events
+     * occurred.
+     * </p>
+     * </important>
      * 
      * @param lookupEventsRequest
      *        Contains a request for LookupEvents.
@@ -480,25 +588,45 @@ public interface AWSCloudTrail {
      *         found.
      * @throws CloudTrailARNInvalidException
      *         This exception is thrown when an operation is called with an
-     *         invalid trail ARN. The format of a trail ARN is
+     *         invalid trail ARN. The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not
      *         supported by CloudTrail.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not
-     *         valid. Trail names must meet the following requirements:</p>
+     *         valid. Trail names must meet the following requirements:
+     *         </p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws InvalidTagParameterException
      *         This exception is thrown when the key or value specified for the
      *         tag does not match the regular expression
@@ -533,15 +661,34 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
@@ -573,15 +720,34 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
@@ -634,15 +800,34 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws TrailNotProvidedException
      *         This exception is deprecated.
      * @throws InvalidParameterCombinationException

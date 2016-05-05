@@ -25,18 +25,18 @@ public class CreateKeyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Metadata associated with the key.
+     * Metadata associated with the CMK.
      * </p>
      */
     private KeyMetadata keyMetadata;
 
     /**
      * <p>
-     * Metadata associated with the key.
+     * Metadata associated with the CMK.
      * </p>
      * 
      * @param keyMetadata
-     *        Metadata associated with the key.
+     *        Metadata associated with the CMK.
      */
 
     public void setKeyMetadata(KeyMetadata keyMetadata) {
@@ -45,10 +45,10 @@ public class CreateKeyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Metadata associated with the key.
+     * Metadata associated with the CMK.
      * </p>
      * 
-     * @return Metadata associated with the key.
+     * @return Metadata associated with the CMK.
      */
 
     public KeyMetadata getKeyMetadata() {
@@ -57,11 +57,11 @@ public class CreateKeyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Metadata associated with the key.
+     * Metadata associated with the CMK.
      * </p>
      * 
      * @param keyMetadata
-     *        Metadata associated with the key.
+     *        Metadata associated with the CMK.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

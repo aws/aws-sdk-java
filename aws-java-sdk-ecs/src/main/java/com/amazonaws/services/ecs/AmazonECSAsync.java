@@ -106,6 +106,12 @@ public interface AmazonECSAsync extends AmazonECS {
      * <a>UpdateService</a>.
      * </p>
      * <p>
+     * In addition to maintaining the desired count of tasks in your service,
+     * you can optionally run your service behind a load balancer. The load
+     * balancer distributes traffic across the tasks that are associated with
+     * the service.
+     * </p>
+     * <p>
      * You can optionally specify a deployment configuration for your service.
      * During a deployment (which is triggered by changing the task definition
      * of a service with an <a>UpdateService</a> operation), the service
@@ -182,6 +188,12 @@ public interface AmazonECSAsync extends AmazonECS {
      * <code>desiredCount</code>, Amazon ECS spawns another instantiation of the
      * task in the specified cluster. To update an existing service, see
      * <a>UpdateService</a>.
+     * </p>
+     * <p>
+     * In addition to maintaining the desired count of tasks in your service,
+     * you can optionally run your service behind a load balancer. The load
+     * balancer distributes traffic across the tasks that are associated with
+     * the service.
      * </p>
      * <p>
      * You can optionally specify a deployment configuration for your service.
@@ -386,8 +398,10 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <note>
      * <p>
-     * When you terminate a container instance, it is automatically deregistered
-     * from your cluster.
+     * If you terminate a running container instance with a connected Amazon ECS
+     * container agent, the agent automatically deregisters the instance from
+     * your cluster (stopped container instances or instances with disconnected
+     * agents are not automatically deregistered when terminated).
      * </p>
      * </note>
      * 
@@ -418,8 +432,10 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <note>
      * <p>
-     * When you terminate a container instance, it is automatically deregistered
-     * from your cluster.
+     * If you terminate a running container instance with a connected Amazon ECS
+     * container agent, the agent automatically deregisters the instance from
+     * your cluster (stopped container instances or instances with disconnected
+     * agents are not automatically deregistered when terminated).
      * </p>
      * </note>
      * 

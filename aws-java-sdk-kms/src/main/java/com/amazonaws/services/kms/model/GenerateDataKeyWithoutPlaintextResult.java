@@ -71,7 +71,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * @param ciphertextBlob
      *        Ciphertext that contains the wrapped data key. You must store the
      *        blob and encryption context so that the key can be used in a
-     *        future decrypt operation. </p>
+     *        future decrypt operation.</p>
      *        <p>
      *        If you are using the CLI, the value is Base64 encoded. Otherwise,
      *        it is not encoded.
@@ -104,7 +104,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * 
      * @return Ciphertext that contains the wrapped data key. You must store the
      *         blob and encryption context so that the key can be used in a
-     *         future decrypt operation. </p>
+     *         future decrypt operation.</p>
      *         <p>
      *         If you are using the CLI, the value is Base64 encoded. Otherwise,
      *         it is not encoded.
@@ -128,7 +128,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * @param ciphertextBlob
      *        Ciphertext that contains the wrapped data key. You must store the
      *        blob and encryption context so that the key can be used in a
-     *        future decrypt operation. </p>
+     *        future decrypt operation.</p>
      *        <p>
      *        If you are using the CLI, the value is Base64 encoded. Otherwise,
      *        it is not encoded.

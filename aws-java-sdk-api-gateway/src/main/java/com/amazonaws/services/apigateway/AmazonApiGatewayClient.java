@@ -500,6 +500,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the CreateDomainName operation returned by the service.
      * @throws UnauthorizedException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.CreateDomainName
      */
@@ -1247,6 +1248,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteResource
      */
@@ -2949,6 +2951,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the PutIntegration operation returned by the service.
      * @throws UnauthorizedException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.PutIntegration
@@ -3161,6 +3164,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the PutRestApi operation returned by the service.
      * @throws UnauthorizedException
      * @throws LimitExceededException
+     * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.PutRestApi
@@ -3623,6 +3627,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateDomainName
      */
@@ -3726,6 +3731,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
+     * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateIntegrationResponse
@@ -3778,6 +3784,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateMethod
      */
@@ -3882,6 +3889,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateModel
      */

@@ -33,13 +33,20 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * To specify this value, use the globally unique key ID or the Amazon
      * Resource Name (ARN) of the key. Examples:
-     * <ul>
-     * <li>Globally unique key ID: 12345678-1234-1234-1234-123456789012</li>
-     * <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234
-     * -123456789012</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Globally unique key ID: 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012
+     * </p>
+     * </li>
+     * </ul>
      */
     private String keyId;
     /**
@@ -82,17 +89,58 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * A list of operations that the grant permits. The list can contain any
      * combination of one or more of the following values:
-     * <ul>
-     * <li>Decrypt</li>
-     * <li>Encrypt</li>
-     * <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li>
-     * <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li>
-     * <li>CreateGrant</li>
-     * <li>RetireGrant</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>Decrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Encrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKey</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptFrom</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptTo</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>CreateGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RetireGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeKey</a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> operations;
     /**
@@ -115,7 +163,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -153,13 +201,20 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * To specify this value, use the globally unique key ID or the Amazon
      * Resource Name (ARN) of the key. Examples:
-     * <ul>
-     * <li>Globally unique key ID: 12345678-1234-1234-1234-123456789012</li>
-     * <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234
-     * -123456789012</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Globally unique key ID: 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param keyId
      *        The unique identifier for the customer master key (CMK) that the
@@ -167,12 +222,20 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        To specify this value, use the globally unique key ID or the
      *        Amazon Resource Name (ARN) of the key. Examples:
+     *        </p>
      *        <ul>
-     *        <li>Globally unique key ID: 12345678-1234-1234-1234-123456789012</li>
-     *        <li>Key ARN:
-     *        arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234
-     *        -1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Globally unique key ID: 12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key ARN:
+     *        arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-
+     *        1234-123456789012
+     *        </p>
+     *        </li>
      */
 
     public void setKeyId(String keyId) {
@@ -187,25 +250,40 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * To specify this value, use the globally unique key ID or the Amazon
      * Resource Name (ARN) of the key. Examples:
-     * <ul>
-     * <li>Globally unique key ID: 12345678-1234-1234-1234-123456789012</li>
-     * <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234
-     * -123456789012</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Globally unique key ID: 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The unique identifier for the customer master key (CMK) that the
      *         grant applies to.</p>
      *         <p>
      *         To specify this value, use the globally unique key ID or the
      *         Amazon Resource Name (ARN) of the key. Examples:
+     *         </p>
      *         <ul>
-     *         <li>Globally unique key ID: 12345678-1234-1234-1234-123456789012</li>
-     *         <li>Key ARN:
-     *         arn:aws:kms:us-west-2:123456789012:key/12345678-1234-
-     *         1234-1234-123456789012</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Globally unique key ID: 12345678-1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Key ARN:
+     *         arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234
+     *         -1234-123456789012
+     *         </p>
+     *         </li>
      */
 
     public String getKeyId() {
@@ -220,13 +298,20 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * To specify this value, use the globally unique key ID or the Amazon
      * Resource Name (ARN) of the key. Examples:
-     * <ul>
-     * <li>Globally unique key ID: 12345678-1234-1234-1234-123456789012</li>
-     * <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234
-     * -123456789012</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Globally unique key ID: 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param keyId
      *        The unique identifier for the customer master key (CMK) that the
@@ -234,12 +319,20 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        To specify this value, use the globally unique key ID or the
      *        Amazon Resource Name (ARN) of the key. Examples:
+     *        </p>
      *        <ul>
-     *        <li>Globally unique key ID: 12345678-1234-1234-1234-123456789012</li>
-     *        <li>Key ARN:
-     *        arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234
-     *        -1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Globally unique key ID: 12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key ARN:
+     *        arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-
+     *        1234-123456789012
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -473,30 +566,111 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * A list of operations that the grant permits. The list can contain any
      * combination of one or more of the following values:
-     * <ul>
-     * <li>Decrypt</li>
-     * <li>Encrypt</li>
-     * <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li>
-     * <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li>
-     * <li>CreateGrant</li>
-     * <li>RetireGrant</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>Decrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Encrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKey</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptFrom</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptTo</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>CreateGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RetireGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeKey</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A list of operations that the grant permits. The list can contain
-     *         any combination of one or more of the following values:
+     *         any combination of one or more of the following values:</p>
      *         <ul>
-     *         <li>Decrypt</li>
-     *         <li>Encrypt</li>
-     *         <li>GenerateDataKey</li>
-     *         <li>GenerateDataKeyWithoutPlaintext</li>
-     *         <li>ReEncryptFrom</li>
-     *         <li>ReEncryptTo</li>
-     *         <li>CreateGrant</li>
-     *         <li>RetireGrant</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         <a>Decrypt</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>Encrypt</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>GenerateDataKey</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>GenerateDataKeyWithoutPlaintext</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     *         >ReEncryptFrom</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     *         >ReEncryptTo</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>CreateGrant</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>RetireGrant</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>DescribeKey</a>
+     *         </p>
+     *         </li>
      * @see GrantOperation
      */
 
@@ -511,31 +685,112 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * A list of operations that the grant permits. The list can contain any
      * combination of one or more of the following values:
-     * <ul>
-     * <li>Decrypt</li>
-     * <li>Encrypt</li>
-     * <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li>
-     * <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li>
-     * <li>CreateGrant</li>
-     * <li>RetireGrant</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>Decrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Encrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKey</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptFrom</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptTo</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>CreateGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RetireGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeKey</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param operations
      *        A list of operations that the grant permits. The list can contain
-     *        any combination of one or more of the following values:
+     *        any combination of one or more of the following values:</p>
      *        <ul>
-     *        <li>Decrypt</li>
-     *        <li>Encrypt</li>
-     *        <li>GenerateDataKey</li>
-     *        <li>GenerateDataKeyWithoutPlaintext</li>
-     *        <li>ReEncryptFrom</li>
-     *        <li>ReEncryptTo</li>
-     *        <li>CreateGrant</li>
-     *        <li>RetireGrant</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <a>Decrypt</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>Encrypt</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>GenerateDataKey</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>GenerateDataKeyWithoutPlaintext</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     *        >ReEncryptFrom</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     *        >ReEncryptTo</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateGrant</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>RetireGrant</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>DescribeKey</a>
+     *        </p>
+     *        </li>
      * @see GrantOperation
      */
 
@@ -553,17 +808,58 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * A list of operations that the grant permits. The list can contain any
      * combination of one or more of the following values:
-     * <ul>
-     * <li>Decrypt</li>
-     * <li>Encrypt</li>
-     * <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li>
-     * <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li>
-     * <li>CreateGrant</li>
-     * <li>RetireGrant</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>Decrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Encrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKey</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptFrom</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptTo</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>CreateGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RetireGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeKey</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setOperations(java.util.Collection)} or
@@ -573,17 +869,57 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * 
      * @param operations
      *        A list of operations that the grant permits. The list can contain
-     *        any combination of one or more of the following values:
+     *        any combination of one or more of the following values:</p>
      *        <ul>
-     *        <li>Decrypt</li>
-     *        <li>Encrypt</li>
-     *        <li>GenerateDataKey</li>
-     *        <li>GenerateDataKeyWithoutPlaintext</li>
-     *        <li>ReEncryptFrom</li>
-     *        <li>ReEncryptTo</li>
-     *        <li>CreateGrant</li>
-     *        <li>RetireGrant</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <a>Decrypt</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>Encrypt</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>GenerateDataKey</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>GenerateDataKeyWithoutPlaintext</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     *        >ReEncryptFrom</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     *        >ReEncryptTo</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateGrant</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>RetireGrant</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>DescribeKey</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see GrantOperation
@@ -604,31 +940,112 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * A list of operations that the grant permits. The list can contain any
      * combination of one or more of the following values:
-     * <ul>
-     * <li>Decrypt</li>
-     * <li>Encrypt</li>
-     * <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li>
-     * <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li>
-     * <li>CreateGrant</li>
-     * <li>RetireGrant</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>Decrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Encrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKey</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptFrom</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptTo</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>CreateGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RetireGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeKey</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param operations
      *        A list of operations that the grant permits. The list can contain
-     *        any combination of one or more of the following values:
+     *        any combination of one or more of the following values:</p>
      *        <ul>
-     *        <li>Decrypt</li>
-     *        <li>Encrypt</li>
-     *        <li>GenerateDataKey</li>
-     *        <li>GenerateDataKeyWithoutPlaintext</li>
-     *        <li>ReEncryptFrom</li>
-     *        <li>ReEncryptTo</li>
-     *        <li>CreateGrant</li>
-     *        <li>RetireGrant</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <a>Decrypt</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>Encrypt</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>GenerateDataKey</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>GenerateDataKeyWithoutPlaintext</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     *        >ReEncryptFrom</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     *        >ReEncryptTo</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateGrant</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>RetireGrant</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>DescribeKey</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see GrantOperation
@@ -644,31 +1061,112 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * A list of operations that the grant permits. The list can contain any
      * combination of one or more of the following values:
-     * <ul>
-     * <li>Decrypt</li>
-     * <li>Encrypt</li>
-     * <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li>
-     * <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li>
-     * <li>CreateGrant</li>
-     * <li>RetireGrant</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>Decrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Encrypt</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKey</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptFrom</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     * >ReEncryptTo</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>CreateGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RetireGrant</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeKey</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param operations
      *        A list of operations that the grant permits. The list can contain
-     *        any combination of one or more of the following values:
+     *        any combination of one or more of the following values:</p>
      *        <ul>
-     *        <li>Decrypt</li>
-     *        <li>Encrypt</li>
-     *        <li>GenerateDataKey</li>
-     *        <li>GenerateDataKeyWithoutPlaintext</li>
-     *        <li>ReEncryptFrom</li>
-     *        <li>ReEncryptTo</li>
-     *        <li>CreateGrant</li>
-     *        <li>RetireGrant</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <a>Decrypt</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>Encrypt</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>GenerateDataKey</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>GenerateDataKeyWithoutPlaintext</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     *        >ReEncryptFrom</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html"
+     *        >ReEncryptTo</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateGrant</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>RetireGrant</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>DescribeKey</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see GrantOperation
@@ -785,7 +1283,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -793,7 +1291,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of grant tokens.</p>
      *         <p>
-     *         For more information, go to <a href=
+     *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
@@ -811,7 +1309,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -820,7 +1318,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
@@ -841,7 +1339,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -856,7 +1354,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
@@ -880,7 +1378,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -889,7 +1387,7 @@ public class CreateGrantRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.

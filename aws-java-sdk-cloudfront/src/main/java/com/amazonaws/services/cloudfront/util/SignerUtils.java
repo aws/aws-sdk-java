@@ -54,28 +54,27 @@ public class SignerUtils {
      * Returns a custom policy for the given parameters.
      */
     public static String buildCustomPolicy(String resourcePath,
-            Date activeFrom, Date expiresOn, String ipAddress) {
+            Date expiresOn, Date activeFrom, String ipAddress) {
         return "{\"Statement\": [{"
                 + "\"Resource\":\""
                 + resourcePath
                 + "\""
                 + ",\"Condition\":{"
                 + "\"DateLessThan\":{\"AWS:EpochTime\":"
-                + MILLISECONDS.toSeconds(activeFrom.getTime())
+                + MILLISECONDS.toSeconds(expiresOn.getTime())
                 + "}"
                 + (ipAddress == null
-                   ? ""
-                   : ",\"IpAddress\":{\"AWS:SourceIp\":\""
-                     + ipAddress + "\"}"
+                  ? ""
+                  : ",\"IpAddress\":{\"AWS:SourceIp\":\""
+                    + ipAddress + "\"}"
                   )
-                + (expiresOn == null
+                + (activeFrom == null
                    ? ""
                    : ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
-                     + MILLISECONDS.toSeconds(expiresOn.getTime()) + "}"
+                     + MILLISECONDS.toSeconds(activeFrom.getTime()) + "}"
                   )
                 + "}}]}";
     }
-
     /**
      * Converts the given data to be safe for use in signed URLs for a private
      * distribution by using specialized Base64 encoding.

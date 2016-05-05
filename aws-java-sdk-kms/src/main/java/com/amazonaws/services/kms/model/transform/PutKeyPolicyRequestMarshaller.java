@@ -74,6 +74,12 @@ public class PutKeyPolicyRequestMarshaller implements
                 jsonGenerator.writeFieldName("Policy").writeValue(
                         putKeyPolicyRequest.getPolicy());
             }
+            if (putKeyPolicyRequest.getBypassPolicyLockoutSafetyCheck() != null) {
+                jsonGenerator.writeFieldName("BypassPolicyLockoutSafetyCheck")
+                        .writeValue(
+                                putKeyPolicyRequest
+                                        .getBypassPolicyLockoutSafetyCheck());
+            }
 
             jsonGenerator.writeEndObject();
 

@@ -134,6 +134,10 @@ public class ServiceJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (service.getCreatedAt() != null) {
+                jsonGenerator.writeFieldName("createdAt").writeValue(
+                        service.getCreatedAt());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

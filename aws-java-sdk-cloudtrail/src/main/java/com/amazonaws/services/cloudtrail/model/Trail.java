@@ -54,12 +54,22 @@ public class Trail implements Serializable, Cloneable {
     private String s3KeyPrefix;
     /**
      * <p>
-     * Name of the existing Amazon SNS topic that CloudTrail uses to notify the
-     * account owner when new CloudTrail log files have been delivered. The
-     * maximum length is 256 characters.
+     * Specifies the name of the Amazon SNS topic that CloudTrail uses to send
+     * notifications when log files are delivered.
      * </p>
      */
+    @Deprecated
     private String snsTopicName;
+    /**
+     * <p>
+     * Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
+     * notifications when log files are delivered. The format of a topic ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * </p>
+     */
+    private String snsTopicARN;
     /**
      * <p>
      * Set to <b>True</b> to include AWS API calls from AWS global services such
@@ -82,8 +92,10 @@ public class Trail implements Serializable, Cloneable {
     private String homeRegion;
     /**
      * <p>
-     * The Amazon Resource Name of the trail. The <code>TrailARN</code> format
-     * is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * Specifies the ARN of the trail. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String trailARN;
@@ -112,7 +124,9 @@ public class Trail implements Serializable, Cloneable {
      * Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
      * The value is a fully specified ARN to a KMS key in the format:
      * </p>
+     * <p>
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
      */
     private String kmsKeyId;
 
@@ -295,54 +309,113 @@ public class Trail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name of the existing Amazon SNS topic that CloudTrail uses to notify the
-     * account owner when new CloudTrail log files have been delivered. The
-     * maximum length is 256 characters.
+     * Specifies the name of the Amazon SNS topic that CloudTrail uses to send
+     * notifications when log files are delivered.
      * </p>
      * 
      * @param snsTopicName
-     *        Name of the existing Amazon SNS topic that CloudTrail uses to
-     *        notify the account owner when new CloudTrail log files have been
-     *        delivered. The maximum length is 256 characters.
+     *        Specifies the name of the Amazon SNS topic that CloudTrail uses to
+     *        send notifications when log files are delivered.
      */
-
+    @Deprecated
     public void setSnsTopicName(String snsTopicName) {
         this.snsTopicName = snsTopicName;
     }
 
     /**
      * <p>
-     * Name of the existing Amazon SNS topic that CloudTrail uses to notify the
-     * account owner when new CloudTrail log files have been delivered. The
-     * maximum length is 256 characters.
+     * Specifies the name of the Amazon SNS topic that CloudTrail uses to send
+     * notifications when log files are delivered.
      * </p>
      * 
-     * @return Name of the existing Amazon SNS topic that CloudTrail uses to
-     *         notify the account owner when new CloudTrail log files have been
-     *         delivered. The maximum length is 256 characters.
+     * @return Specifies the name of the Amazon SNS topic that CloudTrail uses
+     *         to send notifications when log files are delivered.
      */
-
+    @Deprecated
     public String getSnsTopicName() {
         return this.snsTopicName;
     }
 
     /**
      * <p>
-     * Name of the existing Amazon SNS topic that CloudTrail uses to notify the
-     * account owner when new CloudTrail log files have been delivered. The
-     * maximum length is 256 characters.
+     * Specifies the name of the Amazon SNS topic that CloudTrail uses to send
+     * notifications when log files are delivered.
      * </p>
      * 
      * @param snsTopicName
-     *        Name of the existing Amazon SNS topic that CloudTrail uses to
-     *        notify the account owner when new CloudTrail log files have been
-     *        delivered. The maximum length is 256 characters.
+     *        Specifies the name of the Amazon SNS topic that CloudTrail uses to
+     *        send notifications when log files are delivered.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+    @Deprecated
+    public Trail withSnsTopicName(String snsTopicName) {
+        setSnsTopicName(snsTopicName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
+     * notifications when log files are delivered. The format of a topic ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * </p>
+     * 
+     * @param snsTopicARN
+     *        Specifies the ARN of the Amazon SNS topic that CloudTrail uses to
+     *        send notifications when log files are delivered. The format of a
+     *        topic ARN is:</p>
+     *        <p>
+     *        <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     */
+
+    public void setSnsTopicARN(String snsTopicARN) {
+        this.snsTopicARN = snsTopicARN;
+    }
+
+    /**
+     * <p>
+     * Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
+     * notifications when log files are delivered. The format of a topic ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * </p>
+     * 
+     * @return Specifies the ARN of the Amazon SNS topic that CloudTrail uses to
+     *         send notifications when log files are delivered. The format of a
+     *         topic ARN is:</p>
+     *         <p>
+     *         <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     */
+
+    public String getSnsTopicARN() {
+        return this.snsTopicARN;
+    }
+
+    /**
+     * <p>
+     * Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
+     * notifications when log files are delivered. The format of a topic ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * </p>
+     * 
+     * @param snsTopicARN
+     *        Specifies the ARN of the Amazon SNS topic that CloudTrail uses to
+     *        send notifications when log files are delivered. The format of a
+     *        topic ARN is:</p>
+     *        <p>
+     *        <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public Trail withSnsTopicName(String snsTopicName) {
-        setSnsTopicName(snsTopicName);
+    public Trail withSnsTopicARN(String snsTopicARN) {
+        setSnsTopicARN(snsTopicARN);
         return this;
     }
 
@@ -512,15 +585,16 @@ public class Trail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name of the trail. The <code>TrailARN</code> format
-     * is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * Specifies the ARN of the trail. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param trailARN
-     *        The Amazon Resource Name of the trail. The <code>TrailARN</code>
-     *        format is
+     *        Specifies the ARN of the trail. The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      */
 
     public void setTrailARN(String trailARN) {
@@ -529,14 +603,15 @@ public class Trail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name of the trail. The <code>TrailARN</code> format
-     * is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * Specifies the ARN of the trail. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
-     * @return The Amazon Resource Name of the trail. The <code>TrailARN</code>
-     *         format is
+     * @return Specifies the ARN of the trail. The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      */
 
     public String getTrailARN() {
@@ -545,15 +620,16 @@ public class Trail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name of the trail. The <code>TrailARN</code> format
-     * is <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * Specifies the ARN of the trail. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param trailARN
-     *        The Amazon Resource Name of the trail. The <code>TrailARN</code>
-     *        format is
+     *        Specifies the ARN of the trail. The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -718,13 +794,16 @@ public class Trail implements Serializable, Cloneable {
      * Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
      * The value is a fully specified ARN to a KMS key in the format:
      * </p>
+     * <p>
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
      * 
      * @param kmsKeyId
      *        Specifies the KMS key ID that encrypts the logs delivered by
      *        CloudTrail. The value is a fully specified ARN to a KMS key in the
      *        format:</p>
-     *        <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        <p>
+     *        <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -736,12 +815,15 @@ public class Trail implements Serializable, Cloneable {
      * Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
      * The value is a fully specified ARN to a KMS key in the format:
      * </p>
+     * <p>
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
      * 
      * @return Specifies the KMS key ID that encrypts the logs delivered by
      *         CloudTrail. The value is a fully specified ARN to a KMS key in
      *         the format:</p>
-     *         <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         <p>
+     *         <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      */
 
     public String getKmsKeyId() {
@@ -753,13 +835,16 @@ public class Trail implements Serializable, Cloneable {
      * Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
      * The value is a fully specified ARN to a KMS key in the format:
      * </p>
+     * <p>
      * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
      * 
      * @param kmsKeyId
      *        Specifies the KMS key ID that encrypts the logs delivered by
      *        CloudTrail. The value is a fully specified ARN to a KMS key in the
      *        format:</p>
-     *        <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        <p>
+     *        <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -789,6 +874,8 @@ public class Trail implements Serializable, Cloneable {
             sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
         if (getSnsTopicName() != null)
             sb.append("SnsTopicName: " + getSnsTopicName() + ",");
+        if (getSnsTopicARN() != null)
+            sb.append("SnsTopicARN: " + getSnsTopicARN() + ",");
         if (getIncludeGlobalServiceEvents() != null)
             sb.append("IncludeGlobalServiceEvents: "
                     + getIncludeGlobalServiceEvents() + ",");
@@ -842,6 +929,11 @@ public class Trail implements Serializable, Cloneable {
             return false;
         if (other.getSnsTopicName() != null
                 && other.getSnsTopicName().equals(this.getSnsTopicName()) == false)
+            return false;
+        if (other.getSnsTopicARN() == null ^ this.getSnsTopicARN() == null)
+            return false;
+        if (other.getSnsTopicARN() != null
+                && other.getSnsTopicARN().equals(this.getSnsTopicARN()) == false)
             return false;
         if (other.getIncludeGlobalServiceEvents() == null
                 ^ this.getIncludeGlobalServiceEvents() == null)
@@ -914,6 +1006,9 @@ public class Trail implements Serializable, Cloneable {
                 * hashCode
                 + ((getSnsTopicName() == null) ? 0 : getSnsTopicName()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSnsTopicARN() == null) ? 0 : getSnsTopicARN().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getIncludeGlobalServiceEvents() == null) ? 0

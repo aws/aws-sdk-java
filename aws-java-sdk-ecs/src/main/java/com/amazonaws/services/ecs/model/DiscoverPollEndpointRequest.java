@@ -33,8 +33,8 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      * account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container
      * instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:
-     * container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      */
     private String containerInstance;
@@ -53,8 +53,8 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      * account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container
      * instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:
-     * container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      * 
      * @param containerInstance
@@ -64,8 +64,8 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      *        container instance, the AWS account ID of the container instance
      *        owner, the <code>container-instance</code> namespace, and then the
      *        container instance ID. For example,
-     *        arn:aws:ecs:<i>region</i>:<i>aws_account_id
-     *        </i>:container-instance/<i>container_instance_ID</i>.
+     *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     *        .
      */
 
     public void setContainerInstance(String containerInstance) {
@@ -80,8 +80,8 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      * account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container
      * instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:
-     * container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      * 
      * @return The container instance ID or full Amazon Resource Name (ARN) of
@@ -90,9 +90,8 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      *         container instance, the AWS account ID of the container instance
      *         owner, the <code>container-instance</code> namespace, and then
      *         the container instance ID. For example,
-     *         arn:aws:ecs:<i>region</i>:
-     *         <i>aws_account_id</i>:container-instance
-     *         /<i>container_instance_ID</i>.
+     *         <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     *         .
      */
 
     public String getContainerInstance() {
@@ -107,8 +106,8 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      * account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container
      * instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:
-     * container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      * 
      * @param containerInstance
@@ -118,8 +117,8 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      *        container instance, the AWS account ID of the container instance
      *        owner, the <code>container-instance</code> namespace, and then the
      *        container instance ID. For example,
-     *        arn:aws:ecs:<i>region</i>:<i>aws_account_id
-     *        </i>:container-instance/<i>container_instance_ID</i>.
+     *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     *        .
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

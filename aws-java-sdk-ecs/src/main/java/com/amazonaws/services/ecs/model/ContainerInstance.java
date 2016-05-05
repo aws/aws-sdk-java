@@ -33,8 +33,8 @@ public class ContainerInstance implements Serializable, Cloneable {
      * of the container instance, the AWS account ID of the container instance
      * owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id
-     * </i>:container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      */
     private String containerInstanceArn;
@@ -118,8 +118,8 @@ public class ContainerInstance implements Serializable, Cloneable {
      * of the container instance, the AWS account ID of the container instance
      * owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id
-     * </i>:container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      * 
      * @param containerInstanceArn
@@ -128,9 +128,8 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        region of the container instance, the AWS account ID of the
      *        container instance owner, the <code>container-instance</code>
      *        namespace, and then the container instance ID. For example,
-     *        arn:aws
-     *        :ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/
-     *        <i>container_instance_ID</i>.
+     *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     *        .
      */
 
     public void setContainerInstanceArn(String containerInstanceArn) {
@@ -144,8 +143,8 @@ public class ContainerInstance implements Serializable, Cloneable {
      * of the container instance, the AWS account ID of the container instance
      * owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id
-     * </i>:container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the container instance. The ARN
@@ -153,9 +152,8 @@ public class ContainerInstance implements Serializable, Cloneable {
      *         region of the container instance, the AWS account ID of the
      *         container instance owner, the <code>container-instance</code>
      *         namespace, and then the container instance ID. For example,
-     *         arn:aws
-     *         :ecs:<i>region</i>:<i>aws_account_id</i>:container-instance
-     *         /<i>container_instance_ID</i>.
+     *         <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     *         .
      */
 
     public String getContainerInstanceArn() {
@@ -169,8 +167,8 @@ public class ContainerInstance implements Serializable, Cloneable {
      * of the container instance, the AWS account ID of the container instance
      * owner, the <code>container-instance</code> namespace, and then the
      * container instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id
-     * </i>:container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      * 
      * @param containerInstanceArn
@@ -179,9 +177,8 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        region of the container instance, the AWS account ID of the
      *        container instance owner, the <code>container-instance</code>
      *        namespace, and then the container instance ID. For example,
-     *        arn:aws
-     *        :ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/
-     *        <i>container_instance_ID</i>.
+     *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     *        .
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

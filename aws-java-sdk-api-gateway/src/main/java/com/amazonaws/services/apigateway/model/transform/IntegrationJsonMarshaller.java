@@ -101,6 +101,10 @@ public class IntegrationJsonMarshaller {
                 }
                 jsonGenerator.writeEndObject();
             }
+            if (integration.getPassthroughBehavior() != null) {
+                jsonGenerator.writeFieldName("passthroughBehavior").writeValue(
+                        integration.getPassthroughBehavior());
+            }
             if (integration.getCacheNamespace() != null) {
                 jsonGenerator.writeFieldName("cacheNamespace").writeValue(
                         integration.getCacheNamespace());

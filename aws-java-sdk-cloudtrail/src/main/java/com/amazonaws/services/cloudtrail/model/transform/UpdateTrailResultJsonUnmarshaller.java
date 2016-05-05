@@ -73,6 +73,11 @@ public class UpdateTrailResultJsonUnmarshaller implements
                     updateTrailResult.setSnsTopicName(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("SnsTopicARN", targetDepth)) {
+                    context.nextToken();
+                    updateTrailResult.setSnsTopicARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("IncludeGlobalServiceEvents",
                         targetDepth)) {
                     context.nextToken();

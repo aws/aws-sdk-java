@@ -89,6 +89,11 @@ public class IntegrationJsonUnmarshaller implements
                                     context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
+                if (context.testExpression("passthroughBehavior", targetDepth)) {
+                    context.nextToken();
+                    integration.setPassthroughBehavior(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("cacheNamespace", targetDepth)) {
                     context.nextToken();
                     integration.setCacheNamespace(context.getUnmarshaller(

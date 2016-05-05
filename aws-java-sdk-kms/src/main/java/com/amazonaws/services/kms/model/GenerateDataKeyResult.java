@@ -84,7 +84,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      *        context so that the data encrypted by using the key can later be
      *        decrypted. You must provide both the ciphertext blob and the
      *        encryption context to the <a>Decrypt</a> API to recover the
-     *        plaintext data key and decrypt the object. </p>
+     *        plaintext data key and decrypt the object.</p>
      *        <p>
      *        If you are using the CLI, the value is Base64 encoded. Otherwise,
      *        it is not encoded.
@@ -122,7 +122,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      *         context so that the data encrypted by using the key can later be
      *         decrypted. You must provide both the ciphertext blob and the
      *         encryption context to the <a>Decrypt</a> API to recover the
-     *         plaintext data key and decrypt the object. </p>
+     *         plaintext data key and decrypt the object.</p>
      *         <p>
      *         If you are using the CLI, the value is Base64 encoded. Otherwise,
      *         it is not encoded.
@@ -151,7 +151,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      *        context so that the data encrypted by using the key can later be
      *        decrypted. You must provide both the ciphertext blob and the
      *        encryption context to the <a>Decrypt</a> API to recover the
-     *        plaintext data key and decrypt the object. </p>
+     *        plaintext data key and decrypt the object.</p>
      *        <p>
      *        If you are using the CLI, the value is Base64 encoded. Otherwise,
      *        it is not encoded.

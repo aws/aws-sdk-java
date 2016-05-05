@@ -181,6 +181,7 @@ public interface AmazonApiGateway {
      * @return Result of the CreateDomainName operation returned by the service.
      * @throws UnauthorizedException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.CreateDomainName
      */
@@ -438,6 +439,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteResource
      */
@@ -1014,6 +1016,7 @@ public interface AmazonApiGateway {
      * @return Result of the PutIntegration operation returned by the service.
      * @throws UnauthorizedException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.PutIntegration
@@ -1094,6 +1097,7 @@ public interface AmazonApiGateway {
      * @return Result of the PutRestApi operation returned by the service.
      * @throws UnauthorizedException
      * @throws LimitExceededException
+     * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.PutRestApi
@@ -1257,6 +1261,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateDomainName
      */
@@ -1293,6 +1298,7 @@ public interface AmazonApiGateway {
      *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
+     * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateIntegrationResponse
@@ -1311,6 +1317,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateMethod
      */
@@ -1348,6 +1355,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateModel
      */

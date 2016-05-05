@@ -33,13 +33,33 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * requirements:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-)</li>
-     * <li>Start with a letter or number, and end with a letter or number</li>
-     * <li>Be between 3 and 128 characters</li>
-     * <li>Have no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li>
-     * <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start with a letter or number, and end with a letter or number
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be between 3 and 128 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Have no adjacent periods, underscores or dashes. Names like
+     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not be in IP address format (for example, 192.168.5.4)
+     * </p>
+     * </li>
      * </ul>
      */
     private String name;
@@ -89,15 +109,18 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * Specifies whether log file integrity validation is enabled. The default
      * is false.
      * </p>
-     * <note>When you disable log file integrity validation, the chain of digest
-     * files is broken after one hour. CloudTrail will not create digest files
-     * for log files that were delivered during a period in which log file
-     * integrity validation was disabled. For example, if you enable log file
-     * integrity validation at noon on January 1, disable it at noon on January
-     * 2, and re-enable it at noon on January 10, digest files will not be
-     * created for the log files delivered from noon on January 2 to noon on
-     * January 10. The same applies whenever you stop CloudTrail logging or
-     * delete a trail.</note>
+     * <note>
+     * <p>
+     * When you disable log file integrity validation, the chain of digest files
+     * is broken after one hour. CloudTrail will not create digest files for log
+     * files that were delivered during a period in which log file integrity
+     * validation was disabled. For example, if you enable log file integrity
+     * validation at noon on January 1, disable it at noon on January 2, and
+     * re-enable it at noon on January 10, digest files will not be created for
+     * the log files delivered from noon on January 2 to noon on January 10. The
+     * same applies whenever you stop CloudTrail logging or delete a trail.
+     * </p>
+     * </note>
      */
     private Boolean enableLogFileValidation;
     /**
@@ -126,11 +149,27 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * Examples:
      * </p>
      * <ul>
-     * <li>alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
-     * 123456789012</li>
-     * <li>12345678-1234-1234-1234-123456789012</li>
+     * <li>
+     * <p>
+     * alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
      * </ul>
      */
     private String kmsKeyId;
@@ -141,28 +180,67 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * requirements:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-)</li>
-     * <li>Start with a letter or number, and end with a letter or number</li>
-     * <li>Be between 3 and 128 characters</li>
-     * <li>Have no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li>
-     * <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start with a letter or number, and end with a letter or number
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be between 3 and 128 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Have no adjacent periods, underscores or dashes. Names like
+     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not be in IP address format (for example, 192.168.5.4)
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param name
      *        Specifies the name of the trail. The name must meet the following
      *        requirements:</p>
      *        <ul>
-     *        <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *        (.), underscores (_), or dashes (-)</li>
-     *        <li>Start with a letter or number, and end with a letter or number
+     *        <li>
+     *        <p>
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     *        underscores (_), or dashes (-)
+     *        </p>
      *        </li>
-     *        <li>Be between 3 and 128 characters</li>
-     *        <li>Have no adjacent periods, underscores or dashes. Names like
+     *        <li>
+     *        <p>
+     *        Start with a letter or number, and end with a letter or number
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Be between 3 and 128 characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Have no adjacent periods, underscores or dashes. Names like
      *        <code>my-_namespace</code> and <code>my--namespace</code> are
-     *        invalid.</li>
-     *        <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *        invalid.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not be in IP address format (for example, 192.168.5.4)
+     *        </p>
+     *        </li>
      */
 
     public void setName(String name) {
@@ -175,27 +253,66 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * requirements:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-)</li>
-     * <li>Start with a letter or number, and end with a letter or number</li>
-     * <li>Be between 3 and 128 characters</li>
-     * <li>Have no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li>
-     * <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start with a letter or number, and end with a letter or number
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be between 3 and 128 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Have no adjacent periods, underscores or dashes. Names like
+     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not be in IP address format (for example, 192.168.5.4)
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Specifies the name of the trail. The name must meet the following
      *         requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      */
 
     public String getName() {
@@ -208,28 +325,67 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * requirements:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-)</li>
-     * <li>Start with a letter or number, and end with a letter or number</li>
-     * <li>Be between 3 and 128 characters</li>
-     * <li>Have no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li>
-     * <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start with a letter or number, and end with a letter or number
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be between 3 and 128 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Have no adjacent periods, underscores or dashes. Names like
+     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not be in IP address format (for example, 192.168.5.4)
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param name
      *        Specifies the name of the trail. The name must meet the following
      *        requirements:</p>
      *        <ul>
-     *        <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *        (.), underscores (_), or dashes (-)</li>
-     *        <li>Start with a letter or number, and end with a letter or number
+     *        <li>
+     *        <p>
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     *        underscores (_), or dashes (-)
+     *        </p>
      *        </li>
-     *        <li>Be between 3 and 128 characters</li>
-     *        <li>Have no adjacent periods, underscores or dashes. Names like
+     *        <li>
+     *        <p>
+     *        Start with a letter or number, and end with a letter or number
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Be between 3 and 128 characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Have no adjacent periods, underscores or dashes. Names like
      *        <code>my-_namespace</code> and <code>my--namespace</code> are
-     *        invalid.</li>
-     *        <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *        invalid.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not be in IP address format (for example, 192.168.5.4)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -547,28 +703,33 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * Specifies whether log file integrity validation is enabled. The default
      * is false.
      * </p>
-     * <note>When you disable log file integrity validation, the chain of digest
-     * files is broken after one hour. CloudTrail will not create digest files
-     * for log files that were delivered during a period in which log file
-     * integrity validation was disabled. For example, if you enable log file
-     * integrity validation at noon on January 1, disable it at noon on January
-     * 2, and re-enable it at noon on January 10, digest files will not be
-     * created for the log files delivered from noon on January 2 to noon on
-     * January 10. The same applies whenever you stop CloudTrail logging or
-     * delete a trail.</note>
+     * <note>
+     * <p>
+     * When you disable log file integrity validation, the chain of digest files
+     * is broken after one hour. CloudTrail will not create digest files for log
+     * files that were delivered during a period in which log file integrity
+     * validation was disabled. For example, if you enable log file integrity
+     * validation at noon on January 1, disable it at noon on January 2, and
+     * re-enable it at noon on January 10, digest files will not be created for
+     * the log files delivered from noon on January 2 to noon on January 10. The
+     * same applies whenever you stop CloudTrail logging or delete a trail.
+     * </p>
+     * </note>
      * 
      * @param enableLogFileValidation
      *        Specifies whether log file integrity validation is enabled. The
-     *        default is false.</p> <note>When you disable log file integrity
-     *        validation, the chain of digest files is broken after one hour.
-     *        CloudTrail will not create digest files for log files that were
-     *        delivered during a period in which log file integrity validation
-     *        was disabled. For example, if you enable log file integrity
-     *        validation at noon on January 1, disable it at noon on January 2,
-     *        and re-enable it at noon on January 10, digest files will not be
-     *        created for the log files delivered from noon on January 2 to noon
-     *        on January 10. The same applies whenever you stop CloudTrail
-     *        logging or delete a trail.
+     *        default is false.</p> <note>
+     *        <p>
+     *        When you disable log file integrity validation, the chain of
+     *        digest files is broken after one hour. CloudTrail will not create
+     *        digest files for log files that were delivered during a period in
+     *        which log file integrity validation was disabled. For example, if
+     *        you enable log file integrity validation at noon on January 1,
+     *        disable it at noon on January 2, and re-enable it at noon on
+     *        January 10, digest files will not be created for the log files
+     *        delivered from noon on January 2 to noon on January 10. The same
+     *        applies whenever you stop CloudTrail logging or delete a trail.
+     *        </p>
      */
 
     public void setEnableLogFileValidation(Boolean enableLogFileValidation) {
@@ -580,27 +741,32 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * Specifies whether log file integrity validation is enabled. The default
      * is false.
      * </p>
-     * <note>When you disable log file integrity validation, the chain of digest
-     * files is broken after one hour. CloudTrail will not create digest files
-     * for log files that were delivered during a period in which log file
-     * integrity validation was disabled. For example, if you enable log file
-     * integrity validation at noon on January 1, disable it at noon on January
-     * 2, and re-enable it at noon on January 10, digest files will not be
-     * created for the log files delivered from noon on January 2 to noon on
-     * January 10. The same applies whenever you stop CloudTrail logging or
-     * delete a trail.</note>
+     * <note>
+     * <p>
+     * When you disable log file integrity validation, the chain of digest files
+     * is broken after one hour. CloudTrail will not create digest files for log
+     * files that were delivered during a period in which log file integrity
+     * validation was disabled. For example, if you enable log file integrity
+     * validation at noon on January 1, disable it at noon on January 2, and
+     * re-enable it at noon on January 10, digest files will not be created for
+     * the log files delivered from noon on January 2 to noon on January 10. The
+     * same applies whenever you stop CloudTrail logging or delete a trail.
+     * </p>
+     * </note>
      * 
      * @return Specifies whether log file integrity validation is enabled. The
-     *         default is false.</p> <note>When you disable log file integrity
-     *         validation, the chain of digest files is broken after one hour.
-     *         CloudTrail will not create digest files for log files that were
-     *         delivered during a period in which log file integrity validation
-     *         was disabled. For example, if you enable log file integrity
-     *         validation at noon on January 1, disable it at noon on January 2,
-     *         and re-enable it at noon on January 10, digest files will not be
-     *         created for the log files delivered from noon on January 2 to
-     *         noon on January 10. The same applies whenever you stop CloudTrail
-     *         logging or delete a trail.
+     *         default is false.</p> <note>
+     *         <p>
+     *         When you disable log file integrity validation, the chain of
+     *         digest files is broken after one hour. CloudTrail will not create
+     *         digest files for log files that were delivered during a period in
+     *         which log file integrity validation was disabled. For example, if
+     *         you enable log file integrity validation at noon on January 1,
+     *         disable it at noon on January 2, and re-enable it at noon on
+     *         January 10, digest files will not be created for the log files
+     *         delivered from noon on January 2 to noon on January 10. The same
+     *         applies whenever you stop CloudTrail logging or delete a trail.
+     *         </p>
      */
 
     public Boolean getEnableLogFileValidation() {
@@ -612,28 +778,33 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * Specifies whether log file integrity validation is enabled. The default
      * is false.
      * </p>
-     * <note>When you disable log file integrity validation, the chain of digest
-     * files is broken after one hour. CloudTrail will not create digest files
-     * for log files that were delivered during a period in which log file
-     * integrity validation was disabled. For example, if you enable log file
-     * integrity validation at noon on January 1, disable it at noon on January
-     * 2, and re-enable it at noon on January 10, digest files will not be
-     * created for the log files delivered from noon on January 2 to noon on
-     * January 10. The same applies whenever you stop CloudTrail logging or
-     * delete a trail.</note>
+     * <note>
+     * <p>
+     * When you disable log file integrity validation, the chain of digest files
+     * is broken after one hour. CloudTrail will not create digest files for log
+     * files that were delivered during a period in which log file integrity
+     * validation was disabled. For example, if you enable log file integrity
+     * validation at noon on January 1, disable it at noon on January 2, and
+     * re-enable it at noon on January 10, digest files will not be created for
+     * the log files delivered from noon on January 2 to noon on January 10. The
+     * same applies whenever you stop CloudTrail logging or delete a trail.
+     * </p>
+     * </note>
      * 
      * @param enableLogFileValidation
      *        Specifies whether log file integrity validation is enabled. The
-     *        default is false.</p> <note>When you disable log file integrity
-     *        validation, the chain of digest files is broken after one hour.
-     *        CloudTrail will not create digest files for log files that were
-     *        delivered during a period in which log file integrity validation
-     *        was disabled. For example, if you enable log file integrity
-     *        validation at noon on January 1, disable it at noon on January 2,
-     *        and re-enable it at noon on January 10, digest files will not be
-     *        created for the log files delivered from noon on January 2 to noon
-     *        on January 10. The same applies whenever you stop CloudTrail
-     *        logging or delete a trail.
+     *        default is false.</p> <note>
+     *        <p>
+     *        When you disable log file integrity validation, the chain of
+     *        digest files is broken after one hour. CloudTrail will not create
+     *        digest files for log files that were delivered during a period in
+     *        which log file integrity validation was disabled. For example, if
+     *        you enable log file integrity validation at noon on January 1,
+     *        disable it at noon on January 2, and re-enable it at noon on
+     *        January 10, digest files will not be created for the log files
+     *        delivered from noon on January 2 to noon on January 10. The same
+     *        applies whenever you stop CloudTrail logging or delete a trail.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -649,27 +820,32 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * Specifies whether log file integrity validation is enabled. The default
      * is false.
      * </p>
-     * <note>When you disable log file integrity validation, the chain of digest
-     * files is broken after one hour. CloudTrail will not create digest files
-     * for log files that were delivered during a period in which log file
-     * integrity validation was disabled. For example, if you enable log file
-     * integrity validation at noon on January 1, disable it at noon on January
-     * 2, and re-enable it at noon on January 10, digest files will not be
-     * created for the log files delivered from noon on January 2 to noon on
-     * January 10. The same applies whenever you stop CloudTrail logging or
-     * delete a trail.</note>
+     * <note>
+     * <p>
+     * When you disable log file integrity validation, the chain of digest files
+     * is broken after one hour. CloudTrail will not create digest files for log
+     * files that were delivered during a period in which log file integrity
+     * validation was disabled. For example, if you enable log file integrity
+     * validation at noon on January 1, disable it at noon on January 2, and
+     * re-enable it at noon on January 10, digest files will not be created for
+     * the log files delivered from noon on January 2 to noon on January 10. The
+     * same applies whenever you stop CloudTrail logging or delete a trail.
+     * </p>
+     * </note>
      * 
      * @return Specifies whether log file integrity validation is enabled. The
-     *         default is false.</p> <note>When you disable log file integrity
-     *         validation, the chain of digest files is broken after one hour.
-     *         CloudTrail will not create digest files for log files that were
-     *         delivered during a period in which log file integrity validation
-     *         was disabled. For example, if you enable log file integrity
-     *         validation at noon on January 1, disable it at noon on January 2,
-     *         and re-enable it at noon on January 10, digest files will not be
-     *         created for the log files delivered from noon on January 2 to
-     *         noon on January 10. The same applies whenever you stop CloudTrail
-     *         logging or delete a trail.
+     *         default is false.</p> <note>
+     *         <p>
+     *         When you disable log file integrity validation, the chain of
+     *         digest files is broken after one hour. CloudTrail will not create
+     *         digest files for log files that were delivered during a period in
+     *         which log file integrity validation was disabled. For example, if
+     *         you enable log file integrity validation at noon on January 1,
+     *         disable it at noon on January 2, and re-enable it at noon on
+     *         January 10, digest files will not be created for the log files
+     *         delivered from noon on January 2 to noon on January 10. The same
+     *         applies whenever you stop CloudTrail logging or delete a trail.
+     *         </p>
      */
 
     public Boolean isEnableLogFileValidation() {
@@ -792,11 +968,27 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * Examples:
      * </p>
      * <ul>
-     * <li>alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
-     * 123456789012</li>
-     * <li>12345678-1234-1234-1234-123456789012</li>
+     * <li>
+     * <p>
+     * alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param kmsKeyId
@@ -808,12 +1000,27 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      *        Examples:
      *        </p>
      *        <ul>
-     *        <li>alias/MyAliasName</li>
-     *        <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
      *        <li>
+     *        <p>
+     *        alias/MyAliasName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
-     *        123456789012</li>
-     *        <li>12345678-1234-1234-1234-123456789012</li>
+     *        123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -831,11 +1038,27 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * Examples:
      * </p>
      * <ul>
-     * <li>alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
-     * 123456789012</li>
-     * <li>12345678-1234-1234-1234-123456789012</li>
+     * <li>
+     * <p>
+     * alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Specifies the KMS key ID to use to encrypt the logs delivered by
@@ -846,12 +1069,27 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      *         Examples:
      *         </p>
      *         <ul>
-     *         <li>alias/MyAliasName</li>
-     *         <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
      *         <li>
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234
-     *         -123456789012</li>
-     *         <li>12345678-1234-1234-1234-123456789012</li>
+     *         <p>
+     *         alias/MyAliasName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     *         123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         12345678-1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
      */
 
     public String getKmsKeyId() {
@@ -869,11 +1107,27 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      * Examples:
      * </p>
      * <ul>
-     * <li>alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
-     * 123456789012</li>
-     * <li>12345678-1234-1234-1234-123456789012</li>
+     * <li>
+     * <p>
+     * alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
+     * 123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param kmsKeyId
@@ -885,12 +1139,27 @@ public class CreateTrailRequest extends AmazonWebServiceRequest implements
      *        Examples:
      *        </p>
      *        <ul>
-     *        <li>alias/MyAliasName</li>
-     *        <li>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
      *        <li>
+     *        <p>
+     *        alias/MyAliasName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-
-     *        123456789012</li>
-     *        <li>12345678-1234-1234-1234-123456789012</li>
+     *        123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

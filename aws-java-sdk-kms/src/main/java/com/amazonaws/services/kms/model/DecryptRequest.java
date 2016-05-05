@@ -46,7 +46,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -217,7 +217,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -225,7 +225,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of grant tokens.</p>
      *         <p>
-     *         For more information, go to <a href=
+     *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
@@ -243,7 +243,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -252,7 +252,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
@@ -273,7 +273,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -288,7 +288,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
@@ -312,7 +312,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -321,7 +321,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.

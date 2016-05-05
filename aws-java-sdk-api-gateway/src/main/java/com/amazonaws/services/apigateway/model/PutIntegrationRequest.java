@@ -90,12 +90,38 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     private java.util.Map<String, String> requestParameters;
     /**
      * <p>
-     * Specifies the templates used to transform the method request body.
-     * Request templates are represented as a key/value map, with a content-type
-     * as the key and a template as the value.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      */
     private java.util.Map<String, String> requestTemplates;
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     */
+    private String passthroughBehavior;
     /**
      * <p>
      * Specifies a put integration input's cache namespace.
@@ -582,14 +608,16 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the templates used to transform the method request body.
-     * Request templates are represented as a key/value map, with a content-type
-     * as the key and a template as the value.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
-     * @return Specifies the templates used to transform the method request
-     *         body. Request templates are represented as a key/value map, with
-     *         a content-type as the key and a template as the value.
+     * @return Represents a map of Velocity templates that are applied on the
+     *         request payload based on the value of the Content-Type header
+     *         sent by the client. The content type value is the key in this
+     *         map, and the template (as a String) is the value.
      */
 
     public java.util.Map<String, String> getRequestTemplates() {
@@ -598,15 +626,17 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the templates used to transform the method request body.
-     * Request templates are represented as a key/value map, with a content-type
-     * as the key and a template as the value.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
      * @param requestTemplates
-     *        Specifies the templates used to transform the method request body.
-     *        Request templates are represented as a key/value map, with a
-     *        content-type as the key and a template as the value.
+     *        Represents a map of Velocity templates that are applied on the
+     *        request payload based on the value of the Content-Type header sent
+     *        by the client. The content type value is the key in this map, and
+     *        the template (as a String) is the value.
      */
 
     public void setRequestTemplates(
@@ -616,15 +646,17 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the templates used to transform the method request body.
-     * Request templates are represented as a key/value map, with a content-type
-     * as the key and a template as the value.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
      * @param requestTemplates
-     *        Specifies the templates used to transform the method request body.
-     *        Request templates are represented as a key/value map, with a
-     *        content-type as the key and a template as the value.
+     *        Represents a map of Velocity templates that are applied on the
+     *        request payload based on the value of the Content-Type header sent
+     *        by the client. The content type value is the key in this map, and
+     *        the template (as a String) is the value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -654,6 +686,162 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     public PutIntegrationRequest clearRequestTemplatesEntries() {
         this.requestTemplates = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @param passthroughBehavior
+     *        Specifies the pass-through behavior for incoming requests based on
+     *        the Content-Type header in the request, and the available
+     *        requestTemplates defined on the Integration. There are three valid
+     *        values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>
+     *        , and <code>NEVER</code>.</p>
+     *        <p/>
+     *        <p>
+     *        <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *        content types through to the Integration backend without
+     *        transformation.
+     *        </p>
+     *        <p>
+     *        <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     *        'Unsupported Media Type' response.
+     *        </p>
+     *        <p>
+     *        <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *        Integration has NO content types mapped to templates. However if
+     *        there is at least one content type defined, unmapped content types
+     *        will be rejected with the same 415 response.
+     */
+
+    public void setPassthroughBehavior(String passthroughBehavior) {
+        this.passthroughBehavior = passthroughBehavior;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @return Specifies the pass-through behavior for incoming requests based
+     *         on the Content-Type header in the request, and the available
+     *         requestTemplates defined on the Integration. There are three
+     *         valid values: <code>WHEN_NO_MATCH</code>,
+     *         <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p>
+     *         <p/>
+     *         <p>
+     *         <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *         content types through to the Integration backend without
+     *         transformation.
+     *         </p>
+     *         <p>
+     *         <code>NEVER</code> rejects unmapped content types with an HTTP
+     *         415 'Unsupported Media Type' response.
+     *         </p>
+     *         <p>
+     *         <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *         Integration has NO content types mapped to templates. However if
+     *         there is at least one content type defined, unmapped content
+     *         types will be rejected with the same 415 response.
+     */
+
+    public String getPassthroughBehavior() {
+        return this.passthroughBehavior;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @param passthroughBehavior
+     *        Specifies the pass-through behavior for incoming requests based on
+     *        the Content-Type header in the request, and the available
+     *        requestTemplates defined on the Integration. There are three valid
+     *        values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>
+     *        , and <code>NEVER</code>.</p>
+     *        <p/>
+     *        <p>
+     *        <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *        content types through to the Integration backend without
+     *        transformation.
+     *        </p>
+     *        <p>
+     *        <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     *        'Unsupported Media Type' response.
+     *        </p>
+     *        <p>
+     *        <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *        Integration has NO content types mapped to templates. However if
+     *        there is at least one content type defined, unmapped content types
+     *        will be rejected with the same 415 response.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PutIntegrationRequest withPassthroughBehavior(
+            String passthroughBehavior) {
+        setPassthroughBehavior(passthroughBehavior);
         return this;
     }
 
@@ -807,6 +995,8 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
             sb.append("RequestParameters: " + getRequestParameters() + ",");
         if (getRequestTemplates() != null)
             sb.append("RequestTemplates: " + getRequestTemplates() + ",");
+        if (getPassthroughBehavior() != null)
+            sb.append("PassthroughBehavior: " + getPassthroughBehavior() + ",");
         if (getCacheNamespace() != null)
             sb.append("CacheNamespace: " + getCacheNamespace() + ",");
         if (getCacheKeyParameters() != null)
@@ -876,6 +1066,13 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
                 && other.getRequestTemplates().equals(
                         this.getRequestTemplates()) == false)
             return false;
+        if (other.getPassthroughBehavior() == null
+                ^ this.getPassthroughBehavior() == null)
+            return false;
+        if (other.getPassthroughBehavior() != null
+                && other.getPassthroughBehavior().equals(
+                        this.getPassthroughBehavior()) == false)
+            return false;
         if (other.getCacheNamespace() == null
                 ^ this.getCacheNamespace() == null)
             return false;
@@ -922,6 +1119,10 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getRequestTemplates() == null) ? 0 : getRequestTemplates()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPassthroughBehavior() == null) ? 0
+                        : getPassthroughBehavior().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getCacheNamespace() == null) ? 0 : getCacheNamespace()

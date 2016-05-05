@@ -27,7 +27,7 @@ public class TaskDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the of the task definition.
+     * The full Amazon Resource Name (ARN) of the task definition.
      * </p>
      */
     private String taskDefinitionArn;
@@ -36,7 +36,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * A list of container definitions in JSON format that describe the
      * different containers that make up your task. For more information about
      * container definition parameters and defaults, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      * </p>
@@ -63,7 +63,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * <p>
      * The list of volumes in a task. For more information about volume
      * definition parameters and defaults, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      * </p>
@@ -84,11 +84,11 @@ public class TaskDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the of the task definition.
+     * The full Amazon Resource Name (ARN) of the task definition.
      * </p>
      * 
      * @param taskDefinitionArn
-     *        The full Amazon Resource Name (ARN) of the of the task definition.
+     *        The full Amazon Resource Name (ARN) of the task definition.
      */
 
     public void setTaskDefinitionArn(String taskDefinitionArn) {
@@ -97,11 +97,10 @@ public class TaskDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the of the task definition.
+     * The full Amazon Resource Name (ARN) of the task definition.
      * </p>
      * 
-     * @return The full Amazon Resource Name (ARN) of the of the task
-     *         definition.
+     * @return The full Amazon Resource Name (ARN) of the task definition.
      */
 
     public String getTaskDefinitionArn() {
@@ -110,11 +109,11 @@ public class TaskDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full Amazon Resource Name (ARN) of the of the task definition.
+     * The full Amazon Resource Name (ARN) of the task definition.
      * </p>
      * 
      * @param taskDefinitionArn
-     *        The full Amazon Resource Name (ARN) of the of the task definition.
+     *        The full Amazon Resource Name (ARN) of the task definition.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -129,7 +128,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * A list of container definitions in JSON format that describe the
      * different containers that make up your task. For more information about
      * container definition parameters and defaults, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      * </p>
@@ -137,7 +136,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * @return A list of container definitions in JSON format that describe the
      *         different containers that make up your task. For more information
      *         about container definition parameters and defaults, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      *         >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container
      *         Service Developer Guide</i>.
      */
@@ -154,7 +153,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * A list of container definitions in JSON format that describe the
      * different containers that make up your task. For more information about
      * container definition parameters and defaults, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      * </p>
@@ -163,7 +162,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      *        A list of container definitions in JSON format that describe the
      *        different containers that make up your task. For more information
      *        about container definition parameters and defaults, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      *        >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container
      *        Service Developer Guide</i>.
      */
@@ -184,7 +183,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * A list of container definitions in JSON format that describe the
      * different containers that make up your task. For more information about
      * container definition parameters and defaults, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      * </p>
@@ -199,7 +198,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      *        A list of container definitions in JSON format that describe the
      *        different containers that make up your task. For more information
      *        about container definition parameters and defaults, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      *        >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container
      *        Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
@@ -223,7 +222,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * A list of container definitions in JSON format that describe the
      * different containers that make up your task. For more information about
      * container definition parameters and defaults, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      * </p>
@@ -232,7 +231,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      *        A list of container definitions in JSON format that describe the
      *        different containers that make up your task. For more information
      *        about container definition parameters and defaults, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      *        >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container
      *        Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
@@ -364,14 +363,14 @@ public class TaskDefinition implements Serializable, Cloneable {
      * <p>
      * The list of volumes in a task. For more information about volume
      * definition parameters and defaults, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      * </p>
      * 
      * @return The list of volumes in a task. For more information about volume
      *         definition parameters and defaults, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      *         >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container
      *         Service Developer Guide</i>.
      */
@@ -387,7 +386,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * <p>
      * The list of volumes in a task. For more information about volume
      * definition parameters and defaults, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      * </p>
@@ -395,7 +394,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * @param volumes
      *        The list of volumes in a task. For more information about volume
      *        definition parameters and defaults, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      *        >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container
      *        Service Developer Guide</i>.
      */
@@ -414,7 +413,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * <p>
      * The list of volumes in a task. For more information about volume
      * definition parameters and defaults, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      * </p>
@@ -428,7 +427,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * @param volumes
      *        The list of volumes in a task. For more information about volume
      *        definition parameters and defaults, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      *        >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container
      *        Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
@@ -450,7 +449,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * <p>
      * The list of volumes in a task. For more information about volume
      * definition parameters and defaults, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
      * </p>
@@ -458,7 +457,7 @@ public class TaskDefinition implements Serializable, Cloneable {
      * @param volumes
      *        The list of volumes in a task. For more information about volume
      *        definition parameters and defaults, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
+     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html"
      *        >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container
      *        Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be

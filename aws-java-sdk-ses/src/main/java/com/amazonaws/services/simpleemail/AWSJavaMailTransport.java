@@ -37,6 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.simpleemail.model.RawMessage;
 import com.amazonaws.services.simpleemail.model.SendRawEmailRequest;
+import com.amazonaws.services.simpleemail.model.SendRawEmailResult;
 import com.amazonaws.util.VersionInfoUtils;
 
 /**
@@ -64,6 +65,8 @@ public class AWSJavaMailTransport extends Transport {
     private final String accessKey;
     private final String secretKey;
     private final String httpsEndpoint;
+
+    private String lastMessageId;
 
     public AWSJavaMailTransport(Session session, URLName urlname) {
         super(session, urlname);
@@ -263,7 +266,8 @@ public class AWSJavaMailTransport extends Transport {
 
         try {
             appendUserAgent(req, USER_AGENT);
-            this.emailService.sendRawEmail(req);
+            SendRawEmailResult resp = this.emailService.sendRawEmail(req);
+            lastMessageId = resp.getMessageId();
             sent = m.getAllRecipients();
             unsent = new Address[0];
             invalid = new Address[0];
@@ -338,6 +342,18 @@ public class AWSJavaMailTransport extends Transport {
     public void close() throws MessagingException {
         super.close();
         this.emailService = null;
+    }
+
+    /**
+    * <p>
+    * The unique message identifier ot the last message sent by <code>sendMessage</code>
+            * </p>
+            *
+            * @return The unique message identifier sent by the last
+    *         <code>sendMessage</code> action.
+    */
+    public String getLastMessageId() {
+        return lastMessageId;
     }
 
     private static boolean isNullOrEmpty(String s) {

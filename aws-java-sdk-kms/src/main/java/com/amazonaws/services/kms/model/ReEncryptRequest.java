@@ -43,17 +43,31 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key used to re-encrypt the
      * data. This value can be a globally unique identifier, a fully specified
      * ARN to either an alias or a key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      */
     private String destinationKeyId;
     /**
@@ -67,7 +81,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -222,33 +236,62 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key used to re-encrypt the
      * data. This value can be a globally unique identifier, a fully specified
      * ARN to either an alias or a key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param destinationKeyId
      *        A unique identifier for the customer master key used to re-encrypt
      *        the data. This value can be a globally unique identifier, a fully
      *        specified ARN to either an alias or a key, or an alias name
-     *        prefixed by "alias/".
+     *        prefixed by "alias/".</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Alias ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        <li>Alias Name Example - alias/MyAliasName</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias Name Example - alias/MyAliasName
+     *        </p>
+     *        </li>
      */
 
     public void setDestinationKeyId(String destinationKeyId) {
@@ -260,32 +303,61 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key used to re-encrypt the
      * data. This value can be a globally unique identifier, a fully specified
      * ARN to either an alias or a key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A unique identifier for the customer master key used to
      *         re-encrypt the data. This value can be a globally unique
      *         identifier, a fully specified ARN to either an alias or a key, or
-     *         an alias name prefixed by "alias/".
+     *         an alias name prefixed by "alias/".</p>
      *         <ul>
-     *         <li>Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678
-     *         -1234-1234-1234-123456789012</li>
-     *         <li>Alias ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li>
-     *         <li>Alias Name Example - alias/MyAliasName</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-
+     *         1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias Name Example - alias/MyAliasName
+     *         </p>
+     *         </li>
      */
 
     public String getDestinationKeyId() {
@@ -297,33 +369,62 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key used to re-encrypt the
      * data. This value can be a globally unique identifier, a fully specified
      * ARN to either an alias or a key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param destinationKeyId
      *        A unique identifier for the customer master key used to re-encrypt
      *        the data. This value can be a globally unique identifier, a fully
      *        specified ARN to either an alias or a key, or an alias name
-     *        prefixed by "alias/".
+     *        prefixed by "alias/".</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Alias ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        <li>Alias Name Example - alias/MyAliasName</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias Name Example - alias/MyAliasName
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -409,7 +510,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -417,7 +518,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of grant tokens.</p>
      *         <p>
-     *         For more information, go to <a href=
+     *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
@@ -435,7 +536,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -444,7 +545,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
@@ -465,7 +566,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -480,7 +581,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
@@ -504,7 +605,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -513,7 +614,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.

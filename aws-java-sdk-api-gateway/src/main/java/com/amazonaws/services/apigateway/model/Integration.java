@@ -82,10 +82,38 @@ public class Integration implements Serializable, Cloneable {
     private java.util.Map<String, String> requestParameters;
     /**
      * <p>
-     * Specifies the integration's request templates.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      */
     private java.util.Map<String, String> requestTemplates;
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     */
+    private String passthroughBehavior;
     /**
      * <p>
      * Specifies the integration's cache namespace.
@@ -538,10 +566,16 @@ public class Integration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's request templates.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
-     * @return Specifies the integration's request templates.
+     * @return Represents a map of Velocity templates that are applied on the
+     *         request payload based on the value of the Content-Type header
+     *         sent by the client. The content type value is the key in this
+     *         map, and the template (as a String) is the value.
      */
 
     public java.util.Map<String, String> getRequestTemplates() {
@@ -550,11 +584,17 @@ public class Integration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's request templates.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
      * @param requestTemplates
-     *        Specifies the integration's request templates.
+     *        Represents a map of Velocity templates that are applied on the
+     *        request payload based on the value of the Content-Type header sent
+     *        by the client. The content type value is the key in this map, and
+     *        the template (as a String) is the value.
      */
 
     public void setRequestTemplates(
@@ -564,11 +604,17 @@ public class Integration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's request templates.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
      * @param requestTemplates
-     *        Specifies the integration's request templates.
+     *        Represents a map of Velocity templates that are applied on the
+     *        request payload based on the value of the Content-Type header sent
+     *        by the client. The content type value is the key in this map, and
+     *        the template (as a String) is the value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -597,6 +643,161 @@ public class Integration implements Serializable, Cloneable {
 
     public Integration clearRequestTemplatesEntries() {
         this.requestTemplates = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @param passthroughBehavior
+     *        Specifies the pass-through behavior for incoming requests based on
+     *        the Content-Type header in the request, and the available
+     *        requestTemplates defined on the Integration. There are three valid
+     *        values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>
+     *        , and <code>NEVER</code>.</p>
+     *        <p/>
+     *        <p>
+     *        <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *        content types through to the Integration backend without
+     *        transformation.
+     *        </p>
+     *        <p>
+     *        <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     *        'Unsupported Media Type' response.
+     *        </p>
+     *        <p>
+     *        <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *        Integration has NO content types mapped to templates. However if
+     *        there is at least one content type defined, unmapped content types
+     *        will be rejected with the same 415 response.
+     */
+
+    public void setPassthroughBehavior(String passthroughBehavior) {
+        this.passthroughBehavior = passthroughBehavior;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @return Specifies the pass-through behavior for incoming requests based
+     *         on the Content-Type header in the request, and the available
+     *         requestTemplates defined on the Integration. There are three
+     *         valid values: <code>WHEN_NO_MATCH</code>,
+     *         <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p>
+     *         <p/>
+     *         <p>
+     *         <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *         content types through to the Integration backend without
+     *         transformation.
+     *         </p>
+     *         <p>
+     *         <code>NEVER</code> rejects unmapped content types with an HTTP
+     *         415 'Unsupported Media Type' response.
+     *         </p>
+     *         <p>
+     *         <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *         Integration has NO content types mapped to templates. However if
+     *         there is at least one content type defined, unmapped content
+     *         types will be rejected with the same 415 response.
+     */
+
+    public String getPassthroughBehavior() {
+        return this.passthroughBehavior;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @param passthroughBehavior
+     *        Specifies the pass-through behavior for incoming requests based on
+     *        the Content-Type header in the request, and the available
+     *        requestTemplates defined on the Integration. There are three valid
+     *        values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>
+     *        , and <code>NEVER</code>.</p>
+     *        <p/>
+     *        <p>
+     *        <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *        content types through to the Integration backend without
+     *        transformation.
+     *        </p>
+     *        <p>
+     *        <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     *        'Unsupported Media Type' response.
+     *        </p>
+     *        <p>
+     *        <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *        Integration has NO content types mapped to templates. However if
+     *        there is at least one content type defined, unmapped content types
+     *        will be rejected with the same 415 response.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Integration withPassthroughBehavior(String passthroughBehavior) {
+        setPassthroughBehavior(passthroughBehavior);
         return this;
     }
 
@@ -807,6 +1008,8 @@ public class Integration implements Serializable, Cloneable {
             sb.append("RequestParameters: " + getRequestParameters() + ",");
         if (getRequestTemplates() != null)
             sb.append("RequestTemplates: " + getRequestTemplates() + ",");
+        if (getPassthroughBehavior() != null)
+            sb.append("PassthroughBehavior: " + getPassthroughBehavior() + ",");
         if (getCacheNamespace() != null)
             sb.append("CacheNamespace: " + getCacheNamespace() + ",");
         if (getCacheKeyParameters() != null)
@@ -861,6 +1064,13 @@ public class Integration implements Serializable, Cloneable {
                 && other.getRequestTemplates().equals(
                         this.getRequestTemplates()) == false)
             return false;
+        if (other.getPassthroughBehavior() == null
+                ^ this.getPassthroughBehavior() == null)
+            return false;
+        if (other.getPassthroughBehavior() != null
+                && other.getPassthroughBehavior().equals(
+                        this.getPassthroughBehavior()) == false)
+            return false;
         if (other.getCacheNamespace() == null
                 ^ this.getCacheNamespace() == null)
             return false;
@@ -906,6 +1116,10 @@ public class Integration implements Serializable, Cloneable {
                 * hashCode
                 + ((getRequestTemplates() == null) ? 0 : getRequestTemplates()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPassthroughBehavior() == null) ? 0
+                        : getPassthroughBehavior().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getCacheNamespace() == null) ? 0 : getCacheNamespace()

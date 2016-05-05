@@ -82,11 +82,11 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      */
     private String keyState;
@@ -493,18 +493,18 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
      *        The state of the customer master key (CMK).</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK,
-     *        go to <a href=
+     *        see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *        >How Key State Affects the Use of a Customer Master Key</a> in the
      *        <i>AWS Key Management Service Developer Guide</i>.
@@ -520,17 +520,17 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return The state of the customer master key (CMK).</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         CMK, go to <a href=
+     *         CMK, see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -546,18 +546,18 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
      *        The state of the customer master key (CMK).</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK,
-     *        go to <a href=
+     *        see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *        >How Key State Affects the Use of a Customer Master Key</a> in the
      *        <i>AWS Key Management Service Developer Guide</i>.
@@ -576,18 +576,18 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
      *        The state of the customer master key (CMK).</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK,
-     *        go to <a href=
+     *        see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *        >How Key State Affects the Use of a Customer Master Key</a> in the
      *        <i>AWS Key Management Service Developer Guide</i>.
@@ -603,18 +603,18 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
      *        The state of the customer master key (CMK).</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK,
-     *        go to <a href=
+     *        see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *        >How Key State Affects the Use of a Customer Master Key</a> in the
      *        <i>AWS Key Management Service Developer Guide</i>.

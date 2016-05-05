@@ -33,14 +33,14 @@ public class Task implements Serializable, Cloneable {
     private String taskArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the cluster that hosts the task.
+     * The Amazon Resource Name (ARN) of the cluster that hosts the task.
      * </p>
      */
     private String clusterArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the task definition that creates
-     * the task.
+     * The Amazon Resource Name (ARN) of the task definition that creates the
+     * task.
      * </p>
      */
     private String taskDefinitionArn;
@@ -156,12 +156,11 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the cluster that hosts the task.
+     * The Amazon Resource Name (ARN) of the cluster that hosts the task.
      * </p>
      * 
      * @param clusterArn
-     *        The Amazon Resource Name (ARN) of the of the cluster that hosts
-     *        the task.
+     *        The Amazon Resource Name (ARN) of the cluster that hosts the task.
      */
 
     public void setClusterArn(String clusterArn) {
@@ -170,11 +169,11 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the cluster that hosts the task.
+     * The Amazon Resource Name (ARN) of the cluster that hosts the task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the of the cluster that hosts
-     *         the task.
+     * @return The Amazon Resource Name (ARN) of the cluster that hosts the
+     *         task.
      */
 
     public String getClusterArn() {
@@ -183,12 +182,11 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the cluster that hosts the task.
+     * The Amazon Resource Name (ARN) of the cluster that hosts the task.
      * </p>
      * 
      * @param clusterArn
-     *        The Amazon Resource Name (ARN) of the of the cluster that hosts
-     *        the task.
+     *        The Amazon Resource Name (ARN) of the cluster that hosts the task.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -200,13 +198,13 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the task definition that creates
-     * the task.
+     * The Amazon Resource Name (ARN) of the task definition that creates the
+     * task.
      * </p>
      * 
      * @param taskDefinitionArn
-     *        The Amazon Resource Name (ARN) of the of the task definition that
-     *        creates the task.
+     *        The Amazon Resource Name (ARN) of the task definition that creates
+     *        the task.
      */
 
     public void setTaskDefinitionArn(String taskDefinitionArn) {
@@ -215,11 +213,11 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the task definition that creates
-     * the task.
+     * The Amazon Resource Name (ARN) of the task definition that creates the
+     * task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the of the task definition that
+     * @return The Amazon Resource Name (ARN) of the task definition that
      *         creates the task.
      */
 
@@ -229,13 +227,13 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the task definition that creates
-     * the task.
+     * The Amazon Resource Name (ARN) of the task definition that creates the
+     * task.
      * </p>
      * 
      * @param taskDefinitionArn
-     *        The Amazon Resource Name (ARN) of the of the task definition that
-     *        creates the task.
+     *        The Amazon Resource Name (ARN) of the task definition that creates
+     *        the task.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

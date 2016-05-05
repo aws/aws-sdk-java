@@ -24,13 +24,33 @@ import com.amazonaws.AmazonServiceException;
  * names must meet the following requirements:
  * </p>
  * <ul>
- * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
- * underscores (_), or dashes (-)</li>
- * <li>Start with a letter or number, and end with a letter or number</li>
- * <li>Be between 3 and 128 characters</li>
- * <li>Have no adjacent periods, underscores or dashes. Names like
- * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</li>
- * <li>Not be in IP address format (for example, 192.168.5.4)</li>
+ * <li>
+ * <p>
+ * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+ * underscores (_), or dashes (-)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Start with a letter or number, and end with a letter or number
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Be between 3 and 128 characters
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Have no adjacent periods, underscores or dashes. Names like
+ * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Not be in IP address format (for example, 192.168.5.4)
+ * </p>
+ * </li>
  * </ul>
  */
 public class InvalidTrailNameException extends AmazonServiceException {

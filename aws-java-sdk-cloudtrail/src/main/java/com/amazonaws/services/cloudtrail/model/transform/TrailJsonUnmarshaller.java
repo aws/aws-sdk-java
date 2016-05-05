@@ -72,6 +72,11 @@ public class TrailJsonUnmarshaller implements
                     trail.setSnsTopicName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
+                if (context.testExpression("SnsTopicARN", targetDepth)) {
+                    context.nextToken();
+                    trail.setSnsTopicARN(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
+                }
                 if (context.testExpression("IncludeGlobalServiceEvents",
                         targetDepth)) {
                     context.nextToken();

@@ -44,7 +44,9 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see CopyObjectResult
  */
 public class CopyObjectRequest extends AmazonWebServiceRequest implements
-    SSEAwsKeyManagementParamsProvider, Serializable {
+                                                               SSEAwsKeyManagementParamsProvider,
+                                                               Serializable,
+                                                               S3AccelerateUnsupported {
 
     /** The name of the bucket containing the object to be copied */
     private String sourceBucketName;

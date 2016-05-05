@@ -27,42 +27,68 @@ public class DisableKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier or the fully specified ARN to a key.
+     * A unique identifier for the CMK.
+     * </p>
+     * <p>
+     * Use the CMK's unique identifier or its Amazon Resource Name (ARN). For
+     * example:
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-
+     * 56ef-1234567890ab
+     * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private String keyId;
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier or the fully specified ARN to a key.
+     * A unique identifier for the CMK.
+     * </p>
+     * <p>
+     * Use the CMK's unique identifier or its Amazon Resource Name (ARN). For
+     * example:
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-
+     * 56ef-1234567890ab
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be
-     *        a globally unique identifier or the fully specified ARN to a key.
+     *        A unique identifier for the CMK.</p>
+     *        <p>
+     *        Use the CMK's unique identifier or its Amazon Resource Name (ARN).
+     *        For example:
+     *        </p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-
+     *        56ef-1234567890ab
+     *        </p>
+     *        </li>
      */
 
     public void setKeyId(String keyId) {
@@ -71,27 +97,43 @@ public class DisableKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier or the fully specified ARN to a key.
+     * A unique identifier for the CMK.
+     * </p>
+     * <p>
+     * Use the CMK's unique identifier or its Amazon Resource Name (ARN). For
+     * example:
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-
+     * 56ef-1234567890ab
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
-     * @return A unique identifier for the customer master key. This value can
-     *         be a globally unique identifier or the fully specified ARN to a
-     *         key.
+     * @return A unique identifier for the CMK.</p>
+     *         <p>
+     *         Use the CMK's unique identifier or its Amazon Resource Name
+     *         (ARN). For example:
+     *         </p>
      *         <ul>
-     *         <li>Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678
-     *         -1234-1234-1234-123456789012</li>
-     *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-
+     *         56ef-1234567890ab
+     *         </p>
+     *         </li>
      */
 
     public String getKeyId() {
@@ -100,27 +142,44 @@ public class DisableKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a
-     * globally unique identifier or the fully specified ARN to a key.
+     * A unique identifier for the CMK.
+     * </p>
+     * <p>
+     * Use the CMK's unique identifier or its Amazon Resource Name (ARN). For
+     * example:
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-
+     * 56ef-1234567890ab
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be
-     *        a globally unique identifier or the fully specified ARN to a key.
+     *        A unique identifier for the CMK.</p>
+     *        <p>
+     *        Use the CMK's unique identifier or its Amazon Resource Name (ARN).
+     *        For example:
+     *        </p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-
+     *        56ef-1234567890ab
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

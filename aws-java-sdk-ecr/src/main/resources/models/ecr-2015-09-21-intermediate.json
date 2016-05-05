@@ -769,8 +769,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -914,8 +914,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3810,8 +3810,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4061,8 +4061,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4192,8 +4192,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageIdentifier",
-          "templateType" : "java.util.List<ImageIdentifier>",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+          "templateType" : "java.util.List<ImageIdentifier>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4310,8 +4310,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageFailure",
-          "templateType" : "java.util.List<ImageFailure>",
-          "templateImplType" : "java.util.ArrayList<ImageFailure>"
+          "templateImplType" : "java.util.ArrayList<ImageFailure>",
+          "templateType" : "java.util.List<ImageFailure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4451,8 +4451,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageIdentifier",
-            "templateType" : "java.util.List<ImageIdentifier>",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+            "templateType" : "java.util.List<ImageIdentifier>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4570,8 +4570,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageFailure",
-            "templateType" : "java.util.List<ImageFailure>",
-            "templateImplType" : "java.util.ArrayList<ImageFailure>"
+            "templateImplType" : "java.util.ArrayList<ImageFailure>",
+            "templateType" : "java.util.List<ImageFailure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6066,8 +6066,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Image",
-          "templateType" : "java.util.List<Image>",
-          "templateImplType" : "java.util.ArrayList<Image>"
+          "templateImplType" : "java.util.ArrayList<Image>",
+          "templateType" : "java.util.List<Image>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6184,8 +6184,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageFailure",
-          "templateType" : "java.util.List<ImageFailure>",
-          "templateImplType" : "java.util.ArrayList<ImageFailure>"
+          "templateImplType" : "java.util.ArrayList<ImageFailure>",
+          "templateType" : "java.util.List<ImageFailure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6325,8 +6325,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Image",
-            "templateType" : "java.util.List<Image>",
-            "templateImplType" : "java.util.ArrayList<Image>"
+            "templateImplType" : "java.util.ArrayList<Image>",
+            "templateType" : "java.util.List<Image>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6444,8 +6444,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageFailure",
-            "templateType" : "java.util.List<ImageFailure>",
-            "templateImplType" : "java.util.ArrayList<ImageFailure>"
+            "templateImplType" : "java.util.ArrayList<ImageFailure>",
+            "templateType" : "java.util.List<ImageFailure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6912,8 +6912,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7161,8 +7161,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7451,8 +7451,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageIdentifier",
-          "templateType" : "java.util.List<ImageIdentifier>",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+          "templateType" : "java.util.List<ImageIdentifier>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7644,8 +7644,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageIdentifier",
-            "templateType" : "java.util.List<ImageIdentifier>",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+            "templateType" : "java.util.List<ImageIdentifier>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10500,8 +10500,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageIdentifier",
-          "templateType" : "java.util.List<ImageIdentifier>",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+          "templateType" : "java.util.List<ImageIdentifier>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10645,8 +10645,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageIdentifier",
-            "templateType" : "java.util.List<ImageIdentifier>",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+            "templateType" : "java.util.List<ImageIdentifier>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11178,8 +11178,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11482,8 +11482,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12067,8 +12067,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ImageIdentifier",
-          "templateType" : "java.util.List<ImageIdentifier>",
-          "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+          "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+          "templateType" : "java.util.List<ImageIdentifier>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12212,8 +12212,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ImageIdentifier",
-            "templateType" : "java.util.List<ImageIdentifier>",
-            "templateImplType" : "java.util.ArrayList<ImageIdentifier>"
+            "templateImplType" : "java.util.ArrayList<ImageIdentifier>",
+            "templateType" : "java.util.List<ImageIdentifier>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12560,8 +12560,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Repository",
-          "templateType" : "java.util.List<Repository>",
-          "templateImplType" : "java.util.ArrayList<Repository>"
+          "templateImplType" : "java.util.ArrayList<Repository>",
+          "templateType" : "java.util.List<Repository>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12753,8 +12753,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Repository",
-            "templateType" : "java.util.List<Repository>",
-            "templateImplType" : "java.util.ArrayList<Repository>"
+            "templateImplType" : "java.util.ArrayList<Repository>",
+            "templateType" : "java.util.List<Repository>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13454,8 +13454,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AuthorizationData",
-          "templateType" : "java.util.List<AuthorizationData>",
-          "templateImplType" : "java.util.ArrayList<AuthorizationData>"
+          "templateImplType" : "java.util.ArrayList<AuthorizationData>",
+          "templateType" : "java.util.List<AuthorizationData>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13595,8 +13595,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AuthorizationData",
-            "templateType" : "java.util.List<AuthorizationData>",
-            "templateImplType" : "java.util.ArrayList<AuthorizationData>"
+            "templateImplType" : "java.util.ArrayList<AuthorizationData>",
+            "templateType" : "java.util.List<AuthorizationData>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14185,8 +14185,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Layer",
-          "templateType" : "java.util.List<Layer>",
-          "templateImplType" : "java.util.ArrayList<Layer>"
+          "templateImplType" : "java.util.ArrayList<Layer>",
+          "templateType" : "java.util.List<Layer>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14303,8 +14303,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "LayerFailure",
-          "templateType" : "java.util.List<LayerFailure>",
-          "templateImplType" : "java.util.ArrayList<LayerFailure>"
+          "templateImplType" : "java.util.ArrayList<LayerFailure>",
+          "templateType" : "java.util.List<LayerFailure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14444,8 +14444,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Layer",
-            "templateType" : "java.util.List<Layer>",
-            "templateImplType" : "java.util.ArrayList<Layer>"
+            "templateImplType" : "java.util.ArrayList<Layer>",
+            "templateType" : "java.util.List<Layer>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14563,8 +14563,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "LayerFailure",
-            "templateType" : "java.util.List<LayerFailure>",
-            "templateImplType" : "java.util.ArrayList<LayerFailure>"
+            "templateImplType" : "java.util.ArrayList<LayerFailure>",
+            "templateType" : "java.util.List<LayerFailure>"
           },
           "mapModel" : null,
           "enumType" : null,

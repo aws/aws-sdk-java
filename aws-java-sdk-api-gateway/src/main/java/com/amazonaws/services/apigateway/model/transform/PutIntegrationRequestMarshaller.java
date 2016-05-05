@@ -141,6 +141,10 @@ public class PutIntegrationRequestMarshaller implements
                 }
                 jsonGenerator.writeEndObject();
             }
+            if (putIntegrationRequest.getPassthroughBehavior() != null) {
+                jsonGenerator.writeFieldName("passthroughBehavior").writeValue(
+                        putIntegrationRequest.getPassthroughBehavior());
+            }
             if (putIntegrationRequest.getCacheNamespace() != null) {
                 jsonGenerator.writeFieldName("cacheNamespace").writeValue(
                         putIntegrationRequest.getCacheNamespace());

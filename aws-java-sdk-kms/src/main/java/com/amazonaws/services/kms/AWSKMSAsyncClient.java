@@ -60,11 +60,11 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  * <p>
  * Requests must be signed by using an access key ID and a secret access key. We
- * strongly recommend that you <i>do not</i> use your AWS account access key ID
- * and secret key for everyday work with AWS KMS. Instead, use the access key ID
- * and secret access key for an IAM user, or you can use the AWS Security Token
- * Service to generate temporary security credentials that you can use to sign
- * requests.
+ * strongly recommend that you <i>do not</i> use your AWS account (root) access
+ * key ID and secret key for everyday work with AWS KMS. Instead, use the access
+ * key ID and secret access key for an IAM user, or you can use the AWS Security
+ * Token Service to generate temporary security credentials that you can use to
+ * sign requests.
  * </p>
  * <p>
  * All AWS KMS operations require <a href=
@@ -92,17 +92,31 @@ import com.amazonaws.annotation.ThreadSafe;
  * following:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html"
  * >AWS Security Credentials</a> - This topic provides general information about
- * the types of credentials used for accessing AWS.</li>
- * <li><a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS Security
- * Token Service</a> - This guide describes how to create and use temporary
- * security credentials.</li>
- * <li><a href=
- * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
- * >Signing AWS API Requests</a> - This set of topics walks you through the
- * process of signing a request using an access key ID and a secret access key.</li>
+ * the types of credentials used for accessing AWS.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html"
+ * >Temporary Security Credentials</a> - This section of the <i>IAM User
+ * Guide</i> describes how to create and use temporary security credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"
+ * >Signature Version 4 Signing Process</a> - This set of topics walks you
+ * through the process of signing a request using an access key ID and a secret
+ * access key.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Commonly Used APIs</b>
@@ -113,10 +127,26 @@ import com.amazonaws.annotation.ThreadSafe;
  * as creating keys and assigning policies, by using the console.
  * </p>
  * <ul>
- * <li><a>Encrypt</a></li>
- * <li><a>Decrypt</a></li>
- * <li><a>GenerateDataKey</a></li>
- * <li><a>GenerateDataKeyWithoutPlaintext</a></li>
+ * <li>
+ * <p>
+ * <a>Encrypt</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>Decrypt</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GenerateDataKey</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GenerateDataKeyWithoutPlaintext</a>
+ * </p>
+ * </li>
  * </ul>
  */
 @ThreadSafe

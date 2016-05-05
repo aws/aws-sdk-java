@@ -62,6 +62,10 @@ public class TrailJsonMarshaller {
                 jsonGenerator.writeFieldName("SnsTopicName").writeValue(
                         trail.getSnsTopicName());
             }
+            if (trail.getSnsTopicARN() != null) {
+                jsonGenerator.writeFieldName("SnsTopicARN").writeValue(
+                        trail.getSnsTopicARN());
+            }
             if (trail.getIncludeGlobalServiceEvents() != null) {
                 jsonGenerator.writeFieldName("IncludeGlobalServiceEvents")
                         .writeValue(trail.getIncludeGlobalServiceEvents());

@@ -37,68 +37,68 @@ import com.amazonaws.services.dynamodbv2.model.ConsumedCapacity;
  * @param <R> low level result type
  */
 public abstract class ItemCollection<R> extends PageBasedCollection<Item, R> {
-    private int totalCount;
-    private int totalScannedCount;
-    private ConsumedCapacity totalConsumedCapacity;
+    private int accumulatedItemCount;
+    private int accumulatedScannedCount;
+    private ConsumedCapacity accumulatedConsumedCapacity;
 
     protected final void accumulateStats(ConsumedCapacity consumedCapacity,
             Integer count, Integer scannedCount) {
         if (consumedCapacity != null) {
-            if (totalConsumedCapacity == null) {
+            if (accumulatedConsumedCapacity == null) {
                 // Create a new consumed capacity by cloning the one passed in
-                this.totalConsumedCapacity = new ConsumedCapacity();
-                totalConsumedCapacity.setCapacityUnits(consumedCapacity.getCapacityUnits());
-                totalConsumedCapacity.setGlobalSecondaryIndexes(
+                this.accumulatedConsumedCapacity = new ConsumedCapacity();
+                accumulatedConsumedCapacity.setCapacityUnits(consumedCapacity.getCapacityUnits());
+                accumulatedConsumedCapacity.setGlobalSecondaryIndexes(
                     clone(consumedCapacity.getGlobalSecondaryIndexes()));
-                totalConsumedCapacity.setLocalSecondaryIndexes(
+                accumulatedConsumedCapacity.setLocalSecondaryIndexes(
                     clone(consumedCapacity.getLocalSecondaryIndexes()));
-                totalConsumedCapacity.setTable(clone(consumedCapacity.getTable()));
-                totalConsumedCapacity.setTableName(consumedCapacity.getTableName());
+                accumulatedConsumedCapacity.setTable(clone(consumedCapacity.getTable()));
+                accumulatedConsumedCapacity.setTableName(consumedCapacity.getTableName());
             } else {
                 // Accumulate the capacity units
-                final Double capunit = totalConsumedCapacity.getCapacityUnits();
+                final Double capunit = accumulatedConsumedCapacity.getCapacityUnits();
                 final Double delta = consumedCapacity.getCapacityUnits();
                 if (capunit == null) {
-                    totalConsumedCapacity.setCapacityUnits(delta);
+                    accumulatedConsumedCapacity.setCapacityUnits(delta);
                 } else {
-                    totalConsumedCapacity.setCapacityUnits(capunit.doubleValue()
+                    accumulatedConsumedCapacity.setCapacityUnits(capunit.doubleValue()
                         + (delta == null ? 0 : delta.doubleValue()));
                 }
                 // Accumulate the GSI capacities
-                final Map<String, Capacity> gsi = totalConsumedCapacity.getGlobalSecondaryIndexes();
+                final Map<String, Capacity> gsi = accumulatedConsumedCapacity.getGlobalSecondaryIndexes();
                 if (gsi == null) {
-                    totalConsumedCapacity.setGlobalSecondaryIndexes(
+                    accumulatedConsumedCapacity.setGlobalSecondaryIndexes(
                         clone(consumedCapacity.getGlobalSecondaryIndexes()));
                 } else {
-                    totalConsumedCapacity.setGlobalSecondaryIndexes(add(
+                    accumulatedConsumedCapacity.setGlobalSecondaryIndexes(add(
                         consumedCapacity.getGlobalSecondaryIndexes(),
-                        totalConsumedCapacity.getGlobalSecondaryIndexes()));
+                        accumulatedConsumedCapacity.getGlobalSecondaryIndexes()));
                 }
                 // Accumulate the LSI capacities
-                final Map<String, Capacity> lsi = totalConsumedCapacity.getLocalSecondaryIndexes();
+                final Map<String, Capacity> lsi = accumulatedConsumedCapacity.getLocalSecondaryIndexes();
                 if (lsi == null) {
-                    totalConsumedCapacity.setLocalSecondaryIndexes(
+                    accumulatedConsumedCapacity.setLocalSecondaryIndexes(
                         clone(consumedCapacity.getLocalSecondaryIndexes()));
                 } else {
-                    totalConsumedCapacity.setLocalSecondaryIndexes(add(
+                    accumulatedConsumedCapacity.setLocalSecondaryIndexes(add(
                         consumedCapacity.getLocalSecondaryIndexes(),
-                        totalConsumedCapacity.getLocalSecondaryIndexes()));
+                        accumulatedConsumedCapacity.getLocalSecondaryIndexes()));
                 }
                 // Accumulate table capacity
-                final Capacity tableCapacity = totalConsumedCapacity.getTable();
+                final Capacity tableCapacity = accumulatedConsumedCapacity.getTable();
                 if (tableCapacity == null) {
-                    totalConsumedCapacity.setTable(clone(consumedCapacity.getTable()));
+                    accumulatedConsumedCapacity.setTable(clone(consumedCapacity.getTable()));
                 } else {
-                    totalConsumedCapacity.setTable(add(consumedCapacity.getTable(),
-                            totalConsumedCapacity.getTable()));
+                    accumulatedConsumedCapacity.setTable(add(consumedCapacity.getTable(),
+                            accumulatedConsumedCapacity.getTable()));
                 }
             }
         }
         if (count != null) {
-            this.totalCount += count.intValue();
+            this.accumulatedItemCount += count.intValue();
         }
         if (scannedCount != null) {
-            this.totalScannedCount += scannedCount.intValue();
+            this.accumulatedScannedCount += scannedCount.intValue();
         }
     }
 
@@ -149,24 +149,54 @@ public abstract class ItemCollection<R> extends PageBasedCollection<Item, R> {
     }
 
     /**
-     * Returns the total count accumulated so far.
+     * Returns the count of items accumulated so far.
+     * @deprecated This method returns the accumulated count and not the total count.
+     * Use {@link #getAccumulatedItemCount} instead.
      */
+    @Deprecated
     public int getTotalCount() {
-        return totalCount;
+        return getAccumulatedItemCount();
     }
 
     /**
-     * Returns the total scanned count accumulated so far.
+     * Returns the count of items accumulated so far.
      */
+    public int getAccumulatedItemCount() {
+        return accumulatedItemCount;
+    }
+
+    /**
+     * Returns the scanned count accumulated so far.
+     * @deprecated This method returns the accumulated count and not the total count.
+     * Use {@link #getAccumulatedScannedCount} instead.
+     */
+    @Deprecated
     public int getTotalScannedCount() {
-        return totalScannedCount;
+        return getAccumulatedScannedCount();
     }
 
     /**
-     * Returns the total consumed capacity accumulated so far.
+     * Returns the scanned count accumulated so far.
      */
+    public int getAccumulatedScannedCount() {
+        return accumulatedScannedCount;
+    }
+
+    /**
+     * Returns the consumed capacity accumulated so far.
+     * @deprecated This method returns the accumulated consumed capacity and not the total.
+     * Use {@link #getAccumulatedScannedCount} instead.
+     */
+    @Deprecated
     public ConsumedCapacity getTotalConsumedCapacity() {
-        return totalConsumedCapacity;
+        return getAccumulatedConsumedCapacity();
+    }
+
+    /**
+     * Returns the consumed capacity accumulated so far.
+     */
+    public ConsumedCapacity getAccumulatedConsumedCapacity() {
+        return accumulatedConsumedCapacity;
     }
 
     // Overriding these just so javadocs will show up.

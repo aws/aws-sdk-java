@@ -20,13 +20,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "lambda",
     "signingName" : "lambda",
+    "xmlProtocol" : false,
     "serviceName" : "AWS Lambda",
     "cborProtocol" : false,
     "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "AddPermission" : {
@@ -66,12 +66,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AddPermissionResult",
       "asyncReturnType" : "AddPermissionResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddPermissionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddPermissionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult>",
+      "authenticated" : true,
       "methodName" : "addPermission"
     },
     "CreateAlias" : {
@@ -108,12 +108,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateAliasResult",
       "asyncReturnType" : "CreateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult>",
+      "authenticated" : true,
       "methodName" : "createAlias"
     },
     "CreateEventSourceMapping" : {
@@ -150,12 +150,12 @@
         "documentation" : "<p>The resource (for example, a Lambda function or access policy statement) specified in the request does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateEventSourceMappingResult",
       "asyncReturnType" : "CreateEventSourceMappingResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateEventSourceMappingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateEventSourceMappingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEventSourceMappingRequest, CreateEventSourceMappingResult>",
+      "authenticated" : true,
       "methodName" : "createEventSourceMapping"
     },
     "CreateFunction" : {
@@ -195,12 +195,12 @@
         "documentation" : "<p>You have exceeded your maximum total code size per account. <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/limits.html\">Limits</a> </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateFunctionResult",
       "asyncReturnType" : "CreateFunctionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateFunctionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateFunctionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateFunctionRequest, CreateFunctionResult>",
+      "authenticated" : true,
       "methodName" : "createFunction"
     },
     "DeleteAlias" : {
@@ -228,12 +228,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteAlias"
     },
     "DeleteEventSourceMapping" : {
@@ -267,12 +267,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteEventSourceMappingResult",
       "asyncReturnType" : "DeleteEventSourceMappingResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteEventSourceMappingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteEventSourceMappingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEventSourceMappingRequest, DeleteEventSourceMappingResult>",
+      "authenticated" : true,
       "methodName" : "deleteEventSourceMapping"
     },
     "DeleteFunction" : {
@@ -306,12 +306,12 @@
         "documentation" : "<p>The resource already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, Void>",
+      "authenticated" : true,
       "methodName" : "deleteFunction"
     },
     "GetAlias" : {
@@ -345,12 +345,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetAliasResult",
       "asyncReturnType" : "GetAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetAliasRequest, GetAliasResult>",
+      "authenticated" : true,
       "methodName" : "getAlias"
     },
     "GetEventSourceMapping" : {
@@ -384,12 +384,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetEventSourceMappingResult",
       "asyncReturnType" : "GetEventSourceMappingResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetEventSourceMappingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetEventSourceMappingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetEventSourceMappingRequest, GetEventSourceMappingResult>",
+      "authenticated" : true,
       "methodName" : "getEventSourceMapping"
     },
     "GetFunction" : {
@@ -423,12 +423,12 @@
         "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetFunctionResult",
       "asyncReturnType" : "GetFunctionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetFunctionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetFunctionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult>",
+      "authenticated" : true,
       "methodName" : "getFunction"
     },
     "GetFunctionConfiguration" : {
@@ -462,12 +462,12 @@
         "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetFunctionConfigurationResult",
       "asyncReturnType" : "GetFunctionConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetFunctionConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetFunctionConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetFunctionConfigurationRequest, GetFunctionConfigurationResult>",
+      "authenticated" : true,
       "methodName" : "getFunctionConfiguration"
     },
     "GetPolicy" : {
@@ -501,12 +501,12 @@
         "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetPolicyResult",
       "asyncReturnType" : "GetPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult>",
+      "authenticated" : true,
       "methodName" : "getPolicy"
     },
     "Invoke" : {
@@ -570,12 +570,12 @@
         "documentation" : "<p>The Security Group ID provided in the Lambda function VPC configuration is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : true,
-      "authenticated" : true,
       "syncReturnType" : "InvokeResult",
       "asyncReturnType" : "InvokeResult",
       "asyncFutureType" : "java.util.concurrent.Future<InvokeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<InvokeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<InvokeRequest, InvokeResult>",
+      "authenticated" : true,
       "methodName" : "invoke"
     },
     "InvokeAsync" : {
@@ -606,12 +606,12 @@
         "documentation" : "<p>The request body could not be parsed as JSON.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "InvokeAsyncResult",
       "asyncReturnType" : "InvokeAsyncResult",
       "asyncFutureType" : "java.util.concurrent.Future<InvokeAsyncResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<InvokeAsyncResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<InvokeAsyncRequest, InvokeAsyncResult>",
+      "authenticated" : true,
       "methodName" : "invokeAsync"
     },
     "ListAliases" : {
@@ -645,12 +645,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListAliasesResult",
       "asyncReturnType" : "ListAliasesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAliasesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAliasesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult>",
+      "authenticated" : true,
       "methodName" : "listAliases"
     },
     "ListEventSourceMappings" : {
@@ -684,12 +684,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListEventSourceMappingsResult",
       "asyncReturnType" : "ListEventSourceMappingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListEventSourceMappingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListEventSourceMappingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListEventSourceMappingsRequest, ListEventSourceMappingsResult>",
+      "authenticated" : true,
       "methodName" : "listEventSourceMappings"
     },
     "ListFunctions" : {
@@ -717,12 +717,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListFunctionsResult",
       "asyncReturnType" : "ListFunctionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListFunctionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListFunctionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult>",
+      "authenticated" : true,
       "methodName" : "listFunctions"
     },
     "ListVersionsByFunction" : {
@@ -756,12 +756,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListVersionsByFunctionResult",
       "asyncReturnType" : "ListVersionsByFunctionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListVersionsByFunctionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListVersionsByFunctionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListVersionsByFunctionRequest, ListVersionsByFunctionResult>",
+      "authenticated" : true,
       "methodName" : "listVersionsByFunction"
     },
     "PublishVersion" : {
@@ -798,12 +798,12 @@
         "documentation" : "<p>You have exceeded your maximum total code size per account. <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/limits.html\">Limits</a> </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PublishVersionResult",
       "asyncReturnType" : "PublishVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<PublishVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PublishVersionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PublishVersionRequest, PublishVersionResult>",
+      "authenticated" : true,
       "methodName" : "publishVersion"
     },
     "RemovePermission" : {
@@ -834,12 +834,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void>",
+      "authenticated" : true,
       "methodName" : "removePermission"
     },
     "UpdateAlias" : {
@@ -873,12 +873,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateAliasResult",
       "asyncReturnType" : "UpdateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, UpdateAliasResult>",
+      "authenticated" : true,
       "methodName" : "updateAlias"
     },
     "UpdateEventSourceMapping" : {
@@ -915,12 +915,12 @@
         "documentation" : "<p>The resource already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateEventSourceMappingResult",
       "asyncReturnType" : "UpdateEventSourceMappingResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateEventSourceMappingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateEventSourceMappingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateEventSourceMappingRequest, UpdateEventSourceMappingResult>",
+      "authenticated" : true,
       "methodName" : "updateEventSourceMapping"
     },
     "UpdateFunctionCode" : {
@@ -957,12 +957,12 @@
         "documentation" : "<p>You have exceeded your maximum total code size per account. <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/limits.html\">Limits</a> </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateFunctionCodeResult",
       "asyncReturnType" : "UpdateFunctionCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateFunctionCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateFunctionCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateFunctionCodeRequest, UpdateFunctionCodeResult>",
+      "authenticated" : true,
       "methodName" : "updateFunctionCode"
     },
     "UpdateFunctionConfiguration" : {
@@ -996,12 +996,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateFunctionConfigurationResult",
       "asyncReturnType" : "UpdateFunctionConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateFunctionConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateFunctionConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateFunctionConfigurationRequest, UpdateFunctionConfigurationResult>",
+      "authenticated" : true,
       "methodName" : "updateFunctionConfiguration"
     }
   },
@@ -6875,11 +6875,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6993,11 +6993,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7186,11 +7186,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7305,11 +7305,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12031,11 +12031,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<EventSourceMappingConfiguration>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "EventSourceMappingConfiguration"
+          "simpleType" : "EventSourceMappingConfiguration",
+          "templateType" : "java.util.List<EventSourceMappingConfiguration>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12172,11 +12172,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<EventSourceMappingConfiguration>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "EventSourceMappingConfiguration"
+            "simpleType" : "EventSourceMappingConfiguration",
+            "templateType" : "java.util.List<EventSourceMappingConfiguration>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EventSourceMappingConfiguration>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12591,11 +12591,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<AliasConfiguration>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasConfiguration>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "AliasConfiguration"
+          "simpleType" : "AliasConfiguration",
+          "templateType" : "java.util.List<AliasConfiguration>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasConfiguration>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12732,11 +12732,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<AliasConfiguration>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasConfiguration>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "AliasConfiguration"
+            "simpleType" : "AliasConfiguration",
+            "templateType" : "java.util.List<AliasConfiguration>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AliasConfiguration>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17045,11 +17045,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17163,11 +17163,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17304,11 +17304,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17423,11 +17423,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18335,11 +18335,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<FunctionConfiguration>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "FunctionConfiguration"
+          "simpleType" : "FunctionConfiguration",
+          "templateType" : "java.util.List<FunctionConfiguration>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18476,11 +18476,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<FunctionConfiguration>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "FunctionConfiguration"
+            "simpleType" : "FunctionConfiguration",
+            "templateType" : "java.util.List<FunctionConfiguration>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27083,11 +27083,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<FunctionConfiguration>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "FunctionConfiguration"
+          "simpleType" : "FunctionConfiguration",
+          "templateType" : "java.util.List<FunctionConfiguration>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27224,11 +27224,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<FunctionConfiguration>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "FunctionConfiguration"
+            "simpleType" : "FunctionConfiguration",
+            "templateType" : "java.util.List<FunctionConfiguration>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FunctionConfiguration>"
           },
           "mapModel" : null,
           "enumType" : null,

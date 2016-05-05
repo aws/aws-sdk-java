@@ -73,6 +73,11 @@ public class CreateTrailResultJsonUnmarshaller implements
                     createTrailResult.setSnsTopicName(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("SnsTopicARN", targetDepth)) {
+                    context.nextToken();
+                    createTrailResult.setSnsTopicARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("IncludeGlobalServiceEvents",
                         targetDepth)) {
                     context.nextToken();

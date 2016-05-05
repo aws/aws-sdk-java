@@ -73,6 +73,12 @@ public class CreateKeyRequestMarshaller implements
                 jsonGenerator.writeFieldName("KeyUsage").writeValue(
                         createKeyRequest.getKeyUsage());
             }
+            if (createKeyRequest.getBypassPolicyLockoutSafetyCheck() != null) {
+                jsonGenerator.writeFieldName("BypassPolicyLockoutSafetyCheck")
+                        .writeValue(
+                                createKeyRequest
+                                        .getBypassPolicyLockoutSafetyCheck());
+            }
 
             jsonGenerator.writeEndObject();
 
